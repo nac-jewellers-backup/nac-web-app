@@ -86,7 +86,7 @@ class PaymentIndex extends React.Component {
                             </div>
                         </Grid>
                         <Grid item lg={7}>
-                            <div style={{ marginTop: "20px" }} className="pay-index-subhed_datas dz">
+                            <div className="pay-index-subhed_datas dz">
                                 {
                                     this.state.isActive == 'Creditform' && <Creditform />
                                 }
@@ -146,7 +146,7 @@ class PaymentIndex extends React.Component {
                         </ExpansionPanelDetails>
                     </ExpansionPanel>
                 </Hidden>
-            </div>
+            </div >
         )
     }
 }

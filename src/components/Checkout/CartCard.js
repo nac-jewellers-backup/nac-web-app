@@ -325,16 +325,7 @@ class Checkoutcard extends React.Component {
         // const { dataCard1 } = this.props.data;
         var discounted_price = this.props.cartFilters.discounted_price ? this.props.cartFilters.discounted_price : ""
         const dataCard1 = this.props.data.map(val => { return val.dataCard1[0].offerPrice }).reduce(myFunc);
-        // this.props.data.map(val=>{return val.dataCard1[0].offerPrice}).reduce(myFunc)
-
-
-
-        // function myFunc(total, num) {
-        //     return Math.round(total + num);
-        // }
-
         function myFunc(total, num) {
-            // alert(JSON.stringify(props.cartFilters.discounted_price))
             var cart_price
             if (discounted_price.length > 0) {
                 var a = Math.round(total + num);

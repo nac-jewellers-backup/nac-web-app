@@ -34,8 +34,8 @@
 @media screen and (min-width: 959px) {
     .pay-index-subhed_datas {
         box-shadow: 1px 2px 7px 4px #DEDADA;
-        margin-top: 16px;
-        margin-left: 40px;
+        margin-top: 12px;
+        /* margin-left: 40px; */
         padding: 16px
     }
 }
