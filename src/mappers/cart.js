@@ -152,65 +152,44 @@ export default function (data) {
                         pro_header: k.productListByProductId.productName,
                         namedetail: [
                             {
-                                name: k.diamondType&&k.diamondType.length > 0 ? "Diamond Quality" : "",
-                                details: k.diamondType
+                                name: "Product Code",
+                                details: k.generatedSku
                             },
                             {
                                 name: k.metalColor.length > 0 ? "Metal" : "",
                                 details: k.purity + ' ' + k.metalColor
-                            }, {
-                                name: "Gold Weight" ,
-                                details: k.skuWeight + " " + "GM"
                             },
                             {
-                                name: k.skuSize && k.skuSize.length > 0 ? "Size (For rings/bangles)" : "",
+                                name: k.productListByProductId.productType == "Kada"? "Metal Weight (Gm)" : "Gold Weight (Gm)",
+                                details: k.skuWeight
+                            },
+                            {
+                                name: k.skuSize && k.skuSize.length > 0 ? "Size" : null,
                                 details: k.skuSize
                             },
                             {
-                                name: "Product Code",
-                                details: k.generatedSku
-                            }], 
-                        // }, {
-                        //     header: "Diamond Details ",
-
-
-                        //     namedetail: [
-                        //         {
-                        //             name: "Total No of ",
-                        //         },
-                        //         {
-                        //             name: "Diamonds",
-                        //             details: "35"
-                        //         },
-                        //         {
-                        //             name: "Color",
-                        //             details: "IF"
-                        //         },
-                        //         {
-                        //             name: "Clarity",
-                        //             details: "SI"
-                        //         },
-
-                        //     ],
-                        // },
-                        // {
-                        //     header: "Price Breakup",
-                        //     namedetail: [{
-                        //         name: "Metal",
-                        //         details: "SP0679-18110000"
-                        //     },
-                        //     {
-                        //         name: "Diamond",
-                        //         details: "18K Yellow Gold"
-                        //     }, {
-                        //         name: "Making Charges",
-                        //         details: "1.463"
-                        //     },
-                        //     {
-                        //         name: "GST",
-                        //         details: "1.463"
-                        //     },
-                        //     ],
+                                name: k.diamondType&&k.diamondType.length > 0 ? "Diamond Quality" : "",
+                                details: k.diamondType
+                            },
+                      
+                         
+                            {
+                                name:k.productListByProductId.productDiamondsByProductSku.nodes.length>0 ? "Diamond Weight (Ct)" : null,
+                                details:k.productListByProductId.productDiamondsByProductSku.nodes.length>0 ?k.productListByProductId.productDiamondsByProductSku.nodes[0].stoneWeight: null
+                            },
+                            {
+                                name:k.productListByProductId.productGemstonesByProductSku.nodes.length>0 ?"Gemstone Type" : null,
+                                details:k.productListByProductId.productGemstonesByProductSku.nodes.length>0 ? k.productListByProductId.productGemstonesByProductSku.nodes[0].gemstoneType : null
+                            },
+                            {
+                                name:k.productListByProductId.productGemstonesByProductSku.nodes.length>0 ? "Gemstone Weight" : null,
+                                details:k.productListByProductId.productGemstonesByProductSku.nodes.length>0 ? k.productListByProductId.productGemstonesByProductSku.nodes[0].stoneWeight : null
+                            },
+               
+                         
+                            
+                        ], 
+                     
                     },
                 ],
                 // 
@@ -222,6 +201,7 @@ export default function (data) {
                         title: "Diamond Pendant Ring",
                         dis: 'Pendants set in 18 Kt Yellow Gold 3.95 gm with Diamonds (0.52 ct, GH - SI )',
                         save: '5999.9',
+                        discount:k && k.discount ? k.discount : null,
                         image: {
                             placeImage:
                                 "https://assets-cdn.stylori.com/313x313/images/product/SE0176/SE0176-1R.jpg",

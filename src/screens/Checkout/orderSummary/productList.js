@@ -121,9 +121,10 @@ const ProductlistComponent = (props) => {
                                             <Input
                                                 name="from"
                                                 type="text"
-                                                value={values.from}
+                                                value={values.gift_from}
                                                 placeholder="From"
                                                 required
+                                                disabled={data && data.message === "Success" || values.haveAlready ?true:false}
                                                 onChange={e => handlers.handleChange('gift_from', e.target.value)}
                                                 helperText="From is required"
 
@@ -133,8 +134,9 @@ const ProductlistComponent = (props) => {
                                                 placeholder='To'
                                                 name="to"
                                                 type="text"
-                                                value={values.to}
+                                                value={values.gift_to}
                                                 required
+                                                disabled={data && data.message === "Success" || values.haveAlready ?true:false}
                                                 onChange={e => handlers.handleChange('gift_to', e.target.value)}
                                             />
                                             <Input
@@ -144,10 +146,11 @@ const ProductlistComponent = (props) => {
                                                 type="text"
                                                 value={values.message}
                                                 required
+                                                disabled={data && data.message === "Success" || values.haveAlready ?true:false}
                                                 onChange={e => handlers.handleChange('message', e.target.value)}
                                             />
                                             <div className='login-butn'>
-                                                {data && data.message === "Success" ?
+                                                {data && data.message === "Success" || values.haveAlready ?
                                                     <Button style={{ filter: "grayscale(5)" }} disabled className='apply-b' type="submit">Saved</Button> :
                                                     <Button className='apply-b' type="submit">Save</Button>}
 

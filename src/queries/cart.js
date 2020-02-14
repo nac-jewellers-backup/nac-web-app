@@ -1,34 +1,49 @@
 export const CART = `query myquerycart($productList: [String!]) {
   allTransSkuLists(filter: {generatedSku: {in: $productList}}) {
     nodes {
-      generatedSku 
-      purity 
+      generatedSku
+      purity
       metalColor
       discountPrice
+      discount
       markupPrice
       skuUrl
-      
       productListByProductId {
         productId
         productName
-        productImagesByProductId (filter: { imagePosition: {equalTo: 1}}){
+        productImagesByProductId(filter: {imagePosition: {equalTo: 1}}) {
           nodes {
             imageUrl
           }
         }
-        productType 
+        productType
         productMaterialsByProductSku {
           nodes {
             materialName
           }
         }
-       }
+        productDiamondsByProductSku {
+          nodes {
+            diamondColour
+            diamondShape
+            stoneWeight
+          }
+        }
+        productGemstonesByProductSku {
+          nodes {
+            gemstoneSize
+            gemstoneType
+            stoneWeight
+          }
+        }
+      }
       skuWeight
       diamondType
       skuSize
     }
   }
-}`
+}
+`
 export const ALLORDERS = `query MyQuery($userProfileId: [UUID!]) {
   allOrders(filter: {userProfileId: {in: $userProfileId}}, orderBy: CREATED_AT_DESC, condition: {paymentStatus: "Submitted"}) {
     nodes {
@@ -53,6 +68,7 @@ export const ALLORDERS = `query MyQuery($userProfileId: [UUID!]) {
                   }
                 }
                 productName
+                productType
                 productDiamondsByProductSku {
                   nodes {
                     stoneWeight
@@ -182,6 +198,7 @@ export const ORDERSUCCESSFUL = `query MyQuery($orderId:  OrderCondition) {
                   }
                 }
                 productName
+                productType
                 productDiamondsByProductSku {
                   nodes {
                     stoneWeight

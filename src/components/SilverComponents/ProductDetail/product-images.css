@@ -48,7 +48,7 @@ body {
 }
 
 .bg-clr2 {
-    background: linear-gradient(to bottom, #f6f7f8 0%, #fff 100%);
+    /* background: linear-gradient(to bottom, #f6f7f8 0%, #fff 100%); */
     top: 0px !important;
     margin: 18px 0 10px;
 
@@ -565,7 +565,7 @@ body {
 }
 
 .back_img {
-    background-image: url(https://assets.stylori.com/images/static/bg.png);
+    /* background-image: url(https://assets.stylori.com/images/static/bg.png); */
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -843,7 +843,7 @@ body {
     float: left !important;
     border: 1px solid #CCC;
     margin-bottom: 15px !important;
-    width: 90% !important;
+    width: 88% !important;
     /* height: 80px !important; */
     outline: none !important;
     cursor: pointer;
@@ -1571,4 +1571,13 @@ body {
     border-radius: 100%;
     border: 2px solid #fff;
     padding: 1px
+}
+
+/* @media screen and (min-width: 959px) {
+    .imagecard {
+        height: 345px !important;
+    }
+} */
+.imagecard div {
+    display: flex !important;
 }

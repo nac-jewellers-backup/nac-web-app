@@ -300,7 +300,7 @@ const Provider = (props) => {
 
 
     const updateProductList = () => {
-        debugger
+        
         let variables;
         if (localStorage.getItem('user_id')) {
             const status = (response) => {
@@ -585,6 +585,7 @@ const Provider = (props) => {
     const CartCtx = {
         cartFilters, loading, error, wishlist_count, data, setCartFilters, allorderdata, wishlistdata, allordersuccesful, noproducts, NewUser
     }
+    
     return (
         <CartContext.Provider value={{ CartCtx, setwishlist_count, setCartFilters, setallorderdata, setwishlistdata, setNoproducts }} >
             {props.children}

@@ -1,3 +1,5 @@
+import { Autorenew } from "@material-ui/icons";
+
 const styles = theme => ({
     searchCheck: {
         paddingRight: "12px",
@@ -48,7 +50,7 @@ const styles = theme => ({
         [theme.breakpoints.down('xs')]: {
             background: '#fff !important',
             height: '100%',
-            overflow: "scroll",
+            overflowY: "scroll",
             width: '60%',
             marginTop: '3%',
             marginBottom: '3%',
@@ -58,11 +60,49 @@ const styles = theme => ({
         [theme.breakpoints.up('lg')]: {
             background: '#fff !important',
             height: '100%',
-            overflow: "scroll",
+            overflowY: "scroll",
             width: '60%',
             marginTop: '3%',
             marginBottom: '3%',
             marginLeft: '20%',
+            outline: 'none !important',
+        },
+    },
+    modals_document: {
+        [theme.breakpoints.down('xs')]: {
+            background: '#fff !important',
+            height: '95%',
+            overflow: "none",
+            width: '95%',
+            margin:"auto",
+            outline: 'none !important',
+        },
+        [theme.breakpoints.up('lg')]: {
+            background: '#fff !important',
+            height: '90%',
+            overflow: "none",
+            width: '90%',
+            margin:"auto",
+            outline: 'none !important',
+        },
+    },
+    modals_video: {
+        [theme.breakpoints.down('xs')]: {
+            background: '#fff !important',
+            // height: '90%',
+            marginTop:"2%",
+            overflowY: "scroll",
+            width: '90%',
+            margin:"auto",
+            outline: 'none !important',
+        },
+        [theme.breakpoints.up('lg')]: {
+            background: '#fff !important',
+            // height: '70%',
+            marginTop:"2%",
+            overflowY: "scroll",
+            width: '70%',
+            margin:"auto",
             outline: 'none !important',
         },
     },

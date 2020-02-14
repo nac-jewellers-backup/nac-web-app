@@ -180,9 +180,8 @@ class Component extends React.Component {
     TabsComponent = () => {
         const { classes } = this.props;
         const data = this.props.data;
-        console.log("------")
-        console.log(data)
         const { value } = this.state;
+        const kadasize = this.props && this.props.data && this.props.data.length > 0 && this.props.data[0] && this.props.data[0].productsDetails && this.props.data[0].productsDetails.length > 0 && this.props.data[0].productsDetails[0] && this.props.data[0].productsDetails[0].namedetail && this.props.data[0].productsDetails[0].namedetail.length > 0 && this.props.data[0].productsDetails[0].namedetail[3] && this.props.data[0].productsDetails[0].namedetail[3].details && this.props.data[0].productsDetails[0].namedetail[3].details
         const limit = 8;
         const settings = {
             className: 'center',
@@ -218,6 +217,22 @@ class Component extends React.Component {
                 return val
             }
         }
+        const handle_extension = (_url) => {
+            if(_url){
+                var url_extension = _url.substring(_url.lastIndexOf(".") + 1, _url.length).toLowerCase();
+                var extensionVideoLists = ['m4v', 'avi', 'mpg', 'mp4', 'webm', 'mp2', 'mpeg', 'mpe', 'mpv', 'ogg', 'm4p', 'wmv', 'mov', 'qt', 'flv', 'swf', 'avchd'];
+                var extensionImageLists = ['jpg', 'jpeg', 'png', 'gif'];
+                var extensionDocumentsLists = ['doc', 'docx', 'pdf']
+                if (extensionVideoLists.indexOf(url_extension) !== -1) return "video"
+                else if (extensionImageLists.indexOf(url_extension) !== -1) return "image"
+                else if (extensionDocumentsLists.indexOf(url_extension) !== -1) return "document"
+            }
+            else{
+                return null
+            }
+            
+            // return last
+        }
         // data[0].productTabs[0].tab2.Children
 
         return (
@@ -229,8 +244,8 @@ class Component extends React.Component {
                     return (
                         <>
                             {arr.length > 0 ? <Grid container spacing={12} lg={12} style={{ marginBottom: "10px" }}>
-                                <Grid item lg={3} xs={12} style={{ display: "flex", alignItems: "center" }}><h1 className="rings_tabs">{data[0].productType === "Rings"?val.tab1.header:val.tab1.headerBangle}&nbsp;
-                               {data[0].productType === "Rings" && <a
+                                <Grid item lg={3} xs={12} style={{ display: "flex", alignItems: "center" }}><h1 className="rings_tabs">{data[0].productType === "Rings" ? val.tab1.header : val.tab1.headerBangle}&nbsp;
+                               {data[0].size_guide && <a
                                         onClick={this.handleOpen}
                                         className="my-ringsize">Size Guide </a>}</h1></Grid>
                                 <Grid item lg={9} xs={12} >
@@ -250,7 +265,7 @@ class Component extends React.Component {
                                                             {arr.map((val, i) => {
                                                                 return (<>
                                                                     <div style={{ justifyContent: "center", display: "flex" }}>
-                                                                        <div className={JSON.stringify(val) === this.state.skuSize ? 'darkouter' : "darkouterWhite"}>
+                                                                        <div className={JSON.stringify(val) === this.state.skuSize || kadasize === val ? 'darkouter' : "darkouterWhite"}>
                                                                             <button
                                                                                 style={{ padding: "0px" }}
                                                                                 className={'page'}
@@ -272,7 +287,7 @@ class Component extends React.Component {
                                                             {arr.map((val, i) => {
                                                                 return (<>
                                                                     <div style={{ justifyContent: "center", display: "flex" }}>
-                                                                        <div className={JSON.stringify(val) === this.state.skuSize ? 'darkouter' : "darkouterWhite"}>
+                                                                        <div className={JSON.stringify(val) === this.state.skuSize || kadasize === val ? 'darkouter' : "darkouterWhite"}>
                                                                             <button
                                                                                 className={'page'}
                                                                                 id={val}
@@ -297,11 +312,42 @@ class Component extends React.Component {
                                                     aria-describedby="simple-modal-description"
                                                     open={this.state.open}
                                                     onClose={this.handleClose}
-                                                    style={{ overflow: 'scroll' }}
+                                                   
+                                           
+                                                    // className="modalElementSizeGuide"
                                                 >
-                                                    <div className={`${classes.modals} "modalin-ring"`}>
-                                                        <img height='auto' width='100%' src='https://assets.stylori.com/images/static/Ring-size.jpg' />
-                                                    </div>
+                                                    {/* <div className={`${classes.modals}  "modalin-ring"`}> */}
+                                                    <>
+                                                        {
+                                                            handle_extension(data[0].size_guide) === "image" &&
+                                                            <div className={`${classes.modals}  "modalin-ring"`}><img height='auto' width='100%' src={data[0].size_guide} /></div>
+                                                             
+                                                        }
+                                                        {
+                                                             handle_extension(data[0].size_guide) === "document" && 
+                                                             <div className={`${classes.modals_document}  "modalin-ring"`}>
+                                                           {/* <object data={data[0].size_guide} type="application/pdf" className="document_iframe"  width="100%" height="100%">
+  <p>Your web browser doesn't have a PDF plugin.
+  Instead you can <a href={data[0].size_guide}>click here to
+  download the PDF file.</a></p>
+</object> */}
+                                                             <iframe
+                                                           className="document_iframe" 
+                                                             src={data[0].size_guide} width="100%" height="100%" />
+                                                        
+                                                             </div>
+                                                        }
+                                                         {
+                                                             handle_extension(data[0].size_guide) === "video" &&
+                                                             <div className={`${classes.modals_video}  "modalin-ring"`}>
+                                                             <video preload="auto" autoplay width="100%" controls>
+                                                             <source src={data[0].size_guide} type="video/mp4" />
+                                                           </video>
+                                                           </div>
+                                                        }
+
+                                                        </>
+                                                    {/* </div> */}
                                                 </Modal>
                                                 {/* <div style={{ marginTop: "10px", textAlign: "center" }}>
                                                     <span style={{ cursor: "pointer" }} className={`my-ringsize ${classes.normalfonts} `} >My Ring Size ?</span>

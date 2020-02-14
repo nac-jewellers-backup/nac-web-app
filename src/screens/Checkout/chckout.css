@@ -1,5 +1,5 @@
 .ckcut-main-body {
-    background: #fff !important;
+    background: #fff  !important;
     border-color: #ddd !important;
     padding: 0;
     margin-bottom: 0px !important;
@@ -52,12 +52,11 @@
 }
 
 @media screen and (min-width: 1221px) {
-    .marginTop {
-        margin-top: 4% !important;
+    .marginTop{
+        margin-top: 4% !important; 
     }
 }
-
-.marginTop {
+.marginTop{
     margin-top: 0%;
 }
 
@@ -71,7 +70,7 @@
 
 @media screen and (min-width: 1220px) {
     .checkout-ovralldiv-media {
-        padding-left: 20px !important;
-        padding-right: 20px !important;
+        padding-left: 5% !important;
+        padding-right: 5% !important;
     }
 }

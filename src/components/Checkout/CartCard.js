@@ -51,7 +51,8 @@ class Checkoutcard extends React.Component {
     handleDeleteLocalStorage = (e) => {
 
         var local_storage = JSON.parse(localStorage.getItem('cartDetails'))
-        var currentValue = e.target.id
+        // var currentValue = e.target.id
+        var currentValue = e.target.id && e.target.id.length > 0 ? e.target.id : e.currentTarget.id
 
 
         // console.clear()
@@ -75,6 +76,7 @@ class Checkoutcard extends React.Component {
             return response.json()
         }
         if (JSON.parse(localStorage.getItem('cart_id'))) {
+            
             let cart_id = JSON.parse(localStorage.getItem('cart_id')).cart_id
             let bodyVariableRemoveCartItem = { cart_id: cart_id, product_id: currentValue }
             fetch(`${API_URL}/removecartitem`, {
@@ -92,8 +94,9 @@ class Checkoutcard extends React.Component {
             })
                 .then(status)
                 .then(json).then(val => {
+                    
                     sessionStorage.removeItem('updatedProduct');
-                    alert(JSON.stringify(val.message))
+                    alert(val.message)
                     var cartId = JSON.parse(localStorage.getItem('cartDetails')).cart_id
                     var userId = JSON.parse(localStorage.getItem('cartDetails')).user_id
                     var localstorage = JSON.stringify({ "cart_id": `${cartId}`, "user_id": `${userId}`, "products": a })
@@ -111,11 +114,13 @@ class Checkoutcard extends React.Component {
             var _obj = { cart_id: cartId, user_id: userId, products: _products }
             if (_products.length > 0) {
                 localStorage.setItem('cartDetails', JSON.stringify(_obj))
+                alert("You removed this product successfully")
                 window.location.reload()
 
             }
             else {
                 localStorage.removeItem('cartDetails', _products)
+                alert("You removed this product successfully")
                 window.location.reload()
             }
 
@@ -224,12 +229,22 @@ class Checkoutcard extends React.Component {
                                         {/* <img src={}/> */}
                                         {val.namedetail !== undefined && val.namedetail.map(val => (
                                             dataval.fadeImages.map(im_ => <>
-                                                {filter_image(im_, val.name, val.details) && filter_image(im_, val.name, val.details).length > 0 ?
-                                                    <>{window.location.pathname !== "/checkout" ? <NavLink to={dataval.skuUrl} style={{ textDecoration: 'none' }}>
+                                                {
+                                                
+                                                filter_image(im_, val.name, val.details) && filter_image(im_, val.name, val.details).length > 0 ?
+                                                    <>
+                                                    {
+                                                        
+                                                    window.location.pathname !== "/checkout" ? 
+                                                    <NavLink to={dataval.skuUrl} style={{ textDecoration: 'none' }}>
                                                         <Slideshow className="image"
                                                             fadeImages={filter_image(im_, val.name, val.details)} dataCarousel={dataCarousel} />
-                                                    </NavLink> : <Slideshow className="image"
-                                                        fadeImages={filter_image(im_, val.name, val.details)} dataCarousel={dataCarousel} />}</> : ""
+                                                    </NavLink>
+                                                     : 
+                                                     <Slideshow className="image"
+                                                        fadeImages={filter_image(im_, val.name, val.details)} dataCarousel={dataCarousel} />
+                                                        }
+                                                        </> : ""
 
                                                 }</>)
                                         ))}
@@ -246,17 +261,26 @@ class Checkoutcard extends React.Component {
                                     </NavLink> : <h3 className={`title ${classes.normalfonts}`}>{val.pro_header}</h3>}
                                     <Grid container spacing={12} >
                                         <Grid item xs={8} >
-                                            {val.namedetail !== undefined && val.namedetail.map(val => (
-                                                <Grid container spacing={12}>
-                                                    <Grid item xs={6} >
-                                                        <Typography className={`subhesder ${classes.normalfonts}`}>{val.name}</Typography>
-                                                    </Grid>
-                                                    <Grid item xs={6} >
-                                                        <Typography className={`subhesder ${classes.normalfonts}`}>{val.details}</Typography>
-                                                    </Grid>
-                                                </Grid>
+                                            {val.namedetail !== undefined && val.namedetail.map(val => {
+                                                
+                                                return (
+                                                    <>
+                                                        {val.name || val.detail  ?
 
-                                            ))}
+                                                            <Grid container spacing={12}>
+                                                                <Grid item xs={6} >
+                                                                    <Typography className={`subhesder ${classes.normalfonts}`}>{val.name}</Typography>
+                                                                </Grid>
+                                                                <Grid item xs={6} >
+                                                                    <Typography className={`subhesder ${classes.normalfonts}`}>{val.details}</Typography>
+                                                                </Grid>
+                                                            </Grid>
+                                                            :
+                                                            null}
+                                                    </>
+                                                )
+                                            }
+                                            )}
                                         </Grid>
 
                                         <Grid item xs={4} >
@@ -267,7 +291,7 @@ class Checkoutcard extends React.Component {
                                             {/* : ""} */}
 
                                             {window.location.pathname !== "/checkout" ? <div className="highlighter" className={`subhesder hov ${classes.normalfonts}`}
-                                                id={val.namedetail[4].details} onClick={(event) => this.handleDeleteLocalStorage(event)}>
+                                                id={dataval.generatedSku} onClick={(event) => this.handleDeleteLocalStorage(event)}>
                                                 <i class="fa fa-trash"></i>
                                                 &nbsp;Remove</div> : ""}
                                         </Grid>
@@ -278,12 +302,16 @@ class Checkoutcard extends React.Component {
                                 <Grid item xs={4} sm={2} lg={3}>
                                     <div style={{ marginTop: "15%" }}>
                                         {dataval.dataCard1.map(val =>
-                                            <Pricing
+                                        {
+                                            
+                                            return(<Pricing
                                                 detail={dataval}
-                                                offerDiscount={dataval.productType === "Gold Coins" ? "" : "25% - OFF"}
+                                                offerDiscount={(val.discount) ? `${val.discount}% - OFF` : null}
                                                 price={val.price}
                                                 offerPrice={val.offerPrice} >
-                                            </Pricing>
+                                            </Pricing>)
+                                        }
+                                            
                                         )}
                                         {/* <span class={`offer-description ${classes.backgsecondary}`}>25% - OFF</span> */}
                                     </div>
@@ -325,7 +353,16 @@ class Checkoutcard extends React.Component {
         // const { dataCard1 } = this.props.data;
         var discounted_price = this.props.cartFilters.discounted_price ? this.props.cartFilters.discounted_price : ""
         const dataCard1 = this.props.data.map(val => { return val.dataCard1[0].offerPrice }).reduce(myFunc);
+        // this.props.data.map(val=>{return val.dataCard1[0].offerPrice}).reduce(myFunc)
+
+
+
+        // function myFunc(total, num) {
+        //     return Math.round(total + num);
+        // }
+
         function myFunc(total, num) {
+            // alert(JSON.stringify(props.cartFilters.discounted_price))
             var cart_price
             if (discounted_price.length > 0) {
                 var a = Math.round(total + num);
@@ -342,7 +379,7 @@ class Checkoutcard extends React.Component {
         let path = window.location.pathname.split('/').pop();
         const { classes } = this.props;
         return (
-            <div style={{ marginTop: "10px" }} > 
+            <div style={{ marginTop: "10px" }} >
                 <Grid container spacing={12}>
                     <Grid item xs={6} />
                     <Grid item xs={6} >
@@ -351,17 +388,19 @@ class Checkoutcard extends React.Component {
                             <Grid xs={7} >
                                 <Typography className={`subhesder ${classes.normalfonts}`}>Subtotal</Typography>
                                 <Typography className={`subhesder ${classes.normalfonts}`}>You Saved</Typography>
-                                {props.cartFilters.tax_price ? <Typography className={`subhesder ${classes.normalfonts}`}>REGISTRATION</Typography> : ""}
+                        {props.cartFilters.tax_price ? <Typography className={`subhesder ${classes.normalfonts}`}>{props.cartFilters.coupon_type}</Typography> : ""}
                                 <Typography className={`subhesder ${classes.normalfonts}`}>Shipping</Typography>
                                 <Typography className={`subhesder-totsl-size ${classes.normalfonts}`}>Grand Total</Typography>
                             </Grid>
                             <Grid xs={5} >
-                                <Typography className={`subhesder ${classes.normalfonts}`}>{Math.round(dataCard1)}</Typography>
+                                <Typography className={`subhesder ${classes.normalfonts}`}>{props.cartFilters.gross_amount ? Math.round(props.cartFilters.gross_amount) : 
+                                Math.round(dataCard1)
+                                }</Typography>
                                 <Typography className={`subhesder ${classes.normalfonts}`}>{Math.round(yousave)}</Typography>
                                 {props.cartFilters.tax_price ? <Typography className={`subhesder ${classes.normalfonts}`}>
                                     {props.cartFilters.tax_price}</Typography> : ""}
                                 <Typography className={`subhesder ${classes.normalfonts}`}>FREE </Typography>
-                                <Typography className={`subhesder-totsl-size ${classes.normalfonts}`}>{Math.round(dataCard1 - discounted_price)}</Typography>
+                                <Typography className={`subhesder-totsl-size ${classes.normalfonts}`}>{props.cartFilters.discounted_amount ?Math.round(props.cartFilters.discounted_amount) : Math.round(dataCard1 - discounted_price) }</Typography>
                             </Grid>
                         </Grid>
                         {/* // )}  */}
@@ -392,6 +431,7 @@ class Checkoutcard extends React.Component {
             arrows: false,
         }
         var data = this.props.data
+        
         const { classes } = this.props;
         // alert(discounted_price)
         let path = window.location.pathname.split('/').pop();
