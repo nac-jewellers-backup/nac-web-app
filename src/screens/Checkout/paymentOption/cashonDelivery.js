@@ -10,7 +10,7 @@ import { API_URL, HOME_PAGE_URL, CDN_URL } from '../../../config';
 var obj = {}
 var obj_user = {}
 // let user_id = localStorage.getItem("user_id") ? localStorage.getItem("user_id") : ""
-const order_idx = localStorage.getItem('order_id') ? JSON.parse(localStorage.getItem('order_id')) : "yourorder"
+// const order_idx = localStorage.getItem('order_id') ? JSON.parse(localStorage.getItem('order_id')) : "yourorder"
 
 class CashonDelivey extends React.Component {
     constructor(props) {

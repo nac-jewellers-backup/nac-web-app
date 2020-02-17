@@ -2,7 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid, Hidden, Typography, Button } from '@material-ui/core';
 import Slideshow from '../../components/Carousel/carosul'
-import '../Testimony/Testimony.css';
+// import '../Testimony/Testimony.css';
 
 const useStyles = makeStyles(theme => ({
     root: {

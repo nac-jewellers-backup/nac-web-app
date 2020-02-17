@@ -8,7 +8,7 @@ import Slideshow from "../components/Carousel/carosul";
 import StaticView from "../components/CarouselLazyer/StaticView";
 import GridList from "../components/GridList/GridList";
 import { homePageStylori } from "./dummydatahome";
-import Testimony from "../components/Testimony/Testimony";
+import Testimony from "../components/testimonial/testimonial";
 import Feedes from "../components/Feedes/Index";
 import Stories from "../components/Stories/Index";
 import MetaTags from 'react-meta-tags';
