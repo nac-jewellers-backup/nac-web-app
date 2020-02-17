@@ -42,7 +42,7 @@ export default function CustomSeparator(props) {
   // }
 
   const handleUrl = (data) => {
-    let  dataurl = data.toLowerCase()
+    let dataurl = data.toLowerCase()
     if (dataurl === "home") {
       return window.location.href = "/"
     }
@@ -129,8 +129,8 @@ export default function CustomSeparator(props) {
 
   return (
     <div className={window.location.pathname === "/cart" || b[1] === "paymentsuccess" || window.location.pathname === "/checkout" ? "bread_stic" : ""}>
-      <div className={props.className} >
-        <Paper elevation={0} className={props.classsubhed}  >
+      <div >
+        <Paper elevation={0} style={{ backgroundColor: "#22233d", color: "#fff" }}>
           <Container>
             <Grid container>
               <Grid item lg={7}>

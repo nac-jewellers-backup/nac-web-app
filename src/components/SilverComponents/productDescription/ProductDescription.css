@@ -38,7 +38,7 @@
 }
 
 .product-dis {
-  color: #394578 !important;
+  color: #ffffff !important;
   font-size: 15px !important;
   text-transform: capitalize;
 }
@@ -47,6 +47,7 @@
   margin-top: 1.5% !important;
   margin-bottom: 1.5% !important;
 }
+
 /* .text-overflow{
   line-height: 1em;
     height: 8em;

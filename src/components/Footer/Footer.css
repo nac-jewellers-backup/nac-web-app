@@ -139,3 +139,31 @@
 .contantf {
   padding-left: 15px;
 }
+
+.valuesallow {
+  padding: 0px 10px
+}
+
+.imageClass {
+  width: 300px;
+  margin: auto !important;
+}
+
+@media screen and (min-width: 600px) {
+  .imageClass {
+    width: 414px;
+    margin: auto !important;
+  }
+}
+
+.containlarge {
+  width: 50%;
+  margin: auto
+}
+
+@media screen and (max-width: 1200px) {
+  .containlarge {
+    width: 80%;
+    margin: auto
+  }
+}
