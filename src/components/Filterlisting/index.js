@@ -3,7 +3,7 @@ import './index.css'
 import {
     Container, Hidden, Grid, Typography,
     FormControlLabel,
-    Checkbox
+    Checkbox,
 } from '@material-ui/core';
 import Slideshow from '../Carousel/carosul';
 import CustomSeparator from '../BreadCrumb/index';
@@ -30,6 +30,9 @@ const styles = theme => ({
     },
     filterLabel: {
         fontSize: '0.9rem !important'
+    },
+    checkboxreducer: {
+
     }
 });
 
@@ -107,7 +110,7 @@ class ProductDescription extends Component {
                                         data={data_json} />{/* window.location.pathname.split('/').pop()  */}
                                 </Grid>
                             </Hidden>
-                            <Hidden smDown >
+                            {/* <Hidden smDown >
                                 <Grid
                                     item
                                     xs={6}
@@ -115,12 +118,11 @@ class ProductDescription extends Component {
                                     style={{ textAlign: 'center' }}
                                 >
                                     <Typography className={`${classes.TypoDark}`} variant='h1' component='h1'>
-                                        {/* {window.location.pathname.split('/').pop()} */}
                                         {renderTitle()}
 
                                     </Typography>
                                 </Grid>
-                            </Hidden>
+                            </Hidden> */}
                             <Hidden mdUp>
                                 <Grid
                                     item
@@ -143,7 +145,7 @@ class ProductDescription extends Component {
                                             {[0, 1, 2, 3].map(val => <FormControlLabel key={val}
                                                 className={classes.filterLabel}
                                                 control={
-                                                    <Checkbox checked={this.state.checkedA} onChange={this.handleChange('checkedA')} value="checkedA" />
+                                                    <Checkbox checked={this.state.checkedA} onChange={this.handleChange('checkedA')} value="checkedA" className={classes.checkboxreducer} />
                                                 }
                                                 label={<Typography style={{ fontSize: "14px" }}>Secondary</Typography>}
                                             />
