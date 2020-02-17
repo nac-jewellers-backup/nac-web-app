@@ -54,7 +54,11 @@ export const styles = theme => ({
         fontSize: "0.84rem"
     },
     typomedium: {
-        fontSize: "0.91rem"
+        fontSize: "0.86rem"
+    },
+    typomediumr: {
+        fontSize: "0.91rem",
+        fontWeight: 600
     },
     containerBunch: {
         padding: "20px 0px ",

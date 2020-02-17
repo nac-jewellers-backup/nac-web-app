@@ -176,7 +176,7 @@ export default function CustomSeparator(props) {
                        </Grid> */}
                             <Grid item xs={1} >
                               <img src={subdata.icon} style={{
-                                width: "25px", height: "25px", marginLeft: "20px",
+                                width: "25px", height: "25px", marginLeft: "14px",
                                 marginTop: "7px"
                               }} />
                             </Grid>

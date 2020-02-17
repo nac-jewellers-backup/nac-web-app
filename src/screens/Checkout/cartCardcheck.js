@@ -300,10 +300,10 @@ class Component extends React.Component {
                     </Grid>
 
 
-                    <Grid item xs={12} sm={12} md={3} lg={3} conatiner justify="center">
-                        <Grid container style={{ padding: "18px 40px " }}>
+                    <Grid item xs={12} sm={12} md={3} lg={3} conatiner justify="center" style={{ padding: "18px 20px", color: "#394579" }}>
+                        <Grid container style={{ boxShadow: "rgb(222, 218, 218) 1px 2px 6px 0px", padding: "20px" }}>
                             <Grid item xs={12} lg={12}>
-                                <Typography style={{ fontSize: "0.96rem", paddingBottom: "10px" }}>Billing Summary</Typography>
+                                <Typography style={{ fontSize: "0.90rem", paddingBottom: "10px", fontWeight: 600 }}>Billing Summary</Typography>
                                 <Grid container >
                                     <Grid xs={12} style={{ display: "flex", justifyContent: "center" }}>
                                         <Button
@@ -316,7 +316,7 @@ class Component extends React.Component {
                                 </Grid>
                                 <Grid container style={{ padding: "16px 0px ", borderBottom: "1px solid #8080806e" }}>
                                     <Grid item style={{ flexGrow: 1 }} >
-                                        <Typography style={{ display: "flex", width: '100%' }} className={classes.typomedium}>Product Total</Typography>
+                                        <Typography style={{ display: "flex", width: '100%' }} className={classes.typomediumr}>Product Total</Typography>
                                     </Grid>
                                     <Grid item >
 
@@ -330,13 +330,13 @@ class Component extends React.Component {
                                     </Grid>
                                     <Grid container style={{ padding: "10px 0px 0px 0px " }}>
                                         <Grid item >
-                                            <Typography className={classes.typomedium}>+ Use a promo code</Typography>
+                                            <Typography className={classes.typomediumr}>+ Use a promo code</Typography>
                                         </Grid>
                                     </Grid>
                                 </Grid>
                                 <Grid container className={classes.containerBunch}>
                                     <Grid item style={{ flexGrow: 1 }}>
-                                        <Typography className={classes.typomedium}>Gross Total</Typography>
+                                        <Typography className={classes.typomediumr}>Gross Total</Typography>
                                     </Grid>
                                     <Grid item >
 
@@ -350,7 +350,7 @@ class Component extends React.Component {
                                     </Grid>
                                     <Grid container style={{ padding: "10px 0px 0px 0px " }}>
                                         <Grid item style={{ flexGrow: 1 }}>
-                                            <Typography className={classes.typomedium}>TAX</Typography>
+                                            <Typography className={classes.typomediumr}>TAX</Typography>
                                         </Grid>
                                         <Grid item >
 
@@ -366,7 +366,7 @@ class Component extends React.Component {
                                 </Grid>
                                 <Grid container className={classes.containerBunch}>
                                     <Grid item style={{ flexGrow: 1 }}>
-                                        <Typography className={classes.typomedium}>Total</Typography>
+                                        <Typography className={classes.typomediumr}>Total</Typography>
                                     </Grid>
                                     <Grid item >
 

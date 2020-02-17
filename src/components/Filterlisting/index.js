@@ -3,7 +3,7 @@ import './index.css'
 import {
     Container, Hidden, Grid, Typography,
     FormControlLabel,
-    Checkbox,
+    Checkbox
 } from '@material-ui/core';
 import Slideshow from '../Carousel/carosul';
 import CustomSeparator from '../BreadCrumb/index';
@@ -29,7 +29,11 @@ const styles = theme => ({
         letterSpacing: "1px"
     },
     filterLabel: {
-        fontSize: '0.9rem !important'
+        fontSize: '0.9rem !important',
+        "& svg": {
+            width: "0.8em !important",
+            height: "0.8em !important"
+        }
     },
     checkboxreducer: {
 
