@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from 'components/SilverComponents/Header'
-import ProductDescription from 'components/productDescription';
+import Filterlisting from 'components/Filterlisting';
 import { Grid, Hidden } from '@material-ui/core';
 import Filter from 'components/Filter/filter'
 import Footer from "components/Footer/Footer"
@@ -79,7 +79,8 @@ class Stylori extends React.Component {
           <Header data={data} cartcount={this.props.cartcount} wishlist={this.props.wishlistdata} wishlist_count={this.props.wishlist_count} />
 
           <Grid item xs={12}>
-            <ProductDescription title="Jewellery" data={dataFilter} datalisting={data} wishlist={this.props.wishlistdata} />
+            <Filterlisting title="Jewellery" data={dataFilter} datalisting={data} wishlist={this.props.wishlistdata} />
+            {/* <ProductDescription title="Jewellery" data={dataFilter} datalisting={data} wishlist={this.props.wishlistdata} /> */}
             <Filter datas={data} data={dataFilter} loading={loading} wishlist={this.props.wishlistdata} />
           </Grid>
           <Grid item xs={12} >

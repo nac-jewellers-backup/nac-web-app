@@ -4,40 +4,36 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/index.html"
   },
   {
-    "revision": "4ceaef3ef3e09d0033f6",
+    "revision": "b2e6e70578dc0990109d",
     "url": "/static/css/2.css"
   },
   {
-    "revision": "0097e158fdde41ca5b9e",
+    "revision": "80e2aa9ae3b82953ae48",
     "url": "/static/css/3.css"
   },
   {
-    "revision": "474c2d8210f137e6820e",
+    "revision": "7d36df5453d8bcc81b6b",
     "url": "/static/css/main.css"
   },
   {
-    "revision": "4ceaef3ef3e09d0033f6",
+    "revision": "b2e6e70578dc0990109d",
     "url": "/static/js/2.js"
   },
   {
-    "revision": "0097e158fdde41ca5b9e",
+    "revision": "80e2aa9ae3b82953ae48",
     "url": "/static/js/3.js"
   },
   {
-    "revision": "a2fe3b0b6c8f16634892",
+    "revision": "d5968988ac6627234f77",
     "url": "/static/js/4.js"
   },
   {
-    "revision": "474c2d8210f137e6820e",
+    "revision": "7d36df5453d8bcc81b6b",
     "url": "/static/js/main.js"
   },
   {
     "revision": "67501ddb9e15004a2ab4",
     "url": "/static/js/runtime~main.js"
-  },
-  {
-    "revision": "d20d098dccc3deb830808f97fb14f3ca",
-    "url": "/static/media/Diners-Club.jpg"
   },
   {
     "revision": "92e2d23a1a2929823738532362c05eea",
@@ -118,9 +114,5 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "37b89e280ecc047a56d66fdb6404bb23",
     "url": "/static/media/topPicksTwo.jpg"
-  },
-  {
-    "revision": "0a848483a9d0cc238c3b584e1260e3ec",
-    "url": "/static/media/visa.jpg"
   }
 ]);
