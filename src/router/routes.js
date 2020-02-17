@@ -26,7 +26,39 @@ export const routes = {
     paymenthidden: '/paymenthidden',
     Education: '/education',
     ContactUs: '/contactus',
-    Careers: "/careers"
+    Careers: "/careers",
+  HomePage: "/homes",
+  SavingsPage: "/savingscheme",
+  ExperiencePage: "/experiences",
+  AdvertisingPage : '/advertising',
+  TempleWorkPage : '/temple-work',
+  NewsRoomPage : '/newsroom',
+  AboutUsPage: "/aboutuspage",
+  Terms:"/terms",
+  Return:"/return",
+  Delivery:"/delivery",
+  Privacy:"/privacy",
+  ContactPage  :'/contactuspage',
+  EducationPage:"/educationpage",
+  SiteMap:"/sitemap",
+  Faq:"/faq",
+  StoreLocator:"/store",
+  StoreDetail:"/loc/:id",
+  CareersPage:"/careersPage",
+  DigitalMarketing : '/careersDetail',
+  Diamonds:'/solitaires-search',
+  CollectionHomePage : '/collectionhome',
+  rudramadeviBlog:'/rudramadeviBlog',
+
+
+
+
+
+
+
+
+
+
 
 }
 

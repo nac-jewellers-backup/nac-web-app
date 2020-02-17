@@ -128,7 +128,7 @@ class Slideshow extends React.Component {
     var settings = this.props.dataCarousel;
 
     return (
-      <div>
+      <div style={{width:"100%"}}>
         <Slider ref={sliderRef}  {...settings}>
           {this.props.children ? this.props.children : this.renderFadeImages()}
           {this.props.hover ? this.imagehoverchildrens(this.props.hoverlist) : ""}
