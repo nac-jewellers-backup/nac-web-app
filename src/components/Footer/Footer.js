@@ -277,7 +277,7 @@ export default function Footer(props) {
             direction="row"
             justify="center"
             alignItems="center"
-            style={{ padding: '0', backgroundColor: "#1b1e30" }}
+            style={{ marginTop: '20px', backgroundColor: "#1b1e30" }}
         >
             <Hidden only={['sm', 'xs']}>
                 <Grid className={"containlarge"}>

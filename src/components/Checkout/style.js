@@ -3,13 +3,15 @@ const styles = theme => ({
         [theme.breakpoints.down('xs')]: {
             width: "100%",
             overflowX: "auto",
+            padding: "10px"
         },
         [theme.breakpoints.up('lg')]: {
             // width: "100%",
             // border: "0.5px solid #ccc",
-            boxShadow: "1px 2px 13px 7px #DEDADA!important",
+            boxShadow: "0px 1px 9px 4px #DEDADA!important",
             // padding: "10px",
             marginBottom: "20px",
+            padding: "10px",
             outline: "none !important"
 
         },
