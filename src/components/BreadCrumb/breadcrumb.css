@@ -76,3 +76,13 @@
     width: 100% !important;
 
 }
+
+@media only screen and (max-width: 1280px) {
+    .bread_stic {
+        position: fixed !important;
+        z-index: 1000 !important;
+        top: 89px !important;
+        width: 100% !important;
+        display: none;
+    }
+}
