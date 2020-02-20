@@ -55,7 +55,7 @@ export const ImgMediaCard = (props) => {
 // );
 // }
 const imageOnError = (event, res) => {
-  
+
   // var e = event
   // e.target.src.lastIndexOf('\.')
   // var src_img = (e.target.src).lastIndexOf('\.')
@@ -281,12 +281,12 @@ const useStyles = makeStyles(theme => ({
 
   },
   offerPrice: {
-    fontSize: "0.8rem",
+    fontSize: "0.74rem",
     lineHeight: 0,
     color: "#828282",
     // fontWeight: "bold",
     width: 'fit-content',
-    flex: 0.7,
+    // flex: 0.7,
     textAlign: 'center',
     padding: 5,
     "&:span": {
@@ -393,64 +393,11 @@ function Component(props) {
   return (
     <div className={classes.root} style={{ marginLeft: "0px !important" }}>
       <Card className={classes.card} style={{ marginLeft: "0px !important" }} >
-        {/* <CardActions className={classes.cardAtionspadding}>
-          <Grid container xs={12}>
-            <Grid container item xs={6} justify="flex-start">
-            
-
-            </Grid>
-
-            <Grid container item xs={6} justify="flex-end">
-              <i
-                style={{ fontSize: "18px" }}
-                className={`fa ${classes.iconColor}`}
-              >
-                &#xf08a;
-              </i>
-            </Grid>
-          </Grid>
-
-
-        </CardActions> */}
-        {/* /:productCategory/:productType/:material/:productName */}
-
-
         <CardActions style={{
-          //  maxHeight: `${_height ? `${_height}px` : '300px'}`, minHeight: '250px'
         }} className={`${classes.cardAtionspadding} ${classes.cardActionsImage}`}>
-
-          {/* <img 
-srcset={renderImages(props, cardstate)}
-sizes="(max-width: 320px) 320w,
-            (max-width: 480px) 375w,
-            (max-width: 600px) 600w,
-            (max-width: 992px) 768w,
-            (max-width: 1440px) 1440w,
-            (max-width: 2560px) 2560w,
-            2560w
-           
-"
-     alt=""
-          title={props.data.title}
-          onMouseOver={() => {
-            setCardState({ ...cardstate, hovered: !cardstate.hovered });
-          }}
-          onMouseOut={() => {
-            setCardState({ ...cardstate, hovered: !cardstate.hovered });
-          }}
-          style={{width:'100%',height:'100%'}}
-          className={`${props.data.image.placeImage.length === 0 || props.data.image.hoverImage.length === 0 ? 'shine' : '' }`}
-          
-          /> */}
-
-
-
-
           {Gallery(props, callmouseover, callmouseout, cardstate)}
         </CardActions>
         <Card className={classes.priceClass}>
-
-
           {
             Math.round(props.data.offerPrice) === Math.round(props.data.price) ?
               <CardContent className={classes.cardContent} style={{ display: 'flex' }}>
@@ -461,12 +408,15 @@ sizes="(max-width: 320px) 320w,
                   className={classes.textPriceCardGrid}
                   alignItems="center"
                 >
-
-
-
+                  <Hidden smDown>
+                    <Grid container xs={12}>
+                      <Typography variant="body1"
+                        component="span" style={{ paddingLeft: "5px" }} className={`${classes.titles}`}>
+                        {props.data.title}
+                      </Typography>
+                    </Grid>
+                  </Hidden>
                   <Grid container item xs={12} sm={12} className={`${classes.priceClassMain}`} style={{ alignItems: "center" }}>
-
-
                     <Typography
                       variant="h6"
                       component="h6"
@@ -478,33 +428,10 @@ sizes="(max-width: 320px) 320w,
                         paddingLeft: "5px",
 
                       }}>
-                      {/* <i
-                       
-                       className="fa"
-                     >
-                       &#xf156;
-                     </i> */}
-                      {/* {Math.round(props.data.offerPrice)} */}
+
                       {new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', minimumFractionDigits: 0 }).format(Math.round(props.data.offerPrice))}
                     </Typography>
-
-
-
-
                   </Grid>
-
-                  <Hidden smDown>
-                    <Grid container xs={12}>
-                      {/* <Grid item xs={12} className={`${classes.titles}`}> */}
-                      <Typography variant="body1"
-                        component="span" style={{ paddingLeft: "5px" }} className={`${classes.titles}`}>
-                        {props.data.title}
-                      </Typography>
-
-                    </Grid>
-                    {/* </Grid> */}
-                  </Hidden>
-
                 </Grid>
               </CardContent>
               :
@@ -519,30 +446,30 @@ sizes="(max-width: 320px) 320w,
 
                   <Grid container item xs={12} sm={12} className={`${classes.priceClassMain}`}>
 
-
+                    <Hidden smDown>
+                      <Grid container xs={12}>
+                        <Typography variant="body1"
+                          component="span" style={{ paddingLeft: "5px" }} className={`${classes.titles}`}>
+                          {props.data.title}
+                        </Typography>
+                      </Grid>
+                    </Hidden>
                     <Typography
                       variant="h6"
                       component="h6"
                       className={classes.offerMainPrice}
                       style={{
                         width: "100%",
-                        justifyContent: "flex-start",
+                        justifyContent: "center",
                         display: "flex",
                         paddingLeft: "5px"
                       }}>
-                      {/* <i
-        
-        className="fa"
-      >
-        &#xf156;
-      </i> */}
-                      {/* {Math.round(props.data.offerPrice)} */}
                       {new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', minimumFractionDigits: 0 }).format(Math.round(props.data.offerPrice))}
                     </Typography>
                     <Typography
                       style={{
                         width: "100%",
-                        justifyContent: "flex-start",
+                        justifyContent: "center",
                         display: "flex",
                         marginTop: "4px"
                       }}
@@ -551,43 +478,11 @@ sizes="(max-width: 320px) 320w,
                       component="span"
                       className={classes.offerPrice}
                     >
-
-
-
                       <del>
-
                         {new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', minimumFractionDigits: 0 }).format(Math.round(props.data.price))}
                       </del>
-
-
                     </Typography>
-
-
-
-
                   </Grid>
-
-
-                  {/*  */}
-                  {/* <Grid item xs={12} sm={12} md={5} lg={5} xl={5} className={`${classes.priceOffGrid}`}>
-    <Grid container item xs={12} alignItems="center" className={`${classes.priceOffGridsub}`}>
-
-    </Grid>
-
-
-  </Grid> */}
-
-                  <Hidden smDown>
-                    <Grid container xs={12}>
-                      {/* <Grid item xs={12} className={`${classes.titles}`}> */}
-                      <Typography variant="body1"
-                        component="span" style={{ paddingLeft: "5px" }} className={`${classes.titles}`}>
-                        {props.data.title}
-                      </Typography>
-
-                      {/* </Grid> */}
-                    </Grid>
-                  </Hidden>
 
                 </Grid>
               </CardContent>

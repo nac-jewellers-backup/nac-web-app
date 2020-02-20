@@ -31,6 +31,7 @@ import { CheckForCod } from 'queries/productdetail';
 import { useCheckForCod } from 'hooks/CheckForCodHook';
 import Header from 'components/SilverComponents/Header'
 import { withRouter } from 'react-router-dom';
+import OfferAvailable from 'components/OfferDialog'
 var adres = {};
 var variab = {}
 const CartCardCheck = (props) => {
@@ -44,7 +45,8 @@ class Component extends React.Component {
     state = {
         expanded: 'panel' + (localStorage.getItem("panel") ? localStorage.getItem("panel") : 1),
         mailId: null,
-        adres_details: null
+        adres_details: null,
+        modelOpen: false
     }
 
     handleChange = panel => (event) => {
@@ -121,6 +123,11 @@ class Component extends React.Component {
             }
             localStorage.setItem("panel", 1);
         }
+    }
+    handleopenModel = () => {
+        this.setState({
+            modelOpen: true,
+        })
     }
     pincodeapi = () => {
         var obj_user = {}
@@ -329,9 +336,10 @@ class Component extends React.Component {
                                             : ""}
                                     </Grid>
                                     <Grid container style={{ padding: "10px 0px 0px 0px " }}>
-                                        <Grid item >
+                                        <Grid item onClick={() => this.handleopenModel()} style={{cursor:"pointer"}}>
                                             <Typography className={classes.typomediumr}>+ Use a promo code</Typography>
                                         </Grid>
+                                        <OfferAvailable isOpen={this.state.modelOpen} />
                                     </Grid>
                                 </Grid>
                                 <Grid container className={classes.containerBunch}>
