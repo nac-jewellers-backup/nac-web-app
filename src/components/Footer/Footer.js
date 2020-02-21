@@ -127,7 +127,7 @@ export default function Footer(props) {
     const footerData = [
         {
             url: "aboutus",
-            Title: "About Stylori"
+            Title: "About Us"
         },
         {
             url: "/account-profile",
@@ -167,43 +167,55 @@ export default function Footer(props) {
     const footerData1 = [
         {
             url: "/aboutus",
-            Title: "About Stylori"
+            Title: "About Us"
         },
         {
-            url: "/account-profile",
-            Title: "My Account"
+            url: "/careers",
+            Title: "Careers"
         },
         {
-            url: "/productcare",
-            Title: "Product Care"
+            url: "/newsroom",
+            Title: "News Room"
+        },
+        {
+            url: "/advertising",
+            Title: "Advertising"
         },
     ]
     const footerData2 = [
         {
-            url: "/faqs",
-            Title: "Frequently Asked Questions"
+            url: "/store",
+            Title: "Store Locator"
         },
         {
-            url: "/deliveryreturns",
-            Title: "Shopping & Returns"
+            url: "/education",
+            Title: "Education"
         },
         {
-            url: "/privacypolicy",
-            Title: "Privacy & Cookie Policy"
+            url: "/sitemap",
+            Title: "Sitemap"
+        },
+        {
+            url: "/contactus",
+            Title: "Contact"
         },
     ]
     const footerData3 = [
+        {
+            url: "/temple-work",
+            Title: "Temple Work"
+        },
         {
             url: "/termsconditions",
             Title: "Terms & Conditions"
         },
         {
-            url: "/contactus",
-            Title: "Contact us"
+            url: "/faqs",
+            Title: "FAQ"
         },
         {
-            url: "/careers",
-            Title: "Careers"
+            url: "/faqs",
+            Title: "30 Day Return"
         },
     ]
 

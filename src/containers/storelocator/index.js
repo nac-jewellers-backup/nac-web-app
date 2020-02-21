@@ -6,6 +6,7 @@ import Header from 'components/SilverComponents/Header'
 import { storeLocatorData } from 'mappers/dummydata/storeLocator'
 import SocialFields from 'components/socialfield/index'
 import Slideshow from 'components/Carousel/carosul'
+import Footer from "components/Footer/Footer";
 
 export default function Locator(props) {
 
@@ -39,7 +40,7 @@ export default function Locator(props) {
                     </Hidden>
                 </Grid>
             </Grid>
-
+            <Footer/>
         </Grid>
     )
 

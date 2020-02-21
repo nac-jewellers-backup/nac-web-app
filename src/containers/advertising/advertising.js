@@ -8,7 +8,7 @@ import {
   IndexAdvertisingPage,
   IndexNewsRoomPage
 } from "mappers/dummydata/savingNac";
-
+import Footer from "components/Footer/Footer";
 // import { IndexAdvertisingPage } from 'mappers/dummydata/savingNac';
 
 export default function Advertising(props) {
@@ -32,6 +32,7 @@ export default function Advertising(props) {
       <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
         <CardIndexPage value={values()} />
       </Grid>
+      <Footer />
     </Grid>
   );
 }

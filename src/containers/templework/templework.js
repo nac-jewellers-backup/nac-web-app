@@ -10,7 +10,7 @@ import {
   IndexNewsRoomPage
 } from "mappers/dummydata/savingNac";
 import CardIndexPage from "components/card/index";
-
+import Footer from "components/Footer/Footer";
 export default function Templework(props) {
   // const classes = styles();
   const classes = styles();
@@ -69,10 +69,11 @@ export default function Templework(props) {
           ))}
         </Slideshow>
       </Grid>
-    
+
       <Grid item xs={12} sm={12} md={12} lg={12} xl={12} >
         <CardIndexPage value={values()} />
       </Grid>
+      <Footer />
     </Grid>
   );
 }

@@ -37,10 +37,10 @@ export default function SideData(props) {
                 <List
                     component="nav"
                     aria-labelledby="nested-list-subheader"
-
+                    style={{ padding: "0px" }}
                     className={classses.roots}
                 >
-                    <NavLink to={"/aboutuspage"} activeClassName={'active'} style={{ color: '#394578', textDecoration: "none" }} >
+                    <NavLink to={"/aboutus"} activeClassName={'active'} style={{ color: '#394578', textDecoration: "none" }} >
 
                         <ListItem button onClick={() => handleClick("about")}>
 
@@ -50,7 +50,7 @@ export default function SideData(props) {
                     </NavLink>
 
                     <Collapse in={open === true && check.check === "about"} timeout="auto" unmountOnExit>
-                        <List component="div" disablePadding style={{paddingLeft:"15px"}}>
+                        <List component="div" disablePadding style={{ paddingLeft: "15px" }}>
                             {value && value.data && value.data[0].accordian && value.data[0].accordian.map((val, key) =>
 
                                 <ListItem button className={classses.nested}>
@@ -74,10 +74,9 @@ export default function SideData(props) {
                 <List
                     component="nav"
                     aria-labelledby="nested-list-subheader"
-
                     className={classses.roots}
                 >
-                    <NavLink to={"/terms"} activeClassName={'active'} style={{ color: '#394578', textDecoration: "none" }} >
+                    <NavLink to={"/termsconditions"} activeClassName={'active'} style={{ color: '#394578', textDecoration: "none" }} >
 
                         <ListItem button onClick={() => handleClick("terms")}>
 
@@ -87,7 +86,7 @@ export default function SideData(props) {
                     </NavLink>
 
                     <Collapse in={open === true && check.check === "terms"} timeout="auto" unmountOnExit>
-                        <List component="div" disablePadding style={{paddingLeft:"15px"}}>
+                        <List component="div" disablePadding style={{ paddingLeft: "15px" }}>
                             {value && value.data && value.data[0].accordian && value.data[0].accordian.map((val, key) =>
 
                                 <ListItem button className={classses.nested}>
@@ -123,7 +122,7 @@ export default function SideData(props) {
                     </NavLink>
 
                     <Collapse in={open === true && check.check === "return"} timeout="auto" unmountOnExit>
-                        <List component="div" disablePadding style={{paddingLeft:"15px"}}>
+                        <List component="div" disablePadding style={{ paddingLeft: "15px" }}>
                             {value && value.data && value.data[0].accordian && value.data[0].accordian.map((val, key) =>
 
                                 <ListItem button className={classses.nested}>
@@ -158,7 +157,7 @@ export default function SideData(props) {
                     </NavLink>
 
                     <Collapse in={open === true && check.check === "delivery"} timeout="auto" unmountOnExit>
-                        <List component="div" disablePadding style={{paddingLeft:"15px"}}>
+                        <List component="div" disablePadding style={{ paddingLeft: "15px" }}>
                             {value && value.data && value.data[0].accordian && value.data[0].accordian.map((val, key) =>
 
                                 <ListItem button className={classses.nested}>
@@ -194,7 +193,7 @@ export default function SideData(props) {
                     </NavLink>
 
                     <Collapse in={open === true && check.check === "policy"} timeout="auto" unmountOnExit>
-                        <List component="div" disablePadding style={{paddingLeft:"15px"}}>
+                        <List component="div" disablePadding style={{ paddingLeft: "15px" }}>
                             {value && value.data && value.data[0].accordian && value.data[0].accordian.map((val, key) =>
 
                                 <ListItem button className={classses.nested}>
@@ -229,7 +228,7 @@ export default function SideData(props) {
                     </NavLink>
 
                     <Collapse in={open === true && check.check === "education"} timeout="auto" unmountOnExit>
-                        <List component="div" disablePadding style={{paddingLeft:"15px"}}>
+                        <List component="div" disablePadding style={{ paddingLeft: "15px" }}>
                             {value && value.data && value.data[0].accordian && value.data[0].accordian.map((val, key) =>
 
                                 <ListItem button className={classses.nested}>
@@ -264,7 +263,7 @@ export default function SideData(props) {
                     </NavLink>
 
                     <Collapse in={open === true && check.check === "sitemap"} timeout="auto" unmountOnExit>
-                        <List component="div" disablePadding style={{paddingLeft:"15px"}}>
+                        <List component="div" disablePadding style={{ paddingLeft: "15px" }}>
                             {value && value.data && value.data[0].accordian && value.data[0].accordian.map((val, key) =>
 
                                 <ListItem button className={classses.nested}>
@@ -299,7 +298,7 @@ export default function SideData(props) {
                     </NavLink>
 
                     <Collapse in={open === true && check.check === "faq"} timeout="auto" unmountOnExit>
-                        <List component="div" disablePadding style={{paddingLeft:"15px"}}>
+                        <List component="div" disablePadding style={{ paddingLeft: "15px" }}>
                             {value && value.data && value.data[0].accordian && value.data[0].accordian.map((val, key) =>
 
                                 <ListItem button className={classses.nested}>

@@ -12,12 +12,7 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-
-
-
-
-
-
+import Footer from "components/Footer/Footer";
 
 export default function careersPage (props) {
     const classes = styles();
@@ -92,6 +87,7 @@ export default function careersPage (props) {
       </Hidden> 
       </Grid>
       </Grid>
+      <Footer />
       </Grid>
     );
             }

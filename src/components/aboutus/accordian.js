@@ -9,7 +9,7 @@ export default function Accordian(props){
     return(
         <Grid container xs={12}>
             <>{props.value&&props.value.data&&props.value.data.map((val,i)=><Grid container>
-                {val.accordian.map((value,i)=>
+                {val&&val.accordian&&val.accordian.map((value,i)=>
             <AccordianElement value={value} accordian ={val.accordianIcon} />
                 )}
                 

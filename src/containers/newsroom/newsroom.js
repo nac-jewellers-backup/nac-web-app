@@ -7,13 +7,14 @@ import {
   IndexAdvertisingPage,
   IndexNewsRoomPage
 } from "mappers/dummydata/savingNac";
+import Footer from "components/Footer/Footer";
 
 export default function Newsroom(props) {
   //   const classes = styles();
 
   const values = () => {
     if (props.match.path === "/newsroom") {
-      return  IndexNewsRoomPage;
+      return IndexNewsRoomPage;
     } else if (props.match.path === "/advertising") {
       return IndexAdvertisingPage;
     } else if (props.match.path === "/temple-work") {
@@ -28,6 +29,7 @@ export default function Newsroom(props) {
       <Grid item xs={12} sm={12} md={12} lg={12} xl={12}  >
         <CardIndexPage value={values()} />
       </Grid>
-    </Grid>
+      <Footer />
+    </Grid >
   );
 }
