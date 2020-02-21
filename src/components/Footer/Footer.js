@@ -214,11 +214,28 @@ export default function Footer(props) {
             Title: "FAQ"
         },
         {
-            url: "/faqs",
+            url: "/return",
             Title: "30 Day Return"
         },
     ]
-
+    const footerData4 = [
+        {
+            url: "/delivery",
+            Title: "Delivery Info"
+        },
+        {
+            url: "/privacy",
+            Title: "Privacy Policy"
+        },
+        {
+            url: "",
+            Title: "360 ° Store View"
+        },
+        {
+            url: "",
+            Title: "Track Order"
+        },
+    ]
     const status = (response) => {
 
         if ((response.status >= 200 && response.status < 300) || response.status === 409) {
@@ -330,7 +347,7 @@ export default function Footer(props) {
                     <Grid container item style={{ padding: '15px 0px 15px 0px' }}>
                         <Grid container item xs={12} alignItems="center">
                             <Grid container item xs={12} style={{ color: '#434e77', fontSize: '13px' }}>
-                                <Grid item xs={4}>
+                                <Grid item xs={3}>
                                     {footerData1.map(data => {
                                         return (
                                             <>{localStorage.getItem("true") ? <Grid container className={classes.navTitle} onClick={() => { window.location.href = data.url }} href="#">
@@ -344,7 +361,7 @@ export default function Footer(props) {
                                         )
                                     })}
                                 </Grid>
-                                <Grid item xs={4}>
+                                <Grid item xs={3}>
                                     {footerData2.map(data => {
                                         return (
                                             <Grid container className={classes.navTitle} onClick={() => { window.location.href = data.url }} href="#">
@@ -353,8 +370,17 @@ export default function Footer(props) {
                                         )
                                     })}
                                 </Grid>
-                                <Grid item xs={4}>
+                                <Grid item xs={3}>
                                     {footerData3.map(data => {
+                                        return (
+                                            <Grid container className={classes.navTitle} onClick={() => { window.location.href = data.url }} href="#">
+                                                {data.Title}
+                                            </Grid>
+                                        )
+                                    })}
+                                </Grid>
+                                <Grid item xs={3}>
+                                    {footerData4.map(data => {
                                         return (
                                             <Grid container className={classes.navTitle} onClick={() => { window.location.href = data.url }} href="#">
                                                 {data.Title}

@@ -18,28 +18,29 @@ export default function AboutusPage(props) {
     })
     const classes = styles();
     const values = () => {
-        if (props.match.path === '/aboutus') {
+        // alert(window.location.pathname)
+        if (window.location.pathname === '/aboutus') {
             return AboutUs
         }
-        else if (props.match.path === '/termsconditions') {
+        else if (window.location.pathname === '/termsconditions') {
             return Terms
         }
-        else if (props.match.path === '/return') {
+        else if (window.location.pathname === '/return') {
             return Return
         }
-        else if (props.match.path === '/delivery') {
+        else if (window.location.pathname === '/delivery') {
             return Delivery
         }
-        else if (props.match.path === '/privacy') {
+        else if (window.location.pathname === '/privacy') {
             return Privacy
         }
-        else if (props.match.path === '/education') {
+        else if (window.location.pathname === '/education') {
             return Educations
         }
-        else if (props.match.path === '/sitemap') {
+        else if (window.location.pathname === '/sitemap') {
             return Maps
         }
-        else if (props.match.path === '/faqs') {
+        else if (window.location.pathname === '/faqs') {
             return Faqs
         }
     }
@@ -47,6 +48,7 @@ export default function AboutusPage(props) {
         <Grid container xs={12}>
             <Header />
             <Grid item xs={12}>
+                {console.log(values())}
                 <Slideshow dataCarousel={values() && values().carouselTop && values().carouselTop.setting}>
                     {values() && values().carouselTop && values().carouselTop.data && values().carouselTop.data.map((val, index) => (
                         <Grid container key={index}>
@@ -70,9 +72,9 @@ export default function AboutusPage(props) {
                         </Hidden>
                         <Grid item className={classes.mainContent} lg={6} xs={12} md={6} sm={12}>
                             <>
-                                {props.match.path === '/educationpage' && <EducationPage value={values()} />}
-                                {props.match.path === '/sitemap' && <SiteMap value={values()} />}
-                                {props.match.path !== '/educationpage' && <Accordian value={values()} />}
+                                {window.location.pathname === '/education' && <EducationPage value={values()} />}
+                                {window.location.pathname === '/sitemap' && <SiteMap value={values()} />}
+                                {window.location.pathname !== '/education' && <Accordian value={values()} />}
                             </>
                         </Grid>
                         <Hidden smDown>

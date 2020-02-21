@@ -36,7 +36,7 @@ function FaqsBlock(props) {
 
     return (
         <Grid container>
-                <Header />
+            <Header />
             <Grid item xs={12}>
                 <Slideshow dataCarousel={values().carouselTop.setting}>
                     {values().carouselTop.data.map((val, index) => (

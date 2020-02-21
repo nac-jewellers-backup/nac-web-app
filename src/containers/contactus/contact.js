@@ -11,6 +11,7 @@ import {
   contactfooter
 } from "../../mappers/dummydata/savingNac";
 import Header from "components/SilverComponents/Header";
+import Footer from "components/Footer/Footer";
 
 // const useStyles = makeStyles(theme => ({
 //   root: {
@@ -209,6 +210,7 @@ export default function Contact(props) {
           </Grid>
         </Grid>
       </form>
+      <Footer />
     </Grid>
   );
 }

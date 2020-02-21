@@ -14,6 +14,7 @@ import Collapse from '@material-ui/core/Collapse';
 var check = {};
 
 export default function SideData(props) {
+
     // const handleOpen = () => {
     //     window.location.href = "#test"
     // }
@@ -216,7 +217,7 @@ export default function SideData(props) {
 
                     className={classses.roots}
                 >
-                    <NavLink to={"/educationpage"} activeClassName={'active'} style={{ color: '#394578', textDecoration: "none" }} >
+                    <NavLink to={"/education"} activeClassName={'active'} style={{ color: '#394578', textDecoration: "none" }} >
 
                         <ListItem button
                             onClick={() => handleClick("education")}
@@ -286,18 +287,18 @@ export default function SideData(props) {
 
                     className={classses.roots}
                 >
-                    <NavLink to={"/faq"} activeClassName={'active'} style={{ color: '#394578', textDecoration: "none" }} >
+                    <NavLink to={"/faqs"} activeClassName={'active'} style={{ color: '#394578', textDecoration: "none" }} >
 
                         <ListItem button
-                            onClick={() => handleClick("faq")}
+                            onClick={() => handleClick("faqs")}
                         >
 
-                            <ListItemText primary="FAQ" />
-                            {open === true && check.check === "faq" ? <ExpandLess /> : <ExpandMore />}
+                            <ListItemText primary="FAQs" />
+                            {open === true && check.check === "faqs" ? <ExpandLess /> : <ExpandMore />}
                         </ListItem>
                     </NavLink>
 
-                    <Collapse in={open === true && check.check === "faq"} timeout="auto" unmountOnExit>
+                    <Collapse in={open === true && check.check === "faqs"} timeout="auto" unmountOnExit>
                         <List component="div" disablePadding style={{ paddingLeft: "15px" }}>
                             {value && value.data && value.data[0].accordian && value.data[0].accordian.map((val, key) =>
 

@@ -9,12 +9,12 @@ export const routes = {
   HomePageStylori: '/',
   Account: `/account${"-" + window.location.pathname.split("-")[1]}`,
   Silver: '/stylorisilver',
-  Faqs: '/faq',
+  Faqs: '/faqs',
   Stories: '/stories',
   Collection: '/collections',
   ProductCare: '/productcare',
   Shipping: '/deliveryreturns',
-  PrivacyPolicy: '/privacypolicy',
+  PrivacyPolicy: '/privacy',
   TermsConditions: '/termsconditions',
   AboutUs: '/aboutus',
   ForgotPassword: '/forgotpassword',
@@ -24,7 +24,7 @@ export const routes = {
   paymentfail: '/paymentfail',
   paymenthidden: '/paymenthidden',
   Education: '/education',
-  ContactUs: '/contactuspage',
+  ContactUs: '/contactus',
   Careers: "/careersPage",
   HomePage: "/homes",
   SavingsPage: "/savingscheme",
@@ -36,11 +36,11 @@ export const routes = {
   // Terms: "/termsconditions",
   Return: "/return",
   Delivery: "/delivery",
-  Privacy: "/privacy",
+  // Privacy: "/privacy",
   ContactPage: '/contactus',
   // EducationPage: "/education",
   SiteMap: "/sitemap",
-  Faq: "/faqs",
+  // Faq: "/faqs",
   StoreLocator: "/store",
   StoreDetail: "/loc/:id",
   CareersPage: "/careers",
@@ -48,16 +48,6 @@ export const routes = {
   Diamonds: '/solitaires-search',
   CollectionHomePage: '/collectionhome',
   rudramadeviBlog: '/rudramadeviBlog',
-
-
-
-
-
-
-
-
-
-
 
 }
 

@@ -89,20 +89,30 @@ export const RouterApp = (props) => {
       {/* <Redirect key="stylori-redirect" from="/" exact to={"/"} /> */}
       <Route key="HomePageStylori" component={HomePageStylori} exact path={routes.HomePageStylori} />
       <Route key="Silver" component={Silver} exact path={routes.Silver} />
-      <Route key="Faqs" component={Faqs} exact path={routes.Faqs} />
+      <Route key="Faqs" component={AboutusPage} exact path={routes.Faqs} />
       <Route key="ProductCare" component={Faqs} exact path={routes.ProductCare} />
       <Route key="Shipping" component={Faqs} exact path={routes.Shipping} />
-      <Route key="PrivacyPolicy" component={Faqs} exact path={routes.PrivacyPolicy} />
+      <Route key="PrivacyPolicy" component={AboutusPage} exact path={routes.PrivacyPolicy} />
       <Route key="TermsConditions" component={AboutusPage} exact path={routes.TermsConditions} />
       <Route key="Checkout" component={Checkout} exact path={routes.Checkout} />
       <Route key="AboutUs" component={AboutusPage} exact path={routes.AboutUs} />
-      <Route key="ContactUs" component={Contactus} exact path={routes.ContactUs} />
-      <Route key="Careers" component={Careers} exact path={routes.Careers} />
+      <Route key="Contacs" component={ContactPage} exact path={routes.ContactUs} />
+      <Route key="Carees" component={Careers} exact path={routes.Careers} />
       <Route key="forgotpassword" component={ForgotPassword} exact path={routes.ForgotPassword} />
       <Route key="resetPassword" component={ResetPassword} exact path={`${routes.ResetPassword}/:id`} />
       <Route key="ChangePassword" component={ChangePassword} exact path={routes.ChangePassword} />
       <Route key="paymenthidden" component={PaymentHiddenForm} exact path={routes.paymenthidden} />
       <Route key="paymentsuccess" component={Success} exact path={`${routes.paymentsuccess}/:id`} />
+      <Route key="SiteMap" component={AboutusPage} exact path={routes.SiteMap} />
+      {/* <Route key="Faq" component={AboutusPage} exact path={routes.Faq} /> */}
+      <Route key="AboutUs" component={AboutusPage} exact path={routes.AboutUsPage} />
+      {/* <Route key="Terms" component={AboutusPage} exact path={routes.Terms} /> */}
+      <Route key="Return" component={AboutusPage} exact path={routes.Return} />
+      <Route key="Delivery" component={AboutusPage} exact path={routes.Delivery} />
+      {/* <Route key="Privacy" component={AboutusPage} exact path={routes.Privacy} /> */}
+      <Route key="Education" component={AboutusPage} exact path={routes.Education} />
+      <Route key="careersni" component={careersPage} exact path={routes.CareersPage} />
+      {/* <Route key="ContactPage"  exact path={routes.ContactPage} /> */}
       <Route key="paymentfail" component={Fail} exact path={`${routes.paymentfail}/:id`} />
       {(props.location.pathname !== "/cart" && props.location.pathname !== `/account${"-" + window.location.pathname.split("-")[1]}` && props.location.pathname !== '/savingscheme'
         && props.location.pathname !== '/aboutus'
@@ -114,22 +124,14 @@ export const RouterApp = (props) => {
         && props.location.pathname !== '/contactuspage'
         && props.location.pathname !== '/sitemap'
         && props.location.pathname !== '/faq'
-        && props.location.pathname !== '/educationpage'
+        && props.location.pathname !== '/education'
         && props.location.pathname !== '/store'
         && props.location.pathname !== '/loc/:id'
-
-        && props.location.pathname !== '/careersPage'
+        && props.location.pathname !== '/careers'
         && props.location.pathname !== '/careersDetail'
         && props.location.pathname !== '/solitaires-search'
         && props.location.pathname !== '/collectionhome'
         && props.location.pathname !== '/rudramadeviBlog'
-
-
-
-
-
-
-
         && props.location.pathname !== '/advertising' && props.location.pathname !== '/temple-work' && props.location.pathname !== '/experiences' && props.location.pathname !== "/registers" && props.location.pathname !== "/login" && props.location.pathname !== "/checkout" && props.location.pathname !== "/forgotpassword" && props.location.pathname !== "/careers" && props.location.pathname !== "/resetpassword/:id" && props.location.pathname !== "/changepassword" && props.location.pathname !== "/collections" && props.location.pathname !== "/education" && props.location.pathname !== "/stories" && props.location.pathname !== "/paymentfail" && props.location.pathname !== "/paymentsuccess/:id" && props.location.pathname !== "/contactus" && Globalctx && Globalctx.pathName === false) && props.location.pathname !== "/homes" &&
         <Route exact={true} component={Stylori} path={"/:listingpage"} />
       }
@@ -138,7 +140,7 @@ export const RouterApp = (props) => {
         <Route key="silverListingpage" component={SilverListingPage} path={window.location.pathname} />
       }
       <Route key="sto" component={stories} exact path={routes.Stories} />
-      <Route key="sto" component={AboutusPage} exact path={routes.Education} />
+
       <Route key="Collection" component={Collection} exact path={routes.Collection} />
       {(props.location.pathname !== "/cart" && props.location.pathname !== `/account${"-" + window.location.pathname.split("-")[1]}` && props.location.pathname !== '/savingscheme'
         && props.location.pathname !== '/aboutus'
@@ -149,10 +151,10 @@ export const RouterApp = (props) => {
         && props.location.pathname !== '/contactuspage'
         && props.location.pathname !== '/sitemap'
         && props.location.pathname !== '/faq'
-        && props.location.pathname !== '/educationpage'
+        && props.location.pathname !== '/education'
         && props.location.pathname !== '/store'
         && props.location.pathname !== '/loc/:id'
-        && props.location.pathname !== '/careersPage'
+        && props.location.pathname !== '/careers'
         && props.location.pathname !== '/careersDetail'
         && props.location.pathname !== '/solitaires-search'
         && props.location.pathname !== '/collectionhome'
@@ -233,21 +235,13 @@ export const RouterApp = (props) => {
         exact
         path={routes.NewsRoomPage}
       />
-      <Route
+      {/* <Route
         key="Education"
         component={AboutusPage}
         exact
         path={routes.EducationPage}
-      />
-      <Route key="SiteMap" component={AboutusPage} exact path={routes.SiteMap} />
-      <Route key="Faq" component={AboutusPage} exact path={routes.Faq} />
-      <Route key="AboutUs" component={AboutusPage} exact path={routes.AboutUsPage} />
-      <Route key="Terms" component={AboutusPage} exact path={routes.Terms} />
-      <Route key="Return" component={AboutusPage} exact path={routes.Return} />
-      <Route key="Delivery" component={AboutusPage} exact path={routes.Delivery} />
-      <Route key="Privacy" component={AboutusPage} exact path={routes.Privacy} />
-      <Route key="careers" component={careersPage} exact path={routes.CareersPage} />
-      <Route key="ContactPage" component={ContactPage} exact path={routes.ContactPage} />
+      /> */}
+
     </Switch>
   );
 };
