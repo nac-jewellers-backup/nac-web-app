@@ -130,37 +130,16 @@ export default function Footer(props) {
             Title: "About Us"
         },
         {
-            url: "/account-profile",
-            Title: "My Account"
-        },
-        {
-            url: "/productcare",
-            Title: "Product Care"
-        },
-        {
-            url: "/privacypolicy",
-            Title: "Privacy & Cookie Policy"
-        },
-        {
-            url: "/faqs",
-            Title: "FAQ"
-        },
-
-        {
-            url: "/deliveryreturns",
-            Title: "Shopping & Returns"
+            url: "/store",
+            Title: "Store Locator"
         },
         {
             url: "/contactus",
-            Title: "Contact us"
+            Title: "Contact"
         },
         {
-            url: "/termsconditions",
-            Title: "Terms & Conditions"
-        },
-        {
-            url: "/careers",
-            Title: "Careers"
+            url: "/privacy",
+            Title: "Privacy Policy"
         },
 
     ]
