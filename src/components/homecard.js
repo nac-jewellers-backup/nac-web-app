@@ -6,31 +6,32 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
     main: {
-        width:"77%",
+        width: "77%",
         margin: "auto",
         fontFamily: "Source Sans Pro",
         fontSize: "15px",
         lineHeight: 1.42857,
         color: "#5d5d5d",
-        marginBottom:"20px",
-        [theme.breakpoints.between('xs','md')]:{
-            width:"93% !important",
+        marginBottom: "20px",
+        [theme.breakpoints.between('xs', 'md')]: {
+            width: "93% !important",
         },
-        [theme.breakpoints.between('md','sm')]:{
-            width:"88% !important",
+        [theme.breakpoints.between('md', 'sm')]: {
+            width: "88% !important",
         },
     },
+    rootContainer:{
+        padding: "10px",
+    },
     root: {
-        padding: "0px 15px",
-        // margin:"0px 5px",
-        boxShadow:"0 0 5px #888 !important",
-
+        padding: "15px 15px",
+        boxShadow: "0 0 5px #888 !important",
     },
     img: {
         height: "auto",
         width: "100%",
-        [theme.breakpoints.between('xs','sm')]:{
-            height:"auto"
+        [theme.breakpoints.between('xs', 'sm')]: {
+            height: "auto"
         }
 
     },
@@ -81,13 +82,14 @@ export default function HomeCard(props) {
     return (
         <Grid container className={classes.main}  >
             {props && props.Testimonial && props.Testimonial.map((val, index) => (
-                <Grid className={classes.root} item xs={12} sm={4} lg={4}>
+                <Grid className={classes.rootContainer} item xs={12} sm={4} lg={4}>
+                    <Grid className={classes.root}>
                     <img className={classes.img} src={val.img} />
                     <Typography className={classes.heading} variant="h5">
                         {val.heading}
                     </Typography>
                     <Typography className={classes.para}>
-                        {(val.para).slice(0,100)}
+                        {(val.para).slice(0, 100)}
                         <span style={{ display: 'inline' }}>...</span>
                     </Typography>
                     <Grid item xs={12} className={classes.anchorMain}>
@@ -100,6 +102,7 @@ export default function HomeCard(props) {
                             <Grid>
                             </Grid>
                         </a>
+                    </Grid>
                     </Grid>
                 </Grid>
             ))

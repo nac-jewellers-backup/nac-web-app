@@ -238,31 +238,23 @@ const useStyles = makeStyles(theme => ({
     color: "#828282"
   },
   priceClass: {
-    // boxShadow: "0px 0px 5px #F699A3 inset",
     padding: "10px",
-    height: '56px',
+    height: '85px',
     display: 'flex',
     boxShadow: " 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)",
     borderRadius: '0 !important',
-    // borderTopLeftRadius: "20% !important",
-    // borderTopRightRadius: "20% !important",
     opacity: "1.2",
     "&:hover": {
       boxShadow: "40 0 11px rgba(33,33,33,.2)",
       cursor: "pointer"
-      // opacity: "2"
     },
     [theme.breakpoints.down('sm')]: {
-      height: '46px',
+      height: '89px',
       padding: '0 !important',
-      paddingLeft: '10px !important'
     },
     '& div': {
       padding: '0 !important'
-
     },
-
-    // border: "1px solid #F699A3"
   },
   priceClassMain: {
     margin: 'auto !important',
@@ -356,6 +348,14 @@ const useStyles = makeStyles(theme => ({
     textOverflow: 'ellipsis',
     width: "90%"
   },
+  hashtags: {
+    fontSize: '0.7rem',
+    whiteSpace: 'nowrap',
+    color: "#5d5d5d",
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    width: "90%"
+  },
   iconColor: {
     color: theme.palette.secondary.light
   },
@@ -414,6 +414,10 @@ function Component(props) {
                         component="span" style={{ paddingLeft: "5px" }} className={`${classes.titles}`}>
                         {props.data.title}
                       </Typography>
+                      <Grid container justify="center"> <Typography variant="body1"
+                        component="span" style={{ paddingLeft: "5px", textAlign: "center" }} className={`${classes.titles}`}>
+                        from The gold Collection
+                      </Typography></Grid>
                     </Grid>
                   </Hidden>
                   <Grid container item xs={12} sm={12} className={`${classes.priceClassMain}`} style={{ alignItems: "center" }}>
@@ -446,14 +450,18 @@ function Component(props) {
 
                   <Grid container item xs={12} sm={12} className={`${classes.priceClassMain}`}>
 
-                    <Hidden smDown>
-                      <Grid container xs={12}>
-                        <Typography variant="body1"
-                          component="span" style={{ paddingLeft: "5px" }} className={`${classes.titles}`}>
-                          {props.data.title}
-                        </Typography>
-                      </Grid>
-                    </Hidden>
+                    {/* <Hidden smDown> */}
+                    <Grid container xs={12}>
+                      <Typography variant="body1"
+                        component="span" style={{ paddingLeft: "5px" }} className={`${classes.titles}`}>
+                        {props.data.title}
+                      </Typography>
+                      <Grid container justify="center"> <Typography variant="body1"
+                        component="span" style={{ paddingLeft: "5px", textAlign: "center" }} className={`${classes.titles}`}>
+                        from The gold Collection
+                      </Typography></Grid>
+                    </Grid>
+                    {/* </Hidden> */}
                     <Typography
                       variant="h6"
                       component="h6"
@@ -485,6 +493,10 @@ function Component(props) {
                   </Grid>
 
                 </Grid>
+                <Grid container justify="center"> <Typography variant="body1"
+                  component="span" style={{ paddingLeft: "5px", textAlign: "center" }} className={`${classes.hashtags}`}>
+                  #specialday #jewelrylove
+                      </Typography></Grid>
               </CardContent>
           }
         </Card>

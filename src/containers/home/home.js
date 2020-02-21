@@ -11,7 +11,7 @@ import HomeCard from "../../components/homecard";
 import Testimonial from '../../components/testimonial/testimonial'
 import { storyData } from 'mappers/dummydata/homeNac';
 import Header from 'components/SilverComponents/Header'
-
+import Footer from 'components/Footer/Footer'
 
 const styles = theme => ({
   preButton: {
@@ -226,6 +226,7 @@ class HomeComp extends React.Component {
 
           <Testimonial />
         </Grid>
+        <Footer/>
       </Grid>
     );
   }

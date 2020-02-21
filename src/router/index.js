@@ -47,10 +47,6 @@ import Diamonds from 'containers/diamonds/looseDiamonds';
 import CollectionHomePage from 'containers/collectionhomepage/collectionHomePage';
 import rudramadeviBlog from 'containers/collection/rudramadeviBlog'
 
-
-
-
-
 // SILVER SCREENS
 
 import Silver from 'screens/SilverStylori'
@@ -87,7 +83,7 @@ export const RouterApp = (props) => {
   return (
     <Switch history={browserHistory}>
       {/* <Redirect key="stylori-redirect" from="/" exact to={"/"} /> */}
-      <Route key="HomePageStylori" component={HomePageStylori} exact path={routes.HomePageStylori} />
+      <Route key="HomePageStylori" component={HomeComp} exact path={routes.HomePageStylori} />
       <Route key="Silver" component={Silver} exact path={routes.Silver} />
       <Route key="Faqs" component={AboutusPage} exact path={routes.Faqs} />
       <Route key="ProductCare" component={Faqs} exact path={routes.ProductCare} />
