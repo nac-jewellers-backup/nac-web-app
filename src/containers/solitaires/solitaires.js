@@ -1,7 +1,7 @@
 import React from "react";
 import { Grid, Typography } from "@material-ui/core";
 import Slideshow from "../../components/Carousel/carosul";
-import Header from "../../components/Header/header";
+import Header from "../../components/SilverComponents/Header";
 import Footer from "components/Footer/Footer";
 import { SolitairesData } from "../../mappers/dummydata/solitairesData";
 import styles from "../solitaires/solitairestyle";
@@ -17,7 +17,7 @@ export default function Solitaires(props) {
 
   return (
     <Grid container>
-      <Grid item>
+      <Grid container item xs={12}>
         <Header />
       </Grid>
 
@@ -66,7 +66,7 @@ export default function Solitaires(props) {
           </Grid>
         </Grid>
       </Grid>
-      <Grid item>
+      <Grid item xs={12}>
         <Footer />
       </Grid>
     </Grid>

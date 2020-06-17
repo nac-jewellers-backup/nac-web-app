@@ -82,10 +82,14 @@ const styles = makeStyles((theme) => ({
     [theme.breakpoints.up("md")]: {
       height: "500px ",
     },
+    [theme.breakpoints.down('sm')]:{
+      height: "280px ",
+    },
     objectFit: "cover !important",
     headContent: {
       width: "100%",
       height: "100%",
+     
     },
   },
   imageContent: {
@@ -97,8 +101,11 @@ const styles = makeStyles((theme) => ({
     width : "40%",
     top : "20%",
     left : "16%",
-    lineHeight : "1.3"
-
+    lineHeight : "1.3",
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "20px",
+      width : "70%",
+    },
   },
   heading: {
     fontSize: "32px !important",

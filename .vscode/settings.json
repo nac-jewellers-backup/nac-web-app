@@ -10,5 +10,10 @@
             "server": "127.0.0.1",
             "username": "postgres"
         }
-    ]
+    ],
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#13286A",
+        "titleBar.activeBackground": "#1B3795",
+        "titleBar.activeForeground": "#F9FBFE"
+    }
 }
