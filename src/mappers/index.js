@@ -8,6 +8,7 @@ import * as cartdata from './dummydata/cartdata'
 import * as checkoutloginReg from './dummydata/checkoutloginReg'
 import * as dataSilver from './dummydata/DataSilver'
 import * as filterDataSilver from './silverListingPage'
+import * as solitareImageHover from "./dummydata/solitairesData"
 export const filterParams = async (resdata) => JSON.parse(JSON.stringify(filterdata));
 export const headerData = async (resdata) => JSON.parse(JSON.stringify(headerdata));
 export const productcarddatas = async (resdata) => JSON.parse(JSON.stringify(productcarddata));
@@ -18,3 +19,4 @@ export const descriptionData = async (data) => descriptiondata;
 export const headerDataSilver = async (resdata) => JSON.parse(JSON.stringify(headerdataSilver));
 export const HomedataSilver = async (data) => JSON.parse(JSON.stringify(dataSilver));
 export const FilterdataSilver = async (data) => JSON.parse(JSON.stringify(filterDataSilver));
+export const solitareImageHoverData = async (data) => JSON.parse(JSON.stringify(solitareImageHover));

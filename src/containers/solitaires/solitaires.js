@@ -4,7 +4,9 @@ import Slideshow from "../../components/Carousel/carosul";
 import Header from "../../components/SilverComponents/Header";
 import Footer from "components/Footer/Footer";
 import { SolitairesData } from "../../mappers/dummydata/solitairesData";
+// import { fadeImagessublist } from "../../mappers/dummydata/solitairesData";
 import styles from "../solitaires/solitairestyle";
+import ProductModal from "../../components/SilverComponents/ProductModal";
 export default function Solitaires(props) {
   const classes = styles();
   const next = () => {
@@ -65,6 +67,7 @@ export default function Solitaires(props) {
             <hr className={classes.hrTag}></hr>
           </Grid>
         </Grid>
+        <ProductModal />
       </Grid>
       <Grid item xs={12}>
         <Footer />

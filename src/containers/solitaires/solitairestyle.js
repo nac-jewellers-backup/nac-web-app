@@ -128,7 +128,7 @@ const styles = makeStyles((theme) => ({
     fontWeight: 500,
   },
   hrGrid: {
-    padding: "40px 0px",
+    padding: "40px 0px 0px 0px",
     margin: "auto",
   },
   hrTag: {
