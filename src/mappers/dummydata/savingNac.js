@@ -15,23 +15,23 @@ export const SavingPageNac = {
       pauseOnHover: true,
       pauseOnDotsHover: true,
       pauseOnFocus: true,
-      swipe: true
+      swipe: true,
     },
     data: [
       {
         img:
-          "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori-Valentine-banner-web.jpg"
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori-Valentine-banner-web.jpg",
       },
       {
         img:
-          "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/2019/Young-Ones-main-page-final.jpg"
+          "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/2019/Young-Ones-main-page-final.jpg",
       },
       {
         img:
-          "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/2019/Young-Ones-main-page-final.jpg"
-      }
-    ]
-  }
+          "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/2019/Young-Ones-main-page-final.jpg",
+      },
+    ],
+  },
 };
 
 export const IndexSavingPage = {
@@ -49,7 +49,7 @@ export const IndexSavingPage = {
     pauseOnHover: false,
     pauseOnDotsHover: false,
     pauseOnFocus: false,
-    swipe: true
+    swipe: true,
   },
   setting1: {
     dots: false,
@@ -66,13 +66,13 @@ export const IndexSavingPage = {
     pauseOnHover: false,
     pauseOnDotsHover: false,
     pauseOnFocus: false,
-    swipe: false
+    swipe: false,
   },
   carouselData: [
     {
       img:
-        "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori-Valentine-banner-web.jpg"
-    }
+        "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori-Valentine-banner-web.jpg",
+    },
   ],
   data: [
     {
@@ -89,7 +89,7 @@ export const IndexSavingPage = {
       redeemable: "Gold Only",
       joinNow: "Join now",
       payNow: "Pay now",
-      link: "https://nacsavings.in/#"
+      link: "https://nacsavings.in/#",
     },
     {
       img:
@@ -105,7 +105,7 @@ export const IndexSavingPage = {
       redeemable: "Gold Only",
       joinNow: "Join now",
       payNow: "Pay now",
-      link: "https://nacsavings.in/#"
+      link: "https://nacsavings.in/#",
     },
     {
       img:
@@ -121,11 +121,10 @@ export const IndexSavingPage = {
       redeemable: "Silver Articles",
       joinNow: "Join now",
       payNow: "Pay now",
-      link: "https://nacsavings.in/#"
-    }
-  ]
+      link: "https://nacsavings.in/#",
+    },
+  ],
 };
-
 
 ///////////////////////////// Experience Page Data ////////////////////////////////////////////////
 
@@ -146,15 +145,15 @@ export const ExperiencePageNac = {
       pauseOnHover: false,
       pauseOnDotsHover: false,
       pauseOnFocus: false,
-      swipe: false
+      swipe: false,
     },
     data: [
       {
         img:
-          "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori-Valentine-banner-web.jpg"
-      }
-    ]
-  }
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori-Valentine-banner-web.jpg",
+      },
+    ],
+  },
 };
 
 export const IndexExperiencePage = {
@@ -172,13 +171,13 @@ export const IndexExperiencePage = {
     pauseOnHover: false,
     pauseOnDotsHover: false,
     pauseOnFocus: false,
-    swipe: true
+    swipe: true,
   },
   carouselData: [
     {
       img:
-        "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori-Valentine-banner-web.jpg"
-    }
+        "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori-Valentine-banner-web.jpg",
+    },
   ],
 
   setting1: {
@@ -196,7 +195,7 @@ export const IndexExperiencePage = {
     pauseOnHover: false,
     pauseOnDotsHover: false,
     pauseOnFocus: false,
-    swipe: false
+    swipe: false,
   },
   data: [
     {
@@ -209,7 +208,7 @@ export const IndexExperiencePage = {
       averageInvestment: "11:00 hrs - 17:30 hrs",
       durationHeading: "Best suited for",
       duration: "Brides & their families",
-      joinNow: "Book a Session"
+      joinNow: "Book a Session",
     },
     {
       img:
@@ -221,7 +220,7 @@ export const IndexExperiencePage = {
       averageInvestment: "11:00 hrs - 17:30 hrs",
       durationHeading: "Best suited for",
       duration: "Brides & their families",
-      joinNow: "Book a Session"
+      joinNow: "Book a Session",
     },
     {
       img:
@@ -233,9 +232,9 @@ export const IndexExperiencePage = {
       averageInvestment: "11:00 hrs - 17:30 hrs",
       durationHeading: "Best suited for",
       duration: "Brides & their families",
-      joinNow: "Book a Session"
-    }
-  ]
+      joinNow: "Book a Session",
+    },
+  ],
 };
 
 export const IndexTemplePage = {
@@ -255,14 +254,14 @@ export const IndexTemplePage = {
       pauseOnHover: false,
       pauseOnDotsHover: false,
       pauseOnFocus: false,
-      swipe: false
+      swipe: false,
     },
     data: [
       {
         img:
-          "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori-Valentine-banner-web.jpg"
-      }
-    ]
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori-Valentine-banner-web.jpg",
+      },
+    ],
   },
   carouselTop: {
     setting: {
@@ -280,25 +279,25 @@ export const IndexTemplePage = {
       pauseOnHover: true,
       pauseOnDotsHover: true,
       pauseOnFocus: true,
-      swipe: true
-    }
+      swipe: true,
+    },
   },
   title: {
     titlePage: "Temple Work",
     content: [
       {
         contentTemple:
-          "We have great pride in acknowledging that NAC has also been commissioned to make many stunning temple jewellery and silverware for all the major temples and Devasthanams in India."
+          "We have great pride in acknowledging that NAC has also been commissioned to make many stunning temple jewellery and silverware for all the major temples and Devasthanams in India.",
       },
       {
         contentTemple:
-          "The crowning glory of our temple work was a Diamond Crown that was designed for the Goddess Padmavathi Thayar of Tirupati, the divine consort of Lord Balaji. Studded with 10,000 diamonds that was selected with care this Diamond Crown is a dazzling example of NAC’s commitment to excellence and art. Made within the precincts of the temple the Founder Chairman of NAC personally oversaw the process of crafting this crown for the Goddess."
-      }
+          "The crowning glory of our temple work was a Diamond Crown that was designed for the Goddess Padmavathi Thayar of Tirupati, the divine consort of Lord Balaji. Studded with 10,000 diamonds that was selected with care this Diamond Crown is a dazzling example of NAC’s commitment to excellence and art. Made within the precincts of the temple the Founder Chairman of NAC personally oversaw the process of crafting this crown for the Goddess.",
+      },
     ],
 
     imgIcon:
       "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFQAAABFCAYAAADU4cH/AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAohJREFUeNrsm0FOwkAUhge5AEeoMe7xBOLCjRvhBJadO/UEyAmEExRXLoWNLlyAJxDXJsoRegTfi8+kaQp903QKHf4vaTDpFPDrm+m8N4MxAAAAAAAAAAAAAACURWMbH3p+MejIn/Hby3AJocUl3tDRTZ3qkdSpL0IPKpIZ0ss8Qybz4FOENiuQ2aaX1w1NWkfHncb31/sCEaojUrS5IfEtCNV19baiKcu8hVBF5Fm0HdANCCB0fXQGyuj06gHlMkI7Ba7p0o3oQmg2RbtvBKHl0oLQchlBaDZFJuoTSkPvIDQbm6JHTEefZPbxlF8DyYmVUcrtzqj9BBP7fB4VbXo+lfBcC9WU5VbGI5wKlW6f15UHEGrHLOd8mKjgQ6giSqeKbv0AoXYMc863KUq9KN9Vuab0k5Pf/0+flohQHXkZEOfwUd0r95UJlbE0bxrF9VNUmyzoS9feBNdEIwjVz0t7iqZhUak8BdvmsLGtnSO3yqnSQlLTWPGeLHEuwwa3H9J1o70QKgI4AkNlarox30/JTN+QuypnDs1tCf3+ep8dHXcCk7+Qx7KuN22GoHNPJnsNK5BrAzo+6frY2whNRNeH0a+OriTiponr7y3qAZxgjDRDSJ2FcgQ+G7tVUo7UMR2nxn6DRCw3ZeKl0AJjalmcuBhbd2aRTpY/JqbmNHbtC8l+qKiCG+jkf9+5ZWQZ206M20r+wpfUUyt1KVJd7Wye7U2Xz0olZQgISnpLfsofupo67bzQ1Nh6ZYptQvuHI7/vMnOqjdCE2LaIDY3dPqiR5PdOs6XaCU3J5a2Pl+bvxxCtNd2bH3JjErmq4jvVWmhG5CalevcbKAAAAAAAAAAAAACwb/wKMACptMXeFk5vlAAAAABJRU5ErkJggg==",
-    contact: "Contact Us"
+    contact: "Contact Us",
   },
   data: [
     {
@@ -307,7 +306,7 @@ export const IndexTemplePage = {
       name: "Guruvayur Sri Krishna Temple",
       model: "Gold Sangu Cover",
       typeOfMetal: "Weight of metal: 200 gms",
-      location: "Thirussur, Guruvayur"
+      location: "Thirussur, Guruvayur",
     },
     {
       img:
@@ -315,7 +314,7 @@ export const IndexTemplePage = {
       name: "Navasakthi Vinayagar Temple",
       model: "Silver Kireedam",
       typeOfMetal: "Weight of metal: 1.5 kgs Gold polishing",
-      location: "Luz Corner, Mylapore, Chennai"
+      location: "Luz Corner, Mylapore, Chennai",
     },
     {
       img:
@@ -323,7 +322,7 @@ export const IndexTemplePage = {
       name: "Thiruparajkundram Temple",
       model: "Avudaiyar Kavasam",
       typeOfMetal: "Weight of metal: 4 kgs",
-      location: "Thiruparankundram, tamil nadu"
+      location: "Thiruparankundram, tamil nadu",
     },
     {
       img:
@@ -331,9 +330,9 @@ export const IndexTemplePage = {
       name: "Sri Alamelmangai Thayar",
       model: "Vajra Kireedam",
       typeOfMetal: "Weight of metal: 7 kgs",
-      location: "Thiruchanoor, Andhra Pradesh"
-    }
-  ]
+      location: "Thiruchanoor, Andhra Pradesh",
+    },
+  ],
 };
 
 ///////////////////////////////Index Collection Home Page //////////////////////////////////////
@@ -341,37 +340,40 @@ export const IndexTemplePage = {
 export const CollectionHomeNac = {
   carouselTop: {
     setting: {
-      dots: true,
+      dots: false,
       infinite: true,
       autoplay: true,
       speed: 1000,
-      fade: true,
-      arrows: true,
+      fade: false,
+      arrows: false,
       arrowsImg: true,
       dotsClass: "slickdev",
       accessibility: true,
-      centerMode: true,
-      focusOnSelect: true,
-      pauseOnHover: true,
-      pauseOnDotsHover: true,
+      centerMode: false,
+      focusOnSelect: false,
+      pauseOnHover: false,
+      pauseOnDotsHover: false,
       pauseOnFocus: true,
-      swipe: true
+      swipe: false,
     },
     data: [
       {
         img:
-          "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori-Valentine-banner-web.jpg"
+          "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/2019/Youngones_NACWEB_Banner_1189X500.jpg",
+        navigateUrl: "/gemstone-jewellery?sort=latest",
       },
       {
         img:
-          "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/2019/Young-Ones-main-page-final.jpg"
+          "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/2019/Muhurtham_NACWEB_Banner_1189X500.jpg",
+        navigateUrl: "/jewellery-shipping+in+1+day?sort=featured",
       },
       {
         img:
-          "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/2019/Young-Ones-main-page-final.jpg"
-      }
-    ]
-  }
+          "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/2019/J%20Rewind_new2019.jpg",
+        navigateUrl: "/rings-jewellery",
+      },
+    ],
+  },
 };
 
 export const IndexCollectionHomePage = {
@@ -389,7 +391,7 @@ export const IndexCollectionHomePage = {
     pauseOnHover: false,
     pauseOnDotsHover: false,
     pauseOnFocus: false,
-    swipe: true
+    swipe: true,
   },
   setting1: {
     dots: false,
@@ -406,13 +408,13 @@ export const IndexCollectionHomePage = {
     pauseOnHover: false,
     pauseOnDotsHover: false,
     pauseOnFocus: false,
-    swipe: false
+    swipe: false,
   },
   carouselData: [
     {
       img:
-        "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori-Valentine-banner-web.jpg"
-    }
+        "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori-Valentine-banner-web.jpg",
+    },
   ],
   data: [
     {
@@ -421,14 +423,14 @@ export const IndexCollectionHomePage = {
       heading: "Young Ones",
       para:
         "Adorn your kids with trendy and fashionable jewellery with exhaustive themes and options. Gift your child all the glitter and sparkle in the world and match it up with their adorable smiles. Specially designed with trends that appeal to children, our range of jewels is funky, fun, crazy and unique. Gorgeously crafted and sensitively designed using child-friendly technology, our Young Ones range of jewels, not only looks fantastic but also extremely comfortable for the kids to wear.",
-      averageInvestmentHeading: "Starting Price",
-      averageInvestment: "INR 5,278.00",
-      durationHeading: "Metal Type",
-      duration: "Gold,Platinum,Silver",
-      redeemableHeading: "Higlights",
-      redeemable: "Fashionable Kids Jewellery",
-      joinNow: "View Collection",
-      link: "https://www.nacjewellers.com/jewellery?collection=Young+Ones"
+      // averageInvestmentHeading: "Starting Price",
+      // averageInvestment: "INR 5,278.00",
+      // durationHeading: "Metal Type",
+      // duration: "Gold,Platinum,Silver",
+      // redeemableHeading: "Higlights",
+      // redeemable: "Fashionable Kids Jewellery",
+      // joinNow: "View Collection",
+      link: "https://www.nacjewellers.com/jewellery?collection=Young+Ones",
     },
     {
       img:
@@ -436,76 +438,76 @@ export const IndexCollectionHomePage = {
       heading: "Stylori",
       para:
         "Intricate, lightweight and trendy with Stylori you will never run out of fashion! Hoops, hooks and twirls find accessories that match your outfit completely. Sombre, hippy, fashionable, boho and stylish pick your style and flaunt it. Thanks to our exclusive light-weight collection you don’t have to make do with metal jewellery that harm your skin. Delicate and exquisite you will find perfect accessories in our large range of and discover the true ‘you’ in your choice!",
-      averageInvestmentHeading: "Starting Price",
-      averageInvestment: "INR 6,325.00",
-      durationHeading: "Metal Type",
-      duration: "Gold",
-      redeemableHeading: "Higlights",
-      redeemable: "Light weight jewellery",
-       joinNow: "View Collection",
-      link: "https://www.nacjewellers.com/jewellery?collection=Stylori"
+      // averageInvestmentHeading: "Starting Price",
+      // averageInvestment: "INR 6,325.00",
+      // durationHeading: "Metal Type",
+      // duration: "Gold",
+      // redeemableHeading: "Higlights",
+      // redeemable: "Light weight jewellery",
+      // joinNow: "View Collection",
+      link: "https://www.nacjewellers.com/jewellery?collection=Stylori",
     },
     {
       img:
-      "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/Banner%202019/Rewind%20Collection%20june%202019/Rewinf_banner_NACJEWELLERS.jpg",
-    heading: "Rewind",
-    para:
-      "True antique is a rare collectible, a heritage ornament that comes to you with a deep vein of history. Celebrating a rich craftsmanship that has vanished through the centuries, our antiques bear true testimony to the rich cultural history of our region. Our collection of antique jewels is an exquisite range of ornaments that once adorned the women of yore. Studded with precious gems sourced from the ancient mines of Burma these jewels are a rare heritage that one would be proud to possess.",
-    averageInvestmentHeading: "Starting Price",
-    averageInvestment: "INR 19,330.00",
-    durationHeading: "Metal Type",
-    duration: "Gold",
-    redeemableHeading: "Higlights",
-    redeemable: "Gold, Pearls & Diamonds",
-     joinNow: "View Collection",
-    link: "https://www.nacjewellers.com/jewellery?collection=Rewind"
+        "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/Banner%202019/Rewind%20Collection%20june%202019/Rewinf_banner_NACJEWELLERS.jpg",
+      heading: "Rewind",
+      para:
+        "True antique is a rare collectible, a heritage ornament that comes to you with a deep vein of history. Celebrating a rich craftsmanship that has vanished through the centuries, our antiques bear true testimony to the rich cultural history of our region. Our collection of antique jewels is an exquisite range of ornaments that once adorned the women of yore. Studded with precious gems sourced from the ancient mines of Burma these jewels are a rare heritage that one would be proud to possess.",
+      // averageInvestmentHeading: "Starting Price",
+      // averageInvestment: "INR 19,330.00",
+      // durationHeading: "Metal Type",
+      // duration: "Gold",
+      // redeemableHeading: "Higlights",
+      // redeemable: "Gold, Pearls & Diamonds",
+      // joinNow: "View Collection",
+      link: "https://www.nacjewellers.com/jewellery?collection=Rewind",
     },
     {
       img:
-      "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/Banner%202019/Fabula%20July/Fabula-Banner-NAC-Jewellers.jpg",
-    heading: "Fabula",
-    para:
-      "FABULA in latin means an intriguing story or tale. True to its name we have dedicated a signature collection of ostentatious diamond jewellery that will aid women in scripting a grand legacy. A brand that will cater to the wildest whims of strong, independent, passionate, successful urban socialites with sophisticated tastes and bestow them the tag ' LARGER THAN LIFE DIVAS ' This finely crafted jewellery aims to be an effortless extension of their personality and capture undiluted aura of the wearer.",
-    averageInvestmentHeading: "Starting Price",
-    averageInvestment: "INR 38,763.00",
-    durationHeading: "Metal Type",
-    duration: "White Gold",
-    redeemableHeading: "Higlights",
-    redeemable: "White Gold & Pearls",
-     joinNow: "View Collection",
-    link: "https://www.nacjewellers.com/jewellery?collection=Fabula"
+        "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/Banner%202019/Fabula%20July/Fabula-Banner-NAC-Jewellers.jpg",
+      heading: "Fabula",
+      para:
+        "FABULA in latin means an intriguing story or tale. True to its name we have dedicated a signature collection of ostentatious diamond jewellery that will aid women in scripting a grand legacy. A brand that will cater to the wildest whims of strong, independent, passionate, successful urban socialites with sophisticated tastes and bestow them the tag ' LARGER THAN LIFE DIVAS ' This finely crafted jewellery aims to be an effortless extension of their personality and capture undiluted aura of the wearer.",
+      // averageInvestmentHeading: "Starting Price",
+      // averageInvestment: "INR 38,763.00",
+      // durationHeading: "Metal Type",
+      // duration: "White Gold",
+      // redeemableHeading: "Higlights",
+      // redeemable: "White Gold & Pearls",
+      // joinNow: "View Collection",
+      link: "https://www.nacjewellers.com/jewellery?collection=Fabula",
     },
     {
       img:
-      "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/2020%20Banners/bridal-banner-nac-jewellers.jpg",
-    heading: "Muhurtham",
-    para:
-      "We take pride in the fact that we have adorned scores of brides and have been a part of their journey through love and life. Our exclusive bridal collection is as extravagant as it is lovely and will make the bride feel special and unique just as she really is. Our range of Diamond, Gold and Platinum jewels have special bridal collections for the young bride to choose from. We also have a special section of Azva jewels designed specifically for the bride to wear.",
-    averageInvestmentHeading: "Starting Price",
-    averageInvestment: "INR 31,238.00",
-    durationHeading: "Metal Type",
-    duration: "Gold",
-    redeemableHeading: "Higlights",
-    redeemable: "Bridal Jewellery",
-     joinNow: "View Collection",
-    link: "https://www.nacjewellers.com/jewellery?collection=Muhurtham"
+        "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/2020%20Banners/bridal-banner-nac-jewellers.jpg",
+      heading: "Muhurtham",
+      para:
+        "We take pride in the fact that we have adorned scores of brides and have been a part of their journey through love and life. Our exclusive bridal collection is as extravagant as it is lovely and will make the bride feel special and unique just as she really is. Our range of Diamond, Gold and Platinum jewels have special bridal collections for the young bride to choose from. We also have a special section of Azva jewels designed specifically for the bride to wear.",
+      // averageInvestmentHeading: "Starting Price",
+      // averageInvestment: "INR 31,238.00",
+      // durationHeading: "Metal Type",
+      // duration: "Gold",
+      // redeemableHeading: "Higlights",
+      // redeemable: "Bridal Jewellery",
+      // joinNow: "View Collection",
+      link: "https://www.nacjewellers.com/jewellery?collection=Muhurtham",
     },
     {
       img:
-      "https://storage.googleapis.com/media.nacjewellers.com/resources/collection_files/rudhramadevi/Hero-Banner.jpg",
-    heading: "Rudhramadevi",
-    para:
-      "Rudramadevi was one among the few women rulers who made their mark in South India and are still remembered to this day. A 13th century queen from the Kakatiya Dynasty of the Deccan Plateau, Rudra was brought up as a boy for many years as her father craved for a heir. A formidable ruler, she put down rebels and her detractors with an iron hand. This enigmatic queen came back to life in the celluloid as a historical film helmed by Director Gunashekar with Anushka Shetty, as the lead character. NAC Jewellers were given the rare honour of designing jewels for this queen. Drawing our inspiration from ancient statues, art and painting of 13th century we designed royal ornaments after an intense research of three years.",
-    averageInvestmentHeading: "Starting Price",
-    averageInvestment: "INR 46,788.00",
-    durationHeading: "Metal Type",
-    duration: "Gold",
-    redeemableHeading: "Higlights",
-    redeemable: "Inspired by regal jewels of 13th century",
-     joinNow: "View Collection",
-    link: "https://www.nacjewellers.com/jewellery?collection=Rudhramadevi"
+        "https://storage.googleapis.com/media.nacjewellers.com/resources/collection_files/rudhramadevi/Hero-Banner.jpg",
+      heading: "Rudhramadevi",
+      para:
+        "Rudramadevi was one among the few women rulers who made their mark in South India and are still remembered to this day. A 13th century queen from the Kakatiya Dynasty of the Deccan Plateau, Rudra was brought up as a boy for many years as her father craved for a heir. A formidable ruler, she put down rebels and her detractors with an iron hand. This enigmatic queen came back to life in the celluloid as a historical film helmed by Director Gunashekar with Anushka Shetty, as the lead character. NAC Jewellers were given the rare honour of designing jewels for this queen. Drawing our inspiration from ancient statues, art and painting of 13th century we designed royal ornaments after an intense research of three years.",
+      // averageInvestmentHeading: "Starting Price",
+      // averageInvestment: "INR 46,788.00",
+      // durationHeading: "Metal Type",
+      // duration: "Gold",
+      // redeemableHeading: "Higlights",
+      // redeemable: "Inspired by regal jewels of 13th century",
+      // joinNow: "View Collection",
+      link: "https://www.nacjewellers.com/jewellery?collection=Rudhramadevi",
     },
-  ]
+  ],
 };
 
 /////////////////////////
@@ -527,11 +529,11 @@ export const IndexAdvertisingPage = {
       pauseOnHover: true,
       pauseOnDotsHover: true,
       pauseOnFocus: true,
-      swipe: true
-    }
+      swipe: true,
+    },
   },
   title: {
-    titlePage: "NAC Advertising"
+    titlePage: "NAC Advertising",
   },
   data: [
     {
@@ -539,14 +541,14 @@ export const IndexAdvertisingPage = {
         "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/ads_image_1.png",
       name: "NAC Jewellers The Rewind Collection",
       model: "Ad Type - Print",
-      location: "For Antique Jewellwey Line"
+      location: "For Antique Jewellwey Line",
     },
     {
       img:
         "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/ads_image_2.png",
       name: "NAC Jewellers The Breezee Collection",
       model: "Ad Type - Print",
-      location: "For Light Weight Jewellery"
+      location: "For Light Weight Jewellery",
     },
     {
       img:
@@ -555,7 +557,7 @@ export const IndexAdvertisingPage = {
       model: "Ad Type - Video",
       location: "For Bridal Collection",
       type: "video",
-      videoLink: "https://www.youtube.com/embed/ysgwcKNdWg0"
+      videoLink: "https://www.youtube.com/embed/ysgwcKNdWg0",
     },
     {
       img:
@@ -564,7 +566,7 @@ export const IndexAdvertisingPage = {
       model: "Ad Type - Video",
       location: "For The Diamond Collection",
       type: "video",
-      videoLink: "https://www.youtube.com/embed/iw3KiGla-wo"
+      videoLink: "https://www.youtube.com/embed/iw3KiGla-wo",
     },
     {
       img:
@@ -573,9 +575,9 @@ export const IndexAdvertisingPage = {
       model: "Ad Type - Video",
       location: "For Breeze Collection",
       type: "video",
-      videoLink: "https://www.youtube.com/embed/2064qq5VM1g"
-    }
-  ]
+      videoLink: "https://www.youtube.com/embed/2064qq5VM1g",
+    },
+  ],
 };
 export const IndexNewsRoomPage = {
   carouselTop: {
@@ -594,11 +596,11 @@ export const IndexNewsRoomPage = {
       pauseOnHover: true,
       pauseOnDotsHover: true,
       pauseOnFocus: true,
-      swipe: true
-    }
+      swipe: true,
+    },
   },
   title: {
-    titlePage: "NAC Newsroom"
+    titlePage: "NAC Newsroom",
   },
   data: [
     {
@@ -609,7 +611,7 @@ export const IndexNewsRoomPage = {
 
       location: "Published in The Hindu on Jan 24, 2016",
       link:
-        "http://timesofindia.indiatimes.com/entertainment/events/mumbai/Parineeti-Chopra-unveils-online-jewellery-store-by-NAC-Jewellers-in-Mumbai/articleshow/46814998.cms"
+        "http://timesofindia.indiatimes.com/entertainment/events/mumbai/Parineeti-Chopra-unveils-online-jewellery-store-by-NAC-Jewellers-in-Mumbai/articleshow/46814998.cms",
     },
     {
       img:
@@ -617,7 +619,7 @@ export const IndexNewsRoomPage = {
       name: "NAC Jewellers open three more stores in Tamil nadu",
       location: "Published in The Hindu on Jan 24, 2016",
       link:
-        "http://timesofindia.indiatimes.com/business/india-business/NAC-Jewellers-opens-three-more-stores-in-Tamil-Nadu/articleshow/49658146.cms"
+        "http://timesofindia.indiatimes.com/business/india-business/NAC-Jewellers-opens-three-more-stores-in-Tamil-Nadu/articleshow/49658146.cms",
     },
     {
       img:
@@ -626,7 +628,7 @@ export const IndexNewsRoomPage = {
         "NAC Jewellers launches online portal Stylori for ‘everyday fashion’",
       location: "Published in The Hindu on Jan 24, 2016",
       link:
-        "http://www.thehindubusinessline.com/news/national/nac-jewellers-launches-online-portal-stylori-for-everyday-fashion/article7170898.ece"
+        "http://www.thehindubusinessline.com/news/national/nac-jewellers-launches-online-portal-stylori-for-everyday-fashion/article7170898.ece",
     },
     {
       img:
@@ -634,32 +636,32 @@ export const IndexNewsRoomPage = {
       name: "Actress Trisha launches NAC jewellers Kanchipuram branch",
       location: "Published in The Hindu on Jan 24, 2016",
       link:
-        "http://indiaz.com/actress-trisha-launches-nac-jewellers-kanchipuram-branch-stills.html"
-    }
-  ]
+        "http://indiaz.com/actress-trisha-launches-nac-jewellers-kanchipuram-branch-stills.html",
+    },
+  ],
 };
 export const selectPage = {
   data_all: [
     {
       main: "Month",
-      list1: ["Month"]
+      list1: ["Month"],
     },
 
     {
       main: "Day",
-      list1: ["Day"]
+      list1: ["Day"],
     },
 
     {
       main: "Year",
-      list1: ["Year", "2020"]
+      list1: ["Year", "2020"],
     },
 
     {
       main: "time",
-      list1: ["Time"]
-    }
-  ]
+      list1: ["Time"],
+    },
+  ],
 };
 
 export const selectPages = {
@@ -674,15 +676,15 @@ export const selectPages = {
         "Thiruvallur",
         "Anna Nagar",
         "vijayawada",
-        "T.nagar"
-      ]
-    }
-  ]
+        "T.nagar",
+      ],
+    },
+  ],
 };
 
 export const para = {
   content:
-    "On confirming the ‘Appointment’ we will block the time and date of the session. A customer service representative will reach out to you and coordinate the NAC Experience Session with you. We hope you have a good time!"
+    "On confirming the ‘Appointment’ we will block the time and date of the session. A customer service representative will reach out to you and coordinate the NAC Experience Session with you. We hope you have a good time!",
 };
 
 export const contact = {
@@ -693,21 +695,21 @@ export const contact = {
     {
       link:
         "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFQAAABFCAYAAADU4cH/AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAlVJREFUeNrsmUtu2zAURZ8dWombonBQdK4dNEtJ5x10J91KB11AltAleAcVEBT9JHGUWH9Kdu9TUcDITLY+lHMPYFgeSKIOr0g+WoQQQgghhBBCCCGEEOIok6YnXH38coWvyxfi5/r666dlkxNM0zvEq++X3vzi82y+OGaRoU3DsEgf3uP4Q6dCFdxIyiIW7/ytnJizozK5qWyQR7/128fPoOn5Zv8bF5I9/ZTZ2RuZzS9kMpmOPpVFch/a7Mk/5CLm0FagAUhrIqev3402rZsyD7L1L9luN/6h1zJtNGi7KUeZVgiUIlkty3zd2iRr2mxgndY8ktNzpNV75bTMCrNOHv1Rqa2uWEwXvZ5hUFehKta1tKJ9YR7fBlWRdLL06+xp0WBJw5s6sa5QFlGANi26ktlJQp+nFWnAg6z/pXVqhkslXm+85n7X9+rlCSubSfr4o56wdOLqE4zrgU0ffO3cPjA9pgQz6j3kxr2kFSuPMEMqsSTy++zA3t9BTWuCsdXTtHZUvtrsEYv0lR72Xh8PM6jtlK9aEExPvJbKxgJj9l2IVA620TCY0P8CdGzVtBqMrQcssepEIpmLIVLpjNDdtNp8vVf5WpWZ5NGtjplObH85IXSf8lUnOasdgeps6FQ6KbTJZktdNsZ3C+0E13BO6G5an5ev9dILkw4mM2d3t404TF2+2ptaqqJVF6Q6/VeB00J3N1vGwui32SmUQgmFUiiFEgqlUAolFEqhFEqhhEIplEIJhQ7DPjv2AT7fXoifJSNCCCGEEEIIIYQQQsjR8FeAAQArXzJBLKsplgAAAABJRU5ErkJggg==",
-      img_content: "Email"
+      img_content: "Email",
     },
     {
       link:
         "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFQAAABFCAYAAADU4cH/AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAohJREFUeNrsm0FOwkAUhge5AEeoMe7xBOLCjRvhBJadO/UEyAmEExRXLoWNLlyAJxDXJsoRegTfi8+kaQp903QKHf4vaTDpFPDrm+m8N4MxAAAAAAAAAAAAAACURWMbH3p+MejIn/Hby3AJocUl3tDRTZ3qkdSpL0IPKpIZ0ss8Qybz4FOENiuQ2aaX1w1NWkfHncb31/sCEaojUrS5IfEtCNV19baiKcu8hVBF5Fm0HdANCCB0fXQGyuj06gHlMkI7Ba7p0o3oQmg2RbtvBKHl0oLQchlBaDZFJuoTSkPvIDQbm6JHTEefZPbxlF8DyYmVUcrtzqj9BBP7fB4VbXo+lfBcC9WU5VbGI5wKlW6f15UHEGrHLOd8mKjgQ6giSqeKbv0AoXYMc863KUq9KN9Vuab0k5Pf/0+flohQHXkZEOfwUd0r95UJlbE0bxrF9VNUmyzoS9feBNdEIwjVz0t7iqZhUak8BdvmsLGtnSO3yqnSQlLTWPGeLHEuwwa3H9J1o70QKgI4AkNlarox30/JTN+QuypnDs1tCf3+ep8dHXcCk7+Qx7KuN22GoHNPJnsNK5BrAzo+6frY2whNRNeH0a+OriTiponr7y3qAZxgjDRDSJ2FcgQ+G7tVUo7UMR2nxn6DRCw3ZeKl0AJjalmcuBhbd2aRTpY/JqbmNHbtC8l+qKiCG+jkf9+5ZWQZ206M20r+wpfUUyt1KVJd7Wye7U2Xz0olZQgISnpLfsofupo67bzQ1Nh6ZYptQvuHI7/vMnOqjdCE2LaIDY3dPqiR5PdOs6XaCU3J5a2Pl+bvxxCtNd2bH3JjErmq4jvVWmhG5CalevcbKAAAAAAAAAAAAACwb/wKMACptMXeFk5vlAAAAABJRU5ErkJggg==",
-      img_content: "Talk to us"
-    }
-  ]
+      img_content: "Talk to us",
+    },
+  ],
 };
 export const contactpage = {
   dataall: [
     {
-      list2: ["Mr", "Ms"]
-    }
-  ]
+      list2: ["Mr", "Ms"],
+    },
+  ],
 };
 export const contactfooter = {
   content1:
@@ -715,7 +717,7 @@ export const contactfooter = {
   address:
     "NAC Jewellers India Private Limited 58, North Mada Street | Mylapore | Chennai – 600 004",
   phonenum: "+91 44 4399 6666",
-  email: "care@nacjewellers.com"
+  email: "care@nacjewellers.com",
 };
 
 export const DigitalMarketingPage = {
@@ -730,13 +732,13 @@ export const DigitalMarketingPage = {
   resposibilitiesContent: [
     {
       content:
-        "Plan and execute all web, SEO/SEM, marketing database, email, social media and display advertising campaigns"
+        "Plan and execute all web, SEO/SEM, marketing database, email, social media and display advertising campaigns",
     },
     {
       content:
-        "Design, build and maintain our social presceneMeasure and report performance of all digital marketing campaigns, and assess against goals (ROI and KPIs) Identify trends and insights, and optimize spend and performance based on the insightsBrainstrom new and creative growth stratergiesPlan, execute and measure experiments and conversion tests."
-    }
-  ]
+        "Design, build and maintain our social presceneMeasure and report performance of all digital marketing campaigns, and assess against goals (ROI and KPIs) Identify trends and insights, and optimize spend and performance based on the insightsBrainstrom new and creative growth stratergiesPlan, execute and measure experiments and conversion tests.",
+    },
+  ],
 };
 export const IndexCareerPage = {
   settingCareer: {
@@ -753,7 +755,7 @@ export const IndexCareerPage = {
     pauseOnHover: false,
     pauseOnDotsHover: false,
     pauseOnFocus: false,
-    swipe: true
+    swipe: true,
   },
   setting1Career: {
     dots: false,
@@ -770,7 +772,7 @@ export const IndexCareerPage = {
     pauseOnHover: false,
     pauseOnDotsHover: false,
     pauseOnFocus: false,
-    swipe: false
+    swipe: false,
   },
   header: "Careers",
   content:
@@ -779,8 +781,8 @@ export const IndexCareerPage = {
   carouselDataCareer: [
     {
       img:
-        "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori-Valentine-banner-web.jpg"
-    }
+        "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori-Valentine-banner-web.jpg",
+    },
   ],
   jobrole: [
     {
@@ -788,21 +790,21 @@ export const IndexCareerPage = {
       content:
         "Digital Marketing Manager at NAC typically need to liaise with the numerous vendors we deal with on a daily basis.",
       fullrole: "See Complete Job Description",
-      button: "Apply"
+      button: "Apply",
     },
     {
       head: "Digital Marketing Manager",
       content:
         "Digital Marketing Manager at NAC typically need to liaise with the numerous vendors we deal with on a daily basis.",
       fullrole: "See Complete Job Description",
-      button: "Apply"
+      button: "Apply",
     },
     {
       head: "Digital Marketing Manager",
       content:
         "Digital Marketing Manager at NAC typically need to liaise with the numerous vendors we deal with on a daily basis.",
       fullrole: "See Complete Job Description",
-      button: "Apply"
-    }
-  ]
+      button: "Apply",
+    },
+  ],
 };
