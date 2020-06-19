@@ -26,7 +26,6 @@ class Slideshow extends React.Component {
       return false
     }
 
-
   }
   renderFadeImages = () => {
 

@@ -4,31 +4,31 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/index.html"
   },
   {
-    "revision": "2d5cb06dd9d6e2da2786",
+    "revision": "25086dfa97b7412a42ca",
     "url": "/static/css/2.css"
   },
   {
-    "revision": "b1cd4242c35420ec8ed0",
+    "revision": "77620d3c571700c5f563",
     "url": "/static/css/3.css"
   },
   {
-    "revision": "4522a15a9c68bd022b44",
+    "revision": "742bf220d9c417c98560",
     "url": "/static/css/main.css"
   },
   {
-    "revision": "2d5cb06dd9d6e2da2786",
+    "revision": "25086dfa97b7412a42ca",
     "url": "/static/js/2.js"
   },
   {
-    "revision": "b1cd4242c35420ec8ed0",
+    "revision": "77620d3c571700c5f563",
     "url": "/static/js/3.js"
   },
   {
-    "revision": "265869ab8862bc2347e3",
+    "revision": "106db97c44fc2a3645ea",
     "url": "/static/js/4.js"
   },
   {
-    "revision": "4522a15a9c68bd022b44",
+    "revision": "742bf220d9c417c98560",
     "url": "/static/js/main.js"
   },
   {
@@ -44,11 +44,11 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/Roboto-Regular.ttf"
   },
   {
-    "revision": "5c8caf8f7ea7126619cea19d463c5146",
+    "revision": "fadbed18b9fafe0e25c8c0fb8894189f",
     "url": "/static/media/Stylori Silver logo.svg"
   },
   {
-    "revision": "04639ae8969c77110a53303b92b57712",
+    "revision": "271780ce712885f13b93200ae25f1288",
     "url": "/static/media/Stylorilogo.svg"
   },
   {
@@ -56,8 +56,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/cartoonFooter.png"
   },
   {
+    "revision": "2b3d63f761a61e5c65a4773359c4eb40",
+    "url": "/static/media/close.svg"
+  },
+  {
     "revision": "1d4ab251e668bd11b62b30615bd88e78",
     "url": "/static/media/closeheart.jpg"
+  },
+  {
+    "revision": "731e5ecd2c7827cef3f847ec91080214",
+    "url": "/static/media/delivery.svg"
   },
   {
     "revision": "28cd30ea4ad92b4520d9a3fb2634a87d",
@@ -76,12 +84,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/img4ProductModal.jpg"
   },
   {
-    "revision": "51fc5370cb4d7e537c06ea117f090ba2",
+    "revision": "6e25bad6f003be8fe1ddf1c68d2b4dd9",
     "url": "/static/media/logout.svg"
+  },
+  {
+    "revision": "162c55add6a47b0d4045ee2e69d2e824",
+    "url": "/static/media/love.svg"
   },
   {
     "revision": "965dabcd31d04c27b319f732b7aae019",
     "url": "/static/media/nosepin.gif"
+  },
+  {
+    "revision": "57b56bb10faf3b9dbb17bc91e6be7baf",
+    "url": "/static/media/shopping.svg"
   },
   {
     "revision": "ced611daf7709cc778da928fec876475",
@@ -104,6 +120,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/styloriGagets.png"
   },
   {
+    "revision": "26f4adaec0fa060fe6ef92c4c4f7c485",
+    "url": "/static/media/telephone.svg"
+  },
+  {
     "revision": "1737e5e0a88de55dc6cf1a773e4b0816",
     "url": "/static/media/topPicksOne.jpg"
   },
@@ -114,5 +134,9 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "37b89e280ecc047a56d66fdb6404bb23",
     "url": "/static/media/topPicksTwo.jpg"
+  },
+  {
+    "revision": "bcc776345852aa9836e64bcc3e000864",
+    "url": "/static/media/user-shape.svg"
   }
 ]);
