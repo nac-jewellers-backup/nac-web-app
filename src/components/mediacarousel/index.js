@@ -10,7 +10,8 @@ export default function MediaCarousels(props) {
       {props.value &&
         props.value.data.map((val, index) => (
           <>
-            <MediaCarousel key={index}
+            <MediaCarousel
+              key={index}
               img={val.img}
               heading={val.heading}
               para={val.para}
@@ -26,6 +27,7 @@ export default function MediaCarousels(props) {
               joinNow={val.joinNow}
               payNow={val.payNow}
               link={val.link}
+             datas={val.imageContent}
             />
           </>
         ))}

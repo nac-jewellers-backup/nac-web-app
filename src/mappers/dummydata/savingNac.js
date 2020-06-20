@@ -418,96 +418,131 @@ export const IndexCollectionHomePage = {
   ],
   data: [
     {
-      img:
-        "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/2019/Young-Ones-main-page-final.jpg",
+      imageContent: [
+        {
+          img:
+            "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/2019/Young-Ones-main-page-final.jpg",
+
+          title: "product test 0",
+          url: "jewellery/earrings/product-test ?sku_id=1002386",
+        },
+      ],
       heading: "Young Ones",
       para:
         "Adorn your kids with trendy and fashionable jewellery with exhaustive themes and options. Gift your child all the glitter and sparkle in the world and match it up with their adorable smiles. Specially designed with trends that appeal to children, our range of jewels is funky, fun, crazy and unique. Gorgeously crafted and sensitively designed using child-friendly technology, our Young Ones range of jewels, not only looks fantastic but also extremely comfortable for the kids to wear.",
-      // averageInvestmentHeading: "Starting Price",
-      // averageInvestment: "INR 5,278.00",
-      // durationHeading: "Metal Type",
-      // duration: "Gold,Platinum,Silver",
-      // redeemableHeading: "Higlights",
-      // redeemable: "Fashionable Kids Jewellery",
-      // joinNow: "View Collection",
-      link: "https://www.nacjewellers.com/jewellery?collection=Young+Ones",
     },
     {
-      img:
-        "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/Banner%202019/Stylori/nac-Stylori-collections.jpg",
+      imageContent: [
+        {
+          img:
+            "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/Banner%202019/Stylori/nac-Stylori-collections.jpg",
+
+          title: "product test 1",
+          url: "jewellery/earrings/product-test ?sku_id=1002386",
+        },
+      ],
       heading: "Stylori",
       para:
         "Intricate, lightweight and trendy with Stylori you will never run out of fashion! Hoops, hooks and twirls find accessories that match your outfit completely. Sombre, hippy, fashionable, boho and stylish pick your style and flaunt it. Thanks to our exclusive light-weight collection you don’t have to make do with metal jewellery that harm your skin. Delicate and exquisite you will find perfect accessories in our large range of and discover the true ‘you’ in your choice!",
-      // averageInvestmentHeading: "Starting Price",
-      // averageInvestment: "INR 6,325.00",
-      // durationHeading: "Metal Type",
-      // duration: "Gold",
-      // redeemableHeading: "Higlights",
-      // redeemable: "Light weight jewellery",
-      // joinNow: "View Collection",
-      link: "https://www.nacjewellers.com/jewellery?collection=Stylori",
     },
     {
-      img:
-        "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/Banner%202019/Rewind%20Collection%20june%202019/Rewinf_banner_NACJEWELLERS.jpg",
+      imageContent: [
+        {
+          img:
+            "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/Banner%202019/Rewind%20Collection%20june%202019/Rewinf_banner_NACJEWELLERS.jpg",
+
+          title: "product test 1",
+          url: "jewellery/earrings/product-test ?sku_id=1002386",
+        },
+      ],
       heading: "Rewind",
       para:
         "True antique is a rare collectible, a heritage ornament that comes to you with a deep vein of history. Celebrating a rich craftsmanship that has vanished through the centuries, our antiques bear true testimony to the rich cultural history of our region. Our collection of antique jewels is an exquisite range of ornaments that once adorned the women of yore. Studded with precious gems sourced from the ancient mines of Burma these jewels are a rare heritage that one would be proud to possess.",
-      // averageInvestmentHeading: "Starting Price",
-      // averageInvestment: "INR 19,330.00",
-      // durationHeading: "Metal Type",
-      // duration: "Gold",
-      // redeemableHeading: "Higlights",
-      // redeemable: "Gold, Pearls & Diamonds",
-      // joinNow: "View Collection",
-      link: "https://www.nacjewellers.com/jewellery?collection=Rewind",
     },
     {
-      img:
-        "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/Banner%202019/Fabula%20July/Fabula-Banner-NAC-Jewellers.jpg",
-      heading: "Fabula",
+      imageContent: [
+        {
+          img:
+            "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/2019/Young-Ones-main-page-final.jpg",
+
+          title: "product test 1",
+          url: "jewellery/earrings/product-test ?sku_id=1002386",
+        },
+      ],
+      iheading: "Fabula",
       para:
         "FABULA in latin means an intriguing story or tale. True to its name we have dedicated a signature collection of ostentatious diamond jewellery that will aid women in scripting a grand legacy. A brand that will cater to the wildest whims of strong, independent, passionate, successful urban socialites with sophisticated tastes and bestow them the tag ' LARGER THAN LIFE DIVAS ' This finely crafted jewellery aims to be an effortless extension of their personality and capture undiluted aura of the wearer.",
-      // averageInvestmentHeading: "Starting Price",
-      // averageInvestment: "INR 38,763.00",
-      // durationHeading: "Metal Type",
-      // duration: "White Gold",
-      // redeemableHeading: "Higlights",
-      // redeemable: "White Gold & Pearls",
-      // joinNow: "View Collection",
-      link: "https://www.nacjewellers.com/jewellery?collection=Fabula",
     },
     {
-      img:
-        "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/2020%20Banners/bridal-banner-nac-jewellers.jpg",
+      imageContent: [
+        {
+          img:
+            "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/2019/Young-Ones-main-page-final.jpg",
+
+          title: "product test 1",
+          url: "jewellery/earrings/product-test ?sku_id=1002386",
+        },
+      ],
       heading: "Muhurtham",
       para:
         "We take pride in the fact that we have adorned scores of brides and have been a part of their journey through love and life. Our exclusive bridal collection is as extravagant as it is lovely and will make the bride feel special and unique just as she really is. Our range of Diamond, Gold and Platinum jewels have special bridal collections for the young bride to choose from. We also have a special section of Azva jewels designed specifically for the bride to wear.",
-      // averageInvestmentHeading: "Starting Price",
-      // averageInvestment: "INR 31,238.00",
-      // durationHeading: "Metal Type",
-      // duration: "Gold",
-      // redeemableHeading: "Higlights",
-      // redeemable: "Bridal Jewellery",
-      // joinNow: "View Collection",
-      link: "https://www.nacjewellers.com/jewellery?collection=Muhurtham",
     },
     {
-      img:
-        "https://storage.googleapis.com/media.nacjewellers.com/resources/collection_files/rudhramadevi/Hero-Banner.jpg",
+      imageContent: [
+        {
+          img:
+            "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/2019/Young-Ones-main-page-final.jpg",
+
+          title: "product test 1",
+          url: "jewellery/earrings/product-test ?sku_id=1002386",
+        },
+      ],
       heading: "Rudhramadevi",
       para:
         "Rudramadevi was one among the few women rulers who made their mark in South India and are still remembered to this day. A 13th century queen from the Kakatiya Dynasty of the Deccan Plateau, Rudra was brought up as a boy for many years as her father craved for a heir. A formidable ruler, she put down rebels and her detractors with an iron hand. This enigmatic queen came back to life in the celluloid as a historical film helmed by Director Gunashekar with Anushka Shetty, as the lead character. NAC Jewellers were given the rare honour of designing jewels for this queen. Drawing our inspiration from ancient statues, art and painting of 13th century we designed royal ornaments after an intense research of three years.",
-      // averageInvestmentHeading: "Starting Price",
-      // averageInvestment: "INR 46,788.00",
-      // durationHeading: "Metal Type",
-      // duration: "Gold",
-      // redeemableHeading: "Higlights",
-      // redeemable: "Inspired by regal jewels of 13th century",
-      // joinNow: "View Collection",
-      link: "https://www.nacjewellers.com/jewellery?collection=Rudhramadevi",
     },
   ],
+
+  // imageandlinks: [
+  //   {
+  //     img:
+  //       "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/2019/Young-Ones-main-page-final.jpg",
+
+  //     title: "product test 1",
+  //     url: "jewellery/earrings/product-test ?sku_id=1002386",
+  //   },
+  //   {
+  //     img:
+  //       "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/Banner%202019/Stylori/nac-Stylori-collections.jpg",
+  //     url: "https://www.nacjewellers.com/jewellery?collection=Stylori",
+  //     title: "product test 2",
+  //   },
+  //   {
+  //     img:
+  //       "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/Banner%202019/Rewind%20Collection%20june%202019/Rewinf_banner_NACJEWELLERS.jpg",
+  //     url: "https://www.nacjewellers.com/jewellery?collection=Stylori",
+  //     title: "product test 3",
+  //   },
+  //   {
+  //     img:
+  //       "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/2019/Young-Ones-main-page-final.jpg",
+
+  //     title: "product test 1",
+  //     url: "jewellery/earrings/product-test ?sku_id=1002386",
+  //   },
+  //   {
+  //     img:
+  //       "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/Banner%202019/Stylori/nac-Stylori-collections.jpg",
+  //     url: "https://www.nacjewellers.com/jewellery?collection=Stylori",
+  //     title: "product test 2",
+  //   },
+  //   {
+  //     img:
+  //       "https://storage.googleapis.com/media.nacjewellers.com/resources/collection_files/rudhramadevi/Hero-Banner.jpg",
+  //     url: "https://www.nacjewellers.com/jewellery?collection=Stylori",
+  //     title: "product test 3",
+  //   },
+  // ],
 };
 
 /////////////////////////

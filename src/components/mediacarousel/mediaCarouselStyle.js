@@ -29,7 +29,7 @@ const styles = makeStyles((theme) => ({
     margin: "auto",
   },
   imgClass: {
-    width: "90%",
+    width: "90% !important",
     height: "100% !important",
     [theme.breakpoints.down("sm")]: {
       width: "100%",
