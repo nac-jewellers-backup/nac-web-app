@@ -4,6 +4,7 @@ import Slideshow from "components/Carousel/carosul";
 import MediaCarousel from "../../components/mediacarousel/index";
 import Header from "components/SilverComponents/Header";
 import styles from "containers/savings/savingsstyle";
+import { CollectionHomeNac } from "../../mappers/dummydata/savingNac";
 import { IndexSavingPage } from "mappers/dummydata/savingNac";
 import { IndexExperiencePage } from "mappers/dummydata/savingNac";
 import { IndexCollectionHomePage } from "mappers/dummydata/savingNac";
@@ -18,6 +19,17 @@ export default function Savings(props) {
   };
   const slider = React.createRef();
 
+  const dataCarousel = {
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    infinite: true,
+    fade: false,
+    dots: false,
+    autoplaySpeed: 5000,
+    arrows: false,
+  };
+
   const values = () => {
     if (props.match.path === "/savingscheme") {
       return IndexSavingPage;
@@ -27,6 +39,7 @@ export default function Savings(props) {
       return IndexCollectionHomePage;
     }
   };
+
   return (
     <Grid container>
       <Grid item>
@@ -43,21 +56,22 @@ export default function Savings(props) {
         className={classes.bannerImg}
       >
         {/* <Hidden smDown> */}
-        {IndexSavingPage.setting.arrowsImg && (
+        {CollectionHomeNac.carouselTop.setting.arrowsImg && (
           <Grid container>
             <Grid item onClick={previous} className={classes.preButton}></Grid>
             <Grid item onClick={next} className={classes.nextButton}></Grid>
           </Grid>
         )}
         {/* </Hidden> */}
-        <Slideshow dataCarousel={values().setting} sliderRef={slider}>
-          {values() &&
-            values().carouselData &&
-            values().carouselData.map((val, index) => (
-              <Grid container key={index} className={classes.headContent}>
-                <img src={val.img} className={classes.mainCarosel} />
-              </Grid>
-            ))}
+        <Slideshow
+          dataCarousel={CollectionHomeNac.carouselTop.setting}
+          sliderRef={slider}
+        >
+          {CollectionHomeNac.carouselTop.data.map((val, index) => (
+            <Grid container key={index} className={classes.headContent}>
+              <img src={val.img} className={classes.mainCarosel} />
+            </Grid>
+          ))}
         </Slideshow>
       </Grid>
       <Grid xs={12} sm={12} md={12} lg={12} xl={12} container>

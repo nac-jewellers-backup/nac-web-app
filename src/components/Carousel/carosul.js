@@ -83,7 +83,7 @@ class Slideshow extends React.Component {
               <img src={val.img} className='subslider-carousel-img img-responsive' alt="" />
               <div className="overlay1">
                 <h2 className='next-price'>{val.title}</h2><br />
-                <a className='info' href={`/${val.url}`}><span className='sub-list-price'> <i className="fa fa-rupee"></i> &nbsp;{val.price}</span></a>
+             {val.price &&   <a className='info' href={`/${val.url}`}><span className='sub-list-price'> <i className="fa fa-rupee"></i> &nbsp;{val.price}</span></a>}
               </div>
             </div>
           </a>
