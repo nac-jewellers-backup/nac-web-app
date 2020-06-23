@@ -91,7 +91,7 @@ const styles = makeStyles(theme => ({
       },
       dataCon:{
           margin:"auto",
-          padding:"15px 0px",
+        
       }
 
 }))

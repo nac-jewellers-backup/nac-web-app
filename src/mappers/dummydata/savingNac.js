@@ -4,31 +4,69 @@ export const SavingPageNac = {
       dots: true,
       infinite: true,
       autoplay: true,
-      speed: 1000,
-      fade: true,
-      arrows: true,
+      speed: 2000,
+      fade: false,
+      arrows: false,
       arrowsImg: true,
-      dotsClass: "slickdev",
+      dotsClass: "slickdevStatic",
       accessibility: true,
-      centerMode: true,
-      focusOnSelect: true,
-      pauseOnHover: true,
-      pauseOnDotsHover: true,
+      autoplaySpeed: 4000,
+      centerMode: false,
+      focusOnSelect: false,
+      pauseOnHover: false,
+      pauseOnDotsHover: false,
       pauseOnFocus: true,
-      swipe: true,
+      swipe: false,
     },
     data: [
       {
         img:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori+CSK-banner-1920-X-656-px.jpg",
+        mobileImg:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori+CSK-banner-mobile-805X430-px.jpg",
+        navigateUrl: "#123",
+      },
+      {
+        img:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/banner1.jpg",
+        mobileImg:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/gemstone-mob",
+        navigateUrl: "#123",
+      },
+      {
+        img:
           "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori-Valentine-banner-web.jpg",
+        mobileImg:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori-Valentine-banner-mob.jpg",
+        navigateUrl: "#123",
       },
       {
         img:
-          "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/2019/Young-Ones-main-page-final.jpg",
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/banner3.jpg",
+        mobileImg:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/rings-collection-mob.jpg",
+        navigateUrl: "#123",
       },
       {
         img:
-          "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/2019/Young-Ones-main-page-final.jpg",
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/banner4.jpg",
+        mobileImg:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/Floral-collection-Mob.jpg",
+        navigateUrl: "#123",
+      },
+      {
+        img:
+          " https://assets.stylori.com/images/Static+Pages/Home+Page/banner5.jpg",
+        mobileImg:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/halo-collection-mob.jpg",
+        navigateUrl: "#123",
+      },
+      {
+        img:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/harvest-campaign-web.png",
+        mobileImg:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/harvest-campaign-mob.png",
+        navigateUrl: "#123",
       },
     ],
   },
@@ -131,26 +169,72 @@ export const IndexSavingPage = {
 export const ExperiencePageNac = {
   carouselTop: {
     setting: {
-      dots: false,
-      infinite: false,
-      autoplay: false,
-      speed: 1000,
+      dots: true,
+      infinite: true,
+      autoplay: true,
+      speed: 2000,
       fade: false,
       arrows: false,
-      arrowsImg: false,
-      dotsClass: "slickdev",
-      accessibility: false,
+      arrowsImg: true,
+      dotsClass: "slickdevStatic",
+      accessibility: true,
+      autoplaySpeed: 4000,
       centerMode: false,
       focusOnSelect: false,
       pauseOnHover: false,
       pauseOnDotsHover: false,
-      pauseOnFocus: false,
+      pauseOnFocus: true,
       swipe: false,
     },
     data: [
       {
         img:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori+CSK-banner-1920-X-656-px.jpg",
+        mobileImg:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori+CSK-banner-mobile-805X430-px.jpg",
+        navigateUrl: "#",
+      },
+      {
+        img:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/banner1.jpg",
+        mobileImg:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/gemstone-mob",
+        navigateUrl: "#",
+      },
+      {
+        img:
           "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori-Valentine-banner-web.jpg",
+        mobileImg:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori-Valentine-banner-mob.jpg",
+        navigateUrl: "#",
+      },
+      {
+        img:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/banner3.jpg",
+        mobileImg:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/rings-collection-mob.jpg",
+        navigateUrl: "#",
+      },
+      {
+        img:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/banner4.jpg",
+        mobileImg:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/Floral-collection-Mob.jpg",
+        navigateUrl: "#",
+      },
+      {
+        img:
+          " https://assets.stylori.com/images/Static+Pages/Home+Page/banner5.jpg",
+        mobileImg:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/halo-collection-mob.jpg",
+        navigateUrl: "#",
+      },
+      {
+        img:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/harvest-campaign-web.png",
+        mobileImg:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/harvest-campaign-mob.png",
+        navigateUrl: "#",
       },
     ],
   },
@@ -340,15 +424,16 @@ export const IndexTemplePage = {
 export const CollectionHomeNac = {
   carouselTop: {
     setting: {
-      dots: false,
+      dots: true,
       infinite: true,
       autoplay: true,
-      speed: 1000,
+      speed: 2000,
       fade: false,
       arrows: false,
       arrowsImg: true,
-      dotsClass: "slickdev",
+      dotsClass: "slickdevStatic",
       accessibility: true,
+      autoplaySpeed: 4000,
       centerMode: false,
       focusOnSelect: false,
       pauseOnHover: false,
@@ -359,18 +444,52 @@ export const CollectionHomeNac = {
     data: [
       {
         img:
-          "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/2019/Youngones_NACWEB_Banner_1189X500.jpg",
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori+CSK-banner-1920-X-656-px.jpg",
+        mobileImg:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori+CSK-banner-mobile-805X430-px.jpg",
+        navigateUrl: "/jewellery/kada/csk_kada?skuId=1000001",
+      },
+      {
+        img:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/banner1.jpg",
+        mobileImg:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/gemstone-mob",
         navigateUrl: "/gemstone-jewellery?sort=latest",
       },
       {
         img:
-          "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/2019/Muhurtham_NACWEB_Banner_1189X500.jpg",
-        navigateUrl: "/jewellery-shipping+in+1+day?sort=featured",
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori-Valentine-banner-web.jpg",
+        mobileImg:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori-Valentine-banner-mob.jpg",
+        navigateUrl: "/hearts-jewellery?sort=bestseller",
       },
       {
         img:
-          "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/2019/J%20Rewind_new2019.jpg",
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/banner3.jpg",
+        mobileImg:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/rings-collection-mob.jpg",
         navigateUrl: "/rings-jewellery",
+      },
+      {
+        img:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/banner4.jpg",
+        mobileImg:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/Floral-collection-Mob.jpg",
+        navigateUrl: "/floral-jewellery?sort=latest",
+      },
+      {
+        img:
+          " https://assets.stylori.com/images/Static+Pages/Home+Page/banner5.jpg",
+        mobileImg:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/halo-collection-mob.jpg",
+        navigateUrl: "/jewellery-from+halo+collection",
+      },
+      {
+        img:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/harvest-campaign-web.png",
+        mobileImg:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/harvest-campaign-mob.png",
+        navigateUrl: "jewellery?sort=bestseller",
       },
     ],
   },
@@ -423,7 +542,7 @@ export const IndexCollectionHomePage = {
           img:
             "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/2019/Young-Ones-main-page-final.jpg",
 
-          title: "product test 0",
+          title: "View Collection",
           url: "jewellery/earrings/product-test ?sku_id=1002386",
         },
       ],
@@ -437,7 +556,7 @@ export const IndexCollectionHomePage = {
           img:
             "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/Banner%202019/Stylori/nac-Stylori-collections.jpg",
 
-          title: "product test 1",
+          title: "View Collection",
           url: "jewellery/earrings/product-test ?sku_id=1002386",
         },
       ],
@@ -451,7 +570,7 @@ export const IndexCollectionHomePage = {
           img:
             "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/Banner%202019/Rewind%20Collection%20june%202019/Rewinf_banner_NACJEWELLERS.jpg",
 
-          title: "product test 1",
+          title: "View Collection",
           url: "jewellery/earrings/product-test ?sku_id=1002386",
         },
       ],
@@ -465,41 +584,13 @@ export const IndexCollectionHomePage = {
           img:
             "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/2019/Young-Ones-main-page-final.jpg",
 
-          title: "product test 1",
+          title: "View Collection",
           url: "jewellery/earrings/product-test ?sku_id=1002386",
         },
       ],
-      iheading: "Fabula",
+      heading: "Fabula",
       para:
         "FABULA in latin means an intriguing story or tale. True to its name we have dedicated a signature collection of ostentatious diamond jewellery that will aid women in scripting a grand legacy. A brand that will cater to the wildest whims of strong, independent, passionate, successful urban socialites with sophisticated tastes and bestow them the tag ' LARGER THAN LIFE DIVAS ' This finely crafted jewellery aims to be an effortless extension of their personality and capture undiluted aura of the wearer.",
-    },
-    {
-      imageContent: [
-        {
-          img:
-            "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/2019/Young-Ones-main-page-final.jpg",
-
-          title: "product test 1",
-          url: "jewellery/earrings/product-test ?sku_id=1002386",
-        },
-      ],
-      heading: "Muhurtham",
-      para:
-        "We take pride in the fact that we have adorned scores of brides and have been a part of their journey through love and life. Our exclusive bridal collection is as extravagant as it is lovely and will make the bride feel special and unique just as she really is. Our range of Diamond, Gold and Platinum jewels have special bridal collections for the young bride to choose from. We also have a special section of Azva jewels designed specifically for the bride to wear.",
-    },
-    {
-      imageContent: [
-        {
-          img:
-            "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/2019/Young-Ones-main-page-final.jpg",
-
-          title: "product test 1",
-          url: "jewellery/earrings/product-test ?sku_id=1002386",
-        },
-      ],
-      heading: "Rudhramadevi",
-      para:
-        "Rudramadevi was one among the few women rulers who made their mark in South India and are still remembered to this day. A 13th century queen from the Kakatiya Dynasty of the Deccan Plateau, Rudra was brought up as a boy for many years as her father craved for a heir. A formidable ruler, she put down rebels and her detractors with an iron hand. This enigmatic queen came back to life in the celluloid as a historical film helmed by Director Gunashekar with Anushka Shetty, as the lead character. NAC Jewellers were given the rare honour of designing jewels for this queen. Drawing our inspiration from ancient statues, art and painting of 13th century we designed royal ornaments after an intense research of three years.",
     },
   ],
 

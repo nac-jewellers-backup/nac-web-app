@@ -8,20 +8,13 @@
   justify-content:'center'!important;
 } */
 
-
-
 /* hover img*/
-
-
-
-
-
 
 .hovereffect {
   width: 90% !important;
   margin-left: 5% !important;
   margin-right: 5% !important;
-  height: 170px !important;
+  /* height: 170px !important; */
   float: left;
   overflow: hidden;
   position: relative;
@@ -33,19 +26,20 @@
 
 .hovereffect .overlay1 {
   width: 100%;
-  height: 170px !important;
+  /* height: 170px !important; */
   position: absolute;
   overflow: hidden;
   top: 0;
   left: 0;
   opacity: 0;
   background-color: rgba(0, 0, 0, 0.5);
-  -webkit-transition: all .4s ease-in-out;
-  transition: all .4s ease-in-out
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 
 .boxshadow {
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px 4px, rgba(0, 0, 0, 0.14) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 10px 0px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px 4px,
+    rgba(0, 0, 0, 0.14) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 10px 0px;
 }
 
 .slick-slide img {
@@ -54,8 +48,8 @@
 
 .hovereffect img {
   position: relative;
-  -webkit-transition: all .4s linear;
-  transition: all .4s linear;
+  -webkit-transition: all 0.4s linear;
+  transition: all 0.4s linear;
 }
 
 .hovereffect h2 {
@@ -68,15 +62,15 @@
   -webkit-transform: translatey(-100px);
   -ms-transform: translatey(-100px);
   transform: translatey(-100px);
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   padding: 10px;
   height: 50px !important;
   overflow: hidden;
 }
 
 .hovereffect a.info {
-  text-decoration: none;
+  text-decoration: none !important;
   display: inline-block;
   text-transform: uppercase;
   color: #fff;
@@ -84,8 +78,8 @@
   background-color: transparent;
   opacity: 0;
   filter: alpha(opacity=0);
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   padding: 7px 14px;
 }
 
@@ -114,10 +108,9 @@
 }
 
 .hovereffect:hover a.info {
-  -webkit-transition-delay: .2s;
-  transition-delay: .2s;
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
 }
-
 
 @keyframes placeHolderShimmer {
   0% {
@@ -137,11 +130,13 @@
   animation-timing-function: linear;
   background: #f6f7f8;
 
-  background-image: -webkit-linear-gradient(left,
-      #f6f7f8 0%,
-      #edeef1 20%,
-      #f6f7f8 40%,
-      #f6f7f8 100%);
+  background-image: -webkit-linear-gradient(
+    left,
+    #f6f7f8 0%,
+    #edeef1 20%,
+    #f6f7f8 40%,
+    #f6f7f8 100%
+  );
   background-size: 980px 898px;
   /* height: 898px; */
   position: relative;
@@ -175,14 +170,14 @@
   left: 0;
   opacity: 0;
   background-color: rgba(0, 0, 0, 0.411);
-  transition: all .4s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 
 .hovereffectSilver img {
   display: block;
   position: relative;
-  -webkit-transition: all .4s linear;
-  transition: all .4s linear;
+  -webkit-transition: all 0.4s linear;
+  transition: all 0.4s linear;
   width: 100% !important;
   height: auto;
 }
@@ -199,11 +194,11 @@
   -webkit-transform: translatey(-100px);
   -ms-transform: translatey(-100px);
   transform: translatey(-100px);
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   padding: 10px 10px 0px 10px;
   margin: 0px;
-  padding-bottom: 0px
+  padding-bottom: 0px;
 }
 
 .hovereffectSilver h5 {
@@ -215,7 +210,6 @@
   padding-top: 0px;
   padding-bottom: 20px;
   font-weight: 500 !important;
-
 }
 
 .hovereffectSilver span {
@@ -227,7 +221,6 @@
   text-align: center;
   background-color: #fff;
   cursor: pointer;
-
 }
 
 .hovereffectSilver span:hover {
@@ -238,8 +231,6 @@
   -ms-transform: scale(1.2);
   -webkit-transform: scale(1.2);
   transform: scale(1.2);
-
-
 }
 
 .hovereffectSilver:hover .overlay1 {
@@ -249,6 +240,7 @@
 
 .hovereffectSilver:hover h2,
 .hovereffectSilver:hover a.info {
+  text-decoration: none !important;
   opacity: 1;
   filter: alpha(opacity=100);
   -ms-transform: translatey(0);
@@ -257,10 +249,116 @@
 }
 
 .hovereffectSilver:hover a {
-  -webkit-transition-delay: .2s;
-  transition-delay: .2s;
+  text-decoration: none !important;
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
 }
 
 .ProductGrids .slick-slider {
   box-shadow: 10px 10px 7px #aaaaaa;
+}
+.info {
+  text-decoration: none !important;
+}
+.hovereffectStatic {
+  width: 90% !important;
+  margin-left: 5% !important;
+  margin-right: 5% !important;
+  height: 210px !important;
+  float: left;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  cursor: default;
+  border: 1px solid #ccc !important;
+  cursor: pointer;
+}
+
+.hovereffectStatic .overlay1Static {
+  width: 100%;
+  height: 210px !important;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.boxshadow {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px 4px,
+    rgba(0, 0, 0, 0.14) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 10px 0px;
+}
+
+.slick-slide img {
+  display: inline;
+}
+
+.hovereffectStatic img {
+  position: relative;
+  -webkit-transition: all 0.4s linear;
+  transition: all 0.4s linear;
+}
+
+.hovereffectStatic h2 {
+  text-transform: capitalize;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  font-size: 17px;
+  background: rgba(0, 0, 0, 0.6);
+  -webkit-transform: translatey(-100px);
+  -ms-transform: translatey(-100px);
+  transform: translatey(-100px);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  padding: 10px;
+  height: 50px !important;
+  overflow: hidden;
+  margin-top: 13%;
+}
+
+.hovereffectStatic a.info {
+  text-decoration: none !important;
+  display: inline-block;
+  text-transform: uppercase;
+  color: #fff;
+  border: 1px solid #fff;
+  background-color: transparent;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  padding: 7px 14px;
+}
+
+.hovereffectStatic a.info:hover {
+  box-shadow: 0 0 5px #fff;
+}
+
+.hovereffectStatic:hover img {
+  -ms-transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+.hovereffectStatic:hover .overlay1Static {
+  opacity: 0.8;
+  filter: alpha(opacity=100);
+}
+
+.hovereffectStatic:hover h2,
+.hovereffectStatic:hover a.info {
+  opacity: 0.8;
+  filter: alpha(opacity=100);
+  -ms-transform: translatey(0);
+  -webkit-transform: translatey(0);
+  transform: translatey(0);
+}
+
+.hovereffectStatic:hover a.info {
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
 }

@@ -9,7 +9,7 @@ const styles = makeStyles((theme) => ({
   containerHead: {
     display: "-webkit-inline-box !important",
     borderBottom: "1px solid #ddd",
-    padding: "40px 0px",
+    padding: "50px 0px",
     outline: "none !important",
   },
   para: {
@@ -74,17 +74,18 @@ const styles = makeStyles((theme) => ({
   },
   imageGrid: {
     ObjectFit: "cover !important",
-    height: "250px !important",
+    // height: "250px !important",
     [theme.breakpoints.down("sm")]: {
-      height: "150px !important",
+      // height: "150px !important",
     },
   },
   ToggleButton: {
     color: "#5d5d5d",
     fontWeight: "700",
     fontSize: "15px",
-    paddingBottom: "28px",
+
     display: "inline-block",
+    cursor: "pointer",
   },
 }));
 export default styles;

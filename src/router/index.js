@@ -45,6 +45,7 @@ import Diamonds from "containers/diamonds/looseDiamonds";
 import CollectionHomePage from "containers/collectionhomepage/collectionHomePage";
 import rudramadeviBlog from "containers/collection/rudramadeviBlog";
 import Solitaires from "../containers/solitaires/solitaires";
+import ExperiencePage from "../containers/experiences/experiences";
 // SILVER SCREENS
 
 import Silver from "screens/SilverStylori";
@@ -376,7 +377,7 @@ export const RouterApp = (props) => {
       />
       <Route
         key="ExperiencePage"
-        component={SavingsPage}
+        component={ExperiencePage}
         exact
         path={routes.ExperiencePage}
       />
