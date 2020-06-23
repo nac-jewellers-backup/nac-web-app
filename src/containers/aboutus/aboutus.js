@@ -11,11 +11,14 @@ import SiteMap from 'components/sitemap/sitemap'
 import SocialFields from 'components/socialfield/index'
 import Slideshow from 'components/Carousel/carosul'
 import Footer from "components/Footer/Footer";
+import ContactUs from "containers/contactus/contact"
 
 export default function AboutusPage(props) {
+    debugger
     const [state, setState] = React.useState({
         index: "",
     })
+    
     const classes = styles();
     const values = () => {
         // alert(window.location.pathname)
@@ -43,13 +46,15 @@ export default function AboutusPage(props) {
         else if (window.location.pathname === '/faqs') {
             return Faqs
         }
+        else return null
     }
     return (
         <Grid container xs={12}>
             <Header />
             <Grid item xs={12}>
                 {console.log(values())}
-                <Slideshow dataCarousel={values() && values().carouselTop && values().carouselTop.setting}>
+               <Hidden smDown>
+               <Slideshow dataCarousel={values() && values().carouselTop && values().carouselTop.setting}>
                     {values() && values().carouselTop && values().carouselTop.data && values().carouselTop.data.map((val, index) => (
                         <Grid container key={index}>
                             <img
@@ -59,6 +64,19 @@ export default function AboutusPage(props) {
                         </Grid>
                     ))}
                 </Slideshow>
+               </Hidden>
+               <Hidden smUp>
+               <Slideshow dataCarousel={values() && values().carouselTop && values().carouselTop.setting}>
+                    {values() && values().carouselTop && values().carouselTop.data && values().carouselTop.data.map((val, index) => (
+                        <Grid container key={index}>
+                            <img
+                                src={val.mobileImg}
+                                style={{ width: "100%", height: "100%" }}
+                            />
+                        </Grid>
+                    ))}
+                </Slideshow>
+               </Hidden>
             </Grid>
             <Grid item className={classes.paddingsss}>
                 <Grid container className={classes.mainWidths}>
@@ -74,7 +92,9 @@ export default function AboutusPage(props) {
                             <>
                                 {window.location.pathname === '/education' && <EducationPage value={values()} />}
                                 {window.location.pathname === '/sitemap' && <SiteMap value={values()} />}
+                                {window.location.pathname === '/contactus' && <ContactUs/>}
                                 {window.location.pathname !== '/education' && <Accordian value={values()} />}
+                                
                             </>
                         </Grid>
                         <Hidden smDown>

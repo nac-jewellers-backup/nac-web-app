@@ -26,9 +26,9 @@ export default function Contact(props) {
 
   return (
     <Grid>
-      <Grid xs={12} container>
+      {/* <Grid xs={12} container>
         <Header />
-      </Grid>
+      </Grid> */}
       <form>
         <Grid
           container
@@ -177,8 +177,8 @@ export default function Contact(props) {
               xs={12}
               sm={12}
               md={12}
-              lg={6}
-              xl={6}
+              lg={12}
+              xl={12}
               className={classes.grid12}
             >
               <Typography className={classes.grid16}>
@@ -186,14 +186,21 @@ export default function Contact(props) {
               </Typography>
             </Grid>
             <Grid
+            container
               item
               xs={12}
               sm={12}
               md={12}
-              lg={6}
-              xl={6}
+              lg={12}
+              xl={12}
               className={classes.grid13}
+              justify="center"
             >
+              <Grid item   xs={12}
+              sm={12}
+              md={12}
+              lg={6}
+              xl={6}>
               <Typography className={classes.grid14}>
                 {" "}
                 {contactfooter.address}
@@ -206,11 +213,12 @@ export default function Contact(props) {
                 {" "}
                 {contactfooter.email}
               </Typography>
+              </Grid>
             </Grid>
           </Grid>
         </Grid>
       </form>
-      <Footer />
+      {/* <Footer /> */}
     </Grid>
   );
 }

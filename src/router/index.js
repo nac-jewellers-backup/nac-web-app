@@ -124,7 +124,7 @@ export const RouterApp = (props) => {
       />
       <Route
         key="Contacs"
-        component={ContactPage}
+        component={AboutusPage}
         exact
         path={routes.ContactUs}
       />

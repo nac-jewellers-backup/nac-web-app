@@ -34,7 +34,21 @@ const styles = makeStyles(theme => ({
     roots: {
         width: '100%',
         maxWidth: 360,
+        paddingBottom:0,
+        paddingTop:0,
         backgroundColor: theme.palette.background.paper,
+        // .MuiListItem-root.Mui-selected, .MuiListItem-root.Mui-selected:hover
+        "& .Mui-selected":{
+            backgroundColor:"#20205a !important",
+            color:"white",
+            "&::hover":{
+                backgroundColor:"#20205a !important",
+                color:"white",
+            },
+            "& .MuiSvgIcon-root":{
+                fill:'white !important'
+            }
+        }
       },
       nested: {
         // paddingLeft: theme.spacing(4),
@@ -86,6 +100,13 @@ const styles = makeStyles(theme => ({
     },
     shadow:{
         boxShadow:"0 0 5px #888 !important;"
+    },
+    link:{
+        color: '#394578', textDecoration: "none",
+        "& .MuiSvgIcon-root":{
+            fill:'#394578 !important'
+        }
+
     }
 }))
 export default styles;

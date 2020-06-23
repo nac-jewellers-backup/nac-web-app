@@ -1,7 +1,8 @@
 import React from 'react';
 import { Grid, Typography } from '@material-ui/core'
 import style from './style'
-import { NavLink } from "react-router-dom";
+// import { NavHashLink  as NavLink } from "react-router-hash-link";
+import { NavLink } from 'react-router-dom';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 // import ListSubheader from '@material-ui/core/ListSubheader';
@@ -19,6 +20,7 @@ export default function SideData(props) {
     //     window.location.href = "#test"
     // }
     const value = props.value
+    debugger
     const classses = style();
     const [open, setOpen] = React.useState(false);
     const handleClick = (value) => {
@@ -41,12 +43,12 @@ export default function SideData(props) {
                     style={{ padding: "0px" }}
                     className={classses.roots}
                 >
-                    <NavLink to={"/aboutus"} activeClassName={'active'} style={{ color: '#394578', textDecoration: "none" }} >
+                    <NavLink to={"/aboutus"} activeClassName={'active'} className={classses.link} >
 
-                        <ListItem button onClick={() => handleClick("about")}>
-
-                            <ListItemText style={{ color: "black" }} primary="About Us" />
-                            {open === true && check.check === "about" ? <ExpandLess /> : <ExpandMore />}
+                        <ListItem button onClick={() => handleClick("about")} selected={window.location.pathname==="/aboutus"}>
+                        
+                            <ListItemText primary="About Us" />
+                            {open === true && check.check === "about" ? <ExpandLess color="primary"/> : <ExpandMore color="primary"/>}
                         </ListItem>
                     </NavLink>
 
@@ -76,10 +78,11 @@ export default function SideData(props) {
                     component="nav"
                     aria-labelledby="nested-list-subheader"
                     className={classses.roots}
+                    
                 >
-                    <NavLink to={"/termsconditions"} activeClassName={'active'} style={{ color: '#394578', textDecoration: "none" }} >
+                    <NavLink to={"/termsconditions"} activeClassName={'active'} className={classses.link} >
 
-                        <ListItem button onClick={() => handleClick("terms")}>
+                        <ListItem button onClick={() => handleClick("terms")} selected={window.location.pathname==="/termsconditions"}>
 
                             <ListItemText primary="Terms & Conditions" />
                             {open === true && check.check === "terms" ? <ExpandLess /> : <ExpandMore />}
@@ -100,7 +103,7 @@ export default function SideData(props) {
                 </List>
 
             </Grid>
-            <Grid item xs={12} >
+            <Grid item xs={12}  onClick={() => handleClick("return")}>
 
                 {/* <Typography className={classses.leftContent} variant="h6">
                         30 Day Return
@@ -110,11 +113,13 @@ export default function SideData(props) {
                     aria-labelledby="nested-list-subheader"
 
                     className={classses.roots}
+                    
                 >
-                    <NavLink to={"/return"} activeClassName={'active'} style={{ color: '#394578', textDecoration: "none" }} >
+                    <NavLink to={"/return"} activeClassName={'active'} className={classses.link} >
 
                         <ListItem button
-                            onClick={() => handleClick("return")}
+                           
+                            selected={window.location.pathname==="/return"}
                         >
 
                             <ListItemText primary="30 Day Return" />
@@ -143,13 +148,14 @@ export default function SideData(props) {
                 <List
                     component="nav"
                     aria-labelledby="nested-list-subheader"
-
+                    
                     className={classses.roots}
                 >
-                    <NavLink to={"/delivery"} activeClassName={'active'} style={{ color: '#394578', textDecoration: "none" }} >
+                    <NavLink to={"/delivery"} activeClassName={'active'} className={classses.link} >
 
                         <ListItem button
                             onClick={() => handleClick("delivery")}
+                            selected={window.location.pathname==="/delivery"}
                         >
 
                             <ListItemText primary="Delivery Info" />
@@ -179,14 +185,15 @@ export default function SideData(props) {
                 <List
                     component="nav"
                     aria-labelledby="nested-list-subheader"
-
+                   
                     className={classses.roots}
                 >
 
 
-                    <NavLink to={"/privacy"} activeClassName={'active'} style={{ color: '#394578', textDecoration: "none" }} >
+                    <NavLink to={"/privacy"} activeClassName={'active'} className={classses.link} >
                         <ListItem button
                             onClick={() => handleClick("policy")}
+                            selected={window.location.pathname==="/privacy"}
                         >
                             <ListItemText primary="Privacy Policy" />
                             {open === true && check.check === "policy" ? <ExpandLess /> : <ExpandMore />}
@@ -214,13 +221,14 @@ export default function SideData(props) {
                 <List
                     component="nav"
                     aria-labelledby="nested-list-subheader"
-
+                  
                     className={classses.roots}
                 >
-                    <NavLink to={"/education"} activeClassName={'active'} style={{ color: '#394578', textDecoration: "none" }} >
+                    <NavLink to={"/education"} activeClassName={'active'} className={classses.link} >
 
                         <ListItem button
                             onClick={() => handleClick("education")}
+                            selected={window.location.pathname==="/education"}
                         >
 
                             <ListItemText primary="Education" />
@@ -249,13 +257,14 @@ export default function SideData(props) {
                 <List
                     component="nav"
                     aria-labelledby="nested-list-subheader"
-
+                    
                     className={classses.roots}
                 >
-                    <NavLink to={"/sitemap"} activeClassName={'active'} style={{ color: '#394578', textDecoration: "none" }} >
+                    <NavLink to={"/sitemap"} activeClassName={'active'} className={classses.link} >
 
                         <ListItem button
                             onClick={() => handleClick("sitemap")}
+                            selected={window.location.pathname==="/sitemap"}
                         >
 
                             <ListItemText primary="Sitemap" />
@@ -278,19 +287,46 @@ export default function SideData(props) {
             </Grid>
             <Grid item xs={12} >
 
+{/* <Typography className={classses.leftContent} variant="h6">
+        Sitemap
+    </Typography> */}
+<List
+    component="nav"
+    aria-labelledby="nested-list-subheader"
+    
+    className={classses.roots}
+>
+    <NavLink to={"/contactus"} activeClassName={'active'} className={classses.link} >
+
+        <ListItem button
+            onClick={() => handleClick("contactus")}
+            selected={window.location.pathname==="/contactus"}
+        >
+
+            <ListItemText primary="Contact Us" />
+            {/* {open === true && check.check === "sitemap" ? <ExpandLess /> : <ExpandMore />} */}
+        </ListItem>
+    </NavLink>
+
+ 
+</List>
+</Grid>
+            <Grid item xs={12} >
+
                 {/* <Typography className={classses.leftContent} variant="h6">
                         FAQ
                     </Typography> */}
                 <List
                     component="nav"
                     aria-labelledby="nested-list-subheader"
-
+                    
                     className={classses.roots}
                 >
-                    <NavLink to={"/faqs"} activeClassName={'active'} style={{ color: '#394578', textDecoration: "none" }} >
+                    <NavLink to={"/faqs"} activeClassName={'active'} className={classses.link} >
 
                         <ListItem button
                             onClick={() => handleClick("faqs")}
+                            selected={window.location.pathname==="/faqs"}
                         >
 
                             <ListItemText primary="FAQs" />

@@ -46,13 +46,13 @@ const value = props.value;
               <Grid className={classes.root}>
             <List style={{paddingTop:"0px"}}>
 
-                <ListItem style={{ padding: "0px" }} autoFocus={false} className={classes.listeditems} button onClick={handleClick}>
+                <ListItem style={{ padding: "0px" }} autoFocus={false} className={classes.listeditems}  onClick={handleClick}>
                   <Typography id={value.href} style={{ width: "100%" }} className={classes.details} dangerouslySetInnerHTML={{ __html: value.title }}></Typography>
                     <List style={{ float: "end", display: "flex" }}> {open ? checkerOpen() : checkerClose()}</List>
                 </ListItem>
                 <Collapse in={open} timeout="auto" unmountOnExit>
                     <List component="div" disablePadding>
-                        <ListItem className={classes.paddingGrid} button >
+                        <ListItem className={classes.paddingGrid}  >
                             <List style={{ padding: "0px" }}>
                                 <Grid container style={{ display: "inline-block !important" }} className={classes.listeditems}>
                                 {value.para&&
