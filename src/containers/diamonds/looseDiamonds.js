@@ -1,20 +1,16 @@
-import React from 'react'
-import styles from './style'
-import Slideshow from 'components/Carousel/carosul'
-import Header from "components/SilverComponents/Header"
-import { Grid, Typography } from "@material-ui/core";
-import { diamondsData } from "mappers/dummydata/diamonds"
-import Story from 'components/story'
-import DiamondShpae from 'components/diamonds/diamondShape'
-import DiamondSelect from 'components/diamonds/select'
-import DiamondRange from 'components/diamonds/range'
-import DiamondList from 'components/diamonds/list'
-
-
+import React from "react";
+import styles from "./style";
+import Slideshow from "components/Carousel/carosul";
+import Header from "components/SilverComponents/Header";
+import { Grid, Typography, Hidden } from "@material-ui/core";
+import { diamondsData } from "mappers/dummydata/diamonds";
+import Story from "components/story";
+import DiamondShpae from "components/diamonds/diamondShape";
+import DiamondSelect from "components/diamonds/select";
+import DiamondRange from "components/diamonds/range";
+import DiamondList from "components/diamonds/list";
 
 export default function Diamonds(props) {
-
-
   const classes = styles();
   const next = () => {
     slider.current.slickNext();
@@ -26,38 +22,52 @@ export default function Diamonds(props) {
   //  const handleRange=(age)=>{
   //    [name]=age
   //  }
-  // const 
-  
+  // const
 
   return (
     <Grid container xs={12}>
       <Header />
 
-      <Grid item xs={12} style={{ position: "relative" }}>
-        {/* <Hidden smDown> */}
-        {diamondsData.carouselTop.setting.arrowsImg && (
-          <Grid container>
-            <Grid
-              item
-              onClick={previous}
-              className={classes.preButton}
-            ></Grid>
-            <Grid
-              item
-              onClick={next}
-              className={classes.nextButton}
-            ></Grid>
-          </Grid>
-        )}
-        {/* </Hidden> */}
+      <Grid item xs={12}>
+        <Hidden smDown>
+          {diamondsData.carouselTop.setting.arrowsImg && (
+            <Grid container>
+              <Grid
+                item
+                onClick={previous}
+                className={classes.preButton}
+              ></Grid>
+              <Grid item onClick={next} className={classes.nextButton}></Grid>
+            </Grid>
+          )}
+        </Hidden>
         <Slideshow
-          dataCarousel={diamondsData.carouselTop.setting}
           sliderRef={slider}
+          dataCarousel={diamondsData.carouselTop.setting}
         >
           {diamondsData.carouselTop.data.map((val, index) => (
-            <Grid container key={index}>
-              <img src={val.img} className={classes.mainCarosel} />
-            </Grid>
+            <>
+              <Hidden smDown>
+                <Grid container key={index}>
+                  <a href={val.navigateUrl} style={{ width: "100%" }}>
+                    <img
+                      src={val.img}
+                      style={{ width: "100%", height: "100%" }}
+                    />
+                  </a>
+                </Grid>
+              </Hidden>
+              <Hidden mdUp>
+                <Grid container key={index}>
+                  <a href={val.navigateUrl}>
+                    <img
+                      src={val.mobileImg}
+                      style={{ width: "100%", height: "100%" }}
+                    />
+                  </a>
+                </Grid>
+              </Hidden>
+            </>
           ))}
         </Slideshow>
       </Grid>
@@ -67,26 +77,32 @@ export default function Diamonds(props) {
           para={diamondsData.data.para}
         />
       </Grid>
-      <Grid container className={classes.dataCon} xs={11} lg={9} >
+      <Grid container className={classes.dataCon} xs={11} lg={10}>
         <DiamondShpae value={diamondsData} />
         <DiamondSelect
         //  handleRange={handleRange()}
         />
         <DiamondRange value={diamondsData} />
       </Grid>
-      <Grid container className={classes.dataCon} xs={11} lg={9} >
+      <Grid
+        
+        className={classes.dataCon}
+        xs={11}
+        lg={10}
+       
+      >
         <Grid item style={{ float: "left", display: "flex" }}>
-          <Typography >Here are some of our best solitaires handpicked for you</Typography>
+          <Typography>
+            Here are some of our best solitaires handpicked for you
+          </Typography>
         </Grid>
         <Grid item style={{ float: "right", display: "flex" }}>
-          <Typography >Showing 1 of 55,649 results</Typography>
+          <Typography>Showing 1 of 55,649 results</Typography>
         </Grid>
       </Grid>
-      <Grid container className={classes.dataCon} xs={11} lg={9} >
+      <Grid container className={classes.dataCon} xs={11} lg={10}>
         <DiamondList />
       </Grid>
-
-
     </Grid>
-  )
+  );
 }

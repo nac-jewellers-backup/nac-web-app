@@ -6,12 +6,12 @@ import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles(theme => ({
   root: {
     width: "100%",
-    paddingBottom: "40px",
+    paddingBottom: "20px",
     textAlign: "center",
     fontSize: "28px"
   },
   main: {
-    padding: "50px 0px"
+    padding: "50px 0px 30px 0px"
   },
   content: {
     fontSize: "17px",

@@ -10,6 +10,8 @@ class Slideshow extends React.Component {
     super(props);
     this.slider = React.createRef();
   }
+
+
   handleVideoCheck = (url) => {
 
     var extensionVideoLists = ['m4v', 'avi', 'mpg', 'mp4', 'webm', 'mp2', 'mpeg', 'mpe', 'mpv', 'ogg', 'm4p', 'wmv', 'mov', 'qt', 'flv', 'swf', 'avchd'];
@@ -67,7 +69,7 @@ class Slideshow extends React.Component {
             <div style={{ paddingTop: '40%' }}>
               <h2 className='next-price'>{val.title}</h2><br />
               <h5 className="contenttext">{val.description}</h5>
-              <a className='info' href={`/${val.url}`}><span className='shop'>SHOP</span></a>
+              <a className='info' href={`/${val.url}`} ><span   className='shop'>SHOP</span></a>
             </div>
           </div>
         </div>
@@ -79,10 +81,10 @@ class Slideshow extends React.Component {
         return (
 
           <a className='info' href={`/${val.url}`} >
-            <div className={"subslider-carousel" + hover ? "hovereffect" : ""}>
+            <div className={"subslider-carousel" + hover ? "hovereffect" : ""} style={{height : window.location.pathname === "/collectionhome" ? "210px" : "170px"}} >
               <img src={val.img} className='subslider-carousel-img img-responsive' alt="" />
-              <div className="overlay1">
-                <h2 className='next-price'>{val.title}</h2><br />
+              <div className="overlay1" style={{height : window.location.pathname === "/collectionhome" ? "210px" : "170px" }} >
+                <h2 className='next-price' style={{marginTop : window.location.pathname === "/collectionhome" ? "65px" : ""}}  >{val.title}</h2><br />
              {val.price &&   <a className='info' href={`/${val.url}`}><span className='sub-list-price'> <i className="fa fa-rupee"></i> &nbsp;{val.price}</span></a>}
               </div>
             </div>

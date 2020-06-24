@@ -6,7 +6,6 @@
   justify-content: center;
 }
 
-
 .continueshopping {
   display: flex;
   align-items: center;
@@ -19,12 +18,12 @@
   -ms-user-select: none;
   user-select: none;
 }
-.highlighter{
+.highlighter {
   -webkit-tap-highlight-color: transparent;
 }
 
 #loadingss {
-  opacity: .5;
+  opacity: 0.5;
   filter: alpha(opacity=5);
   width: 100%;
   height: 100%;
@@ -32,7 +31,8 @@
   top: 0;
   left: 0;
   position: fixed;
-  background: url(https://alpha-assets.stylori.com/images/static/loadingimg.gif) 50% 50% no-repeat #fff;
+  background: url(https://alpha-assets.stylori.com/images/static/loadingimg.gif)
+    50% 50% no-repeat #fff;
 }
 
 .overall-loader {
@@ -80,7 +80,6 @@
   padding-left: 15px;
   padding-right: 15px;
   margin: 0px !important;
-
 }
 
 .rightImg {
@@ -101,7 +100,6 @@
   margin-top: 5px;
   border-right: 1px solid #e8e8e8;
   padding-top: 10px;
-
 }
 
 .mainWidth {
@@ -115,12 +113,12 @@
 
 .GridListImg {
   width: 100%;
-  height: auto,
+  height: auto;
 }
 
 .menuqans {
   width: 100%;
-  height: auto,
+  height: auto;
 }
 
 .fifty {
@@ -128,15 +126,12 @@
 }
 
 .aboutFifty {
-
   width: 50% !important;
   float: left;
-
 }
 
 .fiftyImg {
   width: 50%;
-
 }
 
 /* .aboutwidth{
@@ -145,7 +140,7 @@
 } */
 .aboutwidth {
   max-width: 1170px;
-  margin: auto
+  margin: auto;
 }
 
 .aboutMargin {
@@ -153,11 +148,10 @@
   margin-left: auto;
 }
 
-@media only screen and (max-width:2560px) and (min-width:1441px) {
+@media only screen and (max-width: 2560px) and (min-width: 1441px) {
   .mainContent {
     width: 77%;
     padding: 13px 8px 40px 50px;
-
   }
 
   .sideContent {
@@ -166,7 +160,6 @@
     border-right: 1px solid #e8e8e8 !important;
     margin-left: 0px !important;
     padding-right: 30px;
-
   }
 
   .rightImg {
@@ -190,7 +183,7 @@
   } */
 }
 
-@media only screen and (max-width:1440px) and (min-width:1025px) {
+@media only screen and (max-width: 1440px) and (min-width: 1025px) {
   .mainWidth {
     width: 100%;
   }
@@ -198,7 +191,6 @@
   .mainContent {
     width: 76%;
     padding: 18px 20px 20px 40px;
-
   }
 
   /* .aboutwidth{
@@ -212,7 +204,6 @@
     margin-left: 0px !important;
     padding-right: 10px;
     padding-left: 15px;
-
   }
 
   .rightContent {
@@ -224,7 +215,6 @@
     padding-right: 15px;
     color: #666;
     margin: 0px !important;
-
   }
 
   .imgPadding {
@@ -247,7 +237,6 @@
   .aboutFifty {
     width: 50% !important;
     float: left;
-
   }
 
   .aboutMargin {
@@ -256,7 +245,7 @@
   }
 }
 
-@media only screen and (max-width:1024px) and (min-width:960px) {
+@media only screen and (max-width: 1024px) and (min-width: 960px) {
   .mainWidth {
     width: 100%;
   }
@@ -307,8 +296,6 @@
     margin-top: 5px;
     padding-left: 10px;
     border-right: 1px solid #e8e8e8;
-
-
   }
 
   /* .aboutwidth{
@@ -357,7 +344,6 @@
     font-size: 13px;
     padding-bottom: 12px;
     color: #666;
-
   }
 
   .imgPadding {
@@ -382,7 +368,7 @@
 @media only screen and (max-width: 768px) and (min-width: 0px) {
   .GridListImg {
     width: 100%;
-    height: auto,
+    height: auto;
   }
 
   .imgPadding {
@@ -395,7 +381,7 @@
   } */
   .menuqans {
     width: 100%;
-    height: auto,
+    height: auto;
   }
 
   .mainContent {
@@ -426,7 +412,6 @@
     font-size: 13px;
     padding-bottom: 12px;
     color: #666;
-
   }
 
   .aboutFifty {
@@ -486,14 +471,13 @@
 @media only screen and (min-width: 1200px) {
   .GridListImg {
     width: 1170px;
-    height: auto,
+    height: auto;
   }
 
   .menuqans {
     width: 1170px;
-    height: auto,
+    height: auto;
   }
-
 }
 
 .GridConatiner {
@@ -518,11 +502,11 @@
 
 .slickdev li {
   border: 0px;
-  background-color: #FFF;
+  background-color: #fff;
   width: 10px;
   height: 10px;
   margin: 0px 7px;
-  border-radius: 100%
+  border-radius: 100%;
 }
 
 .slickdev li button {
@@ -543,7 +527,7 @@
 }
 
 .slickdev li button:before {
-  font-family: 'slick';
+  font-family: "slick";
   font-size: 0px;
   line-height: 20px;
   position: absolute;
@@ -551,9 +535,9 @@
   left: 0;
   width: 20px;
   height: 20px;
-  content: '•';
+  content: "•";
   text-align: center;
-  opacity: .25;
+  opacity: 0.25;
   color: black;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -596,7 +580,7 @@
     width: 8px;
     height: 8px;
     margin: 0px 7px;
-    border-radius: 100%
+    border-radius: 100%;
   }
 
   .slickdev li button {
@@ -617,7 +601,7 @@
   }
 
   .slickdev li button:before {
-    font-family: 'slick';
+    font-family: "slick";
     font-size: 0px;
     line-height: 20px;
     position: absolute;
@@ -625,9 +609,9 @@
     left: 0;
     width: 20px;
     height: 20px;
-    content: '•';
+    content: "•";
     text-align: center;
-    opacity: .25;
+    opacity: 0.25;
     color: black;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -651,7 +635,7 @@
 .storiesData {
   color: #394578;
   cursor: pointer;
-  padding: 10px
+  padding: 10px;
 }
 
 .selectedTab {
@@ -692,5 +676,151 @@
     margin: auto !important;
     display: flex;
     justify-content: center;
+  }
+}
+
+.slickdevStatic {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  z-index: 15;
+  width: 60%;
+  padding-left: 0;
+  margin-left: -30%;
+  text-align: center;
+  list-style: none;
+  display: inline-flex !important;
+  justify-content: center;
+}
+
+.slickdevStatic li {
+  border: 0px;
+  background-color: #fff;
+  width: 10px;
+  height: 10px;
+  margin: 0px 7px;
+  border-radius: 100%;
+}
+
+.slickdevStatic li button {
+  border: 0px;
+  background-color: rgb(219, 213, 213);
+  width: 11px;
+  height: 11px;
+  /* display: none; */
+}
+
+.slickdevStatic li.slick-active {
+  background-color: #a4a4a4 !important;
+  /* box-shadow: 0px 4px 5px #888888 !important; */
+  border: 0px solid #a4a4a4;
+  border-radius: 100%;
+  width: 11px;
+  height: 11px;
+}
+
+.slickdevStatic li button:before {
+  font-family: "slick";
+  font-size: 0px;
+  line-height: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  content: "•";
+  text-align: center;
+  opacity: 0.25;
+  color: black;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.slickdevStatic li button {
+  font-size: 0;
+  line-height: 0;
+  display: block;
+  width: 20px;
+  height: 20px;
+  padding: 0px;
+  cursor: pointer;
+  color: transparent;
+  border: 0;
+  outline: none;
+  background: transparent;
+}
+
+@media only screen and (max-width: 768px) {
+  .slickdevStatic {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    z-index: 15;
+    width: 60%;
+    padding-left: 0;
+    margin-left: -30%;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: center;
+    list-style: none;
+    display: inline-flex !important;
+    justify-content: center;
+  }
+
+  .slickdevStatic li {
+    border: 0px;
+    background-color: rgb(219, 213, 213);
+    width: 8px;
+    height: 8px;
+    margin: 0px 7px;
+    border-radius: 100%;
+  }
+
+  .slickdevStatic li button {
+    border: 0px;
+    background-color: rgb(219, 213, 213);
+    width: 8px;
+    height: 8px;
+    /* display: none; */
+  }
+
+  .slickdevStatic li.slick-active {
+    background-color: #394578 !important;
+    border: 1px solid #e6efdd;
+    /* box-shadow: 0px 4px 5px #888888 !important; */
+    border-radius: 100%;
+    width: 7px;
+    height: 7px;
+  }
+
+  .slickdevStatic li button:before {
+    font-family: "slick";
+    font-size: 0px;
+    line-height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    content: "•";
+    text-align: center;
+    opacity: 0.25;
+    color: black;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .slickdevStatic li button {
+    font-size: 0;
+    line-height: 0;
+    display: block;
+    width: 20px;
+    height: 20px;
+    padding: 0px;
+    cursor: pointer;
+    color: transparent;
+    border: 0;
+    outline: none;
+    background: transparent;
   }
 }

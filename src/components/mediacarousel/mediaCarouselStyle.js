@@ -9,7 +9,7 @@ const styles = makeStyles((theme) => ({
   containerHead: {
     display: "-webkit-inline-box !important",
     borderBottom: "1px solid #ddd",
-    padding: "40px 0px",
+    padding: "50px 0px",
     outline: "none !important",
   },
   para: {
@@ -74,17 +74,44 @@ const styles = makeStyles((theme) => ({
   },
   imageGrid: {
     ObjectFit: "cover !important",
-    height: "250px !important",
+    // height: "250px !important",
     [theme.breakpoints.down("sm")]: {
-      height: "150px !important",
+      // height: "150px !important",
     },
   },
   ToggleButton: {
     color: "#5d5d5d",
     fontWeight: "700",
     fontSize: "15px",
-    paddingBottom: "28px",
+
     display: "inline-block",
+    cursor: "pointer",
+  },
+  GridButtonMoreCollection: {
+    display: "flex",
+    justifyContent: "center",
+    width: "100%",
+    padding: "32px 0px 16px 0px",
+  },
+  buttonLink: {
+    fontWeight: "700",
+    color: "#333",
+    textDecoration: "none",
+    fontSize: "14px",
+    display: "flex",
+    cursor: "pointer",
+    "&:hover": {
+      opacity: "0.8",
+    },
+  },
+  MoreCollectionImg: {
+    transform: "rotate(90deg)",
+  },
+
+  imgGridMoreCollection: {
+    display: "flex",
+    alignItems: "center !important",
+    paddingTop: "1px",
   },
 }));
 export default styles;

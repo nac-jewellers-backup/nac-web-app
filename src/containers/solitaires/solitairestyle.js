@@ -14,7 +14,7 @@ const styles = makeStyles((theme) => ({
     left: 0,
     marginTop: "-30px",
     fontSize: "20px",
-    color: "#fff",
+    // color: "#fff",
     textAlign: "center",
     position: "absolute",
     zIndex: 9,

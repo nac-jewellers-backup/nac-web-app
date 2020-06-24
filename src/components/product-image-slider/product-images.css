@@ -977,8 +977,35 @@ body {
     width: 100% !important;
     display: block !important;
 }
-
-
+.subslider-carouselStatic {
+    border: 1px solid #ccc;
+    background-color: #fff;
+    width: 100% !important;
+    text-align: center !important;
+    cursor: pointer !important;
+}
+.subslider-carouselStatic-img {
+    height: 100%;
+    width: auto !important;
+}
+.next-priceStatic {
+    text-transform: uppercase;
+    color: #fff;
+    text-align: center;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    position: relative;
+    font-family: Roboto !important;
+    font-size: 14px !important;
+    transform: translatey(-100px);
+    transition: all .2s ease-in-out;
+    padding: 10px;
+    height: 50px !important;
+    overflow: hidden;
+    font-weight: 400 !important;
+    margin-top: 13%;
+}
 .sub-carousel-head {
     padding: 30px;
 }

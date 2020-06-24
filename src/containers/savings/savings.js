@@ -1,13 +1,11 @@
 import React from "react";
-import { Grid } from "@material-ui/core";
+import { Grid, Hidden } from "@material-ui/core";
 import Slideshow from "components/Carousel/carosul";
 import { SavingPageNac } from "mappers/dummydata/savingNac";
 import MediaCarousel from "../../components/mediacarousel/index";
 import Header from "components/SilverComponents/Header";
 import styles from "./savingsstyle";
 import { IndexSavingPage } from "mappers/dummydata/savingNac";
-import { IndexExperiencePage } from "mappers/dummydata/savingNac";
-import { IndexCollectionHomePage } from "mappers/dummydata/savingNac";
 
 export default function Savings(props) {
   const classes = styles();
@@ -22,17 +20,11 @@ export default function Savings(props) {
   const values = () => {
     if (props.match.path === "/savingscheme") {
       return IndexSavingPage;
-    } else if (props.match.path === "/experiences") {
-      return IndexExperiencePage;
-    } else if (props.match.path === "/collectionhome") {
-      return IndexCollectionHomePage;
-    }
+    } 
   };
   return (
     <Grid container>
-      <Grid item>
-        <Header />
-      </Grid>
+      <Header />
 
       <Grid
         item
@@ -43,15 +35,57 @@ export default function Savings(props) {
         xl={12}
         className={classes.bannerImg}
       >
+        <Hidden smDown>
+          {SavingPageNac.carouselTop.setting.arrowsImg && (
+            <Grid container>
+              <Grid
+                item
+                onClick={previous}
+                className={classes.preButton}
+              ></Grid>
+              <Grid item onClick={next} className={classes.nextButton}></Grid>
+            </Grid>
+          )}
+        </Hidden>
+        <Slideshow
+          sliderRef={slider}
+          dataCarousel={SavingPageNac.carouselTop.setting}
+        >
+          {SavingPageNac.carouselTop.data.map((val, index) => (
+            <>
+              <Hidden smDown>
+                <Grid container key={index} className={classes.headContent}>
+                  <a href={val.navigateUrl} style={{ width: "100%" }}>
+                    <img
+                      src={val.img}
+                      style={{ width: "100%", height: "100%" }}
+                    />
+                  </a>
+                </Grid>
+              </Hidden>
+              <Hidden mdUp>
+                <Grid container key={index} className={classes.headContent}>
+                  <a href={val.navigateUrl}>
+                    <img
+                      src={val.mobileImg}
+                      style={{ width: "100%", height: "100%" }}
+                    />
+                  </a>
+                </Grid>
+              </Hidden>
+            </>
+          ))}
+        </Slideshow>
+
         {/* <Hidden smDown> */}
-        {IndexSavingPage.setting.arrowsImg && (
+        {/* {IndexSavingPage.setting.arrowsImg && (
           <Grid container>
             <Grid item onClick={previous} className={classes.preButton}></Grid>
             <Grid item onClick={next} className={classes.nextButton}></Grid>
           </Grid>
-        )}
+        )} */}
         {/* </Hidden> */}
-        <Slideshow dataCarousel={values().setting} sliderRef={slider}>
+        {/* <Slideshow dataCarousel={values().setting} sliderRef={slider}>
           {values() &&
             values().carouselData &&
             values().carouselData.map((val, index) => (
@@ -59,7 +93,7 @@ export default function Savings(props) {
                 <img src={val.img} className={classes.mainCarosel} />
               </Grid>
             ))}
-        </Slideshow>
+        </Slideshow> */}
       </Grid>
       <Grid xs={12} sm={12} md={12} lg={12} xl={12} container>
         <Grid

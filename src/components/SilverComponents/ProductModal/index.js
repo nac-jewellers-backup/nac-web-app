@@ -74,7 +74,12 @@ const ProductModal = (props) => {
                   {tile.description}
                 </Grid>
                 <Grid container item xs={12} justify="center">
-                  <Button variant="contained" className={`${classes.btnshop}`}>
+                  <Button
+                    variant="contained"
+                    className={`${classes.btnshop}`}
+                   
+                    
+                  >
                     SHOP
                   </Button>
                 </Grid>

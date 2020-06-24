@@ -22,7 +22,7 @@ const styles = makeStyles(theme => ({
         color: "#000",
         display: "flex",
         justifyContent: "center",
-        padding:"15px 0px",
+        padding:"30px 0px 30px 0px",
     
     },
     containersBor:{
@@ -49,7 +49,7 @@ const styles = makeStyles(theme => ({
     containers2:{
         width: "100%",
     float: "left",
-    paddingTop: "20px",
+   
     },
     containers2Item:{
         position: "relative",
