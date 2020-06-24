@@ -103,7 +103,7 @@ export default function SideData(props) {
                 </List>
 
             </Grid>
-            <Grid item xs={12}  onClick={() => handleClick("return")}>
+            <Grid item xs={12}  >
 
                 {/* <Typography className={classses.leftContent} variant="h6">
                         30 Day Return
@@ -118,7 +118,7 @@ export default function SideData(props) {
                     <NavLink to={"/return"} activeClassName={'active'} className={classses.link} >
 
                         <ListItem button
-                           
+                           onClick={() => handleClick("return")}
                             selected={window.location.pathname==="/return"}
                         >
 
