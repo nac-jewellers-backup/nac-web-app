@@ -1,7 +1,7 @@
 import React from "react";
 import { Grid, Hidden } from "@material-ui/core";
 import Slideshow from "components/Carousel/carosul";
-import MediaCarousel from "../../components/mediacarousel/index";
+import MediaCarousel from "../../components/mediacarousel/mediaCarousel";
 import Header from "components/SilverComponents/Header";
 import styles from "containers/savings/savingsstyle";
 import {

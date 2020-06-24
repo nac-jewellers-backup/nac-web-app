@@ -29,8 +29,6 @@ export default function Diamonds(props) {
       <Header />
 
       <Grid item xs={12}>
-     
-
         <Hidden smDown>
           {diamondsData.carouselTop.setting.arrowsImg && (
             <Grid container>
@@ -73,20 +71,26 @@ export default function Diamonds(props) {
           ))}
         </Slideshow>
       </Grid>
-      <Grid container xs={12} >
+      <Grid container xs={12}>
         <Story
           heading={diamondsData.data.heading}
           para={diamondsData.data.para}
         />
       </Grid>
-      <Grid container className={classes.dataCon} xs={11} lg={9}>
+      <Grid container className={classes.dataCon} xs={11} lg={10}>
         <DiamondShpae value={diamondsData} />
         <DiamondSelect
         //  handleRange={handleRange()}
         />
         <DiamondRange value={diamondsData} />
       </Grid>
-      <Grid container className={classes.dataCon} xs={11} lg={9}>
+      <Grid
+        
+        className={classes.dataCon}
+        xs={11}
+        lg={10}
+       
+      >
         <Grid item style={{ float: "left", display: "flex" }}>
           <Typography>
             Here are some of our best solitaires handpicked for you
@@ -96,7 +100,7 @@ export default function Diamonds(props) {
           <Typography>Showing 1 of 55,649 results</Typography>
         </Grid>
       </Grid>
-      <Grid container className={classes.dataCon} xs={11} lg={9}>
+      <Grid container className={classes.dataCon} xs={11} lg={10}>
         <DiamondList />
       </Grid>
     </Grid>
