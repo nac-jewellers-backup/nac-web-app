@@ -4,7 +4,7 @@ import { Grid, Hidden } from "@material-ui/core";
 import Header from 'components/SilverComponents/Header';
 import Accordian from 'components/aboutus/accordian';
 import SideData from 'components/aboutus/sideData';
-import { AboutUs, Terms, Return, Delivery, Privacy, Faqs } from 'mappers/dummydata/aboutUs'
+import { AboutUs, Terms, Return, Delivery, Privacy, Faqs, sidemenu } from 'mappers/dummydata/aboutUs'
 import { Educations, Maps } from 'mappers/dummydata/education'
 import EducationPage from 'components/education/education'
 import SiteMap from 'components/sitemap/sitemap'
@@ -14,7 +14,7 @@ import Footer from "components/Footer/Footer";
 import ContactUs from "containers/contactus/contact"
 
 export default function AboutusPage(props) {
-    debugger
+    
     const [state, setState] = React.useState({
         index: "",
     })
@@ -84,7 +84,7 @@ export default function AboutusPage(props) {
                         <Hidden smDown>
                             <Grid item className={classes.subWidths} lg={3} sm={3} md={3}>
                                 <Grid item className={classes.sideContent}>
-                                    <SideData value={values()} />
+                                    <SideData value={values()} data={sidemenu}/>
                                 </Grid>
                             </Grid>
                         </Hidden>

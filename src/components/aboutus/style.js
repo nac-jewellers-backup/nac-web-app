@@ -47,6 +47,10 @@ const styles = makeStyles(theme => ({
             },
             "& .MuiSvgIcon-root":{
                 fill:'white !important'
+            },
+            "& a":{
+                backgroundColor:"#20205a !important",
+                color:"white",
             }
         }
       },
@@ -102,11 +106,17 @@ const styles = makeStyles(theme => ({
         boxShadow:"0 0 5px #888 !important;"
     },
     link:{
-        color: '#394578', textDecoration: "none",
-        "& .MuiSvgIcon-root":{
-            fill:'#394578 !important'
-        }
+        color: '#394578',
+        textDecoration: "none",
+        cursor:'pointer !important',
+        
 
+    },
+    list:{
+        "& .MuiSvgIcon-root":{
+            fill:'#394578 !important',
+            cursor:'pointer !important'
+        }
     }
 }))
 export default styles;

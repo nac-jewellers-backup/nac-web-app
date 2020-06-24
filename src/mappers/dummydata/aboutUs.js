@@ -1,10 +1,120 @@
+export const sidemenu = [
+  {
+    title: "About Us",
+    link: "/aboutus",
+    subHeading: [
+      {
+        title: "Aboutus",
+      },
+      {
+        title: "Ourhistory",
+      },
+      {
+        title: "Diamonds",
+      },
+      {
+        title: "Youngones",
+      },
+      {
+        title: "Antique",
+      },
+    ],
+  },
+  {
+    title: "Terms & Conditions",
+    link: "/termsconditions",
+    subHeading: [
+      {
+        title: "Terms",
+      },
+      {
+        title: "privacy",
+      },
+      {
+        title: "Informationsite",
+      },
+      {
+        title: "Sitecontent",
+      },
+      {
+        title: "Jewellerycollection",
+      },
+      {
+        title: "Usesite",
+      },
+    ],
+  },
+  {
+    title: "30 Day Return",
+    link: "/return",
+    subHeading: [
+      {
+        title: "30dayreturn",
+      },
+      {
+        title: "lifetime",
+      },
+      {
+        title: "exchange",
+      },
+    ],
+  },
+  {
+    title: "Delivery Info",
+    link: "/delivery",
+    subHeading: [
+      {
+        title: "Deliverypolicy",
+      },
+      {
+        title: "Packaging",
+      },
+      {
+        title: "Freeshipping",
+      },
+    ],
+  },
+  {
+    title: "Privacy Policy",
+    link: "/privacy",
+    subHeading: [
+      {
+        title: "Privacypolicy",
+      },
+      
+      {
+        title: "PersonalInformation",
+      },
+      
+    ],
+  },
+  { title: "Education", link: "/education", subHeading: [] },
+  { title: "Sitemap", link: "/sitemap", subHeading: [] },
+  { title: "Contact Us", link: "/contactus", subHeading: [] },
+  {
+    title: "FAQs",
+    link: "/faqs",
+    subHeading: [
+      {
+        title: "Tracking",
+      },
+      {
+        title: "Jewellery",
+      },
+      {
+        title: "Returns",
+      },
+    ],
+  },
+];
+
 export const AboutUs = {
   heading: [
     {
-      title: "Aboutus",
+      title: "About us",
     },
     {
-      title: "Ourhistory",
+      title: "Our history",
     },
     {
       title: "Diamonds",
@@ -37,24 +147,32 @@ export const AboutUs = {
     },
     data: [
       {
-        img: "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori+CSK-banner-1920-X-656-px.jpg",
-        mobileImg: "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori+CSK-banner-mobile-805X430-px.jpg",
-        navigateUrl: "/jewellery/kada/csk_kada?skuId=1000001"
+        img:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori+CSK-banner-1920-X-656-px.jpg",
+        mobileImg:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori+CSK-banner-mobile-805X430-px.jpg",
+        navigateUrl: "/jewellery/kada/csk_kada?skuId=1000001",
       },
       {
-        img: "https://assets.stylori.com/images/Static+Pages/Home+Page/banner1.jpg",
-        mobileImg: "https://assets.stylori.com/images/Static+Pages/Home+Page/gemstone-mob",
-        navigateUrl: "/gemstone-jewellery?sort=latest"
+        img:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/banner1.jpg",
+        mobileImg:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/gemstone-mob",
+        navigateUrl: "/gemstone-jewellery?sort=latest",
       },
       {
-        img: "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori-Valentine-banner-web.jpg",
-        mobileImg: "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori-Valentine-banner-mob.jpg",
-        navigateUrl: "/hearts-jewellery?sort=bestseller"
+        img:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori-Valentine-banner-web.jpg",
+        mobileImg:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori-Valentine-banner-mob.jpg",
+        navigateUrl: "/hearts-jewellery?sort=bestseller",
       },
       {
-        img: "https://assets.stylori.com/images/Static+Pages/Home+Page/banner3.jpg",
-        mobileImg: "https://assets.stylori.com/images/Static+Pages/Home+Page/rings-collection-mob.jpg",
-        navigateUrl: "/rings-jewellery"
+        img:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/banner3.jpg",
+        mobileImg:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/rings-collection-mob.jpg",
+        navigateUrl: "/rings-jewellery",
       },
     ],
   },
@@ -177,25 +295,33 @@ export const Terms = {
       swipe: false,
     },
     data: [
-        {
-        img: "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori+CSK-banner-1920-X-656-px.jpg",
-        mobileImg: "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori+CSK-banner-mobile-805X430-px.jpg",
-        navigateUrl: "/jewellery/kada/csk_kada?skuId=1000001"
+      {
+        img:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori+CSK-banner-1920-X-656-px.jpg",
+        mobileImg:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori+CSK-banner-mobile-805X430-px.jpg",
+        navigateUrl: "/jewellery/kada/csk_kada?skuId=1000001",
       },
       {
-        img: "https://assets.stylori.com/images/Static+Pages/Home+Page/banner1.jpg",
-        mobileImg: "https://assets.stylori.com/images/Static+Pages/Home+Page/gemstone-mob",
-        navigateUrl: "/gemstone-jewellery?sort=latest"
+        img:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/banner1.jpg",
+        mobileImg:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/gemstone-mob",
+        navigateUrl: "/gemstone-jewellery?sort=latest",
       },
       {
-        img: "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori-Valentine-banner-web.jpg",
-        mobileImg: "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori-Valentine-banner-mob.jpg",
-        navigateUrl: "/hearts-jewellery?sort=bestseller"
+        img:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori-Valentine-banner-web.jpg",
+        mobileImg:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori-Valentine-banner-mob.jpg",
+        navigateUrl: "/hearts-jewellery?sort=bestseller",
       },
       {
-        img: "https://assets.stylori.com/images/Static+Pages/Home+Page/banner3.jpg",
-        mobileImg: "https://assets.stylori.com/images/Static+Pages/Home+Page/rings-collection-mob.jpg",
-        navigateUrl: "/rings-jewellery"
+        img:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/banner3.jpg",
+        mobileImg:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/rings-collection-mob.jpg",
+        navigateUrl: "/rings-jewellery",
       },
     ],
   },
@@ -209,7 +335,7 @@ export const Terms = {
           title: "Terms & Conditions",
           para:
             "These terms and conditions apply to the NAC Jewellers Web site located at www.nacjewellers.com owned and operated By NACJewellers Private Limited and all associated Web sites linked to www.nacjewellers.com by NAC Jewellers , its subsidiaries and affiliates, including NACJewellers sites around the world (collectively ‘the Site’). Please read these terms and conditions (the ‘Terms and Conditions’) carefully. BY USING THE SITE, YOU AGREE TO BE BOUND BY THESE TERMS AND CONDITIONS. These Terms and Conditions govern your use of, and any purchase from, the NAC Jewellers Site, and constitute an agreement between you and NAC Jewellers . NAC JEWELLERS RESERVES THE RIGHT TO CHANGE OR MODIFY ANY OF THESE TERMS AND CONDITIONS OR ANY POLICY OR GUIDELINE OF THE SITE AT ANY TIME, AND IN ITS SOLE DISCRETION. Any change or modification will be effective immediately upon posting of the revisions on the Site. Your continued use of the Site following the posting of its changes or modifications will constitute your acceptance of such changes or modifications. Therefore, you should frequently review these Terms and Conditions and any other applicable policies from time-to-time to understand the terms and conditions that apply to your use of the Site. If you do not agree to the amended terms, you must stop using the Site.",
-          href: "Terms",
+          href: "terms",
         },
         {
           title: "Product Availability and privacy",
@@ -221,19 +347,19 @@ export const Terms = {
           title: "Information on our Site",
           para:
             "At NAC Jewellers , we make every attempt to ensure that our online catalog is as accurate and complete as possible. In order to give you the opportunity to view our products in great detail, some products may appear larger or smaller than their actual size in our photographs; and since every computer monitor is set differently, color and size may vary slightly.<br>Our objective is to provide you with as much information and detail about your prospective purchase as possible so that you can see the beauty and shape of a particular item. In compliance with industry standards and BIS (Bureau of Indian Standards) regulations, NAC Jewellers states that product total weight in all purchases may vary 0.05 grams from stated weight.<br>On the Site, we may provide the measurement of our products based on our manufacturing specifications. Slight tolerances may be accounted for based on finishing during the manufacturing.<br>For diamond jewellery set with multiple shape and size, we provide the minimum total carat weight for the piece. Color and clarity grades are expressed as either a minimum or an average depending on the number of diamonds. If stated as a minimum, all diamonds within the piece are at or above the stated quality. If expressed as an average, collectively the quality is equal to or exceeds the grade stated.",
-          href: "Informationsite",
+          href: "informationsite",
         },
         {
           title: "Site Content",
           para:
             "The Site and all content and other materials including, without limitation, the NAC Jewellers logo, and all designs, text, graphics, pictures, selection, coordination, ‘look and feel’, information, data, software, audio files, video files, other files and the selection and arrangement thereof (collectively, the “Site Materials”) are the proprietary property of NAC Jewellers are protected by trade dress, copyright, patent and trademark laws, and various other intellectual property rights and unfair competition laws.",
-          href: "Sitecontent",
+          href: "sitecontent",
         },
         {
           title: "The Jewellery Collection",
           para:
             "NAC Jewellers, Alluring Diamonds, Breezee, Fabula, Kundan, Men’s, Muhurtham, Nagas, Platinum, Rewind, Rudhramadevi, Young Ones the NAC Jewellers logos, and any other product or service name or slogan contained in our Site are trademarks of NAC Jewellers and its suppliers or licensors, and may not be copied, imitated or used, in whole or in part, without the prior written permission of NAC Jewellers or the applicable trademark holder. You may not use any metatags or any other “hidden text” utilizing “NAC Jewellers ” or any other name, trademark or product or service name of NAC Jewellers without our prior written permission.",
-          href: "Jewellerycollection",
+          href: "jewellerycollection",
         },
         {
           title: "Use of the Site",
@@ -242,7 +368,7 @@ export const Terms = {
           subtitlee: "Cancel an Order",
           para2:
             "To cancel an order, please send an email to care@nacjewellers.com within the same days from order confirmation. Please include the order ID in the subject line. EX: Order Cancellation.",
-          href: "Usesite",
+          href: "usesite",
         },
       ],
     },
@@ -280,25 +406,33 @@ export const Return = {
       swipe: false,
     },
     data: [
-        {
-        img: "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori+CSK-banner-1920-X-656-px.jpg",
-        mobileImg: "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori+CSK-banner-mobile-805X430-px.jpg",
-        navigateUrl: "/jewellery/kada/csk_kada?skuId=1000001"
+      {
+        img:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori+CSK-banner-1920-X-656-px.jpg",
+        mobileImg:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori+CSK-banner-mobile-805X430-px.jpg",
+        navigateUrl: "/jewellery/kada/csk_kada?skuId=1000001",
       },
       {
-        img: "https://assets.stylori.com/images/Static+Pages/Home+Page/banner1.jpg",
-        mobileImg: "https://assets.stylori.com/images/Static+Pages/Home+Page/gemstone-mob",
-        navigateUrl: "/gemstone-jewellery?sort=latest"
+        img:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/banner1.jpg",
+        mobileImg:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/gemstone-mob",
+        navigateUrl: "/gemstone-jewellery?sort=latest",
       },
       {
-        img: "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori-Valentine-banner-web.jpg",
-        mobileImg: "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori-Valentine-banner-mob.jpg",
-        navigateUrl: "/hearts-jewellery?sort=bestseller"
+        img:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori-Valentine-banner-web.jpg",
+        mobileImg:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori-Valentine-banner-mob.jpg",
+        navigateUrl: "/hearts-jewellery?sort=bestseller",
       },
       {
-        img: "https://assets.stylori.com/images/Static+Pages/Home+Page/banner3.jpg",
-        mobileImg: "https://assets.stylori.com/images/Static+Pages/Home+Page/rings-collection-mob.jpg",
-        navigateUrl: "/rings-jewellery"
+        img:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/banner3.jpg",
+        mobileImg:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/rings-collection-mob.jpg",
+        navigateUrl: "/rings-jewellery",
       },
     ],
   },
@@ -310,16 +444,19 @@ export const Return = {
       accordian: [
         {
           title: "30 Day Return policy: (Exchange or Money Back)",
+          href:'30dayreturn',
           para:
             "NAC Jewellers offers a hassle-free 30 day exchange and money back policy. If for any reason you are not satisfied with the product, we will happily provide you with a 100% Exchange or refund on the Invoice value. You can return any of our products except for Non Exchangeable products and Gold Coins within 30 days of receiving the product. We offer FREE return shipping within the 30 day exchange Policy. The value of the product being returned should not exceed Rs.1, 00,000/- in case of Jewellery and Rs.3, 00,000/- in case of Temple Jewellery Solitairesand exclusive collections.",
         },
         {
           title: "Lifetime Exchange",
+          href:'lifetime',
           para:
             "NAC Jewellers offers a hassle-free 30 day exchange and money back policy. If for any reason you are not satisfied with the product, we will happily provide you with a 100% Exchange or refund on the Invoice value. You can return any of our products except for Non Exchangeable products and Gold Coins within 30 days of receiving the product. We offer FREE return shipping within the 30 day exchange Policy. The value of the product being returned should not exceed Rs.1, 00,000/- in case of Jewellery and Rs.3, 00,000/- in case of Temple Jewellery Solitairesand exclusive collections.",
         },
         {
           title: "How to Return/Exchange a product?",
+          href:"exchange",
           para:
             "We have long been known as the connoisseur of rare and timeless jewellery. Crafted with flawless diamonds, our designs have enchanted many loyal patrons, whose fine taste and penchant for exclusive designs have popularized our sparkling diamond collection.<br></br>Breathtakingly designed, right from exquisite nose studs to lovely necklaces, our lavish collections will pass muster even with the most discerning customer. Our comprehensive range is designed with an obsession for quality and intricate craftsmanship to add glitter to glamour.<br></br>With over 40 years of expertise in grading diamonds, our seasoned team of Gemologists handpicks the most perfect diamond and they come with IGI and SGL certification, while our sparkling solitaires certified by GIA.<br></br>A workmanship that bespeaks our commitment to creativity and modern trends, our designs are a work of art. You will find many sparkling designs at the diamond section of Mylapore store and T.Nagar showroom has an entire floor dedicated to our dazzling collection.",
           number: [
@@ -413,25 +550,33 @@ export const Delivery = {
       swipe: false,
     },
     data: [
-        {
-        img: "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori+CSK-banner-1920-X-656-px.jpg",
-        mobileImg: "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori+CSK-banner-mobile-805X430-px.jpg",
-        navigateUrl: "/jewellery/kada/csk_kada?skuId=1000001"
+      {
+        img:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori+CSK-banner-1920-X-656-px.jpg",
+        mobileImg:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori+CSK-banner-mobile-805X430-px.jpg",
+        navigateUrl: "/jewellery/kada/csk_kada?skuId=1000001",
       },
       {
-        img: "https://assets.stylori.com/images/Static+Pages/Home+Page/banner1.jpg",
-        mobileImg: "https://assets.stylori.com/images/Static+Pages/Home+Page/gemstone-mob",
-        navigateUrl: "/gemstone-jewellery?sort=latest"
+        img:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/banner1.jpg",
+        mobileImg:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/gemstone-mob",
+        navigateUrl: "/gemstone-jewellery?sort=latest",
       },
       {
-        img: "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori-Valentine-banner-web.jpg",
-        mobileImg: "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori-Valentine-banner-mob.jpg",
-        navigateUrl: "/hearts-jewellery?sort=bestseller"
+        img:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori-Valentine-banner-web.jpg",
+        mobileImg:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori-Valentine-banner-mob.jpg",
+        navigateUrl: "/hearts-jewellery?sort=bestseller",
       },
       {
-        img: "https://assets.stylori.com/images/Static+Pages/Home+Page/banner3.jpg",
-        mobileImg: "https://assets.stylori.com/images/Static+Pages/Home+Page/rings-collection-mob.jpg",
-        navigateUrl: "/rings-jewellery"
+        img:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/banner3.jpg",
+        mobileImg:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/rings-collection-mob.jpg",
+        navigateUrl: "/rings-jewellery",
       },
     ],
   },
@@ -443,16 +588,19 @@ export const Delivery = {
       accordian: [
         {
           title: "Delivery Policy",
+          href:'deliverypolicy',
           para:
             "NAC Jewellers offers FREE shipping on every order within India*( valid for the contiguous 29 states, Puducherry and Delhi only!) as an introductory offer for a limited period. Your order will be shipped to you fully insured. We urge all customers to inspect the package for any damage or tamper before receiving or signing for receipt<br>After your item has been packaged, it will be shipped and delivered free via one of the following carriers.<br></br>1. Blue dart<br>2. Speed post<br>3. Sequel Logistics",
         },
         {
           title: "Packaging",
+          href:'packaging',
           para:
             "Every jewellery package from NAC Jewellers arrives at your doorstep in a durable, tamper-proof packing. Whether it is a jewellery, gold coin or solitaire, your item is delivered to you in an exclusive NAC Jewellers box along with the relevant certificates.",
         },
         {
           title: "Free Shipping",
+          href:'freeshipping',
           para:
             "In case your purchase is intended as a gift, we offer free gift packing, along with a gift message of your choice. Your gift will be delivered in distinctive NAC Jewellers gift packing. So whether you order a gift to give to your loved ones personally, or want us to deliver it, the recipient is sure to be impressed.<br></br>To send a free gift message with your gift, look for the Gift message text box in the shopping bag/cart page. Your personal message will be printed on a distinctive card and delivered along with the gift.",
           norDots: [
@@ -495,7 +643,7 @@ export const Delivery = {
 export const Privacy = {
   heading: [
     {
-      title: "Deliverypolicy",
+      title: "Privacypolicy",
     },
     {
       title: "Packaging",
@@ -529,25 +677,33 @@ export const Privacy = {
       swipe: false,
     },
     data: [
-        {
-        img: "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori+CSK-banner-1920-X-656-px.jpg",
-        mobileImg: "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori+CSK-banner-mobile-805X430-px.jpg",
-        navigateUrl: "/jewellery/kada/csk_kada?skuId=1000001"
+      {
+        img:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori+CSK-banner-1920-X-656-px.jpg",
+        mobileImg:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori+CSK-banner-mobile-805X430-px.jpg",
+        navigateUrl: "/jewellery/kada/csk_kada?skuId=1000001",
       },
       {
-        img: "https://assets.stylori.com/images/Static+Pages/Home+Page/banner1.jpg",
-        mobileImg: "https://assets.stylori.com/images/Static+Pages/Home+Page/gemstone-mob",
-        navigateUrl: "/gemstone-jewellery?sort=latest"
+        img:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/banner1.jpg",
+        mobileImg:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/gemstone-mob",
+        navigateUrl: "/gemstone-jewellery?sort=latest",
       },
       {
-        img: "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori-Valentine-banner-web.jpg",
-        mobileImg: "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori-Valentine-banner-mob.jpg",
-        navigateUrl: "/hearts-jewellery?sort=bestseller"
+        img:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori-Valentine-banner-web.jpg",
+        mobileImg:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori-Valentine-banner-mob.jpg",
+        navigateUrl: "/hearts-jewellery?sort=bestseller",
       },
       {
-        img: "https://assets.stylori.com/images/Static+Pages/Home+Page/banner3.jpg",
-        mobileImg: "https://assets.stylori.com/images/Static+Pages/Home+Page/rings-collection-mob.jpg",
-        navigateUrl: "/rings-jewellery"
+        img:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/banner3.jpg",
+        mobileImg:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/rings-collection-mob.jpg",
+        navigateUrl: "/rings-jewellery",
       },
     ],
   },
@@ -558,6 +714,7 @@ export const Privacy = {
       accordian: [
         {
           title: "Privacy Policy",
+          href:'privacypolicy',
           para: `Thank you for visiting NAC Jewellers. We want you to know that your privacy is important to us. Our customers are at the heart of everything we do, and we strive to ensure your experience with NAC Jewellers is one that you will want to repeat and share with your friends. Part of our commitment to you is to respect and protect the privacy of the personal information you provide to us. The information below is designed to inform you of what information we collect, why we collect such information, and how we use the information we collect. This Privacy Policy is incorporated into our Terms of Service.<br></br>When you submit your personal information to us, you are giving us your consent to the collection, use, and disclosure of your information as set forth in this Privacy Policy. We are always available to discuss your questions or concerns regarding this Privacy Policy and our privacy practices. If you would like to speak to a customer service representative, please contact us via telephone at +91 44 43996666 or email at mail@nacjewellers.com<br></br>NAC Jewellers will occasionally update this Privacy Policy. When a revision is made we will revise the "last updated" date on this page. We encourage you to check the date of our Privacy Policy each time you visit our Website for any updates or changes. Your use of our Website constitutes your consent to this Privacy Policy, including any changes or updates. We may make additional features, functionality, offers, activities, or events ("opportunities") available to you subject to additional or different privacy rules that we disclose in connection with those opportunities.`,
           img: [
             {
@@ -582,6 +739,7 @@ export const Privacy = {
         },
         {
           title: "Collection and Use of Information",
+          href:'privacypolicy',
           para:
             "As a welcome guest, you can browse our Website without telling us who you are or revealing any personal information about yourself. At various times, you may decide to provide us with your personal information. You should know that we receive and may store all personal information (whether written or oral) that you provide to us through whatever means you provide such information (through our Website, via e-mail, over the telephone, etc.). Personal information means any information that may be used to identify an individual, including, but not limited to, a first and last name, home, billing or other physical address or email address as well as any information associated with the foregoing. In addition to your contact information, we may collect information about your purchases, billing address, shipping address, gender, occupation, birthday, marital status, anniversary, interests, phone number or other contact information, and credit card information. We may combine the information you provide to us over time and we may combine such information with information that is publicly available, collected through data collection devices, and information that we receive from our partners, affiliates and other third parties.",
         },
@@ -592,6 +750,7 @@ export const Privacy = {
         },
         {
           title: "Personal Information that we May Share with Others",
+          href:'personalinformation',
           para:
             "In certain circumstances, we may share your personal information with trusted partners.",
           dots: [
@@ -667,25 +826,33 @@ export const Faqs = {
       swipe: false,
     },
     data: [
-        {
-        img: "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori+CSK-banner-1920-X-656-px.jpg",
-        mobileImg: "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori+CSK-banner-mobile-805X430-px.jpg",
-        navigateUrl: "/jewellery/kada/csk_kada?skuId=1000001"
+      {
+        img:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori+CSK-banner-1920-X-656-px.jpg",
+        mobileImg:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori+CSK-banner-mobile-805X430-px.jpg",
+        navigateUrl: "/jewellery/kada/csk_kada?skuId=1000001",
       },
       {
-        img: "https://assets.stylori.com/images/Static+Pages/Home+Page/banner1.jpg",
-        mobileImg: "https://assets.stylori.com/images/Static+Pages/Home+Page/gemstone-mob",
-        navigateUrl: "/gemstone-jewellery?sort=latest"
+        img:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/banner1.jpg",
+        mobileImg:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/gemstone-mob",
+        navigateUrl: "/gemstone-jewellery?sort=latest",
       },
       {
-        img: "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori-Valentine-banner-web.jpg",
-        mobileImg: "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori-Valentine-banner-mob.jpg",
-        navigateUrl: "/hearts-jewellery?sort=bestseller"
+        img:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori-Valentine-banner-web.jpg",
+        mobileImg:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori-Valentine-banner-mob.jpg",
+        navigateUrl: "/hearts-jewellery?sort=bestseller",
       },
       {
-        img: "https://assets.stylori.com/images/Static+Pages/Home+Page/banner3.jpg",
-        mobileImg: "https://assets.stylori.com/images/Static+Pages/Home+Page/rings-collection-mob.jpg",
-        navigateUrl: "/rings-jewellery"
+        img:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/banner3.jpg",
+        mobileImg:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/rings-collection-mob.jpg",
+        navigateUrl: "/rings-jewellery",
       },
     ],
   },
@@ -697,6 +864,7 @@ export const Faqs = {
       accordian: [
         {
           title: "Delivery & Tracking",
+          href:"tracking",
           deliver: [
             {
               faqSubtitle:
@@ -718,6 +886,7 @@ export const Faqs = {
         },
         {
           title: "Jewellery",
+          href :'jewellery',
           faqTitle11: "Where is the jewellery made?",
           faqPara:
             "We make our jewellery through our network of craftsmen across India, while we source diamonds and gemstones from across the globe.",
@@ -757,6 +926,7 @@ export const Faqs = {
         },
         {
           title: "Returns",
+          href:'returns',
           faqTitle1: "How to Return/Exchange a product?",
           data: [
             {

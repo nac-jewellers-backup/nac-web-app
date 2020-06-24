@@ -38,7 +38,7 @@ export default function Templework(props) {
 
   return (
     <Grid container>
-      <Grid item>
+      <Grid item xs = {12}>
         <Header />
       </Grid>
       <Grid

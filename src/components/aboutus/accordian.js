@@ -10,7 +10,7 @@ export default function Accordian(props) {
         {props.value &&
           props.value.data &&
           props.value.data.map((val, i) => {
-              debugger
+              
             return (
               <Grid container>
                 {val &&
