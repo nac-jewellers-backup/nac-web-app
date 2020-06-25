@@ -22,6 +22,16 @@
       "darkFirst": "rgba(234, 83, 129, 1)",
       "contrastText": "#fff"
     },
+    "gold":{
+      "main":"#b78231"
+    },
+    "stylori":{
+      "pinkMain":"#ed1165"
+    },
+    "typography": {
+      "fontFamily": "notoSerif-regular"
+      
+     },
     "error": {
       "light": "rgba(199, 110, 108, 1)",
       "main": "rgba(185, 74, 72, 1)",

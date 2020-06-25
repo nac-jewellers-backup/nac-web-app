@@ -162,7 +162,7 @@ export const styles = theme => ({
   },
   menuListCursor: {
     cursor: 'pointer',
-    fontFamily: 'Roboto',
+    fontFamily:'notoSerif-regular',
     fontWeight: 600,
     color: "#6e6d72",
     '&:hover': {
@@ -196,7 +196,7 @@ export const styles = theme => ({
     width: "100%",
     fontSize: "11px",
     letterSpacing: "1px",
-    fontFamily: "Roboto",
+    fontFamily:'notoSerif-regular',
   },
   subtitleContainer: {
     backgroundColor: "#fff !important",
@@ -229,7 +229,7 @@ export const useStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.background.fade,
     color: 'white',
     '& span': {
-      fontFamily: 'Roboto',
+      fontFamily:'notoSerif-regular',
       letterSpacing: '1px'
     },
     '& nav': {
@@ -254,7 +254,7 @@ export const useStyles = makeStyles(theme => ({
     color: theme.palette.background.fade,
     cursor: "pointer",
     '& span': {
-      fontFamily: 'Roboto',
+      fontFamily:'notoSerif-regular',
       letterSpacing: '1px',
       cursor: "pointer",
     },

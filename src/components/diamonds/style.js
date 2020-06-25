@@ -15,7 +15,7 @@ const styles = makeStyles(theme => ({
       paddingBottom:"50px",
     },
     containers:{
-        fontFamily: "Libre Baskerville",
+        fontFamily: "notoSerif-regular",
         fontSize: "20px",
         textAlign: "center",
         padding: "20px 0",
@@ -26,7 +26,7 @@ const styles = makeStyles(theme => ({
     
     },
     containersBor:{
-        fontFamily: "Libre Baskerville",
+        fontFamily: "notoSerif-regular",
         fontSize: "20px",
         textAlign: "center",
         padding: "20px 0",
@@ -39,7 +39,7 @@ const styles = makeStyles(theme => ({
     
     },
     text:{
-        fontFamily: "Libre Baskerville",
+        fontFamily: "notoSerif-regular",
         fontSize: "20px",
         textAlign: "center",
         color: "#000",

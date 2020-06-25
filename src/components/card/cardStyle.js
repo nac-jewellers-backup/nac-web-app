@@ -2,7 +2,7 @@ import { makeStyles } from "@material-ui/core/styles";
 const styles = makeStyles(theme => ({
   titlePage: {
     fontSize: "28px",
-    fontFamily: "Libre Baskerville",
+    fontFamily: "notoSerif-regular",
     fontWeight: "500 !important",
     lineHeight: "1.1",
     color: "#1c1c1c",
@@ -10,7 +10,7 @@ const styles = makeStyles(theme => ({
     textAlign: "center"
   },
   contentTemple: {
-    fontFamily: "Libre Baskerville",
+    fontFamily: "notoSerif-regular",
     lineHeight: "30px",
     textAlign: "center",
     color: "#5d5d5d",
@@ -47,7 +47,7 @@ const styles = makeStyles(theme => ({
   cardName: {
     fontSize: "18px",
     color: "#1e1e1e",
-    fontFamily: "Source Sans Pro",
+    fontFamily: "notoSerif-regular",
     lineHeight: "1.42857",
     padding: "20px 0px 20px 15px"
   },
@@ -61,14 +61,14 @@ const styles = makeStyles(theme => ({
   cardMetal: {
     color: "#5d5d5d",
     fontSize: "15px",
-    fontFamily: "Source Sans Pro",
+    fontFamily: "notoSerif-regular",
     lineHeight: "1.42857",
     padding: "3px 0px 3px 15px"
   },
   cardLocation: {
     fontSize: "12px",
     color: "#969696",
-    fontFamily: "Source Sans Pro",
+    fontFamily: "notoSerif-regular",
     lineHeight: "1.42857",
     padding: "35px 0px 30px 15px"
   },
@@ -82,7 +82,7 @@ const styles = makeStyles(theme => ({
     color: "#000"
   },
   dialogText: {
-    fontFamily: "Source Sans Pro !important",
+    fontFamily: "notoSerif-regular !important",
     fontSize: "18px !important",
     color: "#5d5d5d !important",
     lineHeight: "1.42857 !important",

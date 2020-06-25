@@ -42,12 +42,12 @@ const useStyles = makeStyles(theme => ({
     color: "#000",
     padding: "8px 20px",
     fontSize: "1.3rem !important",
-    fontFamily: "Roboto",
+    fontFamily:'notoSerif-regular',
     fontWeight: 500
   },
   valued: {
     fontSize: "0.85rem !important",
-    fontFamily: "Roboto",
+    fontFamily:'notoSerif-regular',
     color: "#5d5d5d",
   },
   mapped: {

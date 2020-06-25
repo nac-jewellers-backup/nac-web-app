@@ -37,7 +37,7 @@ const useStyles = makeStyles(theme => ({
         border: "1px solid #ccc",
         borderRadius: " 0px",
         height: "40px !important",
-        fontFamily: "Robot-Black!important",
+        fontFamily: "notoSerif-regular",
 
     },
     closeContainer: {

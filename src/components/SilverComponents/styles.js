@@ -21,6 +21,46 @@ export const styles = theme => ({
     justifyContent: "center",
     alignContent: "center"
   },
+  goldCurrentRate:{
+    display: 'flex',
+    color: 'black',
+    justifyContent: 'flex-end',
+    "& .MuiInput-underline":{
+      // "& ::hover":{
+        // "&::not(.Mui-disabled)":{ 
+          "&::before":{
+            borderBottom:'none !important'
+          },
+          "&::after":{
+            borderBottom:'none !important'
+          }
+        // }
+      // }
+    },
+    "& .MuiSelect-selectMenu":{
+      fontSize:13,
+      color:'white',
+      padding:"3px 0px"
+    }
+    // .MuiInput-underline:hover:not(.Mui-disabled):before
+  },
+  goldRateformControl:{
+width:"100%",
+margin: theme.spacing(1),
+minWidth: 120,
+backgroundColor:theme.palette.gold.main,
+boxShadow:"6px 7px 6px #bebfbf"
+  },
+  menunac:{
+backgroundColor:theme.palette.secondary.main
+  },
+  menustylori:{
+    backgroundColor:theme.palette.stylori.pinkMain,
+    display:'flex',
+    justifyContent:'center',
+    alignItems:'center',
+    fontSize:'1.3rem'
+  },
   searchcontainerplain: {
     padding: "4px",
     // backgroundColor: theme.palette.secondary.dark,
@@ -81,26 +121,26 @@ export const styles = theme => ({
     letterSpacing: 2
   },
   headerNavbarList: {
-    color: theme.palette.secondary.dark,
-    textAlign: 'right'
+    color: 'white',
+    textAlign: 'left'
   },
   menuListCursor: {
     cursor: 'pointer',
-    fontFamily: 'Roboto',
+    fontFamily:'notoSerif-regular',
     fontWeight: 600,
-    color: "#6e6d72",
-    borderBottom: "1px solid #fff",
+    color: "white",
+    // borderBottom: "1px solid #fff",
     '&:hover': {
-      color: theme.palette.secondary.dark,
+      color: 'white',
       // paddingBottom: "2px",
-      borderBottom: "1px solid " + theme.palette.secondary.dark,
+      // borderBottom: "1px solid " + theme.palette.secondary.dark,
     }
   },
   seletectedMenu: {
     color: theme.palette.secondary.dark,
     // paddingBottom: "2px",
     cursor: 'pointer',
-    fontFamily: 'Roboto',
+    fontFamily:'notoSerif-regular',
     fontWeight: 600,
     borderBottom: "1px solid #fff",
     // borderBottom: "1px solid " + theme.palette.secondary.dark,
@@ -134,7 +174,7 @@ export const styles = theme => ({
     width: "100%",
     fontSize: "11px",
     letterSpacing: "1px",
-    fontFamily: "Roboto",
+    fontFamily:'notoSerif-regular',
   },
   subtitleContainer: {
     backgroundColor: "#fff !important",
@@ -167,7 +207,7 @@ export const useStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.background.fade,
     color: 'white',
     '& span': {
-      fontFamily: 'Roboto',
+      fontFamily:'notoSerif-regular',
       letterSpacing: '1px'
     },
     '& nav': {
@@ -192,7 +232,7 @@ export const useStyles = makeStyles(theme => ({
     color: theme.palette.background.fade,
     cursor: "pointer",
     '& span': {
-      fontFamily: 'Roboto',
+      fontFamily:'notoSerif-regular',
       letterSpacing: '1px',
       cursor: "pointer",
     },

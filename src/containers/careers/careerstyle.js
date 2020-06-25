@@ -45,7 +45,7 @@ const  currentstyles = makeStyles(theme => ({
     {
     justifyContent:"center",
     textAlign:"center",
-    fontFamily: "Libre Baskerville",
+    fontFamily: "notoSerif-regular",
     fontWeight: "500",
     lineHeight: "1.1",
     color: "#5d5d5d",

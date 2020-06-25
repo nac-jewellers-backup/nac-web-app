@@ -21,7 +21,7 @@ export default function Experience(props) {
   const slider = React.createRef();
 
   const values = () => {
-    debugger
+    
     if (props.match.path === "/experiences") {
       return IndexExperiencePage;
     }

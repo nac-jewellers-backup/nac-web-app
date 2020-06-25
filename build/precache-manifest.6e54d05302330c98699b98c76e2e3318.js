@@ -1,34 +1,34 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f07194dfffd0a76f4b481afaf6a4fa8a",
+    "revision": "2e8b089ec6473e89f1e4f4769edd5192",
     "url": "/index.html"
   },
   {
-    "revision": "9ab0ff5f1b9723576de5",
+    "revision": "f6dfef0aa9371d3701c8",
     "url": "/static/css/2.css"
   },
   {
-    "revision": "fd50abce7fefd578cc53",
+    "revision": "c360e60eed1249434c5f",
     "url": "/static/css/3.css"
   },
   {
-    "revision": "ca5be1b8ecdb5cb7faff",
+    "revision": "5815ea11215a967a75bd",
     "url": "/static/css/main.css"
   },
   {
-    "revision": "9ab0ff5f1b9723576de5",
+    "revision": "f6dfef0aa9371d3701c8",
     "url": "/static/js/2.js"
   },
   {
-    "revision": "fd50abce7fefd578cc53",
+    "revision": "c360e60eed1249434c5f",
     "url": "/static/js/3.js"
   },
   {
-    "revision": "2280523d5c5af3f30bd3",
+    "revision": "7681b84d05609b8ad890",
     "url": "/static/js/4.js"
   },
   {
-    "revision": "ca5be1b8ecdb5cb7faff",
+    "revision": "5815ea11215a967a75bd",
     "url": "/static/js/main.js"
   },
   {
@@ -40,8 +40,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/FlowerDimon.jpg"
   },
   {
-    "revision": "11eabca2251325cfc5589c9c6fb57b46",
-    "url": "/static/media/Roboto-Regular.ttf"
+    "revision": "d1c72e0e788cf2bbc1de53da57599bec",
+    "url": "/static/media/NotoSerif-Regular.ttf"
   },
   {
     "revision": "5c8caf8f7ea7126619cea19d463c5146",

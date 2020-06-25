@@ -55,13 +55,13 @@ export const useStyles = makeStyles((theme) => ({
     boxShadow: "0 8px 16px 0 #ccc, 0 6px 20px 0 #ccc",
     padding: "0px 22px",
     fontWeight: "bold",
-    fontFamily: "Robot-Bold",
+    fontFamily: "notoSerif-Bold",
     letterSpacing: "5px",
     fontSize: "22px",
   
   },
   productCardTitle: {
-    fontFamily: "Robot-Bold",
+    fontFamily: "notoSerif-Bold",
     color: theme.palette.secondary.dark,
     letterSpacing: "5px",
     fontSize: "1.7rem",
@@ -71,7 +71,7 @@ export const useStyles = makeStyles((theme) => ({
   },
   productCardDescription: {
     textAlign: "center",
-    fontFamily: "Robot-Regular",
+    fontFamily: "notoSerif-regular",
     color: theme.palette.secondary.dark,
     paddingTop: "2%",
     paddingBottom: "5%",

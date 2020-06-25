@@ -41,11 +41,11 @@ const useStyles = makeStyles(theme => ({
     color: "#fff",
     padding: "8px 20px",
     fontSize: "1.0rem !important",
-    fontFamily: "Roboto"
+    fontFamily:'notoSerif-regular'
   },
   valued: {
     fontSize: "0.85rem !important",
-    fontFamily: "Roboto"
+    fontFamily:'notoSerif-regular'
   },
   mapped: {
     minWidth: "400px"

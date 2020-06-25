@@ -20,7 +20,7 @@ const useStyles = makeStyles(theme => ({
     textAlign: "justify",
     width: "65%",
     color: "#5d5d5d",
-    fontFamily: "Libre Baskerville",
+    fontFamily: "notoSerif-regular",
     [theme.breakpoints.between("xs", "sm")]: {
       width: "83% !important"
     }

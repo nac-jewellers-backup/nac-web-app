@@ -252,7 +252,7 @@
   letter-spacing: 1px;
   color: #fff;
   text-transform: capitalize;
-  font-family: Roboto;
+  font-family: notoSerif-regular;
 }
 
 .Jew-mbl-head-list1 {
@@ -366,7 +366,7 @@ i {
 
 .ListColor {
   font-size: 12px;
-  /* font-family: "Roboto"; */
+  /* font-family: "notoSerif-regular"; */
   border-left: 3px solid white;
   cursor: pointer;
 }
@@ -467,7 +467,7 @@ i {
   box-sizing: border-box;
   transition: transform 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
   align-items: center;
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-family: "notoSerif-regular",sans-serif;
   font-weight: 500;
   align-content: center;
   border-radius: 10px;
@@ -632,10 +632,10 @@ i {
 
 .cartcardrelese {
   /* margin-bottom: 20px; */
-  margin-top: 20px
+  margin-top: 5px
 }
 
-.headerTopcard {
+.headerTopcard { 
   height: 58px
 }
 

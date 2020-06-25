@@ -3,7 +3,7 @@
 body {
 
     margin: 0;
-    font-family: 'Roboto';
+    font-family: 'notoSerif-regular';
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
@@ -12,7 +12,7 @@ body {
 .MuiTab-root,
 .MuiButton-root,
 .MuiInputBase-input {
-    font-family: 'Roboto' !important;
+    font-family: 'notoSerif-regular' !important;
 }
 
 /* product hovering price*/
@@ -197,14 +197,14 @@ body {
 .tabs-contants {
     font-size: 11px !important;
     margin: auto !important;
-    font-family: 'Roboto' !important;
+    font-family: 'notoSerif-regular' !important;
     text-align: center !important;
 }
 
 .tabs-cont {
     font-size: 9px !important;
     margin: auto !important;
-    font-family: 'Roboto' !important;
+    font-family: 'notoSerif-regular' !important;
     text-align: center !important;
 }
 
@@ -615,7 +615,7 @@ body {
     min-width: 100px;
     font-size: 13px !important;
     padding: 10px 17px !important;
-    font-family: "Roboto"
+    font-family: "notoSerif-regular"
 }
 
 .form-reviews-mob:hover {
@@ -946,7 +946,7 @@ body {
     justify-content: center !important;
     align-items: center !important;
     position: relative;
-    font-family: Roboto !important;
+    font-family: notoSerif-regular !important;
     font-size: 14px !important;
     transform: translatey(-100px);
     transition: all .2s ease-in-out;
@@ -1431,7 +1431,7 @@ body {
     } */
 
 .wrappercustom {
-    /* font-family: "Roboto" !important; */
+    /* font-family: "notoSerif-regular" !important; */
     width: 100% !important;
     height: 35px;
     color: #394578 !important;
@@ -1484,7 +1484,7 @@ body {
     color: #394578 !important;
     font-size: 14px !important;
     text-transform: capitalize;
-    font-family: roboto;
+    font-family: notoSerif-regular;
     font-weight: 500;
 }
 

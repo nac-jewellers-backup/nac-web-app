@@ -5,7 +5,7 @@
 } */
 .MuiTypography-h4,
 .MuiInputBase-input {
-  /* font-family: "Roboto" !important; */
+  /* font-family: "notoSerif-regular" !important; */
 }
 
 .filter-drawer-list {
@@ -147,7 +147,7 @@
   /* padding: 2px; */
   /* color: #394578; */
   cursor: pointer;
-  /* font-family: "Roboto" !important; */
+  /* font-family: "notoSerif-regular" !important; */
   /* font-size: 15px; */
   /* font-weight: 600 !important; */
 }
@@ -166,7 +166,7 @@
   /* color: #394578; */
   color: #666;
   cursor: pointer;
-  /* font-family: "Roboto" !important; */
+  /* font-family: "notoSerif-regular" !important; */
   font-size: 12px !important;
   /* font-weight: 600 !important; */
 }

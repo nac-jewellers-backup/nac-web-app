@@ -13,14 +13,14 @@ const styles = makeStyles(theme => ({
     {
         fontSize:"25px",
         color:"black",
-        fontFamily: "Libre BaskerVille",
+        fontFamily: "notoSerif-regular",
         maxWidth:"100%"
     },
     grid_4:
     {
         fontSize:"20px",
         color:"black",
-        fontFamily: "Libre BaskerVille",
+        fontFamily: "notoSerif-regular",
         marginTop:"4%", 
         fontWeight: "500",
     lineHeight: "1.1",      
@@ -120,7 +120,7 @@ const styles = makeStyles(theme => ({
     },
     grid_11:
     {
-      fontFamily: "Source Sans Pro",
+      fontFamily: "notoSerif-regular",
       marginTop:"8%",
       fontSize:"15px",
       justifyContent:"center",

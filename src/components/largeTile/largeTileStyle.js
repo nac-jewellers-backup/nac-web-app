@@ -149,14 +149,14 @@ main:{
     paddingTop:"40px",
 },
 para:{
-    fontFamily: "Source Sans Pro",
+    fontFamily: "notoSerif-regular",
     fontSize: "15px",
     lineHeight: 1.42857,
     color: "#5d5d5d",
     paddingBottom:"30px",
 },
 heading:{
-    fontFamily: "Libre Baskerville",
+    fontFamily: "notoSerif-regular",
     padding: "30px 0",
     fontSize: "21px",
     color: "#333",

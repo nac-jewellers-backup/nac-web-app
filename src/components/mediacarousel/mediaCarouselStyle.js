@@ -2,7 +2,7 @@ import { makeStyles } from "@material-ui/core/styles";
 const styles = makeStyles((theme) => ({
   heading: {
     fontSize: "30px !important",
-    fontFamily: "Libre Baskerville",
+    fontFamily: "notoSerif-regular",
     fontWeight: "500 !important",
     lineHeight: "1.1",
   },
@@ -14,7 +14,7 @@ const styles = makeStyles((theme) => ({
   },
   para: {
     padding: "30px 0px 8px 0px",
-    fontFamily: "Source Sans Pro !important",
+    fontFamily: "notoSerif-regular !important",
     fontSize: "15px",
     lineHeight: "30px",
     color: "#5d5d5d !important",

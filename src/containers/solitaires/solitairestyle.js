@@ -97,7 +97,7 @@ const styles = makeStyles((theme) => ({
     color: "#fff",
     fontSize: "60px",
     fontWeight: "600",
-    fontFamily: "Libre Baskerville !important",
+    fontFamily: "notoSerif-regular !important",
     width : "40%",
     top : "20%",
     left : "16%",
@@ -109,7 +109,7 @@ const styles = makeStyles((theme) => ({
   },
   heading: {
     fontSize: "32px !important",
-    fontFamily: "Libre Baskerville !important",
+    fontFamily: "notoSerif-regular !important",
     padding: "40px",
     fontWeight: "500  !important",
     lineHeight: "1.1",
@@ -121,7 +121,7 @@ const styles = makeStyles((theme) => ({
     justifyContent: "center",
   },
   bodyContent: {
-    fontFamily: "Libre Baskerville !important",
+    fontFamily: "notoSerif-regular !important",
     fontSize: "16px",
     lineHeight: 1.8,
     color: "#5d5d5d",

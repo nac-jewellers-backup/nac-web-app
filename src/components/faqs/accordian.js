@@ -27,7 +27,7 @@ const useStyles = makeStyles(theme => ({
         fontWeight: 600,
         // marginTop: "3%",
         fontSize: "21px",
-        fontFamily: "Roboto",
+        fontFamily:'notoSerif-regular',
         // paddingBottom: "10px"
         
     },
@@ -36,7 +36,7 @@ const useStyles = makeStyles(theme => ({
         fontWeight: 600,
         // marginTop: "3%",
         fontSize: "15px",
-        fontFamily: "Roboto",
+        fontFamily:'notoSerif-regular',
         paddingTop: "10px"
     },
   

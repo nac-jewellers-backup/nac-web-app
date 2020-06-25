@@ -269,7 +269,7 @@ export default function ChildCollectionItemOne(props) {
                                                                     {data.primaryContantName}
                                                                 </Typography>
                                                             </div>
-                                                            {/* <Button type="button" className={classes.ButtonExplore} style={{ font: "13px Roboto" }}>{data.primaryButtonName}</Button> */}
+                                                            {/* <Button type="button" className={classes.ButtonExplore} style={{ font: "13px notoSerif-regular" }}>{data.primaryButtonName}</Button> */}
                                                         </Grid>
                                                     </Grid>
                                                     <Grid item xs={12} sm={6} md={6} lg={6} xl={6} className={classes.cardPadding} >
@@ -329,7 +329,7 @@ export default function ChildCollectionItemOne(props) {
                                                                     {data.primaryContantName}
                                                                 </Typography>
                                                             </div>
-                                                            {/* <Button type="button" className={classes.ButtonExplore} style={{ font: "13px Roboto" }}>{data.primaryButtonName}</Button> */}
+                                                            {/* <Button type="button" className={classes.ButtonExplore} style={{ font: "13px notoSerif-regular" }}>{data.primaryButtonName}</Button> */}
                                                         </Grid>
                                                     </Grid>
                                                     <Grid item xs={12} sm={6} md={6} lg={6} xl={6} className={classes.cardPadding} >
@@ -397,7 +397,7 @@ export default function ChildCollectionItemOne(props) {
                                                                 {data.secondaryContantName}
                                                             </Typography>
                                                         </div>
-                                                        {/* <Button type="button" className={classes.ButtonExplore} style={{ font: "13px Roboto" }}>{data.secondaryButtonName}</Button> */}
+                                                        {/* <Button type="button" className={classes.ButtonExplore} style={{ font: "13px notoSerif-regular" }}>{data.secondaryButtonName}</Button> */}
                                                     </Grid>
                                                 </Grid>
                                                 <Grid item xs={12} sm={6} md={6} lg={6} xl={6} className={classes.cardPadding}  >
@@ -484,7 +484,7 @@ export default function ChildCollectionItemOne(props) {
                                                                     {data.primaryContantName}
                                                                 </Typography>
                                                             </div>
-                                                            {/* <Button type="button" className={classes.ButtonExplore} style={{ font: "13px Roboto" }}>{data.primaryButtonName}</Button> */}
+                                                            {/* <Button type="button" className={classes.ButtonExplore} style={{ font: "13px notoSerif-regular" }}>{data.primaryButtonName}</Button> */}
                                                         </Grid>
                                                     </Grid>
                                                     <Grid item xs={12} sm={6} md={6} lg={6} xl={6} className={classes.cardPadding}  >
@@ -547,7 +547,7 @@ export default function ChildCollectionItemOne(props) {
                                                                     {data.secondaryContantName}
                                                                 </Typography>
                                                             </div>
-                                                            {/* <Button type="button" className={classes.ButtonExplore} style={{ font: "13px Roboto" }}>{data.secondaryButtonName}</Button> */}
+                                                            {/* <Button type="button" className={classes.ButtonExplore} style={{ font: "13px notoSerif-regular" }}>{data.secondaryButtonName}</Button> */}
                                                         </Grid>
                                                     </Grid>
                                                     <Grid item xs={12} sm={6} md={6} lg={6} xl={6} className={classes.cardPadding} >

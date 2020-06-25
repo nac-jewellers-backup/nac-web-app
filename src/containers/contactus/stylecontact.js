@@ -39,7 +39,7 @@ const styles = makeStyles(theme => ({
     marginRight: theme.spacing(1),
   },
   imageContent: {
-    fontFamily: "Source Sans Pro",
+    fontFamily: "notoSerif-regular",
     fontSize: "20px",
     lineHeight: " 1.42857",
     color: "#5d5d5d",
@@ -53,14 +53,14 @@ const styles = makeStyles(theme => ({
   },
   head: {
     fontSize: "40px",
-    fontFamily: "Libre Baskerville",
+    fontFamily: "notoSerif-regular",
     fontWeight: "500",
     lineHeight: "1.1",
     color: "#1c1c1c",
   },
   contents: {
     paddingTop: "1%",
-    fontFamily: "Source Sans Pro",
+    fontFamily: "notoSerif-regular",
     fontSize: "20px",
     lineHeight: "1.42857",
     color: "#5d5d5d",

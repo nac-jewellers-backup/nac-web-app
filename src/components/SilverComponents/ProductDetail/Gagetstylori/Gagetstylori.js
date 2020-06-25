@@ -10,7 +10,7 @@ const useStyles = makeStyles(theme => ({
         fontSize: "11px",
         marginBottom: 0,
         // textAlign: "center",
-        fontFamily: 'Roboto'
+        fontFamily:'notoSerif-regular'
     },
     mainsource: {
         width: "20%",

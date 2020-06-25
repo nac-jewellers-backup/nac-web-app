@@ -269,7 +269,7 @@ export default function ChildCollectionItemTwo(props) {
                                                                             {data.primaryContantName}
                                                                         </Typography>
                                                                     </div>
-                                                                    {/* <Button type="button" className={classes.ButtonExplore} style={{ font: "13px Roboto" }}>{data.primaryButtonName}</Button> */}
+                                                                    {/* <Button type="button" className={classes.ButtonExplore} style={{ font: "13px notoSerif-regular" }}>{data.primaryButtonName}</Button> */}
                                                                 </Grid>
                                                             </Grid>
                                                             <Grid item xs={12} sm={6} md={6} lg={6} xl={6} className={classes.cardPadding} >
@@ -328,7 +328,7 @@ export default function ChildCollectionItemTwo(props) {
                                                                             {data.primaryContantName}
                                                                         </Typography>
                                                                     </div>
-                                                                    {/* <Button type="button" className={classes.ButtonExplore} style={{ font: "13px Roboto" }}>{data.primaryButtonName}</Button> */}
+                                                                    {/* <Button type="button" className={classes.ButtonExplore} style={{ font: "13px notoSerif-regular" }}>{data.primaryButtonName}</Button> */}
                                                                 </Grid>
                                                             </Grid>
                                                             <Grid item xs={12} sm={6} md={6} lg={6} xl={6} className={classes.cardPadding} >
@@ -389,7 +389,7 @@ export default function ChildCollectionItemTwo(props) {
                                                                         {data.secondaryContantName}
                                                                     </Typography>
                                                                 </div>
-                                                                {/* <Button type="button" className={classes.ButtonExplore} style={{ font: "13px Roboto" }}>{data.secondaryButtonName}</Button> */}
+                                                                {/* <Button type="button" className={classes.ButtonExplore} style={{ font: "13px notoSerif-regular" }}>{data.secondaryButtonName}</Button> */}
                                                             </Grid>
                                                         </Grid>
                                                         <Grid item xs={12} sm={6} md={6} lg={6} xl={6} className={classes.cardPadding}  >
@@ -418,7 +418,7 @@ export default function ChildCollectionItemTwo(props) {
                                                                                                 {val.price}</Typography>
                                                                                         </Grid>
                                                                                         <Grid item style={{ textAlign: 'center', padding: "0px 15px 10px 15px" }}>
-                                                                                            <a style={{ textDecoration: 'none' }} href={val.navigateUrl}><Button type="button" className={classes.Button} style={{ font: "13px Roboto" }}>{val.buttonName}</Button></a>
+                                                                                            <a style={{ textDecoration: 'none' }} href={val.navigateUrl}><Button type="button" className={classes.Button} style={{ font: "13px notoSerif-regular" }}>{val.buttonName}</Button></a>
                                                                                         </Grid>
 
                                                                                     </Grid>
@@ -472,7 +472,7 @@ export default function ChildCollectionItemTwo(props) {
                                                                             {data.primaryContantName}
                                                                         </Typography>
                                                                     </div>
-                                                                    {/* <Button type="button" className={classes.ButtonExplore} style={{ font: "13px Roboto" }}>{data.primaryButtonName}</Button> */}
+                                                                    {/* <Button type="button" className={classes.ButtonExplore} style={{ font: "13px notoSerif-regular" }}>{data.primaryButtonName}</Button> */}
                                                                 </Grid>
                                                             </Grid>
                                                             <Grid item xs={12} sm={6} md={6} lg={6} xl={6} className={classes.cardPadding}  >
@@ -534,7 +534,7 @@ export default function ChildCollectionItemTwo(props) {
                                                                             {data.secondaryContantName}
                                                                         </Typography>
                                                                     </div>
-                                                                    {/* <Button type="button" className={classes.ButtonExplore} style={{ font: "13px Roboto" }}>{data.secondaryButtonName}</Button> */}
+                                                                    {/* <Button type="button" className={classes.ButtonExplore} style={{ font: "13px notoSerif-regular" }}>{data.secondaryButtonName}</Button> */}
                                                                 </Grid>
                                                             </Grid>
                                                             <Grid item xs={12} sm={6} md={6} lg={6} xl={6} className={classes.cardPadding} >

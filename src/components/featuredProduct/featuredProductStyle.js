@@ -31,7 +31,7 @@ const styles = makeStyles(theme => ({
         fontSize:"28px",
     },
     subTitle:{
-        fontFamily: "Libre Baskerville",
+        fontFamily: "notoSerif-regular",
     paddingBottom: "20px",
     fontSize: "22px",
     color: "#000",
@@ -41,7 +41,7 @@ const styles = makeStyles(theme => ({
     textAlign: "justify",
     lineHeight: "30px",
     paddingBottom: "10px",
-    fontFamily: "Source Sans Pro",
+    fontFamily: "notoSerif-regular",
     fontSize: "16px",
     color: "#5d5d5d",
     },

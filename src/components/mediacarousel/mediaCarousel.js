@@ -7,10 +7,10 @@ import DialogBox from "../dialog/dialog";
 import { isCompositeType } from "graphql";
 import index from "postcss-normalize";
 export default function MediaCarousel(props) {
-  debugger
+  
   const classes = styles();
   let propsValue = props.value;
-  debugger
+  
   console.log(propsValue.data);
   const [ButtonCondition, setButtonCondition] = useState(true)
   const [isMoreContent, MoreContent] = useState(true);

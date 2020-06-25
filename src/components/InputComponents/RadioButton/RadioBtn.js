@@ -15,7 +15,7 @@ const useStyles = makeStyles(theme => ({
   },
   formControl: {
     margin: theme.spacing(0.8),
-    fontFamily: "Roboto",
+    fontFamily:'notoSerif-regular',
 
   },
   fromControlTwo: {

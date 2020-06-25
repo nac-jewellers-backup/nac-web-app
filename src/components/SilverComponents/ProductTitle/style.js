@@ -11,7 +11,7 @@ export const useStyles = makeStyles(theme => ({
     title: {
         textAlign: 'center',
         color: theme.palette.secondary.dark,
-        fontFamily: 'Robot-black',
+        fontFamily: 'notoSerif-black',
         letterSpacing: '5px',
         fontSize: '16px',
         [theme.breakpoints.only('xs')]: {

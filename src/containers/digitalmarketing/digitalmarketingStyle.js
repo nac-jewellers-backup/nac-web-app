@@ -2,7 +2,7 @@ import { makeStyles } from "@material-ui/core/styles";
 const styles = makeStyles(theme => ({
   titlePage: {
     fontSize: "28px",
-    fontFamily: "Libre Baskerville",
+    fontFamily: "notoSerif-regular",
     fontWeight: "500 !important",
     lineHeight: "1.1",
     color: "#1c1c1c",
@@ -18,13 +18,13 @@ const styles = makeStyles(theme => ({
   headings: {
     fontSize: "20px",
     color: "#1c1c1c",
-    fontFamily: "Source Sans Pro",
+    fontFamily: "notoSerif-regular",
     lineHeight: "1.42857",
     padding: "30px 0px 20px 0px"
   },
   content: {
     lineHeight: "30px",
-    fontFamily: "Source Sans Pro",
+    fontFamily: "notoSerif-regular",
     fontSize: "15px",
     color: "#5d5d5d",
    

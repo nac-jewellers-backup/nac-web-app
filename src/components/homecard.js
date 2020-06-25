@@ -8,7 +8,7 @@ const useStyles = makeStyles(theme => ({
     main: {
         width: "77%",
         margin: "auto",
-        fontFamily: "Source Sans Pro",
+        fontFamily: "notoSerif-regular",
         fontSize: "15px",
         lineHeight: 1.42857,
         color: "#5d5d5d",
@@ -42,7 +42,7 @@ const useStyles = makeStyles(theme => ({
     },
     para: {
         lineHeight: "24px",
-        fontFamily: "Source Sans Pro",
+        fontFamily: "notoSerif-regular",
         fontSize: "15px",
         color: "#5d5d5d",
 

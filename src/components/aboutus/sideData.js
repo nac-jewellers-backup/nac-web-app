@@ -23,7 +23,7 @@ export default function SideData(props) {
   const classes = style();
   const [open, setOpen] = React.useState(null);
   const handleClick = (value) => {
-      debugger
+      
     if(open === value){
         check["check"] = null;
         setOpen(null);
@@ -38,7 +38,7 @@ export default function SideData(props) {
     let hashedLocation = window.location.hash.replace('#','')
     if(!open){
         if(hashedLocation){
-            debugger
+            
             if(window.location.pathname+window.location.hash === url){
                 if(open !== title) handleClick(title)
             }
@@ -65,7 +65,7 @@ export default function SideData(props) {
     );
   };
   const ExpandCollapse = (val) =>{
-      debugger
+      
       return(
         <Collapse
         in={open === val.data.title && check.check === val.data.title}
