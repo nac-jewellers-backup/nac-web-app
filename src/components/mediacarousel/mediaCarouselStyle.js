@@ -104,6 +104,15 @@ const styles = makeStyles((theme) => ({
       opacity: "0.8",
     },
   },
+  buttonLinkNoMoreproducts:{
+    fontWeight: "700",
+    color: "#33333340",
+    textDecoration: "none",
+    fontSize: "14px",
+    display: "flex",
+    cursor: "not-allowed",
+    
+  },
   MoreCollectionImg: {
     transform: "rotate(90deg)",
   },

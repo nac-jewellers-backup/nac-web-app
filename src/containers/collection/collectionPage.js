@@ -1,13 +1,13 @@
 import React from 'react'
 import { Typography, Grid, Hidden } from '@material-ui/core'
 import styles from './collectionPageStyle';
-import Slideshow from '../../components/carousal/carousal';
+import Slideshow from 'components/Carousel/carosul';
 import { CollectionPageNac,YoungOnes } from 'mappers/dummydata/collectionNac';
 import Story from 'components/story';
 import LargeTiles from 'components/largeTile/index';
-import FeaturedProduct from 'components/featuredProduct/index';
+// import FeaturedProduct from 'components/featuredProduct/index';
 import SubListingCarousel from 'components/subListingCarousel/subListingCarousel'
-import Header from 'components/header/header'
+import Header from 'components/SilverComponents/Header'
 
 
 export default function CollectionPage(props) {

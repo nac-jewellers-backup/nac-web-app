@@ -23,6 +23,7 @@ export default function SideData(props) {
   const classes = style();
   const [open, setOpen] = React.useState(null);
   const handleClick = (value) => {
+      debugger
     if(open === value){
         check["check"] = null;
         setOpen(null);
@@ -33,6 +34,17 @@ export default function SideData(props) {
     }
     
   };
+ const handleUrl =(url, title) =>{
+    let hashedLocation = window.location.hash.replace('#','')
+    if(!open){
+        if(hashedLocation){
+            debugger
+            if(window.location.pathname+window.location.hash === url){
+                if(open !== title) handleClick(title)
+            }
+        }
+    }
+ }
 //   const _data = {}
 //   _data['title'] = val.title
 //   _data['link'] = val.link
@@ -64,24 +76,32 @@ export default function SideData(props) {
           component="div"
           disablePadding
           style={{ paddingLeft: "15px" }}
+          className={classes.sublist}
         >
-          {val.data.subHeading.map((_val, key) => (
-              <ListItem button className={classes.nested}>
-                <a href={`${val.data.link}#${_val.title.replace(/\s/g, '').toLowerCase()}`} style={{ textDecoration: "none" }}>
-                  <ListItemText
-                    className={classes.leftInnerContent}
-                    primary={_val.title}
-                  />{" "}
-                </a>
-              </ListItem>
-            ))}
+          {val.data.subHeading.map((_val, key) => {
+              handleUrl(`${val.data.link}#${_val.title.replace(/\s/g, '').toLowerCase()}`, val.data.title)
+              let url = window.location.pathname+window.location.hash === `${val.data.link}#${_val.title.replace(/\s/g, '').toLowerCase()}`
+              return(
+                <ListItem button className={classes.nested}  selected={url}>
+                  <a href={`${val.data.link}#${_val.title.replace(/\s/g, '').toLowerCase()}`} style={{ textDecoration: "none" }}>
+                    <ListItemText
+                      className={`${url? classes.leftInnerContentselected : classes.leftInnerContent}`}
+                      primary={_val.title}
+                    />{" "}
+                  </a>
+                </ListItem>
+              )
+          }
+            )}
         </List>
       </Collapse>
       )
   }
+ 
   return (
     <Grid container xs={12} className={classes.shadow}>
      {props.data.map(val=>{
+         
          return(
             <Grid item xs={12}>
             {/* <Typography className={classes.leftContent} variant="h6">

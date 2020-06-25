@@ -129,20 +129,22 @@ const styles = makeStyles(theme => ({
         },
     },
     iconRightcaro :{
-        backgroundPosition: "-65px -21px !important",
-        width: "15px !important",
-        height: "20px !important",
-        backgroundImage: `url("https://alpha-assets.stylori.com/images/static/home/slider_button.png")`,
+        // backgroundPosition: "-65px -21px !important",
+        // width: "15px !important",
+        // height: "20px !important",
+        fill:'black !important'
+        // backgroundImage: `url("https://alpha-assets.stylori.com/images/static/home/slider_button.png")`,
 
         /* border-right: 1px solid #ccc, */
     
     },
     
     iconLeftcaro :{
-        backgroundPosition: "-16px -21px !important",
-        width: "15px !important",
-        height: "20px !important",
-        backgroundImage: `url("https://alpha-assets.stylori.com/images/static/home/slider_button.png")`,
+        // backgroundPosition: "-16px -21px !important",
+        // width: "15px !important",
+        // height: "20px !important",
+        fill:'black !important',
+        // backgroundImage: `url("https://alpha-assets.stylori.com/images/static/home/slider_button.png")`,
         /* border-left: 1px solid #ccc, */
     },
     subsliderCarousel: {

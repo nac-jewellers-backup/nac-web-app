@@ -76,4 +76,19 @@ export const useStyles = makeStyles((theme) => ({
     paddingTop: "2%",
     paddingBottom: "5%",
   },
+  viewmoreColor: {
+    color: "white",
+    padding: "6px 12px",
+    "&:hover": {
+      backgroundColor: theme.palette.secondary.main,
+      opacity: "0.8",
+    },
+  },
+  viewmoreColorSilver:{
+    backgroundColor:theme.palette.primary.main,
+    "&:hover": {
+      backgroundColor:theme.palette.primary.main,
+      opacity:'0.9'
+    },
+  }
 }));

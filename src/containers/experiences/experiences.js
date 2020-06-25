@@ -5,7 +5,8 @@ import {
   ExperiencePageNac,
   IndexExperiencePage,
 } from "mappers/dummydata/savingNac";
-import MediaCarousel from "../../components/mediacarousel/index";
+// import MediaCarousel from "../../components/mediacarousel/index";
+import MediaCarousel from "../../components/mediacarousel/mediaCarousel";
 // import Header from "../../components/header/header";
 import styles from "../savings/savingsstyle";
 import Header from "components/SilverComponents/Header";
@@ -20,6 +21,7 @@ export default function Experience(props) {
   const slider = React.createRef();
 
   const values = () => {
+    debugger
     if (props.match.path === "/experiences") {
       return IndexExperiencePage;
     }
@@ -99,7 +101,7 @@ export default function Experience(props) {
           container
           className={classes.gridTen}
         >
-          <Grid item style={{ height: "40px", width: "100%" }}></Grid>
+          <Grid item style={{ height: "40px", width: "100%" }}></Grid> 
           <MediaCarousel value={values()} />
         </Grid>
       </Grid>

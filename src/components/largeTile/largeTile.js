@@ -1,7 +1,7 @@
 import React from 'react'
 import { Typography, Grid, Hidden } from '@material-ui/core'
 import styles from './largeTileStyle';
-import Slideshow from 'components/carousal/carousal';
+import Slideshow from 'components/Carousel/carosul';
 import { NavLink, Link } from "react-router-dom";
 
 

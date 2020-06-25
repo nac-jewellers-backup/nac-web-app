@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid } from "@material-ui/core";
+import { Grid, Hidden } from "@material-ui/core";
 import Header from "components/SilverComponents/Header";
 // import {IndexTemplePage , IndexAdvertisingPage } from 'mappers/dummydata/savingNac';
 import styles from "../savings/savingsstyle";
@@ -58,7 +58,8 @@ export default function Templework(props) {
           </Grid>
         )}
         {/* </Hidden> */}
-        <Slideshow
+       <Hidden smDown>
+       <Slideshow
           dataCarousel={IndexTemplePage.carouselTops.setting}
           sliderRef={slider}
         >
@@ -68,6 +69,19 @@ export default function Templework(props) {
             </Grid>
           ))}
         </Slideshow>
+       </Hidden>
+       <Hidden smUp>
+       <Slideshow
+          dataCarousel={IndexTemplePage.carouselTops.setting}
+          sliderRef={slider}
+        >
+          {IndexTemplePage.carouselTops.data.map((val, index) => (
+            <Grid container key={index} className={classes.headContent}>
+              <img src={val.mobileImg} className={classes.mainCarosel} />
+            </Grid>
+          ))}
+        </Slideshow>
+       </Hidden>
       </Grid>
 
       <Grid item xs={12} sm={12} md={12} lg={12} xl={12} >

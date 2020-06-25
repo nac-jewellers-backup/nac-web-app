@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Slideshow from "../../Carousel/carosul";
 import { useDummyRequest } from "../../../hooks";
 import { HomedataSilver } from "../../../mappers";
@@ -17,9 +17,11 @@ const ProductModal = (props) => {
   };
   const { fadeImagessublist } = props.data;
   const classes = useStyles();
+  const [pagination, setPagination] = useState(4)
   return (
+    <>
     <Grid container className={classes.containerTop} justify="center">
-      {fadeImagessublist.map((tile) => {
+      {fadeImagessublist.slice(0,pagination).map((tile) => {
         return (
           <Grid
             item
@@ -88,7 +90,20 @@ const ProductModal = (props) => {
           </Grid>
         );
       })}
+
     </Grid>
+      <Grid container >
+        <Grid container item xs={12} justify="center">
+        <Button
+        onClick={()=>{setPagination(pagination+2)}}
+      variant="contained"
+      disabled={pagination === fadeImagessublist.length}
+      className={`${classes.button}  ${classes.viewmoreColor} ${classes.viewmoreColorSilver}`}>
+    {pagination === fadeImagessublist.length?`No more products` : `View more products`}
+    </Button>
+        </Grid>
+      </Grid>
+    </>
   );
 };
 export default (props) => {

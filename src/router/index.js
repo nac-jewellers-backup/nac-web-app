@@ -44,6 +44,8 @@ import DigitalMarketing from "containers/digitalmarketing/digitalmarketing";
 import Diamonds from "containers/diamonds/looseDiamonds";
 import CollectionHomePage from "containers/collectionhomepage/collectionHomePage";
 import rudramadeviBlog from "containers/collection/rudramadeviBlog";
+import Blog from "containers/collection/bloagPost";
+import CollectionPage from "containers/collection/collectionPage"
 import Solitaires from "../containers/solitaires/solitaires";
 import ExperiencePage from "../containers/experiences/experiences";
 // SILVER SCREENS
@@ -221,6 +223,8 @@ export const RouterApp = (props) => {
         props.location.pathname !== "/careersDetail" &&
         props.location.pathname !== "/solitaires-search" &&
         props.location.pathname !== "/collectionhome" &&
+        props.location.pathname !== "/collectionpage" &&
+        props.location.pathname !== "/blog" &&
         props.location.pathname !== "/rudramadeviBlog" &&
         props.location.pathname !== "/advertising" &&
         props.location.pathname !== "/temple-work" &&
@@ -261,6 +265,13 @@ export const RouterApp = (props) => {
         exact
         path={routes.Collection}
       />
+      <Route
+        key="Collection"
+        component={CollectionPage}
+        exact
+        path={routes.CollectionPage}
+      />
+      
       {props.location.pathname !== "/cart" &&
         props.location.pathname !==
           `/account${"-" + window.location.pathname.split("-")[1]}` &&
@@ -275,11 +286,13 @@ export const RouterApp = (props) => {
         props.location.pathname !== "/faq" &&
         props.location.pathname !== "/education" &&
         props.location.pathname !== "/store" &&
+        props.location.pathname !== "/blog" &&
         props.location.pathname !== "/loc/:id" &&
         props.location.pathname !== "/careers" &&
         props.location.pathname !== "/careersDetail" &&
         props.location.pathname !== "/solitaires-search" &&
         props.location.pathname !== "/collectionhome" &&
+        props.location.pathname !== "/collectionpage" &&
         props.location.pathname !== "/rudramadeviBlog" &&
         props.location.pathname !== "/newsroom" &&
         props.location.pathname !== "/advertising" &&
@@ -347,13 +360,19 @@ export const RouterApp = (props) => {
         component={StoreLocationDetails}
         exact
         path={routes.StoreDetail}
-      />
+      /> 
       <Route key="Diamonds" component={Diamonds} exact path={routes.Diamonds} />
       <Route
         key="rudramadeviBlog"
         component={rudramadeviBlog}
         exact
         path={routes.rudramadeviBlog}
+      />
+       <Route
+        key="blog"
+        component={Blog}
+        exact
+        path={routes.Blog}
       />
 
       <Route key="HomePage" component={HomeComp} exact path={routes.HomePage} />

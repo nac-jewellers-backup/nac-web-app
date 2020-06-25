@@ -48,6 +48,15 @@ export default function AboutusPage(props) {
         }
         else return null
     }
+    React.useEffect(()=>{
+            let hashedLocation = window.location.hash.replace('#','')
+            if(hashedLocation){
+                let elmnt = document.getElementById(hashedLocation);
+                elmnt.scrollIntoView();
+            }
+            
+        
+    },[])
     return (
         <Grid container xs={12}>
             <Header />

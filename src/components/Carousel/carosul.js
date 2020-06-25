@@ -48,7 +48,7 @@ class Slideshow extends React.Component {
 
   imagehoverchildrens = (hoverlist) => {
 
-    let { hover, hovereffect, TopPic, imagecra } = this.props;
+    let { hover, hovereffect, TopPic, imagecra, collectionhome } = this.props;
     if (TopPic) {
       return hoverlist.map(val => (
         <div className={"subslider-carousel" + TopPic ? "hovereffectSilver" : ""}>
@@ -84,7 +84,7 @@ class Slideshow extends React.Component {
             <div className={"subslider-carousel" + hover ? "hovereffect" : ""} style={{height : window.location.pathname === "/collectionhome" ? "210px" : "170px"}} >
               <img src={val.img} className='subslider-carousel-img img-responsive' alt="" />
               <div className="overlay1" style={{height : window.location.pathname === "/collectionhome" ? "210px" : "170px" }} >
-                <h2 className='next-price' style={{marginTop : window.location.pathname === "/collectionhome" ? "65px" : ""}}  >{val.title}</h2><br />
+                <h2 className={`${collectionhome?'poscollectionHome' :'next-price'}`}   >{val.title}</h2><br />
              {val.price &&   <a className='info' href={`/${val.url}`}><span className='sub-list-price'> <i className="fa fa-rupee"></i> &nbsp;{val.price}</span></a>}
               </div>
             </div>

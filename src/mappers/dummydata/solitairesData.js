@@ -116,4 +116,18 @@ export const fadeImagessublist = [
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy ",
     price: "98.89789",
   },
+  {
+    img: `${img3}`,
+    title: "CONTEMPORARY 3",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy ",
+    price: "98.89789",
+  },
+  {
+    img: `${img1}`,
+    title: "TRADITIONAL 4",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy ",
+    price: "98.89789",
+  },
 ];

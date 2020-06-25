@@ -51,7 +51,10 @@ const styles = makeStyles(theme => ({
             "& a":{
                 backgroundColor:"#20205a !important",
                 color:"white",
-            }
+            },
+            leftInnerContent: {
+                color:"#20205a !important",
+        }
         }
       },
       nested: {
@@ -117,6 +120,35 @@ const styles = makeStyles(theme => ({
             fill:'#394578 !important',
             cursor:'pointer !important'
         }
-    }
+    },
+    sublist:{
+        "& .Mui-selected":{
+            color:"#20205a !important",
+                background:'none !important',
+            "&::hover":{
+                color:"#20205a !important",
+                background:'none !important'
+            },
+            "& a":{
+                color:"#20205a !important",
+                background:'none !important',
+             
+            },
+           
+        }
+    },
+    leftInnerContentselected: {
+        // marginBottom: "25px",
+
+        fontSize: "15px",
+        fontWeight:"bold !important",
+        textDecoration:"underline",
+        lineHeight: "1.427",
+        color: "#20205a !important",
+        // fontFamily:"Source Sans Pro",
+        width: "100%",
+        // fontWeight:"400"
+        
+    },
 }))
 export default styles;

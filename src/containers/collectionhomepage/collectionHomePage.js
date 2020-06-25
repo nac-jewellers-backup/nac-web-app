@@ -106,7 +106,7 @@ export default function Savings(props) {
           className={classes.gridTen}
         >
           <Grid item style={{ height: "40px", width: "100%" }}></Grid>
-          <MediaCarousel value={values()} />
+          <MediaCarousel value={values()} collectionhome={true}/>
         </Grid>
       </Grid>
       <Grid>

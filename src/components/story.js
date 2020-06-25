@@ -24,8 +24,14 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.between("xs", "sm")]: {
       width: "83% !important"
     }
-  },
 
+  },
+  showLess:{
+    'display': '-webkit-box',
+    '-webkit-line-clamp': 2,
+    '-webkit-box-orient': 'vertical',  
+    overflow: 'hidden',
+  },
   sub: {
     width: "1170px",
     margin: "auto",
@@ -67,6 +73,19 @@ const useStyles = makeStyles(theme => ({
     color: "#666",
     letterSpacing: "0.02rem",
     fontWeight: "lighter"
+  },
+  readmorelesstext:{
+    fontWeight:'bold',
+     float:'right',
+     cursor:'pointer',
+     width: "65%",
+     margin: "auto",
+     textAlign: "right",
+     fontSize: '0.8rem',
+    color: '#808080b3',
+     [theme.breakpoints.between("xs", "sm")]: {
+      width: "83% !important"
+    }
   }
 }));
 
@@ -83,59 +102,16 @@ export default function Story(props) {
     <Grid container className={classes.main}>
       <Grid container className={classes.sub}>
         <Grid className={classes.root}>
-          <Typography variant="h4" gutterBottom>
+          <Typography variant="h5" gutterBottom>
             {props.heading}
           </Typography>
         </Grid>
-        <Typography id="message" className={classes.content}>
-          {/* <Hidden xs={12} lgDown> */}
-          {window.innerWidth < 832 ? (
-            <>
-              {state.showLess === true ? (
-                <>
-                  {props.para.slice(0, 350)}
-                  <span id="moreDots" style={{ display: "inline" }}>
-                    ...
-                  </span>
-                  <Typography
-                    onClick={handleReadMore}
-                    className={`know-txt ${classes.colorLight}`}
-                    id="readMore"
-                  >
-                    <span>
-                      <i className="fa faMore">&#xf0da;</i>
-                    </span>{" "}
-                    READ MORE
-                  </Typography>
-                </>
-              ) : (
-                <>
-                  {props.para}
-                  <Typography
-                    onClick={handleReadMore}
-                    className={`know-txt ${classes.colorLight}`}
-                    id="readLess"
-                  >
-                    <span>
-                      <i className="fa faMore">&#xf0d8;</i>
-                    </span>{" "}
-                    CLOSE
-                  </Typography>
-                  <br />
-                </>
-              )}{" "}
-            </>
-          ) : (
-            props.para
-          )}
-          {/* </Hidden> */}
-
-          {/* <Hidden xs={12} lgUp>
-            <a href="/message">     
-                <b>Read More</b>
-            </a>
-        </Hidden> */}
+        <Typography id="message" className={`${classes.content} ${state.showLess ? classes.showLess : ''}`}>
+          
+          {props.para}
+          
         </Typography>
+        <Typography className={classes.readmorelesstext} onClick={()=>{setstate({showLess:!state.showLess})}}>{state.showLess ?'Read More' : 'Read Less'}</Typography>  
         {props.store && (
           <Grid item xs={12} className={classes.anchorMain}>
             <a className={classes.anchor} href="">

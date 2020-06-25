@@ -7,10 +7,12 @@ import DialogBox from "../dialog/dialog";
 import { isCompositeType } from "graphql";
 import index from "postcss-normalize";
 export default function MediaCarousel(props) {
+  debugger
   const classes = styles();
   let propsValue = props.value;
+  debugger
   console.log(propsValue.data);
-  let ButtonCondition = true;
+  const [ButtonCondition, setButtonCondition] = useState(true)
   const [isMoreContent, MoreContent] = useState(true);
   const [isMoreCompound, MoreCompound] = useState(3);
   function toggleIsTruncated() {
@@ -18,8 +20,8 @@ export default function MediaCarousel(props) {
   }
   function toggleIsCompound() {
     MoreCompound((isMoreCompound) => isMoreCompound + 3);
-    if (propsValue.data.length <= isMoreCompound) {
-      return (ButtonCondition = false);
+    if (propsValue.data.length <= isMoreCompound + 3) {
+      setButtonCondition(false);
     }
   }
   const [state, setstate] = React.useState({
@@ -83,7 +85,7 @@ export default function MediaCarousel(props) {
                   xl={6}
                   className={classes.imageGrid}
                 >
-                  <Slideshow dataCarousel={props.setting1} sliderRef={slider}>
+                  <Slideshow dataCarousel={props.setting1} sliderRef={slider} collectionhome={props.collectionhome}>
                     {window.location.pathname === "/collectionhome" ? (
                       ""
                     ) : (
@@ -96,6 +98,7 @@ export default function MediaCarousel(props) {
                         hoverlist={val.imageContent}
                         hover={true}
                         imagecra={true}
+                        collectionhome={props.collectionhome}
                       ></Slideshow>
                     ) : (
                       ""
@@ -294,7 +297,11 @@ export default function MediaCarousel(props) {
           </a>
         </Grid>
       ) : (
-        ""
+        <Grid className={classes.GridButtonMoreCollection}>
+        <a onClick={toggleIsCompound} className={classes.buttonLinkNoMoreproducts}>
+          <div>No More Collections</div>
+        </a>
+      </Grid>
       )}
     </Grid>
   );

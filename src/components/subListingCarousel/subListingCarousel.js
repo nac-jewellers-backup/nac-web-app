@@ -11,8 +11,10 @@ import {
   import React from 'react';
   import {YoungOnes} from 'mappers/dummydata/collectionNac'
 //   import './product-images.css'
-  import Slideshow from 'components/carousal/carousal'
+  import Slideshow from 'components/Carousel/carosul'
   import styles from './style'
+  import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+  import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
   export default function Sublistcarousel(props) {
    
     const  slider = React.createRef();
@@ -129,7 +131,7 @@ import {
                    
                     <Grid container style={{ width: "100%" }} >
                       <Grid item style={{ width: "6%", alignItems: "center", justifyContent: "center", display: "flex" }}>
-                        <img onClick={() => previous()} className={classes.iconLeftcaro} />
+                        <ChevronLeftIcon onClick={() => previous()} className={classes.iconLeftcaro}/>
   
                       </Grid>
                       <Grid item style={{ width: "88%" }}>
@@ -142,7 +144,8 @@ import {
                         
                       </Grid>
                       <Grid item style={{ width: "6%", alignItems: "center", justifyContent: "center", display: "flex" }}>
-                        <img onClick={() => next()} className={classes.iconRightcaro} />
+                        {/* <img onClick={() => next()} className={classes.iconRightcaro} /> */}
+                        <ChevronRightIcon onClick={() => next()} className={classes.iconRightcaro}/>
   
                       </Grid>
                     </Grid>

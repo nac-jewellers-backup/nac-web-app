@@ -48,7 +48,9 @@ export const routes = {
   Diamonds: "/solitaires-search",
   CollectionHomePage: "/collectionhome",
   rudramadeviBlog: "/rudramadeviBlog",
+  Blog: "/blog",
   Solitaires: "/solitaires",
+  CollectionPage:"/collectionPage"
 };
 
 export default routes;
