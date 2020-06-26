@@ -99,7 +99,7 @@ const Gallery = (props, callmouseover, callmouseout, cardstate, scrollPosition) 
 
   return (
     <div className="imageHeight">
-      {props.data.oneDayShipping ? <div class={Math.round(props.data.offerPrice) === Math.round(props.data.price) ? "one-day-ship-listing-page-withoutTop" : "one-day-ship-listing-page"} style={{ zIndex: 2 }}>
+      {/* {props.data.oneDayShipping ? <div class={Math.round(props.data.offerPrice) === Math.round(props.data.price) ? "one-day-ship-listing-page-withoutTop" : "one-day-ship-listing-page"} style={{ zIndex: 2 }}>
         <i class="fa fa-truck" style={{ fontSize: "20px" }}></i>
         <span class="one-day-ship-listing-page-label">1 day shipping</span>
 
@@ -113,7 +113,7 @@ const Gallery = (props, callmouseover, callmouseout, cardstate, scrollPosition) 
 
             </span>
           </>
-      }
+      } */}
 
       {/* <Grid container >
         <Grid item lg={1}>
@@ -239,7 +239,8 @@ const useStyles = makeStyles(theme => ({
   },
   priceClass: {
     padding: "10px",
-    height: '85px',
+    height: '35px',
+    backgroundColor:'#c8ced480',
     display: 'flex',
     boxShadow: " 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)",
     borderRadius: '0 !important',
@@ -260,7 +261,8 @@ const useStyles = makeStyles(theme => ({
     margin: 'auto !important',
   },
   offerMainPrice: {
-    color: "#ed1165",
+    color: "gray",
+    fontWeight:"bold",
     [theme.breakpoints.down('sm')]: {
       fontSize: '0.9rem'
     },
@@ -344,6 +346,7 @@ const useStyles = makeStyles(theme => ({
     fontSize: '0.7rem',
     whiteSpace: 'nowrap',
     // flex: 0.6,
+    color:'gray',
     overflow: 'hidden',
     textOverflow: 'ellipsis',
     width: "90%"
@@ -367,7 +370,10 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 const renderImages = (props, cardstate) => {
-
+if(props.static){
+return props.image
+}
+else{
   const filterType = cardstate.hovered ? "hoverImage" : "placeImage";
 
   // console.info('props.data.image[filterType]',props.data.image[filterType]);
@@ -375,15 +381,17 @@ const renderImages = (props, cardstate) => {
   return props.data.image['hoverImage'].length === 0 ? "https://alpha-assets.stylori.com/1000x1000/images/static/Image_Not_Available.jpg" : props.data.image[filterType].img
 }
 
-function Component(props) {
+}
 
+function Component(props) {
+debugger
   const classes = useStyles();
   const [cardstate, setCardState] = React.useState({
     hovered: false,
     loaded: false,
     dataLoaded: true
   });
-  const _height = props.data.imageResolution.img_res
+  // const _height = props.data.imageResolution.img_res
   const callmouseover = () => {
     setCardState({ ...cardstate, hovered: !cardstate.hovered });
   }
@@ -412,12 +420,12 @@ function Component(props) {
                     <Grid container xs={12}>
                       <Typography variant="body1"
                         component="span" style={{ paddingLeft: "5px" }} className={`${classes.titles}`}>
-                        {props.data.title}
+                 {props.static ? 'Jazzy Gypsy Diamond Hoop Earrings' : props.data.title }
                       </Typography>
-                      <Grid container justify="center"> <Typography variant="body1"
+                      {/* <Grid container justify="center"> <Typography variant="body1"
                         component="span" style={{ paddingLeft: "5px", textAlign: "center" }} className={`${classes.titles}`}>
                         from The gold Collection
-                      </Typography></Grid>
+                      </Typography></Grid> */}
                     </Grid>
                   </Hidden>
                   <Grid container item xs={12} sm={12} className={`${classes.priceClassMain}`} style={{ alignItems: "center" }}>
@@ -433,7 +441,7 @@ function Component(props) {
 
                       }}>
 
-                      {new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', minimumFractionDigits: 0 }).format(Math.round(props.data.offerPrice))}
+                      {new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', minimumFractionDigits: 0 }).format(Math.round(props.static ? 25076 : props.data.offerPrice))}
                     </Typography>
                   </Grid>
                 </Grid>
@@ -451,16 +459,7 @@ function Component(props) {
                   <Grid container item xs={12} sm={12} className={`${classes.priceClassMain}`}>
 
                     {/* <Hidden smDown> */}
-                    <Grid container xs={12}>
-                      <Typography variant="body1"
-                        component="span" style={{ paddingLeft: "5px" }} className={`${classes.titles}`}>
-                        {props.data.title}
-                      </Typography>
-                      <Grid container justify="center"> <Typography variant="body1"
-                        component="span" style={{ paddingLeft: "5px", textAlign: "center" }} className={`${classes.titles}`}>
-                        from The gold Collection
-                      </Typography></Grid>
-                    </Grid>
+                   
                     {/* </Hidden> */}
                     <Typography
                       variant="h6"
@@ -468,13 +467,13 @@ function Component(props) {
                       className={classes.offerMainPrice}
                       style={{
                         width: "100%",
-                        justifyContent: "center",
+                        justifyContent: "flex-start",
                         display: "flex",
                         paddingLeft: "5px"
                       }}>
-                      {new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', minimumFractionDigits: 0 }).format(Math.round(props.data.offerPrice))}
+                      {new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', minimumFractionDigits: 0 }).format(Math.round(props.static ? 25076 : props.data.offerPrice))}
                     </Typography>
-                    <Typography
+                    {/* <Typography
                       style={{
                         width: "100%",
                         justifyContent: "center",
@@ -489,14 +488,24 @@ function Component(props) {
                       <del>
                         {new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', minimumFractionDigits: 0 }).format(Math.round(props.data.price))}
                       </del>
-                    </Typography>
+                    </Typography> */}
+                    <Grid container xs={12}>
+                      <Typography variant="body1"
+                        component="span" style={{ paddingLeft: "5px" }} className={`${classes.titles}`}>
+                        {props.static ? 'Jazzy Gypsy Diamond Hoop Earrings' : props.data.title }
+                      </Typography>
+                      {/* <Grid container justify="center"> <Typography variant="body1"
+                        component="span" style={{ paddingLeft: "5px", textAlign: "center" }} className={`${classes.titles}`}>
+                        from The gold Collection
+                      </Typography></Grid> */}
+                    </Grid>
                   </Grid>
 
                 </Grid>
-                <Grid container justify="center"> <Typography variant="body1"
+                {/* <Grid container justify="center"> <Typography variant="body1"
                   component="span" style={{ paddingLeft: "5px", textAlign: "center" }} className={`${classes.hashtags}`}>
                   #specialday #jewelrylove
-                      </Typography></Grid>
+                      </Typography></Grid> */}
               </CardContent>
           }
         </Card>

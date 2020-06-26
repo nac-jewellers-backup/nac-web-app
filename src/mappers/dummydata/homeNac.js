@@ -5,7 +5,7 @@ export const
 
     "carouselTop": {
       "setting": {
-        dots: false,
+        dots: true,
         infinite: true,
         autoplay: true,
         speed: 1000,
@@ -23,16 +23,19 @@ export const
       },
       "data": [
         {
-          img: "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/2019/Youngones_NACWEB_Banner_1189X500.jpg",
+          img: "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori+CSK-banner-1920-X-656-px.jpg",
+          mobileImg: "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori+CSK-banner-mobile-805X430-px.jpg",
+          navigateUrl: "/jewellery/kada/csk_kada?skuId=1000001"
+        },
+        {
+          img: "https://assets.stylori.com/images/Static+Pages/Home+Page/banner1.jpg",
+          mobileImg: "https://assets.stylori.com/images/Static+Pages/Home+Page/gemstone-mob",
           navigateUrl: "/gemstone-jewellery?sort=latest"
         },
         {
-          img: "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/2019/Muhurtham_NACWEB_Banner_1189X500.jpg",
-          navigateUrl: "/jewellery-shipping+in+1+day?sort=featured"
-        },
-        {
-          img: "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/2019/J%20Rewind_new2019.jpg",
-          navigateUrl: "/rings-jewellery"
+          img: "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori-Valentine-banner-web.jpg",
+          mobileImg: "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori-Valentine-banner-mob.jpg",
+          navigateUrl: "/hearts-jewellery?sort=bestseller"
         },
        
       ]

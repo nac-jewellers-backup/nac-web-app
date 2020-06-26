@@ -502,7 +502,7 @@
 
 .slickdev li {
   border: 0px;
-  background-color: #fff;
+  background-color: #ffffff5c;
   width: 10px;
   height: 10px;
   margin: 0px 7px;
@@ -511,16 +511,16 @@
 
 .slickdev li button {
   border: 0px;
-  background-color: rgb(219, 213, 213);
+  background-color: #ffffff5c;
   width: 11px;
   height: 11px;
   /* display: none; */
 }
 
 .slickdev li.slick-active {
-  background-color: #ed1564 !important;
+  background-color: #fff !important;
   /* box-shadow: 0px 4px 5px #888888 !important; */
-  border: 0px solid #ed1564;
+  border: 0px solid #fff;
   border-radius: 100%;
   width: 11px;
   height: 11px;
@@ -585,15 +585,15 @@
 
   .slickdev li button {
     border: 0px;
-    background-color: rgb(219, 213, 213);
+    background-color: #ffffff5c;
     width: 8px;
     height: 8px;
     /* display: none; */
   }
 
   .slickdev li.slick-active {
-    background-color: #394578 !important;
-    border: 1px solid #e6efdd;
+    background-color: #fff !important;
+    border: 1px solid #fff;
     /* box-shadow: 0px 4px 5px #888888 !important; */
     border-radius: 100%;
     width: 7px;
@@ -704,16 +704,16 @@
 
 .slickdevStatic li button {
   border: 0px;
-  background-color: rgb(219, 213, 213);
+  background-color: #ffffff5c;
   width: 11px;
   height: 11px;
   /* display: none; */
 }
 
 .slickdevStatic li.slick-active {
-  background-color: #a4a4a4 !important;
+  background-color: #fff !important;
   /* box-shadow: 0px 4px 5px #888888 !important; */
-  border: 0px solid #a4a4a4;
+  border: 0px solid #fff;
   border-radius: 100%;
   width: 11px;
   height: 11px;
@@ -769,7 +769,7 @@
 
   .slickdevStatic li {
     border: 0px;
-    background-color: rgb(219, 213, 213);
+    background-color: #ffffff5c;
     width: 8px;
     height: 8px;
     margin: 0px 7px;
@@ -778,15 +778,15 @@
 
   .slickdevStatic li button {
     border: 0px;
-    background-color: rgb(219, 213, 213);
+    background-color: #ffffff5c;
     width: 8px;
     height: 8px;
     /* display: none; */
   }
 
   .slickdevStatic li.slick-active {
-    background-color: #394578 !important;
-    border: 1px solid #e6efdd;
+    background-color: #fff !important;
+    border: 1px solid #fff;
     /* box-shadow: 0px 4px 5px #888888 !important; */
     border-radius: 100%;
     width: 7px;

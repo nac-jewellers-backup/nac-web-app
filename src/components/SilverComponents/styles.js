@@ -189,7 +189,7 @@ backgroundColor:theme.palette.secondary.main
 
 export const useStyles = makeStyles(theme => ({
   imgcont: {
-    marginBottom: "15px",
+    // marginBottom: "15px",
     '&:hover': {
       boxShadow: " 0px 2px 4px 4px rgba(0, 0, 0, 0.1), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12) !important",
     }
@@ -259,9 +259,38 @@ export const useStyles = makeStyles(theme => ({
   listedItemsvalue: {
     padding: "2px 16px 2px 16px",
     fontSize: "0.7rem !important",
-    letterSpacing: 2,
+    letterSpacing: 1,
     cursor: "pointer",
 
+  },
+  listedItemstitle: {
+    padding: "2px 0px 2px 0px",
+    fontSize: "0.6rem !important",
+    letterSpacing: 1,
+    margin:'15px 19px 23px 29px',
+    borderBottom:'1px solid #6e6d72'
+  },
+  listedItemstitlemultiplesection:{
+    padding: "2px 0px 2px 0px",
+    fontSize: "0.6rem !important",
+    letterSpacing: 2,
+    margin:'15px 0px 23px 0px',
+    borderBottom:'1px solid #6e6d72'
+  },
+  gridmultiplesection:{
+    padding:'0px 5px'
+  },
+  checkbox:{
+    padding:'3px !important',
+    fontSize:'0.7rem  !important',
+    "& .MuiFormControlLabel-root":{
+      marginRight:'none',
+    },
+    
+    "& svg":{
+      fill: '#6e6d72 !important',
+      fontSize:"1rem"
+    }
   },
   listedItemsvalue2: {
     padding: "2px 16px 2px 16px",
@@ -271,6 +300,16 @@ export const useStyles = makeStyles(theme => ({
     '&:hover': {
       backgroundColor: theme.palette.background.darkFade,
       color: "#fff"
+    }
+  },
+  secondSection:{
+    paddingBottom:10,
+    "& .MuiTypography-body1":{
+      fontSize: "0.7rem !important",
+    },
+    "& .MuiFormControlLabel-root":{
+      marginLeft:'0px !important',
+      marginRight:'0px !important'
     }
   },
   subtopic1: {

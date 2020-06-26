@@ -52,7 +52,7 @@
   z-index: 10;
   position: absolute;
   top: 15px;
-  right: 17px
+  left: 17px
 }
 
 @media only screen and (max-width:580px) and (min-width:540px) {
@@ -116,7 +116,7 @@
   }
 
   .wishListStyle {
-    right: 20px
+    left: 20px
   }
 }
 
@@ -126,7 +126,7 @@
   }
 
   .wishListStyle {
-    right: 24px
+    left: 24px
   }
 }
 
@@ -137,7 +137,7 @@
   }
 
   .wishListStyle {
-    right: 26px
+    left: 26px
   }
 }
 
@@ -147,7 +147,7 @@
   }
 
   .wishListStyle {
-    right: 30px
+    left: 30px
   }
 }
 
@@ -158,7 +158,7 @@
   }
 
   .wishListStyle {
-    right: 26px;
+    left: 26px;
     padding-top: 2px
   }
 }

@@ -191,7 +191,7 @@ class Header extends Component {
     return (
       <div
         style={{ top: "0", zIndex: "1000", width: "100%" }}
-        className={'headerTop"'}
+        className={'headerTop'}
       >
         <Hidden smDown>
           <div
@@ -544,8 +544,10 @@ class Header extends Component {
                               subMenuTarget={this.subMenuTarget}
                               targetopened={this.state.subMenuTarget}
                               onMouseLeave={() => {
+                                debugger
                                 this.setState({
                                   submenuOpen: false,
+                                
                                   subTitleData: "",
                                   subMenuTarget: "",
                                 });
