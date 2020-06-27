@@ -18,6 +18,7 @@ import GadgetsNac from "components/Gagetstylori/GadgetsNac"
 import {ImgMediaCard} from "components/ProductCard/Card";
 import './index.css'
 import {MediaControlCard} from "./timilineCard"
+import {AdvancedGridList} from "./collectionsGrid"
 
 const styles = (theme) => ({
   preButton: {
@@ -561,6 +562,7 @@ class HomeComp extends React.Component {
           
         </Grid> */}
         <Timeline day="monday" date="06/05/2019" timelineData={tData}/>
+        <AdvancedGridList/>
       </Container>
         <Grid container>
           <Story
