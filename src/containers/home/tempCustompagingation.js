@@ -16,8 +16,6 @@ import ArrowRightIcon from "@material-ui/icons/ArrowRight";
 import ArrowLeftIcon from "@material-ui/icons/ArrowLeft";
 import GadgetsNac from "components/Gagetstylori/GadgetsNac"
 import {ImgMediaCard} from "components/ProductCard/Card";
-import './index.css'
-import {MediaControlCard} from "./timilineCard"
 
 const styles = (theme) => ({
   preButton: {
@@ -425,57 +423,10 @@ class HomeComp extends React.Component {
       slidesToShow: 1,
       slidesToScroll: 1
     };
-    
-      const tData = [
-        {time:'1970s',image:'https://assets.stylori.com/product/SE0016/1000X1000/SE0016-1Y.webp' },
-        {time:'1970s', image:'https://assets.stylori.com/product/SE0015/1000X1000/SE0015-1YW.webp' },
-        {time:'1970s',image:'https://assets.stylori.com/product/SE0016/1000X1000/SE0016-1Y.webp' },
-        {time:'1970s',image:'https://assets.stylori.com/product/SE0016/1000X1000/SE0016-1Y.webp' },
-        {time:'1970s',image:'https://assets.stylori.com/product/SE0016/1000X1000/SE0016-1Y.webp' },
-        {time:'1970s', image:'https://assets.stylori.com/product/SE0015/1000X1000/SE0015-1YW.webp' }
-      ];
-      const TimelineEntry = ({ entry: { time, image }, useBar }) => (
-        <div className="timeline-entry" onClick={()=>{this.setState({timelineImage:image})}}>
-          <span className={`time-range ${this.state.timelineImage ===image ? 'active' : ""}`}>
-            {time}
-          </span>
-          <div className={`${'timeline-icon-container'} ${this.state.timelineImage ===image ? 'active' : ""}`} >
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-              <path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z" />
-            </svg>
-            {/* <FiberManualRecordIcon/> */}
-            {useBar && (<div className="bar" />)}
-          </div>
-        
-        </div>
-      );
-      const Timeline = ({ day, date, timelineData }) => (
-       <Grid container>
-         <Grid item xs={4}>
-         <div className="timeline">
-          
-          <div className="timeline-body">
-            {timelineData.map((el, i) => (
-              <TimelineEntry
-                entry={el}
-                key={i}
-                useBar={i === timelineData.length - 1 ? false : true}
-              />
-            ))}
-          </div>
-        </div>
-         </Grid>
-         <Grid item xs={8}>
-           {/* <img src ={this.state.timelineImage} alt="stylori" style={{width:"400px", height:"auto"}}/> */}
-           <MediaControlCard data={{image:this.state.timelineImage}}/>
-         </Grid>
-       </Grid>
-      );
     return (
       <Grid container>
         <Header />
         <Grid item xs={12}>
-          
           {/* <Hidden smDown> */}
           {homeNac.carouselTop.setting.arrowsImg && (
             <Grid container>
@@ -542,7 +493,7 @@ class HomeComp extends React.Component {
           }
           
         </Grid>
-        {/* <Grid container item xs={12}>
+        <Grid container item xs={12}>
           {  <Slideshow
                 // sliderRef={this.slider}
                 class="subslider-carousel"
@@ -559,8 +510,7 @@ class HomeComp extends React.Component {
 
           }
           
-        </Grid> */}
-        <Timeline day="monday" date="06/05/2019" timelineData={tData}/>
+        </Grid>
       </Container>
         <Grid container>
           <Story
