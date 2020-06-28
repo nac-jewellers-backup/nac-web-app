@@ -108,13 +108,13 @@ export const StaticImage = {
 
 export const Testimonial = {
   "setting": {
-    dots: false,
-    infinite: true,
-    autoplay: true,
+    dots: true,
+    infinite: false,
+    autoplay: false,
     speed: 1000,
     fade: false,
     arrows: false,
-    arrowsImg: true,
+    arrowsImg: false,
     dotsClass: "slickdev",
     accessibility: true,
     centerMode: false,
