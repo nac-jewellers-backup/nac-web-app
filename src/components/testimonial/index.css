@@ -1,0 +1,65 @@
+.slickdevtestimonial {
+    width: 100%;
+    justify-content: center;
+    padding-left: 0;
+    list-style: none;
+    display: inline-flex !important;
+    justify-content: center;
+  }
+  
+  .slickdevtestimonial li {
+    border: 0px;
+    background-color: #8080804d;
+    width: 10px;
+    height: 10px;
+    margin: 0px 7px;
+    border-radius: 100%;
+  }
+  
+  .slickdevtestimonial li button {
+    border: 0px;
+    background-color: #ffffff5c;
+    width: 11px;
+    height: 11px;
+    /* display: none; */
+  }
+  
+  .slickdevtestimonial li.slick-active {
+    background-color: gray !important;
+    /* box-shadow: 0px 4px 5px #888888 !important; */
+    border: 0px solid gray;
+    border-radius: 100%;
+    width: 11px;
+    height: 11px;
+  }
+  
+  .slickdevtestimonial li button:before {
+    font-family: "slick";
+    font-size: 0px;
+    line-height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    content: "•";
+    text-align: center;
+    opacity: 0.25;
+    color: black;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .slickdevtestimonial li button {
+    font-size: 0;
+    line-height: 0;
+    display: block;
+    width: 20px;
+    height: 20px;
+    padding: 0px;
+    cursor: pointer;
+    color: transparent;
+    border: 0;
+    outline: none;
+    background: transparent;
+  }

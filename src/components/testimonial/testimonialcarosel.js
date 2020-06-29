@@ -2,16 +2,20 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Grid, Hidden, Typography, Button } from "@material-ui/core";
 import Slideshow from "../Carousel/carosul";
+import './index.css'
 
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
     backgroundColor: "#fff",
     padding: "0px 15px",
+    [theme.breakpoints.down('sm')]:{
+      padding: "0px 0px",
+    }
   },
   [theme.breakpoints.up("lg")]: {
     root: {
-      width: "1170px !important",
+      // width: "1170px !important",
       margin: "auto",
       backgroundColor: "#fff",
       padding: "0px 15px 10px 15px",
@@ -132,6 +136,10 @@ const useStyles = makeStyles((theme) => ({
   },
   container: {
     display: "flex !important",
+    height: "430px",
+    [theme.breakpoints.down('sm')]:{
+      height:'auto'
+    }
   },
   imgRightGrid: {
     justifyContent: "flex-end",
@@ -158,14 +166,15 @@ const useStyles = makeStyles((theme) => ({
     marginTop: "10px",
   },
   imgcoin: {
-    boxShadow: " 0 0 5px #888 !important",
-    float: "left",
+    // boxShadow: " 0 0 5px #888 !important",
+    // float: "left",
     padding: "5px",
     marginTop: "15px",
     marginBottom: "15px",
     verticalAlign: "middle",
-    width: "calc(100% - 20px) !important",
+    // width: "calc(100% - 20px) !important",
     marginLeft: "4px",
+    height:'140px !important', width:'140px !important', borderRadius:'50%'
   },
   imgcoinsm: {
     verticalAlign: "middle",
@@ -200,8 +209,13 @@ const useStyles = makeStyles((theme) => ({
     color: "#666666",
     fontSize: "13px",
     lineHeight: "30px",
-    marginTop: "60px",
+    // marginTop: "60px",
     paddingLeft: "15px",
+    margin:"0 100px",
+    [theme.breakpoints.down("sm")]:{
+      margin:"0 0px",
+      paddingLeft: "0px",
+    }
   },
   textInner: {
     color: "#666666",
@@ -210,6 +224,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: "25px",
     maxHeight: "140px ",
     overflow: "hidden",
+    textAlign:'center'
   },
   name: {
     fontSize: "16px",
@@ -272,6 +287,7 @@ const useStyles = makeStyles((theme) => ({
     maxHeight: "33px ",
     overflow: "hidden",
   },
+  
 }));
 
 export default function ImageGridList(props) {
@@ -285,12 +301,12 @@ export default function ImageGridList(props) {
   };
   return (
     <Grid container className={classes.root}>
-      <Hidden smDown>
+      {/* <Hidden smDown> */}
         <Grid item className={classes.containerRoot}>
-          <Grid container className={classes.container}>
-            <Grid item md={12} lg={12} sm={12} xs={12}>
+          <Grid container className={classes.container} >
+            <Grid item md={12} lg={12} sm={12} xs={12} >
               <Grid container>
-                <Grid item item xs={12} alignItems="center">
+                <Grid item  xs={12} alignItems="center">
                   <Slideshow
                     dataCarousel={props.dataCarousel}
                     sliderRef={slider}
@@ -298,16 +314,23 @@ export default function ImageGridList(props) {
                     {props.carosolData.map((val, index) => (
                       <>
                         <Grid container>
-                          {/* <Grid
+                          <Grid
+                          container
                             item
-                            md={3}
-                            lg={3}
-                            sm={6}
+                            md={12}
+                            lg={12}
+                            sm={12}
                             xs={12}
+                            justify="center"
                             className={classes.testimonialRight}
                           >
                             <Grid
                               item
+                              xs={12}
+                              sm={12}
+                              md={4}
+                              lg={4}
+                              xl={4}
                               style={{
                                 textAlign: "center",
                                 padding: "0px 15px ",
@@ -317,31 +340,35 @@ export default function ImageGridList(props) {
                                 <img
                                   className={classes.imgcoin}
                                   src={val.img}
+                                  
                                 />
                               </Slideshow>
                             </Grid>
-                          </Grid> */}
+                          </Grid>
                           {/* <span className={classes.exclIcon}></span> */}
+                          <Grid container item xs={12} justify={'center'}>
+                          <Typography >
+                                {val.heading}
+                              </Typography>
+                          </Grid>
                           <Grid
-                            item
+                            item 
                             md={12}
                             lg={12}
                             sm={12}
                             xs={12}
                             className={classes.testimonialInner}
+                            
                           >
                             <Typography className={classes.textInner}>
                               {val.para}
                             </Typography>
-                            <Grid className={classes.textInner}>
-                              <Typography className={classes.name}>
+                           
+                          </Grid>
+                          <Grid container item xs={12} justify={'center'} style={{padding:'20px 0px'}}>
+                          <Typography >
                                 {val.heading}
                               </Typography>
-                              <Typography className={classes.namecountry}>
-                                {val.country}
-                              </Typography>
-                              {/* <span className={classes.excliconright}></span> */}
-                            </Grid>
                           </Grid>
                         </Grid>
                       </>
@@ -352,8 +379,8 @@ export default function ImageGridList(props) {
             </Grid>
           </Grid>
         </Grid>
-      </Hidden>
-      <Hidden mdUp>
+      {/* </Hidden> */}
+      {/* <Hidden mdUp>
         <Grid item className={classes.containerRoot}>
           <Grid container className={classes.container}>
             <Grid
@@ -398,6 +425,7 @@ export default function ImageGridList(props) {
           </Grid>
         </Grid>
       </Hidden>
+    */}
     </Grid>
   );
 }

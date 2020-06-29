@@ -6,7 +6,7 @@ import GridListTileBar from "@material-ui/core/GridListTileBar";
 import IconButton from "@material-ui/core/IconButton";
 import StarBorderIcon from "@material-ui/icons/StarBorder";
 import "./index.css";
-import { Hidden } from "@material-ui/core";
+import { Hidden, Grid } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -66,25 +66,129 @@ export function AdvancedGridList() {
   return (
     <>
       <Hidden smDown>
-        <div class="grid-container">
-          <div class="grid-item item3">3</div>
-          <div class="grid-item item4">4</div>
-          <div class="grid-item item2">2</div>
-          <div class="grid-item item4">4</div>
-          <div class="grid-item item11">2</div>
-          <div class="grid-item item44">4</div>
-          <div class="grid-item item45">4</div>
-          <div class="grid-item item3">3</div>
-        </div>
+        <Grid container>
+          <Grid item xs={12}>
+            <div class="grid-container">
+              <div class="grid-item item3">
+                <img
+                  src="https://assets.stylori.com/images/Static+Pages/Home+Page/mangocollection.png"
+                  alt="NAC"
+                  width="100%"
+                  height="100%"
+                />
+              </div>
+              <div class="grid-item item4">
+                <img
+                  src="https://assets.stylori.com/images/Static+Pages/Home+Page/mangocollection.png"
+                  alt="NAC"
+                  width="100%"
+                  height="100%"
+                />
+              </div>
+              <div class="grid-item item2">
+                <img
+                  src="https://assets.stylori.com/images/Static+Pages/Home+Page/blush+3.png"
+                  alt="NAC"
+                  width="100%"
+                  height="100%"
+                />
+              </div>
+              <div class="grid-item item4">
+                <img
+                  src="https://assets.stylori.com/images/Static+Pages/Home+Page/mangocollection.png"
+                  alt="NAC"
+                  width="100%"
+                  height="100%"
+                />
+              </div>
+              <div class="grid-item item11">
+                <img
+                  src="https://assets.stylori.com/images/Static+Pages/Home+Page/blush+3.png"
+                  alt="NAC"
+                  width="100%"
+                  height="100%"
+                />
+              </div>
+              <div class="grid-item item44">
+                <img
+                  src="https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori_+Daisy+Days.png"
+                  alt="NAC"
+                  width="100%"
+                  height="100%"
+                />
+              </div>
+              <div class="grid-item item45">
+                <img
+                  src="https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori_+Daisy+Days.png"
+                  alt="NAC"
+                  width="100%"
+                  height="100%"
+                />
+              </div>
+              <div class="grid-item item3">
+                <img
+                  src="https://assets.stylori.com/images/Static+Pages/Home+Page/mangocollection.png"
+                  alt="NAC"
+                  width="100%"
+                  height="100%"
+                />
+              </div>
+            </div>
+          </Grid>
+        </Grid>
       </Hidden>
       <Hidden mdUp>
         <div class="grid-container-sm">
-          <div class="grid-item-sm item1-sm">3</div>
-          <div class="grid-item-sm item111-sm">3</div>
-          <div class="grid-item-sm item112-sm">3</div>
-          <div class="grid-item-sm item113-sm">3</div>
-          <div class="grid-item-sm item11-sm">3</div>
-          <div class="grid-item-sm item0-sm">3</div>
+          <div class="grid-item-sm item1-sm">
+            {" "}
+            <img
+              src="https://assets.stylori.com/images/Static+Pages/Home+Page/mangocollection.png"
+              alt="NAC"
+              width="100%"
+              height="100%"
+            />
+          </div>
+          <div class="grid-item-sm item111-sm">
+            {" "}
+            <img
+              src="https://assets.stylori.com/images/Static+Pages/Home+Page/mangocollection.png"
+              alt="NAC"
+              width="100%"
+              height="100%"
+            />
+          </div>
+          <div class="grid-item-sm item112-sm">
+            <img
+              src="https://assets.stylori.com/images/Static+Pages/Home+Page/mangocollection.png"
+              alt="NAC"
+              width="100%"
+              height="100%"
+            />
+          </div>
+          <div class="grid-item-sm item113-sm">
+            <img
+              src="https://assets.stylori.com/images/Static+Pages/Home+Page/mangocollection.png"
+              alt="NAC"
+              width="100%"
+              height="100%"
+            />
+          </div>
+          <div class="grid-item-sm item11-sm">
+            <img
+              src="https://assets.stylori.com/images/Static+Pages/Home+Page/blush+3.png"
+              alt="NAC"
+              width="100%"
+              height="100%"
+            />
+          </div>
+          <div class="grid-item-sm item0-sm">
+            <img
+              src="https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori_+Daisy+Days.png"
+              alt="NAC"
+              width="100%"
+              height="100%"
+            />
+          </div>
         </div>
       </Hidden>
     </>

@@ -651,4 +651,10 @@ i {
   }
 }
 
+@media only screen and (max-width: 600px) {
+  .headerTop {
+    height: 100px
+  }
+}
+
 .badgebackground {}

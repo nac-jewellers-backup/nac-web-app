@@ -6,8 +6,8 @@ export const
     "carouselTop": {
       "setting": {
         dots: true,
-        infinite: true,
-        autoplay: true,
+        infinite: false,
+        autoplay: false,
         speed: 1000,
         fade: false,
         arrows: false,
@@ -115,7 +115,7 @@ export const Testimonial = {
     fade: false,
     arrows: false,
     arrowsImg: false,
-    dotsClass: "slickdev",
+    dotsClass: "slickdevtestimonial",
     accessibility: true,
     centerMode: false,
     focusOnSelect: false,

@@ -1,34 +1,34 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2e8b089ec6473e89f1e4f4769edd5192",
+    "revision": "e713b54dd751fdba968b5d8c9d0b560e",
     "url": "/index.html"
   },
   {
-    "revision": "f6dfef0aa9371d3701c8",
+    "revision": "a733aaee4e98c3012eac",
     "url": "/static/css/2.css"
   },
   {
-    "revision": "c360e60eed1249434c5f",
+    "revision": "0e0594c0607d99791f4a",
     "url": "/static/css/3.css"
   },
   {
-    "revision": "5815ea11215a967a75bd",
+    "revision": "b05edfc376aca31d763b",
     "url": "/static/css/main.css"
   },
   {
-    "revision": "f6dfef0aa9371d3701c8",
+    "revision": "a733aaee4e98c3012eac",
     "url": "/static/js/2.js"
   },
   {
-    "revision": "c360e60eed1249434c5f",
+    "revision": "0e0594c0607d99791f4a",
     "url": "/static/js/3.js"
   },
   {
-    "revision": "7681b84d05609b8ad890",
+    "revision": "898d6d77f9bf2b6e6de5",
     "url": "/static/js/4.js"
   },
   {
-    "revision": "5815ea11215a967a75bd",
+    "revision": "b05edfc376aca31d763b",
     "url": "/static/js/main.js"
   },
   {
@@ -56,8 +56,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/cartoonFooter.png"
   },
   {
+    "revision": "7996bd6992d473ba217275885f52812f",
+    "url": "/static/media/close.svg"
+  },
+  {
     "revision": "1d4ab251e668bd11b62b30615bd88e78",
     "url": "/static/media/closeheart.jpg"
+  },
+  {
+    "revision": "6916c84be4a82b94cf15503ef25d48f2",
+    "url": "/static/media/delivery.svg"
   },
   {
     "revision": "28cd30ea4ad92b4520d9a3fb2634a87d",
@@ -80,8 +88,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/logout.svg"
   },
   {
+    "revision": "37ef37619d53e7631c8ab218a5722c1e",
+    "url": "/static/media/love.svg"
+  },
+  {
     "revision": "965dabcd31d04c27b319f732b7aae019",
     "url": "/static/media/nosepin.gif"
+  },
+  {
+    "revision": "b0c24c44cdbcd2228f0f6fef2740195f",
+    "url": "/static/media/shopping.svg"
   },
   {
     "revision": "ced611daf7709cc778da928fec876475",
@@ -104,6 +120,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/styloriGagets.png"
   },
   {
+    "revision": "5a712650392a83e01a75498ebc83837b",
+    "url": "/static/media/telephone.svg"
+  },
+  {
     "revision": "1737e5e0a88de55dc6cf1a773e4b0816",
     "url": "/static/media/topPicksOne.jpg"
   },
@@ -114,5 +134,9 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "37b89e280ecc047a56d66fdb6404bb23",
     "url": "/static/media/topPicksTwo.jpg"
+  },
+  {
+    "revision": "c7359aa61314bf6d37f83ccc97dd0694",
+    "url": "/static/media/user-shape.svg"
   }
 ]);
