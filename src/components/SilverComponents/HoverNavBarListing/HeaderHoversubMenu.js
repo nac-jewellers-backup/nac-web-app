@@ -484,7 +484,7 @@ function HeaderHoverMenuItem(props) {
           >
             {props.data && props.data.imageContainer && (
               // <ImageWithText {...props} />
-              <SingleImageWithMultipleColumns />
+              <ImageWithText />
             )}
             {props.data &&
               props.data.onlyText &&
