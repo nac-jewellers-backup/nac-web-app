@@ -1,5 +1,27 @@
+import React from 'react'
 import { Hidden } from "@material-ui/core"
-
+import ArrowRightIcon from "@material-ui/icons/ArrowRight";
+import ArrowLeftIcon from "@material-ui/icons/ArrowLeft";
+const ArrowLeft = (props) => {
+  const { className, style, onClick } = props;
+  return (
+    <ArrowLeftIcon
+      className={`${className}`}
+      onClick={onClick}
+      style={{ ...style, left:0, zIndex:2, fontSize:'3rem' }}
+    />
+  );
+};
+const ArrowRight = (props) => {
+  const { className, style, onClick } = props;
+  return (
+    <ArrowRightIcon
+      className={`${className}`}
+      onClick={onClick}
+      style={{ ...style, right:0, zIndex:2, fontSize:'3rem' }}
+    />
+  );
+};
 export const
   homeNac = {
 
@@ -10,8 +32,8 @@ export const
         autoplay: false,
         speed: 1000,
         fade: false,
-        arrows: false,
-        arrowsImg: true,
+        arrows: true,
+        arrowsImg: false, 
         dotsClass: "slickdev",
         accessibility: true,
         centerMode: false,
@@ -20,6 +42,8 @@ export const
         pauseOnDotsHover: false,
         pauseOnFocus: true,
         swipe: false,
+        prevArrow: <ArrowLeft />,
+        nextArrow:  <ArrowRight />,
       },
       "data": [
         {
