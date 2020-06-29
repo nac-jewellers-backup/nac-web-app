@@ -294,7 +294,7 @@ export default function LargeTile(props) {
                     <Grid style={{ display: "block" }}>
                       <iframe
                         width="100%"
-                        height="305"
+                        height="334"
                         src={props.url}
                         frameborder="0"
                         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
