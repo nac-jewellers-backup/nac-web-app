@@ -440,13 +440,42 @@ export const Jewellery = {
 //desktop views
 export const menuListHeader =
     [
-        { title: 'JEWELLERY', url: "/jewellery" },
-        // { title: 'SILVER', url: "/stylorisilver" },
-        { title: 'GOLD COINS', url: "/goldcoins" },
-        { title: 'COLLECTIONS', url: "/collections" },
-        { title: 'READY TO SHIP', url: "/jewellery-shipping+in+1+day" },
-        { title: 'CSK MERCHANDISE', url: "/jewellery/kada/csk_kada?sku_id=1000000" },
-        // { title: 'STORIES', url: "/stories" }
+         {
+        title: "Gold".toUpperCase(),
+        url: "/jewellery",
+    },
+    // {
+    //     title: "Silver",
+    //     url: "/stylorisilver",
+    // },
+    {
+        title: "Diamond".toUpperCase(),
+        url: "/goldcoins",
+    },
+    {
+        title: "Platinum".toUpperCase(),
+        url: "/collections",
+    },
+    {
+        title: "Solitaire".toUpperCase(),
+        url: "/jewellery-shipping+in+1+day",
+    },
+    {
+        title: "Silver".toUpperCase(),
+        url: "/jewellery/kada/csk_kada?sku_id=1000000",
+    },
+    {
+        title: "Collections".toUpperCase(),
+        url: "/jewellery/kada/csk_kada?sku_id=1000000",
+    },
+    {
+        title: "Purchase Plans".toUpperCase(),
+        url: "/jewellery/kada/csk_kada?sku_id=1000000",
+    },
+    {
+        title: "Gifts".toUpperCase(),
+        url: "/jewellery/kada/csk_kada?sku_id=1000000",
+    },
     ];
 
 

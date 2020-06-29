@@ -493,7 +493,7 @@ class Header extends Component {
                                   onMouseOver={(event) => {
                                     this.setState({
                                       Menuopen: true,
-                                      submenuOpen: false,
+                                      submenuOpen: true,
                                       subTitleData: null,
                                       targetopen: event.currentTarget,
                                       listHoverItem: listName.title.replace(
@@ -508,7 +508,7 @@ class Header extends Component {
                               );
                             })}
                           </nav>
-                          {this.state.Menuopen &&
+                          {/* {this.state.Menuopen &&
                           menuLists[this.state.listHoverItem] ? (
                             <HeaderHoverMenuItem
                               tabdata={this.props.data}
@@ -530,26 +530,28 @@ class Header extends Component {
                             />
                           ) : (
                             ""
-                          )}
-                          {this.state.Menuopen && this.state.submenuOpen ? (
+                          )} */}
+                          {this.state.Menuopen  ? (
                             <HeaderHoversubMenu
-                              opened={this.state.submenuOpen}
-                              onMouseOver={(event) => {
-                                this.setState({ submenuOpen: true });
-                              }}
+                              opened={this.state.Menuopen}
+                              // onMouseOver={(event) => {
+                              //   this.setState({ submenuOpen: true });
+                              // }}
                               listHoverItem={
                                 menuLists[this.state.listHoverItem]
                               }
+                              listitem = {this.state.listHoverItem}
                               data={this.state.subTitleData}
                               subMenuTarget={this.subMenuTarget}
-                              targetopened={this.state.subMenuTarget}
+                              targetopened={this.state.targetopen}
                               onMouseLeave={() => {
                                 
                                 this.setState({
                                   submenuOpen: false,
-                                
+                                  Menuopen:false,
                                   subTitleData: "",
                                   subMenuTarget: "",
+                                  targetopen:''
                                 });
                               }}
                             />
