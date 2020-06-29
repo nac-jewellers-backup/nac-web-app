@@ -8,7 +8,9 @@ import { ThemeProvider } from '@material-ui/styles';
 import { lambda_func_front_end } from './utils'
 import Theme from './Theme.js'
 import { withRouter } from 'react-router-dom';
-let jewellery_theme = createMuiTheme(require('./jewellery_theme.json'));
+
+import {jewelleryTheme} from './jewellery_theme'
+let jewellery_theme = createMuiTheme(jewelleryTheme);
 let silver_jewellery_theme = createMuiTheme(require('./silver_jewellery_theme.json'));
 let jewelleryThemes = responsiveFontSizes(jewellery_theme);
 let silverThemes = responsiveFontSizes(silver_jewellery_theme);
@@ -43,6 +45,7 @@ class App extends React.Component {
       // <ApolloProvider client={client}>
       <GlobalProvider>
         <Theme>
+        
           <NetworkProvider>
             {/*productId="SP1135" <ProductDetailProvider productId="SP1135">*/}
             <Router>
