@@ -34,15 +34,12 @@ const styles = (theme) => ({
     borderLeft: 0,
     background: "none",
     left: 0,
-    display:'flex',
-    alignItems:'center',
-    height:'100%',
     // top:"55% !important",
     // marginTop: "-30px",
     fontSize: "20px",
     color: "#fff",
     textAlign: "center",
-    // position: "absolute",
+    position: "absolute",
     zIndex: 9,
     "& svg": {
       fontSize: "3rem",
@@ -69,41 +66,41 @@ const styles = (theme) => ({
     // [theme.breakpoints.only("xl")]: {
     //   top: "682px !important",
     // },
-    // [theme.breakpoints.only("xs")]: {
-    //   top: "160px",
-    //   height: "30px",
-    //   width: "28px",
-    // },
-    // [theme.breakpoints.up(330)]: {
-    //   top: "175px !important",
-    //   height: "30px",
-    //   width: "28px",
-    // },
-    // [theme.breakpoints.up(385)]: {
-    //   top: "190px !important",
-    //   height: "30px",
-    //   width: "28px",
-    // },
-    // [theme.breakpoints.up(438)]: {
-    //   top: "200px !important",
-    //   height: "30px",
-    //   width: "28px",
-    // },
-    // [theme.breakpoints.up(495)]: {
-    //   top: "210px !important",
-    //   height: "30px",
-    //   width: "28px",
-    // },
-    // [theme.breakpoints.up(723)]: {
-    //   top: "258px !important",
-    //   height: "30px",
-    //   width: "28px",
-    // },
-    // [theme.breakpoints.up(840)]: {
-    //   top: "300px !important",
-    //   height: "30px",
-    //   width: "28px",
-    // },
+    [theme.breakpoints.only("xs")]: {
+      top: "160px",
+      height: "30px",
+      width: "28px",
+    },
+    [theme.breakpoints.up(330)]: {
+      top: "175px !important",
+      height: "30px",
+      width: "28px",
+    },
+    [theme.breakpoints.up(385)]: {
+      top: "190px !important",
+      height: "30px",
+      width: "28px",
+    },
+    [theme.breakpoints.up(438)]: {
+      top: "200px !important",
+      height: "30px",
+      width: "28px",
+    },
+    [theme.breakpoints.up(495)]: {
+      top: "210px !important",
+      height: "30px",
+      width: "28px",
+    },
+    [theme.breakpoints.up(723)]: {
+      top: "258px !important",
+      height: "30px",
+      width: "28px",
+    },
+    [theme.breakpoints.up(840)]: {
+      top: "300px !important",
+      height: "30px",
+      width: "28px",
+    },
   },
   nextButton: {
     // backgroundImage:
@@ -946,7 +943,7 @@ class HomeComp extends React.Component {
         <Grid item xs={12}>
           {/* <Hidden smDown> */}
           {homeNac.carouselTop.setting.arrowsImg && (
-            <Grid container style={{position:'absolute'}}>
+            <Grid container>
               <Grid item onClick={this.previous} className={classes.preButton}>
                 <ArrowLeftIcon />
               </Grid>
@@ -1016,7 +1013,7 @@ class HomeComp extends React.Component {
                   </Slideshow>
                 </Hidden>
                 <Hidden mdUp>
-                  <Container>
+                <Container>
                     <Slideshow
                       // sliderRef={this.slider}
                       class="subslider-carousel"
