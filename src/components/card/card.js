@@ -1,5 +1,5 @@
-import React from "react";
-import { Typography, Grid, Card, Link } from "@material-ui/core";
+import React, { useState } from "react";
+import { Typography, Grid, Card, Link, Button } from "@material-ui/core";
 import styles from "./cardStyle";
 import Dialog from "@material-ui/core/Dialog";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
@@ -10,12 +10,12 @@ export default function Cards(props) {
   const classes = styles();
   const [state, setstate] = React.useState({
     loading: false,
-    count: ""
+    count: "",
   });
   const [open, setOpen] = React.useState(false);
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down(""));
-
+  const [pagination, setPagination] = useState(6);
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -97,7 +97,7 @@ export default function Cards(props) {
           container
           className={classes.cardHeadGrid}
         >
-          {props.data.data.map((val, index) => (
+          {props.data.data.slice(0, pagination).map((val, index) => (
             <Grid
               item
               xs={10}
@@ -285,6 +285,67 @@ export default function Cards(props) {
         </Grid>
         <Grid style={{ height: "80px" }}></Grid>
       </Grid>
+
+      {window.location.pathname === "/newsroom" ? (
+        <Grid container>
+          <Grid container item xs={12} justify="center">
+            <Button
+              onClick={() => {
+                setPagination(pagination + 6);
+              }}
+              variant="contained"
+              disabled={pagination >= props.data.data.length}
+              className={classes.viewmoreColor}
+            >
+              {pagination >= props.data.data.length
+                ? `No more news`
+                : `View more news`}
+            </Button>
+          </Grid>
+        </Grid>
+      ) : (
+        ""
+      )}
+      {window.location.pathname === "/advertising" ? (
+        <Grid container>
+          <Grid container item xs={12} justify="center">
+            <Button
+              onClick={() => {
+                setPagination(pagination + 6);
+              }}
+              variant="contained"
+              disabled={pagination >= props.data.data.length}
+              className={classes.viewmoreColor}
+            >
+              {pagination >= props.data.data.length
+                ? `No more advertising`
+                : `View more advertising`}
+            </Button>
+          </Grid>
+        </Grid>
+      ) : (
+        ""
+      )}
+      {window.location.pathname === "/temple-work" ? (
+        <Grid container>
+          <Grid container item xs={12} justify="center">
+            <Button
+              onClick={() => {
+                setPagination(pagination + 6);
+              }}
+              variant="contained"
+              disabled={pagination >= props.data.data.length}
+              className={classes.viewmoreColor}
+            >
+              {pagination >= props.data.data.length
+                ? `No more temple work`
+                : `View more temple work`}
+            </Button>
+          </Grid>
+        </Grid>
+      ) : (
+        ""
+      )}
     </Grid>
   );
 }
