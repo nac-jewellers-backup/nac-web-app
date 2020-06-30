@@ -16,11 +16,11 @@ const useStyles = makeStyles(theme => ({
         }
     },
     colorMain: {
-        backgroundColor: "#1b1e30",
+        backgroundColor: "#b78231",
 
     },
     colorWhiteBackground: {
-        backgroundColor: theme.palette.common.white,
+        backgroundColor: '#b78231',
 
     },
     colorWhite: {
@@ -43,7 +43,7 @@ const useStyles = makeStyles(theme => ({
         color: theme.palette.primary.main,
         fontSize: '13px',
         // width: '100%',
-        backgroundColor: "#232a46",
+        backgroundColor: "#b78231",
 
         height: '34px',
         border: '1px solid #232a46',

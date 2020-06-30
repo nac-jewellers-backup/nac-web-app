@@ -157,8 +157,28 @@ background-color: #c8ced480;
   /* text-align: center; */
 }
 
-.imageHeight {
+.imageHeight { 
   min-height: 144px;
+}
+.cardImage .overlayImage{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background: rgba(58, 69, 120, 0.95) !important;
+  color:white;
+  font-size:15px;
+  padding:4px 0px; 
+  align-items: center;
+  text-align: center;
+  opacity:0
+}
+.cardImage:hover .overlayImage{
+  
+  opacity:1
 }
 
 @media only screen and (max-width: 375px) and (min-width: 320px) {

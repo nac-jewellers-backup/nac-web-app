@@ -232,6 +232,9 @@ const styles = (theme) => ({
     color: theme.palette.gold.main,
     textDecoration: "underline",
     paddingBottom: 20,
+    '-webkit-text-underline-position': 'under',
+  '-ms-text-underline-position': 'below',
+  'text-underline-position': 'under' ,
   },
   minHeighttimerange:{
     paddingBottom:'0 !important',
@@ -515,10 +518,10 @@ class HomeComp extends React.Component {
     const dataCarouselcollections = {
       arrows: true,
       dots: false,
-      autoplay: true,
-      infinite: true,
+      autoplay: false,
+      infinite: false,
       accessibility: true,
-      speed: 2500,
+      // speed: 2500,
       // fade: true,
       slidesToShow: 4,
       slidesToScroll: 4,
@@ -1062,7 +1065,7 @@ class HomeComp extends React.Component {
                     dataCarousel={dataCarouselcollections}
                   >
                     {dummyData.map((val) => {
-                      return <ImgMediaCard data={val} cardSize="auto" />;
+                      return <ImgMediaCard data={val} cardSize="auto" hoverText={true}/>;
                     })}
                   </Slideshow>
                 </Hidden>
@@ -1074,7 +1077,7 @@ class HomeComp extends React.Component {
                       dataCarousel={dataCarouselcollectionsSm}
                     >
                       {dummyData.map((val) => {
-                        return <ImgMediaCard data={val} cardSize="auto" />;
+                        return <ImgMediaCard data={val} cardSize="auto" hoverText={true}/>;
                       })}
                     </Slideshow>
                   </Container>
@@ -1082,11 +1085,11 @@ class HomeComp extends React.Component {
               </>
             }
           </Grid>
-          <Grid container item xs={12}>
+          <Grid container item xs={12} style={{boxShadow:'6px 7px 6px #bebfbf'}}>
             {[
               { title: "NEWS" },
-              { title: "Promotion" },
-              { title: "Videos" },
+              { title: "PROMOTION" },
+              { title: "VIDEOS" },
             ].map((val) => {
               return (
                 <Grid item xs={4} style={{ paddingLeft: 5 }}>

@@ -47,7 +47,8 @@ const useStyles = makeStyles((theme) => ({
     containerRoot: {
       width: "100%",
       backgroundImage: "none !important",
-      boxShadow: "0 0 5px #888 !important",
+      // boxShadow: "0 0 5px #888 !important",
+      border:'1px solid #8080804d'
     },
     smleftGrid: {
       marginTop: "50% !important",
@@ -81,7 +82,8 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     backgroundImage:
       "url(https://alpha-assets.stylori.com/images/static/home/box_bg.png)",
-    boxShadow: "0 0 5px #888 !important",
+    // boxShadow: "0 0 5px #888 !important",
+    border:'1px solid #8080804d'
   },
   imgleft: {
     backgroundImage:

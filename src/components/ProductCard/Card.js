@@ -98,7 +98,7 @@ const imageOnError = (event, res) => {
 const Gallery = (props, callmouseover, callmouseout, cardstate, scrollPosition) => {
 
   return (
-    <div className="imageHeight">
+    <div className="imageHeight" style={{position:'relative'}}>
       {/* {props.data.oneDayShipping ? <div class={Math.round(props.data.offerPrice) === Math.round(props.data.price) ? "one-day-ship-listing-page-withoutTop" : "one-day-ship-listing-page"} style={{ zIndex: 2 }}>
         <i class="fa fa-truck" style={{ fontSize: "20px" }}></i>
         <span class="one-day-ship-listing-page-label">1 day shipping</span>
@@ -145,7 +145,6 @@ const Gallery = (props, callmouseover, callmouseout, cardstate, scrollPosition) 
         <LazyLoadImage
           alt={'props.data.title'}
           effect="blur"
-          style={{}}
           
           src={renderImages(props, cardstate)}
           //  srcset={renderImages(props, cardstate)}
@@ -160,12 +159,19 @@ const Gallery = (props, callmouseover, callmouseout, cardstate, scrollPosition) 
           //  "
           onError={(e) => imageOnError(e, props.data.imageResolution)}
           title={props.data.title}
-          onMouseOver={() => {
+          onMouseOver={!props.hoverText ? () => {
             callmouseover()
-          }}
-          onMouseOut={() => {
+          }
+        :
+        ()=>{return null}
+        }
+          onMouseOut={!props.hoverText ? () => {
+            
             callmouseout()
-          }}
+          }
+        :
+        ()=>{return null}
+        }
           style={{ width: '100%' }}
           scrollPosition={scrollPosition}
 
@@ -176,7 +182,10 @@ const Gallery = (props, callmouseover, callmouseout, cardstate, scrollPosition) 
         // placeholder	= { <div >loading.....</div> }
         >
         </LazyLoadImage>
-
+        {props.hoverText &&
+  <div className="overlayImage">
+Today, NAC has expanded its arms and has found many place in and around Chennai and an exclusive showroom at Vijaywada.
+</div>}
       </Link>
 
 
