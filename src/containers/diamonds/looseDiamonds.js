@@ -9,6 +9,7 @@ import DiamondShpae from "components/diamonds/diamondShape";
 import DiamondSelect from "components/diamonds/select";
 import DiamondRange from "components/diamonds/range";
 import DiamondList from "components/diamonds/list";
+import Footer from "../../components/Footer/Footer";
 
 export default function Diamonds(props) {
   const classes = styles();
@@ -84,24 +85,21 @@ export default function Diamonds(props) {
         />
         <DiamondRange value={diamondsData} />
       </Grid>
-      <Grid
-        
-        className={classes.dataCon}
-        xs={11}
-        lg={10}
-       
-      >
+      <Grid className={classes.countGrid} xs={11} lg={10}>
         <Grid item style={{ float: "left", display: "flex" }}>
-          <Typography>
+          <Typography  className={classes.textColor}>
             Here are some of our best solitaires handpicked for you
           </Typography>
         </Grid>
         <Grid item style={{ float: "right", display: "flex" }}>
-          <Typography>Showing 1 of 55,649 results</Typography>
+          <Typography className={classes.textColor}>Showing 1 of 55,649 results</Typography>
         </Grid>
       </Grid>
       <Grid container className={classes.dataCon} xs={11} lg={10}>
         <DiamondList />
+      </Grid>
+      <Grid>
+        <Footer />
       </Grid>
     </Grid>
   );

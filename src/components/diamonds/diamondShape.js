@@ -7,7 +7,7 @@ export default function DiamondShpae(props) {
     const value = props.value
     const classes = styles();
     return (
-        <Grid container className={classes.mainContainer} xs={12}>
+        <Grid container className={classes.diamondShapeContainer} xs={12}>
             <Grid item className={classes.containers} xs={12} >
                 <Grid item className={classes.numEffect}>
                     1

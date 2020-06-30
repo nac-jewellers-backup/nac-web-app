@@ -5,7 +5,7 @@ import CardIndexPage from "components/card/index";
 import {
   IndexTemplePage,
   IndexAdvertisingPage,
-  IndexNewsRoomPage
+  IndexNewsRoomPage,
 } from "mappers/dummydata/savingNac";
 import Footer from "components/Footer/Footer";
 
@@ -22,14 +22,14 @@ export default function Newsroom(props) {
     }
   };
   return (
-    <Grid container>
+    <Grid container style={{ display: "block" }}>
       <Grid item>
         <Header />
       </Grid>
-      <Grid item xs={12} sm={12} md={12} lg={12} xl={12}  >
+      <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
         <CardIndexPage value={values()} />
       </Grid>
       <Footer />
-    </Grid >
+    </Grid>
   );
 }
