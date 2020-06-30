@@ -92,7 +92,13 @@ const styles = makeStyles((theme) => ({
   dataCon: {
     margin: "auto",
     display: "flex",
-   
+  },
+  textColor: {
+    color: "#5d5d5d",
+  },
+  countGrid: {
+    padding: "10px 0px",
+    margin: "auto",
   },
 }));
 export default styles;

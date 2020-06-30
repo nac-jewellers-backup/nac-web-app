@@ -9,7 +9,7 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import { withStyles, makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
-
+import Pagination from "@material-ui/lab/Pagination";
 const useStyles = makeStyles((theme) => ({
   table: {
     minWidth: 700,
@@ -22,10 +22,16 @@ const useStyles = makeStyles((theme) => ({
       overflow: "scroll",
     },
   },
+  tableCellColorText: {
+    color: "#5d5d5d !important",
+  },
 }));
 export default function DiamondList(props) {
   const classes = useStyles();
-
+  const [page, setPage] = React.useState(1);
+  const handleChange = (event, value) => {
+    setPage(value);
+  };
   const StyledTableCell = withStyles((theme) => ({
     head: {
       backgroundColor: theme.palette.common.black,
@@ -114,24 +120,68 @@ export default function DiamondList(props) {
           <TableBody>
             {rows.map((row) => (
               <StyledTableRow key={row.name}>
-                <StyledTableCell component="th" scope="row">
+                <StyledTableCell
+                  className={classes.tableCellColorText}
+                  component="th"
+                  scope="row"
+                >
                   {row.name}
                 </StyledTableCell>
-                <StyledTableCell align="right">{row.calories}</StyledTableCell>
-                <StyledTableCell align="right">{row.fat}</StyledTableCell>
-                <StyledTableCell align="right">{row.carbs}</StyledTableCell>
-                <StyledTableCell align="right">{row.protein}</StyledTableCell>
-                <StyledTableCell align="right">
+                <StyledTableCell
+                  align="right"
+                  className={classes.tableCellColorText}
+                >
+                  {row.calories}
+                </StyledTableCell>
+                <StyledTableCell
+                  align="right"
+                  className={classes.tableCellColorText}
+                >
+                  {row.fat}
+                </StyledTableCell>
+                <StyledTableCell
+                  align="right"
+                  className={classes.tableCellColorText}
+                >
+                  {row.carbs}
+                </StyledTableCell>
+                <StyledTableCell
+                  align="right"
+                  className={classes.tableCellColorText}
+                >
+                  {row.protein}
+                </StyledTableCell>
+                <StyledTableCell
+                  align="right"
+                  className={classes.tableCellColorText}
+                >
                   {row.certificate}
                 </StyledTableCell>
-                <StyledTableCell align="right">{row.pricing}</StyledTableCell>{" "}
-                <StyledTableCell align="right">
-                  <a href="#">{row.Details}</a>
+                <StyledTableCell
+                  align="right"
+                  className={classes.tableCellColorText}
+                >
+                  {row.pricing}
+                </StyledTableCell>{" "}
+                <StyledTableCell
+                  align="right"
+                  className={classes.tableCellColorText}
+                >
+                  <a
+                    href="#"
+                    className={classes.tableCellColorText}
+                    style={{ textDecoration: "none" }}
+                  >
+                    {row.Details}
+                  </a>
                 </StyledTableCell>
               </StyledTableRow>
             ))}
           </TableBody>
         </Table>
+      </Grid>
+      <Grid style={{ margin: "auto", padding: "24px 0px 20px 0px" }}>
+        <Pagination count={10} page={page} onChange={handleChange} />
       </Grid>
     </Grid>
   );
