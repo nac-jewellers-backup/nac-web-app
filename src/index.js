@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import './fonts/NotoSerif/NotoSerif-Regular.ttf'
 import * as serviceWorker from './serviceWorker';
-import TagManager from 'react-gtm-module'
+// import TagManager from 'react-gtm-module'
 
 // const tagManagerArgs = {
 //     gtmId: 'GTM-PW3ZXSF'
