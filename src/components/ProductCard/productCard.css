@@ -95,7 +95,9 @@
   /* height: 898px; */
   position: relative;
 }
-
+.cardImage span{
+background-color: #c8ced480;
+}
 .imgDiv {
   width: auto;
   height: auto;

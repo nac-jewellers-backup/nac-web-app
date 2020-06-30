@@ -23,6 +23,7 @@ import {
   InputLabel,
   Select,
   MenuItem,
+  NativeSelect,
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import { Hidden } from "@material-ui/core";
@@ -272,7 +273,7 @@ class Header extends Component {
                               {/* <InputLabel id="demo-simple-select-outlined-label">
                                 Age
                               </InputLabel> */}
-                              <Select
+                              {/* <Select
                                 labelId="demo-simple-select-outlined-label"
                                 id="demo-simple-select-outlined"
                                 value={22}
@@ -287,7 +288,18 @@ class Header extends Component {
                                 </MenuItem>
                                 <MenuItem value={24}>Twenty</MenuItem>
                                 <MenuItem value={26}>Thirty</MenuItem>
-                              </Select>
+                              </Select> */}
+             <NativeSelect
+          defaultValue={30}
+          inputProps={{
+            name: 'name',
+            id: 'uncontrolled-native',
+          }}
+        >
+          <option value={10}>Ten</option>
+          <option value={20}>Twenty</option>
+          <option value={30}>Gold 22k/1g ₹ 3256</option>
+        </NativeSelect>
                             </FormControl>
                           </Grid>
                         </Grid>
@@ -328,7 +340,7 @@ class Header extends Component {
                                 }}
                               >
                                 <i
-                                  style={{ fontSize: "20px", marginTop: "9px" }}
+                                  style={{ fontSize: "20px"}}
                                   class={`fa fa-user  ${classes.iconFafa}`}
                                 ></i>
                                 <span className="tooltip-slog">
@@ -347,7 +359,7 @@ class Header extends Component {
                                 }
                               >
                                 <i
-                                  style={{ fontSize: "20px", marginTop: "9px" }}
+                                  style={{ fontSize: "20px" }}
                                   class={`fa fa-user  ${classes.iconFafa}`}
                                 ></i>
                                 <span className="tooltip-slog">
@@ -360,7 +372,7 @@ class Header extends Component {
                           )}
                           <div className="tooltip">
                             <Badge
-                              style={{ marginTop: "9px" }}
+                              // style={{ marginTop: "9px" }}
                               badgeContent={
                                 this.props.wishlist &&
                                 this.props.wishlist.wishlistdata &&
@@ -393,7 +405,7 @@ class Header extends Component {
 
                           <div className="tooltip">
                             <Badge
-                              style={{ marginTop: "9px" }}
+                              // style={{ marginTop: "9px" }}
                               badgeContent={
                                 this.props.cart_count &&
                                 this.props.cart_count.data &&
@@ -531,7 +543,7 @@ class Header extends Component {
                           ) : (
                             ""
                           )} */}
-                          {this.state.Menuopen  ? (
+                          {["DIAMOND", "SILVER", 'PURCHASEPLANS', 'COLLECTIONS'].indexOf(this.state.listHoverItem) === -1  &&this.state.Menuopen  ? (
                             <HeaderHoversubMenu
                               opened={this.state.Menuopen}
                               // onMouseOver={(event) => {
@@ -565,7 +577,9 @@ class Header extends Component {
                   
                     </Grid>
                     <Grid item xs={2} className={classes.menustylori}>
+                            <a href="https://www.stylori.com/" style={{textDecoration:'none'}}>
                             STYLORI
+                            </a>
                     </Grid>
                    
                 

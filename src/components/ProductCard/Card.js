@@ -135,13 +135,18 @@ const Gallery = (props, callmouseover, callmouseout, cardstate, scrollPosition) 
       </Grid> */}
 
 
-      <div class="wishListStyle" >
-        <Wishlist sku={props.data.skuId} productId={props.data.productId} wishlist={props.wishlist} />
+      <div class="wishListStyle" style={{padding:10}}>
+      <i class="fa fa-heart overall-icons" style={{ color: "gray" }}
+                        
+                    ></i>
+        {/* <Wishlist sku={props.data.skuId} productId={props.data.productId} wishlist={props.wishlist} /> */}
       </div>
-      <Link to={{ pathname: props.data.skuUrl }} style={{ textDecoration: 'none' }} target="_blank" onClick={handleProductDetatiContext(props)}>
+      <Link className={'cardImage'} to={{ pathname: props.data.skuUrl }} style={{ textDecoration: 'none' }} target="_blank" onClick={handleProductDetatiContext(props)}>
         <LazyLoadImage
           alt={'props.data.title'}
           effect="blur"
+          style={{}}
+          
           src={renderImages(props, cardstate)}
           //  srcset={renderImages(props, cardstate)}
           //      sizes="(max-width: 320px) 320w,
@@ -225,9 +230,10 @@ const useStyles = makeStyles(theme => ({
   card: {
     minWidth: "90%",
     maxWidth: "90%",
-    boxShadow: "0px 2px 4px 4px rgba(0, 0, 0, 0.1), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12) !important",
+    boxShadow: "6px 7px 6px #bebfbf !important",
     margin: "10px 0px ",
     borderRadius: '0 !important',
+    border:'1px solid #bebfbf70'
   },
   cardAtionspadding: {
     padding: 0,

@@ -69,13 +69,16 @@ export function AdvancedGridList() {
         <Grid container>
           <Grid item xs={12}>
             <div class="grid-container">
-              <div class="grid-item item3">
+              <div class="grid-item item3 ">
                 <img
                   src="https://assets.stylori.com/images/Static+Pages/Home+Page/mangocollection.png"
                   alt="NAC"
                   width="100%"
                   height="100%"
                 />
+                <div className="overlayGrid">
+                  <b>SHOP</b>&nbsp; DIAMOND SETS
+                </div>
               </div>
               <div class="grid-item item4">
                 <img
@@ -84,6 +87,9 @@ export function AdvancedGridList() {
                   width="100%"
                   height="100%"
                 />
+                <div className="overlayGrid">
+                  <b>SHOP</b>&nbsp; REWIND
+                </div>
               </div>
               <div class="grid-item item2">
                 <img
@@ -92,6 +98,9 @@ export function AdvancedGridList() {
                   width="100%"
                   height="100%"
                 />
+                <div className="overlayGrid">
+                  <b>SHOP</b>&nbsp; MUHURTAM
+                </div>
               </div>
               <div class="grid-item item4">
                 <img
@@ -100,6 +109,9 @@ export function AdvancedGridList() {
                   width="100%"
                   height="100%"
                 />
+                <div className="overlayGrid">
+                  <b>SHOP</b>&nbsp; RUDRAMADEVI
+                </div>
               </div>
               <div class="grid-item item11">
                 <img
@@ -108,6 +120,9 @@ export function AdvancedGridList() {
                   width="100%"
                   height="100%"
                 />
+                <div className="overlayGrid">
+                  <b>SHOP</b>&nbsp; FABULA
+                </div>
               </div>
               <div class="grid-item item44">
                 <img
@@ -116,6 +131,9 @@ export function AdvancedGridList() {
                   width="100%"
                   height="100%"
                 />
+                <div className="overlayGrid">
+                  <b>SHOP</b>&nbsp; LITTLE ONES
+                </div>
               </div>
               <div class="grid-item item45">
                 <img
@@ -124,6 +142,9 @@ export function AdvancedGridList() {
                   width="100%"
                   height="100%"
                 />
+                <div className="overlayGrid">
+                  <b>SHOP</b>&nbsp; STYLORI
+                </div>
               </div>
               <div class="grid-item item3">
                 <img
@@ -132,6 +153,9 @@ export function AdvancedGridList() {
                   width="100%"
                   height="100%"
                 />
+                <div className="overlayGrid">
+                  <b>SHOP</b>&nbsp; MAYURA
+                </div>
               </div>
             </div>
           </Grid>

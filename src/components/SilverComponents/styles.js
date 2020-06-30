@@ -49,7 +49,19 @@ width:"100%",
 margin: theme.spacing(1),
 minWidth: 120,
 backgroundColor:theme.palette.gold.main,
-boxShadow:"6px 7px 6px #bebfbf"
+boxShadow:"6px 7px 6px #bebfbf",
+color:'white',
+"& .MuiNativeSelect-select:not([multiple])":{
+  "& option":{
+   color:"gold"
+  },  
+},
+"& .MuiInputBase-input":{
+  color:"white",
+  fontSize:13,
+  padding:"6px 7px 7px",
+ 
+}
   },
   menunac:{
 backgroundColor:theme.palette.secondary.main

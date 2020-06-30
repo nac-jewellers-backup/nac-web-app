@@ -442,39 +442,39 @@ export const menuListHeader =
     [
          {
         title: "Gold".toUpperCase(),
-        url: "/jewellery",
+        url:'#',
     },
     // {
     //     title: "Silver",
-    //     url: "/stylorisilver",
+    //     url:'#',
     // },
     {
         title: "Diamond".toUpperCase(),
-        url: "/goldcoins",
+        url:'#',
     },
     {
         title: "Platinum".toUpperCase(),
-        url: "/collections",
+        url:'#',
     },
     {
         title: "Solitaire".toUpperCase(),
-        url: "/jewellery-shipping+in+1+day",
+        url:'#',
     },
     {
         title: "Silver".toUpperCase(),
-        url: "/jewellery/kada/csk_kada?sku_id=1000000",
+        url:'#',
     },
     {
         title: "Collections".toUpperCase(),
-        url: "/jewellery/kada/csk_kada?sku_id=1000000",
+        url:'#',
     },
     {
         title: "Purchase Plans".toUpperCase(),
-        url: "/jewellery/kada/csk_kada?sku_id=1000000",
+        url:'#',
     },
     {
         title: "Gifts".toUpperCase(),
-        url: "/jewellery/kada/csk_kada?sku_id=1000000",
+        url:'#',
     },
     ];
 

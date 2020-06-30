@@ -17,7 +17,7 @@ import "./../header.css";
 // import Checkbox from "components/InputComponents/CheckBox";
 
 function HeaderHoverMenuItem(props) {
-  debugger
+  
   const [opens, setOpens] = React.useState(props.opened);
   const [target, setTarget] = React.useState(props.subMenuTarget);
   const { onMouseLeave, onMouseOver } = props;
@@ -143,7 +143,7 @@ function HeaderHoverMenuItem(props) {
     }
   ]
   const ImageWithText = () => {
-    debugger
+    
     return (
       <Grid
         container
@@ -242,7 +242,7 @@ function HeaderHoverMenuItem(props) {
     );
   };
   const ImageWithTextMultipleColumns = () => {
-   debugger
+   
     return (
       <Grid
         container
@@ -439,7 +439,7 @@ function HeaderHoverMenuItem(props) {
     );
   };
   const ImageWithTextMultipleColumnsSOLITAIRE = () => {
-    debugger
+    
      return (
        <Grid
          container
@@ -598,7 +598,7 @@ function HeaderHoverMenuItem(props) {
      );
    };
   const SingleImageWithMultipleColumns = () => {
-    debugger
+    
     return (
       <Grid
         container

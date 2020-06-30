@@ -21,6 +21,7 @@ import { MediaControlCard } from "./timilineCard";
 import { AdvancedGridList } from "./collectionsGrid";
 import { Title } from "./titles";
 import { Helmet } from "react-helmet";
+import LiveChat from "react-livechat";
 
 const styles = (theme) => ({
   preButton: {
@@ -232,6 +233,10 @@ const styles = (theme) => ({
     textDecoration: "underline",
     paddingBottom: 20,
   },
+  minHeighttimerange:{
+    paddingBottom:'0 !important',
+    minHeight:'0 !important'
+  }
 });
 
 class HomeComp extends React.Component {
@@ -241,6 +246,7 @@ class HomeComp extends React.Component {
     this.next = this.next.bind(this);
     this.previous = this.previous.bind(this);
     this.slider = React.createRef();
+    this.livechat = React.createRef();
     this.state = {
       loading: false,
       count: "",
@@ -611,7 +617,7 @@ class HomeComp extends React.Component {
         <span
           className={`time-range ${
             this.state.timelineImage === image ? "active" : ""
-          }`}
+          } ${useBar ?'' : classes.minHeighttimerange}`}
         >
           {time}
         </span>
@@ -934,12 +940,21 @@ class HomeComp extends React.Component {
         </blockquote>
       );
     };
+
     return (
       <Grid container>
         {/* <Helmet>
       <script async src="//www.instagram.com/embed.js"></script>
     </Helmet> */}
         <Header />
+
+        {/* <LiveChat license={5807571} onChatLoaded={ ref => {
+          
+          this.livechat = ref
+          } } />
+        <div onClick={()=>window.LC_API.open_chat_window()}>
+          div
+        </div> */}
         <Grid item xs={12}>
           {/* <Hidden smDown> */}
           {homeNac.carouselTop.setting.arrowsImg && (
@@ -997,7 +1012,7 @@ class HomeComp extends React.Component {
         <Container maxWidth="lg">
           <Grid container item xs={12}>
             <Grid item xs={12}>
-              <Title title="New Arraival" />
+              <Title title="New Arrival" />
             </Grid>
             {
               <>
@@ -1013,7 +1028,7 @@ class HomeComp extends React.Component {
                   </Slideshow>
                 </Hidden>
                 <Hidden mdUp>
-                <Container>
+                  <Container>
                     <Slideshow
                       // sliderRef={this.slider}
                       class="subslider-carousel"

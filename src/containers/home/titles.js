@@ -8,7 +8,7 @@ export const Title = (props) =>{
     return(
         <Grid container >
             <Grid item xs={12} className={classes.title}>
-                {props.title}
+                {props.title.toUpperCase()}
             </Grid>
         </Grid>
     )
