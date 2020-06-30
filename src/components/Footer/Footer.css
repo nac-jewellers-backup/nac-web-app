@@ -146,13 +146,13 @@
 
 .imageClass {
   width: 300px;
-  margin: auto !important;
+  /* margin: auto !important; */
 }
 
 @media screen and (min-width: 600px) {
   .imageClass {
     width: 414px;
-    margin: auto !important;
+    /* margin: auto !important; */
   }
 }
 
