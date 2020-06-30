@@ -181,7 +181,7 @@ export default function DiamondList(props) {
         </Table>
       </Grid>
       <Grid style={{ margin: "auto", padding: "24px 0px 20px 0px" }}>
-        <Pagination count={10} page={page} onChange={handleChange} />
+        <Pagination count={5} page={page} onChange={handleChange} />
       </Grid>
     </Grid>
   );
