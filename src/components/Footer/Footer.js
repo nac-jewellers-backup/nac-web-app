@@ -111,6 +111,12 @@ const useStyles = makeStyles(theme => ({
         [theme.breakpoints.up('sm')]: {
             padding: "30px 15px 15px 15px"
         }
+    },
+    textFieldEmail : {
+    width : "100%",
+    backgroundColor : "#fff",
+    textAlign : "center",
+
     }
 
 }));
@@ -392,9 +398,9 @@ export default function Footer(props) {
                         </Grid>
  <Grid container item xs={4} >
     <Grid container item xs={12}>
-    <Grid item xs={12} style={{padding:15, border:'1px solid white', background:'white', height:'20px', width:'100px', display:'flex', justifyContent:'center', alignItems:'center'}}>
-     {/* <TextField id="standard-basic" label="Standard" /> */}
-     Enter email id to receive updates on NAC
+    <Grid item xs={12} style={{  width:'100%', display:'flex', justifyContent:'center', alignItems:'center'}}>
+     <TextField id="standard-basic" placeholder="Enter email id to receive updates on NAC"  className={classes.textFieldEmail} />
+   
      </Grid>
      <Grid  item xs={12} style={{textAlign:'right'}}>
 <Button variant="contained" color="secondary" style={{boxShadow:'rgba(20, 25, 25, 0.32) 6px 7px 6px'}}>
