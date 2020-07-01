@@ -10,8 +10,9 @@ export default function Sliders(props) {
       value:["100","500"]
     })
     const handleRange=(e)=>{
+      debugger
       setState({
-        e:value
+        ...state,value:e
       })
     }
     const settings = {
@@ -46,7 +47,7 @@ export default function Sliders(props) {
                className="rangeDotStyle"
                allowCross={false} 
                value={[state.value[0],state.value[1]]}
-               onChange={(e)=>handleRange(state.e)}
+               onChange={(e)=>handleRange(e)}
                trackStyle={[{ backgroundColor: '#000', height: 10}]}
                handleStyle={[{ backgroundColor: '#64b3e8', height: 20, width: 20 }, { backgroundColor: '#64b3e8', height: 20, width: 20 }]}
                railStyle={{ backgroundColor: "#D3D3D3", height: 10 }}

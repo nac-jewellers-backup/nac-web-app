@@ -287,7 +287,7 @@ export default function MediaCarousel(props) {
       {ButtonCondition ? (
         <Grid className={classes.GridButtonMoreCollection}>
           <a onClick={toggleIsCompound} className={classes.buttonLink}>
-            <div>See More Collections&nbsp;&nbsp;</div>
+            <div>View More Collections&nbsp;&nbsp;</div>
             <div className={classes.imgGridMoreCollection}>
               <img
                 className={classes.MoreCollectionImg}

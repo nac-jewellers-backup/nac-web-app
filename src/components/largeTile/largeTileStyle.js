@@ -157,7 +157,7 @@ para:{
 },
 heading:{
     fontFamily: "notoSerif-regular",
-    padding: "30px 0",
+    padding: "30px 0 10px",
     fontSize: "21px",
     color: "#333",
     lineHeight: 1.2,

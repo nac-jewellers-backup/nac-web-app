@@ -4,10 +4,10 @@ export const sidemenu = [
     link: "/aboutus",
     subHeading: [
       {
-        title: "Aboutus",
+        title: "About Us",
       },
       {
-        title: "Ourhistory",
+        title: "Our History",
       },
       {
         title: "Diamonds",
@@ -28,19 +28,19 @@ export const sidemenu = [
         title: "Terms",
       },
       {
-        title: "privacy",
+        title: "Privacy",
       },
       {
         title: "Informationsite",
       },
       {
-        title: "Sitecontent",
+        title: "Site Content",
       },
       {
-        title: "Jewellerycollection",
+        title: "Jewellery Collection",
       },
       {
-        title: "Usesite",
+        title: "Use Site",
       },
     ],
   },
@@ -49,13 +49,13 @@ export const sidemenu = [
     link: "/return",
     subHeading: [
       {
-        title: "30dayreturn",
+        title: "30 Day Return",
       },
       {
-        title: "lifetime",
+        title: "Lifetime",
       },
       {
-        title: "exchange",
+        title: "Exchange",
       },
     ],
   },
@@ -64,13 +64,13 @@ export const sidemenu = [
     link: "/delivery",
     subHeading: [
       {
-        title: "Deliverypolicy",
+        title: "Delivery Policy",
       },
       {
         title: "Packaging",
       },
       {
-        title: "Freeshipping",
+        title: "Free Shipping",
       },
     ],
   },
@@ -79,11 +79,11 @@ export const sidemenu = [
     link: "/privacy",
     subHeading: [
       {
-        title: "Privacypolicy",
+        title: "Privacy Policy",
       },
       
       {
-        title: "PersonalInformation",
+        title: "Personal Information",
       },
       
     ],
@@ -120,7 +120,7 @@ export const AboutUs = {
       title: "Diamonds",
     },
     {
-      title: "Youngones",
+      title: "Young Ones",
     },
     {
       title: "Antique",

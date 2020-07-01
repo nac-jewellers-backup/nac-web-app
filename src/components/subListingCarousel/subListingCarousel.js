@@ -113,17 +113,7 @@ import {
           <Typography variant="h5" className={classes.title}>
                 {YoungOnes.carouselData.title}
                     </Typography>
-                <Grid item xs={12} className={classes.anchorMain}>
-                    <a className={classes.anchor} href="">
-                        <Grid className={classes.algins}>
-    <Typography className={classes.anchor}>{YoungOnes.carouselData.link}</Typography>
-                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAOCAMAAAAliK2kAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABtQTFRFqKio8fHxREREGRkZYWFh4uLijIyMNjY2////EoUdpQAAAAl0Uk5T//////////8AU094EgAAADpJREFUeNpUzdsKADAIAlBt1///4jkLxoLwYA9h1+BhooCGOqW8V1lLBlcYjOCFU8gUulMY/H8dAQYArKoCrGXO+aEAAAAASUVORK5CYII=" />
-
-                        </Grid>
-                        <Grid>
-                        </Grid>
-                    </a>
-                </Grid>
+           
             <div className="back_img">
                <div className={classes.subCarouselHead}>
                 <Container maxWidth='md'>
@@ -152,13 +142,7 @@ import {
                 </Container>
               </div>
             </div>
-  
-          </Hidden>
-          <Hidden mdUp>
-          <Typography variant="h5" className={classes.title}>
-                {YoungOnes.carouselData.title}
-                    </Typography>
-                <Grid item xs={12} className={classes.anchorMain}>
+            <Grid item xs={12} className={classes.anchorMain}>
                     <a className={classes.anchor} href="">
                         <Grid className={classes.algins}>
     <Typography className={classes.anchor}>{YoungOnes.carouselData.link}</Typography>
@@ -169,6 +153,12 @@ import {
                         </Grid>
                     </a>
                 </Grid>
+          </Hidden>
+          <Hidden mdUp>
+          <Typography variant="h5" className={classes.title}>
+                {YoungOnes.carouselData.title}
+                    </Typography>
+               
             <Container style={{padding:"5px 22px",marginTop:"20px"}}>
               <Grid style={{ boxShadow: "0px 2px 4px 4px rgba(0, 0, 0, 0.1), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12)", padding: "0 5px" }} >
                 <Grid expandIcon={<span className='side-arrow-symbol'>
@@ -189,7 +179,17 @@ import {
   
               
             </Container>
-  
+            <Grid item xs={12} className={classes.anchorMain}>
+                    <a className={classes.anchor} href="">
+                        <Grid className={classes.algins}>
+    <Typography className={classes.anchor}>{YoungOnes.carouselData.link}</Typography>
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAOCAMAAAAliK2kAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABtQTFRFqKio8fHxREREGRkZYWFh4uLijIyMNjY2////EoUdpQAAAAl0Uk5T//////////8AU094EgAAADpJREFUeNpUzdsKADAIAlBt1///4jkLxoLwYA9h1+BhooCGOqW8V1lLBlcYjOCFU8gUulMY/H8dAQYArKoCrGXO+aEAAAAASUVORK5CYII=" />
+
+                        </Grid>
+                        <Grid>
+                        </Grid>
+                    </a>
+                </Grid>
           </Hidden >
         </div>
       )

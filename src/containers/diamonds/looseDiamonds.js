@@ -98,7 +98,7 @@ export default function Diamonds(props) {
       <Grid container className={classes.dataCon} xs={11} lg={10}>
         <DiamondList />
       </Grid>
-      <Grid>
+      <Grid container item xs={12}>
         <Footer />
       </Grid>
     </Grid>

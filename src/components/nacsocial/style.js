@@ -6,6 +6,7 @@ const styles = makeStyles(theme => ({
             textAlign:"center",
             fontWeight:"500",
             paddingBottom:"20px",
+            paddingTop:"20px",
             width:"100%"
         },
         para:{

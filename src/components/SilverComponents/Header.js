@@ -655,7 +655,7 @@ class Header extends Component {
                             <Grid item xs={12}>
                               <FormControl
                                 variant="outlined"
-                                className={classes.goldRateformControl}
+                                className={classes.goldRateformControlSmallScreen}
                               >
                                 {/* <InputLabel id="demo-simple-select-outlined-label">
                                 Age

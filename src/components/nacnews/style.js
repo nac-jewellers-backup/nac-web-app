@@ -13,6 +13,7 @@ const styles = makeStyles(theme => ({
     },
     paddings:{
         paddingBottom:"20px",
+        paddingTop:"20px",
         width:"100%"
     },
     title:{

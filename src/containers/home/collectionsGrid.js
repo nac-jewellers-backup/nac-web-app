@@ -171,6 +171,9 @@ export function AdvancedGridList() {
               width="100%"
               height="100%"
             />
+            <div className="overlayGrid">
+              <b>SHOP</b>&nbsp; DIAMOND SETS
+            </div>
           </div>
           <div class="grid-item-sm item111-sm">
             {" "}
@@ -180,6 +183,9 @@ export function AdvancedGridList() {
               width="100%"
               height="100%"
             />
+            <div className="overlayGrid">
+              <b>SHOP</b>&nbsp; DIAMOND SETS
+            </div>
           </div>
           <div class="grid-item-sm item112-sm">
             <img
@@ -188,6 +194,9 @@ export function AdvancedGridList() {
               width="100%"
               height="100%"
             />
+            <div className="overlayGrid">
+              <b>SHOP</b>&nbsp; REWIND
+            </div>
           </div>
           <div class="grid-item-sm item113-sm">
             <img
@@ -196,6 +205,9 @@ export function AdvancedGridList() {
               width="100%"
               height="100%"
             />
+            <div className="overlayGrid">
+              <b>SHOP</b>&nbsp; MAYURA
+            </div>
           </div>
           <div class="grid-item-sm item11-sm">
             <img
@@ -204,6 +216,9 @@ export function AdvancedGridList() {
               width="100%"
               height="100%"
             />
+            <div className="overlayGrid">
+              <b>SHOP</b>&nbsp; MUHURTAM
+            </div>
           </div>
           <div class="grid-item-sm item0-sm">
             <img
@@ -212,6 +227,9 @@ export function AdvancedGridList() {
               width="100%"
               height="100%"
             />
+            <div className="overlayGrid">
+              <b>SHOP</b>&nbsp; LITTLE ONES
+            </div>
           </div>
         </div>
       </Hidden>
