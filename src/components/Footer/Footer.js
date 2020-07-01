@@ -158,7 +158,47 @@ const useStyles = makeStyles(theme => ({
         paddingLeft:5,
         fontSize:13
       }
-}
+},
+textFieldEmailMobile : {
+    width : "100%",
+    paddingLeft:5,
+    backgroundColor : "#fff",
+    textAlign : "center",
+
+    "& .MuiInput-underline":{
+        "&::before":{
+            borderBottom:'none'
+        },
+        "&::after":{
+            borderBottom:'none'
+           }
+    },
+    "& .MuiInput-underline:hover:not(.Mui-disabled)":{
+        "&::before":{
+            borderBottom:'none'
+        },
+       "&::after":{
+        borderBottom:'none'
+       }
+    }
+},
+"MobileInput":{
+    '&::placeholder': { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        paddingLeft:5,
+        fontSize:10
+        
+      }
+      ,
+      '&:-ms-input-placeholder': { /* Internet Explorer 10-11 */
+        paddingLeft:5,
+        fontSize:10
+      }
+      ,
+      '&::-ms-input-placeholder': { /* Microsoft Edge */
+        paddingLeft:5,
+        fontSize:10
+      }
+},
 }));
 
 
@@ -170,25 +210,25 @@ export default function Footer(props) {
     const [stateClassname, setStateClassname] = React.useState('snackBar')
 
     const classes = useStyles();
-    const footerData = [
-        {
-            url: "aboutus",
-            Title: "About Us"
-        },
-        {
-            url: "/store",
-            Title: "Store Locator"
-        },
-        {
-            url: "/contactus",
-            Title: "Contact"
-        },
-        {
-            url: "/privacy",
-            Title: "Privacy Policy"
-        },
+    // const footerData = [
+    //     {
+    //         url: "aboutus",
+    //         Title: "About Us"
+    //     },
+    //     {
+    //         url: "/store",
+    //         Title: "Store Locator"
+    //     },
+    //     {
+    //         url: "/contactus",
+    //         Title: "Contact"
+    //     },
+    //     {
+    //         url: "/privacy",
+    //         Title: "Privacy Policy"
+    //     },
 
-    ]
+    // ]
     const footerData1 = [
         {
             url: "/aboutus",
@@ -263,6 +303,78 @@ export default function Footer(props) {
         },
        
        
+    ]
+    const MobilefooterData1 = [
+        {
+            url: "/aboutus",
+            Title: "About Us"
+        },
+        {
+            url: "/careers",
+            Title: "Careers"
+        },
+        {
+            url: "/newsroom",
+            Title: "News Room"
+        },
+        {
+            url: "/advertising",
+            Title: "Advertising"
+        },
+        {
+            url: "/return",
+            Title: "30 Day Return"
+        },
+        {
+            url: "/privacy",
+            Title: "Privacy Policy"
+        },
+    ]
+    const MobilefooterData2 = [
+        {
+            url: "/store",
+            Title: "Store Locator"
+        },
+        {
+            url: "/education",
+            Title: "Education"
+        },
+        {
+            url: "/sitemap",
+            Title: "Sitemap"
+        },
+        {
+            url: "/contactus",
+            Title: "Contact"
+        },
+        {
+            url: "",
+            Title: "Track Order"
+        },
+    ]
+    const MobilefooterData3 = [
+        {
+            url: "/temple-work",
+            Title: "Temple Work"
+        },
+        {
+            url: "/termsconditions",
+            Title: "Terms & Conditions"
+        },
+        {
+            url: "",
+            Title: "360 ° Store View"
+        },
+        {
+            url: "/faqs",
+            Title: "FAQ"
+        },
+        {
+            url: "/delivery",
+            Title: "Delivery Info"
+        },
+
+        
     ]
     const status = (response) => {
 
@@ -478,39 +590,45 @@ export default function Footer(props) {
             <Hidden only={['lg', 'xl', 'md']} >
                 <Grid container item className={classes.topConatinerfooter} xs={12} >
 
-                <Grid container item xl={5} lg={5} md={5} xs={10} sm={10}   style={{margin : "auto", paddingTop : "16px"}} >
-                        <Grid container item xs={4} style={{ backgroundColor: 'colorMain', fontSize: '12px' }} alignItems="center" className={`${classes.colorWhite}`}>
+                <Grid container direction="row" item xl={5} lg={5} md={5} xs={10} sm={10}  spacing={.5}  style={{margin : "auto", paddingTop : "16px"}} >
+                       
                             {
-                                footerData1.map(data => {
+                               MobilefooterData1.map(data => {
                                     return (
-                                        <Grid item xs={12} sm={12} container  style={{ padding: '2px 0px 8px 0px' }} onClick={() => { window.location.href = data.url }} href="#">
+                                        <Grid container item xs={4} style={{ backgroundColor: 'colorMain', fontSize: '12px' }} alignItems="center" className={`${classes.colorWhite}`}>
+                                        <Grid item xs={12} sm={12} container  style={{ padding: '4px 0px 8px 0px', width : "100%" }} onClick={() => { window.location.href = data.url }} href="#">
                                             {data.Title}
+                                        </Grid>
                                         </Grid>
                                     )
                                 })
                             }
-                        </Grid>
-                        <Grid container item xs={4} style={{ backgroundColor: 'colorMain', fontSize: '12px' }} alignItems="center" className={`${classes.colorWhite}`}>
+                       
+                      
                             {
-                                footerData2.map(data => {
+                                MobilefooterData2.map(data => {
                                     return (
-                                        <Grid item xs={12} sm={12} container  style={{ padding: '2px 0px 8px 0px' }} onClick={() => { window.location.href = data.url }} href="#">
+                                        <Grid container item xs={4} style={{ backgroundColor: 'colorMain', fontSize: '12px' }} alignItems="center" className={`${classes.colorWhite}`}>
+                                        <Grid item xs={12} sm={12} container  style={{ padding: '4px 0px 8px 0px', width : "100%" }} onClick={() => { window.location.href = data.url }} href="#">
                                             {data.Title}
+                                        </Grid>
                                         </Grid>
                                     )
                                 })
                             }
-                        </Grid><Grid container item xs={4} style={{ backgroundColor: 'colorMain', fontSize: '12px' }} alignItems="center" className={`${classes.colorWhite}`}>
+                      
                             {
-                                footerData3.map(data => {
+                                MobilefooterData3.map(data => {
                                     return (
-                                        <Grid item xs={12} sm={12} container  style={{ padding: '2px 0px 8px 0px' }} onClick={() => { window.location.href = data.url }} href="#">
+                                        <Grid container item xs={4} style={{ backgroundColor: 'colorMain', fontSize: '12px' }} alignItems="center" className={`${classes.colorWhite}`}>
+                                        <Grid item xs={12} sm={12} container  style={{ padding: '4px 0px 8px 0px', width : "100%" }} onClick={() => { window.location.href = data.url }} href="#">
                                             {data.Title}
+                                        </Grid>
                                         </Grid>
                                     )
                                 })
                             }
-                        </Grid>
+                       
                         {/* <Grid container item xs={3} style={{ backgroundColor: 'colorMain', fontSize: '12px' }} alignItems="center" className={`${classes.colorWhite}`}>
                             {
                                 footerData4.map(data => {
@@ -542,7 +660,19 @@ export default function Footer(props) {
                             </Grid>
                         </Grid>
                     </Grid> */}
-
+    <Grid  item xs={10} style={{margin : "auto",  padding : "12px 0px "}}>
+    <Grid item xs={12} style={{   display:'flex', justifyContent:'center', alignItems:'center' ,}}>
+     <TextField id="standard-basic" placeholder={"Enter email id to receive updates on NAC".toUpperCase()}  className={classes.textFieldEmailMobile} 
+      InputProps={{ classes: {input: classes['MobileInput']} }} 
+     />
+   
+     </Grid>
+     <Grid  item xs={12} style={{paddingTop : "4px", }} >
+<Button variant="contained" color="secondary" style={{boxShadow:'rgba(20, 25, 25, 0.32) 6px 7px 6px', fontSize : "10px"}}>
+  Sign Up
+</Button>
+</Grid>
+    </Grid>
                     <Grid container item xs={12} className={`${classes.colorWhite} ${classes.colorMain}`} style={{ padding: '0px 15px 15px 15px', lineHeight: "16px" }}>
                         <Grid item xs={12} sm={12} className="footer-icons" style={{ paddingTop: "6px", display: 'flex',  }}>
                             <a class="valuesallow" style={{ textDecoration: "none" }} target="_blank" href={`http://www.twitter.com/share?url=${window.location.href}`}>
@@ -560,7 +690,7 @@ export default function Footer(props) {
 
                   
                 </Grid>
-                <Grid container className={classes.colorMain} xs={10} style={{margin : "auto"}}>
+                <Grid container className={classes.colorMain} xs={10} style={{margin : "auto",}}>
                     <Grid item className={"imageClass"}>
                         < img src={"https://assets.stylori.com/images/static/footer.png"} style={{ width: "100%", height: "auto" }} />
                     </Grid>
