@@ -111,6 +111,12 @@ const useStyles = makeStyles(theme => ({
         [theme.breakpoints.up('sm')]: {
             padding: "30px 15px 15px 15px"
         }
+    },
+    footerSocialIcons:{
+        width: "100%", textAlign: "end" ,
+        [theme.breakpoints.between(1280,1340)]: {
+            textAlign: "left" ,
+        }
     }
 
 }));
@@ -189,15 +195,24 @@ export default function Footer(props) {
             Title: "Terms & Conditions"
         },
         {
+            url: "",
+            Title: "360 ° Store View"
+        },
+        {
             url: "/faqs",
             Title: "FAQ"
         },
+        
+    ]
+    const footerData4 = [
         {
             url: "/return",
             Title: "30 Day Return"
         },
-    ]
-    const footerData4 = [
+        {
+            url: "",
+            Title: "Track Order"
+        },
         {
             url: "/delivery",
             Title: "Delivery Info"
@@ -206,14 +221,8 @@ export default function Footer(props) {
             url: "/privacy",
             Title: "Privacy Policy"
         },
-        {
-            url: "",
-            Title: "360 ° Store View"
-        },
-        {
-            url: "",
-            Title: "Track Order"
-        },
+       
+       
     ]
     const status = (response) => {
 
@@ -404,7 +413,7 @@ export default function Footer(props) {
     </Grid>
 
     <Grid xs={12} item container style={{ display: 'flex', justifyContent: 'flex-end', paddingTop: "10px" }} className="footer-icons">
-                            <Grid item style={{ width: "100%", textAlign: "end" }}>
+                            <Grid item className={classes.footerSocialIcons}>
                                 <a style={{ textDecoration: "none" }} target="_blank" href={`http://www.twitter.com/share?url=${window.location.href}`}>
                                     <i style={{ fontSize: '24px', color: '#434e77', paddingLeft: '3px', }} className="fa">&#xf099;</i> </a>
                                 <a target="_blank" href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`}>

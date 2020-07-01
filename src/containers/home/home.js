@@ -1022,6 +1022,7 @@ class HomeComp extends React.Component {
             {
               <>
                 <Hidden smDown>
+                <Container maxWidth={'lg'}>
                   <Slideshow
                     // sliderRef={this.slider}
                     class="subslider-carousel"
@@ -1031,9 +1032,10 @@ class HomeComp extends React.Component {
                       return <ImgMediaCard data={val} cardSize="auto" />;
                     })}
                   </Slideshow>
+                  </Container>
                 </Hidden>
                 <Hidden mdUp>
-                  <Container>
+                  <Container maxWidth={'lg'}>
                     <Slideshow
                       // sliderRef={this.slider}
                       class="subslider-carousel"
@@ -1061,6 +1063,7 @@ class HomeComp extends React.Component {
             {
               <>
                 <Hidden smDown>
+                <Container maxWidth={'lg'}>
                   <Slideshow
                     // sliderRef={this.slider}
                     class="subslider-carousel"
@@ -1070,9 +1073,10 @@ class HomeComp extends React.Component {
                       return <ImgMediaCard data={val} cardSize="auto" hoverText={true}/>;
                     })}
                   </Slideshow>
+                  </Container>
                 </Hidden>
                 <Hidden mdUp>
-                  <Container>
+                  <Container maxWidth={'lg'}>
                     <Slideshow
                       // sliderRef={this.slider}
                       class="subslider-carousel"
