@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
       // width: "1170px !important",
       margin: "auto",
       backgroundColor: "#fff",
-      padding: "0px 15px 10px 15px",
+      padding: "0px 0px 0px 10px",
     },
   },
   [theme.breakpoints.only("xs")]: {

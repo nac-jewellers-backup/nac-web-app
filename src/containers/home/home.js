@@ -232,6 +232,8 @@ const styles = (theme) => ({
     color: theme.palette.gold.main,
     textDecoration: "underline",
     paddingBottom: 20,
+    fontWeight:'bold',
+    fontSize:'1.2rem',
     '-webkit-text-underline-position': 'under',
   '-ms-text-underline-position': 'below',
   'text-underline-position': 'under' ,
@@ -1020,6 +1022,7 @@ class HomeComp extends React.Component {
             {
               <>
                 <Hidden smDown>
+                <Container maxWidth={'lg'}>
                   <Slideshow
                     // sliderRef={this.slider}
                     class="subslider-carousel"
@@ -1029,9 +1032,10 @@ class HomeComp extends React.Component {
                       return <ImgMediaCard data={val} cardSize="auto" />;
                     })}
                   </Slideshow>
+                  </Container>
                 </Hidden>
                 <Hidden mdUp>
-                  <Container>
+                  <Container maxWidth={'lg'}>
                     <Slideshow
                       // sliderRef={this.slider}
                       class="subslider-carousel"
@@ -1059,6 +1063,7 @@ class HomeComp extends React.Component {
             {
               <>
                 <Hidden smDown>
+                <Container maxWidth={'lg'}>
                   <Slideshow
                     // sliderRef={this.slider}
                     class="subslider-carousel"
@@ -1068,9 +1073,10 @@ class HomeComp extends React.Component {
                       return <ImgMediaCard data={val} cardSize="auto" hoverText={true}/>;
                     })}
                   </Slideshow>
+                  </Container>
                 </Hidden>
                 <Hidden mdUp>
-                  <Container>
+                  <Container maxWidth={'lg'}>
                     <Slideshow
                       // sliderRef={this.slider}
                       class="subslider-carousel"
@@ -1085,8 +1091,9 @@ class HomeComp extends React.Component {
               </>
             }
           </Grid>
-          <Grid container item xs={12} style={{boxShadow:'6px 7px 6px #bebfbf'}}>
-            {[
+          <Grid container item xs={12} >
+          <Grid container item xs={12}>
+          {[
               { title: "NEWS" },
               { title: "PROMOTION" },
               { title: "VIDEOS" },
@@ -1094,24 +1101,39 @@ class HomeComp extends React.Component {
               return (
                 <Grid item xs={4} style={{ paddingLeft: 5 }}>
                   <div className={classes.titilenews}>{val.title}</div>
+                  
+                </Grid>
+              );
+            })}
+          </Grid>
+            <Grid container item xs={12} style={{boxShadow:'6px 7px 6px #bebfbf'}}>
+            {[
+              { img: "https://i.pinimg.com/originals/bf/cf/0e/bfcf0e1e1b63662860fdbfc1a0a55df1.jpg" },
+              { img: "https://pbs.twimg.com/media/DvMP36yWwAAytvb.jpg" },
+              { img: "https://pbs.twimg.com/media/DvMPyhmXQAE5qGJ.jpg" },
+            ].map((val) => {
+              return (
+                <Grid item xs={4} style={{ paddingLeft: 5 }}>
+                  {/* <div className={classes.titilenews}>{val.title}</div> */}
                   <Slideshow
                     // sliderRef={this.slider}
                     class="subslider-carousel"
                     dataCarousel={mysettings}
                   >
-                    {[0, 1, 2].map((val) => {
-                      return (
+                    {/* {[0, 1, 2].map((val) => {
+                      return ( */}
                         <img
-                          src="https://assets.stylori.com/product/SE0024/1000X1000/HOVER-SE0024-2Y.webp"
+                          src={val.img}
                           alt="NAC"
                           height="100%"
                         />
-                      );
-                    })}
+                    {/* //   ); */}
+                    {/* // })} */}
                   </Slideshow>
                 </Grid>
               );
             })}
+            </Grid>
           </Grid>
           <Grid container style={{ padding: "40px 0px" }}>
             <Hidden smDown>

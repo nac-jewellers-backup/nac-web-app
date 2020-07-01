@@ -112,13 +112,53 @@ const useStyles = makeStyles(theme => ({
             padding: "30px 15px 15px 15px"
         }
     },
+    footerSocialIcons:{
+        width: "100%", textAlign: "end" ,
+        [theme.breakpoints.between(1280,1340)]: {
+            textAlign: "left" ,
+        }},
     textFieldEmail : {
     width : "100%",
+    paddingLeft:10,
     backgroundColor : "#fff",
     textAlign : "center",
 
+    "& .MuiInput-underline":{
+        "&::before":{
+            borderBottom:'none'
+        },
+        "&::after":{
+            borderBottom:'none'
+           }
+    },
+    "& .MuiInput-underline:hover:not(.Mui-disabled)":{
+        "&::before":{
+            borderBottom:'none'
+        },
+       "&::after":{
+        borderBottom:'none'
+       }
     }
-
+  
+    }
+,
+"input":{
+    '&::placeholder': { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        paddingLeft:5,
+        fontSize:13
+        
+      }
+      ,
+      '&:-ms-input-placeholder': { /* Internet Explorer 10-11 */
+        paddingLeft:5,
+        fontSize:13
+      }
+      ,
+      '&::-ms-input-placeholder': { /* Microsoft Edge */
+        paddingLeft:5,
+        fontSize:13
+      }
+}
 }));
 
 
@@ -195,15 +235,24 @@ export default function Footer(props) {
             Title: "Terms & Conditions"
         },
         {
+            url: "",
+            Title: "360 ° Store View"
+        },
+        {
             url: "/faqs",
             Title: "FAQ"
         },
+        
+    ]
+    const footerData4 = [
         {
             url: "/return",
             Title: "30 Day Return"
         },
-    ]
-    const footerData4 = [
+        {
+            url: "",
+            Title: "Track Order"
+        },
         {
             url: "/delivery",
             Title: "Delivery Info"
@@ -212,14 +261,8 @@ export default function Footer(props) {
             url: "/privacy",
             Title: "Privacy Policy"
         },
-        {
-            url: "",
-            Title: "360 ° Store View"
-        },
-        {
-            url: "",
-            Title: "Track Order"
-        },
+       
+       
     ]
     const status = (response) => {
 
@@ -399,7 +442,9 @@ export default function Footer(props) {
  <Grid container item xs={4} >
     <Grid container item xs={12}>
     <Grid item xs={12} style={{  width:'100%', display:'flex', justifyContent:'center', alignItems:'center'}}>
-     <TextField id="standard-basic" placeholder="Enter email id to receive updates on NAC"  className={classes.textFieldEmail} />
+     <TextField id="standard-basic" placeholder={"Enter email id to receive updates on NAC".toUpperCase()}  className={classes.textFieldEmail} 
+      InputProps={{ classes: {input: classes['input']} }} 
+     />
    
      </Grid>
      <Grid  item xs={12} style={{textAlign:'right'}}>
@@ -410,7 +455,7 @@ export default function Footer(props) {
     </Grid>
 
     <Grid xs={12} item container style={{ display: 'flex', justifyContent: 'flex-end', paddingTop: "10px" }} className="footer-icons">
-                            <Grid item style={{ width: "100%", textAlign: "end" }}>
+                            <Grid item className={classes.footerSocialIcons}>
                                 <a style={{ textDecoration: "none" }} target="_blank" href={`http://www.twitter.com/share?url=${window.location.href}`}>
                                     <i style={{ fontSize: '24px', color: '#434e77', paddingLeft: '3px', }} className="fa">&#xf099;</i> </a>
                                 <a target="_blank" href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`}>
