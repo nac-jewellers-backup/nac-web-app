@@ -314,7 +314,7 @@ export default function Footer(props) {
                             </Grid>
                             <Grid item>
                                 <Button type="submit" id="_button" className={`${classes.searchButtonFooter}`} onClick={(e) => { return handleEmail(e) }}>Stay Informed</Button>
-                            </Grid>
+                               </Grid>
                         </Grid>
                         <Grid xs={5} item container style={{ display: 'flex', justifyContent: 'flex-end', paddingTop: "10px" }} className="footer-icons">
                             <Grid item style={{ width: "100%", textAlign: "end" }}>
@@ -333,7 +333,7 @@ export default function Footer(props) {
 
                     </Grid>
                     </Grid>
-                </Grid>
+                </Grid>F
   */}
  <Container >
  <Grid container item xs={12} style={{marginTop:20}}>
@@ -432,7 +432,53 @@ export default function Footer(props) {
             </Hidden>
             <Hidden only={['lg', 'xl', 'md']} >
                 <Grid container item className={classes.topConatinerfooter} xs={12} >
-                    <Grid container className={classes.messageconatainer}>
+
+                <Grid container item xl={5} lg={5} md={5} xs={10} sm={10}   style={{margin : "auto", paddingTop : "16px"}} >
+                        <Grid container item xs={4} style={{ backgroundColor: 'colorMain', fontSize: '12px' }} alignItems="center" className={`${classes.colorWhite}`}>
+                            {
+                                footerData1.map(data => {
+                                    return (
+                                        <Grid item xs={12} sm={12} container  style={{ padding: '2px 0px 8px 0px' }} onClick={() => { window.location.href = data.url }} href="#">
+                                            {data.Title}
+                                        </Grid>
+                                    )
+                                })
+                            }
+                        </Grid>
+                        <Grid container item xs={4} style={{ backgroundColor: 'colorMain', fontSize: '12px' }} alignItems="center" className={`${classes.colorWhite}`}>
+                            {
+                                footerData2.map(data => {
+                                    return (
+                                        <Grid item xs={12} sm={12} container  style={{ padding: '2px 0px 8px 0px' }} onClick={() => { window.location.href = data.url }} href="#">
+                                            {data.Title}
+                                        </Grid>
+                                    )
+                                })
+                            }
+                        </Grid><Grid container item xs={4} style={{ backgroundColor: 'colorMain', fontSize: '12px' }} alignItems="center" className={`${classes.colorWhite}`}>
+                            {
+                                footerData3.map(data => {
+                                    return (
+                                        <Grid item xs={12} sm={12} container  style={{ padding: '2px 0px 8px 0px' }} onClick={() => { window.location.href = data.url }} href="#">
+                                            {data.Title}
+                                        </Grid>
+                                    )
+                                })
+                            }
+                        </Grid>
+                        {/* <Grid container item xs={3} style={{ backgroundColor: 'colorMain', fontSize: '12px' }} alignItems="center" className={`${classes.colorWhite}`}>
+                            {
+                                footerData4.map(data => {
+                                    return (
+                                        <Grid item xs={12} sm={12} container  style={{ padding: '2px 0px 8px 0px' }} onClick={() => { window.location.href = data.url }} href="#">
+                                            {data.Title}
+                                        </Grid>
+                                    )
+                                })
+                            }
+                        </Grid> */}
+                    </Grid>
+                    {/* <Grid container className={classes.messageconatainer}>
                         <Grid container style={{ display: 'flex', justifyContent: 'center', padding: "6px 0px 0px 0px" }}>
                             <Grid item >
                                 <input
@@ -450,10 +496,10 @@ export default function Footer(props) {
                                 <Button type="submit" id="_button" className={`${classes.searchButtonFooter}`} onClick={(e) => handleEmail(e)}>Stay Informed</Button>
                             </Grid>
                         </Grid>
-                    </Grid>
+                    </Grid> */}
 
                     <Grid container item xs={12} className={`${classes.colorWhite} ${classes.colorMain}`} style={{ padding: '0px 15px 15px 15px', lineHeight: "16px" }}>
-                        <Grid item xs={12} sm={12} className="footer-icons" style={{ paddingTop: "6px", display: 'flex', justifyContent: 'center' }}>
+                        <Grid item xs={12} sm={12} className="footer-icons" style={{ paddingTop: "6px", display: 'flex',  }}>
                             <a class="valuesallow" style={{ textDecoration: "none" }} target="_blank" href={`http://www.twitter.com/share?url=${window.location.href}`}>
                                 <i style={{ fontSize: '24px', color: '#434e77', paddingLeft: '3px', }} className="fa">&#xf099;</i> </a>
                             <a class="valuesallow" target="_blank" href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`}>
@@ -467,21 +513,9 @@ export default function Footer(props) {
                         </Grid>
                     </Grid>
 
-                    <Grid container item xl={5} lg={5} md={5} xs={12} sm={12}>
-                        <Grid container item xs={12} style={{ backgroundColor: 'colorMain', fontSize: '12px' }} alignItems="center" className={`${classes.colorWhite}`}>
-                            {
-                                footerData.map(data => {
-                                    return (
-                                        <Grid item xs={12} sm={12} container justify="center" style={{ padding: '2px 0px 8px 0px' }} onClick={() => { window.location.href = data.url }} href="#">
-                                            {data.Title}
-                                        </Grid>
-                                    )
-                                })
-                            }
-                        </Grid>
-                    </Grid>
+                  
                 </Grid>
-                <Grid container className={classes.colorMain}>
+                <Grid container className={classes.colorMain} xs={10} style={{margin : "auto"}}>
                     <Grid item className={"imageClass"}>
                         < img src={"https://assets.stylori.com/images/static/footer.png"} style={{ width: "100%", height: "auto" }} />
                     </Grid>
