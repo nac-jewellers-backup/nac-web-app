@@ -69,6 +69,7 @@ export const styles = (theme) => ({
         display: "flex",
         justifyContent: "flex-start",
         alignItems: "center",
+        color:'white !important'
       },
     width: "100%",
     margin: '8px 0px',

@@ -219,3 +219,10 @@
 }
 
 /*  */
+
+
+@media screen and (max-width: 400px) {
+  .overlayGrid{
+    font-size:11px;
+  }
+}
