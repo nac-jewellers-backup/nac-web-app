@@ -116,9 +116,49 @@ const useStyles = makeStyles(theme => ({
         width: "100%", textAlign: "end" ,
         [theme.breakpoints.between(1280,1340)]: {
             textAlign: "left" ,
-        }
-    }
+        }},
+    textFieldEmail : {
+    width : "100%",
+    paddingLeft:10,
+    backgroundColor : "#fff",
+    textAlign : "center",
 
+    "& .MuiInput-underline":{
+        "&::before":{
+            borderBottom:'none'
+        },
+        "&::after":{
+            borderBottom:'none'
+           }
+    },
+    "& .MuiInput-underline:hover:not(.Mui-disabled)":{
+        "&::before":{
+            borderBottom:'none'
+        },
+       "&::after":{
+        borderBottom:'none'
+       }
+    }
+  
+    }
+,
+"input":{
+    '&::placeholder': { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        paddingLeft:5,
+        fontSize:13
+        
+      }
+      ,
+      '&:-ms-input-placeholder': { /* Internet Explorer 10-11 */
+        paddingLeft:5,
+        fontSize:13
+      }
+      ,
+      '&::-ms-input-placeholder': { /* Microsoft Edge */
+        paddingLeft:5,
+        fontSize:13
+      }
+}
 }));
 
 
@@ -401,9 +441,11 @@ export default function Footer(props) {
                         </Grid>
  <Grid container item xs={4} >
     <Grid container item xs={12}>
-    <Grid item xs={12} style={{padding:15, border:'1px solid white', background:'white', height:'20px', width:'100px', display:'flex', justifyContent:'center', alignItems:'center'}}>
-     {/* <TextField id="standard-basic" label="Standard" /> */}
-     Enter email id to receive updates on NAC
+    <Grid item xs={12} style={{  width:'100%', display:'flex', justifyContent:'center', alignItems:'center'}}>
+     <TextField id="standard-basic" placeholder={"Enter email id to receive updates on NAC".toUpperCase()}  className={classes.textFieldEmail} 
+      InputProps={{ classes: {input: classes['input']} }} 
+     />
+   
      </Grid>
      <Grid  item xs={12} style={{textAlign:'right'}}>
 <Button variant="contained" color="secondary" style={{boxShadow:'rgba(20, 25, 25, 0.32) 6px 7px 6px'}}>
