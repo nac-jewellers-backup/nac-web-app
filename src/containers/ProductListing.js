@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from 'components/SilverComponents/Header'
 import Filterlisting from 'components/Filterlisting';
-import { Grid, Hidden } from '@material-ui/core';
+import { Grid, Hidden, Container } from '@material-ui/core';
 import Filter from 'components/Filter/filter'
 import Footer from "components/Footer/Footer"
 import { ChatHelp } from 'components/ChatHelp';
@@ -15,7 +15,9 @@ import { async } from 'q';
 import MetaTags from 'react-meta-tags';
 import { CartContext } from 'context'
 import LiveChat from 'react-livechat'
-
+import Slideshow from "components/Carousel/carosul";
+import { homePageStylori } from "./dummydatahome";
+import ProductDescription  from 'components/productDescription';
 class Stylori extends React.Component {
   constructor(props) {
     super()
@@ -36,9 +38,30 @@ class Stylori extends React.Component {
     }
 
   }
+
+
+
   render() {
     // alert(JSON.stringify(this.props.wishlist))
     const { data, dataFilter, loading } = this.props
+    const setting = {
+      dots: false,
+      infinite: true,
+      autoplay: true,
+      speed: 2000,
+      fade: false,
+      arrows: false,
+      arrowsImg: true,
+      dotsClass: "slickdev",
+      accessibility: true,
+      autoplaySpeed: 4000,
+      centerMode: false,
+      focusOnSelect: false,
+      pauseOnHover: false,
+      pauseOnDotsHover: false,
+      pauseOnFocus: true,
+      swipe: false
+    }
     return (
 
       <>
@@ -77,12 +100,54 @@ class Stylori extends React.Component {
           </div>
 
           <Header data={data} cartcount={this.props.cartcount} wishlist={this.props.wishlistdata} wishlist_count={this.props.wishlist_count} />
-
           <Grid item xs={12}>
-            <Filterlisting title="Jewellery" data={dataFilter} datalisting={data} wishlist={this.props.wishlistdata} />
-            {/* <ProductDescription title="Jewellery" data={dataFilter} datalisting={data} wishlist={this.props.wishlistdata} /> */}
+          {/* <Hidden smDown>
+            {homePageStylori.carouselTop.setting.arrowsImg && (
+              <Grid container>
+                <Grid
+                  item
+                  onClick={this.previous}
+                  className={"imagePrevios"}
+                ></Grid>
+                <Grid item onClick={this.next} className={"imagenext"}></Grid>
+              </Grid>
+            )}
+          </Hidden> */}
+          <Slideshow
+            sliderRef={this.slider}
+            dataCarousel={setting}
+          >
+            {homePageStylori.carouselTop.data.map((val, index) => (
+              <><Hidden smDown>
+                <Grid container key={index}>
+                  <a href={val.navigateUrl} style={{ width: "100%" }}>
+                    <img
+                      src={val.img}
+                      style={{ width: "100%", height: "100%" }}
+                    />
+                  </a>
+                </Grid>
+              </Hidden>
+                <Hidden mdUp>
+                  <Grid container key={index}>
+                    <a href={val.navigateUrl}>
+                      <img
+                        src={val.mobileImg}
+                        style={{ width: "100%", height: "100%" }}
+                      />
+                    </a>
+                  </Grid>
+                </Hidden></>
+            ))}
+          </Slideshow>
+        </Grid>
+        <Container maxWidth="lg">
+        <Grid item xs={12}>
+            {/* <Filterlisting title="Jewellery" data={dataFilter} datalisting={data} wishlist={this.props.wishlistdata} /> */}
+            <ProductDescription title="Jewellery" data={dataFilter} datalisting={data} wishlist={this.props.wishlistdata} />
             <Filter datas={data} data={dataFilter} loading={loading} wishlist={this.props.wishlistdata} />
           </Grid>
+        </Container>
           <Grid item xs={12} >
             <Hidden smDown>
               {/* <ChatHelp data={data} wishlist={this.props.wishlistdata} /> */}

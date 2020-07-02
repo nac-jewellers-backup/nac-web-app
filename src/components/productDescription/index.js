@@ -84,7 +84,7 @@ class ProductDescription extends Component {
               item
               container
             >
-              <Hidden smDown>
+              {/* <Hidden smDown>
                 <Grid
                   item
                   xs={3}
@@ -93,9 +93,9 @@ class ProductDescription extends Component {
                 >
                   <CustomSeparator
                     list='product-dis'
-                    classsubhed='product-backg'
-                    data={data_json} />{/* window.location.pathname.split('/').pop()  */}
-                </Grid>
+                    classsubhed='product-backg' */}
+                    {/* // data={data_json} />window.location.pathname.split('/').pop()  */}
+                {/* </Grid>
               </Hidden>
               <Hidden smDown >
                 <Grid
@@ -104,14 +104,14 @@ class ProductDescription extends Component {
                   className={`DescriptionTitle`}
                   style={{ textAlign: 'center' }}
                 >
-                  <Typography className={`${classes.TypoDark}`} variant='h1' component='h1'>
+                  <Typography className={`${classes.TypoDark}`} variant='h1' component='h1'> */}
                     {/* {window.location.pathname.split('/').pop()} */}
-                    {renderTitle()}
+                    {/* {renderTitle()}
 
                   </Typography>
                 </Grid>
-              </Hidden>
-              <Hidden mdUp>
+              </Hidden> */}
+              {/* <Hidden mdUp>
                 <Grid
                   item
                   xs={6}
@@ -122,24 +122,24 @@ class ProductDescription extends Component {
                     {renderTitle()}
                   </Typography>
                 </Grid>
-              </Hidden>
+              </Hidden> */}
             </Grid>
             <Grid
               item
               container
               alignItems="center"
             >
-              <Hidden smDown>
+              {/* <Hidden smDown>
                 <Grid
                   item
                   xs={3}
                   style={{ paddingLeft: '4%', textAlign: 'center' }}
-                >
+                > */}
 
                   {/* < Slideshow fadeImages={this.props.fadeImages} dataCarousel={this.props.dataCarousel} styles={'productDescriptionCarousel'} /> */}
-                  < Slideshow fadeImages={fadeImages} dataCarousel={settings} styles={'productDescriptionCarousel'} />
-                </Grid>
-              </Hidden>
+                  {/* < Slideshow fadeImages={fadeImages} dataCarousel={settings} styles={'productDescriptionCarousel'} /> */}
+                {/* </Grid> */}
+              {/* </Hidden> */}
               <Grid
                 item
                 xs={12} sm={12} md={9} lg={9} xl={9}

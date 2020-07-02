@@ -23,6 +23,9 @@ export const jewelleryTheme = {
       "fade": "#6e6d72",
       "darkFade": "#59595b"
     },
+    "badgeColor":{
+      "background":"#d51f63"
+    },
     "primary": {
       "light": "#03b362",
       "main": "#009651",

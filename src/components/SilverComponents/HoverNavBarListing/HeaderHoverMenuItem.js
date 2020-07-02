@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Grid, Popper, List, ListItem, ListItemText, Typography } from '@material-ui/core';
+import { Grid, Popper, List, ListItem, ListItemText, Typography, Checkbox, FormControlLabel  } from '@material-ui/core';
 import { useStyles } from '../styles'
 import PropTypes from 'prop-types';
 
@@ -65,9 +65,22 @@ function HeaderHoverMenuItem(props) {
 
                       <ListItemText variant >
 
-                        {menuList.title ?
-                          menuList.title :
-                          menuList}
+                       
+                           <FormControlLabel
+        control={
+          <Checkbox
+            checked={true}
+            onChange={()=>{}}
+            name= {menuList.title ?
+              menuList.title :
+              menuList}
+            color="primary"
+          />
+        }
+        label= {menuList.title ?
+          menuList.title :
+          menuList}
+      />
                       </ListItemText>
 
                     </ListItem>

@@ -18,16 +18,20 @@ import { filterParams } from 'mappers/index';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel'
 import styles from './styles';
-import { FilterOptionsContext } from 'context'
+import { FilterOptionsContext,GlobalContext } from 'context'
 import { NetworkContext } from 'context/NetworkContext';
 import { PRODUCTLIST, conditions, seoUrlResult } from 'queries/productListing';
+import { withRouter } from 'react-router-dom';
+import {TopFilters} from './topFilters'
 const PersistentDrawerLeft = (props) => {
   const { setSort, setloadingfilters, setOffset, setPriceMax, setPriceMin, FilterOptionsCtx, setdelete_fil } = React.useContext(FilterOptionsContext);
+  
   const loc = window.location.search
   const { NetworkCtx } = React.useContext(NetworkContext);
-
+  const {Globalctx} = React.useContext(GlobalContext)
+  
   return <Component setSort={setSort} setOffset={setOffset} offset={FilterOptionsCtx.offset} setFilters={FilterOptionsCtx.setFilters} setloadingfilters={setloadingfilters} setPriceMax={setPriceMax} setPriceMin={setPriceMin} loadingfilters={FilterOptionsCtx.loadingfilters} sort={FilterOptionsCtx.sort}
-    uri={NetworkCtx.graphqlUrl} setdelete_fil={setdelete_fil}
+    uri={NetworkCtx.graphqlUrl} globalcontext={Globalctx} setdelete_fil={setdelete_fil}
     {...props} />
 }
 
@@ -51,16 +55,19 @@ class Component extends React.Component {
       filtercheck: '',
       productDisplay: true,
       check: true,
-      numOne: '',
-      numTwo: '',
+      numOne: 0,
+      numTwo: 0,
       showMore: 4,
       Price_button_click: false,
       chipData: [],
+      errorPriceMessage:false
     };
 
   }
   componentDidMount() {
     var { checked, chipData, numOne, numTwo, selected } = this.state
+if(this.props.data && this.props.data.length > 0 && this.props.data[0] && this.props.data[0].subFilter['Price Range'])
+   {
     var price_min = Number(this.props.data[0].subFilter['Price Range'].min);
     var price_max = Number(this.props.data[0].subFilter['Price Range'].max);
     var _price_min = new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', minimumFractionDigits: 0 }).format(Math.round(price_min));
@@ -70,9 +77,60 @@ class Component extends React.Component {
     // checked['pricemin'] = _price_min
     this.setState(checked)
     this.setState({ numOne: _price_min, numTwo: _price_max })
+   }
 
 
+//  ****STARTS****  setting state search parameters ....
 
+if (window.location.search) {
+  let price_one;
+  let price_two;
+  let splitSearchParamers = window.location.search.split("&");
+  if (splitSearchParamers.length > 0) {
+    // if (splitSearchParamers.length > 2) {
+      splitSearchParamers.map((val) => {
+        
+        let equalSplit = val.split("=");
+        if (splitSearchParamers.length > 2) {
+          if (equalSplit[0] === "startprice") {
+            price_one = Number(equalSplit[1])
+            numOne = Number(equalSplit[1])
+            
+          }
+          if (equalSplit[0] === "endprice") {
+            price_two = Number(equalSplit[1])
+            numTwo=Number(equalSplit[1])
+          }
+        }
+          else{
+            if (equalSplit[0] === "?startprice") {
+              price_one = Number(equalSplit[1])
+              numOne = Number(equalSplit[1])
+              
+            }
+            if (equalSplit[0] === "endprice") {
+              price_two = Number(equalSplit[1])
+              numTwo=Number(equalSplit[1])
+            } 
+          }
+        
+        
+      });
+      
+  // if(numOne !== price_one && numTwo !== price_two){
+    const price_min = Number(price_one);
+    const price_max = Number(price_two);
+    const _price_min = new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', minimumFractionDigits: 0 }).format(Math.round(price_min));
+    const _price_max = new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', minimumFractionDigits: 0 }).format(Math.round(price_max));
+    this.setState({numOne:_price_min, numTwo:_price_max})
+  // }
+    // }
+  
+  }
+  
+}
+
+//    ****ENDS**** setting state search parameters ....
 
     // This is used for checking the check boxes if we copy and pasted the url to new tab or new window
     // if (window.location.search) {
@@ -231,7 +289,9 @@ class Component extends React.Component {
       this.state.Price_button_click === false && this.setState({ numOne: numOne, numTwo: numTwo })
       // if( this.props.data[0].subFilter['Price Range'].length > 0 && this.props.data[0].subFilter['Price Range'][0] !== undefined){ 
       //   this.props.setFilters({pricemax:numberTwo, pricemin:numberOne})}  
+      
     }
+
 
   }
 
@@ -263,10 +323,34 @@ class Component extends React.Component {
     }
     return bz
   })
+  clearSortIfFiltersIsEmpty = () => {
+    var showSortFilter = false
+    
+    if (window.location.search) {
+      Object.keys(this.state.checked).map((fk) => {
+        const filter = this.state.checked[fk];
+        const fv = Object.keys(filter);
+        if(fk !== "Category" && fk !== "category" && fk !== "filters"){
+          if (fv.length > 0) {
+            if(filter[fv[0]])
+            {
+              showSortFilter = true
+              return showSortFilter
+            }
+            }
+        }
+        
+      });
+      let loc = window.location.pathname.split('?')[0]
+      if (!showSortFilter) {this.props.setSort('');this.props.history.push(loc)} 
+    }
 
-  handleChange(value, BoolName, e, title, TargetName) {
+  };
+  handleChange = (value, BoolName, e, title, TargetName, topfilterstate, selectedfiltertop) => {
     // window.scrollTo(0,2)
-    let { chipData } = this.state;
+    
+    let mystate = this.state
+    let { chipData } =this.state ;
     let checked = { ...this.state.checked }
     var queries = [{}]
     let pathnameSplit = window.location.pathname.split('/')
@@ -284,10 +368,11 @@ class Component extends React.Component {
     //   checked['category'] = _category_obj
     //   this.setState(checked)
     // }
-
+    
 
     if (TargetName === undefined) {
-      if (Object.keys(this.state.checked.category).length === 0 && this.state.checked.category.constructor === Object) {
+      this.clearSortIfFiltersIsEmpty()
+      if (Object.keys(mystate.checked.category).length === 0 && mystate.checked.category.constructor === Object) {
 
         var _replaceCategory = JSON.parse(sessionStorage.getItem('category'))
         checked["category"] = _replaceCategory
@@ -297,12 +382,14 @@ class Component extends React.Component {
       this.props.setloadingfilters(true)
       let checkedvalue = {};
       checkedvalue[value] = BoolName
-      checked[e.target.name] = checkedvalue
+      
+      checked[e && e.target.name ? e.target.name : selectedfiltertop] = checkedvalue
       this.setState({
         checked
       }, () => this.props.setFilters(checked))
     }
     else {
+      
       let arr1 = [];
       let paramsMapUrlSetState = () => TargetName.map(val => {
         var nameFilter = val[0]
@@ -354,6 +441,7 @@ class Component extends React.Component {
 
   handleDelete = (value) => {
     
+    this.handlebye()
     let { chipData, checked } = this.state
     Object.entries(checked).map(val => {
       if (val && val[0] === "Category") {
@@ -427,7 +515,8 @@ class Component extends React.Component {
     // });
 
   };
-
+  handlebye = () => {
+  }
   check_goldCoins = (values_) => {
     
     const Category = this.state.checked
@@ -505,31 +594,68 @@ class Component extends React.Component {
   };
 
 
-  onCurrencyChange_click = (e) => {
+  onCurrencyChange_click = (e, silverPrice) => {
+    
     const { checked } = this.state
-    this.setState({ Price_button_click: true })
+    
     var _price_min;
     var _price_max;
-    if (isNaN(Number((document.getElementById('num1').value).charAt(0)))) {
-      _price_min = Number(((document.getElementById('num1').value).substr(1)).replace(/,/g, ''));
+    if(silverPrice){
+      this.setState(checked)
+      this.setState({ numOne: silverPrice.min, numTwo: silverPrice.max }, () => { this.props.setPriceMax(silverPrice.max); this.props.setPriceMin(silverPrice.min) })
     }
-    else {
-
-      _price_min = Number((document.getElementById('num1').value).replace(/,/g, ''));
+    else{
+      this.setState({ Price_button_click: true })
+      if (isNaN(Number((document.getElementById('num1').value).charAt(0)))) {
+        _price_min = Number(((document.getElementById('num1').value).substr(1)).replace(/,/g, ''));
+      }
+      else {
+  
+        _price_min = Number((document.getElementById('num1').value).replace(/,/g, ''));
+      }
+      if (isNaN(Number((document.getElementById('num2').value).charAt(0)))) {
+        _price_max = Number(((document.getElementById('num2').value).substr(1)).replace(/,/g, ''));
+      }
+      else {
+  
+        _price_max = Number((document.getElementById('num2').value).replace(/,/g, ''));
+      }
+      var price_min = new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', minimumFractionDigits: 0 }).format(Math.round(_price_min));
+      var price_max = new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', minimumFractionDigits: 0 }).format(Math.round(_price_max));
+      
+      var pricemin = price_min.indexOf(',') > -1 ? price_min.indexOf(" ") > -1 ? Number(price_min.substr(2).replace(/\,/g, ''))
+      
+      :
+      Number(price_min.substr(1).replace(/\,/g, ''))
+      :
+      price_min.indexOf(" ") > -1 ?
+      Number(price_min.substr(2))
+      :
+      Number(price_min.substr(1))
+      var pricemax = price_max.indexOf(',') > -1 ? price_max.indexOf(" ") > -1 ? Number(price_max.substr(2).replace(/\,/g, '')) 
+      :
+      Number(price_max.substr(1).replace(/\,/g, ''))
+      :
+      price_max.indexOf(" ") > -1 ?
+      Number(price_max.substr(2))
+      :
+      Number(price_max.substr(1))
+      // alert("came in ")
+      // 
+      // alert(pricemin)
+      // alert(pricemax)
+      if(pricemin > pricemax){
+        this.setState({errorPriceMessage:true})
+      }
+      else if(pricemin === 0 && pricemax === 0){
+        return false
+      }
+      else{
+        this.setState(checked)
+        this.setState({ numOne: price_min, numTwo: price_max }, () => { this.props.setPriceMax(pricemax); this.props.setPriceMin(pricemin) })
+      }
+      
     }
-    if (isNaN(Number((document.getElementById('num2').value).charAt(0)))) {
-      _price_max = Number(((document.getElementById('num2').value).substr(1)).replace(/,/g, ''));
-    }
-    else {
-
-      _price_max = Number((document.getElementById('num2').value).replace(/,/g, ''));
-    }
-    var price_min = new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', minimumFractionDigits: 0 }).format(Math.round(_price_min));
-    var price_max = new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', minimumFractionDigits: 0 }).format(Math.round(_price_max));
-    var pricemin = Number(price_min.substr(2).replace(/\,/g, ''))
-    var pricemax = Number(price_max.substr(2).replace(/\,/g, ''))
-    this.setState(checked)
-    this.setState({ numOne: price_min, numTwo: price_max }, () => { this.props.setPriceMax(pricemax); this.props.setPriceMin(pricemin) })
   }
   txtFieldChange(e) {
     if (!(e.which >= 48 && e.which <= 57)) e.preventDefault();
@@ -561,16 +687,24 @@ class Component extends React.Component {
 
     let { selected, check } = this.state;
     const { open, openMobile } = this.state;
+    const isTopFilter =  true 
     //  const chck_res =  this.state.chipData.map(data => {
     //   return (
     //     data.label
     //   );
     // })
     // alert(JSON.stringify(this.state.selected))
-
-
     return (
       <>
+   {isTopFilter &&
+       <Hidden smDown>
+    <TopFilters filter={filter} state={this.state} subFilter={subFilter} onchangefunc={this.handleChange} onpricechange = {this.onCurrencyChange_click} filtercheck={this.state.filtercheck} checked={this.state.checked} {...this.props}/>
+      </Hidden>
+   }    
+   {/* <TempTest onchangefunc={this.handleChange}/> */}
+  
+       {
+         !isTopFilter &&
         <Hidden smDown>
           <FilterHeader click={this.handleDelete}
             handleChangeDrawer={this.handleChangeDrawer}
@@ -578,7 +712,10 @@ class Component extends React.Component {
             checked={this.state.checked}
           />{/*  handleDrawerOpen={this.handleDrawerOpen.bind(this)} */}
         </Hidden>
+        }
         <div className={classes.root} >
+        {
+         !isTopFilter &&
           <Hidden smDown >
 
             {/* <CssBaseline /> */}
@@ -602,7 +739,8 @@ class Component extends React.Component {
                         <Grid container spacing={12} style={{ paddingLeft: "14px" }}  >
                           <Grid item xs={4} >
                             <TextField
-                              onChange={(e) => { this.setState({ numOne: e.target.value }) }}
+                            error={this.state.errorPriceMessage}
+                              onChange={(e) => { this.setState({ numOne: e.target.value, errorPriceMessage:false }) }}
                               onKeyPress={(e) => { this.txtFieldChange(e) }}
                               name="numOne"
                               className="price-txt"
@@ -614,7 +752,8 @@ class Component extends React.Component {
                           </Grid>&nbsp;
              <Grid item xs={4}>
                             <TextField
-                              onChange={(e) => { this.setState({ numTwo: e.target.value }) }}
+                            error={this.state.errorPriceMessage}
+                              onChange={(e) => { this.setState({ numTwo: e.target.value, errorPriceMessage:false }) }}
                               onKeyPress={(e) => { this.txtFieldChange(e) }}
                               name="numTwo"
                               className="price-txt"
@@ -628,6 +767,7 @@ class Component extends React.Component {
                             <Button variant="contained" className={`price-btn ${classes.colorMainBackground}`} onClick={() => this.onCurrencyChange_click()}>Go</Button>
                           </Grid>
                         </Grid>
+                        {this.state.errorPriceMessage ? <label className={`${classes.priceError}`}>Max price should be greater</label> : null}
                       </div>
                       {/* filter */}
                       <div>
@@ -635,12 +775,14 @@ class Component extends React.Component {
                           <>
                             {
 
-                              filter.map((row, i) => {
+filter  && filter.length > 0 ?
 
+filter.map((row, i) => {
+  
                                 return (
                                   <>
                                     {
-                                      subFilter[row].length > 0 ?
+                                      subFilter && subFilter[row] && subFilter[row].length > 0 ?
                                         <>{window.location.pathname === "/goldcoins" || found === "goldcoins" || found === "/goldcoins" ? row === "Offers" ? "" : <ListItem key={row}
                                           onClick={() => this.selectItem(row)} className={`${classes.li_item_filter}`}>
                                           <ListItemText
@@ -731,7 +873,7 @@ class Component extends React.Component {
 
                                           }
 
-                                          {
+{
                                             (subFilter[row].length) - 4 !== 0 && (subFilter[row].length) - 4 > 0 &&
 
                                             <>
@@ -751,9 +893,13 @@ class Component extends React.Component {
                                                 </div>}
                                             </>
                                           }
+ 
+
 
 
                                         </>
+
+                                       
 
 
                                       }
@@ -766,7 +912,13 @@ class Component extends React.Component {
                               }
 
                               )
+                            :
+                            <div class ={classes.filtersLoading}>
+                              <div id="inTurnFadingTextG"><div id="inTurnFadingTextG_1" class="inTurnFadingTextG">L</div><div id="inTurnFadingTextG_2" class="inTurnFadingTextG">o</div><div id="inTurnFadingTextG_3" class="inTurnFadingTextG">a</div><div id="inTurnFadingTextG_4" class="inTurnFadingTextG">d</div><div id="inTurnFadingTextG_5" class="inTurnFadingTextG">i</div><div id="inTurnFadingTextG_6" class="inTurnFadingTextG">n</div><div id="inTurnFadingTextG_7" class="inTurnFadingTextG">g</div><div id="inTurnFadingTextG_8" class="inTurnFadingTextG"> </div><div id="inTurnFadingTextG_9" class="inTurnFadingTextG">.</div><div id="inTurnFadingTextG_10" class="inTurnFadingTextG">.</div><div id="inTurnFadingTextG_11" class="inTurnFadingTextG">.</div></div>
+                              
+                            </div>
                             }
+
                           </>
                         }
                       </div>
@@ -778,22 +930,40 @@ class Component extends React.Component {
             </div>
 
           </Hidden>
+  }
           {
             this.state.productDisplay &&
-            <div
+          <>
+  <Hidden smDown>
+              <Container maxWidth="lg">
+              <div
               // className="filter_page_layout"
-              className={`${check ? `filter_page_layout ${classes.productCardscheck}` : `filter_page_layout ${classes.productCardsuncheck}`}`}
+              className={`${check ? `filter_page_layout ${classes.productCardscheck}` : `filter_page_layout ${classes.productCardsuncheck}`} ${isTopFilter ? classes.widthFilter : ''}`}
+              
             >
-
+              
               <ProductLayout wishlist={this.props.wishlist} data={this.props.datas} loading={this.props.loading} style={{ backgroundColor: 'whitesmoke' }} ref={this.myRef} />
-
-            </div>}
+            </div>
+              </Container>
+            </Hidden>
+            <Hidden mdUp>
+              <div
+              // className="filter_page_layout"
+              className={`${check ? `filter_page_layout ${classes.productCardscheck}` : `filter_page_layout ${classes.productCardsuncheck}`} ${isTopFilter ? classes.widthFilter : ''}`}
+              
+            >
+              
+              <ProductLayout wishlist={this.props.wishlist} data={this.props.datas} loading={this.props.loading} style={{ backgroundColor: 'whitesmoke' }} ref={this.myRef} />
+            </div>
+            </Hidden>
+          </>
+            }
         </div>
 
 
         <Hidden mdUp>
           <div style={{ top: '60px', position: 'absolute', backgroundColor: 'white', width: '100%' }}>
-            <div style={{ height: "23px", padding: "9px", borderBottom: "1px solid #e3e3e3", display: openMobile ? 'none' : 'block', position: 'sticky', top: '0px' }}
+            <div style={{ padding: "9px", borderBottom: "1px solid #e3e3e3", display: openMobile ? 'none' : 'block', position: 'sticky', top: '0px' }}
               className={`${classes.colorMain}`}
             >
               <button onClick={this.handleDrawerCloseMobile} style={{ background: 'none', border: 'none', fontWeight: '600', color: 'rgba(58, 69, 120, 1)', padding: '6px 8px' }}>
@@ -815,8 +985,8 @@ class Component extends React.Component {
                     : ""} */}
                   <List className="mbl-filter-list">
                     {filter && filter.map(row => {
-                      return (subFilter[row].length > 0 ?
-                        <>{window.location.pathname === "/goldcoins" || found === "/goldcoins" || found === "goldcoins" ? row === "Offers" ? "" : <ListItem key={row} className={`mbl-filter-list ${classes.colorBackgroundList} ${classes.borderBottomList}`}
+                      return (subFilter && subFilter[row] && subFilter[row].length > 0 ?
+                        <>{window.location.pathname === "/goldcoins" || found === "/goldcoins" || found === "goldcoins" ? row === "Offers" ? "" : <ListItem key={row} className={`mbl-filter-list ${isTopFilter ? classes.colorBackgroundListSilver:classes.colorBackgroundList} ${classes.borderBottomList}`}
                           onClick={() => this.filterValue(row)}
                         >
                           <ListItemText
@@ -826,7 +996,7 @@ class Component extends React.Component {
 
                           </ListItemText>
                         </ListItem>
-                          : <ListItem key={row} className={`mbl-filter-list ${classes.colorBackgroundList} ${classes.borderBottomList}`}
+                          : <ListItem key={row} className={`mbl-filter-list ${isTopFilter ? classes.colorBackgroundListSilver:classes.colorBackgroundList} ${classes.borderBottomList}`}
                             onClick={() => this.filterValue(row)}
                           >
                             <ListItemText
@@ -1005,7 +1175,7 @@ Component.propTypes = {
   filterdatas: PropTypes.object.isRequired
 };
 
-export default withStyles(styles, { withTheme: true })(PersistentDrawerLeft)
+export default withRouter(withStyles(styles, { withTheme: true })(PersistentDrawerLeft));
 // (props => {
 //   const { mapped } = useDummyRequest(filterParams);
 //   if (Object.keys(mapped).length === 0) return ''

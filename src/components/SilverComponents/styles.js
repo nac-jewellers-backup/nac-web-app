@@ -245,8 +245,10 @@ export const useStyles = makeStyles((theme) => ({
   mouseOverPopover: {
     zIndex: 1000,
     top: "4px !important",
-    backgroundColor: theme.palette.background.fade,
-    color: "white",
+    backgroundColor: 'white',
+    border:`1px solid ${theme.palette.background.fade}`,
+    boxShadow:'6px 7px 6px #bebfbf !important',
+    color: theme.palette.background.fade,
     "& span": {
       fontFamily: "notoSerif-regular",
       letterSpacing: "1px",
@@ -254,9 +256,12 @@ export const useStyles = makeStyles((theme) => ({
     "& nav": {
       padding: "0px !important",
     },
-    "& li:hover": {
-      backgroundColor: theme.palette.secondary.dark,
-    },
+    "& svg":{
+      fill:`${theme.palette.secondary.main} !important` ,
+    }
+    // "& li:hover": {
+    //   backgroundColor: theme.palette.secondary.dark,
+    // },
   },
   paperdivsub: {
     position: "absolute",
