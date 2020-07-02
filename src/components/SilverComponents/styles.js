@@ -192,13 +192,13 @@ export const styles = (theme) => ({
   menuheader: {
     width: "230px !important",
     position: "sticky",
-    top: "0px",
+    top: "0px", 
     zIndex: 10000,
   },
   drawerPaper: {
     maxHeight: "100% !important",
     height: "max-content",
-    backgroundColor: theme.palette.background.fade,
+    backgroundColor: theme.palette.secondary.main,
   },
   iconbuttons: {
     position: "fixed",
@@ -219,8 +219,11 @@ export const styles = (theme) => ({
       backgroundColor: "#fff !important",
     },
   },
+  subtitleContainersubmenu1:{
+    color: `${theme.palette.secondary.main} !important`,
+  },
   subtitle2Container: {
-    backgroundColor: theme.palette.background.darkFade,
+    backgroundColor: theme.palette.gold.main,
   },
 });
 

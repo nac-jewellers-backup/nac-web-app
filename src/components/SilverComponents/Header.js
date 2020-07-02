@@ -826,101 +826,110 @@ class Header extends Component {
                   </IconButton>
                 </div>
                 <List className="sideNavListing">
-                  {mainlist.map((row) => (
-                    <>
-                      <ListItem button key={row.name} className="drawer-list1">
-                        <ListItemText
-                          onClick={() => {
-                            window.location.href = row.url;
-                          }}
-                        >
-                          <Typography className="list-items1" variant="">
-                            {row.name.toUpperCase()}
-                          </Typography>
-                        </ListItemText>
-                        <div
-                          onClick={() =>
-                            Jewellery[row.name] !== undefined
-                              ? this.selectItem(row.name)
-                              : ""
-                          }
-                        >
-                          {Jewellery[row.name] !== undefined ? (
-                            row.name === selected ? (
-                              <i class="fa fa-caret-up drawer-arrow"></i>
-                            ) : (
-                              <i class="fa fa-caret-down drawer-arrow"></i>
-                            )
-                          ) : (
-                            ""
-                          )}
-                        </div>
-                      </ListItem>
-                      {selected === row.name &&
-                        Object.keys(Jewellery[selected]).map((row2) => (
-                          <>
-                            <ListItem
-                              button
-                              key={Jewellery[selected][row2].name}
-                              className={classes.subtitleContainer}
+                  {mainlist.map((row) =>
+                   {
+                     debugger
+                     return(
+                      (
+                        <>
+                          <ListItem button key={row.name} className="drawer-list1"
+                          selected={window.location.pathname === row.url}
+                          >
+                            <ListItemText
+                              onClick={() => {
+                                window.location.href = row.url;
+                              }}
                             >
-                              <ListItemText
-                                onClick={() => {
-                                  window.location.href =
-                                    Jewellery[selected][row2].url;
-                                }}
-                              >
-                                <Typography
-                                  className={classes.subtitles}
-                                  variant=""
-                                >
-                                  {Jewellery[selected][row2].name.toUpperCase()}
-                                </Typography>
-                              </ListItemText>
-                              <div
-                                onClick={() =>
-                                  this.selectItem1(
-                                    Jewellery[selected][row2].name
-                                  )
-                                }
-                              >
-                                {selected1 ===
-                                Jewellery[selected][row2].name ? (
+                              <Typography className="list-items1" variant="">
+                                {row.name.toUpperCase()}
+                              </Typography>
+                            </ListItemText>
+                            <div
+                              onClick={() =>
+                                Jewellery[row.name] !== undefined
+                                  ? this.selectItem(row.name)
+                                  : ""
+                              }
+                            >
+                              {Jewellery[row.name] !== undefined ? (
+                                row.name === selected ? (
                                   <i class="fa fa-caret-up drawer-arrow"></i>
                                 ) : (
                                   <i class="fa fa-caret-down drawer-arrow"></i>
-                                )}
-                              </div>
-                            </ListItem>
-                            {selected1 === Jewellery[selected][row2].name && (
+                                )
+                              ) : (
+                                ""
+                              )}
+                            </div>
+                          </ListItem>
+                          {selected === row.name &&
+                            Object.keys(Jewellery[selected]).map((row2) => (
                               <>
-                                {subheader[selected1] &&
-                                  subheader[selected1].name &&
-                                  subheader[selected1].name.map((row) => (
-                                    <>
-                                      <ListItem
-                                        onClick={() => {
-                                          window.location.href = row.url;
-                                        }}
-                                        className={classes.subtitle2Container}
-                                      >
-                                        <ListItemText>
-                                          <Typography
-                                            className="list-items1"
-                                            variant=""
+                                <ListItem
+                                  button
+                                  key={Jewellery[selected][row2].name}
+                                  className={`${classes.subtitleContainer} `}
+                                >
+                                  <ListItemText
+                                    onClick={() => {
+                                      window.location.href =
+                                        Jewellery[selected][row2].url;
+                                    }}
+                                  >
+                                    <Typography
+                                      className={`${classes.subtitles} ${classes.subtitleContainersubmenu1}`}
+                                      variant=""
+                                    >
+                                      {Jewellery[selected][row2].name.toUpperCase()}
+                                    </Typography>
+                                  </ListItemText>
+                                  <div
+                                    onClick={() =>
+                                      this.selectItem1(
+                                        Jewellery[selected][row2].name
+                                      )
+                                    }
+                                  >
+                                    {selected1 ===
+                                    Jewellery[selected][row2].name ? (
+                                      <i class="fa fa-caret-up drawer-arrow-submenu1"></i>
+                                    ) : (
+                                      <i class="fa fa-caret-down drawer-arrow-submenu1"></i>
+                                    )}
+                                  </div>
+                                </ListItem>
+                                {selected1 === Jewellery[selected][row2].name && (
+                                  <>
+                                    {subheader[selected1] &&
+                                      subheader[selected1].name &&
+                                      subheader[selected1].name.map((row) => (
+                                        <>
+                                          <ListItem
+                                            onClick={() => {
+                                              window.location.href = row.url;
+                                            }}
+                                            className={classes.subtitle2Container}
                                           >
-                                            {row.name.toUpperCase()}
-                                          </Typography>
-                                        </ListItemText>
-                                      </ListItem>
-                                    </>
-                                  ))}
+                                            <ListItemText>
+                                              <Typography
+                                                className="list-items1"
+                                                variant=""
+                                              >
+                                                {row.name.toUpperCase()}
+                                              </Typography>
+                                            </ListItemText>
+                                          </ListItem>
+                                        </>
+                                      ))}
+                                  </>
+                                )}
                               </>
-                            )}
-                          </>
-                        ))}
-                    </>
-                  ))}
+                            ))}
+                        </>
+                      )
+                     )
+                   }
+                   )}
                   {!localStorage.getItem("true") ? (
                     <>
                       <ListItem button className="drawer-list12">

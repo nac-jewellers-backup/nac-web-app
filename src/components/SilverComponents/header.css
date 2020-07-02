@@ -388,8 +388,15 @@ i {
   }
 }
 
-.drawer-arrow {
-  color: #ed1165;
+.drawer-arrow { 
+  color: #b78231;
+  font-size: 20px;
+  width: 22px;
+  justify-content: center;
+  display: flex;
+}
+.drawer-arrow-submenu1{
+  color: #394578;
   font-size: 20px;
   width: 22px;
   justify-content: center;
