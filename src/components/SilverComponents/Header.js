@@ -828,7 +828,7 @@ class Header extends Component {
                 <List className="sideNavListing">
                   {mainlist.map((row) =>
                    {
-                     debugger
+                  
                      return(
                       (
                         <>
