@@ -232,11 +232,14 @@ const styles = (theme) => ({
     color: theme.palette.gold.main,
     textDecoration: "underline",
     paddingBottom: 20,
-    fontWeight: "bold",
-    fontSize: "1.2rem",
-    "-webkit-text-underline-position": "under",
-    "-ms-text-underline-position": "below",
-    "text-underline-position": "under",
+    fontWeight:'bold',
+    fontSize:'1.2rem',
+    '-webkit-text-underline-position': 'under',
+  '-ms-text-underline-position': 'below',
+  'text-underline-position': 'under' ,
+  [theme.breakpoints.down('sm')]:{
+    fontSize:'0.8rem'
+  }
   },
   minHeighttimerange: {
     paddingBottom: "0 !important",
