@@ -237,6 +237,9 @@ const styles = (theme) => ({
     '-webkit-text-underline-position': 'under',
   '-ms-text-underline-position': 'below',
   'text-underline-position': 'under' ,
+  [theme.breakpoints.down('sm')]:{
+    fontSize:'0.8rem'
+  }
   },
   minHeighttimerange:{
     paddingBottom:'0 !important',
