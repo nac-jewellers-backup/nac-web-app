@@ -110,6 +110,7 @@ class ProductDetail extends Component {
               <Grid item xs={6} style={{ marginBottom: "20px", marginTop: "20px" }}>
                 <ProductDetails data={this.props.data} />
               </Grid>
+             
               <Grid item xs={6} style={{ marginBottom: "20px", marginTop: "20px" }}>
                 <PriceCertification />
                 <Request data={this.props.data} />
