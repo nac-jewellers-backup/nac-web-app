@@ -32,7 +32,7 @@ const Theme = (props) => {
       }
     return (    
                 <ThemeProvider theme={theme_func()}>  
-                {/* <CssBaseline />      */}
+                <CssBaseline />     
                         {props.children}
                 </ThemeProvider>
         

@@ -94,7 +94,7 @@ export const TopFilters = (props) => {
         <Grid
           container
           item
-          xs={9}
+          xs={12}
           id={"containerTitle"}
           justify="flex-end"
           alignItems="center"
@@ -120,6 +120,31 @@ export const TopFilters = (props) => {
               {/* <nav
             // style={{height:"35px", display:"flex"}}
             > */} 
+              <Grid
+            item
+            xs={2}
+            className={`${classes.menuListCursor} ${classes.menuListCursorfiltersLabel}`}
+            onMouseOver={(event) => {
+              setState({
+                ...state,
+                Menuopen: true,
+                submenuOpen: false,
+                subTitleData: null,
+                targetopen: event.currentTarget,
+                listHoverItem: "price",
+              });
+            }}
+          >
+              <Grid container item xs={12} className={classes.spacingfilterdiv}>
+    <Grid item xs = {6} className={classes.filtersLabel}>
+    <a >{'Sort By'} (<i  class="fa">&#xf156;</i>)</a>
+     </Grid>
+     <Grid item xs = {6} style={{display:"flex", justifyContent:"flex-end"}}>
+     {state.listHoverItem ===  'price' ? <ArrowDropUpIcon color="primary"/> : <ArrowDropDownIcon color="primary"/>}
+     </Grid>
+    </Grid>
+           
+          </Grid> 
              <Grid
             item
             xs={2}
@@ -144,7 +169,8 @@ export const TopFilters = (props) => {
      </Grid>
     </Grid>
            
-          </Grid>
+          </Grid> 
+
               {props.filter.map((listName, i) => {
                 // let urlsmall = listName.title.toLowerCase()
                 
@@ -224,7 +250,7 @@ export const TopFilters = (props) => {
             )}
           </Grid>
         </Grid>
-        <Grid container item xs={3}   onMouseLeave={() => {
+        {/* <Grid container item xs={3}   onMouseLeave={() => {
             setState({ ...state,expanded:false, targetopen: null });
           }}>
         <Grid container item xs={12} 
@@ -249,22 +275,7 @@ export const TopFilters = (props) => {
               </Grid>
              
         </Grid>
-        {/* <div className={"testMenu"} style={{
-                          position: "absolute", width: "215px",
-                          right: "15px", top: "65px", boxShadow: 'rgba(0, 0, 0, 0.1) 0px 2px 7px'
-                        }}>
-                            <Popper open={state.expanded} transition disablePortal style={{ position: 'absolute', right: '141px', zIndex:15}}>
-                                {({ TransitionProps }) => (
-                                    <Grow {...TransitionProps} >
-                                        <ClickAwayListener onClickAway={(e) => handleExpandClick(e)}>
-                                            <Grid>
-                                                <CardRadioButton data={sortOptions} onChange={handleChange} values={FilterOptionsCtx.sort} />
-                                            </Grid>
-                                        </ClickAwayListener>
-                                    </Grow>
-                                )}
-                            </Popper>
-                        </div> */}
+        
                         {state.expanded ? (
               <HeaderHoverMenuItem
                 tabdata={sortOptions}
@@ -285,7 +296,7 @@ export const TopFilters = (props) => {
             ) : (
               ""
             )}
-        </Grid>
+        </Grid> */}
       </Grid>
 
       <MorefiltersOpen
