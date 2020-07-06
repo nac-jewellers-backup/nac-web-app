@@ -14,7 +14,7 @@ export const routes = {
   Collection: "/collections",
   ProductCare: "/productcare",
   Shipping: "/deliveryreturns",
-  PrivacyPolicy: "/privacy",
+  PrivacyPolicy: "  privacy",
   TermsConditions: "/termsconditions",
   AboutUs: "/aboutus",
   ForgotPassword: "/forgotpassword",
