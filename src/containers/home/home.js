@@ -1077,6 +1077,30 @@ class HomeComp extends React.Component {
             <AdvancedGridList />
           </Grid>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
           <Grid container item xs={12} style={{ margin: "40px 0px" }}>
             <Grid item xs={12} className={classes.gridPadding}>
               <Title title="Featured" style={{marginBottom : "0px !important"}} />
@@ -1124,6 +1148,33 @@ class HomeComp extends React.Component {
               </>
             }
           </Grid>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
           <Grid container item xs={12} className={classes.gridPadding}>
             <Grid container item xs={12}>
               {[
