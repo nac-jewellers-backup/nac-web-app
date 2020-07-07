@@ -6,7 +6,7 @@
 
 @font-face {
     font-family: notoSerif-regular;
-    src: local('notoSerif-regular'), url(./fonts/NotoSerif/NotoSerif-Regular.ttf) format('truetype');
+    src: local('notoSerif-regular'), url(https://styloriimages-staging.s3.ap-south-1.amazonaws.com/nac_fonts/NotoSerif-Regular.ttf) format('truetype');
     /* url(/path/to/fonts/examplefont.eot) format('eot'); */
     font-weight: 400;
     font-style: normal;
