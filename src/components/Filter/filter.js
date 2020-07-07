@@ -684,7 +684,7 @@ if (window.location.search) {
     const found = window.location.pathname.split(/-/g).find(element => element === "/goldcoins" || element === "goldcoins");
     const { classes, data, loading } = this.props;
     const { filter, subFilter, sortOptions } = this.props.data[0];
-
+    debugger
     let { selected, check } = this.state;
     const { open, openMobile } = this.state;
     const isTopFilter =  true 
@@ -962,7 +962,7 @@ filter.map((row, i) => {
 
 
         <Hidden mdUp>
-          <div style={{ top: '60px', position: 'absolute', backgroundColor: 'white', width: '100%' }}>
+          <div style={{ top: '90px', position: 'absolute', backgroundColor: 'white', width: '100%' }}>
             <div style={{ padding: "9px", borderBottom: "1px solid #e3e3e3", display: openMobile ? 'none' : 'block', position: 'sticky', top: '0px' }}
               className={`${classes.colorMain}`}
             >
@@ -1127,7 +1127,7 @@ filter.map((row, i) => {
                   <Toolbar  >
                     <div onClick={this.handleDrawerOpenMobile}>
                       <Typography variant=""
-                        className={`filter-mbl-font ${classes.colorMain}`}><i className='filter-icon' class="fa fa-filter"
+                        className={`filter-mbl-font ${classes.colorMainSecondary}`}><i className='filter-icon' class="fa fa-filter"
 
                         ></i> &nbsp;
                         Filter
@@ -1138,7 +1138,7 @@ filter.map((row, i) => {
 
                     <IconButton edge="end" color="inherit" onClick={() => this.setState({ CardRadio: !this.state.CardRadio, productDisplay: !this.state.productDisplay })} >
                       <Typography variant=""
-                        className={`filter-mbl-font ${classes.colorMain}`} style={{ fontSize: '1rem' }}><i className='filter-icon' class="fa fa-sort"></i>&nbsp;
+                        className={`filter-mbl-font ${classes.colorMainSecondary}`} style={{ fontSize: '1rem' }}><i className='filter-icon' class="fa fa-sort"></i>&nbsp;
                         Sort
                     </Typography>
                     </IconButton>

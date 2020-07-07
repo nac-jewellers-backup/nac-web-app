@@ -105,7 +105,7 @@ export const styles = makeStyles(theme => ({
     color: "white",
     minWidth:"50px",
     // #80808061
-    boxShadow: `6px 7px 6px  ${theme.palette.secondary.light}`,
+    boxShadow: `6px 7px 6px #bebfbf !important`,
     background:theme.palette.secondary.main,
     // borderBottom: "1px solid #fff",
     '&:hover': {
@@ -148,12 +148,12 @@ top:0
     padding:"5px 4px 5px 15px",
     marginRight:15,
     color: theme.palette.secondary.main,
-    boxShadow: `6px 7px 6px  ${theme.palette.secondary.light}`,
+    boxShadow: `6px 7px 6px #bebfbf !important`,
     background:'white',
     border: `1px solid ${theme.palette.secondary.main}`,
     '&:hover': {
       border: `1px solid ${theme.palette.secondary.dark}`,
-      boxShadow: `6px 7px 6px  ${theme.palette.primary.light}`,
+      boxShadow: `6px 7px 6px #bebfbf !important`,
       color: theme.palette.secondary.dark,
       "& svg":{
         fill:`${theme.palette.secondary.dark} !important`,
@@ -186,7 +186,7 @@ top:0
     margin:'auto',
     alignItems:'center',
     color: theme.palette.secondary.main,
-      boxShadow: `6px 7px 6px  ${theme.palette.secondary.main}`,
+      boxShadow: `6px 7px 6px #bebfbf !important`,
       border: `1px solid ${theme.palette.secondary.main}`,
     background:'white',
     '&:hover': {

@@ -72,7 +72,7 @@ class ProductDescription extends Component {
     }
     return (
       <>
-        <Container >
+        <Container maxWidth="lg">
           <Grid
             style={{ marginTop: "15px", textAlign: "center" }}
             container
@@ -142,7 +142,7 @@ class ProductDescription extends Component {
               {/* </Hidden> */}
               <Grid
                 item
-                xs={12} sm={12} md={9} lg={9} xl={9}
+                xs={12} sm={12} md={12} lg={12} xl={12}
                 style={{ textAlign: 'center' }}
               >
                 <p>
@@ -153,14 +153,16 @@ class ProductDescription extends Component {
                           {(datadescription).slice(0, 160)}
                           <span id="moreDots" style={{ display: 'inline' }}>...</span>
                           <p onClick={this.handleReadMore} className={`know-txt ${classes.colorLight}`} id="readMore" >
-                            <span ><i className="fa faMore">&#xf0da;</i></span> READ MORE
+                            {/* <span ><i className="fa faMore">&#xf0da;</i></span> */}
+                             READ MORE
                    </p>
                         </>
                         :
                         <>
                           {datadescription}
                           <p onClick={this.handleReadMore} className={`know-txt ${classes.colorLight}`} id="readLess" >
-                            <span ><i className="fa faMore">&#xf0d8;</i></span> CLOSE
+                            {/* <span ><i className="fa faMore">&#xf0d8;</i></span>  */}
+                            CLOSE
                </p>
                           <br />
                         </>

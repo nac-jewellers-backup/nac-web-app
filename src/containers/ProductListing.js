@@ -141,6 +141,7 @@ class Stylori extends React.Component {
             ))}
           </Slideshow>
         </Grid>
+        <Hidden smDown>
         <Container maxWidth="lg">
         <Grid item xs={12}>
             {/* <Filterlisting title="Jewellery" data={dataFilter} datalisting={data} wishlist={this.props.wishlistdata} /> */}
@@ -148,6 +149,14 @@ class Stylori extends React.Component {
             <Filter datas={data} data={dataFilter} loading={loading} wishlist={this.props.wishlistdata} />
           </Grid>
         </Container>
+        </Hidden>
+        <Hidden mdUp>
+        <Grid item xs={12}>
+            {/* <Filterlisting title="Jewellery" data={dataFilter} datalisting={data} wishlist={this.props.wishlistdata} /> */}
+            <ProductDescription title="Jewellery" data={dataFilter} datalisting={data} wishlist={this.props.wishlistdata} />
+            <Filter datas={data} data={dataFilter} loading={loading} wishlist={this.props.wishlistdata} />
+          </Grid>
+        </Hidden>
           <Grid item xs={12} >
             <Hidden smDown>
               {/* <ChatHelp data={data} wishlist={this.props.wishlistdata} /> */}

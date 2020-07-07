@@ -91,7 +91,7 @@ export const TopFilters = (props) => {
     <Container style={{marginTop:"25px"}}  >
    
       <Grid container item xs={12} >
-        <Grid
+        <Grid 
           container
           item
           xs={9}
@@ -144,7 +144,7 @@ export const TopFilters = (props) => {
      </Grid>
     </Grid>
            
-          </Grid>
+          </Grid> 
               {props.filter.map((listName, i) => {
                 // let urlsmall = listName.title.toLowerCase()
                 
