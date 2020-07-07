@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Grid, Button, Typography, TextField } from "@material-ui/core";
 
@@ -18,7 +18,7 @@ const styles = makeStyles((theme) => ({
     },
   },
   buttonGrid: {
-    paddingRight: "24px",
+    paddingRight: "20px",
     [theme.breakpoints.down("md")]: {
       paddingRight: "12px",
     },
@@ -26,8 +26,7 @@ const styles = makeStyles((theme) => ({
   inputHeadContainer: {
     border: "1px solid #ccc",
     padding: "24px",
-    boxShadow:
-      "rgba(0, 0, 0, 0.1) 0px 2px 4px 4px, rgba(0, 0, 0, 0.14) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 10px 0px",
+    boxShadow: "6px 7px 6px #bebfbf !important",
     // borderRadius: "5px",
     [theme.breakpoints.down("md")]: {
       padding: "12px",
@@ -69,6 +68,36 @@ const styles = makeStyles((theme) => ({
 export default function ConnectionHome(props) {
   const classes = styles();
 
+  const [initialData, updatedData] = useState({
+    names: "",
+    email: "",
+    message: "",
+    error: {
+      names: "",
+      email: "",
+      message: "",
+    },
+  });
+
+  const handleChange = (e) => {
+    console.log(e.target);
+    updatedData({
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleValidate = () => {
+    // if (
+    //   initialData.names.length === 0 &&
+    //   initialData.email.length === 0 &&
+    //   initialData.message.length === 0
+    // ) {
+    //   initialData.error.names = "Please enter your name";
+    //   initialData.error.email = "Please enter your email id";
+    //   initialData.error.message = "Please enter your message";
+    // }
+  };
+
   return (
     <Grid container xs={12}>
       <Grid container>
@@ -89,9 +118,13 @@ export default function ConnectionHome(props) {
           </Grid>
           <Grid xs={9} md={10} className={classes.TextFieldGrid}>
             <TextField
+              name="userName"
               id="outlined-basic"
               variant="outlined"
               className={classes.inputTextClass}
+              value={initialData.names}
+              onChange={handleChange}
+              // helperText={initialData.error.names}
             />
           </Grid>
         </Grid>
@@ -101,9 +134,13 @@ export default function ConnectionHome(props) {
           </Grid>
           <Grid xs={9} md={10} className={classes.TextFieldGrid}>
             <TextField
+              name="userEmail"
               id="outlined-basic"
               variant="outlined"
               className={classes.inputTextClass}
+              value={initialData.email}
+              onChange={handleChange}
+              // helperText={initialData.error.email}
             />
           </Grid>
         </Grid>{" "}
@@ -113,16 +150,22 @@ export default function ConnectionHome(props) {
           </Grid>
           <Grid xs={9} md={10} className={classes.TextFieldGrid}>
             <TextField
+              name="userMessage"
               multiline={true}
               rows={4}
               variant="outlined"
               className={classes.inputTextClass}
+              value={initialData.message}
+              onChange={handleChange}
+              // helperText={initialData.error.message}
             />
           </Grid>
         </Grid>
         <Grid container className={classes.SendButtonContainer}>
           <Grid>
-            <Button className={classes.SendButton}>SEND</Button>
+            <Button className={classes.SendButton} onClick={handleValidate}>
+              SEND
+            </Button>
           </Grid>
         </Grid>
       </Grid>

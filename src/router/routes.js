@@ -15,7 +15,7 @@ export const routes = {
   ProductCare: "/productcare",
   Shipping: "/deliveryreturns",
   PrivacyPolicy: "  privacy",
-  TermsConditions: "/termsconditions",
+  TermsConditions: "Ftermsconditions",
   AboutUs: "/aboutus",
   ForgotPassword: "/forgotpassword",
   ResetPassword: "/resetpassword",
