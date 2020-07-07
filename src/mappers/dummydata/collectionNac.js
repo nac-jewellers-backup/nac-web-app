@@ -135,18 +135,18 @@ export const YoungOnes = {
       tag: "video",
       url: "https://www.youtube.com/embed/i3neQq2VUBg",
       img:
-        "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/Banner%202019/Youngones%20collection%20page/Tile---527-X-352-01.jpg",
+        "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/Banner%202019/Youngones%20collection%20page/Tile---527-X-352-02.jpg",
       heading: "THE NAC YOUNG ONES ADVERTISEMENT",
       youtubeImg:
         "data:image/png;base64,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",
       para:
-        "Watch the NAC Jewellers Youngones Collection Launch advertisement!",
+        "Watch the NAC Jewellers Youngones Collection Launch advertisement! Watch the NAC Jewellers Youngones Collection Launch advertisement! Watch the NAC Jewellers Youngones Collection Launch advertisement!",
       store: "Show Video",
     },
     {
       tag: "normal",
       img:
-        "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/Banner%202019/Youngones%20collection%20page/Tile---527-X-352-02.jpg",
+        "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/Banner%202019/Youngones%20collection%20page/Tile---527-X-352-01.jpg",
       heading: "THE LOUNGE EXPERIENCE",
       para:
         "Fun and color is the order of the day when you enter ‘Young Ones’ lounge. With funky seats to interesting games and a colorful play corner, our lounge promises to keep your kids engaged while you pick the perfect jewel for your twinkle toes!",
@@ -157,7 +157,7 @@ export const YoungOnes = {
         "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/Banner%202019/Youngones%20collection%20page/Tile---527-X-352-01.jpg",
       heading: "THROWBACK",
       para:
-        "Check out the images when BABY SARA visited our showroom during our 34th anniversary celebration.",
+        "Check out the images when BABY SARA visited our showroom during our 34th anniversary celebration. Check out the images when BABY SARA visited our showroom during our 34th anniversary celebration.Check out the images when BABY SARA visited our showroom during our 34th anniversary celebration.",
       store: "Show Picture",
     },
     {
@@ -168,7 +168,8 @@ export const YoungOnes = {
       img:
         "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/Banner%202019/Youngones%20collection%20page/Tile---527-X-352-02.jpg",
       heading: "WATCH THE NAC JEWELLERS YOUNGONES COLLECTION PHOTOSHOOT MAKING",
-      para: "",
+      para:
+        "Instrument cultivated alteration any favourable expression law far nor. Both new like tore but year. An from mean on with when sing pain.Both new like tore but year. An from mean on with when sing pain.",
       store: "Show Video",
     },
   ],

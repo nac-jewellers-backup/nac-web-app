@@ -3,7 +3,7 @@ import { Typography, Grid, Hidden } from "@material-ui/core";
 import styles from "./largeTileStyle";
 import Slideshow from "components/Carousel/carosul";
 import { NavLink, Link } from "react-router-dom";
-
+import "./style.css";
 export default function LargeTile(props) {
   const classes = styles();
   const [state, setstate] = React.useState({
@@ -11,6 +11,11 @@ export default function LargeTile(props) {
     loading: false,
     count: "",
   });
+
+  const [isMoreContent, MoreContent] = React.useState(true);
+  function toggleIsTruncated() {
+    MoreContent(!isMoreContent);
+  }
   const handleReadMore = () => {
     setstate({ showLess: !state.showLess });
   };
@@ -24,6 +29,7 @@ export default function LargeTile(props) {
 
   return (
     <Grid item xs={12} lg={6} sm={6} md={6} className={classes.paddings}>
+      {/* ---------------------------------Normal --------------------------------------- */}
       {props.tag === "normal" ? (
         <>
           <Grid>
@@ -43,17 +49,54 @@ export default function LargeTile(props) {
               sliderRef={slider}
             >
               <Link to="/rudramadeviBlog">
-                <img
-                  style={{ width: "100%", height: "100%" }}
-                  src={props.img}
-                />
+                {/* ----------------------------Normal collection Page ----------------------------------- */}
+                {window.location.pathname === "/collectionpage" ? (
+                  <>
+                    {" "}
+                    <img
+                      onClick={handleReadMore}
+                      style={{ width: "100%" }}
+                      src={props.img}
+                      className="iframeClass"
+                    />
+                    <></>
+                  </>
+                ) : (
+                  <>
+                    {/* ------------------------------------Normal other pages(non collection pages)----------------------- */}{" "}
+                    <img
+                      onClick={handleReadMore}
+                      style={{ width: "100%", height: "100%" }}
+                      src={props.img}
+                    />
+                    <>
+                      {" "}
+                      <img
+                        onClick={handleReadMore}
+                        className={classes.youtubeImg}
+                        src={props.youtubeImg}
+                      />{" "}
+                    </>{" "}
+                  </>
+                )}
               </Link>
             </Slideshow>
           </Grid>
           <Typography variant="h6" className={classes.heading}>
             {props.heading}
           </Typography>
-          <Typography className={classes.para}>{props.para}</Typography>
+          <Typography className={classes.para}>
+            {isMoreContent === true
+              ? `${props.para.slice(0, 130)}`
+              : props.para}
+            {/* {props.para} */}
+            <br />
+            <span onClick={toggleIsTruncated} className={classes.ToggleButton}>
+              {" "}
+              {isMoreContent ? "Read More" : "Read Less"}
+            </span>
+          </Typography>
+
           {props.store && (
             <Grid item xs={12} className={classes.anchorMain}>
               <a className={classes.anchor}>
@@ -70,9 +113,10 @@ export default function LargeTile(props) {
       ) : (
         ""
       )}
-
+      {/* ----------------------------------Picture Type  --------------------------------------- */}
       {props.tag === "picture" ? (
         <>
+          {/* -------------------------------showless true --------------------------- */}
           {state.showLess === true ? (
             <>
               <Grid>
@@ -93,17 +137,47 @@ export default function LargeTile(props) {
                   dataCarousel={props.setting1}
                   sliderRef={slider}
                 >
-                  <img
-                    onClick={handleReadMore}
-                    style={{ width: "100%", height: "100%" }}
-                    src={props.img}
-                  />
+                  {/* ----------------------------Picture type C0llection Page --------------------------------- */}
+                  {window.location.pathname === "/collectionpage" ? (
+                    <>
+                      {" "}
+                      <img
+                        onClick={handleReadMore}
+                        style={{ width: "100%" }}
+                        src={props.img}
+                        className="iframeClass"
+                      />
+                      <></>
+                    </>
+                  ) : (
+                    <>
+                      {/* ------------------------------Picture type remaining pages */}
+                      <img
+                        onClick={handleReadMore}
+                        style={{ width: "100%", height: "100%" }}
+                        src={props.img}
+                      />
+                    </>
+                  )}
                 </Slideshow>
               </Grid>
               <Typography variant="h6" className={classes.heading}>
                 {props.heading}
               </Typography>
-              <Typography className={classes.para}>{props.para}</Typography>
+              <Typography className={classes.para}>
+                {isMoreContent === true
+                  ? `${props.para.slice(0, 130)}`
+                  : props.para}
+                {/* {props.para} */}
+                <br />
+                <span
+                  onClick={toggleIsTruncated}
+                  className={classes.ToggleButton}
+                >
+                  {" "}
+                  {isMoreContent ? "Read More" : "Read Less"}
+                </span>
+              </Typography>
               {props.store && (
                 <Grid item xs={12} className={classes.anchorMain}>
                   <a className={classes.anchor}>
@@ -120,60 +194,81 @@ export default function LargeTile(props) {
           ) : (
             <>
               {/* {alert(state.showLess)} */}
-
-              <Grid>
-                <Grid container>
-                  <Grid
-                    item
-                    onClick={previous}
-                    className={classes.preButtonsPPP}
-                  ></Grid>
-                  <Grid
-                    item
-                    onClick={next}
-                    className={classes.nextButtons}
-                  ></Grid>
-                </Grid>
+              {/* ----------------------------Show Less False -------------------------------- */}
+              {window.location.pathname === "/collectionpage" ? (
+                ""
+              ) : (
                 <>
-                  <Slideshow
-                    style={{ width: "100%" }}
-                    dataCarousel={props.setting2}
-                    sliderRef={slider}
-                  >
-                    {props.imgPics.map((val, index) => (
-                      <Grid container key={index}>
-                        <img
-                          onClick={handleReadMore}
-                          style={{ width: "100%", height: "100%" }}
-                          src={val.img}
-                        />
-                      </Grid>
-                    ))}
-                  </Slideshow>
-                </>
-              </Grid>
-              <Typography variant="h6" className={classes.heading}>
-                {props.heading}
-              </Typography>
-              <Typography className={classes.para}>{props.para}</Typography>
-              {props.store && (
-                <Grid item xs={12} className={classes.anchorMain}>
-                  <a className={classes.anchor}>
-                    {/* <Grid className={classes.algins}> */}
-                    {/* <Typography onClick={handleReadMore} className={classes.anchor}>{props.store}</Typography> */}
-                    {/* <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAOCAMAAAAliK2kAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABtQTFRFqKio8fHxREREGRkZYWFh4uLijIyMNjY2////EoUdpQAAAAl0Uk5T//////////8AU094EgAAADpJREFUeNpUzdsKADAIAlBt1///4jkLxoLwYA9h1+BhooCGOqW8V1lLBlcYjOCFU8gUulMY/H8dAQYArKoCrGXO+aEAAAAASUVORK5CYII=" /> */}
+                  {" "}
+                  <Grid>
+                    <Grid container>
+                      <Grid
+                        item
+                        onClick={previous}
+                        className={classes.preButtonsPPP}
+                      ></Grid>
+                      <Grid
+                        item
+                        onClick={next}
+                        className={classes.nextButtons}
+                      ></Grid>
+                    </Grid>
+                    <>
+                      <Slideshow
+                        style={{ width: "100%" }}
+                        dataCarousel={props.setting2}
+                        sliderRef={slider}
+                      >
+                        {props.imgPics.map((val, index) => (
+                          <Grid container key={index}>
+                            <img
+                              onClick={handleReadMore}
+                              style={{ width: "100%", height: "100%" }}
+                              src={val.img}
+                            />
+                          </Grid>
+                        ))}
+                      </Slideshow>
+                    </>
+                  </Grid>
+                  <Typography variant="h6" className={classes.heading}>
+                    {props.heading}
+                  </Typography>
+                  <Typography className={classes.para}>
+                    {isMoreContent === true
+                      ? `${props.para.slice(0, 130)}`
+                      : props.para}
+                    {/* {props.para} */}
+                    <br />
+                    <span
+                      onClick={toggleIsTruncated}
+                      className={classes.ToggleButton}
+                    >
+                      {" "}
+                      {isMoreContent ? "Read More" : "Read Less"}
+                    </span>
+                  </Typography>
+                  {props.store && (
+                    <Grid item xs={12} className={classes.anchorMain}>
+                      <a className={classes.anchor}>
+                        {/* <Grid className={classes.algins}> */}
+                        {/* <Typography onClick={handleReadMore} className={classes.anchor}>{props.store}</Typography> */}
+                        {/* <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAOCAMAAAAliK2kAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABtQTFRFqKio8fHxREREGRkZYWFh4uLijIyMNjY2////EoUdpQAAAAl0Uk5T//////////8AU094EgAAADpJREFUeNpUzdsKADAIAlBt1///4jkLxoLwYA9h1+BhooCGOqW8V1lLBlcYjOCFU8gUulMY/H8dAQYArKoCrGXO+aEAAAAASUVORK5CYII=" /> */}
 
-                    {/* </Grid> */}
-                    <Grid></Grid>
-                  </a>
-                </Grid>
-              )}
+                        {/* </Grid> */}
+                        <Grid></Grid>
+                      </a>
+                    </Grid>
+                  )}
+                </>
+              )}{" "}
             </>
           )}
         </>
       ) : (
         ""
       )}
+      {/* ------------------------------Video  Type ------------------------------------- */}
       {props.tag === "video" ? (
         <>
           {state.showLess === true ? (
@@ -198,6 +293,42 @@ export default function LargeTile(props) {
                   dataCarousel={props.setting1}
                   sliderRef={slider}
                 >
+                  {window.location.pathname === "/collectionpage" ? (
+                    <>
+                      {" "}
+                      <img
+                        onClick={handleReadMore}
+                        style={{ width: "100%" }}
+                        src={props.img}
+                        className="iframeClass"
+                      />
+                      <>
+                        {" "}
+                        <img
+                          onClick={handleReadMore}
+                          className={classes.youtubeImg}
+                          src={props.youtubeImg}
+                        />{" "}
+                      </>
+                    </>
+                  ) : (
+                    <>
+                      {" "}
+                      <img
+                        onClick={handleReadMore}
+                        style={{ width: "100%", height: "100%" }}
+                        src={props.img}
+                      />
+                      <>
+                        {" "}
+                        <img
+                          onClick={handleReadMore}
+                          className={classes.youtubeImg}
+                          src={props.youtubeImg}
+                        />{" "}
+                      </>{" "}
+                    </>
+                  )}
                   <img
                     onClick={handleReadMore}
                     style={{ width: "100%", height: "100%" }}
@@ -213,10 +344,24 @@ export default function LargeTile(props) {
                   </>
                 </Slideshow>
               </Grid>
+
               <Typography variant="h6" className={classes.heading}>
                 {props.heading}
               </Typography>
-              <Typography className={classes.para}>{props.para}</Typography>
+              <Typography className={classes.para}>
+                {isMoreContent === true
+                  ? `${props.para.slice(0, 130)}`
+                  : props.para}
+                {/* {props.para} */}
+                <br />
+                <span
+                  onClick={toggleIsTruncated}
+                  className={classes.ToggleButton}
+                >
+                  {" "}
+                  {isMoreContent ? "Read More" : "Read Less"}
+                </span>
+              </Typography>
               {props.store && (
                 <Grid item xs={12} className={classes.anchorMain}>
                   <a className={classes.anchor}>
@@ -232,9 +377,19 @@ export default function LargeTile(props) {
             </>
           ) : (
             <>
+              {/* ---------------------------------------Video type collection page ------------------------------ */}
               {window.location.pathname === "/collectionpage" ? (
                 <>
-                  {" "}
+                  <Grid style={{ display: "block" }}>
+                    <iframe
+                      width="100%"
+                      className="iframeClass"
+                      src={props.url}
+                      frameborder="0"
+                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    ></iframe>
+                  </Grid>
+                  {/* {" "}
                   {window.innerWidth > 0 && window.innerWidth <= 320 && (
                     <Grid style={{ display: "block" }}>
                       <iframe
@@ -311,10 +466,11 @@ export default function LargeTile(props) {
                         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                       ></iframe>
                     </Grid>
-                  )}{" "}
+                  )}{" "} */}
                 </>
               ) : (
                 <>
+                  {/* ---------------------------------------Video type non collection page ------------------------------- */}
                   {window.innerWidth > 0 && window.innerWidth <= 600 && (
                     <Grid style={{ display: "block" }}>
                       <iframe
@@ -372,11 +528,24 @@ export default function LargeTile(props) {
                   )}{" "}
                 </>
               )}
-
+              {/* --------------------------Video type content part--------------------------------- */}
               <Typography variant="h6" className={classes.heading}>
                 {props.heading}
               </Typography>
-              <Typography className={classes.para}>{props.para}</Typography>
+              <Typography className={classes.para}>
+                {isMoreContent === true
+                  ? `${props.para.slice(0, 130)}`
+                  : props.para}
+                {/* {props.para} */}
+                <br />
+                <span
+                  onClick={toggleIsTruncated}
+                  className={classes.ToggleButton}
+                >
+                  {" "}
+                  {isMoreContent ? "Read More" : "Read Less"}
+                </span>
+              </Typography>
               {props.store && (
                 <Grid item xs={12} className={classes.anchorMain}>
                   <a className={classes.anchor}>

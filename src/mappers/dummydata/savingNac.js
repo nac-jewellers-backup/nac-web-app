@@ -342,9 +342,11 @@ export const IndexTemplePage = {
     },
     data: [
       {
-        img: "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori+CSK-banner-1920-X-656-px.jpg",
-        mobileImg: "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori+CSK-banner-mobile-805X430-px.jpg",
-        navigateUrl: "/jewellery/kada/csk_kada?skuId=1000001"
+        img:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori+CSK-banner-1920-X-656-px.jpg",
+        mobileImg:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori+CSK-banner-mobile-805X430-px.jpg",
+        navigateUrl: "/jewellery/kada/csk_kada?skuId=1000001",
       },
     ],
   },
@@ -704,6 +706,88 @@ export const IndexAdvertisingPage = {
       type: "video",
       videoLink: "https://www.youtube.com/embed/2064qq5VM1g",
     },
+    {
+      img:
+        "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/ads_image_1.png",
+      name: "NAC Jewellers The Rewind Collection",
+      model: "Ad Type - Print",
+      location: "For Antique Jewellwey Line",
+    },
+    {
+      img:
+        "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/ads_image_2.png",
+      name: "NAC Jewellers The Breezee Collection",
+      model: "Ad Type - Print",
+      location: "For Light Weight Jewellery",
+    },
+    {
+      img:
+        "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/ads_image_4.png",
+      name: "NAC - Muhurtham jewellery",
+      model: "Ad Type - Video",
+      location: "For Bridal Collection",
+      type: "video",
+      videoLink: "https://www.youtube.com/embed/ysgwcKNdWg0",
+    },
+    {
+      img:
+        "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/ads_image_3.png",
+      name: "NAC Jewellers Diamond Ad",
+      model: "Ad Type - Video",
+      location: "For The Diamond Collection",
+      type: "video",
+      videoLink: "https://www.youtube.com/embed/iw3KiGla-wo",
+    },
+    {
+      img:
+        "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/ads_image_5.png",
+      name: "NAC - Breezee light weight jewellery",
+      model: "Ad Type - Video",
+      location: "For Breeze Collection",
+      type: "video",
+      videoLink: "https://www.youtube.com/embed/2064qq5VM1g",
+    },
+    {
+      img:
+        "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/ads_image_1.png",
+      name: "NAC Jewellers The Rewind Collection",
+      model: "Ad Type - Print",
+      location: "For Antique Jewellwey Line",
+    },
+    {
+      img:
+        "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/ads_image_2.png",
+      name: "NAC Jewellers The Breezee Collection",
+      model: "Ad Type - Print",
+      location: "For Light Weight Jewellery",
+    },
+    {
+      img:
+        "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/ads_image_4.png",
+      name: "NAC - Muhurtham jewellery",
+      model: "Ad Type - Video",
+      location: "For Bridal Collection",
+      type: "video",
+      videoLink: "https://www.youtube.com/embed/ysgwcKNdWg0",
+    },
+    {
+      img:
+        "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/ads_image_3.png",
+      name: "NAC Jewellers Diamond Ad",
+      model: "Ad Type - Video",
+      location: "For The Diamond Collection",
+      type: "video",
+      videoLink: "https://www.youtube.com/embed/iw3KiGla-wo",
+    },
+    {
+      img:
+        "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/ads_image_5.png",
+      name: "NAC - Breezee light weight jewellery",
+      model: "Ad Type - Video",
+      location: "For Breeze Collection",
+      type: "video",
+      videoLink: "https://www.youtube.com/embed/2064qq5VM1g",
+    },
   ],
 };
 export const IndexNewsRoomPage = {
@@ -730,6 +814,41 @@ export const IndexNewsRoomPage = {
     titlePage: "NAC Newsroom",
   },
   data: [
+    {
+      img:
+        "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/news_image_4.png",
+      name:
+        "Parineeti Chopra unveils online jewel- lery store by NAC Jewellers in Mumbai",
+
+      location: "Published in The Hindu on Jan 24, 2016",
+      link:
+        "http://timesofindia.indiatimes.com/entertainment/events/mumbai/Parineeti-Chopra-unveils-online-jewellery-store-by-NAC-Jewellers-in-Mumbai/articleshow/46814998.cms",
+    },
+    {
+      img:
+        "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/news_image_1.png",
+      name: "NAC Jewellers open three more stores in Tamil nadu",
+      location: "Published in The Hindu on Jan 24, 2016",
+      link:
+        "http://timesofindia.indiatimes.com/business/india-business/NAC-Jewellers-opens-three-more-stores-in-Tamil-Nadu/articleshow/49658146.cms",
+    },
+    {
+      img:
+        "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/news_image_3.png",
+      name:
+        "NAC Jewellers launches online portal Stylori for ‘everyday fashion’",
+      location: "Published in The Hindu on Jan 24, 2016",
+      link:
+        "http://www.thehindubusinessline.com/news/national/nac-jewellers-launches-online-portal-stylori-for-everyday-fashion/article7170898.ece",
+    },
+    {
+      img:
+        "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/news_image_2.png",
+      name: "Actress Trisha launches NAC jewellers Kanchipuram branch",
+      location: "Published in The Hindu on Jan 24, 2016",
+      link:
+        "http://indiaz.com/actress-trisha-launches-nac-jewellers-kanchipuram-branch-stills.html",
+    },
     {
       img:
         "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/news_image_4.png",
