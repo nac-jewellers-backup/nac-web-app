@@ -5,7 +5,7 @@ const styles = makeStyles(theme => ({
         float: 'left'
     },
     colorMain: {
-        color: theme.palette.secondary.main
+        color: theme.palette.darkGray.main
     },
     h6FontSize: {
         [theme.breakpoints.down('lg')]: {

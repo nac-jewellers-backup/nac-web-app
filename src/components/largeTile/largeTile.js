@@ -235,83 +235,27 @@ export default function LargeTile(props) {
               {window.location.pathname === "/collectionpage" ? (
                 <>
                   {" "}
-                  {window.innerWidth > 0 && window.innerWidth <= 320 && (
+                  {/* {window.innerWidth > 0 && window.innerWidth <= 320 && ( */}
                     <Grid style={{ display: "block" }}>
-                      <iframe
+                    
+                        <Slideshow
+                  style={{ width: "100%" }}
+                  dataCarousel={props.setting1}
+                  sliderRef={slider}
+                >
+                   <iframe
                         width="100%"
-                        height="175"
+                        height="350px"
+                        title="video"
                         src={props.url}
                         frameborder="0"
                         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                       ></iframe>
+                </Slideshow>
                     </Grid>
-                  )}
-                  {window.innerWidth > 321 && window.innerWidth <= 375 && (
-                    <Grid style={{ display: "block" }}>
-                      <iframe
-                        width="100%"
-                        height="210"
-                        src={props.url}
-                        frameborder="0"
-                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                      ></iframe>
-                    </Grid>
-                  )}
-                  {window.innerWidth > 376 && window.innerWidth <= 425 && (
-                    <Grid style={{ display: "block" }}>
-                      <iframe
-                        width="100%"
-                        height="244"
-                        src={props.url}
-                        frameborder="0"
-                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                      ></iframe>
-                    </Grid>
-                  )}
-                  {window.innerWidth > 426 && window.innerWidth <= 768 && (
-                    <Grid item style={{ display: "block" }} contained>
-                      <iframe
-                        width="100%"
-                        height="216"
-                        src={props.url}
-                        frameborder="0"
-                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                      ></iframe>
-                    </Grid>
-                  )}
-                  {window.innerWidth > 769 && window.innerWidth <= 1024 && (
-                    <Grid style={{ display: "block" }}>
-                      <iframe
-                        width="100%"
-                        height="275"
-                        src={props.url}
-                        frameborder="0"
-                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                      ></iframe>
-                    </Grid>
-                  )}{" "}
-                  {window.innerWidth > 1025 && window.innerWidth <= 1440 && (
-                    <Grid style={{ display: "block" }}>
-                      <iframe
-                        width="100%"
-                        height="334"
-                        src={props.url}
-                        frameborder="0"
-                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                      ></iframe>
-                    </Grid>
-                  )}
-                  {window.innerWidth > 1441 && (
-                    <Grid style={{ display: "block" }}>
-                      <iframe
-                        width="100%"
-                        height="614"
-                        src={props.url}
-                        frameborder="0"
-                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                      ></iframe>
-                    </Grid>
-                  )}{" "}
+                  
+                
+                  {/* )}{" "} */}
                 </>
               ) : (
                 <>

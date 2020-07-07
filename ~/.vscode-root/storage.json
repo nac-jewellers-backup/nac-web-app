@@ -859,8 +859,8 @@
                         "id": "vscode.menubar.separator"
                     },
                     {
-                        "id": "debug.installAdditionalDebuggers",
-                        "label": "&&Install Additional Debuggers..."
+                        "id": "debug.installAdditionals",
+                        "label": "&&Install Additional s..."
                     }
                 ]
             },

@@ -376,7 +376,7 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                 size_guide: PD && PD.transSkuDescriptionsBySkuId && PD.transSkuDescriptionsBySkuId.nodes &&
                     PD.transSkuDescriptionsBySkuId.nodes.length > 0 && PD.transSkuDescriptionsBySkuId.nodes[0] &&
                     PD.transSkuDescriptionsBySkuId.nodes[0].ringsizeImage ? PD.transSkuDescriptionsBySkuId.nodes[0].ringsizeImage : null,
-                certificates: PD && PD.transSkuDescriptionsBySkuId && PD.transSkuDescriptionsBySkuId.nodes &&
+                    certificates: PD && PD.transSkuDescriptionsBySkuId && PD.transSkuDescriptionsBySkuId.nodes &&
                     PD.transSkuDescriptionsBySkuId.nodes.length > 0 && PD.transSkuDescriptionsBySkuId.nodes[0] &&
                     PD.transSkuDescriptionsBySkuId.nodes[0].certificate ? handle_mapper(PD.transSkuDescriptionsBySkuId.nodes[0].certificate) : null,
 

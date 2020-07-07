@@ -8,7 +8,7 @@ import { withStyles } from "@material-ui/core/styles";
 import styles from "../Header/styles";
 import ReactImageZoom from "react-image-zoom";
 import StaticView from "components/CarouselLazyer/StaticView";
-import Gagetstylori from "./Gagetstylori/Gagetstylori";
+import Gagetstylori from "components/Gagetstylori/GadgetsNac";
 import {
   Magnifier,
   GlassMagnifier,
@@ -17,6 +17,8 @@ import {
   MOUSE_ACTIVATION,
   TOUCH_ACTIVATION,
 } from "react-image-magnifiers";
+import ArrowRightIcon from '@material-ui/icons/ArrowRight';
+import ArrowLeftIcon from '@material-ui/icons/ArrowLeft';
 // window.onload = function () {
 //   var flashlight = document.querySelector('#flashlight');
 //   document.getElementById('divs').addEventListener('mouseover', function (event) {
@@ -110,6 +112,22 @@ class ProductImageZoom extends React.Component {
     const { classes, data } = this.props;
     const limit = 3;
     const { showimage, largeImage } = this.state;
+    const NextArrow = (props) =>{
+      const { className, style, onClick } = props;
+      return(
+        <ArrowRightIcon className={`${className} ${classes.customArrows}`}
+        style={{ ...style}}
+        onClick={onClick}/>
+      )
+    }
+    const PrevArrow = (props) =>{
+      const { className, style, onClick } = props;
+      return(
+        <ArrowLeftIcon className={`${className} ${classes.customArrows}`}
+        style={{ ...style}}
+        onClick={onClick}/>
+      )
+    }
     const dataCarousel = {
       infinite: false,
       slidesToShow:
@@ -121,7 +139,9 @@ class ProductImageZoom extends React.Component {
       slidesToScroll: 1,
       vertical: false,
       verticalSwiping: false,
-      arrows: false,
+      arrows: true,
+      nextArrow:<NextArrow/>,
+      prevArrow:<PrevArrow />
     };
     // alert(JSON.stringify(data.image_resolution))
     const props = {
@@ -163,7 +183,7 @@ class ProductImageZoom extends React.Component {
                       : this.props.data[0].size,
                   display: "flex",
                   alignItem: "center",
-                  margin: "auto",
+                  // margin: "auto",
                 }}
               >
                 {/* {alert(JSON.stringify(this.props.data[0].fadeImages.arrOfurls_2X[0]))} */}
@@ -248,7 +268,7 @@ class ProductImageZoom extends React.Component {
                 style={{ textAlign: "center", paddingTop: 20 }}
                 className="imgzom-sidecraousel-media"
               >
-                <Grid
+                {/* <Grid
                   xs={1}
                   style={{
                     display: "flex",
@@ -287,9 +307,10 @@ class ProductImageZoom extends React.Component {
                       </Button>
                     </span>
                   ) : null}{" "}
-                </Grid>
+                </Grid> */}
                 <Grid xs={10} >
-                  {" "}
+                <Container>
+                {" "}
                   <Slideshow
                     sliderRef={this.slider}
                     getmsg={this.getimage}
@@ -299,8 +320,9 @@ class ProductImageZoom extends React.Component {
                     dataCarousel={dataCarousel}
                      
                   />{" "}
+                </Container>
                 </Grid>
-                <Grid
+                {/* <Grid
                   xs={1}
                   style={{
                     display: "flex",
@@ -340,12 +362,12 @@ class ProductImageZoom extends React.Component {
                       </Button>
                     </span>
                   ) : null}
-                </Grid>
+                </Grid> */}
               </Grid>
             </Grid>
             <Grid container  >
               <Grid
-               
+               item xs={10}
                 style={{
                   width: "100%",
                   padding: "0px 15px",

@@ -28,13 +28,13 @@ const RatingComponent = (props) => {
     return (
         <Grid container style={{ marginTop: "10px" }}>
             <Container style={{ paddingLeft: "17px", paddingRight: "17px" }} >
-                <div className="bg-clr2 priceecontainer" style={{ padding: "20px" }}>
+                <div className="bg-clr2" style={{ padding: "20px" }}>
                     <form id="Resetform" action="javascript:void(0)" onSubmit={(e) => handlers.handelSubmit(e, props)}>
                         <Grid container spacing={12} >
                             {/* <Grid item lg={1} /> */}
                             <Grid item xs={12} lg={12}>
                                 <div className="rating-form ">
-                                    <h5 className={`rating-form-head ${classes.normalfonts}`}>Rating</h5>
+                                    <h5 className={`rating-form-head ${classes.normalfonts}`}>RATE THE PRODUCT</h5>
 
                                     <Ratings ratings="starts-review" clear_rating={props.clear_rating} clear_rating_onchange={props.clear_rating_onchange} />
                                     <label className='errtext'> {values.errortext.rateerr ? values.errortext.rateerr : ""}</label>
@@ -101,11 +101,11 @@ const RatingComponent = (props) => {
                             <Grid container spacing={12} style={{ marginTop: '20px' }}>
                                 <Grid item xs={12} lg={12}>
                                     <div style={{ float: "right" }}>
-                                        <Button className={`form-reviews-mob ${classes.fontwhite} ${classes.normalcolorback}`} type="submit">Submit</Button>
+                                        <Button className={`form-reviews-mob ${classes.fontwhite} ${classes.normalcolorback}`} style={{boxShadow:'rgba(20, 25, 25, 0.32) 6px 7px 6px'}} type="submit">{'Submit'.toUpperCase()}</Button>
                                         <Button onClick={() => {
                                             handlers.clear()
                                             props.clear_rating_onchange(true)
-                                        }} className={`form-cancel-mob ${classes.normalfonts} ${classes.backgwhite}`} >Cancel</Button>
+                                        }} className={`form-cancel-mob ${classes.normalfonts} ${classes.backgwhite}`} style={{boxShadow:'rgba(20, 25, 25, 0.32) 6px 7px 6px'}}>Cancel</Button>
                                     </div>
                                 </Grid>
                             </Grid>

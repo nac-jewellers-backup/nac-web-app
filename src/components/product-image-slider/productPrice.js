@@ -55,7 +55,8 @@ const mobilecarousel = (props, val, wishlist) => {
     );
 };
 
-const Productprice = (props, anchorEl, handleClick, handleClose) => {
+const Productprice = (props, anchorEl, handleClick, handleClose, handleReadMore, viewMore) => {
+    
     const { data } = props;
     const { classes } = props;
     const open = anchorEl;
@@ -119,7 +120,7 @@ const Productprice = (props, anchorEl, handleClick, handleClose) => {
                         </Hidden>
                         <Paper elevation={0} style={{ width: "100%", padding: "0px", margin: "0px " }}>
                             <Grid container className="containbev" >
-                                <Grid item xs={12} lg={9} md={9}>
+                                <Grid item xs={12} lg={12} md={12}>
                                     <div className="price-div">
                                         <Hidden mdUp>
                                             <Grid container spacing={12} xs={12}>
@@ -139,6 +140,7 @@ const Productprice = (props, anchorEl, handleClick, handleClose) => {
                                                         )}
                                                     </div>
                                                 </Grid>
+                                                
                                                 <Grid container item xs={4} alignContent="center" alignItems="center">
                                                     <Hidden mdUp>
                                                         <div className={classes.width} style={{ padding: "0px 10px  0px 10px " }}>
@@ -146,6 +148,7 @@ const Productprice = (props, anchorEl, handleClick, handleClose) => {
                                                                 price={data[0].price}
                                                                 offerPrice={data[0].offerPrice}
                                                                 offerDiscount={val.offerDiscount}
+                                                               
                                                             >
 
                                                             </Pricing>
@@ -157,36 +160,60 @@ const Productprice = (props, anchorEl, handleClick, handleClose) => {
 
                                         </Hidden>
                                         <Hidden smDown>
-                                            <h1 className={`pdp-title ${classes.title}`}>
+                                            <h1 className={`pdp-title ${classes.title} `}>
                                                 {val.title}
                                             </h1>
                                         </Hidden>
                                         <Hidden smDown>
-                                            <p className={`pdp-desc ${classes.dis}`}>
+                                            <p className={`pdp-desc ${classes.dis}`} style={{marginBottom:20, fontStyle:'italic'}}>
                                                 {val.dis}
                                             </p>
+                                            <p className={`pdp-desc ${viewMore ? '' : classes.disDescriptionPD}`}>
+                                                <span style={{width:'80%'}}> {`You actually don't need width to be "set" here. All the elements in the responsive design have their width. You can just do it around with the following rules: 
+                                                You actually don't need width to be "set" here. All the elements in the responsive design have their width. You can just do it around with the following rules:
+                                                You actually don't need width to be "set" here. All the elements in the responsive design have their width. You can just do it around with the following rules:
+                                                You actually don't need width to be "set" here. All the elements in the responsive design have their width. You can just do it around with the following rules:`}
+                                                 <span style={{float:'right', cursor:'pointer'}} onClick={()=>{handleReadMore()}}>{viewMore ? 'Read Less' : 'Read More'}</span>
+                                                </span>
+                                               
+                                            </p>
+                                            
                                         </Hidden>
                                     </div>
                                 </Grid>
 
 
 
-                                <Grid item xs={12} lg={3} md={3} style={{
+                                <Grid container item xs={12} lg={12} md={12} style={{
                                     display: "flex",
                                     lineHeight: "20px",
                                     justifyContent: "flex-end"
                                 }}>
                                     <Hidden smDown>
-                                        <div className="starts product-icons" style={{ fontFamily: "fontawesome" }} >
-                                            <div className="row social-shares"
-                                                className={classes.icon}>
-                                                <i class="fa fa-share-alt overall-icons"
+                                        <div className="starts product-icons" style={{ fontFamily: "fontawesome",width:'100%' }} >
+                                            <Grid container item xs={12} sm={12} md={8} lg={6} xl={6}  className="row social-shares"
+                                                className={classes.icon} style={{marginBottom:35}}>
+                                                     <Grid item xs={5}>
+                                                    <div onClick={() => window.scrollTo(0, 1800)}><Ratings ratings="starts-review" disable={"disable"} />
+                                                    <div className={classes.viewReviewsTest}>View Reviews</div>
+                                                    </div> 
+                                                    </Grid>
+                                                    <Grid item xs={2} className={classes.whishlistGrid}>
+                                                    {/* <Wishlist sku={val.skuId} productId={val.productId} wishlist={wishlist} />   */}
+                                                    <i class="fa fa-heart"></i>
+                                                    </Grid>
+                                                    <Grid item xs={2}>
+                                                    <i class="fa fa-share-alt overall-icons"
                                                     aria-owns={open ? 'simple-popper' : ""}
                                                     onClick={handleClick}
                                                 ></i> &nbsp;
+                                                    </Grid>
+                                                   
+                                                   
+                                               
                                         {/* {JSON.stringify(val.productId)} */}
                                                 {/* <Wishlist sku={val.skuId} productId={val.productId} /> */}
-                                                <Wishlist sku={val.skuId} productId={val.productId} wishlist={wishlist} />
+                                             
 
                                                 <Popover
                                                     id="simple-popper"
@@ -215,10 +242,10 @@ const Productprice = (props, anchorEl, handleClick, handleClose) => {
                                                         </a> */}
                                                     </div>
                                                 </Popover>
-                                                <div onClick={() => window.scrollTo(0, 1800)}><Ratings ratings="starts-review" disable={"disable"} /></div>
+                                                
 
                                                 {/* <div><Ratings ratings="starts-review" /></div> */}
-                                            </div>
+                                            </Grid>
                                         </div>
                                     </Hidden>
 
@@ -239,6 +266,7 @@ const Productprice = (props, anchorEl, handleClick, handleClose) => {
 
                                 <Pricing
                                     offerPrice={data[0].offerPrice}
+                                    pdpage = {true}
                                 >
                                     {/* <Grid container spacing={12}>
                                     <div className={`price-info ${classes.dis}`}>
@@ -252,7 +280,7 @@ const Productprice = (props, anchorEl, handleClick, handleClose) => {
                                 </Grid> */}
                                 </Pricing> : <Pricing
                                     offerPrice={data[0].offerPrice}
-                                    price={data[0].price}
+                                    price={data[0].price} pdpage = {true}
 
                                 // offerDiscount={val.offerDiscount}
                                 >
@@ -271,7 +299,8 @@ class ProductPrice extends Component {
         this.state = {
             share: false,
             heart: false,
-            anchorEl: false
+            anchorEl: false,
+            viewMore:false
         }
     }
     handleClick = event => {
@@ -279,7 +308,11 @@ class ProductPrice extends Component {
             anchorEl: event.currentTarget,
         });
     };
-
+    handleReadMore = () =>{
+        this.setState({
+            viewMore: !this.state.viewMore,
+        });
+    }
     handleClose = () => {
         this.setState({
             anchorEl: false,
@@ -287,7 +320,7 @@ class ProductPrice extends Component {
     };
 
     render() {
-        const { anchorEl } = this.state
+        const { anchorEl, viewMore } = this.state
         // alert(JSON.stringify(this.props.wishlist))
         return (
             <div>
@@ -295,7 +328,7 @@ class ProductPrice extends Component {
                     {Productprice(
                         this.props, anchorEl,
                         this.handleClick,
-                        this.handleClose)}
+                        this.handleClose, this.handleReadMore,viewMore)}
                 </Hidden>
 
                 <Hidden mdUp>
@@ -304,7 +337,7 @@ class ProductPrice extends Component {
                             this.props,
                             anchorEl,
                             this.handleClick,
-                            this.handleClose)}
+                            this.handleClose, this.handleReadMore, viewMore)}
                     </Container>
                 </Hidden>
             </div>

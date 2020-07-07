@@ -1,4 +1,4 @@
-import { Hidden, Grid, Container } from "@material-ui/core";
+import { Hidden, Grid, Container, Avatar } from "@material-ui/core";
 import React, { Component } from "react";
 import Header from "components/SilverComponents/Header";
 import CustomSeparator from "components/BreadCrumb/index";
@@ -38,6 +38,18 @@ const styles = (theme) => ({
     fill: `${theme.palette.secondary.main} !important`,
     // }
   },
+  spanIcon:{
+    width: '6px',
+    height: '6px',
+    border: '1px solid gray',
+    borderRadius: '50%',
+    padding: '2px',
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    fontSize: '8px',
+    marginLeft: '5px',
+  }
 });
 class ProductDetail extends Component {
   constructor(props) {
@@ -412,7 +424,7 @@ class ProductDetail extends Component {
         <Hidden smDown>
           <Header wishlist={this.props.wishlistdata} />
 
-          <Grid
+          {/* <Grid
             Container
             spacing={12}
             style={{ maxWidth: "1600px", margin: "auto" }}
@@ -426,29 +438,81 @@ class ProductDetail extends Component {
                 />
               </div>
             </Grid>
-          </Grid>
+          </Grid> */}
 
           <div
             className="pricing-imgzom-media"
             style={{ maxWidth: "1600px", margin: "auto" }}
           >
-            <Grid container spacing={12}>
+            <Grid container spacing={12} style={{marginTop:70}}>
               <Grid item xs={6}>
                 <ProductImageZoom data={this.props.data} />
               </Grid>
               <Grid item xs={6}>
-                <div className="overall-box priceecontainer">
+                <div className="overall-box ">
                   <ProductPrice
                     data={this.props.data}
                     wishlist={this.props.wishlistdata}
                   />
                 </div>
-                <div className="overall-box priceecontainer">
+                {/* <div className="overall-box priceecontainer"> 
                   <PriceTabs data={this.props.data} />
-                </div>
-                <div className="overall-box priceecontainer">
+                </div> */}
+                <div className="overall-box ">
                   <PriceBuynow data={this.props.data} />
                 </div>
+                <Grid container item xs={12} style={{color:'gray', fontStyle:'italic', fontSize:10, marginBottom:10}}>
+                  <Grid item xs={1} >
+<span>Modal No:</span>
+                  </Grid>
+                  <Grid item xs={4}>
+                    <span>BN11160700</span>
+                  </Grid>
+                </Grid>
+                <Grid container item xs={12} style={{marginBottom:50}}>
+                  <Grid item xs={12} style={{color:'gray', fontWeight:'bold', fontSize:12, marginBottom:10}}>
+<span>Product Information:</span><span className={classes.spanIcon}>i</span>
+                  </Grid>
+                  <Grid container item xs={4}>
+                 <Grid container item xs={2}>
+                 <Avatar alt="NAC" src="/static/images/avatar/1.jpg" />
+                 </Grid>
+                 <Grid container item xs={10} style={{fontSize:12,color:'gray', paddingLeft:15}}>
+                 <Grid itex xs={12}>
+                   Metal : 6.17 grams
+                 </Grid>
+                 <Grid itex xs={12}>
+                   Stone : 3.5 grams
+                 </Grid>
+                 </Grid>
+                  </Grid>
+                  <Grid container item xs={4}>
+                 <Grid container item xs={2}>
+                 <Avatar alt="NAC" src="/static/images/avatar/1.jpg" />
+                 </Grid>
+                 <Grid container item xs={10} style={{fontSize:12,color:'gray', paddingLeft:15}}>
+                 <Grid itex xs={12}>
+                   Purity : 22k (916)
+                 </Grid>
+                 <Grid itex xs={12}>
+                   Color : Yellow Gold
+                 </Grid>
+                 </Grid>
+                  </Grid>
+                  <Grid container item xs={4}>
+                 <Grid container item xs={2}>
+                 <Avatar alt="NAC" src="/static/images/avatar/1.jpg" />
+                 </Grid>
+                 <Grid container item xs={10} style={{fontSize:12,color:'gray', paddingLeft:15}}>
+                 <Grid itex xs={12}>
+                  No. of Diamonds : 60
+                 </Grid>
+                 <Grid itex xs={12}>
+                   Total Carat : 12.4 ct
+                 </Grid>
+                 </Grid>
+                  </Grid>
+                </Grid>
                 <div style={{ paddingTop: 6 }}>
                   <ConnectionHome />
                 </div>
@@ -482,7 +546,7 @@ class ProductDetail extends Component {
                 style={{ marginBottom: "20px", marginTop: "20px" }}
               >
                 <PriceCertification data={this.props.data} />
-                <Request data={this.props.data} />
+                {/* <Request data={this.props.data} /> */}
               </Grid>
               <br />
             </Grid>
@@ -492,7 +556,9 @@ class ProductDetail extends Component {
             {
               <>
                 <Hidden smDown>
+                 
                   <Container maxWidth={"lg"} style={{ paddingTop: 8 }}>
+                  <div style = {{fontWeight:'bold', color:'gray'}}>SIMILAR PRODUCTS</div>
                     <Slideshow
                       // sliderRef={this.slider}
                       class="subslider-carousel"

@@ -12,6 +12,7 @@ const styles = theme => ({
         }
     },
     title: {
+        marginTop:'0 !important',
         [theme.breakpoints.down('lg')]: {
             fontSize: '15px',
             // fontWeight: 'bold'
@@ -23,8 +24,29 @@ const styles = theme => ({
     dis: {
         color: theme.palette.text.secondary,
     },
+  
+    disDescriptionPD:{
+        display: 'block',
+        whiteSpace: 'nowrap',
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
+    },
+    viewReviewsTest:{
+        fontSize:12,
+        color:'gray',
+        textAlign:'left',
+        position:'absolute',
+    },
+    whishlistGrid:{
+        paddingRight:30,
+         paddingLeft:17,
+          borderLeft:'1px solid black',
+         borderRight:'1px solid black',
+        //  display:'flex',
+        //  alignItems:'center'
+    },
     icon: {
-        color: theme.palette.primary.main,
+        color: theme.palette.darkGray.main,
     },
     pricedetails: {
         color: theme.palette.primary.main,
@@ -151,7 +173,7 @@ const styles = theme => ({
         paddingTop: "2px"
     },
     normalfonts: {
-        color: theme.palette.text.primary,
+        color: 'gray',
     },
     normalcolorback: {
         background: theme.palette.text.primary
@@ -167,8 +189,10 @@ const styles = theme => ({
     },
     // buynow 
     buttons: {
-        background: theme.palette.overallButoon.primary,
-        color: theme.palette.overallButoon.contrastText
+        background: theme.palette.primary.main,
+        color: theme.palette.overallButoon.contrastText,
+        borderRadius:'unset !important',
+        boxShadow:'6px 7px 6px #bebfbf !important'
     },
     backgsecondary: {
         background: theme.palette.secondary.main,

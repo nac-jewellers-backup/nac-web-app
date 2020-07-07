@@ -5,6 +5,7 @@ import styles from './style'
 import './pricing.css'
 
 export default function Pricing(props) {
+    
     const classes = styles();
     let path = window.location.pathname.split('/').pop();
     return (
@@ -29,18 +30,30 @@ export default function Pricing(props) {
                     <Grid spacing={12} container xs={12} lg={12} class="leftPadding"> */}
                 {window.location.pathname !== "/cart" && window.location.pathname.split("-")[0] !== "/account" && window.location.pathname !== "/checkout" ?
                     <Grid container>
+                         {props.pdpage &&
+                            <Grid item xs={12} style={{ display: "flex", alignItems: "center" }} className={classes.alignval}>
+                            {props.price ?
+                                <Typography style={{ display: "flex", width: '100%' }}>
+                                    <Typography style={{ fontSize: "0.9rem" }}
+                                       style={props.from && { margin: "auto" }} className={`pricing-p${props.price != null & props.price !== '' ? '' : 'shine'} ${classes.deletePrice} ${classes.dis}`}
+                                    >
+                                        {props.offerPrice === props.price ? "" : <del>₹&nbsp;{Math.round(props.price)}</del>}
+                                    </Typography>
+                                </Typography> : ""}
+                        </Grid>}
                         <Grid item >
                             {props.offerPrice ?
                                 <Typography style={{ display: "flex", width: '100%' }}>
                                     <Typography
-                                      style={props.from && { margin: "auto" }}   className={`${props.offerPrice != null & props.offerPrice !== '' ? '' : 'shine'} ${classes.colorMain} ${classes.h6FontSize} ${classes.offerPricePadding} `}
+                                      style={ { margin:props.from ? "auto" : "unset", fontWeight:props.pdpage? 'bold': 'unset' }}   className={`${props.offerPrice != null & props.offerPrice !== '' ? '' : 'shine'} ${classes.colorMain} ${classes.h6FontSize} ${classes.offerPricePadding} `}
                                     >
                                         {/* ₹&nbsp;{props.offerPrice} */}
                                         {new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', minimumFractionDigits: 0 }).format(Math.round(props.offerPrice))}
                                     </Typography>
                                 </Typography> : ""}
                         </Grid>
-                        <Grid item style={{ display: "flex", alignItems: "center" }} className={classes.alignval}>
+                        {!props.pdpage &&
+                            <Grid item xs={12} style={{ display: "flex", alignItems: "center" }} className={classes.alignval}>
                             {props.price ?
                                 <Typography style={{ display: "flex", width: '100%' }} className={classes.resetpadd}>
                                     <Typography style={{ fontSize: "0.9rem" }}
@@ -49,7 +62,8 @@ export default function Pricing(props) {
                                         {props.offerPrice === props.price ? "" : <del>₹&nbsp;{Math.round(props.price)}</del>}
                                     </Typography>
                                 </Typography> : ""}
-                        </Grid></Grid>
+                        </Grid>}
+                        </Grid>
                     :
                     <>
                         <Grid item

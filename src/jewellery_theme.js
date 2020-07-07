@@ -44,6 +44,9 @@ export const jewelleryTheme = {
     "gold":{
       "main":"#b78231"
     },
+    'darkGray':{
+      'main':'#6e6d72'
+    },
     "stylori":{
       "pinkMain":"#ed1165"
     },

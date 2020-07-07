@@ -8,6 +8,7 @@ const styles = makeStyles((theme) => ({
     backgroundColor: "#33346D",
     borderRadius: "0px",
     padding: "6px 16px",
+    boxShadow:'6px 7px 6px #bebfbf !important',
     "&:hover": {
       color: "#fff",
       backgroundColor: "#33346D",
@@ -16,6 +17,9 @@ const styles = makeStyles((theme) => ({
       padding: "5px 10px",
       fontSize: "12px",
     },
+  },
+  activeButton:{
+    backgroundColor:theme.palette.gold.main
   },
   buttonGrid: {
     paddingRight: "20px",
@@ -58,6 +62,7 @@ const styles = makeStyles((theme) => ({
     backgroundColor: "#33346D",
     borderRadius: "0px",
     padding: "4px 14px",
+    boxShadow:'6px 7px 6px #bebfbf !important',
     fontSize: "13px",
     "&:hover": {
       color: "#fff",
@@ -102,7 +107,7 @@ export default function ConnectionHome(props) {
     <Grid container xs={12}>
       <Grid container>
         <Grid item className={classes.buttonGrid}>
-          <Button className={classes.button}>MESSAGE</Button>
+          <Button className={`${classes.button} ${classes.activeButton}` }>MESSAGE</Button>
         </Grid>
         <Grid item className={classes.buttonGrid}>
           <Button className={classes.button}>CALLBACK</Button>

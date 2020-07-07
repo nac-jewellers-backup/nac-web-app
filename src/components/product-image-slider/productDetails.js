@@ -32,7 +32,7 @@ class ProductDetails extends React.Component {
                             <>
                             {
                                 (valueofproductdetail.header !== 'Price Breakup' || (valueofproductdetail.header === 'Price Breakup' && valueofproductdetail.namedetail[5].name === 'Total' && Number(valueofproductdetail.namedetail[5].details[1].replace(/,/g, "").replace(/₹/g,"")) > 13000)) ?
-<div className='overall-boxz' style={{ boxShadow: "0px 2px 4px 4px rgba(0, 0, 0, 0.1), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12)" }}>
+<div className='overall-boxz' >
                                     <div className='overall-bo'>
                                         <span key={valueofproductdetail.name} className={`product-details ${classes.normalfonts}`} > {valueofproductdetail.header}</span>
                                         <hr class="bottom-line"></hr>
@@ -88,21 +88,7 @@ class ProductDetails extends React.Component {
                     })}
                 </Grid>
 
-                <Grid container spacing={12} style={{ paddingRight: "20px" }}>
-                    {data[0].productsPendants.map(val => (
-                        <>
-                            <div className='overall-boxz' style={{ boxShadow: "0px 2px 4px 4px rgba(0, 0, 0, 0.1), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12)" }}>
-                                <div className='overall-bo'>
-                                    <span key={val.name} className={`product-details ${classes.normalfonts}`}>{val.header}</span>
-                                    {/* <hr class="bottom-line"></hr> */}
-                                    <Grid item xs={12} className={`product-subhead ${classes.normalfonts}`}>
-                                        <span style={{ fontSize: "12px" }}>{val.name.join(' ')}</span>
-                                    </Grid>
-                                </div>
-                            </div>
-                        </>
-                    ))}
-                </Grid>
+             
 
             </div>
         )

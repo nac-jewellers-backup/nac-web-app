@@ -10,7 +10,7 @@ export default function Sliders(props) {
       value:["100","500"]
     })
     const handleRange=(e)=>{
-      debugger
+      
       setState({
         ...state,value:e
       })

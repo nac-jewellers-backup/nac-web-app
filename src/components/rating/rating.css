@@ -13,17 +13,17 @@
   }
   
   .star-rating label {
-    color:#F16882!important;
-    cursor:pointer;
+    color:#b78231!important;
+    cursor:pointer; 
   }
   
   .star-rating :checked ~ label {
-    color:#F16882!important;
+    color:#b78231!important;
   }
   
   .star-rating label:hover,
   .star-rating label:hover ~ label {
-    color:#F16882!important;
+    color:#b78231!important;
   }
   
   

@@ -58,7 +58,7 @@ const inputsearch = (props, state, handleChanges, handleCodChange) => {
                         />
                     </Grid>
                     <Grid item xs={4} lg={3} sm={4}>
-                        <Button style={{backgroundColor:"#fa4a4a"}} className={`search-button ${classes.normalcolorback} ${classes.fontwhite}`} onClick={() => { handleCodChange() }}>{state.CheckForCodtitle}</Button>
+                        <Button style={{backgroundColor:"#fa4a4a", boxShadow:'6px 7px 6px #bebfbf '}} className={`search-button ${classes.normalcolorback} ${classes.fontwhite}`} onClick={() => { handleCodChange() }}>{state.CheckForCodtitle.toUpperCase()}</Button>
                     </Grid>
 
                     <Hidden smDown>
