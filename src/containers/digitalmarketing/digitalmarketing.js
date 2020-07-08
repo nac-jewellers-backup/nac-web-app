@@ -3,7 +3,7 @@ import { Grid, Typography, Button, Link } from "@material-ui/core";
 import { DigitalMarketingPage } from "mappers/dummydata/savingNac";
 import Header from "components/SilverComponents/Header";
 import styles from "./digitalmarketingStyle";
-
+import Footer from "../../components/Footer/Footer";
 export default function DigitalMarketing(props) {
   const classes = styles();
 
@@ -50,7 +50,8 @@ export default function DigitalMarketing(props) {
             </Typography>
             {}
             {DigitalMarketingPage.resposibilitiesContent.map((val, index) => (
-              <Typography key={index}
+              <Typography
+                key={index}
                 className={classes.content}
                 style={{ display: "list-item" }}
               >
@@ -77,6 +78,7 @@ export default function DigitalMarketing(props) {
           </Grid>
         </Grid>
       </Grid>
+      <Footer />
     </Grid>
   );
 }

@@ -20,6 +20,8 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "justify",
     width: "65%",
     color: "#5d5d5d",
+    fontFamily: "notoSerif-regular !important",
+
     fontFamily: "notoSerif-regular",
     [theme.breakpoints.between("xs", "sm")]: {
       width: "83% !important",
@@ -44,6 +46,7 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "600",
     fontSize: "14px",
     lineHeight: "1.1",
+    fontFamily: "notoSerif-regular !important",
   },
   anchor: {
     color: "#191919",
@@ -52,6 +55,7 @@ const useStyles = makeStyles((theme) => ({
     lineHeight: 1.1,
     fontWeight: "600",
     paddingRight: "10px",
+    fontFamily: "notoSerif-regular !important",
   },
   line: {
     width: "125px",
@@ -72,6 +76,7 @@ const useStyles = makeStyles((theme) => ({
     color: "#666",
     letterSpacing: "0.02rem",
     fontWeight: "lighter",
+    fontFamily: "notoSerif-regular !important",
   },
   readmorelesstext: {
     fontWeight: "bold",
@@ -82,13 +87,15 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "right",
     fontSize: "0.8rem",
     color: "#808080b3",
+    fontFamily: "notoSerif-regular !important",
+
     [theme.breakpoints.between("xs", "sm")]: {
       width: "83% !important",
     },
   },
-  fontfamilyheader:{
-    fontFamily: 'notoSerif-regular !important'
-  }
+  textFont: {
+    fontFamily: "notoSerif-regular !important",
+  },
 }));
 
 
@@ -105,7 +112,7 @@ export default function Story(props) {
     <Grid container className={classes.main}>
       <Grid container className={classes.sub}>
         <Grid className={classes.root}>
-          <Typography variant="h5" component="h5" className={classes.fontfamilyheader}>
+          <Typography variant="h5" gutterBottom className={classes.textFont}>
             {props.heading}
           </Typography>
         </Grid>

@@ -1,4 +1,4 @@
-@media only screen and (max-width: 320px) and (min-width: 0px) {
+/* @media only screen and (max-width: 320px) and (min-width: 0px) {
   .iframeClass {
     height: 174px;
   }
@@ -20,7 +20,7 @@
 }
 @media only screen and (max-width: 1024px) and (min-width: 768px) {
   .iframeClass {
-    height: 275px;
+    height: 265px;
   }
 }
 @media only screen and (max-width: 1440px) and (min-width: 1025px) {
@@ -32,4 +32,4 @@
   .iframeClass {
     height: 614px;
   }
-}
+} */

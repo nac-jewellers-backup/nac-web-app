@@ -635,6 +635,7 @@ class HomeComp extends React.Component {
         }}
       >
         <span
+         style={{ fontFamily: "notoSerif-regular",}}
           className={`time-range ${
             this.state.timelineImage === image ? "active" : ""
           } ${useBar ? "" : classes.minHeighttimerange}`}

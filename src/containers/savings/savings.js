@@ -2,11 +2,11 @@ import React from "react";
 import { Grid, Hidden } from "@material-ui/core";
 import Slideshow from "components/Carousel/carosul";
 import { SavingPageNac } from "mappers/dummydata/savingNac";
-import MediaCarousel from "../../components/mediacarousel/index";
+import MediaCarousel from "../../components/mediacarousel/mediaCarousel";
 import Header from "components/SilverComponents/Header";
 import styles from "./savingsstyle";
 import { IndexSavingPage } from "mappers/dummydata/savingNac";
-
+import Footer from "../../components/Footer/Footer";
 export default function Savings(props) {
   const classes = styles();
   const next = () => {
@@ -20,7 +20,7 @@ export default function Savings(props) {
   const values = () => {
     if (props.match.path === "/savingscheme") {
       return IndexSavingPage;
-    } 
+    }
   };
   return (
     <Grid container>
@@ -109,6 +109,7 @@ export default function Savings(props) {
           <MediaCarousel value={values()} />
         </Grid>
       </Grid>
+      <Footer />
     </Grid>
   );
 }
