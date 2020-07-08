@@ -85,22 +85,22 @@ export default function ConnectionHome(props) {
   });
 
   const handleChange = (e) => {
-    console.log(e.target);
-    updatedData({
-      [e.target.name]: e.target.value,
-    });
+    const { error } = initialData;
+    [e.target.name] = e.target.value;
+    error[e.target.name] = "";
+    updatedData({ ...initialData, error });
   };
 
   const handleValidate = () => {
-    // if (
-    //   initialData.names.length === 0 &&
-    //   initialData.email.length === 0 &&
-    //   initialData.message.length === 0
-    // ) {
-    //   initialData.error.names = "Please enter your name";
-    //   initialData.error.email = "Please enter your email id";
-    //   initialData.error.message = "Please enter your message";
-    // }
+    if (
+      initialData.names.length === 0 &&
+      initialData.email.length === 0 &&
+      initialData.message.length === 0
+    ) {
+      initialData.error.names = "Please enter your name";
+      initialData.error.email = "Please enter your email id";
+      initialData.error.message = "Please enter your message";
+    }
   };
 
   return (
@@ -129,7 +129,7 @@ export default function ConnectionHome(props) {
               className={classes.inputTextClass}
               value={initialData.names}
               onChange={handleChange}
-              // helperText={initialData.error.names}
+              helperText={initialData.error.names}
             />
           </Grid>
         </Grid>
@@ -145,7 +145,7 @@ export default function ConnectionHome(props) {
               className={classes.inputTextClass}
               value={initialData.email}
               onChange={handleChange}
-              // helperText={initialData.error.email}
+              helperText={initialData.error.email}
             />
           </Grid>
         </Grid>{" "}
@@ -162,7 +162,7 @@ export default function ConnectionHome(props) {
               className={classes.inputTextClass}
               value={initialData.message}
               onChange={handleChange}
-              // helperText={initialData.error.message}
+              helperText={initialData.error.message}
             />
           </Grid>
         </Grid>
