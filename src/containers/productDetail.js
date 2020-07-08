@@ -36,8 +36,13 @@ const styles = (theme) => ({
   collectionSection: {
     // "& svg":{
     fill: `${theme.palette.secondary.main} !important`,
+    
     // }
   },
+  // '& .slick-prev':{
+  //   left:'0px !important'},
+  // '& .slick-next':{
+  //   right:'0px !important'},
   spanIcon:{
     width: '6px',
     height: '6px',
@@ -49,7 +54,12 @@ const styles = (theme) => ({
     justifyContent: 'center',
     fontSize: '8px',
     marginLeft: '5px',
-  }
+  },
+  // similarProducts:{
+  //   "& .svg":{
+  //     left:'0 !important'
+  //   }
+  // }
 });
 class ProductDetail extends Component {
   constructor(props) {
@@ -552,13 +562,13 @@ class ProductDetail extends Component {
             </Grid>
           </div>
 
-          <Grid container item xs={12}>
+          <Grid container item xs={12}  style={{ maxWidth: "1600px", margin: "auto", paddingLeft:"5%",paddingRight:"5%" }}>
             {
               <>
                 <Hidden smDown>
                  
-                  <Container maxWidth={"lg"} style={{ paddingTop: 8 }}>
-                  <div style = {{fontWeight:'bold', color:'gray'}}>SIMILAR PRODUCTS</div>
+                  <div style={{ paddingTop: 8, width:'100%' }}>
+                  <div style = {{fontWeight:'bold', color:'gray', marginLeft:15}}>SIMILAR PRODUCTS</div>
                     <Slideshow
                       // sliderRef={this.slider}
                       class="subslider-carousel"
@@ -574,18 +584,24 @@ class ProductDetail extends Component {
                         );
                       })}
                     </Slideshow>
-                  </Container>
+                  </div>
                 </Hidden>
               </>
             }
           </Grid>
 
-          <RatingForm
+            <div style={{ maxWidth: "1600px", margin: "auto", paddingLeft:"5%",paddingRight:"5%" }}>
+            <RatingForm
             data={this.props.data}
             clear_rating={this.state.clear}
             clear_rating_onchange={clear_rating}
           />
-          <CustomerReviews rating={this.props.rating} />
+            </div>
+          
+            <div style={{ maxWidth: "1600px", margin: "auto", paddingLeft:"5%",paddingRight:"5%" }}>
+            <CustomerReviews rating={this.props.rating} />
+            </div>
+        
 
           <Grid item xs={12}>
             <Footer />
@@ -610,23 +626,25 @@ class ProductDetail extends Component {
               wishlist={this.props.wishlistdata}
             />
           </Grid>
-          <Grid
+          {/* <Grid
             container
             xs={11}
             style={{ margin: "auto", padding: "15px 0px" }}
           >
             <ConnectionHome />
-          </Grid>
+          </Grid> */}
           <Grid item xs={12}>
             <PriceCertification data={this.props.data} />
           </Grid>
-          <Grid item xs={12}>
+          {/* <Grid item xs={12}>
             <Request data={this.props.data} />
-          </Grid>
+          </Grid> */}
 
-          <Grid item xs={12}>
-            <Container maxWidth={"lg"}>
-              <Slideshow
+          <Grid item xs={12} className={classes.similarProducts}>
+            <Container style={{ padding: "0px 26px" }}>
+            <div style = {{fontWeight:'bold', color:'#20205a', marginLeft:15}}>SIMILAR PRODUCTS</div>
+             <div style={{width:'100%'}}>
+             <Slideshow
                 // sliderRef={this.slider}
                 class="subslider-carousel"
                 dataCarousel={dataCarouselcollectionsSm}
@@ -637,21 +655,24 @@ class ProductDetail extends Component {
                   );
                 })}
               </Slideshow>
+             </div>
             </Container>
           </Grid>
 
-          <Grid item xs={12}>
-            <CustomerReviews data={this.props.data} />
-          </Grid>
+          
 
           <Grid item xs={12}>
-            <RatingForm
+          <Container>
+          <RatingForm
               data={this.props.data}
               clear_rating={this.state.clear}
               clear_rating_onchange={clear_rating}
             />
+          </Container>
           </Grid>
-
+          <Grid item xs={12}>
+            <CustomerReviews data={this.props.data} />
+          </Grid>
           <Grid item style={{ paddingBottom: "50px" }}>
             <Footer />
           </Grid>

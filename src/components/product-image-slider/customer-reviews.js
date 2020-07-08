@@ -102,7 +102,7 @@ class CustomerReviews extends React.Component {
         return (
             <div style={{ width: "100%" }}>
                 <Hidden smDown>
-                    <Container style={{ paddingLeft: "15px", paddingRight: "15px", paddingTop: "5px" }}>
+                    {/* <Container style={{ paddingLeft: "15px", paddingRight: "15px", paddingTop: "5px" }}> */}
                         <div style={{ padding: " 20px 0px 0px 0px !important" }}>
                             <div className="reviews-header">
                                 <span className={`reviews-customer ${classes.normalfonts}`}>Customer Reviews</span>
@@ -115,7 +115,7 @@ class CustomerReviews extends React.Component {
                                 </span>
                             </div>
                         </div>
-                    </Container>
+                    {/* </Container> */}
                 </Hidden>
 
                 {/* <Hidden mdUp>

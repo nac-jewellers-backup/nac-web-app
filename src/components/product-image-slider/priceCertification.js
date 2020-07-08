@@ -34,12 +34,12 @@ class PriceCertification extends React.Component {
 // 
                           <>
                         
-                            <ExpansionPanel style={{ boxShadow: "0px 2px 4px 4px rgba(0, 0, 0, 0.1), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12)" ,padding:"0 5px"}} expanded={expanded === certificates.header} onChange={this.handle(certificates.header)} key={certificates.name}>
+                            <ExpansionPanel className={classes.cerfificates} style={{ boxShadow: "rgb(190, 191, 191) 5px 5px 5px", border:'1px solid #ccc' ,padding:"0 5px"}} expanded={expanded === certificates.header} onChange={this.handle(certificates.header)} key={certificates.name}>
                                 <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}
                                             aria-controls="panel1a-content"
                                             id="panel1a-header"  >
                                     <div style={{ width: "100%" }} >
-                                        <Typography className={`subtabs-smrt ${classes.normalfonts}`}>{certificates.header}</Typography>
+                                        <Typography className={`subtabs-smrt ${classes.normalfonts}`}>{'Certificate'}</Typography>
                                         {/* <hr class="bottom-line border-line-"></hr> */}
                                     </div>
     

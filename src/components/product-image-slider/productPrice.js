@@ -8,6 +8,8 @@ import {
     Paper
 } from '@material-ui/core';
 import Slideshow from '../Carousel/carosul'
+import ArrowRightIcon from "@material-ui/icons/ArrowRight";
+import ArrowLeftIcon from "@material-ui/icons/ArrowLeft";
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './product-images.css'
@@ -18,23 +20,47 @@ import styles from './style';
 import Wishlist from 'components/wishlist/wishlist';
 import { Button } from 'semantic-ui-react';
 
-const dataCarousel = {
-    dots: true,
-    infinite: false,
-    speed: 1000,
-    fade: true,
-    arrows: false,
-    dotsClass: "slickdev",
-    className: 'button__bar',
-}
 
 
 const mobilecarousel = (props, val, wishlist) => {
 
     const { data, classes } = props;
+    const ArrowLeft = (props) => {
+        const { className, style, onClick } = props;
+        return (
+          <ArrowLeftIcon
+            className={`${className} ${classes.collectionSection}`}
+            onClick={onClick}
+            style={{ ...style, fill: "theme.palette.secondary.main !important" }}
+          />
+        );
+      };
+      const ArrowRight = (props) => {
+        const { className, style, onClick } = props;
+        return (
+          <ArrowRightIcon
+            className={`${className} ${classes.collectionSection}`}
+            onClick={onClick}
+            style={{ ...style, fill: "theme.palette.secondary.main !important" }}
+          />
+        );
+      };
+    const dataCarousel = {
+        dots: false,
+        infinite: false,
+        speed: 1000,
+        fade: true,
+        arrows: true,
+        dotsClass: "slickdev",
+        className: 'button__bar',
+        nextArrow:<ArrowRight/>,
+        prevArrow:<ArrowLeft/>
+    
+    }
+    
     return (
-        <div>
-            {data.map(data_map =>
+        <div style={{width:'98%'}}>
+            {/* {data.map(data_map =>
                 <Grid container spacing={12} xs={12}>
                     <Grid container item xs={6}>
                         <div className={val && val.offerDiscount ? "css-ts7n45 e5toz5w4" : ""}><span style={{ color: "#fff" }} className={val && val.offerDiscount ? "e195g4sk5 css-5pjie5 ekntgft2" : ""}>{val ? val.offerDiscount : null}</span><br />
@@ -46,7 +72,7 @@ const mobilecarousel = (props, val, wishlist) => {
                         <Wishlist sku={data_map.skuId} productId={data_map.productId} wishlist={wishlist} />
                     </Grid>
                 </Grid>
-            )}
+            )} */}
 
             {/* <div style={{background:"red"}}>Earrings in 18K Yellow Gold and Peridot for Kids</div> */}
             <Slideshow zindex="1000" class="middle" className='responseve-carousel testingcur' imgClass='responseve-carousel-img'
@@ -67,7 +93,7 @@ const Productprice = (props, anchorEl, handleClick, handleClose, handleReadMore,
         <div>
             {data.map(val => (
                 <>
-                    <Grid container spacing={12} sm={12} className={classes.pricedetails}>
+                    <Grid container spacing={12} sm={12} className={classes.pricedetails}> 
                         <Hidden mdUp>
                             <div className="resp" >
                                 {/* <div className="respc"> */}
@@ -123,14 +149,14 @@ const Productprice = (props, anchorEl, handleClick, handleClose, handleReadMore,
                                 <Grid item xs={12} lg={12} md={12}>
                                     <div className="price-div">
                                         <Hidden mdUp>
-                                            <Grid container spacing={12} xs={12}>
+                                            <Grid container spacing={12} xs={12} style={{padding:10}}>
                                                 <Grid container item xs={8}>
                                                     <h1 className={`pdp-title ${classes.title}`} style={{ width: "90%" }}>
                                                         {val.title}
                                                         {/* <i style={{ padding: "2px", fontSize: "12px" }} class="fa fa-info-circle" aria-hidden="true"></i> */}
                                                     </h1>
 
-                                                    <div>
+                                                    {/* <div>
                                                         {data[0].ProductContactNum.map(val =>
                                                             <div >
                                                                 <b style={{ alignItems: "center", display: "flex" }} className={`ships-by ${classes.normalfonts}`}>
@@ -138,7 +164,10 @@ const Productprice = (props, anchorEl, handleClick, handleClose, handleReadMore,
                                                                 </b>
                                                             </div>
                                                         )}
-                                                    </div>
+                                                    </div> */}
+                                                     <p className={`pdp-desc ${classes.dis} ${classes.disEllipises}`} style={{marginBottom:20, fontStyle:'italic'}}>
+                                                {val.dis}
+                                            </p>
                                                 </Grid>
                                                 
                                                 <Grid container item xs={4} alignContent="center" alignItems="center">
@@ -148,6 +177,7 @@ const Productprice = (props, anchorEl, handleClick, handleClose, handleReadMore,
                                                                 price={data[0].price}
                                                                 offerPrice={data[0].offerPrice}
                                                                 offerDiscount={val.offerDiscount}
+                                                                pdpagesm = {true}
                                                                
                                                             >
 
@@ -261,7 +291,7 @@ const Productprice = (props, anchorEl, handleClick, handleClose, handleReadMore,
 
 
                     <Hidden smDown>
-                        <div className={classes.width} style={{ padding: "0px 10px  0px 10px " }}>
+                        <div className={classes.width} >
                             {data[0].price === data[0].offerPrice ?
 
                                 <Pricing

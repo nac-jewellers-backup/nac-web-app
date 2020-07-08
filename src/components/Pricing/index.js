@@ -24,7 +24,7 @@ export default function Pricing(props) {
                     ""
             }
             {/*  */}
-            <Grid spacing={12} style={{ padding: "0px 8px " }} container lg={12}>
+            <Grid spacing={12}  container lg={12}>
 
                 {/* <Grid item xs={12}lg={12} >
                     <Grid spacing={12} container xs={12} lg={12} class="leftPadding"> */}
@@ -45,10 +45,13 @@ export default function Pricing(props) {
                             {props.offerPrice ?
                                 <Typography style={{ display: "flex", width: '100%' }}>
                                     <Typography
-                                      style={ { margin:props.from ? "auto" : "unset", fontWeight:props.pdpage? 'bold': 'unset' }}   className={`${props.offerPrice != null & props.offerPrice !== '' ? '' : 'shine'} ${classes.colorMain} ${classes.h6FontSize} ${classes.offerPricePadding} `}
+                                      style={ { margin:props.from ? "auto" : "unset", fontWeight:'bold' }}   className={`${props.offerPrice != null & props.offerPrice !== '' ? '' : 'shine'} ${classes.colorMain} ${classes.h6FontSize} ${classes.offerPricePadding} `}
                                     >
                                         {/* ₹&nbsp;{props.offerPrice} */}
                                         {new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', minimumFractionDigits: 0 }).format(Math.round(props.offerPrice))}
+                                        <Hidden smDown>
+                                        <span className={classes.spanIcon1}>i</span>
+                                        </Hidden>
                                     </Typography>
                                 </Typography> : ""}
                         </Grid>

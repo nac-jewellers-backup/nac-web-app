@@ -108,7 +108,7 @@ class ProductDetails extends React.Component {
                             {
                                 (val.header !== 'Price Breakup' || (val.header === 'Price Breakup' && val.namedetail[5].name === 'Total' && Number(val.namedetail[5].details[1].replace(/,/g, "").replace(/₹/g,"")) > 13000))
                                 ?
-                                <ExpansionPanel style={{ boxShadow: "0px 2px 4px 4px rgba(0, 0, 0, 0.1), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12)", margin: "12px 0px", padding: "0 5px 5px 5px" }} expanded={expanded === val.header} onChange={this.handle(val.header)} key={val.name}>
+                                <ExpansionPanel className={classes.expansionHere} style={{ boxShadow: "rgb(190, 191, 191) 5px 5px 5px", border:'1px solid #ccc', margin: "12px 0px", padding: "0 5px 5px 5px" }} expanded={expanded === val.header} onChange={this.handle(val.header)} key={val.name}>
                                 <ExpansionPanelSummary
 
 
@@ -162,28 +162,7 @@ class ProductDetails extends React.Component {
                             </>
                     })}
 
-                    {data[0].productsPendants.map(val => (
-                        <div>
-                            <ExpansionPanel style={{ boxShadow: " 0px 2px 4px 4px rgba(0, 0, 0, 0.1), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12)", margin: "12px 0px", padding: "0 5px 5px 5px" }} expanded={expanded === 'panel'} onChange={this.handle('panel')}>
-                                <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}
-                                    aria-controls="panel1a-content"
-                                    id="panel1a-header">
-                                    <div style={{ width: "100%" }} >
-                                        <Typography className={`product-details-smrt ${classes.normalfonts}`}>{val.header}</Typography>
-                                        {/* <hr class="bottom-line border-line-"></hr> */}
-                                    </div>
-                                </ExpansionPanelSummary>
-
-                                <div style={{ padding: "10px", backgroundColor: "antiquewhite" }}>
-                                    <Grid container spacing={12}>
-                                        <Grid item xs={12} className={`product-subhead ${classes.normalfonts}`}>
-                                            <span style={{ fontSize: "12px" }}>{val.name.join(' ')}</span>
-                                        </Grid>
-                                    </Grid>
-                                </div>
-                            </ExpansionPanel>
-                        </div>
-                    ))}
+                   
 
                 </Container>
             </div>

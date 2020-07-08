@@ -5,6 +5,7 @@ import {
   Grid,
   Modal,
   Typography,
+  Avatar,
 } from "@material-ui/core";
 import React from "react";
 import "./product-images.css";
@@ -32,7 +33,7 @@ const inputsearch = (props, state, handleChanges, handleCodChange) => {
   return (
     <div className={classes.searchCheck} style={{}}>
       {data[0].ProductContactNum.map((val) => (
-        <Grid container spacing={12} className={classes.shadow}>
+        <Grid container spacing={12} >  
           <Grid item xs={7} lg={4} sm={7}>
             {/* <input
                             placeholder='&#xf041; &nbsp; Enter Pin Code'
@@ -60,13 +61,13 @@ const inputsearch = (props, state, handleChanges, handleCodChange) => {
           <Grid item xs={5} lg={3} sm={5} 
             style={{
                 color: "#fff",
-                boxShadow: "6px 7px 6px #bebfbf ",
+                boxShadow: "rgb(190, 191, 191) 5px 5px 5px",
               }}
           >
             <Button
               style={{
                 color: "#fff",
-                boxShadow: "6px 7px 6px #bebfbf",
+                boxShadow: "rgb(190, 191, 191) 5px 5px 5px",
               }}
               className={
                 state.pincodeNotFound ||
@@ -162,8 +163,8 @@ const Buydetails = (
     <div>
       {data[0].ProductContactNum.map((val) => (
         <>
-          <Grid container spacing={12} style={{ padding: "0 10px" }}>
-            <Grid item xs={12} lg={4} style={{}}>
+          <Grid container spacing={12} >
+            <Grid item xs={12} lg={4} style={{paddingBottom:'20px'}}>
               {/* <NavLink to="/cart" style={{ textDecoration: 'none' }} onClick={handleLocalStorage.bind(this)}> */}
               <div onClick={handleLocalStorage.bind(this)}>
                 <Buynowbutton
@@ -267,6 +268,7 @@ class Component extends React.Component {
       open: false,
       values: "",
       pincodeValues: {},
+      isShowDetailTab:1,
       CheckForCodtitle: "Check for COD",
       isRequired: false,
       pincodeNotFound: false,
@@ -447,8 +449,47 @@ class Component extends React.Component {
               data={this.props.data}
               wishlist={this.props.wishlist}
             />
-
-            <PriceTabs data={this.props.data} wishlist={this.props.wishlist} />
+  <Container maxWidth="lg">
+                <Grid container item xs={12} style={{marginBottom:30,marginTop:30}}>
+               
+                  <Grid container item xs={4}>
+                 <Grid container item xs={12} justify="center" className={this.state.isShowDetailTab === 1 ? classes.activeDetail : ''}>
+                 <Avatar alt="NAC" src="/static/images/avatar/1.jpg"  onClick={()=>{this.setState({isShowDetailTab:1})}}/>
+                 </Grid>
+               
+                  </Grid>
+                  <Grid container item xs={4}>
+                 <Grid container item xs={12} justify="center" className={this.state.isShowDetailTab === 2 ? classes.activeDetail : ''}>
+                 <Avatar alt="NAC" src="/static/images/avatar/1.jpg"   onClick={()=>{this.setState({isShowDetailTab:2})}}/>
+                 </Grid>
+                
+                  </Grid>
+                  <Grid container item xs={4}>
+                 <Grid container item xs={12} justify="center" className={this.state.isShowDetailTab === 3 ? classes.activeDetail : ''}>
+                 <Avatar alt="NAC" src="/static/images/avatar/1.jpg"  onClick={()=>{this.setState({isShowDetailTab:3})}}/>
+                 </Grid>
+               
+                  </Grid>
+                  <Grid container item xs={12} className={classes.detail} >
+                  {this.state.isShowDetailTab === 1 && <Grid itex xs={12}>
+                   Purity : 22k (916)
+                 </Grid>}
+                 {this.state.isShowDetailTab === 2 && 
+                   <Grid itex xs={12}>
+                   Metal : 6.17 grams
+                 </Grid>}
+                 {this.state.isShowDetailTab === 3 && 
+                   <Grid itex xs={12}>
+                  No. of Diamonds : 60
+                 </Grid>}
+                 {/* <Grid itex xs={12}>
+                   Stone : 3.5 grams
+                 </Grid> */}
+                 </Grid>
+                </Grid>
+               
+  </Container>
+            {/* <PriceTabs data={this.props.data} wishlist={this.props.wishlist} /> */}
             {inputsearch(
               this.props,
               this.state,

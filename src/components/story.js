@@ -86,7 +86,11 @@ const useStyles = makeStyles((theme) => ({
       width: "83% !important",
     },
   },
+  fontfamilyheader:{
+    fontFamily: 'notoSerif-regular !important'
+  }
 }));
+
 
 export default function Story(props) {
   const classes = useStyles();
@@ -101,7 +105,7 @@ export default function Story(props) {
     <Grid container className={classes.main}>
       <Grid container className={classes.sub}>
         <Grid className={classes.root}>
-          <Typography variant="h5" gutterBottom>
+          <Typography variant="h5" component="h5" className={classes.fontfamilyheader}>
             {props.heading}
           </Typography>
         </Grid>
