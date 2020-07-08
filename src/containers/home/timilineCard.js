@@ -24,10 +24,10 @@ const useStyles = makeStyles((theme) => ({
   },
   cover: {
     width: "50%",
-    border:`1.5px solid ${theme.palette.gold.main}`,
-    [theme.breakpoints.down('sm')]:{
+    border: `1.5px solid ${theme.palette.gold.main}`,
+    [theme.breakpoints.down("sm")]: {
       width: "100%",
-    }
+    },
   },
   controls: {
     display: "flex",
@@ -39,6 +39,9 @@ const useStyles = makeStyles((theme) => ({
     height: 38,
     width: 38,
   },
+  contentText: {
+    fontFamily: "notoSerif-regular",
+  },
 }));
 
 export function MediaControlCard(props) {
@@ -47,41 +50,45 @@ export function MediaControlCard(props) {
 
   return (
     <Card className={classes.root}>
-        <Hidden smDown>
-          
-            <CardMedia
-              className={classes.cover}
-              image={props.data.image}
-              title="Live from space album cover"
-            />
-          
-          <div style={{width:"50%"}}>
-            <div className={classes.details}>
-              <CardContent className={classes.content}>
-                <Typography variant="subtitle1" color="textSecondary">
-                  For every occasion and non-occasion. Shop our range of
-                  everyday fashion jewellery featuring gold, silver and stone
-                  rings and earrings, for work, play and everything in between.
-                  Give special occasions a little extra glimmer with our range
-                  of bridal jewellery ranging from engagement rings to wedding
-                  rings to classic party wear.Crafted using the finest jewellery
-                  design and jewellery making principles, buy our jewellery
-                  online for fast deliveries and an easy returns policy.
-                </Typography>
-              </CardContent>
-            </div>
-          </div>
-        </Hidden>
+      <Hidden smDown>
+        <CardMedia
+          className={classes.cover}
+          style={{ fontFamily: "notoSerif-regular",}}
+          image={props.data.image}
+          title="Live from space album cover"
+        />
 
-        <Hidden mdUp>
-          {/* <div style={{width:"100%"}}> */}
-            <CardMedia
-              className={classes.cover}
-              image={props.data.image}
-              title="Live from space album cover"
-            />
-          {/* </div> */}
-        </Hidden>
+        <div style={{ width: "50%" }}>
+          <div className={classes.details}>
+            <CardContent className={classes.content}>
+              <Typography
+                variant="subtitle1"
+                color="textSecondary"
+                className={classes.contentText}
+              >
+                For every occasion and non-occasion. Shop our range of everyday
+                fashion jewellery featuring gold, silver and stone rings and
+                earrings, for work, play and everything in between. Give special
+                occasions a little extra glimmer with our range of bridal
+                jewellery ranging from engagement rings to wedding rings to
+                classic party wear.Crafted using the finest jewellery design and
+                jewellery making principles, buy our jewellery online for fast
+                deliveries and an easy returns policy.
+              </Typography>
+            </CardContent>
+          </div>
+        </div>
+      </Hidden>
+
+      <Hidden mdUp>
+        {/* <div style={{width:"100%"}}> */}
+        <CardMedia
+          className={classes.cover}
+          image={props.data.image}
+          title="Live from space album cover"
+        />
+        {/* </div> */}
+      </Hidden>
     </Card>
   );
 }

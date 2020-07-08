@@ -15,7 +15,7 @@ import Typography from '@material-ui/core/Typography';
 import Footer from "components/Footer/Footer";
 
 export default function careersPage (props) {
-  alert("s")
+ 
     const classes = styles();
     const clases = currentstyles();
     const next = () => {

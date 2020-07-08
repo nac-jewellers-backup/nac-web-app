@@ -38,11 +38,14 @@ export default function DiamondList(props) {
       color: theme.palette.common.white,
       textAlign: "center",
       border: "1px solid #ddd",
+      fontFamily: "notoSerif-regular !important",
+      fontSize: "16px",
     },
     body: {
       fontSize: 14,
       textAlign: "center",
       border: "1px solid #ddd",
+      fontFamily: "notoSerif-regular !important",
     },
     table: {
       minWidth: 700,
