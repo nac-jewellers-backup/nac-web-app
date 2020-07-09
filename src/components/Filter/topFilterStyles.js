@@ -94,6 +94,17 @@ export const styles = makeStyles(theme => ({
     textDecoration: 'none !important',
     // margin-left: 5%;
   },
+  chips:{
+    background: '#8080802e',
+    color: 'black',
+    padding: '5px',
+    display:'inline-flex',
+    "& svg":{
+      fontSize:'1rem',
+      fill:'black !important',
+      margin:'auto',
+    }
+  },
   menuListCursor: {
     cursor: 'pointer',
     fontFamily: 'Roboto',

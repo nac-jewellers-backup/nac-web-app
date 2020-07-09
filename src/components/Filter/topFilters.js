@@ -14,6 +14,7 @@ import ExpandMore from '@material-ui/icons/ExpandMore';
 import AddBoxIcon from '@material-ui/icons/AddBox';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import ArrowDropUpIcon from '@material-ui/icons/ArrowDropUp';
+import CloseIcon from '@material-ui/icons/Close';
 export const TopFilters = (props) => {
   const [state, setState] = React.useState({
     open: false,
@@ -91,6 +92,11 @@ export const TopFilters = (props) => {
     <Container style={{marginTop:"25px"}}  >
    
       <Grid container item xs={12} >
+        <Grid item xs={12} style={{marginBottom:30}}>
+          <div style={{textAlign:'center', fontWeight:'bold'}}>
+            FILTER YOUR SEARCH
+          </div>
+        </Grid>
         <Grid 
           container
           item
@@ -223,6 +229,7 @@ export const TopFilters = (props) => {
               ""
             )}
           </Grid>
+         
         </Grid>
         <Grid container item xs={3}   onMouseLeave={() => {
             setState({ ...state,expanded:false, targetopen: null });
@@ -286,6 +293,17 @@ export const TopFilters = (props) => {
               ""
             )}
         </Grid>
+        <Grid container item xs={12} style={{marginLeft:16}}>
+        <Grid item xs={2} >
+          <span className={classes.chips}>FEMALE &nbsp; <CloseIcon/></span>
+        </Grid>
+        <Grid item xs={2} >
+          <span className={classes.chips}>EVERYDAY &nbsp; <CloseIcon/></span>
+          </Grid>
+        <Grid item xs={2} >
+          <span className={classes.chips}>GOLD &nbsp; <CloseIcon/></span>
+        </Grid>
+      </Grid>
       </Grid>
 
       <MorefiltersOpen
@@ -298,6 +316,7 @@ export const TopFilters = (props) => {
         subFilter={props.subFilter}
         handleClose={handleMoreFilters}
       />
+     
     </Container>
     </div>
   );
