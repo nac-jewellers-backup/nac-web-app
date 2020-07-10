@@ -1200,7 +1200,7 @@ class HomeComp extends React.Component {
               md={8}
               lg={8}
               xl={8}
-              className={classes.gridPadding}
+            style={{paddingTop : "20px"}}
             >
               <Testimonial />
             </Grid>
