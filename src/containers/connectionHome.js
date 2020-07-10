@@ -80,10 +80,12 @@ export default function ConnectionHome(props) {
   });
 
   const handleChange = (e) => {
-    const { error } = initialData;
-    [e.target.name] = e.target.value;
-    error[e.target.name] = "";
-    updatedData({ ...initialData, error });
+    updatedData({
+      [e.target.name]: e.target.value,
+
+      ...initialData,
+      // helperText: "",
+    });
   };
 
   const handleValidate = () => {
@@ -124,7 +126,7 @@ export default function ConnectionHome(props) {
               className={classes.inputTextClass}
               value={initialData.names}
               onChange={handleChange}
-              helperText={initialData.error.names}
+              // helperText={initialData.error.names}
             />
           </Grid>
         </Grid>
@@ -140,7 +142,7 @@ export default function ConnectionHome(props) {
               className={classes.inputTextClass}
               value={initialData.email}
               onChange={handleChange}
-              helperText={initialData.error.email}
+              // helperText={initialData.error.email}
             />
           </Grid>
         </Grid>{" "}
@@ -157,7 +159,7 @@ export default function ConnectionHome(props) {
               className={classes.inputTextClass}
               value={initialData.message}
               onChange={handleChange}
-              helperText={initialData.error.message}
+              // helperText={initialData.error.message}
             />
           </Grid>
         </Grid>
