@@ -8,6 +8,8 @@ import {
     Paper
 } from '@material-ui/core';
 import Slideshow from '../Carousel/carosul'
+import ArrowRightIcon from "@material-ui/icons/ArrowRight";
+import ArrowLeftIcon from "@material-ui/icons/ArrowLeft";
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './product-images.css'
@@ -18,23 +20,47 @@ import styles from './style';
 import Wishlist from 'components/wishlist/wishlist';
 import { Button } from 'semantic-ui-react';
 
-const dataCarousel = {
-    dots: true,
-    infinite: false,
-    speed: 1000,
-    fade: true,
-    arrows: false,
-    dotsClass: "slickdev",
-    className: 'button__bar',
-}
 
 
 const mobilecarousel = (props, val, wishlist) => {
 
     const { data, classes } = props;
+    const ArrowLeft = (props) => {
+        const { className, style, onClick } = props;
+        return (
+          <ArrowLeftIcon
+            className={`${className} ${classes.collectionSection}`}
+            onClick={onClick}
+            style={{ ...style, fill: "theme.palette.secondary.main !important" }}
+          />
+        );
+      };
+      const ArrowRight = (props) => {
+        const { className, style, onClick } = props;
+        return (
+          <ArrowRightIcon
+            className={`${className} ${classes.collectionSection}`}
+            onClick={onClick}
+            style={{ ...style, fill: "theme.palette.secondary.main !important" }}
+          />
+        );
+      };
+    const dataCarousel = {
+        dots: false,
+        infinite: false,
+        speed: 1000,
+        fade: true,
+        arrows: true,
+        dotsClass: "slickdev",
+        className: 'button__bar',
+        nextArrow:<ArrowRight/>,
+        prevArrow:<ArrowLeft/>
+    
+    }
+    
     return (
-        <div>
-            {data.map(data_map =>
+        <div style={{width:'98%'}}>
+            {/* {data.map(data_map =>
                 <Grid container spacing={12} xs={12}>
                     <Grid container item xs={6}>
                         <div className={val && val.offerDiscount ? "css-ts7n45 e5toz5w4" : ""}><span style={{ color: "#fff" }} className={val && val.offerDiscount ? "e195g4sk5 css-5pjie5 ekntgft2" : ""}>{val ? val.offerDiscount : null}</span><br />
@@ -46,7 +72,7 @@ const mobilecarousel = (props, val, wishlist) => {
                         <Wishlist sku={data_map.skuId} productId={data_map.productId} wishlist={wishlist} />
                     </Grid>
                 </Grid>
-            )}
+            )} */}
 
             {/* <div style={{background:"red"}}>Earrings in 18K Yellow Gold and Peridot for Kids</div> */}
             <Slideshow zindex="1000" class="middle" className='responseve-carousel testingcur' imgClass='responseve-carousel-img'
@@ -55,7 +81,8 @@ const mobilecarousel = (props, val, wishlist) => {
     );
 };
 
-const Productprice = (props, anchorEl, handleClick, handleClose) => {
+const Productprice = (props, anchorEl, handleClick, handleClose, handleReadMore, viewMore) => {
+    
     const { data } = props;
     const { classes } = props;
     const open = anchorEl;
@@ -66,7 +93,7 @@ const Productprice = (props, anchorEl, handleClick, handleClose) => {
         <div>
             {data.map(val => (
                 <>
-                    <Grid container spacing={12} sm={12} className={classes.pricedetails}>
+                    <Grid container spacing={12} sm={12} className={classes.pricedetails}> 
                         <Hidden mdUp>
                             <div className="resp" >
                                 {/* <div className="respc"> */}
@@ -119,17 +146,17 @@ const Productprice = (props, anchorEl, handleClick, handleClose) => {
                         </Hidden>
                         <Paper elevation={0} style={{ width: "100%", padding: "0px", margin: "0px " }}>
                             <Grid container className="containbev" >
-                                <Grid item xs={12} lg={9} md={9}>
+                                <Grid item xs={12} lg={12} md={12}>
                                     <div className="price-div">
                                         <Hidden mdUp>
-                                            <Grid container spacing={12} xs={12}>
+                                            <Grid container spacing={12} xs={12} style={{padding:10}}>
                                                 <Grid container item xs={8}>
                                                     <h1 className={`pdp-title ${classes.title}`} style={{ width: "90%" }}>
                                                         {val.title}
                                                         {/* <i style={{ padding: "2px", fontSize: "12px" }} class="fa fa-info-circle" aria-hidden="true"></i> */}
                                                     </h1>
 
-                                                    <div>
+                                                    {/* <div>
                                                         {data[0].ProductContactNum.map(val =>
                                                             <div >
                                                                 <b style={{ alignItems: "center", display: "flex" }} className={`ships-by ${classes.normalfonts}`}>
@@ -137,8 +164,12 @@ const Productprice = (props, anchorEl, handleClick, handleClose) => {
                                                                 </b>
                                                             </div>
                                                         )}
-                                                    </div>
+                                                    </div> */}
+                                                     <p className={`pdp-desc ${classes.dis} ${classes.disEllipises}`} style={{marginBottom:20, fontStyle:'italic'}}>
+                                                {val.dis}
+                                            </p>
                                                 </Grid>
+                                                
                                                 <Grid container item xs={4} alignContent="center" alignItems="center">
                                                     <Hidden mdUp>
                                                         <div className={classes.width} style={{ padding: "0px 10px  0px 10px " }}>
@@ -146,6 +177,8 @@ const Productprice = (props, anchorEl, handleClick, handleClose) => {
                                                                 price={data[0].price}
                                                                 offerPrice={data[0].offerPrice}
                                                                 offerDiscount={val.offerDiscount}
+                                                                pdpagesm = {true}
+                                                               
                                                             >
 
                                                             </Pricing>
@@ -157,36 +190,60 @@ const Productprice = (props, anchorEl, handleClick, handleClose) => {
 
                                         </Hidden>
                                         <Hidden smDown>
-                                            <h1 className={`pdp-title ${classes.title}`}>
+                                            <h1 className={`pdp-title ${classes.title} `}>
                                                 {val.title}
                                             </h1>
                                         </Hidden>
                                         <Hidden smDown>
-                                            <p className={`pdp-desc ${classes.dis}`}>
+                                            <p className={`pdp-desc ${classes.dis}`} style={{marginBottom:20, fontStyle:'italic'}}>
                                                 {val.dis}
                                             </p>
+                                            <p className={`pdp-desc ${viewMore ? '' : classes.disDescriptionPD}`}>
+                                                <span style={{width:'80%'}}> {`You actually don't need width to be "set" here. All the elements in the responsive design have their width. You can just do it around with the following rules: 
+                                                You actually don't need width to be "set" here. All the elements in the responsive design have their width. You can just do it around with the following rules:
+                                                You actually don't need width to be "set" here. All the elements in the responsive design have their width. You can just do it around with the following rules:
+                                                You actually don't need width to be "set" here. All the elements in the responsive design have their width. You can just do it around with the following rules:`}
+                                                 <span style={{float:'right', cursor:'pointer'}} onClick={()=>{handleReadMore()}}>{viewMore ? 'Read Less' : 'Read More'}</span>
+                                                </span>
+                                               
+                                            </p>
+                                            
                                         </Hidden>
                                     </div>
                                 </Grid>
 
 
 
-                                <Grid item xs={12} lg={3} md={3} style={{
+                                <Grid container item xs={12} lg={12} md={12} style={{
                                     display: "flex",
                                     lineHeight: "20px",
                                     justifyContent: "flex-end"
                                 }}>
                                     <Hidden smDown>
-                                        <div className="starts product-icons" style={{ fontFamily: "fontawesome" }} >
-                                            <div className="row social-shares"
-                                                className={classes.icon}>
-                                                <i class="fa fa-share-alt overall-icons"
+                                        <div className="starts product-icons" style={{ fontFamily: "fontawesome",width:'100%' }} >
+                                            <Grid container item xs={12} sm={12} md={8} lg={6} xl={6}  className="row social-shares"
+                                                className={classes.icon} style={{marginBottom:35}}>
+                                                     <Grid item xs={5}>
+                                                    <div onClick={() => window.scrollTo(0, 1800)}><Ratings ratings="starts-review" disable={"disable"} />
+                                                    <div className={classes.viewReviewsTest}>View Reviews</div>
+                                                    </div> 
+                                                    </Grid>
+                                                    <Grid item xs={2} className={classes.whishlistGrid}>
+                                                    {/* <Wishlist sku={val.skuId} productId={val.productId} wishlist={wishlist} />   */}
+                                                    <i class="fa fa-heart"></i>
+                                                    </Grid>
+                                                    <Grid item xs={2}>
+                                                    <i class="fa fa-share-alt overall-icons"
                                                     aria-owns={open ? 'simple-popper' : ""}
                                                     onClick={handleClick}
                                                 ></i> &nbsp;
+                                                    </Grid>
+                                                   
+                                                   
+                                               
                                         {/* {JSON.stringify(val.productId)} */}
                                                 {/* <Wishlist sku={val.skuId} productId={val.productId} /> */}
-                                                <Wishlist sku={val.skuId} productId={val.productId} wishlist={wishlist} />
+                                             
 
                                                 <Popover
                                                     id="simple-popper"
@@ -215,10 +272,10 @@ const Productprice = (props, anchorEl, handleClick, handleClose) => {
                                                         </a> */}
                                                     </div>
                                                 </Popover>
-                                                <div onClick={() => window.scrollTo(0, 1800)}><Ratings ratings="starts-review" disable={"disable"} /></div>
+                                                
 
                                                 {/* <div><Ratings ratings="starts-review" /></div> */}
-                                            </div>
+                                            </Grid>
                                         </div>
                                     </Hidden>
 
@@ -234,11 +291,12 @@ const Productprice = (props, anchorEl, handleClick, handleClose) => {
 
 
                     <Hidden smDown>
-                        <div className={classes.width} style={{ padding: "0px 10px  0px 10px " }}>
+                        <div className={classes.width} >
                             {data[0].price === data[0].offerPrice ?
 
                                 <Pricing
                                     offerPrice={data[0].offerPrice}
+                                    pdpage = {true}
                                 >
                                     {/* <Grid container spacing={12}>
                                     <div className={`price-info ${classes.dis}`}>
@@ -252,7 +310,7 @@ const Productprice = (props, anchorEl, handleClick, handleClose) => {
                                 </Grid> */}
                                 </Pricing> : <Pricing
                                     offerPrice={data[0].offerPrice}
-                                    price={data[0].price}
+                                    price={data[0].price} pdpage = {true}
 
                                 // offerDiscount={val.offerDiscount}
                                 >
@@ -271,7 +329,8 @@ class ProductPrice extends Component {
         this.state = {
             share: false,
             heart: false,
-            anchorEl: false
+            anchorEl: false,
+            viewMore:false
         }
     }
     handleClick = event => {
@@ -279,7 +338,11 @@ class ProductPrice extends Component {
             anchorEl: event.currentTarget,
         });
     };
-
+    handleReadMore = () =>{
+        this.setState({
+            viewMore: !this.state.viewMore,
+        });
+    }
     handleClose = () => {
         this.setState({
             anchorEl: false,
@@ -287,7 +350,7 @@ class ProductPrice extends Component {
     };
 
     render() {
-        const { anchorEl } = this.state
+        const { anchorEl, viewMore } = this.state
         // alert(JSON.stringify(this.props.wishlist))
         return (
             <div>
@@ -295,7 +358,7 @@ class ProductPrice extends Component {
                     {Productprice(
                         this.props, anchorEl,
                         this.handleClick,
-                        this.handleClose)}
+                        this.handleClose, this.handleReadMore,viewMore)}
                 </Hidden>
 
                 <Hidden mdUp>
@@ -304,7 +367,7 @@ class ProductPrice extends Component {
                             this.props,
                             anchorEl,
                             this.handleClick,
-                            this.handleClose)}
+                            this.handleClose, this.handleReadMore, viewMore)}
                     </Container>
                 </Hidden>
             </div>

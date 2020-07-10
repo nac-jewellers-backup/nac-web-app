@@ -2,8 +2,8 @@ import { Autorenew } from "@material-ui/icons";
 
 const styles = theme => ({
     searchCheck: {
-        paddingRight: "12px",
-        paddingLeft: "12px",
+        // paddingRight: "12px",
+        // paddingLeft: "12px",
         marginTop: "12px",
         [theme.breakpoints.down('sm')]: {
             marginTop: "12px",
@@ -11,7 +11,9 @@ const styles = theme => ({
             paddingLeft: "16px",
         }
     },
+  
     title: {
+        marginTop:'0 !important',
         [theme.breakpoints.down('lg')]: {
             fontSize: '15px',
             // fontWeight: 'bold'
@@ -23,8 +25,45 @@ const styles = theme => ({
     dis: {
         color: theme.palette.text.secondary,
     },
+  disEllipises:{
+    width: '80%',
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+  },
+  detail:{
+    fontSize:12,
+    color:theme.palette.gold.main, 
+    textAlign:'center', 
+    paddingTop:20
+  },
+  activeDetail:{
+      "& .MuiAvatar-colorDefault":{
+        backgroundColor:`${theme.palette.gold.main} !important`, 
+      }
+  },
+    disDescriptionPD:{
+        display: 'block',
+        whiteSpace: 'nowrap',
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
+    },
+    viewReviewsTest:{
+        fontSize:12,
+        color:'gray',
+        textAlign:'left',
+        position:'absolute',
+    },
+    whishlistGrid:{
+        paddingRight:30,
+         paddingLeft:17,
+          borderLeft:'1px solid black',
+         borderRight:'1px solid black',
+        //  display:'flex',
+        //  alignItems:'center'
+    },
     icon: {
-        color: theme.palette.primary.main,
+        color: theme.palette.darkGray.main,
     },
     pricedetails: {
         color: theme.palette.primary.main,
@@ -32,18 +71,18 @@ const styles = theme => ({
             padding: "0"
 
         },
-        [theme.breakpoints.up('lg')]: {
-            padding: "0 10px"
-        },
+        // [theme.breakpoints.up('lg')]: {
+        //     padding: "0 10px"
+        // },
     },
     width: {
         [theme.breakpoints.down('xs')]: {
             padding: "0 10px"
 
         },
-        [theme.breakpoints.up('lg')]: {
-            padding: "0 10px"
-        },
+        // [theme.breakpoints.up('lg')]: {
+        //     padding: "0 10px"
+        // },
     },
     // pricetabs
     modals: {
@@ -151,7 +190,7 @@ const styles = theme => ({
         paddingTop: "2px"
     },
     normalfonts: {
-        color: theme.palette.text.primary,
+        color: theme.palette.secondary.main,
     },
     normalcolorback: {
         background: theme.palette.text.primary
@@ -167,8 +206,10 @@ const styles = theme => ({
     },
     // buynow 
     buttons: {
-        background: theme.palette.overallButoon.primary,
-        color: theme.palette.overallButoon.contrastText
+        background: theme.palette.primary.main,
+        color: theme.palette.overallButoon.contrastText,
+        borderRadius:'unset !important',
+        boxShadow:'6px 7px 6px #bebfbf !important'
     },
     backgsecondary: {
         background: theme.palette.secondary.main,
@@ -176,11 +217,60 @@ const styles = theme => ({
     shadow: {
         boxShadow: "0px 2px 4px 4px rgba(0, 0, 0, 0.1), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12)"
     },
+    expansionHere:{
+            borderBottomLeftRadius:'unset !important',
+            borderBottomRightRadius:'unset !important',
+            '& .MuiSvgIcon-root':{
+                fill:`${theme.palette.secondary.main} !important`
+            } 
+    },
+    cerfificates:{
+        '& .MuiSvgIcon-root':{
+            fill:`${theme.palette.secondary.main} !important`
+        } 
+    },
+    ratingFormText:{
+        boxShadow:'6px 7px 6px #bebfbf',
+        "& .MuiOutlinedInput-notchedOutline":{
+            borderRadius: 'unset !important',
+            borderColor:'gray',
+        },
+        [theme.breakpoints.down('sm')]: {
+                boxShadow: "none",
+                "& .MuiOutlinedInput-notchedOutline":{
+                    borderRadius: '8px !important',
+                    borderColor:'gray',
+                },
+        }    
+    },
+    ratingformgrid:{
+        [theme.breakpoints.down('sm')]: {
+            boxShadow:'6px 7px 6px #bebfbf',
+            border:'1px solid #ccc'
+    }   
+        
+    },
+    colorsmallscreen:{
+        [theme.breakpoints.down('sm')]: {
+            color:'gray'
+    } 
+    },
     [theme.breakpoints.up('md')]: {
         shadow: {
             boxShadow: "none"
         },
-    }
+    },
+    collectionSection: {
+        fill: `${theme.palette.secondary.main} !important`,
+        
+    //     "& .slick-prev":{
+    //         left:'-500px !important'
+    //     },
+    //     "& .slick-next":{
+    //       right:'-500px !important'
+    //   }
+      },
+   
 
 });
 export default styles;

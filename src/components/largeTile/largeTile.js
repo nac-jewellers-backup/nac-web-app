@@ -11,7 +11,6 @@ export default function LargeTile(props) {
     loading: false,
     count: "",
   });
-
   const [isMoreContent, MoreContent] = React.useState(true);
   function toggleIsTruncated() {
     MoreContent(!isMoreContent);
@@ -26,7 +25,6 @@ export default function LargeTile(props) {
     slider.current.slickPrev();
   };
   const slider = React.createRef();
-
   return (
     <Grid item xs={12} lg={6} sm={6} md={6} className={classes.paddings}>
       {/* ---------------------------------Normal --------------------------------------- */}
@@ -96,14 +94,12 @@ export default function LargeTile(props) {
               {isMoreContent ? "Read More" : "Read Less"}
             </span>
           </Typography>
-
           {props.store && (
             <Grid item xs={12} className={classes.anchorMain}>
               <a className={classes.anchor}>
                 {/* <Grid className={classes.algins}>
                                     <Typography className={classes.anchor}>{props.store}</Typography>
                                     <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAOCAMAAAAliK2kAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABtQTFRFqKio8fHxREREGRkZYWFh4uLijIyMNjY2////EoUdpQAAAAl0Uk5T//////////8AU094EgAAADpJREFUeNpUzdsKADAIAlBt1///4jkLxoLwYA9h1+BhooCGOqW8V1lLBlcYjOCFU8gUulMY/H8dAQYArKoCrGXO+aEAAAAASUVORK5CYII=" />
-
                                 </Grid> */}
                 <Grid></Grid>
               </a>
@@ -184,7 +180,6 @@ export default function LargeTile(props) {
                     {/* <Grid className={classes.algins}> */}
                     {/* <Typography onClick={handleReadMore} className={classes.anchor}>{props.store}</Typography> */}
                     {/* <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAOCAMAAAAliK2kAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABtQTFRFqKio8fHxREREGRkZYWFh4uLijIyMNjY2////EoUdpQAAAAl0Uk5T//////////8AU094EgAAADpJREFUeNpUzdsKADAIAlBt1///4jkLxoLwYA9h1+BhooCGOqW8V1lLBlcYjOCFU8gUulMY/H8dAQYArKoCrGXO+aEAAAAASUVORK5CYII=" /> */}
-
                     {/* </Grid> */}
                     <Grid></Grid>
                   </a>
@@ -254,7 +249,6 @@ export default function LargeTile(props) {
                         {/* <Grid className={classes.algins}> */}
                         {/* <Typography onClick={handleReadMore} className={classes.anchor}>{props.store}</Typography> */}
                         {/* <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAOCAMAAAAliK2kAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABtQTFRFqKio8fHxREREGRkZYWFh4uLijIyMNjY2////EoUdpQAAAAl0Uk5T//////////8AU094EgAAADpJREFUeNpUzdsKADAIAlBt1///4jkLxoLwYA9h1+BhooCGOqW8V1lLBlcYjOCFU8gUulMY/H8dAQYArKoCrGXO+aEAAAAASUVORK5CYII=" /> */}
-
                         {/* </Grid> */}
                         <Grid></Grid>
                       </a>
@@ -344,7 +338,6 @@ export default function LargeTile(props) {
                   </>
                 </Slideshow>
               </Grid>
-
               <Typography variant="h6" className={classes.heading}>
                 {props.heading}
               </Typography>
@@ -368,7 +361,6 @@ export default function LargeTile(props) {
                     {/* <Grid className={classes.algins}> */}
                     {/* <Typography onClick={handleReadMore} className={classes.anchor}>{props.store}</Typography> */}
                     {/* <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAOCAMAAAAliK2kAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABtQTFRFqKio8fHxREREGRkZYWFh4uLijIyMNjY2////EoUdpQAAAAl0Uk5T//////////8AU094EgAAADpJREFUeNpUzdsKADAIAlBt1///4jkLxoLwYA9h1+BhooCGOqW8V1lLBlcYjOCFU8gUulMY/H8dAQYArKoCrGXO+aEAAAAASUVORK5CYII=" /> */}
-
                     {/* </Grid> */}
                     <Grid></Grid>
                   </a>
@@ -552,7 +544,6 @@ export default function LargeTile(props) {
                     {/* <Grid className={classes.algins}>
                                                 <Typography onClick={handleReadMore} className={classes.anchor}>Hide Video</Typography>
                                                 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAOCAMAAAAliK2kAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABtQTFRFqKio8fHxREREGRkZYWFh4uLijIyMNjY2////EoUdpQAAAAl0Uk5T//////////8AU094EgAAADpJREFUeNpUzdsKADAIAlBt1///4jkLxoLwYA9h1+BhooCGOqW8V1lLBlcYjOCFU8gUulMY/H8dAQYArKoCrGXO+aEAAAAASUVORK5CYII=" />
-
                                             </Grid> */}
                     <Grid></Grid>
                   </a>

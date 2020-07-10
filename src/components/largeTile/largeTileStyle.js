@@ -126,7 +126,6 @@ const styles = makeStyles((theme) => ({
       height: "100%",
     },
   },
-
   youtubeImg: {
     position: "absolute",
     opacity: ".7",
@@ -184,7 +183,6 @@ const styles = makeStyles((theme) => ({
     color: "#333",
     lineHeight: 1.2,
   },
-
   paddings: {
     padding: "0px 30px 30px 30px",
   },
@@ -207,13 +205,11 @@ const styles = makeStyles((theme) => ({
   },
   ToggleButton: {
     color: "#808080b3",
-
     fontSize: "0.8rem",
     float: "right",
     display: "inline-block",
     cursor: "pointer",
   },
-
   // [theme.breakpoints.down("xs")]: {
   //   height: "174px !important",
   // },
@@ -228,7 +224,6 @@ const styles = makeStyles((theme) => ({
   // },
   // [theme.breakpoints.down("xl")]: {
   //   // height: "174px !important",
-
   // [theme.breakpoints.between("0px", "320px")]: {
   //   height: "174px !important",
   // },

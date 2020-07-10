@@ -1,4 +1,4 @@
-import { Hidden, Grid, Container } from "@material-ui/core";
+import { Hidden, Grid, Container, Avatar } from "@material-ui/core";
 import React, { Component } from "react";
 import Header from "components/SilverComponents/Header";
 import CustomSeparator from "components/BreadCrumb/index";
@@ -36,8 +36,30 @@ const styles = (theme) => ({
   collectionSection: {
     // "& svg":{
     fill: `${theme.palette.secondary.main} !important`,
+    
     // }
   },
+  // '& .slick-prev':{
+  //   left:'0px !important'},
+  // '& .slick-next':{
+  //   right:'0px !important'},
+  spanIcon:{
+    width: '6px',
+    height: '6px',
+    border: '1px solid gray',
+    borderRadius: '50%',
+    padding: '2px',
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    fontSize: '8px',
+    marginLeft: '5px',
+  },
+  // similarProducts:{
+  //   "& .svg":{
+  //     left:'0 !important'
+  //   }
+  // }
 });
 class ProductDetail extends Component {
   constructor(props) {
@@ -412,7 +434,7 @@ class ProductDetail extends Component {
         <Hidden smDown>
           <Header wishlist={this.props.wishlistdata} />
 
-          <Grid
+          {/* <Grid
             Container
             spacing={12}
             style={{ maxWidth: "1600px", margin: "auto" }}
@@ -426,29 +448,81 @@ class ProductDetail extends Component {
                 />
               </div>
             </Grid>
-          </Grid>
+          </Grid> */}
 
           <div
             className="pricing-imgzom-media"
             style={{ maxWidth: "1600px", margin: "auto" }}
           >
-            <Grid container spacing={12}>
+            <Grid container spacing={12} style={{marginTop:70}}>
               <Grid item xs={6}>
                 <ProductImageZoom data={this.props.data} />
               </Grid>
               <Grid item xs={6}>
-                <div className="overall-box priceecontainer">
+                <div className="overall-box ">
                   <ProductPrice
                     data={this.props.data}
                     wishlist={this.props.wishlistdata}
                   />
                 </div>
-                <div className="overall-box priceecontainer">
+                {/* <div className="overall-box priceecontainer"> 
                   <PriceTabs data={this.props.data} />
-                </div>
-                <div className="overall-box priceecontainer">
+                </div> */}
+                <div className="overall-box ">
                   <PriceBuynow data={this.props.data} />
                 </div>
+                <Grid container item xs={12} style={{color:'gray', fontStyle:'italic', fontSize:10, marginBottom:10}}>
+                  <Grid item xs={1} >
+<span>Modal No:</span>
+                  </Grid>
+                  <Grid item xs={4}>
+                    <span>BN11160700</span>
+                  </Grid>
+                </Grid>
+                <Grid container item xs={12} style={{marginBottom:50}}>
+                  <Grid item xs={12} style={{color:'gray', fontWeight:'bold', fontSize:12, marginBottom:10}}>
+<span>Product Information:</span><span className={classes.spanIcon}>i</span>
+                  </Grid>
+                  <Grid container item xs={4}>
+                 <Grid container item xs={2}>
+                 <Avatar alt="NAC" src="/static/images/avatar/1.jpg" />
+                 </Grid>
+                 <Grid container item xs={10} style={{fontSize:12,color:'gray', paddingLeft:15}}>
+                 <Grid itex xs={12}>
+                   Metal : 6.17 grams
+                 </Grid>
+                 <Grid itex xs={12}>
+                   Stone : 3.5 grams
+                 </Grid>
+                 </Grid>
+                  </Grid>
+                  <Grid container item xs={4}>
+                 <Grid container item xs={2}>
+                 <Avatar alt="NAC" src="/static/images/avatar/1.jpg" />
+                 </Grid>
+                 <Grid container item xs={10} style={{fontSize:12,color:'gray', paddingLeft:15}}>
+                 <Grid itex xs={12}>
+                   Purity : 22k (916)
+                 </Grid>
+                 <Grid itex xs={12}>
+                   Color : Yellow Gold
+                 </Grid>
+                 </Grid>
+                  </Grid>
+                  <Grid container item xs={4}>
+                 <Grid container item xs={2}>
+                 <Avatar alt="NAC" src="/static/images/avatar/1.jpg" />
+                 </Grid>
+                 <Grid container item xs={10} style={{fontSize:12,color:'gray', paddingLeft:15}}>
+                 <Grid itex xs={12}>
+                  No. of Diamonds : 60
+                 </Grid>
+                 <Grid itex xs={12}>
+                   Total Carat : 12.4 ct
+                 </Grid>
+                 </Grid>
+                  </Grid>
+                </Grid>
                 <div style={{ paddingTop: 6 }}>
                   <ConnectionHome />
                 </div>
@@ -482,17 +556,19 @@ class ProductDetail extends Component {
                 style={{ marginBottom: "20px", marginTop: "20px" }}
               >
                 <PriceCertification data={this.props.data} />
-                <Request data={this.props.data} />
+                {/* <Request data={this.props.data} /> */}
               </Grid>
               <br />
             </Grid>
           </div>
 
-          <Grid container item xs={12}>
+          <Grid container item xs={12}  style={{ maxWidth: "1600px", margin: "auto", paddingLeft:"5%",paddingRight:"5%" }}>
             {
               <>
                 <Hidden smDown>
-                  <Container maxWidth={"lg"} style={{ paddingTop: 8 }}>
+                 
+                  <div style={{ paddingTop: 8, width:'100%' }}>
+                  <div style = {{fontWeight:'bold', color:'gray', marginLeft:15}}>SIMILAR PRODUCTS</div>
                     <Slideshow
                       // sliderRef={this.slider}
                       class="subslider-carousel"
@@ -508,18 +584,24 @@ class ProductDetail extends Component {
                         );
                       })}
                     </Slideshow>
-                  </Container>
+                  </div>
                 </Hidden>
               </>
             }
           </Grid>
 
-          <RatingForm
+            <div style={{ maxWidth: "1600px", margin: "auto", paddingLeft:"5%",paddingRight:"5%" }}>
+            <RatingForm
             data={this.props.data}
             clear_rating={this.state.clear}
             clear_rating_onchange={clear_rating}
           />
-          <CustomerReviews rating={this.props.rating} />
+            </div>
+          
+            <div style={{ maxWidth: "1600px", margin: "auto", paddingLeft:"5%",paddingRight:"5%" }}>
+            <CustomerReviews rating={this.props.rating} />
+            </div>
+        
 
           <Grid item xs={12}>
             <Footer />
@@ -544,23 +626,25 @@ class ProductDetail extends Component {
               wishlist={this.props.wishlistdata}
             />
           </Grid>
-          <Grid
+          {/* <Grid
             container
             xs={11}
             style={{ margin: "auto", padding: "15px 0px" }}
           >
             <ConnectionHome />
-          </Grid>
+          </Grid> */}
           <Grid item xs={12}>
             <PriceCertification data={this.props.data} />
           </Grid>
-          <Grid item xs={12}>
+          {/* <Grid item xs={12}>
             <Request data={this.props.data} />
-          </Grid>
+          </Grid> */}
 
-          <Grid item xs={12}>
-            <Container maxWidth={"lg"}>
-              <Slideshow
+          <Grid item xs={12} className={classes.similarProducts}>
+            <Container style={{ padding: "0px 26px" }}>
+            <div style = {{fontWeight:'bold', color:'#20205a', marginLeft:15}}>SIMILAR PRODUCTS</div>
+             <div style={{width:'100%'}}>
+             <Slideshow
                 // sliderRef={this.slider}
                 class="subslider-carousel"
                 dataCarousel={dataCarouselcollectionsSm}
@@ -571,21 +655,24 @@ class ProductDetail extends Component {
                   );
                 })}
               </Slideshow>
+             </div>
             </Container>
           </Grid>
 
-          <Grid item xs={12}>
-            <CustomerReviews data={this.props.data} />
-          </Grid>
+          
 
           <Grid item xs={12}>
-            <RatingForm
+          <Container>
+          <RatingForm
               data={this.props.data}
               clear_rating={this.state.clear}
               clear_rating_onchange={clear_rating}
             />
+          </Container>
           </Grid>
-
+          <Grid item xs={12}>
+            <CustomerReviews data={this.props.data} />
+          </Grid>
           <Grid item style={{ paddingBottom: "50px" }}>
             <Footer />
           </Grid>

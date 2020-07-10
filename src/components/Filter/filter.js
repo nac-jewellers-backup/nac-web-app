@@ -684,7 +684,7 @@ if (window.location.search) {
     const found = window.location.pathname.split(/-/g).find(element => element === "/goldcoins" || element === "goldcoins");
     const { classes, data, loading } = this.props;
     const { filter, subFilter, sortOptions } = this.props.data[0];
-    debugger
+    
     let { selected, check } = this.state;
     const { open, openMobile } = this.state;
     const isTopFilter =  true 

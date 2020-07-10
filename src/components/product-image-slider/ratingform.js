@@ -27,14 +27,14 @@ const RatingComponent = (props) => {
 
     return (
         <Grid container style={{ marginTop: "10px" }}>
-            <Container style={{ paddingLeft: "17px", paddingRight: "17px" }} >
-                <div className="bg-clr2 priceecontainer" style={{ padding: "20px" }}>
+            {/* <Container style={{ paddingLeft: "17px", paddingRight: "17px" }} > */}
+                <div className={`bg-clr2 ${classes.ratingformgrid}`} style={{ padding: "20px" }}> 
                     <form id="Resetform" action="javascript:void(0)" onSubmit={(e) => handlers.handelSubmit(e, props)}>
                         <Grid container spacing={12} >
                             {/* <Grid item lg={1} /> */}
                             <Grid item xs={12} lg={12}>
                                 <div className="rating-form ">
-                                    <h5 className={`rating-form-head ${classes.normalfonts}`}>Rating</h5>
+                                    <h5 className={`rating-form-head ${classes.normalfonts}`}>RATE THE PRODUCT</h5>
 
                                     <Ratings ratings="starts-review" clear_rating={props.clear_rating} clear_rating_onchange={props.clear_rating_onchange} />
                                     <label className='errtext'> {values.errortext.rateerr ? values.errortext.rateerr : ""}</label>
@@ -42,20 +42,21 @@ const RatingComponent = (props) => {
                                 <h6 className={`rating-form-head ${classes.normalfonts}`} style={{ marginBottom: "-3px" }}>Write your review</h6>
                                 <Input
                                     margin="normal"
+                                    
                                     variant="outlined"
                                     type="text"
                                     name="title"
                                     value={values.title}
                                     maxLength={60}
-                                    placeholder="Title"
-                                    className="rating-form-text"
-                                    onChange={e => handlers.handleChange('title', e.target.value)}
+                                    placeholder="TITLE"
+                                    className={`rating-form-text ${classes.ratingFormText}`}
+                                    onChange={e => handlers.handleChange('title', e.target.value)} 
                                     // helperText="please Enter review title"
                                     error={values.error && values.error.ratetitle ? true : false}
                                 // required
                                 />
 
-                                <div style={{ width: "100%" }} className={`tool-tips ${classes.normalfonts}`} >Max 60 characters</div>
+                                <div style={{ width: "100%" }} className={`tool-tips ${classes.colorsmallscreen}`} >Max 60 characters</div>
                                 <label className='errtext'> {values.errortext.ratetitle ? values.errortext.ratetitle : ""}</label>
 
 
@@ -65,8 +66,8 @@ const RatingComponent = (props) => {
                                         type="text"
                                         name="message"
                                         fullWidth
-                                        placeholder='Write your review here'
-                                        className="rating-form-text"
+                                        placeholder='TYPE YOUR REVIEW'
+                                        className={`rating-form-text ${classes.ratingFormText}`}
                                         maxLength={250}
                                         value={values.message}
                                         multiline={true}
@@ -92,7 +93,7 @@ const RatingComponent = (props) => {
                                 onChange={e => handlers.handleChange('message', e.target.value)}
                                 error={values.error && values.error.ratemsg ? true : false}
                             /> */}
-                                <div className={`tool-tips ${classes.normalfonts}`} >Max 250 characters</div>
+                                <div className={`tool-tips ${classes.normalfonts} ${classes.colorsmallscreen}`} >Max 250 characters</div>
                                 <label className='errtext'> {values.errortext.ratemsg ? values.errortext.ratemsg : ""}</label>
 
                                 {/* <button type="submit" >rr</button> */}
@@ -101,18 +102,18 @@ const RatingComponent = (props) => {
                             <Grid container spacing={12} style={{ marginTop: '20px' }}>
                                 <Grid item xs={12} lg={12}>
                                     <div style={{ float: "right" }}>
-                                        <Button className={`form-reviews-mob ${classes.fontwhite} ${classes.normalcolorback}`} type="submit">Submit</Button>
+                                        <Button className={`form-reviews-mob ${classes.fontwhite} ${classes.normalcolorback}`} style={{boxShadow:'rgba(20, 25, 25, 0.32) 6px 7px 6px'}} type="submit">{'Submit'.toUpperCase()}</Button>
                                         <Button onClick={() => {
                                             handlers.clear()
                                             props.clear_rating_onchange(true)
-                                        }} className={`form-cancel-mob ${classes.normalfonts} ${classes.backgwhite}`} >Cancel</Button>
+                                        }} className={`form-cancel-mob ${classes.normalfonts} ${classes.backgwhite}`} style={{boxShadow:'rgba(20, 25, 25, 0.32) 6px 7px 6px'}}>Cancel</Button>
                                     </div>
                                 </Grid>
                             </Grid>
                         </Grid>
                     </form>
                 </div>
-            </Container>
+            {/* </Container> */}
         </Grid>
     )
 }

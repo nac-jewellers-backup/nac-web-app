@@ -57,7 +57,8 @@ class Component extends React.Component {
         const { starsSelected } = this.state;
 
         return (
-            <div class={this.props.ratings}>
+   <>
+   <div class={this.props.ratings}>
                 {[1, 2, 3, 4, 5].map((n, i) =>
                     <Star key={i}
                         selected={i < starsSelected}
@@ -66,6 +67,7 @@ class Component extends React.Component {
                 )}
                 {/* <p>{starsSelected} of {totalStars} stars</p> */}
             </div>
+</>
         )
     }
 }

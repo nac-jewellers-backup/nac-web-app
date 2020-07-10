@@ -22,7 +22,9 @@ const styles = theme => ({
     color: theme.palette.primary.main,
   },
 
-
+  customArrows:{
+    fill:'#b78231 !important'
+},
 
   colorLightBackground: {
     color: theme.palette.text.secondary,

@@ -5,7 +5,10 @@ const styles = makeStyles(theme => ({
         float: 'left'
     },
     colorMain: {
-        color: theme.palette.secondary.main
+        color: theme.palette.darkGray.main,
+        [theme.breakpoints.down('sm')]: {
+            color: theme.palette.gold.main,
+        },
     },
     h6FontSize: {
         [theme.breakpoints.down('lg')]: {
@@ -18,6 +21,18 @@ const styles = makeStyles(theme => ({
 
         },
     },
+    spanIcon1:{
+        width: '6px',
+        height: '6px',
+        border: '1px solid gray',
+        borderRadius: '50%',
+        padding: '2px',
+        display: 'inline-flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        fontSize: '8px',
+        marginLeft: '5px',
+      },
     off: {
         [theme.breakpoints.down('lg')]: {
             fontSize: '11px',
