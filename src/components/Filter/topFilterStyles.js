@@ -1,13 +1,13 @@
 // import '../../fonts/font.css'
 import { makeStyles } from "@material-ui/core/styles";
 
-export const styles = makeStyles(theme => ({
+export const styles = makeStyles((theme) => ({
   headIcons: {
     color: theme.palette.secondary.dark,
     fontFamily: "fontawesome",
-    textAlign: 'right',
+    textAlign: "right",
     // fontSize: '20px !important',
-    marginTop: '18px !important',
+    marginTop: "18px !important",
     display: "flex",
     alignContent: "center",
     alignItems: "center",
@@ -15,18 +15,18 @@ export const styles = makeStyles(theme => ({
   },
   searchcontainer: {
     padding: "3px 2px 2px 2px",
-    marginTop:"-1px",
-    backgroundColor: theme.palette.secondary.dark, 
+    marginTop: "-1px",
+    backgroundColor: theme.palette.secondary.dark,
     display: "flex",
     justifyContent: "center",
-    alignContent: "center"
+    alignContent: "center",
   },
   searchcontainerplain: {
     padding: "4px",
     // backgroundColor: theme.palette.secondary.dark,
     display: "flex",
     justifyContent: "center",
-    alignContent: "center"
+    alignContent: "center",
   },
   searchcontainTop: {
     padding: "2px",
@@ -36,22 +36,22 @@ export const styles = makeStyles(theme => ({
     alignContent: "center",
     marginTop: "3px",
   },
-  [theme.breakpoints.only('xs')]: {
+  [theme.breakpoints.only("xs")]: {
     padding: "3px !important",
     backgroundColor: theme.palette.secondary.dark,
     display: "flex",
     justifyContent: "center",
-    alignContent: "center"
+    alignContent: "center",
   },
   iconFafa: {
     color: theme.palette.secondary.dark,
     marginLeft: "24px",
     letterSpacing: "4px",
-    cursor: 'pointer',
+    cursor: "pointer",
     alignItems: "center",
     // display: "flex",
     fontSize: "20px",
-    [theme.breakpoints.only('xs')]: {
+    [theme.breakpoints.only("xs")]: {
       marginLeft: "6px",
       letterSpacing: "2px",
     },
@@ -60,14 +60,14 @@ export const styles = makeStyles(theme => ({
     color: theme.palette.secondary.dark,
     marginLeft: "24px",
     letterSpacing: "4px",
-    cursor: 'pointer',
+    cursor: "pointer",
     alignItems: "center",
     display: "flex",
     fontSize: "17px",
     fill: "#d51f63",
-    [theme.breakpoints.only('xs')]: {
+    [theme.breakpoints.only("xs")]: {
       marginLeft: "6px",
-      letterSpacing: "2px"
+      letterSpacing: "2px",
     },
   },
   callerNum: {
@@ -78,149 +78,149 @@ export const styles = makeStyles(theme => ({
     textAlign: "center",
     padding: " 0px 20px 0px 0px",
     fontWeight: 600,
-    letterSpacing: 2
+    letterSpacing: 2,
   },
   headerNavbarList: {
     color: theme.palette.secondary.dark,
     // textAlign: 'right'
   },
-  headerNavbarList1:{
-    whiteSpace: 'nowrap',
+  headerNavbarList1: {
+    whiteSpace: "nowrap",
     width: "100%",
     letterSpacing: 2,
-    
+
     textTransform: "uppercase",
-    fontSize: '12px !important',
-    textDecoration: 'none !important',
+    fontSize: "12px !important",
+    textDecoration: "none !important",
     // margin-left: 5%;
   },
-  chips:{
-    background: '#8080802e',
-    color: 'black',
-    padding: '5px',
-    display:'inline-flex',
-    "& svg":{
-      fontSize:'1rem',
-      fill:'black !important',
-      margin:'auto',
-    }
+  chips: {
+    background: "#8080802e",
+    color: "#666",
+    padding: "5px",
+    display: "inline-flex",
+    "& svg": {
+      fontSize: "1rem",
+      fill: "black !important",
+      margin: "auto",
+    },
   },
   menuListCursor: {
-    cursor: 'pointer',
-    fontFamily: 'Roboto',
+    cursor: "pointer",
+    fontFamily: "Roboto",
     fontWeight: 600,
-    padding:"5px 4px 5px 15px",
-    display:"flex",
-    margin:'auto',
-    alignItems:'center',
+    padding: "5px 4px 5px 15px",
+    display: "flex",
+    //  margin : "auto",
+    marginLeft: "10px",
+    alignItems: "center",
     color: "white",
-    minWidth:"50px",
+    [theme.breakpoints.only("md")]: {
+      minWidth: "100px",
+    },
+    minWidth: "150px ",
     // #80808061
     boxShadow: `6px 7px 6px #bebfbf !important`,
-    background:theme.palette.secondary.main,
+    background: theme.palette.secondary.main,
     // borderBottom: "1px solid #fff",
-    '&:hover': {
+    "&:hover": {
       background: theme.palette.secondary.dark,
       // paddingBottom: "2px",
-    //   borderBottom: "1px solid " + theme.palette.secondary.dark,
+      //   borderBottom: "1px solid " + theme.palette.secondary.dark,
     },
-    "& svg":{
-      fill:`white !important`,
-      
+    "& svg": {
+      fill: `white !important`,
     },
-"&.mouseOverPopover":{
-top:0
-}
+    "&.mouseOverPopover": {
+      top: 0,
+    },
   },
-  topfiltersSticky:{
-    borderBottomLeftRadius: '15px',
-    borderBottomRightRadius: '15px',
-    '-webkit-box-shadow': '0 3px 5px rgba(57, 63, 72, 0.3)',
-    '-moz-box-shadow': '0 3px 5px rgba(57, 63, 72, 0.3)',
-    'box-shadow': '0 3px 5px rgba(57, 63, 72, 0.3)',
+  topfiltersSticky: {
+    borderBottomLeftRadius: "15px",
+    borderBottomRightRadius: "15px",
+    "-webkit-box-shadow": "0 3px 5px rgba(57, 63, 72, 0.3)",
+    "-moz-box-shadow": "0 3px 5px rgba(57, 63, 72, 0.3)",
+    "box-shadow": "0 3px 5px rgba(57, 63, 72, 0.3)",
   },
-  filtersLabel:{
-    [theme.breakpoints.only('md')]: {
-      overflow: 'hidden',
-      textOverflow: 'ellipsis',
-    }
-    
+  filtersLabel: {
+    [theme.breakpoints.only("md")]: {
+      overflow: "hidden",
+      textOverflow: "ellipsis",
+    },
   },
-  menuListCursorfiltersLabel:{
-    fontWeight:'unset !important'
+  menuListCursorfiltersLabel: {
+    fontWeight: "unset !important",
+    [theme.breakpoints.only("md")]: {
+      minWidth: "100px",
+    },
+    minWidth: "150px ",
   },
-  spacingfilterdiv:{
-    display:'flex',
-    alignItems:'center'
+  spacingfilterdiv: {
+    display: "flex",
+    alignItems: "center",
   },
   menuListCursorSort: {
-    cursor: 'pointer',
-    fontFamily: 'Roboto',
-    padding:"5px 4px 5px 15px",
-    marginRight:15,
+    cursor: "pointer",
+    fontFamily: "Roboto",
+    padding: "5px 4px 5px 15px",
+    marginRight: 15,
     color: theme.palette.secondary.main,
     boxShadow: `6px 7px 6px #bebfbf !important`,
-    background:'white',
+    background: "white",
     border: `1px solid ${theme.palette.secondary.main}`,
-    '&:hover': {
+    "&:hover": {
       border: `1px solid ${theme.palette.secondary.dark}`,
       boxShadow: `6px 7px 6px #bebfbf !important`,
       color: theme.palette.secondary.dark,
-      "& svg":{
-        fill:`${theme.palette.secondary.dark} !important`,
+      "& svg": {
+        fill: `${theme.palette.secondary.dark} !important`,
       },
     },
-    "& svg":{
-      fill:`${theme.palette.secondary.main} !important`,
+    "& svg": {
+      fill: `${theme.palette.secondary.main} !important`,
     },
-"&.mouseOverPopover":{
-top:0
-},
+    "&.mouseOverPopover": {
+      top: 0,
+    },
+  },
 
-  },
-  filtersLabel:{
-    [theme.breakpoints.only('md')]: {
-      overflow: 'hidden',
-      textOverflow: 'ellipsis',
-    }
-    
-  },
-  menuListCursorfiltersLabel:{
-    fontWeight:'unset !important'
-  },
   menuListCursorMoreFilters: {
-    cursor: 'pointer',
-    fontFamily: 'Roboto',
+    cursor: "pointer",
+    fontFamily: "Roboto",
     fontWeight: 600,
-    padding:"5px 4px 5px 15px",
-    display:"flex",
-    margin:'auto',
-    alignItems:'center',
+    padding: "5px 4px 5px 15px",
+    display: "flex",
+    // margin: "auto",
+    [theme.breakpoints.only("md")]: {
+      minWidth: "100px",
+    },
+    minWidth: "150px ",
+    marginLeft: "10px",
+    alignItems: "center",
     color: theme.palette.secondary.main,
-      boxShadow: `6px 7px 6px #bebfbf !important`,
-      border: `1px solid ${theme.palette.secondary.main}`,
-    background:'white',
-    '&:hover': {
-    
+    boxShadow: `6px 7px 6px #bebfbf !important`,
+    border: `1px solid ${theme.palette.secondary.main}`,
+    background: "white",
+    "&:hover": {
       border: `1px solid ${theme.palette.secondary.dark}`,
       boxShadow: `6px 7px 6px  ${theme.palette.secondary.light}`,
       color: theme.palette.secondary.main,
-    "& svg":{
-      fill: `${theme.palette.secondary.dark} !important`,
+      "& svg": {
+        fill: `${theme.palette.secondary.dark} !important`,
+      },
     },
+    "& svg": {
+      fill: `${theme.palette.secondary.main} !important`,
     },
-    "& svg":{
-      fill:`${theme.palette.secondary.main} !important`,
+    "&.mouseOverPopover": {
+      top: 0,
     },
-"&.mouseOverPopover":{
-top:0
-}
   },
   seletectedMenu: {
     color: theme.palette.secondary.dark,
     // paddingBottom: "2px",
-    cursor: 'pointer',
-    fontFamily: 'Roboto',
+    cursor: "pointer",
+    fontFamily: "Roboto",
     fontWeight: 600,
     borderBottom: "1px solid #fff",
     // borderBottom: "1px solid " + theme.palette.secondary.dark,
@@ -228,12 +228,12 @@ top:0
     //   borderBottom: "1px solid " + theme.palette.secondary.dark,
     // }
   },
-  filtersHeaderTop:{
+  filtersHeaderTop: {
     position: "sticky",
     top: "39px",
     zIndex: 11,
-    background: 'white',
-    padding: '2px',
+    background: "white",
+    padding: "2px",
   },
   mobileNavIcon: {
     color: theme.palette.secondary.dark,
@@ -243,7 +243,7 @@ top:0
     width: "230px !important",
     position: "sticky",
     top: "0px",
-    zIndex: 10000
+    zIndex: 10000,
   },
   drawerPaper: {
     maxHeight: "100% !important",
@@ -253,7 +253,7 @@ top:0
   iconbuttons: {
     position: "fixed",
     left: "228px",
-    top: "-9px"
+    top: "-9px",
   },
   subtitles: {
     color: theme.palette.background.darkFade,
@@ -265,106 +265,105 @@ top:0
   },
   subtitleContainer: {
     backgroundColor: "#fff !important",
-    '&:hover': {
+    "&:hover": {
       backgroundColor: "#fff !important",
-    }
+    },
   },
   subtitle2Container: {
     backgroundColor: theme.palette.background.darkFade,
   },
-  badgeColor:{
-    '& .MuiBadge-badge':{
+  badgeColor: {
+    "& .MuiBadge-badge": {
       background: theme.palette.badgeColor.background,
-      color:'white'
-    }
-  }
+      color: "white",
+    },
+  },
 }));
 
-export const useStyles = makeStyles(theme => ({
-  imgcont: { 
+export const useStyles = makeStyles((theme) => ({
+  imgcont: {
     marginBottom: "15px",
-    '&:hover': {
-      boxShadow: " 0px 2px 4px 4px rgba(0, 0, 0, 0.1), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12) !important",
-    }
+    "&:hover": {
+      boxShadow:
+        " 0px 2px 4px 4px rgba(0, 0, 0, 0.1), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12) !important",
+    },
   },
   paperdiv: {
-    position: 'absolute',
-    width: 'fit-content',
+    position: "absolute",
+    width: "fit-content",
   },
   root: {
-    width: '100%',
+    width: "100%",
   },
   mouseOverPopover: {
     zIndex: 1000,
-    top: '4px !important',
+    top: "4px !important",
     backgroundColor: theme.palette.background.fade,
-    color: 'white',
-    '& span': {
-      fontFamily: 'Roboto',
-      letterSpacing: '1px'
+    color: "white",
+    "& span": {
+      fontFamily: "Roboto",
+      letterSpacing: "1px",
     },
-    '& nav': {
-      padding: '0px !important'
+    "& nav": {
+      padding: "0px !important",
     },
-    '& li:hover': {
+    "& li:hover": {
       backgroundColor: theme.palette.secondary.dark,
-    }
+    },
   },
   paperdivsub: {
-    position: 'absolute',
-    width: 'fit-content',
+    position: "absolute",
+    width: "fit-content",
   },
   rootsub: {
-    width: '100%',
-
+    width: "100%",
   },
   mouseOverPopoversub: {
     zIndex: 1000,
-    top: '0px !important',
+    top: "0px !important",
     backgroundColor: "#fff",
     color: theme.palette.background.fade,
     cursor: "pointer",
-    '& span': {
-      fontFamily: 'Roboto',
-      letterSpacing: '1px',
+    "& span": {
+      fontFamily: "Roboto",
+      letterSpacing: "1px",
       cursor: "pointer",
     },
-    '& nav': {
-      padding: '0px !important',
+    "& nav": {
+      padding: "0px !important",
       cursor: "pointer",
     },
-    '& li:hover': {
+    "& li:hover": {
       backgroundColor: "#fff",
-    }
+    },
   },
   listedItems: {
     padding: "0px",
     fontSize: "0.7rem !important",
-    cursor: "pointer"
+    cursor: "pointer",
   },
   listedItemsub: {
     padding: "0px",
     fontSize: "0.7rem !important",
-    '&:hover': {
-      backgroundColor: "#000"
-    }
+    "&:hover": {
+      backgroundColor: "#000",
+    },
   },
   listedItemsvalue: {
     padding: "2px 16px 2px 16px",
     fontSize: "0.7rem !important",
     letterSpacing: 2,
     cursor: "pointer",
-
   },
   listedItemsvalue2: {
     padding: "2px 16px 2px 16px",
     fontSize: "0.7rem !important",
     letterSpacing: 2,
     cursor: "pointer",
-    '&:hover': {
+    "&:hover": {
       backgroundColor: theme.palette.background.darkFade,
-      color: "#fff"
-    }
+      color: "#fff",
+    },
   },
   subtopic1: {
     padding: "10px 0px 10px 0px",
@@ -377,4 +376,4 @@ export const useStyles = makeStyles(theme => ({
   drawer: {
     backgroundColor: "#394578",
   },
-}))
+}));
