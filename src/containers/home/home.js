@@ -232,14 +232,14 @@ const styles = (theme) => ({
     color: theme.palette.gold.main,
     textDecoration: "underline",
     paddingBottom: 20,
-    fontWeight:'bold',
-    fontSize:'1.2rem',
-    '-webkit-text-underline-position': 'under',
-  '-ms-text-underline-position': 'below',
-  'text-underline-position': 'under' ,
-  [theme.breakpoints.down('sm')]:{
-    fontSize:'0.8rem'
-  }
+    fontWeight: "bold",
+    fontSize: "1.2rem",
+    "-webkit-text-underline-position": "under",
+    "-ms-text-underline-position": "below",
+    "text-underline-position": "under",
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "0.8rem",
+    },
   },
   minHeighttimerange: {
     paddingBottom: "0 !important",
@@ -247,16 +247,16 @@ const styles = (theme) => ({
   },
   gridPadding: {
     paddingTop: "52px",
-    [theme.breakpoints.down('lg')]: {
+    [theme.breakpoints.down("lg")]: {
       paddingTop: "20px",
     },
   },
-  contentPadding : {
-    paddingTop : "20px",
-    [theme.breakpoints.down('lg')]: {
+  contentPadding: {
+    paddingTop: "20px",
+    [theme.breakpoints.down("lg")]: {
       paddingTop: "0px",
     },
-  }
+  },
 });
 
 class HomeComp extends React.Component {
@@ -635,7 +635,7 @@ class HomeComp extends React.Component {
         }}
       >
         <span
-         style={{ fontFamily: "notoSerif-regular",}}
+          style={{ fontFamily: "notoSerif-regular" }}
           className={`time-range ${
             this.state.timelineImage === image ? "active" : ""
           } ${useBar ? "" : classes.minHeighttimerange}`}
@@ -1067,7 +1067,7 @@ class HomeComp extends React.Component {
               </>
             }
           </Grid>
-          <Grid  className={classes.gridPadding}>
+          <Grid className={classes.gridPadding}>
             <Timeline day="monday" date="06/05/2019" timelineData={tData} />
           </Grid>
 
@@ -1078,33 +1078,12 @@ class HomeComp extends React.Component {
             <AdvancedGridList />
           </Grid>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
           <Grid container item xs={12} style={{ margin: "40px 0px" }}>
             <Grid item xs={12} className={classes.gridPadding}>
-              <Title title="Featured" style={{marginBottom : "0px !important"}} />
+              <Title
+                title="Featured"
+                style={{ marginBottom: "0px !important" }}
+              />
             </Grid>
             {
               <>
@@ -1150,32 +1129,6 @@ class HomeComp extends React.Component {
             }
           </Grid>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-          
           <Grid container item xs={12} className={classes.gridPadding}>
             <Grid container item xs={12}>
               {[
@@ -1230,11 +1183,12 @@ class HomeComp extends React.Component {
                 item
                 xs={12}
                 sm={12}
-                md={12}
+                md={4}
                 lg={4}
                 xl={4}
                 className={classes.photo}
-                style={{ height: "430px", overflow: "auto", marginTop: 52 }}
+                // style={{ height: "430px", overflow: "auto", marginTop: 52 }}
+                style={{ marginTop: "20px" , height: "430px", overflow: "auto",}}
               >
                 <InstagramFeed />
               </Grid>
@@ -1243,7 +1197,7 @@ class HomeComp extends React.Component {
               item
               xs={12}
               sm={12}
-              md={12}
+              md={8}
               lg={8}
               xl={8}
               className={classes.gridPadding}
@@ -1251,7 +1205,7 @@ class HomeComp extends React.Component {
               <Testimonial />
             </Grid>
           </Grid>
-          <Hidden smUp>
+          <Hidden mdUp>
             <Grid
               item
               xs={12}
@@ -1260,7 +1214,7 @@ class HomeComp extends React.Component {
               lg={4}
               xl={4}
               className={classes.photo}
-              style={{ height: "430px", overflow: "auto" }}
+              style={{ height: "430px", overflow: "auto", marginTop : "20px" }}
             >
               <InstagramFeed />
             </Grid>
