@@ -48,7 +48,7 @@ function HeaderHoverMenuItem(props) {
                           {menuList.title ?
                             menuList.title.toUpperCase() :
                             menuList}
-                        </Typography>
+                        </Typography> 
                       </ListItemText>
                     </ListItem>
                   ))
