@@ -86,8 +86,10 @@ const styles = theme => ({
     color: theme.palette.secondary.light,
     paddingTop: '3px',
     paddingBottom: '3px',
+    fill : "#20205A !important",
     '& svg': {
-      fontSize: '0.95rem'
+      fontSize: '0.95rem',
+      fill : "#20205A !important"
     }
   },
 

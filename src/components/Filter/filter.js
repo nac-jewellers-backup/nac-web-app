@@ -960,16 +960,16 @@ filter.map((row, i) => {
             }
         </div>
 
-
+{/* ---------------------------------------------------------------------------------------------------------------------------- */}
         <Hidden mdUp>
           <div style={{ top: '90px', position: 'absolute', backgroundColor: 'white', width: '100%' }}>
             <div style={{ padding: "9px", borderBottom: "1px solid #e3e3e3", display: openMobile ? 'none' : 'block', position: 'sticky', top: '0px' }}
               className={`${classes.colorMain}`}
             >
-              <button onClick={this.handleDrawerCloseMobile} style={{ background: 'none', border: 'none', fontWeight: '600', color: 'rgba(58, 69, 120, 1)', padding: '6px 8px' }}>
-                <i className={`fa fa-times ${classes.colorMain}`} ></i>&nbsp;
+              <button onClick={this.handleDrawerCloseMobile} style={{ background: 'none', border: 'none', fontWeight: '600', color: '#20205A', padding: '6px 8px' }}>
+                <i className={`fa fa-times ${classes.colorMain}`}  style={{color : "#20205A"}} ></i>&nbsp;
                  Filter</button>
-              <Button onClick={this.handleClearAllData} style={{ float: "right", border: '1px solid #ececec', lineHeight: "15px", fontSize: '0.775rem' }} className={`${classes.colorMain}`}>Clear All</Button>
+              <Button onClick={this.handleClearAllData} style={{ float: "right", border: '1px solid #ececec', lineHeight: "15px", fontSize: '0.775rem', color : "#20205A" }} className={`${classes.colorMain}`}>Clear All</Button>
 
             </div>
 
@@ -983,7 +983,7 @@ filter.map((row, i) => {
                       llllccc
                         </ListItemText>
                     : ""} */}
-                  <List className="mbl-filter-list">
+                  <List className="mbl-filter-list" style={{padding : "0px "}}>
                     {filter && filter.map(row => {
                       return (subFilter && subFilter[row] && subFilter[row].length > 0 ?
                         <>{window.location.pathname === "/goldcoins" || found === "/goldcoins" || found === "goldcoins" ? row === "Offers" ? "" : <ListItem key={row} className={`mbl-filter-list ${isTopFilter ? classes.colorBackgroundListSilver:classes.colorBackgroundList} ${classes.borderBottomList}`}
@@ -1036,15 +1036,16 @@ filter.map((row, i) => {
 
 
                         return (
-                          <ListItem key={row} style={{ paddingLeft: "0px", paddingRight: "0px", width: "100%" }}>
+                          <ListItem key={row} style={{ paddingLeft: "0px", paddingRight: "0px", width: "100%", borderBottom : "1px solid #efeeee",  }}>
 
 
 
                             {this.state.filtercheck && this.state.filtercheck === 'Availability' && row.constructor === Object ?
                               <>
                                 <Checkbox
+
                                   value="checked"
-                                  color="primary"
+                             
                                   className={`${classes.sublistMobile}`}
                                   checked={this.state.checked && this.state.filtercheck && this.state.filtercheck[this.state.filtercheck] && this.state.filtercheck[this.state.filtercheck.replace(/\s/g, "")][row.value] ? this.state.checked[this.state.filtercheck && this.state.filtercheck.replace(/\s/g, "")][row.value] : false}
 
@@ -1056,27 +1057,27 @@ filter.map((row, i) => {
                                   onClick={this.handleDrawerCloseMobile}
                                 />
                                 <ListItemText>
-                                  <Typography variant=""
+                                  {/* <Typography variant=""
                                     className={`filter-mbl-font fnts ${classes.colorMainSecondary}`}>
                                     <div
                                       // onClick={this.handleDrawerCloseMobile}
                                       onClick={(e) => this.handleChange(row.value, this.state.checked[this.state.filtercheck && this.state.filtercheck.replace(/\s/g, "")][row.value] !== undefined ? !this.state.checked[this.state.filtercheck && this.state.filtercheck.replace(/\s/g, "")][row.value] : true, e)}
                                     > {row.title}</div>
-                                  </Typography>
+                                  </Typography> */}
                                 </ListItemText>
                               </>
                               :
                               <>
                                 <Checkbox
                                   value="checked"
-                                  color="primary"
+                                 
                                   className={`${classes.sublistMobile}`}
                                   checked={this.state.checked[this.state.filtercheck && this.state.filtercheck.replace(/\s/g, "")][row] !== undefined ? this.state.checked[this.state.filtercheck && this.state.filtercheck.replace(/\s/g, "")][row] : false}
 
                                   onChange={(e) => this.handleChange(row, this.state.checked[this.state.filtercheck && this.state.filtercheck.replace(/\s/g, "")][row] !== undefined ? !this.state.checked[this.state.filtercheck && this.state.filtercheck.replace(/\s/g, "")][row] : true, e)}
                                   // onChange={(e) => this.handleChange(row12, this.state.checked[row.replace(/\s/g, "")][row12] !== undefined ? !this.state.checked[row.replace(/\s/g, "")][row12] : true, e)}
-                                  icon={<CheckBoxOutlineBlankIcon fontSize="small" />}
-                                  checkedIcon={<CheckBoxIcon fontSize="small" />}
+                                  icon={<CheckBoxOutlineBlankIcon fontSize="small" style={{fill : "#000 !important"}} />}
+                                  checkedIcon={<CheckBoxIcon fontSize="small" style={{fill : "#000 !important"}} />}
                                   name={this.state.filtercheck && this.state.filtercheck.replace(/\s/g, "")}
                                   onClick={this.handleDrawerCloseMobile}
                                 />

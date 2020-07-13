@@ -157,7 +157,7 @@
 }
 
 .filter-mbl-fonted :hover {
-  color: white !important
+  color: #666 !important
 }
 
 /*mobile filter*/
@@ -181,18 +181,19 @@
 } */
 .mbl-filter-list {
   border-bottom: '1px solid #efeeee';
+  color: #20205A !important;
 }
 
 .mbl-filter-list :hover {
   /* background-image: linear-gradient(to left, #f9e3e3, rgba(246, 153, 163, 1)) !important; */
-  color: #fff !important;
+  color: #20205A !important;
 }
 
 .mbl-filter-list :hover span {
 
   /* background-color: #394578 !important; */
   /* background-image: linear-gradient(to left, #f9e3e3, rgba(246, 153, 163, 1)); */
-  color: #fff !important;
+  color: #20205A !important;
 }
 
 /* .mbl-filter-list :hover {
