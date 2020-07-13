@@ -55,17 +55,24 @@ class Cart extends React.Component {
             <Grid container>
                 <Hidden smDown>
 
+
+
                     <Header wishlist={this.props.wishlistdata} />
+                
+                 
                     {path === "checkout" ? "" :
                         <CustomSeparator
+                       
                             arrowicon='cart-head-arrows'
-                            className={`breadcrums-header ${classes.normalcolorback}`}
+                            className={`breadcrums-header ${classes.normalcolorback} ${classes.marginTopBreadCrums} `}
                             classsubhed={`breadcrums-sub ${classes.normalcolorback}`}
                             list={`MuiBreadcrumbs-li ${classes.fontwhite}`}
                             data={this.props.data.length > 0 ? this.props.data[0].breadcrumsdata : breadcrumsdata}
                             subdata={this.props.data.length > 0 ? this.props.data[0].cartsubdata : cartsubdata}
-                        />
+                       />
                     }
+                   
+                  
                     <div className="cart-ovralldiv-media " style={{ marginTop: "3%" }}>
                         <Grid Container spacing={12}>
                             {this.props.data.length > 0 ? <Grid item xs={12}>
@@ -78,7 +85,7 @@ class Cart extends React.Component {
                         </Grid>
                     </div>
 
-                    <Grid Container spacing={12}>
+                    <Grid Container style={{width : "100%"}} >
                         <Grid item xs={12}>
                             <Footer />
                         </Grid>
@@ -98,7 +105,7 @@ class Cart extends React.Component {
                             </Grid> : <><div className="noproductsfound">There are no items in this cart.</div><a href="/jewellery"> <div className="continueshopping"> Continue shopping</div></a></>}
                         </Grid>
                     </Container>
-                    <Grid Container spacing={12}>
+                    <Grid Container  >
                         <Grid item xs={12}>
                             <Footer />
                         </Grid>

@@ -161,7 +161,7 @@
     }
 
     .btn-cart-resp:hover {
-        background: #f36e23 !important
+        background: #4BA063 !important
     }
 
     .remove-product {
@@ -234,13 +234,13 @@
     }
 
     .chckout-page-buynow:hover {
-        background: #f36e23 !important;
+        background: #4BA063 !important;
         color: #fff !important;
     }
 
     .chckout-page-buynow {
-        background: #f36e23 !important;
-        border: 1px solid #f36e23 !important;
+        background: #4BA063 !important;
+        border: 1px solid #4BA063 !important;
         color: #FFF !important;
         font-size: 17px;
         min-width: 230px !important;

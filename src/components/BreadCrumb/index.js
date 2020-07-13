@@ -129,7 +129,7 @@ export default function CustomSeparator(props) {
 
   return (
     <div className={window.location.pathname === "/cart" || b[1] === "paymentsuccess" || window.location.pathname === "/checkout" ? "bread_stic" : ""}>
-      <div >
+      <div style={{marginTop : "6px"}}>
         <Paper elevation={0} style={{ backgroundColor: "#22233d", color: "#fff" }}>
           <Container>
             <Grid container>
@@ -181,7 +181,7 @@ export default function CustomSeparator(props) {
                               }} />
                             </Grid>
 
-                            <Grid item xs={2} >
+                            <Grid item xs={2} style={{display : "flex", alignItems : "center"}}>
                               <div style={{ marginTop: "7px", fontSize: "12px", lineHeight: "15px", textAlign: "center" }}>{subdata.name}</div>
                               {/* <div src={subdata.icon} style={{ fontSize: "13px", lineHeight: "15px", textAlign: "center" }}> */}
                               {/* <img src={subdata.icon} style={{ width: "25px", height: "25px" }} /> */}

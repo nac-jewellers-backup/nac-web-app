@@ -69,9 +69,7 @@ const styles = makeStyles(theme => ({
     dis: {
         color: theme.palette.text.secondary,
     },
-    backgsecondary: {
-        background: theme.palette.secondary.light,
-    },
+  
     resetpadd: {
         paddingLeft: "8px",
         [theme.breakpoints.down('sm')]: {

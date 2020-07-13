@@ -131,6 +131,7 @@ body {
     font-size: 17px;
     text-decoration: line-through;
     line-height: 24px !important;
+   
 }
 
 .selling-price {
@@ -148,7 +149,8 @@ body {
     text-align: center;
     font-weight: bold;
     border-radius: 3px;
-    background-color: #ed1165 !important;
+    background-color: #4BA063 !important;
+   
     padding: 3px 6px !important;
 }
 
