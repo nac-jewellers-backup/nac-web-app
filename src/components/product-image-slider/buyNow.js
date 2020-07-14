@@ -174,6 +174,8 @@ const Buydetails = (
                 />
               </div>
               {/* </NavLink> */}
+
+              {/* ---------------------------------------------------------------------------------------------- */}
               <CommenDialog
                 isOpen={state.modelOpen}
                 content={`Verify selected product details before proceeding`}

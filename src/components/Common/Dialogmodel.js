@@ -37,7 +37,7 @@ const useStyles = makeStyles(theme => ({
     color: "rgba(58, 69, 120, 1)"
   },
   titleTypo: {
-    background: "#f84e88",
+    background: "#33346D",
     color: "#fff",
     padding: "8px 20px",
     fontSize: "1.0rem !important",
@@ -102,7 +102,7 @@ export default function PineDialog(props) {
       <DialogActions style={{ padding: "14px" }}>
     {props.negativeBtn ? <Button onClick={() => handleClose()} className={classes.buttons1} style={{ backgroundColor: "gray" }}>{props.logout?"":<i class="fa fa-close" aria-hidden="true" style={{ marginRight: "7px", color: "#ffa0a0" }}></i>}{props.negativeBtn}
         </Button> : ''}
-        {props.positiveBtn ? <Button className={classes.buttons} style={{ backgroundColor: "#f84e88" }} onClick={() => handleSuccess()} >{props.logout?"":<i class="fa fa-check " aria-hidden="true" style={{ marginRight: "7px", color: "#92d049" }}></i>} {props.positiveBtn}
+        {props.positiveBtn ? <Button className={classes.buttons} style={{ backgroundColor: "#33346D" }} onClick={() => handleSuccess()} >{props.logout?"":<i class="fa fa-check " aria-hidden="true" style={{ marginRight: "7px", color: "#92d049" }}></i>} {props.positiveBtn}
         </Button> : ''}
       </DialogActions>
     </Dialog>

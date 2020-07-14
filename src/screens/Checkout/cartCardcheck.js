@@ -32,6 +32,7 @@ import { useCheckForCod } from 'hooks/CheckForCodHook';
 import Header from 'components/SilverComponents/Header'
 import { withRouter } from 'react-router-dom';
 import OfferAvailable from 'components/OfferDialog'
+import Footer from "../../components/Footer/Footer";
 var adres = {};
 var variab = {}
 const CartCardCheck = (props) => {
@@ -177,7 +178,7 @@ class Component extends React.Component {
                     subdata={this.props.data.length > 0 ? this.props.data[0].cartsubdata : cartsubdata_static}
                     changePanel={this.changePanel}
                 />
-                <Grid container className="marginTop checkout-ovralldiv-media " justify="center" xs={12} sm={12} md={12} lg={11} xl={10} style={{ margin: "auto" }}>
+                <Grid container className=" checkout-ovralldiv-media " justify="center" xs={12} sm={12} md={12} lg={11} xl={10} style={{ margin: "auto", marginTop : "14px", marginBottom : "14px" }}>
                     <Grid item className='pt-sm ' xs={12} sm={12} md={9} lg={9}>
                         <div style={{ marginTop: "20px" }}>
                             <ExpansionPanel
@@ -307,7 +308,7 @@ class Component extends React.Component {
                     </Grid>
 
 
-                    <Grid item xs={12} sm={12} md={3} lg={3} conatiner justify="center" style={{ padding: "18px 20px", color: "#394579" }}>
+                    {/* <Grid item xs={12} sm={12} md={3} lg={3} conatiner justify="center" style={{ padding: "18px 20px", color: "#394579" }}>
                         <Grid container style={{ boxShadow: "rgb(222, 218, 218) 1px 2px 6px 0px", padding: "20px" }}>
                             <Grid item xs={12} lg={12}>
                                 <Typography style={{ fontSize: "0.90rem", paddingBottom: "10px", fontWeight: 600 }}>Billing Summary</Typography>
@@ -415,10 +416,11 @@ class Component extends React.Component {
                                 </Grid><br />
                             </Hidden>
                         </Grid>
-                    </Grid>
+                    </Grid> */}
 
 
                 </Grid>
+                <Footer/>
             </Grid>
         )
     }
