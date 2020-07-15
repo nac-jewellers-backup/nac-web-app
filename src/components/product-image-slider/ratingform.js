@@ -56,7 +56,7 @@ const RatingComponent = (props) => {
                                 // required
                                 />
 
-                                <div style={{ width: "100%" }} className={`tool-tips ${classes.colorsmallscreen}`} >Max 60 characters</div>
+                                <div style={{ width: "100%", color : "#33346D !important" }} className={`tool-tips ${classes.normalfonts} ${classes.colorsmallscreen}`} >Max 60 characters</div>
                                 <label className='errtext'> {values.errortext.ratetitle ? values.errortext.ratetitle : ""}</label>
 
 

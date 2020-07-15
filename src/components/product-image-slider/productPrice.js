@@ -203,7 +203,7 @@ const Productprice = (props, anchorEl, handleClick, handleClose, handleReadMore,
                                                 You actually don't need width to be "set" here. All the elements in the responsive design have their width. You can just do it around with the following rules:
                                                 You actually don't need width to be "set" here. All the elements in the responsive design have their width. You can just do it around with the following rules:
                                                 You actually don't need width to be "set" here. All the elements in the responsive design have their width. You can just do it around with the following rules:`}
-                                                 <span style={{float:'right', cursor:'pointer'}} onClick={()=>{handleReadMore()}}>{viewMore ? 'Read Less' : 'Read More'}</span>
+                                                 <span style={{float:'right', cursor:'pointer', color : "#33346D"}} onClick={()=>{handleReadMore()}}>{viewMore ? 'Read Less' : 'Read More'}</span>
                                                 </span>
                                                
                                             </p>
