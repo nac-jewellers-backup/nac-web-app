@@ -483,7 +483,7 @@ class ProductDetail extends Component {
                   <Grid item xs={12} style={{color:'gray', fontWeight:'bold', fontSize:12, marginBottom:10}}>
 <span>Product Information:</span><span className={classes.spanIcon}>i</span>
                   </Grid>
-                  <Grid container item xs={4}>
+                  <Grid container item xs={4} style={{paddingTop : "8px"}}>
                  <Grid container item xs={2}>
                  <Avatar alt="NAC" src="/static/images/avatar/1.jpg" />
                  </Grid>
@@ -496,7 +496,7 @@ class ProductDetail extends Component {
                  </Grid>
                  </Grid>
                   </Grid>
-                  <Grid container item xs={4}>
+                  <Grid container item xs={4} style={{paddingTop : "8px"}}>
                  <Grid container item xs={2}>
                  <Avatar alt="NAC" src="/static/images/avatar/1.jpg" />
                  </Grid>
@@ -509,7 +509,7 @@ class ProductDetail extends Component {
                  </Grid>
                  </Grid>
                   </Grid>
-                  <Grid container item xs={4}>
+                  <Grid container item xs={4} style={{paddingTop : "8px"}}>
                  <Grid container item xs={2}>
                  <Avatar alt="NAC" src="/static/images/avatar/1.jpg" />
                  </Grid>
