@@ -270,6 +270,11 @@ const styles = theme => ({
     //       right:'-500px !important'
     //   }
       },
+
+      buynowItem : {
+          paddingBottom : "20px",
+          
+      }
    
 
 });

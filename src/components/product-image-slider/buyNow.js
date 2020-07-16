@@ -34,7 +34,7 @@ const inputsearch = (props, state, handleChanges, handleCodChange) => {
     <div className={classes.searchCheck} style={{}}>
       {data[0].ProductContactNum.map((val) => (
         <Grid container spacing={12} >  
-          <Grid item xs={7} lg={4} sm={7}>
+          <Grid item xs={7} md={4} lg={4} sm={7}>
             {/* <input
                             placeholder='&#xf041; &nbsp; Enter Pin Code'
                             className='buynow-search'
@@ -58,7 +58,7 @@ const inputsearch = (props, state, handleChanges, handleCodChange) => {
               }}
             />
           </Grid>
-          <Grid item xs={5} lg={3} sm={5} 
+          <Grid item xs={5} lg={3} md={3} sm={5} 
             style={{
                 color: "#fff",
                 boxShadow: "rgb(190, 191, 191) 5px 5px 5px",
@@ -122,6 +122,7 @@ const inputsearch = (props, state, handleChanges, handleCodChange) => {
               xs={12}
               sm={12}
               lg={5}
+              md={5}
               className="content"
               style={{ margin: "auto" }}
             >
@@ -164,7 +165,7 @@ const Buydetails = (
       {data[0].ProductContactNum.map((val) => (
         <>
           <Grid container spacing={12} >
-            <Grid item xs={12} lg={4} style={{paddingBottom:'20px'}}>
+            <Grid item xs={12} lg={4}  className={classes.buynowItem}>
               {/* <NavLink to="/cart" style={{ textDecoration: 'none' }} onClick={handleLocalStorage.bind(this)}> */}
               <div onClick={handleLocalStorage.bind(this)}>
                 <Buynowbutton
