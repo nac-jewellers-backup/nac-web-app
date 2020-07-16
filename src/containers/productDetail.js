@@ -60,6 +60,27 @@ const styles = (theme) => ({
   //     left:'0 !important'
   //   }
   // }
+
+  productInformationGrid : {
+    [theme.breakpoints.only('md')]: {
+    marginBottom : "14px"
+    },
+    [theme.breakpoints.up('lg')]: {
+      marginBottom : "50px"
+    },
+  },
+  priceNowOverallBox : {
+    width : "100%",
+
+    [theme.breakpoints.only('md')]: {
+      paddingBottom: "7px !important",
+      
+      },
+      [theme.breakpoints.up('lg')]: {
+        paddingBottom: "14px !important",
+        marginBottom: "12px !important",
+      },
+  }
 });
 class ProductDetail extends Component {
   constructor(props) {
@@ -459,7 +480,7 @@ class ProductDetail extends Component {
                 <ProductImageZoom data={this.props.data} />
               </Grid>
               <Grid item xs={6}>
-                <div className="overall-box ">
+                <div className={classes.priceNowOverallBox}>
                   <ProductPrice
                     data={this.props.data}
                     wishlist={this.props.wishlistdata}
@@ -468,7 +489,7 @@ class ProductDetail extends Component {
                 {/* <div className="overall-box priceecontainer"> 
                   <PriceTabs data={this.props.data} />
                 </div> */}
-                <div className="overall-box ">
+                <div  className={classes.priceNowOverallBox}>
                   <PriceBuynow data={this.props.data} />
                 </div>
                 <Grid
@@ -489,7 +510,7 @@ class ProductDetail extends Component {
                     <span>BN11160700</span>
                   </Grid>
                 </Grid>
-                <Grid container item xs={12} style={{ marginBottom: 50 }}>
+                <Grid container item xs={12} className={classes.productInformationGrid} >
                   <Grid
                     item
                     xs={12}
