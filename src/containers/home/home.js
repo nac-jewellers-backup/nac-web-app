@@ -670,9 +670,9 @@ class HomeComp extends React.Component {
             </div>
           </div>
         </Grid>
-        <Grid item xs={9} sm={9} md={10} lg={10} xl={10}>
+        <Grid item xs={9} sm={9} md={10} lg={10} xl={10} >
           {/* <img src ={this.state.timelineImage} alt="stylori" style={{width:"400px", height:"auto"}}/> */}
-          <MediaControlCard data={{ image: this.state.timelineImage }} />
+          <MediaControlCard data={{ image: this.state.timelineImage }}  />
         </Grid>
       </Grid>
     );

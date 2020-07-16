@@ -10,6 +10,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
     height: "100%",
+    boxShadow : "6px 7px 6px #bebfbf !important"
   },
   details: {
     display: "flex",
