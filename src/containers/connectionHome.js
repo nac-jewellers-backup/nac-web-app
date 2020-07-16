@@ -8,7 +8,7 @@ const styles = makeStyles((theme) => ({
     backgroundColor: "#33346D",
     borderRadius: "0px",
     padding: "6px 16px",
-    boxShadow:'6px 7px 6px #bebfbf !important',
+    boxShadow: "6px 7px 6px #bebfbf !important",
     "&:hover": {
       color: "#fff",
       backgroundColor: "#33346D",
@@ -18,8 +18,8 @@ const styles = makeStyles((theme) => ({
       fontSize: "12px",
     },
   },
-  activeButton:{
-    backgroundColor:theme.palette.gold.main
+  activeButton: {
+    backgroundColor: theme.palette.gold.main,
   },
   buttonGrid: {
     paddingRight: "20px",
@@ -62,7 +62,7 @@ const styles = makeStyles((theme) => ({
     backgroundColor: "#33346D",
     borderRadius: "0px",
     padding: "4px 14px",
-    boxShadow:'6px 7px 6px #bebfbf !important',
+    boxShadow: "6px 7px 6px #bebfbf !important",
     fontSize: "13px",
     "&:hover": {
       color: "#fff",
@@ -85,31 +85,51 @@ export default function ConnectionHome(props) {
   });
 
   const handleChange = (e) => {
-    updatedData({
-      [e.target.name]: e.target.value,
-
-      ...initialData,
-      // helperText: "",
-    });
+ 
+    initialData[e.target.name] = e.target.value;
+    initialData["error"][e.target.name] = "";
+   
+    updatedData({...initialData});
   };
 
   const handleValidate = () => {
+    const data = initialData;
     if (
-      initialData.names.length === 0 &&
-      initialData.email.length === 0 &&
-      initialData.message.length === 0
+      data.names.length <= 0 &&
+      data.email.length <= 0 &&
+      data.message.length <= 0
     ) {
-      initialData.error.names = "Please enter your name";
-      initialData.error.email = "Please enter your email id";
-      initialData.error.message = "Please enter your message";
+      data.error.names = "Please enter your name";
+      data.error.email = "Please enter your email id";
+      data.error.message = "Please enter your message";
+    } else if (data.names.length <= 0 && data.email.length <= 0) {
+      data.error.names = "Please enter your name";
+      data.error.email = "Please enter your email id";
+    } else if (data.email.length <= 0 && data.message.length <= 0) {
+      data.error.email = "Please enter your email id";
+      data.error.message = "Please enter your message";
+    } else if (data.names.length <= 0 && data.message.length <= 0) {
+      data.error.names = "Please enter your name";
+      data.error.message = "Please enter your message";
+    } else if (data.names.length <= 0) {
+      data.error.names = "Please enter your name";
+    } else if (data.email.length <= 0) {
+      data.error.email = "Please enter your email id";
+    } else if (data.message.length <= 0) {
+      data.error.message = "Please enter your message";
     }
+    updatedData({
+      ...data,
+    });
   };
 
   return (
     <Grid container xs={12}>
       <Grid container>
         <Grid item className={classes.buttonGrid}>
-          <Button className={`${classes.button} ${classes.activeButton}` }>MESSAGE</Button>
+          <Button className={`${classes.button} ${classes.activeButton}`}>
+            MESSAGE
+          </Button>
         </Grid>
         <Grid item className={classes.buttonGrid}>
           <Button className={classes.button}>CALLBACK</Button>
@@ -125,13 +145,14 @@ export default function ConnectionHome(props) {
           </Grid>
           <Grid xs={9} md={10} className={classes.TextFieldGrid}>
             <TextField
-              name="userName"
+              name="names"
               id="outlined-basic"
               variant="outlined"
               className={classes.inputTextClass}
               value={initialData.names}
               onChange={handleChange}
-              // helperText={initialData.error.names}
+              error={initialData.error.names ? true : false}
+              helperText={initialData.error.names}
             />
           </Grid>
         </Grid>
@@ -141,13 +162,14 @@ export default function ConnectionHome(props) {
           </Grid>
           <Grid xs={9} md={10} className={classes.TextFieldGrid}>
             <TextField
-              name="userEmail"
+              name="email"
               id="outlined-basic"
               variant="outlined"
               className={classes.inputTextClass}
               value={initialData.email}
               onChange={handleChange}
-              // helperText={initialData.error.email}
+              error={initialData.error.email ? true : false}
+              helperText={initialData.error.email}
             />
           </Grid>
         </Grid>{" "}
@@ -157,20 +179,25 @@ export default function ConnectionHome(props) {
           </Grid>
           <Grid xs={9} md={10} className={classes.TextFieldGrid}>
             <TextField
-              name="userMessage"
+              name="message"
               multiline={true}
               rows={4}
               variant="outlined"
               className={classes.inputTextClass}
               value={initialData.message}
               onChange={handleChange}
-              // helperText={initialData.error.message}
+              error={initialData.error.message ? true : false}
+              helperText={initialData.error.message}
             />
           </Grid>
         </Grid>
         <Grid container className={classes.SendButtonContainer}>
           <Grid>
-            <Button className={classes.SendButton} onClick={handleValidate}>
+            <Button
+              className={classes.SendButton}
+              onClick={handleValidate}
+              type="submit"
+            >
               SEND
             </Button>
           </Grid>
