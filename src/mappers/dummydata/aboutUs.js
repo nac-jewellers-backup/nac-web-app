@@ -81,11 +81,10 @@ export const sidemenu = [
       {
         title: "Privacy Policy",
       },
-      
+
       {
         title: "Personal Information",
       },
-      
     ],
   },
   { title: "Education", link: "/education", subHeading: [] },
@@ -218,14 +217,75 @@ export const AboutUs = {
                 "Ours is a journey that began almost hundred years ago in 1917 when Shri Nathella Narayana Chetty started a small jewellery business at home where he fashioned hand-made jewels for a few loyal patrons",
             },
             {
-              year: "1917",
+              year: "1927",
               details:
-                "Ours is a journey that began almost hundred years ago in 1917 when Shri Nathella Narayana Chetty started a small jewellery business at home where he fashioned hand-made jewels for a few loyal patrons",
+                "His son, Nathella Anantham Chetty followed his father’s footsteps and opened a small shop at Parrys’ Corner",
             },
             {
-              year: "1917",
+              year: "1973",
               details:
-                "Ours is a journey that began almost hundred years ago in 1917 when Shri Nathella Narayana Chetty started a small jewellery business at home where he fashioned hand-made jewels for a few loyal patrons",
+                " His son, Shri N. Anjaneyulu Chetty founded NAC Jewellers after working with his father, for more than two decades",
+            },
+            {
+              year: "1979",
+              details:
+                "  His son Shri N. Anantha Padmanabhan joined NAC and transformed the small store into a chain of jewellery stores that it is today.",
+            },
+            {
+              year: "1990",
+              details: "  Launch of exclusive jewellery showroom in Mylapore",
+            },
+            {
+              year: "2007",
+              details: " Opened a plush three-floor showroom in Mylapore",
+            },
+            {
+              year: "2010",
+              details:
+                " Launch of Silvermine – an exclusive silver articles and gift show room",
+            },
+            {
+              year: "2012",
+              details:
+                " Unveiled a special brand of jewellery for kids; The Young Ones",
+            },
+            {
+              year: "2013",
+              details:
+                " Opened a swanky three-floor designer jewellery store in T.Nagar",
+            },
+            {
+              year: "2015",
+              details:
+                "  Opened three new branches at Velachery, Kancheepuram and Perambur",
+            },
+            {
+              year: "2015",
+              details:
+                "Launches Stylori - Ultimate Jewellery detsination for online buyers",
+            },
+            {
+              year: "2016",
+              details:
+                " The launch of our first store outside Tamil Nadu in Vijayawada, Andhra Pradesh",
+            },
+            {
+              year: "2016",
+              details: "NAC's Jewellery gets featured in Oscars",
+            },
+            {
+              year: "2016",
+              details:
+                "The launch of a new glamorous red carpet jewellery line called Fabula",
+            },
+            {
+              year: "2017",
+              details: "Opened our 8th showroom at Anna Nagar, Chennai",
+            },
+            {
+              year: "2017",
+              details:
+                "Opened KNACK Studios, a state-of-the-art post production facility in RK Salai, Mylapore",
             },
           ],
         },
@@ -444,19 +504,19 @@ export const Return = {
       accordian: [
         {
           title: "30 Day Return policy: (Exchange or Money Back)",
-          href:'30dayreturn',
+          href: "30dayreturn",
           para:
             "NAC Jewellers offers a hassle-free 30 day exchange and money back policy. If for any reason you are not satisfied with the product, we will happily provide you with a 100% Exchange or refund on the Invoice value. You can return any of our products except for Non Exchangeable products and Gold Coins within 30 days of receiving the product. We offer FREE return shipping within the 30 day exchange Policy. The value of the product being returned should not exceed Rs.1, 00,000/- in case of Jewellery and Rs.3, 00,000/- in case of Temple Jewellery Solitairesand exclusive collections.",
         },
         {
           title: "Lifetime Exchange",
-          href:'lifetime',
+          href: "lifetime",
           para:
             "NAC Jewellers offers a hassle-free 30 day exchange and money back policy. If for any reason you are not satisfied with the product, we will happily provide you with a 100% Exchange or refund on the Invoice value. You can return any of our products except for Non Exchangeable products and Gold Coins within 30 days of receiving the product. We offer FREE return shipping within the 30 day exchange Policy. The value of the product being returned should not exceed Rs.1, 00,000/- in case of Jewellery and Rs.3, 00,000/- in case of Temple Jewellery Solitairesand exclusive collections.",
         },
         {
           title: "How to Return/Exchange a product?",
-          href:"exchange",
+          href: "exchange",
           para:
             "We have long been known as the connoisseur of rare and timeless jewellery. Crafted with flawless diamonds, our designs have enchanted many loyal patrons, whose fine taste and penchant for exclusive designs have popularized our sparkling diamond collection.<br></br>Breathtakingly designed, right from exquisite nose studs to lovely necklaces, our lavish collections will pass muster even with the most discerning customer. Our comprehensive range is designed with an obsession for quality and intricate craftsmanship to add glitter to glamour.<br></br>With over 40 years of expertise in grading diamonds, our seasoned team of Gemologists handpicks the most perfect diamond and they come with IGI and SGL certification, while our sparkling solitaires certified by GIA.<br></br>A workmanship that bespeaks our commitment to creativity and modern trends, our designs are a work of art. You will find many sparkling designs at the diamond section of Mylapore store and T.Nagar showroom has an entire floor dedicated to our dazzling collection.",
           number: [
@@ -588,19 +648,19 @@ export const Delivery = {
       accordian: [
         {
           title: "Delivery Policy",
-          href:'deliverypolicy',
+          href: "deliverypolicy",
           para:
             "NAC Jewellers offers FREE shipping on every order within India*( valid for the contiguous 29 states, Puducherry and Delhi only!) as an introductory offer for a limited period. Your order will be shipped to you fully insured. We urge all customers to inspect the package for any damage or tamper before receiving or signing for receipt<br>After your item has been packaged, it will be shipped and delivered free via one of the following carriers.<br></br>1. Blue dart<br>2. Speed post<br>3. Sequel Logistics",
         },
         {
           title: "Packaging",
-          href:'packaging',
+          href: "packaging",
           para:
             "Every jewellery package from NAC Jewellers arrives at your doorstep in a durable, tamper-proof packing. Whether it is a jewellery, gold coin or solitaire, your item is delivered to you in an exclusive NAC Jewellers box along with the relevant certificates.",
         },
         {
           title: "Free Shipping",
-          href:'freeshipping',
+          href: "freeshipping",
           para:
             "In case your purchase is intended as a gift, we offer free gift packing, along with a gift message of your choice. Your gift will be delivered in distinctive NAC Jewellers gift packing. So whether you order a gift to give to your loved ones personally, or want us to deliver it, the recipient is sure to be impressed.<br></br>To send a free gift message with your gift, look for the Gift message text box in the shopping bag/cart page. Your personal message will be printed on a distinctive card and delivered along with the gift.",
           norDots: [
@@ -714,7 +774,7 @@ export const Privacy = {
       accordian: [
         {
           title: "Privacy Policy",
-          href:'privacypolicy',
+          href: "privacypolicy",
           para: `Thank you for visiting NAC Jewellers. We want you to know that your privacy is important to us. Our customers are at the heart of everything we do, and we strive to ensure your experience with NAC Jewellers is one that you will want to repeat and share with your friends. Part of our commitment to you is to respect and protect the privacy of the personal information you provide to us. The information below is designed to inform you of what information we collect, why we collect such information, and how we use the information we collect. This Privacy Policy is incorporated into our Terms of Service.<br></br>When you submit your personal information to us, you are giving us your consent to the collection, use, and disclosure of your information as set forth in this Privacy Policy. We are always available to discuss your questions or concerns regarding this Privacy Policy and our privacy practices. If you would like to speak to a customer service representative, please contact us via telephone at +91 44 43996666 or email at mail@nacjewellers.com<br></br>NAC Jewellers will occasionally update this Privacy Policy. When a revision is made we will revise the "last updated" date on this page. We encourage you to check the date of our Privacy Policy each time you visit our Website for any updates or changes. Your use of our Website constitutes your consent to this Privacy Policy, including any changes or updates. We may make additional features, functionality, offers, activities, or events ("opportunities") available to you subject to additional or different privacy rules that we disclose in connection with those opportunities.`,
           img: [
             {
@@ -739,7 +799,7 @@ export const Privacy = {
         },
         {
           title: "Collection and Use of Information",
-          href:'privacypolicy',
+          href: "privacypolicy",
           para:
             "As a welcome guest, you can browse our Website without telling us who you are or revealing any personal information about yourself. At various times, you may decide to provide us with your personal information. You should know that we receive and may store all personal information (whether written or oral) that you provide to us through whatever means you provide such information (through our Website, via e-mail, over the telephone, etc.). Personal information means any information that may be used to identify an individual, including, but not limited to, a first and last name, home, billing or other physical address or email address as well as any information associated with the foregoing. In addition to your contact information, we may collect information about your purchases, billing address, shipping address, gender, occupation, birthday, marital status, anniversary, interests, phone number or other contact information, and credit card information. We may combine the information you provide to us over time and we may combine such information with information that is publicly available, collected through data collection devices, and information that we receive from our partners, affiliates and other third parties.",
         },
@@ -750,7 +810,7 @@ export const Privacy = {
         },
         {
           title: "Personal Information that we May Share with Others",
-          href:'personalinformation',
+          href: "personalinformation",
           para:
             "In certain circumstances, we may share your personal information with trusted partners.",
           dots: [
@@ -864,7 +924,7 @@ export const Faqs = {
       accordian: [
         {
           title: "Delivery & Tracking",
-          href:"tracking",
+          href: "tracking",
           deliver: [
             {
               faqSubtitle:
@@ -886,7 +946,7 @@ export const Faqs = {
         },
         {
           title: "Jewellery",
-          href :'jewellery',
+          href: "jewellery",
           faqTitle11: "Where is the jewellery made?",
           faqPara:
             "We make our jewellery through our network of craftsmen across India, while we source diamonds and gemstones from across the globe.",
@@ -926,7 +986,7 @@ export const Faqs = {
         },
         {
           title: "Returns",
-          href:'returns',
+          href: "returns",
           faqTitle1: "How to Return/Exchange a product?",
           data: [
             {
