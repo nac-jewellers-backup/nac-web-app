@@ -256,7 +256,7 @@ export const TopFilters = (props) => {
                           className={classes.spacingfilterdiv}
                         >
                           <Grid item xs={6} className={classes.filtersLabel}>
-                            <a href={listName.url}>{listName}</a>
+                            <a href={listName.url} >{listName}</a>
                           </Grid>
                           <Grid
                             item

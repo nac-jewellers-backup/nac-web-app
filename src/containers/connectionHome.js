@@ -35,6 +35,7 @@ const styles = makeStyles((theme) => ({
     [theme.breakpoints.down("md")]: {
       padding: "12px",
     },
+    height : "303px"
   },
   TextFieldGrid: {
     width: "100%",
@@ -44,6 +45,7 @@ const styles = makeStyles((theme) => ({
   },
   inputTextClass: {
     width: "100%",
+  
   },
   textHeading: {
     fontSize: "13px",
@@ -85,11 +87,10 @@ export default function ConnectionHome(props) {
   });
 
   const handleChange = (e) => {
- 
     initialData[e.target.name] = e.target.value;
     initialData["error"][e.target.name] = "";
-   
-    updatedData({...initialData});
+
+    updatedData({ ...initialData });
   };
 
   const handleValidate = () => {
@@ -117,6 +118,11 @@ export default function ConnectionHome(props) {
       data.error.email = "Please enter your email id";
     } else if (data.message.length <= 0) {
       data.error.message = "Please enter your message";
+    } else if (
+      data.email.length > 0 &&
+      !/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/.test(data.email)
+    ) {
+      data.error.email = "Please enter a valid email address";
     }
     updatedData({
       ...data,
