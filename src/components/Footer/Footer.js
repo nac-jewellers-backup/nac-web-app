@@ -275,7 +275,7 @@ export default function Footer(props) {
             Title: "Terms & Conditions"
         },
         {
-            url: "",
+            url: "https://www.google.co.in/maps/@13.0457285,80.2325498,3a,75y,281.19h,87.03t/data=!3m7!1e1!3m5!1siBMPPhrps9EAAAQ0H3M5OQ!2e0!3e2!7i13312!8i6656!6m1!1e1",
             Title: "360 ° Store View"
         },
         {
@@ -362,7 +362,7 @@ export default function Footer(props) {
             Title: "Terms & Conditions"
         },
         {
-            url: "",
+            url: "https://www.google.co.in/maps/@13.0457285,80.2325498,3a,75y,281.19h,87.03t/data=!3m7!1e1!3m5!1siBMPPhrps9EAAAQ0H3M5OQ!2e0!3e2!7i13312!8i6656!6m1!1e1",
             Title: "360 ° Store View"
         },
         {
