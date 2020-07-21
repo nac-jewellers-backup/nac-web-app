@@ -136,7 +136,7 @@ const Gallery = (props, callmouseover, callmouseout, cardstate, scrollPosition) 
 
 
       <div class="wishListStyle" style={{padding:10}}>
-      <i class="fa fa-heart overall-icons" style={{ color: "gray" }}
+      <i class="fa fa-heart overall-icons" style={{ color: "gray" }} 
                         
                     ></i>
         {/* <Wishlist sku={props.data.skuId} productId={props.data.productId} wishlist={props.wishlist} /> */}

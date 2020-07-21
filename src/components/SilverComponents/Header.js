@@ -591,7 +591,7 @@ class Header extends Component {
                     <Grid item xs={2} className={classes.menustylori}>
                       <a
                         href="https://www.stylori.com/"
-                        style={{ textDecoration: "none" }}
+                        style={{ textDecoration: "none", color : "#fff" }}
                       >
                         STYLORI
                       </a>

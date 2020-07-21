@@ -87,7 +87,7 @@ export default function Cards(props) {
         ) : (
           ""
         )}
-        <Grid style={{ height: "80px" }}></Grid>
+        <Grid style={{ height: "25px" }}></Grid>
         <Grid
           xs={12}
           sm={12}
@@ -265,7 +265,7 @@ export default function Cards(props) {
                       {window.location.pathname === "/temple-work" ? (
                         <>
                           {" "}
-                          <Typography className={classes.cardMetal}>
+                          <Typography className={classes.cardMetal1}>
                             {val.typeOfMetal}
                           </Typography>{" "}
                         </>
@@ -283,7 +283,7 @@ export default function Cards(props) {
             </Grid>
           ))}
         </Grid>
-        <Grid style={{ height: "80px" }}></Grid>
+        <Grid style={{ height: "25px" }}></Grid>
       </Grid>
 
       {window.location.pathname === "/newsroom" ? (

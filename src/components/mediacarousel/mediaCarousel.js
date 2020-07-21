@@ -121,7 +121,7 @@ export default function MediaCarousel(props) {
 
                   <Typography className={classes.para}>
                     {isMoreContent === true
-                      ? `${val.para.slice(0, 350)}...`
+                      ? `${val.para.slice(0, 340)}...`
                       : val.para}
                     {/* {props.para} */}
                   </Typography>
@@ -138,7 +138,7 @@ export default function MediaCarousel(props) {
                     ""
                   ) : (
                     <>
-                      <Grid
+                      {/* <Grid
                         xs={2}
                         sm={2}
                         md={1}
@@ -147,7 +147,7 @@ export default function MediaCarousel(props) {
                         className={classes.gridHr}
                       >
                         <hr className={classes.hrTag} />
-                      </Grid>
+                      </Grid> */}
                       <Grid
                         container
                         direction="row"

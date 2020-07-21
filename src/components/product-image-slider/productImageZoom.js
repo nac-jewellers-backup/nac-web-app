@@ -203,20 +203,22 @@ class ProductImageZoom extends React.Component {
               </Grid>
             </Grid> */}
                 {data.map((val) => {
-                  return val.offerDiscount ? (
-                    <span style={{ color: "#fff" }} className="overlayCss11">
-                      {val.offerDiscount}
-                    </span>
-                  ) : null;
+                  // return val.offerDiscount ? (
+                  //   <span style={{ color: "#fff" }} className="overlayCss11">
+                  //     {val.offerDiscount}
+                  //   </span>
+                  // ) : null;
                 })}
                 {data[0].ProductContactNum[0].isReadyToShip == true ? (
                   <div
-                    class={
-                      data && data[0] && data[0].offerDiscount
-                        ? "one-day-ship_"
-                        : "one-day-ship_only"
-                    }
-                  ></div>
+                    // class={
+                    //   data && data[0] && data[0].offerDiscount
+                    //     ? "one-day-ship_"
+                    //     : "one-day-ship_only"
+                    // }
+                  >
+
+                  </div>
                 ) : (
                   ""
                 )}

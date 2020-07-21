@@ -49,7 +49,7 @@ const styles = makeStyles((theme) => ({
     color: "#1e1e1e",
     fontFamily: "notoSerif-regular",
     lineHeight: "1.42857",
-    padding: "20px 0px 20px 15px",
+    padding: "20px 0px 8px 15px",
   },
   link: {
     textDecoration: "none !important",
@@ -63,14 +63,21 @@ const styles = makeStyles((theme) => ({
     fontSize: "15px",
     fontFamily: "notoSerif-regular",
     lineHeight: "1.42857",
-    padding: "3px 0px 3px 15px",
+    padding: "0px 0px 0px 15px",
+  },
+  cardMetal1: {
+    color: "#5d5d5d",
+    fontSize: "15px",
+    fontFamily: "notoSerif-regular",
+    lineHeight: "1.42857",
+    padding: "5px 0px 0px 15px",
   },
   cardLocation: {
     fontSize: "12px",
     color: "#969696",
     fontFamily: "notoSerif-regular",
     lineHeight: "1.42857",
-    padding: "35px 0px 30px 15px",
+    padding: "12px 0px 30px 15px",
   },
   card: {
     // borderRadius: "0px !important",

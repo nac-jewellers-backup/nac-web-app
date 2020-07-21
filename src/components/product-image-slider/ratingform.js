@@ -102,11 +102,11 @@ const RatingComponent = (props) => {
                             <Grid container spacing={12} style={{ marginTop: '20px' }}>
                                 <Grid item xs={12} lg={12}>
                                     <div style={{ float: "right" }}>
-                                        <Button className={`form-reviews-mob ${classes.fontwhite} ${classes.normalcolorback}`} style={{boxShadow:'rgba(20, 25, 25, 0.32) 6px 7px 6px'}} type="submit">{'Submit'.toUpperCase()}</Button>
+                                        <Button className={`form-reviews-mob ${classes.fontwhite} ${classes.normalcolorback}`} style={{boxShadow:'4px 5px 6px #BEBFBF '}} type="submit">{'Submit'.toUpperCase()}</Button>
                                         <Button onClick={() => {
                                             handlers.clear()
                                             props.clear_rating_onchange(true)
-                                        }} className={`form-cancel-mob ${classes.normalfonts} ${classes.backgwhite}`} style={{boxShadow:'rgba(20, 25, 25, 0.32) 6px 7px 6px'}}>Cancel</Button>
+                                        }} className={`form-cancel-mob ${classes.normalfonts} ${classes.backgwhite}`} style={{boxShadow:'4px 5px 6px #BEBFBF '}}>Cancel</Button>
                                     </div>
                                 </Grid>
                             </Grid>

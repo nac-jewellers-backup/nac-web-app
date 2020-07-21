@@ -195,9 +195,11 @@ const Productprice = (props, anchorEl, handleClick, handleClose, handleReadMore,
                                             </h1>
                                         </Hidden>
                                         <Hidden smDown>
-                                            <p className={`pdp-desc ${classes.dis}`} style={{marginBottom:20, fontStyle:'italic'}}>
+                                            <p className={`pdp-desc ${classes.dis}`} style={{marginBottom:15, fontStyle:'italic', paddingTop : "5px"}}>
                                                 {val.dis}
                                             </p>
+                                            <Grid xs={10}>
+
                                             <p className={`pdp-desc ${viewMore ? '' : classes.disDescriptionPD}`}>
                                                 <span style={{width:'80%'}}> {`You actually don't need width to be "set" here. All the elements in the responsive design have their width. You can just do it around with the following rules: 
                                                 You actually don't need width to be "set" here. All the elements in the responsive design have their width. You can just do it around with the following rules:
@@ -208,6 +210,9 @@ const Productprice = (props, anchorEl, handleClick, handleClose, handleReadMore,
                                                
                                             </p>
                                             
+                                          
+
+                                            </Grid>
                                         </Hidden>
                                     </div>
                                 </Grid>

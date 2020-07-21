@@ -8,10 +8,10 @@ const styles = makeStyles((theme) => ({
     backgroundColor: "#33346D",
     borderRadius: "0px",
     padding: "6px 16px",
-    boxShadow: "6px 7px 6px #bebfbf !important",
+    boxShadow: "4px 5px 6px #BEBFBF !important",
     "&:hover": {
       color: "#fff",
-      backgroundColor: "#33346D",
+      backgroundColor: theme.palette.gold.main,
     },
     [theme.breakpoints.down("md")]: {
       padding: "5px 10px",
@@ -64,7 +64,7 @@ const styles = makeStyles((theme) => ({
     backgroundColor: "#33346D",
     borderRadius: "0px",
     padding: "4px 14px",
-    boxShadow: "6px 7px 6px #bebfbf !important",
+    boxShadow: "4px 5px 6px #BEBFBF !important",
     fontSize: "13px",
     "&:hover": {
       color: "#fff",
