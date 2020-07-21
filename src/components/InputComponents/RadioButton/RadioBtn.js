@@ -5,25 +5,27 @@ import RadioGroup from "@material-ui/core/RadioGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormControl from "@material-ui/core/FormControl";
 import FormHelperText from "@material-ui/core/FormHelperText";
-import "./index.css"
+import "./index.css";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     padding: "6px 6px 6px 6px",
     height: "100vh",
-    display: "flex"
+    display: "flex",
   },
   formControl: {
     margin: theme.spacing(0.8),
-    fontFamily:'notoSerif-regular',
-
+    fontFamily: "notoSerif-regular",
   },
   fromControlTwo: {
-    '& span': {
-      fontSize: '0.9rem !important',
-      '& svg': {
-        width: '0.99rem'
-      }
+    fill: "#394578",
+    "& span": {
+      fontSize: "0.9rem !important",
+      fill: "#394578",
+      "& svg": {
+        width: "0.99rem",
+        fill: "#394578",
+      },
     },
   },
   group: {
@@ -31,40 +33,42 @@ const useStyles = makeStyles(theme => ({
   },
   radio: {
     color: "#394578",
-
   },
   hoverClass: {
     paddingRight: "10px",
     marginLeft: "0px !important",
     marginRight: "0px !important",
-    '&:hover': {
-      backgroundColor: "#9e9e9e40"
-    }
-  }
+    "&:hover": {
+      backgroundColor: "#9e9e9e40",
+    },
+  },
 }));
-
-
 
 export default function RadioBtn(props) {
   const classes = useStyles();
   const [value, setValue] = React.useState({
     sortTitle: "Sort by",
-    values: '',
-    helperText: false
-  }
-  );
+    values: "",
+    helperText: false,
+  });
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     props.onChange(e);
-  }
+  };
   // function handleChange(event) {
   //   setValue({...value, values:event.target.value, helperText: !Boolean((event.target.value != null && event.target.value !== ""))});
   // }
   // console.log(value);
   // console.info('objectvaluesobjectvalues', props.values.values)
   return (
-    <div style={{ alignItems: "flex-end", padding: "6px" }} className="classSort">
-      <FormControl component="fieldset" className={`${classes.fromControlTwo} ${classes.formControl}`}>
+    <div
+      style={{ alignItems: "flex-end", padding: "6px" }}
+      className="classSort"
+    >
+      <FormControl
+        component="fieldset"
+        className={`${classes.fromControlTwo} ${classes.formControl}`}
+      >
         <RadioGroup
           aria-label="Gender"
           name="gender1"
@@ -72,12 +76,20 @@ export default function RadioBtn(props) {
           value={props.values.values}
           onChange={handleChange}
         >
-          {props.radioValues.map(data => (
-            <FormControlLabel className={classes.hoverClass} value={data} control={<Radio color="primary"
-              className={classes.radio} />} label={data} />
+          {props.radioValues.map((data) => (
+            <FormControlLabel
+              className={classes.hoverClass}
+              value={data}
+              control={<Radio color="primary" className={classes.radio} />}
+              label={data}
+            />
           ))}
         </RadioGroup>
-        {value.helperText && <FormHelperText><b style={{ color: 'red' }}>Required</b></FormHelperText>}
+        {value.helperText && (
+          <FormHelperText>
+            <b style={{ color: "red" }}>Required</b>
+          </FormHelperText>
+        )}
       </FormControl>
     </div>
   );
