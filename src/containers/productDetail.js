@@ -503,11 +503,11 @@ class ProductDetail extends Component {
                     marginBottom: 10,
                   }}
                 >
-                  <Grid item xs={1}>
-                    <span>Modal No:</span>
+                  <Grid item >
+                    <span>Model No:</span>
                   </Grid>
-                  <Grid item xs={4}>
-                    <span>BN11160700</span>
+                  <Grid item >
+                    <span> &nbsp;BN11160700</span>
                   </Grid>
                 </Grid>
                 <Grid container item xs={12} className={classes.productInformationGrid} >
@@ -518,7 +518,7 @@ class ProductDetail extends Component {
                       color: "gray",
                       fontWeight: "bold",
                       fontSize: 12,
-                      marginBottom: 10,
+                      marginBottom: 8,
                     }}
                   >
                     <span>Product Information:</span>
@@ -532,7 +532,7 @@ class ProductDetail extends Component {
                       container
                       item
                       xs={10}
-                      style={{ fontSize: 12, color: "gray", paddingLeft: 15 }}
+                      style={{ fontSize: 12, color: "gray", paddingLeft: 15, margin : "auto" }}
                     >
                       <Grid itex xs={12}>
                         Metal : 6.17 grams
@@ -550,7 +550,7 @@ class ProductDetail extends Component {
                       container
                       item
                       xs={10}
-                      style={{ fontSize: 12, color: "gray", paddingLeft: 15 }}
+                      style={{ fontSize: 12, color: "gray", paddingLeft: 15, margin : "auto" }}
                     >
                       <Grid itex xs={12}>
                         Purity : 22k (916)
@@ -568,7 +568,7 @@ class ProductDetail extends Component {
                       container
                       item
                       xs={10}
-                      style={{ fontSize: 12, color: "gray", paddingLeft: 15 }}
+                      style={{ fontSize: 12, color: "gray", paddingLeft: 15, margin : "auto" }}
                     >
                       <Grid itex xs={12}>
                         No. of Diamonds : 60
@@ -643,6 +643,7 @@ class ProductDetail extends Component {
                         fontWeight: "bold",
                         color: "gray",
                         marginLeft: 15,
+                        paddingBottom : 10,
                       }}
                     >
                       SIMILAR PRODUCTS

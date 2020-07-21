@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
     height: "100%",
-    boxShadow : "6px 7px 6px #bebfbf !important"
+    boxShadow: "6px 7px 6px #bebfbf !important",
   },
   details: {
     display: "flex",
@@ -54,7 +54,7 @@ export function MediaControlCard(props) {
       <Hidden smDown>
         <CardMedia
           className={classes.cover}
-          style={{ fontFamily: "notoSerif-regular",}}
+          style={{ fontFamily: "notoSerif-regular" }}
           image={props.data.image}
           title="Live from space album cover"
         />
@@ -67,14 +67,10 @@ export function MediaControlCard(props) {
                 color="textSecondary"
                 className={classes.contentText}
               >
-                For every occasion and non-occasion. Shop our range of everyday
-                fashion jewellery featuring gold, silver and stone rings and
-                earrings, for work, play and everything in between. Give special
-                occasions a little extra glimmer with our range of bridal
-                jewellery ranging from engagement rings to wedding rings to
-                classic party wear.Crafted using the finest jewellery design and
-                jewellery making principles, buy our jewellery online for fast
-                deliveries and an easy returns policy.
+                Ours is a journey that began almost hundred years ago in 1917
+                when Shri Nathella Narayana Chetty started a small jewellery
+                business at home where he fashioned hand-made jewels for a few
+                loyal patrons
               </Typography>
             </CardContent>
           </div>

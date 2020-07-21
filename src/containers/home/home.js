@@ -597,32 +597,32 @@ class HomeComp extends React.Component {
 
     const tData = [
       {
-        time: "1970s",
+        time: "1917s",
         image:
           "https://assets.stylori.com/product/SE0024/1000X1000/HOVER-SE0024-2Y.webp",
       },
       {
-        time: "1970s",
+        time: "1927s",
         image:
           "https://assets.stylori.com/product/SE0015/1000X1000/SE0015-1YW.webp",
       },
       {
-        time: "1970s",
+        time: "1973s",
         image:
           "https://assets.stylori.com/product/SE0016/1000X1000/SE0016-1Y.webp",
       },
       {
-        time: "1970s",
+        time: "1979s",
         image:
           "https://assets.stylori.com/product/SE1270/575X575/HOVER-SE1270-2Y.webp",
       },
       {
-        time: "1970s",
+        time: "1990s",
         image:
           "https://assets.stylori.com/product/SE0420/575X575/HOVER-SE0420-2Y.webp",
       },
       {
-        time: "1970s",
+        time: "2007s",
         image:
           "https://assets.stylori.com/product/SE0867/575X575/HOVER-SE0867-2Y.webp",
       },

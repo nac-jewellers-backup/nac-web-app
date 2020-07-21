@@ -61,13 +61,13 @@ const inputsearch = (props, state, handleChanges, handleCodChange) => {
           <Grid item xs={5} lg={3} md={3} sm={5} 
             style={{
                 color: "#fff",
-                boxShadow: "rgb(190, 191, 191) 5px 5px 5px",
+                boxShadow: "4px 5px 6px #BEBFBF ",
               }}
           >
             <Button
               style={{
                 color: "#fff",
-                boxShadow: "rgb(190, 191, 191) 5px 5px 5px",
+                boxShadow: "4px 5px 6px #BEBFBF !important",
               }}
               className={
                 state.pincodeNotFound ||
@@ -124,7 +124,7 @@ const inputsearch = (props, state, handleChanges, handleCodChange) => {
               lg={5}
               md={5}
               className="content"
-              style={{ margin: "auto" }}
+            
             >
               <b className={`ships-by ${classes.normalfonts}`}>
                 <span

@@ -34,8 +34,8 @@ export default function Pricing(props) {
                             <Grid item xs={12} style={{ display: "flex", alignItems: "center" }} className={classes.alignval}>
                             {props.price ?
                                 <Typography style={{ display: "flex", width: '100%' }}>
-                                    <Typography style={{ fontSize: "0.9rem" }}
-                                       style={props.from && { margin: "auto" }} className={`pricing-p${props.price != null & props.price !== '' ? '' : 'shine'} ${classes.deletePrice} ${classes.dis}`}
+                                    <Typography style={{ fontSize: "0.9rem", }}
+                                       style={props.from && { margin: "auto",  }} className={`pricing-p${props.price != null & props.price !== '' ? '' : 'shine'}${classes.colorMain} ${classes.h6FontSize} ${classes.offerPricePadding} ${classes.dis} ${classes.boldFont}`}
                                     >
                                         {props.offerPrice === props.price ? "" : <del>₹&nbsp;{Math.round(props.price)}</del>}
                                     </Typography>
@@ -48,7 +48,9 @@ export default function Pricing(props) {
                                       style={ { margin:props.from ? "auto" : "unset", fontWeight:'bold' }}   className={`${props.offerPrice != null & props.offerPrice !== '' ? '' : 'shine'} ${classes.colorMain} ${classes.h6FontSize} ${classes.offerPricePadding} `}
                                     >
                                         {/* ₹&nbsp;{props.offerPrice} */}
-                                        {new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', minimumFractionDigits: 0 }).format(Math.round(props.offerPrice))}
+                                        {/* {new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', minimumFractionDigits: 0 }).format(Math.round(props.offerPrice))} */}
+                                        ₹&nbsp;{Math.round(props.offerPrice)}
+                                       
                                         <Hidden smDown>
                                         <span className={classes.spanIcon1}>i</span>
                                         </Hidden>
@@ -60,7 +62,7 @@ export default function Pricing(props) {
                             {props.price ?
                                 <Typography style={{ display: "flex", width: '100%' }} className={classes.resetpadd}>
                                     <Typography style={{ fontSize: "0.9rem" }}
-                                       style={props.from && { margin: "auto" }} className={`pricing-p${props.price != null & props.price !== '' ? '' : 'shine'} ${classes.deletePrice} ${classes.dis}`}
+                                       style={props.from && { margin: "auto" }} className={`pricing-p${props.price != null & props.price !== '' ? '' : 'shine'}${classes.colorMain} ${classes.h6FontSize} ${classes.offerPricePadding} ${classes.dis} ${classes.boldFont}`}
                                     >
                                         {props.offerPrice === props.price ? "" : <del>₹&nbsp;{Math.round(props.price)}</del>}
                                     </Typography>
@@ -76,7 +78,7 @@ export default function Pricing(props) {
                                 <Typography style={{ display: "flex", width: '100%' }}>
                                     <Typography
                                         // variant="caption"
-                                        style={props.from && { margin: "auto" }} className={`pricing-p${props.price != null & props.price !== '' ? '' : 'shine'} ${classes.deletePrice} ${classes.dis}`}
+                                        style={props.from && { margin: "auto" }} className={`pricing-p${props.price != null & props.price !== '' ? '' : 'shine'}${classes.colorMain} ${classes.h6FontSize} ${classes.offerPricePadding} ${classes.dis} ${classes.boldFont}`}
                                     // component="p"
                                     >
                                         {props.offerPrice === props.price ? "" : <del>₹&nbsp;{Math.round(props.price)}</del>}
@@ -94,7 +96,9 @@ export default function Pricing(props) {
                                         style={props.from && { margin: "auto" }} className={`${props.offerPrice != null & props.offerPrice !== '' ? '' : 'shine'} ${classes.colorMain} ${classes.h6FontSize} ${classes.offerPricePadding} `}
                                     >
                                         {/* ₹&nbsp;{props.offerPrice} */}
-                                        {new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', minimumFractionDigits: 0 }).format(Math.round(props.offerPrice))}
+                                        {/* {new Intl.NumberFormat('en-IN ', { style: 'currency', currency: 'INR', minimumFractionDigits: 0 }).format(Math.round(props.offerPrice))}  */}
+                                        ₹&nbsp;{Math.round(props.offerPrice)}
+
                                     </Typography>
                                 </Typography> : ""}
                         </Grid></>

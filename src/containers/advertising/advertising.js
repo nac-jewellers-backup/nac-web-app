@@ -6,7 +6,7 @@ import CardIndexPage from "components/card/index";
 import {
   IndexTemplePage,
   IndexAdvertisingPage,
-  IndexNewsRoomPage
+  IndexNewsRoomPage,
 } from "mappers/dummydata/savingNac";
 import Footer from "components/Footer/Footer";
 // import { IndexAdvertisingPage } from 'mappers/dummydata/savingNac';
@@ -25,7 +25,7 @@ export default function Advertising(props) {
   };
 
   return (
-    <Grid container>
+    <Grid container style={{ display: "block" }}>
       <Grid item>
         <Header />
       </Grid>
