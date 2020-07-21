@@ -10,7 +10,6 @@
   }
 }
 
-
 .shine {
   animation-duration: 1s;
   animation-fill-mode: forwards;
@@ -19,11 +18,13 @@
   animation-timing-function: linear;
   background: #f6f7f8;
 
-  background-image: -webkit-linear-gradient(left,
-      #f6f7f8 0%,
-      #edeef1 20%,
-      #f6f7f8 40%,
-      #f6f7f8 100%);
+  background-image: -webkit-linear-gradient(
+    left,
+    #f6f7f8 0%,
+    #edeef1 20%,
+    #f6f7f8 40%,
+    #f6f7f8 100%
+  );
   background-size: 980px 898px;
   /* height: 898px; */
   position: relative;
@@ -103,7 +104,6 @@
 .imges {
   /* height: 60px; */
   width: 55%;
-
 }
 
 .icons-header-sizes {
@@ -132,7 +132,7 @@
   }
 }
 
-@media screen and (min-width:426px) and (max-width:959px) {
+@media screen and (min-width: 426px) and (max-width: 959px) {
   .MuiBadge-colorSecondary {
     top: -6px !important;
     margin-top: 7px;
@@ -140,7 +140,7 @@
   }
 }
 
-@media screen and (min-width:960px) and (max-width:2560px) {
+@media screen and (min-width: 960px) and (max-width: 2560px) {
   .MuiBadge-colorSecondary {
     top: -6px !important;
     margin-top: 1px;
@@ -157,7 +157,7 @@
   font-family: inherit !important;
   cursor: pointer;
   text-align: left !important;
-  color: #90868a
+  color: #90868a;
 }
 
 .searchsvg {
@@ -175,7 +175,6 @@
   padding: 13px 10px 10px 10px;
   /* background: #d51f63 */
 }
-
 
 .header-appbar-moblie1 {
   background-color: #fff !important;
@@ -213,7 +212,7 @@
   }
 }
 
-@media screen and (min-width:426px) and (max-width:959px) {
+@media screen and (min-width: 426px) and (max-width: 959px) {
   .mobli-icon1 i {
     margin-top: 5px;
     font-size: 17px;
@@ -293,9 +292,7 @@
 }
 
 .logoImgHeader1 {
-
   -webkit-tap-highlight-color: transparent;
-
 }
 
 i {
@@ -312,7 +309,6 @@ i {
   top: 17px;
   left: 18px;
   font-size: 14px;
-
 }
 
 .tooltip-slog {
@@ -321,7 +317,6 @@ i {
   top: 15px;
   left: 18px;
   font-size: 14px;
-
 }
 
 .tooltip:hover .tooltip-s {
@@ -388,14 +383,14 @@ i {
   }
 }
 
-.drawer-arrow { 
+.drawer-arrow {
   color: #b78231;
   font-size: 20px;
   width: 22px;
   justify-content: center;
   display: flex;
 }
-.drawer-arrow-submenu1{
+.drawer-arrow-submenu1 {
   color: #394578;
   font-size: 20px;
   width: 22px;
@@ -448,11 +443,12 @@ i {
   float: right !important;
 }
 
-.header-appbar-sticky1 header {}
+.header-appbar-sticky1 header {
+}
 
 .appbarsilver1 {
   position: sticky;
-  top: 0px
+  top: 0px;
 }
 
 .logoImgHeader1 {
@@ -474,7 +470,7 @@ i {
   box-sizing: border-box;
   transition: transform 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
   align-items: center;
-  font-family: "notoSerif-regular",sans-serif;
+  font-family: "notoSerif-regular", sans-serif;
   font-weight: 500;
   align-content: center;
   border-radius: 10px;
@@ -493,7 +489,7 @@ i {
   }
 }
 
-@media screen and (min-width:426px) and (max-width:959px) {
+@media screen and (min-width: 426px) and (max-width: 959px) {
   .menuRight {
     padding-bottom: 17px;
   }
@@ -509,7 +505,7 @@ i {
 
 @media only screen and (max-width: 428px) {
   .logoDiv1 {
-    padding-top: 3px
+    padding-top: 3px;
   }
 }
 
@@ -617,51 +613,49 @@ i {
 }
 
 .headerTop {
-  height: 58px
+  height: 58px;
 }
 
 @media only screen and (max-width: 958px) and (min-width: 599px) {
   .headerTop {
-    height: 64px
+    height: 64px;
   }
 }
 
 @media only screen and (max-width: 2560px) and (min-width: 959px) {
   .headerTop {
-    height: 140px !important
+    height: 140px !important;
   }
 }
 
 .cartheader {
   margin-bottom: 20px;
-  margin-top: 0px
+  margin-top: 0px;
 }
 
 .cartcardrelese {
   /* margin-bottom: 20px; */
-  margin-top: 5px
+  margin-top: 5px;
 }
 
-.headerTopcard { 
-  height: 58px
+.headerTopcard {
+  height: 58px;
 }
 
 @media only screen and (max-width: 958px) and (min-width: 599px) {
   .headerTopcard {
-    height: 64px
+    height: 64px;
   }
 }
 
 @media only screen and (min-width: 959px) {
   .headerTopcard {
-    height: 89px
+    height: 89px;
   }
 }
 
 @media only screen and (max-width: 600px) {
   .headerTop {
-    height: 100px
+    height: 92px;
   }
 }
-
-.badgebackground {}

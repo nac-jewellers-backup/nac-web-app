@@ -63,16 +63,16 @@ export const styles = (theme) => ({
     },
   },
   goldRateformControlSmallScreen: {
-      "& .MuiOutlinedInput-input": {
-        height: "20px !important",
-        padding: "0px !important",
-        display: "flex",
-        justifyContent: "flex-start",
-        alignItems: "center",
-        color:'white !important'
-      },
+    "& .MuiOutlinedInput-input": {
+      height: "20px !important",
+      padding: "0px !important",
+      display: "flex",
+      justifyContent: "flex-start",
+      alignItems: "center",
+      color: "white !important",
+    },
     width: "100%",
-    margin: '8px 0px',
+    margin: "8px 0px",
     minWidth: 120,
     backgroundColor: theme.palette.gold.main,
     boxShadow: "6px 7px 6px #bebfbf",
@@ -192,7 +192,7 @@ export const styles = (theme) => ({
   menuheader: {
     width: "230px !important",
     position: "sticky",
-    top: "0px", 
+    top: "0px",
     zIndex: 10000,
   },
   drawerPaper: {
@@ -219,7 +219,7 @@ export const styles = (theme) => ({
       backgroundColor: "#fff !important",
     },
   },
-  subtitleContainersubmenu1:{
+  subtitleContainersubmenu1: {
     color: `${theme.palette.secondary.main} !important`,
   },
   subtitle2Container: {
@@ -245,9 +245,9 @@ export const useStyles = makeStyles((theme) => ({
   mouseOverPopover: {
     zIndex: 1000,
     top: "4px !important",
-    backgroundColor: 'white',
-    border:`1px solid ${theme.palette.background.fade}`,
-    boxShadow:'6px 7px 6px #bebfbf !important',
+    backgroundColor: "white",
+    border: `1px solid ${theme.palette.background.fade}`,
+    boxShadow: "6px 7px 6px #bebfbf !important",
     color: theme.palette.background.fade,
     "& span": {
       fontFamily: "notoSerif-regular",
@@ -256,9 +256,9 @@ export const useStyles = makeStyles((theme) => ({
     "& nav": {
       padding: "0px !important",
     },
-    "& svg":{
-      fill:`${theme.palette.secondary.main} !important` ,
-    }
+    "& svg": {
+      fill: `${theme.palette.secondary.main} !important`,
+    },
     // "& li:hover": {
     //   backgroundColor: theme.palette.secondary.dark,
     // },
@@ -366,5 +366,8 @@ export const useStyles = makeStyles((theme) => ({
   },
   drawer: {
     backgroundColor: "#394578",
+  },
+  AppbarMobilePadding: {
+    paddingTop: "33px",
   },
 }));

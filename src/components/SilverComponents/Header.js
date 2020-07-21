@@ -192,7 +192,7 @@ class Header extends Component {
     return (
       <div
         style={{ top: "0", zIndex: "1000", width: "100%" }}
-        className={'headerTop'}
+        className={"headerTop"}
       >
         <Hidden smDown>
           <div
@@ -289,17 +289,17 @@ class Header extends Component {
                                 <MenuItem value={24}>Twenty</MenuItem>
                                 <MenuItem value={26}>Thirty</MenuItem>
                               </Select> */}
-             <NativeSelect
-          defaultValue={30}
-          inputProps={{
-            name: 'name',
-            id: 'uncontrolled-native',
-          }}
-        >
-          <option value={10}>Ten</option>
-          <option value={20}>Twenty</option>
-          <option value={30}>Gold 22k/1g ₹ 3256</option>
-        </NativeSelect>
+                              <NativeSelect
+                                defaultValue={30}
+                                inputProps={{
+                                  name: "name",
+                                  id: "uncontrolled-native",
+                                }}
+                              >
+                                <option value={10}>Ten</option>
+                                <option value={20}>Twenty</option>
+                                <option value={30}>Gold 22k/1g ₹ 3256</option>
+                              </NativeSelect>
                             </FormControl>
                           </Grid>
                         </Grid>
@@ -340,7 +340,7 @@ class Header extends Component {
                                 }}
                               >
                                 <i
-                                  style={{ fontSize: "20px"}}
+                                  style={{ fontSize: "20px" }}
                                   class={`fa fa-user  ${classes.iconFafa}`}
                                 ></i>
                                 <span className="tooltip-slog">
@@ -443,18 +443,22 @@ class Header extends Component {
               b[1] === "paymentfail" ? (
                 ""
               ) : (
-                <Grid container id="headerContainer" style={{marginTop:'15px'}}>
-                 {/* <Container maxWidth="lg"> */}
-                <Grid container item xs={12}>
+                <Grid
+                  container
+                  id="headerContainer"
+                  style={{ marginTop: "15px" }}
+                >
+                  {/* <Container maxWidth="lg"> */}
+                  <Grid container item xs={12}>
                     <Grid item xs={10} className={classes.menunac}>
-                    <Grid
-                      container
-                      spacing={12}
-                      id="fullcontainer"
-                      className="setHeight"
-                      style={{ height:'40px'}}
-                    >
-                      {/*  <Grid item xs={3} className="logoImgHeader1">
+                      <Grid
+                        container
+                        spacing={12}
+                        id="fullcontainer"
+                        className="setHeight"
+                        style={{ height: "40px" }}
+                      >
+                        {/*  <Grid item xs={3} className="logoImgHeader1">
                         <div
                           id="logoDiv1"
                           className="logoDiv1"
@@ -474,53 +478,58 @@ class Header extends Component {
                           />
                         </div>
                       </Grid> */}
-                      <Grid
-                        container
-                        item
-                        xs={9}
-                        id={"containerTitle"}
-                        justify="flex-end"
-                        alignItems="center"
-                        className={`header-navbar-list1 ${classes.headerNavbarList}`}
-                        onMouseLeave={() => {
-                          this.setState({
-                            Menuopen: false,
-                            Checked: false,
-                            targetopen: null,
-                          });
-                        }}
-                      >
-                        <Grid item xs={12} className="titleTop" id={"titleTop"}>
-                          <nav>
-                            {menuListHeader.map((listName) => {
-                              let urlsmall = listName.title.toLowerCase();
-                              return (
-                                <a
-                                  href={listName.url}
-                                  className={
-                                    window.location.pathname === listName.url
-                                      ? classes.seletectedMenu
-                                      : classes.menuListCursor
-                                  }
-                                  onMouseOver={(event) => {
-                                    this.setState({
-                                      Menuopen: true,
-                                      submenuOpen: true,
-                                      subTitleData: null,
-                                      targetopen: event.currentTarget,
-                                      listHoverItem: listName.title.replace(
-                                        / +/g,
-                                        ""
-                                      ),
-                                    });
-                                  }}
-                                >
-                                  {listName.title}
-                                </a>
-                              );
-                            })}
-                          </nav>
-                          {/* {this.state.Menuopen &&
+                        <Grid
+                          container
+                          item
+                          xs={9}
+                          id={"containerTitle"}
+                          justify="flex-end"
+                          alignItems="center"
+                          className={`header-navbar-list1 ${classes.headerNavbarList}`}
+                          onMouseLeave={() => {
+                            this.setState({
+                              Menuopen: false,
+                              Checked: false,
+                              targetopen: null,
+                            });
+                          }}
+                        >
+                          <Grid
+                            item
+                            xs={12}
+                            className="titleTop"
+                            id={"titleTop"}
+                          >
+                            <nav>
+                              {menuListHeader.map((listName) => {
+                                let urlsmall = listName.title.toLowerCase();
+                                return (
+                                  <a
+                                    href={listName.url}
+                                    className={
+                                      window.location.pathname === listName.url
+                                        ? classes.seletectedMenu
+                                        : classes.menuListCursor
+                                    }
+                                    onMouseOver={(event) => {
+                                      this.setState({
+                                        Menuopen: true,
+                                        submenuOpen: true,
+                                        subTitleData: null,
+                                        targetopen: event.currentTarget,
+                                        listHoverItem: listName.title.replace(
+                                          / +/g,
+                                          ""
+                                        ),
+                                      });
+                                    }}
+                                  >
+                                    {listName.title}
+                                  </a>
+                                );
+                              })}
+                            </nav>
+                            {/* {this.state.Menuopen &&
                           menuLists[this.state.listHoverItem] ? (
                             <HeaderHoverMenuItem
                               tabdata={this.props.data}
@@ -543,49 +552,52 @@ class Header extends Component {
                           ) : (
                             ""
                           )} */}
-                          {["DIAMOND", "SILVER", 'PURCHASEPLANS', 'COLLECTIONS'].indexOf(this.state.listHoverItem) === -1  &&this.state.Menuopen  ? (
-                            <HeaderHoversubMenu
-                              opened={this.state.Menuopen}
-                              // onMouseOver={(event) => {
-                              //   this.setState({ submenuOpen: true });
-                              // }}
-                              listHoverItem={
-                                menuLists[this.state.listHoverItem]
-                              }
-                              listitem = {this.state.listHoverItem}
-                              data={this.state.subTitleData}
-                              subMenuTarget={this.subMenuTarget}
-                              targetopened={this.state.targetopen}
-                              onMouseLeave={() => {
-                                
-                                this.setState({
-                                  submenuOpen: false,
-                                  Menuopen:false,
-                                  subTitleData: "",
-                                  subMenuTarget: "",
-                                  targetopen:''
-                                });
-                              }}
-                            />
-                          ) : (
-                            ""
-                          )}
+                            {[
+                              "DIAMOND",
+                              "SILVER",
+                              "PURCHASEPLANS",
+                              "COLLECTIONS",
+                            ].indexOf(this.state.listHoverItem) === -1 &&
+                            this.state.Menuopen ? (
+                              <HeaderHoversubMenu
+                                opened={this.state.Menuopen}
+                                // onMouseOver={(event) => {
+                                //   this.setState({ submenuOpen: true });
+                                // }}
+                                listHoverItem={
+                                  menuLists[this.state.listHoverItem]
+                                }
+                                listitem={this.state.listHoverItem}
+                                data={this.state.subTitleData}
+                                subMenuTarget={this.subMenuTarget}
+                                targetopened={this.state.targetopen}
+                                onMouseLeave={() => {
+                                  this.setState({
+                                    submenuOpen: false,
+                                    Menuopen: false,
+                                    subTitleData: "",
+                                    subMenuTarget: "",
+                                    targetopen: "",
+                                  });
+                                }}
+                              />
+                            ) : (
+                              ""
+                            )}
+                          </Grid>
                         </Grid>
                       </Grid>
-                   
-                    </Grid>
-                  
                     </Grid>
                     <Grid item xs={2} className={classes.menustylori}>
-                            <a href="https://www.stylori.com/" style={{textDecoration:'none'}}>
-                            STYLORI
-                            </a>
+                      <a
+                        href="https://www.stylori.com/"
+                        style={{ textDecoration: "none" }}
+                      >
+                        STYLORI
+                      </a>
                     </Grid>
-                   
-                
-                </Grid>
-                {/* </Container> */}
-
+                  </Grid>
+                  {/* </Container> */}
                 </Grid>
               )}
               <Grid container id="headerContainerTop"></Grid>
@@ -616,6 +628,7 @@ class Header extends Component {
                       xl={1}
                       justify="center"
                       alignItems="center"
+                      style={{ paddingTop: "45px" }}
                     >
                       <IconButton onClick={this.handleDrawerOpen}>
                         <MenuIcon className={classes.mobileNavIcon} />
@@ -629,6 +642,7 @@ class Header extends Component {
                           window.location.href = "/";
                         }}
                         style={{ cursor: "pointer" }}
+                        style={{ paddingTop: "47px" }}
                       >
                         <img
                           className={`imgsilver`}
@@ -655,7 +669,9 @@ class Header extends Component {
                             <Grid item xs={12}>
                               <FormControl
                                 variant="outlined"
-                                className={classes.goldRateformControlSmallScreen}
+                                className={
+                                  classes.goldRateformControlSmallScreen
+                                }
                               >
                                 {/* <InputLabel id="demo-simple-select-outlined-label">
                                 Age
@@ -826,110 +842,110 @@ class Header extends Component {
                   </IconButton>
                 </div>
                 <List className="sideNavListing">
-                  {mainlist.map((row) =>
-                   {
-                  
-                     return(
-                      (
-                        <>
-                          <ListItem button key={row.name} className="drawer-list1"
+                  {mainlist.map((row) => {
+                    return (
+                      <>
+                        <ListItem
+                          button
+                          key={row.name}
+                          className="drawer-list1"
                           selected={window.location.pathname === row.url}
+                        >
+                          <ListItemText
+                            onClick={() => {
+                              window.location.href = row.url;
+                            }}
                           >
-                            <ListItemText
-                              onClick={() => {
-                                window.location.href = row.url;
-                              }}
-                            >
-                              <Typography className="list-items1" variant="">
-                                {row.name.toUpperCase()}
-                              </Typography>
-                            </ListItemText>
-                            <div
-                              onClick={() =>
-                                Jewellery[row.name] !== undefined
-                                  ? this.selectItem(row.name)
-                                  : ""
-                              }
-                            >
-                              {Jewellery[row.name] !== undefined ? (
-                                row.name === selected ? (
-                                  <i class="fa fa-caret-up drawer-arrow"></i>
-                                ) : (
-                                  <i class="fa fa-caret-down drawer-arrow"></i>
-                                )
+                            <Typography className="list-items1" variant="">
+                              {row.name.toUpperCase()}
+                            </Typography>
+                          </ListItemText>
+                          <div
+                            onClick={() =>
+                              Jewellery[row.name] !== undefined
+                                ? this.selectItem(row.name)
+                                : ""
+                            }
+                          >
+                            {Jewellery[row.name] !== undefined ? (
+                              row.name === selected ? (
+                                <i class="fa fa-caret-up drawer-arrow"></i>
                               ) : (
-                                ""
-                              )}
-                            </div>
-                          </ListItem>
-                          {selected === row.name &&
-                            Object.keys(Jewellery[selected]).map((row2) => (
-                              <>
-                                <ListItem
-                                  button
-                                  key={Jewellery[selected][row2].name}
-                                  className={`${classes.subtitleContainer} `}
+                                <i class="fa fa-caret-down drawer-arrow"></i>
+                              )
+                            ) : (
+                              ""
+                            )}
+                          </div>
+                        </ListItem>
+                        {selected === row.name &&
+                          Object.keys(Jewellery[selected]).map((row2) => (
+                            <>
+                              <ListItem
+                                button
+                                key={Jewellery[selected][row2].name}
+                                className={`${classes.subtitleContainer} `}
+                              >
+                                <ListItemText
+                                  onClick={() => {
+                                    window.location.href =
+                                      Jewellery[selected][row2].url;
+                                  }}
                                 >
-                                  <ListItemText
-                                    onClick={() => {
-                                      window.location.href =
-                                        Jewellery[selected][row2].url;
-                                    }}
+                                  <Typography
+                                    className={`${classes.subtitles} ${classes.subtitleContainersubmenu1}`}
+                                    variant=""
                                   >
-                                    <Typography
-                                      className={`${classes.subtitles} ${classes.subtitleContainersubmenu1}`}
-                                      variant=""
-                                    >
-                                      {Jewellery[selected][row2].name.toUpperCase()}
-                                    </Typography>
-                                  </ListItemText>
-                                  <div
-                                    onClick={() =>
-                                      this.selectItem1(
-                                        Jewellery[selected][row2].name
-                                      )
-                                    }
-                                  >
-                                    {selected1 ===
-                                    Jewellery[selected][row2].name ? (
-                                      <i class="fa fa-caret-up drawer-arrow-submenu1"></i>
-                                    ) : (
-                                      <i class="fa fa-caret-down drawer-arrow-submenu1"></i>
-                                    )}
-                                  </div>
-                                </ListItem>
-                                {selected1 === Jewellery[selected][row2].name && (
-                                  <>
-                                    {subheader[selected1] &&
-                                      subheader[selected1].name &&
-                                      subheader[selected1].name.map((row) => (
-                                        <>
-                                          <ListItem
-                                            onClick={() => {
-                                              window.location.href = row.url;
-                                            }}
-                                            className={classes.subtitle2Container}
-                                          >
-                                            <ListItemText>
-                                              <Typography
-                                                className="list-items1"
-                                                variant=""
-                                              >
-                                                {row.name.toUpperCase()}
-                                              </Typography>
-                                            </ListItemText>
-                                          </ListItem>
-                                        </>
-                                      ))}
-                                  </>
-                                )}
-                              </>
-                            ))}
-                        </>
-                      )
-                     )
-                   }
-                   )}
+                                    {Jewellery[selected][
+                                      row2
+                                    ].name.toUpperCase()}
+                                  </Typography>
+                                </ListItemText>
+                                <div
+                                  onClick={() =>
+                                    this.selectItem1(
+                                      Jewellery[selected][row2].name
+                                    )
+                                  }
+                                >
+                                  {selected1 ===
+                                  Jewellery[selected][row2].name ? (
+                                    <i class="fa fa-caret-up drawer-arrow-submenu1"></i>
+                                  ) : (
+                                    <i class="fa fa-caret-down drawer-arrow-submenu1"></i>
+                                  )}
+                                </div>
+                              </ListItem>
+                              {selected1 === Jewellery[selected][row2].name && (
+                                <>
+                                  {subheader[selected1] &&
+                                    subheader[selected1].name &&
+                                    subheader[selected1].name.map((row) => (
+                                      <>
+                                        <ListItem
+                                          onClick={() => {
+                                            window.location.href = row.url;
+                                          }}
+                                          className={classes.subtitle2Container}
+                                        >
+                                          <ListItemText>
+                                            <Typography
+                                              className="list-items1"
+                                              variant=""
+                                            >
+                                              {row.name.toUpperCase()}
+                                            </Typography>
+                                          </ListItemText>
+                                        </ListItem>
+                                      </>
+                                    ))}
+                                </>
+                              )}
+                            </>
+                          ))}
+                      </>
+                    );
+                  })}
                   {!localStorage.getItem("true") ? (
                     <>
                       <ListItem button className="drawer-list12">
