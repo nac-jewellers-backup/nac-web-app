@@ -1,4 +1,4 @@
-export const API_URL = "http://nac-staging-api.ap-south-1.elasticbeanstalk.com";
+export const API_URL = "http://nac-jewellers-staging.ap-south-1.elasticbeanstalk.com";
 // export const API_URL = "https://api-staging.stylori.com";
 export const HOME_PAGE_URL = "";
 export const CDN_URL = "https://assets.stylori.com/";
