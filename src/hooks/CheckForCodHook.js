@@ -22,7 +22,7 @@ export const useCheckForCod = (query, mapper, variables = {}, initRequest = fals
                     setMappedData(mapped);
                 } catch (error) {
                     setError(true);
-                    setMappedData({});
+                    setMappedData({});  
                 }
             }
 

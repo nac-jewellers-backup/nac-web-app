@@ -1,12 +1,12 @@
 import React from "react";
-import {ImgMediaCard} from "./Card.js";
+import { ImgMediaCard } from "./Card.js";
 import { useGraphql } from "../../hooks/GraphqlHook.js";
 import productlistmapper from "../../mappers/productlist.js";
 import { productlist as productlistquery } from "../../queries/index.js";
 // import  {ProductCard}  from "./ProductCard";
 function Card(props) {
   // const { loading, errro, data, mappedData } = useGraphql(productlistquery,productlistmapper);
-  // 
+  //
   // console.info('GRAQPH',loading, errro, data, mappedData);
   // const CardControls = {
   // controls: {
@@ -36,12 +36,10 @@ function Card(props) {
   //   }
   // }
   // }
+ 
   return (
-
     // <ProductCard  ard  data={props.data} {...CardControls}/>
-    <ImgMediaCard data={props.data} wishlist={props.wishlist}/>
-
+    <ImgMediaCard data={props.data} wishlist={props.wishlist} />
   );
 }
 export default Card;
-

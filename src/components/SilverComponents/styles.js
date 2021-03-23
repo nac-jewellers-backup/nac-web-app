@@ -273,8 +273,8 @@ export const useStyles = makeStyles((theme) => ({
   mouseOverPopoversub: {
     zIndex: 1000,
     top: "0px !important",
-    backgroundColor: "#fff",
-    color: theme.palette.background.fade,
+    backgroundColor: "#33346d",
+    color: "#fff",
     cursor: "pointer",
     "& span": {
       fontFamily: "notoSerif-regular",
@@ -286,7 +286,7 @@ export const useStyles = makeStyles((theme) => ({
       cursor: "pointer",
     },
     "& li:hover": {
-      backgroundColor: "#fff",
+      backgroundColor: "#33346d",
     },
   },
   listedItems: {
@@ -298,7 +298,7 @@ export const useStyles = makeStyles((theme) => ({
     padding: "0px",
     fontSize: "0.7rem !important",
     "&:hover": {
-      backgroundColor: "#000",
+      backgroundColor: "#33346d",
     },
   },
   listedItemsvalue: {
@@ -342,7 +342,7 @@ export const useStyles = makeStyles((theme) => ({
     letterSpacing: 2,
     cursor: "pointer",
     "&:hover": {
-      backgroundColor: theme.palette.background.darkFade,
+      backgroundColor: "#33346d",
       color: "#fff",
     },
   },
@@ -362,12 +362,123 @@ export const useStyles = makeStyles((theme) => ({
   subtopic2: {
     padding: "10px 0px 10px 0px",
     borderTop: "1px solid",
-    backgroundColor: theme.palette.background.darkFade,
+    backgroundColor: "#33346d",
   },
   drawer: {
     backgroundColor: "#394578",
   },
   AppbarMobilePadding: {
     paddingTop: "33px",
+  },
+  subtopic1: {
+    padding: "10px 0px 10px 0px",
+  },
+  listedItems: {
+    padding: "0px",
+    fontSize: "0.7rem !important",
+    cursor: "pointer"
+  },
+  listedItemsub: {
+    padding: "0px",
+    fontSize: "0.7rem !important",
+    '&:hover': {
+      backgroundColor: "#33346d"
+    }
+  },
+  listedItemsvalue: {
+    padding: "2px 16px 2px 16px",
+    fontSize: "0.7rem !important",
+    letterSpacing: 2,
+    cursor: "pointer",
+
+  },
+  listedItemsvalue2: {
+    padding: "2px 16px 2px 16px",
+    fontSize: "0.7rem !important",
+    letterSpacing: 2,
+    cursor: "pointer",
+    '&:hover': {
+      backgroundColor: "#33346d",
+      color: "#fff"
+    }
+  },
+  mouseOverPopoverfiltersselected: {
+    backgroundColor: "#33346d !important",
+    color: "#fff"
+  },
+
+  mouseOverPopoverfilterslist: {
+    paddingTop: '0px !important',
+    paddingBottom: '0px !important'
+  },
+  filtersListtopfilters: {
+    "& span": {
+      letterSpacing: 2,
+    }
+
+  },
+  filtersList: {
+    "& span": {
+      letterSpacing: 3,
+    }
+
+  },
+  sortSilver: {
+    // "&.MuiRadio-root":{
+    //   padding:"0px 5px"
+    // },
+    // "&.MuiIconButton-colorSecondary":{
+    //   padding:"4px !important"
+    // },
+    "& svg": {
+      fontSize: "1rem"
+
+    }
+  },
+  subtopic2: {
+    padding: "10px 0px 10px 0px",
+    borderTop: "1px solid",
+    backgroundColor: "#33346d",
+  },
+  listedItemsub: {
+    padding: "0px",
+    fontSize: "0.7rem !important",
+    '&:hover': {
+      backgroundColor: "#33346d !important"
+    }
+  },
+  listedItemsvalue: {
+    padding: "2px 16px 2px 16px",
+    fontSize: "0.7rem !important",
+    letterSpacing: 2,
+    cursor: "pointer",
+
+  },
+  mouseOverPopoverfilters: {
+    "& .MuiRadio-root": {
+      padding: '2px 6px !important'
+    },
+    radioBtnsort: {
+      color: 'red'
+    },
+    zIndex: 1000,
+    top: '4px !important',
+    backgroundColor: 'white',
+    color: theme.palette.secondary.main,
+    '& span': {
+      fontFamily: 'Roboto',
+      letterSpacing: '1px'
+    },
+    '& nav': {
+      padding: '0px !important',
+      minWidth: 150,
+      [theme.breakpoints.only('md')]: {
+        minWidth: 100
+      }
+    },
+    '& li:hover': {
+      backgroundColor: "#33346d !important",
+      color: 'white'
+    }
   },
 }));

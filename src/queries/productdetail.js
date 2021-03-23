@@ -188,7 +188,16 @@ export const YouMayAlsoLike = `query MyQuery($filterdata: ProductListFilter,$fil
               }
             }
           }
-        }
+        }  $conditionfilter: TransSkuListCondition
+        $conditionImage: ProductImageCondition
+        $productnamefilter: TransSkuListFilter
+        $number: Int
+      ) {
+        allTransSkuLists(
+          condition: $conditionfilter
+          filter: $productnamefilter
+          first: $number
+        )
         productName
         productType
         createdAt

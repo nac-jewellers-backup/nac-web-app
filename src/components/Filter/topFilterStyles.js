@@ -95,7 +95,7 @@ export const styles = makeStyles((theme) => ({
     // margin-left: 5%;
   },
   chips: {
-    background: "#8080802e",
+    background: "#8080802e !important",
     color: "#666",
     padding: "5px",
     display: "inline-flex",

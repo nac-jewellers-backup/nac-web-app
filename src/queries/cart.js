@@ -1,27 +1,23 @@
 export const CART = `query myquerycart($productList: [String!]) {
-  allTransSkuLists(filter: {generatedSku: {in: $productList}}) {
+  allTransSkuLists(filter: { generatedSku: { in: $productList } }) {
     nodes {
       generatedSku
       purity
       metalColor
       discountPrice
-      discount
+
       markupPrice
-      skuUrl
+
       productListByProductId {
         productId
         productName
-        productImagesByProductId(filter: {imagePosition: {equalTo: 1}}) {
+        productImagesByProductId(filter: { imagePosition: { equalTo: 1 } }) {
           nodes {
             imageUrl
           }
         }
         productType
-        productMaterialsByProductSku {
-          nodes {
-            materialName
-          }
-        }
+
         productDiamondsByProductSku {
           nodes {
             diamondColour
@@ -43,7 +39,8 @@ export const CART = `query myquerycart($productList: [String!]) {
     }
   }
 }
-`
+
+`;
 export const ALLORDERS = `query MyQuery($userProfileId: [UUID!]) {
   allOrders(filter: {userProfileId: {in: $userProfileId}}, orderBy: CREATED_AT_DESC, condition: {paymentStatus: "Submitted"}) {
     nodes {
@@ -111,7 +108,7 @@ export const ALLORDERS = `query MyQuery($userProfileId: [UUID!]) {
 }
 
 
-`
+`;
 
 // query MyQuery($userProfileId: [UUID!]) {
 //   allOrders(filter: {id: {in: $userProfileId}}) {
@@ -238,7 +235,7 @@ export const ORDERSUCCESSFUL = `query MyQuery($orderId:  OrderCondition) {
   }
 }
 
-`
+`;
 export const ALLUSERWISHLISTS = `query MyQuery($userprofileId: [UUID!]) {
   allUserWhislists(filter: {userprofileId: {in: $userprofileId}, isActive: {equalTo: true}}) {
     nodes {
@@ -263,7 +260,7 @@ export const ALLUSERWISHLISTS = `query MyQuery($userprofileId: [UUID!]) {
   }
 }
 
-`
+`;
 export const FetchSku = `query MyQuery($CartId:ShoppingCartItemCondition) {
   allShoppingCartItems(condition: $CartId) {
     nodes {
@@ -275,7 +272,7 @@ export const FetchSku = `query MyQuery($CartId:ShoppingCartItemCondition) {
   }
 }
 
-`
+`;
 export const FetchCartId = `query FetchCartId($UserId: ShoppingCartCondition) {
   allShoppingCarts(condition: $UserId, orderBy: UPDATED_AT_DESC, first: 1) {
     nodes {
@@ -285,7 +282,7 @@ export const FetchCartId = `query FetchCartId($UserId: ShoppingCartCondition) {
     }
   }
 }
-`
+`;
 export const USERPROFILE = `query MyQuery($id: UUID!) {
   userProfileById(id: $id) {
     firstName
@@ -301,4 +298,4 @@ export const USERPROFILE = `query MyQuery($id: UUID!) {
   }
 }
 
-`
+`;

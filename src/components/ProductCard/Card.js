@@ -8,25 +8,23 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 import { Hidden } from "@material-ui/core";
-import './productCard.css'
-import { CDN_URL } from 'config';
+import "./productCard.css";
+import { CDN_URL } from "config";
 
-import { ProductDetailContext } from 'context'
-import { LazyLoadImage, trackWindowScroll }
-  from 'react-lazy-load-image-component';
-import 'react-lazy-load-image-component/src/effects/blur.css';
+import { ProductDetailContext } from "context";
+import { LazyLoadImage, trackWindowScroll } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 import Wishlist from "components/wishlist/wishlist";
-
 
 export const ImgMediaCard = (props) => {
   const { ProductDetailCtx, setFilters } = React.useContext(ProductDetailContext);
-  const loc = window.location.search
+  const loc = window.location.search;
 
-  return <Component filters={ProductDetailCtx.filters} setFilters={setFilters} {...props} />
-}
-// const MyImage = ( props, callmouseover, callmouseout, cardstate ) => {  
+  return <Component filters={ProductDetailCtx.filters} setFilters={setFilters} {...props} />;
+};
+// const MyImage = ( props, callmouseover, callmouseout, cardstate ) => {
 //   return(
 
 //   <LazyLoadImage
@@ -50,12 +48,11 @@ export const ImgMediaCard = (props) => {
 //   callmouseout()
 // }}
 // style={{width:'100%',height:'100%'}}
-// visibleByDefault={renderImages(props, cardstate) === 'https://alpha-assets.stylori.com/276x276/images/static/Image_Not_Available.jpg'} 
+// visibleByDefault={renderImages(props, cardstate) === 'https://alpha-assets.stylori.com/276x276/images/static/Image_Not_Available.jpg'}
 //     />
 // );
 // }
 const imageOnError = (event, res) => {
-
   // var e = event
   // e.target.src.lastIndexOf('\.')
   // var src_img = (e.target.src).lastIndexOf('\.')
@@ -76,8 +73,6 @@ const imageOnError = (event, res) => {
   //     tester.onerror = imageNotFound;
   //     // tester.on("error" , imageNotFound)
 
-
-
   //   }
   //   const imageFound = (e) => {
   //     e.target.src = URL_1000x1000
@@ -86,19 +81,17 @@ const imageOnError = (event, res) => {
   //   const imageNotFound = (e) => {
   //     e.target.src = `${CDN_URL}product/${res.img_res}X${res.img_res}/productnotfound.webp`
 
-
   //   }
   //   return testImage(URL_1000x1000, e);
   //   // e.target.src = (e.target.src).substr(0, src_img).concat('.jpg')
   // } catch (error) {
   //   console.log(error)
   // }
-  event.target.src = `${CDN_URL}product/${res.img_res}X${res.img_res}/productnotfound.webp`
-}
+  event.target.src = `${CDN_URL}product/${res.img_res}X${res.img_res}/productnotfound.webp`;
+};
 const Gallery = (props, callmouseover, callmouseout, cardstate, scrollPosition) => {
-
   return (
-    <div className="imageHeight" style={{position:'relative'}}>
+    <div className="imageHeight" style={{ position: "relative" }}>
       {/* {props.data.oneDayShipping ? <div class={Math.round(props.data.offerPrice) === Math.round(props.data.price) ? "one-day-ship-listing-page-withoutTop" : "one-day-ship-listing-page"} style={{ zIndex: 2 }}>
         <i class="fa fa-truck" style={{ fontSize: "20px" }}></i>
         <span class="one-day-ship-listing-page-label">1 day shipping</span>
@@ -134,18 +127,20 @@ const Gallery = (props, callmouseover, callmouseout, cardstate, scrollPosition) 
         </Grid>
       </Grid> */}
 
-
-      <div class="wishListStyle" style={{padding:10}}>
-      <i class="fa fa-heart overall-icons" style={{ color: "gray" }} 
-                        
-                    ></i>
+      <div class="wishListStyle" style={{ padding: 10 }}>
+        <i class="fa fa-heart overall-icons" style={{ color: "gray" }}></i>
         {/* <Wishlist sku={props.data.skuId} productId={props.data.productId} wishlist={props.wishlist} /> */}
       </div>
-      <Link className={'cardImage'} to={{ pathname: props.data.skuUrl }} style={{ textDecoration: 'none' }} target="_blank" onClick={handleProductDetatiContext(props)}>
+      <Link
+        className={"cardImage"}
+        to={{ pathname: props.data.skuID }}
+        style={{ textDecoration: "none" }}
+        target="_blank"
+        onClick={handleProductDetatiContext(props)}
+      >
         <LazyLoadImage
-          alt={'props.data.title'}
+          alt={"props.data.title"}
           effect="blur"
-          
           src={renderImages(props, cardstate)}
           //  srcset={renderImages(props, cardstate)}
           //      sizes="(max-width: 320px) 320w,
@@ -159,42 +154,46 @@ const Gallery = (props, callmouseover, callmouseout, cardstate, scrollPosition) 
           //  "
           onError={(e) => imageOnError(e, props.data.imageResolution)}
           title={props.data.title}
-          onMouseOver={!props.hoverText ? () => {
-            callmouseover()
+          onMouseOver={
+            !props.hoverText
+              ? () => {
+                  callmouseover();
+                }
+              : () => {
+                  return null;
+                }
           }
-        :
-        ()=>{return null}
-        }
-          onMouseOut={!props.hoverText ? () => {
-            
-            callmouseout()
+          onMouseOut={
+            !props.hoverText
+              ? () => {
+                  callmouseout();
+                }
+              : () => {
+                  return null;
+                }
           }
-        :
-        ()=>{return null}
-        }
-          style={{ width: '100%' }}
+          style={{ width: "100%" }}
           scrollPosition={scrollPosition}
 
-        // If the image we are creating here has the same src than before,
-        // we can directly display it with no need to lazy-load.
-        // onerror={this.src=}
-        // placeholderSrc={renderImages(props, cardstate) === '' ? 'https://alpha-assets.stylori.com/1000x1000/images/static/Image_Not_Available.jpg' : ''}
-        // placeholder	= { <div >loading.....</div> }
-        >
-        </LazyLoadImage>
-        {props.hoverText &&
-  <div className="overlayImage">
-Today, NAC has expanded its arms and has found many place in and around Chennai and an exclusive showroom at Vijaywada.
-</div>}
+          // If the image we are creating here has the same src than before,
+          // we can directly display it with no need to lazy-load.
+          // onerror={this.src=}
+          // placeholderSrc={renderImages(props, cardstate) === '' ? 'https://alpha-assets.stylori.com/1000x1000/images/static/Image_Not_Available.jpg' : ''}
+          // placeholder	= { <div >loading.....</div> }
+        ></LazyLoadImage>
+        {props.hoverText && (
+          <div className="overlayImage">
+            Today, NAC has expanded its arms and has found many place in and around Chennai and an exclusive showroom at
+            Vijaywada.
+          </div>
+        )}
       </Link>
-
-
     </div>
-  )
+  );
 };
 // onLoad={(e)=>e.target.src=e.target.style.background='url(https://alpha-assets.stylori.com/images/static/loadingimg.gif') center center / 25% 25% no-repeat rgb(255, 255, 255);'}
 export default trackWindowScroll(Gallery);
-// <img 
+// <img
 // srcset={renderImages(props, cardstate)}
 // sizes="(max-width: 320px) 320w,
 //             (max-width: 480px) 375w,
@@ -218,94 +217,102 @@ export default trackWindowScroll(Gallery);
 
 //           />
 const handleProductDetatiContext = (props) => {
-
-
-  props.filters['defaultVariants']['diamondType'] = props.data.diamondType
-  props.filters['defaultVariants']['metalColor'] = props.data.metalColor
-  props.filters['defaultVariants']['purity'] = props.data.purity
-  props.filters['defaultVariants']['skuSize'] = props.data.skuSize
+  props.filters["defaultVariants"]["diamondType"] = props.data.diamondType;
+  props.filters["defaultVariants"]["metalColor"] = props.data.metalColor;
+  props.filters["defaultVariants"]["purity"] = props.data.purity;
+  props.filters["defaultVariants"]["skuSize"] = props.data.skuSize;
   // props.filters['defaultVariants']['productType'] = props.data.productType
   // props.filters['skuId'] = props.data.generatedSku
-  props.filters['skuId'] = props.data.skuID
-  props.setFilters(props.filters)
-}
+  props.filters["skuId"] = props.data.skuID;
+  props.setFilters(props.filters);
+};
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
     justifyContent: "center",
-    margin: 0
+    margin: 0,
   },
   card: {
     minWidth: "90%",
     maxWidth: "90%",
     boxShadow: "6px 7px 6px #bebfbf !important",
     margin: "10px 0px ",
-    borderRadius: '0 !important',
-    border:'1px solid #bebfbf70'
+    borderRadius: "0 !important",
+    border: "1px solid #bebfbf70",
   },
   cardAtionspadding: {
     padding: 0,
-    margin: 0
-
+    margin: 0,
   },
   textDel: {
-    color: "#828282"
+    color: "#828282",
   },
   priceClass: {
     padding: "10px",
-    height: '35px',
-    backgroundColor:'#c8ced480',
-    display: 'flex',
+    height: "40px",
+    backgroundColor: "#c8ced480",
+    display: "flex",
     boxShadow: " 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)",
-    borderRadius: '0 !important',
+    borderRadius: "0 !important",
     opacity: "1.2",
     "&:hover": {
       boxShadow: "40 0 11px rgba(33,33,33,.2)",
-      cursor: "pointer"
+      cursor: "pointer",
     },
-    [theme.breakpoints.down('sm')]: {
-      height: '40px',
-      padding: '0 !important',
+    [theme.breakpoints.down("sm")]: {
+      height: "40px",
+      padding: "0 !important",
     },
-    '& div': {
-      padding: '0 !important'
+    "& div": {
+      padding: "0 !important",
     },
   },
   priceClassMain: {
-    margin: 'auto !important',
+    margin: "auto !important",
   },
   offerMainPrice: {
     color: "gray",
-    fontWeight:"bold",
-    [theme.breakpoints.down('sm')]: {
-      fontSize: '0.9rem'
+    fontWeight: "bold",
+    fontSize: "15px !important",
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "12px !important",
     },
-    '& i': {
-      fontSize: "26px", paddingRight: "5px",
-      [theme.breakpoints.down('sm')]: {
-        fontSize: '0.9rem'
-      },
-    }
 
+    "& i": {
+      fontSize: "26px",
+      paddingRight: "5px",
+      [theme.breakpoints.down("sm")]: {
+        fontSize: "0.9rem",
+      },
+    },
+  },
+  discountPercentage: {
+    color: "#b78231",
+    fontWeight: "bold",
+    fontSize: "15px !important",
+
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "11px !important",
+    },
   },
   offerPrice: {
     fontSize: "0.74rem",
     lineHeight: 0,
     color: "#828282",
     // fontWeight: "bold",
-    width: 'fit-content',
+    width: "fit-content",
     // flex: 0.7,
-    textAlign: 'center',
+    textAlign: "center",
     padding: 5,
     "&:span": {
-      margin: 0
+      margin: 0,
     },
-    [theme.breakpoints.down('sm')]: {
-      textAlign: 'left',
-      padding: '0 !important',
-      paddingTop: '4px !important',
-      paddingBottom: '4px !important',
+    [theme.breakpoints.down("sm")]: {
+      textAlign: "left",
+      padding: "0 !important",
+      paddingTop: "4px !important",
+      paddingBottom: "4px !important",
       padding: 5,
     },
   },
@@ -314,27 +321,27 @@ const useStyles = makeStyles(theme => ({
     color: "#828282",
     "&:span": {
       margin: 0,
-      marginBottom: 0
-    }
+      marginBottom: 0,
+    },
   },
   cardContent: {
     // margin: "auto"
-    width: "100%"
+    width: "100%",
   },
   textPriceCardGrid: {
-    display: 'flex',
+    display: "flex",
     width: "100%",
   },
   priceOffGridsub: {
     flex: 1,
-    display: 'flex',
+    display: "flex",
   },
   priceOffGrid: {
-    display: 'flex',
-    flexDirection: 'column',
-    [theme.breakpoints.down('sm')]: {
-      flexDirection: 'row',
-    }
+    display: "flex",
+    flexDirection: "column",
+    [theme.breakpoints.down("sm")]: {
+      flexDirection: "row",
+    },
   },
   youSavePrice: {
     color: "white",
@@ -343,189 +350,220 @@ const useStyles = makeStyles(theme => ({
     borderRadius: "3px",
     width: "40%",
     flex: 0.7,
-    textAlign: 'center',
-    [theme.breakpoints.down('sm')]: {
+    textAlign: "center",
+    [theme.breakpoints.down("sm")]: {
       // flex: 0.3,
       borderRadius: "3px",
       fontWeight: "normal",
-      fontSize: '0.7rem'
-
+      fontSize: "0.7rem",
     },
-
   },
   offerPricesMain: {
     flex: 1,
     display: "flex",
   },
   titles: {
-    fontSize: '0.7rem',
-    whiteSpace: 'nowrap',
+    fontSize: "0.7rem",
+    whiteSpace: "nowrap",
     // flex: 0.6,
-    color:'gray',
-    overflow: 'hidden',
-    textOverflow: 'ellipsis',
-    width: "90%"
+    color: "gray",
+    overflow: "hidden",
+    textOverflow: "ellipsis",
+    width: "90%",
   },
   hashtags: {
-    fontSize: '0.7rem',
-    whiteSpace: 'nowrap',
+    fontSize: "0.7rem",
+    whiteSpace: "nowrap",
     color: "#5d5d5d",
-    overflow: 'hidden',
-    textOverflow: 'ellipsis',
-    width: "90%"
+    overflow: "hidden",
+    textOverflow: "ellipsis",
+    width: "90%",
   },
   iconColor: {
-    color: theme.palette.secondary.light
+    color: theme.palette.secondary.light,
   },
   cardActionsImage: {
     margin: 0,
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down("md")]: {
       // height: '200px !important'
-    }
-  }
+    },
+  },
+  strikeText: {
+    fontSize: "12px",
+    color: "#5d5d5d",
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "10px !important",
+    },
+  },
+  totalPriceMob: {
+    fontSize: "13px",
+  },
 }));
 const renderImages = (props, cardstate) => {
-if(props.static){
-return props.image
-}
-else{
-  const filterType = cardstate.hovered ? "hoverImage" : "placeImage";
+  if (props.static) {
+    return props.image;
+  } else {
+    const filterType = cardstate.hovered ? "hoverImage" : "placeImage";
 
-  // console.info('props.data.image[filterType]',props.data.image[filterType]);
-  // return props.data.image['hoverImage'].length === 0 ?"https://alpha-assets.stylori.com/1000x1000/images/static/Image_Not_Available.jpg" : props.data.image[filterType].map(imgs => `${imgs.img} ${imgs.size}`).toString()
-  return props.data.image['hoverImage'].length === 0 ? "https://alpha-assets.stylori.com/1000x1000/images/static/Image_Not_Available.jpg" : props.data.image[filterType].img
-}
-
-}
+    // console.info('props.data.image[filterType]',props.data.image[filterType]);
+    // return props.data.image['hoverImage'].length === 0 ?"https://alpha-assets.stylori.com/1000x1000/images/static/Image_Not_Available.jpg" : props.data.image[filterType].map(imgs => `${imgs.img} ${imgs.size}`).toString()
+    return props.data.image["hoverImage"].length === 0
+      ? "https://alpha-assets.stylori.com/1000x1000/images/static/Image_Not_Available.jpg"
+      : props.data.image[filterType].img;
+  }
+};
 
 function Component(props) {
-
   const classes = useStyles();
   const [cardstate, setCardState] = React.useState({
     hovered: false,
     loaded: false,
-    dataLoaded: true
+    dataLoaded: true,
   });
   // const _height = props.data.imageResolution.img_res
   const callmouseover = () => {
     setCardState({ ...cardstate, hovered: !cardstate.hovered });
-  }
+  };
   const callmouseout = () => {
     setCardState({ ...cardstate, hovered: !cardstate.hovered });
-  }
+  };
   return (
     <div className={classes.root} style={{ marginLeft: "0px !important" }}>
-      <Card className={classes.card} style={{ marginLeft: "0px !important" }} >
-        <CardActions style={{
-        }} className={`${classes.cardAtionspadding} ${classes.cardActionsImage}`}>
+      <Card className={classes.card} style={{ marginLeft: "0px !important" }}>
+        <CardActions style={{}} className={`${classes.cardAtionspadding} ${classes.cardActionsImage}`}>
           {Gallery(props, callmouseover, callmouseout, cardstate)}
         </CardActions>
         <Card className={classes.priceClass}>
-          {
-            Math.round(props.data.offerPrice) === Math.round(props.data.price) ?
-              <CardContent className={classes.cardContent} style={{ display: 'flex' }}>
-                <Grid
-                  container
-                  item
-                  xs={12}
-                  className={classes.textPriceCardGrid}
-                  alignItems="center"
-                >
-                  <Hidden smDown>
-                    <Grid container xs={12}>
-                      <Typography variant="body1"
-                        component="span" style={{ paddingLeft: "5px" }} className={`${classes.titles}`}>
-                 {props.static ? 'Jazzy Gypsy Diamond Hoop Earrings' : props.data.title }
+          {Math.round(props.data.offerPrice) === Math.round(props.data.price) ? (
+            <CardContent className={classes.cardContent} style={{ display: "flex" }}>
+              <Grid container item xs={12} className={classes.textPriceCardGrid} alignItems="center">
+                <Hidden smDown>
+                  <Grid
+                    container
+                    item
+                    xs={12}
+                    sm={12}
+                    className={`${classes.priceClassMain}`}
+                    style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between" }}
+                  >
+                    <Grid items>
+                      <Typography
+                        variant="h6"
+                        component="h6"
+                        className={classes.offerMainPrice}
+                        style={{
+                          justifyContent: "flex-start",
+                          display: "flex",
+                          paddingLeft: "5px",
+                        }}
+                      >
+                        {new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", minimumFractionDigits: 0 }).format(
+                          Math.round(props.static ? 25076 : props.data.offerPrice)
+                        )}
+                        <span style={{ display: "flex", alignSelf: "center" }}>
+                          {" "}
+                          <Typography
+                            className={classes.strikeText}
+                            style={{
+                              paddingLeft: "6px",
+                            }}
+                          >
+                            <s style={{ color: "#5d5d5d" }}>10000</s>
+                          </Typography>
+                        </span>
                       </Typography>
-                      {/* <Grid container justify="center"> <Typography variant="body1"
-                        component="span" style={{ paddingLeft: "5px", textAlign: "center" }} className={`${classes.titles}`}>
-                        from The gold Collection
-                      </Typography></Grid> */}
                     </Grid>
-                  </Hidden>
-                  <Grid container item xs={12} sm={12} className={`${classes.priceClassMain}`} style={{ alignItems: "center" }}>
-                    <Typography
-                      variant="h6"
-                      component="h6"
-                      className={classes.offerMainPrice}
-                      style={{
-                        width: "100%",
-                        justifyContent: "flex-start",
-                        display: "flex",
-                        paddingLeft: "5px",
 
-                      }}>
+                    <Grid items>
+                      <Typography className={classes.discountPercentage}>20% OFF</Typography>
+                    </Grid>
+                  </Grid>
+                  <Grid container xs={12}>
+                    <Typography variant="body1" component="span" style={{ paddingLeft: "5px" }} className={`${classes.titles}`}>
+                      {props.static ? "Jazzy Gypsy Diamond Hoop Earrings" : props.data.title}
+                    </Typography>
+                  </Grid>
+                </Hidden>
+                <Hidden mdUp>
+                  <Grid
+                    container
+                    item
+                    xs={12}
+                    sm={12}
+                    className={`${classes.priceClassMain}`}
+                    style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between" }}
+                  >
+                    <Grid items>
+                      <Typography
+                        variant="h6"
+                        component="h6"
+                        className={classes.offerMainPrice}
+                        style={{
+                          justifyContent: "flex-start",
+                          display: "flex",
+                          paddingLeft: "5px",
+                        }}
+                      >
+                        {new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", minimumFractionDigits: 0 }).format(
+                          Math.round(props.static ? 25076 : props.data.offerPrice)
+                        )}
+                        <span style={{ display: "flex", alignSelf: "center" }}>
+                          {" "}
+                          <Typography
+                            className={classes.strikeText}
+                            style={{
+                              paddingLeft: "6px",
+                            }}
+                          >
+                            <s style={{ color: "#5d5d5d" }}>10000</s>
+                          </Typography>
+                        </span>
+                      </Typography>
+                    </Grid>
 
-                      {new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', minimumFractionDigits: 0 }).format(Math.round(props.static ? 25076 : props.data.offerPrice))}
+                    <Grid items>
+                      <Typography className={classes.discountPercentage}>20% Off &nbsp;&nbsp; </Typography>
+                    </Grid>
+                  </Grid>
+                  <Grid container xs={12}>
+                    <Typography variant="body1" component="span" style={{ paddingLeft: "5px" }} className={`${classes.titles}`}>
+                      {props.static ? "" : props.data.title}
+                    </Typography>
+                  </Grid>
+                </Hidden>
+              </Grid>
+            </CardContent>
+          ) : (
+            <CardContent className={classes.cardContent}>
+              <Grid container item xs={12} className={classes.textPriceCardGrid} alignItems="center">
+                <Grid container item xs={12} sm={12} className={`${classes.priceClassMain}`}>
+                  <Typography
+                    variant="h6"
+                    component="h6"
+                    className={classes.offerMainPrice}
+                    style={{
+                      width: "100%",
+                      justifyContent: "flex-start",
+                      display: "flex",
+                      paddingLeft: "5px",
+                    }}
+                  >
+                    {new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", minimumFractionDigits: 0 }).format(
+                      Math.round(props.static ? 25076 : props.data.offerPrice)
+                    )}
+                  </Typography>
+
+                  <Grid container xs={12}>
+                    <Typography variant="body1" component="span" style={{ paddingLeft: "5px" }} className={`${classes.titles}`}>
+                      {props.static ? "Jazzy Gypsy Diamond Hoop Earrings" : props.data.title}
                     </Typography>
                   </Grid>
                 </Grid>
-              </CardContent>
-              :
-              <CardContent className={classes.cardContent}>
-                <Grid
-                  container
-                  item
-                  xs={12}
-                  className={classes.textPriceCardGrid}
-                  alignItems="center"
-                >
-
-                  <Grid container item xs={12} sm={12} className={`${classes.priceClassMain}`}>
-
-                    {/* <Hidden smDown> */}
-                   
-                    {/* </Hidden> */}
-                    <Typography
-                      variant="h6"
-                      component="h6"
-                      className={classes.offerMainPrice}
-                      style={{
-                        width: "100%",
-                        justifyContent: "flex-start",
-                        display: "flex",
-                        paddingLeft: "5px"
-                      }}>
-                      {new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', minimumFractionDigits: 0 }).format(Math.round(props.static ? 25076 : props.data.offerPrice))}
-                    </Typography>
-                    {/* <Typography
-                      style={{
-                        width: "100%",
-                        justifyContent: "center",
-                        display: "flex",
-                        marginTop: "4px"
-                      }}
-                      gutterBottom
-                      variant="body1"
-                      component="span"
-                      className={classes.offerPrice}
-                    >
-                      <del>
-                        {new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', minimumFractionDigits: 0 }).format(Math.round(props.data.price))}
-                      </del>
-                    </Typography> */}
-                    <Grid container xs={12}>
-                      <Typography variant="body1"
-                        component="span" style={{ paddingLeft: "5px" }} className={`${classes.titles}`}>
-                        {props.static ? 'Jazzy Gypsy Diamond Hoop Earrings' : props.data.title }
-                      </Typography>
-                      {/* <Grid container justify="center"> <Typography variant="body1"
-                        component="span" style={{ paddingLeft: "5px", textAlign: "center" }} className={`${classes.titles}`}>
-                        from The gold Collection
-                      </Typography></Grid> */}
-                    </Grid>
-                  </Grid>
-
-                </Grid>
-                {/* <Grid container justify="center"> <Typography variant="body1"
-                  component="span" style={{ paddingLeft: "5px", textAlign: "center" }} className={`${classes.hashtags}`}>
-                  #specialday #jewelrylove
-                      </Typography></Grid> */}
-              </CardContent>
-          }
+              </Grid>
+            </CardContent>
+          )}
         </Card>
-
       </Card>
-    </div >
+    </div>
   );
 }
