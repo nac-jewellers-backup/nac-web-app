@@ -133,7 +133,7 @@ const Gallery = (props, callmouseover, callmouseout, cardstate, scrollPosition) 
       </div>
       <Link
         className={"cardImage"}
-        to={{ pathname: props.data.skuID }}
+        to={{ pathname: `/jewellery/earrings?skuid=${props.data.skuID}` }}
         style={{ textDecoration: "none" }}
         target="_blank"
         onClick={handleProductDetatiContext(props)}

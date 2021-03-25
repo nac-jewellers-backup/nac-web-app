@@ -61,26 +61,25 @@ const styles = (theme) => ({
   //   }
   // }
 
-  productInformationGrid : {
-    [theme.breakpoints.only('md')]: {
-    marginBottom : "14px"
+  productInformationGrid: {
+    [theme.breakpoints.only("md")]: {
+      marginBottom: "14px",
     },
-    [theme.breakpoints.up('lg')]: {
-      marginBottom : "50px"
+    [theme.breakpoints.up("lg")]: {
+      marginBottom: "50px",
     },
   },
-  priceNowOverallBox : {
-    width : "100%",
+  priceNowOverallBox: {
+    width: "100%",
 
-    [theme.breakpoints.only('md')]: {
+    [theme.breakpoints.only("md")]: {
       paddingBottom: "7px !important",
-      
-      },
-      [theme.breakpoints.up('lg')]: {
-        paddingBottom: "14px !important",
-        marginBottom: "12px !important",
-      },
-  }
+    },
+    [theme.breakpoints.up("lg")]: {
+      paddingBottom: "14px !important",
+      marginBottom: "12px !important",
+    },
+  },
 });
 class ProductDetail extends Component {
   constructor(props) {
@@ -101,6 +100,7 @@ class ProductDetail extends Component {
   };
 
   render() {
+  
     // alert(JSON.stringify(this.props.data))
     // alert(JSON.stringify(this.props.data))
     const { classes } = this.props;
@@ -113,12 +113,10 @@ class ProductDetail extends Component {
         save: "5999.9",
         image: {
           placeImage: {
-            img:
-              "https://assets.stylori.com/product/SE0016/1000X1000/SE0016-1Y.webp",
+            img: "https://assets.stylori.com/product/SE0016/1000X1000/SE0016-1Y.webp",
           },
           hoverImage: {
-            img:
-              "https://assets.stylori.com/product/SE0016/1000X1000/HOVER-SE0016-2Y.webp",
+            img: "https://assets.stylori.com/product/SE0016/1000X1000/HOVER-SE0016-2Y.webp",
           },
         },
         productId: "SE0016",
@@ -144,12 +142,10 @@ class ProductDetail extends Component {
         save: "5999.9",
         image: {
           placeImage: {
-            img:
-              "https://assets.stylori.com/product/SE0015/1000X1000/SE0015-1YW.webp",
+            img: "https://assets.stylori.com/product/SE0015/1000X1000/SE0015-1YW.webp",
           },
           hoverImage: {
-            img:
-              "https://assets.stylori.com/product/SE0015/1000X1000/HOVER-SE0015-2YW.webp",
+            img: "https://assets.stylori.com/product/SE0015/1000X1000/HOVER-SE0015-2YW.webp",
           },
         },
         productId: "SE0015",
@@ -175,12 +171,10 @@ class ProductDetail extends Component {
         save: "5999.9",
         image: {
           placeImage: {
-            img:
-              "https://assets.stylori.com/product/SE0024/1000X1000/SE0024-1Y.webp",
+            img: "https://assets.stylori.com/product/SE0024/1000X1000/SE0024-1Y.webp",
           },
           hoverImage: {
-            img:
-              "https://assets.stylori.com/product/SE0024/1000X1000/HOVER-SE0024-2Y.webp",
+            img: "https://assets.stylori.com/product/SE0024/1000X1000/HOVER-SE0024-2Y.webp",
           },
         },
         productId: "SE0024",
@@ -206,12 +200,10 @@ class ProductDetail extends Component {
         save: "5999.9",
         image: {
           placeImage: {
-            img:
-              "https://assets.stylori.com/product/SE0024/1000X1000/SE0024-1Y.webp",
+            img: "https://assets.stylori.com/product/SE0024/1000X1000/SE0024-1Y.webp",
           },
           hoverImage: {
-            img:
-              "https://assets.stylori.com/product/SE0024/1000X1000/HOVER-SE0024-2Y.webp",
+            img: "https://assets.stylori.com/product/SE0024/1000X1000/HOVER-SE0024-2Y.webp",
           },
         },
         productId: "SE0024",
@@ -237,12 +229,10 @@ class ProductDetail extends Component {
         save: "5999.9",
         image: {
           placeImage: {
-            img:
-              "https://assets.stylori.com/product/SE0024/1000X1000/SE0024-1Y.webp",
+            img: "https://assets.stylori.com/product/SE0024/1000X1000/SE0024-1Y.webp",
           },
           hoverImage: {
-            img:
-              "https://assets.stylori.com/product/SE0024/1000X1000/HOVER-SE0024-2Y.webp",
+            img: "https://assets.stylori.com/product/SE0024/1000X1000/HOVER-SE0024-2Y.webp",
           },
         },
         productId: "SE0024",
@@ -268,12 +258,10 @@ class ProductDetail extends Component {
         save: "5999.9",
         image: {
           placeImage: {
-            img:
-              "https://assets.stylori.com/product/SE0024/1000X1000/SE0024-1Y.webp",
+            img: "https://assets.stylori.com/product/SE0024/1000X1000/SE0024-1Y.webp",
           },
           hoverImage: {
-            img:
-              "https://assets.stylori.com/product/SE0024/1000X1000/HOVER-SE0024-2Y.webp",
+            img: "https://assets.stylori.com/product/SE0024/1000X1000/HOVER-SE0024-2Y.webp",
           },
         },
         productId: "SE0024",
@@ -299,12 +287,10 @@ class ProductDetail extends Component {
         save: "5999.9",
         image: {
           placeImage: {
-            img:
-              "https://assets.stylori.com/product/SE0031/1000X1000/SE0031-1Y.webp",
+            img: "https://assets.stylori.com/product/SE0031/1000X1000/SE0031-1Y.webp",
           },
           hoverImage: {
-            img:
-              "https://assets.stylori.com/product/SE0031/1000X1000/HOVER-SE0031-2Y.webp",
+            img: "https://assets.stylori.com/product/SE0031/1000X1000/HOVER-SE0031-2Y.webp",
           },
         },
         productId: "SE0031",
@@ -330,8 +316,7 @@ class ProductDetail extends Component {
       { title: "home", url: "/" },
       { title: path[2], url: this.renderUrl() },
       {
-        title:
-          this.props.data && this.props.data[0] && this.props.data[0].title,
+        title: this.props.data && this.props.data[0] && this.props.data[0].title,
       },
     ];
     // alert(JSON.stringify(this.props.wishlistdata))
@@ -399,52 +384,21 @@ class ProductDetail extends Component {
       <div>
         <div>
           <MetaTags>
-            {this.props.data &&
-            this.props.data[0] &&
-            this.props.data[0].length > 0 ? (
+            {this.props.data && this.props.data[0] && this.props.data[0].length > 0 ? (
               <>
                 <title>{this.props.data[0].title}</title>
                 <meta name="description" content={this.props.data[0].dis} />
-                <meta
-                  name="keywords"
-                  content={this.props.data[0].productsPendants[0].name}
-                />
-                <meta
-                  property="og:title"
-                  id="fb-title"
-                  content={this.props.data[0].title}
-                />
-                <meta
-                  property="og:description"
-                  content={this.props.data[0].dis}
-                />
+                <meta name="keywords" content={this.props.data[0].productsPendants[0].name} />
+                <meta property="og:title" id="fb-title" content={this.props.data[0].title} />
+                <meta property="og:description" content={this.props.data[0].dis} />
                 <meta property="og:type" content="product" />
-                <meta
-                  property="og:url"
-                  id="fb-product-url"
-                  content={window.location.href}
-                />
-                <meta
-                  property="og:image"
-                  id="fb_imageUrl"
-                  content={this.props.data[0].fadeImages}
-                />
+                <meta property="og:url" id="fb-product-url" content={window.location.href} />
+                <meta property="og:image" id="fb_imageUrl" content={this.props.data[0].fadeImages} />
                 <meta name="twitter:card" content="summary" />
                 <meta name="twitter:site" content="@StyloriLove" />
-                <meta
-                  name="twitter:title"
-                  id="twitter-title"
-                  content={this.props.data[0].title}
-                />
-                <meta
-                  name="twitter:description"
-                  content={this.props.data[0].dis}
-                />
-                <meta
-                  name="twitter:image"
-                  id="twitter_imageUrl"
-                  content={this.props.data[0].fadeImages}
-                />
+                <meta name="twitter:title" id="twitter-title" content={this.props.data[0].title} />
+                <meta name="twitter:description" content={this.props.data[0].dis} />
+                <meta name="twitter:image" id="twitter_imageUrl" content={this.props.data[0].fadeImages} />
               </>
             ) : (
               ""
@@ -471,25 +425,19 @@ class ProductDetail extends Component {
             </Grid>
           </Grid> */}
 
-          <div
-            className="pricing-imgzom-media"
-            style={{ maxWidth: "1600px", margin: "auto" }}
-          >
+          <div className="pricing-imgzom-media" style={{ maxWidth: "1600px", margin: "auto" }}>
             <Grid container spacing={12} style={{ marginTop: 70 }}>
               <Grid item xs={6}>
                 <ProductImageZoom data={this.props.data} />
               </Grid>
               <Grid item xs={6}>
                 <div className={classes.priceNowOverallBox}>
-                  <ProductPrice
-                    data={this.props.data}
-                    wishlist={this.props.wishlistdata}
-                  />
+                  <ProductPrice data={this.props.data} wishlist={this.props.wishlistdata} />
                 </div>
                 {/* <div className="overall-box priceecontainer"> 
                   <PriceTabs data={this.props.data} />
                 </div> */}
-                <div  className={classes.priceNowOverallBox}>
+                <div className={classes.priceNowOverallBox}>
                   <PriceBuynow data={this.props.data} />
                 </div>
                 <Grid
@@ -503,14 +451,14 @@ class ProductDetail extends Component {
                     marginBottom: 10,
                   }}
                 >
-                  <Grid item >
+                  <Grid item>
                     <span>Model No:</span>
                   </Grid>
-                  <Grid item >
+                  <Grid item>
                     <span> &nbsp;BN11160700</span>
                   </Grid>
                 </Grid>
-                <Grid container item xs={12} className={classes.productInformationGrid} >
+                <Grid container item xs={12} className={classes.productInformationGrid}>
                   <Grid
                     item
                     xs={12}
@@ -528,12 +476,7 @@ class ProductDetail extends Component {
                     <Grid container item xs={2}>
                       <Avatar alt="NAC" src="/static/images/avatar/1.jpg" />
                     </Grid>
-                    <Grid
-                      container
-                      item
-                      xs={10}
-                      style={{ fontSize: 12, color: "gray", paddingLeft: 15, margin : "auto" }}
-                    >
+                    <Grid container item xs={10} style={{ fontSize: 12, color: "gray", paddingLeft: 15, margin: "auto" }}>
                       <Grid itex xs={12}>
                         Metal : 6.17 grams
                       </Grid>
@@ -546,12 +489,7 @@ class ProductDetail extends Component {
                     <Grid container item xs={2}>
                       <Avatar alt="NAC" src="/static/images/avatar/1.jpg" />
                     </Grid>
-                    <Grid
-                      container
-                      item
-                      xs={10}
-                      style={{ fontSize: 12, color: "gray", paddingLeft: 15, margin : "auto" }}
-                    >
+                    <Grid container item xs={10} style={{ fontSize: 12, color: "gray", paddingLeft: 15, margin: "auto" }}>
                       <Grid itex xs={12}>
                         Purity : 22k (916)
                       </Grid>
@@ -564,12 +502,7 @@ class ProductDetail extends Component {
                     <Grid container item xs={2}>
                       <Avatar alt="NAC" src="/static/images/avatar/1.jpg" />
                     </Grid>
-                    <Grid
-                      container
-                      item
-                      xs={10}
-                      style={{ fontSize: 12, color: "gray", paddingLeft: 15, margin : "auto" }}
-                    >
+                    <Grid container item xs={10} style={{ fontSize: 12, color: "gray", paddingLeft: 15, margin: "auto" }}>
                       <Grid itex xs={12}>
                         No. of Diamonds : 60
                       </Grid>
@@ -610,11 +543,7 @@ class ProductDetail extends Component {
               >
                 <ConnectionHome />
               </Grid> */}
-              <Grid
-                item
-                xs={6}
-                style={{ marginBottom: "20px", marginTop: "20px" }}
-              >
+              <Grid item xs={6} style={{ marginBottom: "20px", marginTop: "20px" }}>
                 <PriceCertification data={this.props.data} />
                 {/* <Request data={this.props.data} /> */}
               </Grid>
@@ -631,7 +560,7 @@ class ProductDetail extends Component {
               margin: "auto",
               paddingLeft: "5%",
               paddingRight: "5%",
-              marginTop : "24px"
+              marginTop: "24px",
             }}
           >
             {
@@ -643,7 +572,7 @@ class ProductDetail extends Component {
                         fontWeight: "bold",
                         color: "gray",
                         marginLeft: 15,
-                        paddingBottom : 10,
+                        paddingBottom: 10,
                       }}
                     >
                       SIMILAR PRODUCTS
@@ -654,13 +583,7 @@ class ProductDetail extends Component {
                       dataCarousel={dataCarouselcollections}
                     >
                       {dummyData.map((val) => {
-                        return (
-                          <ImgMediaCard
-                            data={val}
-                            cardSize="auto"
-                            hoverText={true}
-                          />
-                        );
+                        return <ImgMediaCard data={val} cardSize="auto" hoverText={true} />;
                       })}
                     </Slideshow>
                   </div>
@@ -675,14 +598,10 @@ class ProductDetail extends Component {
               margin: "auto",
               paddingLeft: "5%",
               paddingRight: "5%",
-              marginTop : "12px"
+              marginTop: "12px",
             }}
           >
-            <RatingForm
-              data={this.props.data}
-              clear_rating={this.state.clear}
-              clear_rating_onchange={clear_rating}
-            />
+            <RatingForm data={this.props.data} clear_rating={this.state.clear} clear_rating_onchange={clear_rating} />
           </div>
 
           <div
@@ -691,14 +610,13 @@ class ProductDetail extends Component {
               margin: "auto",
               paddingLeft: "5%",
               paddingRight: "5%",
-              marginTop : "24px"
-            
+              marginTop: "24px",
             }}
           >
             <CustomerReviews rating={this.props.rating} />
           </div>
 
-          <Grid item xs={12}  >
+          <Grid item xs={12}>
             <Footer />
           </Grid>
         </Hidden>
@@ -710,16 +628,10 @@ class ProductDetail extends Component {
           {/* </Grid> */}
 
           <Grid item xs={12}>
-            <PriceBuynow
-              data={this.props.data}
-              wishlist={this.props.wishlistdata}
-            />
+            <PriceBuynow data={this.props.data} wishlist={this.props.wishlistdata} />
           </Grid>
           <Grid item xs={12}>
-            <ProductDetails
-              data={this.props.data}
-              wishlist={this.props.wishlistdata}
-            />
+            <ProductDetails data={this.props.data} wishlist={this.props.wishlistdata} />
           </Grid>
           {/* <Grid
             container
@@ -737,11 +649,7 @@ class ProductDetail extends Component {
 
           <Grid item xs={12} className={classes.similarProducts}>
             <Container style={{ padding: "0px 26px" }}>
-              <div
-                style={{ fontWeight: "bold", color: "#20205a", marginLeft: 15 }}
-              >
-                SIMILAR PRODUCTS
-              </div>
+              <div style={{ fontWeight: "bold", color: "#20205a", marginLeft: 15 }}>SIMILAR PRODUCTS</div>
               <div style={{ width: "100%" }}>
                 <Slideshow
                   // sliderRef={this.slider}
@@ -749,13 +657,7 @@ class ProductDetail extends Component {
                   dataCarousel={dataCarouselcollectionsSm}
                 >
                   {dummyData.map((val) => {
-                    return (
-                      <ImgMediaCard
-                        data={val}
-                        cardSize="auto"
-                        hoverText={true}
-                      />
-                    );
+                    return <ImgMediaCard data={val} cardSize="auto" hoverText={true} />;
                   })}
                 </Slideshow>
               </div>
@@ -764,11 +666,7 @@ class ProductDetail extends Component {
 
           <Grid item xs={12}>
             <Container>
-              <RatingForm
-                data={this.props.data}
-                clear_rating={this.state.clear}
-                clear_rating_onchange={clear_rating}
-              />
+              <RatingForm data={this.props.data} clear_rating={this.state.clear} clear_rating_onchange={clear_rating} />
             </Container>
           </Grid>
           <Grid item xs={12}>
@@ -795,13 +693,7 @@ const Components = (props) => {
   let mapped = datas;
 
   if (!loading && !error) {
-    mapped = productDetails(
-      datas,
-      likedatas,
-      viewedddatas,
-      rating,
-      Globalctx.tabsChange
-    );
+    mapped = productDetails(datas, likedatas, viewedddatas, rating, Globalctx.tabsChange);
   }
   if (Object.keys(mapped).length === 0)
     return (

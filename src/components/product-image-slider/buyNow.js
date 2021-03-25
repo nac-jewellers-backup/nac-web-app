@@ -1,12 +1,4 @@
-import {
-  Button,
-  Hidden,
-  Container,
-  Grid,
-  Modal,
-  Typography,
-  Avatar,
-} from "@material-ui/core";
+import { Button, Hidden, Container, Grid, Modal, Typography, Avatar } from "@material-ui/core";
 import React from "react";
 import "./product-images.css";
 import ProductPrice from "./productPrice";
@@ -33,7 +25,7 @@ const inputsearch = (props, state, handleChanges, handleCodChange) => {
   return (
     <div className={classes.searchCheck} style={{}}>
       {data[0].ProductContactNum.map((val) => (
-        <Grid container spacing={12} >  
+        <Grid container spacing={12}>
           <Grid item xs={7} md={4} lg={4} sm={7}>
             {/* <input
                             placeholder='&#xf041; &nbsp; Enter Pin Code'
@@ -58,11 +50,16 @@ const inputsearch = (props, state, handleChanges, handleCodChange) => {
               }}
             />
           </Grid>
-          <Grid item xs={5} lg={3} md={3} sm={5} 
+          <Grid
+            item
+            xs={5}
+            lg={3}
+            md={3}
+            sm={5}
             style={{
-                color: "#fff",
-                boxShadow: "4px 5px 6px #BEBFBF ",
-              }}
+              color: "#fff",
+              boxShadow: "4px 5px 6px #BEBFBF ",
+            }}
           >
             <Button
               style={{
@@ -70,8 +67,7 @@ const inputsearch = (props, state, handleChanges, handleCodChange) => {
                 boxShadow: "4px 5px 6px #BEBFBF !important",
               }}
               className={
-                state.pincodeNotFound ||
-                state.CheckForCodtitle === "COD Not Available"
+                state.pincodeNotFound || state.CheckForCodtitle === "COD Not Available"
                   ? "pincodeNotFound"
                   : state.CheckForCodtitle === "COD is Available"
                   ? "selectedGreen"
@@ -83,29 +79,15 @@ const inputsearch = (props, state, handleChanges, handleCodChange) => {
             >
               {state.pincodeNotFound ? (
                 <>
-                  <i
-                    class="fa fa-close"
-                    style={{ paddingRight: "3px" }}
-                    aria-hidden="true"
-                  ></i>{" "}
-                  Pincode not found
+                  <i class="fa fa-close" style={{ paddingRight: "3px" }} aria-hidden="true"></i> Pincode not found
                 </>
               ) : state.CheckForCodtitle === "COD Not Available" ? (
                 <>
-                  <i
-                    class="fa fa-close"
-                    style={{ paddingRight: "3px" }}
-                    aria-hidden="true"
-                  ></i>{" "}
-                  COD Not Available
+                  <i class="fa fa-close" style={{ paddingRight: "3px" }} aria-hidden="true"></i> COD Not Available
                 </>
               ) : state.CheckForCodtitle === "COD is Available" ? (
                 <>
-                  <i
-                    class="fa fa-check"
-                    style={{ paddingRight: "3px" }}
-                    aria-hidden="true"
-                  ></i>
+                  <i class="fa fa-check" style={{ paddingRight: "3px" }} aria-hidden="true"></i>
                   {state.CheckForCodtitle}
                 </>
               ) : (
@@ -115,17 +97,7 @@ const inputsearch = (props, state, handleChanges, handleCodChange) => {
           </Grid>
 
           <Hidden smDown>
-            <Grid
-              container
-              item
-              justify="center"
-              xs={12}
-              sm={12}
-              lg={5}
-              md={5}
-              className="content"
-            
-            >
+            <Grid container item justify="center" xs={12} sm={12} lg={5} md={5} className="content">
               <b className={`ships-by ${classes.normalfonts}`}>
                 <span
                   style={{
@@ -164,15 +136,11 @@ const Buydetails = (
     <div>
       {data[0].ProductContactNum.map((val) => (
         <>
-          <Grid container spacing={12} >
-            <Grid item xs={12} lg={4}  className={classes.buynowItem}>
+          <Grid container spacing={12}>
+            <Grid item xs={12} lg={4} className={classes.buynowItem}>
               {/* <NavLink to="/cart" style={{ textDecoration: 'none' }} onClick={handleLocalStorage.bind(this)}> */}
               <div onClick={handleLocalStorage.bind(this)}>
-                <Buynowbutton
-                  sku={data[0].skuId}
-                  class={`buynow-button ${classes.buttons}`}
-                  button="buynow-btn-cont"
-                />
+                <Buynowbutton sku={data[0].skuId} class={`buynow-button ${classes.buttons}`} button="buynow-btn-cont" />
               </div>
               {/* </NavLink> */}
 
@@ -231,14 +199,8 @@ const Buydetails = (
 };
 
 const PriceBuynow = (props) => {
-  const { loading, error, data: CodData, makeRequestCod } = useCheckForCod(
-    CheckForCod,
-    () => {},
-    {}
-  );
-  const { ProductDetailCtx, setFilters } = React.useContext(
-    ProductDetailContext
-  );
+  const { loading, error, data: CodData, makeRequestCod } = useCheckForCod(CheckForCod, () => {}, {});
+  const { ProductDetailCtx, setFilters } = React.useContext(ProductDetailContext);
   const { setCartFilters } = React.useContext(CartContext);
 
   return (
@@ -271,7 +233,7 @@ class Component extends React.Component {
       open: false,
       values: "",
       pincodeValues: {},
-      isShowDetailTab:1,
+      isShowDetailTab: 1,
       CheckForCodtitle: "Check for COD",
       isRequired: false,
       pincodeNotFound: false,
@@ -287,9 +249,7 @@ class Component extends React.Component {
     };
   }
   valus = (valueId) => {
-    var valus_locl = localStorage.getItem("cartDetails")
-      ? JSON.parse(localStorage.getItem("cartDetails")).products
-      : "";
+    var valus_locl = localStorage.getItem("cartDetails") ? JSON.parse(localStorage.getItem("cartDetails")).products : "";
 
     var vals;
     valus_locl &&
@@ -311,10 +271,7 @@ class Component extends React.Component {
     if (prevProps.CodData !== this.props.CodData) {
       // Here i have handeled the "check for COD" condition because the response is not setting to the props instantly
       if (this.props.CodData.data.allPincodeMasters.nodes.length > 0) {
-        if (
-          this.props.data[0].price >
-          this.props.CodData.data.allPincodeMasters.nodes[0].maxCartvalue
-        ) {
+        if (this.props.data[0].price > this.props.CodData.data.allPincodeMasters.nodes[0].maxCartvalue) {
           this.setState({ CheckForCodtitle: "COD Not Available" });
         } else {
           this.setState({ CheckForCodtitle: "COD is Available" });
@@ -411,10 +368,7 @@ class Component extends React.Component {
       this.setState({ isRequired: false });
       var variab = {};
       variab["pincode"] = this.state.values;
-      if (
-        Object.entries(variab).length !== 0 &&
-        variab.constructor === Object
-      ) {
+      if (Object.entries(variab).length !== 0 && variab.constructor === Object) {
         this.props.makeRequestCod(variab);
 
         // this.setState({pincodeValues:this.props.CodData})
@@ -448,57 +402,84 @@ class Component extends React.Component {
 
         <Hidden mdUp>
           <div style={{ marginTop: "10px" }}>
-            <ProductPrice
-              data={this.props.data}
-              wishlist={this.props.wishlist}
-            />
-  <Container maxWidth="lg">
-                <Grid container item xs={12} style={{marginBottom:30,marginTop:30}}>
-               
-                  <Grid container item xs={4}>
-                 <Grid container item xs={12} justify="center" className={this.state.isShowDetailTab === 1 ? classes.activeDetail : ''}>
-                 <Avatar alt="NAC" src="/static/images/avatar/1.jpg"  onClick={()=>{this.setState({isShowDetailTab:1})}}/>
-                 </Grid>
-               
+            <ProductPrice data={this.props.data} wishlist={this.props.wishlist} />
+            <Container maxWidth="lg">
+              <Grid container item xs={12} style={{ marginBottom: 30, marginTop: 30 }}>
+                <Grid container item xs={4}>
+                  <Grid
+                    container
+                    item
+                    xs={12}
+                    justify="center"
+                    className={this.state.isShowDetailTab === 1 ? classes.activeDetail : ""}
+                  >
+                    <Avatar
+                      alt="NAC"
+                      src="/static/images/avatar/1.jpg"
+                      onClick={() => {
+                        this.setState({ isShowDetailTab: 1 });
+                      }}
+                    />
                   </Grid>
-                  <Grid container item xs={4}>
-                 <Grid container item xs={12} justify="center" className={this.state.isShowDetailTab === 2 ? classes.activeDetail : ''}>
-                 <Avatar alt="NAC" src="/static/images/avatar/1.jpg"   onClick={()=>{this.setState({isShowDetailTab:2})}}/>
-                 </Grid>
-                
+                </Grid>
+                <Grid container item xs={4}>
+                  <Grid
+                    container
+                    item
+                    xs={12}
+                    justify="center"
+                    className={this.state.isShowDetailTab === 2 ? classes.activeDetail : ""}
+                  >
+                    <Avatar
+                      alt="NAC"
+                      src="/static/images/avatar/1.jpg"
+                      onClick={() => {
+                        this.setState({ isShowDetailTab: 2 });
+                      }}
+                    />
                   </Grid>
-                  <Grid container item xs={4}>
-                 <Grid container item xs={12} justify="center" className={this.state.isShowDetailTab === 3 ? classes.activeDetail : ''}>
-                 <Avatar alt="NAC" src="/static/images/avatar/1.jpg"  onClick={()=>{this.setState({isShowDetailTab:3})}}/>
-                 </Grid>
-               
+                </Grid>
+                <Grid container item xs={4}>
+                  <Grid
+                    container
+                    item
+                    xs={12}
+                    justify="center"
+                    className={this.state.isShowDetailTab === 3 ? classes.activeDetail : ""}
+                  >
+                    <Avatar
+                      alt="NAC"
+                      src="/static/images/avatar/1.jpg"
+                      onClick={() => {
+                        this.setState({ isShowDetailTab: 3 });
+                      }}
+                    />
                   </Grid>
-                  <Grid container item xs={12} className={classes.detail} >
-                  {this.state.isShowDetailTab === 1 && <Grid itex xs={12}>
-                   Purity : 22k (916)
-                 </Grid>}
-                 {this.state.isShowDetailTab === 2 && 
-                   <Grid itex xs={12}>
-                   Metal : 6.17 grams
-                 </Grid>}
-                 {this.state.isShowDetailTab === 3 && 
-                   <Grid itex xs={12}>
-                  No. of Diamonds : 60
-                 </Grid>}
-                 {/* <Grid itex xs={12}>
+                </Grid>
+                <Grid container item xs={12} className={classes.detail}>
+                  {this.state.isShowDetailTab === 1 && (
+                    <Grid itex xs={12}>
+                      Purity : 22k (916)
+                    </Grid>
+                  )}
+                  {this.state.isShowDetailTab === 2 && (
+                    <Grid itex xs={12}>
+                      Metal : 6.17 grams
+                    </Grid>
+                  )}
+                  {this.state.isShowDetailTab === 3 && (
+                    <Grid itex xs={12}>
+                      No. of Diamonds : 60
+                    </Grid>
+                  )}
+                  {/* <Grid itex xs={12}>
                    Stone : 3.5 grams
                  </Grid> */}
-                 </Grid>
                 </Grid>
-               
-  </Container>
+              </Grid>
+            </Container>
             {/* <PriceTabs data={this.props.data} wishlist={this.props.wishlist} /> */}
-            {inputsearch(
-              this.props,
-              this.state,
-              this.handleChanges,
-              this.handleCodChange
-            )}
+            {inputsearch(this.props, this.state, this.handleChanges, this.handleCodChange)}
             <Buynowfixed
               deleteComment={this.deletechecklists}
               data={this.props.data}

@@ -21,6 +21,7 @@ class ProductDetails extends React.Component {
     };
 
     productsDetails = (data) => {
+        debugger
         const { classes } = this.props;
         return (
             <div>

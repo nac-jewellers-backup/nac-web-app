@@ -28,7 +28,6 @@ const initialCtx = {
 export const ProductDetailContext = React.createContext(initialCtx);
 export const ProductDetailConsumer = ProductDetailContext.Consumer;
 export const TabsProvider = (props) => {
-  debugger
   const [filters, setFilters] = React.useState(initialCtx.ProductDetailCtx.filters);
   const [likedatas, setlikedata] = React.useState([]);
   const [viewedddatas, setvieweddata] = React.useState();
@@ -47,7 +46,7 @@ export const TabsProvider = (props) => {
     pathQueries();
   }, [filters]);
   let variables;
-  debugger;
+
   const { loading, error, data, makeRequest } = useGraphql(PRODUCTDETAILS, () => {}, {});
   const { loading: likeloading, error: likeerror, data: likedata, makeRequest: likemakeRequest } = useGraphql(
     YouMayAlsoLike,
@@ -387,7 +386,7 @@ export const TabsProvider = (props) => {
     rating,
     registerurl,
   };
-  debugger
+
   return (
     <ProductDetailContext.Provider
       value={{
