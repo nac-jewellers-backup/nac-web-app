@@ -8,17 +8,24 @@ import styloriLogo from "../../assets/Stylorilogo.svg";
 import { API_URL } from "config";
 import { SnackBar } from "components/snackbarAlert/SnackBar";
 import { Link } from "react-router-dom";
+import Accordion from "@material-ui/core/Accordion";
+import AccordionSummary from "@material-ui/core/AccordionSummary";
+import AccordionDetails from "@material-ui/core/AccordionDetails";
+
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+
 const useStyles = makeStyles((theme) => ({
   navTitle: {
     cursor: "pointer",
     padding: "7px 0px 6px 0px",
     color: "#6b6b6b",
+    textDecoration: "none",
     "&:hover": {
       textDecoration: "underline",
     },
   },
   colorMain: {
-    backgroundColor: "#b78231",
+    // backgroundColor: "#b78231",
   },
   colorWhiteBackground: {
     backgroundColor: theme.palette.common.white,
@@ -77,10 +84,10 @@ const useStyles = makeStyles((theme) => ({
     borderTop: `1px solid ${theme.palette.common.white}`,
   },
   topConatinerfooter: {
-    color: theme.palette.common.white,
+    color: "#6b6b6b",
     fontSize: "12px",
     lineHeight: "16px",
-    backgroundColor: "#b78231",
+    // backgroundColor: "#b78231",
     padding: "3% 0px 2% 0px",
     margin: "auto",
     [theme.breakpoints.down("sm")]: {
@@ -196,6 +203,19 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "11px",
     color: "#6b6b6b",
     textDecoration: "none",
+  },
+  headingMobile: {
+    fontSize: "14px",
+    color: "#6b6b6b",
+    fontWeight: "800",
+    margin: "0px !important",
+  },
+  bodyMobile: {
+    padding: "0px",
+  },
+  linkMobile: {
+    fontSize: "13px",
+    color: "#6b6b6b",
   },
 }));
 
@@ -494,16 +514,17 @@ export default function Footer(props) {
                 <Grid item xs={3}>
                   {footerData1.map((data) => {
                     return (
-                      <Grid
-                        container
-                        className={classes.navTitle}
-                        onClick={() => {
-                          window.location.href = data.url;
-                        }}
-                        style={{ fontWeight: data.Title === "About Us" ? "800" : "" }}
-                        href="#"
-                      >
-                        {data.Title}
+                      <Grid container>
+                        <Link
+                          className={classes.navTitle}
+                          onClick={() => {
+                            window.location.href = data.url;
+                          }}
+                          style={{ fontWeight: data.Title === "About Us" ? "800" : "" }}
+                          href="#"
+                        >
+                          {data.Title}
+                        </Link>
                       </Grid>
                     );
                   })}
@@ -511,16 +532,17 @@ export default function Footer(props) {
                 <Grid item xs={3}>
                   {footerData2.map((data) => {
                     return (
-                      <Grid
-                        container
-                        className={classes.navTitle}
-                        onClick={() => {
-                          window.location.href = data.url;
-                        }}
-                        style={{ fontWeight: data.Title === "Know Your Jewellery" ? "800" : "" }}
-                        href="#"
-                      >
-                        {data.Title}
+                      <Grid container>
+                        <Link
+                          className={classes.navTitle}
+                          onClick={() => {
+                            window.location.href = data.url;
+                          }}
+                          style={{ fontWeight: data.Title === "Know Your Jewellery" ? "800" : "" }}
+                          href="#"
+                        >
+                          {data.Title}
+                        </Link>
                       </Grid>
                     );
                   })}
@@ -528,16 +550,17 @@ export default function Footer(props) {
                 <Grid item xs={3}>
                   {footerData3.map((data) => {
                     return (
-                      <Grid
-                        container
-                        className={classes.navTitle}
-                        onClick={() => {
-                          window.location.href = data.url;
-                        }}
-                        href="#"
-                        style={{ fontWeight: data.Title === "Customer Service" ? "800" : "" }}
-                      >
-                        {data.Title}
+                      <Grid container>
+                        <Link
+                          className={classes.navTitle}
+                          onClick={() => {
+                            window.location.href = data.url;
+                          }}
+                          style={{ fontWeight: data.Title === "Customer Service" ? "800" : "" }}
+                          href="#"
+                        >
+                          {data.Title}
+                        </Link>
                       </Grid>
                     );
                   })}
@@ -545,16 +568,17 @@ export default function Footer(props) {
                 <Grid item xs={3}>
                   {footerData4.map((data) => {
                     return (
-                      <Grid
-                        container
-                        className={classes.navTitle}
-                        onClick={() => {
-                          window.location.href = data.url;
-                        }}
-                        href="#"
-                        style={{ fontWeight: data.Title === "Contact Us" ? "800" : "" }}
-                      >
-                        {data.Title}
+                      <Grid container>
+                        <Link
+                          className={classes.navTitle}
+                          onClick={() => {
+                            window.location.href = data.url;
+                          }}
+                          style={{ fontWeight: data.Title === "Contact Us" ? "800" : "" }}
+                          href="#"
+                        >
+                          {data.Title}
+                        </Link>
                       </Grid>
                     );
                   })}
@@ -643,6 +667,8 @@ export default function Footer(props) {
           </Grid>
         </Container>
       </Hidden>
+
+      {/* ------------------------------------------------------------------------------------------------------------ */}
       <Hidden only={["lg", "xl", "md"]}>
         <Grid container item className={classes.topConatinerfooter} xs={12}>
           <Grid
@@ -657,6 +683,23 @@ export default function Footer(props) {
             spacing={0.5}
             style={{ margin: "auto", paddingTop: "16px" }}
           >
+            <Accordion style={{ backgroundColor: "rgb(239, 239, 239)", boxShadow: "none", margin: "0px !important" }}>
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon style={{ padding: "0px", margin: "0px" }} />}
+                aria-controls="panel1a-content"
+                id="panel1a-header"
+                style={{ padding: "0px !important", minHeight: "0px", margin: "0px !important" }}
+              >
+                <Typography className={classes.headingMobile}>About Us</Typography>
+              </AccordionSummary>
+              <AccordionDetails className={classes.bodyMobile}>
+                <Typography className={classes.linkMobile}>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo
+                  lobortis eget.
+                </Typography>
+              </AccordionDetails>
+            </Accordion>
+
             {MobilefooterData1.map((data) => {
               return (
                 <Grid
@@ -769,25 +812,7 @@ export default function Footer(props) {
                             </Grid>
                         </Grid>
                     </Grid> */}
-          <Grid item xs={10} style={{ margin: "auto", padding: "12px 0px " }}>
-            <Grid item xs={12} style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-              <TextField
-                id="standard-basic"
-                placeholder={"Enter email id to receive updates on NAC".toUpperCase()}
-                className={classes.textFieldEmailMobile}
-                InputProps={{ classes: { input: classes["MobileInput"] } }}
-              />
-            </Grid>
-            <Grid item xs={12} style={{ paddingTop: "4px" }}>
-              <Button
-                variant="contained"
-                color="secondary"
-                style={{ boxShadow: "rgba(20, 25, 25, 0.32) 6px 7px 6px", fontSize: "10px" }}
-              >
-                Sign Up
-              </Button>
-            </Grid>
-          </Grid>
+
           <Grid
             container
             item
@@ -795,7 +820,13 @@ export default function Footer(props) {
             className={`${classes.colorWhite} ${classes.colorMain}`}
             style={{ padding: "0px 15px 15px 15px", lineHeight: "16px" }}
           >
-            <Grid item xs={12} sm={12} className="footer-icons" style={{ paddingTop: "6px", display: "flex" }}>
+            <Grid
+              item
+              xs={12}
+              sm={12}
+              className="footer-icons"
+              style={{ paddingTop: "6px", display: "flex", justifyContent: "center" }}
+            >
               <a
                 class="valuesallow"
                 style={{ textDecoration: "none" }}
@@ -833,11 +864,7 @@ export default function Footer(props) {
             </Grid>
           </Grid>
         </Grid>
-        <Grid container className={classes.colorMain} xs={10} style={{ margin: "auto" }}>
-          <Grid item className={"imageClass"}>
-            <img src={"https://assets.stylori.com/images/static/footer.png"} style={{ width: "100%", height: "auto" }} />
-          </Grid>
-        </Grid>
+
         <Grid
           container
           className={classes.colorMain}
@@ -853,8 +880,6 @@ export default function Footer(props) {
             padding: "8px 0px",
           }}
         >
-          {/* <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNS4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAgLS0+DQo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiIFsNCgk8IUVOVElUWSBuc19mbG93cyAiaHR0cDovL25zLmFkb2JlLmNvbS9GbG93cy8xLjAvIj4NCl0+DQo8c3ZnIHZlcnNpb249IjEuMSINCgkgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeG1sbnM6YT0iaHR0cDovL25zLmFkb2JlLmNvbS9BZG9iZVNWR1ZpZXdlckV4dGVuc2lvbnMvMy4wLyINCgkgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSIzMHB4IiBoZWlnaHQ9IjMwcHgiIHZpZXdCb3g9Ii0zLjI3NyAtMy4wNjkgMzAgMzAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgLTMuMjc3IC0zLjA2OSAzMCAzMCINCgkgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8ZGVmcz4NCjwvZGVmcz4NCjxwYXRoIGZpbGw9IiM0MzRFNzciIGQ9Ik0xLjk1MywxNi43NzdjMC4zOTksMC43NTYtMC41NTQsMS4xOC0wLjg1NywwLjY4Yy0wLjMxOC0wLjUyOSwwLjQwMS0wLjczMywwLjQwMS0wLjczMw0KCWMtMC4zNjYtMC4zNDctMC44MTMtMC4wNTgtMC45NjcsMC4yMzFjLTAuMTU1LDAuMjg3LTAuNTAyLDEuMzkxLDAuNjExLDEuNzY5YzEuMTExLDAuMzc2LDIuMDQ1LTAuOCwyLjI0Ny0xLjQ3DQoJYzAuMTI5LTAuNDM0LDAuMzcxLTIuMDM1LDAuNTg0LTMuMDg2YzAuMjk4LTEuNDc1LDIuNDUxLTEuMjg2LDQuMTYxLTEuMzI2YzEuMjcyLTAuMDI5LDEuODQ2LDAuMzYzLDEuOTY2LDAuNDU5DQoJYzAuMDE2LDAuMDEyLDAuMDI5LDAuMDI5LDAuMDQyLDAuMDQzYzAuMDk2LDAuMTIsMC40ODgsMC42OTUsMC40NTgsMS45NjdjLTAuMDM3LDEuNzA5LDAuMTUxLDMuODYxLTEuMzI1LDQuMTYNCgljLTEuMDUsMC4yMTMtMi42NTEsMC40NTUtMy4wODYsMC41ODdjLTAuNjY3LDAuMTk5LTEuODQ0LDEuMTMyLTEuNDY3LDIuMjQzczEuNDc3LDAuNzY4LDEuNzY2LDAuNjExDQoJYzAuMjg5LTAuMTU1LDAuNTc5LTAuNiwwLjIzNi0wLjk2NWMwLDAtMC4yMDksMC43MTUtMC43MzYsMC4zOThjLTAuNTAyLTAuMzAxLTAuMDc3LTEuMjU3LDAuNjc4LTAuODU3DQoJYzAuNzU2LDAuNDA0LDAuNzMzLDEuMzA5LTAuMDQzLDEuNzM1Yy0wLjc5LDAuNDM1LTIuMDksMC4zMzQtMi40NTYtMS4zNjZjLTAuMzY0LTEuNjg5LDEuNTMzLTIuNjg5LDIuNzg4LTMuMDMzDQoJYzEuMTY1LTAuMzIyLDEuOTY1LTAuNTU3LDIuMjUxLTEuODY1YzAuMzEtMS40MjYsMC43MTEtMi4zNjMsMC4xNzYtMi44OTZjLTAuNTMyLTAuNTM1LTEuNTAzLTAuMTA3LTIuODk4LDAuMTc2DQoJYy0xLjMxMywwLjI2OS0xLjU0MiwxLjA4Mi0xLjg2MSwyLjI1Yy0wLjM0OCwxLjI1OC0xLjM0OSwzLjE1Mi0zLjAzNSwyLjc5MWMtMS43MDItMC4zNjctMS44MDEtMS42NjgtMS4zNjgtMi40NTcNCglDMC42NDUsMTYuMDQ1LDEuNTUzLDE2LjAyMywxLjk1MywxNi43NzciLz4NCjxwYXRoIGZpbGw9IiM0MzRFNzciIGQ9Ik01LjM4MywxOS42NjJsMC4wNDYsMC4wNDdsLTAuNDU1LDAuNDUzbC0wLjQ0LDAuNDQxbC0wLjA0NS0wLjA0NWMwLDAsMC4xODItMC4zNjEtMC4xMjctMC42NjhsLTAuNzkzLTAuNzk3DQoJYzAsMC0wLjM2Ni0wLjM2My0wLjcwMy0wLjE2bC0wLjA4Mi0wLjA4M2wwLjQzNy0wLjQ0bDAuNDU1LTAuNDU1bDAuMDg1LDAuMDg0Yy0wLjIwNCwwLjMzNiwwLjE2MSwwLjcwMSwwLjE2MSwwLjcwMWwwLjc5NCwwLjc5NQ0KCUM1LjAyNywxOS44NDYsNS4zODMsMTkuNjYyLDUuMzgzLDE5LjY2MiIvPg0KPHBhdGggZmlsbD0iIzQzNEU3NyIgZD0iTTE3LjA0MSwyMS40ODhjMC43NTctMC4zOTgsMS4xODIsMC41NTcsMC42OCwwLjg1N2MtMC41MjcsMC4zMTYtMC43MzQtMC4zOTgtMC43MzQtMC4zOTgNCgljLTAuMzQzLDAuMzY1LTAuMDU2LDAuODA5LDAuMjM0LDAuOTY1YzAuMjg5LDAuMTU2LDEuMzg5LDAuNSwxLjc2OC0wLjYxMmMwLjM3Ny0xLjExLTAuODAyLTIuMDQ0LTEuNDY4LTIuMjQyDQoJYy0wLjQzNS0wLjEzMi0yLjAzOC0wLjM3NC0zLjA4Ny0wLjU4N2MtMS40NzYtMC4yOTktMS4yODctMi40NTEtMS4zMjYtNC4xNmMtMC4wMjgtMS4yNzEsMC4zNjMtMS44NDYsMC40NTYtMS45NjgNCgljMC4wMTUtMC4wMTMsMC4wMy0wLjAzLDAuMDQ3LTAuMDQzYzAuMTE5LTAuMDk1LDAuNjkyLTAuNDg3LDEuOTY0LTAuNDU4YzEuNzExLDAuMDM5LDMuODYzLTAuMTQ4LDQuMTYxLDEuMzI2DQoJYzAuMjEyLDEuMDUsMC40NTUsMi42NTIsMC41ODYsMy4wODZjMC4yLDAuNjcsMS4xMzMsMS44NDYsMi4yNDUsMS40N2MxLjExMi0wLjM3OCwwLjc2Ny0xLjQ4MSwwLjYxMS0xLjc2OQ0KCWMtMC4xNTUtMC4yODktMC42LTAuNTc4LTAuOTY2LTAuMjMxYzAsMCwwLjcxOCwwLjIwNCwwLjQsMC43MzNjLTAuMzAzLDAuNS0xLjI1OCwwLjA3Ni0wLjg1Ny0wLjY4DQoJYzAuNC0wLjc1NCwxLjMwOC0wLjczMiwxLjczNCwwLjA0NWMwLjQzNSwwLjc4OSwwLjMzNSwyLjA5LTEuMzY2LDIuNDU3Yy0xLjY4NywwLjM2MS0yLjY5LTEuNTMzLTMuMDM2LTIuNzkxDQoJYy0wLjMxOS0xLjE2OC0wLjU1NS0xLjk2My0xLjg2Mi0yLjI1Yy0xLjMyOC0wLjI5MS0yLjM2NS0wLjcxMS0yLjktMC4xNzZjLTAuNTMxLDAuNTMzLTAuMjQ0LDEuNjQzLDAuMDM5LDMuMDM3DQoJYzAuMjY2LDEuMzExLDEuMjI0LDEuNDAyLDIuMzg5LDEuNzI1YzEuMjU3LDAuMzQ0LDMuMTU0LDEuMzQ0LDIuNzkxLDMuMDMzYy0wLjM2NiwxLjctMS42NjcsMS44MDEtMi40NTUsMS4zNjYNCglDMTYuMzEsMjIuNzk3LDE2LjI4NywyMS44OTMsMTcuMDQxLDIxLjQ4OCIvPg0KPHBhdGggZmlsbD0iIzQzNEU3NyIgZD0iTTYuNjY1LDEuOTUxYy0wLjc1NSwwLjQtMS4xOC0wLjU1My0wLjY3OC0wLjg1NWMwLjUyNy0wLjMxNiwwLjczNiwwLjQsMC43MzYsMC40DQoJYzAuMzQzLTAuMzY1LDAuMDUzLTAuODEzLTAuMjM2LTAuOTY5Yy0wLjI4OS0wLjE1NC0xLjM4OS0wLjUtMS43NjYsMC42MTJjLTAuMzc3LDEuMTEyLDAuOCwyLjA0NCwxLjQ2NywyLjI0NQ0KCWMwLjQzNSwwLjEzMiwyLjAzNywwLjM3MywzLjA4NiwwLjU4NEMxMC43NSw0LjI3LDEwLjU2Miw2LjQyMiwxMC42LDguMTMxYzAuMDI5LDEuMjcxLTAuMzYzLDEuODQ4LTAuNDU4LDEuOTY4DQoJYy0wLjAxNCwwLjAxMy0wLjAyNywwLjAzLTAuMDQzLDAuMDQyYy0wLjEyLDAuMDk2LTAuNjk0LDAuNDg4LTEuOTY2LDAuNDU5Yy0xLjcxLTAuMDM5LTMuODYzLDAuMTQ4LTQuMTYxLTEuMzI2DQoJYy0wLjIxMy0xLjA1LTAuNDU0LTIuNjUyLTAuNTg0LTMuMDlDMy4xODYsNS41MiwyLjI1Miw0LjM0MiwxLjE0MSw0LjcxOUMwLjAyOCw1LjA5NiwwLjM3NSw2LjE5NywwLjUzLDYuNDg2DQoJYzAuMTU1LDAuMjg5LDAuNjAxLDAuNTc4LDAuOTY3LDAuMjMyYzAsMC0wLjcxOS0wLjIwNS0wLjQwMS0wLjczNGMwLjMwMy0wLjUsMS4yNTctMC4wNzYsMC44NTcsMC42OA0KCWMtMC40LDAuNzU0LTEuMzA4LDAuNzM0LTEuNzM0LTAuMDQ1Yy0wLjQzMy0wLjc4OS0wLjMzNC0yLjA5LDEuMzY4LTIuNDU3YzEuNjg2LTAuMzYzLDIuNjg3LDEuNTM1LDMuMDM1LDIuNzkxDQoJYzAuMzE5LDEuMTY2LDAuNTU1LDEuOTUzLDEuODYxLDIuMjVDNy43OTEsOS41LDguODQ5LDkuOTE0LDkuMzgxLDkuMzgxYzAuNTM1LTAuNTM1LDAuMTQ0LTEuNTA4LTAuMTc2LTIuODk4DQoJQzguOTAyLDUuMTc2LDguMTE5LDQuOTM4LDYuOTU0LDQuNjE5QzUuNjk5LDQuMjczLDMuODAyLDMuMjcxLDQuMTY2LDEuNTg0YzAuMzY2LTEuNjk5LDEuNjY2LTEuNzk5LDIuNDU2LTEuMzY3DQoJQzcuMzk4LDAuNjQzLDcuNDIxLDEuNTUxLDYuNjY1LDEuOTUxIi8+DQo8cGF0aCBmaWxsPSIjNDM0RTc3IiBkPSJNMjEuNzU1LDYuNjY0Yy0wLjQtMC43NTYsMC41NTQtMS4xOCwwLjg1Ny0wLjY4YzAuMzE4LDAuNTMtMC40LDAuNzM0LTAuNCwwLjczNA0KCWMwLjM2NiwwLjM0NiwwLjgxMiwwLjA1NywwLjk2Ni0wLjIzMmMwLjE1Ni0wLjI4OSwwLjUwMS0xLjM5MS0wLjYxMS0xLjc2OHMtMi4wNDQsMC44MDEtMi4yNDUsMS40NjUNCgljLTAuMTMsMC40MzgtMC4zNzQsMi4wNC0wLjU4NiwzLjA5Yy0wLjI5NywxLjQ3NS0yLjQ1LDEuMjg2LTQuMTYxLDEuMzI2Yy0xLjI3MiwwLjAyOS0xLjg0NC0wLjM2My0xLjk2NC0wLjQ1OQ0KCWMtMC4wMTctMC4wMTItMC4wMzItMC4wMjktMC4wNDYtMC4wNDJjLTAuMDk0LTAuMTItMC40ODUtMC42OTYtMC40NTYtMS45NjhjMC4wMzktMS43MDktMC4xNTEtMy44NjEsMS4zMjUtNC4xNjINCgljMS4wNS0wLjIxMSwyLjY1Mi0wLjQ1MiwzLjA4OC0wLjU4NGMwLjY2NS0wLjIwMSwxLjg0NC0xLjEzMywxLjQ2Ny0yLjI0NWMtMC4zNzktMS4xMTItMS40NzktMC43NjctMS43NjgtMC42MTINCgljLTAuMjksMC4xNTYtMC41NzcsMC42MDQtMC4yMzQsMC45NjljMCwwLDAuMjA3LTAuNzE3LDAuNzM0LTAuNGMwLjUwMiwwLjMwMywwLjA3NywxLjI1Ny0wLjY4LDAuODU1DQoJYy0wLjc1NC0wLjQtMC43MzEtMS4zMDksMC4wNDgtMS43MzRjMC43ODgtMC40MzIsMi4wODktMC4zMzIsMi40NTUsMS4zNjdjMC4zNjMsMS42ODgtMS41MzQsMi42ODktMi43OTEsMy4wMzUNCgljLTEuMTY1LDAuMzE4LTEuOTM0LDAuNTY0LTIuMjQ3LDEuODYzYy0wLjMzMiwxLjM1NS0wLjcxMiwyLjM2My0wLjE4MSwyLjg5OGMwLjUzNSwwLjUzMywxLjUwNSwwLjEwNywyLjktMC4xNzgNCgljMS4zMTEtMC4yNjksMS41NDMtMS4wODQsMS44NjItMi4yNWMwLjM0Ni0xLjI1NiwxLjM0OS0zLjE1NCwzLjAzNi0yLjc5MWMxLjcwMSwwLjM2NywxLjgwMSwxLjY2OCwxLjM2NiwyLjQ1Nw0KCUMyMy4wNjQsNy4zOTgsMjIuMTU1LDcuNDE4LDIxLjc1NSw2LjY2NCIvPg0KPHBhdGggZmlsbD0iIzQzNEU3NyIgZD0iTTE4LjMyNSwzLjc4MUwxOC4yOCwzLjczNGwwLjQ1NS0wLjQ1NWwwLjQzOC0wLjQzOGwwLjA0OCwwLjA0NWMwLDAtMC4xODQsMC4zNTcsMC4xMjUsMC42NjZsMC43OTQsMC43OTMNCgljMCwwLDAuMzY1LDAuMzY3LDAuNzAxLDAuMTYybDAuMDg1LDAuMDg0bC0wLjQzOSwwLjQzOWwtMC40NTQsMC40NTVMMTkuOTQ4LDUuNGMwLjIwMi0wLjMzNi0wLjE2MS0wLjY5OS0wLjE2MS0wLjY5OWwtMC43OTUtMC43OTUNCglDMTguNjgzLDMuNTk5LDE4LjMyNSwzLjc4MSwxOC4zMjUsMy43ODEiLz4NCjxwYXRoIGZpbGw9IiM0MzRFNzciIGQ9Ik0xMS44NTgsNi4wOWMtMC43MTQsMC0xLjI5NSwwLjU4LTEuMjk1LDEuMjk3djEuMTk5YzAtMC43MTcsMC41ODEtMS4yOTcsMS4yOTUtMS4yOTcNCgljMC43MTksMCwxLjI5OCwwLjU4LDEuMjk4LDEuMjk3VjcuMzg3QzEzLjE1Niw2LjY3LDEyLjU3Nyw2LjA5LDExLjg1OCw2LjA5Ii8+DQo8cGF0aCBmaWxsPSIjNDM0RTc3IiBkPSJNMTEuODU4LDE3LjQzYzAuNzE5LDAsMS4yOTgtMC41OCwxLjI5OC0xLjI5NXYtMS4xOTljMCwwLjcxMy0wLjU3OSwxLjI5My0xLjI5OCwxLjI5Mw0KCWMtMC43MTQsMC0xLjI5NS0wLjU4LTEuMjk1LTEuMjkzdjEuMTk5QzEwLjU2MywxNi44NSwxMS4xNDUsMTcuNDMsMTEuODU4LDE3LjQzIi8+DQo8cGF0aCBmaWxsPSIjNDM0RTc3IiBkPSJNNi4xOSwxMS43NThjMCwwLjcxNywwLjU3OSwxLjI5NywxLjI5NSwxLjI5N2gxLjIwMWMtMC43MTgsMC0xLjI5OC0wLjU4LTEuMjk4LTEuMjk3DQoJYzAtMC43MTUsMC41OC0xLjI5NSwxLjI5OC0xLjI5NUg3LjQ4NUM2Ljc3LDEwLjQ2Myw2LjE5LDExLjA0Myw2LjE5LDExLjc1OCIvPg0KPHBhdGggZmlsbD0iIzQzNEU3NyIgZD0iTTE3LjUzMiwxMS43NThjMC0wLjcxNS0wLjU4Mi0xLjI5NS0xLjI5OS0xLjI5NWgtMS4yYzAuNzE4LDAsMS4yOTgsMC41OCwxLjI5OCwxLjI5NQ0KCWMwLDAuNzE3LTAuNTgsMS4yOTctMS4yOTgsMS4yOTdoMS4yQzE2Ljk1LDEzLjA1NSwxNy41MzIsMTIuNDc1LDE3LjUzMiwxMS43NTgiLz4NCjxwb2x5Z29uIGZpbGw9IiM0MzRFNzciIHBvaW50cz0iMTMuMDI2LDAgMTEuODU0LDAgMTAuNjg0LDAgMTAuMTU3LDAuNzQ4IDExLjg1NCwyLjQ0MyAxMy41NDksMC43NDggIi8+DQo8cG9seWdvbiBmaWxsPSIjNDM0RTc3IiBwb2ludHM9IjEzLjAyNiwyMC45OTYgMTEuODU0LDIwLjk5NiAxMC42ODQsMjAuOTk2IDEwLjE1NywyMS43NDYgMTEuODU0LDIzLjQ0MyAxMy41NDksMjEuNzQ2ICIvPg0KPHBvbHlnb24gZmlsbD0iIzQzNEU3NyIgcG9pbnRzPSIyMy4xODMsMTAuNTM3IDIyLjAxMSwxMC41MzcgMjAuODM4LDEwLjUzNyAyMC4zMTUsMTEuMjg3IDIyLjAxMSwxMi45ODIgMjMuNzA2LDExLjI4NyAiLz4NCjxwb2x5Z29uIGZpbGw9IiM0MzRFNzciIHBvaW50cz0iMi44NjcsMTAuNTM3IDEuNjk3LDEwLjUzNyAwLjUyNywxMC41MzcgMCwxMS4yODcgMS42OTcsMTIuOTgyIDMuMzk0LDExLjI4NyAiLz4NCjwvc3ZnPg0K" data-reactid="523">
-                    </img>  */}
           © NAC Jewellers Pvt.Ltd. All rights reserved.
         </Grid>
       </Hidden>

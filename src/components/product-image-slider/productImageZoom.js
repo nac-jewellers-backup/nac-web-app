@@ -175,9 +175,8 @@ class ProductImageZoom extends React.Component {
     });
   };
   onErrorImage = async (event, largeImage) => {
-    alert("came");
     let _url = largeImage.replace("1000X1000", "2400X2400");
-    let _notFound = `${CDN_URL}product/1000X1000/productnotfound.webp`;
+    let _notFound = `https://styloriimages-staging.s3.ap-south-1.amazonaws.com/product/1000X1000/productnotfound.webp`;
     return (await this.check_image_exists_in_server(_url)) ? _url : _notFound;
   };
 
@@ -185,7 +184,7 @@ class ProductImageZoom extends React.Component {
     // console.log(this.props.data)
     const { classes, data, customLimit } = this.props;
     const limit = customLimit ? customLimit : 4;
-  
+
     console.log(this.state);
     const { showimage, largeImage, showimageBig, largeImageBig } = this.state;
     const dataCarousel = {
@@ -197,8 +196,8 @@ class ProductImageZoom extends React.Component {
             : data[0].fadeImages.arrOfurls.length
           : 0,
       slidesToScroll: 1,
-      vertical: true,
-      verticalSwiping: true,
+      // vertical: true,
+      // verticalSwiping: true,
       arrows: false,
     };
     // alert(JSON.stringify(data.image_resolution))
@@ -216,69 +215,13 @@ class ProductImageZoom extends React.Component {
     var b = a.length > 0 && a.split("/");
     // var c = a.replace(b[5], data[0].image_resolution_two + 'X' + data[0].image_resolution_two)
     var c = a.length > 0 && a.replace(b[5], "1000X1000");
-    // alert(JSON.stringify(CDN_URL))
+    // alert(JSON.stringify(CDN_URL))consle
+
     return (
       <div>
         {/* {JSON.stringify(showimage)} */}
         <Grid container spacing={_isSilver ? 2 : 12} style={{ paddingRight: _isSilver ? "auto" : "20px" }}>
-          <Grid item xs={_isSilver ? 3 : 2}>
-            <Grid item xs={_isSilver ? 10 : 12} style={{ float: _isSilver && "right" }}>
-              <div style={{ textAlign: !_isSilver && "center" }} className="imgzom-sidecraousel-media">
-                {data && data.length > 0 && data[0] && data[0].fadeImages.arrOfurls.length > 3 ? (
-                  <span
-                    className={
-                      data && data.length > 0 && data[0] && data[0].fadeImages.arrOfurls.length === 4
-                        ? classes.cursor_notallowed
-                        : null
-                    }
-                  >
-                    <Button
-                      onClick={this.previous}
-                      disabled={data && data.length > 0 && data[0] && data[0].fadeImages.arrOfurls.length === 4 ? true : false}
-                    >
-                      <i
-                        className={`fa fa-angle-up ${_isSilver ? classes.iconfill : classes.iconfillStylori}`}
-                        style={{ fontSize: "35px" }}
-                      ></i>
-                    </Button>
-                  </span>
-                ) : null}
-                <Slideshow
-                  sliderRef={this.slider}
-                  height={70}
-                  getmsg={this.getimage}
-                  class={this.props.isSilver ? "vertical-carousel-silver" : `vertical-carousel`}
-                  imgClass="vertical-carousel-img"
-                  fadeImages={data[0].fadeImages.arrOfurls_2X}
-                  dataCarousel={dataCarousel}
-                  currentImage={this.state.showimage}
-                />
-
-                {data && data.length > 0 && data[0] && data[0].fadeImages.arrOfurls.length > 3 ? (
-                  <span
-                    className={
-                      data && data.length > 0 && data[0] && data[0].fadeImages.arrOfurls.length === 4
-                        ? classes.cursor_notallowed
-                        : null
-                    }
-                  >
-                    <Button
-                      onClick={this.next}
-                      disabled={data && data.length > 0 && data[0] && data[0].fadeImages.arrOfurls.length === 4 ? true : false}
-                    >
-                      <i
-                        className={`fa fa-angle-down ${_isSilver ? classes.iconfill : classes.iconfillStylori}`}
-                        style={{ fontSize: "35px" }}
-                        // className={`${classes.colorMain}`}
-                      ></i>
-                    </Button>
-                  </span>
-                ) : null}
-              </div>
-            </Grid>
-          </Grid>
-
-          <Grid item xs={_isSilver ? 9 : 10}>
+          <Grid item xs={_isSilver ? 9 : 11}>
             {/* <div className='imagecard' id="divs" onMouseOut={event => this.zoomOut(event)} onMouseMove={event => this.zoomIn(event)}>
                 {data[0].ProductContactNum[0].isReadyToShip == true ? <div class="one-day-ship" ></div> : ""} */}
             {/* <div id='flashlight'></div> */}
@@ -342,14 +285,17 @@ class ProductImageZoom extends React.Component {
                 ) : (
                   ""
                 )}
-
                 {this.handleVideoCheck(showimage) ? (
                   <video preload="auto" autoplay width="100%" controls style={{ verticalAlign: "bottom" }}>
                     <source src={showimage} type="video/mp4" />
                   </video>
                 ) : (
                   <GlassMagnifier
-                    imageSrc={[largeImage, showimageBig, `${CDN_URL}product/1000X1000/productnotfound.webp`]}
+                    imageSrc={[
+                      largeImage,
+                      showimageBig,
+                      `https://styloriimages-staging.s3.ap-south-1.amazonaws.com/product/1000X1000/productnotfound.webp`,
+                    ]}
                     // imageSrc={largeImage}
                     // onImageLoad={this.imageSrc=`${CDN_URL}product/1000X1000/productnotfound.webp`}
                     imageAlt="Stylori"
@@ -357,8 +303,8 @@ class ProductImageZoom extends React.Component {
                     largeImageSrc={[
                       largeImage,
                       largeImageBig,
-                      `${CDN_URL}product/2400X2400/productnotfound.webp`,
-                      `${CDN_URL}product/1000X1000/productnotfound.webp`,
+                      `https://styloriimages-staging.s3.ap-south-1.amazonaws.com/product/2400X2400/productnotfound.webp`,
+                      `https://styloriimages-staging.s3.ap-south-1.amazonaws.com/product/1000X1000/productnotfound.webp`,
                     ]}
                     magnifierBoxShadow="0px 1px 3px 0px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 2px 1px -1px rgba(0,0,0,0.12)"
                     magnifierBorderColor={this.props.isSilver ? "rgb(58,69,120)" : "#f5003240"}
@@ -383,6 +329,62 @@ class ProductImageZoom extends React.Component {
 
               <div></div>
             </div>
+            <Grid container xs={12} style={{ paddingTop: "20px", display: "flex", justifyContent: "center" }}>
+              <Grid item xs={11}>
+                <div style={{ textAlign: !_isSilver && "center" }} className="imgzom-sidecraousel-media">
+                  {data && data.length > 0 && data[0] && data[0].fadeImages.arrOfurls.length > 3 ? (
+                    <span
+                      className={
+                        data && data.length > 0 && data[0] && data[0].fadeImages.arrOfurls.length === 4
+                          ? classes.cursor_notallowed
+                          : null
+                      }
+                    >
+                      <Button
+                        onClick={this.previous}
+                        disabled={data && data.length > 0 && data[0] && data[0].fadeImages.arrOfurls.length === 4 ? true : false}
+                      >
+                        <i
+                          className={`fa fa-angle-up ${_isSilver ? classes.iconfill : classes.iconfillStylori}`}
+                          style={{ fontSize: "35px" }}
+                        ></i>
+                      </Button>
+                    </span>
+                  ) : null}
+                  <Slideshow
+                    sliderRef={this.slider}
+                    height={30}
+                    getmsg={this.getimage}
+                    class={this.props.isSilver ? "vertical-carousel-silver" : `vertical-carousel`}
+                    imgClass="vertical-carousel-img"
+                    fadeImages={data[0].fadeImages.arrOfurls_2X}
+                    dataCarousel={dataCarousel}
+                    currentImage={this.state.showimage}
+                  />
+
+                  {data && data.length > 0 && data[0] && data[0].fadeImages.arrOfurls.length > 3 ? (
+                    <span
+                      className={
+                        data && data.length > 0 && data[0] && data[0].fadeImages.arrOfurls.length === 4
+                          ? classes.cursor_notallowed
+                          : null
+                      }
+                    >
+                      <Button
+                        onClick={this.next}
+                        disabled={data && data.length > 0 && data[0] && data[0].fadeImages.arrOfurls.length === 4 ? true : false}
+                      >
+                        <i
+                          className={`fa fa-angle-down ${_isSilver ? classes.iconfill : classes.iconfillStylori}`}
+                          style={{ fontSize: "35px" }}
+                          // className={`${classes.colorMain}`}
+                        ></i>
+                      </Button>
+                    </span>
+                  ) : null}
+                </div>
+              </Grid>
+            </Grid>
             <Grid container>
               <Grid
                 item

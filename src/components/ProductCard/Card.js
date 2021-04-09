@@ -427,6 +427,7 @@ function Component(props) {
   const callmouseout = () => {
     setCardState({ ...cardstate, hovered: !cardstate.hovered });
   };
+
   return (
     <div className={classes.root} style={{ marginLeft: "0px !important" }}>
       <Card className={classes.card} style={{ marginLeft: "0px !important" }}>
@@ -458,7 +459,7 @@ function Component(props) {
                         }}
                       >
                         {new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", minimumFractionDigits: 0 }).format(
-                          Math.round(props.static ? 25076 : props.data.offerPrice)
+                          Math.round(props.data.offerPrice)
                         )}
                         <span style={{ display: "flex", alignSelf: "center" }}>
                           {" "}
@@ -468,19 +469,29 @@ function Component(props) {
                               paddingLeft: "6px",
                             }}
                           >
-                            <s style={{ color: "#5d5d5d" }}>10000</s>
+                            <s style={{ color: "#5d5d5d" }}>
+                              {Math.round(props.data.offerPrice) - Math.round(props.data.price) === 0
+                                ? ""
+                                : Math.round(props.data.price)}
+                            </s>
                           </Typography>
                         </span>
                       </Typography>
                     </Grid>
 
                     <Grid items>
-                      <Typography className={classes.discountPercentage}>20% OFF</Typography>
+                      <Typography className={classes.discountPercentage}>
+                        {" "}
+                        {Math.round((100 * props.data.offerPrice) / props.data.price) === 100
+                          ? ""
+                          : `${100 - Math.round((100 * props.data.offerPrice) / props.data.price)}% OFF`}
+                        &nbsp;&nbsp;
+                      </Typography>
                     </Grid>
                   </Grid>
                   <Grid container xs={12}>
                     <Typography variant="body1" component="span" style={{ paddingLeft: "5px" }} className={`${classes.titles}`}>
-                      {props.static ? "Jazzy Gypsy Diamond Hoop Earrings" : props.data.title}
+                      {props.data.title}
                     </Typography>
                   </Grid>
                 </Hidden>
@@ -505,7 +516,7 @@ function Component(props) {
                         }}
                       >
                         {new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", minimumFractionDigits: 0 }).format(
-                          Math.round(props.static ? 25076 : props.data.offerPrice)
+                          Math.round(props.data.offerPrice)
                         )}
                         <span style={{ display: "flex", alignSelf: "center" }}>
                           {" "}
@@ -515,19 +526,29 @@ function Component(props) {
                               paddingLeft: "6px",
                             }}
                           >
-                            <s style={{ color: "#5d5d5d" }}>10000</s>
+                            <s style={{ color: "#5d5d5d" }}>
+                              {" "}
+                              {Math.round(props.data.offerPrice) - Math.round(props.data.price) === 0
+                                ? ""
+                                : Math.round(props.data.price)}
+                            </s>
                           </Typography>
                         </span>
                       </Typography>
                     </Grid>
 
                     <Grid items>
-                      <Typography className={classes.discountPercentage}>20% Off &nbsp;&nbsp; </Typography>
+                      <Typography className={classes.discountPercentage}>
+                        {Math.round((100 * props.data.offerPrice) / props.data.price) === 100
+                          ? ""
+                          : `${100 - Math.round((100 * props.data.offerPrice) / props.data.price)}% OFF`}
+                        &nbsp;&nbsp;
+                      </Typography>
                     </Grid>
                   </Grid>
                   <Grid container xs={12}>
                     <Typography variant="body1" component="span" style={{ paddingLeft: "5px" }} className={`${classes.titles}`}>
-                      {props.static ? "" : props.data.title}
+                      {props.data.title}
                     </Typography>
                   </Grid>
                 </Hidden>

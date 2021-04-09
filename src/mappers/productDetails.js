@@ -173,50 +173,53 @@ const generateImgurls = (PD, val, screen_res, tabsChange) => {
   var metalcolor = null;
   var metalcolor2 = null;
   var largeImageZoom = true;
+
   if (val.length > 0 && PD.metalColor) {
     val.map((imgurl) => {
       if (imgurl && Object.entries(imgurl).length > 0) {
-        if (!handleVideoCheck(imgurl.imageUrl)) {
-          if (imgurl && imgurl.imageUrl && imgurl.imageUrl.indexOf(".") > -1 && imgurl.imageUrl.indexOf("-")[0] > -1) {
-            if (imgurl.imageUrl.split(".")[0].split("-")[1].length > 2) {
-              imgurlsplit = imgurl.imageUrl.split(".")[0].split("-")[1].substr(1);
-            } else {
-              imgurlsplit = imgurl.imageUrl.split(".")[0].charAt(imgurl.imageUrl.split(".")[0].length - 1);
-            }
-          }
+        arrOfurls.push(imgurl.imageUrl);
+        arrOfurls_2X.push(imgurl.imageUrl);
+        // if (!handleVideoCheck(imgurl.imageUrl)) {
+        //   if (imgurl && imgurl.imageUrl && imgurl.imageUrl.indexOf(".") > -1 && imgurl.imageUrl.indexOf("-")[0] > -1) {
+        //     if (imgurl.imageUrl.split(".")[0].split("-")[1].length > 2) {
+        //       imgurlsplit = imgurl.imageUrl.split(".")[0].split("-")[1].substr(1);
+        //     } else {
+        //       imgurlsplit = imgurl.imageUrl.split(".")[0].charAt(imgurl.imageUrl.split(".")[0].length - 1);
+        //     }
+        //   }
 
-          // var imgurlsplit
-          if (PD.metalColor.split(" ").length > 1) {
-            var colorOne = PD.metalColor.split(" ")[0].charAt(0);
-            var colorTwo = PD.metalColor.split(" ")[1].charAt(0);
-            metalcolor = colorOne.concat(colorTwo);
-            metalcolor2 = colorTwo.concat(colorOne);
-          } else {
-            if (PD && PD.metalColor) metalcolor = PD.metalColor.charAt(0);
-            else metalcolor = "";
-          }
+        //   // var imgurlsplit
+        //   if (PD.metalColor.split(" ").length > 1) {
+        //     var colorOne = PD.metalColor.split(" ")[0].charAt(0);
+        //     var colorTwo = PD.metalColor.split(" ")[1].charAt(0);
+        //     metalcolor = colorOne.concat(colorTwo);
+        //     metalcolor2 = colorTwo.concat(colorOne);
+        //   } else {
+        //     if (PD && PD.metalColor) metalcolor = PD.metalColor.charAt(0);
+        //     else metalcolor = "";
+        //   }
 
-          // if (imgurlsplit === metalcolor) {
+        //   // if (imgurlsplit === metalcolor) {
 
-          // arrOfurls.push(injectUrl_url_construct(imgurl, CDN_URL, screen_res))
+        //   // arrOfurls.push(injectUrl_url_construct(imgurl, CDN_URL, screen_res))
 
-          // }
-          if (!tabsChange) {
-            if (imgurl.productColor === PD.metalColor || imgurl.productColor === PD.metalColor) {
-              arrOfurls.push(injectUrl_url_construct(imgurl, CDN_URL, screen_res));
-              arrOfurls_2X.push(injectUrl_url_construct(imgurl, CDN_URL, screen_res, largeImageZoom));
-            }
-          } else {
-            arrOfurls.push(injectUrl_url_construct(imgurl, CDN_URL, screen_res));
-            arrOfurls_2X.push(injectUrl_url_construct(imgurl, CDN_URL, screen_res, largeImageZoom));
-          }
+        //   // }
+        //   if (!tabsChange) {
+        //     if (imgurl.productColor === PD.metalColor || imgurl.productColor === PD.metalColor) {
+        //       arrOfurls.push(injectUrl_url_construct(imgurl, CDN_URL, screen_res));
+        //       arrOfurls_2X.push(injectUrl_url_construct(imgurl, CDN_URL, screen_res, largeImageZoom));
+        //     }
+        //   } else {
+        //     arrOfurls.push(injectUrl_url_construct(imgurl, CDN_URL, screen_res));
+        //     arrOfurls_2X.push(injectUrl_url_construct(imgurl, CDN_URL, screen_res, largeImageZoom));
+        //   }
 
-          return { arrOfurls, arrOfurls_2X };
-        } else {
-          arrOfurls.push(`${CDN_URL}${imgurl.imageUrl}`);
-          arrOfurls_2X.push(`${CDN_URL}${imgurl.imageUrl}`);
-          return { arrOfurls, arrOfurls_2X };
-        }
+        //   return { arrOfurls, arrOfurls_2X };
+        // } else {
+        //   arrOfurls.push(`${CDN_URL}${imgurl.imageUrl}`);
+        //   arrOfurls_2X.push(`${CDN_URL}${imgurl.imageUrl}`);
+        //   return { arrOfurls, arrOfurls_2X };
+        // }
       } else {
         return null;
       }
@@ -334,8 +337,8 @@ const handle_mapper = (val) => {
 };
 // icon: "https://img.icons8.com/color/48/000000/gold-bars.png"})
 export default function (data, like_data, viewedddatas, rating, tabsChange) {
-  // debugger;
-  // console.log(data);
+ 
+
   let mapperdata = [];
   try {
     // mapperda = ;
@@ -344,8 +347,10 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
     mapperdata = [];
   }
   const _format = mapperdata.map((PD) => {
+  
     let _d;
     try {
+   
       _d = {
         message: rating && rating.CodData && rating.CodData.data && rating.CodData.data.allCustomerReviews.nodes,
         // title: rating.CodData.data.allCustomerReviews.nodes[0].title,
@@ -368,6 +373,7 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
           PD.transSkuDescriptionsBySkuId.nodes[0].skuDescription !== ""
             ? PD.transSkuDescriptionsBySkuId.nodes[0].skuDescription
             : "",
+        sellingPrice: PD && PD.sellingPrice ? PD.sellingPrice : "",
         isactive: PD.productListByProductId.isactive ?? "",
         productType: PD.productListByProductId.productType && PD.productListByProductId.productType,
         fadeImages:

@@ -63,10 +63,10 @@ const styles = (theme) => ({
 
   productInformationGrid: {
     [theme.breakpoints.only("md")]: {
-      marginBottom: "14px",
+      marginBottom: "10px",
     },
     [theme.breakpoints.up("lg")]: {
-      marginBottom: "50px",
+      marginBottom: "25px",
     },
   },
   priceNowOverallBox: {
@@ -100,7 +100,6 @@ class ProductDetail extends Component {
   };
 
   render() {
-  
     // alert(JSON.stringify(this.props.data))
     // alert(JSON.stringify(this.props.data))
     const { classes } = this.props;
@@ -379,7 +378,10 @@ class ProductDetail extends Component {
       nextArrow: <ArrowRight />,
     };
 
+    console.clear();
+    console.log("----", this.props.data);
     // alert(JSON.stringify(this.props.setratingcountsclear))
+    // let diamondWeight = this.props.data[0].productsDetails[1].namedetail[3].details ?? "";
     return (
       <div>
         <div>
@@ -425,8 +427,11 @@ class ProductDetail extends Component {
             </Grid>
           </Grid> */}
 
-          <div className="pricing-imgzom-media" style={{ maxWidth: "1600px", margin: "auto" }}>
-            <Grid container spacing={12} style={{ marginTop: 70 }}>
+          <Grid
+            className="pricing-imgzom-media"
+            style={{ maxWidth: "1600px", margin: "auto", display: "flex", justifyContent: "center" }}
+          >
+            <Grid xs={11} container spacing={12} style={{ marginTop: 70 }}>
               <Grid item xs={6}>
                 <ProductImageZoom data={this.props.data} />
               </Grid>
@@ -455,33 +460,34 @@ class ProductDetail extends Component {
                     <span>Model No:</span>
                   </Grid>
                   <Grid item>
-                    <span> &nbsp;BN11160700</span>
+                    <span>
+                      {" "}
+                      &nbsp;{this.props.data[0].skuId} &nbsp; &nbsp;{" "}
+                      <span style={{ fontSize: "10px", fontStyle: "normal " }}>|</span> &nbsp; &nbsp;
+                    </span>
+                    <span
+                      style={{
+                        color: "gray",
+                        fontWeight: "bold",
+                        fontSize: 12,
+                        marginBottom: 8,
+                      }}
+                    >
+                      Product Information: <span className={classes.spanIcon}>i</span>
+                    </span>
                   </Grid>
                 </Grid>
                 <Grid container item xs={12} className={classes.productInformationGrid}>
-                  <Grid
-                    item
-                    xs={12}
-                    style={{
-                      color: "gray",
-                      fontWeight: "bold",
-                      fontSize: 12,
-                      marginBottom: 8,
-                    }}
-                  >
-                    <span>Product Information:</span>
-                    <span className={classes.spanIcon}>i</span>
-                  </Grid>
                   <Grid container item xs={4} style={{ paddingTop: "8px" }}>
                     <Grid container item xs={2}>
                       <Avatar alt="NAC" src="/static/images/avatar/1.jpg" />
                     </Grid>
                     <Grid container item xs={10} style={{ fontSize: 12, color: "gray", paddingLeft: 15, margin: "auto" }}>
                       <Grid itex xs={12}>
-                        Metal : 6.17 grams
+                        Metal Weight
                       </Grid>
                       <Grid itex xs={12}>
-                        Stone : 3.5 grams
+                        {this.props.data[0].productsDetails[0].namedetail[2].details ?? ""}
                       </Grid>
                     </Grid>
                   </Grid>
@@ -491,10 +497,11 @@ class ProductDetail extends Component {
                     </Grid>
                     <Grid container item xs={10} style={{ fontSize: 12, color: "gray", paddingLeft: 15, margin: "auto" }}>
                       <Grid itex xs={12}>
-                        Purity : 22k (916)
+                        Metal Purity
                       </Grid>
                       <Grid itex xs={12}>
-                        Color : Yellow Gold
+                        {this.props.data[0].productsDetails[0].namedetail[1].details ?? ""}
+                        {/* 22K Yellow Gold */}
                       </Grid>
                     </Grid>
                   </Grid>
@@ -504,53 +511,35 @@ class ProductDetail extends Component {
                     </Grid>
                     <Grid container item xs={10} style={{ fontSize: 12, color: "gray", paddingLeft: 15, margin: "auto" }}>
                       <Grid itex xs={12}>
-                        No. of Diamonds : 60
+                        Diamond Weight
                       </Grid>
                       <Grid itex xs={12}>
-                        Total Carat : 12.4 ct
+                        {this.props &&
+                        this.props.data &&
+                        this.props.data.length > 0 &&
+                        this.props.data[0] &&
+                        this.props.data[0].productsDetails.length > 0 &&
+                        this.props.data[0].productsDetails[1] &&
+                        this.props.data[0].productsDetails[1].namedetail.length > 0 &&
+                        this.props.data[0].productsDetails[1].namedetail[3] &&
+                        this.props.data[0].productsDetails[1].namedetail[3].details
+                          ? this.props.data[0].productsDetails[1].namedetail[3].details
+                          : ""}
+                        {/* {this.props.data[0].productsDetails[1].namedetail[3].details != undefined &&
+                        this.props.data[0].productsDetails[1].namedetail[3].details != null
+                          ? this.props.data[0].productsDetails[1].namedetail[3].details
+                          : ""} */}
+                        {/* {diamondWeight} */}
                       </Grid>
                     </Grid>
                   </Grid>
                 </Grid>
-                <div style={{ paddingTop: 6 }}>
-                  <ConnectionHome />
+                <div>
+                  <p style={{ color: "gray", paddingBottom: "8px", borderBottom: "1px solid gray" }}>CERTIFICATES</p>
                 </div>
               </Grid>
             </Grid>
-          </div>
-
-          <div
-            style={{ background: "whitesmoke" }}
-            className="pricing-product-media"
-            style={{ maxWidth: "1600px", margin: "auto" }}
-          >
-            <Grid container spacing={12}>
-              <Grid
-                item
-                xs={6}
-                style={{
-                  marginBottom: "20px",
-                  marginTop: "20px",
-                  paddingRight: "20px",
-                }}
-              >
-                <ProductDetails data={this.props.data} />
-              </Grid>
-              {/* <Grid
-                item
-                xs={6}
-                style={{ marginBottom: "20px", marginTop: "20px" }}
-              >
-                <ConnectionHome />
-              </Grid> */}
-              <Grid item xs={6} style={{ marginBottom: "20px", marginTop: "20px" }}>
-                <PriceCertification data={this.props.data} />
-                {/* <Request data={this.props.data} /> */}
-              </Grid>
-              <br />
-            </Grid>
-          </div>
-
+          </Grid>
           <Grid
             container
             item
@@ -591,6 +580,37 @@ class ProductDetail extends Component {
               </>
             }
           </Grid>
+          <div
+            style={{ background: "whitesmoke" }}
+            className="pricing-product-media"
+            style={{ maxWidth: "1600px", margin: "auto" }}
+          >
+            <Grid container spacing={12}>
+              <Grid
+                item
+                xs={6}
+                style={{
+                  marginBottom: "20px",
+                  marginTop: "20px",
+                  paddingRight: "20px",
+                }}
+              >
+                <ProductDetails data={this.props.data} />
+              </Grid>
+              {/* <Grid
+                item
+                xs={6}
+                style={{ marginBottom: "20px", marginTop: "20px" }}
+              >
+                <ConnectionHome />
+              </Grid> */}
+              <Grid item xs={6} style={{ marginBottom: "20px", marginTop: "20px" }}>
+                {/* <ProductDetails data={this.props.data} /> */}
+                {/* <Request data={this.props.data} /> */}
+              </Grid>
+              <br />
+            </Grid>
+          </div>
 
           <div
             style={{

@@ -81,7 +81,7 @@ const Productprice = (props, anchorEl, handleClick, handleClose, handleReadMore,
   const { classes } = props;
   const open = anchorEl;
   var wishlist = props.wishlist;
-  debugger;
+
   console.log(props);
   // alert(JSON.stringify(props.wishlist.wishlistdata.nodes.skuId))
   // var wishlist = this.props && this.props.wishlist &&
@@ -172,7 +172,7 @@ const Productprice = (props, anchorEl, handleClick, handleClose, handleReadMore,
                           <Hidden mdUp>
                             <div className={classes.width} style={{ padding: "0px 10px  0px 10px " }}>
                               <Pricing
-                                price={data[0].price}
+                                price={data[0].sellingPrice}
                                 offerPrice={data[0].offerPrice}
                                 offerDiscount={val.offerDiscount}
                                 pdpagesm={true}
@@ -192,7 +192,7 @@ const Productprice = (props, anchorEl, handleClick, handleClose, handleReadMore,
                       >
                         {val.dis}
                       </p>
-                      <Grid xs={10}>
+                      {/* <Grid xs={10}>
                         <p className={`pdp-desc ${viewMore ? "" : classes.disDescriptionPD}`}>
                           <span style={{ width: "80%" }}>
                             <span
@@ -205,7 +205,7 @@ const Productprice = (props, anchorEl, handleClick, handleClose, handleReadMore,
                             </span>
                           </span>
                         </p>
-                      </Grid>
+                      </Grid> */}
                     </Hidden>
                   </div>
                 </Grid>
@@ -317,7 +317,7 @@ const Productprice = (props, anchorEl, handleClick, handleClose, handleReadMore,
           <Hidden smDown>
             <div className={classes.width}>
               {data[0].price === data[0].offerPrice ? (
-                <Pricing offerPrice={data[0].save} pdpage={true}>
+                <Pricing offerPrice={data[0].sellingPrice} pdpage={true}>
                   {/* <Grid container spacing={12}>
                                     <div className={`price-info ${classes.dis}`}>
                                         <Grid item xs={4} lg={2} className={`discount-container ${classes.dis}`}>
@@ -331,8 +331,8 @@ const Productprice = (props, anchorEl, handleClick, handleClose, handleReadMore,
                 </Pricing>
               ) : (
                 <Pricing
-                  offerPrice={data[0].save}
-                  price={data[0].save}
+                  offerPrice={data[0].sellingPrice}
+                  price={data[0].sellingPrice}
                   pdpage={true}
 
                   // offerDiscount={val.offerDiscount}
