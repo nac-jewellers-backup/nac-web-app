@@ -133,7 +133,7 @@ const Gallery = (props, callmouseover, callmouseout, cardstate, scrollPosition) 
       </div>
       <Link
         className={"cardImage"}
-        to={{ pathname: `/jewellery/earrings?skuid=${props.data.skuID}` }}
+        to={{ pathname: `/jewellery/earrings?skuid=${props.data.skuID ?? ""}` }}
         style={{ textDecoration: "none" }}
         target="_blank"
         onClick={handleProductDetatiContext(props)}
@@ -181,12 +181,7 @@ const Gallery = (props, callmouseover, callmouseout, cardstate, scrollPosition) 
           // placeholderSrc={renderImages(props, cardstate) === '' ? 'https://alpha-assets.stylori.com/1000x1000/images/static/Image_Not_Available.jpg' : ''}
           // placeholder	= { <div >loading.....</div> }
         ></LazyLoadImage>
-        {props.hoverText && (
-          <div className="overlayImage">
-            Today, NAC has expanded its arms and has found many place in and around Chennai and an exclusive showroom at
-            Vijaywada.
-          </div>
-        )}
+        {props.hoverText && <div className="overlayImage">{props.data.description}</div>}
       </Link>
     </div>
   );
@@ -407,7 +402,7 @@ const renderImages = (props, cardstate) => {
 
     // console.info('props.data.image[filterType]',props.data.image[filterType]);
     // return props.data.image['hoverImage'].length === 0 ?"https://alpha-assets.stylori.com/1000x1000/images/static/Image_Not_Available.jpg" : props.data.image[filterType].map(imgs => `${imgs.img} ${imgs.size}`).toString()
-    return props.data.image["hoverImage"].length === 0
+    return props.data && props.data.image && props.data.image["hoverImage"] && props.data.image["hoverImage"].length === 0
       ? "https://alpha-assets.stylori.com/1000x1000/images/static/Image_Not_Available.jpg"
       : props.data.image[filterType].img;
   }

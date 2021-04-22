@@ -533,11 +533,17 @@ const Provider = (props) => {
     // debugger;
     console.log(filters);
     if (filters && Object.entries(filters).length !== 0 && filters.constructor === Object) {
-      // debugger;
+      debugger;
       console.log(Object.entries(filters).length);
       if (
+        Object.values(filters).length > 0 &&
         Object.values(filters).filter((val) => {
-          if (Object.entries(val).length > 0 && val.constructor === Object) {
+          if (
+            Object.entries(val) !== undefined &&
+            Object.entries(val) !== null &&
+            Object.entries(val).length > 0 &&
+            val.constructor === Object
+          ) {
             return val;
           }
         }).length > 0

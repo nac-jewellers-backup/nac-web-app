@@ -1690,7 +1690,7 @@ body {
 
 .imagecard {
   width: 100% !important;
-  /* height: 100%; */
+  height: 100%;
   border: 1px solid #ccc;
   counter-increment: inherit;
   float: left !important;

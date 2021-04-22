@@ -103,6 +103,7 @@ class ProductDetail extends Component {
     // alert(JSON.stringify(this.props.data))
     // alert(JSON.stringify(this.props.data))
     const { classes } = this.props;
+
     const dummyData = [
       {
         totalCount: 2788,
@@ -370,7 +371,7 @@ class ProductDetail extends Component {
       autoplay: true,
       infinite: true,
       accessibility: true,
-      speed: 2500,
+      speed: 3000,
       // fade: true,
       slidesToShow: 1,
       slidesToScroll: 1,
@@ -378,8 +379,10 @@ class ProductDetail extends Component {
       nextArrow: <ArrowRight />,
     };
 
-    console.clear();
+   
     console.log("----", this.props.data);
+
+   
     // alert(JSON.stringify(this.props.setratingcountsclear))
     // let diamondWeight = this.props.data[0].productsDetails[1].namedetail[3].details ?? "";
     return (
@@ -571,7 +574,7 @@ class ProductDetail extends Component {
                       class="subslider-carousel"
                       dataCarousel={dataCarouselcollections}
                     >
-                      {dummyData.map((val) => {
+                      {this.props.data[0].fadeImageSublist.map((val) => {
                         return <ImgMediaCard data={val} cardSize="auto" hoverText={true} />;
                       })}
                     </Slideshow>
@@ -621,7 +624,7 @@ class ProductDetail extends Component {
               marginTop: "12px",
             }}
           >
-            <RatingForm data={this.props.data} clear_rating={this.state.clear} clear_rating_onchange={clear_rating} />
+            <CustomerReviews rating={this.props.rating} />
           </div>
 
           <div
@@ -633,9 +636,48 @@ class ProductDetail extends Component {
               marginTop: "24px",
             }}
           >
-            <CustomerReviews rating={this.props.rating} />
+            <RatingForm data={this.props.data} clear_rating={this.state.clear} clear_rating_onchange={clear_rating} />
           </div>
-
+          <Grid
+            container
+            item
+            xs={12}
+            style={{
+              maxWidth: "1600px",
+              margin: "auto",
+              paddingLeft: "5%",
+              paddingRight: "5%",
+              marginTop: "24px",
+            }}
+          >
+            {
+              <>
+                <Hidden smDown>
+                  <div style={{ paddingTop: 8, width: "100%" }}>
+                    <div
+                      style={{
+                        fontWeight: "bold",
+                        color: "gray",
+                        marginLeft: 15,
+                        paddingBottom: 10,
+                      }}
+                    >
+                      SHOP OTHER CATEGORIES
+                    </div>
+                    <Slideshow
+                      // sliderRef={this.slider}
+                      class="subslider-carousel"
+                      dataCarousel={dataCarouselcollections}
+                    >
+                      {this.props.data[0].fadeImageSublistRecentlyViewed.map((val) => {
+                        return <ImgMediaCard data={val} cardSize="auto" hoverText={true} />;
+                      })}
+                    </Slideshow>
+                  </div>
+                </Hidden>
+              </>
+            }
+          </Grid>
           <Grid item xs={12}>
             <Footer />
           </Grid>
@@ -676,7 +718,7 @@ class ProductDetail extends Component {
                   class="subslider-carousel"
                   dataCarousel={dataCarouselcollectionsSm}
                 >
-                  {dummyData.map((val) => {
+                  {this.props.data[0].fadeImageSublist.map((val) => {
                     return <ImgMediaCard data={val} cardSize="auto" hoverText={true} />;
                   })}
                 </Slideshow>

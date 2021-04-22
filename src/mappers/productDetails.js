@@ -335,10 +335,105 @@ const handle_mapper = (val) => {
     return null;
   }
 };
+
+// const otherproducts = (viewedddatas) => {
+//   debugger;
+//   console.log(
+//     viewedddatas !== undefined && viewedddatas !== null
+//       ? console.log("eeeehadf", viewedddatas.Bangles.nodes[0].productImagesByProductId)
+//       : "noooooooooooooooooo"
+//   );
+
+// viewedddatas != undefined && viewedddatas != null
+// ? Object.entries(viewedddatas).map(([key, value]) => {
+//     console.log(key);
+//     console.log(value);
+//   })
+// : " ";
+// return viewedddatas !== undefined && viewedddatas !== null ? ["working"] : ["not working"];
+
+// viewedddatas !== undefined && viewedddatas !== null && viewedddatas.data && viewedddatas.data.Bangles
+//   ? console.log(viewedddatas.data.Bangles)
+//   : "its not working";
+// viewedddatas.data != undefined && viewedddatas.data != null
+//   ? Object.entries(viewedddatas.data).map(([key, value]) => {
+//       console.log(key);
+//       console.log(value);
+//     })
+//   : " ";
+//   return viewedddatas != undefined && viewedddatas != null
+//     ? [
+//         {
+//           img: viewedddatas.Bangles.nodes[0].productImagesByProductId.nodes[0].imageUrl ?? " ",
+
+//           image: {
+//             placeImage: {
+//               img: viewedddatas.Bangles.nodes[0].productImagesByProductId.nodes[0].imageUrl ?? "",
+//             },
+//             hoverImage: {
+//               img: viewedddatas.Bangles.nodes[0].productImagesByProductId.nodes[0].imageUrl ?? "",
+//             },
+//           },
+//           title: viewedddatas.Bangles.nodes[0].productListByProductSku.productType ?? "",
+//           offerPrice: "",
+//           skuID: viewedddatas.Bangles.nodes[0].productSku ?? "",
+//           description: viewedddatas.Bangles.nodes[0].productListByProductSku.prodDescription ?? "",
+//         },
+//         {
+//           img: viewedddatas.Bracelets.nodes[0].productImagesByProductId.nodes[0].imageUrl ?? " ",
+
+//           image: {
+//             placeImage: {
+//               img: viewedddatas.Bracelets.nodes[0].productImagesByProductId.nodes[0].imageUrl ?? "",
+//             },
+//             hoverImage: {
+//               img: viewedddatas.Bracelets.nodes[0].productImagesByProductId.nodes[0].imageUrl ?? "",
+//             },
+//           },
+//           title: viewedddatas.Bracelets.nodes[0].productListByProductSku.productType ?? "",
+//           offerPrice: "",
+//           skuID: viewedddatas.Bracelets.nodes[0].productSku ?? "",
+//           description: viewedddatas.Bracelets.nodes[0].productListByProductSku.prodDescription ?? "",
+//         },
+//         {
+//           img: viewedddatas.Earrings.nodes[0].productImagesByProductId.nodes[0].imageUrl ?? " ",
+
+//           image: {
+//             placeImage: {
+//               img: viewedddatas.Earrings.nodes[0].productImagesByProductId.nodes[0].imageUrl ?? "",
+//             },
+//             hoverImage: {
+//               img: viewedddatas.Earrings.nodes[0].productImagesByProductId.nodes[0].imageUrl ?? "",
+//             },
+//           },
+//           title: viewedddatas.Earrings.nodes[0].productListByProductSku.productType ?? "",
+//           offerPrice: "",
+//           skuID: viewedddatas.Earrings.nodes[0].productSku ?? "",
+//           description: viewedddatas.Earrings.nodes[0].productListByProductSku.prodDescription ?? "",
+//         },
+
+//         {
+//           img: viewedddatas.Rings.nodes[0].productImagesByProductId.nodes[0].imageUrl ?? " ",
+
+//           image: {
+//             placeImage: {
+//               img: viewedddatas.Rings.nodes[0].productImagesByProductId.nodes[0].imageUrl ?? "",
+//             },
+//             hoverImage: {
+//               img: viewedddatas.Rings.nodes[0].productImagesByProductId.nodes[0].imageUrl ?? "",
+//             },
+//           },
+//           title: viewedddatas.Rings.nodes[0].productListByProductSku.productType ?? "",
+//           offerPrice: "",
+//           skuID: viewedddatas.Rings.nodes[0].productSku ?? "",
+//           description: viewedddatas.Rings.nodes[0].productListByProductSku.prodDescription ?? "",
+//         },
+//       ]
+//     : [];
+// };
 // icon: "https://img.icons8.com/color/48/000000/gold-bars.png"})
 export default function (data, like_data, viewedddatas, rating, tabsChange) {
- 
-
+  console.log(like_data);
   let mapperdata = [];
   try {
     // mapperda = ;
@@ -347,10 +442,8 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
     mapperdata = [];
   }
   const _format = mapperdata.map((PD) => {
-  
     let _d;
     try {
-   
       _d = {
         message: rating && rating.CodData && rating.CodData.data && rating.CodData.data.allCustomerReviews.nodes,
         // title: rating.CodData.data.allCustomerReviews.nodes[0].title,
@@ -454,7 +547,7 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
             },
             tab2: {
               header: "Metal Purity",
-              // purity: PD.transSkuListsByProductId.nodes!==undefined?(PD.transSkuListsByProductId.nodes).map(P => (P.purity)):"",
+              // purity: PD.productListByProductSku.nodes!==undefined?(PD.transSkuListsByProductId.nodes).map(P => (P.purity)):"",
               // metalColor: (PD.transSkuListsByProductId.nodes).map(P => (P.metalColor)),
               Children: PD.productListByProductId && PD.productListByProductId.colourVarient,
             },
@@ -803,6 +896,7 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
           },
         ],
         // like_data.data.youMayalsolike1.nodes
+
         fadeImageSublist:
           like_data &&
           like_data.data &&
@@ -812,46 +906,57 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
             ? like_data.data.youMayalsolike1 && like_data.data.youMayalsolike1.nodes.length > 0
               ? like_data.data.youMayalsolike1.nodes.map((val) => {
                   return {
-                    img:
-                      `${CDN_URL}${val && val.productImagesByProductId && val.productImagesByProductId.nodes}` &&
-                      injectUrl_url_construct(
-                        val.productImagesByProductId.nodes[0] && val.productImagesByProductId.nodes[0],
-                        CDN_URL,
-                        colSize_like_view
-                      ),
+                    img: val.productImagesByProductId.nodes[0].imageUrl,
 
+                    // `${CDN_URL}${val && val.productImagesByProductId && val.productImagesByProductId.nodes}` &&
+                    // injectUrl_url_construct(
+                    //   val.productImagesByProductId.nodes[0] && val.productImagesByProductId.nodes[0],
+                    //   CDN_URL,
+                    //   colSize_like_view
+                    // ),
+                    image: {
+                      placeImage: {
+                        img: val.productImagesByProductId.nodes[0].imageUrl,
+                      },
+                      hoverImage: {
+                        img: val.productImagesByProductId.nodes[0].imageUrl,
+                      },
+                    },
                     title: val && val.productName && val.productName,
-                    price:
+                    offerPrice:
                       val &&
                       val.transSkuListsByProductId &&
                       val.transSkuListsByProductId.nodes &&
                       val.transSkuListsByProductId.nodes.length > 0 &&
                       val.transSkuListsByProductId.nodes[0] &&
-                      val.transSkuListsByProductId.nodes[0].discountPrice &&
-                      val.transSkuListsByProductId.nodes[0].discountPrice
-                        ? Math.round(val.transSkuListsByProductId.nodes[0].discountPrice)
+                      val.transSkuListsByProductId.nodes[0].sellingPrice &&
+                      val.transSkuListsByProductId.nodes[0].sellingPrice
+                        ? Math.round(val.transSkuListsByProductId.nodes[0].sellingPrice)
                         : 0,
-                    url:
+                    skuID:
                       val &&
                       val.transSkuListsByProductId &&
                       val.transSkuListsByProductId.nodes &&
                       val.transSkuListsByProductId.nodes.length > 0 &&
                       val.transSkuListsByProductId.nodes[0] &&
-                      val.transSkuListsByProductId.nodes[0].skuUrl
-                        ? val.transSkuListsByProductId.nodes[0].skuUrl
+                      val.transSkuListsByProductId.nodes[0].generatedSku
+                        ? val.transSkuListsByProductId.nodes[0].generatedSku
                         : "",
+                    description: "",
                   };
                 })
               : like_data && like_data.data && like_data.data.youMayalsolike2 && like_data.data.youMayalsolike2.nodes
               ? like_data.data.youMayalsolike2.nodes.map((val) => {
                   return {
-                    img: `${CDN_URL}${val && val.productImagesByProductId && val.productImagesByProductId.nodes}`
-                      ? injectUrl_url_construct(
-                          val.productImagesByProductId.nodes[0] && val.productImagesByProductId.nodes[0],
-                          CDN_URL,
-                          colSize_like_view
-                        )
-                      : [],
+                    img: val.productImagesByProductId.nodes[0].imageUrl ?? "",
+
+                    // `${CDN_URL}${val && val.productImagesByProductId && val.productImagesByProductId.nodes}`
+                    //   ? injectUrl_url_construct(
+                    //       val.productImagesByProductId.nodes[0] && val.productImagesByProductId.nodes[0],
+                    //       CDN_URL,
+                    //       colSize_like_view
+                    //     )
+                    //   : [],
                     title: val && val.productName ? val.productName : "",
                     price:
                       val &&
@@ -868,8 +973,8 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                       val.transSkuListsByProductId.nodes &&
                       val.transSkuListsByProductId.nodes.length > 0 &&
                       val.transSkuListsByProductId.nodes[0] &&
-                      val.transSkuListsByProductId.nodes[0].skuUrl
-                        ? val.transSkuListsByProductId.nodes[0].skuUrl
+                      val.transSkuListsByProductId.nodes[0].generatedSku
+                        ? val.transSkuListsByProductId.nodes[0].generatedSku
                         : "",
                   };
                 })
@@ -879,34 +984,96 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
           viewedddatas &&
           viewedddatas.data &&
           Object.entries(viewedddatas.data).length > 0 &&
-          viewedddatas.constructor === Object &&
-          viewedddatas.data.allTransSkuLists.nodes.length > 0
-            ? viewedddatas.data.allTransSkuLists.nodes.map((val) => {
-                return {
-                  img:
-                    `${CDN_URL}${
-                      val && val.productListByProductId && val.productListByProductId.productImagesByProductId.nodes
-                    }` &&
-                    injectUrl_url_construct(
-                      val.productListByProductId.productImagesByProductId.nodes[0] &&
-                        val.productListByProductId.productImagesByProductId.nodes[0],
-                      CDN_URL,
-                      colSize_like_view
-                    ),
-                  title: val.productListByProductId.productName,
-                  price: Math.round(val.discountPrice),
-                  url: val && val.skuUrl ? val.skuUrl : "",
-                };
-              })
+          viewedddatas.data.allProductMaterials &&
+          viewedddatas.data.allProductMaterials.nodes.length !== 0
+            ? viewedddatas.data.allProductMaterials && viewedddatas.data.allProductMaterials.nodes.length > 0
+              ? viewedddatas.data.allProductMaterials.nodes.map((val) => {
+                  debugger;
+                  return {
+                    img:
+                      val &&
+                      val.productListByProductSku &&
+                      val.productListByProductSku.productImagesByProductId &&
+                      val.productListByProductSku.productImagesByProductId.nodes.length > 0 &&
+                      val.productListByProductSku.productImagesByProductId.nodes[0] &&
+                      val.productListByProductSku.productImagesByProductId.nodes[0].imageUrl
+                        ? val.productListByProductSku.productImagesByProductId.nodes[0].imageUrl
+                        : "",
+                    image: {
+                      placeImage: {
+                        img:
+                          val &&
+                          val.productListByProductSku &&
+                          val.productListByProductSku.productImagesByProductId &&
+                          val.productListByProductSku.productImagesByProductId.nodes.length > 0 &&
+                          val.productListByProductSku.productImagesByProductId.nodes[0] &&
+                          val.productListByProductSku.productImagesByProductId.nodes[0].imageUrl
+                            ? val.productListByProductSku.productImagesByProductId.nodes[0].imageUrl
+                            : "",
+                      },
+                      hoverImage: {
+                        img:
+                          val &&
+                          val.productListByProductSku &&
+                          val.productListByProductSku.productImagesByProductId &&
+                          val.productListByProductSku.productImagesByProductId.nodes.length > 0 &&
+                          val.productListByProductSku.productImagesByProductId.nodes[0] &&
+                          val.productListByProductSku.productImagesByProductId.nodes[0].imageUrl
+                            ? val.productListByProductSku.productImagesByProductId.nodes[0].imageUrl
+                            : "",
+                      },
+                    },
+                    title:
+                      val && val.productListByProductSku && val.productListByProductSku.productType
+                        ? val.productListByProductSku.productType
+                        : "",
+                    offerPrice: "",
+                    skuID: val && val.productSku ? val.productSku : "",
+                    description:
+                      val && val.productListByProductSku && val.productListByProductSku.prodDescription
+                        ? val.productListByProductSku.prodDescription
+                        : "",
+                  };
+                })
+              : []
             : [],
+        // viewedddatas && viewedddatas !== undefined && viewedddatas !== null && viewedddatas.data
+        //   ? otherproducts(viewedddatas.data)
+        //   : [],
+
+        //   Object.keys(viewedddatas.data).map(([key, value]) => {
+        //     return {
+        //       img: value.nodes[0].productImagesByProductId.nodes[0].imageUrl ?? " ",
+
+        //       // `${CDN_URL}${val && val.productImagesByProductId && val.productImagesByProductId.nodes}` &&
+        //       // injectUrl_url_construct(
+        //       //   val.productImagesByProductId.nodes[0] && val.productImagesByProductId.nodes[0],
+        //       //   CDN_URL,
+        //       //   colSize_like_view
+        //       // ),
+        //       image: {
+        //         placeImage: {
+        //           img: value.nodes[0].productImagesByProductId.nodes[0].imageUrl ?? "",
+        //         },
+        //         hoverImage: {
+        //           img: value.nodes[0].productImagesByProductId.nodes[0].imageUrl ?? "",
+        //         },
+        //       },
+        //       title: value.nodes[0].productListByProductSku.productType ?? "",
+        //       offerPrice: "",
+        //       skuID: value.nodes[0].productSku ?? "",
+        //       description: value.nodes[0].productListByProductSku.prodDescription ?? "",
+        //     };
+        //   }) ?? []
+        // };
       };
     } catch (e) {
       // console.log("product detail page error", "-----", e)
     }
-
+    console.log(_d);
     return _d;
   });
-
+  console.log(_format);
   return _format;
 }
 
