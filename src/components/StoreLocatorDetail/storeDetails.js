@@ -55,6 +55,9 @@ var obj_values = {};
     else if(props.match.params.id === "ChIJ423xiS1mUjoR_LOZTgQBMMM"){
         return ["https://storage.googleapis.com/media.nacjewellers.com/resources/store-locator/t.nagar.jpg","T. Nagar"]
     }
+     else if(props.match.params.id === ":id"){
+        return ["https://storage.googleapis.com/media.nacjewellers.com/resources/store-locator/t.nagar.jpg","T. Nagar"]
+    }
     }
 
     // alert(JSON.stringify(Maps_data))

@@ -15,6 +15,7 @@ export default function StoreLocationDetails(props) {
                 <StoreDetails />
             </Grid>
         </Grid>
+      
     )
 
 }

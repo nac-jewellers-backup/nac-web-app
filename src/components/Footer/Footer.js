@@ -248,23 +248,23 @@ export default function Footer(props) {
   // ]
   const footerData1 = [
     {
-      url: "#",
+      url: "/aboutus",
       Title: "About Us",
     },
     {
-      url: "#",
+      url: "/stories",
       Title: "Our Story",
     },
     {
-      url: "#",
+      url: "/temple-work",
       Title: "Temple Work",
     },
     {
-      url: "#",
+      url: "/newsroom",
       Title: "In The News",
     },
     {
-      url: "#",
+      url: "/advertising",
       Title: "Advertisements",
     },
   ];
@@ -274,7 +274,7 @@ export default function Footer(props) {
       Title: "Know Your Jewellery",
     },
     {
-      url: "#",
+      url: "/collections",
       Title: "Collections",
     },
     {
@@ -311,7 +311,7 @@ export default function Footer(props) {
   ];
   const footerData4 = [
     {
-      url: "",
+      url: "/contactus",
       Title: "Contact Us",
     },
     {
@@ -327,7 +327,7 @@ export default function Footer(props) {
       Title: "+91 95974 57555 - WhatsApp",
     },
     {
-      url: "",
+      url: "/careersPage",
       Title: "Careers",
     },
   ];
@@ -521,7 +521,7 @@ export default function Footer(props) {
                             window.location.href = data.url;
                           }}
                           style={{ fontWeight: data.Title === "About Us" ? "800" : "" }}
-                          href="#"
+                          // href="#"
                         >
                           {data.Title}
                         </Link>
@@ -628,19 +628,19 @@ export default function Footer(props) {
               <Grid container direction="row" item={12} style={{ display: "flex", alignItems: "center", padding: "10px 0px" }}>
                 <Grid container xs={4}>
                   <Grid item>
-                    <Link className={classes.linkText}>SITEMAP &nbsp; </Link>
+                    <Link className={classes.linkText} to="/sitemap">SITEMAP &nbsp; </Link>
                   </Grid>
                   <Grid item>
-                    <Link className={classes.linkText}>|&nbsp; TERMS & CONDITION &nbsp; </Link>
+                    <Link className={classes.linkText} to="/termsconditions">|&nbsp; TERMS & CONDITION &nbsp; </Link>
                   </Grid>{" "}
                   <Grid item>
-                    <Link className={classes.linkText}>|&nbsp; FAQS &nbsp; </Link>
+                    <Link className={classes.linkText} to="/faqs">|&nbsp; FAQS &nbsp; </Link>
                   </Grid>{" "}
                   <Grid item>
-                    <Link className={classes.linkText}>|&nbsp; DELIVERY INFO &nbsp; </Link>
+                    <Link className={classes.linkText} to="/delivery">|&nbsp; DELIVERY INFO &nbsp; </Link>
                   </Grid>{" "}
                   <Grid item>
-                    <Link className={classes.linkText}>|&nbsp; PRIVACY POLICY &nbsp;</Link>
+                    <Link className={classes.linkText} to="/privacy">|&nbsp; PRIVACY POLICY &nbsp;</Link>
                   </Grid>
                 </Grid>
                 <Grid container style={{ justifyContent: "center" }} xs={4}>
