@@ -39,7 +39,7 @@ import AboutusPage from "containers/aboutus/aboutus";
 import ContactPage from "containers/contactus/contact";
 import careersPage from "containers/careers/careers";
 import Locator from "containers/storelocator/index";
-import StoreLocationDetails from "components/StoreLocatorDetail/index";
+import StoreLocationDetails from "../components/StoreLocatorDetail/index";
 import DigitalMarketing from "containers/digitalmarketing/digitalmarketing";
 import Diamonds from "containers/diamonds/looseDiamonds";
 import CollectionHomePage from "containers/collectionhomepage/collectionHomePage";
@@ -91,6 +91,12 @@ export const RouterApp = (props) => {
   return (
     <Switch history={browserHistory}>
       {/* <Redirect key="stylori-redirect" from="/" exact to={"/"} /> */}
+      <Route
+        key="StoreLocationDetails"
+        component={StoreLocationDetails}
+        exact
+        path={routes.StoreDetail}
+      />
       <Route
         key="HomePageStylori"
         component={HomeComp}
@@ -355,12 +361,8 @@ export const RouterApp = (props) => {
         exact
         path={routes.StoreLocator}
       />
-       <Route
-        key="StoreLocationDetails"
-        component={StoreLocationDetails}
-        exact
-        path={routes.StoreDetail}
-      />
+     
+    
       <Route key="Diamonds" component={Diamonds} exact path={routes.Diamonds} />
       <Route
         key="rudramadeviBlog"
