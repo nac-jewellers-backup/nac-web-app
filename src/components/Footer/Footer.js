@@ -205,7 +205,7 @@ const useStyles = makeStyles((theme) => ({
     textDecoration: "none",
   },
   headingMobile: {
-    fontSize: "14px",
+    fontSize: "12px",
     color: "#6b6b6b",
     fontWeight: "800",
     margin: "0px !important",
@@ -215,15 +215,15 @@ const useStyles = makeStyles((theme) => ({
     display:"block",
   },
   linkMobile: {
-    fontSize: "13px",
+    fontSize: "11px",
     color: "#6b6b6b",
   },
   accordionEdit:{
     padding:"0px",
     height:"30px"
   },
-  accordionExpand:{
-    height:"15px"
+  accodianTotal:{
+      margin:"5px 0 !important"
   },
   iconColor:{
     "& .MuiSvgIcon-root":{
@@ -233,7 +233,6 @@ const useStyles = makeStyles((theme) => ({
   line:{
     border:"0.5px solid #d3d0d0",
     width:"100%",
-    marginTop:"8px",
     backgroundColor:"#d3d0d0",
     marginBottom:"6px"
   }
@@ -760,7 +759,7 @@ export default function Footer(props) {
             style={{ margin: "auto", paddingTop: "16px",display:"block" }}
           >
             {MobilefooterData1.map((data)=>(    
-            <Accordion style={{ backgroundColor: "rgb(239, 239, 239)", boxShadow: "none", margin: "0px !important"}}>
+            <Accordion style={{ backgroundColor: "rgb(239, 239, 239)", boxShadow: "none", margin: "0px !important"}} classes={{expanded:classes.accodianTotal}}>
               <AccordionSummary
                 expandIcon={<ArrowDropDownIcon style={{ padding: "0px", margin: "0px" }} color="primary" className={classes.iconColor} />}
                 aria-controls="panel1a-content"
@@ -819,8 +818,8 @@ export default function Footer(props) {
                         </Grid>
                     </Grid> */}
 
-            <Grid item sm={12} xs={12} style={{textAlign:"center", marginTop:"10px"}}>
-            <Button style={{ background: "#33366D", color: "white", fontSize: "11px" }}>Store Locator</Button>
+            <Grid item sm={12} xs={12} style={{textAlign:"center", margin:"10px 0 10px 0"}}>
+            <Button style={{ background: "#33366D", color: "white", fontSize: "11px", borderRadius:"0px" }}>Store Locator</Button>
             </Grid>
 
           <Grid
@@ -885,7 +884,7 @@ export default function Footer(props) {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            color: "white",
+            color: "#6b6b6b",
             fontSize: "11px",
             padding: "8px 0px",
           }}
