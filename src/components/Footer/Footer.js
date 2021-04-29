@@ -1,6 +1,7 @@
 import React from "react";
 
-import { Grid, Button, Hidden, Container, Typography, TextField } from "@material-ui/core";
+import { Grid, Button, Hidden, Container, Typography, TextField} from "@material-ui/core";
+import List from "@material-ui/core/List";
 import { makeStyles } from "@material-ui/core/styles";
 import cartoonFooter from "../../assets/cartoonFooter.png";
 import "./Footer.css";
@@ -11,8 +12,7 @@ import { Link } from "react-router-dom";
 import Accordion from "@material-ui/core/Accordion";
 import AccordionSummary from "@material-ui/core/AccordionSummary";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
-
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 
 const useStyles = makeStyles((theme) => ({
   navTitle: {
@@ -88,7 +88,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "12px",
     lineHeight: "16px",
     // backgroundColor: "#b78231",
-    padding: "3% 0px 2% 0px",
+    // padding: "3% 0px 2% 0px",
     margin: "auto",
     [theme.breakpoints.down("sm")]: {
       padding: "0px",
@@ -212,11 +212,31 @@ const useStyles = makeStyles((theme) => ({
   },
   bodyMobile: {
     padding: "0px",
+    display:"block",
   },
   linkMobile: {
     fontSize: "13px",
     color: "#6b6b6b",
   },
+  accordionEdit:{
+    padding:"0px",
+    height:"30px"
+  },
+  accordionExpand:{
+    height:"15px"
+  },
+  iconColor:{
+    "& .MuiSvgIcon-root":{
+    fill: "#6b6b6b !important"
+  }
+  },
+  line:{
+    border:"0.5px solid #d3d0d0",
+    width:"100%",
+    marginTop:"8px",
+    backgroundColor:"#d3d0d0",
+    marginBottom:"6px"
+  }
 }));
 
 export default function Footer(props) {
@@ -335,26 +355,82 @@ export default function Footer(props) {
     {
       url: "/aboutus",
       Title: "About Us",
+      content: [
+        {
+          subTitle:"Our Story",
+          url:"/stories"
+        },
+        {
+          subTitle:"Temple Work",
+          url:"/temple-work"
+        },
+        {
+          subTitle:"In The News",
+          url:"/temple-work"
+        },
+        {
+          subTitle:"Advertisements",
+          url:"/temple-work"
+        }
+      ]
     },
     {
       url: "/careers",
-      Title: "Careers",
+      Title: "Know Your Jewellery",
+      content: [
+        {
+          subTitle:"Collections",
+          url:"/stories"
+        },
+        {
+          subTitle:"Diamond Guide",
+          url:"/temple-work"
+        },
+        {
+          subTitle:"Birthstones Gudide",
+          url:"/temple-work"
+        },
+        {
+          subTitle:"Caring For Your Jewellery",
+          url:"/temple-work"
+        }
+      ]
     },
     {
       url: "/newsroom",
-      Title: "News Room",
+      Title: "Customer Service",
+      content: [
+        {
+          subTitle:"Track Your Order",
+          url:"/stories"
+        },
+        {
+          subTitle:"30 Day Return",
+          url:"/temple-work"
+        }
+      ]
     },
     {
       url: "/advertising",
-      Title: "Advertising",
-    },
-    {
-      url: "/return",
-      Title: "30 Day Return",
-    },
-    {
-      url: "/privacy",
-      Title: "Privacy Policy",
+      Title: "Contact us",
+      content: [
+        {
+          subTitle:"+91 44 4399 6666 - Customer Care",
+          url:""
+        },
+        {
+          subTitle:"care@nacjewellers.com - Email",
+          url:""
+        },
+        {
+          subTitle:"+91 95974 57555",
+          url:""
+        },
+        {
+          subTitle:"Careers",
+          url:""
+        }
+      ]
     },
   ];
   const MobilefooterData2 = [
@@ -681,105 +757,35 @@ export default function Footer(props) {
             xs={10}
             sm={10}
             spacing={0.5}
-            style={{ margin: "auto", paddingTop: "16px" }}
+            style={{ margin: "auto", paddingTop: "16px",display:"block" }}
           >
-            <Accordion style={{ backgroundColor: "rgb(239, 239, 239)", boxShadow: "none", margin: "0px !important" }}>
+            {MobilefooterData1.map((data)=>(    
+            <Accordion style={{ backgroundColor: "rgb(239, 239, 239)", boxShadow: "none", margin: "0px !important"}}>
               <AccordionSummary
-                expandIcon={<ExpandMoreIcon style={{ padding: "0px", margin: "0px" }} />}
+                expandIcon={<ArrowDropDownIcon style={{ padding: "0px", margin: "0px" }} color="primary" className={classes.iconColor} />}
                 aria-controls="panel1a-content"
                 id="panel1a-header"
                 style={{ padding: "0px !important", minHeight: "0px", margin: "0px !important" }}
+                classes={{root:classes.accordionEdit, expanded:classes.accordionExpand}}
               >
-                <Typography className={classes.headingMobile}>About Us</Typography>
+                <Typography className={classes.headingMobile}>{data.Title}</Typography>
               </AccordionSummary>
               <AccordionDetails className={classes.bodyMobile}>
-                <Typography className={classes.linkMobile}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo
-                  lobortis eget.
-                </Typography>
+              <div className={classes.line}></div>
+                {data.content.map((data2)=>(
+                   <Typography 
+                   className={classes.linkMobile} 
+                   onClick={() => {
+                      window.location.href = data2.url;
+                    }}
+                    href="#"
+                   >
+                    {data2.subTitle}
+                </Typography> 
+              ))}       
               </AccordionDetails>
-            </Accordion>
+            </Accordion>))}
 
-            {MobilefooterData1.map((data) => {
-              return (
-                <Grid
-                  container
-                  item
-                  xs={4}
-                  style={{ backgroundColor: "colorMain", fontSize: "12px" }}
-                  alignItems="center"
-                  className={`${classes.colorWhite}`}
-                >
-                  <Grid
-                    item
-                    xs={12}
-                    sm={12}
-                    container
-                    style={{ padding: "4px 0px 8px 0px", width: "100%" }}
-                    onClick={() => {
-                      window.location.href = data.url;
-                    }}
-                    href="#"
-                  >
-                    {data.Title}
-                  </Grid>
-                </Grid>
-              );
-            })}
-
-            {MobilefooterData2.map((data) => {
-              return (
-                <Grid
-                  container
-                  item
-                  xs={4}
-                  style={{ backgroundColor: "colorMain", fontSize: "12px" }}
-                  alignItems="center"
-                  className={`${classes.colorWhite}`}
-                >
-                  <Grid
-                    item
-                    xs={12}
-                    sm={12}
-                    container
-                    style={{ padding: "4px 0px 8px 0px", width: "100%" }}
-                    onClick={() => {
-                      window.location.href = data.url;
-                    }}
-                    href="#"
-                  >
-                    {data.Title}
-                  </Grid>
-                </Grid>
-              );
-            })}
-
-            {MobilefooterData3.map((data) => {
-              return (
-                <Grid
-                  container
-                  item
-                  xs={4}
-                  style={{ backgroundColor: "colorMain", fontSize: "12px" }}
-                  alignItems="center"
-                  className={`${classes.colorWhite}`}
-                >
-                  <Grid
-                    item
-                    xs={12}
-                    sm={12}
-                    container
-                    style={{ padding: "4px 0px 8px 0px", width: "100%" }}
-                    onClick={() => {
-                      window.location.href = data.url;
-                    }}
-                    href="#"
-                  >
-                    {data.Title}
-                  </Grid>
-                </Grid>
-              );
-            })}
 
             {/* <Grid container item xs={3} style={{ backgroundColor: 'colorMain', fontSize: '12px' }} alignItems="center" className={`${classes.colorWhite}`}>
                             {
@@ -812,6 +818,10 @@ export default function Footer(props) {
                             </Grid>
                         </Grid>
                     </Grid> */}
+
+            <Grid item sm={12} xs={12} style={{textAlign:"center", marginTop:"10px"}}>
+            <Button style={{ background: "#33366D", color: "white", fontSize: "11px" }}>Store Locator</Button>
+            </Grid>
 
           <Grid
             container

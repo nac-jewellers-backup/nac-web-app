@@ -45,7 +45,7 @@ const styles = makeStyles((theme) => ({
         color: "white",
       },
       "& .MuiSvgIcon-root": {
-        fill: "white !important",
+        fill: "#white !important",
       },
       "& a": {
         backgroundColor: "#20205a !important",
