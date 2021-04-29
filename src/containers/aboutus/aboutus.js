@@ -12,6 +12,7 @@ import {
   Privacy,
   Faqs,
   sidemenu,
+  Contacts
 } from "mappers/dummydata/aboutUs";
 import { Educations, Maps } from "mappers/dummydata/education";
 import EducationPage from "components/education/education";
@@ -48,7 +49,10 @@ export default function AboutusPage(props) {
       return Maps;
     } else if (window.location.pathname === "/faqs") {
       return Faqs;
-    } else return null;
+    } else if (window.location.pathname === "/contactus") {
+      return Contacts;
+    }
+     else return null;
   };
   React.useEffect(() => {
    

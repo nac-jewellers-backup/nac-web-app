@@ -642,6 +642,34 @@ export const IndexCollectionHomePage = {
 /////////////////////////
 
 export const IndexAdvertisingPage = {
+  carouselTops: {
+    setting: {
+      dots: false,
+      infinite: false,
+      autoplay: false,
+      speed: 1000,
+      fade: false,
+      arrows: false,
+      arrowsImg: false,
+      dotsClass: "slickdev",
+      accessibility: false,
+      centerMode: false,
+      focusOnSelect: false,
+      pauseOnHover: false,
+      pauseOnDotsHover: false,
+      pauseOnFocus: false,
+      swipe: false,
+    },
+    data: [
+      {
+        img:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori+CSK-banner-1920-X-656-px.jpg",
+        mobileImg:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori+CSK-banner-mobile-805X430-px.jpg",
+        navigateUrl: "/jewellery/kada/csk_kada?skuId=1000001",
+      },
+    ],
+  },
   carouselTop: {
     setting: {
       dots: true,
@@ -791,6 +819,34 @@ export const IndexAdvertisingPage = {
   ],
 };
 export const IndexNewsRoomPage = {
+  carouselTops: {
+    setting: {
+      dots: false,
+      infinite: false,
+      autoplay: false,
+      speed: 1000,
+      fade: false,
+      arrows: false,
+      arrowsImg: false,
+      dotsClass: "slickdev",
+      accessibility: false,
+      centerMode: false,
+      focusOnSelect: false,
+      pauseOnHover: false,
+      pauseOnDotsHover: false,
+      pauseOnFocus: false,
+      swipe: false,
+    },
+    data: [
+      {
+        img:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori+CSK-banner-1920-X-656-px.jpg",
+        mobileImg:
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori+CSK-banner-mobile-805X430-px.jpg",
+        navigateUrl: "/jewellery/kada/csk_kada?skuId=1000001",
+      },
+    ],
+  },
   carouselTop: {
     setting: {
       dots: true,
@@ -967,6 +1023,31 @@ export const contactfooter = {
 };
 
 export const DigitalMarketingPage = {
+  carouselTop: {
+    setting: {
+      dots: false,
+      infinite: false,
+      autoplay: false,
+      speed: 1000,
+      fade: false,
+      arrows: false,
+      arrowsImg: false,
+      dotsClass: "slickdev",
+      accessibility: false,
+      centerMode: false,
+      focusOnSelect: false,
+      pauseOnHover: false,
+      pauseOnDotsHover: false,
+      pauseOnFocus: false,
+      swipe: false,
+    },
+    data: [
+      {
+        img:
+        "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori+CSK-banner-1920-X-656-px.jpg",
+      },
+    ],
+  },
   heading: "Digital Marketing Manager",
   jobBreifHeading: "Job Brief",
   jobBreifContent:

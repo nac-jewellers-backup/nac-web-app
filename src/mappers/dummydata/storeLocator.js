@@ -20,7 +20,7 @@ export const storeLocatorData = {
     data: [
       {
         img:
-          "https://assets.stylori.com/images/Static+Pages/Home+Page/banner1.jpg",
+        "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori+CSK-banner-1920-X-656-px.jpg"
       },
     ],
   },

@@ -50,7 +50,7 @@ export const routes = {
   rudramadeviBlog: "/rudramadeviBlog",
   Blog: "/blog",
   Solitaires: "/solitaires",
-  CollectionPage:"/collectionPage"
+  CollectionPage:"/collectionPage",
 };
 
 export default routes;

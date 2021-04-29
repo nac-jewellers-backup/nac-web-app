@@ -75,8 +75,8 @@ const fetchData = (getState, dispatch ,otherProps ,routerProps) => {
   return null;
 };
 
-@connectData(fetchData)
-@connect(mapStateToProps, mapDispatchToProps)
+// @connectData(fetchData)
+// @connect(mapStateToProps, mapDispatchToProps)
 
 export default class StoreLocatorDetail extends Component {
   static propTypes = {
@@ -121,3 +121,4 @@ export default class StoreLocatorDetail extends Component {
 		);
 	}
 }
+
