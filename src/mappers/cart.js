@@ -168,7 +168,7 @@ export default function (data) {
                                 details: k.skuSize
                             },
                             {
-                                name: k.diamondType&&k.diamondType.length > 0 ? "Diamond Quality" : "",
+                                name: k.diamondType && k.diamondType.length > 0 ? "Diamond Quality" : "",
                                 details: k.diamondType
                             },
                       

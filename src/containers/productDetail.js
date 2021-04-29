@@ -379,10 +379,8 @@ class ProductDetail extends Component {
       nextArrow: <ArrowRight />,
     };
 
-   
     console.log("----", this.props.data);
 
-   
     // alert(JSON.stringify(this.props.setratingcountsclear))
     // let diamondWeight = this.props.data[0].productsDetails[1].namedetail[3].details ?? "";
     return (
@@ -481,61 +479,91 @@ class ProductDetail extends Component {
                   </Grid>
                 </Grid>
                 <Grid container item xs={12} className={classes.productInformationGrid}>
-                  <Grid container item xs={4} style={{ paddingTop: "8px" }}>
-                    <Grid container item xs={2}>
-                      <Avatar alt="NAC" src="/static/images/avatar/1.jpg" />
-                    </Grid>
-                    <Grid container item xs={10} style={{ fontSize: 12, color: "gray", paddingLeft: 15, margin: "auto" }}>
-                      <Grid itex xs={12}>
-                        Metal Weight
+                  {this.props &&
+                    this.props.data &&
+                    this.props.data.length > 0 &&
+                    this.props.data[0] &&
+                    this.props.data[0].productsDetails.length > 0 &&
+                    this.props.data[0].productsDetails[0] &&
+                    this.props.data[0].productsDetails[0].namedetail.length > 0 &&
+                    this.props.data[0].productsDetails[0].namedetail[2] &&
+                    this.props.data[0].productsDetails[0].namedetail[2].details && (
+                      <Grid container item xs={4} style={{ paddingTop: "8px" }}>
+                        <Grid container item xs={2}>
+                          <Avatar alt="NAC" src="/static/images/avatar/1.jpg" />
+                        </Grid>
+                        <Grid container item xs={10} style={{ fontSize: 12, color: "gray", paddingLeft: 15, margin: "auto" }}>
+                          <Grid itex xs={12}>
+                            Metal Weight
+                          </Grid>
+                          <Grid itex xs={12}>
+                            {this.props.data[0].productsDetails[0].namedetail[2].details ?? ""}
+                          </Grid>
+                        </Grid>
                       </Grid>
-                      <Grid itex xs={12}>
-                        {this.props.data[0].productsDetails[0].namedetail[2].details ?? ""}
+                    )}
+                  {this.props &&
+                    this.props.data &&
+                    this.props.data.length > 0 &&
+                    this.props.data[0] &&
+                    this.props.data[0].productsDetails.length > 0 &&
+                    this.props.data[0].productsDetails[0] &&
+                    this.props.data[0].productsDetails[0].namedetail.length > 0 &&
+                    this.props.data[0].productsDetails[0].namedetail[1] &&
+                    this.props.data[0].productsDetails[0].namedetail[1].details && (
+                      <Grid container item xs={4} style={{ paddingTop: "8px" }}>
+                        <Grid container item xs={2}>
+                          <Avatar alt="NAC" src="/static/images/avatar/1.jpg" />
+                        </Grid>
+                        <Grid container item xs={10} style={{ fontSize: 12, color: "gray", paddingLeft: 15, margin: "auto" }}>
+                          <Grid itex xs={12}>
+                            Metal Purity
+                          </Grid>
+                          <Grid itex xs={12}>
+                            {this.props.data[0].productsDetails[0].namedetail[1].details ?? ""}
+                            {/* 22K Yellow Gold */}
+                          </Grid>
+                        </Grid>
                       </Grid>
-                    </Grid>
-                  </Grid>
-                  <Grid container item xs={4} style={{ paddingTop: "8px" }}>
-                    <Grid container item xs={2}>
-                      <Avatar alt="NAC" src="/static/images/avatar/1.jpg" />
-                    </Grid>
-                    <Grid container item xs={10} style={{ fontSize: 12, color: "gray", paddingLeft: 15, margin: "auto" }}>
-                      <Grid itex xs={12}>
-                        Metal Purity
+                    )}
+                  {this.props &&
+                    this.props.data &&
+                    this.props.data.length > 0 &&
+                    this.props.data[0] &&
+                    this.props.data[0].productsDetails.length > 0 &&
+                    this.props.data[0].productsDetails[1] &&
+                    this.props.data[0].productsDetails[1].namedetail.length > 0 &&
+                    this.props.data[0].productsDetails[1].namedetail[3] &&
+                    this.props.data[0].productsDetails[1].namedetail[3].details && (
+                      <Grid container item xs={4} style={{ paddingTop: "8px" }}>
+                        <Grid container item xs={2}>
+                          <Avatar alt="NAC" src="/static/images/avatar/1.jpg" />
+                        </Grid>
+                        <Grid container item xs={10} style={{ fontSize: 12, color: "gray", paddingLeft: 15, margin: "auto" }}>
+                          <Grid itex xs={12}>
+                            Diamond Weight
+                          </Grid>
+                          <Grid itex xs={12}>
+                            {this.props &&
+                            this.props.data &&
+                            this.props.data.length > 0 &&
+                            this.props.data[0] &&
+                            this.props.data[0].productsDetails.length > 0 &&
+                            this.props.data[0].productsDetails[1] &&
+                            this.props.data[0].productsDetails[1].namedetail.length > 0 &&
+                            this.props.data[0].productsDetails[1].namedetail[3] &&
+                            this.props.data[0].productsDetails[1].namedetail[3].details
+                              ? this.props.data[0].productsDetails[1].namedetail[3].details
+                              : ""}
+                            {/* {this.props.data[0].productsDetails[1].namedetail[3].details != undefined &&
+                            this.props.data[0].productsDetails[1].namedetail[3].details != null
+                              ? this.props.data[0].productsDetails[1].namedetail[3].details
+                              : ""} */}
+                            {/* {diamondWeight} */}
+                          </Grid>
+                        </Grid>
                       </Grid>
-                      <Grid itex xs={12}>
-                        {this.props.data[0].productsDetails[0].namedetail[1].details ?? ""}
-                        {/* 22K Yellow Gold */}
-                      </Grid>
-                    </Grid>
-                  </Grid>
-                  <Grid container item xs={4} style={{ paddingTop: "8px" }}>
-                    <Grid container item xs={2}>
-                      <Avatar alt="NAC" src="/static/images/avatar/1.jpg" />
-                    </Grid>
-                    <Grid container item xs={10} style={{ fontSize: 12, color: "gray", paddingLeft: 15, margin: "auto" }}>
-                      <Grid itex xs={12}>
-                        Diamond Weight
-                      </Grid>
-                      <Grid itex xs={12}>
-                        {this.props &&
-                        this.props.data &&
-                        this.props.data.length > 0 &&
-                        this.props.data[0] &&
-                        this.props.data[0].productsDetails.length > 0 &&
-                        this.props.data[0].productsDetails[1] &&
-                        this.props.data[0].productsDetails[1].namedetail.length > 0 &&
-                        this.props.data[0].productsDetails[1].namedetail[3] &&
-                        this.props.data[0].productsDetails[1].namedetail[3].details
-                          ? this.props.data[0].productsDetails[1].namedetail[3].details
-                          : ""}
-                        {/* {this.props.data[0].productsDetails[1].namedetail[3].details != undefined &&
-                        this.props.data[0].productsDetails[1].namedetail[3].details != null
-                          ? this.props.data[0].productsDetails[1].namedetail[3].details
-                          : ""} */}
-                        {/* {diamondWeight} */}
-                      </Grid>
-                    </Grid>
-                  </Grid>
+                    )}
                 </Grid>
                 <div>
                   <p style={{ color: "gray", paddingBottom: "8px", borderBottom: "1px solid gray" }}>CERTIFICATES</p>
@@ -591,7 +619,7 @@ class ProductDetail extends Component {
             <Grid container spacing={12}>
               <Grid
                 item
-                xs={6}
+                xs={12}
                 style={{
                   marginBottom: "20px",
                   marginTop: "20px",
@@ -607,10 +635,11 @@ class ProductDetail extends Component {
               >
                 <ConnectionHome />
               </Grid> */}
-              <Grid item xs={6} style={{ marginBottom: "20px", marginTop: "20px" }}>
+              {/* <Grid item xs={6} style={{ marginBottom: "20px", marginTop: "20px" }}> */}
+                
                 {/* <ProductDetails data={this.props.data} /> */}
                 {/* <Request data={this.props.data} /> */}
-              </Grid>
+              {/* </Grid> */}
               <br />
             </Grid>
           </div>

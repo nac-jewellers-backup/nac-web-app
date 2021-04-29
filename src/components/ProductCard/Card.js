@@ -153,7 +153,7 @@ const Gallery = (props, callmouseover, callmouseout, cardstate, scrollPosition) 
 
           //  "
           onError={(e) => imageOnError(e, props.data.imageResolution)}
-          title={props.data.title}
+          title={props.data.title.charAt(0).toUpperCase() + props.data.title.slice(1)}
           onMouseOver={
             !props.hoverText
               ? () => {
@@ -486,7 +486,7 @@ function Component(props) {
                   </Grid>
                   <Grid container xs={12}>
                     <Typography variant="body1" component="span" style={{ paddingLeft: "5px" }} className={`${classes.titles}`}>
-                      {props.data.title}
+                      {props.data.title.charAt(0).toUpperCase() + props.data.title.slice(1)}
                     </Typography>
                   </Grid>
                 </Hidden>
@@ -543,7 +543,7 @@ function Component(props) {
                   </Grid>
                   <Grid container xs={12}>
                     <Typography variant="body1" component="span" style={{ paddingLeft: "5px" }} className={`${classes.titles}`}>
-                      {props.data.title}
+                      {props.data.title.charAt(0).toUpperCase() + props.data.title.slice(1)}
                     </Typography>
                   </Grid>
                 </Hidden>
@@ -571,7 +571,7 @@ function Component(props) {
 
                   <Grid container xs={12}>
                     <Typography variant="body1" component="span" style={{ paddingLeft: "5px" }} className={`${classes.titles}`}>
-                      {props.static ? "Jazzy Gypsy Diamond Hoop Earrings" : props.data.title}
+                      {props.static ? "Jazzy Gypsy Diamond Hoop Earrings" : props.data.title.charAt(0).toUpperCase() + props.data.title.slice(1)}
                     </Typography>
                   </Grid>
                 </Grid>
