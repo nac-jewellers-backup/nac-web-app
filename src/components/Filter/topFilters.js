@@ -100,7 +100,7 @@ export const TopFilters = (props) => {
           <Grid
             container
             item
-            xs={10}
+            xs={12}
             id={"containerTitle"}
             justify="flex-end"
             alignItems="center"
@@ -117,13 +117,7 @@ export const TopFilters = (props) => {
           >
             {/* ------------------------------- */}
             <Grid container item xs={12} className="titleTop" id={"titleTop"}>
-              <Grid
-                container
-                item
-                xs={12}
-                // justify="space-between"
-                style={{ paddingBottom: 20 }}
-              >
+              <Grid container item xs={12} justify="space-between" style={{ paddingBottom: 20, display: "flex" }}>
                 {/* <nav
             // style={{height:"35px", display:"flex"}}
             > */}
@@ -142,13 +136,11 @@ export const TopFilters = (props) => {
                     });
                   }}
                 >
-                  <Grid container item xs={12} className={classes.spacingfilterdiv}>
-                    <Grid item xs={6} className={classes.filtersLabel}>
-                      <a>
-                        {"Price"} (<i class="fa">&#xf156;</i>)
-                      </a>
+                  <Grid container item xl={9} className={classes.spacingfilterdiv}>
+                    <Grid item className={classes.filtersLabel}>
+                      <a>{"Price (₹)"}</a>
                     </Grid>
-                    <Grid item xs={6} style={{ display: "flex", justifyContent: "flex-end" }}>
+                    <Grid item xs={3} style={{ display: "flex", justifyContent: "flex-end" }}>
                       {state.listHoverItem === "price" ? (
                         <ArrowDropUpIcon color="primary" />
                       ) : (
@@ -211,13 +203,13 @@ export const TopFilters = (props) => {
                           });
                         }}
                       >
-                        <Grid container item xs={12} className={classes.spacingfilterdiv}>
-                          <Grid item xs={6} className={classes.filtersLabel}>
+                        <Grid container item xl={12} className={classes.spacingfilterdiv}>
+                          <Grid item xs={9} className={classes.filtersLabel}>
                             <a href={listName.url}>{listName}</a>
                           </Grid>
                           <Grid
                             item
-                            xs={6}
+                            xs={3}
                             style={{
                               display: "flex",
                               justifyContent: "flex-end",
@@ -280,95 +272,85 @@ export const TopFilters = (props) => {
             </Grid>
           </Grid>
           {/* ---------------------------------------------------------- */}
-
-          <Grid
-            container
-            item
-            xs={2}
-            onMouseLeave={() => {
-              setState({ ...state, expanded: false, targetopen: null });
-            }}
-          >
-            <Grid container item xs={12} style={{ paddingBottom: 20 }}>
-              <Grid
-                container
-                item
-                xs={12}
-                className={`${classes.headerNavbarList1} ${classes.menuListCursorSort}`}
-                onMouseOver={(e) => {
-                  setState({
-                    ...state,
-                    targetopen: e.currentTarget,
-                    expanded: true,
-                  });
-                }}
-              >
-                <Grid container item xs={12} className={classes.spacingfilterdiv}>
-                  <Grid container item xs={12} justify="space-between">
-                    <Grid item xs={6} style={{ margin: "auto" }}>
-                      Sort by
-                    </Grid>
-                    <Grid item xs={6} style={{ display: "flex", justifyContent: "flex-end" }}>
-                      {state.expanded ? <ArrowDropUpIcon color="primary" /> : <ArrowDropDownIcon color="primary" />}
+          <Grid container xs={12} style={{ display: "flex", justifyContent: "flex-end" }} className={classes.chipContainers}>
+            <Grid item xs={10}>
+              {props?.chips.length > 0
+                ? props?.chips.map((data) => {
+                    return data.label === "Silver" ? null : (
+                      <Chip
+                        className={classes.chips}
+                        size="small"
+                        variant="outlined"
+                        label={data.label}
+                        style={{
+                          padding: "7px 10px",
+                          marginRight: 5,
+                          backgroundColor: "#8080802e",
+                          borderRadius: "2px",
+                          textTransform: "uppercase",
+                        }}
+                        onDelete={() => props.click(data.label)}
+                        deleteIcon={data.label ? <i className="search-choice-close" class="fa fa-times"></i> : ""}
+                      />
+                    );
+                  })
+                : ""}
+            </Grid>
+            <Grid
+              item
+              xs={2}
+              onMouseLeave={() => {
+                setState({ ...state, expanded: false, targetopen: null });
+              }}
+            >
+              <Grid container item xs={12} style={{ paddingBottom: 15 }}>
+                <Grid
+                  container
+                  item
+                  xs={12}
+                  className={`${classes.headerNavbarList1} ${classes.menuListCursorSort}`}
+                  onMouseOver={(e) => {
+                    setState({
+                      ...state,
+                      targetopen: e.currentTarget,
+                      expanded: true,
+                    });
+                  }}
+                >
+                  <Grid container item xs={12} className={classes.spacingfilterdiv}>
+                    <Grid container item xs={12} justify="space-between">
+                      <Grid item style={{ margin: "auto" }}>
+                        Sort by
+                      </Grid>
+                      <Grid item style={{ display: "flex", justifyContent: "flex-end" }}>
+                        {state.expanded ? <ArrowDropUpIcon color="primary" /> : <ArrowDropDownIcon color="primary" />}
+                      </Grid>
                     </Grid>
                   </Grid>
                 </Grid>
               </Grid>
-            </Grid>
 
-            {/* <div className={"testMenu"} style={{
-                          position: "absolute", width: "215px",
-                          right: "15px", top: "65px", boxShadow: 'rgba(0, 0, 0, 0.1) 0px 2px 7px'
-                        }}>
-                            <Popper open={state.expanded} transition disablePortal style={{ position: 'absolute', right: '141px', zIndex:15}}>
-                                {({ TransitionProps }) => (
-                                    <Grow {...TransitionProps} >
-                                        <ClickAwayListener onClickAway={(e) => handleExpandClick(e)}>
-                                            <Grid>
-                                                <CardRadioButton data={sortOptions} onChange={handleChange} values={FilterOptionsCtx.sort} />
-                                            </Grid>
-                                        </ClickAwayListener>
-                                    </Grow>
-                                )}
-                            </Popper>
-                        </div> */}
-            {state.expanded ? (
-              <HeaderHoverMenuItem
-                tabdata={sortOptions}
-                listHoverItem={sortOptions}
-                // onMouseOver={(event) => { setState({ Menuopen: true }) }}
-                sort={true}
-                opened={state.expanded}
-                targetopened={state.targetopen}
-                // submenuDetails={()=>submenuDetails()}
-                // filtercheck={state.listHoverItem}
-                values={FilterOptionsCtx.sort}
-                onchoosetype={handleChange}
-                onMouseLeave={() => {
-                  setState({ ...state, expanded: false, targetopen: null });
-                }}
-              />
-            ) : (
-              ""
-            )}
+              {state.expanded ? (
+                <HeaderHoverMenuItem
+                  tabdata={sortOptions}
+                  listHoverItem={sortOptions}
+                  // onMouseOver={(event) => { setState({ Menuopen: true }) }}
+                  sort={true}
+                  opened={state.expanded}
+                  targetopened={state.targetopen}
+                  // submenuDetails={()=>submenuDetails()}
+                  // filtercheck={state.listHoverItem}
+                  values={FilterOptionsCtx.sort}
+                  onchoosetype={handleChange}
+                  onMouseLeave={() => {
+                    setState({ ...state, expanded: false, targetopen: null });
+                  }}
+                />
+              ) : (
+                ""
+              )}
+            </Grid>
           </Grid>
-          {/* <Grid container item xs={12} style={{ marginLeft: 16 }}>
-            <Grid item style={{ marginRight: "8px" }}>
-              <span className={classes.chips}>
-                FEMALE &nbsp; <CloseIcon />
-              </span>
-            </Grid>
-            <Grid item style={{ marginRight: "8px" }}>
-              <span className={classes.chips}>
-                EVERYDAY &nbsp; <CloseIcon />
-              </span>
-            </Grid>
-            <Grid item style={{ marginRight: "8px" }}>
-              <span className={classes.chips}>
-                GOLD &nbsp; <CloseIcon />
-              </span>
-            </Grid>
-          </Grid> */}
         </Grid>
 
         <MorefiltersOpen
@@ -382,25 +364,7 @@ export const TopFilters = (props) => {
           handleClose={handleMoreFilters}
         />
 
-        <Grid container item xs={12} style={{ margin: "0px 17px" }}>
-          {/* <div className="header-chips Chip"> */}
-          {props?.chips.length > 0
-            ? props?.chips.map((data) => {
-                return data.label === "Silver" ? null : (
-                  <Chip
-                    className={classes.chips}
-                    size="small"
-                    variant="outlined"
-                    label={data.label}
-                    style={{ padding: "5px", marginRight: 5, backgroundColor: "#8080802e" }}
-                    onDelete={() => props.click(data.label)}
-                    deleteIcon={data.label ? <i className="search-choice-close" class="fa fa-times"></i> : ""}
-                  />
-                );
-              })
-            : ""}
-          {/* </div> */}
-        </Grid>
+        {/* <Grid container xs={12} style={{ margin: "0px 17px" }}></Grid> */}
       </Container>
     </div>
   );

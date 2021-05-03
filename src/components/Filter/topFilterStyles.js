@@ -117,6 +117,7 @@ export const styles = makeStyles((theme) => ({
     color: "white",
     [theme.breakpoints.only("md")]: {
       minWidth: "100px",
+      marginBottom: "10px",
     },
     minWidth: "150px ",
     // #80808061
@@ -159,11 +160,17 @@ export const styles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
   },
+  chipContainer: {
+    [theme.breakpoints.only("md")]: {
+      marginLeft: "20px",
+    },
+    marginLeft: "30px",
+  },
   menuListCursorSort: {
     cursor: "pointer",
     fontFamily: "Roboto",
     padding: "5px 4px 5px 15px",
-    marginRight: 15,
+    // marginRight: 15,
     color: theme.palette.secondary.main,
     boxShadow: `6px 7px 6px #bebfbf !important`,
     background: "white",
@@ -193,6 +200,7 @@ export const styles = makeStyles((theme) => ({
     // margin: "auto",
     [theme.breakpoints.only("md")]: {
       minWidth: "100px",
+      marginBottom: "10px",
     },
     minWidth: "150px ",
     marginLeft: "10px",

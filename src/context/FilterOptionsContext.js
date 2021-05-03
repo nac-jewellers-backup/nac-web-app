@@ -490,7 +490,8 @@ const Provider = (props) => {
       // alert(JSON.stringify('filters',filters))
       // alert(JSON.stringify(newObj))
       // if()
-      if (Object.keys(filters.category).length === 0 && filters.category.constructor === Object) {
+      // debugger;
+      if (filters?.category?.constructor === Object && Object.keys(filters?.category)?.length === 0) {
         if (filters.Category && Object.keys(filters.Category).length > 0 && filters.Category.constructor === Object) {
           var _replaceCategory = filters.Category;
           filters["category"] = _replaceCategory;
@@ -533,17 +534,12 @@ const Provider = (props) => {
     // debugger;
     console.log(filters);
     if (filters && Object.entries(filters).length !== 0 && filters.constructor === Object) {
-      debugger;
-      console.log(Object.entries(filters).length);
       if (
-        Object.values(filters).length > 0 &&
+        Object.keys(filters).length !== 0 &&
+        filters.constructor === Object &&
         Object.values(filters).filter((val) => {
-          if (
-            Object.entries(val) !== undefined &&
-            Object.entries(val) !== null &&
-            Object.entries(val).length > 0 &&
-            val.constructor === Object
-          ) {
+          // debugger;
+          if (val?.constructor === Object && Object.keys(val)?.length > 0) {
             return val;
           }
         }).length > 0
@@ -670,7 +666,7 @@ const Provider = (props) => {
     if (filters && Object.entries(filters).length !== 0 && filters.constructor === Object) {
       if (
         Object.values(filters).filter((val) => {
-          if (Object.entries(val).length > 0 && val.constructor === Object) {
+          if (val?.constructor === Object && Object?.entries(val)?.length > 0) {
             return val;
           }
         }).length > 0

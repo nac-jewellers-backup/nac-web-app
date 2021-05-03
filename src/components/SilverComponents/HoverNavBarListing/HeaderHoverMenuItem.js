@@ -60,6 +60,7 @@ function HeaderHoverMenuItem(props) {
                     onClick={() => {
                       window.location.href = menuList.url;
                     }}
+                    style={{ overflow: "scroll" }}
                   >
                     <ListItemText variant>
                       <Typography className={classes.listedItemsvalue}>

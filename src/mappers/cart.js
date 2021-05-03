@@ -124,6 +124,8 @@ export default function (data) {
         mapperdata = data.data.allTransSkuLists.nodes;
     } catch (error) {
         mapperdata = [];
+        
+       
     }
     const _format = mapperdata.map(k => {
         let _d;

@@ -90,7 +90,7 @@ export default function MoreFilters(props) {
                 <CancelIcon />
               </div>
               {props.filter.map((val, i) => {
-                if (i > 3 && val !== "price" && val !== "Material") {
+                if ( val !== "price" && val !== "Occasion" && val !== "Material" && val !== "Collection" && val !== "Offers" && val !== "Gender") {
                   return (
                     <Grid item xs={3} style={{ marginBottom: "3%" }}>
                       <div style={{ marginBottom: "10px" }}>

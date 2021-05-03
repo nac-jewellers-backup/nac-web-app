@@ -394,21 +394,22 @@ class Component extends React.Component {
       if (val !== undefined && val !== null) {
         const ss = val ? val[1] : "";
         valx = ss;
-        Object.values(valx).map((val1) => {
-          var n = valx && Object.keys(valx)[0].length > 0;
-          const s1s = val1 ? val1[0] : "";
-          if (val1 !== undefined && val1 !== null && n) {
-            valx2 = s1s;
-            mm = valx ? Object.keys(valx)[0] : "";
-            if (value === mm) {
-              bz = mm;
-              checked[val[0]] = { [mm]: false };
-              this.setState(checked);
+        valx?.constructor === Object &&
+          Object.values(valx).map((val1) => {
+            var n = valx && Object.keys(valx)[0].length > 0;
+            const s1s = val1 ? val1[0] : "";
+            if (val1 !== undefined && val1 !== null && n) {
+              valx2 = s1s;
+              mm = valx ? Object.keys(valx)[0] : "";
+              if (value === mm) {
+                bz = mm;
+                checked[val[0]] = { [mm]: false };
+                this.setState(checked);
+              }
+              // alert(JSON.stringify(checked))
+              return false;
             }
-            // alert(JSON.stringify(checked))
-            return false;
-          }
-        });
+          });
       }
       return bz;
     });
@@ -460,7 +461,7 @@ class Component extends React.Component {
 
     if (TargetName === undefined) {
       this.clearSortIfFiltersIsEmpty();
-      if (Object.keys(mystate.checked.category).length === 0 && mystate.checked.category.constructor === Object) {
+      if (mystate?.checked?.category?.constructor === Object && Object.keys(mystate?.checked?.category).length === 0) {
         var _replaceCategory = JSON.parse(sessionStorage.getItem("category"));
         checked["category"] = _replaceCategory;
         this.setState(checked);
@@ -691,7 +692,7 @@ class Component extends React.Component {
 
   onCurrencyChange_click = (e, silverPrice) => {
     const { checked } = this.state;
-    debugger;
+    // debugger;
     console.log(this.state);
     console.log(silverPrice);
     var _price_min;

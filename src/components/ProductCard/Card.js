@@ -13,6 +13,7 @@ import { Hidden } from "@material-ui/core";
 import "./productCard.css";
 import { CDN_URL } from "config";
 
+
 import { ProductDetailContext } from "context";
 import { LazyLoadImage, trackWindowScroll } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
