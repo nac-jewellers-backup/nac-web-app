@@ -166,7 +166,7 @@ class Component extends React.Component {
                             {data && data.length === 0 && `No products found`}
                             {data &&
                               data.length >= 24 &&
-                              ` View ${data && data.length > 0 && data[0] ? data[0].totalCount - data.length : ""} More Products`}
+                              ` See ${data && data.length > 0 && data[0] ? data[0].totalCount - data.length : ""} More Products`}
                             {data &&
                               data.length > 0 &&
                               data.length < 24 &&

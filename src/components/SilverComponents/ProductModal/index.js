@@ -99,7 +99,7 @@ const ProductModal = (props) => {
       variant="contained"
       disabled={pagination === fadeImagessublist.length}
       className={`${classes.button}  ${classes.viewmoreColor} ${classes.viewmoreColorSilver}`}>
-    {pagination === fadeImagessublist.length?`No more products` : `View more products`}
+    {pagination === fadeImagessublist.length?`No more products` : `See more products`}
     </Button>
         </Grid>
       </Grid>
