@@ -93,10 +93,13 @@ export const styles = (theme) => ({
   },
   menustylori: {
     backgroundColor: theme.palette.stylori.pinkMain,
-    display: "flex",
+    display: "flex-end",
     justifyContent: "center",
     alignItems: "center",
     fontSize: "1.3rem",
+    textAlign:"center",
+    marginLeft:"3%",
+    height:"40px"
   },
   searchcontainerplain: {
     padding: "4px",
@@ -168,10 +171,13 @@ export const styles = (theme) => ({
     color: "white",
     // borderBottom: "1px solid #fff",
     "&:hover": {
-      color: "white",
+      color: "#b78231",
       // paddingBottom: "2px",
       // borderBottom: "1px solid " + theme.palette.secondary.dark,
     },
+    "&:active":{
+      color:"#b78231"
+    }
   },
   seletectedMenu: {
     color: theme.palette.secondary.dark,
@@ -182,7 +188,7 @@ export const styles = (theme) => ({
     borderBottom: "1px solid #fff",
     // borderBottom: "1px solid " + theme.palette.secondary.dark,
     "&:hover": {
-      borderBottom: "1px solid " + theme.palette.secondary.dark,
+      borderBottom: "1px solid " + theme.palette.secondary.dark, 
     },
   },
   mobileNavIcon: {
@@ -271,11 +277,14 @@ export const useStyles = makeStyles((theme) => ({
     width: "100%",
   },
   mouseOverPopoversub: {
-    zIndex: 1000,
+    // zIndex: -100,
+    width:"-webkit-fill-available",
     top: "0px !important",
+    left:"-10px !important",
     backgroundColor: "#33346d",
     color: "#fff",
     cursor: "pointer",
+    transform: "translate3d(9px, 137px, 0px) !important",
     "& span": {
       fontFamily: "notoSerif-regular",
       letterSpacing: "1px",
@@ -308,18 +317,20 @@ export const useStyles = makeStyles((theme) => ({
     cursor: "pointer",
   },
   listedItemstitle: {
-    padding: "2px 0px 2px 0px",
+    padding: "2px 0px 8px 0px",
     fontSize: "0.6rem !important",
     letterSpacing: 1,
     margin: "15px 19px 23px 29px",
-    borderBottom: "1px solid #6e6d72",
+    borderBottom: "1px solid #33346d",
+    color:"#33346d"
   },
   listedItemstitlemultiplesection: {
-    padding: "2px 0px 2px 0px",
+    padding: "2px 0px 8px 0px",
     fontSize: "0.6rem !important",
-    letterSpacing: 2,
+    letterSpacing: 1,
     margin: "15px 0px 23px 0px",
-    borderBottom: "1px solid #6e6d72",
+    borderBottom: "1px solid #33346d",
+    color:"#33346d"
   },
   gridmultiplesection: {
     padding: "0px 5px",
@@ -388,7 +399,7 @@ export const useStyles = makeStyles((theme) => ({
   listedItemsvalue: {
     padding: "2px 16px 2px 16px",
     fontSize: "0.7rem !important",
-    letterSpacing: 2,
+    // letterSpacing: 2,
     cursor: "pointer",
 
   },
@@ -450,7 +461,7 @@ export const useStyles = makeStyles((theme) => ({
   listedItemsvalue: {
     padding: "2px 16px 2px 16px",
     fontSize: "0.7rem !important",
-    letterSpacing: 2,
+    // letterSpacing: 2,
     cursor: "pointer",
 
   },

@@ -441,19 +441,19 @@ export const Jewellery = {
 export const menuListHeader =
     [
          {
-        title: "Gold".toUpperCase(),
-        url:'#',
-    },
-    // {
-    //     title: "Silver",
-    //     url:'#',
-    // },
-    {
-        title: "Diamond".toUpperCase(),
+        title: "Earrings".toUpperCase(),
         url:'#',
     },
     {
-        title: "Platinum".toUpperCase(),
+        title: "Necklace".toUpperCase(),
+        url:'#',
+    },
+    {
+        title: "Rings".toUpperCase(),
+        url:'#',
+    },
+    {
+        title: "Bangles & Bracelets".toUpperCase(),
         url:'#',
     },
     {
@@ -469,11 +469,11 @@ export const menuListHeader =
         url:'#',
     },
     {
-        title: "Purchase Plans".toUpperCase(),
+        title: "Other jewellery".toUpperCase(),
         url:'#',
     },
     {
-        title: "Gifts".toUpperCase(),
+        title: "Saving scheme".toUpperCase(),
         url:'#',
     },
     ];
