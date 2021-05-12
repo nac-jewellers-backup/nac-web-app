@@ -120,6 +120,7 @@ class Component extends React.Component {
     };
   }
   componentDidMount() {
+    debugger;
     var { checked, chipData, numOne, numTwo, selected } = this.state;
     if (this.props.data && this.props.data.length > 0 && this.props.data[0] && this.props.data[0].subFilter["Price Range"]) {
       var price_min = Number(this.props.data[0].subFilter["Price Range"].min);
@@ -691,6 +692,7 @@ class Component extends React.Component {
   };
 
   onCurrencyChange_click = (e, silverPrice) => {
+    debugger;
     const { checked } = this.state;
     // debugger;
     console.log(this.state);

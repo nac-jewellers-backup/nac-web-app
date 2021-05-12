@@ -183,15 +183,16 @@ const Components = (props) => {
   if (cartId) {
     console.log("came in --");
     if (
-      data.data.allTransSkuLists.nodes
+      data?.data?.allTransSkuLists?.nodes
         .map((val) => {
-          return val.productListByProductId.productMaterialsByProductSku.nodes;
+          return val?.productListByProductId?.productMaterialsByProductSku?.nodes;
         })
         .flat()
-        .findIndex((val) => Boolean(val.materialName === "Silver")) > -1
+        .findIndex((val) => Boolean(val?.materialName === "Silver")) > -1
     ) {
       if (codAvailability !== false) {
         setCodAvailability(false);
+        
       }
     } else {
       fetch(`${API_URL}/graphql`, {
