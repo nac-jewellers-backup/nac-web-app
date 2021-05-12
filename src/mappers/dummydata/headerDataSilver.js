@@ -443,257 +443,268 @@ export const subheader = {
 //layer 3 named jewellery
 export const Jewellery = {
   Earrings: {
-    name: "SHOPS BY STYLE",
-    img: [
-      {
-        img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Studs+Earrings+Stylori-01.png",
-        content: "Studs",
-        url: "/studs-earrings-jewellery",
-      },
-      {
-        img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Drops+Earrings+Stylori-02.png",
-        content: "Drops",
-        url: "/drops-earrings-jewellery",
-      },
-      {
-        img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Earcuffs+Earrings+Stylori-03.png",
-        content: "Earcuffs",
-        url: "/ear+cuffs-earrings-jewellery",
-      },
-      {
-        img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Huggies+Earrings+Stylori-04.png",
-        content: "Huggies",
-        url: "/huggies-earrings-jewellery",
-      },
-      {
-        img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Jhumkas+Earrings+Stylori-05.png",
-        content: "Jhumkas",
-        url: "/jhumkas+online-earrings-jewellery",
-      },
-      {
-        img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Ear+Jackets+Earrings+Stylori-06.png",
-        content: "Ear Jacket",
-        url: "/ear+jacket-earrings-jewellery",
-      },
-    ],
-    name2: "SHOP BY STONE AND METAL",
-    stone_metal: [
-      {
-        icon: "",
-        name: "Gemstone",
-      },
-      {
-        icon: "",
-        name: "Diamond",
-      },
-      {
-        icon: "",
-        name: "Solitaire",
-      },
+    styles: {
+      name: "SHOPS BY STYLE",
+      img: [
+        {
+          img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Studs+Earrings+Stylori-01.png",
+          content: "Studs",
+          url: "/studs-earrings-jewellery",
+        },
+        {
+          img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Drops+Earrings+Stylori-02.png",
+          content: "Drops",
+          url: "/drops-earrings-jewellery",
+        },
+        {
+          img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Earcuffs+Earrings+Stylori-03.png",
+          content: "Earcuffs",
+          url: "/ear+cuffs-earrings-jewellery",
+        },
+        {
+          img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Huggies+Earrings+Stylori-04.png",
+          content: "Huggies",
+          url: "/huggies-earrings-jewellery",
+        },
+        {
+          img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Jhumkas+Earrings+Stylori-05.png",
+          content: "Jhumkas",
+          url: "/jhumkas+online-earrings-jewellery",
+        },
+        {
+          img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Ear+Jackets+Earrings+Stylori-06.png",
+          content: "Ear Jacket",
+          url: "/ear+jacket-earrings-jewellery",
+        },
+      ],
+    },
+    stone: {
+      name2: "SHOP BY STONE AND METAL",
+      stone_metal: [
+        {
+          icon: "",
+          name: "Gemstone",
+        },
+        {
+          icon: "",
+          name: "Diamond",
+        },
+        {
+          icon: "",
+          name: "Solitaire",
+        },
 
-      {
-        icon: "",
-        name: "Platinum",
-      },
-      {
-        icon: "",
-        name: "Yellow Gold",
-      },
-      {
-        icon: "",
-        name: "White Gold",
-      },
-      {
-        icon: "",
-        name: "Rose Gold",
-      },
-      {
-        icon: "",
-        name: "Silver by STYLORI",
-      },
-    ],
-    name3: "SHOP BY PRICE",
-    price: [
-      {
-        price: "Below -$1000",
-      },
-      {
-        price: "$10000 -$250000",
-      },
-      {
-        price: "$250000 - &50000",
-      },
-      {
-        price: "Above -$1000",
-      },
-    ],
-    // extrafeature: [
-    //   {
-    //     name: "LEG CHAIN",
-    //     feature: ["anglets", "Metti", "others"],
-    //   },
-    //   {
-    //     name: "Furniture",
-    //     feature: ["Chairs", "Tables", "center Tables"],
-    //   },
-    // ],
+        {
+          icon: "",
+          name: "Platinum",
+        },
+        {
+          icon: "",
+          name: "Yellow Gold",
+        },
+        {
+          icon: "",
+          name: "White Gold",
+        },
+        {
+          icon: "",
+          name: "Rose Gold",
+        },
+        {
+          icon: "",
+          name: "Silver by STYLORI",
+        },
+      ],
+    },
+    price: {
+      name3: "SHOP BY PRICE",
+      price: [
+        {
+          price: "Below -$1000",
+        },
+        {
+          price: "$10000 -$250000",
+        },
+        {
+          price: "$250000 - &50000",
+        },
+        {
+          price: "Above -$1000",
+        },
+      ],
+    },
   },
 
   SILVER: {
-    name: "SHOPS BY STYLE",
-    img: [
-      {
-        img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Studs+Earrings+Stylori-01.png",
-        content: "Studs",
-        url: "/studs-earrings-jewellery",
-      },
-      {
-        img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Drops+Earrings+Stylori-02.png",
-        content: "Drops",
-        url: "/drops-earrings-jewellery",
-      },
-      {
-        img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Earcuffs+Earrings+Stylori-03.png",
-        content: "Earcuffs",
-        url: "/ear+cuffs-earrings-jewellery",
-      },
-      {
-        img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Huggies+Earrings+Stylori-04.png",
-        content: "Huggies",
-        url: "/huggies-earrings-jewellery",
-      },
-      {
-        img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Jhumkas+Earrings+Stylori-05.png",
-        content: "Jhumkas",
-        url: "/jhumkas+online-earrings-jewellery",
-      },
-      {
-        img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Ear+Jackets+Earrings+Stylori-06.png",
-        content: "Ear Jacket",
-        url: "/ear+jacket-earrings-jewellery",
-      },
-    ],
-    name2: "",
-
-    name3: "SHOP BY PRICE",
-    price: [
-      {
-        price: "Below -$1000",
-      },
-      {
-        price: "$10000 -$250000",
-      },
-      {
-        price: "$250000 - &50000",
-      },
-      {
-        price: "Above -$1000",
-      },
-    ],
-    extrafeature: [
-      {
-        name: "LEG CHAIN",
-        feature: ["anglets", "Metti", "others"],
-      },
-      {
-        name: "Furniture",
-        feature: ["Chairs", "Tables", "center Tables"],
-      },
-      {
-        name: "TANJORE",
-        feature: ["anglets", "Metti", "others"],
-      },
-      {
-        name: "COLLECTIONS",
-        feature: ["Chairs", "Tables", "center Tables"],
-      },
-    ],
+    styles: {
+      name: "SILVER ARTICLES",
+      img: [
+        {
+          img: "https://assets.stylori.com/images/Menu/Jewellery/Jewellery+by+Collections/Carve+Collection+Stylori-08.png",
+          content: "Carve",
+          url: "/jewellery-from+the+carve+collection?sort=latest",
+        },
+        {
+          img: "https://assets.stylori.com/images/Menu/Jewellery/Jewellery+by+Collections/Blush+Collection+Stylori+-.png",
+          content: "Blush",
+          url: "/jewellery-blush",
+        },
+        {
+          img: "https://assets.stylori.com/images/Menu/Jewellery/Jewellery+by+Collections/Molecute+Collection+Stylori+-01.png",
+          content: "Molecute",
+          url: "/jewellery-molecute+collection",
+        },
+        {
+          img: "https://assets.stylori.com/images/Menu/Jewellery/Jewellery+by+Collections/Gemstone+Collection+Stylori+-02.png",
+          content: "Gemstone",
+          url: "/gemstone-jewellery?sort=latest",
+        },
+        {
+          img: "https://assets.stylori.com/images/Menu/Jewellery/Jewellery+by+Collections/Mistletoe+Collection+Stylori-01.png",
+          content: "Mistletoe",
+          url: "/jewellery-from+mistletoe+collection",
+        },
+        {
+          img: "https://assets.stylori.com/images/Menu/Jewellery/Jewellery+by+Collections/Renaissance+Collection+Stylori+-04.png",
+          content: "The Renaissance",
+          url: "/jewellery-from+the+renaissance+collection",
+        },
+        {
+          img: "https://assets.stylori.com/images/Menu/Jewellery/Jewellery+by+Collections/Monsoon+Collection+Stylori-02.png",
+          content: "Monsoon",
+          url: "/jewellery-from+monsoon+collection",
+        },
+        {
+          img: "https://assets.stylori.com/images/Menu/Jewellery/Jewellery+by+Collections/Summer+Collection+Stylori-06.png",
+          content: "Summer",
+          url: "/jewellery-from+the+summer+collection",
+        },
+      ],
+    },
+    price: {
+      name3: "CORPORATE GIFITNG",
+      price: [
+        {
+          price: "Below -$1000",
+        },
+        {
+          price: "$10000 -$250000",
+        },
+        {
+          price: "$250000 - &50000",
+        },
+        {
+          price: "Above -$1000",
+        },
+      ],
+    },
+    feature: {
+      extrafeature: [
+        {
+          name: "LEG CHAIN",
+          feature: ["anglets", "Metti", "Velli pavai Set", "Antique", "others"],
+        },
+        {
+          name: "Furniture",
+          feature: ["Chairs", "Tables", "center Tables", "Sofa Sets", "Others"],
+        },
+        {
+          name: "TANJORE",
+          feature: ["Photos", "others"],
+        },
+        {
+          name: "COLLECTIONS",
+          feature: [
+            "Dinner",
+            "Wedding",
+            "Grahapravesham",
+            "Recptions",
+            "Panchapatram",
+            "New Born",
+            "Pooja",
+            "Vattil",
+            "Tea/Coffe",
+          ],
+        },
+      ],
+    },
   },
   "BANGLES & BRACELETS": {
-    name: "SHOPS BY STYLE",
-    img: [
-      {
-        img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Studs+Earrings+Stylori-01.png",
-        content: "Studs",
-        url: "/studs-earrings-jewellery",
-      },
-      {
-        img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Drops+Earrings+Stylori-02.png",
-        content: "Drops",
-        url: "/drops-earrings-jewellery",
-      },
-      {
-        img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Earcuffs+Earrings+Stylori-03.png",
-        content: "Earcuffs",
-        url: "/ear+cuffs-earrings-jewellery",
-      },
-      {
-        img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Huggies+Earrings+Stylori-04.png",
-        content: "Huggies",
-        url: "/huggies-earrings-jewellery",
-      },
-      {
-        img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Jhumkas+Earrings+Stylori-05.png",
-        content: "Jhumkas",
-        url: "/jhumkas+online-earrings-jewellery",
-      },
-      {
-        img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Ear+Jackets+Earrings+Stylori-06.png",
-        content: "Ear Jacket",
-        url: "/ear+jacket-earrings-jewellery",
-      },
-    ],
-    name2: "SHOP BY STONE AND METAL",
-    stone_metal: [
-      {
-        icon: "",
-        name: "Gemstone",
-      },
-      {
-        icon: "",
-        name: "Diamond",
-      },
-      {
-        icon: "",
-        name: "Solitaire",
-      },
+    styles: {
+      name: "SHOPS BY STYLE",
+      img: [
+        {
+          img: "https://assets.stylori.com/images/Menu/Jewellery/Bangles+and+Bracelets/Bangle+stylori+-02.png",
+          content: "Bangles",
+          url: "/bangles-jewellery",
+        },
+        {
+          img: "https://assets.stylori.com/images/Menu/Jewellery/Bangles+and+Bracelets/Bracelet+stylori+Bracelets-01.png",
+          content: "Bracelets",
+          url: "/bracelets-jewellery",
+        },
+        {
+          img: "https://assets.stylori.com/images/Menu/Jewellery/Bangles+and+Bracelets/Oval+Bracelet+stylori+-03.png",
+          content: "Oval Bracelets",
+          url: "/oval+bracelets-jewellery",
+        },
+      ],
+    },
+    stone: {
+      name2: "SHOP BY STONE AND METAL",
+      stone_metal: [
+        {
+          icon: "",
+          name: "Gemstone",
+        },
+        {
+          icon: "",
+          name: "Diamond",
+        },
+        {
+          icon: "",
+          name: "Solitaire",
+        },
 
-      {
-        icon: "",
-        name: "Platinum",
-      },
-      {
-        icon: "",
-        name: "Yellow Gold",
-      },
-      {
-        icon: "",
-        name: "White Gold",
-      },
-      {
-        icon: "",
-        name: "Rose Gold",
-      },
-      {
-        icon: "",
-        name: "Silver by STYLORI",
-      },
-    ],
-    name3: "SHOP BY PRICE",
-    price: [
-      {
-        price: "Below -$1000",
-      },
-      {
-        price: "$10000 -$250000",
-      },
-      {
-        price: "$250000 - &50000",
-      },
-      {
-        price: "Above -$1000",
-      },
-    ],
+        {
+          icon: "",
+          name: "Platinum",
+        },
+        {
+          icon: "",
+          name: "Yellow Gold",
+        },
+        {
+          icon: "",
+          name: "White Gold",
+        },
+        {
+          icon: "",
+          name: "Rose Gold",
+        },
+        {
+          icon: "",
+          name: "Silver by STYLORI",
+        },
+      ],
+    },
+    price: {
+      name3: "SHOP BY PRICE",
+      price: [
+        {
+          price: "Below -$1000",
+        },
+        {
+          price: "$10000 -$250000",
+        },
+        {
+          price: "$250000 - &50000",
+        },
+        {
+          price: "Above -$1000",
+        },
+      ],
+    },
     // extrafeature: [
     //   {
     //     name: "LEG CHAIN",
@@ -706,90 +717,92 @@ export const Jewellery = {
     // ],
   },
   RINGS: {
-    name: "SHOPS BY STYLE",
-    img: [
-      {
-        img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Studs+Earrings+Stylori-01.png",
-        content: "Studs",
-        url: "/studs-earrings-jewellery",
-      },
-      {
-        img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Drops+Earrings+Stylori-02.png",
-        content: "Drops",
-        url: "/drops-earrings-jewellery",
-      },
-      {
-        img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Earcuffs+Earrings+Stylori-03.png",
-        content: "Earcuffs",
-        url: "/ear+cuffs-earrings-jewellery",
-      },
-      {
-        img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Huggies+Earrings+Stylori-04.png",
-        content: "Huggies",
-        url: "/huggies-earrings-jewellery",
-      },
-      {
-        img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Jhumkas+Earrings+Stylori-05.png",
-        content: "Jhumkas",
-        url: "/jhumkas+online-earrings-jewellery",
-      },
-      {
-        img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Ear+Jackets+Earrings+Stylori-06.png",
-        content: "Ear Jacket",
-        url: "/ear+jacket-earrings-jewellery",
-      },
-    ],
-    name2: "SHOP BY STONE AND METAL",
-    stone_metal: [
-      {
-        icon: "",
-        name: "Gemstone",
-      },
-      {
-        icon: "",
-        name: "Diamond",
-      },
-      {
-        icon: "",
-        name: "Solitaire",
-      },
+    styles: {
+      name: "SHOPS BY STYLE",
+      img: [
+        {
+          img: "https://assets.stylori.com/images/Menu/Jewellery/Rings/Classic+stylori+Rings-01.png",
+          content: "Classic",
+          url: "/classic-rings-jewellery",
+        },
+        {
+          img: "https://assets.stylori.com/images/Menu/Jewellery/Rings/Casual+stylori+Rings-02.png",
+          content: "Casual",
+          url: "/casual-rings-jewellery",
+        },
+        {
+          img: "https://assets.stylori.com/images/Menu/Jewellery/Rings/Cocktail+stylori+Rings-03.png",
+          content: "Cocktail",
+          url: "/cocktail-rings-jewellery",
+        },
+        {
+          img: "https://assets.stylori.com/images/Menu/Jewellery/Rings/Engagement+stylori+Rings-04.png",
+          content: "Engagement",
+          url: "/rings-jewellery-for+engagement",
+        },
+        {
+          img: "https://assets.stylori.com/images/Menu/Jewellery/Rings/Fashion+stylori+Rings-05.png",
+          content: "Fashion",
+          url: "/fashion-rings-jewellery",
+        },
+      ],
+    },
+    stone: {
+      name2: "SHOP BY STONE AND METAL",
+      stone_metal: [
+        {
+          icon: "",
+          name: "Gemstone",
+        },
+        {
+          icon: "",
+          name: "Diamond",
+        },
+        {
+          icon: "",
+          name: "Solitaire",
+        },
 
-      {
-        icon: "",
-        name: "Platinum",
-      },
-      {
-        icon: "",
-        name: "Yellow Gold",
-      },
-      {
-        icon: "",
-        name: "White Gold",
-      },
-      {
-        icon: "",
-        name: "Rose Gold",
-      },
-      {
-        icon: "",
-        name: "Silver by STYLORI",
-      },
-    ],
-    name3: "SHOP BY PRICE",
-    price: [
-      {
-        price: "Below -$1000",
-      },
-      {
-        price: "$10000 -$250000",
-      },
-      {
-        price: "$250000 - &50000",
-      },
-      {
-        price: "Above -$1000",
-      },
-    ],
+        {
+          icon: "",
+          name: "Platinum",
+        },
+        {
+          icon: "",
+          name: "Yellow Gold",
+        },
+        {
+          icon: "",
+          name: "White Gold",
+        },
+        {
+          icon: "",
+          name: "Rose Gold",
+        },
+        {
+          icon: "",
+          name: "Silver by STYLORI",
+        },
+      ],
+    },
+    price: {
+      name3: "SHOP BY PRICE",
+      price: [
+        {
+          price: "Below -$1000",
+        },
+        {
+          price: "$10000 -$250000",
+        },
+        {
+          price: "$250000 - &50000",
+        },
+        {
+          price: "Above -$1000",
+        },
+      ],
+    },
+
     // extrafeature: [
     //   {
     //     name: "LEG CHAIN",
@@ -802,173 +815,186 @@ export const Jewellery = {
     // ],
   },
   COLLECTIONS: {
-    name: "SHOPS BY STYLE",
-    img: [
-      {
-        img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Studs+Earrings+Stylori-01.png",
-        content: "Studs",
-        url: "/studs-earrings-jewellery",
-      },
-      {
-        img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Drops+Earrings+Stylori-02.png",
-        content: "Drops",
-        url: "/drops-earrings-jewellery",
-      },
-      {
-        img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Earcuffs+Earrings+Stylori-03.png",
-        content: "Earcuffs",
-        url: "/ear+cuffs-earrings-jewellery",
-      },
-      {
-        img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Huggies+Earrings+Stylori-04.png",
-        content: "Huggies",
-        url: "/huggies-earrings-jewellery",
-      },
-      {
-        img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Jhumkas+Earrings+Stylori-05.png",
-        content: "Jhumkas",
-        url: "/jhumkas+online-earrings-jewellery",
-      },
-      {
-        img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Ear+Jackets+Earrings+Stylori-06.png",
-        content: "Ear Jacket",
-        url: "/ear+jacket-earrings-jewellery",
-      },
-    ],
-    name2: "",
-
-    name3: "",
+    styles: {
+      name: "SHOPS BY STYLE",
+      img: [
+        {
+          img: "https://assets.stylori.com/images/Menu/Jewellery/Jewellery+by+Collections/Carve+Collection+Stylori-08.png",
+          content: "Carve",
+          url: "/jewellery-from+the+carve+collection?sort=latest",
+        },
+        {
+          img: "https://assets.stylori.com/images/Menu/Jewellery/Jewellery+by+Collections/Blush+Collection+Stylori+-.png",
+          content: "Blush",
+          url: "/jewellery-blush",
+        },
+        {
+          img: "https://assets.stylori.com/images/Menu/Jewellery/Jewellery+by+Collections/Molecute+Collection+Stylori+-01.png",
+          content: "Molecute",
+          url: "/jewellery-molecute+collection",
+        },
+        {
+          img: "https://assets.stylori.com/images/Menu/Jewellery/Jewellery+by+Collections/Gemstone+Collection+Stylori+-02.png",
+          content: "Gemstone",
+          url: "/gemstone-jewellery?sort=latest",
+        },
+        {
+          img: "https://assets.stylori.com/images/Menu/Jewellery/Jewellery+by+Collections/Mistletoe+Collection+Stylori-01.png",
+          content: "Mistletoe",
+          url: "/jewellery-from+mistletoe+collection",
+        },
+        {
+          img: "https://assets.stylori.com/images/Menu/Jewellery/Jewellery+by+Collections/Renaissance+Collection+Stylori+-04.png",
+          content: "The Renaissance",
+          url: "/jewellery-from+the+renaissance+collection",
+        },
+        {
+          img: "https://assets.stylori.com/images/Menu/Jewellery/Jewellery+by+Collections/Monsoon+Collection+Stylori-02.png",
+          content: "Monsoon",
+          url: "/jewellery-from+monsoon+collection",
+        },
+        {
+          img: "https://assets.stylori.com/images/Menu/Jewellery/Jewellery+by+Collections/Summer+Collection+Stylori-06.png",
+          content: "Summer",
+          url: "/jewellery-from+the+summer+collection",
+        },
+      ],
+    },
   },
   GIFITING: {
-    name: "",
-    name2: "",
-
-    hr: "",
-    option: [
-      "SOLITAIRE GUIDE",
-      "DESIGN YOUR OWN",
-      "KNOW YOUR SIZE",
-      "SHOP ALL DESIGN",
-    ],
-    name3: "SHOP BY PRICE",
-    price: [
-      {
-        price: "Below -$1000",
-      },
-      {
-        price: "$10000 -$250000",
-      },
-      {
-        price: "$250000 - &50000",
-      },
-      {
-        price: "Above -$1000",
-      },
-    ],
+    option: {
+      option: [
+        "Gifts for men",
+        "Gifts for women",
+        "Gifts for kids",
+        "Gifts for wife",
+        "Lightweight by STYLORI",
+        "Silver by STYLORI",
+      ],
+    },
+    price: {
+      name3: "SHOP BY PRICE",
+      price: [
+        {
+          price: "Below -$1000",
+        },
+        {
+          price: "$10000 -$250000",
+        },
+        {
+          price: "$250000 - &50000",
+        },
+        {
+          price: "Above -$1000",
+        },
+      ],
+    },
   },
   STYLORI: {
-    name: "",
-    name2: "",
-    name3: "",
-    hr: "",
-    option: [
-      "SOLITAIRE GUIDE",
-      "DESIGN YOUR OWN",
-      "KNOW YOUR SIZE",
-      "SHOP ALL DESIGN",
-    ],
+    option: {
+      hr: "",
+      option: ["STYLORI GOLD", "STYLORI SILVER", "CSK MERCHANDISE"],
+    },
   },
   SOLITAIRE: {
-    name: "SHOPS BY STYLE",
-    img: [
-      {
-        img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Studs+Earrings+Stylori-01.png",
-        content: "Studs",
-        url: "/studs-earrings-jewellery",
-      },
-      {
-        img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Drops+Earrings+Stylori-02.png",
-        content: "Drops",
-        url: "/drops-earrings-jewellery",
-      },
-      {
-        img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Earcuffs+Earrings+Stylori-03.png",
-        content: "Earcuffs",
-        url: "/ear+cuffs-earrings-jewellery",
-      },
-      {
-        img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Huggies+Earrings+Stylori-04.png",
-        content: "Huggies",
-        url: "/huggies-earrings-jewellery",
-      },
-      {
-        img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Jhumkas+Earrings+Stylori-05.png",
-        content: "Jhumkas",
-        url: "/jhumkas+online-earrings-jewellery",
-      },
-      {
-        img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Ear+Jackets+Earrings+Stylori-06.png",
-        content: "Ear Jacket",
-        url: "/ear+jacket-earrings-jewellery",
-      },
-    ],
-    name2: "SHOP BY STONE AND METAL",
-    stone_metal: [
-      {
-        icon: "",
-        name: "Gemstone",
-      },
-      {
-        icon: "",
-        name: "Diamond",
-      },
-      {
-        icon: "",
-        name: "Solitaire",
-      },
+    styles: {
+      name: "SHOPS BY STYLE",
+      img: [
+        {
+          img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Studs+Earrings+Stylori-01.png",
+          content: "Studs",
+          url: "/studs-earrings-jewellery",
+        },
+        {
+          img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Drops+Earrings+Stylori-02.png",
+          content: "Drops",
+          url: "/drops-earrings-jewellery",
+        },
+        {
+          img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Earcuffs+Earrings+Stylori-03.png",
+          content: "Earcuffs",
+          url: "/ear+cuffs-earrings-jewellery",
+        },
+        {
+          img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Huggies+Earrings+Stylori-04.png",
+          content: "Huggies",
+          url: "/huggies-earrings-jewellery",
+        },
+        {
+          img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Jhumkas+Earrings+Stylori-05.png",
+          content: "Jhumkas",
+          url: "/jhumkas+online-earrings-jewellery",
+        },
+        {
+          img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Ear+Jackets+Earrings+Stylori-06.png",
+          content: "Ear Jacket",
+          url: "/ear+jacket-earrings-jewellery",
+        },
+      ],
+    },
+    stone: {
+      name2: "LOOSE DIAMONDS",
+      stone_metal: [
+        {
+          icon: "",
+          name: "Round",
+        },
+        {
+          icon: "",
+          name: "Oval",
+        },
+        {
+          icon: "",
+          name: "Cushion",
+        },
 
-      {
-        icon: "",
-        name: "Platinum",
-      },
-      {
-        icon: "",
-        name: "Yellow Gold",
-      },
-      {
-        icon: "",
-        name: "White Gold",
-      },
-      {
-        icon: "",
-        name: "Rose Gold",
-      },
-      {
-        icon: "",
-        name: "Silver by STYLORI",
-      },
-    ],
-    name3: "SHOP BY PRICE",
-    price: [
-      {
-        price: "Below -$1000",
-      },
-      {
-        price: "$10000 -$250000",
-      },
-      {
-        price: "$250000 - &50000",
-      },
-      {
-        price: "Above -$1000",
-      },
-    ],
-    option: [
-      "SOLITAIRE GUIDE",
-      "DESIGN YOUR OWN",
-      "KNOW YOUR SIZE",
-      "SHOP ALL DESIGN",
-    ],
+        {
+          icon: "",
+          name: "Emerald",
+        },
+        {
+          icon: "",
+          name: "Princes",
+        },
+        {
+          icon: "",
+          name: "Heart",
+        },
+        {
+          icon: "",
+          name: "Pear",
+        },
+        {
+          icon: "",
+          name: "Silver by STYLORI",
+        },
+      ],
+    },
+    price: {
+      name3: "SHOP BY PRICE",
+      price: [
+        {
+          price: "Below -$1000",
+        },
+        {
+          price: "$10000 -$250000",
+        },
+        {
+          price: "$250000 - &50000",
+        },
+        {
+          price: "Above -$1000",
+        },
+      ],
+    },
+    option: {
+      option: [
+        "SOLITAIRE GUIDE",
+        "DESIGN YOUR OWN",
+        "KNOW YOUR SIZE",
+        "SHOP ALL DESIGN",
+      ],
+    },
     // extrafeature: [
     //   {
     //     name: "LEG CHAIN",
@@ -982,63 +1008,70 @@ export const Jewellery = {
   },
 
   "SAVING SCHEME": {
-    name: "",
-    name2: "",
-    name3: "",
-    hr: "",
-    option: [
-      "SOLITAIRE GUIDE",
-      "DESIGN YOUR OWN",
-      "KNOW YOUR SIZE",
-      "SHOP ALL DESIGN",
-    ],
+    option: {
+      hr: "",
+      option: [
+        "PAY NOW",
+        "JOIN NOW",
+        "NEW QUICK GOLD",
+        "SUPER QUICK DIAMOND",
+        "SUPER QUICK SILVER",
+      ],
+    },
   },
   "OTHER JEWELLERY": {
-    name: "",
-
-    name2: "",
-
-    name3: "SHOP BY PRICE",
-    price: [
-      {
-        price: "Below -$1000",
-      },
-      {
-        price: "$10000 -$250000",
-      },
-      {
-        price: "$250000 - &50000",
-      },
-      {
-        price: "Above -$1000",
-      },
-    ],
-    extrafeature: [
-      {
-        name: "LEG CHAIN",
-        feature: ["anglets", "Metti", "others"],
-      },
-      {
-        name: "Furniture",
-        feature: ["Chairs", "Tables", "center Tables"],
-      },
-      {
-        name: "LEG CHAIN",
-        feature: ["anglets", "Metti", "others"],
-      },
-      {
-        name: "Furniture",
-        feature: ["Chairs", "Tables", "center Tables"],
-      },
-      {
-        name: "LEG CHAIN",
-        feature: ["anglets", "Metti", "others"],
-      },
-      {
-        name: "Furniture",
-        feature: ["Chairs", "Tables", "center Tables"],
-      },
-    ],
+    price: {
+      name3: "SHOP BY PRICE",
+      price: [
+        {
+          price: "Below -$1000",
+        },
+        {
+          price: "$10000 -$250000",
+        },
+        {
+          price: "$250000 - &50000",
+        },
+        {
+          price: "Above -$1000",
+        },
+      ],
+    },
+    feature: {
+      extrafeature: [
+        {
+          name: "NECKLACE",
+          feature: ["Short", "Long", "Layered", "Bridal"],
+        },
+        {
+          name: "PENDANTS",
+          feature: ["Casual", "Bridal", "Religious"],
+        },
+        {
+          name: "SHOP MORE",
+          feature: [
+            "Nose Pin",
+            "Chain",
+            "Platinum Brands",
+            "Bridal Accessories",
+            "Odiyanam",
+            "Anklets",
+          ],
+        },
+        {
+          name: "STYLORI",
+          feature: ["Gold & Diamonds", "Silver"],
+        },
+        {
+          name: "GOLD COINS",
+          feature: ["22ct", "24ct"],
+        },
+        {
+          name: "SHOP ALL JEWELLERY",
+          feature: ["For Men", "For Women", "For Kids"],
+        },
+      ],
+    },
   },
   // "My Account": {
   //     Login: {
