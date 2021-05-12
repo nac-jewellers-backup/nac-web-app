@@ -1,6 +1,13 @@
 import React from "react";
 
-import { Grid, Button, Hidden, Container, Typography, TextField} from "@material-ui/core";
+import {
+  Grid,
+  Button,
+  Hidden,
+  Container,
+  Typography,
+  TextField,
+} from "@material-ui/core";
 import List from "@material-ui/core/List";
 import { makeStyles } from "@material-ui/core/styles";
 import cartoonFooter from "../../assets/cartoonFooter.png";
@@ -12,7 +19,7 @@ import { Link } from "react-router-dom";
 import Accordion from "@material-ui/core/Accordion";
 import AccordionSummary from "@material-ui/core/AccordionSummary";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
-import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
+import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 
 const useStyles = makeStyles((theme) => ({
   navTitle: {
@@ -212,30 +219,30 @@ const useStyles = makeStyles((theme) => ({
   },
   bodyMobile: {
     padding: "0px",
-    display:"block",
+    display: "block",
   },
   linkMobile: {
     fontSize: "11px",
     color: "#6b6b6b",
   },
-  accordionEdit:{
-    padding:"0px",
-    height:"30px"
+  accordionEdit: {
+    padding: "0px",
+    height: "30px",
   },
-  accodianTotal:{
-      margin:"5px 0 !important"
+  accodianTotal: {
+    margin: "5px 0 !important",
   },
-  iconColor:{
-    "& .MuiSvgIcon-root":{
-    fill: "#6b6b6b !important"
-  }
+  iconColor: {
+    "& .MuiSvgIcon-root": {
+      fill: "#6b6b6b !important",
+    },
   },
-  line:{
-    border:"0.5px solid #d3d0d0",
-    width:"100%",
-    backgroundColor:"#d3d0d0",
-    marginBottom:"6px"
-  }
+  line: {
+    border: "0.5px solid #d3d0d0",
+    width: "100%",
+    backgroundColor: "#d3d0d0",
+    marginBottom: "6px",
+  },
 }));
 
 export default function Footer(props) {
@@ -356,80 +363,80 @@ export default function Footer(props) {
       Title: "About Us",
       content: [
         {
-          subTitle:"Our Story",
-          url:"/stories"
+          subTitle: "Our Story",
+          url: "/stories",
         },
         {
-          subTitle:"Temple Work",
-          url:"/temple-work"
+          subTitle: "Temple Work",
+          url: "/temple-work",
         },
         {
-          subTitle:"In The News",
-          url:"/temple-work"
+          subTitle: "In The News",
+          url: "/temple-work",
         },
         {
-          subTitle:"Advertisements",
-          url:"/temple-work"
-        }
-      ]
+          subTitle: "Advertisements",
+          url: "/temple-work",
+        },
+      ],
     },
     {
       url: "/careers",
       Title: "Know Your Jewellery",
       content: [
         {
-          subTitle:"Collections",
-          url:"/stories"
+          subTitle: "Collections",
+          url: "/stories",
         },
         {
-          subTitle:"Diamond Guide",
-          url:"/temple-work"
+          subTitle: "Diamond Guide",
+          url: "/temple-work",
         },
         {
-          subTitle:"Birthstones Gudide",
-          url:"/temple-work"
+          subTitle: "Birthstones Gudide",
+          url: "/temple-work",
         },
         {
-          subTitle:"Caring For Your Jewellery",
-          url:"/temple-work"
-        }
-      ]
+          subTitle: "Caring For Your Jewellery",
+          url: "/temple-work",
+        },
+      ],
     },
     {
       url: "/newsroom",
       Title: "Customer Service",
       content: [
         {
-          subTitle:"Track Your Order",
-          url:"/stories"
+          subTitle: "Track Your Order",
+          url: "/stories",
         },
         {
-          subTitle:"30 Day Return",
-          url:"/temple-work"
-        }
-      ]
+          subTitle: "30 Day Return",
+          url: "/temple-work",
+        },
+      ],
     },
     {
       url: "/advertising",
       Title: "Contact us",
       content: [
         {
-          subTitle:"+91 44 4399 6666 - Customer Care",
-          url:""
+          subTitle: "+91 44 4399 6666 - Customer Care",
+          url: "",
         },
         {
-          subTitle:"care@nacjewellers.com - Email",
-          url:""
+          subTitle: "care@nacjewellers.com - Email",
+          url: "",
         },
         {
-          subTitle:"+91 95974 57555",
-          url:""
+          subTitle: "+91 95974 57555",
+          url: "",
         },
         {
-          subTitle:"Careers",
-          url:""
-        }
-      ]
+          subTitle: "Careers",
+          url: "",
+        },
+      ],
     },
   ];
   const MobilefooterData2 = [
@@ -464,8 +471,7 @@ export default function Footer(props) {
       Title: "Terms & Conditions",
     },
     {
-      url:
-        "https://www.google.co.in/maps/@13.0457285,80.2325498,3a,75y,281.19h,87.03t/data=!3m7!1e1!3m5!1siBMPPhrps9EAAAQ0H3M5OQ!2e0!3e2!7i13312!8i6656!6m1!1e1",
+      url: "https://www.google.co.in/maps/@13.0457285,80.2325498,3a,75y,281.19h,87.03t/data=!3m7!1e1!3m5!1siBMPPhrps9EAAAQ0H3M5OQ!2e0!3e2!7i13312!8i6656!6m1!1e1",
       Title: "360 ° Store View",
     },
     {
@@ -478,7 +484,10 @@ export default function Footer(props) {
     },
   ];
   const status = (response) => {
-    if ((response.status >= 200 && response.status < 300) || response.status === 409) {
+    if (
+      (response.status >= 200 && response.status < 300) ||
+      response.status === 409
+    ) {
       if (response.status === 409) setStateClassname("snackBarError");
       else setStateClassname("snackBar");
       return Promise.resolve(response);
@@ -505,16 +514,22 @@ export default function Footer(props) {
     var element_input = document.getElementById("_input");
     element_input.classList.remove("error");
     element.classList.remove("error");
-    var emailvld = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    var emailvld =
+      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (!document.getElementById("_input").value.length > 0) {
       element_input.classList.add("error");
       element.classList.add("error");
       return;
-    } else if (!Boolean(document.getElementById("_input").value.match(emailvld))) {
+    } else if (
+      !Boolean(document.getElementById("_input").value.match(emailvld))
+    ) {
       element_input.classList.add("error");
       element.classList.add("error");
       return;
-    } else if (document.getElementById("_input").value.length > 0 && document.getElementById("_input").value.match(emailvld)) {
+    } else if (
+      document.getElementById("_input").value.length > 0 &&
+      document.getElementById("_input").value.match(emailvld)
+    ) {
       fetch(`${API_URL}/addemailsubscription`, {
         method: "post",
         headers: {
@@ -585,7 +600,12 @@ export default function Footer(props) {
         <Container>
           <Grid container item xs={12} style={{ marginTop: 20 }}>
             <Grid container item xs={12} alignItems="center">
-              <Grid container item xs={12} style={{ color: "white", fontSize: "13px" }}>
+              <Grid
+                container
+                item
+                xs={12}
+                style={{ color: "white", fontSize: "13px" }}
+              >
                 <Grid item xs={3}>
                   {footerData1.map((data) => {
                     return (
@@ -595,7 +615,9 @@ export default function Footer(props) {
                           onClick={() => {
                             window.location.href = data.url;
                           }}
-                          style={{ fontWeight: data.Title === "About Us" ? "800" : "" }}
+                          style={{
+                            fontWeight: data.Title === "About Us" ? "800" : "",
+                          }}
                           // href="#"
                         >
                           {data.Title}
@@ -613,7 +635,10 @@ export default function Footer(props) {
                           onClick={() => {
                             window.location.href = data.url;
                           }}
-                          style={{ fontWeight: data.Title === "Know Your Jewellery" ? "800" : "" }}
+                          style={{
+                            fontWeight:
+                              data.Title === "Know Your Jewellery" ? "800" : "",
+                          }}
                           href="#"
                         >
                           {data.Title}
@@ -631,7 +656,10 @@ export default function Footer(props) {
                           onClick={() => {
                             window.location.href = data.url;
                           }}
-                          style={{ fontWeight: data.Title === "Customer Service" ? "800" : "" }}
+                          style={{
+                            fontWeight:
+                              data.Title === "Customer Service" ? "800" : "",
+                          }}
                           href="#"
                         >
                           {data.Title}
@@ -649,7 +677,10 @@ export default function Footer(props) {
                           onClick={() => {
                             window.location.href = data.url;
                           }}
-                          style={{ fontWeight: data.Title === "Contact Us" ? "800" : "" }}
+                          style={{
+                            fontWeight:
+                              data.Title === "Contact Us" ? "800" : "",
+                          }}
                           href="#"
                         >
                           {data.Title}
@@ -663,8 +694,18 @@ export default function Footer(props) {
                 <Grid container xs={9} style={{ width: "100%" }}>
                   <Grid item className={"imageClass"}>
                     <Grid item className={classes.footerSocialIcons}>
-                      <a target="_blank" href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`}>
-                        <i style={{ fontSize: "24px", color: "#434e77", paddingLeft: "3px" }} className="fa ">
+                      <a
+                        target="_blank"
+                        href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`}
+                      >
+                        <i
+                          style={{
+                            fontSize: "24px",
+                            color: "#434e77",
+                            paddingLeft: "3px",
+                          }}
+                          className="fa "
+                        >
                           &#xf09a;
                         </i>
                       </a>
@@ -673,23 +714,60 @@ export default function Footer(props) {
                         target="_blank"
                         href={`http://www.twitter.com/share?url=${window.location.href}`}
                       >
-                        <i style={{ fontSize: "24px", color: "#434e77", paddingLeft: "5%" }} className="fa">
+                        <i
+                          style={{
+                            fontSize: "24px",
+                            color: "#434e77",
+                            paddingLeft: "5%",
+                          }}
+                          className="fa"
+                        >
                           &#xf099;
                         </i>{" "}
                       </a>
-                      <a target="_blank" href="https://instagram.com/stylorilove">
-                        <i style={{ fontSize: "24px", color: "#434e77", paddingLeft: "5%" }} className="fa ">
+                      <a
+                        target="_blank"
+                        href="https://instagram.com/stylorilove"
+                      >
+                        <i
+                          style={{
+                            fontSize: "24px",
+                            color: "#434e77",
+                            paddingLeft: "5%",
+                          }}
+                          className="fa "
+                        >
                           &#xf16d;
                         </i>
                       </a>
-                      <a target="_blank" href="https://in.pinterest.com/stylori2015/">
-                        <i style={{ fontSize: "24px", color: "#434e77", paddingLeft: "5%" }} className="fa ">
+                      <a
+                        target="_blank"
+                        href="https://in.pinterest.com/stylori2015/"
+                      >
+                        <i
+                          style={{
+                            fontSize: "24px",
+                            color: "#434e77",
+                            paddingLeft: "5%",
+                          }}
+                          className="fa "
+                        >
                           &#xf231;
                         </i>
                       </a>
 
-                      <a target="_blank" href="https://www.youtube.com/c/stylori">
-                        <i style={{ fontSize: "24px", color: "#434e77", paddingLeft: "5%" }} className="fa ">
+                      <a
+                        target="_blank"
+                        href="https://www.youtube.com/c/stylori"
+                      >
+                        <i
+                          style={{
+                            fontSize: "24px",
+                            color: "#434e77",
+                            paddingLeft: "5%",
+                          }}
+                          className="fa "
+                        >
                           &#xf167;
                         </i>
                       </a>
@@ -697,35 +775,69 @@ export default function Footer(props) {
                   </Grid>
                 </Grid>
                 <Grid container xs={3}>
-                  <Button style={{ background: "#33366D", color: "white", fontSize: "11px" }}>Store Locator</Button>
+                  <Button
+                    style={{
+                      background: "#33366D",
+                      color: "white",
+                      fontSize: "11px",
+                    }}
+                  >
+                    Store Locator
+                  </Button>
                 </Grid>
               </Grid>
-              <Grid container direction="row" item={12} style={{ display: "flex", alignItems: "center", padding: "10px 0px" }}>
+              <Grid
+                container
+                direction="row"
+                item={12}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  padding: "10px 0px",
+                }}
+              >
                 <Grid container xs={4}>
                   <Grid item>
-                    <Link className={classes.linkText} to="/sitemap">SITEMAP &nbsp; </Link>
+                    <Link className={classes.linkText} to="/sitemap">
+                      SITEMAP &nbsp;{" "}
+                    </Link>
                   </Grid>
                   <Grid item>
-                    <Link className={classes.linkText} to="/termsconditions">|&nbsp; TERMS & CONDITION &nbsp; </Link>
+                    <Link className={classes.linkText} to="/termsconditions">
+                      |&nbsp; TERMS & CONDITION &nbsp;{" "}
+                    </Link>
                   </Grid>{" "}
                   <Grid item>
-                    <Link className={classes.linkText} to="/faqs">|&nbsp; FAQS &nbsp; </Link>
+                    <Link className={classes.linkText} to="/faqs">
+                      |&nbsp; FAQS &nbsp;{" "}
+                    </Link>
                   </Grid>{" "}
                   <Grid item>
-                    <Link className={classes.linkText} to="/delivery">|&nbsp; DELIVERY INFO &nbsp; </Link>
+                    <Link className={classes.linkText} to="/delivery">
+                      |&nbsp; DELIVERY INFO &nbsp;{" "}
+                    </Link>
                   </Grid>{" "}
                   <Grid item>
-                    <Link className={classes.linkText} to="/privacy">|&nbsp; PRIVACY POLICY &nbsp;</Link>
+                    <Link className={classes.linkText} to="/privacy">
+                      |&nbsp; PRIVACY POLICY &nbsp;
+                    </Link>
                   </Grid>
                 </Grid>
                 <Grid container style={{ justifyContent: "center" }} xs={4}>
                   <Grid item>
-                    <p style={{ fontSize: "13px", color: "#6b6b6b" }}>@NAC Jewellers Pvt.Ltd. All rights reserved</p>
+                    <p style={{ fontSize: "13px", color: "#6b6b6b" }}>
+                      @NAC Jewellers Pvt.Ltd. All rights reserved
+                    </p>
                   </Grid>
                 </Grid>
                 <Grid container xs={4}>
                   <Grid item className={"imageClass"}>
-                    <img src={"https://assets.stylori.com/images/static/footer.png"} style={{ width: "100%", height: "auto" }} />
+                    <img
+                      src={
+                        "https://assets.stylori.com/images/static/footer.png"
+                      }
+                      style={{ width: "100%", height: "auto" }}
+                    />
                   </Grid>
                 </Grid>
               </Grid>
@@ -735,7 +847,11 @@ export default function Footer(props) {
                 xs={12}
                 item
                 container
-                style={{ display: "flex", justifyContent: "flex-end", paddingTop: "10px" }}
+                style={{
+                  display: "flex",
+                  justifyContent: "flex-end",
+                  paddingTop: "10px",
+                }}
                 className="footer-icons"
               ></Grid>
             </Grid>
@@ -756,35 +872,61 @@ export default function Footer(props) {
             xs={10}
             sm={10}
             spacing={0.5}
-            style={{ margin: "auto", paddingTop: "16px",display:"block" }}
+            style={{ margin: "auto", paddingTop: "16px", display: "block" }}
           >
-            {MobilefooterData1.map((data)=>(    
-            <Accordion style={{ backgroundColor: "rgb(239, 239, 239)", boxShadow: "none", margin: "0px !important"}} classes={{expanded:classes.accodianTotal}}>
-              <AccordionSummary
-                expandIcon={<ArrowDropDownIcon style={{ padding: "0px", margin: "0px" }} color="primary" className={classes.iconColor} />}
-                aria-controls="panel1a-content"
-                id="panel1a-header"
-                style={{ padding: "0px !important", minHeight: "0px", margin: "0px !important" }}
-                classes={{root:classes.accordionEdit, expanded:classes.accordionExpand}}
+            {MobilefooterData1.map((data) => (
+              <Accordion
+                style={{
+                  backgroundColor: "rgb(239, 239, 239)",
+                  boxShadow: "none",
+                  margin: "0px !important",
+                }}
+                classes={{ expanded: classes.accodianTotal }}
               >
-                <Typography className={classes.headingMobile}>{data.Title}</Typography>
-              </AccordionSummary>
-              <AccordionDetails className={classes.bodyMobile}>
-              <div className={classes.line}></div>
-                {data.content.map((data2)=>(
-                   <Typography 
-                   className={classes.linkMobile} 
-                   onClick={() => {
-                      window.location.href = data2.url;
-                    }}
-                    href="#"
-                   >
-                    {data2.subTitle}
-                </Typography> 
-              ))}       
-              </AccordionDetails>
-            </Accordion>))}
-
+                <AccordionSummary
+                  expandIcon={
+                    <ArrowDropDownIcon
+                      style={{
+                        padding: "0px",
+                        margin: "0px",
+                        color: "#6b6b6b",
+                      }}
+                      color="primary"
+                      className={classes.iconColor}
+                    />
+                  }
+                  aria-controls="panel1a-content"
+                  id="panel1a-header"
+                  style={{
+                    padding: "0px !important",
+                    minHeight: "0px",
+                    margin: "0px !important",
+                  }}
+                  classes={{
+                    root: classes.accordionEdit,
+                    expanded: classes.accordionExpand,
+                  }}
+                >
+                  <Typography className={classes.headingMobile}>
+                    {data.Title}
+                  </Typography>
+                </AccordionSummary>
+                <AccordionDetails className={classes.bodyMobile}>
+                  <div className={classes.line}></div>
+                  {data.content.map((data2) => (
+                    <Typography
+                      className={classes.linkMobile}
+                      onClick={() => {
+                        window.location.href = data2.url;
+                      }}
+                      href="#"
+                    >
+                      {data2.subTitle}
+                    </Typography>
+                  ))}
+                </AccordionDetails>
+              </Accordion>
+            ))}
 
             {/* <Grid container item xs={3} style={{ backgroundColor: 'colorMain', fontSize: '12px' }} alignItems="center" className={`${classes.colorWhite}`}>
                             {
@@ -818,9 +960,23 @@ export default function Footer(props) {
                         </Grid>
                     </Grid> */}
 
-            <Grid item sm={12} xs={12} style={{textAlign:"center", margin:"10px 0 10px 0"}}>
-            <Button style={{ background: "#33366D", color: "white", fontSize: "11px", borderRadius:"0px" }}>Store Locator</Button>
-            </Grid>
+          <Grid
+            item
+            sm={12}
+            xs={12}
+            style={{ textAlign: "center", margin: "10px 0 10px 0" }}
+          >
+            <Button
+              style={{
+                background: "#33366D",
+                color: "white",
+                fontSize: "11px",
+                borderRadius: "0px",
+              }}
+            >
+              Store Locator
+            </Button>
+          </Grid>
 
           <Grid
             container
@@ -834,7 +990,11 @@ export default function Footer(props) {
               xs={12}
               sm={12}
               className="footer-icons"
-              style={{ paddingTop: "6px", display: "flex", justifyContent: "center" }}
+              style={{
+                paddingTop: "6px",
+                display: "flex",
+                justifyContent: "center",
+              }}
             >
               <a
                 class="valuesallow"
@@ -842,7 +1002,14 @@ export default function Footer(props) {
                 target="_blank"
                 href={`http://www.twitter.com/share?url=${window.location.href}`}
               >
-                <i style={{ fontSize: "24px", color: "#434e77", paddingLeft: "3px" }} className="fa">
+                <i
+                  style={{
+                    fontSize: "24px",
+                    color: "#434e77",
+                    paddingLeft: "3px",
+                  }}
+                  className="fa"
+                >
                   &#xf099;
                 </i>{" "}
               </a>
@@ -851,22 +1018,62 @@ export default function Footer(props) {
                 target="_blank"
                 href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`}
               >
-                <i style={{ fontSize: "24px", color: "#434e77", paddingLeft: "7%" }} className="fa ">
+                <i
+                  style={{
+                    fontSize: "24px",
+                    color: "#434e77",
+                    paddingLeft: "7%",
+                  }}
+                  className="fa "
+                >
                   &#xf09a;
                 </i>
               </a>
-              <a class="valuesallow" target="_blank" href="https://in.pinterest.com/stylori2015/">
-                <i style={{ fontSize: "24px", color: "#434e77", paddingLeft: "7%" }} className="fa ">
+              <a
+                class="valuesallow"
+                target="_blank"
+                href="https://in.pinterest.com/stylori2015/"
+              >
+                <i
+                  style={{
+                    fontSize: "24px",
+                    color: "#434e77",
+                    paddingLeft: "7%",
+                  }}
+                  className="fa "
+                >
                   &#xf231;
                 </i>
               </a>
-              <a class="valuesallow" target="_blank" href="https://instagram.com/stylorilove">
-                <i style={{ fontSize: "24px", color: "#434e77", paddingLeft: "7%" }} className="fa ">
+              <a
+                class="valuesallow"
+                target="_blank"
+                href="https://instagram.com/stylorilove"
+              >
+                <i
+                  style={{
+                    fontSize: "24px",
+                    color: "#434e77",
+                    paddingLeft: "7%",
+                  }}
+                  className="fa "
+                >
                   &#xf16d;
                 </i>
               </a>
-              <a class="valuesallow" target="_blank" href="https://www.youtube.com/c/stylori">
-                <i style={{ fontSize: "24px", color: "#434e77", paddingLeft: "7%" }} className="fa ">
+              <a
+                class="valuesallow"
+                target="_blank"
+                href="https://www.youtube.com/c/stylori"
+              >
+                <i
+                  style={{
+                    fontSize: "24px",
+                    color: "#434e77",
+                    paddingLeft: "7%",
+                  }}
+                  className="fa "
+                >
                   &#xf167;
                 </i>
               </a>

@@ -1,11 +1,11 @@
 .backgroundimageset {
-    background-size: contain;
-    background-image: url(https://www.nacjewellers.com/rstatic/dist/220f443063367e817c08380d41aaae0a.png);
-    color: #fff;
-    background-color: #22233d;
-    padding: 20px 0;
+  background-size: contain;
+  background-image: url(https://www.nacjewellers.com/rstatic/dist/220f443063367e817c08380d41aaae0a.png);
+  color: #fff;
+  background-color: #22233d;
+  padding: 20px 0;
 }
 
-.MuiSvgIcon-root {
+/* .MuiSvgIcon-root {
     fill: #fff !important
-}
+} */

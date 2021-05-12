@@ -61,8 +61,14 @@ export const styles = (theme) => ({
       fontSize: 13,
       padding: "6px 7px 7px",
     },
+    "& .MuiNativeSelect-icon": {
+      color: "white",
+    },
   },
   goldRateformControlSmallScreen: {
+    "& .MuiSelect-icon": {
+      color: "white",
+    },
     "& .MuiOutlinedInput-input": {
       height: "20px !important",
       padding: "0px !important",
@@ -97,9 +103,9 @@ export const styles = (theme) => ({
     justifyContent: "center",
     alignItems: "center",
     fontSize: "1.3rem",
-    textAlign:"center",
-    marginLeft:"3%",
-    height:"40px"
+    textAlign: "center",
+    marginLeft: "3%",
+    height: "40px",
   },
   searchcontainerplain: {
     padding: "4px",
@@ -175,9 +181,9 @@ export const styles = (theme) => ({
       // paddingBottom: "2px",
       // borderBottom: "1px solid " + theme.palette.secondary.dark,
     },
-    "&:active":{
-      color:"#b78231"
-    }
+    "&:active": {
+      color: "#b78231",
+    },
   },
   seletectedMenu: {
     color: theme.palette.secondary.dark,
@@ -188,7 +194,7 @@ export const styles = (theme) => ({
     borderBottom: "1px solid #fff",
     // borderBottom: "1px solid " + theme.palette.secondary.dark,
     "&:hover": {
-      borderBottom: "1px solid " + theme.palette.secondary.dark, 
+      borderBottom: "1px solid " + theme.palette.secondary.dark,
     },
   },
   mobileNavIcon: {
@@ -348,9 +354,9 @@ export const useStyles = makeStyles((theme) => ({
   },
   mouseOverPopoversub: {
     // zIndex: -100,
-    width:"-webkit-fill-available",
+    width: "-webkit-fill-available",
     top: "0px !important",
-    left:"-10px !important",
+    left: "-10px !important",
     backgroundColor: "#33346d",
     color: "#fff",
     cursor: "pointer",
@@ -392,7 +398,7 @@ export const useStyles = makeStyles((theme) => ({
     letterSpacing: 1,
     margin: "15px 19px 23px 29px",
     borderBottom: "1px solid #33346d",
-    color:"#33346d"
+    color: "#33346d",
   },
   listedItemstitlemultiplesection: {
     padding: "2px 0px 8px 0px",
@@ -400,7 +406,7 @@ export const useStyles = makeStyles((theme) => ({
     letterSpacing: 1,
     margin: "15px 0px 23px 0px",
     borderBottom: "1px solid #33346d",
-    color:"#33346d"
+    color: "#33346d",
   },
   gridmultiplesection: {
     padding: "0px 5px",
