@@ -991,13 +991,12 @@ class Header extends Component {
                                             // }}
                                             className={classes.iconstyle}
                                           >
-                                            {/* <img
+                                            <img
                                               style={{
                                                 width: "35%",
-                                                margin: "auto",
                                               }}
                                               src={val.icon}
-                                            /> */}
+                                            />
                                             <p
                                               // style={{ marginTop: "58px" }}
                                               className={classes.ptext}

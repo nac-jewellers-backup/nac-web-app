@@ -482,59 +482,36 @@ export const Jewellery = {
       name2: "SHOP BY STONE AND METAL",
       stone_metal: [
         {
-          width: "71px",
-          height: "58px",
-          position: "",
-          icon: "https://www.nacjewellers.com/rstatic/dist/28785c70c75542c44e626a2ab0f0725a.png",
+          icon: "https://imgcdn1.gempundit.com/media/catalog/category/Danburite_2.jpg",
           name: "Gemstone",
         },
         {
-          width: "71px",
-          height: "58px",
-          position: "-169px 2px",
-          icon: "https://www.nacjewellers.com/rstatic/dist/28785c70c75542c44e626a2ab0f0725a.png",
+          icon: "https://www.pngarts.com/files/2/Blue-Diamond-PNG-Picture.png",
           name: "Diamond",
         },
         {
-          width: "71px",
-          height: "58px",
-          icon: "https://www.nacjewellers.com/rstatic/dist/28785c70c75542c44e626a2ab0f0725a.png",
+          icon: "https://www.pngarts.com/files/2/Blue-Diamond-PNG-Picture.png",
           name: "Solitaire",
         },
 
         {
-          width: "71px",
-          height: "58px",
-          position: "",
-          icon: "https://www.nacjewellers.com/rstatic/dist/28785c70c75542c44e626a2ab0f0725a.png",
+          icon: "https://www.pngarts.com/files/2/Blue-Diamond-PNG-Picture.png",
           name: "Platinum",
         },
         {
-          width: "71px",
-          height: "58px",
-          position: "",
-          icon: "https://www.nacjewellers.com/rstatic/dist/28785c70c75542c44e626a2ab0f0725a.png",
+          icon: "https://www.pngarts.com/files/2/Blue-Diamond-PNG-Picture.png",
           name: "Yellow Gold",
         },
         {
-          width: "71px",
-          height: "58px",
-          position: "",
-          icon: "https://www.nacjewellers.com/rstatic/dist/28785c70c75542c44e626a2ab0f0725a.png",
+          icon: "https://www.pngarts.com/files/2/Blue-Diamond-PNG-Picture.png",
           name: "White Gold",
         },
         {
-          width: "71px",
-          height: "58px",
-          position: "",
-          icon: "https://www.nacjewellers.com/rstatic/dist/28785c70c75542c44e626a2ab0f0725a.png",
+          icon: "https://www.pngarts.com/files/2/Blue-Diamond-PNG-Picture.png",
           name: "Rose Gold",
         },
         {
-          width: "71px",
-          height: "58px",
-          position: "",
-          icon: "https://www.nacjewellers.com/rstatic/dist/28785c70c75542c44e626a2ab0f0725a.png",
+          icon: "https://www.pngarts.com/files/2/Blue-Diamond-PNG-Picture.png",
           name: "Silver by STYLORI",
         },
       ],
@@ -677,36 +654,36 @@ export const Jewellery = {
       name2: "SHOP BY STONE AND METAL",
       stone_metal: [
         {
-          icon: "",
+          icon: "https://www.pngarts.com/files/2/Blue-Diamond-PNG-Picture.png",
           name: "Gemstone",
         },
         {
-          icon: "",
+          icon: "https://www.pngarts.com/files/2/Blue-Diamond-PNG-Picture.png",
           name: "Diamond",
         },
         {
-          icon: "",
+          icon: "https://www.pngarts.com/files/2/Blue-Diamond-PNG-Picture.png",
           name: "Solitaire",
         },
 
         {
-          icon: "",
+          icon: "https://www.pngarts.com/files/2/Blue-Diamond-PNG-Picture.png",
           name: "Platinum",
         },
         {
-          icon: "",
+          icon: "https://www.pngarts.com/files/2/Blue-Diamond-PNG-Picture.png",
           name: "Yellow Gold",
         },
         {
-          icon: "",
+          icon: "https://www.pngarts.com/files/2/Blue-Diamond-PNG-Picture.png",
           name: "White Gold",
         },
         {
-          icon: "",
+          icon: "https://www.pngarts.com/files/2/Blue-Diamond-PNG-Picture.png",
           name: "Rose Gold",
         },
         {
-          icon: "",
+          icon: "https://www.pngarts.com/files/2/Blue-Diamond-PNG-Picture.png",
           name: "Silver by STYLORI",
         },
       ],
@@ -774,36 +751,36 @@ export const Jewellery = {
       name2: "SHOP BY STONE AND METAL",
       stone_metal: [
         {
-          icon: "",
+          icon: "https://www.pngarts.com/files/2/Blue-Diamond-PNG-Picture.png",
           name: "Gemstone",
         },
         {
-          icon: "",
+          icon: "https://www.pngarts.com/files/2/Blue-Diamond-PNG-Picture.png",
           name: "Diamond",
         },
         {
-          icon: "",
+          icon: "https://www.pngarts.com/files/2/Blue-Diamond-PNG-Picture.png",
           name: "Solitaire",
         },
 
         {
-          icon: "",
+          icon: "https://www.pngarts.com/files/2/Blue-Diamond-PNG-Picture.png",
           name: "Platinum",
         },
         {
-          icon: "",
+          icon: "https://www.pngarts.com/files/2/Blue-Diamond-PNG-Picture.png",
           name: "Yellow Gold",
         },
         {
-          icon: "",
+          icon: "https://www.pngarts.com/files/2/Blue-Diamond-PNG-Picture.png",
           name: "White Gold",
         },
         {
-          icon: "",
+          icon: "https://www.pngarts.com/files/2/Blue-Diamond-PNG-Picture.png",
           name: "Rose Gold",
         },
         {
-          icon: "",
+          icon: "https://www.pngarts.com/files/2/Blue-Diamond-PNG-Picture.png",
           name: "Silver by STYLORI",
         },
       ],
@@ -959,36 +936,36 @@ export const Jewellery = {
       name2: "LOOSE DIAMONDS",
       stone_metal: [
         {
-          icon: "",
+          icon: "https://www.pngarts.com/files/2/Blue-Diamond-PNG-Picture.png",
           name: "Round",
         },
         {
-          icon: "",
+          icon: "https://www.pngarts.com/files/2/Blue-Diamond-PNG-Picture.png",
           name: "Oval",
         },
         {
-          icon: "",
+          icon: "https://www.pngarts.com/files/2/Blue-Diamond-PNG-Picture.png",
           name: "Cushion",
         },
 
         {
-          icon: "",
+          icon: "https://www.pngarts.com/files/2/Blue-Diamond-PNG-Picture.png",
           name: "Emerald",
         },
         {
-          icon: "",
+          icon: "https://www.pngarts.com/files/2/Blue-Diamond-PNG-Picture.png",
           name: "Princes",
         },
         {
-          icon: "",
+          icon: "https://www.pngarts.com/files/2/Blue-Diamond-PNG-Picture.png",
           name: "Heart",
         },
         {
-          icon: "",
+          icon: "https://www.pngarts.com/files/2/Blue-Diamond-PNG-Picture.png",
           name: "Pear",
         },
         {
-          icon: "",
+          icon: "https://www.pngarts.com/files/2/Blue-Diamond-PNG-Picture.png",
           name: "Silver by STYLORI",
         },
       ],
