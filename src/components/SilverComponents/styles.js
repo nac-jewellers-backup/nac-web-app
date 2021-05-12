@@ -257,6 +257,10 @@ export const styles = (theme) => ({
   griddiv: {
     textAlign: "center",
   },
+  griddivstone: {
+    textAlign: "center",
+    // marginBottom: "30px",
+  },
   iconstyle: {
     display: "flex",
     margin: "auto",

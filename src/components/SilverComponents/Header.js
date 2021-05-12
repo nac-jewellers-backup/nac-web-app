@@ -980,11 +980,28 @@ class Header extends Component {
                                           item
                                           xs={6}
                                           sm={6}
-                                          className={classes.griddiv}
+                                          className={classes.griddivstone}
                                         >
-                                          <div className={classes.iconstyle}>
-                                            {val.icon}
-                                            <p className={classes.ptext}>
+                                          <div
+                                            // style={{
+                                            //   backgroundImage: `url(${val.icon})`,
+                                            //   width: `${val.width}`,
+                                            //   height: `${val.height}`,
+                                            //   backgroundPosition: `${val.position}`,
+                                            // }}
+                                            className={classes.iconstyle}
+                                          >
+                                            {/* <img
+                                              style={{
+                                                width: "35%",
+                                                margin: "auto",
+                                              }}
+                                              src={val.icon}
+                                            /> */}
+                                            <p
+                                              // style={{ marginTop: "58px" }}
+                                              className={classes.ptext}
+                                            >
                                               {val.name}
                                             </p>
                                           </div>
