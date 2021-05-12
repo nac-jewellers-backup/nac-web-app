@@ -261,9 +261,12 @@ export const styles = (theme) => ({
     display: "flex",
     margin: "auto",
   },
-  // ptext: {
-  //   margin: "0px",
-  // },
+  ptext: {
+    "&:hover": {
+      width: "fit-content",
+      borderBottom: "1px solid",
+    },
+  },
   metaldiv: {
     padding: "0px 16px",
   },
@@ -283,6 +286,10 @@ export const styles = (theme) => ({
   optiontext: {
     fontSize: "12px",
     color: theme.palette.background.darkFade,
+    "&:hover": {
+      width: "fit-content",
+      borderBottom: "1px solid",
+    },
   },
 });
 
