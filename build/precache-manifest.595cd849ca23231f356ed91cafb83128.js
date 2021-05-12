@@ -4,23 +4,23 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/index.html"
   },
   {
-    "revision": "97de1f510427ba453369",
+    "revision": "f7668e01e306996f31c6",
     "url": "/static/css/2.css"
   },
   {
-    "revision": "5a90117fbb0f17a3944b",
+    "revision": "efb5f2efa8cbae08ae7e",
     "url": "/static/css/3.css"
   },
   {
-    "revision": "1c412c6020713b8d1936",
+    "revision": "30aec0be89226fb7f5c6",
     "url": "/static/css/main.css"
   },
   {
-    "revision": "97de1f510427ba453369",
+    "revision": "f7668e01e306996f31c6",
     "url": "/static/js/2.js"
   },
   {
-    "revision": "5a90117fbb0f17a3944b",
+    "revision": "efb5f2efa8cbae08ae7e",
     "url": "/static/js/3.js"
   },
   {
@@ -28,7 +28,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/4.js"
   },
   {
-    "revision": "1c412c6020713b8d1936",
+    "revision": "30aec0be89226fb7f5c6",
     "url": "/static/js/main.js"
   },
   {
@@ -98,6 +98,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "57b56bb10faf3b9dbb17bc91e6be7baf",
     "url": "/static/media/shopping.svg"
+  },
+  {
+    "revision": "b03bd5d7d745593acdc60d6c1d6591d4",
+    "url": "/static/media/silverOpenLink.png"
   },
   {
     "revision": "ced611daf7709cc778da928fec876475",

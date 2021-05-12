@@ -130,7 +130,7 @@ function HeaderHoverMenuItem(props) {
                         className={`${props.filters ? classes.filtersListtopfilters : classes.filtersList}`}
                         style={{ fontSize: "0.9rem" }}
                       >
-                        {menuList.title ? menuList.title : menuList}
+                        {menuList.title ? menuList.title.charAt(0).toUpperCase() + menuList.title.slice(1) : menuList.charAt(0).toUpperCase() + menuList.slice(1)}
                       </ListItemText>
                     </ListItem>
                   );
