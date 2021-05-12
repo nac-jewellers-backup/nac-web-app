@@ -196,20 +196,42 @@ export const styles = (theme) => ({
     fill: theme.palette.secondary.dark + "!important",
   },
   menuheader: {
-    width: "230px !important",
+    // width: "230px !important",
+    backgroundColor: theme.palette.secondary.main,
+    display: "flex",
     position: "sticky",
     top: "0px",
     zIndex: 10000,
   },
+  headertext: {
+    color: "#fff",
+    fontSize: "20px",
+    margin: "auto",
+  },
   drawerPaper: {
+    width: "100%",
     maxHeight: "100% !important",
-    height: "max-content",
-    backgroundColor: theme.palette.secondary.main,
+    // height: "max-content",
+    backgroundColor: "#fff",
+  },
+  sideNavListing: {
+    padding: "0px",
+  },
+  drawerlisttext: {
+    backgroundColor: "#b78231 !important",
+    color: "#fff",
+    "& .drawer-arrow": {
+      color: "#fff",
+    },
+    "& .list-items1": {
+      color: "#fff",
+    },
   },
   iconbuttons: {
-    position: "fixed",
-    left: "228px",
-    top: "-9px",
+    color: "white",
+    // position: "fixed",
+    // left: "228px",
+    // top: "-9px",
   },
   subtitles: {
     color: theme.palette.background.darkFade,
@@ -230,6 +252,54 @@ export const styles = (theme) => ({
   },
   subtitle2Container: {
     backgroundColor: theme.palette.gold.main,
+  },
+  imgdiv: {
+    display: "flex",
+    flexWrap: "wrap",
+  },
+  imgsubdiv: {
+    margin: "auto",
+  },
+  griddiv: {
+    textAlign: "center",
+  },
+  griddivstone: {
+    textAlign: "center",
+    // marginBottom: "30px",
+  },
+  iconstyle: {
+    display: "flex",
+    margin: "auto",
+  },
+  ptext: {
+    "&:hover": {
+      width: "fit-content",
+      borderBottom: "1px solid",
+    },
+  },
+  metaldiv: {
+    padding: "0px 16px",
+  },
+  Chip: {
+    padding: "4px 0px",
+    borderRadius: "4px",
+    width: "130px",
+    color: "#545465 ",
+
+    fontSize: "11px",
+
+    marginTop: "auto",
+  },
+  pricediv: {
+    margin: "0px 0px 15px 0px",
+  },
+  optiontext: {
+    fontSize: "12px",
+    color: theme.palette.background.darkFade,
+    "&:hover": {
+      width: "fit-content",
+      borderBottom: "1px solid",
+    },
   },
 });
 
@@ -387,52 +457,49 @@ export const useStyles = makeStyles((theme) => ({
   listedItems: {
     padding: "0px",
     fontSize: "0.7rem !important",
-    cursor: "pointer"
+    cursor: "pointer",
   },
   listedItemsub: {
     padding: "0px",
     fontSize: "0.7rem !important",
-    '&:hover': {
-      backgroundColor: "#33346d"
-    }
+    "&:hover": {
+      backgroundColor: "#33346d",
+    },
   },
   listedItemsvalue: {
     padding: "2px 16px 2px 16px",
     fontSize: "0.7rem !important",
     // letterSpacing: 2,
     cursor: "pointer",
-
   },
   listedItemsvalue2: {
     padding: "2px 16px 2px 16px",
     fontSize: "0.7rem !important",
     letterSpacing: 2,
     cursor: "pointer",
-    '&:hover': {
+    "&:hover": {
       backgroundColor: "#33346d",
-      color: "#fff"
-    }
+      color: "#fff",
+    },
   },
   mouseOverPopoverfiltersselected: {
     backgroundColor: "#33346d !important",
-    color: "#fff"
+    color: "#fff",
   },
 
   mouseOverPopoverfilterslist: {
-    paddingTop: '0px !important',
-    paddingBottom: '0px !important'
+    paddingTop: "0px !important",
+    paddingBottom: "0px !important",
   },
   filtersListtopfilters: {
     "& span": {
       letterSpacing: 2,
-    }
-
+    },
   },
   filtersList: {
     "& span": {
       letterSpacing: 3,
-    }
-
+    },
   },
   sortSilver: {
     // "&.MuiRadio-root":{
@@ -442,9 +509,8 @@ export const useStyles = makeStyles((theme) => ({
     //   padding:"4px !important"
     // },
     "& svg": {
-      fontSize: "1rem"
-
-    }
+      fontSize: "1rem",
+    },
   },
   subtopic2: {
     padding: "10px 0px 10px 0px",
@@ -454,42 +520,41 @@ export const useStyles = makeStyles((theme) => ({
   listedItemsub: {
     padding: "0px",
     fontSize: "0.7rem !important",
-    '&:hover': {
-      backgroundColor: "#33346d !important"
-    }
+    "&:hover": {
+      backgroundColor: "#33346d !important",
+    },
   },
   listedItemsvalue: {
     padding: "2px 16px 2px 16px",
     fontSize: "0.7rem !important",
     // letterSpacing: 2,
     cursor: "pointer",
-
   },
   mouseOverPopoverfilters: {
     "& .MuiRadio-root": {
-      padding: '2px 6px !important'
+      padding: "2px 6px !important",
     },
     radioBtnsort: {
-      color: 'red'
+      color: "red",
     },
     zIndex: 1000,
-    top: '4px !important',
-    backgroundColor: 'white',
+    top: "4px !important",
+    backgroundColor: "white",
     color: theme.palette.secondary.main,
-    '& span': {
-      fontFamily: 'Roboto',
-      letterSpacing: '1px'
+    "& span": {
+      fontFamily: "Roboto",
+      letterSpacing: "1px",
     },
-    '& nav': {
-      padding: '0px !important',
+    "& nav": {
+      padding: "0px !important",
       minWidth: 150,
-      [theme.breakpoints.only('md')]: {
-        minWidth: 100
-      }
+      [theme.breakpoints.only("md")]: {
+        minWidth: 100,
+      },
     },
-    '& li:hover': {
+    "& li:hover": {
       backgroundColor: "#33346d !important",
-      color: 'white'
-    }
+      color: "white",
+    },
   },
 }));

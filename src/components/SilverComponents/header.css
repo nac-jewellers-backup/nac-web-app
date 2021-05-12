@@ -261,9 +261,10 @@
   text-align: left;
   white-space: nowrap;
   width: 100%;
+  font-weight: bold;
   font-size: 11px !important;
   letter-spacing: 1px;
-  color: #fff;
+  color: #33346d;
   text-transform: capitalize;
   font-family: notoSerif-regular;
 }
@@ -341,7 +342,10 @@ i {
   display: block;
 }
 
-.drawer-list1:hover {
+/* .drawer-list1:hover {
+  background-color: rgba(0, 0, 0, 0.08) !important;
+} */
+.drawer-list12 {
   background-color: rgba(0, 0, 0, 0.08) !important;
 }
 
@@ -398,7 +402,7 @@ i {
 }
 
 .drawer-arrow {
-  color: #b78231;
+  color: #33346d;
   font-size: 20px;
   width: 22px;
   justify-content: center;
@@ -457,8 +461,8 @@ i {
   float: right !important;
 }
 
-.header-appbar-sticky1 header {
-}
+/* .header-appbar-sticky1 header {
+} */
 
 .appbarsilver1 {
   position: sticky;
@@ -543,9 +547,9 @@ i {
   color: red;
 }
 
-.logoDiv1 {
-  /* padding-Top: 8%; */
-}
+/* .logoDiv1 {
+  /* padding-Top: 8%; 
+} */
 
 .headdd {
   height: 72px;
