@@ -104,7 +104,7 @@ export const styles = (theme) => ({
     alignItems: "center",
     fontSize: "1.3rem",
     textAlign: "center",
-    marginLeft: "3%",
+    // marginLeft: "3%",
     height: "40px",
   },
   searchcontainerplain: {
@@ -357,6 +357,7 @@ export const useStyles = makeStyles((theme) => ({
   },
   mouseOverPopoversub: {
     // zIndex: -100,
+
     width: "-webkit-fill-available",
     top: "0px !important",
     left: "-10px !important",

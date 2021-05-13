@@ -335,7 +335,6 @@ function HeaderHoverMenuItem(props) {
   ];
 
   const savingScheme = [
-    { title: "" },
     { title: "Pay now" },
     { title: "Join now" },
     { title: "New Quick Gold" },
@@ -344,9 +343,6 @@ function HeaderHoverMenuItem(props) {
   ];
 
   const styloridata = [
-    { title: "" },
-    { title: "" },
-    { title: "" },
     { title: "Stylori Gold" },
     { title: "Stylori Silver" },
     { title: "Csk Merchandise" },
@@ -671,7 +667,7 @@ function HeaderHoverMenuItem(props) {
                       <Grid item style={{ margin: "auto" }}>
                         <Typography
                           style={{ margin: "auto", color: "#33346d" }}
-                          className={classes.listedItemsvalue}
+                          className={classes.imgtitle}
                         >
                           {val.title}
                         </Typography>
@@ -812,9 +808,19 @@ function HeaderHoverMenuItem(props) {
           zIndex: "10000",
         }}
       >
-        <Grid item container xs={12} className={classes.gridmultiplesection}>
+        <Grid
+          item
+          container
+          xs={12}
+          style={{ display: "flex", justifyContent: "flex-end" }}
+          className={classes.gridmultiplesection}
+        >
           {savingScheme.map((val, i) => (
-            <Grid item xs={2} style={{ display: "inline-flex" }}>
+            <Grid
+              item
+              xs={2}
+              style={{ display: "flex", justifyContent: "flex-end" }}
+            >
               <Typography className={classes.phovertitile}>
                 {val.title.toUpperCase()}
               </Typography>
@@ -835,9 +841,19 @@ function HeaderHoverMenuItem(props) {
           zIndex: "10000",
         }}
       >
-        <Grid item container xs={12} className={classes.gridmultiplesection}>
+        <Grid
+          item
+          container
+          xs={12}
+          style={{ display: "flex", justifyContent: "flex-end" }}
+          className={classes.gridmultiplesection}
+        >
           {styloridata.map((val, i) => (
-            <Grid item xs={2} style={{ display: "inline-flex" }}>
+            <Grid
+              item
+              xs={2}
+              style={{ display: "flex", justifyContent: "flex-end" }}
+            >
               <Typography className={classes.phovertitile}>
                 {val.title.toUpperCase()}
               </Typography>
