@@ -547,6 +547,19 @@ class Header extends Component {
                           color: "#fff",
                           padding: "8px 15px 0 15px",
                         }}
+                        onMouseOver={(event) => {
+                          this.setState({
+                            Menuopen: true,
+                            submenuOpen: true,
+                            subTitleData: null,
+                            targetopen: event.currentTarget,
+                            listHoverItem: "STYLORI",
+                            // .replace(
+                            //   / +/g,
+                            //   "ss"
+                            // ),
+                          });
+                        }}
                       >
                         <img
                           src={StyloriSLogo}
@@ -558,7 +571,7 @@ class Header extends Component {
                   </Grid>
                 </Grid>
               )}
-              <Grid container id="headerContainerTop"></Grid>
+              {/* <Grid container id="headerContainerTop"></Grid> */}
             </AppBar>
           </div>
         </Hidden>

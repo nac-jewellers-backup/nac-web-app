@@ -211,6 +211,12 @@ const useStyles = makeStyles((theme) => ({
     color: "#6b6b6b",
     textDecoration: "none",
   },
+  linkTextm: {
+    fontSize: "9px",
+    color: "#6b6b6b",
+    textDecoration: "none",
+  },
+
   headingMobile: {
     fontSize: "12px",
     color: "#6b6b6b",
@@ -796,7 +802,7 @@ export default function Footer(props) {
                   padding: "10px 0px",
                 }}
               >
-                <Grid container xs={4}>
+                <Grid container xs={5}>
                   <Grid item>
                     <Link className={classes.linkText} to="/sitemap">
                       SITEMAP &nbsp;{" "}
@@ -823,7 +829,7 @@ export default function Footer(props) {
                     </Link>
                   </Grid>
                 </Grid>
-                <Grid container style={{ justifyContent: "center" }} xs={4}>
+                <Grid container xs={3}>
                   <Grid item>
                     <p style={{ fontSize: "13px", color: "#6b6b6b" }}>
                       @NAC Jewellers Pvt.Ltd. All rights reserved
@@ -1097,6 +1103,48 @@ export default function Footer(props) {
           }}
         >
           © NAC Jewellers Pvt.Ltd. All rights reserved.
+        </Grid>
+        <Grid
+          container
+          className={classes.colorMain}
+          item
+          xs={12}
+          sm={12}
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            color: "#6b6b6b",
+            fontSize: "11px",
+            padding: "8px 0px",
+          }}
+        >
+          {" "}
+          <Grid item>
+            <Link className={classes.linkTextm} to="/sitemap">
+              SITEMAP &nbsp;{" "}
+            </Link>
+          </Grid>
+          <Grid item>
+            <Link className={classes.linkTextm} to="/termsconditions">
+              |&nbsp; TERMS & CONDITION &nbsp;{" "}
+            </Link>
+          </Grid>{" "}
+          <Grid item>
+            <Link className={classes.linkTextm} to="/faqs">
+              |&nbsp; FAQS &nbsp;{" "}
+            </Link>
+          </Grid>{" "}
+          <Grid item>
+            <Link className={classes.linkTextm} to="/delivery">
+              |&nbsp; DELIVERY INFO &nbsp;{" "}
+            </Link>
+          </Grid>{" "}
+          <Grid item>
+            <Link className={classes.linkTextm} to="/privacy">
+              |&nbsp; PRIVACY POLICY &nbsp;
+            </Link>
+          </Grid>
         </Grid>
       </Hidden>
 

@@ -313,8 +313,11 @@ export const useStyles = makeStyles((theme) => ({
   imgcont: {
     // marginBottom: "15px",
     "&:hover": {
-      boxShadow:
-        " 0px 2px 4px 4px rgba(0, 0, 0, 0.1), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12) !important",
+      "& $imgtitle": {
+        borderBottom: "1px solid #B78231",
+      },
+      // boxShadow:
+      //   " 0px 2px 4px 4px rgba(0, 0, 0, 0.1), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12) !important",
     },
   },
   paperdiv: {
@@ -386,13 +389,35 @@ export const useStyles = makeStyles((theme) => ({
       backgroundColor: "#33346d",
     },
   },
-  listedItemsvalue: {
-    padding: "2px 16px 2px 16px",
-    fontSize: "0.7rem !important",
-    letterSpacing: 1,
-    cursor: "pointer",
-  },
+  // listedItemsvalue: {
+  //   padding: "2px 16px 2px 16px",
+  //   fontSize: "0.7rem !important",
+  //   letterSpacing: 1,
+  //   cursor: "pointer",
+  // },
   listedItemstitle: {
+    padding: "2px 0px 8px 0px",
+    fontSize: "0.6rem !important",
+    letterSpacing: 1,
+    margin: "15px 19px 23px 29px",
+    borderBottom: "1px solid #20205a",
+    color: "#33346d",
+    "&:hover": {
+      borderBottom: "1px solid #B78231",
+    },
+  },
+  phovertitile: {
+    padding: "2px 0px 8px 0px",
+    fontSize: "0.6rem !important",
+    letterSpacing: 1,
+    margin: "15px 19px 23px 29px",
+
+    color: "#33346d",
+    "&:hover": {
+      borderBottom: "1px solid #B78231",
+    },
+  },
+  shoptitle: {
     padding: "2px 0px 8px 0px",
     fontSize: "0.6rem !important",
     letterSpacing: 1,
@@ -472,12 +497,7 @@ export const useStyles = makeStyles((theme) => ({
       backgroundColor: "#33346d",
     },
   },
-  listedItemsvalue: {
-    padding: "2px 16px 2px 16px",
-    fontSize: "0.7rem !important",
-    // letterSpacing: 2,
-    cursor: "pointer",
-  },
+
   listedItemsvalue2: {
     padding: "2px 16px 2px 16px",
     fontSize: "0.7rem !important",
@@ -534,6 +554,15 @@ export const useStyles = makeStyles((theme) => ({
     padding: "2px 16px 2px 16px",
     fontSize: "0.7rem !important",
     // letterSpacing: 2,
+    cursor: "pointer",
+    "&:hover": {
+      borderBottom: "1px solid #B78231",
+    },
+  },
+  imgtitle: {
+    padding: "2px 16px 2px 16px",
+    fontSize: "0.7rem !important",
+
     cursor: "pointer",
   },
   mouseOverPopoverfilters: {
