@@ -356,7 +356,7 @@ export const useStyles = makeStyles((theme) => ({
     width: "100%",
   },
   mouseOverPopoversub: {
-    // zIndex: -100,
+    // zIndex: 1000000,
     position: "fixed !important",
     width: "-webkit-fill-available",
     top: "0px !important",
@@ -380,6 +380,7 @@ export const useStyles = makeStyles((theme) => ({
   },
   mouseOverPopoversubscroll: {
     // zIndex: -100,
+    zIndex: 1000,
     position: "fixed !important",
     width: "-webkit-fill-available",
     top: "-110px !important",
