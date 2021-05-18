@@ -383,7 +383,7 @@ export const useStyles = makeStyles((theme) => ({
     zIndex: 1000,
     position: "fixed !important",
     width: "-webkit-fill-available",
-    top: "-110px !important",
+    top: "-100px !important",
     left: "-10px !important",
     backgroundColor: "#33346d",
     color: "#fff",
