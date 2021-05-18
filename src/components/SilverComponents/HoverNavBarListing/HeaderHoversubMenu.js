@@ -350,7 +350,7 @@ function HeaderHoverMenuItem(props) {
 
   const silverItems = [
     {
-      title: "Kumkum Bharani",
+      title: <>Kumkum&nbsp;Bharani</>,
       img: "https://e7.pngegg.com/pngimages/273/928/png-clipart-silver-bowl-silver-glass-metal.png",
     },
     {
@@ -362,11 +362,11 @@ function HeaderHoverMenuItem(props) {
       img: "https://e7.pngegg.com/pngimages/273/928/png-clipart-silver-bowl-silver-glass-metal.png",
     },
     {
-      title: "Kuthu Vilaku",
+      title: <>Kuthu&nbsp;Vilaku</>,
       img: "https://e7.pngegg.com/pngimages/273/928/png-clipart-silver-bowl-silver-glass-metal.png",
     },
     {
-      title: "Kamakshi Vilaku",
+      title: <>Vilaku</>,
       img: "https://e7.pngegg.com/pngimages/273/928/png-clipart-silver-bowl-silver-glass-metal.png",
     },
     {
@@ -386,7 +386,7 @@ function HeaderHoverMenuItem(props) {
       img: "https://e7.pngegg.com/pngimages/273/928/png-clipart-silver-bowl-silver-glass-metal.png",
     },
     {
-      title: "Young Ones",
+      title: <>Young&nbsp;Ones</>,
       img: "https://e7.pngegg.com/pngimages/273/928/png-clipart-silver-bowl-silver-glass-metal.png",
     },
   ];
