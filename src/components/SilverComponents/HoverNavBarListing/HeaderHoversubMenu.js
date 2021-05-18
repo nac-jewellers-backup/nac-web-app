@@ -1380,6 +1380,7 @@ function HeaderHoverMenuItem(props) {
       </Grid>
     );
   };
+
   return (
     <Grid container className={classes.rootsub}>
       <Grid container item xs={12} className={classes.paperdivsub}>
@@ -1389,7 +1390,11 @@ function HeaderHoverMenuItem(props) {
           open={opens}
           anchorEl={target}
           transition
-          className={classes.mouseOverPopoversub}
+          className={
+            props.scroll
+              ? classes.mouseOverPopoversubscroll
+              : classes.mouseOverPopoversub
+          }
         >
           <List
             component="nav"

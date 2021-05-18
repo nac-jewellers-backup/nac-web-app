@@ -357,9 +357,32 @@ export const useStyles = makeStyles((theme) => ({
   },
   mouseOverPopoversub: {
     // zIndex: -100,
-
+    position: "fixed !important",
     width: "-webkit-fill-available",
     top: "0px !important",
+    left: "-10px !important",
+    backgroundColor: "#33346d",
+    color: "#fff",
+    cursor: "pointer",
+    transform: "translate3d(9px, 137px, 0px) !important",
+    "& span": {
+      fontFamily: "notoSerif-regular",
+      letterSpacing: "1px",
+      cursor: "pointer",
+    },
+    "& nav": {
+      padding: "0px !important",
+      cursor: "pointer",
+    },
+    "& li:hover": {
+      backgroundColor: "#33346d",
+    },
+  },
+  mouseOverPopoversubscroll: {
+    // zIndex: -100,
+    position: "fixed !important",
+    width: "-webkit-fill-available",
+    top: "-110px !important",
     left: "-10px !important",
     backgroundColor: "#33346d",
     color: "#fff",
@@ -398,7 +421,7 @@ export const useStyles = makeStyles((theme) => ({
   // },
   listedItemstitle: {
     padding: "2px 0px 8px 0px",
-    fontSize: "0.6rem !important",
+    fontSize: "0.7rem !important",
     letterSpacing: 1,
     margin: "15px 19px 23px 29px",
     borderBottom: "1px solid #20205a",
@@ -409,7 +432,7 @@ export const useStyles = makeStyles((theme) => ({
   },
   phovertitile: {
     padding: "2px 0px 8px 0px",
-    fontSize: "0.6rem !important",
+    fontSize: "0.75rem !important",
     letterSpacing: 1,
     margin: "15px 19px 23px 29px",
 
@@ -420,7 +443,7 @@ export const useStyles = makeStyles((theme) => ({
   },
   shoptitle: {
     padding: "2px 0px 8px 0px",
-    fontSize: "0.6rem !important",
+    fontSize: "0.7rem !important",
     letterSpacing: 1,
     margin: "15px 19px 23px 29px",
     borderBottom: "1px solid #33346d",
@@ -428,7 +451,7 @@ export const useStyles = makeStyles((theme) => ({
   },
   listedItemstitlemultiplesection: {
     padding: "2px 0px 8px 0px",
-    fontSize: "0.6rem !important",
+    fontSize: "0.7rem !important",
     letterSpacing: 1,
     margin: "15px 0px 23px 0px",
     borderBottom: "1px solid #33346d",
@@ -462,7 +485,7 @@ export const useStyles = makeStyles((theme) => ({
   secondSection: {
     paddingBottom: 10,
     "& .MuiTypography-body1": {
-      fontSize: "0.7rem !important",
+      fontSize: "0.8rem !important",
     },
     "& .MuiFormControlLabel-root": {
       marginLeft: "0px !important",
@@ -553,7 +576,7 @@ export const useStyles = makeStyles((theme) => ({
   },
   listedItemsvalue: {
     padding: "2px 16px 2px 16px",
-    fontSize: "0.7rem !important",
+    fontSize: "0.8rem !important",
     // letterSpacing: 2,
     cursor: "pointer",
     "&:hover": {
@@ -562,7 +585,7 @@ export const useStyles = makeStyles((theme) => ({
   },
   imgtitle: {
     padding: "2px 16px 2px 16px",
-    fontSize: "0.7rem !important",
+    fontSize: "0.9rem !important",
 
     cursor: "pointer",
   },

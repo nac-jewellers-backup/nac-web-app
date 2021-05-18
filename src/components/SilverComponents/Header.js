@@ -71,6 +71,7 @@ class Header extends Component {
       subMenuTarget: null,
       anchorEl: false,
       opened: false,
+      scroll: false,
     };
     this.topZero = React.createRef();
   }
@@ -147,6 +148,7 @@ class Header extends Component {
     ) {
       if (document.getElementById("topNav")) {
         document.getElementById("topNav").style.marginTop = "-110px";
+        this.setState({ scroll: true });
       }
       if (document.getElementById("logoImage")) {
         document.getElementById("logoImage").style.width = "56%";
@@ -161,6 +163,13 @@ class Header extends Component {
         document.getElementById("logoImage").style.width = "66%";
         document.getElementById("logoImage").style.marginTop = "0px";
       }
+    }
+    if (
+      document.getElementsByTagName("body")[0].scrollHeight >
+        window.innerHeight &&
+      window.scrollY === 0
+    ) {
+      this.setState({ scroll: false });
     }
   };
   submenuDetails = (data, target) => {
@@ -549,6 +558,7 @@ class Header extends Component {
               ) === -1 && this.state.Menuopen ? (
                 <HeaderHoversubMenu
                   opened={this.state.Menuopen}
+                  scroll={this.state.scroll}
                   // onMouseOver={(event) => {
                   //   this.setState({ submenuOpen: true });
                   // }}
