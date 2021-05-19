@@ -227,11 +227,12 @@ const Provider = (props) => {
 
   // {filter:{transSkuListsByProductId:{every:{markupPrice:{  "greaterThanOrEqualTo":   20000,
   // "lessThanOrEqualTo":70000}}}}}
-  const { loading: seoloading, error: seoError, data: seoData, makeRequest: makeRequestSeo } = useGraphql(
-    seoUrlResult,
-    () => {},
-    {}
-  );
+  const {
+    loading: seoloading,
+    error: seoError,
+    data: seoData,
+    makeRequest: makeRequestSeo,
+  } = useGraphql(seoUrlResult, () => {}, {});
 
   useEffect(() => {
     if (offset === 0) {
@@ -470,6 +471,7 @@ const Provider = (props) => {
         return sort && `sort=${sort.values}`;
       }
     };
+    debugger;
     if ((Object.entries(sort).length > 0 && sort.constructor === Object) || (pricemin !== null && pricemax !== null)) {
       props.history.push({
         pathname: `${mappedFilters.seo_url ? `/${mappedFilters.seo_url}` : ""}`,
@@ -485,11 +487,13 @@ const Provider = (props) => {
     }
   }, [ntxdata, silverFilters, mappedFilters, seoData]);
   useEffect(() => {
+    debugger;
     if (window.location.pathname !== "jewellery") {
       matchPath(window.location.pathname, {
         path: ":listingpage",
       });
     } else {
+      debugger;
       matchPath(`/${mappedFilters.seo_url}`, {
         path: ":listingpage",
       });

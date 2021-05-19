@@ -353,11 +353,12 @@ const Provider = (props) => {
 
   // {filter:{transSkuListsByProductId:{every:{markupPrice:{  "greaterThanOrEqualTo":   20000,
   // "lessThanOrEqualTo":70000}}}}}
-  const { loading: seoloading, error: seoError, data: seoData, makeRequest: makeRequestSeo } = useGraphql(
-    seoUrlResult,
-    () => {},
-    {}
-  );
+  const {
+    loading: seoloading,
+    error: seoError,
+    data: seoData,
+    makeRequest: makeRequestSeo,
+  } = useGraphql(seoUrlResult, () => {}, {});
 
   useEffect(() => {
     if (offset === 0) {
@@ -695,6 +696,7 @@ const Provider = (props) => {
     // clearSortIfFiltersIsEmpty()
     // if(!sortFilterCombo) setSort("")
     if (Object.entries(ntxdata).length !== 0 && ntxdata.constructor === Object) {
+      debugger;
       // if(ntxdata.seo_url !=="jewellery" ){
       if (window.location.pathname !== "jewellery") {
         props.history.push({
