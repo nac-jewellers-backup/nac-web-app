@@ -357,43 +357,34 @@ export const TopFilters = (props) => {
               onMouseLeave={() => {
                 setState({ ...state, expanded: false, targetopen: null });
               }}
+              className={classes.shortby}
             >
-              <Grid container item xs={12} style={{ paddingBottom: 15 }}>
+              <Grid
+                container
+                item
+                xs={12}
+                className={`${classes.headerNavbarList1} ${classes.menuListCursorSort}`}
+                onMouseOver={(e) => {
+                  setState({
+                    ...state,
+                    targetopen: e.currentTarget,
+                    expanded: true,
+                  });
+                }}
+              >
+                <Grid item xs={6} style={{ margin: "auto" }}>
+                  Sort by
+                </Grid>
                 <Grid
-                  container
                   item
-                  xs={12}
-                  className={`${classes.headerNavbarList1} ${classes.menuListCursorSort}`}
-                  onMouseOver={(e) => {
-                    setState({
-                      ...state,
-                      targetopen: e.currentTarget,
-                      expanded: true,
-                    });
-                  }}
+                  xs={6}
+                  style={{ display: "flex", justifyContent: "flex-end" }}
                 >
-                  <Grid
-                    container
-                    item
-                    xs={12}
-                    className={classes.spacingfilterdiv}
-                  >
-                    <Grid container item xs={12} justify="space-between">
-                      <Grid item style={{ margin: "auto" }}>
-                        Sort by
-                      </Grid>
-                      <Grid
-                        item
-                        style={{ display: "flex", justifyContent: "flex-end" }}
-                      >
-                        {state.expanded ? (
-                          <ArrowDropUpIcon color="primary" />
-                        ) : (
-                          <ArrowDropDownIcon color="primary" />
-                        )}
-                      </Grid>
-                    </Grid>
-                  </Grid>
+                  {state.expanded ? (
+                    <ArrowDropUpIcon color="primary" />
+                  ) : (
+                    <ArrowDropDownIcon color="primary" />
+                  )}
                 </Grid>
               </Grid>
 

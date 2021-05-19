@@ -118,6 +118,7 @@ export const styles = makeStyles((theme) => ({
     [theme.breakpoints.only("md")]: {
       minWidth: "100px",
       marginBottom: "10px",
+      marginLeft: "0px",
     },
     minWidth: "150px ",
     // #80808061
@@ -155,6 +156,14 @@ export const styles = makeStyles((theme) => ({
       minWidth: "100px",
     },
     minWidth: "150px ",
+  },
+  shortby: {
+    maxWidth: "150px",
+    marginBottom: "10px",
+
+    [theme.breakpoints.only("md")]: {
+      maxWidth: "100px !important",
+    },
   },
   spacingfilterdiv: {
     display: "flex",
