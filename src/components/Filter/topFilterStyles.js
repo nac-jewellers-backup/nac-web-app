@@ -157,6 +157,14 @@ export const styles = makeStyles((theme) => ({
     },
     minWidth: "150px ",
   },
+  shortby: {
+    maxWidth: "150px",
+    marginBottom: "10px",
+
+    [theme.breakpoints.only("md")]: {
+      maxWidth: "100px !important",
+    },
+  },
   spacingfilterdiv: {
     display: "flex",
     alignItems: "center",

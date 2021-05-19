@@ -357,7 +357,7 @@ export const TopFilters = (props) => {
               onMouseLeave={() => {
                 setState({ ...state, expanded: false, targetopen: null });
               }}
-              style={{ maxWidth: "150px", marginBottom: "10px" }}
+              className={classes.shortby}
             >
               <Grid
                 container
