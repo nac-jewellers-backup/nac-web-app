@@ -591,8 +591,9 @@ export const useStyles = makeStyles((theme) => ({
     cursor: "pointer",
   },
   mouseOverPopoverfilters: {
-    maxHeight: "calc(100% - 300px)",
+    maxHeight: "calc(100% - 250px)",
     // height: "calc(100% - 200px)",
+    maxWidth: "220px",
     overflowY: "auto",
     "& .MuiRadio-root": {
       padding: "2px 6px !important",
@@ -607,6 +608,15 @@ export const useStyles = makeStyles((theme) => ({
     "& span": {
       fontFamily: "Roboto",
       letterSpacing: "1px",
+      overflow: "hidden",
+      textOverflow: "ellipsis",
+      display: "-webkit-box",
+      "-webkit-line-clamp": 1,
+      "-webkit-box-orient": "vertical",
+
+      // display: "-webkit-box",
+      // // "-webkit-line-clamp": "1",
+      // "-webkit-box-orient": "vertical",
     },
     "& nav": {
       padding: "0px !important",

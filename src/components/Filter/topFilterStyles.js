@@ -118,6 +118,7 @@ export const styles = makeStyles((theme) => ({
     [theme.breakpoints.only("md")]: {
       minWidth: "100px",
       marginBottom: "10px",
+      marginLeft: "0px",
     },
     minWidth: "150px ",
     // #80808061
