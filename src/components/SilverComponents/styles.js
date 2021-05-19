@@ -591,6 +591,9 @@ export const useStyles = makeStyles((theme) => ({
     cursor: "pointer",
   },
   mouseOverPopoverfilters: {
+    maxHeight: "calc(100% - 300px)",
+    // height: "calc(100% - 200px)",
+    overflowY: "auto",
     "& .MuiRadio-root": {
       padding: "2px 6px !important",
     },
