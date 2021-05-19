@@ -20,7 +20,7 @@ export const GlobalProvider = (props) => {
   const [Globalctx, setGlobalCtx] = React.useState(initialCtx.GLobalCtx);
 
   React.useEffect(() => {
-    // debugger;
+  
     var loc = window.location.pathname
       .split("/")[1]
       .split("-")

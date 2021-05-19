@@ -76,7 +76,6 @@ const LoginComponent = (props) => {
                     // props.history.push('/account-profile')
                 }
             } catch (error) {
-                // console.log(error)
             }
         }
 

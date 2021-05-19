@@ -357,8 +357,6 @@ class Component extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    console.log(prevProps);
-    console.log(prevState);
     // Typical usage (don't forget to compare props):
     if (this.state.checked !== prevState.checked) {
       // this.myRef.scrollTop()
@@ -536,15 +534,13 @@ class Component extends React.Component {
     // alert(JSON.stringify(value));
     this.handlebye();
     let { chipData, checked } = this.state;
-    // debugger;
-    console.log("chipdata", chipData);
-    console.log("checked", checked);
+   
     Object.entries(checked).map((val) => {
-      // debugger
+    
       if (val && val[0] === "category") {
-        // debugger
+      
         if (val && val[1] && val[1].goldcoins === true) {
-          // debugger
+        
           if (value === "Gold Coins") {
             return false;
           }
@@ -556,10 +552,10 @@ class Component extends React.Component {
           }
           let arr = [],
             arr1 = [];
-          // debugger
+        
           arr = chipData.filter((val) => val.label !== value);
           if (checked) {
-            // debugger
+          
             arr1 = this.delete_val_chips(value).filter((val) => {
               var dlt;
               if (val !== undefined && val !== null) {
@@ -578,7 +574,7 @@ class Component extends React.Component {
           this.props.setFilters(checked);
           return false;
         } else {
-          // debugger
+        
           let arr = [],
             arr1 = [];
           arr = chipData.filter((val) => val.label !== value);
@@ -692,11 +688,9 @@ class Component extends React.Component {
   };
 
   onCurrencyChange_click = (e, silverPrice) => {
-    debugger;
+  
     const { checked } = this.state;
-    // debugger;
-    console.log(this.state);
-    console.log(silverPrice);
+   
     var _price_min;
     var _price_max;
     if (silverPrice) {

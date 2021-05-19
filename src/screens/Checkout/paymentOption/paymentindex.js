@@ -48,7 +48,7 @@ class PaymentIndex extends React.Component {
   }
   render() {
     var a = 1;
-    console.log("state - calling - repeatdly", a + 1);
+  
     const dataCard1 = this.props.data ? this.props.data : [];
 
     return (
@@ -181,7 +181,7 @@ const Components = (props) => {
     }
   }
   if (cartId) {
-    console.log("came in --");
+  
     if (
       data?.data?.allTransSkuLists?.nodes
         .map((val) => {

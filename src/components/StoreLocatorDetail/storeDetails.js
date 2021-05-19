@@ -73,7 +73,6 @@ var obj_values = {};
         )
             .then(res => res.json())
             .then(fetchValue => {
-                // console.log(fetchValue.result)
                 obj_values["data"] = fetchValue
                 setState({
                     ...state,

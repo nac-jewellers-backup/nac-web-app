@@ -124,7 +124,7 @@ export default function PaymentHiddenForm(props) {
           localStorage.setItem("order_id", JSON.stringify(data.order.id));
           hitPaymentGateWayAPI(data.order.id);
         }
-        debugger;
+        
 
         setOrderId(data.order.payment_id);
       })
@@ -139,7 +139,6 @@ export default function PaymentHiddenForm(props) {
   useEffect(() => {
     if (hash.checksum) document.getElementById("sendtoairpay").submit();
   }, [hash]);
-  // useEffect(()=>{if(hash.checksum) console.log(hash,orderId,"hashandorderid")},[hash])
   return (
     <div container>
       <form method="POST" action="https://payments.airpay.co.in/pay/index.php" id="sendtoairpay">

@@ -219,7 +219,7 @@ const Provider = (props) => {
     return paramsAo;
   };
 
-  debugger;
+
   // {transSkuListsByProductId: {some: {discountPrice: {greaterThan: 1.5}}}}
   // const { loading, error, data, makeRequest } = useGraphql(PRODUCTLIST, () => { }, {})
   const { loading, error, data, makeFetch: fetchproducts } = useNetworkRequest("/fetchproducts", {}, false, {});
@@ -419,7 +419,6 @@ const Provider = (props) => {
 
       // bodyvar = paramObjects();
     } catch (error) {
-      // console.log(error)
     }
     var k = qtfArr.map((val) => Object.values(val));
     var keyy = qtfArr.map((val) => Object.keys(val));
@@ -439,7 +438,6 @@ const Provider = (props) => {
         setMappedFilters(ntxdata);
       }
     } catch (error) {
-      // console.log(error)
     }
     // }
   };
@@ -471,7 +469,7 @@ const Provider = (props) => {
         return sort && `sort=${sort.values}`;
       }
     };
-    debugger;
+    
     if ((Object.entries(sort).length > 0 && sort.constructor === Object) || (pricemin !== null && pricemax !== null)) {
       props.history.push({
         pathname: `${mappedFilters.seo_url ? `/${mappedFilters.seo_url}` : ""}`,
@@ -487,13 +485,13 @@ const Provider = (props) => {
     }
   }, [ntxdata, silverFilters, mappedFilters, seoData]);
   useEffect(() => {
-    debugger;
+   
     if (window.location.pathname !== "jewellery") {
       matchPath(window.location.pathname, {
         path: ":listingpage",
       });
     } else {
-      debugger;
+     
       matchPath(`/${mappedFilters.seo_url}`, {
         path: ":listingpage",
       });

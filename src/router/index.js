@@ -87,7 +87,6 @@ export const RouterApp = (props) => {
     if (val === "silverjewellery") return val;
   });
 
-  // console.log('window.location.pathnamewindow.location.pathname', window.location.pathname, props.location.pathname)
   return (
     <Switch history={browserHistory}>
       {/* <Redirect key="stylori-redirect" from="/" exact to={"/"} /> */}

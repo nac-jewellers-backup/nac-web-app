@@ -111,13 +111,8 @@ const Provider = (props) => {
 
   const { loading: ntx, error: ntxerr, data: ntxdata, makeFetch } = useNetworkRequest("/filterlist", {}, false, {});
 
-  // debugger;
-  // console.log({
-  //   loading: ntx,
-  //   error: ntxerr,
-  //   data: ntxdata,
-  //   makeFetch,
-  // });
+ 
+ 
   var con_gust = localStorage.getItem("gut_lg") ? JSON.parse(localStorage.getItem("gut_lg")) : "";
   const myStorage = sessionStorage.getItem("user_id");
   const localvalues_check = JSON.parse(localStorage.getItem("gut_lg")) === true ? true : false;
@@ -491,7 +486,7 @@ const Provider = (props) => {
       // alert(JSON.stringify('filters',filters))
       // alert(JSON.stringify(newObj))
       // if()
-      // debugger;
+     
       if (filters?.category?.constructor === Object && Object.keys(filters?.category)?.length === 0) {
         if (filters.Category && Object.keys(filters.Category).length > 0 && filters.Category.constructor === Object) {
           var _replaceCategory = filters.Category;
@@ -511,7 +506,7 @@ const Provider = (props) => {
         }).length !== 0
       )
         if (Object.keys(newObj).findIndex((val) => val === "material") > -1) {
-          // debugger
+       
           // if(newObj.category === "Jewellery"){
           if (!(newObj.material === "Silver")) {
             newObj["isJewellery"] = true;
@@ -522,7 +517,7 @@ const Provider = (props) => {
         } else {
           newObj["isJewellery"] = true;
         }
-      // debugger
+   
       // data.data.allTransSkuLists.nodes.map(val=>{return val.productListByProductId.productMaterialsByProductSku.nodes}).flat().findIndex(val=> Boolean(val.materialName === "Silver")) > -1
       await fetchproducts(newObj);
     }
@@ -532,14 +527,13 @@ const Provider = (props) => {
     // alert(JSON.stringify(filters.Offers))
     // clearSortIfFiltersIsEmpty()
     // if(!sortFilterCombo) setSort("")
-    // debugger;
-    console.log(filters);
+   
     if (filters && Object.entries(filters).length !== 0 && filters.constructor === Object) {
       if (
         Object.keys(filters).length !== 0 &&
         filters.constructor === Object &&
         Object.values(filters).filter((val) => {
-          // debugger;
+         
           if (val?.constructor === Object && Object.keys(val)?.length > 0) {
             return val;
           }
@@ -567,7 +561,6 @@ const Provider = (props) => {
   useEffect(() => {
     // alert("sort")
     if (sort) {
-      console.log(sort, "{}");
       updatefiltersSort();
     }
   }, [sort]);
@@ -627,7 +620,6 @@ const Provider = (props) => {
 
       // bodyvar = paramObjects();
     } catch (error) {
-      // console.log(error)
     }
     var k = qtfArr.map((val) => Object.values(val));
     var keyy = qtfArr.map((val) => Object.keys(val));
@@ -687,7 +679,6 @@ const Provider = (props) => {
         setMappedFilters(ntxdata);
       }
     } catch (error) {
-      // console.log(error)
     }
     // }
   };
@@ -696,7 +687,7 @@ const Provider = (props) => {
     // clearSortIfFiltersIsEmpty()
     // if(!sortFilterCombo) setSort("")
     if (Object.entries(ntxdata).length !== 0 && ntxdata.constructor === Object) {
-      debugger;
+     
       // if(ntxdata.seo_url !=="jewellery" ){
       if (window.location.pathname !== "jewellery") {
         props.history.push({

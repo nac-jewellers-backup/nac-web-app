@@ -11,7 +11,6 @@ export default function MediaCarousel(props) {
   const classes = styles();
   let propsValue = props.value;
   
-  console.log(propsValue.data);
   const [ButtonCondition, setButtonCondition] = useState(true)
   const [isMoreContent, MoreContent] = useState(true);
   const [isMoreCompound, MoreCompound] = useState(3);

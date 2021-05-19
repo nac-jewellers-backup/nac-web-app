@@ -80,7 +80,6 @@ export const useNetworkRequest = (
       })
       .catch((err) => {
       
-        console.log(err);
         setError(true);
         setLoading(false);
       });

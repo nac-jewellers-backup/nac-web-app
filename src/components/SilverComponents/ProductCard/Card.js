@@ -85,7 +85,6 @@ const imageOnError = (event, res) => {
   //   return testImage(URL_1000x1000, e);
   //   // e.target.src = (e.target.src).substr(0, src_img).concat('.jpg')
   // } catch (error) {
-  //   console.log(error)
   // }
 
   event.target.src = `${CDN_URL}product/${res.img_res}X${res.img_res}/productnotfound.webp`;

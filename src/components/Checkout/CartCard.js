@@ -65,7 +65,6 @@ class Checkoutcard extends React.Component {
         var currentValue = e.target.id && e.target.id.length > 0 ? e.target.id : e.currentTarget.id
 
         // console.clear()
-        // console.log("e-clear",e.target.id)
 
         var a = local_storage.products.filter(val => {
             if (currentValue !== val.sku_id) {
@@ -220,8 +219,6 @@ class Checkoutcard extends React.Component {
             if(_data.indexOf("silver") > -1)  return false 
             else return true
         }
-        console.clear()
-        console.log(this.props.data,"this.props.data----")
         return ( 
             <div style={{ marginTop: "10px" }}>
                 <Grid container>
@@ -416,7 +413,6 @@ class Checkoutcard extends React.Component {
         // const yousave = Math.round(Number(dataCard1.price) - Number(dataCard1.offerPrice))
         let path = window.location.pathname.split('/').pop();
         const { classes } = this.props;
-        console.log(props.cartFilters.tax_price, "you saved.")
         return (
             <div style={{ marginTop: "10px" }} >
                 <Grid container spacing={12}>
@@ -490,7 +486,6 @@ class Checkoutcard extends React.Component {
         const { classes } = this.props;
         // alert(discounted_price)
         let path = window.location.pathname.split('/').pop();
-        console.log(this.props.isdatafromstate)
        
         
         

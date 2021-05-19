@@ -62,7 +62,6 @@ export const TopFilters = (props) => {
   };
   const handleChange = (event) => {
     if (FilterOptionsCtx.offset > 0) FilterOptionsCtx.setOffset(0);
-    // console.log(this.props.offset)
     setSort({ values: event.target.value });
     setState({ ...state, expanded: false });
     window.scrollTo(0, 0);

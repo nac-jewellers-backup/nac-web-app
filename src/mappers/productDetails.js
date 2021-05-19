@@ -52,7 +52,6 @@ var screen_width_type = (screen_res, largeImageZoom) => {
     return subtracting_spacesaroundcard;
   };
   var calc = _calc();
-  console.log(calc + "sssss");
   // var img_res;
   var sizes = [275, 300, 350, 375, 400, 500, 600, 675, 700, 775, 800, 900, 975, 1000, 1100, 2400];
   // [50, 60, 70, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 425, 450, 475, 500, 525, 550, 575, 600, 625, 650, 675, 700, 725, 750, 775, 800, 825, 850, 875, 900, 925, 950, 975, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000, 2100, 2200, 2300, 2400]
@@ -88,13 +87,12 @@ var screen_width_type = (screen_res, largeImageZoom) => {
 };
 screen_width_type_like_view();
 screenWidth();
-// console.log('screen_width_type()',screen_width_type())
 
 // const baseUi = "https://assets-cdn.stylori.com/";
 // const injectUrl = (url, baseUi) => url ? resolutions.map(k => ({ ...k, img: `${baseUi}${url.imageUrl===undefined  ? url : url.imageUrl}` })) : [];
-// debugger
+// 
 const injectUrl_url_construct = (url, baseUi, screen_res, largeImageZoom) => {
-  // debugger
+ 
   var browser_type = JSON.parse(localStorage.getItem("browserDetails"));
   if (
     browser_type !== undefined &&
@@ -165,7 +163,6 @@ const handleVideoCheck = (url) => {
 
 const injectUrl = (url, baseUi) => resolutions.map((k) => ({ ...k, img: `${baseUi}${k.res}${url}` }));
 const generateImgurls = (PD, val, screen_res, tabsChange) => {
-  console.log(PD, val, "PD , VAL---------");
 
   var arrOfurls = [];
   var arrOfurls_2X = [];
@@ -341,104 +338,8 @@ const handle_mapper = (val) => {
   }
 };
 
-// const otherproducts = (viewedddatas) => {
-//   debugger;
-//   console.log(
-//     viewedddatas !== undefined && viewedddatas !== null
-//       ? console.log("eeeehadf", viewedddatas.Bangles.nodes[0].productImagesByProductId)
-//       : "noooooooooooooooooo"
-//   );
 
-// viewedddatas != undefined && viewedddatas != null
-// ? Object.entries(viewedddatas).map(([key, value]) => {
-//     console.log(key);
-//     console.log(value);
-//   })
-// : " ";
-// return viewedddatas !== undefined && viewedddatas !== null ? ["working"] : ["not working"];
-
-// viewedddatas !== undefined && viewedddatas !== null && viewedddatas.data && viewedddatas.data.Bangles
-//   ? console.log(viewedddatas.data.Bangles)
-//   : "its not working";
-// viewedddatas.data != undefined && viewedddatas.data != null
-//   ? Object.entries(viewedddatas.data).map(([key, value]) => {
-//       console.log(key);
-//       console.log(value);
-//     })
-//   : " ";
-//   return viewedddatas != undefined && viewedddatas != null
-//     ? [
-//         {
-//           img: viewedddatas.Bangles.nodes[0].productImagesByProductId.nodes[0].imageUrl ?? " ",
-
-//           image: {
-//             placeImage: {
-//               img: viewedddatas.Bangles.nodes[0].productImagesByProductId.nodes[0].imageUrl ?? "",
-//             },
-//             hoverImage: {
-//               img: viewedddatas.Bangles.nodes[0].productImagesByProductId.nodes[0].imageUrl ?? "",
-//             },
-//           },
-//           title: viewedddatas.Bangles.nodes[0].productListByProductSku.productType ?? "",
-//           offerPrice: "",
-//           skuID: viewedddatas.Bangles.nodes[0].productSku ?? "",
-//           description: viewedddatas.Bangles.nodes[0].productListByProductSku.prodDescription ?? "",
-//         },
-//         {
-//           img: viewedddatas.Bracelets.nodes[0].productImagesByProductId.nodes[0].imageUrl ?? " ",
-
-//           image: {
-//             placeImage: {
-//               img: viewedddatas.Bracelets.nodes[0].productImagesByProductId.nodes[0].imageUrl ?? "",
-//             },
-//             hoverImage: {
-//               img: viewedddatas.Bracelets.nodes[0].productImagesByProductId.nodes[0].imageUrl ?? "",
-//             },
-//           },
-//           title: viewedddatas.Bracelets.nodes[0].productListByProductSku.productType ?? "",
-//           offerPrice: "",
-//           skuID: viewedddatas.Bracelets.nodes[0].productSku ?? "",
-//           description: viewedddatas.Bracelets.nodes[0].productListByProductSku.prodDescription ?? "",
-//         },
-//         {
-//           img: viewedddatas.Earrings.nodes[0].productImagesByProductId.nodes[0].imageUrl ?? " ",
-
-//           image: {
-//             placeImage: {
-//               img: viewedddatas.Earrings.nodes[0].productImagesByProductId.nodes[0].imageUrl ?? "",
-//             },
-//             hoverImage: {
-//               img: viewedddatas.Earrings.nodes[0].productImagesByProductId.nodes[0].imageUrl ?? "",
-//             },
-//           },
-//           title: viewedddatas.Earrings.nodes[0].productListByProductSku.productType ?? "",
-//           offerPrice: "",
-//           skuID: viewedddatas.Earrings.nodes[0].productSku ?? "",
-//           description: viewedddatas.Earrings.nodes[0].productListByProductSku.prodDescription ?? "",
-//         },
-
-//         {
-//           img: viewedddatas.Rings.nodes[0].productImagesByProductId.nodes[0].imageUrl ?? " ",
-
-//           image: {
-//             placeImage: {
-//               img: viewedddatas.Rings.nodes[0].productImagesByProductId.nodes[0].imageUrl ?? "",
-//             },
-//             hoverImage: {
-//               img: viewedddatas.Rings.nodes[0].productImagesByProductId.nodes[0].imageUrl ?? "",
-//             },
-//           },
-//           title: viewedddatas.Rings.nodes[0].productListByProductSku.productType ?? "",
-//           offerPrice: "",
-//           skuID: viewedddatas.Rings.nodes[0].productSku ?? "",
-//           description: viewedddatas.Rings.nodes[0].productListByProductSku.prodDescription ?? "",
-//         },
-//       ]
-//     : [];
-// };
-// icon: "https://img.icons8.com/color/48/000000/gold-bars.png"})
 export default function (data, like_data, viewedddatas, rating, tabsChange) {
-  console.log(like_data);
   let mapperdata = [];
   try {
     // mapperda = ;
@@ -1087,7 +988,7 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
           viewedddatas.data.allProductMaterials.nodes.length !== 0
             ? viewedddatas.data.allProductMaterials && viewedddatas.data.allProductMaterials.nodes.length > 0
               ? viewedddatas.data.allProductMaterials.nodes.map((val) => {
-                  // debugger;
+                 ;
                   return {
                     img:
                       val &&
@@ -1167,12 +1068,9 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
         // };
       };
     } catch (e) {
-      // console.log("product detail page error", "-----", e)
     }
-    console.log(_d);
     return _d;
   });
-  console.log(_format);
   return _format;
 }
 

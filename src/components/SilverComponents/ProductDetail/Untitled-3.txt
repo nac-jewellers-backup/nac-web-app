@@ -651,7 +651,6 @@ function usePrevious(value) {
 
             // bodyvar = paramObjects();
         } catch (error) {
-            console.log(error)
         }
         var k = qtfArr.map(val => Object.values(val));
         var keyy = qtfArr.map(val => Object.keys(val))
@@ -661,7 +660,6 @@ function usePrevious(value) {
             var toLowerCase = key[0].toLowerCase()
             newObj[toLowerCase] = k[len][0]
         }
-        console.log('i came in as update filters function',"123123")
         await makeFetch(newObj);
         //    props.history.push({
         //     pathname: `/stylori${mappedFilters.seo_url   ?`/${mappedFilters.seo_url}` : '' }`,

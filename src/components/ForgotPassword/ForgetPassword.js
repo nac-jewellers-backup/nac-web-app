@@ -59,7 +59,6 @@ const LoginComponent = (props) => {
                     setValues({ ...values, email: "", modelOpen: true })
                 }
             } catch (error) {
-                // console.log(error)
             }
         }
 

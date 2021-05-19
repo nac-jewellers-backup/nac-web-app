@@ -82,7 +82,6 @@ const Productprice = (props, anchorEl, handleClick, handleClose, handleReadMore,
   const open = anchorEl;
   var wishlist = props.wishlist;
 
-  console.log(props);
   // alert(JSON.stringify(props.wishlist.wishlistdata.nodes.skuId))
   // var wishlist = this.props && this.props.wishlist &&
   return (

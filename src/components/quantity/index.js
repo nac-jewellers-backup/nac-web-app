@@ -25,7 +25,7 @@ const handleQty = (
   let _max = _incrementQty ? value + _incrementQty : value++;
   let _min  = _incrementQty ? value - _incrementQty : value--;
   if (isMaxMin === "max") {
-    debugger
+   
     if (_max <= _maxOrderQty) {
       if(_max === _maxOrderQty){
         increment = false;
@@ -133,7 +133,6 @@ const Quantity = (props) => {
           .then((res) => res.json())
           .then((res) => console.log(res.data));
       } catch (error) {
-        console.log("Error Occoured in quantity updation.", error);
       }
     }
   };
@@ -216,10 +215,8 @@ const Quantity = (props) => {
     // _updateQuantityApi()
   }, []);
   console.clear();
-  console.log("this.props.isdatafromstate", filters);
   const { classes, cart, pdpage } = props;
   const _cart = cart || pdpage ? true : false;
-  console.log(filters, "//////////QTY");
   return (
     <Grid container item xs={12}>
       {!_cart && (

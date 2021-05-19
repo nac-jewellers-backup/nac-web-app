@@ -379,7 +379,6 @@ class ProductDetail extends Component {
       nextArrow: <ArrowRight />,
     };
 
-    console.log("----", this.props.data);
 
     // alert(JSON.stringify(this.props.setratingcountsclear))
     // let diamondWeight = this.props.data[0].productsDetails[1].namedetail[3].details ?? "";

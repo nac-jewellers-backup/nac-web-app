@@ -62,7 +62,7 @@ const fetchData = (getState, dispatch ,otherProps ,routerProps) => {
           currentStore.push(store)
         }
     });
-    debugger
+    
     axios.get(`https://maps.googleapis.com/maps/api/place/details/json?placeid=${currentStore[0].placeID}&key=AIzaSyBHtJJ5uHfhX92hxFzHsciwPCayzYB9yCk`).then( response => {
      let newPromises = [];
      newPromises.push(dispatch({type:UPDATE_REVIEWS , rating:response.data.result.rating , reviews: response.data.result.reviews}))

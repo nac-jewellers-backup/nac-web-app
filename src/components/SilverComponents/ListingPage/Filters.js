@@ -51,7 +51,6 @@ const Filters = (props) => {
       ListingPageCtx.setSilverFilters(state.filters);
     } else {
       // alert(a,b,d)
-      // console.log('error')
     }
   };
   const handleChangesort = (event) => {

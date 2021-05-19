@@ -74,7 +74,6 @@ class CashonDelivey extends React.Component {
         window.location.pathname = `/paymentsuccess/${resdata.order.id}`;
       })
       .catch((err) => {
-        // console.log(err)
       });
     // localStorage.removeItem("cart_id")
 

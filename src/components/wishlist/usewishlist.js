@@ -65,7 +65,6 @@ const useWishlists = (props) => {
     //         return response.json();
     //     })
     //         .then((myJson) => {
-    //             console.log(myJson);
     //         });
     // }
 

@@ -46,7 +46,7 @@ export const TabsProvider = (props) => {
     pathQueries();
   }, [filters]);
   let variables;
-  debugger;
+  
   const { loading, error, data, makeRequest } = useGraphql(PRODUCTDETAILS, () => {}, {});
   const { loading: likeloading, error: likeerror, data: likedata, makeRequest: likemakeRequest } = useGraphql(
     YouMayAlsoLike,

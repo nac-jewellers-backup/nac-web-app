@@ -181,11 +181,9 @@ class ProductImageZoom extends React.Component {
   };
 
   productImageZoom = (_isSilver) => {
-    // console.log(this.props.data)
     const { classes, data, customLimit } = this.props;
     const limit = customLimit ? customLimit : 4;
 
-    console.log(this.state);
     const { showimage, largeImage, showimageBig, largeImageBig } = this.state;
     const dataCarousel = {
       infinite: false,
@@ -210,7 +208,6 @@ class ProductImageZoom extends React.Component {
     };
 
     var a = showimage && showimage;
-    console.log(this.props.data[0], "this.props.data[0]");
     // alert(JSON.stringify(this.props.data[0]))
     var b = a.length > 0 && a.split("/");
     // var c = a.replace(b[5], data[0].image_resolution_two + 'X' + data[0].image_resolution_two)

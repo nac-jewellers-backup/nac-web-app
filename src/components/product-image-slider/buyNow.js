@@ -372,7 +372,6 @@ class Component extends React.Component {
         this.props.makeRequestCod(variab);
 
         // this.setState({pincodeValues:this.props.CodData})
-        // console.log('variables',variables,queryvariables,data)
         // console.info('objectdataobject', data, data[0].price> state.pincodeValues.data.allPincodeMasters.nodes[0].maxCartvalue, props.CodData)
       } else {
         return {};

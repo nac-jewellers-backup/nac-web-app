@@ -67,7 +67,6 @@ export default function AboutusPage(props) {
     <Grid container xs={12}>
       <Header />
       <Grid item xs={12}>
-        {console.log(values())}
         <Hidden smDown>
           <Slideshow
             dataCarousel={

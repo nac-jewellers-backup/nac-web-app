@@ -72,7 +72,6 @@ class PaymentResponseSuccess extends React.Component {
         alert("Your mail has been Resending on successfully");
       })
       .catch((err) => {
-        // console.log(err)
       });
   };
 

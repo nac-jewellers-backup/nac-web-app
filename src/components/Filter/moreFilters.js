@@ -60,7 +60,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function MoreFilters(props) {
-  console.log(props.subFilter);
   const classes = useStyles();
   return (
     <div>
