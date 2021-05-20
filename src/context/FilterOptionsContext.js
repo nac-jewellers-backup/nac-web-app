@@ -111,8 +111,6 @@ const Provider = (props) => {
 
   const { loading: ntx, error: ntxerr, data: ntxdata, makeFetch } = useNetworkRequest("/filterlist", {}, false, {});
 
- 
- 
   var con_gust = localStorage.getItem("gut_lg") ? JSON.parse(localStorage.getItem("gut_lg")) : "";
   const myStorage = sessionStorage.getItem("user_id");
   const localvalues_check = JSON.parse(localStorage.getItem("gut_lg")) === true ? true : false;
@@ -192,6 +190,7 @@ const Provider = (props) => {
             data.data.allSeoUrlPriorities.nodes.map((val) => {
               let attrName = val.attributeName.replace(/\s/g, "");
               let attrVal = val.attributeValue;
+                
               filters[attrName] = { [attrVal]: true };
 
               // setFilters(filters)
@@ -327,6 +326,7 @@ const Provider = (props) => {
       });
       paramsAo = urlSplitparamsEqual;
     } else if (filtersparms !== undefined && filtersparms !== "jewellery") {
+        
       const filterdata = window.location.pathname;
       const splitslash = filterdata && filterdata.replace("/", "");
       const splitNtxData = filterdata && splitslash.split("-");
@@ -362,6 +362,7 @@ const Provider = (props) => {
     }
   }, [loading, error, data]);
   const seoUrlFetch = () => {
+      ;
     var path_name =
       mappedFilters.seo_url && mappedFilters.seo_url.length > 0 ? mappedFilters.seo_url : window.location.pathname.split("/")[1];
     const conditionfiltersSeo = {
@@ -398,6 +399,7 @@ const Provider = (props) => {
   // }
 
   useEffect(() => {
+      
     setMappedFilters(ntxdata);
   }, [ntxdata, ntxerr, ntx]);
   useEffect(() => {
@@ -486,7 +488,7 @@ const Provider = (props) => {
       // alert(JSON.stringify('filters',filters))
       // alert(JSON.stringify(newObj))
       // if()
-     
+
       if (filters?.category?.constructor === Object && Object.keys(filters?.category)?.length === 0) {
         if (filters.Category && Object.keys(filters.Category).length > 0 && filters.Category.constructor === Object) {
           var _replaceCategory = filters.Category;
@@ -506,7 +508,6 @@ const Provider = (props) => {
         }).length !== 0
       )
         if (Object.keys(newObj).findIndex((val) => val === "material") > -1) {
-       
           // if(newObj.category === "Jewellery"){
           if (!(newObj.material === "Silver")) {
             newObj["isJewellery"] = true;
@@ -517,7 +518,7 @@ const Provider = (props) => {
         } else {
           newObj["isJewellery"] = true;
         }
-   
+
       // data.data.allTransSkuLists.nodes.map(val=>{return val.productListByProductId.productMaterialsByProductSku.nodes}).flat().findIndex(val=> Boolean(val.materialName === "Silver")) > -1
       await fetchproducts(newObj);
     }
@@ -527,13 +528,12 @@ const Provider = (props) => {
     // alert(JSON.stringify(filters.Offers))
     // clearSortIfFiltersIsEmpty()
     // if(!sortFilterCombo) setSort("")
-   
+
     if (filters && Object.entries(filters).length !== 0 && filters.constructor === Object) {
       if (
         Object.keys(filters).length !== 0 &&
         filters.constructor === Object &&
         Object.values(filters).filter((val) => {
-         
           if (val?.constructor === Object && Object.keys(val)?.length > 0) {
             return val;
           }
@@ -619,8 +619,7 @@ const Provider = (props) => {
       const query = encodeURI(queries.join("&"));
 
       // bodyvar = paramObjects();
-    } catch (error) {
-    }
+    } catch (error) {}
     var k = qtfArr.map((val) => Object.values(val));
     var keyy = qtfArr.map((val) => Object.keys(val));
     len = keyy.length;
@@ -675,19 +674,19 @@ const Provider = (props) => {
     }
     await makeFetch(newObj);
     try {
+        
       if (ntxdata.seo_url === "jewellery") {
         setMappedFilters(ntxdata);
       }
-    } catch (error) {
-    }
+    } catch (error) {}
     // }
   };
 
   useEffect(() => {
     // clearSortIfFiltersIsEmpty()
     // if(!sortFilterCombo) setSort("")
+      
     if (Object.entries(ntxdata).length !== 0 && ntxdata.constructor === Object) {
-     
       // if(ntxdata.seo_url !=="jewellery" ){
       if (window.location.pathname !== "jewellery") {
         props.history.push({
@@ -723,6 +722,7 @@ const Provider = (props) => {
       }
     };
     if ((sort && Object.entries(sort).length > 0 && sort.constructor === Object) || (pricemin !== null && pricemax !== null)) {
+      
       props.history.push({
         pathname: `${mappedFilters.seo_url ? `/${mappedFilters.seo_url}` : ""}`,
         search: filters_seo_condition() ? filters_seo_condition() : window.location.search,
@@ -732,16 +732,19 @@ const Provider = (props) => {
     }
   }, [sort, pricemin, pricemax]);
   useEffect(() => {
+      
     if (paramObjects(mappedFilters.seo_url).length > 0) {
       setParamsAo(paramObjects(mappedFilters.seo_url));
     }
   }, [ntxdata, filters, mappedFilters, seoData]);
   useEffect(() => {
+      
     if (window.location.pathname !== "jewellery") {
       matchPath(window.location.pathname, {
         path: ":listingpage",
       });
     } else {
+        
       matchPath(`/${mappedFilters.seo_url}`, {
         path: ":listingpage",
       });

@@ -1,4 +1,5 @@
 import React from "react";
+import { routes } from "router/routes";
 
 const initialCtx = {
   GLobalCtx: {
@@ -20,7 +21,6 @@ export const GlobalProvider = (props) => {
   const [Globalctx, setGlobalCtx] = React.useState(initialCtx.GLobalCtx);
 
   React.useEffect(() => {
-  
     var loc = window.location.pathname
       .split("/")[1]
       .split("-")
@@ -28,16 +28,14 @@ export const GlobalProvider = (props) => {
         if (val === "silver") return val;
       });
     var locsilverStaticPage = window.location.pathname.split("/")[1];
+    console.log("locsilverStaticPage", routes.Silver, `/${locsilverStaticPage}`);
     var loc_PD = window.location.pathname.split("/").filter((val) => {
       if (val === "silverjewellery") return val;
     });
-    if (window.location.pathname === "/stylorisilver") setGlobalCtx({ ...Globalctx, pathName: true });
+    if (`/${locsilverStaticPage}` === routes.Silver) setGlobalCtx({ ...Globalctx, pathName: true });
+    else if (`/${locsilverStaticPage}` === routes.styloriSilverCollections) setGlobalCtx({ ...Globalctx, pathName: true });
     else if (loc_PD.length > 0) setGlobalCtx({ ...Globalctx, pathName: true });
     else if (loc.length > 0) setGlobalCtx({ ...Globalctx, pathName: true });
-    // else if (`/${locsilverStaticPage}`) {
-    //   alert("ji");
-    //   setGlobalCtx({ ...Globalctx, pathName: true });
-    // }
     else setGlobalCtx({ ...Globalctx, pathName: false });
   }, []);
   return <GlobalContext.Provider value={{ Globalctx, setGlobalCtx }}>{props.children}</GlobalContext.Provider>;

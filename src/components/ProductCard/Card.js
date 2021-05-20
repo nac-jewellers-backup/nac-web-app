@@ -13,7 +13,6 @@ import { Hidden } from "@material-ui/core";
 import "./productCard.css";
 import { CDN_URL } from "config";
 
-
 import { ProductDetailContext } from "context";
 import { LazyLoadImage, trackWindowScroll } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
@@ -133,7 +132,7 @@ const Gallery = (props, callmouseover, callmouseout, cardstate, scrollPosition) 
       </div>
       <Link
         className={"cardImage"}
-        to={{ pathname: `/jewellery/earrings?skuid=${props.data.skuID ?? ""}` }}
+        to={{ pathname: `/${props.data.skuUrl ?? ""}` }}
         style={{ textDecoration: "none" }}
         target="_blank"
         onClick={handleProductDetatiContext(props)}
@@ -571,7 +570,9 @@ function Component(props) {
 
                   <Grid container xs={12}>
                     <Typography variant="body1" component="span" style={{ paddingLeft: "5px" }} className={`${classes.titles}`}>
-                      {props.static ? "Jazzy Gypsy Diamond Hoop Earrings" : props.data.title.charAt(0).toUpperCase() + props.data.title.slice(1)}
+                      {props.static
+                        ? "Jazzy Gypsy Diamond Hoop Earrings"
+                        : props.data.title.charAt(0).toUpperCase() + props.data.title.slice(1)}
                     </Typography>
                   </Grid>
                 </Grid>
