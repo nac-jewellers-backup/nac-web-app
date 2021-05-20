@@ -194,7 +194,7 @@ function HeaderHoverMenuItem(props) {
     },
     {
       img: "https://storage.googleapis.com/media.nacjewellers.com/resources/dist/jewellery/diamond/affordable-diamonds/ladies-ring/ba1726-f.png",
-      content: "Lightweight by STYLORI",
+      content: <>Light&nbsp;weightby&nbsp;STYLORI</>,
       url: "/ear+jacket-earrings-jewellery",
     },
   ];
@@ -666,7 +666,7 @@ function HeaderHoverMenuItem(props) {
                     >
                       <Grid item style={{ margin: "auto" }}>
                         <Typography
-                          style={{ margin: "auto", color: "#33346d" }}
+                          // style={{ margin: "auto", color: "#33346d" }}
                           className={classes.imgtitle}
                         >
                           {val.title}
@@ -764,15 +764,7 @@ function HeaderHoverMenuItem(props) {
                         }}
                       >
                         {val.content.map((item, i) => (
-                          <Typography
-                            style={{
-                              margin: "auto",
-                              textAlign: "center",
-                              color: "#000",
-                              paddingTop: "14px",
-                            }}
-                            className={classes.listedItemsvalue}
-                          >
+                          <Typography className={classes.listedItemsvalue}>
                             {item.itm}
                           </Typography>
                         ))}
@@ -871,7 +863,7 @@ function HeaderHoverMenuItem(props) {
         style={{
           width: "100%",
           background: "#fff",
-          padding: "20px 60px 20px 35px",
+          padding: "0px 20px 0px 0px",
           zIndex: "10000",
           color: "#000",
         }}
@@ -919,7 +911,6 @@ function HeaderHoverMenuItem(props) {
                             style={{
                               width: "50%",
                               margin: "auto",
-                              marginBottom: "15px",
                             }}
                             src={val.img}
                           />
@@ -933,7 +924,7 @@ function HeaderHoverMenuItem(props) {
           </Grid>
           <Grid item xs={6} className={classes.gridmultiplesection}>
             <Grid container item xs={12}>
-              <Grid item xs={4} style={{ padding: "0 6px 0 30px" }}>
+              <Grid item xs={4} style={{ padding: "0 6px 0 25px" }}>
                 {/* second section */}
                 <Grid item xs={12} style={{ textAlign: "center" }}>
                   <Typography
@@ -1055,7 +1046,7 @@ function HeaderHoverMenuItem(props) {
         style={{
           width: "100%",
           background: "#fff",
-          padding: "20px 60px 20px 30px",
+          padding: "0px 20px 0px 0px",
           zIndex: "10000",
         }}
       >
@@ -1082,14 +1073,7 @@ function HeaderHoverMenuItem(props) {
                       style={{ cursor: "pointer" }}
                     >
                       <Grid item style={{ margin: "auto" }}>
-                        <Typography
-                          style={{
-                            margin: "auto",
-                            textAlign: "center",
-                            color: "#000",
-                          }}
-                          className={classes.imgtitle}
-                        >
+                        <Typography className={classes.imgtitle}>
                           {val.title}
                         </Typography>
                       </Grid>
@@ -1147,14 +1131,7 @@ function HeaderHoverMenuItem(props) {
                     style={{ cursor: "pointer" }}
                   >
                     {val.contents.map((x, i) => (
-                      <Typography
-                        className={classes.listedItemsvalue}
-                        style={{
-                          color: "#000",
-                          paddingBottom: "15px",
-                          textAlign: "center",
-                        }}
-                      >
+                      <Typography className={classes.listedItemsvalue}>
                         {x.sub}
                       </Typography>
                     ))}
@@ -1182,14 +1159,7 @@ function HeaderHoverMenuItem(props) {
                 </Grid>
                 <Grid item xs={12} style={{ marginBottom: "50px" }}>
                   {val.contents.map((cont, i) => (
-                    <Typography
-                      className={classes.listedItemsvalue}
-                      style={{
-                        color: "#000",
-                        paddingBottom: "15px",
-                        textAlign: "center",
-                      }}
-                    >
+                    <Typography className={classes.listedItemsvalue}>
                       {cont.itm}
                     </Typography>
                   ))}
@@ -1259,14 +1229,7 @@ function HeaderHoverMenuItem(props) {
                       style={{ cursor: "pointer" }}
                     >
                       <Grid item style={{ margin: "auto" }}>
-                        <Typography
-                          style={{
-                            margin: "auto",
-                            textAlign: "center",
-                            color: "#000",
-                          }}
-                          className={classes.imgtitle}
-                        >
+                        <Typography className={classes.imgtitle}>
                           {val.title}
                         </Typography>
                       </Grid>
@@ -1323,14 +1286,7 @@ function HeaderHoverMenuItem(props) {
                     style={{ cursor: "pointer" }}
                   >
                     {val.contents.map((x, i) => (
-                      <Typography
-                        className={classes.listedItemsvalue}
-                        style={{
-                          color: "#000",
-                          paddingBottom: "15px",
-                          textAlign: "center",
-                        }}
-                      >
+                      <Typography className={classes.listedItemsvalue}>
                         {x.item}
                       </Typography>
                     ))}
@@ -1352,14 +1308,7 @@ function HeaderHoverMenuItem(props) {
                 </Grid>
                 <Grid item xs={12}>
                   {val.contents.map((itms, i) => (
-                    <Typography
-                      className={classes.listedItemsvalue}
-                      style={{
-                        color: "#000",
-                        paddingBottom: "15px",
-                        textAlign: "center",
-                      }}
-                    >
+                    <Typography className={classes.listedItemsvalue}>
                       {itms.item}
                     </Typography>
                   ))}

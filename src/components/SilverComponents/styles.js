@@ -314,7 +314,7 @@ export const useStyles = makeStyles((theme) => ({
     // marginBottom: "15px",
     "&:hover": {
       "& $imgtitle": {
-        borderBottom: "1px solid #B78231",
+        borderBottom: "1px solid #B2832C",
       },
       // boxShadow:
       //   " 0px 2px 4px 4px rgba(0, 0, 0, 0.1), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12) !important",
@@ -422,41 +422,41 @@ export const useStyles = makeStyles((theme) => ({
   // },
   listedItemstitle: {
     padding: "2px 0px 8px 0px",
-    fontSize: "0.7rem !important",
+    fontSize: "12.4px !important",
     letterSpacing: 1,
     margin: "15px 19px 23px 29px",
-    borderBottom: "1px solid #20205a",
-    color: "#33346d",
+    borderBottom: "1px solid #2F348B",
+    color: "#2F348B",
     "&:hover": {
       borderBottom: "1px solid #B78231",
     },
   },
   phovertitile: {
     padding: "2px 0px 8px 0px",
-    fontSize: "0.75rem !important",
+    fontSize: "12.4px !important",
     letterSpacing: 1,
     margin: "15px 19px 23px 29px",
 
-    color: "#33346d",
+    color: "#2F348B",
     "&:hover": {
       borderBottom: "1px solid #B78231",
     },
   },
   shoptitle: {
     padding: "2px 0px 8px 0px",
-    fontSize: "0.7rem !important",
+    fontSize: "12.4px !important",
     letterSpacing: 1,
     margin: "15px 19px 23px 29px",
-    borderBottom: "1px solid #33346d",
-    color: "#33346d",
+    borderBottom: "1px solid #2F348B",
+    color: "#2F348B",
   },
   listedItemstitlemultiplesection: {
     padding: "2px 0px 8px 0px",
-    fontSize: "0.7rem !important",
+    fontSize: "12.4px !important",
     letterSpacing: 1,
     margin: "15px 0px 23px 0px",
-    borderBottom: "1px solid #33346d",
-    color: "#33346d",
+    borderBottom: "1px solid #2F348B",
+    color: "#2F348B",
   },
   gridmultiplesection: {
     padding: "0px 5px",
@@ -486,7 +486,8 @@ export const useStyles = makeStyles((theme) => ({
   secondSection: {
     paddingBottom: 10,
     "& .MuiTypography-body1": {
-      fontSize: "0.8rem !important",
+      fontSize: "15.4px !important",
+      color: "#6E6F72",
     },
     "& .MuiFormControlLabel-root": {
       marginLeft: "0px !important",
@@ -577,17 +578,19 @@ export const useStyles = makeStyles((theme) => ({
   },
   listedItemsvalue: {
     padding: "2px 16px 2px 16px",
-    fontSize: "0.8rem !important",
-    // letterSpacing: 2,
+    fontSize: "15.4px !important",
+    color: "#6E6F72",
     cursor: "pointer",
+    margin: "auto",
+    textAlign: "center",
     "&:hover": {
       borderBottom: "1px solid #B78231",
     },
   },
   imgtitle: {
     padding: "2px 16px 2px 16px",
-    fontSize: "0.9rem !important",
-
+    fontSize: "16.4px !important",
+    color: "#6E6F72",
     cursor: "pointer",
   },
   mouseOverPopoverfilters: {
