@@ -175,6 +175,7 @@ export const styles = (theme) => ({
     fontFamily: "notoSerif-regular",
     fontWeight: 600,
     color: "white",
+    fontSize: "12px",
     // borderBottom: "1px solid #fff",
     "&:hover": {
       color: "#b78231",
@@ -183,6 +184,9 @@ export const styles = (theme) => ({
     },
     "&:active": {
       color: "#b78231",
+    },
+    [theme.breakpoints.down("md")]: {
+      fontSize: "10px !important",
     },
   },
   seletectedMenu: {
@@ -422,7 +426,7 @@ export const useStyles = makeStyles((theme) => ({
   // },
   listedItemstitle: {
     padding: "2px 0px 8px 0px",
-    fontSize: "12.4px !important",
+    fontSize: "15.4px !important",
     letterSpacing: 1,
     margin: "15px 19px 23px 29px",
     borderBottom: "1px solid #2F348B",
@@ -444,7 +448,7 @@ export const useStyles = makeStyles((theme) => ({
   },
   shoptitle: {
     padding: "2px 0px 8px 0px",
-    fontSize: "12.4px !important",
+    fontSize: "15.4px !important",
     letterSpacing: 1,
     margin: "15px 19px 23px 29px",
     borderBottom: "1px solid #2F348B",
@@ -452,7 +456,7 @@ export const useStyles = makeStyles((theme) => ({
   },
   listedItemstitlemultiplesection: {
     padding: "2px 0px 8px 0px",
-    fontSize: "12.4px !important",
+    fontSize: "15.4px !important",
     letterSpacing: 1,
     margin: "15px 0px 23px 0px",
     borderBottom: "1px solid #2F348B",

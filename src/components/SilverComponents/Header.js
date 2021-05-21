@@ -976,7 +976,8 @@ class Header extends Component {
                                           >
                                             <img
                                               style={{
-                                                width: "35%",
+                                                width: "11%",
+                                                marginRight: "10px",
                                               }}
                                               src={val.icon}
                                             />
@@ -1046,23 +1047,42 @@ class Header extends Component {
                                           className={`${classes.subtitleContainer} `}
                                         >
                                           <ListItemText>
-                                            <Typography
-                                              className={`${classes.subtitles} ${classes.subtitleContainersubmenu1}`}
-                                              variant=""
+                                            <div
+                                              style={{
+                                                display: "flex",
+                                                justifyContent: "space-between",
+                                              }}
+                                              onClick={() =>
+                                                this.selectItem1(val.name)
+                                              }
                                             >
-                                              {val.name.toUpperCase()}
-                                            </Typography>
+                                              <Typography
+                                                className={`${classes.subtitles} ${classes.subtitleContainersubmenu1}`}
+                                                variant=""
+                                              >
+                                                {val.name.toUpperCase()}
+                                              </Typography>
+                                              {selected1 === val.name ? (
+                                                <i class="fa fa-chevron-up drawer-arrow-submenu2"></i>
+                                              ) : (
+                                                <i class="fa fa-chevron-down drawer-arrow-submenu2"></i>
+                                              )}
+                                            </div>
                                             <hr />
                                           </ListItemText>
                                         </ListItem>
                                         <Grid className={classes.metaldiv}>
-                                          {val?.feature?.map((v) => (
-                                            <div>
-                                              <p className={classes.ptext}>
-                                                {v}
-                                              </p>
-                                            </div>
-                                          ))}
+                                          {selected1 === val.name && (
+                                            <>
+                                              {val?.feature?.map((v) => (
+                                                <div>
+                                                  <p className={classes.ptext}>
+                                                    {v}
+                                                  </p>
+                                                </div>
+                                              ))}
+                                            </>
+                                          )}
                                         </Grid>
                                       </>
                                     ))}
