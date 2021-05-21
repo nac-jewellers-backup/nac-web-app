@@ -441,13 +441,34 @@ function HeaderHoverMenuItem(props) {
     {
       title: "Loose Diamonds",
       contents: [
-        { sub: "Round" },
-        { sub: "Princess" },
-        { sub: "Oval" },
-        { sub: "Heart" },
-        { sub: "Cushion" },
-        { sub: "Pear" },
-        { sub: "Emerald" },
+        {
+          sub: "Round",
+          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Group+319.svg",
+        },
+        {
+          sub: "Princess",
+          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Group+321.svg",
+        },
+        {
+          sub: "Oval",
+          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Group+325.svg",
+        },
+        {
+          sub: "Heart",
+          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Ellipse+3.svg",
+        },
+        {
+          sub: "Cushion",
+          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
+        },
+        {
+          sub: "Pear",
+          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
+        },
+        {
+          sub: "Emerald",
+          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
+        },
       ],
     },
   ];
@@ -1176,13 +1197,25 @@ function HeaderHoverMenuItem(props) {
                     justify="center"
                     alignContent="center"
                     alignItems="center"
-                    style={{ cursor: "pointer" }}
+                    style={{
+                      cursor: "pointer",
+                      display: "flex",
+                      justifyContent: "center",
+                    }}
                   >
-                    {val.contents.map((x, i) => (
-                      <Typography className={classes.listedItemsvalue}>
-                        {x.sub}
-                      </Typography>
-                    ))}
+                    <div>
+                      {val.contents.map((x, i) => (
+                        <div style={{ display: "flex" }}>
+                          <img src={x.img} width="17px" height="25px" />
+                          <Typography
+                            style={{ margin: "0px" }}
+                            className={classes.listedItemsvalue}
+                          >
+                            {x.sub}
+                          </Typography>
+                        </div>
+                      ))}
+                    </div>
                   </Grid>
                 </Grid>
               ))}
