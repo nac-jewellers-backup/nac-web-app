@@ -27,6 +27,7 @@ const useStyles = makeStyles((theme) => ({
     padding: "7px 0px 6px 0px",
     color: "#6b6b6b",
     textDecoration: "none",
+    fontSize: "17px",
     "&:hover": {
       textDecoration: "underline",
     },
@@ -249,6 +250,48 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "#d3d0d0",
     marginBottom: "6px",
   },
+  social: {
+    margin: "0px 10px",
+    position: "relative",
+  },
+  signup: {
+    background: "#33366D",
+    color: "white",
+    fontSize: "15px",
+    "&:hover": {
+      background: "#33366D",
+      color: "white",
+    },
+  },
+  signupdiv: {
+    display: "flex",
+    justifyContent: "flex-end",
+  },
+  parentdiv: {
+    position: "relative",
+    display: "flex",
+    justifyContent: "center",
+  },
+  input: {
+    color: " rgba(58, 69, 120, 1)",
+    border: "0px",
+    height: "34px",
+    padding: "0px 3px",
+    fontSize: "11px",
+    borderRadius: "0",
+    textAlign: "center",
+    width: "300px",
+    margin: "10px 0px",
+  },
+  socialdiv: {
+    display: "flex",
+    justifyContent: "space-between",
+    marginTop: "30px",
+  },
+  rights: {
+    fontSize: "17px",
+    color: "#6b6b6b",
+  },
 }));
 
 export default function Footer(props) {
@@ -278,26 +321,98 @@ export default function Footer(props) {
   //     },
 
   // ]
-  const footerData1 = [
+  const footerData = [
     {
-      url: "/aboutus",
-      Title: "About Us",
+      row: [
+        {
+          url: "/aboutus",
+          Title: "About Us",
+        },
+        {
+          url: "/careersPage",
+          Title: "Careers",
+        },
+        // {
+        //   url: "/stories",
+        //   Title: "Our Story",
+        // },
+        // {
+        //   url: "/temple-work",
+        //   Title: "Temple Work",
+        // },
+        {
+          url: "/newsroom",
+          Title: "News Room",
+        },
+        {
+          url: "/advertising",
+          Title: "Advertisements",
+        },
+      ],
     },
     {
-      url: "/stories",
-      Title: "Our Story",
+      row: [
+        {
+          url: "#",
+          Title: "Store Locator",
+        },
+        // {
+        //   url: "/collections",
+        //   Title: "Collections",
+        // },
+        {
+          url: "/",
+          Title: "Education",
+        },
+        {
+          url: "/",
+          Title: "Site Map",
+        },
+        {
+          url: "/contactus",
+          Title: "Contact Us",
+        },
+      ],
     },
     {
-      url: "/temple-work",
-      Title: "Temple Work",
+      row: [
+        {
+          url: "/temple-work",
+          Title: "Temple Work",
+        },
+        {
+          url: "C",
+          Title: "Terms & Condition",
+        },
+        {
+          url: "",
+          Title: "360 Store View",
+        },
+        {
+          url: "",
+          Title: "FAQ",
+        },
+      ],
     },
     {
-      url: "/newsroom",
-      Title: "In The News",
-    },
-    {
-      url: "/advertising",
-      Title: "Advertisements",
+      row: [
+        {
+          url: "",
+          Title: "30 Days Return",
+        },
+        {
+          url: "",
+          Title: "Track Order",
+        },
+        {
+          url: "",
+          Title: "Delivery Into",
+        },
+        {
+          url: "",
+          Title: "Privacy Policy",
+        },
+      ],
     },
   ];
   const footerData2 = [
@@ -604,7 +719,7 @@ export default function Footer(props) {
                 </Grid>F
   */}
         <Container>
-          <Grid container item xs={12} style={{ marginTop: 20 }}>
+          <Grid container item xs={12} style={{ marginTop: 40 }}>
             <Grid container item xs={12} alignItems="center">
               <Grid
                 container
@@ -612,27 +727,29 @@ export default function Footer(props) {
                 xs={12}
                 style={{ color: "white", fontSize: "13px" }}
               >
-                <Grid item xs={3}>
-                  {footerData1.map((data) => {
-                    return (
-                      <Grid container>
-                        <Link
-                          className={classes.navTitle}
-                          onClick={() => {
-                            window.location.href = data.url;
-                          }}
-                          style={{
-                            fontWeight: data.Title === "About Us" ? "800" : "",
-                          }}
-                          // href="#"
-                        >
-                          {data.Title}
-                        </Link>
-                      </Grid>
-                    );
-                  })}
-                </Grid>
-                <Grid item xs={3}>
+                {footerData.map((data, i) => {
+                  return (
+                    <Grid item xs={2}>
+                      {data.row.map((v, s) => {
+                        return (
+                          <Grid container>
+                            <Link
+                              className={classes.navTitle}
+                              onClick={() => {
+                                window.location.href = v.url;
+                              }}
+
+                              // href="#"
+                            >
+                              {v.Title}
+                            </Link>
+                          </Grid>
+                        );
+                      })}
+                    </Grid>
+                  );
+                })}
+                {/* <Grid item xs={3}>
                   {footerData2.map((data) => {
                     return (
                       <Grid container>
@@ -673,8 +790,8 @@ export default function Footer(props) {
                       </Grid>
                     );
                   })}
-                </Grid>
-                <Grid item xs={3}>
+                </Grid> */}
+                {/* <Grid item xs={3}>
                   {footerData4.map((data) => {
                     return (
                       <Grid container>
@@ -694,9 +811,150 @@ export default function Footer(props) {
                       </Grid>
                     );
                   })}
+                </Grid> */}
+                <Grid className={classes.parentdiv} item xs={4}>
+                  <div>
+                    <div>
+                      <input
+                        id="_input"
+                        type="email"
+                        placeholder="ENTER EMAIL ID TO RECIEVE UPDATE ON NAC"
+                        className={classes.input}
+                        value=""
+                      />
+                    </div>
+                    <div className={classes.signupdiv}>
+                      <Button className={classes.signup}>Sign UP</Button>
+                    </div>
+                    {/* <Grid item className={classes.footerSocialIcons}> */}
+                    <div className={classes.socialdiv}>
+                      <div className={classes.social}>
+                        <a
+                          target="_blank"
+                          href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`}
+                        >
+                          {/* <i
+                          style={{
+                            fontSize: "24px",
+                            color: "#434e77",
+                            paddingLeft: "3px",
+                          }}
+                          className="fa "
+                        >
+                          &#xf09a;
+                        </i> */}
+                          <img
+                            src={
+                              "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_footer/Path+52.svg"
+                            }
+                            style={{ width: "40px", height: "auto" }}
+                          />
+                        </a>
+                      </div>
+                      <div className={classes.social}>
+                        <a
+                          style={{ textDecoration: "none" }}
+                          target="_blank"
+                          href={`http://www.twitter.com/share?url=${window.location.href}`}
+                        >
+                          {/* <i
+                          style={{
+                            fontSize: "24px",
+                            color: "#434e77",
+                            paddingLeft: "5%",
+                          }}
+                          className="fa"
+                        >
+                          &#xf099;
+                        </i>{" "} */}
+                          <img
+                            src={
+                              "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_footer/Path+53.svg"
+                            }
+                            style={{ width: "40px", height: "auto" }}
+                          />
+                        </a>
+                      </div>
+                      <div className={classes.social}>
+                        <a
+                          target="_blank"
+                          href="https://instagram.com/stylorilove"
+                        >
+                          <i
+                            style={{
+                              fontSize: "32px",
+                              color: "#2F348B",
+                              position: "absolute",
+                              top: "5px",
+                              right: "7px",
+                            }}
+                            className="fa "
+                          >
+                            &#xf16d;
+                          </i>
+                          <img
+                            src={
+                              "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_footer/Path+54.svg"
+                            }
+                            style={{ width: "40px", height: "auto" }}
+                          />
+                        </a>
+                      </div>
+                      <div className={classes.social}>
+                        <a
+                          target="_blank"
+                          href="https://www.youtube.com/c/stylori"
+                        >
+                          <i
+                            style={{
+                              position: "absolute",
+                              fontSize: "13px",
+                              top: "14px",
+                              left: "17px",
+                              color: "#2F348B",
+                            }}
+                            className="fa"
+                            aria-hidden="true"
+                          >
+                            &#xf04b;
+                          </i>
+                          <img
+                            src={
+                              "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_footer/Path+57.svg"
+                            }
+                            style={{ width: "40px", height: "auto" }}
+                          />
+                        </a>
+                      </div>
+                      <div className={classes.social}>
+                        <a
+                          target="_blank"
+                          href="https://in.pinterest.com/stylori2015/"
+                        >
+                          {/* <i
+                          style={{
+                            fontSize: "24px",
+                            color: "#434e77",
+                            paddingLeft: "5%",
+                          }}
+                          className="fa "
+                        >
+                          &#xf231;
+                        </i> */}
+                          <img
+                            src={
+                              " https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_footer/nQjOPg.tif.svg"
+                            }
+                            style={{ width: "40px", height: "auto" }}
+                          />
+                        </a>
+                      </div>
+                    </div>
+                    {/* </Grid> */}
+                  </div>
                 </Grid>
               </Grid>
-              <Grid container style={{ display: "flex", padding: "15px 0px" }}>
+              {/* <Grid container style={{ display: "flex", padding: "15px 0px" }}>
                 <Grid container xs={9} style={{ width: "100%" }}>
                   <Grid item className={"imageClass"}>
                     <Grid item className={classes.footerSocialIcons}>
@@ -791,7 +1049,7 @@ export default function Footer(props) {
                     Store Locator
                   </Button>
                 </Grid>
-              </Grid>
+              </Grid> */}
               <Grid
                 container
                 direction="row"
@@ -799,10 +1057,10 @@ export default function Footer(props) {
                 style={{
                   display: "flex",
                   alignItems: "center",
-                  padding: "10px 0px",
+                  padding: "30px 0px",
                 }}
               >
-                <Grid container xs={5}>
+                {/* <Grid container xs={5}>
                   <Grid item>
                     <Link className={classes.linkText} to="/sitemap">
                       SITEMAP &nbsp;{" "}
@@ -828,22 +1086,27 @@ export default function Footer(props) {
                       |&nbsp; PRIVACY POLICY &nbsp;
                     </Link>
                   </Grid>
-                </Grid>
-                <Grid container xs={3}>
+                </Grid> */}
+                {/* <Grid container xs={3}>
                   <Grid item>
                     <p style={{ fontSize: "13px", color: "#6b6b6b" }}>
                       @NAC Jewellers Pvt.Ltd. All rights reserved
                     </p>
                   </Grid>
-                </Grid>
+                </Grid> */}
                 <Grid container xs={4}>
                   <Grid item className={"imageClass"}>
                     <img
                       src={
-                        "https://assets.stylori.com/images/static/footer.png"
+                        "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_footer/k77ABP.tif%402x.png"
                       }
                       style={{ width: "100%", height: "auto" }}
                     />
+                  </Grid>
+                  <Grid item>
+                    <p className={classes.rights}>
+                      @NAC Jewellers Pvt.Ltd. All rights reserved
+                    </p>
                   </Grid>
                 </Grid>
               </Grid>

@@ -71,7 +71,7 @@ export function AdvancedGridList() {
             <div class="grid-container">
               <div class="grid-item item3 ">
                 <img
-                  src="https://assets.stylori.com/images/Static+Pages/Home+Page/mangocollection.png"
+                  src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_collection/Group+46%402x.png"
                   alt="NAC"
                   width="100%"
                   height="100%"
@@ -82,7 +82,7 @@ export function AdvancedGridList() {
               </div>
               <div class="grid-item item4">
                 <img
-                  src="https://assets.stylori.com/images/Static+Pages/Home+Page/mangocollection.png"
+                  src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_collection/Group+50%402x.png"
                   alt="NAC"
                   width="100%"
                   height="100%"
@@ -93,7 +93,7 @@ export function AdvancedGridList() {
               </div>
               <div class="grid-item item2">
                 <img
-                  src="https://assets.stylori.com/images/Static+Pages/Home+Page/blush+3.png"
+                  src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_page/Group+147%402x.png"
                   alt="NAC"
                   width="100%"
                   height="100%"
@@ -104,7 +104,7 @@ export function AdvancedGridList() {
               </div>
               <div class="grid-item item4">
                 <img
-                  src="https://assets.stylori.com/images/Static+Pages/Home+Page/mangocollection.png"
+                  src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_collection/Group+60%402x.png"
                   alt="NAC"
                   width="100%"
                   height="100%"
@@ -115,7 +115,7 @@ export function AdvancedGridList() {
               </div>
               <div class="grid-item item11">
                 <img
-                  src="https://assets.stylori.com/images/Static+Pages/Home+Page/blush+3.png"
+                  src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_collection/Group+64%402x.png"
                   alt="NAC"
                   width="100%"
                   height="100%"
@@ -126,7 +126,7 @@ export function AdvancedGridList() {
               </div>
               <div class="grid-item item44">
                 <img
-                  src="https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori_+Daisy+Days.png"
+                  src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_collection/Group+68%402x.png"
                   alt="NAC"
                   width="100%"
                   height="100%"
@@ -137,7 +137,7 @@ export function AdvancedGridList() {
               </div>
               <div class="grid-item item45">
                 <img
-                  src="https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori_+Daisy+Days.png"
+                  src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_page/Group+156%402x.png"
                   alt="NAC"
                   width="100%"
                   height="100%"
@@ -148,7 +148,7 @@ export function AdvancedGridList() {
               </div>
               <div class="grid-item item3">
                 <img
-                  src="https://assets.stylori.com/images/Static+Pages/Home+Page/mangocollection.png"
+                  src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_collection/Group+73.png"
                   alt="NAC"
                   width="100%"
                   height="100%"

@@ -271,7 +271,7 @@ class HomeComp extends React.Component {
       loading: false,
       count: "",
       timelineImage:
-        "https://assets.stylori.com/product/SE0024/1000X1000/HOVER-SE0024-2Y.webp",
+        "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_page/Group+213%402x.png",
     };
   }
   next = () => {
@@ -302,12 +302,10 @@ class HomeComp extends React.Component {
         save: "5999.9",
         image: {
           placeImage: {
-            img:
-              "https://assets.stylori.com/product/SE0016/1000X1000/SE0016-1Y.webp",
+            img: "https://assets.stylori.com/product/SE0016/1000X1000/SE0016-1Y.webp",
           },
           hoverImage: {
-            img:
-              "https://assets.stylori.com/product/SE0016/1000X1000/HOVER-SE0016-2Y.webp",
+            img: "https://assets.stylori.com/product/SE0016/1000X1000/HOVER-SE0016-2Y.webp",
           },
         },
         productId: "SE0016",
@@ -333,12 +331,10 @@ class HomeComp extends React.Component {
         save: "5999.9",
         image: {
           placeImage: {
-            img:
-              "https://assets.stylori.com/product/SE0015/1000X1000/SE0015-1YW.webp",
+            img: "https://assets.stylori.com/product/SE0015/1000X1000/SE0015-1YW.webp",
           },
           hoverImage: {
-            img:
-              "https://assets.stylori.com/product/SE0015/1000X1000/HOVER-SE0015-2YW.webp",
+            img: "https://assets.stylori.com/product/SE0015/1000X1000/HOVER-SE0015-2YW.webp",
           },
         },
         productId: "SE0015",
@@ -364,12 +360,10 @@ class HomeComp extends React.Component {
         save: "5999.9",
         image: {
           placeImage: {
-            img:
-              "https://assets.stylori.com/product/SE0024/1000X1000/SE0024-1Y.webp",
+            img: "https://assets.stylori.com/product/SE0024/1000X1000/SE0024-1Y.webp",
           },
           hoverImage: {
-            img:
-              "https://assets.stylori.com/product/SE0024/1000X1000/HOVER-SE0024-2Y.webp",
+            img: "https://assets.stylori.com/product/SE0024/1000X1000/HOVER-SE0024-2Y.webp",
           },
         },
         productId: "SE0024",
@@ -395,12 +389,10 @@ class HomeComp extends React.Component {
         save: "5999.9",
         image: {
           placeImage: {
-            img:
-              "https://assets.stylori.com/product/SE0024/1000X1000/SE0024-1Y.webp",
+            img: "https://assets.stylori.com/product/SE0024/1000X1000/SE0024-1Y.webp",
           },
           hoverImage: {
-            img:
-              "https://assets.stylori.com/product/SE0024/1000X1000/HOVER-SE0024-2Y.webp",
+            img: "https://assets.stylori.com/product/SE0024/1000X1000/HOVER-SE0024-2Y.webp",
           },
         },
         productId: "SE0024",
@@ -426,12 +418,10 @@ class HomeComp extends React.Component {
         save: "5999.9",
         image: {
           placeImage: {
-            img:
-              "https://assets.stylori.com/product/SE0024/1000X1000/SE0024-1Y.webp",
+            img: "https://assets.stylori.com/product/SE0024/1000X1000/SE0024-1Y.webp",
           },
           hoverImage: {
-            img:
-              "https://assets.stylori.com/product/SE0024/1000X1000/HOVER-SE0024-2Y.webp",
+            img: "https://assets.stylori.com/product/SE0024/1000X1000/HOVER-SE0024-2Y.webp",
           },
         },
         productId: "SE0024",
@@ -457,12 +447,10 @@ class HomeComp extends React.Component {
         save: "5999.9",
         image: {
           placeImage: {
-            img:
-              "https://assets.stylori.com/product/SE0024/1000X1000/SE0024-1Y.webp",
+            img: "https://assets.stylori.com/product/SE0024/1000X1000/SE0024-1Y.webp",
           },
           hoverImage: {
-            img:
-              "https://assets.stylori.com/product/SE0024/1000X1000/HOVER-SE0024-2Y.webp",
+            img: "https://assets.stylori.com/product/SE0024/1000X1000/HOVER-SE0024-2Y.webp",
           },
         },
         productId: "SE0024",
@@ -488,12 +476,10 @@ class HomeComp extends React.Component {
         save: "5999.9",
         image: {
           placeImage: {
-            img:
-              "https://assets.stylori.com/product/SE0031/1000X1000/SE0031-1Y.webp",
+            img: "https://assets.stylori.com/product/SE0031/1000X1000/SE0031-1Y.webp",
           },
           hoverImage: {
-            img:
-              "https://assets.stylori.com/product/SE0031/1000X1000/HOVER-SE0031-2Y.webp",
+            img: "https://assets.stylori.com/product/SE0031/1000X1000/HOVER-SE0031-2Y.webp",
           },
         },
         productId: "SE0031",
@@ -599,7 +585,7 @@ class HomeComp extends React.Component {
       {
         time: "1917s",
         image:
-          "https://assets.stylori.com/product/SE0024/1000X1000/HOVER-SE0024-2Y.webp",
+          "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_page/Group+213%402x.png",
       },
       {
         time: "1927s",
@@ -670,9 +656,9 @@ class HomeComp extends React.Component {
             </div>
           </div>
         </Grid>
-        <Grid item xs={9} sm={9} md={10} lg={10} xl={10} >
+        <Grid item xs={9} sm={9} md={10} lg={10} xl={10}>
           {/* <img src ={this.state.timelineImage} alt="stylori" style={{width:"400px", height:"auto"}}/> */}
-          <MediaControlCard data={{ image: this.state.timelineImage }}  />
+          <MediaControlCard data={{ image: this.state.timelineImage }} />
         </Grid>
       </Grid>
     );
@@ -1151,11 +1137,14 @@ class HomeComp extends React.Component {
             >
               {[
                 {
-                  img:
-                    "https://i.pinimg.com/originals/bf/cf/0e/bfcf0e1e1b63662860fdbfc1a0a55df1.jpg",
+                  img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_page/Group+177%402x.png",
                 },
-                { img: "https://pbs.twimg.com/media/DvMP36yWwAAytvb.jpg" },
-                { img: "https://pbs.twimg.com/media/DvMPyhmXQAE5qGJ.jpg" },
+                {
+                  img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_page/Group+180%402x.png",
+                },
+                {
+                  img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_page/Group+181%402x.png",
+                },
               ].map((val) => {
                 return (
                   <Grid item xs={4} style={{ paddingLeft: 5 }}>
@@ -1188,7 +1177,7 @@ class HomeComp extends React.Component {
                 xl={4}
                 className={classes.photo}
                 // style={{ height: "430px", overflow: "auto", marginTop: 52 }}
-                style={{ marginTop: "20px" , height: "430px", overflow: "auto",}}
+                style={{ marginTop: "20px", height: "430px", overflow: "auto" }}
               >
                 <InstagramFeed />
               </Grid>
@@ -1200,7 +1189,7 @@ class HomeComp extends React.Component {
               md={8}
               lg={8}
               xl={8}
-            style={{paddingTop : "20px"}}
+              style={{ paddingTop: "20px" }}
             >
               <Testimonial />
             </Grid>
@@ -1214,7 +1203,7 @@ class HomeComp extends React.Component {
               lg={4}
               xl={4}
               className={classes.photo}
-              style={{ height: "430px", overflow: "auto", marginTop : "20px" }}
+              style={{ height: "430px", overflow: "auto", marginTop: "20px" }}
             >
               <InstagramFeed />
             </Grid>

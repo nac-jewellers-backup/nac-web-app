@@ -26,14 +26,38 @@ function HeaderHoverMenuItem(props) {
     setTarget(props.targetopened);
   });
   const stones = [
-    { title: "Genstone" },
-    { title: "Diamond" },
-    { title: "Solitaire" },
-    { title: "Platinum" },
-    { title: "Yellow Gold" },
-    { title: "White Gold" },
-    { title: "Rose Gold" },
-    { title: "Silver by STYLORI" },
+    {
+      title: "Genstone",
+      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Group+319.svg",
+    },
+    {
+      title: "Diamond",
+      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Group+321.svg",
+    },
+    {
+      title: "Solitaire",
+      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Group+325.svg",
+    },
+    {
+      title: "Platinum",
+      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Ellipse+3.svg",
+    },
+    {
+      title: "Yellow Gold",
+      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
+    },
+    {
+      title: "White Gold",
+      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
+    },
+    {
+      title: "Rose Gold",
+      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
+    },
+    {
+      title: "Silver by STYLORI",
+      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Path+423.svg",
+    },
   ];
   const data = [
     { title: "Below ₹10,000" },
@@ -89,12 +113,18 @@ function HeaderHoverMenuItem(props) {
   });
   const imageForEarRings = [
     {
-      img: "https://imgmediagumlet.lbb.in/media/2019/08/5d4e38a8de22e35fd497babb_1565407400197.jpg?fm=webp&w=750&h=500&dpr=1",
+      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Group+317.png",
+    },
+  ];
+
+  const imageForBangles = [
+    {
+      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/bangles%26bracelets/Group+461.png",
     },
   ];
   const imageForRings = [
     {
-      img: "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-410,/pub/media/catalog/product/d/c/dc-rng-10052_1.jpg?rnd=20200526195200",
+      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/rings/Group+387.png",
     },
   ];
   const _imagewithtextOne = [
@@ -131,102 +161,118 @@ function HeaderHoverMenuItem(props) {
   ];
   const earRings = [
     {
-      img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Studs+Earrings+Stylori-01.png",
+      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Group+330%402x.png",
       content: "Studs",
       url: "/studs-earrings-jewellery",
     },
     {
-      img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Drops+Earrings+Stylori-02.png",
+      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/PRPpoy%402x.png",
       content: "Drops",
       url: "/drops-earrings-jewellery",
     },
     {
-      img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Earcuffs+Earrings+Stylori-03.png",
-      content: "Earcuffs",
-      url: "/ear+cuffs-earrings-jewellery",
-    },
-    {
-      img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Huggies+Earrings+Stylori-04.png",
-      content: "Huggies",
-      url: "/huggies-earrings-jewellery",
-    },
-    {
-      img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Jhumkas+Earrings+Stylori-05.png",
+      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/qyLKdg%402x.png",
       content: "Jhumkas",
       url: "/jhumkas+online-earrings-jewellery",
     },
     {
-      img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Ear+Jackets+Earrings+Stylori-06.png",
-      content: "Ear Jacket",
+      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/NDUTnF%402x.png",
+      content: "Earcuffs",
+      url: "/ear+cuffs-earrings-jewellery",
+    },
+    {
+      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/1SevWE%402x.png",
+      content: <>Hoops&nbsp;&Huggies</>,
+      url: "/huggies-earrings-jewellery",
+    },
+
+    {
+      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/nkQJnj%402x.png",
+      content: "Kids Earrings",
+      url: "/ear+jacket-earrings-jewellery",
+    },
+    {
+      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/ZZJVeH%402x.png",
+      content: "Pearl earring",
+      url: "/ear+jacket-earrings-jewellery",
+    },
+    {
+      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/INe8h1%402x.png",
+      content: <>LightWeight&nbsp;by&nbsp;Stylori</>,
       url: "/ear+jacket-earrings-jewellery",
     },
   ];
   const ringsJewel = [
     {
-      img: "https://storage.googleapis.com/media.nacjewellers.com/resources/dist/jewellery/diamond/rings/135-ac4820.png",
+      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/rings/hBk9ve%402x.png",
       content: "Casual",
       url: "/studs-earrings-jewellery",
     },
     {
-      img: "https://storage.googleapis.com/media.nacjewellers.com/resources/dist/jewellery/diamond/rings/135-cr4210.png",
+      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/rings/DzDcBv%402x.png",
       content: "Cocktail",
       url: "/drops-earrings-jewellery",
     },
     {
-      img: "https://images-eu.ssl-images-amazon.com/images/I/41fA9mWaFEL._SR600%2C315_PIWhiteStrip%2CBottomLeft%2C0%2C35_SCLZZZZZZZ_FMpng_BG255%2C255%2C255.jpg",
+      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/rings/Ul3xhG%402x.png",
       content: "Fashion",
       url: "/ear+cuffs-earrings-jewellery",
     },
     {
-      img: "https://storage.googleapis.com/media.nacjewellers.com/resources/dist/jewellery/diamond/affordable-diamonds/ladies-ring/bh4750.png",
+      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/rings/xJu4r9%402x.png",
       content: "Bridal",
       url: "/huggies-earrings-jewellery",
     },
     {
-      img: "https://img.favpng.com/5/1/8/wedding-ring-platinum-jewellery-diamond-png-favpng-H998EWTVanXK9Er0GfN06r7dw.jpg",
+      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/rings/C1IQGq%402x.png",
       content: "Platinum rings",
       url: "/jhumkas+online-earrings-jewellery",
     },
     {
-      img: "https://storage.googleapis.com/media.nacjewellers.com/resources/dist/jewellery/diamond/close-setting/gents-ring/521682.png",
+      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/rings/YE4CnD%402x.png",
       content: "Men's Rings",
       url: "/ear+jacket-earrings-jewellery",
     },
     {
-      img: "https://storage.googleapis.com/media.nacjewellers.com/resources/dist/jewellery/diamond/affordable-diamonds/ladies-ring/ba1726-f.png",
-      content: "Lightweight by STYLORI",
+      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/rings/JfQ2Pg%402x.png",
+      content: <>Light&nbsp;weightby&nbsp;STYLORI</>,
       url: "/ear+jacket-earrings-jewellery",
     },
   ];
-  const _singleimagewithmultiplecolumns = [
+  const banglesbracelets = [
     {
-      img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Studs+Earrings+Stylori-01.png",
-      content: "Studs",
+      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/bangles%26bracelets/5Zna1n%402x.png",
+      content: "Oval bracelts",
       url: "/studs-earrings-jewellery",
     },
     {
-      img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Drops+Earrings+Stylori-02.png",
-      content: "Drops",
+      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/bangles%26bracelets/6afKPj%402x.png",
+      content: <>Tennies&nbsp;bracelets</>,
       url: "/drops-earrings-jewellery",
     },
     {
-      img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Earcuffs+Earrings+Stylori-03.png",
-      content: "Earcuffs",
+      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/bangles%26bracelets/GTmGEC%402x.png",
+      content: <>LightWeight&nbsp;bangles</>,
       url: "/ear+cuffs-earrings-jewellery",
     },
     {
-      img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Huggies+Earrings+Stylori-04.png",
-      content: "Huggies",
+      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/bangles%26bracelets/yGnqN0%402x.png",
+      content: <>Platinum&nbsp;Bracelets</>,
       url: "/huggies-earrings-jewellery",
     },
     {
-      img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Jhumkas+Earrings+Stylori-05.png",
-      content: "Jhumkas",
+      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/bangles%26bracelets/iYTHDb%402x.png",
+      content: "Mens bracelets",
       url: "/jhumkas+online-earrings-jewellery",
     },
     {
-      img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Ear+Jackets+Earrings+Stylori-06.png",
-      content: "Ear Jacket",
+      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/bangles%26bracelets/MN2iaL%402x.png",
+      content: "Kids bangles",
+      url: "/ear+jacket-earrings-jewellery",
+    },
+    {
+      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/bangles%26bracelets/2wA3vs%402x.png",
+      content: <>Lightweight&nbsp;by&nbsp;stylori</>,
       url: "/ear+jacket-earrings-jewellery",
     },
   ];
@@ -234,64 +280,64 @@ function HeaderHoverMenuItem(props) {
     {
       title: "Traditional Setting",
       image:
-        "https://storage.googleapis.com/media.nacjewellers.com/resources/dist/jewellery/gold/muhurtham/necklace/2-cy7845.png",
+        "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/SqY6sJ%402x.png",
     },
     {
       title: "Young Ones",
       image:
-        "https://storage.googleapis.com/media.nacjewellers.com/resources/dist/jewellery/collection/youngones/ring/bc3776-f.png",
+        "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/bvtACp%402x.png",
     },
     {
       title: "Mens",
       image:
-        "https://storage.googleapis.com/media.nacjewellers.com/resources/dist/jewellery/diamond/close-setting/gents-ring/521682.png",
+        "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/3keZ23%402x.png",
     },
     {
       title: "Mayura",
       image:
-        "https://storage.googleapis.com/media.nacjewellers.com/resources/dist/jewellery/diamond/mayura/earring/bl6413-f.png",
+        "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/XEwpui%402x.png",
     },
     {
       title: "Fabula",
       image:
-        "https://storage.googleapis.com/media.nacjewellers.com/resources/dist/jewellery/diamond/fabula/earring/bj0928-2.png",
+        "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/26P38o%402x.png",
     },
     {
       title: "Muhurtham",
       image:
-        "https://storage.googleapis.com/media.nacjewellers.com/resources/dist/jewellery/gold/muhurtham/necklace/2-db3518-f.png",
+        "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/lMysCt%402x.png",
     },
     {
       title: "Uncut",
       image:
-        "https://storage.googleapis.com/media.nacjewellers.com/resources/dist/jewellery/collection/uncut/necklace/9-302468.png",
+        "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/z5pju4%402x.png",
     },
     { title: "Jadau", image: "" },
     {
       title: "Nagas",
       image:
-        "https://storage.googleapis.com/media.nacjewellers.com/resources/dist/jewellery/gold/nagas/earrings/bn6921.png",
+        "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/2FXfOD%402x.png",
     },
     {
       title: "Rewind",
       image:
-        "https://storage.googleapis.com/media.nacjewellers.com/resources/dist/jewellery/gold/earrings/888578+888581-royal-ruby-antique-stud-earring.png",
+        "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/UmsWiC%402x.png",
     },
     {
       title: "Strings",
       image:
-        "https://storage.googleapis.com/media.nacjewellers.com/resources/dist/jewellery/gold/kundan/necklace/ay8439-2.png",
+        "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/xMJ8PJ%402x.png",
     },
     {
       title: "Forevermark",
       image:
-        "https://storage.googleapis.com/media.nacjewellers.com/resources/dist/jewellery/diamond/earrings/134-bw2850.png",
+        "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/z6JNI6%402x.png",
     },
   ];
 
   const otherJewels = [
     {
-      title: "Necklaces",
+      title: "NWCKLACES",
       content: [
         { itm: "Short" },
         { itm: "Long" },
@@ -300,11 +346,11 @@ function HeaderHoverMenuItem(props) {
       ],
     },
     {
-      title: "Pendants",
+      title: "PENDANTS",
       content: [{ itm: "Casual" }, { itm: "Bridal" }, { itm: "Religious" }],
     },
     {
-      title: "Shop by price",
+      title: "SHOP BY PRICE",
       content: [
         { itm: "Below ₹10,000" },
         { itm: "₹10,001 - ₹25,000" },
@@ -313,7 +359,7 @@ function HeaderHoverMenuItem(props) {
       ],
     },
     {
-      title: "Shop more",
+      title: "SHOP MORE",
       content: [
         { itm: "Nose Pins" },
         { itm: "Chains" },
@@ -324,12 +370,12 @@ function HeaderHoverMenuItem(props) {
       ],
     },
     {
-      title: "Stylori",
+      title: "STYLORI",
       content: [{ itm: "Gold & Diamond" }, { itm: "Silver" }],
     },
     { title: "Gold Coins", content: [{ itm: "22ct" }, { itm: "24ct" }] },
     {
-      title: "Shop All Jewellery",
+      title: <>Shop&nbsp;All&nbsp;Jewellery</>,
       content: [{ itm: "For men" }, { itm: "For women" }, { itm: "For kids" }],
     },
   ];
@@ -351,43 +397,43 @@ function HeaderHoverMenuItem(props) {
   const silverItems = [
     {
       title: <>Kumkum&nbsp;Bharani</>,
-      img: "https://e7.pngegg.com/pngimages/273/928/png-clipart-silver-bowl-silver-glass-metal.png",
+      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/silver/yPTMge%402x.png",
     },
     {
       title: "Plates",
-      img: "https://e7.pngegg.com/pngimages/273/928/png-clipart-silver-bowl-silver-glass-metal.png",
+      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/silver/yPTMge%402x.png",
     },
     {
       title: "Bowls",
-      img: "https://e7.pngegg.com/pngimages/273/928/png-clipart-silver-bowl-silver-glass-metal.png",
+      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/silver/yPTMge%402x.png",
     },
     {
       title: <>Kuthu&nbsp;Vilaku</>,
-      img: "https://e7.pngegg.com/pngimages/273/928/png-clipart-silver-bowl-silver-glass-metal.png",
+      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/silver/yPTMge%402x.png",
     },
     {
       title: <>Vilaku</>,
-      img: "https://e7.pngegg.com/pngimages/273/928/png-clipart-silver-bowl-silver-glass-metal.png",
+      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/silver/yPTMge%402x.png",
     },
     {
       title: "Jyothi",
-      img: "https://e7.pngegg.com/pngimages/273/928/png-clipart-silver-bowl-silver-glass-metal.png",
+      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/silver/yPTMge%402x.png",
     },
     {
       title: "Idols",
-      img: "https://e7.pngegg.com/pngimages/273/928/png-clipart-silver-bowl-silver-glass-metal.png",
+      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/silver/yPTMge%402x.png",
     },
     {
       title: "Coins",
-      img: "https://e7.pngegg.com/pngimages/273/928/png-clipart-silver-bowl-silver-glass-metal.png",
+      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/silver/yPTMge%402x.png",
     },
     {
       title: "Tumblers",
-      img: "https://e7.pngegg.com/pngimages/273/928/png-clipart-silver-bowl-silver-glass-metal.png",
+      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/silver/yPTMge%402x.png",
     },
     {
       title: <>Young&nbsp;Ones</>,
-      img: "https://e7.pngegg.com/pngimages/273/928/png-clipart-silver-bowl-silver-glass-metal.png",
+      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/silver/yPTMge%402x.png",
     },
   ];
 
@@ -395,13 +441,34 @@ function HeaderHoverMenuItem(props) {
     {
       title: "Loose Diamonds",
       contents: [
-        { sub: "Round" },
-        { sub: "Princess" },
-        { sub: "Oval" },
-        { sub: "Heart" },
-        { sub: "Cushion" },
-        { sub: "Pear" },
-        { sub: "Emerald" },
+        {
+          sub: "Round",
+          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Group+319.svg",
+        },
+        {
+          sub: "Princess",
+          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Group+321.svg",
+        },
+        {
+          sub: "Oval",
+          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Group+325.svg",
+        },
+        {
+          sub: "Heart",
+          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Ellipse+3.svg",
+        },
+        {
+          sub: "Cushion",
+          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
+        },
+        {
+          sub: "Pear",
+          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
+        },
+        {
+          sub: "Emerald",
+          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
+        },
       ],
     },
   ];
@@ -427,7 +494,7 @@ function HeaderHoverMenuItem(props) {
 
   const silverItems2 = [
     {
-      title: "Corporate Gifting",
+      title: <>CORPORATE&nbsp;GIFTING</>,
       contents: [
         { item: "Below ₹3,000" },
         { item: "₹3,001 - ₹5,001" },
@@ -435,11 +502,11 @@ function HeaderHoverMenuItem(props) {
       ],
     },
     {
-      title: "Tangore",
+      title: "TANGORE",
       contents: [{ item: "Photos" }, { item: "Others" }],
     },
     {
-      title: "Leg Chain",
+      title: "LEG CHAIN",
       contents: [
         { item: "Anklets" },
         { item: "Metti" },
@@ -449,7 +516,7 @@ function HeaderHoverMenuItem(props) {
       ],
     },
     {
-      title: "Furniture",
+      title: "FURNITURE",
       contents: [
         { item: "Chairs" },
         { item: "Tables" },
@@ -462,7 +529,7 @@ function HeaderHoverMenuItem(props) {
 
   const silverItems3 = [
     {
-      title: "Collections",
+      title: "COLLECTIONS",
       contents: [
         { item: "Dinner" },
         { item: "Wedding" },
@@ -481,32 +548,32 @@ function HeaderHoverMenuItem(props) {
     {
       title: "Rings",
       image:
-        "https://storage.googleapis.com/media.nacjewellers.com/resources/dist/jewellery/diamond/rings/135-ac4820.png",
+        "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/solitaire/Ul3xhG%402x.png",
     },
     {
       title: "Earrings",
       image:
-        "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Studs+Earrings+Stylori-01.png",
+        "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/solitaire/Ul3xhG%402x.png",
     },
     {
       title: "Necklaces",
       image:
-        "https://storage.googleapis.com/media.nacjewellers.com/resources/dist/jewellery/gold/muhurtham/necklace/2-cy7845.png",
+        "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/solitaire/OxwFfP%402x.png",
     },
     {
-      title: "Bangles and bracelets",
+      title: <>Bangles&nbsp;and&nbsp;bracelets</>,
       image:
-        "https://storage.googleapis.com/media.nacjewellers.com/resources/dist/jewellery/gold/5k-to-35k/bangle/3-bs6486.png",
+        "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/solitaire/MN2iaL%402x.png",
     },
     {
       title: "Pendants",
       image:
-        "https://storage.googleapis.com/media.nacjewellers.com/resources/dist/jewellery/diamond/close-setting/bangle/bl1017.png",
+        "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/solitaire/1SevWE%402x.png",
     },
     {
       title: "Men's rings",
       image:
-        "https://storage.googleapis.com/media.nacjewellers.com/resources/dist/jewellery/diamond/close-setting/gents-ring/521682.png",
+        "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/solitaire/YE4CnD%402x.png",
     },
   ];
 
@@ -516,7 +583,7 @@ function HeaderHoverMenuItem(props) {
     } else if (props.listitem === "EARRINGS") {
       return earRings;
     } else if (props.listitem === "BANGLES & BRACELETS") {
-      return earRings;
+      return banglesbracelets;
     }
   };
 
@@ -526,7 +593,7 @@ function HeaderHoverMenuItem(props) {
     } else if (props.listitem === "EARRINGS") {
       return imageForEarRings;
     } else if (props.listitem === "BANGLES & BRACELETS") {
-      return imageForEarRings;
+      return imageForBangles;
     } else if (props.listitem === "SAVING SCHEME") {
       return imageForEarRings;
     }
@@ -666,7 +733,7 @@ function HeaderHoverMenuItem(props) {
                     >
                       <Grid item style={{ margin: "auto" }}>
                         <Typography
-                          style={{ margin: "auto", color: "#33346d" }}
+                          // style={{ margin: "auto", color: "#33346d" }}
                           className={classes.imgtitle}
                         >
                           {val.title}
@@ -698,7 +765,7 @@ function HeaderHoverMenuItem(props) {
           <Grid item xs={4} className={classes.gridmultiplesection}>
             <div style={{ paddingTop: "20px" }}>
               <img
-                src="https://content3.jdmagicbox.com/comp/vijayawada/b3/0866px866.x866.160420142936.k3b3/catalogue/nac-jewellers-pvt-ltd-labbipet-vijayawada-jewellery-showrooms-4jze9u2.jpg"
+                src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/Group+724%402x.png"
                 width="100%"
                 height="75%"
               />
@@ -716,7 +783,7 @@ function HeaderHoverMenuItem(props) {
         style={{
           width: "100%",
           background: "#fff",
-          padding: "20px 60px 20px 0px",
+          padding: "20px 20px 20px 0px",
           zIndex: "10000",
         }}
       >
@@ -751,7 +818,7 @@ function HeaderHoverMenuItem(props) {
                           style={{ margin: "auto", color: "#33346d" }}
                           className={classes.listedItemstitle}
                         >
-                          {val.title.toUpperCase()}
+                          {val.title}
                         </Typography>
                       </Grid>
                       <Grid
@@ -764,15 +831,7 @@ function HeaderHoverMenuItem(props) {
                         }}
                       >
                         {val.content.map((item, i) => (
-                          <Typography
-                            style={{
-                              margin: "auto",
-                              textAlign: "center",
-                              color: "#000",
-                              paddingTop: "14px",
-                            }}
-                            className={classes.listedItemsvalue}
-                          >
+                          <Typography className={classes.listedItemsvalue}>
                             {item.itm}
                           </Typography>
                         ))}
@@ -786,7 +845,7 @@ function HeaderHoverMenuItem(props) {
           <Grid item xs={4} className={classes.gridmultiplesection}>
             <div style={{ paddingTop: "20px" }}>
               <img
-                src="https://content3.jdmagicbox.com/comp/vijayawada/b3/0866px866.x866.160420142936.k3b3/catalogue/nac-jewellers-pvt-ltd-labbipet-vijayawada-jewellery-showrooms-4jze9u2.jpg"
+                src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/otherjwellery/Group+773%402x.png"
                 width="100%"
                 height="75%"
               />
@@ -871,7 +930,7 @@ function HeaderHoverMenuItem(props) {
         style={{
           width: "100%",
           background: "#fff",
-          padding: "20px 60px 20px 35px",
+          padding: "20px 20px 20px 0px",
           zIndex: "10000",
           color: "#000",
         }}
@@ -919,7 +978,6 @@ function HeaderHoverMenuItem(props) {
                             style={{
                               width: "50%",
                               margin: "auto",
-                              marginBottom: "15px",
                             }}
                             src={val.img}
                           />
@@ -933,7 +991,7 @@ function HeaderHoverMenuItem(props) {
           </Grid>
           <Grid item xs={6} className={classes.gridmultiplesection}>
             <Grid container item xs={12}>
-              <Grid item xs={4} style={{ padding: "0 6px 0 30px" }}>
+              <Grid item xs={4} style={{ padding: "0 6px 0 2px" }}>
                 {/* second section */}
                 <Grid item xs={12} style={{ textAlign: "center" }}>
                   <Typography
@@ -951,17 +1009,19 @@ function HeaderHoverMenuItem(props) {
                         onClick={() => {
                           window.location.href = val.url;
                         }}
-                        // justify="center"
+                        justify="center"
                         alignContent="center"
                         alignItems="center"
-                        style={{ cursor: "pointer" }}
+                        style={{
+                          cursor: "pointer",
+                        }}
                       >
-                        <Typography
-                          style={{ margin: "auto", textAlign: "center" }}
-                          className={classes.listedItemsvalue}
-                        >
-                          {val.title}
-                        </Typography>
+                        <div style={{ display: "flex" }}>
+                          <img src={val.img} width="17px" height="25px" />
+                          <Typography className={classes.listedItemsvalue}>
+                            {val.title}
+                          </Typography>
+                        </div>
                       </Grid>
                     </Grid>
                   );
@@ -1055,7 +1115,7 @@ function HeaderHoverMenuItem(props) {
         style={{
           width: "100%",
           background: "#fff",
-          padding: "20px 60px 20px 30px",
+          padding: "20px 20px 20px 0px",
           zIndex: "10000",
         }}
       >
@@ -1082,14 +1142,7 @@ function HeaderHoverMenuItem(props) {
                       style={{ cursor: "pointer" }}
                     >
                       <Grid item style={{ margin: "auto" }}>
-                        <Typography
-                          style={{
-                            margin: "auto",
-                            textAlign: "center",
-                            color: "#000",
-                          }}
-                          className={classes.imgtitle}
-                        >
+                        <Typography className={classes.imgtitle}>
                           {val.title}
                         </Typography>
                       </Grid>
@@ -1144,20 +1197,25 @@ function HeaderHoverMenuItem(props) {
                     justify="center"
                     alignContent="center"
                     alignItems="center"
-                    style={{ cursor: "pointer" }}
+                    style={{
+                      cursor: "pointer",
+                      display: "flex",
+                      justifyContent: "center",
+                    }}
                   >
-                    {val.contents.map((x, i) => (
-                      <Typography
-                        className={classes.listedItemsvalue}
-                        style={{
-                          color: "#000",
-                          paddingBottom: "15px",
-                          textAlign: "center",
-                        }}
-                      >
-                        {x.sub}
-                      </Typography>
-                    ))}
+                    <div>
+                      {val.contents.map((x, i) => (
+                        <div style={{ display: "flex" }}>
+                          <img src={x.img} width="17px" height="25px" />
+                          <Typography
+                            style={{ margin: "0px" }}
+                            className={classes.listedItemsvalue}
+                          >
+                            {x.sub}
+                          </Typography>
+                        </div>
+                      ))}
+                    </div>
                   </Grid>
                 </Grid>
               ))}
@@ -1182,14 +1240,7 @@ function HeaderHoverMenuItem(props) {
                 </Grid>
                 <Grid item xs={12} style={{ marginBottom: "50px" }}>
                   {val.contents.map((cont, i) => (
-                    <Typography
-                      className={classes.listedItemsvalue}
-                      style={{
-                        color: "#000",
-                        paddingBottom: "15px",
-                        textAlign: "center",
-                      }}
-                    >
+                    <Typography className={classes.listedItemsvalue}>
                       {cont.itm}
                     </Typography>
                   ))}
@@ -1215,7 +1266,7 @@ function HeaderHoverMenuItem(props) {
           <Grid item xs={3} className={classes.gridmultiplesection}>
             <div style={{ paddingTop: "20px" }}>
               <img
-                src="https://southindiajewels.com/wp/wp-content/uploads/2017/10/diamond-ring-nac-jewellers.jpg"
+                src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/solitaire/Group+524.png"
                 width="100%"
                 height="75%"
               />
@@ -1259,14 +1310,7 @@ function HeaderHoverMenuItem(props) {
                       style={{ cursor: "pointer" }}
                     >
                       <Grid item style={{ margin: "auto" }}>
-                        <Typography
-                          style={{
-                            margin: "auto",
-                            textAlign: "center",
-                            color: "#000",
-                          }}
-                          className={classes.imgtitle}
-                        >
+                        <Typography className={classes.imgtitle}>
                           {val.title}
                         </Typography>
                       </Grid>
@@ -1311,7 +1355,7 @@ function HeaderHoverMenuItem(props) {
                       className={classes.listedItemstitle}
                       style={{ textAlign: "center" }}
                     >
-                      {val.title.toUpperCase()}
+                      {val.title}
                     </Typography>
                   </Grid>
                   <Grid
@@ -1323,14 +1367,7 @@ function HeaderHoverMenuItem(props) {
                     style={{ cursor: "pointer" }}
                   >
                     {val.contents.map((x, i) => (
-                      <Typography
-                        className={classes.listedItemsvalue}
-                        style={{
-                          color: "#000",
-                          paddingBottom: "15px",
-                          textAlign: "center",
-                        }}
-                      >
+                      <Typography className={classes.listedItemsvalue}>
                         {x.item}
                       </Typography>
                     ))}
@@ -1352,14 +1389,7 @@ function HeaderHoverMenuItem(props) {
                 </Grid>
                 <Grid item xs={12}>
                   {val.contents.map((itms, i) => (
-                    <Typography
-                      className={classes.listedItemsvalue}
-                      style={{
-                        color: "#000",
-                        paddingBottom: "15px",
-                        textAlign: "center",
-                      }}
-                    >
+                    <Typography className={classes.listedItemsvalue}>
                       {itms.item}
                     </Typography>
                   ))}

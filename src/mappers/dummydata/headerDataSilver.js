@@ -447,33 +447,44 @@ export const Jewellery = {
       name: "SHOPS BY STYLE",
       img: [
         {
-          img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Studs+Earrings+Stylori-01.png",
+          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Group+330%402x.png",
           content: "Studs",
           url: "/studs-earrings-jewellery",
         },
         {
-          img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Drops+Earrings+Stylori-02.png",
+          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/PRPpoy%402x.png",
           content: "Drops",
           url: "/drops-earrings-jewellery",
         },
         {
-          img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Earcuffs+Earrings+Stylori-03.png",
-          content: "Earcuffs",
-          url: "/ear+cuffs-earrings-jewellery",
-        },
-        {
-          img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Huggies+Earrings+Stylori-04.png",
-          content: "Huggies",
-          url: "/huggies-earrings-jewellery",
-        },
-        {
-          img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Jhumkas+Earrings+Stylori-05.png",
+          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/qyLKdg%402x.png",
           content: "Jhumkas",
           url: "/jhumkas+online-earrings-jewellery",
         },
         {
-          img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Ear+Jackets+Earrings+Stylori-06.png",
-          content: "Ear Jacket",
+          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/NDUTnF%402x.png",
+          content: "Earcuffs",
+          url: "/ear+cuffs-earrings-jewellery",
+        },
+        {
+          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/1SevWE%402x.png",
+          content: "Hoops & Huggies",
+          url: "/huggies-earrings-jewellery",
+        },
+
+        {
+          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/nkQJnj%402x.png",
+          content: "Kids Earrings",
+          url: "/ear+jacket-earrings-jewellery",
+        },
+        {
+          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/ZZJVeH%402x.png",
+          content: "Pearl earring",
+          url: "/ear+jacket-earrings-jewellery",
+        },
+        {
+          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/INe8h1%402x.png",
+          content: "LightWeight by Stylori",
           url: "/ear+jacket-earrings-jewellery",
         },
       ],
@@ -482,36 +493,36 @@ export const Jewellery = {
       name2: "SHOP BY STONE AND METAL",
       stone_metal: [
         {
-          icon: "https://imgcdn1.gempundit.com/media/catalog/category/Danburite_2.jpg",
+          icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Group+319.svg",
           name: "Gemstone",
         },
         {
-          icon: "https://www.pngarts.com/files/2/Blue-Diamond-PNG-Picture.png",
+          icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Group+321.svg",
           name: "Diamond",
         },
         {
-          icon: "https://www.pngarts.com/files/2/Blue-Diamond-PNG-Picture.png",
+          icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Group+325.svg",
           name: "Solitaire",
         },
 
         {
-          icon: "https://www.pngarts.com/files/2/Blue-Diamond-PNG-Picture.png",
+          icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Ellipse+3.svg",
           name: "Platinum",
         },
         {
-          icon: "https://www.pngarts.com/files/2/Blue-Diamond-PNG-Picture.png",
+          icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
           name: "Yellow Gold",
         },
         {
-          icon: "https://www.pngarts.com/files/2/Blue-Diamond-PNG-Picture.png",
+          icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
           name: "White Gold",
         },
         {
-          icon: "https://www.pngarts.com/files/2/Blue-Diamond-PNG-Picture.png",
+          icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
           name: "Rose Gold",
         },
         {
-          icon: "https://www.pngarts.com/files/2/Blue-Diamond-PNG-Picture.png",
+          icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Path+423.svg",
           name: "Silver by STYLORI",
         },
       ],
@@ -540,43 +551,53 @@ export const Jewellery = {
       name: "SILVER ARTICLES",
       img: [
         {
-          img: "https://assets.stylori.com/images/Menu/Jewellery/Jewellery+by+Collections/Carve+Collection+Stylori-08.png",
-          content: "Carve",
+          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/silver/yPTMge%402x.png",
+          content: "Kumkum Bharani",
           url: "/jewellery-from+the+carve+collection?sort=latest",
         },
         {
-          img: "https://assets.stylori.com/images/Menu/Jewellery/Jewellery+by+Collections/Blush+Collection+Stylori+-.png",
-          content: "Blush",
+          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/silver/yPTMge%402x.png",
+          content: "Plates",
           url: "/jewellery-blush",
         },
         {
-          img: "https://assets.stylori.com/images/Menu/Jewellery/Jewellery+by+Collections/Molecute+Collection+Stylori+-01.png",
-          content: "Molecute",
+          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/silver/yPTMge%402x.png",
+          content: "Bowls",
           url: "/jewellery-molecute+collection",
         },
         {
-          img: "https://assets.stylori.com/images/Menu/Jewellery/Jewellery+by+Collections/Gemstone+Collection+Stylori+-02.png",
-          content: "Gemstone",
+          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/silver/yPTMge%402x.png",
+          content: "Kuthu Vilaku",
           url: "/gemstone-jewellery?sort=latest",
         },
         {
-          img: "https://assets.stylori.com/images/Menu/Jewellery/Jewellery+by+Collections/Mistletoe+Collection+Stylori-01.png",
-          content: "Mistletoe",
+          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/silver/yPTMge%402x.png",
+          content: "Vilaku",
           url: "/jewellery-from+mistletoe+collection",
         },
         {
-          img: "https://assets.stylori.com/images/Menu/Jewellery/Jewellery+by+Collections/Renaissance+Collection+Stylori+-04.png",
-          content: "The Renaissance",
+          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/silver/yPTMge%402x.png",
+          content: "Jothi",
           url: "/jewellery-from+the+renaissance+collection",
         },
         {
-          img: "https://assets.stylori.com/images/Menu/Jewellery/Jewellery+by+Collections/Monsoon+Collection+Stylori-02.png",
-          content: "Monsoon",
+          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/silver/yPTMge%402x.png",
+          content: "Idols",
           url: "/jewellery-from+monsoon+collection",
         },
         {
-          img: "https://assets.stylori.com/images/Menu/Jewellery/Jewellery+by+Collections/Summer+Collection+Stylori-06.png",
-          content: "Summer",
+          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/silver/yPTMge%402x.png",
+          content: "Coins",
+          url: "/jewellery-from+the+summer+collection",
+        },
+        {
+          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/silver/yPTMge%402x.png",
+          content: "Timblers",
+          url: "/jewellery-from+monsoon+collection",
+        },
+        {
+          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/silver/yPTMge%402x.png",
+          content: "Young Ones",
           url: "/jewellery-from+the+summer+collection",
         },
       ],
@@ -634,19 +655,39 @@ export const Jewellery = {
       name: "SHOPS BY STYLE",
       img: [
         {
-          img: "https://assets.stylori.com/images/Menu/Jewellery/Bangles+and+Bracelets/Bangle+stylori+-02.png",
-          content: "Bangles",
-          url: "/bangles-jewellery",
+          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/bangles%26bracelets/5Zna1n%402x.png",
+          content: "Oval bracelts",
+          url: "/studs-earrings-jewellery",
         },
         {
-          img: "https://assets.stylori.com/images/Menu/Jewellery/Bangles+and+Bracelets/Bracelet+stylori+Bracelets-01.png",
-          content: "Bracelets",
-          url: "/bracelets-jewellery",
+          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/bangles%26bracelets/6afKPj%402x.png",
+          content: "Tennies bracelets",
+          url: "/drops-earrings-jewellery",
         },
         {
-          img: "https://assets.stylori.com/images/Menu/Jewellery/Bangles+and+Bracelets/Oval+Bracelet+stylori+-03.png",
-          content: "Oval Bracelets",
-          url: "/oval+bracelets-jewellery",
+          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/bangles%26bracelets/GTmGEC%402x.png",
+          content: "LightWeight bangles",
+          url: "/ear+cuffs-earrings-jewellery",
+        },
+        {
+          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/bangles%26bracelets/yGnqN0%402x.png",
+          content: "Platinum Bracelets",
+          url: "/huggies-earrings-jewellery",
+        },
+        {
+          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/bangles%26bracelets/iYTHDb%402x.png",
+          content: "Mens bracelets",
+          url: "/jhumkas+online-earrings-jewellery",
+        },
+        {
+          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/bangles%26bracelets/MN2iaL%402x.png",
+          content: "Kids bangles",
+          url: "/ear+jacket-earrings-jewellery",
+        },
+        {
+          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/bangles%26bracelets/2wA3vs%402x.png",
+          content: "Lightweight by stylori",
+          url: "/ear+jacket-earrings-jewellery",
         },
       ],
     },
@@ -654,36 +695,36 @@ export const Jewellery = {
       name2: "SHOP BY STONE AND METAL",
       stone_metal: [
         {
-          icon: "https://www.pngarts.com/files/2/Blue-Diamond-PNG-Picture.png",
+          icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Group+319.svg",
           name: "Gemstone",
         },
         {
-          icon: "https://www.pngarts.com/files/2/Blue-Diamond-PNG-Picture.png",
+          icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Group+321.svg",
           name: "Diamond",
         },
         {
-          icon: "https://www.pngarts.com/files/2/Blue-Diamond-PNG-Picture.png",
+          icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Group+325.svg",
           name: "Solitaire",
         },
 
         {
-          icon: "https://www.pngarts.com/files/2/Blue-Diamond-PNG-Picture.png",
+          icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Ellipse+3.svg",
           name: "Platinum",
         },
         {
-          icon: "https://www.pngarts.com/files/2/Blue-Diamond-PNG-Picture.png",
+          icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
           name: "Yellow Gold",
         },
         {
-          icon: "https://www.pngarts.com/files/2/Blue-Diamond-PNG-Picture.png",
+          icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
           name: "White Gold",
         },
         {
-          icon: "https://www.pngarts.com/files/2/Blue-Diamond-PNG-Picture.png",
+          icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
           name: "Rose Gold",
         },
         {
-          icon: "https://www.pngarts.com/files/2/Blue-Diamond-PNG-Picture.png",
+          icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Path+423.svg",
           name: "Silver by STYLORI",
         },
       ],
@@ -721,29 +762,39 @@ export const Jewellery = {
       name: "SHOPS BY STYLE",
       img: [
         {
-          img: "https://assets.stylori.com/images/Menu/Jewellery/Rings/Classic+stylori+Rings-01.png",
-          content: "Classic",
-          url: "/classic-rings-jewellery",
-        },
-        {
-          img: "https://assets.stylori.com/images/Menu/Jewellery/Rings/Casual+stylori+Rings-02.png",
+          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/rings/hBk9ve%402x.png",
           content: "Casual",
-          url: "/casual-rings-jewellery",
+          url: "/studs-earrings-jewellery",
         },
         {
-          img: "https://assets.stylori.com/images/Menu/Jewellery/Rings/Cocktail+stylori+Rings-03.png",
+          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/rings/DzDcBv%402x.png",
           content: "Cocktail",
-          url: "/cocktail-rings-jewellery",
+          url: "/drops-earrings-jewellery",
         },
         {
-          img: "https://assets.stylori.com/images/Menu/Jewellery/Rings/Engagement+stylori+Rings-04.png",
-          content: "Engagement",
-          url: "/rings-jewellery-for+engagement",
-        },
-        {
-          img: "https://assets.stylori.com/images/Menu/Jewellery/Rings/Fashion+stylori+Rings-05.png",
+          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/rings/Ul3xhG%402x.png",
           content: "Fashion",
-          url: "/fashion-rings-jewellery",
+          url: "/ear+cuffs-earrings-jewellery",
+        },
+        {
+          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/rings/xJu4r9%402x.png",
+          content: "Bridal",
+          url: "/huggies-earrings-jewellery",
+        },
+        {
+          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/rings/C1IQGq%402x.png",
+          content: "Platinum rings",
+          url: "/jhumkas+online-earrings-jewellery",
+        },
+        {
+          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/rings/YE4CnD%402x.png",
+          content: "Men's Rings",
+          url: "/ear+jacket-earrings-jewellery",
+        },
+        {
+          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/rings/JfQ2Pg%402x.png",
+          content: "Light weightby STYLORI",
+          url: "/ear+jacket-earrings-jewellery",
         },
       ],
     },
@@ -751,36 +802,36 @@ export const Jewellery = {
       name2: "SHOP BY STONE AND METAL",
       stone_metal: [
         {
-          icon: "https://www.pngarts.com/files/2/Blue-Diamond-PNG-Picture.png",
+          icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Group+319.svg",
           name: "Gemstone",
         },
         {
-          icon: "https://www.pngarts.com/files/2/Blue-Diamond-PNG-Picture.png",
+          icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Group+321.svg",
           name: "Diamond",
         },
         {
-          icon: "https://www.pngarts.com/files/2/Blue-Diamond-PNG-Picture.png",
+          icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Group+325.svg",
           name: "Solitaire",
         },
 
         {
-          icon: "https://www.pngarts.com/files/2/Blue-Diamond-PNG-Picture.png",
+          icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Ellipse+3.svg",
           name: "Platinum",
         },
         {
-          icon: "https://www.pngarts.com/files/2/Blue-Diamond-PNG-Picture.png",
+          icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
           name: "Yellow Gold",
         },
         {
-          icon: "https://www.pngarts.com/files/2/Blue-Diamond-PNG-Picture.png",
+          icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
           name: "White Gold",
         },
         {
-          icon: "https://www.pngarts.com/files/2/Blue-Diamond-PNG-Picture.png",
+          icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
           name: "Rose Gold",
         },
         {
-          icon: "https://www.pngarts.com/files/2/Blue-Diamond-PNG-Picture.png",
+          icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Path+423.svg",
           name: "Silver by STYLORI",
         },
       ],
@@ -819,44 +870,49 @@ export const Jewellery = {
       name: "SHOPS BY STYLE",
       img: [
         {
-          img: "https://assets.stylori.com/images/Menu/Jewellery/Jewellery+by+Collections/Carve+Collection+Stylori-08.png",
-          content: "Carve",
-          url: "/jewellery-from+the+carve+collection?sort=latest",
+          content: "Traditional Setting",
+          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/SqY6sJ%402x.png",
         },
         {
-          img: "https://assets.stylori.com/images/Menu/Jewellery/Jewellery+by+Collections/Blush+Collection+Stylori+-.png",
-          content: "Blush",
-          url: "/jewellery-blush",
+          content: "Young Ones",
+          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/bvtACp%402x.png",
         },
         {
-          img: "https://assets.stylori.com/images/Menu/Jewellery/Jewellery+by+Collections/Molecute+Collection+Stylori+-01.png",
-          content: "Molecute",
-          url: "/jewellery-molecute+collection",
+          content: "Mens",
+          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/3keZ23%402x.png",
         },
         {
-          img: "https://assets.stylori.com/images/Menu/Jewellery/Jewellery+by+Collections/Gemstone+Collection+Stylori+-02.png",
-          content: "Gemstone",
-          url: "/gemstone-jewellery?sort=latest",
+          content: "Mayura",
+          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/XEwpui%402x.png",
         },
         {
-          img: "https://assets.stylori.com/images/Menu/Jewellery/Jewellery+by+Collections/Mistletoe+Collection+Stylori-01.png",
-          content: "Mistletoe",
-          url: "/jewellery-from+mistletoe+collection",
+          content: "Fabula",
+          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/26P38o%402x.png",
         },
         {
-          img: "https://assets.stylori.com/images/Menu/Jewellery/Jewellery+by+Collections/Renaissance+Collection+Stylori+-04.png",
-          content: "The Renaissance",
-          url: "/jewellery-from+the+renaissance+collection",
+          content: "Muhurtham",
+          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/lMysCt%402x.png",
         },
         {
-          img: "https://assets.stylori.com/images/Menu/Jewellery/Jewellery+by+Collections/Monsoon+Collection+Stylori-02.png",
-          content: "Monsoon",
-          url: "/jewellery-from+monsoon+collection",
+          content: "Uncut",
+          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/z5pju4%402x.png",
+        },
+        { content: "Jadau", image: "" },
+        {
+          content: "Nagas",
+          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/2FXfOD%402x.png",
         },
         {
-          img: "https://assets.stylori.com/images/Menu/Jewellery/Jewellery+by+Collections/Summer+Collection+Stylori-06.png",
-          content: "Summer",
-          url: "/jewellery-from+the+summer+collection",
+          content: "Rewind",
+          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/UmsWiC%402x.png",
+        },
+        {
+          content: "Strings",
+          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/xMJ8PJ%402x.png",
+        },
+        {
+          content: "Forevermark",
+          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/z6JNI6%402x.png",
         },
       ],
     },
@@ -901,33 +957,33 @@ export const Jewellery = {
       name: "SHOPS BY STYLE",
       img: [
         {
-          img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Studs+Earrings+Stylori-01.png",
-          content: "Studs",
+          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/solitaire/Ul3xhG%402x.png",
+          content: "Rings",
           url: "/studs-earrings-jewellery",
         },
         {
-          img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Drops+Earrings+Stylori-02.png",
-          content: "Drops",
+          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/solitaire/Ul3xhG%402x.png",
+          content: "Earrings",
           url: "/drops-earrings-jewellery",
         },
         {
-          img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Earcuffs+Earrings+Stylori-03.png",
-          content: "Earcuffs",
+          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/solitaire/OxwFfP%402x.png",
+          content: "Necklace",
           url: "/ear+cuffs-earrings-jewellery",
         },
         {
-          img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Huggies+Earrings+Stylori-04.png",
-          content: "Huggies",
+          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/solitaire/MN2iaL%402x.png",
+          content: "Bangles & bracelets",
           url: "/huggies-earrings-jewellery",
         },
         {
-          img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Jhumkas+Earrings+Stylori-05.png",
-          content: "Jhumkas",
+          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/solitaire/1SevWE%402x.png",
+          content: "pendants",
           url: "/jhumkas+online-earrings-jewellery",
         },
         {
-          img: "https://assets.stylori.com/images/Menu/Jewellery/Earrings/Ear+Jackets+Earrings+Stylori-06.png",
-          content: "Ear Jacket",
+          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/solitaire/YE4CnD%402x.png",
+          content: "Men's Ring",
           url: "/ear+jacket-earrings-jewellery",
         },
       ],
@@ -936,36 +992,36 @@ export const Jewellery = {
       name2: "LOOSE DIAMONDS",
       stone_metal: [
         {
-          icon: "https://www.pngarts.com/files/2/Blue-Diamond-PNG-Picture.png",
-          name: "Round",
+          icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Group+319.svg",
+          name: "Gemstone",
         },
         {
-          icon: "https://www.pngarts.com/files/2/Blue-Diamond-PNG-Picture.png",
-          name: "Oval",
+          icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Group+321.svg",
+          name: "Diamond",
         },
         {
-          icon: "https://www.pngarts.com/files/2/Blue-Diamond-PNG-Picture.png",
-          name: "Cushion",
+          icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Group+325.svg",
+          name: "Solitaire",
         },
 
         {
-          icon: "https://www.pngarts.com/files/2/Blue-Diamond-PNG-Picture.png",
-          name: "Emerald",
+          icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Ellipse+3.svg",
+          name: "Platinum",
         },
         {
-          icon: "https://www.pngarts.com/files/2/Blue-Diamond-PNG-Picture.png",
-          name: "Princes",
+          icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
+          name: "Yellow Gold",
         },
         {
-          icon: "https://www.pngarts.com/files/2/Blue-Diamond-PNG-Picture.png",
-          name: "Heart",
+          icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
+          name: "White Gold",
         },
         {
-          icon: "https://www.pngarts.com/files/2/Blue-Diamond-PNG-Picture.png",
-          name: "Pear",
+          icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
+          name: "Rose Gold",
         },
         {
-          icon: "https://www.pngarts.com/files/2/Blue-Diamond-PNG-Picture.png",
+          icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Path+423.svg",
           name: "Silver by STYLORI",
         },
       ],
