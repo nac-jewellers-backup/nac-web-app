@@ -137,7 +137,8 @@ const Buydetails = (
       {data[0].ProductContactNum.map((val) => (
         <>
           <Grid container spacing={12}>
-            <Grid item xs={12} lg={4} className={classes.buynowItem}>
+            
+            <Grid item xs={12}  md={4} lg={4} className={classes.buynowItem}>
               {/* <NavLink to="/cart" style={{ textDecoration: 'none' }} onClick={handleLocalStorage.bind(this)}> */}
               <div onClick={handleLocalStorage.bind(this)}>
                 <Buynowbutton sku={data[0].skuId} class={`buynow-button ${classes.buttons}`} button="buynow-btn-cont" />
