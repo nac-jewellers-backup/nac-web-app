@@ -19,6 +19,16 @@ const styles = makeStyles((theme) => ({
       // letterSpacing:"1px"
     },
   },
+  h6FontSizeStrike : {
+    [theme.breakpoints.down("lg")]: {
+      fontSize: "16px ",
+      // fontWeight: 'bold'
+    },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "0.88rem",
+      // letterSpacing:"1px"
+    },
+  },
   spanIcon1: {
     width: "6px",
     height: "6px",

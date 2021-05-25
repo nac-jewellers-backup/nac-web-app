@@ -84,6 +84,7 @@ const Productprice = (props, anchorEl, handleClick, handleClose, handleReadMore,
 
   // alert(JSON.stringify(props.wishlist.wishlistdata.nodes.skuId))
   // var wishlist = this.props && this.props.wishlist &&
+ 
   return (
     <div>
       {data.map((val) => (
@@ -316,7 +317,7 @@ const Productprice = (props, anchorEl, handleClick, handleClose, handleReadMore,
           <Hidden smDown>
             <div className={classes.width}>
               {data[0].price === data[0].offerPrice ? (
-                <Pricing offerPrice={data[0].sellingPrice} pdpage={true}>
+                <Pricing offerPrice={data[0].offerPrice} pdpage={true}>
                   {/* <Grid container spacing={12}>
                                     <div className={`price-info ${classes.dis}`}>
                                         <Grid item xs={4} lg={2} className={`discount-container ${classes.dis}`}>
@@ -330,7 +331,7 @@ const Productprice = (props, anchorEl, handleClick, handleClose, handleReadMore,
                 </Pricing>
               ) : (
                 <Pricing
-                  offerPrice={data[0].sellingPrice}
+                  offerPrice={data[0].offerPrice}
                   price={data[0].sellingPrice}
                   pdpage={true}
 

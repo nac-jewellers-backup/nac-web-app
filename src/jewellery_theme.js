@@ -28,7 +28,7 @@ export const jewelleryTheme = {
     },
     "primary": {
       "light": "#03b362",
-      "main": "#009651",
+      "main": "#F37536",
       "dark": "#027741",
       "contrastText": "#fff"
     },
