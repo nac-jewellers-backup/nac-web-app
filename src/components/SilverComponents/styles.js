@@ -97,8 +97,12 @@ export const styles = (theme) => ({
   menunac: {
     backgroundColor: theme.palette.secondary.main,
   },
-  menustylori: {
+  styloriEditing:{
     backgroundColor: theme.palette.stylori.pinkMain,
+    height:"40px"
+  },
+  menustylori: {
+    // backgroundColor: theme.palette.stylori.pinkMain,
     display: "flex-end",
     justifyContent: "center",
     alignItems: "center",
@@ -215,8 +219,10 @@ export const styles = (theme) => ({
   },
   headertext: {
     color: "#fff",
-    fontSize: "20px",
+    fontSize: "16px",
     margin: "auto",
+    paddingRight:"20px",
+    letterSpacing:3
   },
   drawerPaper: {
     width: "100%",
@@ -253,6 +259,7 @@ export const styles = (theme) => ({
   },
   subtitleContainer: {
     backgroundColor: "#fff !important",
+    color:"#33346d",
     "&:hover": {
       backgroundColor: "#fff !important",
     },
@@ -284,7 +291,7 @@ export const styles = (theme) => ({
   ptext: {
     "&:hover": {
       width: "fit-content",
-      borderBottom: "1px solid",
+      borderBottom: "1px solid #B2832C",
     },
   },
   metaldiv: {
@@ -304,11 +311,11 @@ export const styles = (theme) => ({
     margin: "0px 0px 15px 0px",
   },
   optiontext: {
-    fontSize: "12px",
+    fontSize: "13px",
     color: theme.palette.background.darkFade,
     "&:hover": {
       width: "fit-content",
-      borderBottom: "1px solid",
+      borderBottom: "1px solid #B2832C",
     },
   },
 });
@@ -364,7 +371,7 @@ export const useStyles = makeStyles((theme) => ({
     position: "fixed !important",
     width: "-webkit-fill-available",
     top: "0px !important",
-    left: "-10px !important",
+    left: "-8.6px !important",
     backgroundColor: "#33346d",
     color: "#fff",
     cursor: "pointer",
@@ -426,8 +433,8 @@ export const useStyles = makeStyles((theme) => ({
   // },
   listedItemstitle: {
     padding: "2px 0px 8px 0px",
-    fontSize: "15.4px !important",
-    letterSpacing: 1,
+    fontSize: "14px !important",
+    letterSpacing: "0px !important",
     margin: "15px 19px 23px 29px",
     borderBottom: "1px solid #2F348B",
     color: "#2F348B",
@@ -448,16 +455,16 @@ export const useStyles = makeStyles((theme) => ({
   },
   shoptitle: {
     padding: "2px 0px 8px 0px",
-    fontSize: "15.4px !important",
-    letterSpacing: 1,
+    fontSize: "14px !important",
+    letterSpacing: "0 !important",
     margin: "15px 19px 23px 29px",
     borderBottom: "1px solid #2F348B",
     color: "#2F348B",
   },
   listedItemstitlemultiplesection: {
     padding: "2px 0px 8px 0px",
-    fontSize: "15.4px !important",
-    letterSpacing: 1,
+    fontSize: "14px !important",
+    letterSpacing: "0 !important",
     margin: "15px 0px 23px 0px",
     borderBottom: "1px solid #2F348B",
     color: "#2F348B",
@@ -593,7 +600,7 @@ export const useStyles = makeStyles((theme) => ({
   },
   imgtitle: {
     padding: "2px 16px 2px 16px",
-    fontSize: "16.4px !important",
+    fontSize: "15.4px !important",
     color: "#6E6F72",
     cursor: "pointer",
   },

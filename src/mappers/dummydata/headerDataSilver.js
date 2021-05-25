@@ -867,7 +867,7 @@ export const Jewellery = {
   },
   COLLECTIONS: {
     styles: {
-      name: "SHOPS BY STYLE",
+      name: "",
       img: [
         {
           content: "Traditional Setting",

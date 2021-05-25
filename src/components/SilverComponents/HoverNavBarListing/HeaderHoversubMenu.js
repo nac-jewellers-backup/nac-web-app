@@ -337,7 +337,7 @@ function HeaderHoverMenuItem(props) {
 
   const otherJewels = [
     {
-      title: "NWCKLACES",
+      title: "NECKLACES",
       content: [
         { itm: "Short" },
         { itm: "Long" },
@@ -489,7 +489,7 @@ function HeaderHoverMenuItem(props) {
     { title: "Solitaire Guide" },
     { title: "Design your own" },
     { title: "Know your size" },
-    { title: "Shop all Design" },
+    { title: "Shop all Designs" },
   ];
 
   const silverItems2 = [
@@ -705,14 +705,14 @@ function HeaderHoverMenuItem(props) {
         style={{
           width: "100%",
           background: "#fff",
-          padding: "20px 60px 20px 0px",
+          padding: "25px 75px 20px 0px",
           zIndex: "10000",
         }}
       >
         <Grid container item xs={12}>
           <Grid
             item
-            xs={8}
+            xs={9}
             className={classes.gridmultiplesection}
             style={{ paddingTop: "20px" }}
           >
@@ -735,6 +735,7 @@ function HeaderHoverMenuItem(props) {
                         <Typography
                           // style={{ margin: "auto", color: "#33346d" }}
                           className={classes.imgtitle}
+                          style={{paddingBottom:"5px"}}
                         >
                           {val.title}
                         </Typography>
@@ -749,10 +750,10 @@ function HeaderHoverMenuItem(props) {
                       >
                         {val.image && (
                           <img
-                            style={{ paddingBottom: "20px" }}
+                            style={{ paddingBottom: "10px" }}
                             src={val.image}
-                            width="30%"
-                            height="35%"
+                            width="40%"
+                            height="45%"
                           />
                         )}
                       </Grid>
@@ -762,8 +763,8 @@ function HeaderHoverMenuItem(props) {
               })}{" "}
             </Grid>
           </Grid>
-          <Grid item xs={4} className={classes.gridmultiplesection}>
-            <div style={{ paddingTop: "20px" }}>
+          <Grid item xs={3} >
+            <div style={{ paddingTop: "25px" }}>
               <img
                 src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/Group+724%402x.png"
                 width="100%"
@@ -783,16 +784,16 @@ function HeaderHoverMenuItem(props) {
         style={{
           width: "100%",
           background: "#fff",
-          padding: "20px 20px 20px 0px",
+          padding: "25px 75px 20px 0px",
           zIndex: "10000",
         }}
       >
         <Grid container item xs={12}>
           <Grid
             item
-            xs={8}
+            xs={9}
             className={classes.gridmultiplesection}
-            style={{ paddingTop: "20px" }}
+            style={{ padding:"20px 30px 40px 0px" }}
           >
             <Grid container item xs={12}>
               {otherJewels.map((val, index) => {
@@ -828,10 +829,11 @@ function HeaderHoverMenuItem(props) {
                           justifyContent: "center",
                           alignContent: "center",
                           display: "block",
+                          paddingTop:"13px"
                         }}
                       >
                         {val.content.map((item, i) => (
-                          <Typography className={classes.listedItemsvalue}>
+                          <Typography className={classes.listedItemsvalue} style={{paddingTop:"12px"}}>
                             {item.itm}
                           </Typography>
                         ))}
@@ -842,8 +844,8 @@ function HeaderHoverMenuItem(props) {
               })}{" "}
             </Grid>
           </Grid>
-          <Grid item xs={4} className={classes.gridmultiplesection}>
-            <div style={{ paddingTop: "20px" }}>
+          <Grid item xs={3} >
+            <div style={{ paddingTop: "25px" }}>
               <img
                 src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/otherjwellery/Group+773%402x.png"
                 width="100%"
@@ -863,7 +865,7 @@ function HeaderHoverMenuItem(props) {
         style={{
           width: "100%",
           background: "#fff",
-          padding: "20px 60px 20px 0px",
+          padding: "40px 68px 20px 0px",
           zIndex: "10000",
         }}
       >
@@ -878,7 +880,7 @@ function HeaderHoverMenuItem(props) {
             <Grid
               item
               xs={2}
-              style={{ display: "flex", justifyContent: "flex-end" }}
+              style={{ display: "flex", justifyContent: "flex-start",paddingRight:"30px" }}
             >
               <Typography className={classes.phovertitile}>
                 {val.title.toUpperCase()}
@@ -896,7 +898,7 @@ function HeaderHoverMenuItem(props) {
         style={{
           width: "100%",
           background: "#fff",
-          padding: "20px 60px 20px 0px",
+          padding: "40px 100px 20px 0px",
           zIndex: "10000",
         }}
       >
@@ -911,7 +913,7 @@ function HeaderHoverMenuItem(props) {
             <Grid
               item
               xs={2}
-              style={{ display: "flex", justifyContent: "flex-end" }}
+              style={{ display: "flex", justifyContent: "flex-start" }}
             >
               <Typography className={classes.phovertitile}>
                 {val.title.toUpperCase()}
@@ -930,7 +932,7 @@ function HeaderHoverMenuItem(props) {
         style={{
           width: "100%",
           background: "#fff",
-          padding: "20px 20px 20px 0px",
+          padding: "25px 75px 20px 20px",
           zIndex: "10000",
           color: "#000",
         }}
@@ -955,7 +957,7 @@ function HeaderHoverMenuItem(props) {
                       justify="center"
                       alignContent="center"
                       alignItems="center"
-                      style={{ cursor: "pointer" }}
+                      style={{ cursor: "pointer",paddingBottom:"17px" }}
                     >
                       <Grid item style={{ margin: "auto" }}>
                         <Typography
@@ -989,7 +991,7 @@ function HeaderHoverMenuItem(props) {
               })}{" "}
             </Grid>
           </Grid>
-          <Grid item xs={6} className={classes.gridmultiplesection}>
+          <Grid item xs={6} className={classes.gridmultiplesection} style={{padding:"0 20px"}}>
             <Grid container item xs={12}>
               <Grid item xs={4} style={{ padding: "0 6px 0 2px" }}>
                 {/* second section */}
@@ -1097,8 +1099,8 @@ function HeaderHoverMenuItem(props) {
               </Grid>
             </Grid>
           </Grid>
-          <Grid item xs={3} className={classes.gridmultiplesection}>
-            <div style={{ paddingTop: "20px" }}>
+          <Grid item xs={3}>
+            <div style={{ paddingTop: "25px" }}>
               {valueForImage().map((val, i) => (
                 <img src={val.img} width="100%" height="75%" />
               ))}
@@ -1115,12 +1117,14 @@ function HeaderHoverMenuItem(props) {
         style={{
           width: "100%",
           background: "#fff",
-          padding: "20px 20px 20px 0px",
+          padding: "25px 75px 40px 20px",
           zIndex: "10000",
         }}
       >
         <Grid container item xs={12}>
-          <Grid item xs={3} className={classes.gridmultiplesection}>
+        <Grid item xs={9}>
+        <Grid item xs={12} style={{display:"flex"}}>
+          <Grid item xs={4} className={classes.gridmultiplesection}>
             <Grid item xs={12} style={{ textAlign: "center" }}>
               <Typography className={classes.listedItemstitle}>
                 SHOP BY STYLE
@@ -1172,7 +1176,7 @@ function HeaderHoverMenuItem(props) {
             </Grid>
           </Grid>
           <Grid item xs={1}></Grid>
-          <Grid item xs={2} className={classes.gridmultiplesection}>
+          <Grid item xs={3} className={classes.gridmultiplesection}>
             <Grid container item xs={12}>
               {solitaireData2.map((val, i) => (
                 <Grid item xs={12}>
@@ -1205,7 +1209,7 @@ function HeaderHoverMenuItem(props) {
                   >
                     <div>
                       {val.contents.map((x, i) => (
-                        <div style={{ display: "flex" }}>
+                        <div style={{ display: "flex", paddingBottom:"13px" }}>
                           <img src={x.img} width="17px" height="25px" />
                           <Typography
                             style={{ margin: "0px" }}
@@ -1222,13 +1226,12 @@ function HeaderHoverMenuItem(props) {
             </Grid>
           </Grid>
           <Grid item xs={1}></Grid>
-          <Grid item xs={2} className={classes.gridmultiplesection}>
+          <Grid item xs={3} className={classes.gridmultiplesection}>
             {solitaireData3.map((val, i) => (
               <Grid
                 container
                 item
                 xs={12}
-                style={{ borderBottom: "1px solid #33346d" }}
               >
                 <Grid item xs={12}>
                   <Typography
@@ -1238,16 +1241,17 @@ function HeaderHoverMenuItem(props) {
                     {val.title.toUpperCase()}
                   </Typography>
                 </Grid>
-                <Grid item xs={12} style={{ marginBottom: "50px" }}>
+                <Grid item xs={12} style={{ marginBottom: "40px" }}>
                   {val.contents.map((cont, i) => (
-                    <Typography className={classes.listedItemsvalue}>
+                    <Typography className={classes.listedItemsvalue} style={{paddingBottom:"13px"}} >
                       {cont.itm}
                     </Typography>
                   ))}
                 </Grid>
               </Grid>
             ))}
-            <div>
+            <div style={{ borderBottom: "1px solid #33346d",width:"75%",margin:"auto" }}></div>
+            <div style={{marginTop:"30px"}}>
               {solitaireData4.map((val, i) => (
                 <Typography
                   className={classes.phovertitile}
@@ -1263,8 +1267,10 @@ function HeaderHoverMenuItem(props) {
               ))}
             </div>
           </Grid>
+          </Grid>
+          </Grid>
           <Grid item xs={3} className={classes.gridmultiplesection}>
-            <div style={{ paddingTop: "20px" }}>
+            <div style={{ paddingTop: "25px" }}>
               <img
                 src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/solitaire/Group+524.png"
                 width="100%"
@@ -1283,12 +1289,14 @@ function HeaderHoverMenuItem(props) {
         style={{
           width: "100%",
           background: "#fff",
-          padding: "20px 60px 20px 0px",
+          padding: "25px 75px 30px 0px",
           zIndex: "10000",
         }}
       >
         <Grid container item xs={12}>
-          <Grid item xs={3} className={classes.gridmultiplesection}>
+        <Grid item xs={9}>
+          <Grid item xs={12} style={{display:"flex"}}>
+            <Grid item xs={5} className={classes.gridmultiplesection}>
             <Grid item xs={12} style={{ textAlign: "center" }}>
               <Typography className={classes.listedItemstitle}>
                 SILVER ARTICLES
@@ -1339,7 +1347,7 @@ function HeaderHoverMenuItem(props) {
               })}{" "}
             </Grid>
           </Grid>
-          <Grid item xs={4} className={classes.gridmultiplesection}>
+          <Grid item xs={5} className={classes.gridmultiplesection}>
             <Grid container item xs={12}>
               {silverItems2.map((val, i) => (
                 <Grid item xs={6}>
@@ -1353,7 +1361,7 @@ function HeaderHoverMenuItem(props) {
                   >
                     <Typography
                       className={classes.listedItemstitle}
-                      style={{ textAlign: "center" }}
+                      style={{ textAlign: "center",marginBottom:"12px" }}
                     >
                       {val.title}
                     </Typography>
@@ -1367,7 +1375,7 @@ function HeaderHoverMenuItem(props) {
                     style={{ cursor: "pointer" }}
                   >
                     {val.contents.map((x, i) => (
-                      <Typography className={classes.listedItemsvalue}>
+                      <Typography className={classes.listedItemsvalue} style={{paddingTop:"12px"}}>
                         {x.item}
                       </Typography>
                     ))}
@@ -1382,23 +1390,25 @@ function HeaderHoverMenuItem(props) {
                 <Grid item xs={12}>
                   <Typography
                     className={classes.listedItemstitle}
-                    style={{ textAlign: "center" }}
+                    style={{ textAlign: "center",marginBottom:"12px" }}
                   >
                     {val.title}
                   </Typography>
                 </Grid>
                 <Grid item xs={12}>
                   {val.contents.map((itms, i) => (
-                    <Typography className={classes.listedItemsvalue}>
+                    <Typography className={classes.listedItemsvalue} style={{paddingTop:"12px"}}>
                       {itms.item}
                     </Typography>
                   ))}
                 </Grid>
               </Grid>
-            ))}
+            ))}    
           </Grid>
-          <Grid item xs={3} className={classes.gridmultiplesection}>
-            <div style={{ paddingTop: "20px" }}>
+          </Grid>
+          </Grid>
+          <Grid item xs={3} >
+            <div style={{ paddingTop: "25px" }}>
               <img
                 src="https://products.jewelegance.com/JG-1910-00295.jpg"
                 width="100%"
@@ -1415,7 +1425,7 @@ function HeaderHoverMenuItem(props) {
     <Grid container className={classes.rootsub}>
       <Grid container item xs={12} className={classes.paperdivsub}>
         <Popper
-          style={{ border: "1px solid #ccc" }}
+          style={{ boxShadow: "5px 5px 8px #666161"}}
           placement={"bottom"}
           open={opens}
           anchorEl={target}
