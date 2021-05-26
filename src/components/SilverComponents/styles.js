@@ -433,7 +433,7 @@ export const useStyles = makeStyles((theme) => ({
   // },
   listedItemstitle: {
     padding: "2px 0px 8px 0px",
-    fontSize: "14px !important",
+    fontSize: "13px !important",
     letterSpacing: "0px !important",
     margin: "15px 19px 23px 29px",
     borderBottom: "1px solid #2F348B",
@@ -444,10 +444,9 @@ export const useStyles = makeStyles((theme) => ({
   },
   phovertitile: {
     padding: "2px 0px 8px 0px",
-    fontSize: "12.4px !important",
-    letterSpacing: 1,
+    fontSize: "13px !important",
+    letterSpacing: "0 !important",
     margin: "15px 19px 23px 29px",
-
     color: "#2F348B",
     "&:hover": {
       borderBottom: "1px solid #B78231",
@@ -455,7 +454,7 @@ export const useStyles = makeStyles((theme) => ({
   },
   shoptitle: {
     padding: "2px 0px 8px 0px",
-    fontSize: "14px !important",
+    fontSize: "13px !important",
     letterSpacing: "0 !important",
     margin: "15px 19px 23px 29px",
     borderBottom: "1px solid #2F348B",
@@ -463,7 +462,7 @@ export const useStyles = makeStyles((theme) => ({
   },
   listedItemstitlemultiplesection: {
     padding: "2px 0px 8px 0px",
-    fontSize: "14px !important",
+    fontSize: "13px !important",
     letterSpacing: "0 !important",
     margin: "15px 0px 23px 0px",
     borderBottom: "1px solid #2F348B",
@@ -497,7 +496,7 @@ export const useStyles = makeStyles((theme) => ({
   secondSection: {
     paddingBottom: 10,
     "& .MuiTypography-body1": {
-      fontSize: "15.4px !important",
+      fontSize: "14.4px !important",
       color: "#6E6F72",
     },
     "& .MuiFormControlLabel-root": {
@@ -589,7 +588,7 @@ export const useStyles = makeStyles((theme) => ({
   },
   listedItemsvalue: {
     padding: "2px 16px 2px 16px",
-    fontSize: "15.4px !important",
+    fontSize: "14.4px !important",
     color: "#6E6F72",
     cursor: "pointer",
     margin: "auto",
@@ -600,7 +599,7 @@ export const useStyles = makeStyles((theme) => ({
   },
   imgtitle: {
     padding: "2px 16px 2px 16px",
-    fontSize: "15.4px !important",
+    fontSize: "14.4px !important",
     color: "#6E6F72",
     cursor: "pointer",
   },
