@@ -70,6 +70,7 @@
     "react-next-paging": "^7.0.7",
     "react-paginate": "^6.5.0",
     "react-pose": "4.0.8",
+    "react-router": "^5.2.0",
     "react-router-dom": "5.0.1",
     "react-router-hash-link": "^1.2.2",
     "react-slick": "0.24.0",
