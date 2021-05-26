@@ -150,6 +150,8 @@
   /* font-family: "notoSerif-regular" !important; */
   /* font-size: 15px; */
   /* font-weight: 600 !important; */
+  font-Weight: "600";
+  color: "#20205A",
 }
 
 .fnts {
@@ -164,11 +166,11 @@
 .filter-mbl-font span {
   /* padding: 2px; */
   /* color: #394578; */
-  color: #666;
+  /* color: #666; */
   cursor: pointer;
   /* font-family: "notoSerif-regular" !important; */
   font-size: 12px !important;
-  /* font-weight: 600 !important; */
+  font-weight: 600 !important;
 }
 
 .p,
@@ -186,14 +188,16 @@
 
 .mbl-filter-list :hover {
   /* background-image: linear-gradient(to left, #f9e3e3, rgba(246, 153, 163, 1)) !important; */
-  color: #20205A !important;
+  color: #fff !important;
+  background-color: #b78231;
 }
 
 .mbl-filter-list :hover span {
 
   /* background-color: #394578 !important; */
   /* background-image: linear-gradient(to left, #f9e3e3, rgba(246, 153, 163, 1)); */
-  color: #20205A !important;
+  color: #fff !important;
+  background-color: #b78231;
 }
 
 /* .mbl-filter-list :hover {
@@ -203,7 +207,7 @@
 
 .filter-fixed {
   text-align: center;
-  background-color: whitesmoke !important;
+  background-color: whitesmoke ;
   position: fixed !important;
   bottom: 0 !important;
   top: auto !important;
