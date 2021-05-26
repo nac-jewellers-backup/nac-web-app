@@ -97,7 +97,7 @@
   text-decoration: none !important;
   /* padding: 0px 2px; */
 
-  margin-left: 2% !important;
+  margin-left: 3% !important;
 }
 @media screen and (min-width: 960px) and (max-width: 1024px) {
   .header-navbar-list1 a {
@@ -278,6 +278,18 @@
   font-family: notoSerif-regular;
 }
 
+.newlist-items1 {
+  text-align: left;
+  white-space: nowrap;
+  width: 100%;
+  font-weight: bold;
+  font-size: 13px !important;
+  letter-spacing: 1px;
+  color: #33346d;
+  text-transform: capitalize;
+  font-family: notoSerif-regular;
+}
+
 .Jew-mbl-head-list1 {
   color: #fff;
   width: 100%;
@@ -356,6 +368,7 @@ i {
 } */
 .drawer-list12 {
   background-color: rgba(0, 0, 0, 0.08) !important;
+  
 }
 
 .side-arrow-symbol {
