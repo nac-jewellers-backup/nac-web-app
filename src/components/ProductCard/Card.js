@@ -422,6 +422,7 @@ function Component(props) {
     setCardState({ ...cardstate, hovered: !cardstate.hovered });
   };
 
+
   return (
     <div className={classes.root} style={{ marginLeft: "0px !important" }}>
       <Card className={classes.card} style={{ marginLeft: "0px !important" }}>
@@ -453,7 +454,7 @@ function Component(props) {
                         }}
                       >
                         {new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", minimumFractionDigits: 0 }).format(
-                          Math.round(props.data.offerPrice)
+                          Math.round(props.data.price)
                         )}
                         <span style={{ display: "flex", alignSelf: "center" }}>
                           {" "}
@@ -466,7 +467,7 @@ function Component(props) {
                             <s style={{ color: "#5d5d5d" }}>
                               {Math.round(props.data.offerPrice) - Math.round(props.data.price) === 0
                                 ? ""
-                                : Math.round(props.data.price)}
+                                : Math.round(props.data.offerPrice)}
                             </s>
                           </Typography>
                         </span>
@@ -510,7 +511,7 @@ function Component(props) {
                         }}
                       >
                         {new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", minimumFractionDigits: 0 }).format(
-                          Math.round(props.data.offerPrice)
+                          Math.round(props.data.price)
                         )}
                         <span style={{ display: "flex", alignSelf: "center" }}>
                           {" "}
@@ -524,7 +525,7 @@ function Component(props) {
                               {" "}
                               {Math.round(props.data.offerPrice) - Math.round(props.data.price) === 0
                                 ? ""
-                                : Math.round(props.data.price)}
+                                : Math.round(props.data.offerPrice)}
                             </s>
                           </Typography>
                         </span>
@@ -564,7 +565,7 @@ function Component(props) {
                     }}
                   >
                     {new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", minimumFractionDigits: 0 }).format(
-                      Math.round(props.static ? 25076 : props.data.offerPrice)
+                      Math.round(props.static ? "" : props.data.price)
                     )}
                   </Typography>
 
