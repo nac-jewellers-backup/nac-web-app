@@ -24,10 +24,10 @@ import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 const useStyles = makeStyles((theme) => ({
   navTitle: {
     cursor: "pointer",
-    padding: "7px 0px 6px 0px",
+    padding: "7px 0px 15px 0px",
     color: "#6b6b6b",
     textDecoration: "none",
-    fontSize: "17px",
+    fontSize: "16px",
     "&:hover": {
       textDecoration: "underline",
     },
@@ -258,6 +258,8 @@ const useStyles = makeStyles((theme) => ({
     background: "#33366D",
     color: "white",
     fontSize: "15px",
+    boxShadow:"2px 3px 6px 2px #888888",
+    borderRadius:"0",
     "&:hover": {
       background: "#33366D",
       color: "white",
@@ -277,7 +279,7 @@ const useStyles = makeStyles((theme) => ({
     border: "0px",
     height: "34px",
     padding: "0px 3px",
-    fontSize: "11px",
+    fontSize: "12px",
     borderRadius: "0",
     textAlign: "center",
     width: "300px",
@@ -289,7 +291,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: "30px",
   },
   rights: {
-    fontSize: "17px",
+    fontSize: "16px",
     color: "#6b6b6b",
   },
 }));
@@ -725,7 +727,7 @@ export default function Footer(props) {
                 container
                 item
                 xs={12}
-                style={{ color: "white", fontSize: "13px" }}
+                style={{ color: "white", fontSize: "14px" }}
               >
                 {footerData.map((data, i) => {
                   return (
@@ -847,7 +849,7 @@ export default function Footer(props) {
                             src={
                               "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_footer/Path+52.svg"
                             }
-                            style={{ width: "40px", height: "auto" }}
+                            style={{ width: "40px", height: "auto", borderRadius:"20px 20px",boxShadow:"2px 3px 6px 2px #888888" }}
                           />
                         </a>
                       </div>
@@ -871,7 +873,7 @@ export default function Footer(props) {
                             src={
                               "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_footer/Path+53.svg"
                             }
-                            style={{ width: "40px", height: "auto" }}
+                            style={{ width: "40px", height: "auto",borderRadius:"20px 20px",boxShadow:"2px 3px 6px 2px #888888" }}
                           />
                         </a>
                       </div>
@@ -896,7 +898,7 @@ export default function Footer(props) {
                             src={
                               "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_footer/Path+54.svg"
                             }
-                            style={{ width: "40px", height: "auto" }}
+                            style={{ width: "40px", height: "auto",borderRadius:"20px 20px",boxShadow:"2px 3px 6px 2px #888888"  }}
                           />
                         </a>
                       </div>
@@ -922,7 +924,7 @@ export default function Footer(props) {
                             src={
                               "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_footer/Path+57.svg"
                             }
-                            style={{ width: "40px", height: "auto" }}
+                            style={{ width: "40px", height: "auto",borderRadius:"20px 20px",boxShadow:"2px 3px 6px 2px #888888"  }}
                           />
                         </a>
                       </div>
@@ -945,7 +947,7 @@ export default function Footer(props) {
                             src={
                               " https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_footer/nQjOPg.tif.svg"
                             }
-                            style={{ width: "40px", height: "auto" }}
+                            style={{ width: "40px", height: "auto",borderRadius:"20px 20px",boxShadow:"2px 3px 6px 2px #888888"  }}
                           />
                         </a>
                       </div>
@@ -1057,7 +1059,7 @@ export default function Footer(props) {
                 style={{
                   display: "flex",
                   alignItems: "center",
-                  padding: "30px 0px",
+                  padding: "35px 0px",
                 }}
               >
                 {/* <Grid container xs={5}>

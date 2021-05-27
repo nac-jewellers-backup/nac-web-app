@@ -12,6 +12,9 @@ const styles = theme => ({
 
     }),
   },
+  clearBtn:{
+    padding:"2px 7px"
+  },
   appBarShift: {
     width: `calc(100% - ${drawerWidth}px)`,
     marginLeft: drawerWidth,
@@ -98,6 +101,7 @@ const styles = theme => ({
 
     '&:hover': {
       backgroundImage: 'linear-gradient(to left, #f9e3e3, rgba(246, 153, 163, 1))',
+      // backgroundColor:"#b78231"
     }
   },
   colorMainBackground: {

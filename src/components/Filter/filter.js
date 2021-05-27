@@ -20,6 +20,7 @@ import {
   Container,
   Chip,
 } from "@material-ui/core";
+import ArrowRightIcon from '@material-ui/icons/ArrowRight';
 import { ExpandLess, ExpandMore } from "@material-ui/icons";
 import "./filter.css";
 import ProductLayout from "../ProductCard/ProductLayout";
@@ -704,6 +705,7 @@ class Component extends React.Component {
     //   this.setState({ filtercheck: '' })
     // } else {
     this.setState({ filtercheck });
+    console.log("filtercheck",filtercheck);
     // }
   };
 
@@ -1474,7 +1476,7 @@ class Component extends React.Component {
           >
             <div
               style={{
-                padding: "9px",
+                padding: "16px 22px 10px",
                 borderBottom: "1px solid #e3e3e3",
                 display: openMobile ? "none" : "block",
                 position: "sticky",
@@ -1482,32 +1484,35 @@ class Component extends React.Component {
               }}
               className={`${classes.colorMain}`}
             >
-              <button
-                onClick={this.handleDrawerCloseMobile}
+            <i onClick={this.handleDrawerCloseMobile}
+                  className={`fa fa-times ${classes.colorMain}`}
+                  style={{ color: "#20205A",}}
+                ></i>
+              <button 
                 style={{
                   background: "none",
                   border: "none",
                   fontWeight: "600",
                   color: "#20205A",
                   padding: "6px 8px",
+                  fontFamily: "notoSerif-regular",
                 }}
               >
-                <i
-                  className={`fa fa-times ${classes.colorMain}`}
-                  style={{ color: "#20205A" }}
-                ></i>
-                &nbsp; Filter
+                 FILTER
               </button>
               <Button
                 onClick={this.handleClearAllData}
                 style={{
                   float: "right",
-                  border: "1px solid #ececec",
+                  border: "1px solid #c0bcbc",
                   lineHeight: "15px",
-                  fontSize: "0.775rem",
+                  fontSize: "12px",
                   color: "#20205A",
+                  borderRadius:"0px",
+                  marginTop:"3px"
                 }}
                 className={`${classes.colorMain}`}
+                classes={{text:classes.clearBtn}}
               >
                 Clear All
               </Button>
@@ -1571,8 +1576,9 @@ class Component extends React.Component {
                                 onClick={() => this.filterValue(row)}
                               >
                                 <ListItemText className="filter-mbl-font filter-mbl-fonts">
-                                  {row && row}
+                                  {row && row.toUpperCase()}
                                 </ListItemText>
+                                <ArrowRightIcon></ArrowRightIcon>
                               </ListItem>
                             )}
                           </>
@@ -1812,11 +1818,15 @@ class Component extends React.Component {
 
               </AppBar> */}
             </Grid>
-
+            {openMobile ?  null: 
+            <AppBar className="filter-fixed header" style={{backgroundColor:"#20205A ", minHeight:"35px"}}>
+                <div style={{color:"#fff",paddingTop:"7px"}}>APPLY FILTERS</div>
+            </AppBar>}
+            
             <AppBar
               color="primary"
               className="filter-fixed header"
-              style={{ display: !openMobile ? "none" : "block" }}
+              style={{ display: !openMobile ? "none" : "block",backgroundColor: "whitesmoke"  }}
             >
               <Container>
                 <div
@@ -1865,7 +1875,7 @@ class Component extends React.Component {
             </AppBar>
           </div>
           {this.state.CardRadio ? (
-            <div style={{ position: "fixed", bottom: "42px" }}>
+            <div style={{ position: "fixed", top: "-65px" }}>
               <CardRadioButton
                 cardWidth="cardSortSmallScreen"
                 data={sortOptions}
