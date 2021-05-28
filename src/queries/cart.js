@@ -5,9 +5,16 @@ export const CART = `query myquerycart($productList: [String!]) {
       purity
       metalColor
       discountPrice
-
+      skuUrl
       markupPrice
-
+      skuWeight
+      diamondType
+      skuSize
+      costPrice
+      sellingPrice
+    
+ 
+      
       productListByProductId {
         productId
         productName
@@ -23,6 +30,13 @@ export const CART = `query myquerycart($productList: [String!]) {
             diamondColour
             diamondShape
             stoneWeight
+            diamondClarity
+            stoneCont
+            diamondType
+            stoneCount
+            description
+            stoneAmount
+            itemName
           }
         }
         productGemstonesByProductSku {
@@ -30,15 +44,19 @@ export const CART = `query myquerycart($productList: [String!]) {
             gemstoneSize
             gemstoneType
             stoneWeight
+            stoneCount
+            description
+            stoneRate
+            stoneAmount
+            itemName
+            gemstoneShape
           }
         }
       }
-      skuWeight
-      diamondType
-      skuSize
     }
   }
 }
+
 
 `;
 export const ALLORDERS = `query MyQuery($userProfileId: [UUID!]) {

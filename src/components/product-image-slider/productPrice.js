@@ -2,7 +2,7 @@ import { Grid, Hidden, ExpansionPanel, Container, Popover, paper, Paper } from "
 import Slideshow from "../Carousel/carosul";
 import ArrowRightIcon from "@material-ui/icons/ArrowRight";
 import ArrowLeftIcon from "@material-ui/icons/ArrowLeft";
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import PropTypes from "prop-types";
 import "./product-images.css";
 import Ratings from "../rating/rating";
@@ -77,14 +77,12 @@ const mobilecarousel = (props, val, wishlist) => {
 };
 
 const Productprice = (props, anchorEl, handleClick, handleClose, handleReadMore, viewMore) => {
+  // const [prodDesc, setProdDesc] = useState(false);
   const { data } = props;
   const { classes } = props;
   const open = anchorEl;
   var wishlist = props.wishlist;
 
-  // alert(JSON.stringify(props.wishlist.wishlistdata.nodes.skuId))
-  // var wishlist = this.props && this.props.wishlist &&
- 
   return (
     <div>
       {data.map((val) => (
@@ -160,11 +158,28 @@ const Productprice = (props, anchorEl, handleClick, handleClose, handleReadMore,
                                                             </div>
                                                         )}
                                                     </div> */}
-                          <p
-                            className={`pdp-desc ${classes.dis} ${classes.disEllipises}`}
-                            style={{ marginBottom: 20, fontStyle: "italic" }}
-                          >
-                            {val.dis}
+                          <p className={`pdp-desc ${classes.dis} `} style={{ marginBottom: 20, fontStyle: "italic" }}>
+                            {val.dis.length > 30 && viewMore ? val.dis : `${val.dis.substring(0, 30)}...`}
+                            <span>
+                              <p className={`pdp-desc ${viewMore ? "" : classes.disDescriptionPD}`}>
+                                <span>
+                                  <span
+                                    style={{
+                                      float: "right",
+                                      cursor: "pointer",
+                                      color: "#33346D",
+                                      fontSize: "10px",
+                                      marginTop: "5px",
+                                    }}
+                                    onClick={() => {
+                                      handleReadMore();
+                                    }}
+                                  >
+                                    {viewMore ? "" : "Read More"}
+                                  </span>
+                                </span>
+                              </p>
+                            </span>
                           </p>
                         </Grid>
 
@@ -190,22 +205,24 @@ const Productprice = (props, anchorEl, handleClick, handleClose, handleReadMore,
                         className={`pdp-desc ${classes.dis}`}
                         style={{ marginBottom: 15, fontStyle: "italic", paddingTop: "5px" }}
                       >
-                        {val.dis}
-                      </p>
-                      {/* <Grid xs={10}>
-                        <p className={`pdp-desc ${viewMore ? "" : classes.disDescriptionPD}`}>
-                          <span style={{ width: "80%" }}>
-                            <span
-                              style={{ float: "right", cursor: "pointer", color: "#33346D" }}
-                              onClick={() => {
-                                handleReadMore();
-                              }}
-                            >
-                              {viewMore ? "Read Less" : "Read More"}
+                        {val.dis.length > 100 && viewMore ? val.dis : val.dis.substring(0, 100)}
+                        {/* {val.dis} */}
+                        <span>
+                          <p className={`pdp-desc ${viewMore ? "" : classes.disDescriptionPD}`}>
+                            <span style={{ width: "80%" }}>
+                              <span
+                                style={{ float: "right", cursor: "pointer", color: "#33346D" }}
+                                onClick={() => {
+                                  handleReadMore();
+                                }}
+                              >
+                                {viewMore ? "" : "Read More"}
+                              </span>
                             </span>
-                          </span>
-                        </p>
-                      </Grid> */}
+                          </p>
+                        </span>
+                      </p>
+                      {/* <Grid xs={10}></Grid> */}
                     </Hidden>
                   </div>
                 </Grid>

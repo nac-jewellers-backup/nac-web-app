@@ -82,7 +82,7 @@ class ProductDetails extends React.Component {
                                                 ) : (
                                                   <ListItemText variant="" className={`product-subhead-list ${classes.fontgray}`}>
                                                     {/* {data[0].productsDetails[3].namedetail[1].length > 0} */}
-                                                    {<span style={{ fontSize: "12px", marginLeft: "10px" }}> {res.details}</span>}
+                                                    {<span style={{ fontSize: "12px" }}> {res.details}</span>}
                                                   </ListItemText>
                                                 )
                                               }
@@ -110,7 +110,7 @@ class ProductDetails extends React.Component {
     const { expanded } = this.state;
     const { data } = this.props;
     const { classes } = this.props;
-   
+
     return (
       <div>
         <Container>
@@ -182,7 +182,7 @@ class ProductDetails extends React.Component {
                                           </ListItemText>
                                         ) : (
                                           <ListItemText variant="" className={`product-subhead-list ${classes.fontgray}`}>
-                                            <span style={{ fontSize: "12px", marginLeft: "10px" }}> {res.details}</span>
+                                            <span style={{ fontSize: "12px" }}> {res.details}</span>
                                           </ListItemText>
                                         )}
                                       </Grid>

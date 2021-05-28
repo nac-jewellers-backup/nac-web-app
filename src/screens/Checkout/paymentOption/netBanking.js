@@ -16,10 +16,10 @@ class Netbanking extends React.Component {
     var dataCard1;
     if (data.length > 0 && data !== undefined && data !== null) {
       dataCard1 =
-        this.props.data &&
-        this.props.data
+        this.props?.data &&
+        this.props?.data
           .map((val) => {
-            return val.dataCard1[0].offerPrice * JSON.parse(localStorage.getItem("quantity"))[val.generatedSku];
+            return val?.dataCard1[0]?.offerPrice * JSON.parse(localStorage.getItem("quantity"))[val?.generatedSku];
           })
           .reduce(myFunc);
       function myFunc(total, num) {

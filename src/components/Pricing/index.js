@@ -155,7 +155,7 @@ export default function Pricing(props) {
                   : 12
               }
             >
-              {props.offerPrice ? (
+              {props.Price ? (
                 <Typography style={{ display: "flex", width: "100%" }}>
                   <Typography
                     // variant="h6"

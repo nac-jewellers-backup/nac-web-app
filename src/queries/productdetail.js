@@ -1,7 +1,16 @@
 import { filterGenerator } from "utils";
 // SR3261
-export const PRODUCTDETAILS = `query MyQuery($conditionfilter: TransSkuListCondition, $conditionImage: ProductImageCondition, $productnamefilter: TransSkuListFilter, $number: Int) {
-  allTransSkuLists(condition: $conditionfilter, filter: $productnamefilter, first: $number) {
+export const PRODUCTDETAILS = `query MyQuery(
+  $conditionfilter: TransSkuListCondition
+  $conditionImage: ProductImageCondition
+  $productnamefilter: TransSkuListFilter
+  $number: Int
+) {
+  allTransSkuLists(
+    condition: $conditionfilter
+    filter: $productnamefilter
+    first: $number
+  ) {
     nodes {
       skuSize
       markupPrice
@@ -44,6 +53,9 @@ export const PRODUCTDETAILS = `query MyQuery($conditionfilter: TransSkuListCondi
             diamondShape
             diamondSettings
             stoneCount
+            description
+            itemName
+            
           }
         }
         productGemstonesByProductSku {
@@ -55,9 +67,15 @@ export const PRODUCTDETAILS = `query MyQuery($conditionfilter: TransSkuListCondi
             productSku
             stoneCount
             stoneWeight
+            description
+            itemName
+            
           }
         }
-        productImagesByProductId(condition: $conditionImage, orderBy: IMAGE_POSITION_ASC) {
+        productImagesByProductId(
+          condition: $conditionImage
+          orderBy: IMAGE_POSITION_ASC
+        ) {
           nodes {
             ishover
             imageUrl
@@ -85,7 +103,6 @@ export const PRODUCTDETAILS = `query MyQuery($conditionfilter: TransSkuListCondi
     }
   }
 }
-
 
 
 
