@@ -195,7 +195,6 @@ class Header extends Component {
     const opened = this.state;
     var a = window.location.pathname;
     var b = a.split("/");
-    console.log("Jewellery", Jewellery[selected]);
     return (
       <div
         style={{ top: "0", zIndex: "1000", width: "100%" }}

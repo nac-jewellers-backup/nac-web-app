@@ -1171,7 +1171,7 @@ export const menuListHeader = [
   },
   {
     title: "Collections".toUpperCase(),
-    url: "#",
+    url: "/CollectionFullPage",
   },
   {
     title: "Other jewellery".toUpperCase(),
@@ -1580,7 +1580,7 @@ export const menuLists = {
       {
         value: "bycollections",
         title: "By Collections",
-        url: "/collections",
+        url: "/CollectionFullPage",
         imgContainer: {
           imageContainer: [
             {
