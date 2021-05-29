@@ -1,4 +1,4 @@
-import moment from "moment";
+  import moment from "moment";
 // export const productsDetails = [
 //     {
 //         header: "Product Details",
@@ -142,6 +142,7 @@ export default function (data) {
         productId: k.productListByProductId && k.productListByProductId.productId,
         shipby: generateShipsBy(k.isReadyToShip, k.vendorDeliveryTime),
         isReadyToShip: k.isReadyToShip,
+        isActive: k.productListByProductId.isactive,
         productsDetails: [
           //                     Quality
           // Metal

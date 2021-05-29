@@ -131,30 +131,49 @@ const Buydetails = (
 ) => {
   const { data } = props;
   const { classes } = props;
-
+  const isactive = props.data[0].isactive ?? "";
   return (
     <div>
       {data[0].ProductContactNum.map((val) => (
         <>
-          <Grid container spacing={12}>
-            
-            <Grid item xs={12}  md={4} lg={4} className={classes.buynowItem}>
-              {/* <NavLink to="/cart" style={{ textDecoration: 'none' }} onClick={handleLocalStorage.bind(this)}> */}
-              <div onClick={handleLocalStorage.bind(this)}>
-                <Buynowbutton sku={data[0].skuId} class={`buynow-button ${classes.buttons}`} button="buynow-btn-cont" />
+          <Grid container direction="column" spacing={12}>
+            <Grid xs={12} md={4} lg={4} className={classes.buynowItem}>
+              <div onClick={isactive ? deletechecklists : ""}>
+                {isactive ? (
+                  <>
+                    {" "}
+                    <Buynowbutton
+                      sku={data[0].skuId}
+                      class={`buynow-button ${classes.AddtoCartbuttons}`}
+                      button="buynow-btn-cont"
+                      id="silverButton"
+                      withoutBag={true}
+                      addtoCartToBuyNow={true}
+                      productIsActive={isactive ?? ""}
+                      // onClick={}
+                      // handleSuccess={deletechecklists}
+                      onClick={isactive ? handleLocalStorage.bind(this) : ""}
+                    />{" "}
+                  </>
+                ) : (
+                  ""
+                )}
               </div>
-              {/* </NavLink> */}
-
-              {/* ---------------------------------------------------------------------------------------------- */}
-              <CommenDialog
-                isOpen={state.modelOpen}
-                content={`Verify selected product details before proceeding`}
-                handleClose={canceldeletechecklist}
-                handleSuccess={deletechecklists}
-                negativeBtn="No"
-                positiveBtn="Yes"
-                title="Confirmation"
-              />
+            </Grid>
+            <Grid xs={12} md={4} lg={4} className={classes.buynowItem}>
+              <div onClick={isactive ? deletechecklists : ""}>
+                <Buynowbutton
+                  sku={data[0].skuId}
+                  class={`buynow-button ${classes.buttons}`}
+                  button="buynow-btn-cont"
+                  id="silverButton"
+                  withoutBag={true}
+                  productIsActive={isactive ?? ""}
+                  // onClick={}
+                  // handleSuccess={deletechecklists}
+                  onClick={isactive ? handleLocalStorage.bind(this) : ""}
+                />
+              </div>
             </Grid>
 
             {/* <Grid item container alignContent="center" alignItems="center" xs={12} lg={8} style={{ padding: "0px 0px 0px 25px" }}>
@@ -385,7 +404,7 @@ class Component extends React.Component {
   render() {
     let { showimage } = this.state;
     const { classes, data } = this.props;
-
+    const isactive = this.props.data[0].isactive ?? "";
     return (
       <div>
         <Hidden smDown>
@@ -484,6 +503,7 @@ class Component extends React.Component {
               deleteComment={this.deletechecklists}
               data={this.props.data}
               onClick={this.handleLocalStorage.bind(this)}
+              productIsActive={isactive ?? ""}
             />
           </div>
         </Hidden>

@@ -44,6 +44,7 @@ export const PRODUCTDETAILS = `query MyQuery(
         colourVarient
         defaultWeight
         productType
+        isactive
         productDiamondsByProductSku {
           nodes {
             diamondClarity

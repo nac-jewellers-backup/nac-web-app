@@ -341,6 +341,7 @@ class Checkoutcard extends React.Component {
   };
   checkoutbutton = () => {
     const { classes } = this.props;
+    let productIsActive = this.props.data[0].isActive ?? "";
     let path = window.location.pathname.split("/").pop();
     return (
       <div>
@@ -352,15 +353,21 @@ class Checkoutcard extends React.Component {
               style={{ textDecoration: "none" }}
               onClick={() => {
                 // window.location.reload()
-                localStorage.removeItem("bil_isactive");
-                localStorage.removeItem("ship_isactive");
-                localStorage.setItem("panel", 1);
-                localStorage.removeItem("select_addres");
-                window.location.href = "/checkout";
+                if (productIsActive) {
+                  localStorage.removeItem("bil_isactive");
+                  localStorage.removeItem("ship_isactive");
+                  localStorage.setItem("panel", 1);
+                  localStorage.removeItem("select_addres");
+                  window.location.href = "/checkout";
+                }
               }}
             >
               {/* {window.location.reload()} */}
-              <Buynowbutton class={`chckout-page-buynow ${classes.buttons}`} />
+              <Buynowbutton
+                productIsActive={productIsActive ?? ""}
+                productURL={this.props?.data[0]?.skuUrl}
+                class={`chckout-page-buynow ${classes.buttons}`}
+              />
             </div>
           </div>
         )}

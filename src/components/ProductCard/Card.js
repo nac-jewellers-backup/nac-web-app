@@ -422,7 +422,7 @@ function Component(props) {
     setCardState({ ...cardstate, hovered: !cardstate.hovered });
   };
 
-
+console.log(props, "<<<<<<<<<<<<<<<<<<<<<")
   return (
     <div className={classes.root} style={{ marginLeft: "0px !important" }}>
       <Card className={classes.card} style={{ marginLeft: "0px !important" }}>
@@ -454,7 +454,7 @@ function Component(props) {
                         }}
                       >
                         {new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", minimumFractionDigits: 0 }).format(
-                          Math.round(props.data.price)
+                          Math.round(props?.data?.price)
                         )}
                         <span style={{ display: "flex", alignSelf: "center" }}>
                           {" "}

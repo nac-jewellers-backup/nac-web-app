@@ -209,12 +209,21 @@ const styles = (theme) => ({
     borderRadius: "unset !important",
     boxShadow: "4px 5px 6px #BEBFBF !important",
   },
+  AddtoCartbuttons: {
+    background: "#33366D",
+    color: theme.palette.overallButoon.contrastText,
+    borderRadius: "unset !important",
+    boxShadow: "4px 5px 6px #BEBFBF !important",
+    "&:hover, &:focus": {
+      background: "#33366D !important",
+    },
+  },
+
   backgsecondary: {
     background: theme.palette.secondary.main,
   },
   shadow: {
-    boxShadow:
-      "0px 2px 4px 4px rgba(0, 0, 0, 0.1), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12)",
+    boxShadow: "0px 2px 4px 4px rgba(0, 0, 0, 0.1), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12)",
   },
   expansionHere: {
     borderBottomLeftRadius: "unset !important",
@@ -270,7 +279,7 @@ const styles = (theme) => ({
   },
 
   buynowItem: {
-    paddingBottom: "20px",
+    paddingBottom: "15px",
   },
 });
 export default styles;

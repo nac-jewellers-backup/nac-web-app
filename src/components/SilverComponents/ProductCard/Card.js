@@ -358,6 +358,7 @@ function Component(props) {
   const callmouseout = () => {
     setCardState({ ...cardstate, hovered: !cardstate.hovered });
   };
+ 
   return (
     <div className={classes.root} style={{ marginLeft: "0px !important" }}>
       <Card className={`${classes.card} ${"imageHeight"}`} style={{ marginLeft: "0px !important" }}>
