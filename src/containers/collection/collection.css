@@ -1,0 +1,218 @@
+.root{
+    padding: 100px 125px;
+}
+
+.titleContent{
+    font-size:18px !important;
+    padding:0px 255px
+}
+
+.heading{
+    font-size:60px !important;
+    color:#B2832C;
+    font-style:italic;
+    padding:10px 18px 0px 13px
+}
+
+.buttonEdit{
+    background-color:#b78231 !important;
+    color:#fff !important;
+    border-radius:0px !important;
+    width:100%;
+    font-size:25px !important
+}
+
+.imgContent{
+    font-size:18px !important; 
+    padding:0px 20px 10px 20px
+}
+
+.logoEdit{
+    position:relative;
+    height:80px;
+    top:12px
+}
+
+.rightSidecontent{
+    text-align:center;
+    padding-left:60px
+}
+
+.leftSidecontent{
+    text-align:center;
+    padding-right:60px
+}
+
+.mediaContents{
+    padding-top: 60px;
+}
+
+@media screen and (min-width: 1120px) and (max-width: 1320px){
+    .titleContent{
+        padding:0 180px
+    }
+}
+
+@media screen and (min-width: 930px) and (max-width: 1120px){
+    .root{
+        padding: 100px 110px;
+    }
+
+    .titleContent{
+        padding:0 110px;
+        font-size: 17px !important;
+    }
+
+    .imgContent{
+        font-size:17px !important; 
+        padding:0px 15px 8px 15px
+    }
+
+    .buttonEdit{
+        font-size:19px !important
+    }
+
+    .heading{
+        font-size: 55px !important;
+    }
+
+    .rightSidecontent{
+        padding-left:47px
+    }
+    
+    .leftSidecontent{
+        padding-right:47px
+    }
+
+    .logoEdit{
+        position:relative;
+        height:75px;
+        top:14px
+    }
+}
+
+@media screen and (min-width: 650px) and (max-width: 930px){
+    .root{
+        padding: 80px 85px;
+    }
+
+    .titleContent{
+        padding:0 80px;
+        font-size: 15px !important;
+    }
+
+    .imgContent{
+        font-size:15px !important; 
+        padding:0px 15px 8px 15px
+    }
+
+    .buttonEdit{
+        font-size:17px !important;
+        padding:5px 15px !important
+    }
+
+    .heading{
+        font-size: 48px !important;
+    }
+
+    .logoEdit{
+        position:relative;
+        height:60px;
+        top:14px
+    }
+
+    .rightSidecontent{
+        padding-left:35px
+    }
+    
+    .leftSidecontent{
+        padding-right:35px
+    }
+}
+
+@media screen and (min-width: 420px) and (max-width: 659px){
+    .root{
+        padding: 50px 40px 45px 40px
+    }
+
+    .titleContent{
+        padding:0 33px;
+        font-size: 12px !important;
+    }
+
+    .imgContent{
+        font-size:12px !important; 
+        padding:0px 3px 6px 3px
+    }
+
+    .buttonEdit{
+        font-size:10px !important;
+        padding:2px 8px !important
+    }
+
+    .heading{
+        font-size: 33px !important;
+    }
+
+    .logoEdit{
+        position:relative;
+        height:40px;
+        top:14px
+    }
+
+    .rightSidecontent{
+        padding-left:15px
+    }
+    
+    .leftSidecontent{
+        padding-right:15px
+    }
+
+    .mediaContents{
+        padding-top: 35px;
+    }
+}
+
+@media screen and (min-width: 355px) and (max-width: 420px){
+    .root{
+        padding: 45px 40px 30px 45px;
+    }
+
+    .titleContent{
+        padding:0 10px;
+        font-size: 11px !important;
+    }
+
+    .imgContent{
+        font-size:11px !important; 
+        padding:0px 3px 6px 3px
+    }
+
+    .buttonEdit{
+        font-size:9px !important;
+        padding:2px 4px !important
+    }
+
+    .heading{
+        font-size: 28px !important;
+        padding: 10px 9px 0 6px;
+    }
+
+    .logoEdit{
+        position:relative;
+        height:32px;
+        top:14px
+    }
+
+    .rightSidecontent{
+        padding-left:15px
+    }
+    
+    .leftSidecontent{
+        padding-right:15px
+    }
+
+    .mediaContents{
+        padding-top: 27px;
+    }
+}

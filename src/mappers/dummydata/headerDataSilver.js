@@ -93,7 +93,7 @@ export const subheader = {
     name: [
       {
         name: "Studs",
-        url: "/studs-earrings-jewellery",
+        url: "/studs+and+tops-jewellery",
       },
       {
         name: "Drop",
@@ -1147,23 +1147,23 @@ export const Jewellery = {
 export const menuListHeader = [
   {
     title: "Earrings".toUpperCase(),
-    url: "#",
+    url: "/earrings-jewellery",
   },
   {
     title: "Necklace".toUpperCase(),
-    url: "#",
+    url: "/necklaces-jewellery",
   },
   {
     title: "Rings".toUpperCase(),
-    url: "#",
+    url: "/rings-jewellery",
   },
   {
     title: "Bangles & Bracelets".toUpperCase(),
-    url: "#",
+    url: "bangles-jewellery",
   },
   {
     title: "Solitaire".toUpperCase(),
-    url: "#",
+    url: "/solitaire-jewellery",
   },
   {
     title: "Silver".toUpperCase(),
@@ -1171,7 +1171,7 @@ export const menuListHeader = [
   },
   {
     title: "Collections".toUpperCase(),
-    url: "#",
+    url: "/CollectionFullPage",
   },
   {
     title: "Other jewellery".toUpperCase(),
@@ -1580,7 +1580,7 @@ export const menuLists = {
       {
         value: "bycollections",
         title: "By Collections",
-        url: "/collections",
+        url: "/CollectionFullPage",
         imgContainer: {
           imageContainer: [
             {

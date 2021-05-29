@@ -48,6 +48,7 @@ import Blog from "containers/collection/bloagPost";
 import CollectionPage from "containers/collection/collectionPage"
 import Solitaires from "../containers/solitaires/solitaires";
 import ExperiencePage from "../containers/experiences/experiences";
+import CollectionFullPage from "../containers/collection/collectionsFullPage";
 // SILVER SCREENS
 
 import Silver from "screens/SilverStylori";
@@ -96,6 +97,12 @@ export const RouterApp = (props) => {
         exact
         path={routes.StoreDetail}
       />
+        <Route
+       key="CollectionFullPage"
+       component={CollectionFullPage}
+       exact
+       path={routes.CollectionFullPage}
+       />
       <Route
         key="HomePageStylori"
         component={HomeComp}
@@ -276,6 +283,7 @@ export const RouterApp = (props) => {
         exact
         path={routes.CollectionPage}
       />
+    
       
       {props.location.pathname !== "/cart" &&
         props.location.pathname !==

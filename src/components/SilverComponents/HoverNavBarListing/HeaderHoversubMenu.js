@@ -29,49 +29,124 @@ function HeaderHoverMenuItem(props) {
     {
       title: "Genstone",
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Group+319.svg",
+      url1:"/#",
+      url2:"#",
+      url3:"#"
     },
     {
       title: "Diamond",
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Group+321.svg",
+      url1:"/diamond-earrings-jewellery",
+      url2:"/diamond-rings-jewellery",
+      url3:"/diamond-bangles-jewellery"
+
     },
     {
       title: "Solitaire",
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Group+325.svg",
+      url1:"/#",
+      url2:"#",
+      url3:"#"
     },
     {
       title: "Platinum",
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Ellipse+3.svg",
+      url1:"/buy+platinum-earrings-jewellery",
+      url2:"/rings-jewellery-rings-platinum",
+      url3:"/buy+platinum-bracelets-jewellery"
     },
     {
       title: "Yellow Gold",
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
+      url1:"/plain+gold-earrings-jewellery",
+      url2:"/plain+gold-rings-jewellery",
+      url3:"/plain+gold-bangles-jewellery"
     },
     {
       title: "White Gold",
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
+      url1:"#",
+      url2:"#",
+      url3:"#"
     },
     {
       title: "Rose Gold",
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
+      url1:"#",
+      url2:"#",
+      url3:"#"
     },
     {
       title: "Silver by STYLORI",
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Path+423.svg",
+      url1:"#",
+      url2:"#",
+      url3:"#"
     },
   ];
   const data = [
-    { title: "Below ₹10,000" },
-    { title: "₹10,001 - ₹25,000" },
-    { title: "₹25,001 - ₹50,000" },
-    { title: "Above ₹50,000" },
+    { 
+      title: "Below ₹10,000",
+      url1:"/earrings-jewellery?startprice=1000&endprice=10000",
+      url2:"/rings-jewellery?startprice=1000&endprice=10000",
+      url3:"/bangles-jewellery?startprice=1000&endprice=10000"
+     },
+    { 
+      title: "₹10,001 - ₹25,000",
+      url1:"/earrings-jewellery?startprice=10001&endprice=20000",
+      url2:"/rings-jewellery?startprice=10001&endprice=20000",
+      url3:"/bangles-jewellery?startprice=10001&endprice=20000"
+     },
+    {
+       title: "₹25,001 - ₹50,000",
+       url1:"/earrings-jewellery?startprice=20001&endprice=30000",
+       url2:"/rings-jewellery?startprice=20001&endprice=30000",
+       url3:"/bangles-jewellery?startprice=20001&endprice=30000"
+       },
+    { 
+      title: "Above ₹50,000",
+      url1:"/earrings-jewellery?startprice=50001&endprice=200000",
+      url2:"/rings-jewellery?startprice=50001&endprice=200000",
+      url3:"/bangles-jewellery?startprice=50001&endprice=200000"
+     },
   ];
   const gifts3 = [
-    { title: "Gifts for men" },
-    { title: "Gifts for mom" },
-    { title: "Gifts for wife" },
-    { title: "Gifts for kids" },
-    { title: "Lightweight by STYLORI" },
-    { title: "Silver by STYLORI" },
+    { 
+      title: "Gifts for men",
+      url1:"#",
+      url2:"/rings-jewellery-rings-mens+collection",
+      url3:"/bracelets-jewellery-bracelets-mens+collection"
+     },
+    { 
+      title: "Gifts for mom",
+      url1:"/earrings-jewellery-for+female",
+      url2:"/rings-jewellery-for+female",
+      url3:"/bangles-jewellery-for+female"
+     },
+    {
+     title: "Gifts for wife",
+     url1:"/earrings-jewellery-for+female",
+     url2:"/rings-jewellery-for+female",
+     url3:"/bangles-jewellery-for+female"
+     },
+    {
+      title: "Gifts for kids",
+      url1:"/earrings-jewellery-for+kids",
+      url2:"/rings-jewellery-for+kids",
+      url3:"/bangles-jewellery-for+kids"
+    },
+    { 
+      title: "Lightweight by STYLORI",
+      url1:"/earrings-jewellery-earrings-stylori",
+      url2:"/rings-jewellery-rings-stylori",
+      url3:"/bangles-jewellery-bangles-stylori"
+     },
+    {
+     title: "Silver by STYLORI",
+     url1:"#",
+     url2:"#",
+     url3:"#"
+     },
   ];
   const gender = [
     { title: "Woman" },
@@ -163,173 +238,184 @@ function HeaderHoverMenuItem(props) {
     {
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Group+330%402x.png",
       content: "Studs",
-      url: "/studs-earrings-jewellery",
+      url: "/studs+and+tops-jewellery",
     },
     {
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/PRPpoy%402x.png",
       content: "Drops",
-      url: "/drops-earrings-jewellery",
+      url: "/drops+and+danglers-earrings-jewellery",
     },
     {
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/qyLKdg%402x.png",
       content: "Jhumkas",
-      url: "/jhumkas+online-earrings-jewellery",
+      url: "/jhumkas-jewellery",
     },
     {
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/NDUTnF%402x.png",
       content: "Earcuffs",
-      url: "/ear+cuffs-earrings-jewellery",
+      url: "/ear+cuffs-jewellery",
     },
     {
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/1SevWE%402x.png",
       content: <>Hoops&nbsp;&Huggies</>,
-      url: "/huggies-earrings-jewellery",
+      url: "/hoops+and+huggies-earrings-jewellery",
     },
 
     {
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/nkQJnj%402x.png",
       content: "Kids Earrings",
-      url: "/ear+jacket-earrings-jewellery",
+      url: "/earrings-jewellery-for+kids",
     },
     {
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/ZZJVeH%402x.png",
       content: "Pearl earring",
-      url: "/ear+jacket-earrings-jewellery",
+      url: "/#",
     },
     {
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/INe8h1%402x.png",
       content: <>LightWeight&nbsp;by&nbsp;Stylori</>,
-      url: "/ear+jacket-earrings-jewellery",
+      url: "/earrings-jewellery-earrings-stylori",
     },
   ];
   const ringsJewel = [
     {
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/rings/hBk9ve%402x.png",
       content: "Casual",
-      url: "/studs-earrings-jewellery",
+      url: "/casual+rings-jewellery",
     },
     {
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/rings/DzDcBv%402x.png",
       content: "Cocktail",
-      url: "/drops-earrings-jewellery",
+      url: "/cocktail-rings-jewellery",
     },
     {
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/rings/Ul3xhG%402x.png",
       content: "Fashion",
-      url: "/ear+cuffs-earrings-jewellery",
+      url: "#",
     },
     {
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/rings/xJu4r9%402x.png",
       content: "Bridal",
-      url: "/huggies-earrings-jewellery",
+      url: "/bridal+set-rings-jewellery",
     },
     {
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/rings/C1IQGq%402x.png",
       content: "Platinum rings",
-      url: "/jhumkas+online-earrings-jewellery",
+      url: "/buy+platinum-rings-jewellery",
     },
     {
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/rings/YE4CnD%402x.png",
       content: "Men's Rings",
-      url: "/ear+jacket-earrings-jewellery",
+      url: "/rings-jewellery-rings-mens+collection",
     },
     {
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/rings/JfQ2Pg%402x.png",
       content: <>Light&nbsp;weightby&nbsp;STYLORI</>,
-      url: "/ear+jacket-earrings-jewellery",
+      url: "/rings-jewellery-rings-stylori",
     },
   ];
   const banglesbracelets = [
     {
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/bangles%26bracelets/5Zna1n%402x.png",
       content: "Oval bracelts",
-      url: "/studs-earrings-jewellery",
+      url: "/oval-bracelets-jewellery",
     },
     {
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/bangles%26bracelets/6afKPj%402x.png",
       content: <>Tennies&nbsp;bracelets</>,
-      url: "/drops-earrings-jewellery",
+      url: "#",
     },
     {
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/bangles%26bracelets/GTmGEC%402x.png",
       content: <>LightWeight&nbsp;bangles</>,
-      url: "/ear+cuffs-earrings-jewellery",
+      url: "#",
     },
     {
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/bangles%26bracelets/yGnqN0%402x.png",
       content: <>Platinum&nbsp;Bracelets</>,
-      url: "/huggies-earrings-jewellery",
+      url: "buy+platinum-bracelets-jewellery",
     },
     {
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/bangles%26bracelets/iYTHDb%402x.png",
       content: "Mens bracelets",
-      url: "/jhumkas+online-earrings-jewellery",
+      url: "/bracelets-jewellery-bracelets-mens+collection",
     },
     {
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/bangles%26bracelets/MN2iaL%402x.png",
       content: "Kids bangles",
-      url: "/ear+jacket-earrings-jewellery",
+      url: "/bangles-jewellery-for+kids",
     },
     {
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/bangles%26bracelets/2wA3vs%402x.png",
       content: <>Lightweight&nbsp;by&nbsp;stylori</>,
-      url: "/ear+jacket-earrings-jewellery",
+      url: "/bracelets-jewellery-bracelets-stylori",
     },
   ];
   const collectionsData = [
     {
       title: "Traditional Setting",
+      url:"#",
       image:
         "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/SqY6sJ%402x.png",
     },
     {
       title: "Young Ones",
+      url:"/jewellery-young+ones",
       image:
         "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/bvtACp%402x.png",
     },
     {
       title: "Mens",
+      url:"/jewellery-mens+collection",
       image:
         "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/3keZ23%402x.png",
     },
     {
       title: "Mayura",
+      url:"/jewellery-mayura",
       image:
         "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/XEwpui%402x.png",
     },
     {
       title: "Fabula",
+      url:"/jewellery-fabula",
       image:
         "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/26P38o%402x.png",
     },
     {
       title: "Muhurtham",
+      url:"/jewellery-muhurtham",
       image:
         "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/lMysCt%402x.png",
     },
     {
       title: "Uncut",
+      url:"/jewellery-uncut",
       image:
         "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/z5pju4%402x.png",
     },
-    { title: "Jadau", image: "" },
+    { title: "Jadau", url:"/jadai-jewellery", image: "" },
     {
       title: "Nagas",
+      url:"/jewellery-nagas",
       image:
         "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/2FXfOD%402x.png",
     },
     {
       title: "Rewind",
+      url:"/jewellery-rewind",
       image:
         "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/UmsWiC%402x.png",
     },
     {
       title: "Strings",
+      url:"#",
       image:
         "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/xMJ8PJ%402x.png",
     },
     {
       title: "Forevermark",
+      url:"/jewellery-forevermark",
       image:
         "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/z6JNI6%402x.png",
     },
@@ -339,44 +425,126 @@ function HeaderHoverMenuItem(props) {
     {
       title: "NECKLACES",
       content: [
-        { itm: "Short" },
-        { itm: "Long" },
-        { itm: "Layered" },
-        { itm: "Bridal" },
+        { 
+          itm: "Short",
+          url:"/short+necklace-necklaces-jewellery"
+         },
+        { 
+          itm: "Long",
+          url:"/long+haram-necklaces-jewellery"
+        },
+        { 
+          itm: "Layered",
+          url:"#"
+         },
+        { 
+          itm: "Bridal",
+          url:"/bridal+necklace-necklaces-jewellery"
+         },
       ],
     },
     {
       title: "PENDANTS",
-      content: [{ itm: "Casual" }, { itm: "Bridal" }, { itm: "Religious" }],
+      content: [
+        { 
+          itm: "Casual",
+          url:"/casual+rings-pendants-jewellery"
+         }, 
+         {
+          itm: "Bridal",
+          url:"/bridal+necklace-pendants-jewellery"
+         },
+         { 
+           itm: "Religious" ,
+           url:"/pendants-jewellery-special+occasion,festive"
+          }],
     },
     {
       title: "SHOP BY PRICE",
       content: [
-        { itm: "Below ₹10,000" },
-        { itm: "₹10,001 - ₹25,000" },
-        { itm: "₹25,001 - ₹50,000" },
-        { itm: "Above ₹50,000" },
+        { 
+          itm: "Below ₹10,000",
+          url:"/jewellery?startprice=1000&endprice=10000"
+         },
+        { 
+          itm: "₹10,001 - ₹25,000",
+          url:"/jewellery?startprice=10001&endprice=20000"
+         },
+        { 
+          itm: "₹25,001 - ₹50,000",
+          url:"/jewellery?startprice=20001&endprice=30000" 
+        },
+        { 
+          itm: "Above ₹50,000",
+          url:"/jewellery?startprice=50001&endprice=200000" 
+        },
       ],
     },
     {
       title: "SHOP MORE",
       content: [
-        { itm: "Nose Pins" },
-        { itm: "Chains" },
-        { itm: "Platinum Brands" },
-        { itm: "Bridal Accessories" },
-        { itm: "Odiyanam" },
-        { itm: "Anklets" },
+        { 
+          itm: "Nose Pins",
+          url:"/nosepin-jewellery"
+         },
+        { 
+          itm: "Chains",
+          url:"/chains-jewellery"
+         },
+        { 
+          itm: "Platinum Brands",
+          url:"/buy+platinum-jewellery"
+         },
+        { 
+          itm: "Bridal Accessories",
+          url:"/bridal+set-jewellery"
+         },
+        { 
+          itm: "Odiyanam",
+          url:"/oddiyanam-jewellery"
+         },
+        { 
+          itm: "Anklets",
+          url:"/anklets-jewellery"
+         },
       ],
     },
     {
       title: "STYLORI",
-      content: [{ itm: "Gold & Diamond" }, { itm: "Silver" }],
+      content: [
+        {
+           itm: "Gold & Diamond",
+           url:"/diamond-jewellery-stylori"
+          }, 
+        { 
+          itm: "Silver",
+          url:"#"
+         }],
     },
-    { title: "Gold Coins", content: [{ itm: "22ct" }, { itm: "24ct" }] },
+    { 
+      title: "GOLD COINS", 
+      content: [
+        { itm: "22ct",
+        url:"#"
+       }, 
+       { itm: "24ct",
+       url:"#"
+       }] },
     {
-      title: <>Shop&nbsp;All&nbsp;Jewellery</>,
-      content: [{ itm: "For men" }, { itm: "For women" }, { itm: "For kids" }],
+      title: <>SHOP&nbsp;ALL&nbsp;JEWELLERY    </>,
+      content: [
+        { 
+          itm: "For men",
+          url:"/jewellery-mens+collection"
+         }, 
+         { 
+           itm: "For women",
+           url:"/jewellery-for+female"
+         },
+         { 
+           itm: "For kids",
+           url:"/jewellery-for+kids"
+         }],
     },
   ];
 
@@ -443,30 +611,37 @@ function HeaderHoverMenuItem(props) {
       contents: [
         {
           sub: "Round",
+          url:"/round-jewellery",
           img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Group+319.svg",
         },
         {
           sub: "Princess",
+          url:"#",
           img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Group+321.svg",
         },
         {
           sub: "Oval",
+          url:"/oval-jewellery",
           img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Group+325.svg",
         },
         {
           sub: "Heart",
+          url:"#",
           img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Ellipse+3.svg",
         },
         {
           sub: "Cushion",
+          url:"#",
           img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
         },
         {
           sub: "Pear",
+          url:"",
           img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
         },
         {
           sub: "Emerald",
+          url:"/emerald+uncut+dia-jewellery",
           img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
         },
       ],
@@ -477,10 +652,22 @@ function HeaderHoverMenuItem(props) {
     {
       title: "Shop by price",
       contents: [
-        { itm: "Below ₹10,000" },
-        { itm: "₹10,001 - ₹25,000" },
-        { itm: "₹25,001 - ₹50,000" },
-        { itm: "Above ₹50,000" },
+        { 
+          itm: "Below ₹10,000",
+          url:"#"
+        },
+        { 
+          itm: "₹10,001 - ₹25,000",
+          url:"#"
+        },
+        { 
+          itm: "₹25,001 - ₹50,000",
+          url:"#"
+        },
+        { 
+          itm: "Above ₹50,000",
+          url:"#"
+        },
       ],
     },
   ];
@@ -547,31 +734,37 @@ function HeaderHoverMenuItem(props) {
   const solitaireData = [
     {
       title: "Rings",
+      url:"/rings-jewellery",
       image:
         "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/solitaire/Ul3xhG%402x.png",
     },
     {
       title: "Earrings",
+      url:"/earrings-jewellery",
       image:
         "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/solitaire/Ul3xhG%402x.png",
     },
     {
       title: "Necklaces",
+      url:"/necklaces-jewellery",
       image:
         "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/solitaire/OxwFfP%402x.png",
     },
     {
       title: <>Bangles&nbsp;and&nbsp;bracelets</>,
+      url:"/bracelets-jewellery",
       image:
         "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/solitaire/MN2iaL%402x.png",
     },
     {
       title: "Pendants",
+      url:"/pendants-jewellery",
       image:
         "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/solitaire/1SevWE%402x.png",
     },
     {
       title: "Men's rings",
+      url:"/rings-jewellery-rings-mens+collections",
       image:
         "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/solitaire/YE4CnD%402x.png",
     },
@@ -598,7 +791,6 @@ function HeaderHoverMenuItem(props) {
       return imageForEarRings;
     }
   };
-
 
   const ForCollections = () => {
     return (
@@ -704,9 +896,6 @@ function HeaderHoverMenuItem(props) {
                     <Grid
                       container
                       className={classes.imgcont}
-                      onClick={() => {
-                        window.location.href = val.url;
-                      }}
                       justify="center"
                       alignContent="center"
                       alignItems="center"
@@ -724,6 +913,7 @@ function HeaderHoverMenuItem(props) {
                           {val.title}
                         </Typography>
                       </Grid>
+                      {val.content.map((item, i) => (
                       <Grid
                         item
                         xs={12}
@@ -733,13 +923,15 @@ function HeaderHoverMenuItem(props) {
                           display: "block",
                           paddingTop:"13px"
                         }}
+                        onClick={() => {
+                        window.location.href = item.url;
+                      }}
                       >
-                        {val.content.map((item, i) => (
-                          <Typography className={classes.listedItemsvalue} style={{paddingTop:"12px"}}>
+                          <Typography className={classes.listedItemsvalue}>
                             {item.itm}
                           </Typography>
-                        ))}
                       </Grid>
+                      ))}
                     </Grid>
                   </Grid>
                 );
@@ -853,9 +1045,11 @@ function HeaderHoverMenuItem(props) {
                     <Grid
                       container
                       className={classes.imgcont}
-                      onClick={() => {
+                      onClick={
+                        () => {
                         window.location.href = val.url;
-                      }}
+                      }
+                      }
                       justify="center"
                       alignContent="center"
                       alignItems="center"
@@ -911,7 +1105,13 @@ function HeaderHoverMenuItem(props) {
                         container
                         className={classes.imgcont}
                         onClick={() => {
-                          window.location.href = val.url;
+                          if (props.listitem === "EARRINGS") {
+                            return window.location.href = val.url1;
+                          } else if (props.listitem === "RINGS") {
+                            return window.location.href = val.url2;
+                          } else if (props.listitem === "BANGLES & BRACELETS") {
+                            return window.location.href = val.url3;
+                          }
                         }}
                         justify="center"
                         alignContent="center"
@@ -947,7 +1147,13 @@ function HeaderHoverMenuItem(props) {
                         container
                         className={classes.imgcont}
                         onClick={() => {
-                          window.location.href = val.url;
+                          if (props.listitem === "EARRINGS") {
+                            return window.location.href = val.url1;
+                          } else if (props.listitem === "RINGS") {
+                            return window.location.href = val.url2;
+                          } else if (props.listitem === "BANGLES & BRACELETS") {
+                            return window.location.href = val.url3;
+                          }
                         }}
                         // justify="center"
                         alignContent="center"
@@ -981,7 +1187,13 @@ function HeaderHoverMenuItem(props) {
                         container
                         className={classes.imgcont}
                         onClick={() => {
-                          window.location.href = val.url;
+                          if (props.listitem === "EARRINGS") {
+                            return window.location.href = val.url1;
+                          } else if (props.listitem === "RINGS") {
+                            return window.location.href = val.url2;
+                          } else if (props.listitem === "BANGLES & BRACELETS") {
+                            return window.location.href = val.url3;
+                          }
                         }}
                         // justify="center"
                         alignContent="center"

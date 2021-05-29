@@ -51,6 +51,7 @@ export const routes = {
   Blog: "/blog",
   Solitaires: "/solitaires",
   CollectionPage:"/collectionPage",
+  CollectionFullPage:"/CollectionFullPage"
 };
 
 export default routes;

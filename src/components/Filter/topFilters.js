@@ -142,7 +142,7 @@ export const TopFilters = (props) => {
                 >
                   <Grid container item xl={9} className={classes.spacingfilterdiv}>
                     <Grid item className={classes.filtersLabel}>
-                      <a>{"Price (₹)"}</a>
+                      <a style={{color:"#fff"}}>{"Price (₹)"}</a>
                     </Grid>
                     <Grid item xs={3} style={{ display: "flex", justifyContent: "flex-end" }}>
                       {state.listHoverItem === "price" ? (
@@ -182,7 +182,7 @@ export const TopFilters = (props) => {
                       >
                         <Grid container item xl={12} className={classes.spacingfilterdiv}>
                           <Grid item xs={9} className={classes.filtersLabel}>
-                            <a href={listName.url}>{listName}</a>
+                            <a style={{color:"#fff"}} href={listName.url}>{listName}</a>
                           </Grid>
                           <Grid
                             item
