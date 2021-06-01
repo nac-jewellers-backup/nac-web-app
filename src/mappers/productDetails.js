@@ -618,7 +618,7 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                       : "",
                     PD?.productListByProductId?.productDiamondsByProductSku?.nodes[0]?.itemName
                       ? {
-                          name: "Item Name",
+                          name: "Diamond Name",
                           details: PD?.productListByProductId?.productDiamondsByProductSku?.nodes[0]?.itemName,
                         }
                       : "",
@@ -768,7 +768,7 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                       : "",
                     PD?.productListByProductId?.productGemstonesByProductSku?.nodes[0]?.itemName
                       ? {
-                          name: "Item Name",
+                          name: "Gemstone Name",
                           details: PD?.productListByProductId?.productGemstonesByProductSku?.nodes[0]?.itemName,
                         }
                       : "",
