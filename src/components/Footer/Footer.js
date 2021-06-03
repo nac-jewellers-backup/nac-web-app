@@ -1,13 +1,6 @@
 import React from "react";
 
-import {
-  Grid,
-  Button,
-  Hidden,
-  Container,
-  Typography,
-  TextField,
-} from "@material-ui/core";
+import { Grid, Button, Hidden, Container, Typography, TextField } from "@material-ui/core";
 import List from "@material-ui/core/List";
 import { makeStyles } from "@material-ui/core/styles";
 import cartoonFooter from "../../assets/cartoonFooter.png";
@@ -258,8 +251,8 @@ const useStyles = makeStyles((theme) => ({
     background: "#33366D",
     color: "white",
     fontSize: "15px",
-    boxShadow:"2px 3px 6px 2px #888888",
-    borderRadius:"0",
+    boxShadow: "2px 3px 6px 2px #888888",
+    borderRadius: "0",
     "&:hover": {
       background: "#33366D",
       color: "white",
@@ -355,7 +348,7 @@ export default function Footer(props) {
     {
       row: [
         {
-          url: "#",
+          url: "/store",
           Title: "Store Locator",
         },
         // {
@@ -363,11 +356,11 @@ export default function Footer(props) {
         //   Title: "Collections",
         // },
         {
-          url: "/",
+          url: "/education",
           Title: "Education",
         },
         {
-          url: "/",
+          url: "/sitemap",
           Title: "Site Map",
         },
         {
@@ -383,15 +376,15 @@ export default function Footer(props) {
           Title: "Temple Work",
         },
         {
-          url: "C",
+          url: "/termsconditions",
           Title: "Terms & Condition",
         },
         {
-          url: "",
+          url: "https://www.google.co.in/maps/@13.0457285,80.2325498,3a,75y,281.19h,87.03t/data=!3m7!1e1!3m5!1siBMPPhrps9EAAAQ0H3M5OQ!2e0!3e2!7i13312!8i6656!6m1!1e1",
           Title: "360 Store View",
         },
         {
-          url: "",
+          url: "/faqs",
           Title: "FAQ",
         },
       ],
@@ -399,19 +392,7 @@ export default function Footer(props) {
     {
       row: [
         {
-          url: "",
-          Title: "30 Days Return",
-        },
-        {
-          url: "",
-          Title: "Track Order",
-        },
-        {
-          url: "",
-          Title: "Delivery Into",
-        },
-        {
-          url: "",
+          url: "/privacy",
           Title: "Privacy Policy",
         },
       ],
@@ -607,10 +588,7 @@ export default function Footer(props) {
     },
   ];
   const status = (response) => {
-    if (
-      (response.status >= 200 && response.status < 300) ||
-      response.status === 409
-    ) {
+    if ((response.status >= 200 && response.status < 300) || response.status === 409) {
       if (response.status === 409) setStateClassname("snackBarError");
       else setStateClassname("snackBar");
       return Promise.resolve(response);
@@ -643,16 +621,11 @@ export default function Footer(props) {
       element_input.classList.add("error");
       element.classList.add("error");
       return;
-    } else if (
-      !Boolean(document.getElementById("_input").value.match(emailvld))
-    ) {
+    } else if (!Boolean(document.getElementById("_input").value.match(emailvld))) {
       element_input.classList.add("error");
       element.classList.add("error");
       return;
-    } else if (
-      document.getElementById("_input").value.length > 0 &&
-      document.getElementById("_input").value.match(emailvld)
-    ) {
+    } else if (document.getElementById("_input").value.length > 0 && document.getElementById("_input").value.match(emailvld)) {
       fetch(`${API_URL}/addemailsubscription`, {
         method: "post",
         headers: {
@@ -723,12 +696,7 @@ export default function Footer(props) {
         <Container>
           <Grid container item xs={12} style={{ marginTop: 40 }}>
             <Grid container item xs={12} alignItems="center">
-              <Grid
-                container
-                item
-                xs={12}
-                style={{ color: "white", fontSize: "14px" }}
-              >
+              <Grid container item xs={12} style={{ color: "white", fontSize: "14px" }}>
                 {footerData.map((data, i) => {
                   return (
                     <Grid item xs={2}>
@@ -831,10 +799,7 @@ export default function Footer(props) {
                     {/* <Grid item className={classes.footerSocialIcons}> */}
                     <div className={classes.socialdiv}>
                       <div className={classes.social}>
-                        <a
-                          target="_blank"
-                          href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`}
-                        >
+                        <a target="_blank" href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`}>
                           {/* <i
                           style={{
                             fontSize: "24px",
@@ -849,7 +814,12 @@ export default function Footer(props) {
                             src={
                               "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_footer/Path+52.svg"
                             }
-                            style={{ width: "40px", height: "auto", borderRadius:"20px 20px",boxShadow:"2px 3px 6px 2px #888888" }}
+                            style={{
+                              width: "40px",
+                              height: "auto",
+                              borderRadius: "20px 20px",
+                              boxShadow: "2px 3px 6px 2px #888888",
+                            }}
                           />
                         </a>
                       </div>
@@ -873,15 +843,17 @@ export default function Footer(props) {
                             src={
                               "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_footer/Path+53.svg"
                             }
-                            style={{ width: "40px", height: "auto",borderRadius:"20px 20px",boxShadow:"2px 3px 6px 2px #888888" }}
+                            style={{
+                              width: "40px",
+                              height: "auto",
+                              borderRadius: "20px 20px",
+                              boxShadow: "2px 3px 6px 2px #888888",
+                            }}
                           />
                         </a>
                       </div>
                       <div className={classes.social}>
-                        <a
-                          target="_blank"
-                          href="https://instagram.com/stylorilove"
-                        >
+                        <a target="_blank" href="https://instagram.com/stylorilove">
                           <i
                             style={{
                               fontSize: "32px",
@@ -898,15 +870,17 @@ export default function Footer(props) {
                             src={
                               "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_footer/Path+54.svg"
                             }
-                            style={{ width: "40px", height: "auto",borderRadius:"20px 20px",boxShadow:"2px 3px 6px 2px #888888"  }}
+                            style={{
+                              width: "40px",
+                              height: "auto",
+                              borderRadius: "20px 20px",
+                              boxShadow: "2px 3px 6px 2px #888888",
+                            }}
                           />
                         </a>
                       </div>
                       <div className={classes.social}>
-                        <a
-                          target="_blank"
-                          href="https://www.youtube.com/c/stylori"
-                        >
+                        <a target="_blank" href="https://www.youtube.com/c/stylori">
                           <i
                             style={{
                               position: "absolute",
@@ -924,15 +898,17 @@ export default function Footer(props) {
                             src={
                               "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_footer/Path+57.svg"
                             }
-                            style={{ width: "40px", height: "auto",borderRadius:"20px 20px",boxShadow:"2px 3px 6px 2px #888888"  }}
+                            style={{
+                              width: "40px",
+                              height: "auto",
+                              borderRadius: "20px 20px",
+                              boxShadow: "2px 3px 6px 2px #888888",
+                            }}
                           />
                         </a>
                       </div>
                       <div className={classes.social}>
-                        <a
-                          target="_blank"
-                          href="https://in.pinterest.com/stylori2015/"
-                        >
+                        <a target="_blank" href="https://in.pinterest.com/stylori2015/">
                           {/* <i
                           style={{
                             fontSize: "24px",
@@ -947,7 +923,12 @@ export default function Footer(props) {
                             src={
                               " https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_footer/nQjOPg.tif.svg"
                             }
-                            style={{ width: "40px", height: "auto",borderRadius:"20px 20px",boxShadow:"2px 3px 6px 2px #888888"  }}
+                            style={{
+                              width: "40px",
+                              height: "auto",
+                              borderRadius: "20px 20px",
+                              boxShadow: "2px 3px 6px 2px #888888",
+                            }}
                           />
                         </a>
                       </div>
@@ -1106,9 +1087,7 @@ export default function Footer(props) {
                     />
                   </Grid>
                   <Grid item>
-                    <p className={classes.rights}>
-                      @NAC Jewellers Pvt.Ltd. All rights reserved
-                    </p>
+                    <p className={classes.rights}>@NAC Jewellers Pvt.Ltd. All rights reserved</p>
                   </Grid>
                 </Grid>
               </Grid>
@@ -1178,9 +1157,7 @@ export default function Footer(props) {
                     expanded: classes.accordionExpand,
                   }}
                 >
-                  <Typography className={classes.headingMobile}>
-                    {data.Title}
-                  </Typography>
+                  <Typography className={classes.headingMobile}>{data.Title}</Typography>
                 </AccordionSummary>
                 <AccordionDetails className={classes.bodyMobile}>
                   <div className={classes.line}></div>
@@ -1231,12 +1208,7 @@ export default function Footer(props) {
                         </Grid>
                     </Grid> */}
 
-          <Grid
-            item
-            sm={12}
-            xs={12}
-            style={{ textAlign: "center", margin: "10px 0 10px 0" }}
-          >
+          <Grid item sm={12} xs={12} style={{ textAlign: "center", margin: "10px 0 10px 0" }}>
             <Button
               style={{
                 background: "#33366D",
@@ -1300,11 +1272,7 @@ export default function Footer(props) {
                   &#xf09a;
                 </i>
               </a>
-              <a
-                class="valuesallow"
-                target="_blank"
-                href="https://in.pinterest.com/stylori2015/"
-              >
+              <a class="valuesallow" target="_blank" href="https://in.pinterest.com/stylori2015/">
                 <i
                   style={{
                     fontSize: "24px",
@@ -1316,11 +1284,7 @@ export default function Footer(props) {
                   &#xf231;
                 </i>
               </a>
-              <a
-                class="valuesallow"
-                target="_blank"
-                href="https://instagram.com/stylorilove"
-              >
+              <a class="valuesallow" target="_blank" href="https://instagram.com/stylorilove">
                 <i
                   style={{
                     fontSize: "24px",
@@ -1332,11 +1296,7 @@ export default function Footer(props) {
                   &#xf16d;
                 </i>
               </a>
-              <a
-                class="valuesallow"
-                target="_blank"
-                href="https://www.youtube.com/c/stylori"
-              >
+              <a class="valuesallow" target="_blank" href="https://www.youtube.com/c/stylori">
                 <i
                   style={{
                     fontSize: "24px",
