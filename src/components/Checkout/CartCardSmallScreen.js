@@ -125,6 +125,8 @@ function MediaControlCard(props) {
       // alert(JSON.stringify( [image_urls]))
     }
   };
+
+  console.log(props, "aaaaaaaaaaaaaaaaaaaaaaaaaaa")
   return (
     <div style={{ paddingTop: "10px" }}>
       {/* <Grid container>
@@ -143,106 +145,77 @@ function MediaControlCard(props) {
         dataval.productsDetails.map((val) => {
           return (
             <Card className={classes.card}>
-              {/* {dataval.productsDetails[0].namedetail.map((val) =>
-                dataval.fadeImages.map((val_imgUrl) => {
-                  return filter_image(val_imgUrl, val.name, val.details) &&
-                    filter_image(val_imgUrl, val.name, val.details).length > 0 ? (
-                    window.location.pathname !== "/checkout" ? (
-                      <div style={{ width: "195px" }}>
-                        <NavLink
-                          to={`jewellery/${dataval.productType}/${dataval.materialName[0]}/${val.pro_header}?skuId=${dataval.generatedSku}`}
-                          style={{ textDecoration: "none" }}
-                        >
-                          <img src={filter_image(val_imgUrl, val.name, val.details)} width="100%" height="100%" alt="" />
-                        </NavLink>
-                      </div>
-                    ) : (
-                      <div style={{ width: "195px" }}>
-                        <img src={filter_image(val_imgUrl, val.name, val.details)} width="100%" height="100%" alt="" />
-                      </div>
-                    )
-                  ) : null;
-                })
-              )} */}
-              {window.location.pathname !== "/checkout" ? (
-                <NavLink to={dataval?.skuUrl} style={{ textDecoration: "none" }}>
+              <Grid xs={6}>
+                {window.location.pathname !== "/checkout" ? (
+                  <NavLink to={dataval?.skuUrl} style={{ textDecoration: "none" }}>
+                    <img width="100%" height="100%" src={dataval?.fadeImages[0]?.imageUrl}></img>
+                  </NavLink>
+                ) : (
                   <img width="100%" height="100%" src={dataval?.fadeImages[0]?.imageUrl}></img>
-                </NavLink>
-              ) : (
-                <img width="100%" height="100%" src={dataval?.fadeImages[0]?.imageUrl}></img>
-              )}
-              <div className={classes.details}>
-                <CardContent className={classes.content}>
-                  {window.location.pathname !== "/checkout" ? (
-                    <NavLink
-                      to={`jewellery/${dataval.productType}/${dataval.materialName[0]}/${val.pro_header}?skuId=${dataval.generatedSku}`}
-                      style={{ textDecoration: "none" }}
-                    >
+                )}
+              </Grid>
+              <Grid xs={6}>
+                <div className={classes.details}>
+                  <CardContent className={classes.content}>
+                    {window.location.pathname !== "/checkout" ? (
+                      <NavLink
+                        to={`jewellery/${dataval.productType}/${dataval.materialName[0]}/${val.pro_header}?skuId=${dataval.generatedSku}`}
+                        style={{ textDecoration: "none" }}
+                      >
+                        <Typography component="div" variant="subtitle1" className={`${classes.contents} ${classes.normalfonts}`}>
+                          {val.pro_header}
+                        </Typography>
+                      </NavLink>
+                    ) : (
                       <Typography component="div" variant="subtitle1" className={`${classes.contents} ${classes.normalfonts}`}>
                         {val.pro_header}
                       </Typography>
-                    </NavLink>
-                  ) : (
-                    <Typography component="div" variant="subtitle1" className={`${classes.contents} ${classes.normalfonts}`}>
-                      {val.pro_header}
-                    </Typography>
-                  )}
-                  {dataval.dataCard1.map((val) => (
-                    <Pricing price={val.price} offerPrice={val.offerPrice} offerDiscount={"25% - OFF"}>
-                      <label className={classes.labelPrice}>
-                        <Typography variant="subtitle1" color="textSecondary" className={classes.labelPriceDel}>
-                          <del>{val.offerPrice}</del>
-                        </Typography>
-                        &nbsp;
-                        <Typography variant="subtitle1" style={{ color: "#ED1165" }} className={classes.labelPriceOff}>
-                          {val.price}
-                        </Typography>
-                        <Typography variant="subtitle1" color="textSecondary" className={classes.labelPriceDel}>
-                          <del>{val.offerPrice}</del>
-                        </Typography>
-                      </label>
-                    </Pricing>
-                  ))}
-                </CardContent>
-                <div className={classes.controls}>
-                  {/* <NavLink to="/checkout" style={{ textDecoration: 'none' }}>
-          <Button
-            className={`btn-cart-resp ${classes.buttons}`}
-            variant="contained"
-            style={{
-              color: "white",
-              fontSize: "0.7rem"
-            }}
-          >
-            Buy Now
-  </Button>
-        </NavLink> */}
-                  {window.location.pathname !== "/checkout" ? (
-                    <div
-                      variant="contained"
-                      style={{ cursor: "pointer", fontSize: "0.9rem" }}
-                      className={`${classes.normalfonts} ${classes.controls}`}
-                      className="highliter"
-                    >
-                      &nbsp;
+                    )}
+                    {dataval.dataCard1.map((val) => (
+                      <Pricing price={val.price} offerPrice={val.offerPrice} offerDiscount={"25% - OFF"}>
+                        <label className={classes.labelPrice}>
+                          <Typography variant="subtitle1" color="textSecondary" className={classes.labelPriceDel}>
+                            <del>{val.offerPrice}</del>
+                          </Typography>
+                          &nbsp;
+                          <Typography variant="subtitle1" style={{ color: "#ED1165" }} className={classes.labelPriceOff}>
+                            {val.price}
+                          </Typography>
+                          <Typography variant="subtitle1" color="textSecondary" className={classes.labelPriceDel}>
+                            <del>{val.offerPrice}</del>
+                          </Typography>
+                        </label>
+                      </Pricing>
+                    ))}
+                  </CardContent>
+                  <div>
+                    {window.location.pathname !== "/checkout" ? (
                       <div
-                        id={dataval.generatedSku}
+                        variant="contained"
+                        style={{ cursor: "pointer", fontSize: "0.9rem" }}
+                        className={`${classes.normalfonts} ${classes.controls}`}
                         className="highliter"
-                        productid={dataval}
-                        onClick={(e) => handleDeleteLocalStorage(e, val)}
                       >
-                        <i style={{ fontSize: "16px" }} class="fa">
-                          {" "}
-                          &#xf014;
-                        </i>
-                        &nbsp;<span className="highliter">Remove</span>
+                        &nbsp;
+                        <div
+                          id={dataval.generatedSku}
+                          className="highliter"
+                          productid={dataval}
+                          onClick={(e) => handleDeleteLocalStorage(e, val)}
+                        >
+                          <i style={{ fontSize: "16px" }} class="fa">
+                            {" "}
+                            &#xf014;
+                          </i>
+                          &nbsp;<span className="highliter">Remove</span>
+                        </div>
                       </div>
-                    </div>
-                  ) : (
-                    ""
-                  )}{" "}
+                    ) : (
+                      ""
+                    )}{" "}
+                  </div>
                 </div>
-              </div>
+              </Grid>
             </Card>
           );
         })

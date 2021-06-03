@@ -341,7 +341,6 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
   try {
     // mapperda = ;
     mapperdata = data.data.allTransSkuLists.nodes;
-    
   } catch (error) {
     mapperdata = [];
   }
@@ -609,17 +608,16 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                             generatedDiamondType(PD, PD.productListByProductId.productDiamondsByProductSku.nodes, "diamondShape"),
                         }
                       : "",
-
+                    PD?.productListByProductId?.productDiamondsByProductSku?.nodes[0]?.subItemName
+                      ? {
+                          name: "Diamond Name",
+                          details: PD?.productListByProductId?.productDiamondsByProductSku?.nodes[0]?.subItemName,
+                        }
+                      : "",
                     PD?.productListByProductId?.productDiamondsByProductSku?.nodes[0]?.description
                       ? {
                           name: "Description",
                           details: PD?.productListByProductId?.productDiamondsByProductSku?.nodes[0]?.description,
-                        }
-                      : "",
-                    PD?.productListByProductId?.productDiamondsByProductSku?.nodes[0]?.itemName
-                      ? {
-                          name: "Diamond Name",
-                          details: PD?.productListByProductId?.productDiamondsByProductSku?.nodes[0]?.itemName,
                         }
                       : "",
                   ]
@@ -759,17 +757,17 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                                 ),
                         }
                       : "",
+                    PD?.productListByProductId?.productGemstonesByProductSku?.nodes[0]?.subItemName
+                      ? {
+                          name: "Gemstone Name",
+                          details: PD?.productListByProductId?.productGemstonesByProductSku?.nodes[0]?.subItemName,
+                        }
+                      : "",
 
                     PD?.productListByProductId?.productGemstonesByProductSku?.nodes[0]?.description
                       ? {
                           name: "Description",
                           details: PD?.productListByProductId?.productGemstonesByProductSku?.nodes[0]?.description,
-                        }
-                      : "",
-                    PD?.productListByProductId?.productGemstonesByProductSku?.nodes[0]?.itemName
-                      ? {
-                          name: "Gemstone Name",
-                          details: PD?.productListByProductId?.productGemstonesByProductSku?.nodes[0]?.itemName,
                         }
                       : "",
                   ]
@@ -782,8 +780,14 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
               {
                 name: "Metal",
                 details: [
-                  calculatetotalss(PD.pricingSkuMetalsByProductSku.nodes, "goldprice"),
-                  calculatetotalm(PD.pricingSkuMetalsByProductSku.nodes, "goldprice"),
+                  PD?.pricingSkuMetalsByProductSku?.nodes[0]?.sellingPrice
+                    ? PD?.pricingSkuMetalsByProductSku?.nodes[0]?.sellingPrice
+                    : "",
+                  PD?.pricingSkuMetalsByProductSku?.nodes[0]?.sellingPrice
+                    ? PD?.pricingSkuMetalsByProductSku?.nodes[1]?.sellingPrice
+                    : "",
+                  // calculatetotalss(PD.pricingSkuMetalsByProductSku.nodes, "goldprice", "makingcharge"),
+                  // calculatetotalm(PD.pricingSkuMetalsByProductSku.nodes, "goldprice", "sellingPrice"),
                 ],
               },
               {
@@ -851,7 +855,7 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                     style: "currency",
                     currency: "INR",
                     minimumFractionDigits: 0,
-                  }).format(Math.round(PD.discountPrice)),
+                  }).format(Math.round(PD.markupPrice)),
                   new Intl.NumberFormat("en-IN", {
                     style: "currency",
                     currency: "INR",

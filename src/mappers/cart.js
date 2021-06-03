@@ -1,4 +1,4 @@
-  import moment from "moment";
+import moment from "moment";
 // export const productsDetails = [
 //     {
 //         header: "Product Details",
@@ -143,6 +143,8 @@ export default function (data) {
         shipby: generateShipsBy(k.isReadyToShip, k.vendorDeliveryTime),
         isReadyToShip: k.isReadyToShip,
         isActive: k.productListByProductId.isactive,
+        // sellingPrice: k?.sellingPrice,
+        // markupPrice: k?.markupPrice,
         productsDetails: [
           //                     Quality
           // Metal
@@ -202,7 +204,7 @@ export default function (data) {
         dataCard1: [
           {
             offerPrice: k.markupPrice,
-            price: k.discountPrice,
+            price: k.sellingPrice,
             title: "Diamond Pendant Ring",
             dis: "Pendants set in 18 Kt Yellow Gold 3.95 gm with Diamonds (0.52 ct, GH - SI )",
             save: "5999.9",

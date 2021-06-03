@@ -26,6 +26,7 @@ export const PRODUCTDETAILS = `query MyQuery(
       vendorDeliveryTime
       discountPriceTax
       markupPriceTax
+      skuUrl
       transSkuDescriptionsBySkuId {
         nodes {
           skuDescription
@@ -56,7 +57,10 @@ export const PRODUCTDETAILS = `query MyQuery(
             stoneCount
             description
             itemName
-            
+            stoneAmount
+            subItemName
+            stoneCont
+            stoneRate
           }
         }
         productGemstonesByProductSku {
@@ -70,7 +74,10 @@ export const PRODUCTDETAILS = `query MyQuery(
             stoneWeight
             description
             itemName
-            
+            stoneAmount
+            subItemName
+            stoneAmount
+            stoneRate
           }
         }
         productImagesByProductId(
@@ -91,6 +98,8 @@ export const PRODUCTDETAILS = `query MyQuery(
           discountPrice
           sellingPrice
           markup
+          costPrice
+          marginPercentage
         }
       }
       pricingSkuMetalsByProductSku {
@@ -99,14 +108,13 @@ export const PRODUCTDETAILS = `query MyQuery(
           discountPrice
           sellingPrice
           markup
+          costPrice
+          marginPercentage
         }
       }
     }
   }
 }
-
-
-
 
 `;
 export const CheckForCod = `query CheckForCod($pincode:String) {
