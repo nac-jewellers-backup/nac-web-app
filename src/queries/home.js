@@ -22,3 +22,19 @@ export const testimonials = `query testimonials {
       }
     }
   }`
+
+  export const ALLBANNERS = `
+  query MyQuery {
+    allBanners(condition: {urlParam: "landing"})
+    {
+      nodes {
+        id
+        mobile
+        position
+        url
+        web
+        urlParam 
+      }
+    }
+  }
+  `;
