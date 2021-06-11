@@ -38,3 +38,19 @@ export const testimonials = `query testimonials {
     }
   }
   `;
+
+export const ALLBANNERSCOMPLETE = `
+  query MyQuery {
+    allBanners
+    {
+      nodes {
+        id
+        mobile
+        position
+        url
+        web
+        urlParam 
+      }
+    }
+  }
+  `;
