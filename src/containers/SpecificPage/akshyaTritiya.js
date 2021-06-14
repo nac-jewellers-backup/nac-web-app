@@ -17,7 +17,6 @@ import { header, dummyData } from "./dummyDataSpecific";
 import { ImgMediaCard } from "../../components/ProductCard/Card";
 import ArrowRightIcon from "@material-ui/icons/ArrowRight";
 import ArrowLeftIcon from "@material-ui/icons/ArrowLeft";
-import "./specificPage.css";
 import Footer from "../../components/Footer/Footer";
 import { API_URL } from "../../config";
 import { ALLBANNERSCOMPLETE } from "../../queries/home";
@@ -99,7 +98,28 @@ const useStyles = makeStyles((theme) => ({
     outline: "none !important",
     position: "relative",
   },
-
+  imgBtn:{
+    width:"100%",
+    fontStyle:"italic",
+    backgroundColor:"#2E348A",
+    color:"#fff",
+    borderRadius:"0px",
+    top:"-4px",
+    padding:"10px 0px",
+    textAlign:"center",
+  },
+  storeImage:{
+    maxHeight:"700px",
+    [theme.breakpoints.down("md")]: {
+      minHeight:"580px"
+    },
+    [theme.breakpoints.down("sm")]:{
+      minHeight:"555px"
+    },
+    [theme.breakpoints.down("xs")]:{
+      minHeight:"400px"
+    },
+  },
   mainCarosel: {
     width: "100%",
     [theme.breakpoints.up("md")]: {
@@ -130,6 +150,12 @@ const useStyles = makeStyles((theme) => ({
   formArea: {
     padding: "50px 75px",
     backgroundColor: "#F4F4F4",
+    [theme.breakpoints.down("md")]: {
+      padding: "35px 45px",
+    },
+    [theme.breakpoints.down("sm")]:{
+      padding: "35px 25px",
+    },
   },
   inputFieldsHeader: {
     paddingBottom: "5px",
@@ -147,13 +173,83 @@ const useStyles = makeStyles((theme) => ({
     "&:hover": {
       backgroundColor: "#9b6706",
     },
+    [theme.breakpoints.down("xs")]:{
+      fontSize: "small",
+      padding: "3px 50px",
+    },
   },
   totalFormArea: {
-    width: "80%",
+    width: "83%",
     margin: "auto",
     padding: "55px 0px 65px 0px",
-    boxShawdow: "6px 7px 6px #bebfbf !important"
+    boxShawdow: "6px 7px 6px #000 !important",
+    [theme.breakpoints.down("xs")]:{
+    padding: "55px 0px 35px 0px",
+    },
   },
+  titleContents:{
+    fontSize:"18px !important",
+    padding:"0px 190px",
+    [theme.breakpoints.down("md")]: {
+      fontSize:"16px !important",
+      padding:"0px 100px",
+    },
+    [theme.breakpoints.down("sm")]:{
+      padding:"0px 50px",
+    },
+    [theme.breakpoints.down("xs")]:{
+      padding:"0px 45px",
+      fontSize:"14px !important",
+    },
+  },
+  roots:{
+    padding:"50px 60px",
+    [theme.breakpoints.down("xs")]: {
+     padding:"25px 0px",  
+    },
+  },
+  headings:{
+    fontSize:"50px !important",
+    color:"#B2832C",
+    fontStyle:"italic",
+    padding:"10px 13px 0px 13px",
+    [theme.breakpoints.down("md")]: {
+      fontSize:"45px !important",
+    },
+    [theme.breakpoints.down("xs")]: {
+      fontSize:"30px !important",
+      padding:"10px 4px 0px 4px",
+    },
+  },
+  logoEdits:{
+    position:"relative",
+    height:"70px",
+    top:"12px",
+    [theme.breakpoints.down("md")]: {
+      height:"55px",
+      top:"17px",
+    },
+    [theme.breakpoints.down("xs")]: {
+      height:"40px",
+      top:"12px",
+    },
+  },
+  cardEdit:{
+    width:"89%",
+    margin:"auto",
+    [theme.breakpoints.down("md")]: {
+      width:"90%"
+    },
+  },
+  headerAlign:{
+    display: "flex",
+    justifyContent: "center",
+    paddingBottom: "40px",
+    [theme.breakpoints.down("xs")]: {
+     paddingBottom:"10px",
+    },
+  }
+
 }));
 
 function AkshyaTritiya(props) {
@@ -274,7 +370,7 @@ function AkshyaTritiya(props) {
   };
 
   return (
-    <Grid container>
+    <Grid container style={{overflow:"auto"}}>
       <Grid xs={12}>
         <Header />
       </Grid>
@@ -335,32 +431,28 @@ function AkshyaTritiya(props) {
             </>
           ))}
         </Slideshow>
-        <Grid xs={12} className="roots">
+      </Grid>
+
+        <Grid xs={12} className={classes.roots}>
           <div style={{ textAlign: "center" }}>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                paddingBottom: "40px",
-              }}
-            >
+            <div className={classes.headerAlign}>
               <img
-                className="logoEdits"
+                className={classes.logoEdits}
                 src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/collection+page/urn_aaid_sc_US_4f2880c9-1910-41e4-b332-90c4513a4ca7+(1).png"
               />
-              <Typography className="headings">AKSHAYA TRITIYA</Typography>
+              <Typography className={classes.headings}>AKSHAYA TRITIYA</Typography>
               <img
-                className="logoEdits"
+                className={classes.logoEdits}
                 src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/collection+page/urn_aaid_sc_US_4f2880c9-1910-41e4-b332-90c4513a4ca7+(2).png"
               />
             </div>
             {header.map((val) => (
-              <Typography className="titleContents">{val.title}</Typography>
+              <Typography className={classes.titleContents}>{val.title}</Typography>
             ))}
           </div>
         </Grid>
         <Hidden smDown>
-          <Container maxWidth={"lg"} style={{ paddingTop: 8 }}>
+          <Container className={classes.cardEdit} style={{ paddingTop: 8 }}>
             <Slideshow
               // sliderRef={this.slider}
               class="subslider-carousel"
@@ -392,7 +484,8 @@ function AkshyaTritiya(props) {
 
       
         <Grid container className={classes.totalFormArea}>
-          <Grid item xs={7} className={classes.formArea}>
+          <Grid item sm={7} xs={12} style={{backgroundColor:"#F4F4F4"}}>
+          <div className={classes.formArea}>
             <div className={classes.inputFieldsEdit}>
               <Typography className={classes.inputFieldsHeader}>
                 First Name:
@@ -407,8 +500,8 @@ function AkshyaTritiya(props) {
                   name="firstName"
                 />
               </FormControl>
-            </div>
-            <div className={classes.inputFieldsEdit}>
+             </div>
+              <div className={classes.inputFieldsEdit}>
               <Typography className={classes.inputFieldsHeader}>
                 Last Name:
               </Typography>
@@ -422,8 +515,8 @@ function AkshyaTritiya(props) {
                   name="lastName"
                 />
               </FormControl>
-            </div>
-            <div className={classes.inputFieldsEdit}>
+              </div>
+             <div className={classes.inputFieldsEdit}>
               <Typography className={classes.inputFieldsHeader}>
                 Email id:
               </Typography>
@@ -437,8 +530,8 @@ function AkshyaTritiya(props) {
                   name="email"
                 />
               </FormControl>
-            </div>
-            <div className={classes.inputFieldsEdit}>
+             </div>
+              <div className={classes.inputFieldsEdit}>
               <Typography className={classes.inputFieldsHeader}>
                 Your Query
               </Typography>
@@ -453,8 +546,8 @@ function AkshyaTritiya(props) {
                   rows={8}
                 />
               </FormControl>
-            </div>
-            <div style={{ textAlign: "end", paddingTop: "10px" }}>
+              </div>
+              <div style={{ textAlign: "end", paddingTop: "10px" }}>
               <Button
                 variant="contained"
                 onClick={onsubmitvalue}
@@ -463,18 +556,18 @@ function AkshyaTritiya(props) {
                 Sumbit
               </Button>
             </div>
+            </div>
           </Grid>
-          <Grid item xs={5}>
-            <div>
+          <Grid item sm={5} xs={12} style={{backgroundColor:"#2E348A"}}>
               <img
                 src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/akshaya+page/Group+63%402x.png"
-                style={{ width: "100%", maxHeight: "635px" }}
+                style={{ width: "100%"}}
+                className={classes.storeImage}
               />
-            </div>
+              <div className={classes.imgBtn}>FOR MORE VISIT OUR STORE</div>
           </Grid>
         </Grid>
         <Footer />
-      </Grid>
     </Grid>
   );
 }
