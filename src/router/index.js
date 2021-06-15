@@ -49,6 +49,7 @@ import CollectionPage from "containers/collection/collectionPage"
 import Solitaires from "../containers/solitaires/solitaires";
 import ExperiencePage from "../containers/experiences/experiences";
 import CollectionFullPage from "../containers/collection/collectionsFullPage";
+import AkshyaTritiya from "../containers/SpecificPage/akshyaTritiya";
 // SILVER SCREENS
 
 import Silver from "screens/SilverStylori";
@@ -102,6 +103,12 @@ export const RouterApp = (props) => {
        component={CollectionFullPage}
        exact
        path={routes.CollectionFullPage}
+       />
+       <Route
+        key="AkshyaTritiya"
+        component={AkshyaTritiya}
+        exact
+        path={routes.AkshyaTritiya}
        />
       <Route
         key="HomePageStylori"

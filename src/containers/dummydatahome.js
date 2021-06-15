@@ -58,7 +58,7 @@ export const
         {
           img: "https://assets.stylori.com/images/Static+Pages/Home+Page/harvest-campaign-web.png",
           mobileImg: "https://assets.stylori.com/images/Static+Pages/Home+Page/harvest-campaign-mob.png",
-          navigateUrl: "jewellery?sort=bestseller"
+          navigateUrl: "/jewellery?sort=bestseller"
         },
       ]
     },

@@ -18,10 +18,15 @@ import LiveChat from "react-livechat";
 import Slideshow from "components/Carousel/carosul";
 import { homePageStylori } from "./dummydatahome";
 import ProductDescription from "components/productDescription";
+import {API_URL} from "../config";
+import {ALLBANNERSCOMPLETE} from "../queries/home"
 class Stylori extends React.Component {
   constructor(props) {
     super();
-    this.state = { loading: false };
+    this.state = { 
+      loading: false,
+      bannerData: []
+    };
   }
   componentDidUpdate(prevProps) {
     // Typical usage (don't forget to compare props):
@@ -36,6 +41,30 @@ class Stylori extends React.Component {
       // setTimeout(function(){  this.props.setloadingfilters(false); }.bind(this), 5000);
     }
       
+  }
+
+  componentDidMount(){
+    fetch(`${API_URL}/graphql`, {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        query: ALLBANNERSCOMPLETE,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        let bannerFullData = data.data.allBanners.nodes;
+        const specificPageData = bannerFullData.filter((item) => item.urlParam === window.location.pathname);
+        const listedPageData = bannerFullData.filter((item) => item.urlParam === "listing");
+
+        if (specificPageData.length > 0) {
+          this.setState({ bannerData: specificPageData });
+        } else {
+          this.setState({ bannerData: listedPageData });
+        }
+      });
   }
 
   render() {
@@ -122,19 +151,19 @@ class Stylori extends React.Component {
             )}
           </Hidden> */}
             <Slideshow sliderRef={this.slider} dataCarousel={setting}>
-              {homePageStylori.carouselTop.data.map((val, index) => (
+              {this.state.bannerData.map((val, index) => (
                 <>
                   <Hidden smDown>
                     <Grid container key={index}>
-                      <a href={val.navigateUrl} style={{ width: "100%" }}>
-                        <img src={val.img} style={{ width: "100%", height: "100%" }} />
+                      <a href={val.url} style={{ width: "100%" }}>
+                        <img src={val.web} style={{ width: "100%", height: "100%" }} />
                       </a>
                     </Grid>
                   </Hidden>
                   <Hidden mdUp>
                     <Grid container key={index}>
-                      <a href={val.navigateUrl}>
-                        <img src={val.mobileImg} style={{ width: "100%", height: "100%" }} />
+                      <a href={val.url}>
+                        <img src={val.mobile} style={{ width: "100%", height: "100%" }} />
                       </a>
                     </Grid>
                   </Hidden>

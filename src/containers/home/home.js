@@ -22,6 +22,8 @@ import { AdvancedGridList } from "./collectionsGrid";
 import { Title } from "./titles";
 import { Helmet } from "react-helmet";
 import LiveChat from "react-livechat";
+import {API_URL} from "../../config";
+import {ALLBANNERS} from "../../queries/home";
 
 const styles = (theme) => ({
   preButton: {
@@ -272,8 +274,28 @@ class HomeComp extends React.Component {
       count: "",
       timelineImage:
         "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_page/Group+213%402x.png",
+      bannerHome:[],
     };
   }
+
+  componentDidMount(){
+    fetch(`${API_URL}/graphql`, {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        query: ALLBANNERS,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        let bannerDataFull = data.data.allBanners.nodes;
+        this.setState({bannerHome:bannerDataFull})
+      }); 
+  }
+
+
   next = () => {
     this.slider.current.slickNext();
   };
@@ -979,13 +1001,13 @@ class HomeComp extends React.Component {
             sliderRef={this.slider}
             dataCarousel={homeNac.carouselTop.setting}
           >
-            {homeNac.carouselTop.data.map((val, index) => (
+            {this.state.bannerHome.map((val, index) => (
               <>
                 <Hidden smDown>
                   <Grid container key={index}>
-                    <a href={val.navigateUrl} style={{ width: "100%" }}>
+                    <a href={val.url} style={{ width: "100%" }}>
                       <img
-                        src={val.img}
+                        src={val.web}
                         style={{ width: "100%", height: "100%" }}
                       />
                     </a>
@@ -993,9 +1015,9 @@ class HomeComp extends React.Component {
                 </Hidden>
                 <Hidden mdUp>
                   <Grid container key={index}>
-                    <a href={val.navigateUrl}>
+                    <a href={val.url}>
                       <img
-                        src={val.mobileImg}
+                        src={val.mobile}
                         style={{ width: "100%", height: "100%" }}
                       />
                     </a>
@@ -1206,6 +1228,7 @@ class HomeComp extends React.Component {
               style={{ height: "430px", overflow: "auto", marginTop: "20px" }}
             >
               <InstagramFeed />
+             
             </Grid>
           </Hidden>
         </Container>
