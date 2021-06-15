@@ -35,6 +35,7 @@ class Stylori extends React.Component {
       // setTimeout(function(){ alert("Hello"); }, 3000);
       // setTimeout(function(){  this.props.setloadingfilters(false); }.bind(this), 5000);
     }
+      
   }
 
   render() {
