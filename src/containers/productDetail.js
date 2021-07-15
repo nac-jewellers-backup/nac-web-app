@@ -379,7 +379,6 @@ class ProductDetail extends Component {
       nextArrow: <ArrowRight />,
     };
 
-
     // alert(JSON.stringify(this.props.setratingcountsclear))
     // let diamondWeight = this.props.data[0].productsDetails[1].namedetail[3].details ?? "";
     return (
@@ -489,7 +488,7 @@ class ProductDetail extends Component {
                     this.props.data[0].productsDetails[0].namedetail[2].details && (
                       <Grid container item xs={4} style={{ paddingTop: "8px" }}>
                         <Grid container item xs={2}>
-                          <Avatar alt="NAC" src="/static/images/avatar/1.jpg" />
+                          <Avatar alt="NAC">N</Avatar>
                         </Grid>
                         <Grid container item xs={10} style={{ fontSize: 12, color: "gray", paddingLeft: 15, margin: "auto" }}>
                           <Grid itex xs={12}>
@@ -512,7 +511,7 @@ class ProductDetail extends Component {
                     this.props.data[0].productsDetails[0].namedetail[1].details && (
                       <Grid container item xs={4} style={{ paddingTop: "8px" }}>
                         <Grid container item xs={2}>
-                          <Avatar alt="NAC" src="/static/images/avatar/1.jpg" />
+                        <Avatar alt="NAC">N</Avatar>
                         </Grid>
                         <Grid container item xs={10} style={{ fontSize: 12, color: "gray", paddingLeft: 15, margin: "auto" }}>
                           <Grid itex xs={12}>
@@ -536,7 +535,7 @@ class ProductDetail extends Component {
                     this.props.data[0].productsDetails[1].namedetail[3].details && (
                       <Grid container item xs={4} style={{ paddingTop: "8px" }}>
                         <Grid container item xs={2}>
-                          <Avatar alt="NAC" src="/static/images/avatar/1.jpg" />
+                        <Avatar alt="NAC">N</Avatar>
                         </Grid>
                         <Grid container item xs={10} style={{ fontSize: 12, color: "gray", paddingLeft: 15, margin: "auto" }}>
                           <Grid itex xs={12}>
@@ -635,9 +634,9 @@ class ProductDetail extends Component {
                 <ConnectionHome />
               </Grid> */}
               {/* <Grid item xs={6} style={{ marginBottom: "20px", marginTop: "20px" }}> */}
-                
-                {/* <ProductDetails data={this.props.data} /> */}
-                {/* <Request data={this.props.data} /> */}
+
+              {/* <ProductDetails data={this.props.data} /> */}
+              {/* <Request data={this.props.data} /> */}
               {/* </Grid> */}
               <br />
             </Grid>

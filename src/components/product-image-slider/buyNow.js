@@ -434,11 +434,12 @@ class Component extends React.Component {
                   >
                     <Avatar
                       alt="NAC"
-                      src="/static/images/avatar/1.jpg"
                       onClick={() => {
                         this.setState({ isShowDetailTab: 1 });
                       }}
-                    />
+                    >
+                      N
+                    </Avatar>
                   </Grid>
                 </Grid>
                 <Grid container item xs={4}>
@@ -451,11 +452,12 @@ class Component extends React.Component {
                   >
                     <Avatar
                       alt="NAC"
-                      src="/static/images/avatar/1.jpg"
                       onClick={() => {
                         this.setState({ isShowDetailTab: 2 });
                       }}
-                    />
+                    >
+                      N
+                    </Avatar>
                   </Grid>
                 </Grid>
                 <Grid container item xs={4}>
@@ -468,11 +470,12 @@ class Component extends React.Component {
                   >
                     <Avatar
                       alt="NAC"
-                      src="/static/images/avatar/1.jpg"
                       onClick={() => {
                         this.setState({ isShowDetailTab: 3 });
                       }}
-                    />
+                    >
+                      N
+                    </Avatar>
                   </Grid>
                 </Grid>
                 <Grid container item xs={12} className={classes.detail}>
