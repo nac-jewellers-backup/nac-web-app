@@ -31,6 +31,7 @@ import { CheckForCod } from "queries/productdetail";
 import { useCheckForCod } from "hooks/CheckForCodHook";
 import Header from "components/SilverComponents/Header";
 import { withRouter } from "react-router-dom";
+import ReactPixel from "react-facebook-pixel";
 var adres = {};
 var variab = {};
 const CartCardCheck = (props) => {
@@ -59,7 +60,11 @@ class Component extends React.Component {
     mailId: null,
     adres_details: null,
   };
-
+  componentDidMount() {
+    ReactPixel.init("1464338023867789", {}, { debug: true, autoConfig: false });
+    ReactPixel.fbq("track", "PageView");
+    ReactPixel.track("InitiateCheckout");
+  }
   handleChange = (panel) => (event) => {
     // alert(JSON.stringify(panel))
 
@@ -334,7 +339,7 @@ class Component extends React.Component {
                     <Grid container>
                       <Grid xs={12} lg={7} />
                       <Grid xs={12} lg={4}>
-                      <div style={{ float: "right" }}>
+                        <div style={{ float: "right" }}>
                           {this.props?.data[0]?.isActive ? (
                             <Button onClick={() => this.pincodeapi()} className="summaryOrder-pay-btn">
                               Continue to Pay
@@ -359,7 +364,7 @@ class Component extends React.Component {
                       <Grid container>
                         <Grid xs={12} lg={7} />
                         <Grid xs={12} lg={4}>
-                        <div style={{ float: "right", marginBottom: "5px" }}>
+                          <div style={{ float: "right", marginBottom: "5px" }}>
                             {this.props?.data[0]?.isActive ? (
                               <Button onClick={() => this.pincodeapi()} className="summaryOrder-pay-btn">
                                 Continue to Pay
@@ -382,7 +387,7 @@ class Component extends React.Component {
                     <Grid container style={{ marginTop: "10px" }}>
                       <Grid xs={12} lg={7} />
                       <Grid xs={12} lg={4}>
-                      <div style={{ float: "right", marginBottom: "5px" }}>
+                        <div style={{ float: "right", marginBottom: "5px" }}>
                           {this.props?.data[0]?.isActive ? (
                             <Button onClick={() => this.pincodeapi()} className="summaryOrder-pay-btn">
                               Continue to Pay

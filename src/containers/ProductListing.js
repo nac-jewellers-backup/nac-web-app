@@ -18,14 +18,15 @@ import LiveChat from "react-livechat";
 import Slideshow from "components/Carousel/carosul";
 import { homePageStylori } from "./dummydatahome";
 import ProductDescription from "components/productDescription";
-import {API_URL} from "../config";
-import {ALLBANNERSCOMPLETE} from "../queries/home"
+import { API_URL } from "../config";
+import { ALLBANNERSCOMPLETE } from "../queries/home";
+import ReactPixel from "react-facebook-pixel";
 class Stylori extends React.Component {
   constructor(props) {
     super();
-    this.state = { 
+    this.state = {
       loading: false,
-      bannerData: []
+      bannerData: [],
     };
   }
   componentDidUpdate(prevProps) {
@@ -40,10 +41,11 @@ class Stylori extends React.Component {
       // setTimeout(function(){ alert("Hello"); }, 3000);
       // setTimeout(function(){  this.props.setloadingfilters(false); }.bind(this), 5000);
     }
-      
   }
 
-  componentDidMount(){
+  componentDidMount() {
+    ReactPixel.init("1464338023867789", {}, { debug: true, autoConfig: true });
+    ReactPixel.pageView();
     fetch(`${API_URL}/graphql`, {
       method: "post",
       headers: {

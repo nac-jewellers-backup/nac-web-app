@@ -31,7 +31,7 @@ import "screens/screens.css";
 import MetaTags from "react-meta-tags";
 import { CartContext } from "context";
 import { GlobalContext } from "context";
-
+import ReactPixel from "react-facebook-pixel";
 const styles = (theme) => ({
   collectionSection: {
     // "& svg":{
@@ -88,6 +88,12 @@ class ProductDetail extends Component {
       clear: "",
     };
   }
+
+  componentDidMount() {
+    ReactPixel.init("1464338023867789", {}, { debug: true, autoConfig: false });
+    ReactPixel.track("PageView");
+  }
+
   renderUrl = () => {
     var loc = this.props.location.pathname;
     var path = loc.split("/");
@@ -511,7 +517,7 @@ class ProductDetail extends Component {
                     this.props.data[0].productsDetails[0].namedetail[1].details && (
                       <Grid container item xs={4} style={{ paddingTop: "8px" }}>
                         <Grid container item xs={2}>
-                        <Avatar alt="NAC">N</Avatar>
+                          <Avatar alt="NAC">N</Avatar>
                         </Grid>
                         <Grid container item xs={10} style={{ fontSize: 12, color: "gray", paddingLeft: 15, margin: "auto" }}>
                           <Grid itex xs={12}>
@@ -535,7 +541,7 @@ class ProductDetail extends Component {
                     this.props.data[0].productsDetails[1].namedetail[3].details && (
                       <Grid container item xs={4} style={{ paddingTop: "8px" }}>
                         <Grid container item xs={2}>
-                        <Avatar alt="NAC">N</Avatar>
+                          <Avatar alt="NAC">N</Avatar>
                         </Grid>
                         <Grid container item xs={10} style={{ fontSize: 12, color: "gray", paddingLeft: 15, margin: "auto" }}>
                           <Grid itex xs={12}>
