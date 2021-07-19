@@ -13,7 +13,8 @@ const networkcall = (path, skuID) => {
       description = ResultData[0].transSkuDescriptionsBySkuId.nodes[0].skuDescription;
 
       if (description.length > 200) {
-        description = description.substring(0, 200);
+        description = description.substring(0, 197);
+        description = description.concat("...");
       }
       // var SlasValue = 0;
       // var imgData = "";
