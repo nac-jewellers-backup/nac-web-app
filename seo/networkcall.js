@@ -13,7 +13,7 @@ const networkcall = (path, skuID) => {
       description = ResultData[0].transSkuDescriptionsBySkuId.nodes[0].skuDescription;
 
       if (description.length > 200) {
-        description = description.substring(0, 197);
+        description = description.replace(/^(.{197}[^\s]*).*/, "$1");
         description = description.concat("...");
       }
       // var SlasValue = 0;
