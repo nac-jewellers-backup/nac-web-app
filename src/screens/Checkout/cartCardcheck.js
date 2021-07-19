@@ -64,7 +64,7 @@ class Component extends React.Component {
     ReactPixel.init("1464338023867789", {}, { debug: true, autoConfig: false });
     ReactPixel.fbq("track", "PageView");
     ReactPixel.track("InitiateCheckout");
-  }
+  }e
   handleChange = (panel) => (event) => {
     // alert(JSON.stringify(panel))
 

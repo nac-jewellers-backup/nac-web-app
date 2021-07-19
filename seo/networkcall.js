@@ -7,9 +7,14 @@ const networkcall = (path, skuID) => {
     var variables = { conditionfilter: { skuId: skuID } };
     return request(API_URL + "/graphql", PRODUCTDETAILS, variables).then((data) => {
       var imgConstructURL;
+      var description = null;
       var ResultData = data.allTransSkuLists.nodes;
       imgConstructURL = ResultData[0].productListByProductId.productImagesByProductId.nodes[0].imageUrl;
+      description = ResultData[0].transSkuDescriptionsBySkuId.nodes[0].skuDescription;
 
+      if (description.length > 200) {
+        description = description.substring(0, 200);
+      }
       // var SlasValue = 0;
       // var imgData = "";
       // var i;
@@ -26,7 +31,7 @@ const networkcall = (path, skuID) => {
       return {
         title: `${ResultData[0].productListByProductId.productName}  
         `,
-        description: ResultData[0].transSkuDescriptionsBySkuId.nodes[0].skuDescription,
+        description: description,
         imgURL: imgConstructURL,
       };
       // return { title: replaceValue, description: data.seo_text };
