@@ -14,6 +14,7 @@ const networkcall = (path, skuID) => {
 
       if (description.length > 200) {
         description = description.replace(/^(.{200}[^\s]*).*/, "$1");
+        description = description.concat("...");
       }
       // var SlasValue = 0;
       // var imgData = "";
