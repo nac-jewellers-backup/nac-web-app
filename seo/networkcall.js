@@ -13,8 +13,7 @@ const networkcall = (path, skuID) => {
       description = ResultData[0].transSkuDescriptionsBySkuId.nodes[0].skuDescription;
 
       if (description.length > 200) {
-        description = description.replace(/^(.{197}[^\s]*).*/, "$1");
-        description = description.concat("...");
+        description = description.replace(/^(.{200}[^\s]*).*/, "$1");
       }
       // var SlasValue = 0;
       // var imgData = "";
