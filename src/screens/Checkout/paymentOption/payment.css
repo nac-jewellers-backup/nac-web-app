@@ -40,61 +40,61 @@
 }
 
 /* .credit-btn-div {
-    float: right ! important;
-    margin-top: 5%;
+  float: right ! important;
+  margin-top: 5%;
 }
 
 .font-netbanking {
-    color: #394578 !important;
-    padding-right: 15px !important;
-    padding-left: 15px;
-    text-align: center;
-    font-size: 14px;
+  color: #394578 !important;
+  padding-right: 15px !important;
+  padding-left: 15px;
+  text-align: center;
+  font-size: 14px;
 }
 .amout-pay{
-    width: 100%;
-    font-size: 13px;
-    margin-bottom: 2px;
-    margin-bottom: 10px;
-    color: #828282;
+  width: 100%;
+  font-size: 13px;
+  margin-bottom: 2px;
+  margin-bottom: 10px;
+  color: #828282;
 }
 
- 
+
 .panel-body{
-    border: 1px solid #CCC;
+  border: 1px solid #CCC;
 }
 .pay-index-subhed{
-    float: left;
-    background: #f0f0f0;
-    border-right: 1px solid #d3d3d3;
-    min-height: 400px;
-    font-size: 12px!important;
-    color: #333!important;
-    width: 215px !important;
+  float: left;
+  background: #f0f0f0;
+  border-right: 1px solid #d3d3d3;
+  min-height: 400px;
+  font-size: 12px!important;
+  color: #333!important;
+  width: 215px !important;
 } 
 .pay-index-subhed p{
-    padding: 0 15px;
-    padding-top:5px;
-    padding-bottom:5px;
-    cursor: pointer;
-    line-height: 20px;
+  padding: 0 15px;
+  padding-top:5px;
+  padding-bottom:5px;
+  cursor: pointer;
+  line-height: 20px;
 }*/
 .pay-index-subhed p:hover {
   background: #dfdfdf;
 }
 
 /* .code-icon {
-    background: url(https://assets.stylori.com/images/static/icons/icon04.png) no-repeat;
-    width: 24px;
-    height: 24px;
-    float: left;
+  background: url(https://assets.stylori.com/images/static/icons/icon04.png) no-repeat;
+  width: 24px;
+  height: 24px;
+  float: left;
 } */
 
 /* .net-bnk-icon {
-    background: url(https://assets.stylori.com/images/static/icons/icon03.png) no-repeat;
-    width: 24px;
-    height: 24px;
-    float: left;
+  background: url(https://assets.stylori.com/images/static/icons/icon03.png) no-repeat;
+  width: 24px;
+  height: 24px;
+  float: left;
 } */
 
 .dc-icon {

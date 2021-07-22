@@ -114,7 +114,7 @@ class ProductDetails extends React.Component {
     return (
       <div>
         <Container>
-          {data[0].productsDetails.map((val) => {
+          {data[0]?.productsDetails?.map((val) => {
             return val.namedetail.length === 0 ? (
               false
             ) : (

@@ -45,23 +45,14 @@ export default function PaymentHiddenForm(props) {
   obj["cart_id"] = cart_ids;
   obj["voucher_code"] = cartFilters.vouchercode;
   const hitPaymentGateWayAPI = async (orderId) => {
-    await fetch(`https://api.stylori.com/sendtoairpay`, {
+    await fetch(`${API_URL}/sendtoairpay`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        buyerEmail: hash.buyerEmail,
-        buyerPhone: hash.buyerPhone,
-        buyerFirstName: hash.buyerFirstName,
-        buyerLastName: hash.buyerLastName,
-        buyerAddress: hash.buyerAddress,
-        buyerCity: hash.buyerCity,
-        buyerState: hash.buyerState,
-        buyerCountry: hash.buyerCountry,
-        buyerPinCode: hash.buyerPinCode,
         orderid: orderId,
-        amount: 1,
+        amount: props.data,
         //props.data
         customvar: "",
         subtype: "",
@@ -74,15 +65,25 @@ export default function PaymentHiddenForm(props) {
           // hashvalue: data.hash,
           // timedate: data.day
           ...data,
+          // buyerEmail: data.buyerEmail,
+          // buyerPhone: data.buyerPhone,
+          // buyerFirstName: data.buyerFirstName,
+          // buyerLastName: data.buyerLastName,
+          // buyerAddress: data.buyerAddress,
+          // buyerCity: data.buyerCity,
+          // buyerState: data.buyerState,
+          // buyerCountry: data.buyerCountry,
+          // buyerPinCode: data.buyerPinCode,
           privatekey: data.privatekey,
           mercid: data.mercid,
           currency: data.currency,
           isocurrency: data.isocurrency,
           chmod: data.chmod,
           checksum: data.checksum,
-          amount: 1,
+          amount: data.amount,
         });
-
+        debugger;
+        console.log(hash);
         //  hash=data.hash
         //  day = data.day
         //  currentutc = data.currentutc
@@ -105,7 +106,7 @@ export default function PaymentHiddenForm(props) {
       return response.json();
     };
 
-    await fetch(`https://api.stylori.com/createorder`, {
+    await fetch(`${API_URL}/createorder`, {
       method: "post",
       headers: {
         "Content-Type": "application/json",
@@ -117,6 +118,8 @@ export default function PaymentHiddenForm(props) {
       .then(status)
       .then(json)
       .then((data) => {
+        debugger;
+        console.log(hash);
         localStorage.removeItem("order_id");
         // if (localStorage.getItem('gut_lg')) localStorage.removeItem("user_id")
         sessionStorage.removeItem("updatedProduct");
@@ -124,7 +127,6 @@ export default function PaymentHiddenForm(props) {
           localStorage.setItem("order_id", JSON.stringify(data.order.id));
           hitPaymentGateWayAPI(data.order.id);
         }
-        
 
         setOrderId(data.order.payment_id);
       })
@@ -137,64 +139,69 @@ export default function PaymentHiddenForm(props) {
     // document.getElementById("sendtoairpay").submit();
   };
   useEffect(() => {
+    debugger;
+    console.log(hash);
     if (hash.checksum) document.getElementById("sendtoairpay").submit();
   }, [hash]);
+  debugger;
+  console.log(hash);
+  // useEffect(()=>{if(hash.checksum) console.log(hash,orderId,"hashandorderid")},[hash])
   return (
     <div container>
       <form method="POST" action="https://payments.airpay.co.in/pay/index.php" id="sendtoairpay">
         <div class="form-group">
-          <input id="privatekey" name="privatekey" value={hash.privatekey} class="form-control" />
+          <input id="privatekey" type="hidden" name="privatekey" value={hash.privatekey} class="form-control" />
         </div>
         <div class="form-group">
-          <input id="buyerPhone" name="mercid" value={hash.mercid} class="form-control" />
+          <input id="buyerPhone" type="hidden" name="mercid" value={hash.mercid} class="form-control" />
         </div>
         <div class="form-group">
-          <input id="orderid" name="orderid" value={orderId} class="form-control" />
+          <input id="orderid" type="hidden" name="orderid" value={orderId} class="form-control" />
         </div>
         <div class="form-group">
-          <input id="currency" name="currency" value={hash.currency} class="form-control" />
+          <input id="currency" type="hidden" name="currency" value={hash.currency} class="form-control" />
         </div>
         <div class="form-group">
-          <input id="isocurrency" name="isocurrency" value={hash.isocurrency} class="form-control" />
+          <input id="isocurrency" type="hidden" name="isocurrency" value={hash.isocurrency} class="form-control" />
         </div>
         <div class="form-group">
-          <input id="chmod" name="chmod" value={hash.chmod} class="form-control" />
+          <input id="chmod" type="hidden" name="chmod" value={hash.chmod} class="form-control" />
         </div>
         <div class="form-group">
-          <input id="buyerEmail" name="buyerEmail" value={hash.buyerEmail} class="form-control" />
+          <input id="buyerEmail" type="hidden" name="buyerEmail" value={hash.buyerEmail} class="form-control" />
         </div>
         <div class="form-group">
-          <input id="buyerPhone" name="buyerPhone" value={hash.buyerPhone} class="form-control" />
+          <input id="buyerPhone" type="hidden" name="buyerPhone" value={hash.buyerPhone} class="form-control" />
         </div>
         <div class="form-group">
-          <input id="buyerFirstName" name="buyerFirstName" value={hash.buyerFirstName} class="form-control" />
+          <input id="buyerFirstName" type="hidden" name="buyerFirstName" value={hash.buyerFirstName} class="form-control" />
         </div>
         <div class="form-group">
-          <input id="buyerLastName" name="buyerLastName" value={hash.buyerLastName} class="form-control" />
+          <input id="buyerLastName" type="hidden" name="buyerLastName" value={hash.buyerLastName} class="form-control" />
         </div>
         <div class="form-group">
-          <input id="buyerAddress" name="buyerAddress" value={hash.buyerAddress} class="form-control" />
+          <input id="buyerAddress" type="hidden" name="buyerAddress" value={hash.buyerAddress} class="form-control" />
         </div>
         <div class="form-group">
-          <input id="buyerCity" name="buyerCity" value={hash.buyerCity} class="form-control" />
+          <input id="buyerCity" type="hidden" name="buyerCity" value={hash.buyerCity} class="form-control" />
         </div>
         <div class="form-group">
-          <input id="buyerState" name="buyerState" value={hash.buyerState} class="form-control" />
+          <input id="buyerState" type="hidden" name="buyerState" value={hash.buyerState} class="form-control" />
         </div>
         <div class="form-group">
-          <input id="buyerCountry" name="buyerCountry" value={hash.buyerCountry} class="form-control" />
+          <input id="buyerCountry" type="hidden" name="buyerCountry" value={hash.buyerCountry} class="form-control" />
         </div>
         <div class="form-group">
-          <input id="buyerPinCode" name="buyerPinCode" value={hash.buyerPinCode} class="form-control" />
+          <input id="buyerPinCode" type="hidden" name="buyerPinCode" value={hash.buyerPinCode} class="form-control" />
         </div>
         <div class="form-group">
-          <input id="orderid" name="orderid" value={orderId} class="form-control" />
+          <input id="orderid" type="hidden" name="orderid" value={orderId} class="form-control" />
         </div>
         <div class="form-group">
-          <input id="amount" name="amount" value={hash.amount} class="form-control" />
+          <input id="amount" type="hidden" name="amount" value={hash.amount} class="form-control" />
         </div>
         <div class="form-group">
-          <input id="checksum" name="checksum" value={hash.checksum} class="form-control" />
+          <input id="checksum" type="hidden" name="checksum" value={hash.checksum} class="form-control" />
         </div>
       </form>
       <Grid item container>

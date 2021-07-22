@@ -48,20 +48,20 @@ export const TabsProvider = (props) => {
   let variables;
 
   const { loading, error, data, makeRequest } = useGraphql(PRODUCTDETAILS, () => {}, {});
-  const { loading: likeloading, error: likeerror, data: likedata, makeRequest: likemakeRequest } = useGraphql(
-    YouMayAlsoLike,
-    () => {},
-    {},
-    false
-  );
+  const {
+    loading: likeloading,
+    error: likeerror,
+    data: likedata,
+    makeRequest: likemakeRequest,
+  } = useGraphql(YouMayAlsoLike, () => {}, {}, false);
   // youRecentlyViewed
   // "filtersku": {"skuId": {"in": ["SB0013-18110000","SB0013-18210000"]}}
-  const { loading: viewedloading, error: viewederror, data: vieweddata, makeRequest: viewmakeRequest } = useGraphql(
-    youRecentlyViewed,
-    () => {},
-    {},
-    false
-  );
+  const {
+    loading: viewedloading,
+    error: viewederror,
+    data: vieweddata,
+    makeRequest: viewmakeRequest,
+  } = useGraphql(youRecentlyViewed, () => {}, {}, false);
   // useEffect(()=>{
   //     likemakeRequest(vardata)
   // },[])
@@ -85,7 +85,14 @@ export const TabsProvider = (props) => {
   useEffect(() => {
     setvieweddata(vieweddata);
   }, [vieweddata, price, data]);
+
   useEffect(() => {
+    let localStorageQuantity = localStorage.getItem("quantity") ? JSON.parse(localStorage.getItem("quantity")) : null;
+
+    if (localStorageQuantity) {
+      filters.quantity = localStorageQuantity;
+      setFilters(filters);
+    }
     if (filters.productId === "") {
       if (window.location.search.length > 0) {
         let loc = window.location.search.split("=");

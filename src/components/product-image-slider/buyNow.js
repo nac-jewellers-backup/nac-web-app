@@ -24,7 +24,7 @@ const inputsearch = (props, state, handleChanges, handleCodChange) => {
 
   return (
     <div className={classes.searchCheck} style={{}}>
-      {data[0].ProductContactNum.map((val) => (
+      {data[0]?.ProductContactNum?.map((val) => (
         <Grid container spacing={12}>
           <Grid item xs={7} md={4} lg={4} sm={7}>
             {/* <input
@@ -131,10 +131,10 @@ const Buydetails = (
 ) => {
   const { data } = props;
   const { classes } = props;
-  const isactive = props.data[0].isactive ?? "";
+  const isactive = props?.data[0]?.isactive ?? "";
   return (
     <div>
-      {data[0].ProductContactNum.map((val) => (
+      {data[0]?.ProductContactNum.map((val) => (
         <>
           <Grid container direction="column" spacing={12}>
             <Grid xs={12} md={4} lg={4} className={classes.buynowItem}>
@@ -351,15 +351,48 @@ class Component extends React.Component {
   deletechecklists = () => {
     this.props.setCartFilters({
       skuId: this.props.data[0].skuId,
-      qty: 1,
+      qty:
+        this.props.quantity && this.props.data && this.props.quantity[this.props.data[0].skuId]
+          ? this.props.quantity[this.props.data[0].skuId]
+          : 1,
       price: this.props.data[0].offerPrice,
     });
+
+    const _qty =
+      this.props.quantity && this.props.data && this.props.quantity[this.props.data[0].skuId]
+        ? this.props.quantity[this.props.data[0].skuId]
+        : 1;
+    this.props.setFilters({
+      ...this.props.filters,
+      quantity: _qty,
+    });
+    let localStorageQuantity = localStorage.getItem("quantity") ? JSON.parse(localStorage.getItem("quantity")) : null;
+    if (!localStorageQuantity) {
+      if (localStorageQuantity && !localStorageQuantity[this.props.data[0].skuId]) {
+        let _obj = {};
+        localStorageQuantity[this.props.data[0].skuId] = _qty;
+        localStorage.setItem("quantity", JSON.stringify(localStorageQuantity));
+        this.props.filters.quantity[this.props.data[0].skuId] = _qty;
+      } else {
+        let _obj = {};
+        _obj[this.props.data[0].skuId] = _qty;
+        localStorage.setItem("quantity", JSON.stringify(_obj));
+        this.props.filters.quantity[this.props.data[0].skuId] = _qty;
+      }
+    } else {
+      localStorageQuantity[this.props.data[0].skuId] = _qty;
+      localStorage.setItem("quantity", JSON.stringify(localStorageQuantity));
+      this.props.filters.quantity[this.props?.data[0]?.skuId] = localStorageQuantity[this.props?.data[0]?.skuId];
+    }
 
     sessionStorage.setItem(
       "updatedProduct",
       JSON.stringify({
         sku_id: this.props.data[0].skuId,
-        qty: 1,
+        qty:
+          this.props.quantity && this.props.data && this.props.quantity[this.props.data[0].skuId]
+            ? this.props.quantity[this.props.data[0].skuId]
+            : 1,
         price: this.props.data[0].offerPrice,
       })
     );
@@ -404,7 +437,7 @@ class Component extends React.Component {
   render() {
     let { showimage } = this.state;
     const { classes, data } = this.props;
-    const isactive = this.props.data[0].isactive ?? "";
+    const isactive = this.props?.data[0]?.isactive ?? "";
     return (
       <div>
         <Hidden smDown>

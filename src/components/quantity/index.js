@@ -214,7 +214,7 @@ const Quantity = (props) => {
 
     // _updateQuantityApi()
   }, []);
-  console.clear();
+ 
   const { classes, cart, pdpage } = props;
   const _cart = cart || pdpage ? true : false;
   return (

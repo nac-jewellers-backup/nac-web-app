@@ -7,7 +7,10 @@ import "./pricing.css";
 export default function Pricing(props) {
   const classes = styles();
   let path = window.location.pathname.split("/").pop();
+  const { globalContext, quantity } = props;
+  const product_quantity = quantity ? quantity : 1;
 
+  const isSilver = globalContext && globalContext.pathName ? true : false;
   return (
     <div>
       {props.title ? (

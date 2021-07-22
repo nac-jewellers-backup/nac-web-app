@@ -12,10 +12,13 @@ export const CART = `query myquerycart($productList: [String!]) {
       skuSize
       costPrice
       sellingPrice
-    
- 
-      
+
       productListByProductId {
+        productMaterialsByProductSku {
+          nodes {
+            materialName
+          }
+        }
         productId
         productName
         isactive

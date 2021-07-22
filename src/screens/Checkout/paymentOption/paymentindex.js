@@ -48,7 +48,7 @@ class PaymentIndex extends React.Component {
   }
   render() {
     var a = 1;
-  
+
     const dataCard1 = this.props.data ? this.props.data : [];
 
     return (
@@ -181,18 +181,17 @@ const Components = (props) => {
     }
   }
   if (cartId) {
-  
     if (
-      data?.data?.allTransSkuLists?.nodes
+      data.data.allTransSkuLists.nodes
         .map((val) => {
-          return val?.productListByProductId?.productMaterialsByProductSku?.nodes;
+          debugger;
+          return val.productListByProductId.productMaterialsByProductSku.nodes;
         })
         .flat()
-        .findIndex((val) => Boolean(val?.materialName === "Silver")) > -1
+        .findIndex((val) => Boolean(val.materialName === "Silver")) > -1
     ) {
       if (codAvailability !== false) {
         setCodAvailability(false);
-        
       }
     } else {
       fetch(`${API_URL}/graphql`, {

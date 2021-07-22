@@ -108,6 +108,9 @@ class ProductDetail extends Component {
   render() {
     // alert(JSON.stringify(this.props.data))
     // alert(JSON.stringify(this.props.data))
+    debugger;
+
+    console.log(this.props);
     const { classes } = this.props;
 
     const dummyData = [
@@ -387,6 +390,7 @@ class ProductDetail extends Component {
 
     // alert(JSON.stringify(this.props.setratingcountsclear))
     // let diamondWeight = this.props.data[0].productsDetails[1].namedetail[3].details ?? "";
+
     return (
       <div>
         <div>
@@ -467,7 +471,7 @@ class ProductDetail extends Component {
                   <Grid item>
                     <span>
                       {" "}
-                      &nbsp;{this.props.data[0].skuId} &nbsp; &nbsp;{" "}
+                      &nbsp;{this?.props?.data[0]?.skuId ?? " "} &nbsp; &nbsp;{" "}
                       <span style={{ fontSize: "10px", fontStyle: "normal " }}>|</span> &nbsp; &nbsp;
                     </span>
                     <span
@@ -606,7 +610,7 @@ class ProductDetail extends Component {
                       class="subslider-carousel"
                       dataCarousel={dataCarouselcollections}
                     >
-                      {this.props.data[0].fadeImageSublist.map((val) => {
+                      {this.props?.data[0]?.fadeImageSublist.map((val) => {
                         return <ImgMediaCard data={val} cardSize="auto" hoverText={true} />;
                       })}
                     </Slideshow>
@@ -702,7 +706,7 @@ class ProductDetail extends Component {
                       class="subslider-carousel"
                       dataCarousel={dataCarouselcollections}
                     >
-                      {this.props.data[0].fadeImageSublistRecentlyViewed.map((val) => {
+                      {this.props?.data[0]?.fadeImageSublistRecentlyViewed?.map((val) => {
                         return <ImgMediaCard data={val} cardSize="auto" hoverText={true} />;
                       })}
                     </Slideshow>
@@ -751,7 +755,7 @@ class ProductDetail extends Component {
                   class="subslider-carousel"
                   dataCarousel={dataCarouselcollectionsSm}
                 >
-                  {this.props.data[0].fadeImageSublist.map((val) => {
+                  {this.props?.data[0]?.fadeImageSublist?.map((val) => {
                     return <ImgMediaCard data={val} cardSize="auto" hoverText={true} />;
                   })}
                 </Slideshow>

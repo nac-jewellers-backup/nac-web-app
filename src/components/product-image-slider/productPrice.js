@@ -54,7 +54,7 @@ const mobilecarousel = (props, val, wishlist) => {
         class="middle"
         className="responseve-carousel testingcur"
         imgClass="responseve-carousel-img"
-        fadeImages={data[0].fadeImages.arrOfurls}
+        fadeImages={data[0]?.fadeImages?.arrOfurls}
         dataCarousel={dataCarousel}
         videoControls={true}
       />
@@ -85,12 +85,12 @@ const Productprice = (props, anchorEl, handleClick, handleClose, handleReadMore,
                       <Grid container spacing={12} xs={12} style={{ padding: 10 }}>
                         <Grid container item xs={8}>
                           <h1 className={`pdp-title ${classes.title}`} style={{ width: "90%" }}>
-                            {val.title}
+                            {val?.title}
                           </h1>
 
                         
                           <p className={`pdp-desc ${classes.dis} `} style={{ marginBottom: 20 }}>
-                            {val.dis.length > 30 && viewMore ? val.dis : `${val.dis.substring(0, 30)}...`}
+                            {val?.dis?.length > 30 && viewMore ? val?.dis : `${val?.dis?.substring(0, 30)}...`}
                             <span>
                               <p className={`pdp-desc ${viewMore ? "" : classes.disDescriptionPD}`}>
                                 <span>
@@ -114,13 +114,13 @@ const Productprice = (props, anchorEl, handleClick, handleClose, handleReadMore,
                           </p>
                         </Grid>
 
-                        <Grid container item xs={4} alignContent="center" alignItems="center">
+                        <Grid container item xs={4} alignContent="center" alignItems="cennpm cache cleanter">
                           <Hidden mdUp>
                             <div className={classes.width} style={{ padding: "0px 10px  0px 10px " }}>
                               <Pricing
-                                price={data[0].sellingPrice}
-                                offerPrice={data[0].offerPrice}
-                                offerDiscount={val.offerDiscount}
+                                price={data[0]?.sellingPrice}
+                                offerPrice={data[0]?.offerPrice}
+                                offerDiscount={val?.offerDiscount}
                                 pdpagesm={true}
                               ></Pricing>
                             </div>
@@ -129,11 +129,11 @@ const Productprice = (props, anchorEl, handleClick, handleClose, handleReadMore,
                       </Grid>
                     </Hidden>
                     <Hidden smDown>
-                      <h1 className={`pdp-title ${classes.title} `}>{val.title}</h1>
+                      <h1 className={`pdp-title ${classes.title} `}>{val?.title}</h1>
                     </Hidden>
                     <Hidden smDown>
                       <p className={`pdp-desc ${classes.dis}`} style={{ marginBottom: 0, paddingTop: "5px" }}>
-                        {val.dis.length > 100 && viewMore ? val.dis : val.dis.substring(0, 100)}
+                        {val?.dis?.length > 100 && viewMore ? val?.dis : val?.dis.substring(0, 100)}
                         {/* {val.dis} */}
                         <span>
                           <p className={`pdp-desc ${viewMore ? "" : classes.disDescriptionPD}`}>
@@ -161,14 +161,14 @@ const Productprice = (props, anchorEl, handleClick, handleClose, handleReadMore,
 
           <Hidden smDown>
             <div className={classes.width}>
-              {data[0].price === data[0].offerPrice ? (
-                <Pricing offerPrice={data[0].offerPrice} pdpage={true}>
+              {data[0]?.price === data[0]?.offerPrice ? (
+                <Pricing offerPrice={data[0]?.offerPrice} pdpage={true}>
                 
                 </Pricing>
               ) : (
                 <Pricing
-                  offerPrice={data[0].offerPrice}
-                  price={data[0].sellingPrice}
+                  offerPrice={data[0]?.offerPrice}
+                  price={data[0]?.sellingPrice}
                   pdpage={true}
 
                   // offerDiscount={val.offerDiscount}

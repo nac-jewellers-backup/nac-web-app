@@ -14,6 +14,7 @@ import styles from "./style";
 import { NavLink } from "react-router-dom";
 import Cart from "./Cart.css";
 import { API_URL, CDN_URL } from "config";
+import Quantity from "../quantity/index";
 function MediaControlCard(props) {
   const { classes } = props;
   const { dataCard1 } = props.data;
@@ -126,7 +127,16 @@ function MediaControlCard(props) {
     }
   };
 
-  console.log(props, "aaaaaaaaaaaaaaaaaaaaaaaaaaa")
+  const checkMaterial = (material) => {
+    let _data = material.map((val) => val.toLowerCase());
+    if (_data.indexOf("silver") > -1) return false;
+    else return true;
+  };
+  const dataCarousel = {
+    slidesToShow: 1,
+    arrows: false,
+  };
+  console.log(props, "aaaaaaaaaaaaaaaaaaaaaaaaaaa");
   return (
     <div style={{ paddingTop: "10px" }}>
       {/* <Grid container>
@@ -171,9 +181,24 @@ function MediaControlCard(props) {
                         {val.pro_header}
                       </Typography>
                     )}
+                    <Typography className={`subhesder ${classes.normalfonts}`}>
+                      {window.location.pathname === "/checkout" ||
+                      checkMaterial(dataval.materialName) ||
+                      !Boolean(dataval?.[0]?.maxOrderQty) ||
+                      dataval?.[0]?.maxOrderQty < 2 ? (
+                        `Quantity ${JSON.parse(localStorage.getItem("quantity"))[dataval.generatedSku]}`
+                      ) : (
+                        <Quantity data={[dataval]} cart={true} />
+                      )}
+                    </Typography>
                     {dataval.dataCard1.map((val) => (
-                      <Pricing price={val.price} offerPrice={val.offerPrice} offerDiscount={"25% - OFF"}>
-                        <label className={classes.labelPrice}>
+                      <Pricing
+                        price={val.price}
+                        offerPrice={val.offerPrice}
+                        offerDiscount={"25% - OFF"}
+                        quantity={JSON.parse(localStorage.getItem("quantity"))[dataval.generatedSku]}
+                      >
+                        {/* <label className={classes.labelPrice}>
                           <Typography variant="subtitle1" color="textSecondary" className={classes.labelPriceDel}>
                             <del>{val.offerPrice}</del>
                           </Typography>
@@ -184,7 +209,7 @@ function MediaControlCard(props) {
                           <Typography variant="subtitle1" color="textSecondary" className={classes.labelPriceDel}>
                             <del>{val.offerPrice}</del>
                           </Typography>
-                        </label>
+                        </label> */}
                       </Pricing>
                     ))}
                   </CardContent>

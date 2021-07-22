@@ -112,10 +112,10 @@ class ProductImageZoom extends React.Component {
 
   componentDidUpdate(prevProps) {
     // Typical usage (don't forget to compare props):
-    if (this.props.data[0].fadeImages.arrOfurls[0] !== prevProps.data[0].fadeImages.arrOfurls[0]) {
+    if (this.props?.data[0]?.fadeImages?.arrOfurls[0] !== prevProps.data[0]?.fadeImages?.arrOfurls[0]) {
       this.setState({
-        showimage: this.props.data[0].fadeImages.arrOfurls[0],
-        largeImage: this.props.data[0].fadeImages.arrOfurls_2X[0],
+        showimage: this.props?.data[0]?.fadeImages?.arrOfurls[0],
+        largeImage: this.props?.data[0]?.fadeImages?.arrOfurls_2X[0],
       });
     }
   }
@@ -189,9 +189,9 @@ class ProductImageZoom extends React.Component {
       infinite: false,
       slidesToShow:
         data && data.length > 0
-          ? data[0] && data[0].fadeImages.arrOfurls.length > 3
+          ? data[0] && data[0]?.fadeImages?.arrOfurls?.length > 3
             ? limit
-            : data[0].fadeImages.arrOfurls.length
+            : data[0]?.fadeImages?.arrOfurls?.length
           : 0,
       slidesToScroll: 1,
       // vertical: true,
@@ -200,18 +200,18 @@ class ProductImageZoom extends React.Component {
     };
     // alert(JSON.stringify(data.image_resolution))
     const props = {
-      width: data[0].image_resolution,
-      height: data[0].image_resolution,
-      zoomWidth: data[0].image_resolution,
+      width: data[0]?.image_resolution ?? "",
+      height: data[0]?.image_resolution ?? "",
+      zoomWidth: data[0]?.image_resolution ?? "",
       img: `${showimage}`,
       zoomStyle: "z-index:2",
     };
 
     var a = showimage && showimage;
     // alert(JSON.stringify(this.props.data[0]))
-    var b = a.length > 0 && a.split("/");
+    var b = a?.length > 0 && a?.split("/");
     // var c = a.replace(b[5], data[0].image_resolution_two + 'X' + data[0].image_resolution_two)
-    var c = a.length > 0 && a.replace(b[5], "1000X1000");
+    var c = a?.length > 0 && a?.replace(b[5], "1000X1000");
     // alert(JSON.stringify(CDN_URL))consle
 
     return (
@@ -241,8 +241,8 @@ class ProductImageZoom extends React.Component {
                         ? "500px"
                         : "800px"
                       : _isSilver
-                      ? this.props.data[0].size - 100
-                      : this.props.data[0].size,
+                      ? this.props?.data[0]?.size - 100
+                      : this.props?.data[0]?.size,
                   display: "flex",
                   alignItem: "center",
                 }}
@@ -264,20 +264,20 @@ class ProductImageZoom extends React.Component {
               </Grid>
             </Grid> */}
                 {data.map((val) => {
-                  return !this.props.isSilver && val.offerDiscount ? (
+                  return !this.props?.isSilver && val?.offerDiscount ? (
                     <span style={{ color: "#fff" }} className="overlayCss11">
-                      {val.offerDiscount}
+                      {val?.offerDiscount}
                     </span>
                   ) : null;
                 })}
                 {/* !this.props.isSilver &&  */}
-                {data[0].ProductContactNum[0].isReadyToShip == true ? (
-                  this.props.isSilver ? (
+                {data[0]?.ProductContactNum[0]?.isReadyToShip == true ? (
+                  this.props?.isSilver ? (
                     <div class={"one-day-ship_only_silver"}>
                       <img src={""} alt="" />
                     </div>
                   ) : (
-                    <div class={data && data[0] && data[0].offerDiscount ? "one-day-ship_" : "one-day-ship_only"}></div>
+                    <div class={data && data[0] && data[0]?.offerDiscount ? "one-day-ship_" : "one-day-ship_only"}></div>
                   )
                 ) : (
                   ""
@@ -354,7 +354,7 @@ class ProductImageZoom extends React.Component {
                     getmsg={this.getimage}
                     class={this.props.isSilver ? "vertical-carousel-silver" : `vertical-carousel`}
                     imgClass="vertical-carousel-img"
-                    fadeImages={data[0].fadeImages.arrOfurls_2X}
+                    fadeImages={data[0]?.fadeImages?.arrOfurls_2X}
                     dataCarousel={dataCarousel}
                     currentImage={this.state.showimage}
                   />

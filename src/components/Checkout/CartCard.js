@@ -28,6 +28,12 @@ class Checkoutcard extends React.Component {
       cart: true,
     };
   }
+  handleCartQuantity = (skuId) => {
+    const filters =
+      this.props.filters && this.props.filters.quantity && Object.keys(this.props.filters.quantity).length > 0 ? true : false;
+    if (filters) return this.props.filters.quantity[skuId];
+    else return JSON.parse(localStorage.getItem("quantity"))[skuId];
+  };
 
   // handleCartQuantity = (skuId) =>{
 
@@ -48,7 +54,7 @@ class Checkoutcard extends React.Component {
   handleDeleteLocalStorage = (e) => {
     var local_storage = JSON.parse(localStorage.getItem("cartDetails"));
 
-    // var _localStorageQuantity = JSON.parse(localStorage.getItem('quantity'))
+    var _localStorageQuantity = JSON.parse(localStorage.getItem("quantity"));
 
     // var currentValue = e.target.id
     var currentValue = e.target.id && e.target.id.length > 0 ? e.target.id : e.currentTarget.id;
@@ -95,8 +101,8 @@ class Checkoutcard extends React.Component {
           var cartId = JSON.parse(localStorage.getItem("cartDetails")).cart_id;
           var userId = JSON.parse(localStorage.getItem("cartDetails")).user_id;
           var localstorage = JSON.stringify({ cart_id: `${cartId}`, user_id: `${userId}`, products: a });
-          // delete _localStorageQuantity[currentValue]
-          // localStorage.setItem('quantity', JSON.stringify(_localStorageQuantity))
+          delete _localStorageQuantity[currentValue];
+          localStorage.setItem("quantity", JSON.stringify(_localStorageQuantity));
           localStorage.setItem("cartDetails", localstorage);
           window.location.reload();
         });
@@ -109,8 +115,8 @@ class Checkoutcard extends React.Component {
       var _obj = { cart_id: cartId, user_id: userId, products: _products };
       if (_products.length > 0) {
         localStorage.setItem("cartDetails", JSON.stringify(_obj));
-        // delete _localStorageQuantity[currentValue]
-        // localStorage.setItem('quantity', JSON.stringify(_localStorageQuantity))
+        delete _localStorageQuantity[currentValue];
+        localStorage.setItem("quantity", JSON.stringify(_localStorageQuantity));
         alert("You removed this product successfully");
         window.location.reload();
       } else {
@@ -380,7 +386,7 @@ class Checkoutcard extends React.Component {
     var discounted_price = this.props.cartFilters.discounted_price ? this.props.cartFilters.discounted_price : "";
     const dataCard1 = this.props.data
       .map((val) => {
-        return val.dataCard1[0].offerPrice;
+        return val.dataCard1[0].offerPrice * JSON.parse(localStorage.getItem("quantity"))[val.generatedSku];
       })
       .reduce(myFunc);
     // this.props.data.map(val=>{return val.dataCard1[0].offerPrice}).reduce(myFunc)
@@ -402,7 +408,10 @@ class Checkoutcard extends React.Component {
     }
     var yousave = this.props.data
       .map((_data) => {
-        return _data.dataCard1[0].price - _data.dataCard1[0].offerPrice;
+        return (
+          _data.dataCard1[0].price * JSON.parse(localStorage.getItem("quantity"))[_data.generatedSku] -
+          _data.dataCard1[0].offerPrice * JSON.parse(localStorage.getItem("quantity"))[_data.generatedSku]
+        );
       })
       .reduce(myFunc);
     // const yousave = Math.round(Number(dataCard1.price) - Number(dataCard1.offerPrice))
