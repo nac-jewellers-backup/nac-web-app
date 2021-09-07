@@ -1,12 +1,7 @@
-import React from "react";
+import { Grid, Hidden } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import GridList from "@material-ui/core/GridList";
-import GridListTile from "@material-ui/core/GridListTile";
-import GridListTileBar from "@material-ui/core/GridListTileBar";
-import IconButton from "@material-ui/core/IconButton";
-import StarBorderIcon from "@material-ui/icons/StarBorder";
+import React from "react";
 import "./index.css";
-import { Hidden, Grid } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -29,6 +24,9 @@ const useStyles = makeStyles((theme) => ({
   },
   icon: {
     color: "white",
+  },
+  gridimg: {
+    objectFit: "cover",
   },
 }));
 
@@ -75,6 +73,7 @@ export function AdvancedGridList() {
                   alt="NAC"
                   width="100%"
                   height="100%"
+                  className={classes.gridimg}
                 />
                 <div className="overlayGrid">
                   <b>SHOP</b>&nbsp; DIAMOND SETS
@@ -86,6 +85,7 @@ export function AdvancedGridList() {
                   alt="NAC"
                   width="100%"
                   height="100%"
+                  className={classes.gridimg}
                 />
                 <div className="overlayGrid">
                   <b>SHOP</b>&nbsp; REWIND
@@ -97,6 +97,7 @@ export function AdvancedGridList() {
                   alt="NAC"
                   width="100%"
                   height="100%"
+                  className={classes.gridimg}
                 />
                 <div className="overlayGrid">
                   <b>SHOP</b>&nbsp; MUHURTAM
@@ -108,6 +109,7 @@ export function AdvancedGridList() {
                   alt="NAC"
                   width="100%"
                   height="100%"
+                  className={classes.gridimg}
                 />
                 <div className="overlayGrid">
                   <b>SHOP</b>&nbsp; RUDRAMADEVI
@@ -119,6 +121,7 @@ export function AdvancedGridList() {
                   alt="NAC"
                   width="100%"
                   height="100%"
+                  className={classes.gridimg}
                 />
                 <div className="overlayGrid">
                   <b>SHOP</b>&nbsp; FABULA
@@ -130,6 +133,7 @@ export function AdvancedGridList() {
                   alt="NAC"
                   width="100%"
                   height="100%"
+                  className={classes.gridimg}
                 />
                 <div className="overlayGrid">
                   <b>SHOP</b>&nbsp; LITTLE ONES
@@ -141,6 +145,7 @@ export function AdvancedGridList() {
                   alt="NAC"
                   width="100%"
                   height="100%"
+                  className={classes.gridimg}
                 />
                 <div className="overlayGrid">
                   <b>SHOP</b>&nbsp; STYLORI
@@ -152,6 +157,7 @@ export function AdvancedGridList() {
                   alt="NAC"
                   width="100%"
                   height="100%"
+                  className={classes.gridimg}
                 />
                 <div className="overlayGrid">
                   <b>SHOP</b>&nbsp; MAYURA

@@ -221,7 +221,7 @@ const styles = (theme) => ({
     // }
   },
   timelinegrid: {
-    margin: "50px 0",
+    margin: "20px 0",
   },
   titilenews: {
     textAlign: "center",
@@ -229,7 +229,7 @@ const styles = (theme) => ({
     textDecoration: "underline",
     paddingBottom: 20,
     fontWeight: "bold",
-    fontSize: "1.2rem",
+    fontSize: "1.4rem",
     "-webkit-text-underline-position": "under",
     "-ms-text-underline-position": "below",
     "text-underline-position": "under",
@@ -687,9 +687,9 @@ class HomeComp extends React.Component {
           style={{
             background: "#FFF",
             border: 0,
-            borderRadius: "3px",
-            boxShadow:
-              "0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15)",
+            // borderRadius: "3px",
+            // boxShadow:
+            //   "0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15)",
             margin: "1px",
             maxWidth: "540px",
             minWidth: "326px",
@@ -1033,47 +1033,49 @@ class HomeComp extends React.Component {
           </Grid>
         </Grid>
         <Container maxWidth="lg">
-          <Grid container item xs={12}>
-            <Grid item xs={12} className={classes.contentPadding}>
-              <Title title="New Arrival" />
+          <Hidden mdUp>
+            <Grid container item xs={12}>
+              <Grid item xs={12} className={classes.contentPadding}>
+                <Title title="New Arrival" />
+              </Grid>
+
+              {
+                <>
+                  <Hidden smDown>
+                    <Container maxWidth={"lg"} style={{ paddingTop: 4 }}>
+                      <Slideshow
+                        // sliderRef={this.slider}
+                        class="subslider-carousel"
+                        dataCarousel={dataCarouselcollections}
+                      >
+                        {dummyData.map((val) => {
+                          return <ImgMediaCard data={val} cardSize="auto" />;
+                        })}
+                      </Slideshow>
+                    </Container>
+                  </Hidden>
+                  <Hidden mdUp>
+                    <Container maxWidth={"lg"}>
+                      <Slideshow
+                        // sliderRef={this.slider}
+                        class="subslider-carousel"
+                        dataCarousel={dataCarouselcollectionsSm}
+                      >
+                        {dummyData.map((val) => {
+                          return <ImgMediaCard data={val} cardSize="auto" />;
+                        })}
+                      </Slideshow>
+                    </Container>
+                  </Hidden>
+                </>
+              }
             </Grid>
-            {
-              <>
-                <Hidden smDown>
-                  <Container maxWidth={"lg"} style={{ paddingTop: 4 }}>
-                    <Slideshow
-                      // sliderRef={this.slider}
-                      class="subslider-carousel"
-                      dataCarousel={dataCarouselcollections}
-                    >
-                      {dummyData.map((val) => {
-                        return <ImgMediaCard data={val} cardSize="auto" />;
-                      })}
-                    </Slideshow>
-                  </Container>
-                </Hidden>
-                <Hidden mdUp>
-                  <Container maxWidth={"lg"}>
-                    <Slideshow
-                      // sliderRef={this.slider}
-                      class="subslider-carousel"
-                      dataCarousel={dataCarouselcollectionsSm}
-                    >
-                      {dummyData.map((val) => {
-                        return <ImgMediaCard data={val} cardSize="auto" />;
-                      })}
-                    </Slideshow>
-                  </Container>
-                </Hidden>
-              </>
-            }
-          </Grid>
-          <Grid className={classes.gridPadding}>
-            <Timeline day="monday" date="06/05/2019" timelineData={tData} />
-          </Grid>
-          <Grid item xs={12}>
+          </Hidden>
+
+          <Hidden mdUp>
+            {/* <div style={{width:"100%"}}> */}
             <Homenote />
-          </Grid>
+          </Hidden>
           <Grid item xs={12} className={classes.gridPadding}>
             <Title title="Collections" />
           </Grid>
@@ -1132,6 +1134,10 @@ class HomeComp extends React.Component {
             }
           </Grid>
 
+          <Grid className={classes.gridPadding}>
+            <Title title="ABOUT US" />
+            <Timeline day="monday" date="06/05/2019" timelineData={tData} />
+          </Grid>
           <Grid container item xs={12} className={classes.gridPadding}>
             <Grid container item xs={12}>
               {[
@@ -1194,7 +1200,13 @@ class HomeComp extends React.Component {
                 xl={4}
                 className={classes.photo}
                 // style={{ height: "430px", overflow: "auto", marginTop: 52 }}
-                style={{ marginTop: "20px", height: "430px", overflow: "auto" }}
+                style={{
+                  marginTop: "20px",
+                  height: "430px",
+                  overflow: "auto",
+                  borderRadius: "3px",
+                  border: "1px solid #D9D9D9",
+                }}
               >
                 <InstagramFeed />
               </Grid>

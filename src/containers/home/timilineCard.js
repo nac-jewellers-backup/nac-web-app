@@ -3,8 +3,8 @@ import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
-import Typography from "@material-ui/core/Typography";
 import React from "react";
+import Homenote from "./Homenote";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,7 +21,8 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     display: "flex",
     textAlign: "center",
-    padding: "70px",
+    padding: "50px",
+    backgroundColor: "#F9E3BF",
   },
   cover: {
     width: "50%",
@@ -63,7 +64,8 @@ export function MediaControlCard(props) {
           <div style={{ width: "50%" }}>
             <div className={classes.details}>
               <CardContent className={classes.content}>
-                <Typography
+                <Homenote />
+                {/* <Typography
                   variant="subtitle1"
                   color="textSecondary"
                   className={classes.contentText}
@@ -72,7 +74,7 @@ export function MediaControlCard(props) {
                   when Shri Nathella Narayana Chetty started a small jewellery
                   business at home where he fashioned hand-made jewels for a few
                   loyal patrons
-                </Typography>
+                </Typography> */}
               </CardContent>
             </div>
           </div>
@@ -85,7 +87,6 @@ export function MediaControlCard(props) {
             image={props.data.image}
             title="Live from space album cover"
           />
-          {/* </div> */}
         </Hidden>
       </Card>
     </>

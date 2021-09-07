@@ -8,8 +8,8 @@ const styles = makeStyles((theme) => ({
     marginBottom: 15,
   },
   img: {
-    height: 50,
-    width: 50,
+    height: 35,
+    width: 35,
   },
 }));
 export default styles;

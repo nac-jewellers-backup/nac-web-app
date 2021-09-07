@@ -1,4 +1,4 @@
-import { Typography } from "@material-ui/core";
+import { Box, Typography } from "@material-ui/core";
 import {
   createTheme,
   makeStyles,
@@ -10,15 +10,26 @@ const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: "#F9E3BF",
     padding: 20,
+    textAlign: "center",
   },
   hr: {
     border: "1px solid #CBA561",
     width: "5rem",
+    padding: 0,
   },
+
   content: {
     textAlign: "center",
     color: "#6E6E71",
     fontSize: 6.97,
+    fontFamily: "NotoSerif",
+  },
+  img: {
+    height: 40,
+    width: 40,
+  },
+  flex: {
+    display: "flex",
   },
 }));
 const CardTheme = createTheme({
@@ -37,18 +48,41 @@ export default function Homenote(props) {
   return (
     <ThemeProvider theme={CardTheme}>
       <div className={classes.root}>
-        <hr className={classes.hr}></hr>
+        <Box display="flex" justifyContent="center" flexDirection="column">
+          <Box marginBottom={-2}>
+            <img
+              src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/Group+215.svg"
+              alt="t
+          opimage"
+              className={classes.img}
+            />
+          </Box>
+          <Box>
+            <hr className={classes.hr}></hr>
+          </Box>
+        </Box>
+
         <div className={classes.content}>
           <Typography>
             In 1973, Shri N. Anjaneyalu Chetty started a jewellery shop in
-            Mylapore
-            <br />
-            hoping to find loyal patrons. What began as a small store was soon a
-            <br />
-            flourishing business and NAC became a household name in Mylapore!
+            Mylapore hoping to find loyal patrons. What began as a small store
+            was soon a flourishing business and NAC became a household name in
+            Mylapore!
           </Typography>
         </div>
-        <hr className={classes.hr}></hr>
+        <Box display="flex" justifyContent="center" flexDirection="column">
+          <Box>
+            <hr className={classes.hr}></hr>
+          </Box>
+          <Box marginTop={-1}>
+            <img
+              src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/Group+53.svg"
+              alt="t
+               opimage"
+              className={classes.img}
+            />
+          </Box>
+        </Box>
       </div>
     </ThemeProvider>
   );

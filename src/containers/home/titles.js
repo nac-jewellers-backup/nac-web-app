@@ -15,9 +15,7 @@ export const Title = (props) => {
               alt="title images"
             />
           </Box>
-          <Box className={classes.title} marginTop={1}>
-            {props.title.toUpperCase()}
-          </Box>
+          <Box className={classes.title}>{props.title.toUpperCase()}</Box>
           <Box>
             <img
               className={classes.img}
