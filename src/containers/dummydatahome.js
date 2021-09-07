@@ -16,13 +16,13 @@ export const
         arrowsImg: true,
         dotsClass: "slickdev",
         accessibility: true,
-        autoplaySpeed: 4000,
+        autoplaySpeed: 2000,
         centerMode: false,
         focusOnSelect: false,
         pauseOnHover: false,
         pauseOnDotsHover: false,
         pauseOnFocus: true,
-        swipe: false
+        swipe: true
       },
       "data": [
         {

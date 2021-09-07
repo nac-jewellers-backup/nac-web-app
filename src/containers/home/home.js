@@ -543,10 +543,10 @@ class HomeComp extends React.Component {
     const dataCarouselcollections = {
       arrows: true,
       dots: false,
-      autoplay: false,
+      autoplay: true,
       infinite: false,
       accessibility: true,
-      // speed: 2500,
+      speed: 2500,
       // fade: true,
       slidesToShow: 4,
       slidesToScroll: 4,

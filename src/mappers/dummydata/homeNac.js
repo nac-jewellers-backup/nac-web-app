@@ -26,9 +26,9 @@ export const homeNac = {
   carouselTop: {
     setting: {
       dots: true,
-      infinite: false,
-      autoplay: false,
-      speed: 1000,
+      infinite: true,
+      autoplay: true,
+      speed: 3000,
       fade: false,
       arrows: true,
       arrowsImg: false,
