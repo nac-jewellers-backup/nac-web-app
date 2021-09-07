@@ -1076,14 +1076,19 @@ class HomeComp extends React.Component {
             {/* <div style={{width:"100%"}}> */}
             <Homenote />
           </Hidden>
-          <Grid item xs={12} className={classes.gridPadding}>
+          <Grid
+            item
+            xs={12}
+            className={classes.gridPadding}
+            style={{ paddingTop: "40px" }}
+          >
             <Title title="Collections" />
           </Grid>
           <Grid style={{ paddingTop: 8 }}>
             <AdvancedGridList />
           </Grid>
 
-          <Grid container item xs={12} style={{ margin: "40px 0px" }}>
+          <Grid container item xs={12} style={{ margin: "60px 0px" }}>
             <Grid item xs={12} className={classes.gridPadding}>
               <Title
                 title="Featured"
@@ -1138,7 +1143,13 @@ class HomeComp extends React.Component {
             <Title title="ABOUT US" />
             <Timeline day="monday" date="06/05/2019" timelineData={tData} />
           </Grid>
-          <Grid container item xs={12} className={classes.gridPadding}>
+          <Grid
+            container
+            item
+            xs={12}
+            className={classes.gridPadding}
+            style={{ margin: "80px 0px" }}
+          >
             <Grid container item xs={12}>
               {[
                 { title: "NEWS" },

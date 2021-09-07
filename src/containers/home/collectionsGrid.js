@@ -28,6 +28,15 @@ const useStyles = makeStyles((theme) => ({
   gridimg: {
     objectFit: "cover",
   },
+  coverfooter: {
+    background: "rgba(183, 130, 49, 0.85)",
+    color: "white",
+    fontSize: 15,
+    zIndex: 1,
+    padding: 4,
+    marginBottom: -14,
+    textAlign: "center",
+  },
 }));
 
 const tileData = [
@@ -64,6 +73,154 @@ export function AdvancedGridList() {
   return (
     <>
       <Hidden smDown>
+        <Grid container spacing={1}>
+          <Grid item xs={4} style={{ marginLeft: "5%" }}>
+            <Grid container>
+              <Grid item xs={3}></Grid>
+              <Grid item xs={9}>
+                <div className="parent">
+                  <img
+                    src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_collection/Group+46%402x.png"
+                    alt="NAC"
+                    width="100%"
+                    height="300"
+                    className={classes.gridimg}
+                  />
+                  <div className="child" style={{ width: "100%" }}>
+                    <div className={classes.coverfooter}>
+                      <b>SHOP</b>&nbsp; DIAMOND SETS
+                    </div>
+                    <div>&nbsp; </div>
+                  </div>
+                </div>
+                <div className="parent">
+                  <img
+                    src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_collection/Group+64%402x.png"
+                    alt="NAC"
+                    width="100%"
+                    height="600"
+                    className={classes.gridimg}
+                  />
+                  <div className="child" style={{ width: "100%" }}>
+                    <div className={classes.coverfooter}>
+                      <b>SHOP</b>&nbsp; FABULA
+                    </div>
+                    <div>&nbsp; </div>
+                  </div>
+                </div>
+              </Grid>
+            </Grid>
+          </Grid>
+          <Grid item xs={6}>
+            <Grid container spacing={1}>
+              <Grid item xs={6}>
+                <div className="parent">
+                  <img
+                    src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_collection/Group+50%402x.png"
+                    alt="NAC"
+                    width="100%"
+                    height="300"
+                    className={classes.gridimg}
+                  />
+                  <div className="child" style={{ width: "100%" }}>
+                    <div className={classes.coverfooter}>
+                      <b>SHOP</b>&nbsp; REWIND
+                    </div>
+                    <div>&nbsp; </div>
+                  </div>
+                </div>
+                <div className="parent">
+                  <img
+                    src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_collection/Group+60%402x.png"
+                    alt="NAC"
+                    width="100%"
+                    height="300"
+                    className={classes.gridimg}
+                  />
+                  <div className="child" style={{ width: "100%" }}>
+                    <div className={classes.coverfooter}>
+                      <b>SHOP</b>&nbsp; RUDRAMADEVI
+                    </div>
+                    <div>&nbsp; </div>
+                  </div>
+                </div>
+              </Grid>
+              <Grid item xs={6}>
+                <div className="parent">
+                  <img
+                    src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_page/Group+147%402x.png"
+                    alt="NAC"
+                    width="100%"
+                    height="604"
+                  />
+                  <div className="child" style={{ width: "100%" }}>
+                    <div className={classes.coverfooter}>
+                      <b>SHOP</b>&nbsp; MUHURTAM
+                    </div>
+                    <div>&nbsp; </div>
+                  </div>
+                </div>
+              </Grid>
+            </Grid>
+            <Grid container>
+              <Grid item xs={12}>
+                <div className="parent">
+                  <img
+                    src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_collection/Group+68%402x.png"
+                    alt="NAC"
+                    width="100%"
+                    height="296"
+                  />
+                  <div className="child" style={{ width: "100%" }}>
+                    <div className={classes.coverfooter}>
+                      <b>SHOP</b>&nbsp; LITTLE ONES
+                    </div>
+                    <div>&nbsp; </div>
+                  </div>
+                </div>
+              </Grid>
+            </Grid>
+          </Grid>
+          <Grid container spacing={1}>
+            <Grid item xs={1} style={{ marginLeft: "5%" }}></Grid>
+            <Grid item xs={6}>
+              <div className="parent">
+                <img
+                  src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_page/Group+156%402x.png"
+                  alt="NAC"
+                  width="100%"
+                  height="300"
+                  className={classes.gridimg}
+                />
+                <div className="child" style={{ width: "100%" }}>
+                  <div className={classes.coverfooter}>
+                    <b>SHOP</b>&nbsp; STYLORI
+                  </div>
+                  <div>&nbsp; </div>
+                </div>
+              </div>
+            </Grid>
+            <Grid item xs={3}>
+              <div className="parent">
+                <img
+                  src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_collection/Group+73.png"
+                  alt="NAC"
+                  width="100%"
+                  height="300"
+                  className={classes.gridimg}
+                />
+                <div className="child" style={{ width: "100%" }}>
+                  <div className={classes.coverfooter}>
+                    <b>SHOP</b>&nbsp; MAYURA
+                  </div>
+                  <div>&nbsp; </div>
+                </div>
+              </div>
+            </Grid>
+          </Grid>
+        </Grid>
+      </Hidden>
+      {/* <Hidden smDown>
         <Grid container>
           <Grid item xs={12}>
             <div class="grid-container">
@@ -71,7 +228,7 @@ export function AdvancedGridList() {
                 <img
                   src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_collection/Group+46%402x.png"
                   alt="NAC"
-                  width="100%"
+                  width="100%%"
                   height="100%"
                   className={classes.gridimg}
                 />
@@ -97,7 +254,6 @@ export function AdvancedGridList() {
                   alt="NAC"
                   width="100%"
                   height="100%"
-                  className={classes.gridimg}
                 />
                 <div className="overlayGrid">
                   <b>SHOP</b>&nbsp; MUHURTAM
@@ -133,7 +289,6 @@ export function AdvancedGridList() {
                   alt="NAC"
                   width="100%"
                   height="100%"
-                  className={classes.gridimg}
                 />
                 <div className="overlayGrid">
                   <b>SHOP</b>&nbsp; LITTLE ONES
@@ -166,7 +321,8 @@ export function AdvancedGridList() {
             </div>
           </Grid>
         </Grid>
-      </Hidden>
+      </Hidden> */}
+
       <Hidden mdUp>
         <div class="grid-container-sm">
           <div class="grid-item-sm item1-sm">

@@ -1,185 +1,197 @@
-
-
 /* TIMELINE */
 .timeline-entry {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
-.timeline-entry .time-range, .timeline-entry .timeline-label {
-    min-height: 60px;
-    padding-bottom: 10px;
-    color: gray;
-    font-size: 21px;
-    line-height: 23px;
-    /* width: calc(50% - 20px); */
-    text-transform: capitalize;
+.timeline-entry .time-range,
+.timeline-entry .timeline-label {
+  min-height: 60px;
+  padding-bottom: 10px;
+  color: gray;
+  font-size: 21px;
+  line-height: 23px;
+  /* width: calc(50% - 20px); */
+  text-transform: capitalize;
 }
-.active{
-    color:#b78231 !important;
+.active {
+  color: #b78231 !important;
 }
 .timeline-entry .time-range {
-    text-align: right;
+  text-align: right;
 }
 .timeline-entry .timeline-label {
-    text-align: left;
+  text-align: left;
 }
 .timeline-entry .timeline-icon-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 10px;
 }
 .timeline-entry .timeline-icon-container svg {
-    width: 20px;
-    fill: gray;
-    background: gray;
-    border-radius: 50%;
+  width: 20px;
+  fill: gray;
+  background: gray;
+  border-radius: 50%;
 }
 
-.active svg{
-    background: #b78231 !important;
-    border-radius: 50%;
-    fill: #b78231 !important;
+.active svg {
+  background: #b78231 !important;
+  border-radius: 50%;
+  fill: #b78231 !important;
 }
 .timeline-entry .timeline-icon-container .bar {
-    border-right: 1px solid gray;
-    height: calc(100% - 16px);
-    width: 1px;
+  border-right: 1px solid gray;
+  height: calc(100% - 16px);
+  width: 1px;
 }
 .timeline {
-    font-family: sans-serif;
-    max-width: 600px;
-    /* margin: 10px auto 0; */
+  font-family: sans-serif;
+  max-width: 600px;
+  /* margin: 10px auto 0; */
 }
 .timeline * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 .timeline .timeline-header {
-    padding: 5px 10px;
-    background-image: linear-gradient(to right, #568aff, #0d9cb3);
+  padding: 5px 10px;
+  background-image: linear-gradient(to right, #568aff, #0d9cb3);
 }
 .timeline .timeline-header .date {
-    text-align: center;
-    color: #fff;
-    font-size: 21px;
-    text-transform: capitalize;
+  text-align: center;
+  color: #fff;
+  font-size: 21px;
+  text-transform: capitalize;
 }
 .timeline .timeline-body {
-    display: flex;
-    flex-direction: column;
-    /* padding-top: 20px; */
+  display: flex;
+  flex-direction: column;
+  /* padding-top: 20px; */
 }
 
 @media screen and (max-width: 600px) {
   .timeline-entry .timeline-icon-container svg {
     width: 17px;
-}
-.timeline-entry .time-range, .timeline-entry .timeline-label {
-  font-size: 15px;
-  
-}
+  }
+  .timeline-entry .time-range,
+  .timeline-entry .timeline-label {
+    font-size: 15px;
+  }
 }
 
 /* ENDS */
-
-
 
 /* COLLECTION GRID LIST */
 
 /* DESKTOP */
 
 .grid-container {
-    display: grid;
-    grid-gap: 6px;
-    /* background-color: #2196F3; */
-    /* padding: 10px; */
-    /* height: 200px; */
-    grid-template-rows: 200px 200px 200px 200px;
-  }
-  
-  .grid-item {
-    background-color: rgba(255, 255, 255, 0.8);
-    text-align: center;
-    /* padding: 20px; */
-    font-size: 30px;
-    /* height: 50px; */
-    position:relative
-  }
-  .overlayGrid{
-    position: absolute;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    background: rgba(183, 130, 49, 0.85);
-    color:white;
-    font-size:15px;
-    padding:4px 0px; 
-  }
-  .item1 {
-    grid-column: 1 / span 2;
-    grid-row: 1;
-  }
-  
-  .item2 {
-    grid-column: 3;
-    grid-row: 1 / span 2;
-  }
-  .item11 {
-    grid-column: 1;
-    grid-row: 2 / span 2;
-  }
-  .item5 {
-    grid-column: 1 / span 3;
-    grid-row: 3;
-  }
-  .item44{
-  grid-column: 2/ span 2;
-    grid-row: 3;
-  }
-  .item45{
-  grid-column: 1/ span 2;
-    grid-row: 4;
-  }
+  display: grid;
+  grid-gap: 6px;
+  /* background-color: #2196F3; */
+  /* padding: 10px; */
+  /* height: 200px; */
+  grid-template-rows: 200px 200px 200px 200px;
+}
 
-  /* MOBILE DEVICES */
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  /* padding: 20px; */
+  font-size: 30px;
+  /* height: 50px; */
+  position: relative;
+}
+.overlayGrid {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background: rgba(183, 130, 49, 0.85);
+  color: white;
+  font-size: 15px;
+  padding: 4px 0px;
+}
+.item1 {
+  grid-column: 1 / span 2;
+  grid-row: 1;
+}
 
-  .grid-container-sm {
-    display: grid;
-    grid-gap: 10px;
-    /* background-color: #2196F3; */
-    /* padding: 10px; */
-  }
-  
-  .grid-item-sm {
-    background-color: rgba(255, 255, 255, 0.8);
-    text-align: center;
-    /* padding: 20px; */
-    font-size: 30px;
-    position:relative;
-  }
-  
-  .item1-sm {
-    grid-column: 2 ;
-    grid-row: 1;
-  }
-  .item112-sm {
-    grid-column: 1;
-    grid-row: 2;
-  }
-  .item113-sm {
-    grid-column: 1;
-    grid-row: 3;
-  }
-  
-  .item11-sm {
-    grid-column: 2;
-    grid-row: 2 / span 2;
-  }
-  .item0-sm {
-  grid-column: 1/span 2;
-    grid-row: 4;
-  }
+.item2 {
+  grid-column: 3;
+  grid-row: 1 / span 2;
+}
+.item11 {
+  grid-column: 1;
+  grid-row: 2 / span 2;
+}
+.item5 {
+  grid-column: 1 / span 3;
+  grid-row: 3;
+}
+.item44 {
+  grid-column: 2 / span 2;
+  grid-row: 3;
+}
+.item45 {
+  grid-column: 1 / span 2;
+  grid-row: 4;
+}
+.parent {
+  position: relative;
+}
+.child {
+  position: absolute;
+
+  bottom: 0;
+  /* bottom: 0;
+ 
+  display: flex;
+  justify-content: center;
+  background: rgba(183, 130, 49, 0.85);
+  color: white;
+  font-size: 15px;
+  padding: 4px 0px; */
+}
+/* MOBILE DEVICES */
+
+.grid-container-sm {
+  display: grid;
+  grid-gap: 10px;
+  /* background-color: #2196F3; */
+  /* padding: 10px; */
+}
+
+.grid-item-sm {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  /* padding: 20px; */
+  font-size: 30px;
+  position: relative;
+}
+
+.item1-sm {
+  grid-column: 2;
+  grid-row: 1;
+}
+.item112-sm {
+  grid-column: 1;
+  grid-row: 2;
+}
+.item113-sm {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+.item11-sm {
+  grid-column: 2;
+  grid-row: 2 / span 2;
+}
+.item0-sm {
+  grid-column: 1 / span 2;
+  grid-row: 4;
+}
 
 /*  */
 
@@ -220,9 +232,8 @@
 
 /*  */
 
-
 @media screen and (max-width: 400px) {
-  .overlayGrid{
-    font-size:11px;
+  .overlayGrid {
+    font-size: 11px;
   }
 }

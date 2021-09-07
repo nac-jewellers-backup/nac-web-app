@@ -4,8 +4,9 @@ const styles = makeStyles((theme) => ({
     color: theme.palette.gold.main,
     textAlign: "center",
     fontStyle: "italic",
-    fontSize: "2rem",
+    fontSize: "2.1rem",
     marginBottom: 15,
+    fontWeight: "530",
   },
   img: {
     height: 35,
