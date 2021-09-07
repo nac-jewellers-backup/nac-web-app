@@ -6,7 +6,7 @@ const styles = makeStyles((theme) => ({
     fontStyle: "italic",
     fontSize: "2.1rem",
     marginBottom: 15,
-    fontWeight: "530",
+    fontWeight: "550",
   },
   img: {
     height: 35,
