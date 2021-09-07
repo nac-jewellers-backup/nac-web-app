@@ -1,10 +1,10 @@
-import React from "react";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { Hidden } from "@material-ui/core";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
-import { Hidden, Grid } from "@material-ui/core";
+import React from "react";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
   },
   cover: {
     width: "50%",
-    border: `1.5px solid ${theme.palette.gold.main}`,
+    border: `3px solid ${theme.palette.gold.main}`,
     [theme.breakpoints.down("sm")]: {
       width: "100%",
     },
@@ -50,42 +50,44 @@ export function MediaControlCard(props) {
   const theme = useTheme();
 
   return (
-    <Card className={classes.root}>
-      <Hidden smDown>
-        <CardMedia
-          className={classes.cover}
-          style={{ fontFamily: "notoSerif-regular" }}
-          image={props.data.image}
-          title="Live from space album cover"
-        />
+    <>
+      <Card className={classes.root}>
+        <Hidden smDown>
+          <CardMedia
+            className={classes.cover}
+            style={{ fontFamily: "notoSerif-regular" }}
+            image={props.data.image}
+            title="Live from space album cover"
+          />
 
-        <div style={{ width: "50%" }}>
-          <div className={classes.details}>
-            <CardContent className={classes.content}>
-              <Typography
-                variant="subtitle1"
-                color="textSecondary"
-                className={classes.contentText}
-              >
-                Ours is a journey that began almost hundred years ago in 1917
-                when Shri Nathella Narayana Chetty started a small jewellery
-                business at home where he fashioned hand-made jewels for a few
-                loyal patrons
-              </Typography>
-            </CardContent>
+          <div style={{ width: "50%" }}>
+            <div className={classes.details}>
+              <CardContent className={classes.content}>
+                <Typography
+                  variant="subtitle1"
+                  color="textSecondary"
+                  className={classes.contentText}
+                >
+                  Ours is a journey that began almost hundred years ago in 1917
+                  when Shri Nathella Narayana Chetty started a small jewellery
+                  business at home where he fashioned hand-made jewels for a few
+                  loyal patrons
+                </Typography>
+              </CardContent>
+            </div>
           </div>
-        </div>
-      </Hidden>
+        </Hidden>
 
-      <Hidden mdUp>
-        {/* <div style={{width:"100%"}}> */}
-        <CardMedia
-          className={classes.cover}
-          image={props.data.image}
-          title="Live from space album cover"
-        />
-        {/* </div> */}
-      </Hidden>
-    </Card>
+        <Hidden mdUp>
+          {/* <div style={{width:"100%"}}> */}
+          <CardMedia
+            className={classes.cover}
+            image={props.data.image}
+            title="Live from space album cover"
+          />
+          {/* </div> */}
+        </Hidden>
+      </Card>
+    </>
   );
 }

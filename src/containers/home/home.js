@@ -1,30 +1,24 @@
-import React from "react";
-import { Grid, Typography, Container } from "@material-ui/core";
-import Slideshow from "components/Carousel/carosul";
-import { homeNac, HomeCardData, StaticImage } from "mappers/dummydata/homeNac";
-import { withRouter } from "react-router-dom";
+import { Container, Grid } from "@material-ui/core";
 import Hidden from "@material-ui/core/Hidden";
 import { withStyles } from "@material-ui/core/styles";
-import Story from "../../components/story";
-import HomeCard from "../../components/homecard";
-// import {styles} from './homestyle';
-import Testimonial from "../../components/testimonial/testimonial";
-import { storyData } from "mappers/dummydata/homeNac";
-import Header from "components/SilverComponents/Header";
-import Footer from "components/Footer/Footer";
-import ArrowRightIcon from "@material-ui/icons/ArrowRight";
 import ArrowLeftIcon from "@material-ui/icons/ArrowLeft";
+import ArrowRightIcon from "@material-ui/icons/ArrowRight";
+import Slideshow from "components/Carousel/carosul";
+import Footer from "components/Footer/Footer";
 import GadgetsNac from "components/Gagetstylori/GadgetsNac";
 import { ImgMediaCard } from "components/ProductCard/Card";
+import Header from "components/SilverComponents/Header";
+import { homeNac } from "mappers/dummydata/homeNac";
+import React from "react";
+// import {styles} from './homestyle';
+import Testimonial from "../../components/testimonial/testimonial";
+import { API_URL } from "../../config";
+import { ALLBANNERS } from "../../queries/home";
+import { AdvancedGridList } from "./collectionsGrid";
+import Homenote from "./Homenote";
 import "./index.css";
 import { MediaControlCard } from "./timilineCard";
-import { AdvancedGridList } from "./collectionsGrid";
 import { Title } from "./titles";
-import { Helmet } from "react-helmet";
-import LiveChat from "react-livechat";
-import {API_URL} from "../../config";
-import {ALLBANNERS} from "../../queries/home";
-
 const styles = (theme) => ({
   preButton: {
     // backgroundRepeat: "no-repeat !important",
@@ -274,11 +268,11 @@ class HomeComp extends React.Component {
       count: "",
       timelineImage:
         "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_page/Group+213%402x.png",
-      bannerHome:[],
+      bannerHome: [],
     };
   }
 
-  componentDidMount(){
+  componentDidMount() {
     fetch(`${API_URL}/graphql`, {
       method: "post",
       headers: {
@@ -291,10 +285,9 @@ class HomeComp extends React.Component {
       .then((res) => res.json())
       .then((data) => {
         let bannerDataFull = data.data.allBanners.nodes;
-        this.setState({bannerHome:bannerDataFull})
-      }); 
+        this.setState({ bannerHome: bannerDataFull });
+      });
   }
-
 
   next = () => {
     this.slider.current.slickNext();
@@ -1078,7 +1071,9 @@ class HomeComp extends React.Component {
           <Grid className={classes.gridPadding}>
             <Timeline day="monday" date="06/05/2019" timelineData={tData} />
           </Grid>
-
+          <Grid item xs={12}>
+            <Homenote />
+          </Grid>
           <Grid item xs={12} className={classes.gridPadding}>
             <Title title="Collections" />
           </Grid>
@@ -1228,7 +1223,6 @@ class HomeComp extends React.Component {
               style={{ height: "430px", overflow: "auto", marginTop: "20px" }}
             >
               <InstagramFeed />
-             
             </Grid>
           </Hidden>
         </Container>
