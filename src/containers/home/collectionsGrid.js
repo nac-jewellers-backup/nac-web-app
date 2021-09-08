@@ -37,6 +37,12 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: -14,
     textAlign: "center",
   },
+  titlefooter: {
+    [theme.breakpoints.up("xs")]: {
+      fontSize: 13,
+    },
+    whiteSpace: "noWrap",
+  },
 }));
 
 const tileData = [
@@ -333,7 +339,8 @@ export function AdvancedGridList() {
               className={classes.gridimg}
             />
             <div className="overlayGrid">
-              <b>SHOP</b>&nbsp;REWIND
+              <b className={classes.titlefooter}>SHOP</b>&nbsp;
+              <span className={classes.titlefooter}>REWIND</span>
             </div>
           </div>
           <div class="grid-item-sm item111-sm">
@@ -346,7 +353,8 @@ export function AdvancedGridList() {
               className={classes.gridimg}
             />
             <div className="overlayGrid">
-              <b>SHOP</b>&nbsp; DIAMOND SETS
+              <b className={classes.titlefooter}>SHOP</b>&nbsp;{" "}
+              <span className={classes.titlefooter}>DIAMOND SETS</span>
             </div>
           </div>
           <div class="grid-item-sm item112-sm">
@@ -358,7 +366,8 @@ export function AdvancedGridList() {
               className={classes.gridimg}
             />
             <div className="overlayGrid">
-              <b>SHOP</b>&nbsp; RUDRAMA DEVI
+              <b className={classes.titlefooter}>SHOP</b>&nbsp;
+              <span className={classes.titlefooter}>RUDRAMA DEVI</span>
             </div>
           </div>
           <div class="grid-item-sm item113-sm">
@@ -370,7 +379,8 @@ export function AdvancedGridList() {
               className={classes.gridimg}
             />
             <div className="overlayGrid">
-              <b>SHOP</b>&nbsp; MAYURA
+              <b className={classes.titlefooter}>SHOP</b>&nbsp;
+              <span className={classes.titlefooter}>MAYURA</span>
             </div>
           </div>
           <div class="grid-item-sm item11-sm">
@@ -382,7 +392,8 @@ export function AdvancedGridList() {
               className={classes.gridimg}
             />
             <div className="overlayGrid">
-              <b>SHOP</b>&nbsp; MUHURTAM
+              <b className={classes.titlefooter}>SHOP</b>&nbsp;
+              <span className={classes.titlefooter}>MUHURTAM</span>
             </div>
           </div>
           <div class="grid-item-sm item0-sm">
@@ -394,7 +405,8 @@ export function AdvancedGridList() {
               height="100%"
             />
             <div className="overlayGrid">
-              <b>SHOP</b>&nbsp; LITTLE ONES
+              <b className={classes.titlefooter}>SHOP</b>&nbsp;
+              <span className={classes.titlefooter}>LITTLE ONES</span>
             </div>
           </div>
         </div>
