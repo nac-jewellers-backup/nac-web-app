@@ -198,7 +198,11 @@ const styles = (theme) => ({
       height: "230px",
     },
   },
-
+  testimonial: {
+    [theme.breakpoints.down("md")]: {
+      boxShadow: "4px 4px 4px #bebfbf",
+    },
+  },
   mainImg: {
     position: "block",
     width: "100%",
@@ -705,8 +709,7 @@ class HomeComp extends React.Component {
             // boxShadow:
             //   "0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15)",
             margin: "1px",
-            maxWidth: "540px",
-            minWidth: "326px",
+            maxWidth: "100%",
             padding: 0,
             width: "calc(100% - 2px)",
           }}
@@ -1240,9 +1243,13 @@ class HomeComp extends React.Component {
               md={8}
               lg={8}
               xl={8}
-              style={{ paddingTop: "20px" }}
+              style={{
+                paddingTop: "20px",
+              }}
             >
-              <Testimonial />
+              <div className={classes.testimonial}>
+                <Testimonial />
+              </div>
             </Grid>
           </Grid>
           <Hidden mdUp>
@@ -1254,9 +1261,16 @@ class HomeComp extends React.Component {
               lg={4}
               xl={4}
               className={classes.photo}
-              style={{ height: "430px", overflow: "auto", marginTop: "20px" }}
+              style={{
+                overflow: "auto",
+                marginTop: "20px",
+                border: "1px solid #D9D9D9",
+                boxShadow: "4px 4px 4px #bebfbf",
+              }}
             >
-              <InstagramFeed />
+              <center>
+                <InstagramFeed />
+              </center>
             </Grid>
           </Hidden>
         </Container>
