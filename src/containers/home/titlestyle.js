@@ -6,7 +6,7 @@ const styles = makeStyles((theme) => ({
     fontStyle: "italic",
     fontSize: "2.1rem",
     marginBottom: 15,
-    fontWeight: "550",
+    fontWeight: "540",
     marginTop: -4,
     whiteSpace: "noWrap",
   },

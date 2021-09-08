@@ -326,22 +326,24 @@ export function AdvancedGridList() {
           <div class="grid-item-sm item1-sm">
             {" "}
             <img
-              src="https://assets.stylori.com/images/Static+Pages/Home+Page/mangocollection.png"
+              src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_collection/Group+50%402x.png"
               alt="NAC"
               width="100%"
               height="100%"
+              className={classes.gridimg}
             />
             <div className="overlayGrid">
-              <b>SHOP</b>&nbsp; DIAMOND SETS
+              <b>SHOP</b>&nbsp;REWIND
             </div>
           </div>
           <div class="grid-item-sm item111-sm">
             {" "}
             <img
-              src="https://assets.stylori.com/images/Static+Pages/Home+Page/mangocollection.png"
+              src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_collection/Group+46%402x.png"
               alt="NAC"
               width="100%"
               height="100%"
+              className={classes.gridimg}
             />
             <div className="overlayGrid">
               <b>SHOP</b>&nbsp; DIAMOND SETS
@@ -349,21 +351,23 @@ export function AdvancedGridList() {
           </div>
           <div class="grid-item-sm item112-sm">
             <img
-              src="https://assets.stylori.com/images/Static+Pages/Home+Page/mangocollection.png"
+              src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_collection/Group+60%402x.png"
               alt="NAC"
               width="100%"
               height="100%"
+              className={classes.gridimg}
             />
             <div className="overlayGrid">
-              <b>SHOP</b>&nbsp; REWIND
+              <b>SHOP</b>&nbsp; RUDRAMA DEVI
             </div>
           </div>
           <div class="grid-item-sm item113-sm">
             <img
-              src="https://assets.stylori.com/images/Static+Pages/Home+Page/mangocollection.png"
+              src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_collection/Group+73.png"
               alt="NAC"
               width="100%"
               height="100%"
+              className={classes.gridimg}
             />
             <div className="overlayGrid">
               <b>SHOP</b>&nbsp; MAYURA
@@ -371,10 +375,11 @@ export function AdvancedGridList() {
           </div>
           <div class="grid-item-sm item11-sm">
             <img
-              src="https://assets.stylori.com/images/Static+Pages/Home+Page/blush+3.png"
+              src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_page/Group+147%402x.png"
               alt="NAC"
               width="100%"
               height="100%"
+              className={classes.gridimg}
             />
             <div className="overlayGrid">
               <b>SHOP</b>&nbsp; MUHURTAM
@@ -382,8 +387,9 @@ export function AdvancedGridList() {
           </div>
           <div class="grid-item-sm item0-sm">
             <img
-              src="https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori_+Daisy+Days.png"
+              src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_collection/Group+68%402x.png"
               alt="NAC"
+              className={classes.gridimg}
               width="100%"
               height="100%"
             />

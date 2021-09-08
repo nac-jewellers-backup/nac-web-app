@@ -21,8 +21,17 @@ const useStyles = makeStyles((theme) => ({
   content: {
     textAlign: "center",
     color: "#6E6E71",
-    fontSize: 6.97,
+
     fontFamily: "NotoSerif",
+    [theme.breakpoints.down("lg")]: {
+      fontSize: "1rem",
+    },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: 10,
+    },
+    [theme.breakpoints.down("md")]: {
+      fontSize: 15,
+    },
   },
   img: {
     height: 40,
@@ -63,7 +72,7 @@ export default function Homenote(props) {
         </Box>
 
         <div className={classes.content}>
-          <Typography>{props.content}</Typography>
+          <Typography className={classes.content}>{props.content}</Typography>
         </div>
         <Box display="flex" justifyContent="center" flexDirection="column">
           <Box>

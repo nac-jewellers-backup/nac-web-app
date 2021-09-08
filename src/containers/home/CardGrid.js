@@ -35,56 +35,61 @@ export default function Card(props) {
 
   return (
     <ThemeProvider theme={CardTheme}>
-      <div className={classes.root}>
+      <div>
         <Hidden smDown>
-          <Grid container spacing={0}>
-            <Grid item xs={4}>
-              <Box
-                border={2}
-                borderColor="#BB8D57"
-                width="100%"
-                padding={1}
-                bgcolor="white"
-              >
-                <img
-                  src={props.data.image}
-                  alt="cover image"
-                  style={{ objectFit: "contain" }}
-                  height="100%"
+          <div className={classes.root}>
+            <Grid container spacing={0}>
+              <Grid item xs={4}>
+                <Box
+                  border={2}
+                  borderColor="#BB8D57"
                   width="100%"
-                />
-              </Box>
-            </Grid>
-            <Grid item xs={8}>
-              <div className={classes.note}>
-                <Homenote
-                  content=" In 1973, Shri N. Anjaneyalu Chetty started a jewellery shop in
+                  padding={1}
+                  bgcolor="white"
+                >
+                  <img
+                    src={props.data.image}
+                    alt="cover image"
+                    style={{ objectFit: "contain" }}
+                    height="100%"
+                    width="100%"
+                  />
+                </Box>
+              </Grid>
+              <Grid item xs={8}>
+                <div className={classes.note}>
+                  <Homenote
+                    content=" In 1973, Shri N. Anjaneyalu Chetty started a jewellery shop in
             Mylapore hoping to find loyal patrons. What began as a small store
             was soon a flourishing business and NAC became a household name in
             Mylapore!"
-                />
-              </div>
+                  />
+                </div>
+              </Grid>
             </Grid>
-          </Grid>
+          </div>
         </Hidden>
+
         <Hidden mdUp>
           <Grid container>
-            <Grid item xs={12}>
-              <Box
-                border={2}
-                borderColor="#BB8D57"
-                width="100%"
-                padding={1}
-                bgcolor="white"
-              >
-                <img
-                  src={props.data.image}
-                  alt="cover image"
-                  style={{ objectFit: "contain" }}
-                  height="100%"
+            <Grid item xs={11} sm={11}>
+              <div className={classes.root}>
+                <Box
+                  border={2}
+                  borderColor="#BB8D57"
                   width="100%"
-                />
-              </Box>
+                  padding={1}
+                  bgcolor="white"
+                >
+                  <img
+                    src={props.data.image}
+                    alt="cover image"
+                    style={{ objectFit: "contain" }}
+                    height="100%"
+                    width="100%"
+                  />
+                </Box>
+              </div>
             </Grid>
           </Grid>
         </Hidden>
