@@ -100,11 +100,10 @@ export function MediaControlCard(props) {
             <Box
               border={2}
               borderColor="#BB8D57"
-              height={350}
               style={{
-                paddingRight: 2,
-                paddingLeft: 2,
-                paddingTop: 2,
+                paddingRight: 3,
+                paddingLeft: 3,
+                paddingTop: 3,
               }}
               bgcolor="white"
             >
@@ -112,7 +111,7 @@ export function MediaControlCard(props) {
                 <img
                   src={props.data.image}
                   alt="cover image"
-                  height="338"
+                  height="337"
                   width="340"
                 />
               </div>
@@ -139,7 +138,6 @@ export function MediaControlCard(props) {
             <img
               src={props.data.image}
               alt="cover image"
-              className={classes.cover}
               height="100%"
               width="100%"
             />
