@@ -1,17 +1,17 @@
-import React from "react";
+import { Grid, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import { Grid, Hidden, Typography, Button } from "@material-ui/core";
+import React from "react";
 import Slideshow from "../Carousel/carosul";
-import './index.css'
+import "./index.css";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
     backgroundColor: "#fff",
     padding: "0px 15px",
-    [theme.breakpoints.down('sm')]:{
+    [theme.breakpoints.down("sm")]: {
       padding: "0px 0px",
-    }
+    },
   },
   [theme.breakpoints.up("lg")]: {
     root: {
@@ -48,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
       width: "100%",
       backgroundImage: "none !important",
       // boxShadow: "0 0 5px #888 !important",
-      border:'1px solid #8080804d'
+      border: "1px solid #8080804d",
     },
     smleftGrid: {
       marginTop: "50% !important",
@@ -83,7 +83,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundImage:
       "url(https://alpha-assets.stylori.com/images/static/home/box_bg.png)",
     // boxShadow: "0 0 5px #888 !important",
-    border:'1px solid #8080804d'
+    border: "1px solid #8080804d",
   },
   imgleft: {
     backgroundImage:
@@ -139,9 +139,9 @@ const useStyles = makeStyles((theme) => ({
   container: {
     display: "flex !important",
     height: "430px",
-    [theme.breakpoints.down('sm')]:{
-      height:'auto'
-    }
+    [theme.breakpoints.down("sm")]: {
+      height: "auto",
+    },
   },
   imgRightGrid: {
     justifyContent: "flex-end",
@@ -176,7 +176,9 @@ const useStyles = makeStyles((theme) => ({
     verticalAlign: "middle",
     // width: "calc(100% - 20px) !important",
     marginLeft: "4px",
-    height:'140px !important', width:'140px !important', borderRadius:'50%'
+    height: "140px !important",
+    width: "140px !important",
+    borderRadius: "50%",
   },
   imgcoinsm: {
     verticalAlign: "middle",
@@ -213,11 +215,11 @@ const useStyles = makeStyles((theme) => ({
     lineHeight: "30px",
     // marginTop: "60px",
     paddingLeft: "15px",
-    margin:"0 100px",
-    [theme.breakpoints.down("sm")]:{
-      margin:"0 0px",
+    margin: "0 100px",
+    [theme.breakpoints.down("sm")]: {
+      margin: "0 0px",
       paddingLeft: "0px",
-    }
+    },
   },
   textInner: {
     color: "#666666",
@@ -226,7 +228,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: "25px",
     maxHeight: "140px ",
     overflow: "hidden",
-    textAlign:'center'
+    textAlign: "center",
   },
   name: {
     fontSize: "16px",
@@ -289,7 +291,6 @@ const useStyles = makeStyles((theme) => ({
     maxHeight: "33px ",
     overflow: "hidden",
   },
-  
 }));
 
 export default function ImageGridList(props) {
@@ -304,83 +305,78 @@ export default function ImageGridList(props) {
   return (
     <Grid container className={classes.root}>
       {/* <Hidden smDown> */}
-        <Grid item className={classes.containerRoot}>
-          <Grid container className={classes.container} >
-            <Grid item md={12} lg={12} sm={12} xs={12} >
-              <Grid container>
-                <Grid item  xs={12} alignItems="center">
-                  <Slideshow
-                    dataCarousel={props.dataCarousel}
-                    sliderRef={slider}
-                  >
-                    {props.carosolData.map((val, index) => (
-                      <>
-                        <Grid container>
-                          <Grid
+      <Grid item className={classes.containerRoot}>
+        <Grid container className={classes.container}>
+          <Grid item md={12} lg={12} sm={12} xs={12}>
+            <Grid container>
+              <Grid item xs={12} alignItems="center">
+                <Slideshow dataCarousel={props.dataCarousel} sliderRef={slider}>
+                  {props.carosolData.map((val, index) => (
+                    <>
+                      <Grid container>
+                        <Grid
                           container
-                            item
-                            md={12}
-                            lg={12}
-                            sm={12}
-                            xs={12}
-                            justify="center"
-                            className={classes.testimonialRight}
-                          >
-                            <Grid
-                              item
-                              xs={12}
-                              sm={12}
-                              md={4}
-                              lg={4}
-                              xl={4}
-                              style={{
-                                textAlign: "center",
-                                padding: "0px 15px ",
-                              }}
-                            >
-                              <Slideshow>
-                                <img
-                                  className={classes.imgcoin}
-                                  src={val.img}
-                                  
-                                />
-                              </Slideshow>
-                            </Grid>
-                          </Grid>
-                          {/* <span className={classes.exclIcon}></span> */}
-                          <Grid container item xs={12} justify={'center'}>
-                          <Typography >
-                                {val.heading}
-                              </Typography>
-                          </Grid>
+                          item
+                          md={12}
+                          lg={12}
+                          sm={12}
+                          xs={12}
+                          justify="center"
+                          className={classes.testimonialRight}
+                        >
                           <Grid
-                            item 
-                            md={12}
-                            lg={12}
-                            sm={12}
+                            item
                             xs={12}
-                            className={classes.testimonialInner}
-                            
+                            sm={12}
+                            md={4}
+                            lg={4}
+                            xl={4}
+                            style={{
+                              textAlign: "center",
+                              padding: "0px 15px ",
+                            }}
                           >
+                            <Slideshow>
+                              <img className={classes.imgcoin} src={val.img} />
+                            </Slideshow>
+                          </Grid>
+                        </Grid>
+                        {/* <span className={classes.exclIcon}></span> */}
+                        <Grid container item xs={12} justify={"center"}>
+                          <Typography>{val.heading}</Typography>
+                        </Grid>
+                        <Grid
+                          item
+                          md={12}
+                          lg={12}
+                          sm={12}
+                          xs={12}
+                          className={classes.testimonialInner}
+                        >
+                          <div style={{ padding: 10 }}>
                             <Typography className={classes.textInner}>
                               {val.para}
                             </Typography>
-                           
-                          </Grid>
-                          <Grid container item xs={12} justify={'center'} style={{padding:'20px 0px'}}>
-                          <Typography >
-                                {val.heading}
-                              </Typography>
-                          </Grid>
+                          </div>
                         </Grid>
-                      </>
-                    ))}
-                  </Slideshow>
-                </Grid>
+                        <Grid
+                          container
+                          item
+                          xs={12}
+                          justify={"center"}
+                          style={{ padding: "20px 0px" }}
+                        >
+                          <Typography>{val.heading}</Typography>
+                        </Grid>
+                      </Grid>
+                    </>
+                  ))}
+                </Slideshow>
               </Grid>
             </Grid>
           </Grid>
         </Grid>
+      </Grid>
       {/* </Hidden> */}
       {/* <Hidden mdUp>
         <Grid item className={classes.containerRoot}>
