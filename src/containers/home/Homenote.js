@@ -63,12 +63,7 @@ export default function Homenote(props) {
         </Box>
 
         <div className={classes.content}>
-          <Typography>
-            In 1973, Shri N. Anjaneyalu Chetty started a jewellery shop in
-            Mylapore hoping to find loyal patrons. What began as a small store
-            was soon a flourishing business and NAC became a household name in
-            Mylapore!
-          </Typography>
+          <Typography>{props.content}</Typography>
         </div>
         <Box display="flex" justifyContent="center" flexDirection="column">
           <Box>

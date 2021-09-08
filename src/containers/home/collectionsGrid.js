@@ -73,45 +73,40 @@ export function AdvancedGridList() {
   return (
     <>
       <Hidden smDown>
-        <Grid container spacing={1}>
-          <Grid item xs={4} style={{ marginLeft: "5%" }}>
-            <Grid container>
-              <Grid item xs={3}></Grid>
-              <Grid item xs={9}>
-                <div className="parent">
-                  <img
-                    src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_collection/Group+46%402x.png"
-                    alt="NAC"
-                    width="100%"
-                    height="300"
-                    className={classes.gridimg}
-                  />
-                  <div className="child" style={{ width: "100%" }}>
-                    <div className={classes.coverfooter}>
-                      <b>SHOP</b>&nbsp; DIAMOND SETS
-                    </div>
-                    <div>&nbsp; </div>
-                  </div>
+        <Grid container spacing={1} style={{ padding: "30px" }}>
+          <Grid item xs={4}>
+            <div className="parent">
+              <img
+                src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_collection/Group+46%402x.png"
+                alt="NAC"
+                width="100%"
+                height="300"
+                className={classes.gridimg}
+              />
+              <div className="child" style={{ width: "100%" }}>
+                <div className={classes.coverfooter}>
+                  <b>SHOP</b>&nbsp; DIAMOND SETS
                 </div>
-                <div className="parent">
-                  <img
-                    src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_collection/Group+64%402x.png"
-                    alt="NAC"
-                    width="100%"
-                    height="600"
-                    className={classes.gridimg}
-                  />
-                  <div className="child" style={{ width: "100%" }}>
-                    <div className={classes.coverfooter}>
-                      <b>SHOP</b>&nbsp; FABULA
-                    </div>
-                    <div>&nbsp; </div>
-                  </div>
+                <div>&nbsp; </div>
+              </div>
+            </div>
+            <div className="parent">
+              <img
+                src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_collection/Group+64%402x.png"
+                alt="NAC"
+                width="100%"
+                height="600"
+                className={classes.gridimg}
+              />
+              <div className="child" style={{ width: "100%" }}>
+                <div className={classes.coverfooter}>
+                  <b>SHOP</b>&nbsp; FABULA
                 </div>
-              </Grid>
-            </Grid>
+                <div>&nbsp; </div>
+              </div>
+            </div>
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={8}>
             <Grid container spacing={1}>
               <Grid item xs={6}>
                 <div className="parent">
@@ -181,9 +176,12 @@ export function AdvancedGridList() {
               </Grid>
             </Grid>
           </Grid>
-          <Grid container spacing={1}>
-            <Grid item xs={1} style={{ marginLeft: "5%" }}></Grid>
-            <Grid item xs={6}>
+          <Grid
+            container
+            spacing={1}
+            style={{ paddingRight: 5, paddingLeft: 5 }}
+          >
+            <Grid item xs={8}>
               <div className="parent">
                 <img
                   src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_page/Group+156%402x.png"
@@ -200,7 +198,7 @@ export function AdvancedGridList() {
                 </div>
               </div>
             </Grid>
-            <Grid item xs={3}>
+            <Grid item xs={4}>
               <div className="parent">
                 <img
                   src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_collection/Group+73.png"

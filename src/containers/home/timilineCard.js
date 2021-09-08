@@ -118,7 +118,12 @@ export function MediaControlCard(props) {
             </Box>
             <Box>
               <div className={classes.note}>
-                <Homenote />
+                <Homenote
+                  content=" In 1973, Shri N. Anjaneyalu Chetty started a jewellery shop in
+            Mylapore hoping to find loyal patrons. What began as a small store
+            was soon a flourishing business and NAC became a household name in
+            Mylapore!"
+                />
               </div>
             </Box>
           </Box>

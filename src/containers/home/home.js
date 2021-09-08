@@ -14,10 +14,10 @@ import React from "react";
 import Testimonial from "../../components/testimonial/testimonial";
 import { API_URL } from "../../config";
 import { ALLBANNERS } from "../../queries/home";
+import Card from "./CardGrid";
 import { AdvancedGridList } from "./collectionsGrid";
 import Homenote from "./Homenote";
 import "./index.css";
-import { MediaControlCard } from "./timilineCard";
 import { Title } from "./titles";
 
 const styles = (theme) => ({
@@ -674,7 +674,20 @@ class HomeComp extends React.Component {
         </Grid>
         <Grid item xs={9} sm={9} md={10} lg={10} xl={10}>
           {/* <img src ={this.state.timelineImage} alt="stylori" style={{width:"400px", height:"auto"}}/> */}
-          <MediaControlCard data={{ image: this.state.timelineImage }} />
+          {/* <MediaControlCard data={{ image: this.state.timelineImage }} /> */}
+          <Card data={{ image: this.state.timelineImage }} />
+        </Grid>
+        <Grid item xs={12}>
+          <Hidden mdUp>
+            <br />
+            {/* <div style={{width:"100%"}}> */}
+            <Homenote
+              content=" In 1973, Shri N. Anjaneyalu Chetty started a jewellery shop in
+            Mylapore hoping to find loyal patrons. What began as a small store
+            was soon a flourishing business and NAC became a household name in
+            Mylapore!"
+            />
+          </Hidden>
         </Grid>
       </Grid>
     );
@@ -1139,10 +1152,6 @@ class HomeComp extends React.Component {
           <Grid item xs={12} className={classes.gridPadding}>
             <Title title="ABOUT US" />
             <Timeline day="monday" date="06/05/2019" timelineData={tData} />
-            <Hidden mdUp>
-              {/* <div style={{width:"100%"}}> */}
-              <Homenote />
-            </Hidden>
           </Grid>
           <Grid
             container
