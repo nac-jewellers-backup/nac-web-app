@@ -19,6 +19,7 @@ import Homenote from "./Homenote";
 import "./index.css";
 import { MediaControlCard } from "./timilineCard";
 import { Title } from "./titles";
+
 const styles = (theme) => ({
   preButton: {
     // backgroundRepeat: "no-repeat !important",
@@ -1072,10 +1073,6 @@ class HomeComp extends React.Component {
             </Grid>
           </Hidden>
 
-          <Hidden mdUp>
-            {/* <div style={{width:"100%"}}> */}
-            <Homenote />
-          </Hidden>
           <Grid
             item
             xs={12}
@@ -1139,9 +1136,13 @@ class HomeComp extends React.Component {
             }
           </Grid>
 
-          <Grid className={classes.gridPadding}>
+          <Grid item xs={12} className={classes.gridPadding}>
             <Title title="ABOUT US" />
             <Timeline day="monday" date="06/05/2019" timelineData={tData} />
+            <Hidden mdUp>
+              {/* <div style={{width:"100%"}}> */}
+              <Homenote />
+            </Hidden>
           </Grid>
           <Grid
             container

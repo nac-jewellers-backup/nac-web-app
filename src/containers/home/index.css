@@ -48,6 +48,7 @@
 .timeline {
   font-family: sans-serif;
   max-width: 600px;
+  margin-top: 1rem;
   /* margin: 10px auto 0; */
 }
 .timeline * {

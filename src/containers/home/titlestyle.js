@@ -7,10 +7,12 @@ const styles = makeStyles((theme) => ({
     fontSize: "2.1rem",
     marginBottom: 15,
     fontWeight: "550",
+    marginTop: -4,
+    whiteSpace: "noWrap",
   },
   img: {
-    height: 35,
-    width: 35,
+    height: 32,
+    width: 32,
   },
 }));
 export default styles;

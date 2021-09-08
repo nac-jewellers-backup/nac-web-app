@@ -1,16 +1,13 @@
-import { Hidden } from "@material-ui/core";
-import Card from "@material-ui/core/Card";
-import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
+import { Box, Hidden } from "@material-ui/core";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import React from "react";
 import Homenote from "./Homenote";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    display: "flex",
-    height: "100%",
     boxShadow: "6px 7px 6px #bebfbf !important",
+    backgroundColor: "#F9E3BF",
+    height: 350,
   },
   details: {
     display: "flex",
@@ -24,13 +21,7 @@ const useStyles = makeStyles((theme) => ({
     padding: "50px",
     backgroundColor: "#F9E3BF",
   },
-  cover: {
-    width: "50%",
-    border: `3px solid ${theme.palette.gold.main}`,
-    [theme.breakpoints.down("sm")]: {
-      width: "100%",
-    },
-  },
+
   controls: {
     display: "flex",
     alignItems: "center",
@@ -44,6 +35,13 @@ const useStyles = makeStyles((theme) => ({
   contentText: {
     fontFamily: "notoSerif-regular",
   },
+  note: {
+    backgroundColor: "#F9E3BF",
+    height: "100%",
+  },
+  coverborder: {
+    border: "4px solid white",
+  },
 }));
 
 export function MediaControlCard(props) {
@@ -52,8 +50,10 @@ export function MediaControlCard(props) {
 
   return (
     <>
-      <Card className={classes.root}>
-        <Hidden smDown>
+      {/* 
+         <Card className={classes.root}>
+         <Hidden smDown>
+
           <CardMedia
             className={classes.cover}
             style={{ fontFamily: "notoSerif-regular" }}
@@ -65,7 +65,7 @@ export function MediaControlCard(props) {
             <div className={classes.details}>
               <CardContent className={classes.content}>
                 <Homenote />
-                {/* <Typography
+                <Typography
                   variant="subtitle1"
                   color="textSecondary"
                   className={classes.contentText}
@@ -74,21 +74,78 @@ export function MediaControlCard(props) {
                   when Shri Nathella Narayana Chetty started a small jewellery
                   business at home where he fashioned hand-made jewels for a few
                   loyal patrons
-                </Typography> */}
+                </Typography>
               </CardContent>
             </div>
           </div>
         </Hidden>
-
-        <Hidden mdUp>
-          {/* <div style={{width:"100%"}}> */}
-          <CardMedia
-            className={classes.cover}
-            image={props.data.image}
-            title="Live from space album cover"
-          />
-        </Hidden>
-      </Card>
+        
+      <Hidden mdUp>
+     
+        <CardMedia
+          className={classes.cover}
+          image={props.data.image}
+          title="Live from space album cover"
+        />
+      </Hidden>
+         </Card>*/}
+      <Hidden smDown>
+        <div className={classes.root}>
+          <Box
+            display="flex"
+            flexDirection="row"
+            height={350}
+            alignItems="center"
+          >
+            <Box
+              border={2}
+              borderColor="#BB8D57"
+              height={350}
+              style={{
+                paddingRight: 2,
+                paddingLeft: 2,
+                paddingTop: 2,
+              }}
+              bgcolor="white"
+            >
+              <div className={classes.coverborder}>
+                <img
+                  src={props.data.image}
+                  alt="cover image"
+                  height="338"
+                  width="340"
+                />
+              </div>
+            </Box>
+            <Box>
+              <div className={classes.note}>
+                <Homenote />
+              </div>
+            </Box>
+          </Box>
+        </div>
+      </Hidden>
+      <Hidden mdUp>
+        <Box
+          border={2}
+          borderColor="#BB8D57"
+          style={{
+            paddingRight: 3,
+            paddingLeft: 3,
+            paddingTop: 3,
+          }}
+        >
+          <div className={classes.coverborder}>
+            <img
+              src={props.data.image}
+              alt="cover image"
+              className={classes.cover}
+              height="100%"
+              width="100%"
+            />
+          </div>
+        </Box>
+      </Hidden>
     </>
   );
 }
