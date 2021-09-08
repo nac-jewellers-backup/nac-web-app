@@ -1209,7 +1209,8 @@ class HomeComp extends React.Component {
               })}
             </Grid>
           </Grid>
-
+        </Container>
+        <Container maxWidth="xl">
           <Grid container style={{ paddingTop: "40px" }}>
             <Hidden smDown>
               <Grid
