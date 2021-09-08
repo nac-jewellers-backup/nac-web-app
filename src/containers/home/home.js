@@ -199,7 +199,7 @@ const styles = (theme) => ({
     },
   },
   testimonial: {
-    [theme.breakpoints.down("md")]: {
+    [theme.breakpoints.down("sm")]: {
       boxShadow: "4px 4px 4px #bebfbf",
     },
   },
