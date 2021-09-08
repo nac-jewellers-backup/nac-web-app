@@ -51,6 +51,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 2rem;
 
   /* margin: 10px auto 0; */
 }
@@ -87,7 +88,7 @@
   .timeline {
     font-family: sans-serif;
     max-width: 600px;
-
+    margin-top: 0;
     /* margin: 10px auto 0; */
   }
   .overlayGrid {
@@ -108,6 +109,12 @@
 @media screen and (max-width: 300px) {
   .overlayGrid {
     font-size: 11px;
+  }
+  .timeline {
+    font-family: sans-serif;
+    max-width: 600px;
+    margin-top: 0;
+    /* margin: 10px auto 0; */
   }
   .timeline-entry .time-range,
   .timeline-entry .timeline-label {
