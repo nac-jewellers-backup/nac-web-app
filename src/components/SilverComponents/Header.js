@@ -470,18 +470,6 @@ class Header extends Component {
                               // ),
                             });
                           }}
-                          onScroll={() => {
-                            this.setState({
-                              Menuopen: false,
-                              submenuOpen: false,
-
-                              listHoverItem: "Jewellery",
-
-                              targetopen: null,
-
-                              subTitleData: null,
-                            });
-                          }}
                           className={
                             //  window.location.pathname === listName.url
                             this.Menuopen === true || this.submenuOpen === true
