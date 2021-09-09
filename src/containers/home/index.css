@@ -42,7 +42,7 @@
 }
 .timeline-entry .timeline-icon-container .bar {
   border-right: 1px solid gray;
-  height: calc(100% - 16px);
+  height: calc(100% - 13px);
   width: 1px;
 }
 .timeline {
