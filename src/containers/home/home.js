@@ -1090,6 +1090,7 @@ class HomeComp extends React.Component {
           </Hidden>
           <Hidden mdUp>
             <Grid item xs={12} className={classes.gridPadding}>
+              <br />
               <Title title="ABOUT US" />
               <Timeline day="monday" date="06/05/2019" timelineData={tData} />
             </Grid>
