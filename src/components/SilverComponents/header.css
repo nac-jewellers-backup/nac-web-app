@@ -127,6 +127,7 @@
 .imges {
   /* height: 60px; */
   width: 55%;
+  float: left !important;
 }
 
 .icons-header-sizes {
@@ -368,7 +369,6 @@ i {
 } */
 .drawer-list12 {
   background-color: rgba(0, 0, 0, 0.08) !important;
-  
 }
 
 .side-arrow-symbol {

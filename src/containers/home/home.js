@@ -3,6 +3,9 @@ import Hidden from "@material-ui/core/Hidden";
 import { withStyles } from "@material-ui/core/styles";
 import ArrowLeftIcon from "@material-ui/icons/ArrowLeft";
 import ArrowRightIcon from "@material-ui/icons/ArrowRight";
+// import {styles} from './homestyle';
+import Aos from "aos";
+import "aos/dist/aos.css";
 import Slideshow from "components/Carousel/carosul";
 import Footer from "components/Footer/Footer";
 import GadgetsNac from "components/Gagetstylori/GadgetsNac";
@@ -10,7 +13,6 @@ import { ImgMediaCard } from "components/ProductCard/Card";
 import Header from "components/SilverComponents/Header";
 import { homeNac } from "mappers/dummydata/homeNac";
 import React from "react";
-// import {styles} from './homestyle';
 import Testimonial from "../../components/testimonial/testimonial";
 import { API_URL } from "../../config";
 import { ALLBANNERS } from "../../queries/home";
@@ -21,6 +23,9 @@ import "./index.css";
 import { Title } from "./titles";
 
 const styles = (theme) => ({
+  root: {
+    overflow: "hidden",
+  },
   preButton: {
     // backgroundRepeat: "no-repeat !important",
     opacity: "1!important",
@@ -292,6 +297,7 @@ class HomeComp extends React.Component {
         let bannerDataFull = data.data.allBanners.nodes;
         this.setState({ bannerHome: bannerDataFull });
       });
+    Aos.init({ duration: 1500 });
   }
 
   next = () => {
@@ -987,300 +993,346 @@ class HomeComp extends React.Component {
     };
 
     return (
-      <Grid container>
-        {/* <Helmet>
+      <div className={classes.root}>
+        <Grid container>
+          {/* <Helmet>
       <script async src="//www.instagram.com/embed.js"></script>
     </Helmet> */}
-        <Header />
+          <Header />
 
-        {/* <LiveChat license={5807571} onChatLoaded={ ref => {
+          {/* <LiveChat license={5807571} onChatLoaded={ ref => {
           
           this.livechat = ref
           } } />
         <div onClick={()=>window.LC_API.open_chat_window()}>
           div
         </div> */}
-        <Grid item xs={12}>
-          {/* <Hidden smDown> */}
-          {homeNac.carouselTop.setting.arrowsImg && (
-            <Grid container>
-              <Grid item onClick={this.previous} className={classes.preButton}>
-                <ArrowLeftIcon />
+          <Grid item xs={12}>
+            {/* <Hidden smDown> */}
+            {homeNac.carouselTop.setting.arrowsImg && (
+              <Grid container>
+                <Grid
+                  item
+                  onClick={this.previous}
+                  className={classes.preButton}
+                >
+                  <ArrowLeftIcon />
+                </Grid>
+                <Grid item onClick={this.next} className={classes.nextButton}>
+                  <ArrowRightIcon />
+                </Grid>
               </Grid>
-              <Grid item onClick={this.next} className={classes.nextButton}>
-                <ArrowRightIcon />
-              </Grid>
-            </Grid>
-          )}
-          {/* </Hidden> */}
-          <Slideshow
-            sliderRef={this.slider}
-            dataCarousel={homeNac.carouselTop.setting}
-          >
-            {this.state.bannerHome.map((val, index) => (
-              <>
-                <Hidden smDown>
-                  <Grid container key={index}>
-                    <a href={val.url} style={{ width: "100%" }}>
-                      <img
-                        src={val.web}
-                        style={{ width: "100%", height: "100%" }}
-                      />
-                    </a>
-                  </Grid>
-                </Hidden>
-                <Hidden mdUp>
-                  <Grid container key={index}>
-                    <a href={val.url}>
-                      <img
-                        src={val.mobile}
-                        style={{ width: "100%", height: "100%" }}
-                      />
-                    </a>
-                  </Grid>
-                </Hidden>
-              </>
-            ))}
-          </Slideshow>
-        </Grid>
-
-        <Grid
-          container
-          item
-          xs={12}
-          justify="center"
-          style={{ margin: "35px 0" }}
-        >
-          <Grid item xs={8} sm={8} md={6} lg={6} xl={6}>
-            <GadgetsNac />
-          </Grid>
-        </Grid>
-        <Container maxWidth="xl">
-          <Hidden mdUp>
-            <Grid container item xs={12}>
-              <Grid item xs={12} className={classes.contentPadding}>
-                <Title title="New Arrival" />
-              </Grid>
-
-              {
+            )}
+            {/* </Hidden> */}
+            <Slideshow
+              sliderRef={this.slider}
+              dataCarousel={homeNac.carouselTop.setting}
+            >
+              {this.state.bannerHome.map((val, index) => (
                 <>
                   <Hidden smDown>
-                    <Container maxWidth={"lg"} style={{ paddingTop: 4 }}>
-                      <Slideshow
-                        // sliderRef={this.slider}
-                        class="subslider-carousel"
-                        dataCarousel={dataCarouselcollections}
-                      >
-                        {dummyData.map((val) => {
-                          return <ImgMediaCard data={val} cardSize="auto" />;
-                        })}
-                      </Slideshow>
-                    </Container>
+                    <Grid container key={index}>
+                      <a href={val.url} style={{ width: "100%" }}>
+                        <img
+                          src={val.web}
+                          style={{ width: "100%", height: "100%" }}
+                        />
+                      </a>
+                    </Grid>
                   </Hidden>
                   <Hidden mdUp>
-                    <Container maxWidth={"lg"}>
-                      <Slideshow
-                        // sliderRef={this.slider}
-                        class="subslider-carousel"
-                        dataCarousel={dataCarouselcollectionsSm}
-                      >
-                        {dummyData.map((val) => {
-                          return <ImgMediaCard data={val} cardSize="auto" />;
-                        })}
-                      </Slideshow>
-                    </Container>
+                    <Grid container key={index}>
+                      <a href={val.url}>
+                        <img
+                          src={val.mobile}
+                          style={{ width: "100%", height: "100%" }}
+                        />
+                      </a>
+                    </Grid>
                   </Hidden>
                 </>
-              }
-            </Grid>
-          </Hidden>
-        </Container>
-        <Hidden mdUp>
-          <Grid item xs={12} className={classes.gridPadding}>
-            <br />
-            <Title title="ABOUT US" />
-            <Timeline day="monday" date="06/05/2019" timelineData={tData} />
-          </Grid>
-        </Hidden>
-        <Container>
-          <Grid
-            item
-            xs={12}
-            className={classes.gridPadding}
-            style={{ paddingTop: "40px" }}
-          >
-            <Title title="Collections" />
-          </Grid>
-          <Grid style={{ paddingTop: 8 }}>
-            <AdvancedGridList />
+              ))}
+            </Slideshow>
           </Grid>
 
-          <Grid container item xs={12}>
-            <Grid item xs={12} className={classes.gridPadding}>
-              <br />
-              <Title
-                title="Featured"
-                style={{ marginBottom: "0px !important" }}
-              />
-            </Grid>
-            {
-              <>
-                <Hidden smDown>
-                  <Container maxWidth={"lg"}>
-                    <Slideshow
-                      // sliderRef={this.slider}
-                      class="subslider-carousel"
-                      dataCarousel={dataCarouselcollections}
-                    >
-                      {dummyData.map((val) => {
-                        return (
-                          <ImgMediaCard
-                            data={val}
-                            cardSize="auto"
-                            hoverText={true}
-                          />
-                        );
-                      })}
-                    </Slideshow>
-                  </Container>
-                </Hidden>
-                <Hidden mdUp>
-                  <Container maxWidth={"lg"}>
-                    <Slideshow
-                      // sliderRef={this.slider}
-                      class="subslider-carousel"
-                      dataCarousel={dataCarouselcollectionsSm}
-                    >
-                      {dummyData.map((val) => {
-                        return (
-                          <ImgMediaCard
-                            data={val}
-                            cardSize="auto"
-                            hoverText={true}
-                          />
-                        );
-                      })}
-                    </Slideshow>
-                  </Container>
-                </Hidden>
-              </>
-            }
-          </Grid>
-          <Hidden smDown>
-            <Grid item xs={12} className={classes.gridPadding}>
-              <Title title="ABOUT US" />
-              <Timeline day="monday" date="06/05/2019" timelineData={tData} />
-            </Grid>
-          </Hidden>
           <Grid
             container
             item
             xs={12}
-            className={classes.gridPadding}
-            style={{ margin: "40px 0px" }}
+            justify="center"
+            style={{ margin: "35px 0" }}
           >
-            <Grid container item xs={12}>
-              {[
-                { title: "NEWS" },
-                { title: "PROMOTION" },
-                { title: "VIDEOS" },
-              ].map((val) => {
-                return (
-                  <Grid item xs={4} style={{ paddingLeft: 5 }}>
-                    <div className={classes.titilenews}>{val.title}</div>
-                  </Grid>
-                );
-              })}
-            </Grid>
-            <Grid
-              container
-              item
-              xs={12}
-              style={{ boxShadow: "6px 7px 6px #bebfbf" }}
-            >
-              {[
-                {
-                  img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_page/Group+177%402x.png",
-                },
-                {
-                  img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_page/Group+180%402x.png",
-                },
-                {
-                  img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_page/Group+181%402x.png",
-                },
-              ].map((val) => {
-                return (
-                  <Grid item xs={4} style={{ paddingLeft: 5 }}>
-                    {/* <div className={classes.titilenews}>{val.title}</div> */}
-                    <Slideshow
-                      // sliderRef={this.slider}
-                      class="subslider-carousel"
-                      dataCarousel={mysettings}
-                    >
-                      {/* {[0, 1, 2].map((val) => {
-                      return ( */}
-                      <img src={val.img} alt="NAC" height="100%" />
-                      {/* //   ); */}
-                      {/* // })} */}
-                    </Slideshow>
-                  </Grid>
-                );
-              })}
+            <Grid item xs={8} sm={8} md={6} lg={6} xl={6}>
+              <GadgetsNac />
             </Grid>
           </Grid>
-        </Container>
-        <Container maxWidth="xl">
-          <Grid container>
-            <Hidden smDown>
-              <Grid
-                item
-                xs={12}
-                sm={12}
-                md={4}
-                lg={4}
-                xl={4}
-                className={classes.photo}
-                // style={{ height: "430px", overflow: "auto", marginTop: 52 }}
-                style={{
-                  height: "475px",
-                  overflow: "auto",
-                  borderRadius: "3px",
-                  border: "1px solid #D9D9D9",
-                }}
-              >
-                <InstagramFeed />
+          <Container maxWidth="xl">
+            <Hidden mdUp>
+              <Grid container>
+                <Grid
+                  item
+                  xs={12}
+                  className={classes.contentPadding}
+                  data-aos="fade-right"
+                >
+                  <Title title="New Arrival" />
+                </Grid>
+                <Grid item xs={12} data-aos="fade-right">
+                  {
+                    <>
+                      <Hidden smDown>
+                        <Container maxWidth={"lg"} style={{ paddingTop: 4 }}>
+                          <Slideshow
+                            // sliderRef={this.slider}
+                            class="subslider-carousel"
+                            dataCarousel={dataCarouselcollections}
+                          >
+                            {dummyData.map((val) => {
+                              return (
+                                <ImgMediaCard data={val} cardSize="auto" />
+                              );
+                            })}
+                          </Slideshow>
+                        </Container>
+                      </Hidden>
+                      <Hidden mdUp>
+                        <Container maxWidth={"lg"}>
+                          <Slideshow
+                            // sliderRef={this.slider}
+                            class="subslider-carousel"
+                            dataCarousel={dataCarouselcollectionsSm}
+                          >
+                            {dummyData.map((val) => {
+                              return (
+                                <ImgMediaCard data={val} cardSize="auto" />
+                              );
+                            })}
+                          </Slideshow>
+                        </Container>
+                      </Hidden>
+                    </>
+                  }
+                </Grid>
               </Grid>
             </Hidden>
-            <Grid item xs={12} sm={12} md={8} lg={8} xl={8}>
-              <div className={classes.testimonial}>
-                <Testimonial />
-              </div>
-            </Grid>
-          </Grid>
+          </Container>
           <Hidden mdUp>
             <Grid
               item
               xs={12}
-              sm={12}
-              md={12}
-              lg={4}
-              xl={4}
-              className={classes.photo}
-              style={{
-                overflow: "auto",
-                marginTop: "20px",
-                border: "1px solid #D9D9D9",
-                boxShadow: "4px 4px 4px #bebfbf",
-              }}
+              className={classes.gridPadding}
+              data-aos="fade-left"
             >
-              <center>
-                <InstagramFeed />
-              </center>
+              <br />
+              <Title title="ABOUT US" />
+              <Timeline day="monday" date="06/05/2019" timelineData={tData} />
             </Grid>
           </Hidden>
-        </Container>
+          <Container>
+            <Grid
+              item
+              xs={12}
+              className={classes.gridPadding}
+              style={{ paddingTop: "40px" }}
+              data-aos="fade-right"
+            >
+              <Title title="Collections" />
+            </Grid>
+            <Grid item xs={12} style={{ paddingTop: 8 }} data-aos="fade-right">
+              <AdvancedGridList />
+            </Grid>
 
-        {/* <Grid container>
+            <Grid container>
+              <Grid item xs={12} className={classes.gridPadding}>
+                <br />
+                <Title
+                  title="Featured"
+                  style={{ marginBottom: "0px !important" }}
+                />
+              </Grid>
+              <Grid container>
+                <Grid item xs={12}>
+                  <>
+                    <Hidden smDown>
+                      <div>
+                        <Slideshow
+                          // sliderRef={this.slider}
+                          class="subslider-carousel"
+                          dataCarousel={dataCarouselcollections}
+                        >
+                          {dummyData.map((val) => {
+                            return (
+                              <ImgMediaCard
+                                data={val}
+                                cardSize="auto"
+                                hoverText={true}
+                              />
+                            );
+                          })}
+                        </Slideshow>
+                      </div>
+                    </Hidden>
+                    <Hidden mdUp>
+                      <Container maxWidth={"lg"}>
+                        <Slideshow
+                          // sliderRef={this.slider}
+                          class="subslider-carousel"
+                          dataCarousel={dataCarouselcollectionsSm}
+                        >
+                          {dummyData.map((val) => {
+                            return (
+                              <ImgMediaCard
+                                data={val}
+                                cardSize="auto"
+                                hoverText={true}
+                              />
+                            );
+                          })}
+                        </Slideshow>
+                      </Container>
+                    </Hidden>
+                  </>
+                </Grid>
+              </Grid>
+            </Grid>
+            <Hidden smDown>
+              <Grid
+                item
+                xs={12}
+                className={classes.gridPadding}
+                data-aos="fade-right"
+              >
+                <br />
+                <Title title="ABOUT US" />
+                <Timeline day="monday" date="06/05/2019" timelineData={tData} />
+              </Grid>
+            </Hidden>
+            <div>
+              <Grid
+                item
+                xs={12}
+                className={classes.gridPadding}
+                style={{ margin: "40px 0px" }}
+              >
+                <Grid container>
+                  {[
+                    { title: "NEWS" },
+                    { title: "PROMOTION" },
+                    { title: "VIDEOS" },
+                  ].map((val) => {
+                    return (
+                      <Grid
+                        item
+                        xs={4}
+                        style={{ paddingLeft: 5 }}
+                        data-aos="fade-left"
+                      >
+                        <div className={classes.titilenews}>{val.title}</div>
+                      </Grid>
+                    );
+                  })}
+                </Grid>
+
+                <Grid container style={{ boxShadow: "6px 7px 6px #bebfbf" }}>
+                  {[
+                    {
+                      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_page/Group+177%402x.png",
+                    },
+                    {
+                      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_page/Group+180%402x.png",
+                    },
+                    {
+                      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_page/Group+181%402x.png",
+                    },
+                  ].map((val) => {
+                    return (
+                      <Grid
+                        item
+                        xs={4}
+                        style={{ paddingLeft: 5 }}
+                        data-aos="fade-left"
+                      >
+                        {/* <div className={classes.titilenews}>{val.title}</div> */}
+                        <Slideshow
+                          // sliderRef={this.slider}
+                          class="subslider-carousel"
+                          dataCarousel={mysettings}
+                        >
+                          {/* {[0, 1, 2].map((val) => {
+                      return ( */}
+                          <img src={val.img} alt="NAC" height="100%" />
+                          {/* //   ); */}
+                          {/* // })} */}
+                        </Slideshow>
+                      </Grid>
+                    );
+                  })}
+                </Grid>
+              </Grid>
+            </div>
+          </Container>
+          <Container maxWidth="xl">
+            <Grid container>
+              <Hidden smDown>
+                <Grid
+                  item
+                  xs={12}
+                  sm={12}
+                  md={4}
+                  lg={4}
+                  xl={4}
+                  className={classes.photo}
+                  data-aos="fade-right"
+                  // style={{ height: "430px", overflow: "auto", marginTop: 52 }}
+                  style={{
+                    height: "475px",
+                    overflow: "auto",
+                    borderRadius: "3px",
+                    border: "1px solid #D9D9D9",
+                  }}
+                >
+                  <InstagramFeed />
+                </Grid>
+              </Hidden>
+              <Grid
+                item
+                xs={12}
+                sm={12}
+                md={8}
+                lg={8}
+                xl={8}
+                data-aos="fade-right"
+              >
+                <div className={classes.testimonial}>
+                  <Testimonial />
+                </div>
+              </Grid>
+            </Grid>
+            <Hidden mdUp>
+              <Grid
+                item
+                xs={12}
+                sm={12}
+                md={12}
+                lg={4}
+                xl={4}
+                className={classes.photo}
+                data-aos="fade-left"
+                style={{
+                  overflow: "auto",
+                  marginTop: "20px",
+                  border: "1px solid #D9D9D9",
+                  boxShadow: "4px 4px 4px #bebfbf",
+                }}
+              >
+                <center>
+                  <InstagramFeed />
+                </center>
+              </Grid>
+            </Hidden>
+          </Container>
+
+          {/* <Grid container>
           <Story
             heading={storyData.data.heading}
             para={storyData.data.para}
@@ -1317,8 +1369,9 @@ class HomeComp extends React.Component {
 
           <Testimonial />
         </Grid> */}
-        <Footer />
-      </Grid>
+          <Footer />
+        </Grid>
+      </div>
     );
   }
 }
