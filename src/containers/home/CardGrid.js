@@ -72,7 +72,7 @@ export default function Card(props) {
 
         <Hidden mdUp>
           <Grid container>
-            <Grid item xs={11} sm={11}>
+            <Grid item xs={11} sm={7}>
               <div className={classes.root}>
                 <Box
                   border={2}

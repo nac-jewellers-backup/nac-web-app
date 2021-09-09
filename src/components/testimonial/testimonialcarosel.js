@@ -305,7 +305,7 @@ export default function ImageGridList(props) {
   return (
     <Grid container className={classes.root}>
       {/* <Hidden smDown> */}
-      <Grid item className={classes.containerRoot}>
+      <Grid item className={classes.containerRoot} style={{ padding: 20 }}>
         <Grid container className={classes.container}>
           <Grid item md={12} lg={12} sm={12} xs={12}>
             <Grid container>

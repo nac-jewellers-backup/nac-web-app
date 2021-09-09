@@ -171,6 +171,10 @@ export function AdvancedGridList() {
                     alt="NAC"
                     width="100%"
                     height="296"
+                    style={{
+                      objectFit: "cover",
+                      objectPosition: "40% 5%",
+                    }}
                   />
                   <div className="child" style={{ width: "100%" }}>
                     <div className={classes.coverfooter}>

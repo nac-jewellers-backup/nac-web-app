@@ -1227,7 +1227,7 @@ class HomeComp extends React.Component {
                 // style={{ height: "430px", overflow: "auto", marginTop: 52 }}
                 style={{
                   marginTop: "20px",
-                  height: "430px",
+                  height: "475px",
                   overflow: "auto",
                   borderRadius: "3px",
                   border: "1px solid #D9D9D9",
