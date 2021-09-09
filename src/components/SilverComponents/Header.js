@@ -1,49 +1,38 @@
-import React, { Component } from "react";
-import classNames from "classnames";
-import "./header.css";
-import Tooltip from "@material-ui/core/Tooltip";
 import {
   AppBar,
-  Grid,
-  InputBase,
   Badge,
+  Chip,
+  ClickAwayListener,
+  Container,
   Drawer,
-  Toolbar,
-  List,
-  Typography,
+  FormControl,
+  Grid,
+  Hidden,
   IconButton,
+  List,
   ListItem,
   ListItemText,
-  Container,
-  InputAdornment,
-  Modal,
-  Fab,
-  ClickAwayListener,
-  FormControl,
-  InputLabel,
-  Select,
   MenuItem,
+  Modal,
   NativeSelect,
-  Chip,
+  Select,
+  Toolbar,
+  Typography,
 } from "@material-ui/core";
-import MenuIcon from "@material-ui/icons/Menu";
-import { Hidden } from "@material-ui/core";
-import HeaderHoverMenuItem from "./HoverNavBarListing/HeaderHoverMenuItem";
-import HeaderHoversubMenu from "./HoverNavBarListing/HeaderHoversubMenu";
 // import HeaderNotification from './Notification/HeaderNotification'
 import { withStyles } from "@material-ui/core/styles";
-import { useDummyRequest } from "../../hooks";
-import { headerDataSilver } from "../../mappers";
-import { styles } from "./styles";
-import LogoSmallScreen from "../../assets/Stylori Silver logo.svg";
-import StyloriSLogo from "../../assets/silverOpenLink.png";
-import Seach from "../../assets/search";
-import stylorisilverlogo from "../../assets/Stylori Silver logo.svg";
-import Popover from "@material-ui/core/Popover";
-import { NavLink } from "react-router-dom";
-import logout from "../../assets/Icons/logout.svg";
+import MenuIcon from "@material-ui/icons/Menu";
+import classNames from "classnames";
 import ElasticSearch from "components/ElasticSearch/ElasticSearch";
 import { CartContext } from "context";
+import React, { Component } from "react";
+import Seach from "../../assets/search";
+import StyloriSLogo from "../../assets/silverOpenLink.png";
+import { useDummyRequest } from "../../hooks";
+import { headerDataSilver } from "../../mappers";
+import "./header.css";
+import HeaderHoversubMenu from "./HoverNavBarListing/HeaderHoversubMenu";
+import { styles } from "./styles";
 
 let user_id = localStorage.getItem("user_id")
   ? localStorage.getItem("user_id")
@@ -481,6 +470,18 @@ class Header extends Component {
                               // ),
                             });
                           }}
+                          onScroll={() => {
+                            this.setState({
+                              Menuopen: false,
+                              submenuOpen: false,
+
+                              listHoverItem: "Jewellery",
+
+                              targetopen: null,
+
+                              subTitleData: null,
+                            });
+                          }}
                           className={
                             //  window.location.pathname === listName.url
                             this.Menuopen === true || this.submenuOpen === true
@@ -526,31 +527,36 @@ class Header extends Component {
                     style={{ display: "flex" }}
                     className={classes.menustylori}
                   >
-                  <div style={{flexGrow:1}}></div>
-                  <div className={classes.styloriEditing}>
-                    <a
-                      href="https://www.stylori.com/"
-                      style={{
-                        textDecoration: "none",
-                        color: "#fff",
-                        padding: "8px 7px 0 7px",
-                      }}
-                      onMouseOver={(event) => {
-                        this.setState({
-                          Menuopen: true,
-                          submenuOpen: true,
-                          subTitleData: null,
-                          targetopen: event.currentTarget,
-                          listHoverItem: "STYLORI",
-                          // .replace(
-                          //   / +/g,
-                          //   "ss"
-                          // ),
-                        });
-                      }}
-                    >
-                      <img src={StyloriSLogo} width="30px" height="30px" style={{padding:"5px 15px 0px 15px"}}></img>
-                    </a>
+                    <div style={{ flexGrow: 1 }}></div>
+                    <div className={classes.styloriEditing}>
+                      <a
+                        href="https://www.stylori.com/"
+                        style={{
+                          textDecoration: "none",
+                          color: "#fff",
+                          padding: "8px 7px 0 7px",
+                        }}
+                        onMouseOver={(event) => {
+                          this.setState({
+                            Menuopen: true,
+                            submenuOpen: true,
+                            subTitleData: null,
+                            targetopen: event.currentTarget,
+                            listHoverItem: "STYLORI",
+                            // .replace(
+                            //   / +/g,
+                            //   "ss"
+                            // ),
+                          });
+                        }}
+                      >
+                        <img
+                          src={StyloriSLogo}
+                          width="30px"
+                          height="30px"
+                          style={{ padding: "5px 15px 0px 15px" }}
+                        ></img>
+                      </a>
                     </div>
                   </Grid>
                 </Grid>
@@ -821,7 +827,7 @@ class Header extends Component {
                   >
                     <i class="fa fa-times closebus"></i>
                   </IconButton>
-                  <Typography className={classes.headertext} >MENU</Typography>
+                  <Typography className={classes.headertext}>MENU</Typography>
                 </div>
                 <List className={classes.sideNavListing}>
                   {mainlist.map((row) => {
@@ -836,7 +842,7 @@ class Header extends Component {
                               : "drawer-list1"
                           }
                           selected={window.location.pathname === row.url}
-                          style={{padding:"8.5px 25px"}}
+                          style={{ padding: "8.5px 25px" }}
                         >
                           <ListItemText
                             onClick={() => {
@@ -870,8 +876,7 @@ class Header extends Component {
                             selected === row.name && (
                               // Object.keys(Jewellery[selected]).map((row2) => (
                               <>
-                                {Jewellery[selected]?.styles  && (
-                                  
+                                {Jewellery[selected]?.styles && (
                                   <>
                                     {/* {Jewellery[selected]?.styles === "COLLECTIONS" && (<div></div>)} */}
                                     <ListItem
@@ -879,9 +884,8 @@ class Header extends Component {
                                       // key={Jewellery[selected][row2].name}
                                       className={`${classes.subtitleContainer} `}
                                       disableGutters
-                                      style={{padding:"5px 25px"}}
+                                      style={{ padding: "5px 25px" }}
                                     >
-                                    
                                       <ListItemText
                                       // onClick={() => {
                                       //   window.location.href =
@@ -891,13 +895,20 @@ class Header extends Component {
                                         <Typography
                                           className={`${classes.subtitles} ${classes.subtitleContainersubmenu1}`}
                                           variant=""
-                                          style={{fontWeight:"bold",}}
+                                          style={{ fontWeight: "bold" }}
                                         >
                                           {Jewellery[
                                             selected
                                           ]?.styles.name?.toUpperCase()}
                                         </Typography>
-                                        {selected === "COLLECTIONS" ? null : <div style={{borderBottom:"1.5px solid #33346d"}}></div>}
+                                        {selected === "COLLECTIONS" ? null : (
+                                          <div
+                                            style={{
+                                              borderBottom:
+                                                "1.5px solid #33346d",
+                                            }}
+                                          ></div>
+                                        )}
                                       </ListItemText>
                                       {/* <div
                                   onClick={() =>
@@ -949,19 +960,23 @@ class Header extends Component {
                                       button
                                       className={`${classes.subtitleContainer} `}
                                       disableGutters
-                                      style={{padding:"5px 25px"}}
+                                      style={{ padding: "5px 25px" }}
                                     >
                                       <ListItemText>
                                         <Typography
                                           className={`${classes.subtitles} ${classes.subtitleContainersubmenu1}`}
                                           variant=""
-                                          style={{fontWeight:"bold",}}
+                                          style={{ fontWeight: "bold" }}
                                         >
                                           {Jewellery[
                                             selected
                                           ]?.stone.name2?.toUpperCase()}
                                         </Typography>
-                                        <div style={{borderBottom:"1.5px solid #33346d"}}></div>
+                                        <div
+                                          style={{
+                                            borderBottom: "1.5px solid #33346d",
+                                          }}
+                                        ></div>
                                       </ListItemText>
                                     </ListItem>
 
@@ -1006,7 +1021,7 @@ class Header extends Component {
                                     </Grid>
                                   </>
                                 )}
-                                
+
                                 {/* for features */}
                                 {Jewellery[selected]?.feature && (
                                   <>
@@ -1018,7 +1033,9 @@ class Header extends Component {
                                           button
                                           className={`${classes.subtitleContainer} `}
                                           disableGutters
-                                          style={{padding:"10px 25px 3px 25px"}}
+                                          style={{
+                                            padding: "10px 25px 3px 25px",
+                                          }}
                                         >
                                           <ListItemText>
                                             <div
@@ -1042,15 +1059,29 @@ class Header extends Component {
                                                 <i class="fa fa-chevron-down drawer-arrow-submenu2"></i>
                                               )}
                                             </div>
-                                            <div style={{borderBottom:"1.5px solid #33346d"}}></div>
+                                            <div
+                                              style={{
+                                                borderBottom:
+                                                  "1.5px solid #33346d",
+                                              }}
+                                            ></div>
                                           </ListItemText>
                                         </ListItem>
-                                        <Grid style={{padding:"6px 25px 0 25px"}}>
+                                        <Grid
+                                          style={{ padding: "6px 25px 0 25px" }}
+                                        >
                                           {selected1 === val.name && (
                                             <>
                                               {val?.feature?.map((v) => (
                                                 <div>
-                                                  <p className={classes.ptext} style={{fontSize:"14px", color:"#6E6F72", marginTop:"2px"}}>
+                                                  <p
+                                                    className={classes.ptext}
+                                                    style={{
+                                                      fontSize: "14px",
+                                                      color: "#6E6F72",
+                                                      marginTop: "2px",
+                                                    }}
+                                                  >
                                                     {v}
                                                   </p>
                                                 </div>
@@ -1063,14 +1094,17 @@ class Header extends Component {
                                   </>
                                 )}
 
-                                 {/* FOR OPTIONS */}
-                                  {Jewellery[selected]?.option && (
+                                {/* FOR OPTIONS */}
+                                {Jewellery[selected]?.option && (
                                   <>
-                                    <Grid style={{padding:"0px 25px"}}>
+                                    <Grid style={{ padding: "0px 25px" }}>
                                       {Jewellery[selected]?.option.option?.map(
                                         (v) => (
                                           <div>
-                                            <p className={classes.optiontext} style={{paddingTop:"3px"}}>
+                                            <p
+                                              className={classes.optiontext}
+                                              style={{ paddingTop: "3px" }}
+                                            >
                                               {v}
                                             </p>
                                           </div>
@@ -1087,19 +1121,23 @@ class Header extends Component {
                                       button
                                       className={`${classes.subtitleContainer} `}
                                       disableGutters
-                                      style={{padding:"5px 25px"}}
+                                      style={{ padding: "5px 25px" }}
                                     >
                                       <ListItemText>
                                         <Typography
                                           className={`${classes.subtitles} ${classes.subtitleContainersubmenu1}`}
                                           variant=""
-                                          style={{fontWeight:"bold",}}
+                                          style={{ fontWeight: "bold" }}
                                         >
                                           {Jewellery[
                                             selected
                                           ]?.price.name3?.toUpperCase()}
                                         </Typography>
-                                        <div style={{borderBottom:"1.5px solid #33346d"}}></div>
+                                        <div
+                                          style={{
+                                            borderBottom: "1.5px solid #33346d",
+                                          }}
+                                        ></div>
                                       </ListItemText>
                                     </ListItem>
                                     <Grid
@@ -1126,7 +1164,6 @@ class Header extends Component {
                                   </>
                                 )}
 
-                               
                                 {/* {selected1 === Jewellery[selected][row2].name && (
                                 <>
                                   {subheader[selected1] &&
@@ -1168,7 +1205,10 @@ class Header extends Component {
                             (window.location.pathname = "/registers")
                           }
                         >
-                          <Typography className="newlist-items1" style={{fontWeight:"bold",padding:"0px 25px"}}>
+                          <Typography
+                            className="newlist-items1"
+                            style={{ fontWeight: "bold", padding: "0px 25px" }}
+                          >
                             HELPLINE
                           </Typography>
                         </ListItemText>
@@ -1177,7 +1217,12 @@ class Header extends Component {
                         <ListItemText
                           onClick={() => (window.location.pathname = "/login")}
                         >
-                          <Typography className="newlist-items1" style={{fontWeight:"bold",padding:"0px 25px"}}>LOGIN</Typography>
+                          <Typography
+                            className="newlist-items1"
+                            style={{ fontWeight: "bold", padding: "0px 25px" }}
+                          >
+                            LOGIN
+                          </Typography>
                         </ListItemText>
                       </ListItem>
                     </>

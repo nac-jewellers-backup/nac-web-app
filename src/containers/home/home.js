@@ -1073,11 +1073,11 @@ class HomeComp extends React.Component {
                   item
                   xs={12}
                   className={classes.contentPadding}
-                  data-aos="fade-right"
+                  data-aos="fade-left"
                 >
                   <Title title="New Arrival" />
                 </Grid>
-                <Grid item xs={12} data-aos="fade-right">
+                <Grid item xs={12} data-aos="fade-left">
                   {
                     <>
                       <Hidden smDown>
@@ -1134,16 +1134,21 @@ class HomeComp extends React.Component {
               xs={12}
               className={classes.gridPadding}
               style={{ paddingTop: "40px" }}
-              data-aos="fade-right"
+              data-aos="fade-left"
             >
               <Title title="Collections" />
             </Grid>
-            <Grid item xs={12} style={{ paddingTop: 8 }} data-aos="fade-right">
+            <Grid item xs={12} style={{ paddingTop: 8 }} data-aos="fade-left">
               <AdvancedGridList />
             </Grid>
 
             <Grid container>
-              <Grid item xs={12} className={classes.gridPadding}>
+              <Grid
+                item
+                xs={12}
+                className={classes.gridPadding}
+                data-aos="fade-left"
+              >
                 <br />
                 <Title
                   title="Featured"
@@ -1151,7 +1156,7 @@ class HomeComp extends React.Component {
                 />
               </Grid>
               <Grid container>
-                <Grid item xs={12}>
+                <Grid item xs={12} data-aos="fade-left">
                   <>
                     <Hidden smDown>
                       <div>
@@ -1200,14 +1205,14 @@ class HomeComp extends React.Component {
                 item
                 xs={12}
                 className={classes.gridPadding}
-                data-aos="fade-right"
+                data-aos="fade-left"
               >
                 <br />
                 <Title title="ABOUT US" />
                 <Timeline day="monday" date="06/05/2019" timelineData={tData} />
               </Grid>
             </Hidden>
-            <div>
+            <div data-aos="fade-left">
               <Grid
                 item
                 xs={12}
@@ -1221,12 +1226,7 @@ class HomeComp extends React.Component {
                     { title: "VIDEOS" },
                   ].map((val) => {
                     return (
-                      <Grid
-                        item
-                        xs={4}
-                        style={{ paddingLeft: 5 }}
-                        data-aos="fade-left"
-                      >
+                      <Grid item xs={4} style={{ paddingLeft: 5 }}>
                         <div className={classes.titilenews}>{val.title}</div>
                       </Grid>
                     );
@@ -1246,12 +1246,7 @@ class HomeComp extends React.Component {
                     },
                   ].map((val) => {
                     return (
-                      <Grid
-                        item
-                        xs={4}
-                        style={{ paddingLeft: 5 }}
-                        data-aos="fade-left"
-                      >
+                      <Grid item xs={4} style={{ paddingLeft: 5 }}>
                         {/* <div className={classes.titilenews}>{val.title}</div> */}
                         <Slideshow
                           // sliderRef={this.slider}
@@ -1282,7 +1277,7 @@ class HomeComp extends React.Component {
                   lg={4}
                   xl={4}
                   className={classes.photo}
-                  data-aos="fade-right"
+                  data-aos="fade-left"
                   // style={{ height: "430px", overflow: "auto", marginTop: 52 }}
                   style={{
                     height: "475px",
@@ -1301,7 +1296,7 @@ class HomeComp extends React.Component {
                 md={8}
                 lg={8}
                 xl={8}
-                data-aos="fade-right"
+                data-aos="fade-left"
               >
                 <div className={classes.testimonial}>
                   <Testimonial />
