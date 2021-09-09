@@ -6,12 +6,13 @@ const styles = makeStyles((theme) => ({
     fontStyle: "italic",
     fontSize: "2.1rem",
     [theme.breakpoints.down("xs")]: {
-      fontSize: "1.6rem",
+      fontSize: "1.8rem",
     },
     marginBottom: 15,
     fontWeight: "540",
     marginTop: -4,
     whiteSpace: "noWrap",
+    padding: 2,
   },
   img: {
     height: 32,
@@ -20,6 +21,7 @@ const styles = makeStyles((theme) => ({
       height: 22,
       width: 22,
     },
+    marginTop: 2,
   },
 }));
 export default styles;

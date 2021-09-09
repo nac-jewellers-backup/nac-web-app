@@ -662,38 +662,44 @@ class HomeComp extends React.Component {
       </div>
     );
     const Timeline = ({ day, date, timelineData }) => (
-      <Grid container className={classes.timelinegrid}>
-        <Grid item xs={3} sm={3} md={2} lg={2} xl={2}>
-          <div className="timeline">
-            <div className="timeline-body">
-              {timelineData.map((el, i) => (
-                <TimelineEntry
-                  entry={el}
-                  key={i}
-                  useBar={i === timelineData.length - 1 ? false : true}
-                />
-              ))}
-            </div>
-          </div>
-        </Grid>
-        <Grid item xs={9} sm={9} md={10} lg={10} xl={10}>
-          {/* <img src ={this.state.timelineImage} alt="stylori" style={{width:"400px", height:"auto"}}/> */}
-          {/* <MediaControlCard data={{ image: this.state.timelineImage }} /> */}
-          <Card data={{ image: this.state.timelineImage }} />
-        </Grid>
-        <Grid item xs={12}>
-          <Hidden mdUp>
-            <br />
-            {/* <div style={{width:"100%"}}> */}
-            <Homenote
-              content=" In 1973, Shri N. Anjaneyalu Chetty started a jewellery shop in
+      <>
+        <Container>
+          <Grid container className={classes.timelinegrid}>
+            <Grid item xs={3} sm={3} md={2} lg={2} xl={2}>
+              <div className="timeline">
+                <div className="timeline-body">
+                  {timelineData.map((el, i) => (
+                    <TimelineEntry
+                      entry={el}
+                      key={i}
+                      useBar={i === timelineData.length - 1 ? false : true}
+                    />
+                  ))}
+                </div>
+              </div>
+            </Grid>
+            <Grid item xs={9} sm={9} md={10} lg={10} xl={10}>
+              {/* <img src ={this.state.timelineImage} alt="stylori" style={{width:"400px", height:"auto"}}/> */}
+              {/* <MediaControlCard data={{ image: this.state.timelineImage }} /> */}
+              <Card data={{ image: this.state.timelineImage }} />
+            </Grid>
+          </Grid>
+        </Container>
+        <Grid container>
+          <Grid item xs={12}>
+            <Hidden mdUp>
+              <br />
+              {/* <div style={{width:"100%"}}> */}
+              <Homenote
+                content=" In 1973, Shri N. Anjaneyalu Chetty started a jewellery shop in
             Mylapore hoping to find loyal patrons. What began as a small store
             was soon a flourishing business and NAC became a household name in
             Mylapore!"
-            />
-          </Hidden>
+              />
+            </Hidden>
+          </Grid>
         </Grid>
-      </Grid>
+      </>
     );
     const InstagramFeed = () => {
       return (
@@ -1049,7 +1055,7 @@ class HomeComp extends React.Component {
             <GadgetsNac />
           </Grid>
         </Grid>
-        <Container maxWidth="lg">
+        <Container maxWidth="xl">
           <Hidden mdUp>
             <Grid container item xs={12}>
               <Grid item xs={12} className={classes.contentPadding}>
@@ -1088,14 +1094,15 @@ class HomeComp extends React.Component {
               }
             </Grid>
           </Hidden>
-          <Hidden mdUp>
-            <Grid item xs={12} className={classes.gridPadding}>
-              <br />
-              <Title title="ABOUT US" />
-              <Timeline day="monday" date="06/05/2019" timelineData={tData} />
-            </Grid>
-          </Hidden>
-
+        </Container>
+        <Hidden mdUp>
+          <Grid item xs={12} className={classes.gridPadding}>
+            <br />
+            <Title title="ABOUT US" />
+            <Timeline day="monday" date="06/05/2019" timelineData={tData} />
+          </Grid>
+        </Hidden>
+        <Container>
           <Grid
             item
             xs={12}
@@ -1108,8 +1115,9 @@ class HomeComp extends React.Component {
             <AdvancedGridList />
           </Grid>
 
-          <Grid container item xs={12} style={{ margin: "60px 0px" }}>
+          <Grid container item xs={12}>
             <Grid item xs={12} className={classes.gridPadding}>
+              <br />
               <Title
                 title="Featured"
                 style={{ marginBottom: "0px !important" }}
@@ -1118,7 +1126,7 @@ class HomeComp extends React.Component {
             {
               <>
                 <Hidden smDown>
-                  <Container maxWidth={"lg"} style={{ paddingTop: 8 }}>
+                  <Container maxWidth={"lg"}>
                     <Slideshow
                       // sliderRef={this.slider}
                       class="subslider-carousel"
@@ -1169,7 +1177,7 @@ class HomeComp extends React.Component {
             item
             xs={12}
             className={classes.gridPadding}
-            style={{ margin: "80px 0px" }}
+            style={{ margin: "40px 0px" }}
           >
             <Grid container item xs={12}>
               {[
@@ -1222,7 +1230,7 @@ class HomeComp extends React.Component {
           </Grid>
         </Container>
         <Container maxWidth="xl">
-          <Grid container style={{ paddingTop: "40px" }}>
+          <Grid container>
             <Hidden smDown>
               <Grid
                 item
@@ -1234,7 +1242,6 @@ class HomeComp extends React.Component {
                 className={classes.photo}
                 // style={{ height: "430px", overflow: "auto", marginTop: 52 }}
                 style={{
-                  marginTop: "20px",
                   height: "475px",
                   overflow: "auto",
                   borderRadius: "3px",
@@ -1244,17 +1251,7 @@ class HomeComp extends React.Component {
                 <InstagramFeed />
               </Grid>
             </Hidden>
-            <Grid
-              item
-              xs={12}
-              sm={12}
-              md={8}
-              lg={8}
-              xl={8}
-              style={{
-                paddingTop: "20px",
-              }}
-            >
+            <Grid item xs={12} sm={12} md={8} lg={8} xl={8}>
               <div className={classes.testimonial}>
                 <Testimonial />
               </div>

@@ -220,6 +220,7 @@ const useStyles = makeStyles((theme) => ({
   linkMobile: {
     fontSize: "11px",
     color: "#6b6b6b",
+    lineHeight: "1.2rem",
   },
   accordionEdit: {
     padding: "0px",
