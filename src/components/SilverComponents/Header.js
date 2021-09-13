@@ -432,58 +432,70 @@ class Header extends Component {
                   </Grid>
                 </Grid>
               </Container>
-              {window.location.pathname === "/cart" ||
-              window.location.pathname === "/checkout" ||
-              b[1] === "paymentsuccess" ||
-              b[1] === "paymentfail" ? (
-                ""
-              ) : (
-                <Grid
-                  id="headerContainer"
-                  style={{ marginTop: "15px", width: "100%" }}
-                  className={classes.menunac}
-                  container
-                >
+              <div
+                onMouseLeave={(event) => {
+                  this.setState({
+                    Menuopen: false,
+                    submenuOpen: false,
+                    subTitleData: null,
+                    targetopen: false,
+                    listHoverItem: "",
+                  });
+                }}
+              >
+                {window.location.pathname === "/cart" ||
+                window.location.pathname === "/checkout" ||
+                b[1] === "paymentsuccess" ||
+                b[1] === "paymentfail" ? (
+                  ""
+                ) : (
                   <Grid
-                    item
-                    style={{ height: "40px", padding: "0px 30px" }}
-                    xs={11}
-                    xl={11}
-                    className={`header-navbar-list1 ${classes.headerNavbarList}`}
+                    id="headerContainer"
+                    style={{ marginTop: "15px", width: "100%" }}
+                    className={classes.menunac}
+                    container
                   >
-                    {/* <div> */}
-                    {menuListHeader.map((listName) => {
-                      let urlsmall = listName.title.toLowerCase();
-                      return (
-                        <a
-                          href={listName.url}
-                          onMouseOver={(event) => {
-                            this.setState({
-                              Menuopen: true,
-                              submenuOpen: true,
-                              subTitleData: null,
-                              targetopen: event.currentTarget,
-                              listHoverItem: listName.title,
-                              // .replace(
-                              //   / +/g,
-                              //   "ss"
-                              // ),
-                            });
-                          }}
-                          className={
-                            //  window.location.pathname === listName.url
-                            this.Menuopen === true || this.submenuOpen === true
-                              ? classes.seletectedMenu
-                              : classes.menuListCursor
-                          }
-                        >
-                          {listName.title}
-                        </a>
-                      );
-                    })}
-                    {/* </div> */}
+                    <Grid
+                      item
+                      style={{ height: "40px", padding: "0px 30px" }}
+                      xs={11}
+                      xl={11}
+                      className={`header-navbar-list1 ${classes.headerNavbarList}`}
+                    >
+                      {/* <div> */}
+                      {menuListHeader.map((listName) => {
+                        let urlsmall = listName.title.toLowerCase();
+                        return (
+                          <a
+                            href={listName.url}
+                            onMouseOver={(event) => {
+                              this.setState({
+                                Menuopen: true,
+                                submenuOpen: true,
+                                subTitleData: null,
+                                targetopen: event.currentTarget,
+                                listHoverItem: listName.title,
+                                // .replace(
+                                //   / +/g,
+                                //   "ss"
+                                // ),
+                              });
+                            }}
+                            className={
+                              //  window.location.pathname === listName.url
+                              this.Menuopen === true ||
+                              this.submenuOpen === true
+                                ? classes.seletectedMenu
+                                : classes.menuListCursor
+                            }
+                          >
+                            {listName.title}
+                          </a>
+                        );
+                      })}
+                      {/* </div> */}
 
-                    {/* {this.state.Menuopen &&
+                      {/* {this.state.Menuopen &&
         menuLists[this.state.listHoverItem] ? (
           <HeaderHoverMenuItem
             tabdata={this.props.data}
@@ -507,76 +519,83 @@ class Header extends Component {
           ""
         )} */}
 
-                    {/* <div style={{ flexGrow: 1 }}></div> */}
-                  </Grid>
-                  <Grid
-                    xs={1}
-                    xl={1}
-                    style={{ display: "flex" }}
-                    className={classes.menustylori}
-                  >
-                    <div style={{ flexGrow: 1 }}></div>
-                    <div className={classes.styloriEditing}>
-                      <a
-                        href="https://www.stylori.com/"
-                        style={{
-                          textDecoration: "none",
-                          color: "#fff",
-                          padding: "8px 7px 0 7px",
-                        }}
-                        onMouseOver={(event) => {
-                          this.setState({
-                            Menuopen: true,
-                            submenuOpen: true,
-                            subTitleData: null,
-                            targetopen: event.currentTarget,
-                            listHoverItem: "STYLORI",
-                            // .replace(
-                            //   / +/g,
-                            //   "ss"
-                            // ),
-                          });
-                        }}
+                      {/* <div style={{ flexGrow: 1 }}></div> */}
+                    </Grid>
+                    <Grid
+                      xs={1}
+                      xl={1}
+                      style={{ display: "flex" }}
+                      className={classes.menustylori}
+                    >
+                      <div style={{ flexGrow: 1 }}></div>
+                      <div
+                        className={classes.styloriEditing}
+                        // onMouseLeave={(event) => {
+                        //   this.setState({
+                        //     Menuopen: false,
+                        //     submenuOpen: false,
+                        //     subTitleData: null,
+                        //     targetopen: false,
+                        //     listHoverItem: "",
+                        //     // .replace(
+                        //     //   / +/g,
+                        //     //   "ss"
+                        //     // ),
+                        //   });
+                        // }}
                       >
-                        <img
-                          src={StyloriSLogo}
-                          width="30px"
-                          height="30px"
-                          style={{ padding: "5px 15px 0px 15px" }}
-                        ></img>
-                      </a>
-                    </div>
+                        <a
+                          href="https://www.stylori.com/"
+                          style={{
+                            textDecoration: "none",
+                            color: "#fff",
+                            padding: "8px 7px 0 7px",
+                          }}
+                          onMouseOver={(event) => {
+                            this.setState({
+                              Menuopen: true,
+                              submenuOpen: true,
+                              subTitleData: null,
+                              targetopen: event.currentTarget,
+                              listHoverItem: "STYLORI",
+                              // .replace(
+                              //   / +/g,
+                              //   "ss"
+                              // ),
+                            });
+                          }}
+                        >
+                          <img
+                            src={StyloriSLogo}
+                            width="30px"
+                            height="30px"
+                            style={{ padding: "5px 15px 0px 15px" }}
+                          ></img>
+                        </a>
+                      </div>
+                    </Grid>
                   </Grid>
-                </Grid>
-              )}
-              {/* <Grid container id="headerContainerTop"></Grid> */}
-              {["JEWELLERY", "PURCHASEPLANS"].indexOf(
-                this.state.listHoverItem
-              ) === -1 && this.state.Menuopen ? (
-                <HeaderHoversubMenu
-                  opened={this.state.Menuopen}
-                  scroll={this.state.scroll}
-                  // onMouseOver={(event) => {
-                  //   this.setState({ submenuOpen: true });
-                  // }}
-                  listHoverItem={menuLists[this.state.listHoverItem]}
-                  listitem={this.state.listHoverItem}
-                  data={this.state.subTitleData}
-                  subMenuTarget={this.subMenuTarget}
-                  targetopened={this.state.targetopen}
-                  onMouseLeave={() => {
-                    this.setState({
-                      submenuOpen: false,
-                      Menuopen: false,
-                      subTitleData: "",
-                      subMenuTarget: "",
-                      targetopen: "",
-                    });
-                  }}
-                />
-              ) : (
-                ""
-              )}
+                )}
+                {/* <Grid container id="headerContainerTop"></Grid> */}
+                {["JEWELLERY", "PURCHASEPLANS"].indexOf(
+                  this.state.listHoverItem
+                ) === -1 && this.state.Menuopen ? (
+                  <HeaderHoversubMenu
+                    opened={this.state.Menuopen}
+                    scroll={this.state.scroll}
+                    // onMouseOver={(event) => {
+                    //   this.setState({ submenuOpen: true });
+                    // }}
+                    listHoverItem={menuLists[this.state.listHoverItem]}
+                    listitem={this.state.listHoverItem}
+                    data={this.state.subTitleData}
+                    subMenuTarget={this.subMenuTarget}
+                    targetopened={this.state.targetopen}
+                  />
+                ) : (
+                  ""
+                )}
+              </div>
             </AppBar>
           </div>
         </Hidden>
