@@ -60,8 +60,9 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
-const CheckboxWithGreenCheck = withStyles({
+const CheckboxWithTick = withStyles({
   root: {
+    cursor: "default",
     backgroundColor: "white",
     "&:hover": {
       backgroundColor: "white",
@@ -150,7 +151,7 @@ export default function MoreFilters(props) {
                                 <FormControlLabel
                                   control={
                                     <div>
-                                      <CheckboxWithGreenCheck
+                                      <CheckboxWithTick
                                         color="white"
                                         label={valsub}
                                         onChange={(e) => {
