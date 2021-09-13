@@ -1,15 +1,9 @@
-import React from "react";
-import { GridList, GridListTile, Button } from "@material-ui/core";
-import ProductCards from "./index";
+import { Button, GridList, GridListTile } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
-import { useDummyRequest } from "hooks";
-import { productcarddatas } from "mappers";
-import productlist from "mappers/productlist";
-import { PRODUCTLIST } from "queries";
-import { useGraphql } from "hooks/GraphqlHook";
-import { CDN_URL } from "config";
 import { FilterOptionsContext } from "context";
+import React from "react";
 import { withRouter } from "react-router";
+import ProductCards from "./index";
 
 const styles = (theme) => ({
   gridlistmain: {
@@ -42,7 +36,8 @@ const styles = (theme) => ({
   },
 });
 const ProductLayout = (props) => {
-  const { setOffset, setFirst, FilterOptionsCtx } = React.useContext(FilterOptionsContext);
+  const { setOffset, setFirst, FilterOptionsCtx } =
+    React.useContext(FilterOptionsContext);
   return (
     <Component
       offset={FilterOptionsCtx.offset}
@@ -113,7 +108,10 @@ class Component extends React.Component {
             {this.props.loadingFilterCtx && (
               <div className="overall-loaders">
                 <div id="loadings">
-                  <img src="https://alpha-assets.stylori.com/images/static/loadingimg.gif" alt="loading..." />
+                  <img
+                    src="https://alpha-assets.stylori.com/images/static/loadingimg.gif"
+                    alt="loading..."
+                  />
                 </div>
               </div>
             )}
@@ -134,7 +132,10 @@ class Component extends React.Component {
                         className={`${classes.liClass}`}
                       >
                         {/* <ProductCard data={tile} /> */}
-                        <ProductCards data={tile} wishlist={this.props.wishlist} />
+                        <ProductCards
+                          data={tile}
+                          wishlist={this.props.wishlist}
+                        />
                       </GridListTile>
                     ) : (
                       ""
@@ -150,10 +151,15 @@ class Component extends React.Component {
                       {data && data.length !== 0 ? (
                         data[0] &&
                         data[0].totalCount &&
-                        (data[0].totalCount - data.length === 0 || data[0].totalCount - data.length < 0) ? (
+                        (data[0].totalCount - data.length === 0 ||
+                          data[0].totalCount - data.length < 0) ? (
                           ""
                         ) : (
                           <Button
+                            style={{
+                              boxShadow: "6px 6px 6px #A5A4A5 ",
+                              fontWeight: "bold",
+                            }}
                             variant="contained"
                             className={`${classes.button}  ${classes.viewmoreColor}`}
                             onClick={() => {
@@ -164,12 +170,18 @@ class Component extends React.Component {
                             {data && data.length === 0 && `No products found`}
                             {data &&
                               data.length >= 24 &&
-                              ` See ${data && data.length > 0 && data[0] ? data[0].totalCount - data.length : ""} More Products`}
+                              ` See ${
+                                data && data.length > 0 && data[0]
+                                  ? data[0].totalCount - data.length
+                                  : ""
+                              } More Products`}
                             {data &&
                               data.length > 0 &&
                               data.length < 24 &&
                               `Only ${
-                                data && data.length > 0 && data[0] ? data[0].totalCount - data.length : ""
+                                data && data.length > 0 && data[0]
+                                  ? data[0].totalCount - data.length
+                                  : ""
                               } products avalilable`}
                           </Button>
                         )
@@ -193,4 +205,6 @@ class Component extends React.Component {
   }
 }
 
-export default withRouter(withStyles(styles, { withTheme: true })(ProductLayout));
+export default withRouter(
+  withStyles(styles, { withTheme: true })(ProductLayout)
+);

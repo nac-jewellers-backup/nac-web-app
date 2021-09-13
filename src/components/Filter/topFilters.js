@@ -1,20 +1,14 @@
-import React from "react";
-
-import { Grid, Container, Popper, ClickAwayListener, Grow, Paper, Chip } from "@material-ui/core";
-import HeaderHoverMenuItem from "../SilverComponents/HoverNavBarListing/HeaderHoverMenuItem";
-import HeaderHoversubMenu from "../SilverComponents/HoverNavBarListing/HeaderHoverMenuItem";
-import { filterParams } from "../../mappers";
-import { useDummyRequest } from "../../hooks";
-import { styles } from "./topFilterStyles";
-import MorefiltersOpen from "./moreFilters";
-import CardRadioButton from "../InputComponents/RadioButton/index";
-import { FilterOptionsContext } from "context";
-import ExpandLess from "@material-ui/icons/ExpandLess";
-import ExpandMore from "@material-ui/icons/ExpandMore";
+import { Chip, Container, Grid } from "@material-ui/core";
 import AddBoxIcon from "@material-ui/icons/AddBox";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 import ArrowDropUpIcon from "@material-ui/icons/ArrowDropUp";
-import CloseIcon from "@material-ui/icons/Close";
+import { FilterOptionsContext } from "context";
+import React from "react";
+import { useDummyRequest } from "../../hooks";
+import { filterParams } from "../../mappers";
+import HeaderHoverMenuItem from "../SilverComponents/HoverNavBarListing/HeaderHoverMenuItem";
+import MorefiltersOpen from "./moreFilters";
+import { styles } from "./topFilterStyles";
 
 export const TopFilters = (props) => {
   const [state, setState] = React.useState({
@@ -41,7 +35,8 @@ export const TopFilters = (props) => {
     sortOpen: null,
   });
   const { mapped } = useDummyRequest(filterParams);
-  const { setSort, setOffset, FilterOptionsCtx } = React.useContext(FilterOptionsContext);
+  const { setSort, setOffset, FilterOptionsCtx } =
+    React.useContext(FilterOptionsContext);
 
   const submenuDetails = (data, target) => {
     setState({
@@ -96,7 +91,11 @@ export const TopFilters = (props) => {
       <Container style={{ marginTop: "25px" }}>
         <Grid container item xs={12}>
           <Grid item xs={12} style={{ marginBottom: 30 }}>
-            <div style={{ textAlign: "center", fontWeight: "bold", color: "#666" }}>FILTER YOUR SEARCH</div>
+            <div
+              style={{ textAlign: "center", fontWeight: "bold", color: "#666" }}
+            >
+              FILTER YOUR SEARCH
+            </div>
           </Grid>
 
           {/* ------------------------------ */}
@@ -121,7 +120,13 @@ export const TopFilters = (props) => {
           >
             {/* ------------------------------- */}
             <Grid container item xs={12} className="titleTop" id={"titleTop"}>
-              <Grid container item xs={12} justify="space-between" style={{ paddingBottom: 20, display: "flex" }}>
+              <Grid
+                container
+                item
+                xs={12}
+                justify="space-between"
+                style={{ paddingBottom: 20, display: "flex" }}
+              >
                 {/* <nav
             // style={{height:"35px", display:"flex"}}
             > */}
@@ -140,11 +145,24 @@ export const TopFilters = (props) => {
                     });
                   }}
                 >
-                  <Grid container item xl={9} className={classes.spacingfilterdiv}>
+                  <Grid
+                    container
+                    item
+                    xl={9}
+                    className={classes.spacingfilterdiv}
+                  >
                     <Grid item className={classes.filtersLabel}>
-                      <a style={{color:"#fff"}}>{"Price (₹)"}</a>
+                      <a
+                        style={{ color: "#fff", fontSize: 13, fontWeight: 550 }}
+                      >
+                        {"Price (₹)"}
+                      </a>
                     </Grid>
-                    <Grid item xs={3} style={{ display: "flex", justifyContent: "flex-end" }}>
+                    <Grid
+                      item
+                      xs={3}
+                      style={{ display: "flex", justifyContent: "flex-end" }}
+                    >
                       {state.listHoverItem === "price" ? (
                         <ArrowDropUpIcon color="primary" />
                       ) : (
@@ -180,9 +198,23 @@ export const TopFilters = (props) => {
                           });
                         }}
                       >
-                        <Grid container item xl={12} className={classes.spacingfilterdiv}>
+                        <Grid
+                          container
+                          item
+                          xl={12}
+                          className={classes.spacingfilterdiv}
+                        >
                           <Grid item xs={9} className={classes.filtersLabel}>
-                            <a style={{color:"#fff"}} href={listName.url}>{listName}</a>
+                            <a
+                              style={{
+                                color: "#fff",
+                                fontSize: 13,
+                                fontWeight: 550,
+                              }}
+                              href={listName.url}
+                            >
+                              {listName}
+                            </a>
                           </Grid>
                           <Grid
                             item
@@ -214,11 +246,20 @@ export const TopFilters = (props) => {
                     handleMoreFilters();
                   }}
                 >
-                  <Grid container item xs={12} className={classes.spacingfilterdiv}>
+                  <Grid
+                    container
+                    item
+                    xs={12}
+                    className={classes.spacingfilterdiv}
+                  >
                     <Grid item xs={6}>
-                      More
+                      <div style={{ fontSize: 13, fontWeight: 550 }}>More</div>
                     </Grid>
-                    <Grid item xs={6} style={{ display: "flex", justifyContent: "flex-end" }}>
+                    <Grid
+                      item
+                      xs={6}
+                      style={{ display: "flex", justifyContent: "flex-end" }}
+                    >
                       <AddBoxIcon color="primary" />
                     </Grid>
                   </Grid>
@@ -249,7 +290,12 @@ export const TopFilters = (props) => {
             </Grid>
           </Grid>
           {/* ---------------------------------------------------------- */}
-          <Grid container xs={12} style={{ display: "flex", justifyContent: "flex-end" }} className={classes.chipContainers}>
+          <Grid
+            container
+            xs={12}
+            style={{ display: "flex", justifyContent: "flex-end" }}
+            className={classes.chipContainers}
+          >
             <Grid item xs={10}>
               <>
                 {props?.chips.length > 0 ? (
@@ -269,7 +315,12 @@ export const TopFilters = (props) => {
                       props.history.push("/jewellery");
                       window.location.reload();
                     }}
-                    deleteIcon={<i className="search-choice-close" class="fa fa-times"></i>}
+                    deleteIcon={
+                      <i
+                        className="search-choice-close"
+                        class="fa fa-times"
+                      ></i>
+                    }
                   />
                 ) : (
                   ""
@@ -291,7 +342,16 @@ export const TopFilters = (props) => {
                           textTransform: "uppercase",
                         }}
                         onDelete={() => props.click(data.label)}
-                        deleteIcon={data.label ? <i className="search-choice-close" class="fa fa-times"></i> : ""}
+                        deleteIcon={
+                          data.label ? (
+                            <i
+                              className="search-choice-close"
+                              class="fa fa-times"
+                            ></i>
+                          ) : (
+                            ""
+                          )
+                        }
                       />
                     );
                   })
@@ -319,10 +379,18 @@ export const TopFilters = (props) => {
                 }}
               >
                 <Grid item xs={6} style={{ margin: "auto" }}>
-                  Sort by
+                  <div style={{ fontSize: 13, fontWeight: 550 }}>Sort by</div>
                 </Grid>
-                <Grid item xs={6} style={{ display: "flex", justifyContent: "flex-end" }}>
-                  {state.expanded ? <ArrowDropUpIcon color="primary" /> : <ArrowDropDownIcon color="primary" />}
+                <Grid
+                  item
+                  xs={6}
+                  style={{ display: "flex", justifyContent: "flex-end" }}
+                >
+                  {state.expanded ? (
+                    <ArrowDropUpIcon color="primary" />
+                  ) : (
+                    <ArrowDropDownIcon color="primary" />
+                  )}
                 </Grid>
               </Grid>
 

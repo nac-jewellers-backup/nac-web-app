@@ -1,32 +1,29 @@
-
 //  ResponsiveFontSizes
-import React from "react";
 import {
   Card,
-  CardMedia,
-  CardContent,
-  Typography,
   CardActions,
+  CardContent,
+  CardMedia,
+  Typography,
 } from "@material-ui/core";
 import PropTypes from "prop-types";
-import "./productCard.css";
+import React from "react";
 import CardControl from "./CardControl";
+import "./productCard.css";
 
-
-
-export const ProductCard = props => {
+export const ProductCard = (props) => {
   const [cardstate, setCardState] = React.useState({
     hovered: false,
     loaded: false,
-    dataLoaded: true
+    dataLoaded: true,
   });
 
   const renderControls = () =>
-    Object.keys(props.controls).map(pos => (
+    Object.keys(props.controls).map((pos) => (
       <CardControl position={pos} {...props.controls[pos]} />
     ));
   return (
-    <Card style={styles.card} >
+    <Card style={styles.card}>
       {props.controls ? renderControls() : ""}
       <CardMedia
         onMouseOver={() => {
@@ -40,12 +37,11 @@ export const ProductCard = props => {
         className="shine"
         alt={cardstate.dataLoaded && props.title}
         height="220"
-        
         image={
           cardstate.dataLoaded &&
           props.data.image[cardstate.hovered ? "hoverImage" : "placeImage"]
         }
-        title={cardstate.dataLoaded && 'props.data.title'}
+        title={cardstate.dataLoaded && "props.data.title"}
       />
       <CardContent>
         <Typography
@@ -54,7 +50,6 @@ export const ProductCard = props => {
           variant="overline"
           component="div"
           align="left"
-         
         >
           {cardstate.dataLoaded && props.data.title}
         </Typography>
@@ -74,8 +69,7 @@ export const ProductCard = props => {
           <Typography
             variant="h6"
             className={`${!cardstate.dataLoaded && "shine"} price`}
-            style={{color:'#ED1165'}}
-            
+            style={{ color: "#ED1165" }}
           >
             {cardstate.dataLoaded && props.data.offerPrice}
           </Typography>
@@ -91,33 +85,33 @@ export const ProductCard = props => {
 
 const controlShape = PropTypes.shape({
   icon: PropTypes.string.isRequired,
-  handler: PropTypes.func.isRequired
+  handler: PropTypes.func.isRequired,
 });
 
 ProductCard.propTypes = {
   title: PropTypes.string.isRequired,
   image: PropTypes.shape({
     placeImage: PropTypes.string.isRequired,
-    hoverImage: PropTypes.string.isRequired
+    hoverImage: PropTypes.string.isRequired,
   }),
   controls: PropTypes.shape({
     topleft: controlShape,
     bottomleft: controlShape,
     topright: controlShape,
-    bottomright: controlShape
-  })
+    bottomright: controlShape,
+  }),
 };
 
 const styles = {
   delPrice: {},
   priceHolder: {
     display: "flex",
-    alignItems: "baseline"
+    alignItems: "baseline",
   },
   card: {
     width: "90%",
-    border:'1px solid #e3e3e3',
-    boxShadow:'none',
-    position: "relative"
-  }
+    border: "1px solid #e3e3e3",
+    boxShadow: "none",
+    position: "relative",
+  },
 };
