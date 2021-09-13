@@ -21,9 +21,9 @@ export const testimonials = `query testimonials {
         }
       }
     }
-  }`
+  }`;
 
-  export const ALLBANNERS = `
+export const ALLBANNERS = `
   query MyQuery {
     allBanners(condition: {urlParam: "landing"})
     {
@@ -50,6 +50,40 @@ export const ALLBANNERSCOMPLETE = `
         url
         web
         urlParam 
+      }
+    }
+  }
+  `;
+
+export const ALLFEATUREDPRODUCT = `
+  query MyQuery {
+    allFeaturedProducts(condition: {isActive: true}) {
+      nodes {
+        productId
+        productListByProductId {
+          productName
+          productId
+          productImagesByProductId(condition: {ishover: true}) {
+            nodes {
+              imageUrl
+            }
+          }
+          transSkuListsByProductId {
+            nodes {
+              costPrice
+              markupPrice
+           skuId
+              skuUrl
+              transSkuDescriptionsBySkuId {
+                nodes {
+                  skuDescription
+                }
+              }
+              sellingPrice
+            }
+          }
+        }
+        isActive
       }
     }
   }
