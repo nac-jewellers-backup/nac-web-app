@@ -42,13 +42,24 @@ const Gallery = (
 ) => {
   return (
     <div className="imageHeight" style={{ position: "relative" }}>
+      {props.data.price < 20000 ? (
+        <span className="newarraival">NEW ARRIVAL</span>
+      ) : (
+        ""
+      )}
+      {props.data.price > 20000 ? (
+        <span className="bestsell">BEST SELLER</span>
+      ) : (
+        ""
+      )}
+
       <div class="wishListStyle" style={{ padding: 10 }}>
         <i
           class="fa fa-heart overall-icons"
           style={{ color: "gray", height: 15, width: 15 }}
         ></i>
-        {/* <Wishlist sku={props.data.skuId} productId={props.data.productId} wishlist={props.wishlist} /> */}
       </div>
+
       <Link
         className={"cardImage"}
         to={{ pathname: `/${props.data.skuUrl ?? ""}` }}
