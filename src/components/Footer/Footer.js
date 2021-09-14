@@ -300,25 +300,6 @@ export default function Footer(props) {
   const [stateClassname, setStateClassname] = React.useState("snackBar");
 
   const classes = useStyles();
-  // const footerData = [
-  //     {
-  //         url: "aboutus",
-  //         Title: "About Us"
-  //     },
-  //     {
-  //         url: "/store",
-  //         Title: "Store Locator"
-  //     },
-  //     {
-  //         url: "/contactus",
-  //         Title: "Contact"
-  //     },
-  //     {
-  //         url: "/privacy",
-  //         Title: "Privacy Policy"
-  //     },
-
-  // ]
   const footerData = [
     {
       row: [
@@ -326,14 +307,7 @@ export default function Footer(props) {
           url: "/aboutus",
           heading: "About Us",
         },
-        // {
-        //   url: "/aboutus",
-        //   Title: "About Us",
-        // },
-        // {
-        //   url: "/careersPage",
-        //   Title: "Careers",
-        // },
+
         {
           url: "/stories",
           Title: "Our Story",
@@ -354,26 +328,6 @@ export default function Footer(props) {
     },
     {
       row: [
-        // {
-        //   url: "/store",
-        //   Title: "Store Locator",
-        // },
-        // {
-        //   url: "/collections",
-        //   Title: "Collections",
-        // },
-        // {
-        //   url: "/education",
-        //   Title: "Education",
-        // },
-        // {
-        //   url: "/sitemap",
-        //   Title: "Site Map",
-        // },
-        // {
-        //   url: "/contactus",
-        //   Title: "Contact Us",
-        // },
         {
           url: "#",
           heading: "Know Your Jewellery",
@@ -396,26 +350,7 @@ export default function Footer(props) {
         },
       ],
     },
-    // {
-    //   row: [
-    //     {
-    //       url: "/temple-work",
-    //       Title: "Temple Work",
-    //     },
-    //     {
-    //       url: "/termsconditions",
-    //       Title: "Terms & Condition",
-    //     },
-    //     {
-    //       url: "https://www.google.co.in/maps/@13.0457285,80.2325498,3a,75y,281.19h,87.03t/data=!3m7!1e1!3m5!1siBMPPhrps9EAAAQ0H3M5OQ!2e0!3e2!7i13312!8i6656!6m1!1e1",
-    //       Title: "360 Store View",
-    //     },
-    //     {
-    //       url: "/faqs",
-    //       Title: "FAQ",
-    //     },
-    //   ],
-    // },
+
     {
       row: [
         {
@@ -446,7 +381,7 @@ export default function Footer(props) {
         },
         {
           url: "",
-          Title: "care@nacjewelers.com - Email",
+          Title: "care@nacjewellers.com - Email",
         },
         {
           url: "",
