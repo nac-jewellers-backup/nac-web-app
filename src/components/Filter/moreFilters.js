@@ -135,7 +135,7 @@ export default function MoreFilters(props) {
                     <Grid
                       item
                       xs={3}
-                      style={{ marginBottom: "3%", padding: 10 }}
+                      style={{ marginBottom: "3%", padding: 20 }}
                     >
                       <div
                         style={{
