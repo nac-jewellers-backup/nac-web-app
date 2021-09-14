@@ -1,42 +1,38 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { withStyles } from "@material-ui/core/styles";
 import {
-  Slide,
   AppBar,
-  Toolbar,
-  List,
-  Typography,
-  Divider,
-  IconButton,
-  ListItem,
-  Grid,
-  TextField,
-  ListItemText,
   Button,
   Checkbox,
-  Paper,
-  Hidden,
   Container,
-  Chip,
+  Divider,
+  Grid,
+  Hidden,
+  IconButton,
+  List,
+  ListItem,
+  ListItemText,
+  Paper,
+  Slide,
+  TextField,
+  Typography,
 } from "@material-ui/core";
-import ArrowRightIcon from '@material-ui/icons/ArrowRight';
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import FormGroup from "@material-ui/core/FormGroup";
+import { withStyles } from "@material-ui/core/styles";
 import { ExpandLess, ExpandMore } from "@material-ui/icons";
-import "./filter.css";
-import ProductLayout from "../ProductCard/ProductLayout";
-import FilterHeader from "./FilterHeader";
+import ArrowRightIcon from "@material-ui/icons/ArrowRight";
 import CheckBoxIcon from "@material-ui/icons/CheckBox";
 import CheckBoxOutlineBlankIcon from "@material-ui/icons/CheckBoxOutlineBlank";
-import CardRadioButton from "../InputComponents/RadioButton/index";
-import { useDummyRequest } from "hooks/index";
-import { filterParams } from "mappers/index";
-import FormGroup from "@material-ui/core/FormGroup";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import styles from "./styles";
 import { FilterOptionsContext, GlobalContext } from "context";
 import { NetworkContext } from "context/NetworkContext";
-import { PRODUCTLIST, conditions, seoUrlResult } from "queries/productListing";
+import PropTypes from "prop-types";
+import { seoUrlResult } from "queries/productListing";
+import React from "react";
 import { withRouter } from "react-router-dom";
+import CardRadioButton from "../InputComponents/RadioButton/index";
+import ProductLayout from "../ProductCard/ProductLayout";
+import "./filter.css";
+import FilterHeader from "./FilterHeader";
+import styles from "./styles";
 import { TopFilters } from "./topFilters";
 const PersistentDrawerLeft = (props) => {
   const {
@@ -705,7 +701,7 @@ class Component extends React.Component {
     //   this.setState({ filtercheck: '' })
     // } else {
     this.setState({ filtercheck });
-    console.log("filtercheck",filtercheck);
+    console.log("filtercheck", filtercheck);
     // }
   };
 
@@ -1484,11 +1480,12 @@ class Component extends React.Component {
               }}
               className={`${classes.colorMain}`}
             >
-            <i onClick={this.handleDrawerCloseMobile}
-                  className={`fa fa-times ${classes.colorMain}`}
-                  style={{ color: "#20205A",}}
-                ></i>
-              <button 
+              <i
+                onClick={this.handleDrawerCloseMobile}
+                className={`fa fa-times ${classes.colorMain}`}
+                style={{ color: "#20205A" }}
+              ></i>
+              <button
                 style={{
                   background: "none",
                   border: "none",
@@ -1498,7 +1495,7 @@ class Component extends React.Component {
                   fontFamily: "notoSerif-regular",
                 }}
               >
-                 FILTER
+                FILTER
               </button>
               <Button
                 onClick={this.handleClearAllData}
@@ -1508,11 +1505,11 @@ class Component extends React.Component {
                   lineHeight: "15px",
                   fontSize: "12px",
                   color: "#20205A",
-                  borderRadius:"0px",
-                  marginTop:"3px"
+                  borderRadius: "0px",
+                  marginTop: "3px",
                 }}
                 className={`${classes.colorMain}`}
-                classes={{text:classes.clearBtn}}
+                classes={{ text: classes.clearBtn }}
               >
                 Clear All
               </Button>
@@ -1818,15 +1815,24 @@ class Component extends React.Component {
 
               </AppBar> */}
             </Grid>
-            {openMobile ?  null: 
-            <AppBar className="filter-fixed header" style={{backgroundColor:"#20205A ", minHeight:"35px"}}>
-                <div style={{color:"#fff",paddingTop:"7px"}}>APPLY FILTERS</div>
-            </AppBar>}
-            
+            {openMobile ? null : (
+              <AppBar
+                className="filter-fixed header"
+                style={{ backgroundColor: "#20205A ", minHeight: "35px" }}
+              >
+                <div style={{ color: "#fff", paddingTop: "7px" }}>
+                  APPLY FILTERS
+                </div>
+              </AppBar>
+            )}
+
             <AppBar
               color="primary"
               className="filter-fixed header"
-              style={{ display: !openMobile ? "none" : "block",backgroundColor: "whitesmoke"  }}
+              style={{
+                display: !openMobile ? "none" : "block",
+                backgroundColor: "whitesmoke",
+              }}
             >
               <Container>
                 <div

@@ -1,11 +1,11 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Modal from "@material-ui/core/Modal";
+import { FormControlLabel, FormGroup, Grid } from "@material-ui/core";
 import Backdrop from "@material-ui/core/Backdrop";
-import Fade from "@material-ui/core/Fade";
-import { Grid, FormControlLabel, FormGroup } from "@material-ui/core";
 import Checkbox from "@material-ui/core/Checkbox";
+import Fade from "@material-ui/core/Fade";
+import Modal from "@material-ui/core/Modal";
+import { makeStyles, withStyles } from "@material-ui/core/styles";
 import CancelIcon from "@material-ui/icons/Cancel";
+import React from "react";
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -43,6 +43,8 @@ const useStyles = makeStyles((theme) => ({
     "&.MuiIconButton-colorSecondary": {
       padding: "4px !important",
     },
+    //display: "none",
+    border: "1px solid white",
     "& span": {
       "& svg": {
         fill: `${theme.palette.primary.main} !important`,
@@ -58,9 +60,41 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
+const CheckboxWithTick = withStyles({
+  root: {
+    cursor: "default",
+    backgroundColor: "white",
+    "&:hover": {
+      backgroundColor: "white",
+    },
+    color: "white",
+    "&$checked": {
+      color: "white",
+
+      "& .MuiIconButton-label": {
+        position: "relative",
+        zIndex: 0,
+      },
+      "& .MuiIconButton-label:after": {
+        content: '""',
+        left: 4,
+        top: 4,
+        height: 15,
+        width: 15,
+        position: "absolute",
+        backgroundColor: "#33346D",
+        zIndex: -1,
+      },
+    },
+  },
+  checked: {
+    border: "1px solid white",
+  },
+})(Checkbox);
 
 export default function MoreFilters(props) {
   const classes = useStyles();
+
   return (
     <div>
       <Modal
@@ -89,11 +123,35 @@ export default function MoreFilters(props) {
                 <CancelIcon />
               </div>
               {props.filter.map((val, i) => {
-                if ( val !== "price" && val !== "Occasion" && val !== "Material" && val !== "Collection" && val !== "Offers" && val !== "Gender") {
+                if (
+                  val !== "price" &&
+                  val !== "Occasion" &&
+                  val !== "Material" &&
+                  val !== "Collection" &&
+                  val !== "Offers" &&
+                  val !== "Gender"
+                ) {
                   return (
-                    <Grid item xs={3} style={{ marginBottom: "3%" }}>
-                      <div style={{ marginBottom: "10px" }}>
-                        <b>{val}</b>
+                    <Grid
+                      item
+                      xs={3}
+                      style={{ marginBottom: "3%", padding: 20 }}
+                    >
+                      <div
+                        style={{
+                          marginBottom: "10px",
+                          color: "#33346D",
+                          borderBottom: "1px solid #33346D",
+                        }}
+                      >
+                        <span
+                          style={{
+                            color: "#33346D !important",
+                            fontWeight: "bold",
+                          }}
+                        >
+                          {val}
+                        </span>
                       </div>
                       <FormGroup row>
                         {props.subFilter[val].map((valsub) => {
@@ -107,46 +165,74 @@ export default function MoreFilters(props) {
                                 xs={12}
                                 className={classes.checkboxlabel}
                               >
+                                <span
+                                  style={{ cursor: "pointer" }}
+                                  onClick={(e) => {
+                                    props.handleClose();
+                                    props.onchoosetype(
+                                      valsub,
+                                      props.checked[
+                                        val && val.replace(/\s/g, "")
+                                      ][valsub] !== undefined
+                                        ? !props.checked[
+                                            val && val.replace(/\s/g, "")
+                                          ][valsub]
+                                        : true,
+                                      e,
+                                      null,
+                                      undefined,
+                                      props.state,
+                                      val ? val.replace(/\s/g, "") : ""
+                                    );
+                                  }}
+                                >
+                                  {valsub}
+                                </span>
                                 <FormControlLabel
                                   control={
-                                    <Checkbox
-                                      className={classes.checkboxgrid}
-                                      checked={
-                                        props.checked[val.replace(/\s/g, "")] &&
-                                        props.checked[val.replace(/\s/g, "")][
-                                          valsub
-                                        ] !== undefined
-                                          ? props.checked[
-                                              val.replace(/\s/g, "")
-                                            ] &&
-                                            props.checked[
-                                              val.replace(/\s/g, "")
-                                            ][valsub]
-                                          : false
-                                      }
-                                      onChange={(e) => {
-                                        props.handleClose();
-                                        props.onchoosetype(
-                                          valsub,
+                                    <div>
+                                      <CheckboxWithTick
+                                        color="white"
+                                        label={valsub}
+                                        // onChange={(e) => {
+                                        //   props.handleClose();
+                                        //   props.onchoosetype(
+                                        //     valsub,
+                                        //     props.checked[
+                                        //       val && val.replace(/\s/g, "")
+                                        //     ][valsub] !== undefined
+                                        //       ? !props.checked[
+                                        //           val && val.replace(/\s/g, "")
+                                        //         ][valsub]
+                                        //       : true,
+                                        //     e,
+                                        //     null,
+                                        //     undefined,
+                                        //     props.state,
+                                        //     val ? val.replace(/\s/g, "") : ""
+                                        //   );
+                                        // }}
+                                        checked={
                                           props.checked[
-                                            val && val.replace(/\s/g, "")
-                                          ][valsub] !== undefined
-                                            ? !props.checked[
-                                                val && val.replace(/\s/g, "")
+                                            val.replace(/\s/g, "")
+                                          ] &&
+                                          props.checked[val.replace(/\s/g, "")][
+                                            valsub
+                                          ] !== undefined
+                                            ? props.checked[
+                                                val.replace(/\s/g, "")
+                                              ] &&
+                                              props.checked[
+                                                val.replace(/\s/g, "")
                                               ][valsub]
-                                            : true,
-                                          e,
-                                          null,
-                                          undefined,
-                                          props.state,
-                                          val ? val.replace(/\s/g, "") : ""
-                                        );
-                                      }}
-                                      name={val.replace(/\s/g, "")}
-                                      color={"secondary"}
-                                    />
+                                            : false
+                                        }
+                                        name={val.replace(/\s/g, "")}
+                                      />
+                                    </div>
                                   }
-                                  label={valsub}
+                                  // label={valsub}
+                                  labelPlacement="start"
                                 />
                               </Grid>
                             );

@@ -163,6 +163,28 @@
 .imageHeight {
   min-height: 100px;
 }
+.newarraival {
+  background-color: #0c2879;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 3px 8px 3px 18px;
+  border-bottom-left-radius: 20px;
+  font-size: 13px;
+  color: white;
+  white-space: nowrap;
+}
+.bestsell {
+  background-color: #a66e1d;
+  white-space: nowrap;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 3px 8px 3px 18px;
+  border-bottom-left-radius: 20px;
+  font-size: 13px;
+  color: white;
+}
 .cardImage .overlayImage {
   position: absolute;
   bottom: 0;

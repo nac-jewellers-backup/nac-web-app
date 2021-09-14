@@ -57,7 +57,6 @@ class Stylori extends React.Component {
     })
       .then((res) => res.json())
       .then((data) => {
-     
         let bannerFullData = data.data.allBanners.nodes;
         const specificPageData = bannerFullData.filter((item) => item.urlParam === window.location.pathname);
         const listedPageData = bannerFullData.filter((item) => item.urlParam === "listingPage");
@@ -91,7 +90,7 @@ class Stylori extends React.Component {
       pauseOnFocus: true,
       swipe: false,
     };
-    
+
     return (
       <>
         <LiveChat license={5807571} />
@@ -163,7 +162,7 @@ class Stylori extends React.Component {
             </Slideshow>
           </Grid>
           <Grid item xs={12}>
-            <h3 style={{ textTransform: "capitalize", textAlign: "center", margin : "28px 0px 0px 0px" }}>
+            <h3 style={{ textTransform: "capitalize", textAlign: "center", margin: "28px 0px 0px 0px" }}>
               {this.props?.location?.pathname?.replaceAll("/", " ").replaceAll("-", " ").replaceAll("+", " ") ?? " "}
             </h3>
           </Grid>

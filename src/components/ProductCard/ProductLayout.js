@@ -4,7 +4,6 @@ import { FilterOptionsContext } from "context";
 import React from "react";
 import { withRouter } from "react-router";
 import ProductCards from "./index";
-
 const styles = (theme) => ({
   gridlistmain: {
     [theme.breakpoints.down("sm")]: {
@@ -102,105 +101,109 @@ class Component extends React.Component {
     // const { loading, errro, data, mappedData } = useGraphql(productlistquery,productlistmapper);
 
     return (
-      <div className={`productLayoutRoot `} style={this.props.styles}>
-        {
-          <>
-            {this.props.loadingFilterCtx && (
-              <div className="overall-loaders">
-                <div id="loadings">
-                  <img
-                    src="https://alpha-assets.stylori.com/images/static/loadingimg.gif"
-                    alt="loading..."
-                  />
+      <>
+        <div className={`productLayoutRoot `} style={this.props.styles}>
+          {
+            <>
+              {this.props.loadingFilterCtx && (
+                <div className="overall-loaders">
+                  <div id="loadings">
+                    <img
+                      src="https://alpha-assets.stylori.com/images/static/loadingimg.gif"
+                      alt="loading..."
+                    />
+                  </div>
                 </div>
-              </div>
-            )}
-            {this.props.loadingFilterCtx === false && (
-              <>
-                <GridList
-                  cellHeight={"auto"}
-                  className={`productLayoutGridList ${classes.gridlistmain}`}
-                  cols={this.state.colSize}
-                  style={{ margin: "25px !important" }}
-                >
-                  {data.map((tile, i) => {
-                    return tile && Object.entries(tile).length > 0 ? (
-                      <GridListTile
-                        key={tile.title}
-                        cols={tile.cols || 1}
-                        style={{ padding: "0 !important" }}
-                        className={`${classes.liClass}`}
-                      >
-                        {/* <ProductCard data={tile} /> */}
-                        <ProductCards
-                          data={tile}
-                          wishlist={this.props.wishlist}
-                        />
-                      </GridListTile>
-                    ) : (
-                      ""
-                    );
-                  })}
-                </GridList>
+              )}
 
-                <div className={`${classes.gridlistmainviewmore}`}>
-                  {this.state.loadingtext ? (
-                    <div style={{ textAlign: "center" }}>Loading...</div>
-                  ) : (
-                    <>
-                      {data && data.length !== 0 ? (
-                        data[0] &&
-                        data[0].totalCount &&
-                        (data[0].totalCount - data.length === 0 ||
-                          data[0].totalCount - data.length < 0) ? (
-                          ""
-                        ) : (
-                          <Button
-                            style={{
-                              boxShadow: "6px 6px 6px #A5A4A5 ",
-                              fontWeight: "bold",
-                            }}
-                            variant="contained"
-                            className={`${classes.button}  ${classes.viewmoreColor}`}
-                            onClick={() => {
-                              this.handleOffset();
-                            }}
-                            disabled={data && data.length < 24}
-                          >
-                            {data && data.length === 0 && `No products found`}
-                            {data &&
-                              data.length >= 24 &&
-                              ` See ${
-                                data && data.length > 0 && data[0]
-                                  ? data[0].totalCount - data.length
-                                  : ""
-                              } More Products`}
-                            {data &&
-                              data.length > 0 &&
-                              data.length < 24 &&
-                              `Only ${
-                                data && data.length > 0 && data[0]
-                                  ? data[0].totalCount - data.length
-                                  : ""
-                              } products avalilable`}
-                          </Button>
-                        )
+              {this.props.loadingFilterCtx === false && (
+                <>
+                  <GridList
+                    cellHeight={"auto"}
+                    className={`productLayoutGridList ${classes.gridlistmain}`}
+                    cols={this.state.colSize}
+                    style={{ margin: "25px !important" }}
+                  >
+                    {data.map((tile, i, index) => {
+                      return tile && Object.entries(tile).length > 0 ? (
+                        <GridListTile
+                          key={tile.title}
+                          cols={tile.cols || 1}
+                          style={{ padding: "0 !important" }}
+                          className={`${classes.liClass}`}
+                        >
+                          {/* <ProductCard data={tile} /> */}
+                          <ProductCards
+                            index={index}
+                            data={tile}
+                            wishlist={this.props.wishlist}
+                          />
+                        </GridListTile>
                       ) : (
-                        <>
-                          <div>No Products Found.</div>
-                          {/* <div onClick={()=>{this.props.history.push('/jewellery')}}>Try Again.</div> */}
-                          <a href="/jewellery">Try Again.</a>
-                          {/* <Redirect to="/jewellery" >Try Again.</Redirect> */}
-                        </>
-                      )}
-                    </>
-                  )}
-                </div>
-              </>
-            )}
-          </>
-        }
-      </div>
+                        ""
+                      );
+                    })}
+                  </GridList>
+
+                  <div className={`${classes.gridlistmainviewmore}`}>
+                    {this.state.loadingtext ? (
+                      <div style={{ textAlign: "center" }}>Loading...</div>
+                    ) : (
+                      <>
+                        {data && data.length !== 0 ? (
+                          data[0] &&
+                          data[0].totalCount &&
+                          (data[0].totalCount - data.length === 0 ||
+                            data[0].totalCount - data.length < 0) ? (
+                            ""
+                          ) : (
+                            <Button
+                              style={{
+                                boxShadow: "6px 6px 6px #A5A4A5 ",
+                                fontWeight: "bold",
+                              }}
+                              variant="contained"
+                              className={`${classes.button}  ${classes.viewmoreColor}`}
+                              onClick={() => {
+                                this.handleOffset();
+                              }}
+                              disabled={data && data.length < 24}
+                            >
+                              {data && data.length === 0 && `No products found`}
+                              {data &&
+                                data.length >= 24 &&
+                                ` See ${
+                                  data && data.length > 0 && data[0]
+                                    ? data[0].totalCount - data.length
+                                    : ""
+                                } More Products`}
+                              {data &&
+                                data.length > 0 &&
+                                data.length < 24 &&
+                                `Only ${
+                                  data && data.length > 0 && data[0]
+                                    ? data[0].totalCount - data.length
+                                    : ""
+                                } products avalilable`}
+                            </Button>
+                          )
+                        ) : (
+                          <>
+                            <div>No Products Found.</div>
+                            {/* <div onClick={()=>{this.props.history.push('/jewellery')}}>Try Again.</div> */}
+                            <a href="/jewellery">Try Again.</a>
+                            {/* <Redirect to="/jewellery" >Try Again.</Redirect> */}
+                          </>
+                        )}
+                      </>
+                    )}
+                  </div>
+                </>
+              )}
+            </>
+          }
+        </div>
+      </>
     );
   }
 }

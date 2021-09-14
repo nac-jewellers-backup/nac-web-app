@@ -23,63 +23,65 @@ export const ProductCard = (props) => {
       <CardControl position={pos} {...props.controls[pos]} />
     ));
   return (
-    <Card style={styles.card}>
-      {props.controls ? renderControls() : ""}
-      <CardMedia
-        onMouseOver={() => {
-          setCardState({ ...cardstate, hovered: !cardstate.hovered });
-        }}
-        onMouseOut={() => {
-          setCardState({ ...cardstate, hovered: !cardstate.hovered });
-        }}
-        onLoadedData={() => setCardState({ ...cardstate, loaded: true })}
-        component="img"
-        className="shine"
-        alt={cardstate.dataLoaded && props.title}
-        height="220"
-        image={
-          cardstate.dataLoaded &&
-          props.data.image[cardstate.hovered ? "hoverImage" : "placeImage"]
-        }
-        title={cardstate.dataLoaded && "props.data.title"}
-      />
-      <CardContent>
-        <Typography
-          className={`${!cardstate.dataLoaded && "shine"} title`}
-          gutterBottom
-          variant="overline"
-          component="div"
-          align="left"
-        >
-          {cardstate.dataLoaded && props.data.title}
-        </Typography>
-        {/* Pricing Info */}
-        <div style={styles.priceHolder}>
+    <>
+      <Card style={styles.card}>
+        {props.controls ? renderControls() : ""}
+        <CardMedia
+          onMouseOver={() => {
+            setCardState({ ...cardstate, hovered: !cardstate.hovered });
+          }}
+          onMouseOut={() => {
+            setCardState({ ...cardstate, hovered: !cardstate.hovered });
+          }}
+          onLoadedData={() => setCardState({ ...cardstate, loaded: true })}
+          component="img"
+          className="shine"
+          alt={cardstate.dataLoaded && props.title}
+          height="220"
+          image={
+            cardstate.dataLoaded &&
+            props.data.image[cardstate.hovered ? "hoverImage" : "placeImage"]
+          }
+          title={cardstate.dataLoaded && "props.data.title"}
+        />
+        <CardContent>
           <Typography
-            variant="p"
-            color="textSecondary"
-            style={styles.delPrice}
-            component="p"
+            className={`${!cardstate.dataLoaded && "shine"} title`}
+            gutterBottom
+            variant="overline"
+            component="div"
             align="left"
           >
-            <del className={`${!cardstate.dataLoaded && "shine"}`}>
-              {cardstate.dataLoaded && props.data.price}
-            </del>
+            {cardstate.dataLoaded && props.data.title}
           </Typography>
-          <Typography
-            variant="h6"
-            className={`${!cardstate.dataLoaded && "shine"} price`}
-            style={{ color: "#ED1165" }}
-          >
-            {cardstate.dataLoaded && props.data.offerPrice}
-          </Typography>
-        </div>
-      </CardContent>
-      <CardActions>
-        {/* Add actions if required */}
-        {/* <Button>Help</Button> */}
-      </CardActions>
-    </Card>
+          {/* Pricing Info */}
+          <div style={styles.priceHolder}>
+            <Typography
+              variant="p"
+              color="textSecondary"
+              style={styles.delPrice}
+              component="p"
+              align="left"
+            >
+              <del className={`${!cardstate.dataLoaded && "shine"}`}>
+                {cardstate.dataLoaded && props.data.price}
+              </del>
+            </Typography>
+            <Typography
+              variant="h6"
+              className={`${!cardstate.dataLoaded && "shine"} price`}
+              style={{ color: "#ED1165" }}
+            >
+              {cardstate.dataLoaded && props.data.offerPrice}
+            </Typography>
+          </div>
+        </CardContent>
+        <CardActions>
+          {/* Add actions if required */}
+          {/* <Button>Help</Button> */}
+        </CardActions>
+      </Card>
+    </>
   );
 };
 
