@@ -19,7 +19,7 @@ import Slideshow from "components/Carousel/carosul";
 import { homePageStylori } from "./dummydatahome";
 import ProductDescription from "components/productDescription";
 import { API_URL } from "../config";
-import { ALLBANNERSCOMPLETE } from "../queries/home";
+import { LISTINGBANNER } from "../queries/home";
 import ReactPixel from "react-facebook-pixel";
 class Stylori extends React.Component {
   constructor(props) {
@@ -52,14 +52,15 @@ class Stylori extends React.Component {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        query: ALLBANNERSCOMPLETE,
+        query: LISTINGBANNER,
       }),
     })
       .then((res) => res.json())
       .then((data) => {
+     
         let bannerFullData = data.data.allBanners.nodes;
         const specificPageData = bannerFullData.filter((item) => item.urlParam === window.location.pathname);
-        const listedPageData = bannerFullData.filter((item) => item.urlParam === "listing");
+        const listedPageData = bannerFullData.filter((item) => item.urlParam === "listingPage");
 
         if (specificPageData.length > 0) {
           this.setState({ bannerData: specificPageData });
@@ -76,7 +77,7 @@ class Stylori extends React.Component {
       dots: false,
       infinite: true,
       autoplay: true,
-      speed: 2000,
+      speed: 2500,
       fade: false,
       arrows: false,
       arrowsImg: true,
@@ -90,7 +91,7 @@ class Stylori extends React.Component {
       pauseOnFocus: true,
       swipe: false,
     };
-
+    
     return (
       <>
         <LiveChat license={5807571} />
@@ -140,32 +141,20 @@ class Stylori extends React.Component {
             wishlist_count={this.props.wishlist_count}
           />
           <Grid item xs={12}>
-            {/* <Hidden smDown>
-            {homePageStylori.carouselTop.setting.arrowsImg && (
-              <Grid container>
-                <Grid
-                  item
-                  onClick={this.previous}
-                  className={"imagePrevios"}
-                ></Grid>
-                <Grid item onClick={this.next} className={"imagenext"}></Grid>
-              </Grid>
-            )}
-          </Hidden> */}
             <Slideshow sliderRef={this.slider} dataCarousel={setting}>
               {this.state.bannerData.map((val, index) => (
                 <>
                   <Hidden smDown>
                     <Grid container key={index}>
                       <a href={val.url} style={{ width: "100%" }}>
-                        <img src={val.web} style={{ width: "100%", height: "100%" }} />
+                        <img src={val.web} alt="banner" style={{ width: "100%", height: "100%" }} />
                       </a>
                     </Grid>
                   </Hidden>
                   <Hidden mdUp>
                     <Grid container key={index}>
                       <a href={val.url}>
-                        <img src={val.mobile} style={{ width: "100%", height: "100%" }} />
+                        <img src={val.mobile} alt="banner" style={{ width: "100%", height: "100%" }} />
                       </a>
                     </Grid>
                   </Hidden>
@@ -173,6 +162,12 @@ class Stylori extends React.Component {
               ))}
             </Slideshow>
           </Grid>
+          <Grid item xs={12}>
+            <h3 style={{ textTransform: "capitalize", textAlign: "center", margin : "28px 0px 0px 0px" }}>
+              {this.props?.location?.pathname?.replaceAll("/", " ").replaceAll("-", " ").replaceAll("+", " ") ?? " "}
+            </h3>
+          </Grid>
+
           <Hidden smDown>
             <Container maxWidth="lg">
               <Grid item xs={12}>

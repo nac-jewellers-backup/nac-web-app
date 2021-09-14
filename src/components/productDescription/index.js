@@ -43,23 +43,13 @@ class ProductDescription extends Component {
       { title: "jewellery", url: "/jewellery" },
     ];
     // const descriptionData = this.props.data;
-    const settings =
-      this.props.data && this.props.data[0] && this.props.data[0].dataCarousel;
+    const settings = this.props.data && this.props.data[0] && this.props.data[0].dataCarousel;
     // const fadeImages = this.props.data && this.props.data[0] && this.props.data[0].carouselImage;
     const fadeImages =
-      this.props.datalisting &&
-      this.props.datalisting &&
-      this.props.datalisting.length > 0
+      this.props.datalisting && this.props.datalisting && this.props.datalisting.length > 0
         ? this.props.datalisting.map((val) => {
-            if (
-              val &&
-              val.image &&
-              val.image.placeImage &&
-              val.image.placeImage.img
-            )
-              return val.image.placeImage.img;
-            else
-              return "https://assets.stylori.com/product/SP0384/1000X1000/SP0384-1W.webp";
+            if (val && val.image && val.image.placeImage && val.image.placeImage.img) return val.image.placeImage.img;
+            else return "https://assets.stylori.com/product/SP0384/1000X1000/SP0384-1W.webp";
           })
         : [
             "https://assets.stylori.com/product/SP0384/500X500/SP0384-1W.webp",
@@ -70,8 +60,7 @@ class ProductDescription extends Component {
 
     fadeImages.sort((a, b) => 0.5 - Math.random());
     const title = this.props.title;
-    const datadescription =
-      this.props.data && this.props.data[0] && this.props.data[0].seoText;
+    const datadescription = this.props.data && this.props.data[0] && this.props.data[0].seoText;
     const renderTitle = () => {
       var pathname_split_hyphen = path[1].split("-");
       var a = window.location.pathname.split("/");
@@ -88,12 +77,7 @@ class ProductDescription extends Component {
     return (
       <>
         <Container maxWidth="lg">
-          <Grid
-            style={{ marginTop: "15px", textAlign: "center" }}
-            container
-            direction="row"
-            justify="space-around"
-          >
+          <Grid style={{ textAlign: "center" }} container direction="row" justify="space-around">
             <Grid item container>
               {/* <Hidden smDown>
                 <Grid
@@ -147,36 +131,20 @@ class ProductDescription extends Component {
               {/* < Slideshow fadeImages={fadeImages} dataCarousel={settings} styles={'productDescriptionCarousel'} /> */}
               {/* </Grid> */}
               {/* </Hidden> */}
-              <Grid
-                item
-                xs={12}
-                sm={12}
-                md={12}
-                lg={12}
-                xl={12}
-                style={{ textAlign: "center" }}
-              >
+              <Grid item xs={12} sm={12} md={12} lg={12} xl={12} style={{ textAlign: "center" }}>
                 <p>
                   <div className="DescriptionContent">
                     {this.state.showLess === true ? (
                       <>
                         {datadescription.slice(0, 160)}
                         <span id="moreDots" style={{ display: "inline" }}>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit, sed do eiusmod tempor incididunt ut labore et
-                          dolore magna aliqua. Ut enim ad minim veniam, quis
-                          nostrud exercitation ullamco laboris nisi ut aliquip
-                          ex ea commodo consequat. Duis aute irure dolor in
-                          reprehenderit in voluptate velit esse cillum dolore eu
-                          fugiat nulla pariatur. Excepteur sint occaecat
-                          cupidatat non proident, sunt in culpa qui officia
+                           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                          dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                          ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                          fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
                           deserunt mollit anim id est laborum ...
                         </span>
-                        <p
-                          onClick={this.handleReadMore}
-                          className={`know-txt ${classes.colorLight}`}
-                          id="readMore"
-                        >
+                        <p onClick={this.handleReadMore} className={`know-txt ${classes.colorLight}`} id="readMore">
                           {/* <span ><i className="fa faMore">&#xf0da;</i></span> */}
                           READ MORE
                         </p>
@@ -184,11 +152,7 @@ class ProductDescription extends Component {
                     ) : (
                       <>
                         {datadescription}
-                        <p
-                          onClick={this.handleReadMore}
-                          className={`know-txt ${classes.colorLight}`}
-                          id="readLess"
-                        >
+                        <p onClick={this.handleReadMore} className={`know-txt ${classes.colorLight}`} id="readLess">
                           {/* <span ><i className="fa faMore">&#xf0d8;</i></span>  */}
                           CLOSE
                         </p>

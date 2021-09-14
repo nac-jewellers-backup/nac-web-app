@@ -88,3 +88,35 @@ export const ALLFEATUREDPRODUCT = `
     }
   }
   `;
+export const ALLREVIEWS = `
+query MyQuery {
+
+  allCustomerReviews(filter: {rating: {greaterThanOrEqualTo: 4}}, first: 6) {
+    nodes {
+      customerName
+      id
+      message
+      productId
+      rating
+      title
+    }
+  }
+}
+`;
+export const LISTINGBANNER = `
+query MyQuery {
+  allBanners(condition: {urlParam: "listingPage"}) {
+    nodes {
+      mobile
+      url
+      web
+      urlParam
+      position
+      id
+    }
+  }
+}
+
+
+
+`
