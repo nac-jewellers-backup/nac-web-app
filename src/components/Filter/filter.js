@@ -4,6 +4,7 @@ import {
   Checkbox,
   Container,
   Divider,
+  FormControlLabel,
   Grid,
   Hidden,
   IconButton,
@@ -15,7 +16,6 @@ import {
   TextField,
   Typography,
 } from "@material-ui/core";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormGroup from "@material-ui/core/FormGroup";
 import { withStyles } from "@material-ui/core/styles";
 import { ExpandLess, ExpandMore } from "@material-ui/icons";
@@ -34,6 +34,40 @@ import "./filter.css";
 import FilterHeader from "./FilterHeader";
 import styles from "./styles";
 import { TopFilters } from "./topFilters";
+const CheckboxWithTick = withStyles({
+  root: {
+    cursor: "default",
+    backgroundColor: "transparent",
+    border: "none",
+    outline: "none",
+    "&:hover": {
+      backgroundColor: "transparent",
+    },
+    color: "white",
+    "&$checked": {
+      color: "white",
+
+      "& .MuiIconButton-label": {
+        position: "relative",
+        zIndex: 0,
+      },
+      "& .MuiIconButton-label:after": {
+        content: '""',
+        left: 4,
+        top: 4,
+        height: 15,
+        width: 15,
+        position: "absolute",
+        backgroundColor: "#33346D",
+        zIndex: -1,
+      },
+    },
+  },
+  checked: {
+    border: "1px solid transparent",
+  },
+})(Checkbox);
+
 const PersistentDrawerLeft = (props) => {
   const {
     setSort,
@@ -1693,7 +1727,68 @@ class Component extends React.Component {
                               </>
                             ) : (
                               <>
-                                <Checkbox
+                                <FormControlLabel
+                                  style={{ paddingLeft: 4 }}
+                                  label={row}
+                                  control={
+                                    <div>
+                                      <CheckboxWithTick
+                                        color="white"
+                                        value="checked"
+                                        checked={
+                                          this.state.checked[
+                                            this.state.filtercheck &&
+                                              this.state.filtercheck.replace(
+                                                /\s/g,
+                                                ""
+                                              )
+                                          ][row] !== undefined
+                                            ? this.state.checked[
+                                                this.state.filtercheck &&
+                                                  this.state.filtercheck.replace(
+                                                    /\s/g,
+                                                    ""
+                                                  )
+                                              ][row]
+                                            : false
+                                        }
+                                        onChange={(e) =>
+                                          this.handleChange(
+                                            row,
+                                            this.state.checked[
+                                              this.state.filtercheck &&
+                                                this.state.filtercheck.replace(
+                                                  /\s/g,
+                                                  ""
+                                                )
+                                            ][row] !== undefined
+                                              ? !this.state.checked[
+                                                  this.state.filtercheck &&
+                                                    this.state.filtercheck.replace(
+                                                      /\s/g,
+                                                      ""
+                                                    )
+                                                ][row]
+                                              : true,
+                                            e
+                                          )
+                                        }
+                                        name={
+                                          this.state.filtercheck &&
+                                          this.state.filtercheck.replace(
+                                            /\s/g,
+                                            ""
+                                          )
+                                        }
+                                        onClick={this.handleDrawerCloseMobile}
+                                      />
+                                    </div>
+                                  }
+                                  labelPlacement="end"
+                                />
+
+                                {/* <CheckboxWithTick
+                                  color="white"
                                   value="checked"
                                   className={`${classes.sublistMobile}`}
                                   checked={
@@ -1786,7 +1881,7 @@ class Component extends React.Component {
                                       {row}
                                     </div>
                                   </Typography>
-                                </ListItemText>
+                                </ListItemText> */}
                               </>
                             )}
                           </ListItem>
@@ -1881,7 +1976,7 @@ class Component extends React.Component {
             </AppBar>
           </div>
           {this.state.CardRadio ? (
-            <div style={{ position: "fixed", top: "-65px" }}>
+            <div style={{ position: "fixed", top: "5px" }}>
               <CardRadioButton
                 cardWidth="cardSortSmallScreen"
                 data={sortOptions}

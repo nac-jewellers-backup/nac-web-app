@@ -68,9 +68,10 @@ const Gallery = (
         onClick={handleProductDetatiContext(props)}
       >
         <LazyLoadImage
+          style={{ objectFit: "cover" }}
           alt={"props.data.title"}
           src={renderImages(props, cardstate)}
-          onError={(e) => imageOnError(e, props.data.imageResolution)}
+          //onError={(e) => imageOnError(e, props.data.imageResolution)}
           title={
             props.data.title.charAt(0).toUpperCase() + props.data.title.slice(1)
           }
@@ -95,6 +96,7 @@ const Gallery = (
           style={{ width: "100%" }}
           scrollPosition={scrollPosition}
         ></LazyLoadImage>
+
         {props.hoverText && (
           <div className="overlayImage">{props.data.description}</div>
         )}
@@ -321,7 +323,10 @@ function Component(props) {
   };
 
   return (
-    <div className={classes.root} style={{ marginLeft: "0px !important" }}>
+    <div
+      className={classes.root}
+      style={{ marginLeft: "0px !important", overflow: "hidden" }}
+    >
       <Card className={classes.card} style={{ marginLeft: "0px !important" }}>
         <CardActions
           style={{}}
