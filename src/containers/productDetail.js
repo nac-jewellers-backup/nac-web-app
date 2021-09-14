@@ -537,13 +537,13 @@ class ProductDetail extends Component {
                     this.props.data[0].productsDetails[0].namedetail[2]
                       .details && (
                       <Grid container item xs={4} style={{ paddingTop: "8px" }}>
-                        <Grid container item xs={2}>
+                        <Grid container item xs={3}>
                           <Avatar alt="NAC">N</Avatar>
                         </Grid>
                         <Grid
                           container
                           item
-                          xs={10}
+                          xs={9}
                           style={{
                             fontSize: 12,
                             color: "gray",
@@ -573,13 +573,13 @@ class ProductDetail extends Component {
                     this.props.data[0].productsDetails[0].namedetail[1]
                       .details && (
                       <Grid container item xs={4} style={{ paddingTop: "8px" }}>
-                        <Grid container item xs={2}>
+                        <Grid container item xs={3}>
                           <Avatar alt="NAC">N</Avatar>
                         </Grid>
                         <Grid
                           container
                           item
-                          xs={10}
+                          xs={9}
                           style={{
                             fontSize: 12,
                             color: "gray",

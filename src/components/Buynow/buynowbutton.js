@@ -1,7 +1,7 @@
-import React from "react";
-import "../product-image-slider/product-images.css";
-import { withRouter } from "react-router";
 import { Button } from "@material-ui/core";
+import React from "react";
+import { withRouter } from "react-router";
+import "../product-image-slider/product-images.css";
 // var valus = localStorage.getItem("cartDetails") ? JSON.parse(localStorage.getItem("cartDetails")).products[0].sku_id : ""
 // let path = window.location.pathname.split('/').pop();
 // const path = window.location.pathname !== "cart" || window.location.pathname!== "checkout"
@@ -14,7 +14,9 @@ class Buynowbutton extends React.Component {
   }
 
   valus = (props) => {
-    var valus_locl = localStorage.getItem("cartDetails") ? JSON.parse(localStorage.getItem("cartDetails")).products : "";
+    var valus_locl = localStorage.getItem("cartDetails")
+      ? JSON.parse(localStorage.getItem("cartDetails")).products
+      : "";
 
     var vals;
     // return valus_locl && valus_locl.map(val => {
@@ -32,7 +34,9 @@ class Buynowbutton extends React.Component {
       let productIds = valus_locl.map((val) => {
         return val.sku_id;
       });
-      productIds.indexOf(props.sku) > -1 ? this.setState({ vals: 1 }) : this.setState({ vals: 0 });
+      productIds.indexOf(props.sku) > -1
+        ? this.setState({ vals: 1 })
+        : this.setState({ vals: 0 });
     }
   };
   componentDidUpdate(prevProps, prevState) {
@@ -43,19 +47,24 @@ class Buynowbutton extends React.Component {
   }
 
   render() {
- 
     let productIsActive = this.props.productIsActive ?? "";
     const enquireLink = () => {
       if (!productIsActive) {
         if (this.props?.productURL) {
-          window.open(`https://wa.me/919952625252?text=Hi - ${window.location.hostname + "/" + this.props.productURL ?? ""}`);
+          window.open(
+            `https://wa.me/919952625252?text=Hi - ${
+              window.location.hostname + "/" + this.props.productURL ?? ""
+            }`
+          );
         } else {
-          window.open(`https://wa.me/919952625252?text=Hi - ${window.location.href}`);
+          window.open(
+            `https://wa.me/919952625252?text=Hi - ${window.location.href}`
+          );
         }
       }
     };
     return (
-      <div>
+      <div style={{ width: "200px" }}>
         <Button
           className={this.props.class}
           style={{ borderRadius: "5px", ...this.props.style }}
@@ -65,7 +74,9 @@ class Buynowbutton extends React.Component {
           window.location.pathname.split("/").pop() !== "checkout" &&
           this.state.vals === 1 ? (
             <>
-              {!this.props.withoutBag && productIsActive && <i class="fa fa-shopping-bag buynow-icon"></i>}
+              {!this.props.withoutBag && productIsActive && (
+                <i class="fa fa-shopping-bag buynow-icon"></i>
+              )}
               {this.props.addtoCartToBuyNow ? (
                 <span style={{ fontWeight: "bolder" }}> In Cart!</span>
               ) : (
@@ -91,14 +102,25 @@ class Buynowbutton extends React.Component {
               {/* {!this.props.withoutBag && !this.props.isSilver && !this.props.smallScreen && <i class="fa fa-shopping-bag buynow-icon"></i>} */}
               {
                 this.props.addtoCartToBuyNow ? (
-                  <span
-                    style={{
-                      fontWeight: "bolder",
-                      fontSize: "8px !important",
-                    }}
-                  >
-                    <i class="fa fa-shopping-bag buynow-icon"></i> Add to Cart
-                  </span>
+                  <>
+                    <span
+                      style={{
+                        fontWeight: "bolder",
+                        fontSize: "8px !important",
+                      }}
+                    >
+                      {" "}
+                      <i class="fa fa-shopping-bag buynow-icon"></i>
+                    </span>
+                    <span
+                      style={{
+                        fontWeight: "bolder",
+                        fontSize: "8px !important",
+                      }}
+                    >
+                      &nbsp;Add&nbsp;to&nbsp;Cart
+                    </span>
+                  </>
                 ) : (
                   <>
                     {productIsActive ? (

@@ -1,20 +1,17 @@
-import { Button, Hidden, Container, Grid, Modal, Typography, Avatar } from "@material-ui/core";
-import React from "react";
-import "./product-images.css";
-import ProductPrice from "./productPrice";
-import PriceTabs from "./priceTabs";
-import PropTypes from "prop-types";
-import Buynowbutton from "../Buynow/buynowbutton";
+import { Avatar, Button, Container, Grid, Hidden } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
-import styles from "./style";
-import { NavLink } from "react-router-dom";
+import Buynowfixed from "components/SilverComponents/ProductDetail/buynowfixed";
+import { CartContext } from "context";
 import { ProductDetailContext } from "context/ProductDetailContext";
 import { useCheckForCod } from "hooks/CheckForCodHook";
+import PropTypes from "prop-types";
 import { CheckForCod } from "queries/productdetail";
-import { CartContext } from "context";
+import React from "react";
 import { withRouter } from "react-router";
-import CommenDialog from "../Common/Dialogmodel";
-import Buynowfixed from "components/SilverComponents/ProductDetail/buynowfixed";
+import Buynowbutton from "../Buynow/buynowbutton";
+import "./product-images.css";
+import ProductPrice from "./productPrice";
+import styles from "./style";
 
 const inputsearch = (props, state, handleChanges, handleCodChange) => {
   const { data } = props;
@@ -67,7 +64,8 @@ const inputsearch = (props, state, handleChanges, handleCodChange) => {
                 boxShadow: "4px 5px 6px #BEBFBF !important",
               }}
               className={
-                state.pincodeNotFound || state.CheckForCodtitle === "COD Not Available"
+                state.pincodeNotFound ||
+                state.CheckForCodtitle === "COD Not Available"
                   ? "pincodeNotFound"
                   : state.CheckForCodtitle === "COD is Available"
                   ? "selectedGreen"
@@ -79,15 +77,29 @@ const inputsearch = (props, state, handleChanges, handleCodChange) => {
             >
               {state.pincodeNotFound ? (
                 <>
-                  <i class="fa fa-close" style={{ paddingRight: "3px" }} aria-hidden="true"></i> Pincode not found
+                  <i
+                    class="fa fa-close"
+                    style={{ paddingRight: "3px" }}
+                    aria-hidden="true"
+                  ></i>{" "}
+                  Pincode not found
                 </>
               ) : state.CheckForCodtitle === "COD Not Available" ? (
                 <>
-                  <i class="fa fa-close" style={{ paddingRight: "3px" }} aria-hidden="true"></i> COD Not Available
+                  <i
+                    class="fa fa-close"
+                    style={{ paddingRight: "3px" }}
+                    aria-hidden="true"
+                  ></i>{" "}
+                  COD Not Available
                 </>
               ) : state.CheckForCodtitle === "COD is Available" ? (
                 <>
-                  <i class="fa fa-check" style={{ paddingRight: "3px" }} aria-hidden="true"></i>
+                  <i
+                    class="fa fa-check"
+                    style={{ paddingRight: "3px" }}
+                    aria-hidden="true"
+                  ></i>
                   {state.CheckForCodtitle}
                 </>
               ) : (
@@ -97,7 +109,16 @@ const inputsearch = (props, state, handleChanges, handleCodChange) => {
           </Grid>
 
           <Hidden smDown>
-            <Grid container item justify="center" xs={12} sm={12} lg={5} md={5} className="content">
+            <Grid
+              container
+              item
+              justify="center"
+              xs={12}
+              sm={12}
+              lg={5}
+              md={5}
+              className="content"
+            >
               <b className={`ships-by ${classes.normalfonts}`}>
                 <span
                   style={{
@@ -219,8 +240,14 @@ const Buydetails = (
 };
 
 const PriceBuynow = (props) => {
-  const { loading, error, data: CodData, makeRequestCod } = useCheckForCod(CheckForCod, () => {}, {});
-  const { ProductDetailCtx, setFilters } = React.useContext(ProductDetailContext);
+  const {
+    loading,
+    error,
+    data: CodData,
+    makeRequestCod,
+  } = useCheckForCod(CheckForCod, () => {}, {});
+  const { ProductDetailCtx, setFilters } =
+    React.useContext(ProductDetailContext);
   const { setCartFilters } = React.useContext(CartContext);
 
   return (
@@ -269,7 +296,9 @@ class Component extends React.Component {
     };
   }
   valus = (valueId) => {
-    var valus_locl = localStorage.getItem("cartDetails") ? JSON.parse(localStorage.getItem("cartDetails")).products : "";
+    var valus_locl = localStorage.getItem("cartDetails")
+      ? JSON.parse(localStorage.getItem("cartDetails")).products
+      : "";
 
     var vals;
     valus_locl &&
@@ -291,7 +320,10 @@ class Component extends React.Component {
     if (prevProps.CodData !== this.props.CodData) {
       // Here i have handeled the "check for COD" condition because the response is not setting to the props instantly
       if (this.props.CodData.data.allPincodeMasters.nodes.length > 0) {
-        if (this.props.data[0].price > this.props.CodData.data.allPincodeMasters.nodes[0].maxCartvalue) {
+        if (
+          this.props.data[0].price >
+          this.props.CodData.data.allPincodeMasters.nodes[0].maxCartvalue
+        ) {
           this.setState({ CheckForCodtitle: "COD Not Available" });
         } else {
           this.setState({ CheckForCodtitle: "COD is Available" });
@@ -352,23 +384,32 @@ class Component extends React.Component {
     this.props.setCartFilters({
       skuId: this.props.data[0].skuId,
       qty:
-        this.props.quantity && this.props.data && this.props.quantity[this.props.data[0].skuId]
+        this.props.quantity &&
+        this.props.data &&
+        this.props.quantity[this.props.data[0].skuId]
           ? this.props.quantity[this.props.data[0].skuId]
           : 1,
       price: this.props.data[0].offerPrice,
     });
 
     const _qty =
-      this.props.quantity && this.props.data && this.props.quantity[this.props.data[0].skuId]
+      this.props.quantity &&
+      this.props.data &&
+      this.props.quantity[this.props.data[0].skuId]
         ? this.props.quantity[this.props.data[0].skuId]
         : 1;
     this.props.setFilters({
       ...this.props.filters,
       quantity: _qty,
     });
-    let localStorageQuantity = localStorage.getItem("quantity") ? JSON.parse(localStorage.getItem("quantity")) : null;
+    let localStorageQuantity = localStorage.getItem("quantity")
+      ? JSON.parse(localStorage.getItem("quantity"))
+      : null;
     if (!localStorageQuantity) {
-      if (localStorageQuantity && !localStorageQuantity[this.props.data[0].skuId]) {
+      if (
+        localStorageQuantity &&
+        !localStorageQuantity[this.props.data[0].skuId]
+      ) {
         let _obj = {};
         localStorageQuantity[this.props.data[0].skuId] = _qty;
         localStorage.setItem("quantity", JSON.stringify(localStorageQuantity));
@@ -382,7 +423,8 @@ class Component extends React.Component {
     } else {
       localStorageQuantity[this.props.data[0].skuId] = _qty;
       localStorage.setItem("quantity", JSON.stringify(localStorageQuantity));
-      this.props.filters.quantity[this.props?.data[0]?.skuId] = localStorageQuantity[this.props?.data[0]?.skuId];
+      this.props.filters.quantity[this.props?.data[0]?.skuId] =
+        localStorageQuantity[this.props?.data[0]?.skuId];
     }
 
     sessionStorage.setItem(
@@ -390,7 +432,9 @@ class Component extends React.Component {
       JSON.stringify({
         sku_id: this.props.data[0].skuId,
         qty:
-          this.props.quantity && this.props.data && this.props.quantity[this.props.data[0].skuId]
+          this.props.quantity &&
+          this.props.data &&
+          this.props.quantity[this.props.data[0].skuId]
             ? this.props.quantity[this.props.data[0].skuId]
             : 1,
         price: this.props.data[0].offerPrice,
@@ -421,7 +465,10 @@ class Component extends React.Component {
       this.setState({ isRequired: false });
       var variab = {};
       variab["pincode"] = this.state.values;
-      if (Object.entries(variab).length !== 0 && variab.constructor === Object) {
+      if (
+        Object.entries(variab).length !== 0 &&
+        variab.constructor === Object
+      ) {
         this.props.makeRequestCod(variab);
 
         // this.setState({pincodeValues:this.props.CodData})
@@ -454,16 +501,29 @@ class Component extends React.Component {
 
         <Hidden mdUp>
           <div style={{ marginTop: "10px" }}>
-            <ProductPrice data={this.props.data} wishlist={this.props.wishlist} />
+            <ProductPrice
+              data={this.props.data}
+              wishlist={this.props.wishlist}
+            />
             <Container maxWidth="lg">
-              <Grid container item xs={12} style={{ marginBottom: 30, marginTop: 30 }}>
+              <Grid
+                container
+                spacing={2}
+                item
+                xs={12}
+                style={{ marginBottom: 30, marginTop: 30 }}
+              >
                 <Grid container item xs={4}>
                   <Grid
                     container
                     item
                     xs={12}
                     justify="center"
-                    className={this.state.isShowDetailTab === 1 ? classes.activeDetail : ""}
+                    className={
+                      this.state.isShowDetailTab === 1
+                        ? classes.activeDetail
+                        : ""
+                    }
                   >
                     <Avatar
                       alt="NAC"
@@ -481,7 +541,11 @@ class Component extends React.Component {
                     item
                     xs={12}
                     justify="center"
-                    className={this.state.isShowDetailTab === 2 ? classes.activeDetail : ""}
+                    className={
+                      this.state.isShowDetailTab === 2
+                        ? classes.activeDetail
+                        : ""
+                    }
                   >
                     <Avatar
                       alt="NAC"
@@ -499,7 +563,11 @@ class Component extends React.Component {
                     item
                     xs={12}
                     justify="center"
-                    className={this.state.isShowDetailTab === 3 ? classes.activeDetail : ""}
+                    className={
+                      this.state.isShowDetailTab === 3
+                        ? classes.activeDetail
+                        : ""
+                    }
                   >
                     <Avatar
                       alt="NAC"
@@ -534,7 +602,12 @@ class Component extends React.Component {
               </Grid>
             </Container>
             {/* <PriceTabs data={this.props.data} wishlist={this.props.wishlist} /> */}
-            {inputsearch(this.props, this.state, this.handleChanges, this.handleCodChange)}
+            {inputsearch(
+              this.props,
+              this.state,
+              this.handleChanges,
+              this.handleCodChange
+            )}
             <Buynowfixed
               deleteComment={this.deletechecklists}
               data={this.props.data}

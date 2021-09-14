@@ -199,7 +199,12 @@ class Buynowfixed extends React.Component {
                     {isSilver ? null : <i class="fa fa-comments"></i>}
                     &nbsp;
                     {isSilver ? (
-                      <span style={{ fontFamily: "Roboto-bold" }}>
+                      <span
+                        style={{
+                          fontFamily: "Roboto-bold",
+                          whiteSpace: "nowrap",
+                        }}
+                      >
                         Add To Cart
                       </span>
                     ) : (
