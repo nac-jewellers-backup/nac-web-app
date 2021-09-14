@@ -165,30 +165,53 @@ export default function MoreFilters(props) {
                                 xs={12}
                                 className={classes.checkboxlabel}
                               >
+                                <span
+                                  style={{ cursor: "pointer" }}
+                                  onClick={(e) => {
+                                    props.handleClose();
+                                    props.onchoosetype(
+                                      valsub,
+                                      props.checked[
+                                        val && val.replace(/\s/g, "")
+                                      ][valsub] !== undefined
+                                        ? !props.checked[
+                                            val && val.replace(/\s/g, "")
+                                          ][valsub]
+                                        : true,
+                                      e,
+                                      null,
+                                      undefined,
+                                      props.state,
+                                      val ? val.replace(/\s/g, "") : ""
+                                    );
+                                  }}
+                                >
+                                  {valsub}
+                                </span>
                                 <FormControlLabel
                                   control={
                                     <div>
                                       <CheckboxWithTick
                                         color="white"
                                         label={valsub}
-                                        onChange={(e) => {
-                                          props.handleClose();
-                                          props.onchoosetype(
-                                            valsub,
-                                            props.checked[
-                                              val && val.replace(/\s/g, "")
-                                            ][valsub] !== undefined
-                                              ? !props.checked[
-                                                  val && val.replace(/\s/g, "")
-                                                ][valsub]
-                                              : true,
-                                            e,
-                                            null,
-                                            undefined,
-                                            props.state,
-                                            val ? val.replace(/\s/g, "") : ""
-                                          );
-                                        }}
+                                        // onChange={(e) => {
+                                        //   props.handleClose();
+                                        //   props.onchoosetype(
+                                        //     valsub,
+                                        //     props.checked[
+                                        //       val && val.replace(/\s/g, "")
+                                        //     ][valsub] !== undefined
+                                        //       ? !props.checked[
+                                        //           val && val.replace(/\s/g, "")
+                                        //         ][valsub]
+                                        //       : true,
+                                        //     e,
+                                        //     null,
+                                        //     undefined,
+                                        //     props.state,
+                                        //     val ? val.replace(/\s/g, "") : ""
+                                        //   );
+                                        // }}
                                         checked={
                                           props.checked[
                                             val.replace(/\s/g, "")
@@ -208,7 +231,7 @@ export default function MoreFilters(props) {
                                       />
                                     </div>
                                   }
-                                  label={valsub}
+                                  // label={valsub}
                                   labelPlacement="start"
                                 />
                               </Grid>
