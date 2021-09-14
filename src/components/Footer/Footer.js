@@ -206,6 +206,11 @@ const useStyles = makeStyles((theme) => ({
     color: "#6b6b6b",
     textDecoration: "none",
   },
+  linkTextmlg: {
+    fontSize: "13px",
+    color: "#6b6b6b",
+    textDecoration: "none",
+  },
 
   headingMobile: {
     fontSize: "12px",
@@ -281,8 +286,9 @@ const useStyles = makeStyles((theme) => ({
     marginTop: "30px",
   },
   rights: {
-    fontSize: "16px",
+    fontSize: "15px",
     color: "#6b6b6b",
+    float: "left",
   },
 }));
 
@@ -318,23 +324,27 @@ export default function Footer(props) {
       row: [
         {
           url: "/aboutus",
-          Title: "About Us",
+          heading: "About Us",
+        },
+        // {
+        //   url: "/aboutus",
+        //   Title: "About Us",
+        // },
+        // {
+        //   url: "/careersPage",
+        //   Title: "Careers",
+        // },
+        {
+          url: "/stories",
+          Title: "Our Story",
         },
         {
-          url: "/careersPage",
-          Title: "Careers",
+          url: "/temple-work",
+          Title: "Temple Work",
         },
-        // {
-        //   url: "/stories",
-        //   Title: "Our Story",
-        // },
-        // {
-        //   url: "/temple-work",
-        //   Title: "Temple Work",
-        // },
         {
           url: "/newsroom",
-          Title: "News Room",
+          Title: "In The News",
         },
         {
           url: "/advertising",
@@ -344,53 +354,107 @@ export default function Footer(props) {
     },
     {
       row: [
-        {
-          url: "/store",
-          Title: "Store Locator",
-        },
+        // {
+        //   url: "/store",
+        //   Title: "Store Locator",
+        // },
         // {
         //   url: "/collections",
         //   Title: "Collections",
         // },
+        // {
+        //   url: "/education",
+        //   Title: "Education",
+        // },
+        // {
+        //   url: "/sitemap",
+        //   Title: "Site Map",
+        // },
+        // {
+        //   url: "/contactus",
+        //   Title: "Contact Us",
+        // },
         {
-          url: "/education",
-          Title: "Education",
+          url: "#",
+          heading: "Know Your Jewellery",
         },
         {
-          url: "/sitemap",
-          Title: "Site Map",
+          url: "/collections",
+          Title: "Collections",
         },
+        {
+          url: "/",
+          Title: "Diamond Guide",
+        },
+        {
+          url: "/",
+          Title: "Birthstones Guide",
+        },
+        {
+          url: "/",
+          Title: "Caring For Your Jewellery",
+        },
+      ],
+    },
+    // {
+    //   row: [
+    //     {
+    //       url: "/temple-work",
+    //       Title: "Temple Work",
+    //     },
+    //     {
+    //       url: "/termsconditions",
+    //       Title: "Terms & Condition",
+    //     },
+    //     {
+    //       url: "https://www.google.co.in/maps/@13.0457285,80.2325498,3a,75y,281.19h,87.03t/data=!3m7!1e1!3m5!1siBMPPhrps9EAAAQ0H3M5OQ!2e0!3e2!7i13312!8i6656!6m1!1e1",
+    //       Title: "360 Store View",
+    //     },
+    //     {
+    //       url: "/faqs",
+    //       Title: "FAQ",
+    //     },
+    //   ],
+    // },
+    {
+      row: [
+        {
+          url: "#",
+          heading: "Customer Service",
+        },
+
+        {
+          url: "",
+          Title: "Track Your Order",
+        },
+        {
+          url: "",
+          Title: "30 Day Return",
+        },
+      ],
+    },
+    {
+      row: [
         {
           url: "/contactus",
-          Title: "Contact Us",
+          heading: "Contact Us",
         },
-      ],
-    },
-    {
-      row: [
+
         {
-          url: "/temple-work",
-          Title: "Temple Work",
+          url: "",
+          Title: "+91 44 4399 6666 - Customer Care",
         },
         {
-          url: "/termsconditions",
-          Title: "Terms & Condition",
+          url: "",
+          Title: "care@nacjewelers.com - Email",
         },
         {
-          url: "https://www.google.co.in/maps/@13.0457285,80.2325498,3a,75y,281.19h,87.03t/data=!3m7!1e1!3m5!1siBMPPhrps9EAAAQ0H3M5OQ!2e0!3e2!7i13312!8i6656!6m1!1e1",
-          Title: "360 Store View",
+          url: "",
+          Title: "+91 95974 57555 - WhatsApp",
         },
         {
-          url: "/faqs",
-          Title: "FAQ",
-        },
-      ],
-    },
-    {
-      row: [
-        {
-          url: "/privacy",
-          Title: "Privacy Policy",
+          url: "/careersPage",
+          Title: "Careers",
         },
       ],
     },
@@ -657,47 +721,6 @@ export default function Footer(props) {
       style={{ marginTop: "30px", backgroundColor: "#efefef" }}
     >
       <Hidden only={["sm", "xs"]}>
-        {/* <Grid className={"containlarge"}>
-                   
-                    <Grid container item style={{ padding: '15px 0px 15px 0px' }}>
-                       
-                        <Grid container item xs={4} className={classes.topConatinerfooter} >
-                        <Grid container item className={classes.buttonConatiner} xs={7}>
-                            <Grid item style={{ width: "260px" }}>
-                                <input
-                                    value={state}
-                                    id="_input"
-                                    style={{ width: "255px" }}
-                                    type="email"
-                                    onInvalid={(e) => { e.preventDefault() }}
-                                    onChange={(e) => handleChage(e)}
-                                    placeholder='Email address'
-                                    className={`${classes.buynowSearch}`}
-                                />
-                            </Grid>
-                            <Grid item>
-                                <Button type="submit" id="_button" className={`${classes.searchButtonFooter}`} onClick={(e) => { return handleEmail(e) }}>Stay Informed</Button>
-                               </Grid>
-                        </Grid>
-                        <Grid xs={5} item container style={{ display: 'flex', justifyContent: 'flex-end', paddingTop: "10px" }} className="footer-icons">
-                            <Grid item style={{ width: "100%", textAlign: "end" }}>
-                                <a style={{ textDecoration: "none" }} target="_blank" href={`http://www.twitter.com/share?url=${window.location.href}`}>
-                                    <i style={{ fontSize: '24px', color: '#434e77', paddingLeft: '3px', }} className="fa">&#xf099;</i> </a>
-                                <a target="_blank" href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`}>
-                                    <i style={{ fontSize: '24px', color: '#434e77', paddingLeft: '5%' }} className="fa ">&#xf09a;</i></a>
-                                <a target="_blank" href="https://in.pinterest.com/stylori2015/">
-                                    <i style={{ fontSize: '24px', color: '#434e77', paddingLeft: '5%' }} className="fa ">&#xf231;</i></a>
-                                <a target="_blank" href="https://instagram.com/stylorilove">
-                                    <i style={{ fontSize: '24px', color: '#434e77', paddingLeft: '5%' }} className="fa ">&#xf16d;</i></a>
-                                <a target="_blank" href="https://www.youtube.com/c/stylori">
-                                    <i style={{ fontSize: '24px', color: '#434e77', paddingLeft: '5%' }} className="fa ">&#xf167;</i></a>
-                            </Grid>
-                        </Grid>
-
-                    </Grid>
-                    </Grid>
-                </Grid>F
-  */}
         <Container>
           <Grid container item xs={12} style={{ marginTop: 40 }}>
             <Grid container item xs={12} alignItems="center">
@@ -709,7 +732,7 @@ export default function Footer(props) {
               >
                 {footerData.map((data, i) => {
                   return (
-                    <Grid item xs={2}>
+                    <Grid item xs={3}>
                       {data.row.map((v, s) => {
                         return (
                           <Grid container>
@@ -721,7 +744,21 @@ export default function Footer(props) {
 
                               // href="#"
                             >
-                              {v.Title}
+                              <b style={{ fontSize: "14px" }}>{v.heading}</b>
+                            </Link>
+
+                            <Link
+                              className={classes.navTitle}
+                              onClick={() => {
+                                window.location.href = v.url;
+                              }}
+
+                              // href="#"
+                            >
+                              <span style={{ fontSize: "14px" }}>
+                                {" "}
+                                {v.Title}
+                              </span>
                             </Link>
                           </Grid>
                         );
@@ -729,120 +766,39 @@ export default function Footer(props) {
                     </Grid>
                   );
                 })}
-                {/* <Grid item xs={3}>
-                  {footerData2.map((data) => {
-                    return (
-                      <Grid container>
-                        <Link
-                          className={classes.navTitle}
-                          onClick={() => {
-                            window.location.href = data.url;
-                          }}
+              </Grid>
+            </Grid>
+          </Grid>
+          <Grid container>
+            <Grid item xs={9}>
+              <Grid className={classes.parentdiv} item xs={4}>
+                <div>
+                  <div className={classes.socialdiv}>
+                    <div className={classes.social}>
+                      <a
+                        target="_blank"
+                        href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`}
+                      >
+                        <img
+                          src={
+                            "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_footer/Path+52.svg"
+                          }
                           style={{
-                            fontWeight:
-                              data.Title === "Know Your Jewellery" ? "800" : "",
+                            width: "40px",
+                            height: "auto",
+                            borderRadius: "20px 20px",
+                            boxShadow: "2px 3px 6px 2px #888888",
                           }}
-                          href="#"
-                        >
-                          {data.Title}
-                        </Link>
-                      </Grid>
-                    );
-                  })}
-                </Grid>
-                <Grid item xs={3}>
-                  {footerData3.map((data) => {
-                    return (
-                      <Grid container>
-                        <Link
-                          className={classes.navTitle}
-                          onClick={() => {
-                            window.location.href = data.url;
-                          }}
-                          style={{
-                            fontWeight:
-                              data.Title === "Customer Service" ? "800" : "",
-                          }}
-                          href="#"
-                        >
-                          {data.Title}
-                        </Link>
-                      </Grid>
-                    );
-                  })}
-                </Grid> */}
-                {/* <Grid item xs={3}>
-                  {footerData4.map((data) => {
-                    return (
-                      <Grid container>
-                        <Link
-                          className={classes.navTitle}
-                          onClick={() => {
-                            window.location.href = data.url;
-                          }}
-                          style={{
-                            fontWeight:
-                              data.Title === "Contact Us" ? "800" : "",
-                          }}
-                          href="#"
-                        >
-                          {data.Title}
-                        </Link>
-                      </Grid>
-                    );
-                  })}
-                </Grid> */}
-                <Grid className={classes.parentdiv} item xs={4}>
-                  <div>
-                    <div>
-                      <input
-                        id="_input"
-                        type="email"
-                        placeholder="ENTER EMAIL ID TO RECIEVE UPDATE ON NAC"
-                        className={classes.input}
-                        value=""
-                      />
+                        />
+                      </a>
                     </div>
-                    <div className={classes.signupdiv}>
-                      <Button className={classes.signup}>Sign UP</Button>
-                    </div>
-                    {/* <Grid item className={classes.footerSocialIcons}> */}
-                    <div className={classes.socialdiv}>
-                      <div className={classes.social}>
-                        <a
-                          target="_blank"
-                          href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`}
-                        >
-                          {/* <i
-                          style={{
-                            fontSize: "24px",
-                            color: "#434e77",
-                            paddingLeft: "3px",
-                          }}
-                          className="fa "
-                        >
-                          &#xf09a;
-                        </i> */}
-                          <img
-                            src={
-                              "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_footer/Path+52.svg"
-                            }
-                            style={{
-                              width: "40px",
-                              height: "auto",
-                              borderRadius: "20px 20px",
-                              boxShadow: "2px 3px 6px 2px #888888",
-                            }}
-                          />
-                        </a>
-                      </div>
-                      <div className={classes.social}>
-                        <a
-                          style={{ textDecoration: "none" }}
-                          target="_blank"
-                          href={`http://www.twitter.com/share?url=${window.location.href}`}
-                        >
-                          {/* <i
+                    <div className={classes.social}>
+                      <a
+                        style={{ textDecoration: "none" }}
+                        target="_blank"
+                        href={`http://www.twitter.com/share?url=${window.location.href}`}
+                      >
+                        {/* <i
                           style={{
                             fontSize: "24px",
                             color: "#434e77",
@@ -852,86 +808,86 @@ export default function Footer(props) {
                         >
                           &#xf099;
                         </i>{" "} */}
-                          <img
-                            src={
-                              "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_footer/Path+53.svg"
-                            }
-                            style={{
-                              width: "40px",
-                              height: "auto",
-                              borderRadius: "20px 20px",
-                              boxShadow: "2px 3px 6px 2px #888888",
-                            }}
-                          />
-                        </a>
-                      </div>
-                      <div className={classes.social}>
-                        <a
-                          target="_blank"
-                          href="https://instagram.com/stylorilove"
+                        <img
+                          src={
+                            "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_footer/Path+53.svg"
+                          }
+                          style={{
+                            width: "40px",
+                            height: "auto",
+                            borderRadius: "20px 20px",
+                            boxShadow: "2px 3px 6px 2px #888888",
+                          }}
+                        />
+                      </a>
+                    </div>
+                    <div className={classes.social}>
+                      <a
+                        target="_blank"
+                        href="https://instagram.com/stylorilove"
+                      >
+                        <i
+                          style={{
+                            fontSize: "32px",
+                            color: "#2F348B",
+                            position: "absolute",
+                            top: "5px",
+                            right: "7px",
+                          }}
+                          className="fa "
                         >
-                          <i
-                            style={{
-                              fontSize: "32px",
-                              color: "#2F348B",
-                              position: "absolute",
-                              top: "5px",
-                              right: "7px",
-                            }}
-                            className="fa "
-                          >
-                            &#xf16d;
-                          </i>
-                          <img
-                            src={
-                              "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_footer/Path+54.svg"
-                            }
-                            style={{
-                              width: "40px",
-                              height: "auto",
-                              borderRadius: "20px 20px",
-                              boxShadow: "2px 3px 6px 2px #888888",
-                            }}
-                          />
-                        </a>
-                      </div>
-                      <div className={classes.social}>
-                        <a
-                          target="_blank"
-                          href="https://www.youtube.com/c/stylori"
+                          &#xf16d;
+                        </i>
+                        <img
+                          src={
+                            "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_footer/Path+54.svg"
+                          }
+                          style={{
+                            width: "40px",
+                            height: "auto",
+                            borderRadius: "20px 20px",
+                            boxShadow: "2px 3px 6px 2px #888888",
+                          }}
+                        />
+                      </a>
+                    </div>
+                    <div className={classes.social}>
+                      <a
+                        target="_blank"
+                        href="https://www.youtube.com/c/stylori"
+                      >
+                        <i
+                          style={{
+                            position: "absolute",
+                            fontSize: "13px",
+                            top: "14px",
+                            left: "17px",
+                            color: "#2F348B",
+                          }}
+                          className="fa"
+                          aria-hidden="true"
                         >
-                          <i
-                            style={{
-                              position: "absolute",
-                              fontSize: "13px",
-                              top: "14px",
-                              left: "17px",
-                              color: "#2F348B",
-                            }}
-                            className="fa"
-                            aria-hidden="true"
-                          >
-                            &#xf04b;
-                          </i>
-                          <img
-                            src={
-                              "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_footer/Path+57.svg"
-                            }
-                            style={{
-                              width: "40px",
-                              height: "auto",
-                              borderRadius: "20px 20px",
-                              boxShadow: "2px 3px 6px 2px #888888",
-                            }}
-                          />
-                        </a>
-                      </div>
-                      <div className={classes.social}>
-                        <a
-                          target="_blank"
-                          href="https://in.pinterest.com/stylori2015/"
-                        >
-                          {/* <i
+                          &#xf04b;
+                        </i>
+                        <img
+                          src={
+                            "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_footer/Path+57.svg"
+                          }
+                          style={{
+                            width: "40px",
+                            height: "auto",
+                            borderRadius: "20px 20px",
+                            boxShadow: "2px 3px 6px 2px #888888",
+                          }}
+                        />
+                      </a>
+                    </div>
+                    <div className={classes.social}>
+                      <a
+                        target="_blank"
+                        href="https://in.pinterest.com/stylori2015/"
+                      >
+                        {/* <i
                           style={{
                             fontSize: "24px",
                             color: "#434e77",
@@ -941,193 +897,105 @@ export default function Footer(props) {
                         >
                           &#xf231;
                         </i> */}
-                          <img
-                            src={
-                              " https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_footer/nQjOPg.tif.svg"
-                            }
-                            style={{
-                              width: "40px",
-                              height: "auto",
-                              borderRadius: "20px 20px",
-                              boxShadow: "2px 3px 6px 2px #888888",
-                            }}
-                          />
-                        </a>
-                      </div>
+                        <img
+                          src={
+                            " https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_footer/nQjOPg.tif.svg"
+                          }
+                          style={{
+                            width: "40px",
+                            height: "auto",
+                            borderRadius: "20px 20px",
+                            boxShadow: "2px 3px 6px 2px #888888",
+                          }}
+                        />
+                      </a>
                     </div>
-                    {/* </Grid> */}
                   </div>
-                </Grid>
+                  {/* </Grid> */}
+                </div>
               </Grid>
-              {/* <Grid container style={{ display: "flex", padding: "15px 0px" }}>
-                <Grid container xs={9} style={{ width: "100%" }}>
-                  <Grid item className={"imageClass"}>
-                    <Grid item className={classes.footerSocialIcons}>
-                      <a
-                        target="_blank"
-                        href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`}
-                      >
-                        <i
-                          style={{
-                            fontSize: "24px",
-                            color: "#434e77",
-                            paddingLeft: "3px",
-                          }}
-                          className="fa "
-                        >
-                          &#xf09a;
-                        </i>
-                      </a>
-                      <a
-                        style={{ textDecoration: "none" }}
-                        target="_blank"
-                        href={`http://www.twitter.com/share?url=${window.location.href}`}
-                      >
-                        <i
-                          style={{
-                            fontSize: "24px",
-                            color: "#434e77",
-                            paddingLeft: "5%",
-                          }}
-                          className="fa"
-                        >
-                          &#xf099;
-                        </i>{" "}
-                      </a>
-                      <a
-                        target="_blank"
-                        href="https://instagram.com/stylorilove"
-                      >
-                        <i
-                          style={{
-                            fontSize: "24px",
-                            color: "#434e77",
-                            paddingLeft: "5%",
-                          }}
-                          className="fa "
-                        >
-                          &#xf16d;
-                        </i>
-                      </a>
-                      <a
-                        target="_blank"
-                        href="https://in.pinterest.com/stylori2015/"
-                      >
-                        <i
-                          style={{
-                            fontSize: "24px",
-                            color: "#434e77",
-                            paddingLeft: "5%",
-                          }}
-                          className="fa "
-                        >
-                          &#xf231;
-                        </i>
-                      </a>
-
-                      <a
-                        target="_blank"
-                        href="https://www.youtube.com/c/stylori"
-                      >
-                        <i
-                          style={{
-                            fontSize: "24px",
-                            color: "#434e77",
-                            paddingLeft: "5%",
-                          }}
-                          className="fa "
-                        >
-                          &#xf167;
-                        </i>
-                      </a>
-                    </Grid>
-                  </Grid>
-                </Grid>
-                <Grid container xs={3}>
-                  <Button
-                    style={{
-                      background: "#33366D",
-                      color: "white",
-                      fontSize: "11px",
-                    }}
-                  >
-                    Store Locator
-                  </Button>
-                </Grid>
-              </Grid> */}
-              <Grid
-                container
-                direction="row"
-                item={12}
+            </Grid>
+            <Grid item xs={3} style={{ margin: "10px 0 10px 0" }}>
+              <Button
                 style={{
-                  display: "flex",
-                  alignItems: "center",
-                  padding: "35px 0px",
+                  background: "#33366D",
+                  color: "white",
+                  fontSize: "14px",
+                  borderRadius: "0px",
+                  fontWeight: "580px",
+                  boxShadow: "4px 4px 4px #A5A4A5",
+                }}
+                onClick={() => {
+                  window.location.href = "/store";
                 }}
               >
-                {/* <Grid container xs={5}>
+                Store Locator
+              </Button>
+            </Grid>
+
+            <Grid
+              container
+              direction="row"
+              item={12}
+              style={{
+                alignItems: "center",
+                padding: "35px 0px",
+              }}
+              spacing={1}
+            >
+              <Grid item xs={5}>
+                <Grid
+                  container
+                  item
+                  xs={12}
+                  sm={12}
+                  style={{
+                    display: "flex",
+                    color: "#6b6b6b",
+                  }}
+                >
+                  {" "}
                   <Grid item>
-                    <Link className={classes.linkText} to="/sitemap">
+                    <Link className={classes.linkTextmlg} to="/sitemap">
                       SITEMAP &nbsp;{" "}
                     </Link>
                   </Grid>
                   <Grid item>
-                    <Link className={classes.linkText} to="/termsconditions">
+                    <Link className={classes.linkTextmlg} to="/termsconditions">
                       |&nbsp; TERMS & CONDITION &nbsp;{" "}
                     </Link>
                   </Grid>{" "}
                   <Grid item>
-                    <Link className={classes.linkText} to="/faqs">
+                    <Link className={classes.linkTextmlg} to="/faqs">
                       |&nbsp; FAQS &nbsp;{" "}
                     </Link>
                   </Grid>{" "}
                   <Grid item>
-                    <Link className={classes.linkText} to="/delivery">
+                    <Link className={classes.linkTextmlg} to="/delivery">
                       |&nbsp; DELIVERY INFO &nbsp;{" "}
                     </Link>
                   </Grid>{" "}
                   <Grid item>
-                    <Link className={classes.linkText} to="/privacy">
+                    <Link className={classes.linkTextmlg} to="/privacy">
                       |&nbsp; PRIVACY POLICY &nbsp;
                     </Link>
                   </Grid>
-                </Grid> */}
-                {/* <Grid container xs={3}>
-                  <Grid item>
-                    <p style={{ fontSize: "13px", color: "#6b6b6b" }}>
-                      @NAC Jewellers Pvt.Ltd. All rights reserved
-                    </p>
-                  </Grid>
-                </Grid> */}
-                <Grid container xs={4}>
-                  <Grid item className={"imageClass"}>
-                    <img
-                      src={
-                        "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_footer/k77ABP.tif%402x.png"
-                      }
-                      style={{ width: "100%", height: "auto" }}
-                    />
-                  </Grid>
-                  <Grid item>
-                    <p className={classes.rights}>
-                      @NAC Jewellers Pvt.Ltd. All rights reserved
-                    </p>
-                  </Grid>
                 </Grid>
               </Grid>
-            </Grid>
-            <Grid container item xs={4}>
-              <Grid
-                xs={12}
-                item
-                container
-                style={{
-                  display: "flex",
-                  justifyContent: "flex-end",
-                  paddingTop: "10px",
-                }}
-                className="footer-icons"
-              ></Grid>
+
+              <Grid item xs={3}>
+                <p className={classes.rights}>
+                  @NAC Jewellers Pvt.Ltd. All rights reserved
+                </p>
+              </Grid>
+              <Grid item xs={4} className={"imageClass"}>
+                <img
+                  src={
+                    "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_footer/k77ABP.tif%402x.png"
+                  }
+                  style={{ width: "100%", height: "auto" }}
+                />
+              </Grid>
             </Grid>
           </Grid>
         </Container>
@@ -1201,38 +1069,7 @@ export default function Footer(props) {
                 </AccordionDetails>
               </Accordion>
             ))}
-
-            {/* <Grid container item xs={3} style={{ backgroundColor: 'colorMain', fontSize: '12px' }} alignItems="center" className={`${classes.colorWhite}`}>
-                            {
-                                footerData4.map(data => {
-                                    return (
-                                        <Grid item xs={12} sm={12} container  style={{ padding: '2px 0px 8px 0px' }} onClick={() => { window.location.href = data.url }} href="#">
-                                            {data.Title}
-                                        </Grid>
-                                    )
-                                })
-                            }
-                        </Grid> */}
           </Grid>
-          {/* <Grid container className={classes.messageconatainer}>
-                        <Grid container style={{ display: 'flex', justifyContent: 'center', padding: "6px 0px 0px 0px" }}>
-                            <Grid item >
-                                <input
-                                    value={state}
-                                    id="_input"
-                                    type="email"
-                                    onInvalid={(e) => { e.preventDefault() }}
-                                    // ref={this._inputRef}
-                                    onChange={(e) => handleChage(e)}
-                                    placeholder='Email address'
-                                    className={`${classes.buynowSearch}`}
-                                />
-                            </Grid>
-                            <Grid item >
-                                <Button type="submit" id="_button" className={`${classes.searchButtonFooter}`} onClick={(e) => handleEmail(e)}>Stay Informed</Button>
-                            </Grid>
-                        </Grid>
-                    </Grid> */}
 
           <Grid
             item
@@ -1246,6 +1083,9 @@ export default function Footer(props) {
                 color: "white",
                 fontSize: "11px",
                 borderRadius: "0px",
+              }}
+              onClick={() => {
+                window.location.href = "/store";
               }}
             >
               Store Locator
