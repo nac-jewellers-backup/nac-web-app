@@ -132,9 +132,26 @@ export default function MoreFilters(props) {
                   val !== "Gender"
                 ) {
                   return (
-                    <Grid item xs={3} style={{ marginBottom: "3%" }}>
-                      <div style={{ marginBottom: "10px" }}>
-                        <b>{val}</b>
+                    <Grid
+                      item
+                      xs={3}
+                      style={{ marginBottom: "3%", padding: 10 }}
+                    >
+                      <div
+                        style={{
+                          marginBottom: "10px",
+                          color: "#33346D",
+                          borderBottom: "1px solid #33346D",
+                        }}
+                      >
+                        <span
+                          style={{
+                            color: "#33346D !important",
+                            fontWeight: "bold",
+                          }}
+                        >
+                          {val}
+                        </span>
                       </div>
                       <FormGroup row>
                         {props.subFilter[val].map((valsub) => {
