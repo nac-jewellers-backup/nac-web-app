@@ -1,10 +1,10 @@
-import { Grid, AppBar } from "@material-ui/core";
-import React from "react";
-import "./product-images.css";
-import Buynowbutton from "../../Buynow/buynowbutton";
-import CommenDialog from "../../../components/Common/Dialogmodel";
-import styles from "./style";
+import { AppBar, Grid } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
+import React from "react";
+import CommenDialog from "../../../components/Common/Dialogmodel";
+import Buynowbutton from "../../Buynow/buynowbutton";
+import "./product-images.css";
+import styles from "./style";
 
 class Buynowfixed extends React.Component {
   constructor(props) {
@@ -14,7 +14,9 @@ class Buynowfixed extends React.Component {
     };
   }
   valus = (valueId) => {
-    var valus_locl = localStorage.getItem("cartDetails") ? JSON.parse(localStorage.getItem("cartDetails")).products : "";
+    var valus_locl = localStorage.getItem("cartDetails")
+      ? JSON.parse(localStorage.getItem("cartDetails")).products
+      : "";
 
     var vals;
 
@@ -81,14 +83,24 @@ class Buynowfixed extends React.Component {
                 <Grid
                   item
                   xs={6}
-                  className={`fixed-grid ${isSilver ? classes.fixedGridsilver : ""}`}
+                  className={`fixed-grid ${
+                    isSilver ? classes.fixedGridsilver : ""
+                  }`}
                   style={{ textAlign: "center", background: "#EBEAEA" }}
                 >
-                  <div onClick={() => (productIsActive ? this.props.deleteComment() : "")}>
+                  <div
+                    onClick={() =>
+                      productIsActive ? this.props.deleteComment() : ""
+                    }
+                  >
                     <Buynowbutton
                       sku={data[0].skuId}
-                      class={`product-footer-buynow ${isSilver ? classes.fixedGridsilver : ""}`}
-                      onClick={productIsActive ? handleLocalStorage.bind(this) : ""}
+                      class={`product-footer-buynow ${
+                        isSilver ? classes.fixedGridsilver : ""
+                      }`}
+                      onClick={
+                        productIsActive ? handleLocalStorage.bind(this) : ""
+                      }
                       productIsActive={productIsActive ?? ""}
                     />
                   </div>
@@ -100,13 +112,21 @@ class Buynowfixed extends React.Component {
                 <Grid
                   item
                   xs={6}
-                  className={`fixed-grid ${isSilver ? classes.fixedGridsilver : ""}`}
+                  className={`fixed-grid ${
+                    isSilver ? classes.fixedGridsilver : ""
+                  }`}
                   style={{ textAlign: "center", background: "#EBEAEA" }}
                 >
-                  <div onClick={productIsActive ? handleLocalStorage.bind(this) : ""}>
+                  <div
+                    onClick={
+                      productIsActive ? handleLocalStorage.bind(this) : ""
+                    }
+                  >
                     <Buynowbutton
                       sku={data[0].skuId}
-                      class={`product-footer-buynow ${isSilver ? classes.fixedGridsilver : ""}`}
+                      class={`product-footer-buynow ${
+                        isSilver ? classes.fixedGridsilver : ""
+                      }`}
                       productIsActive={productIsActive ?? ""}
                     />
                   </div>
@@ -128,8 +148,16 @@ class Buynowfixed extends React.Component {
             {isSilver ? (
               <>
                 {" "}
-                <Grid item xs={6} style={{ textAlign: "center", backgroundColor: "#ccc" }}>
-                  <div onClick={() => (productIsActive ? this.props.deleteComment() : "")}>
+                <Grid
+                  item
+                  xs={6}
+                  style={{ textAlign: "center", backgroundColor: "#ccc" }}
+                >
+                  <div
+                    onClick={() =>
+                      productIsActive ? this.props.deleteComment() : ""
+                    }
+                  >
                     <Buynowbutton
                       sku={data[0].skuId}
                       // class={`product-footer-buynow ${
@@ -137,7 +165,9 @@ class Buynowfixed extends React.Component {
                       // }`}
                       class={`product-footer-buynow ${classes.addtoCartToBuyNowStyle}`}
                       addtoCartToBuyNow={true}
-                      onClick={productIsActive ? handleLocalStorage.bind(this) : ""}
+                      onClick={
+                        productIsActive ? handleLocalStorage.bind(this) : ""
+                      }
                       productIsActive={productIsActive ?? ""}
                     />
                   </div>
@@ -146,7 +176,16 @@ class Buynowfixed extends React.Component {
             ) : (
               <>
                 {" "}
-                <Grid className="talk-to-us" item xs={6} style={{ justifyContent: "center", display: "flex" }}>
+                <Grid
+                  className="talk-to-us"
+                  item
+                  xs={6}
+                  style={{
+                    justifyContent: "center",
+                    display: "flex",
+                    backgroundColor: "white",
+                  }}
+                >
                   <a
                     href={isSilver ? "#" : "tel:18001020330"}
                     style={{
@@ -159,7 +198,13 @@ class Buynowfixed extends React.Component {
                   >
                     {isSilver ? null : <i class="fa fa-comments"></i>}
                     &nbsp;
-                    {isSilver ? <span style={{ fontFamily: "Roboto-bold" }}>Add To Cart</span> : "Talk To Us"}
+                    {isSilver ? (
+                      <span style={{ fontFamily: "Roboto-bold" }}>
+                        Add To Cart
+                      </span>
+                    ) : (
+                      "Talk To Us"
+                    )}
                   </a>
                 </Grid>
               </>

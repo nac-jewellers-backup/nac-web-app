@@ -1,10 +1,10 @@
+import PropTypes from "prop-types";
 import React from "react";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import "./index.css";
+import "slick-carousel/slick/slick.css";
 import "../product-image-slider/product-images.css";
-import PropTypes from "prop-types";
+import "./index.css";
 class Slideshow extends React.Component {
   constructor(props) {
     super(props);
@@ -34,7 +34,9 @@ class Slideshow extends React.Component {
 
     if (url.length > 0) {
       var array_split = url.split(/\.(?=[^\.]+$)/);
-      const found = extensionVideoLists.find((element) => element.toLowerCase() === array_split[1]);
+      const found = extensionVideoLists.find(
+        (element) => element.toLowerCase() === array_split[1]
+      );
       if (found) {
         return true;
       } else return false;
@@ -54,7 +56,9 @@ class Slideshow extends React.Component {
               <video
                 style={{ verticalAlign: "bottom", zIndex: this.props.zindex }}
                 preload="auto"
-                className={`${imgs ? "shine imgDiv2" : ""} ${this.props.imgClass ? this.props.imgClass : ""}`}
+                className={`${imgs ? "shine imgDiv2" : ""} ${
+                  this.props.imgClass ? this.props.imgClass : ""
+                }`}
                 src={imgs}
                 poster="https://assets.stylori.com/product/SP0195/500X500/HOVER-SP0195-2Y.webp"
                 type="video/mp4"
@@ -62,7 +66,10 @@ class Slideshow extends React.Component {
               ></video>
             ) : (
               <img
-                className={`${imgs ? "imgDiv2" : "shine imgDiv2"} ${this.props.imgClass ? this.props.imgClass : ""}`}
+                style={{ objectFit: "cover" }}
+                className={`${imgs ? "imgDiv2" : "shine imgDiv2"} ${
+                  this.props.imgClass ? this.props.imgClass : ""
+                }`}
                 src={imgs}
                 alt=""
               />
@@ -76,8 +83,15 @@ class Slideshow extends React.Component {
     let { hover, hovereffect, TopPic, imagecra, collectionhome } = this.props;
     if (TopPic) {
       return hoverlist.map((val) => (
-        <div className={"subslider-carousel" + TopPic ? "hovereffectSilver" : ""}>
-          <img src={val.img} className="subslider-carousel-img img-responsive" style={{ width: "100%", height: "auto" }} alt="" />
+        <div
+          className={"subslider-carousel" + TopPic ? "hovereffectSilver" : ""}
+        >
+          <img
+            src={val.img}
+            className="subslider-carousel-img img-responsive"
+            style={{ width: "100%", height: "100%" }}
+            alt=""
+          />
           <div className="overlay1">
             <div>
               <h2 className="next-price">{val.title}</h2>
@@ -90,7 +104,11 @@ class Slideshow extends React.Component {
       return (
         hoverlist &&
         hoverlist.map((val) => (
-          <div className={"subslider-carousel" + hovereffect ? "hovereffectSilver" : ""}>
+          <div
+            className={
+              "subslider-carousel" + hovereffect ? "hovereffectSilver" : ""
+            }
+          >
             <img
               src={val.img}
               className="subslider-carousel-img img-responsive"
@@ -118,11 +136,34 @@ class Slideshow extends React.Component {
             <a className="info" href={`/${val.url}`}>
               <div
                 className={"subslider-carousel" + hover ? "hovereffect" : ""}
-                style={{ height: window.location.pathname === "/collectionhome" ? "210px" : "170px" }}
+                style={{
+                  height:
+                    window.location.pathname === "/collectionhome"
+                      ? "210px"
+                      : "170px",
+                }}
               >
-                <img src={val.img} className="subslider-carousel-img img-responsive" alt="" />
-                <div className="overlay1" style={{ height: window.location.pathname === "/collectionhome" ? "210px" : "170px" }}>
-                  <h2 className={`${collectionhome ? "poscollectionHome" : "next-price"}`}>{val.title}</h2>
+                <img
+                  src={val.img}
+                  className="subslider-carousel-img img-responsive"
+                  alt=""
+                />
+                <div
+                  className="overlay1"
+                  style={{
+                    height:
+                      window.location.pathname === "/collectionhome"
+                        ? "210px"
+                        : "170px",
+                  }}
+                >
+                  <h2
+                    className={`${
+                      collectionhome ? "poscollectionHome" : "next-price"
+                    }`}
+                  >
+                    {val.title}
+                  </h2>
                   <br />
                   {val.price && (
                     <a className="info" href={`/${val.url}`}>
@@ -142,11 +183,18 @@ class Slideshow extends React.Component {
   };
   imagewithouthoverchildrens = (hoverlist) => {
     return (
-      <div className={"subslider-carousel-silver "} style={{ display: "block !important " }}>
+      <div
+        className={"subslider-carousel-silver "}
+        style={{ display: "block !important " }}
+      >
         <img
           src={hoverlist.img}
           className="subslider-carousel-img-Silver img-responsive"
-          style={{ width: "auto !important", height: "auto", display: "block !important  " }}
+          style={{
+            width: "auto !important",
+            height: "auto",
+            display: "block !important  ",
+          }}
           alt=""
         />
         {/* <div class="overlay1">
@@ -181,19 +229,31 @@ class Slideshow extends React.Component {
       <div style={{ width: "100%" }}>
         <Slider ref={sliderRef} {...settings}>
           {this.props.children ? this.props.children : this.renderFadeImages()}
-          {this.props.hover ? this.imagehoverchildrens(this.props.hoverlist) : ""}
+          {this.props.hover
+            ? this.imagehoverchildrens(this.props.hoverlist)
+            : ""}
 
-          {this.props.hover ? this.imagehoverchildrens(this.props.hoverlist) : ""}
-          {this.props.hovereffect ? this.imagehoverchildrens(this.props.hoverlist) : ""}
-          {this.props.WithoutHoverhover ? this.imagewithouthoverchildrens(this.props.hoverlist) : ""}
-          {this.props.TopPic ? this.imagehoverchildrens(this.props.hoverlist) : ""}
+          {this.props.hover
+            ? this.imagehoverchildrens(this.props.hoverlist)
+            : ""}
+          {this.props.hovereffect
+            ? this.imagehoverchildrens(this.props.hoverlist)
+            : ""}
+          {this.props.WithoutHoverhover
+            ? this.imagewithouthoverchildrens(this.props.hoverlist)
+            : ""}
+          {this.props.TopPic
+            ? this.imagehoverchildrens(this.props.hoverlist)
+            : ""}
         </Slider>
       </div>
     );
   }
 }
 
-export default React.forwardRef((props, ref) => <Slideshow sliderRef={ref} {...props} />);
+export default React.forwardRef((props, ref) => (
+  <Slideshow sliderRef={ref} {...props} />
+));
 Slideshow.propTypes = {
   settings: PropTypes.object.isRequired,
   fadeImages: PropTypes.array.isRequired,

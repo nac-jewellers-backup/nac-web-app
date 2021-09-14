@@ -1,16 +1,13 @@
-import { Grid, Hidden, ExpansionPanel, Container, Popover, paper, Paper } from "@material-ui/core";
-import Slideshow from "../Carousel/carosul";
-import ArrowRightIcon from "@material-ui/icons/ArrowRight";
-import ArrowLeftIcon from "@material-ui/icons/ArrowLeft";
-import React, { Component, useState } from "react";
-import PropTypes from "prop-types";
-import "./product-images.css";
-import Ratings from "../rating/rating";
+import { Container, Grid, Hidden, Paper } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
+import ArrowLeftIcon from "@material-ui/icons/ArrowLeft";
+import ArrowRightIcon from "@material-ui/icons/ArrowRight";
+import PropTypes from "prop-types";
+import React, { Component } from "react";
+import Slideshow from "../Carousel/carosul";
 import Pricing from "../Pricing/index";
+import "./product-images.css";
 import styles from "./style";
-import Wishlist from "components/wishlist/wishlist";
-import { Button } from "semantic-ui-react";
 
 const mobilecarousel = (props, val, wishlist) => {
   const { data, classes } = props;
@@ -47,8 +44,7 @@ const mobilecarousel = (props, val, wishlist) => {
   };
 
   return (
-    <div style={{ width: "98%" }}>
-  
+    <div style={{ width: "100%" }}>
       <Slideshow
         zindex="1000"
         class="middle"
@@ -62,7 +58,14 @@ const mobilecarousel = (props, val, wishlist) => {
   );
 };
 
-const Productprice = (props, anchorEl, handleClick, handleClose, handleReadMore, viewMore) => {
+const Productprice = (
+  props,
+  anchorEl,
+  handleClick,
+  handleClose,
+  handleReadMore,
+  viewMore
+) => {
   // const [prodDesc, setProdDesc] = useState(false);
   const { data } = props;
   const { classes } = props;
@@ -77,22 +80,41 @@ const Productprice = (props, anchorEl, handleClick, handleClose, handleReadMore,
             <Hidden mdUp>
               <div className="resp">{mobilecarousel(props, val, wishlist)}</div>
             </Hidden>
-            <Paper elevation={0} style={{ width: "100%", padding: "0px", margin: "0px " }}>
+            <Paper
+              elevation={0}
+              style={{ width: "100%", padding: "0px", margin: "0px " }}
+            >
               <Grid container className="containbev">
                 <Grid item xs={12} lg={12} md={12}>
                   <div className="price-div">
                     <Hidden mdUp>
-                      <Grid container spacing={12} xs={12} style={{ padding: 10 }}>
+                      <Grid
+                        container
+                        spacing={12}
+                        xs={12}
+                        style={{ padding: 10 }}
+                      >
                         <Grid container item xs={8}>
-                          <h1 className={`pdp-title ${classes.title}`} style={{ width: "90%" }}>
+                          <h1
+                            className={`pdp-title ${classes.title}`}
+                            style={{ width: "90%" }}
+                          >
                             {val?.title}
                           </h1>
 
-                        
-                          <p className={`pdp-desc ${classes.dis} `} style={{ marginBottom: 20 }}>
-                            {val?.dis?.length > 30 && viewMore ? val?.dis : `${val?.dis?.substring(0, 30)}...`}
+                          <p
+                            className={`pdp-desc ${classes.dis} `}
+                            style={{ marginBottom: 20 }}
+                          >
+                            {val?.dis?.length > 30 && viewMore
+                              ? val?.dis
+                              : `${val?.dis?.substring(0, 30)}...`}
                             <span>
-                              <p className={`pdp-desc ${viewMore ? "" : classes.disDescriptionPD}`}>
+                              <p
+                                className={`pdp-desc ${
+                                  viewMore ? "" : classes.disDescriptionPD
+                                }`}
+                              >
                                 <span>
                                   <span
                                     style={{
@@ -114,9 +136,18 @@ const Productprice = (props, anchorEl, handleClick, handleClose, handleReadMore,
                           </p>
                         </Grid>
 
-                        <Grid container item xs={4} alignContent="center" alignItems="cennpm cache cleanter">
+                        <Grid
+                          container
+                          item
+                          xs={4}
+                          alignContent="center"
+                          alignItems="cennpm cache cleanter"
+                        >
                           <Hidden mdUp>
-                            <div className={classes.width} style={{ padding: "0px 10px  0px 10px " }}>
+                            <div
+                              className={classes.width}
+                              style={{ padding: "0px 10px  0px 10px " }}
+                            >
                               <Pricing
                                 price={data[0]?.sellingPrice}
                                 offerPrice={data[0]?.offerPrice}
@@ -129,17 +160,32 @@ const Productprice = (props, anchorEl, handleClick, handleClose, handleReadMore,
                       </Grid>
                     </Hidden>
                     <Hidden smDown>
-                      <h1 className={`pdp-title ${classes.title} `}>{val?.title}</h1>
+                      <h1 className={`pdp-title ${classes.title} `}>
+                        {val?.title}
+                      </h1>
                     </Hidden>
                     <Hidden smDown>
-                      <p className={`pdp-desc ${classes.dis}`} style={{ marginBottom: 0, paddingTop: "5px" }}>
-                        {val?.dis?.length > 100 && viewMore ? val?.dis : val?.dis.substring(0, 100)}
+                      <p
+                        className={`pdp-desc ${classes.dis}`}
+                        style={{ marginBottom: 0, paddingTop: "5px" }}
+                      >
+                        {val?.dis?.length > 100 && viewMore
+                          ? val?.dis
+                          : val?.dis.substring(0, 100)}
                         {/* {val.dis} */}
                         <span>
-                          <p className={`pdp-desc ${viewMore ? "" : classes.disDescriptionPD}`}>
+                          <p
+                            className={`pdp-desc ${
+                              viewMore ? "" : classes.disDescriptionPD
+                            }`}
+                          >
                             <span style={{ width: "80%" }}>
                               <span
-                                style={{ float: "right", cursor: "pointer", color: "#33346D" }}
+                                style={{
+                                  float: "right",
+                                  cursor: "pointer",
+                                  color: "#33346D",
+                                }}
                                 onClick={() => {
                                   handleReadMore();
                                 }}
@@ -150,21 +196,20 @@ const Productprice = (props, anchorEl, handleClick, handleClose, handleReadMore,
                           </p>
                         </span>
                       </p>
-                     
                     </Hidden>
                   </div>
                 </Grid>
               </Grid>
             </Paper>
-           
           </Grid>
 
           <Hidden smDown>
             <div className={classes.width}>
               {data[0]?.price === data[0]?.offerPrice ? (
-                <Pricing offerPrice={data[0]?.offerPrice} pdpage={true}>
-                
-                </Pricing>
+                <Pricing
+                  offerPrice={data[0]?.offerPrice}
+                  pdpage={true}
+                ></Pricing>
               ) : (
                 <Pricing
                   offerPrice={data[0]?.offerPrice}
@@ -214,12 +259,26 @@ class ProductPrice extends Component {
     return (
       <div>
         <Hidden smDown>
-          {Productprice(this.props, anchorEl, this.handleClick, this.handleClose, this.handleReadMore, viewMore)}
+          {Productprice(
+            this.props,
+            anchorEl,
+            this.handleClick,
+            this.handleClose,
+            this.handleReadMore,
+            viewMore
+          )}
         </Hidden>
 
         <Hidden mdUp>
           <Container style={{ paddingBottom: "6px" }}>
-            {Productprice(this.props, anchorEl, this.handleClick, this.handleClose, this.handleReadMore, viewMore)}
+            {Productprice(
+              this.props,
+              anchorEl,
+              this.handleClick,
+              this.handleClose,
+              this.handleReadMore,
+              viewMore
+            )}
           </Container>
         </Hidden>
       </div>

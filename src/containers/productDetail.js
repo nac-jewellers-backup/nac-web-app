@@ -1,37 +1,27 @@
-import { Hidden, Grid, Container, Avatar } from "@material-ui/core";
-import React, { Component } from "react";
-import Header from "components/SilverComponents/Header";
-import CustomSeparator from "components/BreadCrumb/index";
+import { Avatar, Container, Grid, Hidden } from "@material-ui/core";
+import { withStyles } from "@material-ui/core/styles";
+import ArrowLeftIcon from "@material-ui/icons/ArrowLeft";
+import ArrowRightIcon from "@material-ui/icons/ArrowRight";
+import Footer from "components/Footer/Footer";
+import PriceBuynow from "components/product-image-slider/buyNow";
+import CustomerReviews from "components/product-image-slider/customer-reviews";
+import PriceCertification from "components/product-image-slider/priceCertification";
+import "components/product-image-slider/product-images.css";
+import ProductDetails from "components/product-image-slider/productDetails";
 import ProductImageZoom from "components/product-image-slider/productImageZoom";
 import ProductPrice from "components/product-image-slider/productPrice";
-import PriceTabs from "components/product-image-slider/priceTabs";
-import PriceBuynow from "components/product-image-slider/buyNow";
-import ProductDetails from "components/product-image-slider/productDetails";
-import PriceCertification from "components/product-image-slider/priceCertification";
-import Request from "components/product-image-slider/request";
 import RatingForm from "components/product-image-slider/ratingform";
-import Sublistcarousel from "components/product-image-slider/subListcarousel";
-import CustomerReviews from "components/product-image-slider/customer-reviews";
-import ConnectionHome from "../containers/connectionHome";
-import Footer from "components/Footer/Footer";
-import Buynowfixed from "components/product-image-slider/buynowfixed";
-import "components/product-image-slider/product-images.css";
-import { withRouter } from "react-router-dom";
-import { withStyles } from "@material-ui/core/styles";
-import productDetails from "mappers/productDetails";
-import Slideshow from "../components/Carousel/carosul";
-import ArrowRightIcon from "@material-ui/icons/ArrowRight";
-import ArrowLeftIcon from "@material-ui/icons/ArrowLeft";
 import { ImgMediaCard } from "components/ProductCard/Card";
-import { PRODUCTDETAILS, conditions } from "queries/productdetail";
-import { useGraphql } from "hooks/GraphqlHook";
+import Header from "components/SilverComponents/Header";
+import { CartContext, GlobalContext } from "context";
 import { ProductDetailContext } from "context/ProductDetailContext";
-import { CDN_URL } from "config";
-import "screens/screens.css";
-import MetaTags from "react-meta-tags";
-import { CartContext } from "context";
-import { GlobalContext } from "context";
+import productDetails from "mappers/productDetails";
+import React, { Component } from "react";
 import ReactPixel from "react-facebook-pixel";
+import MetaTags from "react-meta-tags";
+import { withRouter } from "react-router-dom";
+import "screens/screens.css";
+import Slideshow from "../components/Carousel/carosul";
 const styles = (theme) => ({
   collectionSection: {
     // "& svg":{
@@ -108,7 +98,6 @@ class ProductDetail extends Component {
   render() {
     // alert(JSON.stringify(this.props.data))
     // alert(JSON.stringify(this.props.data))
-    debugger;
 
     console.log(this.props);
     const { classes } = this.props;
@@ -325,7 +314,8 @@ class ProductDetail extends Component {
       { title: "home", url: "/" },
       { title: path[2], url: this.renderUrl() },
       {
-        title: this.props.data && this.props.data[0] && this.props.data[0].title,
+        title:
+          this.props.data && this.props.data[0] && this.props.data[0].title,
       },
     ];
     // alert(JSON.stringify(this.props.wishlistdata))
@@ -395,21 +385,52 @@ class ProductDetail extends Component {
       <div>
         <div>
           <MetaTags>
-            {this.props.data && this.props.data[0] && this.props.data[0].length > 0 ? (
+            {this.props.data &&
+            this.props.data[0] &&
+            this.props.data[0].length > 0 ? (
               <>
                 <title>{this.props.data[0].title}</title>
                 <meta name="description" content={this.props.data[0].dis} />
-                <meta name="keywords" content={this.props.data[0].productsPendants[0].name} />
-                <meta property="og:title" id="fb-title" content={this.props.data[0].title} />
-                <meta property="og:description" content={this.props.data[0].dis} />
+                <meta
+                  name="keywords"
+                  content={this.props.data[0].productsPendants[0].name}
+                />
+                <meta
+                  property="og:title"
+                  id="fb-title"
+                  content={this.props.data[0].title}
+                />
+                <meta
+                  property="og:description"
+                  content={this.props.data[0].dis}
+                />
                 <meta property="og:type" content="product" />
-                <meta property="og:url" id="fb-product-url" content={window.location.href} />
-                <meta property="og:image" id="fb_imageUrl" content={this.props.data[0].fadeImages} />
+                <meta
+                  property="og:url"
+                  id="fb-product-url"
+                  content={window.location.href}
+                />
+                <meta
+                  property="og:image"
+                  id="fb_imageUrl"
+                  content={this.props.data[0].fadeImages}
+                />
                 <meta name="twitter:card" content="summary" />
                 <meta name="twitter:site" content="@StyloriLove" />
-                <meta name="twitter:title" id="twitter-title" content={this.props.data[0].title} />
-                <meta name="twitter:description" content={this.props.data[0].dis} />
-                <meta name="twitter:image" id="twitter_imageUrl" content={this.props.data[0].fadeImages} />
+                <meta
+                  name="twitter:title"
+                  id="twitter-title"
+                  content={this.props.data[0].title}
+                />
+                <meta
+                  name="twitter:description"
+                  content={this.props.data[0].dis}
+                />
+                <meta
+                  name="twitter:image"
+                  id="twitter_imageUrl"
+                  content={this.props.data[0].fadeImages}
+                />
               </>
             ) : (
               ""
@@ -438,7 +459,12 @@ class ProductDetail extends Component {
 
           <Grid
             className="pricing-imgzom-media"
-            style={{ maxWidth: "1600px", margin: "auto", display: "flex", justifyContent: "center" }}
+            style={{
+              maxWidth: "1600px",
+              margin: "auto",
+              display: "flex",
+              justifyContent: "center",
+            }}
           >
             <Grid xs={11} container spacing={12} style={{ marginTop: 70 }}>
               <Grid item xs={6}>
@@ -446,7 +472,10 @@ class ProductDetail extends Component {
               </Grid>
               <Grid item xs={6}>
                 <div className={classes.priceNowOverallBox}>
-                  <ProductPrice data={this.props.data} wishlist={this.props.wishlistdata} />
+                  <ProductPrice
+                    data={this.props.data}
+                    wishlist={this.props.wishlistdata}
+                  />
                 </div>
                 {/* <div className="overall-box priceecontainer"> 
                   <PriceTabs data={this.props.data} />
@@ -472,7 +501,10 @@ class ProductDetail extends Component {
                     <span>
                       {" "}
                       &nbsp;{this?.props?.data[0]?.skuId ?? " "} &nbsp; &nbsp;{" "}
-                      <span style={{ fontSize: "10px", fontStyle: "normal " }}>|</span> &nbsp; &nbsp;
+                      <span style={{ fontSize: "10px", fontStyle: "normal " }}>
+                        |
+                      </span>{" "}
+                      &nbsp; &nbsp;
                     </span>
                     <span
                       style={{
@@ -482,30 +514,49 @@ class ProductDetail extends Component {
                         marginBottom: 8,
                       }}
                     >
-                      Product Information: <span className={classes.spanIcon}>i</span>
+                      Product Information:{" "}
+                      <span className={classes.spanIcon}>i</span>
                     </span>
                   </Grid>
                 </Grid>
-                <Grid container item xs={12} className={classes.productInformationGrid}>
+                <Grid
+                  container
+                  item
+                  xs={12}
+                  className={classes.productInformationGrid}
+                >
                   {this.props &&
                     this.props.data &&
                     this.props.data.length > 0 &&
                     this.props.data[0] &&
                     this.props.data[0].productsDetails.length > 0 &&
                     this.props.data[0].productsDetails[0] &&
-                    this.props.data[0].productsDetails[0].namedetail.length > 0 &&
+                    this.props.data[0].productsDetails[0].namedetail.length >
+                      0 &&
                     this.props.data[0].productsDetails[0].namedetail[2] &&
-                    this.props.data[0].productsDetails[0].namedetail[2].details && (
+                    this.props.data[0].productsDetails[0].namedetail[2]
+                      .details && (
                       <Grid container item xs={4} style={{ paddingTop: "8px" }}>
                         <Grid container item xs={2}>
                           <Avatar alt="NAC">N</Avatar>
                         </Grid>
-                        <Grid container item xs={10} style={{ fontSize: 12, color: "gray", paddingLeft: 15, margin: "auto" }}>
+                        <Grid
+                          container
+                          item
+                          xs={10}
+                          style={{
+                            fontSize: 12,
+                            color: "gray",
+                            paddingLeft: 15,
+                            margin: "auto",
+                          }}
+                        >
                           <Grid itex xs={12}>
                             Metal Weight
                           </Grid>
                           <Grid itex xs={12}>
-                            {this.props.data[0].productsDetails[0].namedetail[2].details ?? ""}
+                            {this.props.data[0].productsDetails[0].namedetail[2]
+                              .details ?? ""}
                           </Grid>
                         </Grid>
                       </Grid>
@@ -516,19 +567,32 @@ class ProductDetail extends Component {
                     this.props.data[0] &&
                     this.props.data[0].productsDetails.length > 0 &&
                     this.props.data[0].productsDetails[0] &&
-                    this.props.data[0].productsDetails[0].namedetail.length > 0 &&
+                    this.props.data[0].productsDetails[0].namedetail.length >
+                      0 &&
                     this.props.data[0].productsDetails[0].namedetail[1] &&
-                    this.props.data[0].productsDetails[0].namedetail[1].details && (
+                    this.props.data[0].productsDetails[0].namedetail[1]
+                      .details && (
                       <Grid container item xs={4} style={{ paddingTop: "8px" }}>
                         <Grid container item xs={2}>
                           <Avatar alt="NAC">N</Avatar>
                         </Grid>
-                        <Grid container item xs={10} style={{ fontSize: 12, color: "gray", paddingLeft: 15, margin: "auto" }}>
+                        <Grid
+                          container
+                          item
+                          xs={10}
+                          style={{
+                            fontSize: 12,
+                            color: "gray",
+                            paddingLeft: 15,
+                            margin: "auto",
+                          }}
+                        >
                           <Grid itex xs={12}>
                             Metal Purity
                           </Grid>
                           <Grid itex xs={12}>
-                            {this.props.data[0].productsDetails[0].namedetail[1].details ?? ""}
+                            {this.props.data[0].productsDetails[0].namedetail[1]
+                              .details ?? ""}
                             {/* 22K Yellow Gold */}
                           </Grid>
                         </Grid>
@@ -540,14 +604,26 @@ class ProductDetail extends Component {
                     this.props.data[0] &&
                     this.props.data[0].productsDetails.length > 0 &&
                     this.props.data[0].productsDetails[1] &&
-                    this.props.data[0].productsDetails[1].namedetail.length > 0 &&
+                    this.props.data[0].productsDetails[1].namedetail.length >
+                      0 &&
                     this.props.data[0].productsDetails[1].namedetail[3] &&
-                    this.props.data[0].productsDetails[1].namedetail[3].details && (
+                    this.props.data[0].productsDetails[1].namedetail[3]
+                      .details && (
                       <Grid container item xs={4} style={{ paddingTop: "8px" }}>
                         <Grid container item xs={2}>
                           <Avatar alt="NAC">N</Avatar>
                         </Grid>
-                        <Grid container item xs={10} style={{ fontSize: 12, color: "gray", paddingLeft: 15, margin: "auto" }}>
+                        <Grid
+                          container
+                          item
+                          xs={10}
+                          style={{
+                            fontSize: 12,
+                            color: "gray",
+                            paddingLeft: 15,
+                            margin: "auto",
+                          }}
+                        >
                           <Grid itex xs={12}>
                             Diamond Weight
                           </Grid>
@@ -558,10 +634,14 @@ class ProductDetail extends Component {
                             this.props.data[0] &&
                             this.props.data[0].productsDetails.length > 0 &&
                             this.props.data[0].productsDetails[1] &&
-                            this.props.data[0].productsDetails[1].namedetail.length > 0 &&
-                            this.props.data[0].productsDetails[1].namedetail[3] &&
-                            this.props.data[0].productsDetails[1].namedetail[3].details
-                              ? this.props.data[0].productsDetails[1].namedetail[3].details
+                            this.props.data[0].productsDetails[1].namedetail
+                              .length > 0 &&
+                            this.props.data[0].productsDetails[1]
+                              .namedetail[3] &&
+                            this.props.data[0].productsDetails[1].namedetail[3]
+                              .details
+                              ? this.props.data[0].productsDetails[1]
+                                  .namedetail[3].details
                               : ""}
                             {/* {this.props.data[0].productsDetails[1].namedetail[3].details != undefined &&
                             this.props.data[0].productsDetails[1].namedetail[3].details != null
@@ -574,7 +654,15 @@ class ProductDetail extends Component {
                     )}
                 </Grid>
                 <div>
-                  <p style={{ color: "gray", paddingBottom: "8px", borderBottom: "1px solid gray" }}>CERTIFICATES</p>
+                  <p
+                    style={{
+                      color: "gray",
+                      paddingBottom: "8px",
+                      borderBottom: "1px solid gray",
+                    }}
+                  >
+                    CERTIFICATES
+                  </p>
                 </div>
               </Grid>
             </Grid>
@@ -611,7 +699,13 @@ class ProductDetail extends Component {
                       dataCarousel={dataCarouselcollections}
                     >
                       {this.props?.data[0]?.fadeImageSublist.map((val) => {
-                        return <ImgMediaCard data={val} cardSize="auto" hoverText={true} />;
+                        return (
+                          <ImgMediaCard
+                            data={val}
+                            cardSize="auto"
+                            hoverText={true}
+                          />
+                        );
                       })}
                     </Slideshow>
                   </div>
@@ -673,7 +767,11 @@ class ProductDetail extends Component {
               marginTop: "24px",
             }}
           >
-            <RatingForm data={this.props.data} clear_rating={this.state.clear} clear_rating_onchange={clear_rating} />
+            <RatingForm
+              data={this.props.data}
+              clear_rating={this.state.clear}
+              clear_rating_onchange={clear_rating}
+            />
           </div>
           <Grid
             container
@@ -706,9 +804,17 @@ class ProductDetail extends Component {
                       class="subslider-carousel"
                       dataCarousel={dataCarouselcollections}
                     >
-                      {this.props?.data[0]?.fadeImageSublistRecentlyViewed?.map((val) => {
-                        return <ImgMediaCard data={val} cardSize="auto" hoverText={true} />;
-                      })}
+                      {this.props?.data[0]?.fadeImageSublistRecentlyViewed?.map(
+                        (val) => {
+                          return (
+                            <ImgMediaCard
+                              data={val}
+                              cardSize="auto"
+                              hoverText={true}
+                            />
+                          );
+                        }
+                      )}
                     </Slideshow>
                   </div>
                 </Hidden>
@@ -727,10 +833,16 @@ class ProductDetail extends Component {
           {/* </Grid> */}
 
           <Grid item xs={12}>
-            <PriceBuynow data={this.props.data} wishlist={this.props.wishlistdata} />
+            <PriceBuynow
+              data={this.props.data}
+              wishlist={this.props.wishlistdata}
+            />
           </Grid>
           <Grid item xs={12}>
-            <ProductDetails data={this.props.data} wishlist={this.props.wishlistdata} />
+            <ProductDetails
+              data={this.props.data}
+              wishlist={this.props.wishlistdata}
+            />
           </Grid>
           {/* <Grid
             container
@@ -748,7 +860,11 @@ class ProductDetail extends Component {
 
           <Grid item xs={12} className={classes.similarProducts}>
             <Container style={{ padding: "0px 26px" }}>
-              <div style={{ fontWeight: "bold", color: "#20205a", marginLeft: 15 }}>SIMILAR PRODUCTS</div>
+              <div
+                style={{ fontWeight: "bold", color: "#20205a", marginLeft: 15 }}
+              >
+                SIMILAR PRODUCTS
+              </div>
               <div style={{ width: "100%" }}>
                 <Slideshow
                   // sliderRef={this.slider}
@@ -756,7 +872,13 @@ class ProductDetail extends Component {
                   dataCarousel={dataCarouselcollectionsSm}
                 >
                   {this.props?.data[0]?.fadeImageSublist?.map((val) => {
-                    return <ImgMediaCard data={val} cardSize="auto" hoverText={true} />;
+                    return (
+                      <ImgMediaCard
+                        data={val}
+                        cardSize="auto"
+                        hoverText={true}
+                      />
+                    );
                   })}
                 </Slideshow>
               </div>
@@ -765,7 +887,11 @@ class ProductDetail extends Component {
 
           <Grid item xs={12}>
             <Container>
-              <RatingForm data={this.props.data} clear_rating={this.state.clear} clear_rating_onchange={clear_rating} />
+              <RatingForm
+                data={this.props.data}
+                clear_rating={this.state.clear}
+                clear_rating_onchange={clear_rating}
+              />
             </Container>
           </Grid>
           <Grid item xs={12}>
@@ -792,7 +918,13 @@ const Components = (props) => {
   let mapped = datas;
 
   if (!loading && !error) {
-    mapped = productDetails(datas, likedatas, viewedddatas, rating, Globalctx.tabsChange);
+    mapped = productDetails(
+      datas,
+      likedatas,
+      viewedddatas,
+      rating,
+      Globalctx.tabsChange
+    );
   }
   if (Object.keys(mapped).length === 0)
     return (

@@ -28,7 +28,8 @@ body {
 }
 
 .containbev {
-  box-shadow: 0px 2px 4px 4px rgba(0, 0, 0, 0.1), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 2px 4px 4px rgba(0, 0, 0, 0.1),
+    0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
   padding: 0px 0px 5px 0px;
   margin: 0px 0px 10px 0px;
 }
@@ -728,7 +729,9 @@ body {
 .MuiExpansionPanelSummary-root.Mui-expanded,
 .MuiExpansionPanelSummary-root,
 .MuiExpansionPanel-root:before,
-.MuiExpansionPanel-root.Mui-expanded .MuiExpansionPanel-rounded:last-child .MuiExpansionPanel-rounded:first-child {
+.MuiExpansionPanel-root.Mui-expanded
+  .MuiExpansionPanel-rounded:last-child
+  .MuiExpansionPanel-rounded:first-child {
   padding: 0 !important;
   border-bottom-left-radius: 0px !important;
   border-bottom-right-radius: 0px !important;
@@ -1235,7 +1238,13 @@ body {
   animation-timing-function: linear;
   background: #f6f7f8;
 
-  background-image: -webkit-linear-gradient(left, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+  background-image: -webkit-linear-gradient(
+    left,
+    #f6f7f8 0%,
+    #edeef1 20%,
+    #f6f7f8 40%,
+    #f6f7f8 100%
+  );
   background-size: 980px 898px;
   /* height: 898px; */
   position: relative;
@@ -1306,7 +1315,8 @@ body {
   height: 45px;
   border-radius: 100%;
   background: #fff;
-  box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.8), 0px 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.8),
+    0px 1px 3px rgba(0, 0, 0, 0.1);
   font-size: 13px;
   text-decoration: none;
   color: #394578 !important;
@@ -1458,7 +1468,8 @@ body {
 }
 
 .priceecontainer {
-  box-shadow: 0px 2px 4px 4px rgba(0, 0, 0, 0.1), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 2px 4px 4px rgba(0, 0, 0, 0.1),
+    0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
 }
 
 /* @media screen and (max-width:1220px),
@@ -1602,7 +1613,8 @@ body {
 }
 
 .resp {
-  box-shadow: 0px 2px 4px 4px rgba(0, 0, 0, 0.1), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12) !important;
+  box-shadow: 0px 2px 4px 4px rgba(0, 0, 0, 0.1),
+    0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12) !important;
   width: 100% !important;
   height: auto !important;
   margin-bottom: 10px;
@@ -1695,7 +1707,8 @@ body {
   counter-increment: inherit;
   float: left !important;
   cursor: pointer !important;
-  box-shadow: 0px 2px 4px 4px rgba(0, 0, 0, 0.1), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12) !important;
+  box-shadow: 0px 2px 4px 4px rgba(0, 0, 0, 0.1),
+    0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12) !important;
 }
 
 /* @media screen and (min-width: 959px) {
