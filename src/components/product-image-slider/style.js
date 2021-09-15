@@ -1,5 +1,3 @@
-import { Autorenew } from "@material-ui/icons";
-
 const styles = (theme) => ({
   searchCheck: {
     // paddingRight: "12px",
@@ -9,6 +7,12 @@ const styles = (theme) => ({
       marginTop: "12px",
       paddingRight: "16px",
       paddingLeft: "16px",
+    },
+  },
+  cardimg: {
+    [theme.breakpoints.up("xs")]: {
+      maxHeight: "10%",
+      overflow: "none",
     },
   },
 
@@ -223,7 +227,8 @@ const styles = (theme) => ({
     background: theme.palette.secondary.main,
   },
   shadow: {
-    boxShadow: "0px 2px 4px 4px rgba(0, 0, 0, 0.1), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12)",
+    boxShadow:
+      "0px 2px 4px 4px rgba(0, 0, 0, 0.1), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12)",
   },
   expansionHere: {
     borderBottomLeftRadius: "unset !important",

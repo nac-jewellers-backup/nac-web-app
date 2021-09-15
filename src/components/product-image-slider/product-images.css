@@ -920,6 +920,8 @@ body {
   border: 1px solid #ccc;
   margin-bottom: 15px !important;
   width: 88% !important;
+  height: 150px;
+  overflow: hidden;
   /* height: 80px !important; */
   outline: none !important;
   cursor: pointer;

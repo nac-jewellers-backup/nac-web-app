@@ -44,17 +44,15 @@ const mobilecarousel = (props, val, wishlist) => {
   };
 
   return (
-    <div style={{ width: "100%" }}>
-      <Slideshow
-        zindex="1000"
-        class="middle"
-        className="responseve-carousel testingcur"
-        imgClass="responseve-carousel-img"
-        fadeImages={data[0]?.fadeImages?.arrOfurls}
-        dataCarousel={dataCarousel}
-        videoControls={true}
-      />
-    </div>
+    <Slideshow
+      zindex="1000"
+      class="middle"
+      className="responseve-carousel testingcur"
+      imgClass="responseve-carousel-img"
+      fadeImages={data[0]?.fadeImages?.arrOfurls}
+      dataCarousel={dataCarousel}
+      videoControls={true}
+    />
   );
 };
 
@@ -78,7 +76,18 @@ const Productprice = (
         <>
           <Grid container spacing={12} sm={12} className={classes.pricedetails}>
             <Hidden mdUp>
-              <div className="resp">{mobilecarousel(props, val, wishlist)}</div>
+              <div
+                style={{
+                  width: "100%",
+                  marginBottom: "10px",
+                  marginTop: "18px",
+                  overflow: "hidden",
+                }}
+                className={classes.cardimg}
+              >
+                {mobilecarousel(props, val, wishlist)}
+              </div>
+              <br />
             </Hidden>
             <Paper
               elevation={0}
