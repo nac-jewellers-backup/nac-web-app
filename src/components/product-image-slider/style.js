@@ -9,12 +9,6 @@ const styles = (theme) => ({
       paddingLeft: "16px",
     },
   },
-  cardimg: {
-    [theme.breakpoints.up("xs")]: {
-      maxHeight: "10%",
-      overflow: "none",
-    },
-  },
 
   title: {
     marginTop: "0 !important",

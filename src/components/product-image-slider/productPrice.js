@@ -79,11 +79,10 @@ const Productprice = (
               <div
                 style={{
                   width: "100%",
+                  height: "auto",
                   marginBottom: "10px",
                   marginTop: "18px",
-                  overflow: "hidden",
                 }}
-                className={classes.cardimg}
               >
                 {mobilecarousel(props, val, wishlist)}
               </div>
