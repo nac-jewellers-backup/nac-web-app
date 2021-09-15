@@ -1,9 +1,12 @@
 import { Grid, Typography } from "@material-ui/core";
+import Avatar from "@material-ui/core/Avatar";
 import { makeStyles } from "@material-ui/core/styles";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Slideshow from "../Carousel/carosul";
 import "./index.css";
-
+import { API_URL } from "./../../config";
+import { ALLREVIEWS } from "../../queries/home";
+import Rating from "@material-ui/lab/Rating";
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
@@ -80,14 +83,12 @@ const useStyles = makeStyles((theme) => ({
 
   containerRoot: {
     width: "100%",
-    backgroundImage:
-      "url(https://alpha-assets.stylori.com/images/static/home/box_bg.png)",
+    backgroundImage: "url(https://alpha-assets.stylori.com/images/static/home/box_bg.png)",
     // boxShadow: "0 0 5px #888 !important",
     border: "1px solid #8080804d",
   },
   imgleft: {
-    backgroundImage:
-      "url(https://alpha-assets.stylori.com/images/static/slider_icon.png) !important",
+    backgroundImage: "url(https://alpha-assets.stylori.com/images/static/slider_icon.png) !important",
     backgroundPosition: "-27px -229px !important",
     width: "35px !important",
     height: "44px !important",
@@ -97,8 +98,7 @@ const useStyles = makeStyles((theme) => ({
     borderLeft: " 0px",
   },
   imgRight: {
-    backgroundImage:
-      "url(https://alpha-assets.stylori.com/images/static/slider_icon.png) !important",
+    backgroundImage: "url(https://alpha-assets.stylori.com/images/static/slider_icon.png) !important",
     backgroundPosition: "-160px -229px !important",
     width: "35px !important",
     height: " 44px !important",
@@ -118,8 +118,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundPosition: "-16px -21px !important",
     width: "15px!important",
     height: "20px!important",
-    backgroundImage:
-      "url(https://alpha-assets.stylori.com/images/static/home/slider_button.png) !important",
+    backgroundImage: "url(https://alpha-assets.stylori.com/images/static/home/slider_button.png) !important",
     borderLeft: "1px solid #ccc",
     marginLeft: "-8px!important",
     verticalAlign: "text-top",
@@ -129,8 +128,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundPosition: "-65px -21px !important",
     width: "15px !important",
     height: "20px !important",
-    backgroundImage:
-      "url(https://alpha-assets.stylori.com/images/static/home/slider_button.png) !important",
+    backgroundImage: "url(https://alpha-assets.stylori.com/images/static/home/slider_button.png) !important",
     borderRight: "1px solid #ccc",
     marginRight: "-8px !important",
     float: "right",
@@ -168,17 +166,17 @@ const useStyles = makeStyles((theme) => ({
     marginTop: "10px",
   },
   imgcoin: {
-    // boxShadow: " 0 0 5px #888 !important",
-    // float: "left",
+    display: "flex !important",
+    alignItems: "center",
+    alignContent: "center",
+    margin: "auto",
     padding: "5px",
     marginTop: "15px",
     marginBottom: "15px",
-    verticalAlign: "middle",
-    // width: "calc(100% - 20px) !important",
-    marginLeft: "4px",
-    height: "140px !important",
-    width: "140px !important",
-    borderRadius: "50%",
+
+    fontSize: "40px",
+    height: "70px !important",
+    width: "70px !important",
   },
   imgcoinsm: {
     verticalAlign: "middle",
@@ -199,8 +197,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   exclIcon: {
-    backgroundImage:
-      "url(https://alpha-assets.stylori.com/images/static/home/Testimonial_icons.png)",
+    backgroundImage: "url(https://alpha-assets.stylori.com/images/static/home/Testimonial_icons.png)",
     backgroundPosition: "-24px -45px",
     width: "38px",
     height: "37px",
@@ -225,7 +222,7 @@ const useStyles = makeStyles((theme) => ({
     color: "#666666",
     fontSize: "13px",
     lineHeight: "30px",
-    marginTop: "25px",
+    marginTop: "10px",
     maxHeight: "140px ",
     overflow: "hidden",
     textAlign: "center",
@@ -240,8 +237,7 @@ const useStyles = makeStyles((theme) => ({
     color: "#394578",
   },
   excliconright: {
-    backgroundImage:
-      "url(https://alpha-assets.stylori.com/images/static/home/Testimonial_icons.png)",
+    backgroundImage: "url(https://alpha-assets.stylori.com/images/static/home/Testimonial_icons.png)",
     backgroundPosition: "-82px -45px",
     width: "38px",
     height: "37px",
@@ -267,8 +263,7 @@ const useStyles = makeStyles((theme) => ({
     float: "left",
     marginTop: "15px",
     marginLeft: "0px",
-    backgroundImage:
-      "url(https://alpha-assets.stylori.com/images/static/home/sprites-imgs.png)",
+    backgroundImage: "url(https://alpha-assets.stylori.com/images/static/home/sprites-imgs.png)",
     [theme.breakpoints.between("xs", "md")]: {
       marginTop: "0px",
     },
@@ -281,8 +276,7 @@ const useStyles = makeStyles((theme) => ({
     float: "right",
     marginTop: "10px",
     marginLeft: "15px",
-    backgroundImage:
-      "url(https://alpha-assets.stylori.com/images/static/home/sprites-imgs.png)",
+    backgroundImage: "url(https://alpha-assets.stylori.com/images/static/home/sprites-imgs.png)",
   },
   textInnersm: {
     color: "#666666",
@@ -296,12 +290,30 @@ const useStyles = makeStyles((theme) => ({
 export default function ImageGridList(props) {
   const classes = useStyles();
   const slider = React.createRef();
+  const [reviews, setReviews] = useState([]);
+  useEffect(() => {
+    fetch(`${API_URL}/graphql`, {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        query: ALLREVIEWS,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        let customerReviews = data.data.allCustomerReviews.nodes;
+        setReviews(customerReviews);
+      });
+  }, []);
   const next = () => {
     slider.current.slickNext();
   };
   const previous = () => {
     slider.current.slickPrev();
   };
+
   return (
     <Grid container className={classes.root}>
       {/* <Hidden smDown> */}
@@ -311,7 +323,7 @@ export default function ImageGridList(props) {
             <Grid container>
               <Grid item xs={12} alignItems="center">
                 <Slideshow dataCarousel={props.dataCarousel} sliderRef={slider}>
-                  {props.carosolData.map((val, index) => (
+                  {reviews.map((val, index) => (
                     <>
                       <Grid container>
                         <Grid
@@ -337,36 +349,31 @@ export default function ImageGridList(props) {
                             }}
                           >
                             <Slideshow>
-                              <img className={classes.imgcoin} src={val.img} />
+                              {/* <img className={classes.imgcoin} src={val.img} /> */}
+                              <Avatar className={classes.imgcoin}>{val?.customerName?.charAt(0).toUpperCase() ?? "S"}</Avatar>
                             </Slideshow>
                           </Grid>
                         </Grid>
                         {/* <span className={classes.exclIcon}></span> */}
                         <Grid container item xs={12} justify={"center"}>
-                          <Typography>{val.heading}</Typography>
+                          <Typography>{val.customerName ?? "Samir"}</Typography>
+                          <br />
+                          <br />
                         </Grid>
-                        <Grid
-                          item
-                          md={12}
-                          lg={12}
-                          sm={12}
-                          xs={12}
-                          className={classes.testimonialInner}
-                        >
-                          <div style={{ padding: 10 }}>
-                            <Typography className={classes.textInner}>
-                              {val.para}
-                            </Typography>
+
+                        <Rating
+                          name="read-only"
+                          value={val.rating}
+                          readOnly
+                          style={{ display: "flex", justifyContent: "center", margin: "auto" }}
+                        />
+                        <Grid item md={12} lg={12} sm={12} xs={12} className={classes.testimonialInner}>
+                          <div>
+                            <Typography className={classes.textInner}>{val.message}</Typography>
                           </div>
                         </Grid>
-                        <Grid
-                          container
-                          item
-                          xs={12}
-                          justify={"center"}
-                          style={{ padding: "20px 0px" }}
-                        >
-                          <Typography>{val.heading}</Typography>
+                        <Grid container item xs={12} justify={"center"} style={{ padding: "8px 0px 10px 0px" }}>
+                          <Typography>{val.title ?? "Testing Title"}</Typography>
                         </Grid>
                       </Grid>
                     </>
@@ -377,53 +384,6 @@ export default function ImageGridList(props) {
           </Grid>
         </Grid>
       </Grid>
-      {/* </Hidden> */}
-      {/* <Hidden mdUp>
-        <Grid item className={classes.containerRoot}>
-          <Grid container className={classes.container}>
-            <Grid
-              item
-              md={12}
-              lg={12}
-              sm={12}
-              xs={12}
-              style={{ marginBottom: "15px", height: "350px" }}
-            >
-              <Grid container>
-                <Grid item xs={12}>
-                  <Slideshow
-                    dataCarousel={props.dataCarousel}
-                    sliderRef={slider}
-                  >
-                    {props.carosolData.map((val, index) => (
-                      <>
-                        <Grid container>
-                          <span className={classes.spanimage}></span>
-                          <Grid item md={12} lg={12} sm={12} xs={12}>
-                            <Typography className={classes.textInnersm}>
-                              {val.para}
-                            </Typography>
-                            <Grid>
-                              <Typography className={classes.name}>
-                                {val.heading}
-                              </Typography>
-                              <Typography className={classes.namecountry}>
-                                {val.country}
-                              </Typography>
-                              <span className={classes.spanimage2}></span>
-                            </Grid>
-                          </Grid>
-                        </Grid>
-                      </>
-                    ))}
-                  </Slideshow>
-                </Grid>
-              </Grid>
-            </Grid>
-          </Grid>
-        </Grid>
-      </Hidden>
-    */}
     </Grid>
   );
 }

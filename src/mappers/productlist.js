@@ -34,61 +34,9 @@ var screen_width_type = () => {
 
   // var sizes = [275, 300, 350, 375, 400, 500, 600, 675, 700, 775, 800, 900, 975, 1000, 1100, 2400]
   var sizes = [
-    60,
-    70,
-    80,
-    90,
-    100,
-    125,
-    150,
-    175,
-    200,
-    225,
-    250,
-    275,
-    300,
-    325,
-    350,
-    375,
-    400,
-    425,
-    450,
-    475,
-    500,
-    525,
-    550,
-    575,
-    600,
-    625,
-    650,
-    675,
-    700,
-    725,
-    750,
-    775,
-    800,
-    825,
-    850,
-    875,
-    900,
-    925,
-    950,
-    975,
-    1000,
-    1100,
-    1200,
-    1300,
-    1400,
-    1500,
-    1600,
-    1700,
-    1800,
-    1900,
-    2000,
-    2100,
-    2200,
-    2300,
-    2400,
+    60, 70, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 425, 450, 475, 500, 525, 550, 575, 600, 625,
+    650, 675, 700, 725, 750, 775, 800, 825, 850, 875, 900, 925, 950, 975, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800,
+    1900, 2000, 2100, 2200, 2300, 2400,
   ];
   // [50,60,70,80,90,100,125,150,175,200,225,250,275,300,325,350,375,400,425,450,475,500,525,550,575,600,625,650,675,700,725,750,775,800,825,850,875,900,925,950,975,1000,1100,1200,1300,1400,1500,1600,1700,1800,1900,2000,2100,2200,2300,2400]
   for (var i = 0; i <= sizes.length; i++) {
@@ -142,7 +90,11 @@ const injectUrl = (url, baseUi) => {
     url_construct = url_split.join().replace(/\,/g, "/");
   }
 
-  var img_url = { img: `${url.imageUrl}` ?? `${baseUi}${url_construct}` };
+  var img_url = {
+    img: url?.imageUrl?.length > 0 ? url?.imageUrl : "https://styloriimages.s3.ap-south-1.amazonaws.com/Banners/Stylori+Silver/StyloriSilver+nemonic.png",
+  };
+  console.log(img_url);
+  debugger;
   return img_url;
 };
 // const valuesinjectUrl = (imageUrl, cdnUrl) => injectUrl(imageUrl, cdnUrl);in
@@ -153,41 +105,44 @@ export default function (data, cdnUrl) {
   let mapperdata = [];
   try {
     mapperdata = data.data.allProductLists;
-   
   } catch (error) {
     mapperdata = [];
   }
   const _format = mapperdata.map((k) => {
-    let _d;
+    let _d = {};
     try {
+      debugger;
       _d = {
-        totalCount: data.data.totalCount,
-        price: k.trans_sku_lists[0].sellingPrice ?? "1333",
-        offerPrice:  k.trans_sku_lists[0].sellingPrice ?? "1333",
+        totalCount: data.data.totalCount ?? " ",
+        price: k.trans_sku_lists[0].sellingPrice ?? " ",
+        offerPrice: k.trans_sku_lists[0].sellingPrice ?? " ",
         title: k.productName,
-        save: k.trans_sku_lists[0].discountPrice ?? "2000",
+        save: k.trans_sku_lists[0].discountPrice ?? " ",
         image: {
-          placeImage: injectUrl(placeImages(k.productImagesByProductId), cdnUrl),
-          hoverImage: injectUrl(hoverImage(k.productImagesByProductId), cdnUrl),
+          placeImage: injectUrl(placeImages(k.productImagesByProductId), cdnUrl) ?? {
+            img: "https://styloriimages.s3.ap-south-1.amazonaws.com/Banners/Stylori+Silver/StyloriSilver+nemonic.png",
+          },
+          hoverImage: injectUrl(hoverImage(k.productImagesByProductId), cdnUrl) ?? {
+            img: "https://styloriimages.s3.ap-south-1.amazonaws.com/Banners/Stylori+Silver/StyloriSilver+nemonic.png",
+          },
         },
-        productId: k.productId,
+        productId: k.productId ?? " ",
 
-        diamondType: k.trans_sku_lists[0] === undefined ? "" : k.trans_sku_lists[0].diamondType,
-        metalColor: k.trans_sku_lists[0] === undefined ? "" : k.trans_sku_lists[0].metalColor,
-        purity: k.trans_sku_lists[0] === undefined ? "" : k.trans_sku_lists[0].purity,
-        skuSize: k.trans_sku_lists[0] === undefined ? "" : k.trans_sku_lists[0].skuSize,
+        diamondType: k.trans_sku_lists[0].diamondType ?? " ",
+        // metalColor: k.trans_sku_lists[0].metalColor ?? " ",
+        purity: k.trans_sku_lists[0].purity ?? " ",
+        skuSize: k.trans_sku_lists[0].skuSize ?? " ",
         // material:k.productMaterialsByProductSku[0] === undefined ? '' : k.productMaterialsByProductSku[0].materialName,
-        productType: k.productType,
-        skuId: k.trans_sku_lists[0].generatedSku,
-        oneDayShipping: k.trans_sku_lists[0].isReadyToShip,
+        productType: k.productType ?? " ",
+        skuId: k.trans_sku_lists[0].generatedSku ?? " ",
+        oneDayShipping: k.trans_sku_lists[0].isReadyToShip ?? " ",
         imageResolution: { img_res: img_res, url_1000x1000: url_construct_1000x1000 },
-        skuUrl: k.trans_sku_lists[0].skuUrl,
-        skuID: k.trans_sku_lists[0].skuID,
-        discount: k.trans_sku_lists[0].discount,
+        skuUrl: k.trans_sku_lists[0].skuUrl ?? " ",
+        skuID: k.trans_sku_lists[0].skuID ?? " ",
+        discount: k.trans_sku_lists[0].discount ?? " ",
       };
     } catch (error) {}
-
-    
+    debugger;
     return _d;
   });
   // console.info('_format', _format);
