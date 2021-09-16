@@ -341,6 +341,7 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
   try {
     // mapperda = ;
     mapperdata = data.data.allTransSkuLists.nodes;
+    
   } catch (error) {
     mapperdata = [];
   }
