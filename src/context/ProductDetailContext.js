@@ -6,7 +6,17 @@ import { withRouter } from "react-router-dom";
 // const { setValues } = useRegister();
 const initialCtx = {
   ProductDetailCtx: {
-    filters: { productId: "", defaultVariants: { diamondType: "", metalColor: "", purity: "", skuSize: "" }, skuId: "" },
+    filters: {
+      productId: "",
+      defaultVariants: {
+        diamondType: "",
+        metalColor: "",
+        purity: "",
+        skuSize: "",
+      },
+      skuId: "",
+      quantity: {},
+    },
     loading: false,
     error: false,
     data: [],

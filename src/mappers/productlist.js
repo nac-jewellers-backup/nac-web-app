@@ -93,8 +93,8 @@ const injectUrl = (url, baseUi) => {
   var img_url = {
     img: url?.imageUrl?.length > 0 ? url?.imageUrl : "https://styloriimages.s3.ap-south-1.amazonaws.com/Banners/Stylori+Silver/StyloriSilver+nemonic.png",
   };
-  console.log(img_url);
-  debugger;
+ 
+
   return img_url;
 };
 // const valuesinjectUrl = (imageUrl, cdnUrl) => injectUrl(imageUrl, cdnUrl);in
@@ -111,13 +111,13 @@ export default function (data, cdnUrl) {
   const _format = mapperdata.map((k) => {
     let _d = {};
     try {
-      debugger;
+   
       _d = {
         totalCount: data.data.totalCount ?? " ",
-        price: k.trans_sku_lists[0].sellingPrice ?? " ",
-        offerPrice: k.trans_sku_lists[0].sellingPrice ?? " ",
+        price: k.trans_sku_lists[0].markupPrice ?? " ",
+        offerPrice: k.trans_sku_lists[0].discountPrice ?? " ",
         title: k.productName,
-        save: k.trans_sku_lists[0].discountPrice ?? " ",
+        save: k.trans_sku_lists[0].discount ?? " ",
         image: {
           placeImage: injectUrl(placeImages(k.productImagesByProductId), cdnUrl) ?? {
             img: "https://styloriimages.s3.ap-south-1.amazonaws.com/Banners/Stylori+Silver/StyloriSilver+nemonic.png",
@@ -142,7 +142,7 @@ export default function (data, cdnUrl) {
         discount: k.trans_sku_lists[0].discount ?? " ",
       };
     } catch (error) {}
-    debugger;
+ 
     return _d;
   });
   // console.info('_format', _format);

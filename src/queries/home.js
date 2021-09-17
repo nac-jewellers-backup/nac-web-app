@@ -56,37 +56,39 @@ export const ALLBANNERSCOMPLETE = `
   `;
 
 export const ALLFEATUREDPRODUCT = `
-  query MyQuery {
-    allFeaturedProducts(condition: {isActive: true}) {
-      nodes {
+query MyQuery {
+  allFeaturedProducts(condition: {isActive: true}) {
+    nodes {
+      productId
+      productListByProductId {
+        productName
         productId
-        productListByProductId {
-          productName
-          productId
-          productImagesByProductId(condition: {ishover: true}) {
-            nodes {
-              imageUrl
-            }
-          }
-          transSkuListsByProductId {
-            nodes {
-              costPrice
-              markupPrice
-           skuId
-              skuUrl
-              transSkuDescriptionsBySkuId {
-                nodes {
-                  skuDescription
-                }
-              }
-              sellingPrice
-            }
+        productImagesByProductId(condition: {ishover: true}) {
+          nodes {
+            imageUrl
           }
         }
-        isActive
+        transSkuListsByProductId {
+          nodes {
+            
+            markupPrice
+            discountPrice
+            discount
+         skuId
+            skuUrl
+            transSkuDescriptionsBySkuId {
+              nodes {
+                skuDescription
+              }
+            }
+           
+          }
+        }
       }
+      isActive
     }
   }
+}
   `;
 export const ALLREVIEWS = `
 query MyQuery {

@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
-import { useNetworkRequest } from "hooks/index";
+import React from "react";
 
-import { API_URL, HOME_PAGE_URL, CDN_URL } from "../../config";
-import { CART, FetchSku, FetchCartId } from "queries/cart";
 import { CartContext, ProductDetailContext } from "context";
-var orderobj = {};
+import { API_URL } from "../../config";
+import { FetchCartId } from "queries/cart";
+import { checkProductAlreadyExistInCart } from "queries/productdetail";
+
 var orderobj_cart = {};
 const useWishlists = (props) => {
   const [values, setValues] = React.useState({
@@ -15,8 +15,6 @@ const useWishlists = (props) => {
     isactive: null,
   });
   const [invalids, setInvalids] = React.useState({ user_id: false, product_id: false, product_sku: false });
-  // const { data, error, loading, makeFetch, mapped, status } = useNetworkRequest('/addwishlist', {}, [], false);
-  // const { data: removedata, makeFetch: removemakeFetch, } = useNetworkRequest('/removewishlist', {}, [], false);
   const { setCartFilters, setwishlistdata } = React.useContext(CartContext);
   const {
     ProductDetailCtx: { filters },
@@ -24,16 +22,12 @@ const useWishlists = (props) => {
   } = React.useContext(ProductDetailContext);
   let user_id = localStorage.getItem("user_id") ? localStorage.getItem("user_id") : {};
   const check_gustlog = localStorage.getItem("true") ? localStorage.getItem("true") : {};
-  // useEffect(() => {
-  //     // orderobj["product_sku"] = sku
-  //     setValues(orderobj);
-  // }, [])
+
   const handleChange = (type, value) => {
     setValues({
       ...values,
       [type]: value,
     });
-    // makeFetch(values)
   };
 
   const handleInvalid = (type, status) => {
@@ -48,45 +42,48 @@ const useWishlists = (props) => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        // 'Content-Type': 'application/x-www-form-urlencoded',
       },
       body: JSON.stringify(values),
     }).then((response) => {
       return response.json();
     });
   };
-  // const removemakeFetch = () => {
-  //
-  //     fetch('https://api.stylori.net/removewishlist', {
-  //         method: 'POST',
-  //         headers: {
-  //             'Content-Type': 'application/json'
-  //             // 'Content-Type': 'application/x-www-form-urlencoded',
-  //         },
-  //         body: JSON.stringify(values)
-  //     }).then((response) => {
-  //         return response.json();
-  //     })
-  //         .then((myJson) => {
-  //         });
-  // }
 
+  const checkProductAlreadyAddedInWishlist = async (num) => {
+    const cartId = JSON.parse(localStorage.getItem("cart_id")).cart_id;
+    await fetch(`${API_URL}/graphql`, {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+
+      body: JSON.stringify({
+        query: checkProductAlreadyExistInCart({ skuId: values.product_sku, cartId: cartId }),
+      }),
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        if (res.data.allShoppingCartItems.nodes.length > 0) {
+          alert("This product is already added in the cart");
+        } else {
+          values["isactive"] = num;
+          values["user_id"] = user_id;
+          setValues({ values, ...values });
+          makeFetch();
+        }
+      });
+  };
   const handelSubmit = (num) => {
     setwishlistdata({
       wishlistdata: values.isactive,
     });
     if (user_id.length > 0 && check_gustlog === "false") {
-      values["isactive"] = num;
-      values["user_id"] = user_id;
-      setValues({ values, ...values });
-      makeFetch();
+      checkProductAlreadyAddedInWishlist(num);
     } else {
       alert("Please login your email Id");
       localStorage.setItem("review_location", `${window.location.href}`);
-      // localStorage.setItem('wishlist', 0)
       window.location.href = "/login";
     }
-    // changePanel(3)
   };
   const status = (response) => {
     if (response.status >= 200 && response.status < 300) {
@@ -114,7 +111,6 @@ const useWishlists = (props) => {
       var _products = [];
       var _obj = {};
       setCartFilters(orderobj_cart);
-
       var _conditionfetchCartId = {
         UserId: { userprofileId: localStorage.getItem("user_id") },
       };
@@ -138,6 +134,7 @@ const useWishlists = (props) => {
           filters.quantity[values.product_sku] = _qty;
         }
       } else {
+        debugger;
         localStorageQuantity[values.product_sku] = _qty;
         localStorage.setItem("quantity", JSON.stringify(localStorageQuantity));
         filters.quantity[values.product_sku] = localStorageQuantity[values.product_sku];
@@ -146,7 +143,6 @@ const useWishlists = (props) => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          // 'Content-Type': 'application/x-www-form-urlencoded',
         },
         body: JSON.stringify(values),
       }).then((myJson) => {
@@ -154,8 +150,6 @@ const useWishlists = (props) => {
           values.add &&
             fetch(`${API_URL}/graphql`, {
               method: "post",
-              // body: {query:seoUrlResult,variables:splitHiphen()}
-              // body: JSON.stringify({query:seoUrlResult}),
 
               headers: {
                 "Content-Type": "application/json",
@@ -176,9 +170,6 @@ const useWishlists = (props) => {
                   val.data.allShoppingCarts.nodes.length > 0 &&
                   val.data.allShoppingCarts.nodes[0].status === "paid"
                 ) {
-                  // alert(val.data.allShoppingCarts.nodes[0].status)
-                  // var _get_cart_id = JSON.parse(localStorage.getItem('cart_id')).cart_id
-                  // var _cart_id = { cart_id: _get_cart_id }
                   var _user_id = { user_id: localStorage.getItem("user_id") };
 
                   _products_obj["sku_id"] = values.product_sku;
@@ -189,8 +180,6 @@ const useWishlists = (props) => {
                   _obj = { ..._user_id, ..._products };
                   fetch(`${API_URL}/addtocart`, {
                     method: "post",
-                    // body: {query:seoUrlResult,variables:splitHiphen()}
-                    // body: JSON.stringify({query:seoUrlResult}),
 
                     headers: {
                       "Content-Type": "application/json",
@@ -200,7 +189,6 @@ const useWishlists = (props) => {
                     }),
                   });
                 } else {
-                  // alert("not paid")
                   if (
                     val &&
                     val.data &&
@@ -225,8 +213,6 @@ const useWishlists = (props) => {
 
                     fetch(`${API_URL}/addtocart`, {
                       method: "post",
-                      // body: {query:seoUrlResult,variables:splitHiphen()}
-                      // body: JSON.stringify({query:seoUrlResult}),
 
                       headers: {
                         "Content-Type": "application/json",
@@ -263,8 +249,6 @@ const useWishlists = (props) => {
                       _obj = { ..._user_id, ..._products };
                       fetch(`${API_URL}/addtocart`, {
                         method: "post",
-                        // body: {query:seoUrlResult,variables:splitHiphen()}
-                        // body: JSON.stringify({query:seoUrlResult}),
 
                         headers: {
                           "Content-Type": "application/json",

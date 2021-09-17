@@ -134,7 +134,7 @@ export const CheckForCod = `query CheckForCod($pincode:String) {
 `;
 
 export const CUSTOMERREVIEWS = `query MyQuery($productSku: String) {
-  allCustomerReviews(condition: {productSku: $productSku, isPublish: true}, last: 5) {
+  allCustomerReviews(condition: {productSku: $productSku}, last: 5) {
     nodes {
       message
       title
@@ -337,6 +337,14 @@ export const shopByStyloriSilver = (data) => {
   
     `;
 };
+
+export const checkProductAlreadyExistInCart = (data) => ` {
+  allShoppingCartItems(condition: {productSku: "${data.skuId}", shoppingCartId: "${data.cartId}"}) {
+    nodes {
+      productSku
+    }
+  }
+}`;
 export const filterProductMatrix = (type, value) => {
   let fc = { table: "", type: "" };
   switch (type) {

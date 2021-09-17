@@ -8,56 +8,30 @@ import Typography from "@material-ui/core/Typography";
 import { CDN_URL } from "config";
 import { ProductDetailContext } from "context";
 import React from "react";
-import {
-  LazyLoadImage,
-  trackWindowScroll,
-} from "react-lazy-load-image-component";
+import { LazyLoadImage, trackWindowScroll } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { Link } from "react-router-dom";
 import "./productCard.css";
+import Wishlist from "components/wishlist/wishlist";
 
 export const ImgMediaCard = (props) => {
-  const { ProductDetailCtx, setFilters } =
-    React.useContext(ProductDetailContext);
+  const { ProductDetailCtx, setFilters } = React.useContext(ProductDetailContext);
   const loc = window.location.search;
 
-  return (
-    <Component
-      filters={ProductDetailCtx.filters}
-      setFilters={setFilters}
-      {...props}
-    />
-  );
+  return <Component filters={ProductDetailCtx.filters} setFilters={setFilters} {...props} />;
 };
 
 const imageOnError = (event, res) => {
   event.target.src = `${CDN_URL}product/${res.img_res}X${res.img_res}/productnotfound.webp`;
 };
-const Gallery = (
-  props,
-  callmouseover,
-  callmouseout,
-  cardstate,
-  scrollPosition
-) => {
+const Gallery = (props, callmouseover, callmouseout, cardstate, scrollPosition) => {
   return (
     <div className="imageHeight" style={{ position: "relative" }}>
-      {props.data.price < 20000 ? (
-        <span className="newarraival">NEW ARRIVAL</span>
-      ) : (
-        ""
-      )}
-      {props.data.price > 20000 ? (
-        <span className="bestsell">BEST SELLER</span>
-      ) : (
-        ""
-      )}
+      {/* {props.data.price < 20000 ? <span className="newarraival">NEW ARRIVAL</span> : ""}
+      {props.data.price > 20000 ? <span className="bestsell">BEST SELLER</span> : ""} */}
 
-      <div class="wishListStyle" style={{ padding: 10 }}>
-        <i
-          class="fa fa-heart overall-icons"
-          style={{ color: "gray", height: 15, width: 15 }}
-        ></i>
+      <div class="wishListStyle">
+        <Wishlist sku={props.data.skuId} productId={props.data.productId} wishlist={props.wishlist} />
       </div>
 
       <Link
@@ -72,9 +46,7 @@ const Gallery = (
           alt={"props.data.title"}
           src={renderImages(props, cardstate)}
           //onError={(e) => imageOnError(e, props.data.imageResolution)}
-          title={
-            props.data.title.charAt(0).toUpperCase() + props.data.title.slice(1)
-          }
+          title={props.data.title.charAt(0).toUpperCase() + props.data.title.slice(1)}
           onMouseOver={
             !props.hoverText
               ? () => {
@@ -97,9 +69,7 @@ const Gallery = (
           scrollPosition={scrollPosition}
         ></LazyLoadImage>
 
-        {props.hoverText && (
-          <div className="overlayImage">{props.data.description}</div>
-        )}
+        {props.hoverText && <div className="overlayImage">{props.data.description}</div>}
       </Link>
     </div>
   );
@@ -298,10 +268,7 @@ const renderImages = (props, cardstate) => {
   } else {
     const filterType = cardstate.hovered ? "hoverImage" : "placeImage";
 
-    return props.data &&
-      props.data.image &&
-      props.data.image["hoverImage"] &&
-      props.data.image["hoverImage"].length === 0
+    return props.data && props.data.image && props.data.image["hoverImage"] && props.data.image["hoverImage"].length === 0
       ? "https://alpha-assets.stylori.com/1000x1000/images/static/Image_Not_Available.jpg"
       : props.data.image[filterType].img;
   }
@@ -323,31 +290,15 @@ function Component(props) {
   };
 
   return (
-    <div
-      className={classes.root}
-      style={{ marginLeft: "0px !important", overflow: "hidden" }}
-    >
+    <div className={classes.root} style={{ marginLeft: "0px !important", overflow: "hidden" }}>
       <Card className={classes.card} style={{ marginLeft: "0px !important" }}>
-        <CardActions
-          style={{}}
-          className={`${classes.cardAtionspadding} ${classes.cardActionsImage}`}
-        >
+        <CardActions style={{}} className={`${classes.cardAtionspadding} ${classes.cardActionsImage}`}>
           {Gallery(props, callmouseover, callmouseout, cardstate)}
         </CardActions>
         <Card className={classes.priceClass}>
-          {Math.round(props.data.offerPrice) ===
-          Math.round(props.data.price) ? (
-            <CardContent
-              className={classes.cardContent}
-              style={{ display: "flex" }}
-            >
-              <Grid
-                container
-                item
-                xs={12}
-                className={classes.textPriceCardGrid}
-                alignItems="center"
-              >
+          {Math.round(props.data.offerPrice) === Math.round(props.data.price) ? (
+            <CardContent className={classes.cardContent} style={{ display: "flex" }}>
+              <Grid container item xs={12} className={classes.textPriceCardGrid} alignItems="center">
                 <Hidden smDown>
                   <Grid
                     container
@@ -370,13 +321,14 @@ function Component(props) {
                           justifyContent: "flex-start",
                           display: "flex",
                           paddingLeft: "5px",
+                          color: "rgb(109,110,112)",
                         }}
                       >
                         {new Intl.NumberFormat("en-IN", {
                           style: "currency",
                           currency: "INR",
                           minimumFractionDigits: 0,
-                        }).format(Math.round(props?.data?.price))}
+                        }).format(Math.round(props.data.price))}
                         <span style={{ display: "flex", alignSelf: "center" }}>
                           {" "}
                           <Typography
@@ -385,13 +337,20 @@ function Component(props) {
                               paddingLeft: "6px",
                             }}
                           >
-                            <s style={{ color: "#5d5d5d" }}>
-                              {Math.round(props.data.offerPrice) -
-                                Math.round(props.data.price) ===
-                              0
-                                ? ""
-                                : Math.round(props.data.offerPrice)}
-                            </s>
+                            <span style={{ color: "rgb(109,110,112)", textDecoration: "line-through" }}>
+                              <span>
+                                {props.data.offerPrice === 0
+                                  ? " "
+                                  : new Intl.NumberFormat("en-IN", {
+                                      style: "currency",
+                                      currency: "INR",
+                                      minimumFractionDigits: 0,
+                                    }).format(Math.round(props.data.offerPrice))}
+                              </span>
+                            </span>
+                            {/* <s style={{ color: "#5d5d5d" }}>
+                              {props.data.offerPrice === 0 ? "" : Math.round(props.data.offerPrice)}
+                            </s> */}
                           </Typography>
                         </span>
                       </Typography>
@@ -399,30 +358,14 @@ function Component(props) {
 
                     <Grid items>
                       <Typography className={classes.discountPercentage}>
-                        {" "}
-                        {Math.round(
-                          (100 * props.data.offerPrice) / props.data.price
-                        ) === 100
-                          ? ""
-                          : `${
-                              100 -
-                              Math.round(
-                                (100 * props.data.offerPrice) / props.data.price
-                              )
-                            }% OFF`}
+                        {props.data.save === 0 ? " " : ` ${Math.round(props.data.save)} % OFF`}
                         &nbsp;&nbsp;
                       </Typography>
                     </Grid>
                   </Grid>
                   <Grid container xs={12}>
-                    <Typography
-                      variant="body1"
-                      component="span"
-                      style={{ paddingLeft: "5px" }}
-                      className={`${classes.titles}`}
-                    >
-                      {props.data.title.charAt(0).toUpperCase() +
-                        props.data.title.slice(1)}
+                    <Typography variant="body1" component="span" style={{ paddingLeft: "5px" }} className={`${classes.titles}`}>
+                      {props.data.title.charAt(0).toUpperCase() + props.data.title.slice(1)}
                     </Typography>
                   </Grid>
                 </Hidden>
@@ -448,6 +391,7 @@ function Component(props) {
                           justifyContent: "flex-start",
                           display: "flex",
                           paddingLeft: "5px",
+                          color: "rgb(109,110,112)",
                         }}
                       >
                         {new Intl.NumberFormat("en-IN", {
@@ -463,14 +407,17 @@ function Component(props) {
                               paddingLeft: "6px",
                             }}
                           >
-                            <s style={{ color: "#5d5d5d" }}>
-                              {" "}
-                              {Math.round(props.data.offerPrice) -
-                                Math.round(props.data.price) ===
-                              0
-                                ? ""
-                                : Math.round(props.data.offerPrice)}
-                            </s>
+                            <span style={{ color: "rgb(109,110,112)", textDecoration: "line-through" }}>
+                              <span>
+                                {props.data.offerPrice === 0
+                                  ? " "
+                                  : new Intl.NumberFormat("en-IN", {
+                                      style: "currency",
+                                      currency: "INR",
+                                      minimumFractionDigits: 0,
+                                    }).format(Math.round(props.data.offerPrice))}
+                              </span>
+                            </span>
                           </Typography>
                         </span>
                       </Typography>
@@ -478,29 +425,14 @@ function Component(props) {
 
                     <Grid items>
                       <Typography className={classes.discountPercentage}>
-                        {Math.round(
-                          (100 * props.data.offerPrice) / props.data.price
-                        ) === 100
-                          ? ""
-                          : `${
-                              100 -
-                              Math.round(
-                                (100 * props.data.offerPrice) / props.data.price
-                              )
-                            }% OFF`}
+                        {props.data.save === 0 ? " " : ` ${Math.round(props.data.save)} % OFF`}
                         &nbsp;&nbsp;
                       </Typography>
                     </Grid>
                   </Grid>
                   <Grid container xs={12}>
-                    <Typography
-                      variant="body1"
-                      component="span"
-                      style={{ paddingLeft: "5px" }}
-                      className={`${classes.titles}`}
-                    >
-                      {props.data.title.charAt(0).toUpperCase() +
-                        props.data.title.slice(1)}
+                    <Typography variant="body1" component="span" style={{ paddingLeft: "5px" }} className={`${classes.titles}`}>
+                      {props.data.title.charAt(0).toUpperCase() + props.data.title.slice(1)}
                     </Typography>
                   </Grid>
                 </Hidden>
@@ -508,20 +440,8 @@ function Component(props) {
             </CardContent>
           ) : (
             <CardContent className={classes.cardContent}>
-              <Grid
-                container
-                item
-                xs={12}
-                className={classes.textPriceCardGrid}
-                alignItems="center"
-              >
-                <Grid
-                  container
-                  item
-                  xs={12}
-                  sm={12}
-                  className={`${classes.priceClassMain}`}
-                >
+              <Grid container item xs={12} className={classes.textPriceCardGrid} alignItems="center">
+                <Grid container item xs={12} sm={12} className={`${classes.priceClassMain}`}>
                   <Typography
                     variant="h6"
                     component="h6"
@@ -537,20 +457,14 @@ function Component(props) {
                       style: "currency",
                       currency: "INR",
                       minimumFractionDigits: 0,
-                    }).format(Math.round(props.static ? "" : props.data.price))}
+                    }).format(Math.round(props.data.price))}
                   </Typography>
 
                   <Grid container xs={12}>
-                    <Typography
-                      variant="body1"
-                      component="span"
-                      style={{ paddingLeft: "5px" }}
-                      className={`${classes.titles}`}
-                    >
+                    <Typography variant="body1" component="span" style={{ paddingLeft: "5px" }} className={`${classes.titles}`}>
                       {props.static
                         ? "Jazzy Gypsy Diamond Hoop Earrings"
-                        : props.data.title.charAt(0).toUpperCase() +
-                          props.data.title.slice(1)}
+                        : props.data.title.charAt(0).toUpperCase() + props.data.title.slice(1)}
                     </Typography>
                   </Grid>
                 </Grid>

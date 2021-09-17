@@ -257,11 +257,10 @@ class HomeComp extends React.Component {
         let responseData = data?.data?.allFeaturedProducts?.nodes;
 
         let productDetails = responseData.map((val) => ({
-          price: val?.productListByProductId?.transSkuListsByProductId?.nodes[0]?.sellingPrice ?? " ",
-
-          offerPrice: val?.productListByProductId?.transSkuListsByProductId?.nodes[0]?.markupPrice ?? " ",
+          price: val?.productListByProductId?.transSkuListsByProductId?.nodes[0]?.markupPrice ?? " ",
+          offerPrice: val?.productListByProductId?.transSkuListsByProductId?.nodes[0]?.discountPrice ?? " ",
           title: val?.productListByProductId?.productName ?? " ",
-          save: " ",
+          save: val?.productListByProductId?.transSkuListsByProductId?.nodes[0]?.discount ?? " ",
           image: {
             placeImage: {
               img: val?.productListByProductId?.productImagesByProductId?.nodes[0]?.imageUrl ?? " ",

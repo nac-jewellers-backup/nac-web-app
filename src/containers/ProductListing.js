@@ -30,16 +30,10 @@ class Stylori extends React.Component {
     };
   }
   componentDidUpdate(prevProps) {
-    // Typical usage (don't forget to compare props):
-
-    //  if(this.props.dataFilter !== prevProps.dataFilter){
 
     if (this.props.loading !== prevProps.loading) {
       this.props.setloadingfilters(false);
 
-      // }
-      // setTimeout(function(){ alert("Hello"); }, 3000);
-      // setTimeout(function(){  this.props.setloadingfilters(false); }.bind(this), 5000);
     }
   }
 

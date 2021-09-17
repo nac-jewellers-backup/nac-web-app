@@ -232,7 +232,7 @@ class ProductImageZoom extends React.Component {
 
             <div>
               <div
-                className={_isSilver ? "imagecardSilver" : "imagecard"}
+                className={_isSilver ? "imagecardSilver" : "imagecardSilver"}
                 id="divs"
                 style={{
                   height:
