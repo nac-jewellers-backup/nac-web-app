@@ -98,8 +98,7 @@ class ProductDetail extends Component {
   render() {
     // alert(JSON.stringify(this.props.data))
     // alert(JSON.stringify(this.props.data))
-
-    console.log(this.props);
+    console.log(this.props.data);
     const { classes } = this.props;
 
     const dummyData = [
@@ -699,6 +698,8 @@ class ProductDetail extends Component {
                       dataCarousel={dataCarouselcollections}
                     >
                       {this.props?.data[0]?.fadeImageSublist.map((val) => {
+                        console.log(this.props?.data);
+                        console.log("pppppp");
                         return (
                           <ImgMediaCard
                             data={val}

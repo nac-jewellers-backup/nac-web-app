@@ -1,13 +1,13 @@
-import React from "react";
-import "./index.css";
-import { Paper, Grid, Typography } from "@material-ui/core";
+import { Grid, Typography } from "@material-ui/core";
+import { withStyles } from "@material-ui/core/styles";
 import AddBoxIcon from "@material-ui/icons/AddBox";
 import IndeterminateCheckBoxIcon from "@material-ui/icons/IndeterminateCheckBox";
-import { withStyles } from "@material-ui/core/styles";
-import styles from "./styles";
 import { ProductDetailContext } from "context/ProductDetailContext";
-import { API_URL } from "../../config";
+import React from "react";
 import { withRouter } from "react-router-dom";
+import { API_URL } from "../../config";
+import "./index.css";
+import styles from "./styles";
 const handleQty = (
   isMaxMin,
   _incrementQty,
@@ -16,24 +16,21 @@ const handleQty = (
   state,
   skuId
 ) => {
-  
   var element = document.getElementById(`number${skuId}`);
   var value = parseInt(element.value, 10);
   var increment = state["maxOrderQty"];
   var decrement = state["minOrderQty"];
   value = isNaN(value) ? 1 : value;
   let _max = _incrementQty ? value + _incrementQty : value++;
-  let _min  = _incrementQty ? value - _incrementQty : value--;
+  let _min = _incrementQty ? value - _incrementQty : value--;
   if (isMaxMin === "max") {
-   
     if (_max <= _maxOrderQty) {
-      if(_max === _maxOrderQty){
+      if (_max === _maxOrderQty) {
         increment = false;
         value = _incrementQty ? value + _incrementQty : value++;
-      }
-      else{
+      } else {
         increment = true;
-      value = _incrementQty ? value + _incrementQty : value++;
+        value = _incrementQty ? value + _incrementQty : value++;
       }
     } else {
       increment = false;
@@ -45,13 +42,12 @@ const handleQty = (
     }
   } else if (isMaxMin === "min") {
     if (_min >= _incrementQty) {
-      if(_min === _incrementQty){
+      if (_min === _incrementQty) {
         decrement = false;
         value = _incrementQty ? value - _incrementQty : value--;
-      }
-      else{
+      } else {
         decrement = true;
-      value = _incrementQty ? value - _incrementQty : value--;
+        value = _incrementQty ? value - _incrementQty : value--;
       }
     } else {
       decrement = false;
@@ -62,7 +58,7 @@ const handleQty = (
       increment = false;
     }
   }
-  
+
   setClass({ maxOrderQty: increment, minOrderQty: decrement, qty: value });
 };
 
@@ -79,11 +75,11 @@ const Quantity = (props) => {
     props.data && props.data.length > 0 && props.data[0].maxOrderQty
       ? props.data[0].maxOrderQty
       : 100000;
-      const initialState =  filters.quantity[props.data[0].skuId]
-      ? filters.quantity[props.data[0].skuId]
-      : _incrementQty
-      ? _incrementQty
-      : 1
+  const initialState = filters.quantity[props.data[0].skuId]
+    ? filters.quantity[props.data[0].skuId]
+    : _incrementQty
+    ? _incrementQty
+    : 1;
 
   const [state, setState] = React.useState({
     maxOrderQty: true,
@@ -92,11 +88,10 @@ const Quantity = (props) => {
       filters.quantity[props.data[0].skuId] > _incrementQty
         ? true
         : false,
-    qty:initialState,
+    qty: initialState,
   });
 
   const setClass = (data) => {
-    
     setState({
       ...state,
       qty: data["qty"],
@@ -132,8 +127,7 @@ const Quantity = (props) => {
         })
           .then((res) => res.json())
           .then((res) => console.log(res.data));
-      } catch (error) {
-      }
+      } catch (error) {}
     }
   };
   React.useEffect(() => {
@@ -191,7 +185,10 @@ const Quantity = (props) => {
           JSON.stringify(localStorageCartDetails)
         );
       }
-      if (props.history.location.pathname === "/cart" || props.history.location.pathname === "/account-shoppingcart") {
+      if (
+        props.history.location.pathname === "/cart" ||
+        props.history.location.pathname === "/account-shoppingcart"
+      ) {
         setFilters({ ...filters, quantity });
       }
     };
@@ -214,7 +211,7 @@ const Quantity = (props) => {
 
     // _updateQuantityApi()
   }, []);
- 
+
   const { classes, cart, pdpage } = props;
   const _cart = cart || pdpage ? true : false;
   return (

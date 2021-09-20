@@ -20,6 +20,7 @@ export const ImgMediaCard = (props) => {
   const { ProductDetailCtx, setFilters } =
     React.useContext(ProductDetailContext);
   const loc = window.location.search;
+  console.log(props.data);
 
   return (
     <Component
@@ -499,6 +500,7 @@ function Component(props) {
                       style={{ paddingLeft: "5px" }}
                       className={`${classes.titles}`}
                     >
+                      {props.data.price}
                       {props.data.title.charAt(0).toUpperCase() +
                         props.data.title.slice(1)}
                     </Typography>

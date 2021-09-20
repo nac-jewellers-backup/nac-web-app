@@ -27,6 +27,7 @@ export const PRODUCTDETAILS = `query MyQuery(
       discountPriceTax
       markupPriceTax
       skuUrl
+      
       transSkuDescriptionsBySkuId {
         nodes {
           skuDescription
@@ -39,6 +40,7 @@ export const PRODUCTDETAILS = `query MyQuery(
         productName
         productId
         defaultSize
+        prodDescription
         width
         height
         sizeVarient
@@ -194,11 +196,10 @@ export const ADDRESSDETAILS = `query MyQuery($userprofileId: String) {
 export const YouMayAlsoLike = `query MyQuery(
   $filterdata: ProductListFilter
   $filterdatatranssku: TransSkuListFilter
-  $filterdatatranssku2: TransSkuListFilter
+  # $filterdatatranssku2: TransSkuListFilter
   $filterdata2: ProductListFilter
   $imgcondition: ProductImageCondition
-  $Conditiondatatranssku: TransSkuListCondition
-  $Conditiondatatranssku2: TransSkuListCondition
+  $Conditiondatatranssku: TransSkuListCondition # $Conditiondatatranssku2: TransSkuListCondition
 ) {
   youMayalsolike1: allProductLists(
     filter: $filterdata
@@ -220,7 +221,30 @@ export const YouMayAlsoLike = `query MyQuery(
           generatedSku
           skuUrl
           sellingPrice
+          productId
           productListByProductId {
+            productName
+            productImagesByProductId {
+              nodes {
+                imageUrl
+                imagePosition
+                ishover
+              }
+            }
+            transSkuListsByProductId {
+              nodes {
+                skuId
+                skuUrl
+                markupPrice
+                discountPrice
+                discount
+                transSkuDescriptionsBySkuId {
+                  nodes {
+                    skuDescription
+                  }
+                }
+              }
+            }
             productMaterialsByProductSku {
               nodes {
                 materialName
@@ -247,15 +271,38 @@ export const YouMayAlsoLike = `query MyQuery(
         }
       }
       transSkuListsByProductId(
-        condition: $Conditiondatatranssku2
-        filter: $filterdatatranssku2
+        condition: $Conditiondatatranssku
+        filter: $filterdatatranssku
       ) {
         nodes {
           discountPrice
           generatedSku
           skuUrl
-
+          sellingPrice
+          productId
           productListByProductId {
+            productName
+            productImagesByProductId {
+              nodes {
+                imageUrl
+                imagePosition
+                ishover
+              }
+            }
+            transSkuListsByProductId {
+              nodes {
+                skuId
+                skuUrl
+                markupPrice
+                discountPrice
+                discount
+                transSkuDescriptionsBySkuId {
+                  nodes {
+                    skuDescription
+                  }
+                }
+              }
+            }
             productMaterialsByProductSku {
               nodes {
                 materialName
@@ -271,48 +318,46 @@ export const YouMayAlsoLike = `query MyQuery(
     totalCount
   }
 }
-
 `;
 export const youRecentlyViewed = `query MyQuery {
   allProductMaterials(
-     filter: {
-       and: {
-         productListByProductSku: {
-           isactive: { equalTo: true }
-         
-         }
-       }
-     }
-     first: 13
-   ) {
-     nodes {
-       materialName
-       productSku
-       isActive
- 
-       productListByProductSku {
-         productType
-         productName
-         productCategory
-         prodDescription
- 
-         productImagesByProductId {
-           nodes {
-             imageUrl
-             imagePosition
-             productId
-             isActive
-           }
-         }
-       }
-     }
-     totalCount
-   }
- 
-   
- }
- 
-
+    filter: {and: {productListByProductSku: {isactive: {equalTo: true}}}}
+    first: 13
+  ) {
+    nodes {
+      materialName
+      productSku
+      isActive
+      productListByProductSku {
+        productType
+        productName
+        productCategory
+        prodDescription
+        productImagesByProductId {
+          nodes {
+            imageUrl
+            imagePosition
+            productId
+            isActive
+            productListByProductId {
+              transSkuListsByProductId {
+                nodes {
+                  sellingPrice
+                  transSkuDescriptionsBySkuId {
+                    nodes {
+                      skuDescription
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    totalCount
+  }
+}
   `;
 export const shopByStyloriSilver = (data) => {
   return `query MyQuery {

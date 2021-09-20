@@ -1,10 +1,9 @@
-import React, { useState } from "react";
-import { Typography, Grid, Card, Link, Button } from "@material-ui/core";
-import styles from "./cardStyle";
+import { Button, Card, Grid, Link, Typography } from "@material-ui/core";
 import Dialog from "@material-ui/core/Dialog";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { useTheme } from "@material-ui/core/styles";
-import Slideshow from "../Carousel/carosul";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
+import React, { useState } from "react";
+import styles from "./cardStyle";
 
 export default function Cards(props) {
   const classes = styles();
