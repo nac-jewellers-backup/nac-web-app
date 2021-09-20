@@ -92,8 +92,11 @@ query MyQuery {
   `;
 export const ALLREVIEWS = `
 query MyQuery {
-
-  allCustomerReviews(filter: {rating: {greaterThanOrEqualTo: 4}}, first: 6) {
+  allCustomerReviews(
+    filter: {rating: {greaterThanOrEqualTo: 4}}
+    first: 6
+    condition: {isPublish: true}
+  ) {
     nodes {
       customerName
       id
@@ -104,6 +107,7 @@ query MyQuery {
     }
   }
 }
+
 `;
 export const LISTINGBANNER = `
 query MyQuery {
