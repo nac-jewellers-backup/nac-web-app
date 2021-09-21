@@ -50,9 +50,9 @@ export const routes = {
   rudramadeviBlog: "/rudramadeviBlog",
   Blog: "/blog",
   Solitaires: "/solitaires",
-  CollectionPage:"/collectionPage",
-  CollectionFullPage:"/CollectionFullPage",
-  AkshyaTritiya: "/akshyaTritiya"
+  CollectionPage: "/collectionPage",
+  CollectionFullPage: "/CollectionFullPage",
+  AkshyaTritiya: "/akshyaTritiya",
 };
 
 export default routes;

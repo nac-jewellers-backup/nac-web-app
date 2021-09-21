@@ -337,15 +337,15 @@ export default function Footer(props) {
           Title: "Collections",
         },
         {
-          url: "/",
+          url: "/productcare",
           Title: "Diamond Guide",
         },
         {
-          url: "/",
+          url: "/productcare",
           Title: "Birthstones Guide",
         },
         {
-          url: "/",
+          url: "/productcare",
           Title: "Caring For Your Jewellery",
         },
       ],
@@ -363,7 +363,7 @@ export default function Footer(props) {
           Title: "Track Your Order",
         },
         {
-          url: "",
+          url: "/return",
           Title: "30 Day Return",
         },
       ],

@@ -1,19 +1,16 @@
-import React, { useState, useEffect } from "react";
 import {
   Grid,
   List,
-  Popper,
   ListItem,
   ListItemText,
+  Popper,
   Typography,
-  FormGroup,
-  FormControlLabel,
-  Checkbox,
 } from "@material-ui/core";
-import { useStyles } from "../styles";
 import PropTypes from "prop-types";
-
+import React, { useEffect } from "react";
+import { useStyles } from "../styles";
 import "./../header.css";
+
 // import Checkbox from "components/InputComponents/CheckBox";
 
 function HeaderHoverMenuItem(props) {
@@ -29,124 +26,123 @@ function HeaderHoverMenuItem(props) {
     {
       title: "Genstone",
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Group+319.svg",
-      url1:"/#",
-      url2:"#",
-      url3:"#"
+      url1: "/#",
+      url2: "#",
+      url3: "#",
     },
     {
       title: "Diamond",
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Group+321.svg",
-      url1:"/diamond-earrings-jewellery",
-      url2:"/diamond-rings-jewellery",
-      url3:"/diamond-bangles-jewellery"
-
+      url1: "/diamond-earrings-jewellery",
+      url2: "/diamond-rings-jewellery",
+      url3: "/diamond-bangles-jewellery",
     },
     {
       title: "Solitaire",
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Group+325.svg",
-      url1:"/#",
-      url2:"#",
-      url3:"#"
+      url1: "/#",
+      url2: "#",
+      url3: "#",
     },
     {
       title: "Platinum",
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Ellipse+3.svg",
-      url1:"/buy+platinum-earrings-jewellery",
-      url2:"/rings-jewellery-rings-platinum",
-      url3:"/buy+platinum-bracelets-jewellery"
+      url1: "/buy+platinum-earrings-jewellery",
+      url2: "/rings-jewellery-rings-platinum",
+      url3: "/buy+platinum-bracelets-jewellery",
     },
     {
       title: "Yellow Gold",
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
-      url1:"/plain+gold-earrings-jewellery",
-      url2:"/plain+gold-rings-jewellery",
-      url3:"/plain+gold-bangles-jewellery"
+      url1: "/plain+gold-earrings-jewellery",
+      url2: "/plain+gold-rings-jewellery",
+      url3: "/plain+gold-bangles-jewellery",
     },
     {
       title: "White Gold",
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
-      url1:"#",
-      url2:"#",
-      url3:"#"
+      url1: "#",
+      url2: "#",
+      url3: "#",
     },
     {
       title: "Rose Gold",
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
-      url1:"#",
-      url2:"#",
-      url3:"#"
+      url1: "#",
+      url2: "#",
+      url3: "#",
     },
     {
       title: "Silver by STYLORI",
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Path+423.svg",
-      url1:"#",
-      url2:"#",
-      url3:"#"
+      url1: "#",
+      url2: "#",
+      url3: "#",
     },
   ];
   const data = [
-    { 
-      title: "Below ₹10,000",
-      url1:"/earrings-jewellery?startprice=1000&endprice=10000",
-      url2:"/rings-jewellery?startprice=1000&endprice=10000",
-      url3:"/bangles-jewellery?startprice=1000&endprice=10000"
-     },
-    { 
-      title: "₹10,001 - ₹25,000",
-      url1:"/earrings-jewellery?startprice=10001&endprice=20000",
-      url2:"/rings-jewellery?startprice=10001&endprice=20000",
-      url3:"/bangles-jewellery?startprice=10001&endprice=20000"
-     },
     {
-       title: "₹25,001 - ₹50,000",
-       url1:"/earrings-jewellery?startprice=20001&endprice=30000",
-       url2:"/rings-jewellery?startprice=20001&endprice=30000",
-       url3:"/bangles-jewellery?startprice=20001&endprice=30000"
-       },
-    { 
+      title: "Below ₹10,000",
+      url1: "/earrings-jewellery?startprice=1000&endprice=10000",
+      url2: "/rings-jewellery?startprice=1000&endprice=10000",
+      url3: "/bangles-jewellery?startprice=1000&endprice=10000",
+    },
+    {
+      title: "₹10,001 - ₹25,000",
+      url1: "/earrings-jewellery?startprice=10001&endprice=20000",
+      url2: "/rings-jewellery?startprice=10001&endprice=20000",
+      url3: "/bangles-jewellery?startprice=10001&endprice=20000",
+    },
+    {
+      title: "₹25,001 - ₹50,000",
+      url1: "/earrings-jewellery?startprice=20001&endprice=30000",
+      url2: "/rings-jewellery?startprice=20001&endprice=30000",
+      url3: "/bangles-jewellery?startprice=20001&endprice=30000",
+    },
+    {
       title: "Above ₹50,000",
-      url1:"/earrings-jewellery?startprice=50001&endprice=200000",
-      url2:"/rings-jewellery?startprice=50001&endprice=200000",
-      url3:"/bangles-jewellery?startprice=50001&endprice=200000"
-     },
+      url1: "/earrings-jewellery?startprice=50001&endprice=200000",
+      url2: "/rings-jewellery?startprice=50001&endprice=200000",
+      url3: "/bangles-jewellery?startprice=50001&endprice=200000",
+    },
   ];
   const gifts3 = [
-    { 
-      title: "Gifts for men",
-      url1:"#",
-      url2:"/rings-jewellery-rings-mens+collection",
-      url3:"/bracelets-jewellery-bracelets-mens+collection"
-     },
-    { 
-      title: "Gifts for mom",
-      url1:"/earrings-jewellery-for+female",
-      url2:"/rings-jewellery-for+female",
-      url3:"/bangles-jewellery-for+female"
-     },
     {
-     title: "Gifts for wife",
-     url1:"/earrings-jewellery-for+female",
-     url2:"/rings-jewellery-for+female",
-     url3:"/bangles-jewellery-for+female"
-     },
+      title: "Gifts for men",
+      url1: "#",
+      url2: "/rings-jewellery-rings-mens+collection",
+      url3: "/bracelets-jewellery-bracelets-mens+collection",
+    },
+    {
+      title: "Gifts for mom",
+      url1: "/earrings-jewellery-for+female",
+      url2: "/rings-jewellery-for+female",
+      url3: "/bangles-jewellery-for+female",
+    },
+    {
+      title: "Gifts for wife",
+      url1: "/earrings-jewellery-for+female",
+      url2: "/rings-jewellery-for+female",
+      url3: "/bangles-jewellery-for+female",
+    },
     {
       title: "Gifts for kids",
-      url1:"/earrings-jewellery-for+kids",
-      url2:"/rings-jewellery-for+kids",
-      url3:"/bangles-jewellery-for+kids"
+      url1: "/earrings-jewellery-for+kids",
+      url2: "/rings-jewellery-for+kids",
+      url3: "/bangles-jewellery-for+kids",
     },
-    { 
-      title: "Lightweight by STYLORI",
-      url1:"/earrings-jewellery-earrings-stylori",
-      url2:"/rings-jewellery-rings-stylori",
-      url3:"/bangles-jewellery-bangles-stylori"
-     },
     {
-     title: "Silver by STYLORI",
-     url1:"#",
-     url2:"#",
-     url3:"#"
-     },
+      title: "Lightweight by STYLORI",
+      url1: "/earrings-jewellery-earrings-stylori",
+      url2: "/rings-jewellery-rings-stylori",
+      url3: "/bangles-jewellery-bangles-stylori",
+    },
+    {
+      title: "Silver by STYLORI",
+      url1: "#",
+      url2: "#",
+      url3: "#",
+    },
   ];
   const gender = [
     { title: "Woman" },
@@ -291,7 +287,7 @@ function HeaderHoverMenuItem(props) {
     {
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/rings/Ul3xhG%402x.png",
       content: "Fashion",
-      url: "#",
+      url: "/fusion-jewellery",
     },
     {
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/rings/xJu4r9%402x.png",
@@ -328,7 +324,7 @@ function HeaderHoverMenuItem(props) {
     {
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/bangles%26bracelets/GTmGEC%402x.png",
       content: <>LightWeight&nbsp;bangles</>,
-      url: "#",
+      url: "/bracelets-jewellery-bracelets-stylori",
     },
     {
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/bangles%26bracelets/yGnqN0%402x.png",
@@ -354,68 +350,68 @@ function HeaderHoverMenuItem(props) {
   const collectionsData = [
     {
       title: "Traditional Setting",
-      url:"#",
+      url: "#",
       image:
         "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/SqY6sJ%402x.png",
     },
     {
       title: "Young Ones",
-      url:"/jewellery-young+ones",
+      url: "/jewellery-young+ones",
       image:
         "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/bvtACp%402x.png",
     },
     {
       title: "Mens",
-      url:"/jewellery-mens+collection",
+      url: "/jewellery-mens+collection",
       image:
         "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/3keZ23%402x.png",
     },
     {
       title: "Mayura",
-      url:"/jewellery-mayura",
+      url: "/jewellery-mayura",
       image:
         "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/XEwpui%402x.png",
     },
     {
       title: "Fabula",
-      url:"/jewellery-fabula",
+      url: "/jewellery-fabula",
       image:
         "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/26P38o%402x.png",
     },
     {
       title: "Muhurtham",
-      url:"/jewellery-muhurtham",
+      url: "/jewellery-muhurtham",
       image:
         "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/lMysCt%402x.png",
     },
     {
       title: "Uncut",
-      url:"/jewellery-uncut",
+      url: "/jewellery-uncut",
       image:
         "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/z5pju4%402x.png",
     },
-    { title: "Jadau", url:"/jadai-jewellery", image: "" },
+    { title: "Jadau", url: "/jadai-jewellery", image: "" },
     {
       title: "Nagas",
-      url:"/jewellery-nagas",
+      url: "/jewellery-nagas",
       image:
         "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/2FXfOD%402x.png",
     },
     {
       title: "Rewind",
-      url:"/jewellery-rewind",
+      url: "/jewellery-rewind",
       image:
         "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/UmsWiC%402x.png",
     },
     {
       title: "Strings",
-      url:"#",
+      url: "#",
       image:
         "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/xMJ8PJ%402x.png",
     },
     {
       title: "Forevermark",
-      url:"/jewellery-forevermark",
+      url: "/jewellery-forevermark",
       image:
         "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/z6JNI6%402x.png",
     },
@@ -425,126 +421,127 @@ function HeaderHoverMenuItem(props) {
     {
       title: "NECKLACES",
       content: [
-        { 
+        {
           itm: "Short",
-          url:"/short+necklace-necklaces-jewellery"
-         },
-        { 
-          itm: "Long",
-          url:"/long+haram-necklaces-jewellery"
+          url: "/short+necklace-necklaces-jewellery",
         },
-        { 
+        {
+          itm: "Long",
+          url: "/long+haram-necklaces-jewellery",
+        },
+        {
           itm: "Layered",
-          url:"#"
-         },
-        { 
+          url: "#",
+        },
+        {
           itm: "Bridal",
-          url:"/bridal+necklace-necklaces-jewellery"
-         },
+          url: "/bridal+necklace-necklaces-jewellery",
+        },
       ],
     },
     {
       title: "PENDANTS",
       content: [
-        { 
+        {
           itm: "Casual",
-          url:"/casual+rings-pendants-jewellery"
-         }, 
-         {
+          url: "/casual+rings-pendants-jewellery",
+        },
+        {
           itm: "Bridal",
-          url:"/bridal+necklace-pendants-jewellery"
-         },
-         { 
-           itm: "Religious" ,
-           url:"/pendants-jewellery-special+occasion,festive"
-          }],
+          url: "/bridal+necklace-pendants-jewellery",
+        },
+        {
+          itm: "Religious",
+          url: "/pendants-jewellery-special+occasion,festive",
+        },
+      ],
     },
     {
       title: "SHOP BY PRICE",
       content: [
-        { 
+        {
           itm: "Below ₹10,000",
-          url:"/jewellery?startprice=1000&endprice=10000"
-         },
-        { 
-          itm: "₹10,001 - ₹25,000",
-          url:"/jewellery?startprice=10001&endprice=20000"
-         },
-        { 
-          itm: "₹25,001 - ₹50,000",
-          url:"/jewellery?startprice=20001&endprice=30000" 
+          url: "/jewellery?startprice=1000&endprice=10000",
         },
-        { 
+        {
+          itm: "₹10,001 - ₹25,000",
+          url: "/jewellery?startprice=10001&endprice=20000",
+        },
+        {
+          itm: "₹25,001 - ₹50,000",
+          url: "/jewellery?startprice=20001&endprice=30000",
+        },
+        {
           itm: "Above ₹50,000",
-          url:"/jewellery?startprice=50001&endprice=200000" 
+          url: "/jewellery?startprice=50001&endprice=200000",
         },
       ],
     },
     {
       title: "SHOP MORE",
       content: [
-        { 
+        {
           itm: "Nose Pins",
-          url:"/nosepin-jewellery"
-         },
-        { 
+          url: "/nosepin-jewellery",
+        },
+        {
           itm: "Chains",
-          url:"/chains-jewellery"
-         },
-        { 
+          url: "/chains-jewellery",
+        },
+        {
           itm: "Platinum Brands",
-          url:"/buy+platinum-jewellery"
-         },
-        { 
+          url: "/buy+platinum-jewellery",
+        },
+        {
           itm: "Bridal Accessories",
-          url:"/bridal+set-jewellery"
-         },
-        { 
+          url: "/bridal+set-jewellery",
+        },
+        {
           itm: "Odiyanam",
-          url:"/oddiyanam-jewellery"
-         },
-        { 
+          url: "/oddiyanam-jewellery",
+        },
+        {
           itm: "Anklets",
-          url:"/anklets-jewellery"
-         },
+          url: "/anklets-jewellery",
+        },
       ],
     },
     {
       title: "STYLORI",
       content: [
         {
-           itm: "Gold & Diamond",
-           url:"/diamond-jewellery-stylori"
-          }, 
-        { 
+          itm: "Gold & Diamond",
+          url: "/diamond-jewellery-stylori",
+        },
+        {
           itm: "Silver",
-          url:"#"
-         }],
+          url: "#",
+        },
+      ],
     },
-    { 
-      title: "GOLD COINS", 
-      content: [
-        { itm: "22ct",
-        url:"#"
-       }, 
-       { itm: "24ct",
-       url:"#"
-       }] },
     {
-      title: <>SHOP&nbsp;ALL&nbsp;JEWELLERY    </>,
+      title: "GOLD COINS",
       content: [
-        { 
+        { itm: "22ct", url: "#" },
+        { itm: "24ct", url: "#" },
+      ],
+    },
+    {
+      title: <>SHOP&nbsp;ALL&nbsp;JEWELLERY </>,
+      content: [
+        {
           itm: "For men",
-          url:"/jewellery-mens+collection"
-         }, 
-         { 
-           itm: "For women",
-           url:"/jewellery-for+female"
-         },
-         { 
-           itm: "For kids",
-           url:"/jewellery-for+kids"
-         }],
+          url: "/jewellery-mens+collection",
+        },
+        {
+          itm: "For women",
+          url: "/jewellery-for+female",
+        },
+        {
+          itm: "For kids",
+          url: "/jewellery-for+kids",
+        },
+      ],
     },
   ];
 
@@ -611,37 +608,37 @@ function HeaderHoverMenuItem(props) {
       contents: [
         {
           sub: "Round",
-          url:"/round-jewellery",
+          url: "/round-jewellery",
           img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Group+319.svg",
         },
         {
           sub: "Princess",
-          url:"#",
+          url: "#",
           img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Group+321.svg",
         },
         {
           sub: "Oval",
-          url:"/oval-jewellery",
+          url: "/oval-jewellery",
           img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Group+325.svg",
         },
         {
           sub: "Heart",
-          url:"#",
+          url: "#",
           img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Ellipse+3.svg",
         },
         {
           sub: "Cushion",
-          url:"#",
+          url: "#",
           img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
         },
         {
           sub: "Pear",
-          url:"",
+          url: "",
           img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
         },
         {
           sub: "Emerald",
-          url:"/emerald+uncut+dia-jewellery",
+          url: "/emerald+uncut+dia-jewellery",
           img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
         },
       ],
@@ -652,21 +649,21 @@ function HeaderHoverMenuItem(props) {
     {
       title: "Shop by price",
       contents: [
-        { 
+        {
           itm: "Below ₹10,000",
-          url:"#"
+          url: "#",
         },
-        { 
+        {
           itm: "₹10,001 - ₹25,000",
-          url:"#"
+          url: "#",
         },
-        { 
+        {
           itm: "₹25,001 - ₹50,000",
-          url:"#"
+          url: "#",
         },
-        { 
+        {
           itm: "Above ₹50,000",
-          url:"#"
+          url: "#",
         },
       ],
     },
@@ -734,37 +731,37 @@ function HeaderHoverMenuItem(props) {
   const solitaireData = [
     {
       title: "Rings",
-      url:"/rings-jewellery",
+      url: "/rings-jewellery",
       image:
         "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/solitaire/Ul3xhG%402x.png",
     },
     {
       title: "Earrings",
-      url:"/earrings-jewellery",
+      url: "/earrings-jewellery",
       image:
         "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/solitaire/Ul3xhG%402x.png",
     },
     {
       title: "Necklaces",
-      url:"/necklaces-jewellery",
+      url: "/necklaces-jewellery",
       image:
         "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/solitaire/OxwFfP%402x.png",
     },
     {
       title: <>Bangles&nbsp;and&nbsp;bracelets</>,
-      url:"/bracelets-jewellery",
+      url: "/bracelets-jewellery",
       image:
         "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/solitaire/MN2iaL%402x.png",
     },
     {
       title: "Pendants",
-      url:"/pendants-jewellery",
+      url: "/pendants-jewellery",
       image:
         "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/solitaire/1SevWE%402x.png",
     },
     {
       title: "Men's rings",
-      url:"/rings-jewellery-rings-mens+collections",
+      url: "/rings-jewellery-rings-mens+collections",
       image:
         "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/solitaire/YE4CnD%402x.png",
     },
@@ -829,7 +826,7 @@ function HeaderHoverMenuItem(props) {
                         <Typography
                           // style={{ margin: "auto", color: "#33346d" }}
                           className={classes.imgtitle}
-                          style={{paddingBottom:"5px"}}
+                          style={{ paddingBottom: "5px" }}
                         >
                           {val.title}
                         </Typography>
@@ -857,7 +854,7 @@ function HeaderHoverMenuItem(props) {
               })}{" "}
             </Grid>
           </Grid>
-          <Grid item xs={3} >
+          <Grid item xs={3}>
             <div style={{ paddingTop: "25px" }}>
               <img
                 src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/Group+724%402x.png"
@@ -887,7 +884,7 @@ function HeaderHoverMenuItem(props) {
             item
             xs={9}
             className={classes.gridmultiplesection}
-            style={{ padding:"20px 30px 40px 0px" }}
+            style={{ padding: "20px 30px 40px 0px" }}
           >
             <Grid container item xs={12}>
               {otherJewels.map((val, index) => {
@@ -914,23 +911,23 @@ function HeaderHoverMenuItem(props) {
                         </Typography>
                       </Grid>
                       {val.content.map((item, i) => (
-                      <Grid
-                        item
-                        xs={12}
-                        style={{
-                          justifyContent: "center",
-                          alignContent: "center",
-                          display: "block",
-                          paddingTop:"13px"
-                        }}
-                        onClick={() => {
-                        window.location.href = item.url;
-                      }}
-                      >
+                        <Grid
+                          item
+                          xs={12}
+                          style={{
+                            justifyContent: "center",
+                            alignContent: "center",
+                            display: "block",
+                            paddingTop: "13px",
+                          }}
+                          onClick={() => {
+                            window.location.href = item.url;
+                          }}
+                        >
                           <Typography className={classes.listedItemsvalue}>
                             {item.itm}
                           </Typography>
-                      </Grid>
+                        </Grid>
                       ))}
                     </Grid>
                   </Grid>
@@ -938,7 +935,7 @@ function HeaderHoverMenuItem(props) {
               })}{" "}
             </Grid>
           </Grid>
-          <Grid item xs={3} >
+          <Grid item xs={3}>
             <div style={{ paddingTop: "25px" }}>
               <img
                 src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/otherjwellery/Group+773%402x.png"
@@ -974,7 +971,11 @@ function HeaderHoverMenuItem(props) {
             <Grid
               item
               xs={2}
-              style={{ display: "flex", justifyContent: "flex-start",paddingRight:"30px" }}
+              style={{
+                display: "flex",
+                justifyContent: "flex-start",
+                paddingRight: "30px",
+              }}
             >
               <Typography className={classes.phovertitile}>
                 {val.title.toUpperCase()}
@@ -1045,15 +1046,13 @@ function HeaderHoverMenuItem(props) {
                     <Grid
                       container
                       className={classes.imgcont}
-                      onClick={
-                        () => {
+                      onClick={() => {
                         window.location.href = val.url;
-                      }
-                      }
+                      }}
                       justify="center"
                       alignContent="center"
                       alignItems="center"
-                      style={{ cursor: "pointer",paddingBottom:"17px" }}
+                      style={{ cursor: "pointer", paddingBottom: "17px" }}
                     >
                       <Grid item style={{ margin: "auto" }}>
                         <Typography
@@ -1087,7 +1086,12 @@ function HeaderHoverMenuItem(props) {
               })}{" "}
             </Grid>
           </Grid>
-          <Grid item xs={6} className={classes.gridmultiplesection} style={{padding:"0 20px"}}>
+          <Grid
+            item
+            xs={6}
+            className={classes.gridmultiplesection}
+            style={{ padding: "0 20px" }}
+          >
             <Grid container item xs={12}>
               <Grid item xs={4} style={{ padding: "0 6px 0 2px" }}>
                 {/* second section */}
@@ -1106,11 +1110,11 @@ function HeaderHoverMenuItem(props) {
                         className={classes.imgcont}
                         onClick={() => {
                           if (props.listitem === "EARRINGS") {
-                            return window.location.href = val.url1;
+                            return (window.location.href = val.url1);
                           } else if (props.listitem === "RINGS") {
-                            return window.location.href = val.url2;
+                            return (window.location.href = val.url2);
                           } else if (props.listitem === "BANGLES & BRACELETS") {
-                            return window.location.href = val.url3;
+                            return (window.location.href = val.url3);
                           }
                         }}
                         justify="center"
@@ -1148,11 +1152,11 @@ function HeaderHoverMenuItem(props) {
                         className={classes.imgcont}
                         onClick={() => {
                           if (props.listitem === "EARRINGS") {
-                            return window.location.href = val.url1;
+                            return (window.location.href = val.url1);
                           } else if (props.listitem === "RINGS") {
-                            return window.location.href = val.url2;
+                            return (window.location.href = val.url2);
                           } else if (props.listitem === "BANGLES & BRACELETS") {
-                            return window.location.href = val.url3;
+                            return (window.location.href = val.url3);
                           }
                         }}
                         // justify="center"
@@ -1188,11 +1192,11 @@ function HeaderHoverMenuItem(props) {
                         className={classes.imgcont}
                         onClick={() => {
                           if (props.listitem === "EARRINGS") {
-                            return window.location.href = val.url1;
+                            return (window.location.href = val.url1);
                           } else if (props.listitem === "RINGS") {
-                            return window.location.href = val.url2;
+                            return (window.location.href = val.url2);
                           } else if (props.listitem === "BANGLES & BRACELETS") {
-                            return window.location.href = val.url3;
+                            return (window.location.href = val.url3);
                           }
                         }}
                         // justify="center"
@@ -1236,152 +1240,159 @@ function HeaderHoverMenuItem(props) {
         }}
       >
         <Grid container item xs={12}>
-        <Grid item xs={9}>
-        <Grid item xs={12} style={{display:"flex"}}>
-          <Grid item xs={4} className={classes.gridmultiplesection}>
-            <Grid item xs={12} style={{ textAlign: "center" }}>
-              <Typography className={classes.listedItemstitle}>
-                SHOP BY STYLE
-              </Typography>
-            </Grid>
-            <Grid container item xs={12} style={{ padding: "0 25px" }}>
-              {solitaireData.map((val, index) => {
-                return (
-                  <Grid item xs={6}>
-                    <Grid
-                      container
-                      className={classes.imgcont}
-                      onClick={() => {
-                        window.location.href = val.url;
-                      }}
-                      justify="center"
-                      alignContent="center"
-                      alignItems="center"
-                      style={{ cursor: "pointer" }}
-                    >
-                      <Grid item style={{ margin: "auto" }}>
-                        <Typography className={classes.imgtitle}>
-                          {val.title}
+          <Grid item xs={9}>
+            <Grid item xs={12} style={{ display: "flex" }}>
+              <Grid item xs={4} className={classes.gridmultiplesection}>
+                <Grid item xs={12} style={{ textAlign: "center" }}>
+                  <Typography className={classes.listedItemstitle}>
+                    SHOP BY STYLE
+                  </Typography>
+                </Grid>
+                <Grid container item xs={12} style={{ padding: "0 25px" }}>
+                  {solitaireData.map((val, index) => {
+                    return (
+                      <Grid item xs={6}>
+                        <Grid
+                          container
+                          className={classes.imgcont}
+                          onClick={() => {
+                            window.location.href = val.url;
+                          }}
+                          justify="center"
+                          alignContent="center"
+                          alignItems="center"
+                          style={{ cursor: "pointer" }}
+                        >
+                          <Grid item style={{ margin: "auto" }}>
+                            <Typography className={classes.imgtitle}>
+                              {val.title}
+                            </Typography>
+                          </Grid>
+                          <Grid
+                            item
+                            style={{
+                              justifyContent: "center",
+                              alignContent: "center",
+                              display: "flex",
+                            }}
+                          >
+                            {val.image && (
+                              <img
+                                style={{
+                                  width: "50%",
+                                  margin: "auto",
+                                  marginBottom: "15px",
+                                }}
+                                src={val.image}
+                              />
+                            )}
+                          </Grid>
+                        </Grid>
+                      </Grid>
+                    );
+                  })}{" "}
+                </Grid>
+              </Grid>
+              <Grid item xs={1}></Grid>
+              <Grid item xs={3} className={classes.gridmultiplesection}>
+                <Grid container item xs={12}>
+                  {solitaireData2.map((val, i) => (
+                    <Grid item xs={12}>
+                      <Grid
+                        item
+                        xs={12}
+                        justify="center"
+                        alignContent="center"
+                        alignItems="center"
+                        style={{ cursor: "pointer" }}
+                      >
+                        <Typography
+                          className={classes.listedItemstitle}
+                          style={{ textAlign: "center" }}
+                        >
+                          {val.title.toUpperCase()}
                         </Typography>
                       </Grid>
                       <Grid
                         item
+                        xs={12}
+                        justify="center"
+                        alignContent="center"
+                        alignItems="center"
                         style={{
-                          justifyContent: "center",
-                          alignContent: "center",
+                          cursor: "pointer",
                           display: "flex",
+                          justifyContent: "center",
                         }}
                       >
-                        {val.image && (
-                          <img
-                            style={{
-                              width: "50%",
-                              margin: "auto",
-                              marginBottom: "15px",
-                            }}
-                            src={val.image}
-                          />
-                        )}
+                        <div>
+                          {val.contents.map((x, i) => (
+                            <div
+                              style={{ display: "flex", paddingBottom: "13px" }}
+                            >
+                              <img src={x.img} width="17px" height="25px" />
+                              <Typography
+                                style={{ margin: "0px" }}
+                                className={classes.listedItemsvalue}
+                              >
+                                {x.sub}
+                              </Typography>
+                            </div>
+                          ))}
+                        </div>
                       </Grid>
                     </Grid>
-                  </Grid>
-                );
-              })}{" "}
-            </Grid>
-          </Grid>
-          <Grid item xs={1}></Grid>
-          <Grid item xs={3} className={classes.gridmultiplesection}>
-            <Grid container item xs={12}>
-              {solitaireData2.map((val, i) => (
-                <Grid item xs={12}>
-                  <Grid
-                    item
-                    xs={12}
-                    justify="center"
-                    alignContent="center"
-                    alignItems="center"
-                    style={{ cursor: "pointer" }}
-                  >
-                    <Typography
-                      className={classes.listedItemstitle}
-                      style={{ textAlign: "center" }}
-                    >
-                      {val.title.toUpperCase()}
-                    </Typography>
-                  </Grid>
-                  <Grid
-                    item
-                    xs={12}
-                    justify="center"
-                    alignContent="center"
-                    alignItems="center"
-                    style={{
-                      cursor: "pointer",
-                      display: "flex",
-                      justifyContent: "center",
-                    }}
-                  >
-                    <div>
-                      {val.contents.map((x, i) => (
-                        <div style={{ display: "flex", paddingBottom:"13px" }}>
-                          <img src={x.img} width="17px" height="25px" />
-                          <Typography
-                            style={{ margin: "0px" }}
-                            className={classes.listedItemsvalue}
-                          >
-                            {x.sub}
-                          </Typography>
-                        </div>
-                      ))}
-                    </div>
-                  </Grid>
-                </Grid>
-              ))}
-            </Grid>
-          </Grid>
-          <Grid item xs={1}></Grid>
-          <Grid item xs={3} className={classes.gridmultiplesection}>
-            {solitaireData3.map((val, i) => (
-              <Grid
-                container
-                item
-                xs={12}
-              >
-                <Grid item xs={12}>
-                  <Typography
-                    className={classes.listedItemstitle}
-                    style={{ textAlign: "center" }}
-                  >
-                    {val.title.toUpperCase()}
-                  </Typography>
-                </Grid>
-                <Grid item xs={12} style={{ marginBottom: "40px" }}>
-                  {val.contents.map((cont, i) => (
-                    <Typography className={classes.listedItemsvalue} style={{paddingBottom:"13px"}} >
-                      {cont.itm}
-                    </Typography>
                   ))}
                 </Grid>
               </Grid>
-            ))}
-            <div style={{ borderBottom: "1px solid #33346d",width:"75%",margin:"auto" }}></div>
-            <div style={{marginTop:"30px"}}>
-              {solitaireData4.map((val, i) => (
-                <Typography
-                  className={classes.phovertitile}
+              <Grid item xs={1}></Grid>
+              <Grid item xs={3} className={classes.gridmultiplesection}>
+                {solitaireData3.map((val, i) => (
+                  <Grid container item xs={12}>
+                    <Grid item xs={12}>
+                      <Typography
+                        className={classes.listedItemstitle}
+                        style={{ textAlign: "center" }}
+                      >
+                        {val.title.toUpperCase()}
+                      </Typography>
+                    </Grid>
+                    <Grid item xs={12} style={{ marginBottom: "40px" }}>
+                      {val.contents.map((cont, i) => (
+                        <Typography
+                          className={classes.listedItemsvalue}
+                          style={{ paddingBottom: "13px" }}
+                        >
+                          {cont.itm}
+                        </Typography>
+                      ))}
+                    </Grid>
+                  </Grid>
+                ))}
+                <div
                   style={{
-                    // borderBottom: "none",
-                    marginBottom: "2px",
-                    marginTop: "7px",
-                    textAlign: "center",
+                    borderBottom: "1px solid #33346d",
+                    width: "75%",
+                    margin: "auto",
                   }}
-                >
-                  {val.title.toUpperCase()}
-                </Typography>
-              ))}
-            </div>
-          </Grid>
-          </Grid>
+                ></div>
+                <div style={{ marginTop: "30px" }}>
+                  {solitaireData4.map((val, i) => (
+                    <Typography
+                      className={classes.phovertitile}
+                      style={{
+                        // borderBottom: "none",
+                        marginBottom: "2px",
+                        marginTop: "7px",
+                        textAlign: "center",
+                      }}
+                    >
+                      {val.title.toUpperCase()}
+                    </Typography>
+                  ))}
+                </div>
+              </Grid>
+            </Grid>
           </Grid>
           <Grid item xs={3} className={classes.gridmultiplesection}>
             <div style={{ paddingTop: "25px" }}>
@@ -1408,120 +1419,126 @@ function HeaderHoverMenuItem(props) {
         }}
       >
         <Grid container item xs={12}>
-        <Grid item xs={9}>
-          <Grid item xs={12} style={{display:"flex"}}>
-            <Grid item xs={5} className={classes.gridmultiplesection}>
-            <Grid item xs={12} style={{ textAlign: "center" }}>
-              <Typography className={classes.listedItemstitle}>
-                SILVER ARTICLES
-              </Typography>
-            </Grid>
-            <Grid container item xs={12} style={{ padding: "0 25px" }}>
-              {silverItems.map((val, index) => {
-                return (
-                  <Grid item xs={4}>
-                    <Grid
-                      container
-                      className={classes.imgcont}
-                      onClick={() => {
-                        window.location.href = val.url;
-                      }}
-                      justify="center"
-                      alignContent="center"
-                      alignItems="center"
-                      style={{ cursor: "pointer" }}
-                    >
-                      <Grid item style={{ margin: "auto" }}>
-                        <Typography className={classes.imgtitle}>
+          <Grid item xs={9}>
+            <Grid item xs={12} style={{ display: "flex" }}>
+              <Grid item xs={5} className={classes.gridmultiplesection}>
+                <Grid item xs={12} style={{ textAlign: "center" }}>
+                  <Typography className={classes.listedItemstitle}>
+                    SILVER ARTICLES
+                  </Typography>
+                </Grid>
+                <Grid container item xs={12} style={{ padding: "0 25px" }}>
+                  {silverItems.map((val, index) => {
+                    return (
+                      <Grid item xs={4}>
+                        <Grid
+                          container
+                          className={classes.imgcont}
+                          onClick={() => {
+                            window.location.href = val.url;
+                          }}
+                          justify="center"
+                          alignContent="center"
+                          alignItems="center"
+                          style={{ cursor: "pointer" }}
+                        >
+                          <Grid item style={{ margin: "auto" }}>
+                            <Typography className={classes.imgtitle}>
+                              {val.title}
+                            </Typography>
+                          </Grid>
+                          <Grid
+                            item
+                            style={{
+                              justifyContent: "center",
+                              alignContent: "center",
+                              display: "flex",
+                            }}
+                          >
+                            {val.img && (
+                              <img
+                                style={{
+                                  width: "50%",
+                                  margin: "auto",
+                                  marginBottom: "15px",
+                                }}
+                                src={val.img}
+                              />
+                            )}
+                          </Grid>
+                        </Grid>
+                      </Grid>
+                    );
+                  })}{" "}
+                </Grid>
+              </Grid>
+              <Grid item xs={5} className={classes.gridmultiplesection}>
+                <Grid container item xs={12}>
+                  {silverItems2.map((val, i) => (
+                    <Grid item xs={6}>
+                      <Grid
+                        item
+                        xs={12}
+                        justify="center"
+                        alignContent="center"
+                        alignItems="center"
+                        style={{ cursor: "pointer" }}
+                      >
+                        <Typography
+                          className={classes.listedItemstitle}
+                          style={{ textAlign: "center", marginBottom: "12px" }}
+                        >
                           {val.title}
                         </Typography>
                       </Grid>
                       <Grid
                         item
-                        style={{
-                          justifyContent: "center",
-                          alignContent: "center",
-                          display: "flex",
-                        }}
+                        xs={12}
+                        justify="center"
+                        alignContent="center"
+                        alignItems="center"
+                        style={{ cursor: "pointer" }}
                       >
-                        {val.img && (
-                          <img
-                            style={{
-                              width: "50%",
-                              margin: "auto",
-                              marginBottom: "15px",
-                            }}
-                            src={val.img}
-                          />
-                        )}
+                        {val.contents.map((x, i) => (
+                          <Typography
+                            className={classes.listedItemsvalue}
+                            style={{ paddingTop: "12px" }}
+                          >
+                            {x.item}
+                          </Typography>
+                        ))}
                       </Grid>
                     </Grid>
-                  </Grid>
-                );
-              })}{" "}
-            </Grid>
-          </Grid>
-          <Grid item xs={5} className={classes.gridmultiplesection}>
-            <Grid container item xs={12}>
-              {silverItems2.map((val, i) => (
-                <Grid item xs={6}>
-                  <Grid
-                    item
-                    xs={12}
-                    justify="center"
-                    alignContent="center"
-                    alignItems="center"
-                    style={{ cursor: "pointer" }}
-                  >
-                    <Typography
-                      className={classes.listedItemstitle}
-                      style={{ textAlign: "center",marginBottom:"12px" }}
-                    >
-                      {val.title}
-                    </Typography>
-                  </Grid>
-                  <Grid
-                    item
-                    xs={12}
-                    justify="center"
-                    alignContent="center"
-                    alignItems="center"
-                    style={{ cursor: "pointer" }}
-                  >
-                    {val.contents.map((x, i) => (
-                      <Typography className={classes.listedItemsvalue} style={{paddingTop:"12px"}}>
-                        {x.item}
-                      </Typography>
-                    ))}
-                  </Grid>
-                </Grid>
-              ))}
-            </Grid>
-          </Grid>
-          <Grid item xs={2} className={classes.gridmultiplesection}>
-            {silverItems3.map((val, i) => (
-              <Grid container item xs={12}>
-                <Grid item xs={12}>
-                  <Typography
-                    className={classes.listedItemstitle}
-                    style={{ textAlign: "center",marginBottom:"12px" }}
-                  >
-                    {val.title}
-                  </Typography>
-                </Grid>
-                <Grid item xs={12}>
-                  {val.contents.map((itms, i) => (
-                    <Typography className={classes.listedItemsvalue} style={{paddingTop:"12px"}}>
-                      {itms.item}
-                    </Typography>
                   ))}
                 </Grid>
               </Grid>
-            ))}    
+              <Grid item xs={2} className={classes.gridmultiplesection}>
+                {silverItems3.map((val, i) => (
+                  <Grid container item xs={12}>
+                    <Grid item xs={12}>
+                      <Typography
+                        className={classes.listedItemstitle}
+                        style={{ textAlign: "center", marginBottom: "12px" }}
+                      >
+                        {val.title}
+                      </Typography>
+                    </Grid>
+                    <Grid item xs={12}>
+                      {val.contents.map((itms, i) => (
+                        <Typography
+                          className={classes.listedItemsvalue}
+                          style={{ paddingTop: "12px" }}
+                        >
+                          {itms.item}
+                        </Typography>
+                      ))}
+                    </Grid>
+                  </Grid>
+                ))}
+              </Grid>
+            </Grid>
           </Grid>
-          </Grid>
-          </Grid>
-          <Grid item xs={3} >
+          <Grid item xs={3}>
             <div style={{ paddingTop: "25px" }}>
               <img
                 src="https://products.jewelegance.com/JG-1910-00295.jpg"
@@ -1539,7 +1556,7 @@ function HeaderHoverMenuItem(props) {
     <Grid container className={classes.rootsub}>
       <Grid container item xs={12} className={classes.paperdivsub}>
         <Popper
-          style={{ boxShadow: "5px 5px 8px #666161"}}
+          style={{ boxShadow: "5px 5px 8px #666161" }}
           placement={"bottom"}
           open={opens}
           anchorEl={target}

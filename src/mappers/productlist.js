@@ -130,7 +130,6 @@ export default function (data, cdnUrl) {
   const _format = mapperdata.map((k) => {
     let _d = {};
     try {
-      debugger;
       _d = {
         totalCount: data.data.totalCount ?? " ",
         price: k.trans_sku_lists[0].sellingPrice ?? " ",
@@ -170,7 +169,7 @@ export default function (data, cdnUrl) {
         discount: k.trans_sku_lists[0].discount ?? " ",
       };
     } catch (error) {}
-    debugger;
+
     return _d;
   });
   // console.info('_format', _format);
