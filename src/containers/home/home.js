@@ -3,7 +3,6 @@ import Hidden from "@material-ui/core/Hidden";
 import { withStyles } from "@material-ui/core/styles";
 import ArrowLeftIcon from "@material-ui/icons/ArrowLeft";
 import ArrowRightIcon from "@material-ui/icons/ArrowRight";
-
 import Aos from "aos";
 import "aos/dist/aos.css";
 import Slideshow from "components/Carousel/carosul";
@@ -20,8 +19,9 @@ import Card from "./CardGrid";
 import { AdvancedGridList } from "./collectionsGrid";
 import Homenote from "./Homenote";
 import "./index.css";
-import { Title } from "./titles";
 import InstagramFeed from "./InstagramFeed";
+import { Title } from "./titles";
+
 const styles = (theme) => ({
   root: {
     overflow: "hidden",
@@ -257,8 +257,9 @@ class HomeComp extends React.Component {
         let responseData = data?.data?.allFeaturedProducts?.nodes;
 
         let productDetails = responseData.map((val) => ({
-          price: val?.productListByProductId?.transSkuListsByProductId?.nodes[0]?.markupPrice ?? " ",
-          offerPrice: val?.productListByProductId?.transSkuListsByProductId?.nodes[0]?.discountPrice ?? " ",
+          price: val?.productListByProductId?.transSkuListsByProductId?.nodes[0]?.sellingPrice ?? " ",
+
+          offerPrice: val?.productListByProductId?.transSkuListsByProductId?.nodes[0]?.markupPrice ?? " ",
           title: val?.productListByProductId?.productName ?? " ",
           save: val?.productListByProductId?.transSkuListsByProductId?.nodes[0]?.discount ?? " ",
           image: {

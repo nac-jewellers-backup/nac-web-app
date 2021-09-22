@@ -97,9 +97,9 @@ export const styles = (theme) => ({
   menunac: {
     backgroundColor: theme.palette.secondary.main,
   },
-  styloriEditing:{
+  styloriEditing: {
     backgroundColor: theme.palette.stylori.pinkMain,
-    height:"40px"
+    height: "40px",
   },
   menustylori: {
     // backgroundColor: theme.palette.stylori.pinkMain,
@@ -221,8 +221,8 @@ export const styles = (theme) => ({
     color: "#fff",
     fontSize: "16px",
     margin: "auto",
-    paddingRight:"20px",
-    letterSpacing:3
+    paddingRight: "20px",
+    letterSpacing: 3,
   },
   drawerPaper: {
     width: "100%",
@@ -259,7 +259,7 @@ export const styles = (theme) => ({
   },
   subtitleContainer: {
     backgroundColor: "#fff !important",
-    color:"#33346d",
+    color: "#33346d",
     "&:hover": {
       backgroundColor: "#fff !important",
     },

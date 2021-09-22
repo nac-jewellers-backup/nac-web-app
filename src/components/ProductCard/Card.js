@@ -17,6 +17,7 @@ import Wishlist from "components/wishlist/wishlist";
 export const ImgMediaCard = (props) => {
   const { ProductDetailCtx, setFilters } = React.useContext(ProductDetailContext);
   const loc = window.location.search;
+  console.log(props.data);
 
   return <Component filters={ProductDetailCtx.filters} setFilters={setFilters} {...props} />;
 };
@@ -358,7 +359,7 @@ function Component(props) {
 
                     <Grid items>
                       <Typography className={classes.discountPercentage}>
-                        {props.data.save === 0 ? " " : ` ${Math.round(props.data.save)} % OFF`}
+                        {props.data.save === 0 ? " " : ` ${Math.round(props.data.save)}% OFF`}
                         &nbsp;&nbsp;
                       </Typography>
                     </Grid>
@@ -425,14 +426,21 @@ function Component(props) {
 
                     <Grid items>
                       <Typography className={classes.discountPercentage}>
-                        {props.data.save === 0 ? " " : ` ${Math.round(props.data.save)} % OFF`}
+                        {props.data.save === 0 ? " " : ` ${Math.round(props.data.save)}% OFF`}
                         &nbsp;&nbsp;
                       </Typography>
                     </Grid>
                   </Grid>
                   <Grid container xs={12}>
-                    <Typography variant="body1" component="span" style={{ paddingLeft: "5px" }} className={`${classes.titles}`}>
-                      {props.data.title.charAt(0).toUpperCase() + props.data.title.slice(1)}
+                    <Typography
+                      variant="body1"
+                      component="span"
+                      style={{ paddingLeft: "5px" }}
+                      className={`${classes.titles}`}
+                    >
+                      {props.data.price}
+                      {props.data.title.charAt(0).toUpperCase() +
+                        props.data.title.slice(1)}
                     </Typography>
                   </Grid>
                 </Hidden>

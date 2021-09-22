@@ -85,6 +85,7 @@ class Component extends React.Component {
 
     if (this.props.data !== prevProps.data) {
       this.setState({ loadingtext: false });
+
       // setTimeout(function(){ this.setState({loading:false}); }.bind(this), 2000);
     }
   }

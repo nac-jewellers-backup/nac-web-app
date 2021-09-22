@@ -356,7 +356,7 @@ export default function ImageGridList(props) {
                         </Grid>
                         {/* <span className={classes.exclIcon}></span> */}
                         <Grid container item xs={12} justify={"center"}>
-                          <Typography>{val.customerName ?? "Samir"}</Typography>
+                          <Typography>{val.customerName ?? " "}</Typography>
                           <br />
                           <br />
                         </Grid>

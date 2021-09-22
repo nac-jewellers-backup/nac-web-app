@@ -82,7 +82,9 @@ const Productprice = (
                   height: "auto",
                   marginBottom: "10px",
                   marginTop: "18px",
+                  borderBottom: "-5px",
                 }}
+                className="boxshadow"
               >
                 {mobilecarousel(props, val, wishlist)}
               </div>

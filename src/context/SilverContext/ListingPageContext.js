@@ -1,16 +1,14 @@
-import React, { useEffect } from "react";
+import { createApolloFetch } from "apollo-fetch";
+import { CDN_URL } from "config";
+import { GlobalContext } from "context/GlobalContext";
+import { NetworkContext } from "context/NetworkContext";
 import { useGraphql } from "hooks/GraphqlHook";
 import { useNetworkRequest } from "hooks/NetworkHooks";
-import { PRODUCTLIST, conditions, seoUrlResult } from "queries/productListing";
-import { withRouter } from "react-router-dom";
 import productlist from "mappers/productlist";
-import { CDN_URL } from "config";
+import { seoUrlResult } from "queries/productListing";
+import React, { useEffect } from "react";
 import { matchPath } from "react-router";
-import { createApolloFetch } from "apollo-fetch";
-import { NetworkContext } from "context/NetworkContext";
-import { GlobalContext } from "context/GlobalContext";
-import { bool } from "prop-types";
-import { filterParams } from "mappers";
+import { withRouter } from "react-router-dom";
 
 // *****************************************************************
 
@@ -53,14 +51,18 @@ export const ListingPageConsumer = ListingPageContext.Consumer;
 
 // *****************************************
 const Provider = (props) => {
-  const [silverFilters, setSilverFilters] = React.useState(initialCtx.ListingPageCtx.silverFilters);
+  const [silverFilters, setSilverFilters] = React.useState(
+    initialCtx.ListingPageCtx.silverFilters
+  );
   const [sort, setSort] = React.useState(initialCtx.ListingPageCtx.sort);
   const [offset, setOffset] = React.useState(0);
   const [first, setFirst] = React.useState(24);
   const [dataArr, setDataArr] = React.useState([]);
   const [cartcount, setcartcount] = React.useState([]);
   const [mappedFilters, setMappedFilters] = React.useState([]);
-  const [{ filterLogic }, setFilterLogic] = React.useState({ filterLogic: () => [] });
+  const [{ filterLogic }, setFilterLogic] = React.useState({
+    filterLogic: () => [],
+  });
   const [LoadingSeoQuery, setLoadingSeoQurey] = React.useState(true);
   const [ErrorSeoQuery, setErrorSeoQuery] = React.useState(false);
   const [DataSeoQuery, setDataSeoQuery] = React.useState([]);
@@ -80,7 +82,12 @@ const Provider = (props) => {
   const { Globalctx, setGlobalCtx } = React.useContext(GlobalContext);
   const client = createApolloFetch({ uri });
 
-  const { loading: ntx, error: ntxerr, data: ntxdata, makeFetch } = useNetworkRequest("/filterlist", {}, false, {});
+  const {
+    loading: ntx,
+    error: ntxerr,
+    data: ntxdata,
+    makeFetch,
+  } = useNetworkRequest("/filterlist", {}, false, {});
 
   useEffect(() => {
     const fetch_data = async () => {
@@ -99,7 +106,9 @@ const Provider = (props) => {
         }
       };
 
-      const conditionfiltersSeo = { seofilter: { seoUrl: { in: splitHiphen() } } };
+      const conditionfiltersSeo = {
+        seofilter: { seoUrl: { in: splitHiphen() } },
+      };
       // makeRequestSeo(conditionfiltersSeo)
       function status(response) {
         if (response.status >= 200 && response.status < 300) {
@@ -219,10 +228,14 @@ const Provider = (props) => {
     return paramsAo;
   };
 
-
   // {transSkuListsByProductId: {some: {discountPrice: {greaterThan: 1.5}}}}
   // const { loading, error, data, makeRequest } = useGraphql(PRODUCTLIST, () => { }, {})
-  const { loading, error, data, makeFetch: fetchproducts } = useNetworkRequest("/fetchproducts", {}, false, {});
+  const {
+    loading,
+    error,
+    data,
+    makeFetch: fetchproducts,
+  } = useNetworkRequest("/fetchproducts", {}, false, {});
   // fetchproducts
 
   // {filter:{transSkuListsByProductId:{every:{markupPrice:{  "greaterThanOrEqualTo":   20000,
@@ -242,8 +255,12 @@ const Provider = (props) => {
   }, [loading, error, data]);
   const seoUrlFetch = () => {
     var path_name =
-      mappedFilters.seo_url && mappedFilters.seo_url.length > 0 ? mappedFilters.seo_url : window.location.pathname.split("/")[1];
-    const conditionfiltersSeo = { seofilter: { seoUrl: { in: paramObjects(path_name) } } };
+      mappedFilters.seo_url && mappedFilters.seo_url.length > 0
+        ? mappedFilters.seo_url
+        : window.location.pathname.split("/")[1];
+    const conditionfiltersSeo = {
+      seofilter: { seoUrl: { in: paramObjects(path_name) } },
+    };
 
     makeRequestSeo(conditionfiltersSeo);
   };
@@ -341,7 +358,11 @@ const Provider = (props) => {
 
   useEffect(() => {
     //    alert("filters")
-    if (silverFilters && Object.entries(silverFilters).length !== 0 && silverFilters.constructor === Object) {
+    if (
+      silverFilters &&
+      Object.entries(silverFilters).length !== 0 &&
+      silverFilters.constructor === Object
+    ) {
       if (
         Object.values(silverFilters).filter((val) => {
           if (Object.entries(val).length > 0 && val.constructor === Object) {
@@ -418,8 +439,7 @@ const Provider = (props) => {
       const query = encodeURI(queries.join("&"));
 
       // bodyvar = paramObjects();
-    } catch (error) {
-    }
+    } catch (error) {}
     var k = qtfArr.map((val) => Object.values(val));
     var keyy = qtfArr.map((val) => Object.keys(val));
     len = keyy.length;
@@ -437,17 +457,21 @@ const Provider = (props) => {
       if (ntxdata.seo_url === "jewellery") {
         setMappedFilters(ntxdata);
       }
-    } catch (error) {
-    }
+    } catch (error) {}
     // }
   };
 
   useEffect(() => {
-    if (Object.entries(ntxdata).length !== 0 && ntxdata.constructor === Object) {
+    if (
+      Object.entries(ntxdata).length !== 0 &&
+      ntxdata.constructor === Object
+    ) {
       // if(ntxdata.seo_url !=="jewellery" ){
       if (window.location.pathname !== "jewellery") {
         props.history.push({
-          pathname: `${mappedFilters.seo_url ? `/${mappedFilters.seo_url}` : ""}`,
+          pathname: `${
+            mappedFilters.seo_url ? `/${mappedFilters.seo_url}` : ""
+          }`,
         });
       }
       setSort("");
@@ -461,16 +485,35 @@ const Provider = (props) => {
 
   useEffect(() => {
     const filters_seo_condition = () => {
-      if (Object.entries(sort).length > 0 && sort.constructor === Object && pricemin !== null && pricemax !== null) {
-        return sort && `sort=${sort.values}&startprice=${pricemin}&endprice=${pricemax}`;
-      } else if (pricemin !== null && pricemax !== null && pricemin !== 0 && pricemax !== 0) {
+      if (
+        Object.entries(sort).length > 0 &&
+        sort.constructor === Object &&
+        pricemin !== null &&
+        pricemax !== null
+      ) {
+        return (
+          sort &&
+          `sort=${sort.values}&startprice=${pricemin}&endprice=${pricemax}`
+        );
+      } else if (
+        pricemin !== null &&
+        pricemax !== null &&
+        pricemin !== 0 &&
+        pricemax !== 0
+      ) {
         return `startprice=${pricemin}&endprice=${pricemax}`;
-      } else if (Object.entries(sort).length > 0 && sort.constructor === Object) {
+      } else if (
+        Object.entries(sort).length > 0 &&
+        sort.constructor === Object
+      ) {
         return sort && `sort=${sort.values}`;
       }
     };
-    
-    if ((Object.entries(sort).length > 0 && sort.constructor === Object) || (pricemin !== null && pricemax !== null)) {
+
+    if (
+      (Object.entries(sort).length > 0 && sort.constructor === Object) ||
+      (pricemin !== null && pricemax !== null)
+    ) {
       props.history.push({
         pathname: `${mappedFilters.seo_url ? `/${mappedFilters.seo_url}` : ""}`,
         search: filters_seo_condition(),
@@ -485,13 +528,11 @@ const Provider = (props) => {
     }
   }, [ntxdata, silverFilters, mappedFilters, seoData]);
   useEffect(() => {
-   
     if (window.location.pathname !== "jewellery") {
       matchPath(window.location.pathname, {
         path: ":listingpage",
       });
     } else {
-     
       matchPath(`/${mappedFilters.seo_url}`, {
         path: ":listingpage",
       });
@@ -517,7 +558,16 @@ const Provider = (props) => {
   };
   return (
     <ListingPageContext.Provider
-      value={{ setcartcount, ListingPageCtx, setOffset, setFirst, setSort, setloadingfilters, setPriceMax, setPriceMin }}
+      value={{
+        setcartcount,
+        ListingPageCtx,
+        setOffset,
+        setFirst,
+        setSort,
+        setloadingfilters,
+        setPriceMax,
+        setPriceMin,
+      }}
     >
       {props.children}
     </ListingPageContext.Provider>
