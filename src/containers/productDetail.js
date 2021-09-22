@@ -3,6 +3,7 @@ import { withStyles } from "@material-ui/core/styles";
 import ArrowLeftIcon from "@material-ui/icons/ArrowLeft";
 import ArrowRightIcon from "@material-ui/icons/ArrowRight";
 import Footer from "components/Footer/Footer";
+import GadgetsNac from "components/Gagetstylori/GadgetsNac";
 import PriceBuynow from "components/product-image-slider/buyNow";
 import CustomerReviews from "components/product-image-slider/customer-reviews";
 import PriceCertification from "components/product-image-slider/priceCertification";
@@ -381,7 +382,7 @@ class ProductDetail extends Component {
     // let diamondWeight = this.props.data[0].productsDetails[1].namedetail[3].details ?? "";
 
     return (
-      <div>
+      <div style={{ overflow: "hidden" }}>
         <div>
           <MetaTags>
             {this.props.data &&
@@ -537,7 +538,14 @@ class ProductDetail extends Component {
                       .details && (
                       <Grid container item xs={4} style={{ paddingTop: "8px" }}>
                         <Grid container item xs={3}>
-                          <Avatar alt="NAC">N</Avatar>
+                          <Avatar alt="NAC">
+                            <img
+                              src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/Group+1015.svg"
+                              alt="matel weight"
+                              height="100%"
+                              width="100%"
+                            />
+                          </Avatar>
                         </Grid>
                         <Grid
                           container
@@ -573,7 +581,14 @@ class ProductDetail extends Component {
                       .details && (
                       <Grid container item xs={4} style={{ paddingTop: "8px" }}>
                         <Grid container item xs={3}>
-                          <Avatar alt="NAC">N</Avatar>
+                          <Avatar alt="NAC">
+                            <img
+                              src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/Group+1019.svg"
+                              alt=" Metal Purity"
+                              height="100%"
+                              width="100%"
+                            />
+                          </Avatar>
                         </Grid>
                         <Grid
                           container
@@ -610,7 +625,14 @@ class ProductDetail extends Component {
                       .details && (
                       <Grid container item xs={4} style={{ paddingTop: "8px" }}>
                         <Grid container item xs={2}>
-                          <Avatar alt="NAC">N</Avatar>
+                          <Avatar alt="NAC">
+                            <img
+                              src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/Group+1022.svg"
+                              alt="Diamond Weight"
+                              height="100%"
+                              width="100%"
+                            />
+                          </Avatar>
                         </Grid>
                         <Grid
                           container
@@ -720,15 +742,7 @@ class ProductDetail extends Component {
             style={{ maxWidth: "1600px", margin: "auto" }}
           >
             <Grid container spacing={12}>
-              <Grid
-                item
-                xs={12}
-                style={{
-                  marginBottom: "20px",
-                  marginTop: "20px",
-                  paddingRight: "20px",
-                }}
-              >
+              <Grid item xs={12}>
                 <ProductDetails data={this.props.data} />
               </Grid>
               {/* <Grid
@@ -831,8 +845,8 @@ class ProductDetail extends Component {
           {/* <div style={{ paddingBottom: "50px" }}> */}
           {/* <Grid container spacing={12} style={{ position: 'sticky', top: '0', zIndex: '1000' }}> */}
           <Header wishlist={this.props.wishlistdata} pdpage={true} />
-          {/* </Grid> */}
 
+          {/* </Grid> */}
           <Grid item xs={12}>
             <PriceBuynow
               data={this.props.data}
@@ -845,24 +859,18 @@ class ProductDetail extends Component {
               wishlist={this.props.wishlistdata}
             />
           </Grid>
-          {/* <Grid
-            container
-            xs={11}
-            style={{ margin: "auto", padding: "15px 0px" }}
-          >
-            <ConnectionHome />
-          </Grid> */}
           <Grid item xs={12}>
             <PriceCertification data={this.props.data} />
           </Grid>
-          {/* <Grid item xs={12}>
-            <Request data={this.props.data} />
-          </Grid> */}
-
           <Grid item xs={12} className={classes.similarProducts}>
             <Container style={{ padding: "0px 26px" }}>
               <div
-                style={{ fontWeight: "bold", color: "#20205a", marginLeft: 15 }}
+                style={{
+                  fontWeight: "bold",
+                  color: "#20205a",
+                  marginLeft: 15,
+                  marginTop: 35,
+                }}
               >
                 SIMILAR PRODUCTS
               </div>
@@ -882,10 +890,41 @@ class ProductDetail extends Component {
                     );
                   })}
                 </Slideshow>
+                <Grid item xs={12} sm={12} md={12} style={{ marginTop: 30 }}>
+                  <GadgetsNac />
+                </Grid>
+              </div>
+              <div
+                style={{
+                  fontWeight: "bold",
+                  color: "#20205a",
+                  marginLeft: 15,
+                  marginTop: 35,
+                }}
+              >
+                SHOP OTHER CATEGORIES
+              </div>
+              <div style={{ paddingTop: 8, width: "100%" }}>
+                <Slideshow
+                  // sliderRef={this.slider}
+                  class="subslider-carousel"
+                  dataCarousel={dataCarouselcollectionsSm}
+                >
+                  {this.props?.data[0]?.fadeImageSublistRecentlyViewed?.map(
+                    (val) => {
+                      return (
+                        <ImgMediaCard
+                          data={val}
+                          cardSize="auto"
+                          hoverText={true}
+                        />
+                      );
+                    }
+                  )}
+                </Slideshow>
               </div>
             </Container>
           </Grid>
-
           <Grid item xs={12}>
             <Container>
               <RatingForm

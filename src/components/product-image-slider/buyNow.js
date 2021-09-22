@@ -505,13 +505,13 @@ class Component extends React.Component {
               data={this.props.data}
               wishlist={this.props.wishlist}
             />
-            <Container maxWidth="lg">
+            <Container maxWidth="lg" style={{ marginTop: "35px" }}>
               <Grid
                 container
                 spacing={2}
                 item
                 xs={12}
-                style={{ marginBottom: 30, marginTop: 30 }}
+                style={{ marginBottom: 30 }}
               >
                 <Grid container item xs={4}>
                   <Grid
@@ -531,7 +531,12 @@ class Component extends React.Component {
                         this.setState({ isShowDetailTab: 1 });
                       }}
                     >
-                      N
+                      <img
+                        src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/Group+1015.svg"
+                        alt="matel weight"
+                        height="100%"
+                        width="100%"
+                      />
                     </Avatar>
                   </Grid>
                 </Grid>
@@ -553,7 +558,12 @@ class Component extends React.Component {
                         this.setState({ isShowDetailTab: 2 });
                       }}
                     >
-                      N
+                      <img
+                        src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/Group+1019.svg"
+                        alt=" Metal Purity"
+                        height="100%"
+                        width="100%"
+                      />
                     </Avatar>
                   </Grid>
                 </Grid>
@@ -575,7 +585,12 @@ class Component extends React.Component {
                         this.setState({ isShowDetailTab: 3 });
                       }}
                     >
-                      N
+                      <img
+                        src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/Group+1022.svg"
+                        alt="Diamond Weight"
+                        height="100%"
+                        width="100%"
+                      />
                     </Avatar>
                   </Grid>
                 </Grid>
