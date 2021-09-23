@@ -83,7 +83,7 @@ export function AdvancedGridList() {
           <Grid item xs={4}>
             <div className="parent">
               <img
-                src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_collection/Group+46%402x.png"
+                src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Collection+tile/Fabula_tile_385+X+300_px.jpg"
                 alt="NAC"
                 width="100%"
                 height="300"
@@ -91,14 +91,14 @@ export function AdvancedGridList() {
               />
               <div className="child" style={{ width: "100%" }}>
                 <div className={classes.coverfooter}>
-                  <b>SHOP</b>&nbsp; DIAMOND SETS
+                  <b>SHOP</b>&nbsp;
                 </div>
                 <div>&nbsp; </div>
               </div>
             </div>
             <div className="parent">
               <img
-                src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_collection/Group+64%402x.png"
+                src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Collection+tile/Diamond_tile_385+X+600_px.jpg"
                 alt="NAC"
                 width="100%"
                 height="600"
@@ -106,7 +106,7 @@ export function AdvancedGridList() {
               />
               <div className="child" style={{ width: "100%" }}>
                 <div className={classes.coverfooter}>
-                  <b>SHOP</b>&nbsp; FABULA
+                  <b>SHOP</b>&nbsp;
                 </div>
                 <div>&nbsp; </div>
               </div>
@@ -117,7 +117,7 @@ export function AdvancedGridList() {
               <Grid item xs={6}>
                 <div className="parent">
                   <img
-                    src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_collection/Group+50%402x.png"
+                    src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Collection+tile/Rewind_tile_385+X+300_px.jpg"
                     alt="NAC"
                     width="100%"
                     height="300"
@@ -125,14 +125,14 @@ export function AdvancedGridList() {
                   />
                   <div className="child" style={{ width: "100%" }}>
                     <div className={classes.coverfooter}>
-                      <b>SHOP</b>&nbsp; REWIND
+                      <b>SHOP</b>&nbsp;
                     </div>
                     <div>&nbsp; </div>
                   </div>
                 </div>
                 <div className="parent">
                   <img
-                    src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_collection/Group+60%402x.png"
+                    src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Collection+tile/Nagas_tile_385+X+300_px.jpg"
                     alt="NAC"
                     width="100%"
                     height="300"
@@ -140,7 +140,7 @@ export function AdvancedGridList() {
                   />
                   <div className="child" style={{ width: "100%" }}>
                     <div className={classes.coverfooter}>
-                      <b>SHOP</b>&nbsp; RUDRAMADEVI
+                      <b>SHOP</b>&nbsp;
                     </div>
                     <div>&nbsp; </div>
                   </div>
@@ -149,14 +149,14 @@ export function AdvancedGridList() {
               <Grid item xs={6}>
                 <div className="parent">
                   <img
-                    src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_page/Group+147%402x.png"
+                    src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Collection+tile/Muhurtham_tile_385+X+600_px.jpg"
                     alt="NAC"
                     width="100%"
                     height="604"
                   />
                   <div className="child" style={{ width: "100%" }}>
                     <div className={classes.coverfooter}>
-                      <b>SHOP</b>&nbsp; MUHURTAM
+                      <b>SHOP</b>&nbsp;
                     </div>
                     <div>&nbsp; </div>
                   </div>
@@ -167,7 +167,7 @@ export function AdvancedGridList() {
               <Grid item xs={12}>
                 <div className="parent">
                   <img
-                    src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_collection/Group+68%402x.png"
+                    src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Collection+tile/Stylori_tile_770+X+300_px.jpg"
                     alt="NAC"
                     width="100%"
                     height="296"
@@ -178,7 +178,7 @@ export function AdvancedGridList() {
                   />
                   <div className="child" style={{ width: "100%" }}>
                     <div className={classes.coverfooter}>
-                      <b>SHOP</b>&nbsp; LITTLE ONES
+                      <b>SHOP</b>&nbsp;
                     </div>
                     <div>&nbsp; </div>
                   </div>
@@ -194,7 +194,7 @@ export function AdvancedGridList() {
             <Grid item xs={8}>
               <div className="parent">
                 <img
-                  src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_page/Group+156%402x.png"
+                  src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Collection+tile/StyloriSilver_tile_770+X+300_px.jpg"
                   alt="NAC"
                   width="100%"
                   height="300"
@@ -202,7 +202,7 @@ export function AdvancedGridList() {
                 />
                 <div className="child" style={{ width: "100%" }}>
                   <div className={classes.coverfooter}>
-                    <b>SHOP</b>&nbsp; STYLORI
+                    <b>SHOP</b>&nbsp;
                   </div>
                   <div>&nbsp; </div>
                 </div>
@@ -211,7 +211,7 @@ export function AdvancedGridList() {
             <Grid item xs={4}>
               <div className="parent">
                 <img
-                  src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_collection/Group+73.png"
+                  src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Collection+tile/Youngones_tile_385+X+300_px.jpg"
                   alt="NAC"
                   width="100%"
                   height="300"
@@ -219,7 +219,7 @@ export function AdvancedGridList() {
                 />
                 <div className="child" style={{ width: "100%" }}>
                   <div className={classes.coverfooter}>
-                    <b>SHOP</b>&nbsp; MAYURA
+                    <b>SHOP</b>&nbsp;
                   </div>
                   <div>&nbsp; </div>
                 </div>
@@ -228,115 +228,13 @@ export function AdvancedGridList() {
           </Grid>
         </Grid>
       </Hidden>
-      {/* <Hidden smDown>
-        <Grid container>
-          <Grid item xs={12}>
-            <div class="grid-container">
-              <div class="grid-item item3 ">
-                <img
-                  src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_collection/Group+46%402x.png"
-                  alt="NAC"
-                  width="100%%"
-                  height="100%"
-                  className={classes.gridimg}
-                />
-                <div className="overlayGrid">
-                  <b>SHOP</b>&nbsp; DIAMOND SETS
-                </div>
-              </div>
-              <div class="grid-item item4">
-                <img
-                  src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_collection/Group+50%402x.png"
-                  alt="NAC"
-                  width="100%"
-                  height="100%"
-                  className={classes.gridimg}
-                />
-                <div className="overlayGrid">
-                  <b>SHOP</b>&nbsp; REWIND
-                </div>
-              </div>
-              <div class="grid-item item2">
-                <img
-                  src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_page/Group+147%402x.png"
-                  alt="NAC"
-                  width="100%"
-                  height="100%"
-                />
-                <div className="overlayGrid">
-                  <b>SHOP</b>&nbsp; MUHURTAM
-                </div>
-              </div>
-              <div class="grid-item item4">
-                <img
-                  src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_collection/Group+60%402x.png"
-                  alt="NAC"
-                  width="100%"
-                  height="100%"
-                  className={classes.gridimg}
-                />
-                <div className="overlayGrid">
-                  <b>SHOP</b>&nbsp; RUDRAMADEVI
-                </div>
-              </div>
-              <div class="grid-item item11">
-                <img
-                  src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_collection/Group+64%402x.png"
-                  alt="NAC"
-                  width="100%"
-                  height="100%"
-                  className={classes.gridimg}
-                />
-                <div className="overlayGrid">
-                  <b>SHOP</b>&nbsp; FABULA
-                </div>
-              </div>
-              <div class="grid-item item44">
-                <img
-                  src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_collection/Group+68%402x.png"
-                  alt="NAC"
-                  width="100%"
-                  height="100%"
-                />
-                <div className="overlayGrid">
-                  <b>SHOP</b>&nbsp; LITTLE ONES
-                </div>
-              </div>
-              <div class="grid-item item45">
-                <img
-                  src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_page/Group+156%402x.png"
-                  alt="NAC"
-                  width="100%"
-                  height="100%"
-                  className={classes.gridimg}
-                />
-                <div className="overlayGrid">
-                  <b>SHOP</b>&nbsp; STYLORI
-                </div>
-              </div>
-              <div class="grid-item item3">
-                <img
-                  src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_collection/Group+73.png"
-                  alt="NAC"
-                  width="100%"
-                  height="100%"
-                  className={classes.gridimg}
-                />
-                <div className="overlayGrid">
-                  <b>SHOP</b>&nbsp; MAYURA
-                </div>
-              </div>
-            </div>
-          </Grid>
-        </Grid>
-      </Hidden> */}
 
       <Hidden mdUp>
         <div class="grid-container-sm">
           <div class="grid-item-sm item1-sm">
             {" "}
             <img
-              src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_collection/Group+50%402x.png"
+              src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Collection+tile/Rewind_tile_385+X+300_px.jpg"
               alt="NAC"
               width="100%"
               height="100%"
@@ -344,13 +242,13 @@ export function AdvancedGridList() {
             />
             <div className="overlayGrid">
               <b className={classes.titlefooter}>SHOP</b>&nbsp;
-              <span className={classes.titlefooter}>REWIND</span>
+              <span className={classes.titlefooter}></span>
             </div>
           </div>
           <div class="grid-item-sm item111-sm">
             {" "}
             <img
-              src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_collection/Group+46%402x.png"
+              src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Collection+tile/Fabula_tile_385+X+300_px.jpg"
               alt="NAC"
               width="100%"
               height="100%"
@@ -358,12 +256,12 @@ export function AdvancedGridList() {
             />
             <div className="overlayGrid">
               <b className={classes.titlefooter}>SHOP</b>&nbsp;{" "}
-              <span className={classes.titlefooter}>DIAMOND SETS</span>
+              <span className={classes.titlefooter}></span>
             </div>
           </div>
           <div class="grid-item-sm item112-sm">
             <img
-              src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_collection/Group+60%402x.png"
+              src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Collection+tile/Nagas_tile_385+X+300_px.jpg"
               alt="NAC"
               width="100%"
               height="100%"
@@ -371,12 +269,12 @@ export function AdvancedGridList() {
             />
             <div className="overlayGrid">
               <b className={classes.titlefooter}>SHOP</b>&nbsp;
-              <span className={classes.titlefooter}>RUDRAMA DEVI</span>
+              <span className={classes.titlefooter}></span>
             </div>
           </div>
           <div class="grid-item-sm item113-sm">
             <img
-              src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_collection/Group+73.png"
+              src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Collection+tile/Youngones_tile_385+X+300_px.jpg"
               alt="NAC"
               width="100%"
               height="100%"
@@ -384,12 +282,12 @@ export function AdvancedGridList() {
             />
             <div className="overlayGrid">
               <b className={classes.titlefooter}>SHOP</b>&nbsp;
-              <span className={classes.titlefooter}>MAYURA</span>
+              <span className={classes.titlefooter}></span>
             </div>
           </div>
           <div class="grid-item-sm item11-sm">
             <img
-              src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_page/Group+147%402x.png"
+              src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Collection+tile/Muhurtham_tile_385+X+600_px.jpg"
               alt="NAC"
               width="100%"
               height="100%"
@@ -397,12 +295,12 @@ export function AdvancedGridList() {
             />
             <div className="overlayGrid">
               <b className={classes.titlefooter}>SHOP</b>&nbsp;
-              <span className={classes.titlefooter}>MUHURTAM</span>
+              <span className={classes.titlefooter}></span>
             </div>
           </div>
           <div class="grid-item-sm item0-sm">
             <img
-              src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_collection/Group+68%402x.png"
+              src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Collection+tile/Stylori_tile_770+X+300_px.jpg"
               alt="NAC"
               className={classes.gridimg}
               width="100%"
@@ -410,7 +308,7 @@ export function AdvancedGridList() {
             />
             <div className="overlayGrid">
               <b className={classes.titlefooter}>SHOP</b>&nbsp;
-              <span className={classes.titlefooter}>LITTLE ONES</span>
+              <span className={classes.titlefooter}></span>
             </div>
           </div>
         </div>

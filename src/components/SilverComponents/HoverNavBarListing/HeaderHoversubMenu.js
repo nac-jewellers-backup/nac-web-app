@@ -184,18 +184,23 @@ function HeaderHoverMenuItem(props) {
   });
   const imageForEarRings = [
     {
-      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Group+317.png",
+      img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Main+menu+category+images/NAC+Jewellers+Earring.jpg",
     },
   ];
 
   const imageForBangles = [
     {
-      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/bangles%26bracelets/Group+461.png",
+      img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Main+menu+category+images/NAC+Jewellers+Bangle.jpg",
+    },
+  ];
+  const imageForNecklesh = [
+    {
+      img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Main+menu+category+images/NAC+Jewellers+Necklace.jpg",
     },
   ];
   const imageForRings = [
     {
-      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/rings/Group+387.png",
+      img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Main+menu+category+images/NAC+Jewellers+Rings.jpg",
     },
   ];
   const _imagewithtextOne = [
@@ -857,7 +862,7 @@ function HeaderHoverMenuItem(props) {
           <Grid item xs={3}>
             <div style={{ paddingTop: "25px" }}>
               <img
-                src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/Group+724%402x.png"
+                src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Main+menu+category+images/NAC+Jewellers+collections.jpg"
                 width="100%"
                 height="75%"
               />
@@ -938,7 +943,7 @@ function HeaderHoverMenuItem(props) {
           <Grid item xs={3}>
             <div style={{ paddingTop: "25px" }}>
               <img
-                src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/otherjwellery/Group+773%402x.png"
+                src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Main+menu+category+images/NAC+Jewellers+Other+Collections.jpg"
                 width="100%"
                 height="75%"
               />
@@ -1397,7 +1402,7 @@ function HeaderHoverMenuItem(props) {
           <Grid item xs={3} className={classes.gridmultiplesection}>
             <div style={{ paddingTop: "25px" }}>
               <img
-                src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/solitaire/Group+524.png"
+                src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Main+menu+category+images/NAC+Jewellers+Solitaire.jpg"
                 width="100%"
                 height="75%"
               />
@@ -1541,7 +1546,7 @@ function HeaderHoverMenuItem(props) {
           <Grid item xs={3}>
             <div style={{ paddingTop: "25px" }}>
               <img
-                src="https://products.jewelegance.com/JG-1910-00295.jpg"
+                src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Main+menu+category+images/NAC+Jewellers+Silver+Articles.jpg"
                 width="100%"
                 height="75%"
               />
