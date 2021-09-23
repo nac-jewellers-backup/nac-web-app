@@ -585,7 +585,7 @@ class HomeComp extends React.Component {
                   className={classes.contentPadding}
                   data-aos="fade-left"
                 >
-                  <Title title="New Arrivalss" />
+                  <Title title="New Arrival" />
                 </Grid>
                 <Grid item xs={12} data-aos="fade-left">
                   {
