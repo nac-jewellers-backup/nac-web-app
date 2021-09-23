@@ -1,16 +1,16 @@
-import React from "react";
+import { Grid, Hidden } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import { Typography, Grid, Hidden } from "@material-ui/core";
+import ArrowLeftIcon from "@material-ui/icons/ArrowLeft";
+import ArrowRightIcon from "@material-ui/icons/ArrowRight";
+import { Slideshow } from "components";
+import React from "react";
 import { Certified } from "./Certified";
 import { Diversestyles } from "./Diversestyles-pink";
 import { Easyreturns } from "./Easyreturns-pink";
 import { Fromthehouseofnac } from "./Fromthehouseofnac-pink.js";
-import { Securepayments } from "./Securepayments-pink";
 import { Hypoallergenic } from "./Hypoallergenic-pink";
 import "./index.css";
-import { Slideshow } from "components";
-import ArrowRightIcon from "@material-ui/icons/ArrowRight";
-import ArrowLeftIcon from "@material-ui/icons/ArrowLeft";
+import { Securepayments } from "./Securepayments-pink";
 
 const useStyles = makeStyles((theme) => ({
   typo: {
@@ -127,32 +127,97 @@ export default function PaperSheet(props) {
               isSilver ? classes.silverSvg : ""
             }`}
           >
-            {/* <img style={{ width: "70%", height: '100%' }} src={"https://assets.stylori.com/images/Static+Pages/Other+Pages/fromthehouseofnac-pink.svg"} /> */}
             <Certified color={color} />
           </Grid>
           <Grid item xs={4} className={classes.mainsource}>
-            {/* <img style={{ width: "70%", height: '100%' }} src={"https://assets.stylori.com/images/Static%20Pages/Other%20Pages/certifiedjewellery-pink.svg"} /> */}
             <Diversestyles color={color} />
           </Grid>
           <Grid item xs={4} className={classes.mainsource}>
-            {/* <img style={{ width: "70%", height: '100%' }} src={"https://assets.stylori.com/images/Static+Pages/Other+Pages/securepayments-pink.svg"} /> */}
             {!isSilver ? (
               <Easyreturns color={color} />
             ) : (
               <Hypoallergenic color={color} />
             )}
           </Grid>
-          {/* <Grid container item xs={4} justify="space-evenly"> */}
           <Grid item xs={4} className={classes.mainsource}>
-            {/* <img style={{ width: "70%", height: '100%' }} src={"https://assets.stylori.com/images/Static+Pages/Other+Pages/diversestyles-pink.svg"} /> */}
             <Fromthehouseofnac color={color} />
           </Grid>
           <Grid item xs={4} className={classes.mainsource}>
-            {/* <img style={{ width: "70%", height: '100%' }} src={"https://assets.stylori.com/images/Static+Pages/Other+Pages/easyreturns-pink.svg"} /> */}
             <Securepayments color={color} />
           </Grid>
-          {/* </Grid> */}
         </Slideshow>
+      </Hidden>
+    </Grid>
+  );
+}
+export function PaperSheetProduct(props) {
+  const isSilver = props.isSilver ? true : false;
+  const color = "#33346d";
+  const classes = useStyles();
+  const ArrowLeft = (props) => {
+    const { className, style, onClick } = props;
+    return (
+      <ArrowLeftIcon
+        className={`${className} ${classes.collectionSection}`}
+        onClick={onClick}
+        style={{ ...style }}
+      />
+    );
+  };
+  const ArrowRight = (props) => {
+    const { className, style, onClick } = props;
+    return (
+      <ArrowRightIcon
+        className={`${className} ${classes.collectionSection}`}
+        onClick={onClick}
+        style={{ ...style }}
+      />
+    );
+  };
+  const dataCarouselcollections = {
+    arrows: true,
+    dots: false,
+    autoplay: true,
+    infinite: true,
+    accessibility: true,
+    speed: 2500,
+    // fade: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    prevArrow: <ArrowLeft />,
+    nextArrow: <ArrowRight />,
+  };
+
+  // "#D91965"
+  return (
+    <Grid container justifyContent="center">
+      <Hidden smUp>
+        <Grid
+          item
+          xs={4}
+          sm={3}
+          className={`silverSvg ${classes.mainsource} ${
+            isSilver ? classes.silverSvg : ""
+          }`}
+        >
+          <Certified color={color} />
+        </Grid>
+        <Grid item xs={4} sm={3} className={classes.mainsource}>
+          <Diversestyles color={color} />
+        </Grid>
+        <Grid item xs={4} sm={3} className={classes.mainsource}>
+          {!isSilver ? (
+            <Easyreturns color={color} />
+          ) : (
+            <Hypoallergenic color={color} />
+          )}
+        </Grid>
+        <Grid item xs={4} sm={3} className={classes.mainsource}>
+          <Fromthehouseofnac color={color} />
+        </Grid>
+        <Grid item xs={4} sm={3} className={classes.mainsource}>
+          <Securepayments color={color} />
+        </Grid>
       </Hidden>
     </Grid>
   );

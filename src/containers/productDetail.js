@@ -3,7 +3,7 @@ import { withStyles } from "@material-ui/core/styles";
 import ArrowLeftIcon from "@material-ui/icons/ArrowLeft";
 import ArrowRightIcon from "@material-ui/icons/ArrowRight";
 import Footer from "components/Footer/Footer";
-import GadgetsNac from "components/Gagetstylori/GadgetsNac";
+import { PaperSheetProduct } from "components/Gagetstylori/GadgetsNac";
 import PriceBuynow from "components/product-image-slider/buyNow";
 import CustomerReviews from "components/product-image-slider/customer-reviews";
 import PriceCertification from "components/product-image-slider/priceCertification";
@@ -536,7 +536,13 @@ class ProductDetail extends Component {
                     this.props.data[0].productsDetails[0].namedetail[2] &&
                     this.props.data[0].productsDetails[0].namedetail[2]
                       .details && (
-                      <Grid container item xs={4} style={{ paddingTop: "8px" }}>
+                      <Grid
+                        container
+                        item
+                        xs={4}
+                        sm={3}
+                        style={{ paddingTop: "8px" }}
+                      >
                         <Grid container item xs={3}>
                           <Avatar alt="NAC">
                             <img
@@ -845,23 +851,15 @@ class ProductDetail extends Component {
           {/* <div style={{ paddingBottom: "50px" }}> */}
           {/* <Grid container spacing={12} style={{ position: 'sticky', top: '0', zIndex: '1000' }}> */}
           <Header wishlist={this.props.wishlistdata} pdpage={true} />
-
           {/* </Grid> */}
+
           <Grid item xs={12}>
             <PriceBuynow
               data={this.props.data}
               wishlist={this.props.wishlistdata}
             />
           </Grid>
-          <Grid item xs={12}>
-            <ProductDetails
-              data={this.props.data}
-              wishlist={this.props.wishlistdata}
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <PriceCertification data={this.props.data} />
-          </Grid>
+
           <Grid item xs={12} className={classes.similarProducts}>
             <Container style={{ padding: "0px 26px" }}>
               <div
@@ -891,7 +889,7 @@ class ProductDetail extends Component {
                   })}
                 </Slideshow>
                 <Grid item xs={12} sm={12} md={12} style={{ marginTop: 30 }}>
-                  <GadgetsNac />
+                  <PaperSheetProduct />
                 </Grid>
               </div>
               <div
@@ -924,6 +922,16 @@ class ProductDetail extends Component {
                 </Slideshow>
               </div>
             </Container>
+          </Grid>
+
+          <Grid item xs={12}>
+            <ProductDetails
+              data={this.props.data}
+              wishlist={this.props.wishlistdata}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <PriceCertification data={this.props.data} />
           </Grid>
           <Grid item xs={12}>
             <Container>

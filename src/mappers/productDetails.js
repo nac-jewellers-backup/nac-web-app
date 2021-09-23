@@ -1171,7 +1171,7 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
               like_data.data.youMayalsolike1.nodes.length > 0
               ? like_data.data.youMayalsolike1.nodes.map((val) => {
                   console.log(val);
-                  debugger;
+                  //debugger;
                   return {
                     img: val.productImagesByProductId.nodes[0].imageUrl,
                     image: {
