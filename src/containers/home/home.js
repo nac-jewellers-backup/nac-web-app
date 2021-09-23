@@ -14,7 +14,7 @@ import { homeNac } from "mappers/dummydata/homeNac";
 import React from "react";
 import Testimonial from "../../components/testimonial/testimonial";
 import { API_URL } from "../../config";
-import { ALLBANNERS, ALLFEATUREDPRODUCT } from "../../queries/home";
+import { AllHOMEQUERY } from "../../queries/home";
 import Card from "./CardGrid";
 import { AdvancedGridList } from "./collectionsGrid";
 import Homenote from "./Homenote";
@@ -225,39 +225,33 @@ class HomeComp extends React.Component {
         "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_page/Group+213%402x.png",
       bannerHome: [],
       featuredProduct: [],
+      newarrival: [],
+      reviews: [],
     };
   }
 
   componentDidMount() {
+    //all  api
     fetch(`${API_URL}/graphql`, {
       method: "post",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        query: ALLBANNERS,
+        query: AllHOMEQUERY,
       }),
     })
       .then((res) => res.json())
       .then((data) => {
+        //set banner
         let bannerDataFull = data.data.allBanners.nodes;
         this.setState({ bannerHome: bannerDataFull });
-      });
-    fetch(`${API_URL}/graphql`, {
-      method: "post",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        query: ALLFEATUREDPRODUCT,
-      }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        let responseData = data?.data?.allFeaturedProducts?.nodes;
-
-        let productDetails = responseData.map((val) => ({
-          price: val?.productListByProductId?.transSkuListsByProductId?.nodes[0]?.sellingPrice ?? " ",
+        //feature product
+        let featureproductdata = data?.data?.allFeaturedProducts?.nodes;
+        let featureproductDetails = featureproductdata.map((val) => ({
+          price:
+            val?.productListByProductId?.transSkuListsByProductId?.nodes[0]
+              ?.sellingPrice ?? " ",
 
           offerPrice: val?.productListByProductId?.transSkuListsByProductId?.nodes[0]?.markupPrice ?? " ",
           title: val?.productListByProductId?.productName ?? " ",
@@ -281,8 +275,59 @@ class HomeComp extends React.Component {
             val?.productListByProductId?.transSkuListsByProductId?.nodes[0]?.transSkuDescriptionsBySkuId?.nodes[0]
               ?.skuDescription ?? " ",
         }));
+        console.log("--------feature product------");
+        this.setState({ featuredProduct: featureproductDetails });
+        console.log(this.state.featuredProduct);
 
-        this.setState({ featuredProduct: productDetails });
+        //new arrival
+        let newarrivaldataresponse = data?.data?.allNewArrivalProducts.nodes;
+        let productDetails = newarrivaldataresponse.map((val) => ({
+          price:
+            val?.productListByProductId?.transSkuListsByProductId?.nodes[0]
+              ?.sellingPrice ?? " ",
+
+          offerPrice:
+            val?.productListByProductId?.transSkuListsByProductId?.nodes[0]
+              ?.markupPrice ?? " ",
+          title: val?.productListByProductId?.productName ?? " ",
+          save: " ",
+          image: {
+            placeImage: {
+              img:
+                val?.productListByProductId?.productImagesByProductId?.nodes[0]
+                  ?.imageUrl ?? " ",
+            },
+            hoverImage: {
+              img:
+                val?.productListByProductId?.productImagesByProductId?.nodes[0]
+                  ?.imageUrl ?? " ",
+            },
+          },
+          productId: val?.productId ?? " ",
+          diamondType: "",
+          purity: "",
+          productType: "",
+          skuId:
+            val?.productListByProductId?.transSkuListsByProductId?.nodes[0]
+              ?.skuId ?? " ",
+          skuID:
+            val?.productListByProductId?.transSkuListsByProductId?.nodes[0]
+              ?.skuId ?? " ",
+          skuUrl:
+            val?.productListByProductId?.transSkuListsByProductId?.nodes[0]
+              ?.skuUrl ?? " ",
+          description:
+            val?.productListByProductId?.transSkuListsByProductId?.nodes[0]
+              ?.transSkuDescriptionsBySkuId?.nodes[0]?.skuDescription ?? " ",
+        }));
+        console.log("--------new arrival------");
+        this.setState({ newarrival: productDetails });
+        console.log(this.state.newarrival);
+        //customer review
+        let reviewresponse = data?.data?.allCustomerReviews.nodes;
+        console.log("--------reviews------");
+        this.setState({ reviews: reviewresponse });
+        console.log(this.state.reviews);
       });
     Aos.init({ duration: 1500 });
   }
@@ -486,9 +531,14 @@ class HomeComp extends React.Component {
                     <>
                       <Hidden smDown>
                         <Container maxWidth={"lg"} style={{ paddingTop: 4 }}>
-                          <Slideshow class="subslider-carousel" dataCarousel={dataCarouselcollections}>
-                            {this.state.featuredProduct.map((val) => {
-                              return <ImgMediaCard data={val} cardSize="auto" />;
+                          <Slideshow
+                            class="subslider-carousel"
+                            dataCarousel={dataCarouselcollections}
+                          >
+                            {this.state.newarrival.map((val) => {
+                              return (
+                                <ImgMediaCard data={val} cardSize="auto" />
+                              );
                             })}
                           </Slideshow>
                         </Container>
@@ -500,8 +550,10 @@ class HomeComp extends React.Component {
                             class="subslider-carousel"
                             dataCarousel={dataCarouselcollectionsSm}
                           >
-                            {this.state.featuredProduct.map((val) => {
-                              return <ImgMediaCard data={val} cardSize="auto" />;
+                            {this.state.newarrival.map((val) => {
+                              return (
+                                <ImgMediaCard data={val} cardSize="auto" />
+                              );
                             })}
                           </Slideshow>
                         </Container>
@@ -628,7 +680,7 @@ class HomeComp extends React.Component {
               </Hidden>
               <Grid item xs={12} sm={12} md={8} lg={8} xl={8} data-aos="fade-left">
                 <div className={classes.testimonial}>
-                  <Testimonial />
+                  <Testimonial customerreview={this.state.reviews} />
                 </div>
               </Grid>
             </Grid>

@@ -102,48 +102,42 @@ const Productprice = (
                         container
                         spacing={12}
                         xs={12}
-                        style={{ padding: 10 }}
+                        style={{ padding: 15 }}
                       >
                         <Grid container item xs={8}>
                           <h1
                             className={`pdp-title ${classes.title}`}
-                            style={{ width: "90%" }}
+                            style={{ width: "100%" }}
                           >
                             {val?.title}
                           </h1>
-
-                          <p
-                            className={`pdp-desc ${classes.dis} `}
-                            style={{ marginBottom: 20 }}
-                          >
+                          <span className={`pdp-desc ${classes.dis} `}>
                             {val?.dis?.length > 30 && viewMore
                               ? val?.dis
                               : `${val?.dis?.substring(0, 30)}...`}
-                            <span>
-                              <p
-                                className={`pdp-desc ${
-                                  viewMore ? "" : classes.disDescriptionPD
-                                }`}
-                              >
-                                <span>
-                                  <span
-                                    style={{
-                                      float: "right",
-                                      cursor: "pointer",
-                                      color: "#33346D",
-                                      fontSize: "10px",
-                                      marginTop: "5px",
-                                    }}
-                                    onClick={() => {
-                                      handleReadMore();
-                                    }}
-                                  >
-                                    {viewMore ? "" : "Read More"}
-                                  </span>
+                            <span
+                              className={`pdp-desc ${
+                                viewMore ? "" : classes.disDescriptionPD
+                              }`}
+                            >
+                              <span>
+                                <span
+                                  style={{
+                                    float: "right",
+                                    cursor: "pointer",
+                                    color: "#33346D",
+                                    fontSize: "10px",
+                                    marginTop: "5px",
+                                  }}
+                                  onClick={() => {
+                                    handleReadMore();
+                                  }}
+                                >
+                                  {viewMore ? "" : "Read More"}
                                 </span>
-                              </p>
+                              </span>
                             </span>
-                          </p>
+                          </span>
                         </Grid>
 
                         <Grid
@@ -154,10 +148,7 @@ const Productprice = (
                           alignItems="cennpm cache cleanter"
                         >
                           <Hidden mdUp>
-                            <div
-                              className={classes.width}
-                              style={{ padding: "0px 10px  0px 10px " }}
-                            >
+                            <div className={classes.width}>
                               <Pricing
                                 price={data[0]?.sellingPrice}
                                 offerPrice={data[0]?.offerPrice}

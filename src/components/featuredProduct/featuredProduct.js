@@ -58,7 +58,7 @@ export default function FeaturedProduct(props) {
                 <Grid item xs={12} style={{ padding: "0px 15px " }}>
                   <Typography className={classes.carouselPara}>
                     {/* <i class="fa fa-inr" aria-hidden="true" ></i> */}
-                    {val.para}dummy
+                    {val.para}
                   </Typography>
                 </Grid>
                 <Grid

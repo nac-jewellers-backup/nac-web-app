@@ -17,7 +17,8 @@ const styles = (theme) => ({
       // fontWeight: 'bold'
     },
     [theme.breakpoints.down("xs")]: {
-      fontSize: "11px !important",
+      fontSize: "15px !important",
+      color: "#33346D",
     },
   },
   dis: {
@@ -76,6 +77,8 @@ const styles = (theme) => ({
   width: {
     [theme.breakpoints.down("xs")]: {
       padding: "0 10px",
+      marginTop: -10,
+      marginLeft: 10,
     },
     // [theme.breakpoints.up('lg')]: {
     //     padding: "0 10px"
