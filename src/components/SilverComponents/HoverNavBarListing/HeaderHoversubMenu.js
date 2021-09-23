@@ -1402,7 +1402,7 @@ function HeaderHoverMenuItem(props) {
           <Grid item xs={3} className={classes.gridmultiplesection}>
             <div style={{ paddingTop: "25px" }}>
               <img
-                src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/solitaire/Group+524.png"
+                src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Main+menu+category+images/NAC+Jewellers+Solitaire.jpg"
                 width="100%"
                 height="75%"
               />
