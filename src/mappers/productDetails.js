@@ -375,6 +375,7 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
 
   const _format = mapperdata.map((PD) => {
     //debugger;
+
     let _d;
     try {
       _d = {
@@ -1170,6 +1171,7 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
               like_data.data.youMayalsolike1.nodes.length > 0
               ? like_data.data.youMayalsolike1.nodes.map((val) => {
                   console.log(val);
+                  debugger;
                   return {
                     img: val.productImagesByProductId.nodes[0].imageUrl,
                     image: {
@@ -1210,6 +1212,8 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                     price:
                       val?.transSkuListsByProductId?.nodes[0]?.sellingPrice ??
                       " ",
+                    skuUrl:
+                      val?.transSkuListsByProductId?.nodes[0]?.skuUrl ?? " ",
                   };
                 })
               : like_data &&
@@ -1251,7 +1255,7 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                     description:
                       val?.transSkuDescriptionsBySkuId
                         ?.transSkuDescriptionsBySkuId?.nodes[0]
-                        ?.skuDescription ?? "prem",
+                        ?.skuDescription ?? "",
                   };
                 })
               : []
@@ -1332,6 +1336,10 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                         ?.nodes[0].productListByProductId
                         ?.transSkuListsByProductId?.nodes[0]?.sellingPrice ??
                       " ",
+                    skuUrl:
+                      val?.productListByProductSku?.productImagesByProductId
+                        ?.nodes[0].productListByProductId
+                        ?.transSkuListsByProductId?.nodes[0]?.skuUrl ?? " ",
                   };
                 })
               : []

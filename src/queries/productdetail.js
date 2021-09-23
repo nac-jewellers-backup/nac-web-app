@@ -343,6 +343,7 @@ export const youRecentlyViewed = `query MyQuery {
               transSkuListsByProductId {
                 nodes {
                   sellingPrice
+                  skuUrl
                   transSkuDescriptionsBySkuId {
                     nodes {
                       skuDescription
