@@ -1,15 +1,12 @@
-import React, { useEffect } from "react";
-import Aos from "aos";
-import Header from "components/SilverComponents/Header";
 // import Header from "components/SilverComponents/Header";
-import { Grid, Hidden, Typography, Button } from "@material-ui/core";
-import Footer from "components/Footer/Footer";
-import {
-  header,
-  contentData,
-} from "../../mappers/dummydata/collectionFulldata";
-import "./collection.css";
+import { Button, Grid, Typography } from "@material-ui/core";
+import Aos from "aos";
 import "aos/dist/aos.css";
+import Footer from "components/Footer/Footer";
+import Header from "components/SilverComponents/Header";
+import React, { useEffect } from "react";
+import { header } from "../../mappers/dummydata/collectionFulldata";
+import "./collection.css";
 
 function CollectionFullPage() {
   useEffect(() => {
@@ -64,7 +61,7 @@ function CollectionFullPage() {
           <Grid item xs={7}>
             <div style={{ width: "100%", height: "75%" }}>
               <img
-                src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/collection+page/Group+64%402x.png"
+                src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Collection+Page/Fabula_collection_page.jpg"
                 width="100%"
                 style={{ maxHeight: "460px" }}
               />
@@ -105,7 +102,7 @@ function CollectionFullPage() {
           <Grid item xs={7}>
             <div style={{ width: "100%", height: "75%" }}>
               <img
-                src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/collection+page/Group+68%402x.png"
+                src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Collection+Page/Youngones_collection_page.jpg"
                 width="100%"
                 style={{ maxHeight: "460px" }}
               />
@@ -124,7 +121,7 @@ function CollectionFullPage() {
           <Grid item xs={7}>
             <div style={{ width: "100%", height: "75%" }}>
               <img
-                src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/collection+page/Group+55%402x.png"
+                src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Collection+Page/Bridal_collection_page_.jpg"
                 width="100%"
                 style={{ maxHeight: "460px" }}
               />
@@ -165,7 +162,7 @@ function CollectionFullPage() {
           <Grid item xs={7}>
             <div style={{ width: "100%", height: "75%" }}>
               <img
-                src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/collection+page/Group+50%402x.png"
+                src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Collection+Page/Rewind_collection_page.jpg"
                 width="100%"
                 style={{ maxHeight: "460px" }}
               />
@@ -184,7 +181,7 @@ function CollectionFullPage() {
           <Grid item xs={7}>
             <div style={{ width: "100%", height: "75%" }}>
               <img
-                src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/collection+page/Group+59%402x.png"
+                src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Collection+Page/Nagas_collection_page.jpg"
                 width="100%"
                 style={{ maxHeight: "460px" }}
               />
@@ -225,7 +222,7 @@ function CollectionFullPage() {
           <Grid item xs={7}>
             <div style={{ width: "100%", height: "75%" }}>
               <img
-                src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/collection+page/Group+73%402x.png"
+                src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Collection+Page/Stylori_collection_page.jpg"
                 width="100%"
                 style={{ maxHeight: "460px" }}
               />
@@ -244,7 +241,7 @@ function CollectionFullPage() {
           <Grid item xs={7}>
             <div style={{ width: "100%", height: "75%" }}>
               <img
-                src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/collection+page/Group+46%402x.png"
+                src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Collection+Page/Diamond_collection_page.jpg"
                 width="100%"
                 style={{ maxHeight: "460px" }}
               />
