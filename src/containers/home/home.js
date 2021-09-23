@@ -226,6 +226,7 @@ class HomeComp extends React.Component {
       bannerHome: [],
       featuredProduct: [],
       newarrival: [],
+      reviews: [],
     };
   }
 
@@ -334,6 +335,11 @@ class HomeComp extends React.Component {
         console.log("--------new arrival------");
         this.setState({ newarrival: productDetails });
         console.log(this.state.newarrival);
+        //customer review
+        let reviewresponse = data?.data?.allCustomerReviews.nodes;
+        console.log("--------reviews------");
+        this.setState({ reviews: reviewresponse });
+        console.log(this.state.reviews);
       });
     Aos.init({ duration: 1500 });
   }
@@ -794,7 +800,7 @@ class HomeComp extends React.Component {
                 data-aos="fade-left"
               >
                 <div className={classes.testimonial}>
-                  <Testimonial />
+                  <Testimonial customerreview={this.state.reviews} />
                 </div>
               </Grid>
             </Grid>
