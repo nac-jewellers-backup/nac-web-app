@@ -65,7 +65,7 @@ class Buynowfixed extends React.Component {
     };
     let productIsActive = this.props.productIsActive ?? "";
     return (
-      <div>
+      <div style={{ width: "100%" }}>
         <AppBar color="primary" className="product-page-fixed-footer">
           {/* price={data[0].price}
                     offerPrice={data[0].offerPrice} */}

@@ -119,4 +119,124 @@ query MyQuery {
 
 
 
-`
+`;
+export const ALLNEWARRIVALPRODUCT = `query MyQuery{
+  allNewArrivalProducts {
+    nodes {
+      productId
+      productListByProductId {
+        productName
+        productId
+        productImagesByProductId(condition: {ishover: false}) {
+          nodes {
+            imageUrl
+          }
+        }
+        transSkuListsByProductId{
+          nodes{
+            costPrice
+            markupPrice
+            skuUrl
+            transSkuDescriptionsBySkuId{
+              nodes{
+                skuDescription
+              }
+            }
+            sellingPrice
+          }
+        }
+      }
+      isActive
+    }
+  }
+}
+`;
+export const AllHOMEQUERY = `query MyQuery {
+  allBanners(condition: { urlParam: "landing" }) {
+    nodes {
+      id
+      mobile
+      position
+      url
+      web
+      urlParam
+    }
+  }
+  allFeaturedProducts(condition: { isActive: true }) {
+    nodes {
+      productId
+      productListByProductId {
+        productName
+        productId
+        productImagesByProductId(condition: { ishover: true }) {
+          nodes {
+            imageUrl
+          }
+        }
+        transSkuListsByProductId {
+          nodes {
+            markupPrice
+            discountPrice
+            discount
+            skuId
+            skuUrl
+            transSkuDescriptionsBySkuId {
+              nodes {
+                skuDescription
+              }
+            }
+            sellingPrice
+          }
+        }
+      }
+      isActive
+    }
+  }
+  allNewArrivalProducts(condition: { isActive: true }) {
+    nodes {
+      productId
+      productListByProductId {
+        productName
+        productId
+        productImagesByProductId(condition: { ishover: true }) {
+          nodes {
+            imageUrl
+          }
+        }
+        transSkuListsByProductId {
+          nodes {
+            markupPrice
+            discountPrice
+            discount
+            skuId
+            skuUrl
+            transSkuDescriptionsBySkuId {
+              nodes {
+                skuDescription
+              }
+            }
+            sellingPrice
+          }
+        }
+      }
+      isActive
+    }
+  }
+  allCustomerReviews(
+    filter: { rating: { greaterThanOrEqualTo: 4 } }
+    first: 6
+    condition: { isPublish: true }
+  ) {
+    nodes {
+      customerName
+      id
+      message
+      productId
+      rating
+      title
+    }
+  }
+}
+
+
+`;

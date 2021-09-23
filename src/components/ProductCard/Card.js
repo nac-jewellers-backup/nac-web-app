@@ -20,7 +20,6 @@ export const ImgMediaCard = (props) => {
   const { ProductDetailCtx, setFilters } =
     React.useContext(ProductDetailContext);
   const loc = window.location.search;
-  console.log(props.data);
 
   return (
     <Component
