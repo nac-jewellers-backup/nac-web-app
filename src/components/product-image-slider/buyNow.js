@@ -500,7 +500,7 @@ class Component extends React.Component {
         </Hidden>
 
         <Hidden mdUp>
-          <div style={{ marginTop: "10px" }}>
+          <div style={{ marginTop: "25px" }}>
             <ProductPrice
               data={this.props.data}
               wishlist={this.props.wishlist}

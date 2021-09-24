@@ -314,7 +314,8 @@ class ProductDetail extends Component {
       { title: "home", url: "/" },
       { title: path[2], url: this.renderUrl() },
       {
-        title: this.props.data && this.props.data[0] && this.props.data[0].title,
+        title:
+          this.props.data && this.props.data[0] && this.props.data[0].title,
       },
     ];
     // alert(JSON.stringify(this.props.wishlistdata))
@@ -384,21 +385,52 @@ class ProductDetail extends Component {
       <div style={{ overflow: "hidden" }}>
         <div>
           <MetaTags>
-            {this.props.data && this.props.data[0] && this.props.data[0].length > 0 ? (
+            {this.props.data &&
+            this.props.data[0] &&
+            this.props.data[0].length > 0 ? (
               <>
                 <title>{this.props.data[0].title}</title>
                 <meta name="description" content={this.props.data[0].dis} />
-                <meta name="keywords" content={this.props.data[0].productsPendants[0].name} />
-                <meta property="og:title" id="fb-title" content={this.props.data[0].title} />
-                <meta property="og:description" content={this.props.data[0].dis} />
+                <meta
+                  name="keywords"
+                  content={this.props.data[0].productsPendants[0].name}
+                />
+                <meta
+                  property="og:title"
+                  id="fb-title"
+                  content={this.props.data[0].title}
+                />
+                <meta
+                  property="og:description"
+                  content={this.props.data[0].dis}
+                />
                 <meta property="og:type" content="product" />
-                <meta property="og:url" id="fb-product-url" content={window.location.href} />
-                <meta property="og:image" id="fb_imageUrl" content={this.props.data[0].fadeImages} />
+                <meta
+                  property="og:url"
+                  id="fb-product-url"
+                  content={window.location.href}
+                />
+                <meta
+                  property="og:image"
+                  id="fb_imageUrl"
+                  content={this.props.data[0].fadeImages}
+                />
                 <meta name="twitter:card" content="summary" />
                 <meta name="twitter:site" content="@StyloriLove" />
-                <meta name="twitter:title" id="twitter-title" content={this.props.data[0].title} />
-                <meta name="twitter:description" content={this.props.data[0].dis} />
-                <meta name="twitter:image" id="twitter_imageUrl" content={this.props.data[0].fadeImages} />
+                <meta
+                  name="twitter:title"
+                  id="twitter-title"
+                  content={this.props.data[0].title}
+                />
+                <meta
+                  name="twitter:description"
+                  content={this.props.data[0].dis}
+                />
+                <meta
+                  name="twitter:image"
+                  id="twitter_imageUrl"
+                  content={this.props.data[0].fadeImages}
+                />
               </>
             ) : (
               ""
@@ -408,22 +440,6 @@ class ProductDetail extends Component {
 
         <Hidden smDown>
           <Header wishlist={this.props.wishlistdata} />
-
-          {/* <Grid
-            Container
-            spacing={12}
-            style={{ maxWidth: "1600px", margin: "auto" }}
-          >
-            <Grid item xs={12}>
-              <div className="pricing-breadcrums-media">
-                <CustomSeparator
-                  list="pricing-loctn"
-                  classsubhed="pricing-loctn-head"
-                  data={data_json}
-                />
-              </div>
-            </Grid>
-          </Grid> */}
 
           <Grid
             className="pricing-imgzom-media"
@@ -440,11 +456,11 @@ class ProductDetail extends Component {
               </Grid>
               <Grid item xs={6}>
                 <div className={classes.priceNowOverallBox}>
-                  <ProductPrice data={this.props.data} wishlist={this.props.wishlistdata} />
+                  <ProductPrice
+                    data={this.props.data}
+                    wishlist={this.props.wishlistdata}
+                  />
                 </div>
-                {/* <div className="overall-box priceecontainer"> 
-                  <PriceTabs data={this.props.data} />
-                </div> */}
                 <div className={classes.priceNowOverallBox}>
                   <PriceBuynow data={this.props.data} />
                 </div>
@@ -466,7 +482,10 @@ class ProductDetail extends Component {
                     <span>
                       {" "}
                       &nbsp;{this?.props?.data[0]?.skuId ?? " "} &nbsp; &nbsp;{" "}
-                      <span style={{ fontSize: "10px", fontStyle: "normal " }}>|</span> &nbsp; &nbsp;
+                      <span style={{ fontSize: "10px", fontStyle: "normal " }}>
+                        |
+                      </span>{" "}
+                      &nbsp; &nbsp;
                     </span>
                     <span
                       style={{
@@ -476,18 +495,25 @@ class ProductDetail extends Component {
                         marginBottom: 8,
                       }}
                     >
-                      Product Information: <span className={classes.spanIcon}>i</span>
+                      Product Information:{" "}
+                      <span className={classes.spanIcon}>i</span>
                     </span>
                   </Grid>
                 </Grid>
-                <Grid container item xs={12} className={classes.productInformationGrid}>
+                <Grid
+                  container
+                  item
+                  xs={12}
+                  className={classes.productInformationGrid}
+                >
                   {this.props &&
                     this.props.data &&
                     this.props.data.length > 0 &&
                     this.props.data[0] &&
                     this.props.data[0].productsDetails.length > 0 &&
                     this.props.data[0].productsDetails[0] &&
-                    this.props.data[0].productsDetails[0].namedetail.length > 0 &&
+                    this.props.data[0].productsDetails[0].namedetail.length >
+                      0 &&
                     this.props.data[0].productsDetails[0].namedetail[2] &&
                     this.props.data[0].productsDetails[0].namedetail[2]
                       .details && (
@@ -523,7 +549,8 @@ class ProductDetail extends Component {
                             Metal Weight
                           </Grid>
                           <Grid itex xs={12}>
-                            {this.props.data[0].productsDetails[0].namedetail[2].details ?? ""}
+                            {this.props.data[0].productsDetails[0].namedetail[2]
+                              .details ?? ""}
                           </Grid>
                         </Grid>
                       </Grid>
@@ -534,9 +561,11 @@ class ProductDetail extends Component {
                     this.props.data[0] &&
                     this.props.data[0].productsDetails.length > 0 &&
                     this.props.data[0].productsDetails[0] &&
-                    this.props.data[0].productsDetails[0].namedetail.length > 0 &&
+                    this.props.data[0].productsDetails[0].namedetail.length >
+                      0 &&
                     this.props.data[0].productsDetails[0].namedetail[1] &&
-                    this.props.data[0].productsDetails[0].namedetail[1].details && (
+                    this.props.data[0].productsDetails[0].namedetail[1]
+                      .details && (
                       <Grid container item xs={4} style={{ paddingTop: "8px" }}>
                         <Grid container item xs={3}>
                           <Avatar alt="NAC">
@@ -563,7 +592,8 @@ class ProductDetail extends Component {
                             Metal Purity
                           </Grid>
                           <Grid itex xs={12}>
-                            {this.props.data[0].productsDetails[0].namedetail[1].details ?? ""}
+                            {this.props.data[0].productsDetails[0].namedetail[1]
+                              .details ?? ""}
                             {/* 22K Yellow Gold */}
                           </Grid>
                         </Grid>
@@ -575,9 +605,11 @@ class ProductDetail extends Component {
                     this.props.data[0] &&
                     this.props.data[0].productsDetails.length > 0 &&
                     this.props.data[0].productsDetails[1] &&
-                    this.props.data[0].productsDetails[1].namedetail.length > 0 &&
+                    this.props.data[0].productsDetails[1].namedetail.length >
+                      0 &&
                     this.props.data[0].productsDetails[1].namedetail[3] &&
-                    this.props.data[0].productsDetails[1].namedetail[3].details && (
+                    this.props.data[0].productsDetails[1].namedetail[3]
+                      .details && (
                       <Grid container item xs={4} style={{ paddingTop: "8px" }}>
                         <Grid container item xs={2}>
                           <Avatar alt="NAC">
@@ -610,16 +642,15 @@ class ProductDetail extends Component {
                             this.props.data[0] &&
                             this.props.data[0].productsDetails.length > 0 &&
                             this.props.data[0].productsDetails[1] &&
-                            this.props.data[0].productsDetails[1].namedetail.length > 0 &&
-                            this.props.data[0].productsDetails[1].namedetail[3] &&
-                            this.props.data[0].productsDetails[1].namedetail[3].details
-                              ? this.props.data[0].productsDetails[1].namedetail[3].details
+                            this.props.data[0].productsDetails[1].namedetail
+                              .length > 0 &&
+                            this.props.data[0].productsDetails[1]
+                              .namedetail[3] &&
+                            this.props.data[0].productsDetails[1].namedetail[3]
+                              .details
+                              ? this.props.data[0].productsDetails[1]
+                                  .namedetail[3].details
                               : ""}
-                            {/* {this.props.data[0].productsDetails[1].namedetail[3].details != undefined &&
-                            this.props.data[0].productsDetails[1].namedetail[3].details != null
-                              ? this.props.data[0].productsDetails[1].namedetail[3].details
-                              : ""} */}
-                            {/* {diamondWeight} */}
                           </Grid>
                         </Grid>
                       </Grid>
@@ -673,7 +704,13 @@ class ProductDetail extends Component {
                       {this.props?.data[0]?.fadeImageSublist.map((val) => {
                         console.log(this.props?.data);
                         console.log("pppppp");
-                        return <ImgMediaCard data={val} cardSize="auto" hoverText={true} />;
+                        return (
+                          <ImgMediaCard
+                            data={val}
+                            cardSize="auto"
+                            hoverText={true}
+                          />
+                        );
                       })}
                     </Slideshow>
                   </div>
@@ -690,18 +727,7 @@ class ProductDetail extends Component {
               <Grid item xs={12}>
                 <ProductDetails data={this.props.data} />
               </Grid>
-              {/* <Grid
-                item
-                xs={6}
-                style={{ marginBottom: "20px", marginTop: "20px" }}
-              >
-                <ConnectionHome />
-              </Grid> */}
-              {/* <Grid item xs={6} style={{ marginBottom: "20px", marginTop: "20px" }}> */}
 
-              {/* <ProductDetails data={this.props.data} /> */}
-              {/* <Request data={this.props.data} /> */}
-              {/* </Grid> */}
               <br />
             </Grid>
           </div>
@@ -727,7 +753,11 @@ class ProductDetail extends Component {
               marginTop: "24px",
             }}
           >
-            <RatingForm data={this.props.data} clear_rating={this.state.clear} clear_rating_onchange={clear_rating} />
+            <RatingForm
+              data={this.props.data}
+              clear_rating={this.state.clear}
+              clear_rating_onchange={clear_rating}
+            />
           </div>
           <Grid
             container
@@ -760,9 +790,17 @@ class ProductDetail extends Component {
                       class="subslider-carousel"
                       dataCarousel={dataCarouselcollections}
                     >
-                      {this.props?.data[0]?.fadeImageSublistRecentlyViewed?.map((val) => {
-                        return <ImgMediaCard data={val} cardSize="auto" hoverText={true} />;
-                      })}
+                      {this.props?.data[0]?.fadeImageSublistRecentlyViewed?.map(
+                        (val) => {
+                          return (
+                            <ImgMediaCard
+                              data={val}
+                              cardSize="auto"
+                              hoverText={true}
+                            />
+                          );
+                        }
+                      )}
                     </Slideshow>
                   </div>
                 </Hidden>
@@ -775,13 +813,12 @@ class ProductDetail extends Component {
         </Hidden>
 
         <Hidden mdUp>
-          {/* <div style={{ paddingBottom: "50px" }}> */}
-          {/* <Grid container spacing={12} style={{ position: 'sticky', top: '0', zIndex: '1000' }}> */}
           <Header wishlist={this.props.wishlistdata} pdpage={true} />
-          {/* </Grid> */}
-
           <Grid item xs={12}>
-            <PriceBuynow data={this.props.data} wishlist={this.props.wishlistdata} />
+            <PriceBuynow
+              data={this.props.data}
+              wishlist={this.props.wishlistdata}
+            />
           </Grid>
           <Grid item xs={12} className={classes.similarProducts}>
             <Container style={{ padding: "0px 26px" }}>
@@ -803,15 +840,75 @@ class ProductDetail extends Component {
                 >
                   {this.props?.data[0]?.fadeImageSublist?.map((val) => {
                     console.log(val);
-                    debugger;
 
-                    return <ImgMediaCard data={val} cardSize="auto" hoverText={true} />;
+                    return (
+                      <ImgMediaCard
+                        data={val}
+                        cardSize="auto"
+                        hoverText={true}
+                      />
+                    );
                   })}
                 </Slideshow>
                 <Grid item xs={12} sm={12} md={12} style={{ marginTop: 30 }}>
                   <PaperSheetProduct />
                 </Grid>
               </div>
+            </Container>
+          </Grid>
+
+          <Grid item xs={12}>
+            <ProductDetails
+              data={this.props.data}
+              wishlist={this.props.wishlistdata}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <div
+              style={{
+                margin: "auto",
+                paddingLeft: "5%",
+                paddingRight: "5%",
+                marginTop: "25px",
+              }}
+            >
+              <p
+                style={{
+                  color: "gray",
+                  padding: "8px",
+                  fontSize: "12px",
+                  borderBottom: "1px solid gray",
+                }}
+              >
+                CERTIFICATES
+              </p>
+            </div>
+            <PriceCertification data={this.props.data} />
+          </Grid>
+          <Grid item xs={12}>
+            <div
+              style={{
+                margin: "auto",
+                paddingLeft: "5%",
+                paddingRight: "5%",
+                marginTop: "25px",
+              }}
+            >
+              <CustomerReviews rating={this.props.rating} />
+            </div>
+          </Grid>
+          <Grid item xs={12}>
+            <Container>
+              <RatingForm
+                data={this.props.data}
+                clear_rating={this.state.clear}
+                clear_rating_onchange={clear_rating}
+              />
+            </Container>
+          </Grid>
+
+          <Grid item xs={12} className={classes.similarProducts}>
+            <Container style={{ padding: "0px 26px" }}>
               <div
                 style={{
                   fontWeight: "bold",
@@ -843,24 +940,6 @@ class ProductDetail extends Component {
               </div>
             </Container>
           </Grid>
-
-          <Grid item xs={12}>
-            <ProductDetails
-              data={this.props.data}
-              wishlist={this.props.wishlistdata}
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <PriceCertification data={this.props.data} />
-          </Grid>
-          <Grid item xs={12}>
-            <Container>
-              <RatingForm data={this.props.data} clear_rating={this.state.clear} clear_rating_onchange={clear_rating} />
-            </Container>
-          </Grid>
-          <Grid item xs={12}>
-            <CustomerReviews data={this.props.data} />
-          </Grid>
           <Grid item style={{ paddingBottom: "50px" }}>
             <Footer />
           </Grid>
@@ -882,7 +961,13 @@ const Components = (props) => {
   let mapped = datas;
 
   if (!loading && !error) {
-    mapped = productDetails(datas, likedatas, viewedddatas, rating, Globalctx.tabsChange);
+    mapped = productDetails(
+      datas,
+      likedatas,
+      viewedddatas,
+      rating,
+      Globalctx.tabsChange
+    );
   }
   if (Object.keys(mapped).length === 0)
     return (

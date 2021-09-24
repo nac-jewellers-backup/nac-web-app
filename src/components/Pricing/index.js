@@ -56,7 +56,6 @@ export default function Pricing(props) {
                         classes.offerPricePadding
                       } ${classes.dis} ${classes.boldFont}`}
                     >
-                      p
                       {props.offerPrice === props.price ? (
                         ""
                       ) : (
@@ -120,7 +119,7 @@ export default function Pricing(props) {
                     className={classes.resetpadd}
                   >
                     <Typography
-                      style={{ fontSize: "0.9rem" }}
+                      style={{ fontSize: "10px" }}
                       style={props.from && { margin: "auto" }}
                       className={`pricing-p${
                         (props.price != null) & (props.price !== "")
@@ -133,7 +132,9 @@ export default function Pricing(props) {
                       {props.offerPrice === props.price ? (
                         ""
                       ) : (
-                        <del>₹&nbsp;{Math.round(props.offerPrice)}</del>
+                        <del style={{ fontSize: "15px", float: "right" }}>
+                          ₹&nbsp;{Math.round(props.offerPrice)}
+                        </del>
                       )}
                     </Typography>
                   </Typography>
@@ -174,7 +175,7 @@ export default function Pricing(props) {
                       ""
                     ) : (
                       <del>
-                        ₹&nbsp;{" "}
+                        ₹&nbsp;
                         {new Intl.NumberFormat("en-IN", {
                           style: "currency",
                           currency: "INR",

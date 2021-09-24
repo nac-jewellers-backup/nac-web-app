@@ -1,4 +1,189 @@
 const styles = (theme) => ({
+  root: {
+    overflow: "hidden",
+  },
+  preButton: {
+    opacity: "1!important",
+
+    borderLeft: 0,
+    background: "none",
+    left: 0,
+
+    fontSize: "20px",
+    color: "#fff",
+    textAlign: "center",
+    position: "absolute",
+    zIndex: 9,
+    "& svg": {
+      fontSize: "3rem",
+    },
+
+    [theme.breakpoints.only("xs")]: {
+      top: "160px",
+      height: "30px",
+      width: "28px",
+    },
+    [theme.breakpoints.up(330)]: {
+      top: "175px !important",
+      height: "30px",
+      width: "28px",
+    },
+    [theme.breakpoints.up(385)]: {
+      top: "190px !important",
+      height: "30px",
+      width: "28px",
+    },
+    [theme.breakpoints.up(438)]: {
+      top: "200px !important",
+      height: "30px",
+      width: "28px",
+    },
+    [theme.breakpoints.up(495)]: {
+      top: "210px !important",
+      height: "30px",
+      width: "28px",
+    },
+    [theme.breakpoints.up(723)]: {
+      top: "258px !important",
+      height: "30px",
+      width: "28px",
+    },
+    [theme.breakpoints.up(840)]: {
+      top: "300px !important",
+      height: "30px",
+      width: "28px",
+    },
+  },
+  nextButton: {
+    opacity: "1!important",
+
+    "& svg": {
+      fontSize: "3rem",
+    },
+    borderRight: 0,
+    position: "absolute",
+    zIndex: 9,
+    float: "right",
+    right: 0,
+    top: "55%",
+    [theme.breakpoints.only("xs")]: {
+      top: "160px",
+      height: "30px",
+      width: "28px",
+      right: 15,
+    },
+    [theme.breakpoints.up(330)]: {
+      top: "175px !important",
+      height: "30px",
+      width: "28px",
+      right: 15,
+    },
+    [theme.breakpoints.up(385)]: {
+      top: "190px !important",
+      height: "30px",
+      width: "28px",
+      right: 15,
+    },
+    [theme.breakpoints.up(438)]: {
+      top: "200px !important",
+      height: "30px",
+      width: "28px",
+      right: 15,
+    },
+    [theme.breakpoints.up(495)]: {
+      top: "210px !important",
+      height: "30px",
+      width: "28px",
+      right: 15,
+    },
+    [theme.breakpoints.up(723)]: {
+      top: "258px !important",
+      height: "30px",
+      width: "28px",
+      right: 15,
+    },
+    [theme.breakpoints.up(840)]: {
+      top: "300px !important",
+      height: "30px",
+      width: "28px",
+      right: 20,
+    },
+
+    [theme.breakpoints.up("lg")]: {
+      top: "397px !important",
+    },
+    [theme.breakpoints.only("xl")]: {
+      top: "653px !important",
+    },
+  },
+
+  mainCarosel: {
+    width: "100%",
+    height: "100%",
+    [theme.breakpoints.only("xs")]: {
+      height: "230px",
+    },
+  },
+  testimonial: {
+    [theme.breakpoints.down("sm")]: {
+      boxShadow: "4px 4px 4px #bebfbf",
+    },
+  },
+  mainImg: {
+    position: "block",
+    width: "100%",
+    // height:"500px"
+  },
+  mainImgCarosel: {
+    width: "100%",
+    // height: "500px"
+  },
+  mainImgContainer: {
+    position: "relative",
+    width: "100%",
+    // height:"500px"
+  },
+  width: {
+    width: "100%",
+  },
+  collectionSection: {
+    // "& svg":{
+    fill: `${theme.palette.secondary.main} !important`,
+    // }
+  },
+  timelinegrid: {
+    margin: "20px 0",
+  },
+  titilenews: {
+    textAlign: "center",
+    color: theme.palette.gold.main,
+    textDecoration: "underline",
+    paddingBottom: 20,
+    fontWeight: "bold",
+    fontSize: "1.4rem",
+    "-webkit-text-underline-position": "under",
+    "-ms-text-underline-position": "below",
+    "text-underline-position": "under",
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "0.8rem",
+    },
+  },
+  minHeighttimerange: {
+    paddingBottom: "0 !important",
+    minHeight: "0 !important",
+  },
+  gridPadding: {
+    paddingTop: "52px",
+    [theme.breakpoints.down("lg")]: {
+      paddingTop: "20px",
+    },
+  },
+  contentPadding: {
+    paddingTop: "20px",
+    [theme.breakpoints.down("lg")]: {
+      paddingTop: "0px",
+    },
+  },
   searchCheck: {
     // paddingRight: "12px",
     // paddingLeft: "12px",
@@ -249,9 +434,9 @@ const styles = (theme) => ({
       borderColor: "gray",
     },
     [theme.breakpoints.down("sm")]: {
-      boxShadow: "none",
+      boxShadow: "6px 7px 6px #bebfbf",
       "& .MuiOutlinedInput-notchedOutline": {
-        borderRadius: "8px !important",
+        borderRadius: "0px !important",
         borderColor: "gray",
       },
     },
