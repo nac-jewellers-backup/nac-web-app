@@ -15,14 +15,11 @@ export default function Pricing(props) {
     <div>
       {props.title ? (
         <Typography
-          // variant="caption"
-          // component="div"
           style={props.from && { margin: "auto" }}
           className={`pricing  ${
             (props.title != null) & (props.title !== "") ? "" : "shine"
           } ${path == "stylori" && "pricingTitle"}`}
         >
-          {/* Dazzling Gold Bloom Diamond Pendant */}
           {props.title}
         </Typography>
       ) : (
@@ -30,8 +27,6 @@ export default function Pricing(props) {
       )}
       {/*  */}
       <Grid spacing={12} container lg={12}>
-        {/* <Grid item xs={12}lg={12} >
-                    <Grid spacing={12} container xs={12} lg={12} class="leftPadding"> */}
         {window.location.pathname !== "/cart" &&
         window.location.pathname.split("-")[0] !== "/account" &&
         window.location.pathname !== "/checkout" ? (
@@ -175,7 +170,6 @@ export default function Pricing(props) {
                       ""
                     ) : (
                       <del>
-                        ₹&nbsp;
                         {new Intl.NumberFormat("en-IN", {
                           style: "currency",
                           currency: "INR",
