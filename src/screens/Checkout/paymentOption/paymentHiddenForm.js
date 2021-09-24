@@ -82,7 +82,7 @@ export default function PaymentHiddenForm(props) {
           checksum: data.checksum,
           amount: data.amount,
         });
-        debugger;
+     
         console.log(hash);
         //  hash=data.hash
         //  day = data.day
@@ -118,7 +118,7 @@ export default function PaymentHiddenForm(props) {
       .then(status)
       .then(json)
       .then((data) => {
-        debugger;
+     
         console.log(hash);
         localStorage.removeItem("order_id");
         // if (localStorage.getItem('gut_lg')) localStorage.removeItem("user_id")
@@ -139,11 +139,11 @@ export default function PaymentHiddenForm(props) {
     // document.getElementById("sendtoairpay").submit();
   };
   useEffect(() => {
-    debugger;
+ 
     console.log(hash);
     if (hash.checksum) document.getElementById("sendtoairpay").submit();
   }, [hash]);
-  debugger;
+ 
   console.log(hash);
   // useEffect(()=>{if(hash.checksum) console.log(hash,orderId,"hashandorderid")},[hash])
   return (

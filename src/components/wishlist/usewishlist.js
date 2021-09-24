@@ -134,7 +134,7 @@ const useWishlists = (props) => {
           filters.quantity[values.product_sku] = _qty;
         }
       } else {
-        debugger;
+       
         localStorageQuantity[values.product_sku] = _qty;
         localStorage.setItem("quantity", JSON.stringify(localStorageQuantity));
         filters.quantity[values.product_sku] = localStorageQuantity[values.product_sku];

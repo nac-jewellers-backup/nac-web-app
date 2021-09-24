@@ -353,7 +353,7 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
   }
 
   const _format = mapperdata.map((PD) => {
-    //debugger;
+   
 
     let _d;
     try {

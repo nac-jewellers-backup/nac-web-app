@@ -9,7 +9,7 @@ const RemoveWishlist = (props) => {
 const RemoveWishlistComponent = (props) => {
   const { classes } = props;
   const { values, setValues, handlers } = useWishlists(props);
-  debugger;
+  
 
   return (
     <div

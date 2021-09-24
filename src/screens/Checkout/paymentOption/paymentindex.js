@@ -184,7 +184,7 @@ const Components = (props) => {
     if (
       data.data.allTransSkuLists.nodes
         .map((val) => {
-          debugger;
+         
           return val.productListByProductId.productMaterialsByProductSku.nodes;
         })
         .flat()
