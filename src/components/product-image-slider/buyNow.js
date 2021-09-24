@@ -1,4 +1,4 @@
-import { Avatar, Button, Container, Grid, Hidden } from "@material-ui/core";
+import { Avatar, Box, Button, Grid, Hidden } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 import Buynowfixed from "components/SilverComponents/ProductDetail/buynowfixed";
 import { CartContext } from "context";
@@ -505,117 +505,125 @@ class Component extends React.Component {
               data={this.props.data}
               wishlist={this.props.wishlist}
             />
-            <Container maxWidth="lg" style={{ marginTop: "35px" }}>
-              <Grid
-                container
-                spacing={2}
-                item
-                xs={12}
-                style={{ marginBottom: 30 }}
-              >
-                <Grid container item xs={4}>
-                  <Grid
-                    container
-                    item
-                    xs={12}
-                    justify="center"
-                    className={
-                      this.state.isShowDetailTab === 1
-                        ? classes.activeDetail
-                        : ""
-                    }
-                  >
-                    <Avatar
-                      alt="NAC"
-                      onClick={() => {
-                        this.setState({ isShowDetailTab: 1 });
-                      }}
-                    >
-                      <img
-                        src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/Group+1015.svg"
-                        alt="matel weight"
-                        height="100%"
-                        width="100%"
-                      />
-                    </Avatar>
-                  </Grid>
-                </Grid>
-                <Grid container item xs={4}>
-                  <Grid
-                    container
-                    item
-                    xs={12}
-                    justify="center"
-                    className={
-                      this.state.isShowDetailTab === 2
-                        ? classes.activeDetail
-                        : ""
-                    }
-                  >
-                    <Avatar
-                      alt="NAC"
-                      onClick={() => {
-                        this.setState({ isShowDetailTab: 2 });
-                      }}
-                    >
-                      <img
-                        src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/Group+1019.svg"
-                        alt=" Metal Purity"
-                        height="100%"
-                        width="100%"
-                      />
-                    </Avatar>
-                  </Grid>
-                </Grid>
-                <Grid container item xs={4}>
-                  <Grid
-                    container
-                    item
-                    xs={12}
-                    justify="center"
-                    className={
-                      this.state.isShowDetailTab === 3
-                        ? classes.activeDetail
-                        : ""
-                    }
-                  >
-                    <Avatar
-                      alt="NAC"
-                      onClick={() => {
-                        this.setState({ isShowDetailTab: 3 });
-                      }}
-                    >
-                      <img
-                        src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/Group+1022.svg"
-                        alt="Diamond Weight"
-                        height="100%"
-                        width="100%"
-                      />
-                    </Avatar>
-                  </Grid>
-                </Grid>
-                <Grid container item xs={12} className={classes.detail}>
-                  {this.state.isShowDetailTab === 1 && (
-                    <Grid itex xs={12}>
-                      Purity : 22k (916)
-                    </Grid>
-                  )}
-                  {this.state.isShowDetailTab === 2 && (
-                    <Grid itex xs={12}>
-                      Metal : 6.17 grams
-                    </Grid>
-                  )}
-                  {this.state.isShowDetailTab === 3 && (
-                    <Grid itex xs={12}>
-                      No. of Diamonds : 60
-                    </Grid>
-                  )}
-                  {/* <Grid itex xs={12}>
-                   Stone : 3.5 grams
-                 </Grid> */}
-                </Grid>
+
+            <Grid container style={{ marginTop: "35x" }}>
+              <Grid item xs={12}>
+                <Box display="flex" flexDirection="row" justifyContent="center">
+                  {this.props &&
+                    this.props.data &&
+                    this.props.data.length > 0 &&
+                    this.props.data[0] &&
+                    this.props.data[0].productsDetails.length > 0 &&
+                    this.props.data[0].productsDetails[0] &&
+                    this.props.data[0].productsDetails[0].namedetail.length >
+                      0 &&
+                    this.props.data[0].productsDetails[0].namedetail[2] &&
+                    this.props.data[0].productsDetails[0].namedetail[2]
+                      .details && (
+                      <Box padding="10px" textAlign="center">
+                        <Avatar alt="NAC" style={{ padding: "10px" }}>
+                          <img
+                            src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/Group+1015.svg"
+                            alt="matel weight"
+                            height="70px"
+                          />
+                        </Avatar>
+
+                        <p
+                          style={{
+                            fontSize: 12,
+                            color: "gray",
+                          }}
+                        >
+                          Metal Weight
+                          <br />
+                          {this.props.data[0].productsDetails[0].namedetail[2]
+                            .details ?? ""}
+                        </p>
+                      </Box>
+                    )}
+
+                  {this.props &&
+                    this.props.data &&
+                    this.props.data.length > 0 &&
+                    this.props.data[0] &&
+                    this.props.data[0].productsDetails.length > 0 &&
+                    this.props.data[0].productsDetails[0] &&
+                    this.props.data[0].productsDetails[0].namedetail.length >
+                      0 &&
+                    this.props.data[0].productsDetails[0].namedetail[1] &&
+                    this.props.data[0].productsDetails[0].namedetail[1]
+                      .details && (
+                      <Box padding="10px" textAlign="center">
+                        <Avatar alt="NAC" style={{ padding: "10px" }}>
+                          <img
+                            src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/Group+1019.svg"
+                            alt=" Metal Purity"
+                            height="70px"
+                          />
+                        </Avatar>
+
+                        <p
+                          style={{
+                            fontSize: 12,
+                            color: "gray",
+                          }}
+                        >
+                          Metal Purity
+                          <br />
+                          {this.props.data[0].productsDetails[0].namedetail[1]
+                            .details ?? ""}
+                        </p>
+                      </Box>
+                    )}
+                  {this.props &&
+                    this.props.data &&
+                    this.props.data.length > 0 &&
+                    this.props.data[0] &&
+                    this.props.data[0].productsDetails.length > 0 &&
+                    this.props.data[0].productsDetails[1] &&
+                    this.props.data[0].productsDetails[1].namedetail.length >
+                      0 &&
+                    this.props.data[0].productsDetails[1].namedetail[3] &&
+                    this.props.data[0].productsDetails[1].namedetail[3]
+                      .details && (
+                      <Box padding="10px" textAlign="center">
+                        <Avatar alt="NAC" style={{ padding: "10px" }}>
+                          <img
+                            src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/Group+1022.svg"
+                            alt="Diamond Weight"
+                            height="70px"
+                          />
+                        </Avatar>
+                        <p
+                          style={{
+                            fontSize: 12,
+                            color: "gray",
+                          }}
+                        >
+                          Diamond Weight
+                          <br />
+                          {this.props &&
+                          this.props.data &&
+                          this.props.data.length > 0 &&
+                          this.props.data[0] &&
+                          this.props.data[0].productsDetails.length > 0 &&
+                          this.props.data[0].productsDetails[1] &&
+                          this.props.data[0].productsDetails[1].namedetail
+                            .length > 0 &&
+                          this.props.data[0].productsDetails[1].namedetail[3] &&
+                          this.props.data[0].productsDetails[1].namedetail[3]
+                            .details
+                            ? this.props.data[0].productsDetails[1]
+                                .namedetail[3].details
+                            : ""}
+                        </p>
+                      </Box>
+                    )}
+                </Box>
               </Grid>
-            </Container>
+            </Grid>
+
             {/* <PriceTabs data={this.props.data} wishlist={this.props.wishlist} /> */}
             {inputsearch(
               this.props,

@@ -94,7 +94,7 @@ const Productprice = (
               elevation={0}
               style={{ width: "100%", padding: "0px", margin: "0px " }}
             >
-              <Grid container className="containbev">
+              <Grid container>
                 <Grid item xs={12} lg={12} md={12}>
                   <div className="price-div">
                     <Hidden mdUp>
@@ -102,7 +102,7 @@ const Productprice = (
                         container
                         spacing={12}
                         xs={12}
-                        style={{ padding: 15 }}
+                        style={{ padding: 5 }}
                       >
                         <Grid container item xs={8}>
                           <h1

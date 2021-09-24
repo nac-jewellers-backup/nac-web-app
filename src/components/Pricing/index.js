@@ -1,8 +1,8 @@
+import { Grid, Hidden, Typography } from "@material-ui/core";
 import React from "react";
-import { Typography, Grid, Hidden } from "@material-ui/core";
 import "../product-image-slider/product-images.css";
-import styles from "./style";
 import "./pricing.css";
+import styles from "./style";
 
 export default function Pricing(props) {
   const classes = styles();
@@ -18,9 +18,9 @@ export default function Pricing(props) {
           // variant="caption"
           // component="div"
           style={props.from && { margin: "auto" }}
-          className={`pricing  ${(props.title != null) & (props.title !== "") ? "" : "shine"} ${
-            path == "stylori" && "pricingTitle"
-          }`}
+          className={`pricing  ${
+            (props.title != null) & (props.title !== "") ? "" : "shine"
+          } ${path == "stylori" && "pricingTitle"}`}
         >
           {/* Dazzling Gold Bloom Diamond Pendant */}
           {props.title}
@@ -37,16 +37,26 @@ export default function Pricing(props) {
         window.location.pathname !== "/checkout" ? (
           <Grid container>
             {props.pdpage && (
-              <Grid item xs={12} style={{ display: "flex", alignItems: "center" }} className={classes.alignval}>
+              <Grid
+                item
+                xs={12}
+                style={{ display: "flex", alignItems: "center" }}
+                className={classes.alignval}
+              >
                 {props.offerPrice ? (
                   <Typography style={{ display: "flex", width: "100%" }}>
                     <Typography
                       style={{ fontSize: "0.9rem" }}
                       style={props.from && { margin: "auto" }}
-                      className={`pricing-p${(props.price != null) & (props.price !== "") ? "" : "shine"}${classes.colorMain} ${
-                        classes.h6FontSizeStrike
-                      } ${classes.offerPricePadding} ${classes.dis} ${classes.boldFont}`}
+                      className={`pricing-p${
+                        (props.price != null) & (props.price !== "")
+                          ? ""
+                          : "shine"
+                      }${classes.colorMain} ${classes.h6FontSizeStrike} ${
+                        classes.offerPricePadding
+                      } ${classes.dis} ${classes.boldFont}`}
                     >
+                      p
                       {props.offerPrice === props.price ? (
                         ""
                       ) : (
@@ -69,15 +79,24 @@ export default function Pricing(props) {
               {props.price ? (
                 <Typography style={{ display: "flex", width: "100%" }}>
                   <Typography
-                    style={{ margin: props.from ? "auto" : "unset", fontWeight: "bold" }}
-                    className={`${(props.offerPrice != null) & (props.offerPrice !== "") ? "" : "shine"} ${classes.colorMain} ${
-                      classes.h6FontSize
-                    } ${classes.offerPricePadding} `}
+                    style={{
+                      margin: props.from ? "auto" : "unset",
+                      fontWeight: "bold",
+                    }}
+                    className={`${
+                      (props.offerPrice != null) & (props.offerPrice !== "")
+                        ? ""
+                        : "shine"
+                    } ${classes.colorMain} ${classes.h6FontSize} ${
+                      classes.offerPricePadding
+                    } `}
                   >
                     {/* ₹&nbsp;{props.offerPrice} */}
-                    {new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", minimumFractionDigits: 0 }).format(
-                      Math.round(props.price)
-                    )}
+                    {new Intl.NumberFormat("en-IN", {
+                      style: "currency",
+                      currency: "INR",
+                      minimumFractionDigits: 0,
+                    }).format(Math.round(props.price))}
                     {/* ₹&nbsp;{Math.round(props.offerPrice)} */}
                     <Hidden smDown>
                       <span className={classes.spanIcon1}>i</span>
@@ -89,17 +108,33 @@ export default function Pricing(props) {
               )}
             </Grid>
             {!props.pdpage && (
-              <Grid item xs={12} style={{ display: "flex", alignItems: "center" }} className={classes.alignval}>
+              <Grid
+                item
+                xs={12}
+                style={{ display: "flex", alignItems: "center" }}
+                className={classes.alignval}
+              >
                 {props.price ? (
-                  <Typography style={{ display: "flex", width: "100%" }} className={classes.resetpadd}>
+                  <Typography
+                    style={{ display: "flex", width: "100%" }}
+                    className={classes.resetpadd}
+                  >
                     <Typography
                       style={{ fontSize: "0.9rem" }}
                       style={props.from && { margin: "auto" }}
-                      className={`pricing-p${(props.price != null) & (props.price !== "") ? "" : "shine"}${classes.colorMain} ${
-                        classes.h6FontSizeStrike
-                      } ${classes.offerPricePadding} ${classes.dis} ${classes.boldFont}`}
+                      className={`pricing-p${
+                        (props.price != null) & (props.price !== "")
+                          ? ""
+                          : "shine"
+                      }${classes.colorMain} ${classes.h6FontSizeStrike} ${
+                        classes.offerPricePadding
+                      } ${classes.dis} ${classes.boldFont}`}
                     >
-                      {props.offerPrice === props.price ? "" : <del>₹&nbsp;{Math.round(props.offerPrice)}</del>}
+                      {props.offerPrice === props.price ? (
+                        ""
+                      ) : (
+                        <del>₹&nbsp;{Math.round(props.offerPrice)}</del>
+                      )}
                     </Typography>
                   </Typography>
                 ) : (
@@ -126,9 +161,13 @@ export default function Pricing(props) {
                   <Typography
                     // variant="caption"
                     style={props.from && { margin: "auto" }}
-                    className={`pricing-p${(props.price != null) & (props.price !== "") ? "" : "shine"}${classes.colorMain} ${
-                      classes.h6FontSizeStrike
-                    } ${classes.offerPricePadding} ${classes.dis} ${classes.boldFont}`}
+                    className={`pricing-p${
+                      (props.price != null) & (props.price !== "")
+                        ? ""
+                        : "shine"
+                    }${classes.colorMain} ${classes.h6FontSizeStrike} ${
+                      classes.offerPricePadding
+                    } ${classes.dis} ${classes.boldFont}`}
                     // component="p"
                   >
                     {props.offerPrice === props.price ? (
@@ -136,9 +175,11 @@ export default function Pricing(props) {
                     ) : (
                       <del>
                         ₹&nbsp;{" "}
-                        {new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", minimumFractionDigits: 0 }).format(
-                          Math.round(props.price)
-                        )}
+                        {new Intl.NumberFormat("en-IN", {
+                          style: "currency",
+                          currency: "INR",
+                          minimumFractionDigits: 0,
+                        }).format(Math.round(props.price))}
                       </del>
                     )}
                   </Typography>
@@ -164,14 +205,20 @@ export default function Pricing(props) {
                     // variant="h6"
                     // component="h6"
                     style={props.from && { margin: "auto" }}
-                    className={`${(props.offerPrice != null) & (props.offerPrice !== "") ? "" : "shine"} ${classes.colorMain} ${
-                      classes.h6FontSize
-                    } ${classes.offerPricePadding} `}
+                    className={`${
+                      (props.offerPrice != null) & (props.offerPrice !== "")
+                        ? ""
+                        : "shine"
+                    } ${classes.colorMain} ${classes.h6FontSize} ${
+                      classes.offerPricePadding
+                    } `}
                   >
                     {/* ₹&nbsp;{props.offerPrice} */}
-                    {new Intl.NumberFormat("en-IN ", { style: "currency", currency: "INR", minimumFractionDigits: 0 }).format(
-                      Math.round(props.Price)
-                    )}
+                    {new Intl.NumberFormat("en-IN ", {
+                      style: "currency",
+                      currency: "INR",
+                      minimumFractionDigits: 0,
+                    }).format(Math.round(props.Price))}
                     {/* ₹&nbsp;{Math.round(props.offerPrice)} */}
                   </Typography>
                 </Typography>
@@ -196,7 +243,10 @@ export default function Pricing(props) {
         >
           <Hidden smDown>
             {props.offerDiscount ? (
-              <span style={props.from && { margin: "auto" }} className={`discount ${classes.backgsecondary} ${classes.off}`}>
+              <span
+                style={props.from && { margin: "auto" }}
+                className={`discount ${classes.backgsecondary} ${classes.off}`}
+              >
                 {props.offerDiscount}
               </span>
             ) : (
@@ -204,7 +254,9 @@ export default function Pricing(props) {
                 <Typography
                   variant="caption"
                   component="p"
-                  className={`${(props.save != null) & (props.save !== "") ? "" : "shine"} ${classes.colorMain}  `}
+                  className={`${
+                    (props.save != null) & (props.save !== "") ? "" : "shine"
+                  } ${classes.colorMain}  `}
                 >
                   {path === "stylori" && "You save"} {props.save}
                 </Typography>

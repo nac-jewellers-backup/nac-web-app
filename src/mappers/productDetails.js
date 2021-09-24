@@ -946,7 +946,6 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
           (like_data.data.youMayalsolike1.nodes.length !== 0 || like_data.data.youMayalsolike2.nodes.length !== 0)
             ? like_data.data.youMayalsolike1 && like_data.data.youMayalsolike1.nodes.length > 0
               ? like_data.data.youMayalsolike1.nodes.map((val) => {
-                  
                   return {
                     offerDiscount: val?.transSkuListsByProductId?.nodes[0]?.discount
                       ? `${val?.transSkuListsByProductId?.nodes[0]?.discount}% OFF`
@@ -984,15 +983,10 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                         ? val.transSkuListsByProductId.nodes[0].generatedSku
                         : "",
                     description:
-                      val?.transSkuListsByProductId?.nodes[0]
-                        .productListByProductId?.transSkuListsByProductId
-                        ?.nodes[0]?.transSkuDescriptionsBySkuId?.nodes[0]
-                        ?.skuDescription ?? " ",
-                    price:
-                      val?.transSkuListsByProductId?.nodes[0]?.sellingPrice ??
-                      " ",
-                    skuUrl:
-                      val?.transSkuListsByProductId?.nodes[0]?.skuUrl ?? " ",
+                      val?.transSkuListsByProductId?.nodes[0].productListByProductId?.transSkuListsByProductId?.nodes[0]
+                        ?.transSkuDescriptionsBySkuId?.nodes[0]?.skuDescription ?? " ",
+                    price: val?.transSkuListsByProductId?.nodes[0]?.sellingPrice ?? " ",
+                    skuUrl: val?.transSkuListsByProductId?.nodes[0]?.skuUrl ?? " ",
                   };
                 })
               : like_data && like_data.data && like_data.data.youMayalsolike2 && like_data.data.youMayalsolike2.nodes
@@ -1000,13 +994,6 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                   return {
                     img: val.productImagesByProductId.nodes[0].imageUrl ?? "",
 
-                    // `${CDN_URL}${val && val.productImagesByProductId && val.productImagesByProductId.nodes}`
-                    //   ? injectUrl_url_construct(
-                    //       val.productImagesByProductId.nodes[0] && val.productImagesByProductId.nodes[0],
-                    //       CDN_URL,
-                    //       colSize_like_view
-                    //     )
-                    //   : [],
                     title: val && val.productName ? val.productName : "",
                     price:
                       val &&
@@ -1026,10 +1013,7 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                       val.transSkuListsByProductId.nodes[0].generatedSku
                         ? val.transSkuListsByProductId.nodes[0].generatedSku
                         : "",
-                    description:
-                      val?.transSkuDescriptionsBySkuId
-                        ?.transSkuDescriptionsBySkuId?.nodes[0]
-                        ?.skuDescription ?? "",
+                    description: val?.transSkuDescriptionsBySkuId?.transSkuDescriptionsBySkuId?.nodes[0]?.skuDescription ?? "",
                   };
                 })
               : []
@@ -1087,13 +1071,10 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                       val?.productListByProductSku?.productImagesByProductId?.nodes[0].productListByProductId
                         ?.transSkuListsByProductId?.nodes[0]?.transSkuDescriptionsBySkuId?.nodes[0]?.skuDescription ?? " ",
                     price:
-                      val?.productListByProductSku?.productImagesByProductId
-                        ?.nodes[0].productListByProductId
-                        ?.transSkuListsByProductId?.nodes[0]?.sellingPrice ??
-                      " ",
+                      val?.productListByProductSku?.productImagesByProductId?.nodes[0].productListByProductId
+                        ?.transSkuListsByProductId?.nodes[0]?.sellingPrice ?? " ",
                     skuUrl:
-                      val?.productListByProductSku?.productImagesByProductId
-                        ?.nodes[0].productListByProductId
+                      val?.productListByProductSku?.productImagesByProductId?.nodes[0].productListByProductId
                         ?.transSkuListsByProductId?.nodes[0]?.skuUrl ?? " ",
                   };
                 })

@@ -19,7 +19,7 @@ const styles = makeStyles((theme) => ({
       // letterSpacing:"1px"
     },
   },
-  h6FontSizeStrike : {
+  h6FontSizeStrike: {
     [theme.breakpoints.down("lg")]: {
       fontSize: "16px ",
       // fontWeight: 'bold'
@@ -57,6 +57,9 @@ const styles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down("xs")]: {
       paddingLeft: "0px",
+      color: "#33346D",
+      fontSize: "18px",
+      fontWeight: "bold !important",
     },
   },
   deletePrice: {
