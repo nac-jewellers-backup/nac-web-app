@@ -64,11 +64,14 @@ const Gallery = (
         onClick={handleProductDetatiContext(props)}
       >
         <LazyLoadImage
-          style={{ objectFit: "cover" }}
+          style={{
+            objectFit: "cover",
+            backgroundColor: "white",
+            width: "100%",
+          }}
           alt={"props.data.title"}
           effect="blur"
           src={renderImages(props, cardstate)}
-          //onError={(e) => imageOnError(e, props.data.imageResolution)}
           title={
             props.data.title.charAt(0).toUpperCase() + props.data.title.slice(1)
           }
@@ -90,7 +93,6 @@ const Gallery = (
                   return null;
                 }
           }
-          style={{ width: "100%" }}
           scrollPosition={scrollPosition}
         ></LazyLoadImage>
 
