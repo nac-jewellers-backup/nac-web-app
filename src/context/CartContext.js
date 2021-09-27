@@ -62,15 +62,41 @@ const Provider = (props) => {
   const [NewUser, setNewUser] = React.useState({});
   const [loadingWishlist, setLoadingWishlist] = React.useState(false);
   // const [_cart_id, setCartId] = React.useState([])
+
+  useEffect(() => {
+    let user_ids = localStorage.getItem("user_id") ?? "";
+    let user_ids_Obj = {
+      user_id: user_ids,
+    };
+    const updateCart = (user_ids_Obj) => {
+      let accessTokens = localStorage.getItem("accessToken") ? localStorage.getItem("accessToken") : "";
+
+      fetch(`${API_URL}/updatecart_latestprice`, {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json",
+          "x-access-token": accessTokens,
+          // 'Content-Type': 'application/x-www-form-urlencoded',
+        },
+
+        body: JSON.stringify(user_ids_Obj),
+      })
+        .then((res) => res.json())
+        .then((data) => console.log(data));
+    };
+    user_ids.length > 0 && updateCart(user_ids_Obj);
+  }, []);
+
   var products = localStorage.getItem("cartDetails") ? JSON.parse(localStorage.getItem("cartDetails")).products : [];
   const user_id = cartFilters.user_id ? cartFilters.user_id : "";
   const price = cartFilters.price ? cartFilters.price : "";
 
-  const { loading: crtloading, error: crterror, data: crtdata, makeFetch: addtocart } = useNetworkRequest(
-    "/addtocart",
-    { user_id, products },
-    false
-  );
+  const {
+    loading: crtloading,
+    error: crterror,
+    data: crtdata,
+    makeFetch: addtocart,
+  } = useNetworkRequest("/addtocart", { user_id, products }, false);
   const userIds = localStorage.getItem("user_id") ? localStorage.getItem("user_id") : "";
   var cartdetails =
     JSON.parse(localStorage.getItem("cartDetails")) &&
@@ -86,24 +112,24 @@ const Provider = (props) => {
       : {};
   // JSON.parse(localStorage.getItem("cartDetails")).products[0].sku_id : []
   const guestlogId = cartFilters.user_id ? cartFilters.user_id : "";
-  const { loading: allorderloading, error: allordererror, data: allorder, makeRequest: allordermakeRequest } = useGraphql(
-    ALLORDERS,
-    () => {},
-    {},
-    false
-  );
+  const {
+    loading: allorderloading,
+    error: allordererror,
+    data: allorder,
+    makeRequest: allordermakeRequest,
+  } = useGraphql(ALLORDERS, () => {}, {}, false);
   const {
     loading: allorderloadingsuccesful,
     error: allordererrorsuccesful,
     data: allordersuccesful,
     makeRequest: allordermakeRequestSuccessful,
   } = useGraphql(ORDERSUCCESSFUL, () => {}, {}, false);
-  const { loading: wishlistloading, error: wishlisterror, data: wishlistDATA, makeRequest: wishlistmakeRequest } = useGraphql(
-    ALLUSERWISHLISTS,
-    () => {},
-    {},
-    false
-  );
+  const {
+    loading: wishlistloading,
+    error: wishlisterror,
+    data: wishlistDATA,
+    makeRequest: wishlistmakeRequest,
+  } = useGraphql(ALLUSERWISHLISTS, () => {}, {}, false);
   const { loading, error, data, makeRequest } = useGraphql(CART, () => {}, {});
   // const prices = cartFilters.price ? cartFilters.price : ''
   const discounted_price = cartFilters.discounted_price ? cartFilters.discounted_price : "";
