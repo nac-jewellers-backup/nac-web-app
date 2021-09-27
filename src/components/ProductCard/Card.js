@@ -43,7 +43,7 @@ const Gallery = (
   scrollPosition
 ) => {
   return (
-    <div className="imageHeight" style={{ position: "relative" }}>
+    <div className="imageHeight" >
       {/* {props.data.price < 20000 ? <span className="newarraival">NEW ARRIVAL</span> : ""}
       {props.data.price > 20000 ? <span className="bestsell">BEST SELLER</span> : ""} */}
 
