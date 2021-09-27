@@ -300,16 +300,20 @@ export const TopFilters = (props) => {
               <>
                 {props?.chips.length > 0 ? (
                   <Chip
-                    className={classes.chips}
+                    style
                     size="small"
-                    variant="outlined"
                     label={"Clear All Search"}
                     style={{
-                      padding: "7px 10px",
+                      padding: "14px 14px",
                       marginRight: 5,
-                      backgroundColor: "#8080802e",
+                      backgroundColor: "#FFFFFF",
+                      border: "1px solid #0C2879",
+                      color: "#0C2879",
                       borderRadius: "2px",
                       textTransform: "uppercase",
+                      boxShadow: "4px 4px 4px #bebfbf",
+                      fontFamily: "notoSerif-regular",
+                      fontWeight: "bold",
                     }}
                     onDelete={() => {
                       props.history.push("/jewellery");
@@ -332,11 +336,11 @@ export const TopFilters = (props) => {
                       <Chip
                         className={classes.chips}
                         size="small"
-                        variant="outlined"
                         label={data.label}
                         style={{
-                          padding: "7px 10px",
-                          marginRight: 5,
+                          padding: "14px 14px",
+                          marginRight: 6,
+                          marginLeft: 2,
                           backgroundColor: "#8080802e",
                           borderRadius: "2px",
                           textTransform: "uppercase",
