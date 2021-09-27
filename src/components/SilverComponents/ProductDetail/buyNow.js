@@ -1,19 +1,18 @@
-import { Button, Hidden, Container, Grid, Modal } from "@material-ui/core";
-import React from "react";
-import "./product-images.css";
-import ProductPrice from "./productPrice";
-import PriceTabs from "./priceTabs";
-import PropTypes from "prop-types";
-import Buynowbutton from "../../Buynow/buynowbutton";
+import { Button, Grid, Hidden } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
-import styles from "./style";
-import { NavLink } from "react-router-dom";
+import { CartContext } from "context";
 import { ProductDetailContext } from "context/ProductDetailContext";
 import { useCheckForCod } from "hooks/CheckForCodHook";
+import PropTypes from "prop-types";
 import { CheckForCod } from "queries/productdetail";
-import { CartContext } from "context";
+import React from "react";
 import { withRouter } from "react-router";
+import Buynowbutton from "../../Buynow/buynowbutton";
 import CommenDialog from "../../Common/Dialogmodel";
+import PriceTabs from "./priceTabs";
+import "./product-images.css";
+import ProductPrice from "./productPrice";
+import styles from "./style";
 
 const inputsearch = (props, state, handleChanges, handleCodChange) => {
   const { data } = props;
@@ -57,7 +56,10 @@ const inputsearch = (props, state, handleChanges, handleCodChange) => {
           </Grid>
           <Grid item xs={4} lg={3} sm={4}>
             <Button
-              style={{ backgroundColor: "#fa4a4a", boxShadow: "6px 7px 6px #bebfbf " }}
+              style={{
+                backgroundColor: "#fa4a4a",
+                boxShadow: "6px 7px 6px #bebfbf ",
+              }}
               className={`search-button ${classes.normalcolorback} ${classes.fontwhite}`}
               onClick={() => {
                 handleCodChange();
@@ -68,16 +70,27 @@ const inputsearch = (props, state, handleChanges, handleCodChange) => {
           </Grid>
 
           <Hidden smDown>
-            <Grid container item justify="center" xs={12} sm={12} lg={5} className="content" style={{ margin: "auto" }}>
+            <Grid
+              container
+              item
+              justify="center"
+              xs={12}
+              sm={12}
+              lg={5}
+              className="content"
+              style={{ margin: "auto" }}
+            >
               <b className={`ships-by ${classes.normalfonts}`}>
                 <span>
-                  <i style={{ fontSize: "20px" }} class="fa fa-truck"></i>&nbsp;&nbsp;{val.shipby}
+                  <i style={{ fontSize: "20px" }} class="fa fa-truck"></i>
+                  &nbsp;&nbsp;{shipByDate}
                 </span>
               </b>
             </Grid>
           </Hidden>
           <label style={{ fontWeight: "bold", color: "rgba(185, 74, 72, 1)" }}>
-            {(state.isRequired && "Please fill out this field") || (state.pincodeNotFound && "Pincode not found")}
+            {(state.isRequired && "Please fill out this field") ||
+              (state.pincodeNotFound && "Pincode not found")}
           </label>
         </Grid>
       ))}
@@ -105,7 +118,11 @@ const Buydetails = (
             <Grid item xs={12} lg={4} style={{ marginRight: "15px" }}>
               {/* <NavLink to="/cart" style={{ textDecoration: 'none' }} onClick={handleLocalStorage.bind(this)}> */}
               <div onClick={handleLocalStorage.bind(this)}>
-                <Buynowbutton sku={data[0].skuId} class={`buynow-button ${classes.buttons}`} button="buynow-btn-cont" />
+                <Buynowbutton
+                  sku={data[0].skuId}
+                  class={`buynow-button ${classes.buttons}`}
+                  button="buynow-btn-cont"
+                />
               </div>
               {/* </NavLink> */}
               <CommenDialog
@@ -121,21 +138,50 @@ const Buydetails = (
 
             <Grid xs={12} lg={7} style={{ marginBottom: "7px" }}>
               <Grid container spacing={12}>
-                <Grid item lg={12} xs={12} className={`buy-subheaders nd-hlp ${classes.normalfonts}`}>
+                <Grid
+                  item
+                  lg={12}
+                  xs={12}
+                  className={`buy-subheaders nd-hlp ${classes.normalfonts}`}
+                >
                   Need Help ?
                 </Grid>
               </Grid>
               <Grid container spacing={12}>
-                <Grid item lg={5} xs={4} className={`buy-subheaders ${classes.normalfonts}`}>
-                  <i class="fa fa-phone overall-icons" aria-hidden="true"></i>&nbsp;{val.telephone}
+                <Grid
+                  item
+                  lg={5}
+                  xs={4}
+                  className={`buy-subheaders ${classes.normalfonts}`}
+                >
+                  <i class="fa fa-phone overall-icons" aria-hidden="true"></i>
+                  &nbsp;{val.telephone}
                 </Grid>
 
-                <Grid item lg={5} xs={4} className={`buy-subheaders ${classes.normalfonts}`}>
-                  <i class="fa fa-whatsapp overall-icons" aria-hidden="true"></i>&nbsp;{val.phonenum}
+                <Grid
+                  item
+                  lg={5}
+                  xs={4}
+                  className={`buy-subheaders ${classes.normalfonts}`}
+                >
+                  <i
+                    class="fa fa-whatsapp overall-icons"
+                    aria-hidden="true"
+                  ></i>
+                  &nbsp;{val.phonenum}
                 </Grid>
 
-                <Grid item lg={2} style={{ cursor: "pointer !important" }} className={`buy-subheaders ${classes.normalfonts}`}>
-                  <i class="fa fa-comments-o overall-icons" aria-hidden="true"></i>&nbsp;{val.chat}
+                <Grid
+                  item
+                  lg={2}
+                  style={{ cursor: "pointer !important" }}
+                  className={`buy-subheaders ${classes.normalfonts}`}
+                >
+                  <i
+                    class="fa fa-comments-o overall-icons"
+                    aria-hidden="true"
+                  ></i>
+                  &nbsp;{val.chat}
                 </Grid>
               </Grid>
             </Grid>
@@ -148,8 +194,14 @@ const Buydetails = (
 };
 
 const PriceBuynow = (props) => {
-  const { loading, error, data: CodData, makeRequestCod } = useCheckForCod(CheckForCod, () => {}, {});
-  const { ProductDetailCtx, setFilters } = React.useContext(ProductDetailContext);
+  const {
+    loading,
+    error,
+    data: CodData,
+    makeRequestCod,
+  } = useCheckForCod(CheckForCod, () => {}, {});
+  const { ProductDetailCtx, setFilters } =
+    React.useContext(ProductDetailContext);
   const { setCartFilters } = React.useContext(CartContext);
 
   return (
@@ -194,7 +246,10 @@ class Component extends React.Component {
     if (prevProps.CodData !== this.props.CodData) {
       // Here i have handeled the "check for COD" condition because the response is not setting to the props instantly
       if (this.props.CodData.data.allPincodeMasters.nodes.length > 0) {
-        if (this.props.data[0].price > this.props.CodData.data.allPincodeMasters.nodes[0].maxCartvalue) {
+        if (
+          this.props.data[0].price >
+          this.props.CodData.data.allPincodeMasters.nodes[0].maxCartvalue
+        ) {
           this.setState({ CheckForCodtitle: "COD Not Available" });
         } else {
           this.setState({ CheckForCodtitle: "COD is Available" });
@@ -208,7 +263,11 @@ class Component extends React.Component {
   }
 
   openModel = () => {
-    this.props.setCartFilters({ skuId: this.props.data[0].skuId, qty: 1, price: this.props.data[0].offerPrice });
+    this.props.setCartFilters({
+      skuId: this.props.data[0].skuId,
+      qty: 1,
+      price: this.props.data[0].offerPrice,
+    });
     window.location.pathname = "/cart";
   };
 
@@ -218,7 +277,11 @@ class Component extends React.Component {
         modelOpen: true,
       });
     } else {
-      this.props.setCartFilters({ skuId: this.props.data[0].skuId, qty: 1, price: this.props.data[0].offerPrice });
+      this.props.setCartFilters({
+        skuId: this.props.data[0].skuId,
+        qty: 1,
+        price: this.props.data[0].offerPrice,
+      });
       window.location.pathname = "/cart";
     }
   };
@@ -230,7 +293,11 @@ class Component extends React.Component {
   };
 
   deletechecklists = () => {
-    this.props.setCartFilters({ skuId: this.props.data[0].skuId, qty: 1, price: this.props.data[0].offerPrice });
+    this.props.setCartFilters({
+      skuId: this.props.data[0].skuId,
+      qty: 1,
+      price: this.props.data[0].offerPrice,
+    });
     window.location.pathname = "/cart";
 
     this.setState({
@@ -244,14 +311,22 @@ class Component extends React.Component {
     this.setState({ open: false });
   };
   handleChanges = (e) => {
-    this.setState({ values: e.target.value, CheckForCodtitle: "", pincodeNotFound: false, isRequired: false });
+    this.setState({
+      values: e.target.value,
+      CheckForCodtitle: "",
+      pincodeNotFound: false,
+      isRequired: false,
+    });
   };
   handleCodChange = () => {
     if (this.state.values) {
       this.setState({ isRequired: false });
       var variab = {};
       variab["pincode"] = this.state.values;
-      if (Object.entries(variab).length !== 0 && variab.constructor === Object) {
+      if (
+        Object.entries(variab).length !== 0 &&
+        variab.constructor === Object
+      ) {
         this.props.makeRequestCod(variab);
       } else {
         return {};
@@ -283,7 +358,12 @@ class Component extends React.Component {
             <ProductPrice data={this.props.data} />
 
             <PriceTabs data={this.props.data} />
-            {inputsearch(this.props, this.state, this.handleChanges, this.handleCodChange)}
+            {inputsearch(
+              this.props,
+              this.state,
+              this.handleChanges,
+              this.handleCodChange
+            )}
           </div>
         </Hidden>
       </div>

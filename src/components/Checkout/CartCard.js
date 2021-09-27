@@ -1,6 +1,7 @@
 import { Container, Grid, Hidden } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
+import axios from "axios";
 import { API_URL } from "config";
 import { CartContext } from "context";
 import React from "react";
@@ -10,10 +11,6 @@ import Pricing from "../Pricing/index";
 import "./Cart.css";
 import CardSmallScreen from "./CartCardSmallScreen.js";
 import styles from "./style";
-
-// import { FilterOptionsContext } from 'context/FilterOptionsContext';
-//
-//
 
 class Checkoutcard extends React.Component {
   constructor(props) {
@@ -32,23 +29,6 @@ class Checkoutcard extends React.Component {
     if (filters) return this.props.filters.quantity[skuId];
     else return JSON.parse(localStorage.getItem("quantity"))[skuId];
   };
-
-  // handleCartQuantity = (skuId) =>{
-
-  //     const filters = this.props.filters && this.props.filters.quantity && Object.keys(this.props.filters.quantity).length > 0 ? true : false
-  //     if(filters) return this.props.filters.quantity[skuId]
-  //     else return JSON.parse(localStorage.getItem('quantity'))[skuId]
-  // }
-  // handlereloadcart = (val) => {
-  //     const data = this.props.data
-  //
-  //     var redirect_url;
-  //     redirect_url = data.map(val =>
-  //         "/jewellery" + "/" + val.productType + "/" + val.materialName + "/" + val.prdheader + "/" + val.generatedSku
-  //     )
-  //     return alert(JSON.stringify(redirect_url))
-
-  // }
   handleDeleteLocalStorage = (e) => {
     var local_storage = JSON.parse(localStorage.getItem("cartDetails"));
 
@@ -156,10 +136,22 @@ class Checkoutcard extends React.Component {
     return alert(JSON.stringify(redirect_url));
   };
   row = (props) => {
+    //let { productShipBy } = state;
     const dataCarousel = {
       slidesToShow: 1,
       arrows: false,
     };
+    let dateObj = "";
+    let shipByDate = "";
+    if (this.state.productShipBy) {
+      dateObj = new Date(this.state.productShipBy);
+      shipByDate = `Ships by ${dateObj.getUTCDate()} ${dateObj.toLocaleString(
+        "default",
+        {
+          month: "long",
+        }
+      )} ${dateObj.getUTCFullYear()}`;
+    }
     const { classes, data } = this.props;
     const { productsDetails, fadeImages, dataCard1 } = this.props.data;
     const filter_image = (imges__val, name, details) => {
@@ -278,7 +270,7 @@ class Checkoutcard extends React.Component {
                       <Typography
                         className={`subhesder ${classes.normalfonts}`}
                       >
-                        {data[0].shipby}
+                        {shipByDate}
                       </Typography>
                       {/* : ""} */}
 
@@ -475,7 +467,21 @@ class Checkoutcard extends React.Component {
       </div>
     );
   };
-
+  componentDidMount() {
+    let sku_id = this.props?.data[0]?.generatedSku;
+    let params = {
+      sku_id: sku_id,
+      current_datetime: new Date(),
+    };
+    axios
+      .post(`${API_URL}/getshippingdate`, params)
+      .then((res) => {
+        this.setState({ productShipBy: res?.data?.shipping_date });
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }
   render() {
     const dataCarousel = {
       slidesToShow: 1,

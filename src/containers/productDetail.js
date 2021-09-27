@@ -99,7 +99,7 @@ class ProductDetail extends Component {
   render() {
     // alert(JSON.stringify(this.props.data))
     // alert(JSON.stringify(this.props.data))
-    console.log(this.props.data);
+
     const { classes } = this.props;
 
     const dummyData = [
