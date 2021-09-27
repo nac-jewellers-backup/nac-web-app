@@ -1,39 +1,34 @@
-import React from "react";
-import Header from "components/SilverComponents/Header";
-import Filterlisting from "components/Filterlisting";
-import { Grid, Hidden, Container } from "@material-ui/core";
+import { Container, Grid, Hidden } from "@material-ui/core";
+import Skeleton from "@material-ui/lab/Skeleton";
+import Slideshow from "components/Carousel/carosul";
 import Filter from "components/Filter/filter";
 import Footer from "components/Footer/Footer";
-import { ChatHelp } from "components/ChatHelp";
-import { FilterOptionsContext } from "context";
-import productList from "mappers/productlist";
+import ProductDescription from "components/productDescription";
+import Header from "components/SilverComponents/Header";
 import { CDN_URL } from "config";
+import { CartContext, FilterOptionsContext } from "context";
+import filterData from "mappers/filterData";
+import productList from "mappers/productlist";
+import React from "react";
+import ReactPixel from "react-facebook-pixel";
+import LiveChat from "react-livechat";
+import MetaTags from "react-meta-tags";
 import { withRouter } from "react-router";
 import "screens/screens.css";
-import filterData from "mappers/filterData";
-import { async } from "q";
-import MetaTags from "react-meta-tags";
-import { CartContext } from "context";
-import LiveChat from "react-livechat";
-import Slideshow from "components/Carousel/carosul";
-import { homePageStylori } from "./dummydatahome";
-import ProductDescription from "components/productDescription";
 import { API_URL } from "../config";
 import { LISTINGBANNER } from "../queries/home";
-import ReactPixel from "react-facebook-pixel";
 class Stylori extends React.Component {
   constructor(props) {
     super();
     this.state = {
       loading: false,
+      starting: false,
       bannerData: [],
     };
   }
   componentDidUpdate(prevProps) {
-
     if (this.props.loading !== prevProps.loading) {
       this.props.setloadingfilters(false);
-
     }
   }
 
@@ -52,13 +47,21 @@ class Stylori extends React.Component {
       .then((res) => res.json())
       .then((data) => {
         let bannerFullData = data.data.allBanners.nodes;
-        const specificPageData = bannerFullData.filter((item) => item.urlParam === window.location.pathname);
-        const listedPageData = bannerFullData.filter((item) => item.urlParam === "listingPage");
+        const specificPageData = bannerFullData.filter(
+          (item) => item.urlParam === window.location.pathname
+        );
+        const listedPageData = bannerFullData.filter(
+          (item) => item.urlParam === "listingPage"
+        );
 
         if (specificPageData.length > 0) {
           this.setState({ bannerData: specificPageData });
         } else {
           this.setState({ bannerData: listedPageData });
+        }
+        if (data.data.allBanners.nodes.length > 0) {
+          this.setState({ starting: true });
+          console.log("initial", this.state.starting);
         }
       });
   }
@@ -90,21 +93,43 @@ class Stylori extends React.Component {
         <LiveChat license={5807571} />
         <Grid container>
           <div>
-            {this.props && this.props.mappedFilters && this.props.mappedFilters.seo_url ? (
+            {this.props &&
+            this.props.mappedFilters &&
+            this.props.mappedFilters.seo_url ? (
               <MetaTags>
                 <title>{this.props.mappedFilters.seo_url}</title>
-                <meta name="description" content={this.props.mappedFilters.seo_text} />
-                <meta name="keywords" content={this.props.dataFilter[0].filter} />
+                <meta
+                  name="description"
+                  content={this.props.mappedFilters.seo_text}
+                />
+                <meta
+                  name="keywords"
+                  content={this.props.dataFilter[0].filter}
+                />
 
-                <meta property="og:title" id="fb-title" content={this.props.mappedFilters.seo_url} />
-                <meta property="og:description" content={this.props.mappedFilters.seo_text} />
+                <meta
+                  property="og:title"
+                  id="fb-title"
+                  content={this.props.mappedFilters.seo_url}
+                />
+                <meta
+                  property="og:description"
+                  content={this.props.mappedFilters.seo_text}
+                />
                 <meta property="og:type" content="website" />
-                <meta property="og:url" id="fb-product-url" content={window.location.href} />
+                <meta
+                  property="og:url"
+                  id="fb-product-url"
+                  content={window.location.href}
+                />
                 <meta
                   property="og:image"
                   id="fb_imageUrl"
                   content={
-                    this.props.data && this.props.data[0] && this.props.data[0].image && this.props.data[0].image.placeImage.img
+                    this.props.data &&
+                    this.props.data[0] &&
+                    this.props.data[0].image &&
+                    this.props.data[0].image.placeImage.img
                   }
                 />
                 <meta property="og:image:width" content="200" />
@@ -112,13 +137,23 @@ class Stylori extends React.Component {
 
                 <meta name="twitter:card" content="summary" />
                 <meta name="twitter:site" content="@StyloriLove" />
-                <meta name="twitter:title" id="twitter-title" content={this.props.mappedFilters.seo_url} />
-                <meta name="twitter:description" content={this.props.mappedFilters.seo_text} />
+                <meta
+                  name="twitter:title"
+                  id="twitter-title"
+                  content={this.props.mappedFilters.seo_url}
+                />
+                <meta
+                  name="twitter:description"
+                  content={this.props.mappedFilters.seo_text}
+                />
                 <meta
                   property="og:image"
                   id="fb_imageUrl"
                   content={
-                    this.props.data && this.props.data[0] && this.props.data[0].image && this.props.data[0].image.placeImage.img
+                    this.props.data &&
+                    this.props.data[0] &&
+                    this.props.data[0].image &&
+                    this.props.data[0].image.placeImage.img
                   }
                 />
               </MetaTags>
@@ -134,30 +169,56 @@ class Stylori extends React.Component {
             wishlist_count={this.props.wishlist_count}
           />
           <Grid item xs={12}>
-            <Slideshow sliderRef={this.slider} dataCarousel={setting}>
-              {this.state.bannerData.map((val, index) => (
-                <>
-                  <Hidden smDown>
-                    <Grid container key={index}>
-                      <a href={val.url} style={{ width: "100%" }}>
-                        <img src={val.web} alt="banner" style={{ width: "100%", height: "100%" }} />
-                      </a>
-                    </Grid>
-                  </Hidden>
-                  <Hidden mdUp>
-                    <Grid container key={index}>
-                      <a href={val.url}>
-                        <img src={val.mobile} alt="banner" style={{ width: "100%", height: "100%" }} />
-                      </a>
-                    </Grid>
-                  </Hidden>
-                </>
-              ))}
-            </Slideshow>
+            {this.state.starting ? (
+              <Slideshow sliderRef={this.slider} dataCarousel={setting}>
+                {this.state.bannerData.map((val, index) => (
+                  <>
+                    <Hidden smDown>
+                      <Grid container key={index}>
+                        <a href={val.url} style={{ width: "100%" }}>
+                          <img
+                            src={val.web}
+                            alt="banner"
+                            style={{ width: "100%", height: "100%" }}
+                          />
+                        </a>
+                      </Grid>
+                    </Hidden>
+                    <Hidden mdUp>
+                      <Grid container key={index}>
+                        <a href={val.url}>
+                          <img
+                            src={val.mobile}
+                            alt="banner"
+                            style={{ width: "100%", height: "100%" }}
+                          />
+                        </a>
+                      </Grid>
+                    </Hidden>
+                  </>
+                ))}
+              </Slideshow>
+            ) : (
+              <Skeleton
+                variant="rect"
+                style={{ width: "100%" }}
+                className="skeletonHeight"
+                animation="wave"
+              />
+            )}
           </Grid>
           <Grid item xs={12}>
-            <h3 style={{ textTransform: "capitalize", textAlign: "center", margin: "28px 0px 0px 0px" }}>
-              {this.props?.location?.pathname?.replaceAll("/", " ").replaceAll("-", " ").replaceAll("+", " ") ?? " "}
+            <h3
+              style={{
+                textTransform: "capitalize",
+                textAlign: "center",
+                margin: "28px 0px 0px 0px",
+              }}
+            >
+              {this.props?.location?.pathname
+                ?.replaceAll("/", " ")
+                .replaceAll("-", " ")
+                .replaceAll("+", " ") ?? " "}
             </h3>
           </Grid>
 
@@ -165,16 +226,36 @@ class Stylori extends React.Component {
             <Container maxWidth="lg">
               <Grid item xs={12}>
                 {/* <Filterlisting title="Jewellery" data={dataFilter} datalisting={data} wishlist={this.props.wishlistdata} /> */}
-                <ProductDescription title="Jewellery" data={dataFilter} datalisting={data} wishlist={this.props.wishlistdata} />
-                <Filter datas={data} data={dataFilter} loading={loading} wishlist={this.props.wishlistdata} />
+                <ProductDescription
+                  title="Jewellery"
+                  data={dataFilter}
+                  datalisting={data}
+                  wishlist={this.props.wishlistdata}
+                />
+                <Filter
+                  datas={data}
+                  data={dataFilter}
+                  loading={loading}
+                  wishlist={this.props.wishlistdata}
+                />
               </Grid>
             </Container>
           </Hidden>
           <Hidden mdUp>
             <Grid item xs={12}>
               {/* <Filterlisting title="Jewellery" data={dataFilter} datalisting={data} wishlist={this.props.wishlistdata} /> */}
-              <ProductDescription title="Jewellery" data={dataFilter} datalisting={data} wishlist={this.props.wishlistdata} />
-              <Filter datas={data} data={dataFilter} loading={loading} wishlist={this.props.wishlistdata} />
+              <ProductDescription
+                title="Jewellery"
+                data={dataFilter}
+                datalisting={data}
+                wishlist={this.props.wishlistdata}
+              />
+              <Filter
+                datas={data}
+                data={dataFilter}
+                loading={loading}
+                wishlist={this.props.wishlistdata}
+              />
             </Grid>
           </Hidden>
           <Grid item xs={12}>
@@ -197,7 +278,16 @@ const Components = (props) => {
     CartCtx: { allorderdata, wishlistdata },
   } = React.useContext(CartContext);
   let {
-    FilterOptionsCtx: { data, loading, error, dataArr, mappedFilters, cartcount, loadingfilters, wishlist_count },
+    FilterOptionsCtx: {
+      data,
+      loading,
+      error,
+      dataArr,
+      mappedFilters,
+      cartcount,
+      loadingfilters,
+      wishlist_count,
+    },
     setloadingfilters,
   } = React.useContext(FilterOptionsContext);
   let content,
