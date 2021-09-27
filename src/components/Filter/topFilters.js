@@ -342,7 +342,7 @@ export const TopFilters = (props) => {
                           marginRight: 6,
                           marginLeft: 2,
                           backgroundColor: "#8080802e",
-
+                          borderRadius: "0px",
                           textTransform: "uppercase",
                         }}
                         onDelete={() => props.click(data.label)}
