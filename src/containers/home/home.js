@@ -3,6 +3,7 @@ import Hidden from "@material-ui/core/Hidden";
 import { withStyles } from "@material-ui/core/styles";
 import ArrowLeftIcon from "@material-ui/icons/ArrowLeft";
 import ArrowRightIcon from "@material-ui/icons/ArrowRight";
+import Skeleton from "@material-ui/lab/Skeleton";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import Slideshow from "components/Carousel/carosul";
@@ -227,6 +228,8 @@ class HomeComp extends React.Component {
       featuredProduct: [],
       newarrival: [],
       reviews: [],
+      starting: false,
+      imageLoading: false,
     };
   }
 
@@ -246,6 +249,10 @@ class HomeComp extends React.Component {
         //set banner
         let bannerDataFull = data.data.allBanners.nodes;
         this.setState({ bannerHome: bannerDataFull });
+        if (data.data.allBanners.nodes.length > 0) {
+          this.setState({ starting: true });
+          console.log("initial", this.state.starting);
+        }
         //feature product
         let featureproductdata = data?.data?.allFeaturedProducts?.nodes;
         let featureproductDetails = featureproductdata.map((val) => ({
@@ -253,27 +260,41 @@ class HomeComp extends React.Component {
             val?.productListByProductId?.transSkuListsByProductId?.nodes[0]
               ?.sellingPrice ?? " ",
 
-          offerPrice: val?.productListByProductId?.transSkuListsByProductId?.nodes[0]?.markupPrice ?? " ",
+          offerPrice:
+            val?.productListByProductId?.transSkuListsByProductId?.nodes[0]
+              ?.markupPrice ?? " ",
           title: val?.productListByProductId?.productName ?? " ",
-          save: val?.productListByProductId?.transSkuListsByProductId?.nodes[0]?.discount ?? " ",
+          save:
+            val?.productListByProductId?.transSkuListsByProductId?.nodes[0]
+              ?.discount ?? " ",
           image: {
             placeImage: {
-              img: val?.productListByProductId?.productImagesByProductId?.nodes[0]?.imageUrl ?? " ",
+              img:
+                val?.productListByProductId?.productImagesByProductId?.nodes[0]
+                  ?.imageUrl ?? " ",
             },
             hoverImage: {
-              img: val?.productListByProductId?.productImagesByProductId?.nodes[0]?.imageUrl ?? " ",
+              img:
+                val?.productListByProductId?.productImagesByProductId?.nodes[0]
+                  ?.imageUrl ?? " ",
             },
           },
           productId: val?.productId ?? " ",
           diamondType: "",
           purity: "",
           productType: "",
-          skuId: val?.productListByProductId?.transSkuListsByProductId?.nodes[0]?.skuId ?? " ",
-          skuID: val?.productListByProductId?.transSkuListsByProductId?.nodes[0]?.skuId ?? " ",
-          skuUrl: val?.productListByProductId?.transSkuListsByProductId?.nodes[0]?.skuUrl ?? " ",
+          skuId:
+            val?.productListByProductId?.transSkuListsByProductId?.nodes[0]
+              ?.skuId ?? " ",
+          skuID:
+            val?.productListByProductId?.transSkuListsByProductId?.nodes[0]
+              ?.skuId ?? " ",
+          skuUrl:
+            val?.productListByProductId?.transSkuListsByProductId?.nodes[0]
+              ?.skuUrl ?? " ",
           description:
-            val?.productListByProductId?.transSkuListsByProductId?.nodes[0]?.transSkuDescriptionsBySkuId?.nodes[0]
-              ?.skuDescription ?? " ",
+            val?.productListByProductId?.transSkuListsByProductId?.nodes[0]
+              ?.transSkuDescriptionsBySkuId?.nodes[0]?.skuDescription ?? " ",
         }));
         console.log("--------feature product------");
         this.setState({ featuredProduct: featureproductDetails });
@@ -344,11 +365,23 @@ class HomeComp extends React.Component {
 
     const ArrowLeft = (props) => {
       const { className, style, onClick } = props;
-      return <ArrowLeftIcon className={`${className} ${classes.collectionSection}`} onClick={onClick} style={{ ...style }} />;
+      return (
+        <ArrowLeftIcon
+          className={`${className} ${classes.collectionSection}`}
+          onClick={onClick}
+          style={{ ...style }}
+        />
+      );
     };
     const ArrowRight = (props) => {
       const { className, style, onClick } = props;
-      return <ArrowRightIcon className={`${className} ${classes.collectionSection}`} onClick={onClick} style={{ ...style }} />;
+      return (
+        <ArrowRightIcon
+          className={`${className} ${classes.collectionSection}`}
+          onClick={onClick}
+          style={{ ...style }}
+        />
+      );
     };
     const dataCarouselcollections = {
       arrows: true,
@@ -398,23 +431,28 @@ class HomeComp extends React.Component {
       },
       {
         time: "1927s",
-        image: "https://assets.stylori.com/product/SE0015/1000X1000/SE0015-1YW.webp",
+        image:
+          "https://assets.stylori.com/product/SE0015/1000X1000/SE0015-1YW.webp",
       },
       {
         time: "1973s",
-        image: "https://assets.stylori.com/product/SE0016/1000X1000/SE0016-1Y.webp",
+        image:
+          "https://assets.stylori.com/product/SE0016/1000X1000/SE0016-1Y.webp",
       },
       {
         time: "1979s",
-        image: "https://assets.stylori.com/product/SE1270/575X575/HOVER-SE1270-2Y.webp",
+        image:
+          "https://assets.stylori.com/product/SE1270/575X575/HOVER-SE1270-2Y.webp",
       },
       {
         time: "1990s",
-        image: "https://assets.stylori.com/product/SE0420/575X575/HOVER-SE0420-2Y.webp",
+        image:
+          "https://assets.stylori.com/product/SE0420/575X575/HOVER-SE0420-2Y.webp",
       },
       {
         time: "2007s",
-        image: "https://assets.stylori.com/product/SE0867/575X575/HOVER-SE0867-2Y.webp",
+        image:
+          "https://assets.stylori.com/product/SE0867/575X575/HOVER-SE0867-2Y.webp",
       },
     ];
     const TimelineEntry = ({ entry: { time, image }, useBar }) => (
@@ -426,13 +464,17 @@ class HomeComp extends React.Component {
       >
         <span
           style={{ fontFamily: "notoSerif-regular" }}
-          className={`time-range ${this.state.timelineImage === image ? "active" : ""} ${
-            useBar ? "" : classes.minHeighttimerange
-          }`}
+          className={`time-range ${
+            this.state.timelineImage === image ? "active" : ""
+          } ${useBar ? "" : classes.minHeighttimerange}`}
         >
           {time}
         </span>
-        <div className={`${"timeline-icon-container"} ${this.state.timelineImage === image ? "active" : ""}`}>
+        <div
+          className={`${"timeline-icon-container"} ${
+            this.state.timelineImage === image ? "active" : ""
+          }`}
+        >
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
             <path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z" />
           </svg>
@@ -449,7 +491,11 @@ class HomeComp extends React.Component {
               <div className="timeline">
                 <div className="timeline-body">
                   {timelineData.map((el, i) => (
-                    <TimelineEntry entry={el} key={i} useBar={i === timelineData.length - 1 ? false : true} />
+                    <TimelineEntry
+                      entry={el}
+                      key={i}
+                      useBar={i === timelineData.length - 1 ? false : true}
+                    />
                   ))}
                 </div>
               </div>
@@ -480,42 +526,77 @@ class HomeComp extends React.Component {
       <div className={classes.root}>
         <Grid container>
           <Header />
+          {this.state.starting ? (
+            <Grid item xs={12} style={{ backgroundColor: "#ebebeb" }}>
+              {/* <Stack spacing={1}>
+              <Skeleton
+                variant="rectangular"
+                width={210}
+                height={118}
+              ></Skeleton>
+            </Stack> */}
 
-          <Grid item xs={12}>
-            {homeNac.carouselTop.setting.arrowsImg && (
-              <Grid container>
-                <Grid item onClick={this.previous} className={classes.preButton}>
-                  <ArrowLeftIcon />
+              {homeNac.carouselTop.setting.arrowsImg && (
+                <Grid container>
+                  <Grid
+                    item
+                    onClick={this.previous}
+                    className={classes.preButton}
+                  >
+                    <ArrowLeftIcon />
+                  </Grid>
+                  <Grid item onClick={this.next} className={classes.nextButton}>
+                    <ArrowRightIcon />
+                  </Grid>
                 </Grid>
-                <Grid item onClick={this.next} className={classes.nextButton}>
-                  <ArrowRightIcon />
-                </Grid>
-              </Grid>
-            )}
-            {/* </Hidden> */}
-            <Slideshow sliderRef={this.slider} dataCarousel={homeNac.carouselTop.setting}>
-              {this.state.bannerHome.map((val, index) => (
-                <>
-                  <Hidden smDown>
-                    <Grid container key={index}>
-                      <a href={val.url} style={{ width: "100%" }}>
-                        <img src={val.web} style={{ width: "100%", height: "100%" }} />
-                      </a>
-                    </Grid>
-                  </Hidden>
-                  <Hidden mdUp>
-                    <Grid container key={index}>
-                      <a href={val.url}>
-                        <img src={val.mobile} style={{ width: "100%", height: "100%" }} />
-                      </a>
-                    </Grid>
-                  </Hidden>
-                </>
-              ))}
-            </Slideshow>
-          </Grid>
+              )}
+              {/* </Hidden> */}
 
-          <Grid container item xs={12} justify="center" style={{ margin: "35px 0" }}>
+              <Slideshow
+                sliderRef={this.slider}
+                dataCarousel={homeNac.carouselTop.setting}
+              >
+                {this.state.bannerHome.map((val, index) => (
+                  <>
+                    <Hidden smDown>
+                      <Grid container key={index}>
+                        <a href={val.url} style={{ width: "100%" }}>
+                          <img
+                            src={val.web}
+                            style={{ width: "100%", height: "100%" }}
+                          />
+                        </a>
+                      </Grid>
+                    </Hidden>
+                    <Hidden mdUp>
+                      <Grid container key={index}>
+                        <a href={val.url}>
+                          <img
+                            src={val.mobile}
+                            style={{ width: "100%", height: "100%" }}
+                          />
+                        </a>
+                      </Grid>
+                    </Hidden>
+                  </>
+                ))}
+              </Slideshow>
+            </Grid>
+          ) : (
+            <Skeleton
+              variant="rect"
+              style={{ width: "100%" }}
+              className="skeletonHeight"
+              animation="wave"
+            />
+          )}
+          <Grid
+            container
+            item
+            xs={12}
+            justify="center"
+            style={{ margin: "35px 0" }}
+          >
             <Grid item xs={8} sm={8} md={6} lg={6} xl={6}>
               <GadgetsNac />
             </Grid>
@@ -523,7 +604,12 @@ class HomeComp extends React.Component {
           <Container maxWidth="xl">
             <Hidden mdUp>
               <Grid container>
-                <Grid item xs={12} className={classes.contentPadding} data-aos="fade-left">
+                <Grid
+                  item
+                  xs={12}
+                  className={classes.contentPadding}
+                  data-aos="fade-left"
+                >
                   <Title title="New Arrival" />
                 </Grid>
                 <Grid item xs={12} data-aos="fade-left">
@@ -565,14 +651,25 @@ class HomeComp extends React.Component {
             </Hidden>
           </Container>
           <Hidden mdUp>
-            <Grid item xs={12} className={classes.gridPadding} data-aos="fade-left">
+            <Grid
+              item
+              xs={12}
+              className={classes.gridPadding}
+              data-aos="fade-left"
+            >
               <br />
               <Title title="ABOUT US" />
               <Timeline day="monday" date="06/05/2019" timelineData={tData} />
             </Grid>
           </Hidden>
           <Container>
-            <Grid item xs={12} className={classes.gridPadding} style={{ paddingTop: "40px" }} data-aos="fade-left">
+            <Grid
+              item
+              xs={12}
+              className={classes.gridPadding}
+              style={{ paddingTop: "40px" }}
+              data-aos="fade-left"
+            >
               <Title title="Collections" />
             </Grid>
             <Grid item xs={12} style={{ paddingTop: 8 }} data-aos="fade-left">
@@ -580,18 +677,35 @@ class HomeComp extends React.Component {
             </Grid>
 
             <Grid container>
-              <Grid item xs={12} className={classes.gridPadding} data-aos="fade-left">
+              <Grid
+                item
+                xs={12}
+                className={classes.gridPadding}
+                data-aos="fade-left"
+              >
                 <br />
-                <Title title="Featured" style={{ marginBottom: "0px !important" }} />
+                <Title
+                  title="Featured"
+                  style={{ marginBottom: "0px !important" }}
+                />
               </Grid>
               <Grid container>
                 <Grid item xs={12} data-aos="fade-left">
                   <>
                     <Hidden smDown>
                       <div>
-                        <Slideshow class="subslider-carousel" dataCarousel={dataCarouselcollections}>
+                        <Slideshow
+                          class="subslider-carousel"
+                          dataCarousel={dataCarouselcollections}
+                        >
                           {this.state.featuredProduct.map((val) => {
-                            return <ImgMediaCard data={val} cardSize="auto" hoverText={true} />;
+                            return (
+                              <ImgMediaCard
+                                data={val}
+                                cardSize="auto"
+                                hoverText={true}
+                              />
+                            );
                           })}
                         </Slideshow>
                       </div>
@@ -604,7 +718,13 @@ class HomeComp extends React.Component {
                           dataCarousel={dataCarouselcollectionsSm}
                         >
                           {this.state.featuredProduct.map((val) => {
-                            return <ImgMediaCard data={val} cardSize="auto" hoverText={true} />;
+                            return (
+                              <ImgMediaCard
+                                data={val}
+                                cardSize="auto"
+                                hoverText={true}
+                              />
+                            );
                           })}
                         </Slideshow>
                       </Container>
@@ -614,16 +734,30 @@ class HomeComp extends React.Component {
               </Grid>
             </Grid>
             <Hidden smDown>
-              <Grid item xs={12} className={classes.gridPadding} data-aos="fade-right">
+              <Grid
+                item
+                xs={12}
+                className={classes.gridPadding}
+                data-aos="fade-right"
+              >
                 <br />
                 <Title title="ABOUT US" />
                 <Timeline day="monday" date="06/05/2019" timelineData={tData} />
               </Grid>
             </Hidden>
             <div data-aos="fade-left">
-              <Grid item xs={12} className={classes.gridPadding} style={{ margin: "40px 0px" }}>
+              <Grid
+                item
+                xs={12}
+                className={classes.gridPadding}
+                style={{ margin: "40px 0px" }}
+              >
                 <Grid container>
-                  {[{ title: "NEWS" }, { title: "PROMOTION" }, { title: "VIDEOS" }].map((val) => {
+                  {[
+                    { title: "NEWS" },
+                    { title: "PROMOTION" },
+                    { title: "VIDEOS" },
+                  ].map((val) => {
                     return (
                       <Grid item xs={4} style={{ paddingLeft: 5 }}>
                         <div className={classes.titilenews}>{val.title}</div>
@@ -646,7 +780,10 @@ class HomeComp extends React.Component {
                   ].map((val) => {
                     return (
                       <Grid item xs={4} style={{ paddingLeft: 5 }}>
-                        <Slideshow class="subslider-carousel" dataCarousel={mysettings}>
+                        <Slideshow
+                          class="subslider-carousel"
+                          dataCarousel={mysettings}
+                        >
                           <img src={val.img} alt="NAC" height="100%" />
                         </Slideshow>
                       </Grid>
@@ -678,7 +815,15 @@ class HomeComp extends React.Component {
                   <InstagramFeed />
                 </Grid>
               </Hidden>
-              <Grid item xs={12} sm={12} md={8} lg={8} xl={8} data-aos="fade-left">
+              <Grid
+                item
+                xs={12}
+                sm={12}
+                md={8}
+                lg={8}
+                xl={8}
+                data-aos="fade-left"
+              >
                 <div className={classes.testimonial}>
                   <Testimonial customerreview={this.state.reviews} />
                 </div>
