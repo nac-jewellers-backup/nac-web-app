@@ -1,4 +1,4 @@
-import { Card, Container, Grid, Hidden } from "@material-ui/core";
+import { Container, Grid, Hidden } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import { API_URL } from "config";
@@ -85,9 +85,6 @@ class Checkoutcard extends React.Component {
       };
       fetch(`${API_URL}/removecartitem`, {
         method: "post",
-        // body: {query:seoUrlResult,variables:splitHiphen()}
-        // body: JSON.stringify({query:seoUrlResult}),
-
         headers: {
           "Content-Type": "application/json",
         },
@@ -164,57 +161,11 @@ class Checkoutcard extends React.Component {
       arrows: false,
     };
     const { classes, data } = this.props;
-    // Quantity {JSON.parse(localStorage.getItem('quantity'))[val.namedetail[0].details]}
     const { productsDetails, fadeImages, dataCard1 } = this.props.data;
-    // const { FilterOptionsCtx: { setcartcount } } = React.useContext(FilterOptionsContext);
-    // React.useEffect(()=>{
-    //     setcartcount({
-    //         cartcount: this.props.data.length
-    //     })
-    // },[data])
     const filter_image = (imges__val, name, details) => {
       var image_urls;
       const width = window.innerWidth;
       if (imges__val.imageUrl && imges__val.imageUrl.length > 0) {
-        // this.props.data.map(dataval => {
-        //     if (dataval !== undefined && dataval !== null) {
-        //         dataval.productsDetails.map(val => {
-        // if (val !== undefined && val !== null) {
-        // val.namedetail !== undefined && val.namedetail.map(val___ => {
-        // if (name && name === "Metal") {
-        //   var valu = details.split(" ");
-        //   var valu1 = valu[1];
-        //   var valu2 = valu1[0];
-        //   //  imges__val && imges__val.map(img => {
-        //   var cnt = imges__val && imges__val.imageUrl.split("/");
-        //   var cnt_b = cnt[2].split("-");
-        //   var cnt_c = cnt_b[1];
-        //   if ((cnt_c && cnt_c[1]) === valu2) {
-        //     var browser_type = JSON.parse(localStorage.getItem("browserDetails"));
-        //     var resolution = 500;
-        //     var _resolutions = width < 960 ? `${resolution * 2}X${resolution * 2}` : `${resolution}X${resolution}`;
-        //     var url_split = imges__val && imges__val.imageUrl.split("/");
-        //     var extension_split = url_split && url_split[url_split.length - 1];
-        //     var browser_type_append =
-        //       extension_split && extension_split.split(".")[0].concat(`${browser_type && browser_type.browser_type}`);
-        //     url_split[url_split && url_split.length - 1] = browser_type_append;
-        //     url_split.splice(2, 0, _resolutions);
-        //     var url_construct = url_split.join().replace(/\,/g, "/");
-        //     image_urls = `${CDN_URL}${url_construct}`;
-        //     return [image_urls];
-        //   }
-        //   // })
-        // }
-        // return url
-        // })
-        // }
-        // return image
-        // })
-        // }
-        // return detail
-        // })
-        // }
-        // alert(JSON.stringify( [image_urls]))
         return imges__val.imageUrl;
       }
     };
@@ -244,10 +195,6 @@ class Checkoutcard extends React.Component {
               className={classes.cart}
             >
               <Grid container spacing={12} xs={12}>
-                {/* {window.location.pathname !== "/checkout" ?
-                                    <Grid item xs={1}  >
-                                        <a>Redirect</a>
-                                    </Grid> : ""} */}
                 <Grid
                   item
                   xs={3}
@@ -259,47 +206,28 @@ class Checkoutcard extends React.Component {
                     padding: "1px",
                   }}
                 >
-                  {/* {val.namedetail !== undefined && val.namedetail.map(val => (
-                                        dataval.fadeImages.map(im_ => <>
-                                            {filter_image(im_, val.name, val.details).length > 0 ? */}
-                  <Card className="product-image-thumb">
-                    {/* <CardHeader style={{ padding: "0px", paddingTop: "10px" }}
-                                            id={dataval.generatedSku}
-                                            action={
-                                                <Button id={dataval.generatedSku} onClick={(event) => this.handleDeleteLocalStorage(event, dataval.generatedSku)}>
-                                                    <Wishlist sku={dataval.generatedSku} productId={dataval.productId} />
-                                                </Button>
-                                            }
-                                        /> */}
-                    {/* <img src={}/> */}
-                    {/* {val.namedetail !== undefined &&
-                      val.namedetail.map((val) =>
-                        dataval.fadeImages.map((im_) => ( */}
-                    <>
-                      {window.location.pathname !== "/checkout" ? (
-                        <NavLink
-                          to={dataval?.skuUrl}
-                          style={{ textDecoration: "none" }}
-                        >
+                  <>
+                    {window.location.pathname !== "/checkout" ? (
+                      <NavLink
+                        to={dataval?.skuUrl}
+                        style={{ textDecoration: "none" }}
+                      >
+                        <center>
                           <img
-                            style={{ width: "50%" }}
+                            style={{ width: "70%" }}
                             src={dataval?.fadeImages[0]?.imageUrl}
                           ></img>
-                        </NavLink>
-                      ) : (
+                        </center>
+                      </NavLink>
+                    ) : (
+                      <center>
                         <img
                           style={{ width: "50%" }}
                           src={dataval?.fadeImages[0]?.imageUrl}
                         ></img>
-                      )}
-                    </>
-                    {/* ))
-                      )} */}
-                  </Card>
-                  {/* : ""
-
-                                            }</>) */}
-                  {/* ))} */}
+                      </center>
+                    )}
+                  </>
                 </Grid>
 
                 <Grid item xs={5} sm={7} lg={6} style={{ padding: "13px" }}>
@@ -317,7 +245,7 @@ class Checkoutcard extends React.Component {
                       {val.pro_header}
                     </h3>
                   )}
-                  <Grid container spacing={12}>
+                  <Grid container spacing={12} style={{ marginTop: "15px" }}>
                     <Grid item xs={8}>
                       {val.namedetail !== undefined &&
                         val.namedetail.map((val) => {
@@ -347,15 +275,6 @@ class Checkoutcard extends React.Component {
                     </Grid>
 
                     <Grid item xs={4}>
-                      {/* <Typography style={{ marginTop: "8px" }} className={`subhesder ${classes.normalfonts}`}>
-                                                {window.location.pathname === "/checkout" || checkMaterial(dataval.materialName)  ?
-
-                                                `Quantity ${this.props.isdatafromstate[dataval.generatedSku]}`
-                                                :
-                                                <Quantity  data={[dataval]} cart = {true}/>}
-                                                </Typography> */}
-                      {/* <Quantity data={[dataval]}/> */}
-                      {/* {data[0].isReadyToShip === true ? */}
                       <Typography
                         className={`subhesder ${classes.normalfonts}`}
                       >
@@ -381,9 +300,6 @@ class Checkoutcard extends React.Component {
                     </Grid>
                   </Grid>
                 </Grid>
-                {/* <Grid xs ={12} item>
-<Quantity  data={[dataval]}/>
-</Grid> */}
                 <Grid item xs={4} sm={2} lg={3}>
                   <div style={{ marginTop: "15%" }}>
                     {dataval.dataCard1.map((val) => {
@@ -395,11 +311,9 @@ class Checkoutcard extends React.Component {
                           }
                           price={val.price}
                           offerPrice={val.offerPrice}
-                          // quantity = {this.props.isdatafromstate[dataval.generatedSku]}
                         ></Pricing>
                       );
                     })}
-                    {/* <span class={`offer-description ${classes.backgsecondary}`}>25% - OFF</span> */}
                   </div>
                 </Grid>
               </Grid>
@@ -433,7 +347,6 @@ class Checkoutcard extends React.Component {
                 }
               }}
             >
-              {/* {window.location.reload()} */}
               <Buynowbutton
                 productIsActive={productIsActive ?? ""}
                 productURL={this.props?.data[0]?.skuUrl}
@@ -446,8 +359,6 @@ class Checkoutcard extends React.Component {
     );
   };
   subtotals = (props) => {
-    // alert(JSON.stringify(props.cartFilters.discounted_price))
-    // const { dataCard1 } = this.props.data;
     var discounted_price = this.props.cartFilters.discounted_price
       ? this.props.cartFilters.discounted_price
       : "";
@@ -459,14 +370,7 @@ class Checkoutcard extends React.Component {
         );
       })
       .reduce(myFunc);
-    // this.props.data.map(val=>{return val.dataCard1[0].offerPrice}).reduce(myFunc)
-
-    // function myFunc(total, num) {
-    //     return Math.round(total + num);
-    // }
-
     function myFunc(total, num) {
-      // alert(JSON.stringify(props.cartFilters.discounted_price))
       var cart_price;
       if (discounted_price.length > 0) {
         var a = Math.round(total + num);
@@ -486,7 +390,6 @@ class Checkoutcard extends React.Component {
         );
       })
       .reduce(myFunc);
-    // const yousave = Math.round(Number(dataCard1.price) - Number(dataCard1.offerPrice))
     let path = window.location.pathname.split("/").pop();
     const { classes } = this.props;
     return (
@@ -494,7 +397,6 @@ class Checkoutcard extends React.Component {
         <Grid container spacing={12}>
           <Grid item xs={6} />
           <Grid item xs={6}>
-            {/* {dataCard1.map(val => */}
             <Grid container>
               <Grid xs={7}>
                 <Typography className={`subhesder ${classes.normalfonts}`}>
@@ -535,9 +437,6 @@ class Checkoutcard extends React.Component {
                       : Math.round(yousave)}
                   </Typography>
                 ) : null}
-                {
-                  // yousave !== 0  ? <Typography className={`subhesder ${classes.normalfonts}`}>{Math.round(yousave) + props.cartFilters.tax_price}</Typography> : null
-                }
 
                 {props.cartFilters.tax_price ? (
                   <Typography className={`subhesder ${classes.normalfonts}`}>
@@ -585,7 +484,6 @@ class Checkoutcard extends React.Component {
     var data = this.props.data;
 
     const { classes } = this.props;
-    // alert(discounted_price)
     let path = window.location.pathname.split("/").pop();
 
     return (
@@ -604,7 +502,6 @@ class Checkoutcard extends React.Component {
             handleDeleteLocalStorage={(event) =>
               this.handleDeleteLocalStorage(event)
             }
-            //  subtotals={Math.round(dataCard1)}
             checkoutbutton={this.checkoutbutton()}
           />
           {this.subtotals(this.props)}
