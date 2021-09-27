@@ -1,5 +1,7 @@
 import { Container, Grid, Hidden } from "@material-ui/core";
 import Skeleton from "@material-ui/lab/Skeleton";
+import Aos from "aos";
+import "aos/dist/aos.css";
 import Slideshow from "components/Carousel/carosul";
 import Filter from "components/Filter/filter";
 import Footer from "components/Footer/Footer";
@@ -24,6 +26,7 @@ class Stylori extends React.Component {
       loading: false,
       starting: false,
       bannerData: [],
+      imageLoader: false,
     };
   }
   componentDidUpdate(prevProps) {
@@ -64,8 +67,11 @@ class Stylori extends React.Component {
           console.log("initial", this.state.starting);
         }
       });
+    Aos.init({ duration: 1500 });
   }
-
+  imageLoader = () => {
+    this.setState({ imageLoading: true });
+  };
   render() {
     // alert(JSON.stringify(this.props.wishlist))
     const { data, dataFilter, loading } = this.props;
@@ -168,13 +174,20 @@ class Stylori extends React.Component {
             wishlist={this.props.wishlistdata}
             wishlist_count={this.props.wishlist_count}
           />
-          <Grid item xs={12}>
+          <Grid item xs={12} style={{ backgroundColor: "#ebebeb" }}>
             {this.state.starting ? (
               <Slideshow sliderRef={this.slider} dataCarousel={setting}>
                 {this.state.bannerData.map((val, index) => (
                   <>
                     <Hidden smDown>
-                      <Grid container key={index}>
+                      <Grid
+                        container
+                        key={index}
+                        data-aos="fade-zoom-in"
+                        data-aos-easing="ease-in-back"
+                        data-aos-delay="150"
+                        data-aos-offset="0"
+                      >
                         <a href={val.url} style={{ width: "100%" }}>
                           <img
                             src={val.web}
@@ -191,6 +204,10 @@ class Stylori extends React.Component {
                             src={val.mobile}
                             alt="banner"
                             style={{ width: "100%", height: "100%" }}
+                            className={`image-${
+                              this.state.imageLoading ? "visible" : "hidden"
+                            }`}
+                            onLoad={this.imageLoader}
                           />
                         </a>
                       </Grid>

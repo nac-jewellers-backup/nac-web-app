@@ -1144,3 +1144,12 @@
     height: 175px !important;
   }
 }
+
+.image-visible {
+  background-color: #796f6f !important;
+  height: "500px";
+}
+
+.image-hidden {
+  width: 100%;
+}

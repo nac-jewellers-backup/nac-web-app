@@ -222,6 +222,7 @@ class HomeComp extends React.Component {
     this.state = {
       loading: false,
       count: "",
+      imageLoading: false,
       timelineImage:
         "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_page/Group+213%402x.png",
       bannerHome: [],
@@ -357,6 +358,9 @@ class HomeComp extends React.Component {
   };
   previous = () => {
     this.slider.current.slickPrev();
+  };
+  imageLoader = () => {
+    this.setState({ imageLoading: true });
   };
 
   render() {
@@ -526,7 +530,7 @@ class HomeComp extends React.Component {
         <Grid container>
           <Header />
           {this.state.starting ? (
-            <Grid item xs={12}>
+            <Grid item xs={12} style={{ backgroundColor: "#ebebeb" }}>
               {homeNac.carouselTop.setting.arrowsImg && (
                 <Grid container>
                   <Grid
@@ -549,7 +553,14 @@ class HomeComp extends React.Component {
                 {this.state.bannerHome.map((val, index) => (
                   <>
                     <Hidden smDown>
-                      <Grid container key={index}>
+                      <Grid
+                        container
+                        key={index}
+                        data-aos="fade-zoom-in"
+                        data-aos-easing="ease-in-back"
+                        data-aos-delay="150"
+                        data-aos-offset="0"
+                      >
                         <a href={val.url} style={{ width: "100%" }}>
                           <img
                             src={val.web}
@@ -564,6 +575,10 @@ class HomeComp extends React.Component {
                           <img
                             src={val.mobile}
                             style={{ width: "100%", height: "100%" }}
+                            className={`image-${
+                              this.state.imageLoading ? "visible" : "hidden"
+                            }`}
+                            onLoad={this.imageLoader}
                           />
                         </a>
                       </Grid>
