@@ -87,7 +87,7 @@
   animation-name: placeHolderShimmer;
   animation-timing-function: linear;
   background: #f6f7f8;
-  /* min-height:20px; */
+  /* min-height:20px;  !important*/
   background-image: -webkit-linear-gradient(
     left,
     #f6f7f8 0%,
@@ -161,7 +161,7 @@
 }
 
 .imageHeight {
-  min-height: 100px;
+  min-height: 100px !important;
 }
 .newarraival {
   background-color: #0c2879;
@@ -205,74 +205,78 @@
   opacity: 1;
 }
 
+.imageHeight {
+  min-height: 144px !important;
+}
+
 @media only screen and (max-width: 375px) and (min-width: 320px) {
   .imageHeight {
-    min-height: 100px;
+    min-height: 144px !important;
   }
 }
 
 @media only screen and (max-width: 376px) and (min-width: 425px) {
   .imageHeight {
-    min-height: 100px;
+    min-height: 168px !important;
   }
 }
 
 @media only screen and (max-width: 425px) and (min-width: 377px) {
   .imageHeight {
-    min-height: 100px;
+    min-height: 144px !important;
   }
 }
 
 @media only screen and (max-width: 599px) and (min-width: 426px) {
   .imageHeight {
-    min-height: 100px;
+    min-height: 191px !important;
   }
 }
 
 @media only screen and (max-width: 768px) and (min-width: 600px) {
   .imageHeight {
-    min-height: 100px;
+    min-height: 270px !important;
   }
 }
 
 @media only screen and (max-width: 1023px) and (min-width: 768px) {
   .imageHeight {
-    min-height: 100px;
+    min-height: 172px !important;
   }
 }
 
 @media only screen and (max-width: 1439px) and (min-width: 1024px) {
   .imageHeight {
-    min-height: 100px;
+    min-height: 221px !important;
   }
 }
 
 @media only screen and (max-width: 1800px) and (min-width: 1440px) {
   .imageHeight {
-    min-height: 100px;
+    min-height: 259px !important;
   }
 }
 
 @media only screen and (max-width: 2000px) and (min-width: 1881px) {
   .imageHeight {
-    min-height: 100px;
+    min-height: 275px !important;
   }
 }
 
 @media only screen and (max-width: 2400px) and (min-width: 2000px) {
   .imageHeight {
-    min-height: 386px;
+    min-height: 386px !important;
   }
 }
 
 @media only screen and (max-width: 2540px) and (min-width: 2401px) {
   .imageHeight {
-    min-height: 475px;
+    min-height: 475px !important;
   }
 }
 
 @media only screen and (max-width: 2560px) and (min-width: 2541px) {
   .imageHeight {
-    min-height: 340px;
+    min-height: 340px !important;
   }
 }
