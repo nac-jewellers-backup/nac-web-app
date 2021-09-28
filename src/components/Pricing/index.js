@@ -85,13 +85,12 @@ export default function Pricing(props) {
                       classes.offerPricePadding
                     } `}
                   >
-                    {/* ₹&nbsp;{props.offerPrice} */}
                     {new Intl.NumberFormat("en-IN", {
                       style: "currency",
                       currency: "INR",
                       minimumFractionDigits: 0,
                     }).format(Math.round(props.price))}
-                    {/* ₹&nbsp;{Math.round(props.offerPrice)} */}
+
                     <Hidden smDown>
                       <span className={classes.spanIcon1}>i</span>
                     </Hidden>
@@ -101,6 +100,7 @@ export default function Pricing(props) {
                 ""
               )}
             </Grid>
+
             {!props.pdpage && (
               <Grid
                 item
@@ -127,9 +127,11 @@ export default function Pricing(props) {
                       {props.offerPrice === props.price ? (
                         ""
                       ) : (
-                        <del style={{ fontSize: "15px", float: "right" }}>
-                          ₹&nbsp;{Math.round(props.offerPrice)}
-                        </del>
+                        <>
+                          <del style={{ fontSize: "15px", float: "right" }}>
+                            ₹&nbsp;{Math.round(props.offerPrice)}
+                          </del>
+                        </>
                       )}
                     </Typography>
                   </Typography>
@@ -167,15 +169,33 @@ export default function Pricing(props) {
                     // component="p"
                   >
                     {props.offerPrice === props.price ? (
-                      ""
-                    ) : (
-                      <del>
+                      <span>
+                        {" "}
                         {new Intl.NumberFormat("en-IN", {
                           style: "currency",
                           currency: "INR",
                           minimumFractionDigits: 0,
-                        }).format(Math.round(props.price))}
-                      </del>
+                        }).format(Math.round(props.offerPrice))}
+                      </span>
+                    ) : (
+                      <>
+                        <span>
+                          {" "}
+                          {new Intl.NumberFormat("en-IN", {
+                            style: "currency",
+                            currency: "INR",
+                            minimumFractionDigits: 0,
+                          }).format(Math.round(props.offerPrice))}
+                        </span>
+                        <br />
+                        <del>
+                          {new Intl.NumberFormat("en-IN", {
+                            style: "currency",
+                            currency: "INR",
+                            minimumFractionDigits: 0,
+                          }).format(Math.round(props.price))}
+                        </del>
+                      </>
                     )}
                   </Typography>
                 </Typography>

@@ -201,9 +201,9 @@
 .cardImage:hover .overlayImage {
   opacity: 1;
 }
-.imageHeight {
+/* .imageHeight {
   min-height: 144px;
-}
+} */
 
 @media only screen and (max-width: 375px) and (min-width: 320px) {
   .imageHeight {
