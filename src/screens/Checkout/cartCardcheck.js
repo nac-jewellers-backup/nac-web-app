@@ -221,8 +221,23 @@ class Component extends React.Component {
     //     localStorage.setItem("panel", 1);
     // }
     const enquireLink = () => {
-      window.open(`https://wa.me/919952625252?text=Hi - ${window.location.hostname + "/" + this.props?.data[0]?.skuUrl ?? ""}`);
+      let ProductIsActiveUrl;
+      this.props.data.map((val) => {
+        if (val.isActive == false) {
+          ProductIsActiveUrl = val.skuUrl;
+        }
+      });
+      window.open(`https://wa.me/919952625252?text=Hi - ${window.location.hostname + "/" + ProductIsActiveUrl ?? ""}`);
     };
+
+  
+
+    let ProductIsActive = true;
+    this.props.data.map((val) => {
+      if (val.isActive == false) {
+        ProductIsActive = false;
+      }
+    });
     return (
       <Grid>
         <Header wishlist={this.props.wishlistdata} />
@@ -335,12 +350,11 @@ class Component extends React.Component {
               <ExpansionPanelDetails style={{ boxShadow: "rgb(222, 218, 218) 1px 2px 6px 0px" }}>
                 <Grid container>
                   <Grid item xs={12} lg={12}>
-                    {/* {JSON.stringify(this.datalist(cartContext))} */}
                     <Grid container>
                       <Grid xs={12} lg={7} />
                       <Grid xs={12} lg={4}>
                         <div style={{ float: "right" }}>
-                          {this.props?.data[0]?.isActive ? (
+                          {ProductIsActive ? (
                             <Button onClick={() => this.pincodeapi()} className="summaryOrder-pay-btn">
                               Continue to Pay
                             </Button>
@@ -365,7 +379,7 @@ class Component extends React.Component {
                         <Grid xs={12} lg={7} />
                         <Grid xs={12} lg={4}>
                           <div style={{ float: "right", marginBottom: "5px" }}>
-                            {this.props?.data[0]?.isActive ? (
+                            {ProductIsActive ? (
                               <Button onClick={() => this.pincodeapi()} className="summaryOrder-pay-btn">
                                 Continue to Pay
                               </Button>
@@ -388,7 +402,7 @@ class Component extends React.Component {
                       <Grid xs={12} lg={7} />
                       <Grid xs={12} lg={4}>
                         <div style={{ float: "right", marginBottom: "5px" }}>
-                          {this.props?.data[0]?.isActive ? (
+                          {ProductIsActive ? (
                             <Button onClick={() => this.pincodeapi()} className="summaryOrder-pay-btn">
                               Continue to Pay
                             </Button>
@@ -425,15 +439,9 @@ class Component extends React.Component {
     );
   }
 }
-// export default withStyles(styles)(props => {
-//     const { mapped } = useDummyRequest(cartdatas);
-//     if (Object.keys(mapped).length === 0) return '';
-//     return <CartCardCheck {...props} data={mapped} />
-// });
+
 const Components = (props) => {
-  // React.useEffect(()=>{
-  //     localStorage.setItem('panel', 1)
-  // },[])
+ 
   let {
     CartCtx: { data, loading, error, allorderdata, wishlistdata },
   } = React.useContext(CartContext);
