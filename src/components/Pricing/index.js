@@ -5,6 +5,8 @@ import "./pricing.css";
 import styles from "./style";
 
 export default function Pricing(props) {
+  console.log(props);
+
   const classes = styles();
   let path = window.location.pathname.split("/").pop();
   const { globalContext, quantity } = props;
@@ -217,8 +219,6 @@ export default function Pricing(props) {
               {props.Price ? (
                 <Typography style={{ display: "flex", width: "100%" }}>
                   <Typography
-                    // variant="h6"
-                    // component="h6"
                     style={props.from && { margin: "auto" }}
                     className={`${
                       (props.offerPrice != null) & (props.offerPrice !== "")

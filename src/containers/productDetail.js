@@ -98,9 +98,7 @@ class ProductDetail extends Component {
   };
 
   render() {
-    // alert(JSON.stringify(this.props.data))
-    // alert(JSON.stringify(this.props.data))
-
+    //console.log(JSON.stringify(this.props.data));
     const { classes } = this.props;
 
     const dummyData = [
@@ -308,7 +306,6 @@ class ProductDetail extends Component {
         discount: 25,
       },
     ];
-
     var loc = this.props.location.pathname;
     var path = loc.split("/");
     var data_json = [
@@ -319,7 +316,6 @@ class ProductDetail extends Component {
           this.props.data && this.props.data[0] && this.props.data[0].title,
       },
     ];
-    // alert(JSON.stringify(this.props.wishlistdata))
     const clear_rating = (bool) => {
       if (bool === false) {
         this.setState({
@@ -378,9 +374,6 @@ class ProductDetail extends Component {
       prevArrow: <ArrowLeft />,
       nextArrow: <ArrowRight />,
     };
-
-    // alert(JSON.stringify(this.props.setratingcountsclear))
-    // let diamondWeight = this.props.data[0].productsDetails[1].namedetail[3].details ?? "";
 
     return (
       <div style={{ overflow: "hidden" }}>
@@ -703,8 +696,6 @@ class ProductDetail extends Component {
                       dataCarousel={dataCarouselcollections}
                     >
                       {this.props?.data[0]?.fadeImageSublist.map((val) => {
-                        console.log(this.props?.data);
-                        console.log("pppppp");
                         return (
                           <ImgMediaCard
                             data={val}
@@ -793,6 +784,9 @@ class ProductDetail extends Component {
                     >
                       {this.props?.data[0]?.fadeImageSublistRecentlyViewed?.map(
                         (val) => {
+                          {
+                            console.log(val);
+                          }
                           return (
                             <ImgMediaCard
                               data={val}

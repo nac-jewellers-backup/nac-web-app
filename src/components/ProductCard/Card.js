@@ -311,7 +311,6 @@ function Component(props) {
     loaded: false,
     dataLoaded: true,
   });
-  // const _height = props.data.imageResolution.img_res
   const callmouseover = () => {
     setCardState({ ...cardstate, hovered: !cardstate.hovered });
   };
@@ -373,16 +372,7 @@ function Component(props) {
                           style: "currency",
                           currency: "INR",
                           minimumFractionDigits: 0,
-                        }).format(Math.round(props.data.offerPrice))}
-                        <span style={{ display: "flex", alignSelf: "center" }}>
-                          {" "}
-                          <Typography
-                            className={classes.strikeText}
-                            style={{
-                              paddingLeft: "6px",
-                            }}
-                          ></Typography>
-                        </span>
+                        }).format(Math.round(props.data.price))}
                       </Typography>
                     ) : (
                       <Typography
@@ -400,7 +390,7 @@ function Component(props) {
                           style: "currency",
                           currency: "INR",
                           minimumFractionDigits: 0,
-                        }).format(Math.round(props.data.offerPrice))}
+                        }).format(Math.round(props.data.price))}
                         <span style={{ display: "flex", alignSelf: "center" }}>
                           {" "}
                           <Typography
@@ -416,25 +406,27 @@ function Component(props) {
                               }}
                             >
                               <span>
-                                {props.data.price === 0
+                                {props.data.offerPrice == 0
                                   ? " "
                                   : new Intl.NumberFormat("en-IN", {
                                       style: "currency",
                                       currency: "INR",
                                       minimumFractionDigits: 0,
-                                    }).format(Math.round(props.data.price))}
+                                    }).format(
+                                      Math.round(props.data.offerPrice)
+                                    )}
                               </span>
                             </span>
                           </Typography>
                         </span>
                       </Typography>
-                    )}
+                    )}{" "}
                   </Grid>
 
                   <Grid items>
                     <Typography className={classes.discountPercentage}>
-                      {props.data.save === 0
-                        ? "  "
+                      {props.data.save == 0
+                        ? " "
                         : ` ${Math.round(props.data.save)}% OFF`}
                       &nbsp;&nbsp;
                     </Typography>
@@ -483,16 +475,7 @@ function Component(props) {
                           style: "currency",
                           currency: "INR",
                           minimumFractionDigits: 0,
-                        }).format(Math.round(props.data.offerPrice))}
-                        <span style={{ display: "flex", alignSelf: "center" }}>
-                          {" "}
-                          <Typography
-                            className={classes.strikeText}
-                            style={{
-                              paddingLeft: "6px",
-                            }}
-                          ></Typography>
-                        </span>
+                        }).format(Math.round(props.data.price))}
                       </Typography>
                     ) : (
                       <Typography
@@ -510,7 +493,7 @@ function Component(props) {
                           style: "currency",
                           currency: "INR",
                           minimumFractionDigits: 0,
-                        }).format(Math.round(props.data.offerPrice))}
+                        }).format(Math.round(props.data.price))}
                         <span style={{ display: "flex", alignSelf: "center" }}>
                           {" "}
                           <Typography
@@ -526,13 +509,15 @@ function Component(props) {
                               }}
                             >
                               <span>
-                                {props.data.price === 0
+                                {props.data.offerPrice
                                   ? " "
                                   : new Intl.NumberFormat("en-IN", {
                                       style: "currency",
                                       currency: "INR",
                                       minimumFractionDigits: 0,
-                                    }).format(Math.round(props.data.price))}
+                                    }).format(
+                                      Math.round(props.data.offerPrice)
+                                    )}
                               </span>
                             </span>
                           </Typography>
@@ -543,7 +528,7 @@ function Component(props) {
 
                   <Grid items>
                     <Typography className={classes.discountPercentage}>
-                      {props.data.save === 0
+                      {props.data.save == 0
                         ? " "
                         : ` ${Math.round(props.data.save)}% OFF`}
                       &nbsp;&nbsp;
