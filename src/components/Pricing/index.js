@@ -71,7 +71,11 @@ export default function Pricing(props) {
                 )}
               </Grid>
             )}
-            <Grid item>
+            <Grid
+              item
+              xs={6}
+              style={{ display: "flex", alignItems: "normal", color: "grey" }}
+            >
               {props.price ? (
                 <Typography style={{ display: "flex", width: "100%" }}>
                   <Typography
@@ -93,10 +97,39 @@ export default function Pricing(props) {
                       minimumFractionDigits: 0,
                     }).format(Math.round(props.price))}
 
-                    <Hidden smDown>
+                    {/* <Hidden smDown>
                       <span className={classes.spanIcon1}>i</span>
-                    </Hidden>
+                    </Hidden> */}
                   </Typography>
+                  <Hidden smDown>
+                    {props.offerDiscount ? (
+                      <Typography
+                        style={{
+                          color: "grey",
+                          fontSize: "17px",
+                          marginLeft: "4px",
+                          marginTop: "3px",
+                        }}
+                        // className={`discount ${classes.backgsecondary} ${classes.off}`}
+                      >
+                        ({props.offerDiscount})
+                      </Typography>
+                    ) : (
+                      <Typography style={{ display: "flex" }}>
+                        <Typography
+                          variant="caption"
+                          component="p"
+                          className={`${
+                            (props.save != null) & (props.save !== "")
+                              ? ""
+                              : "shine"
+                          } ${classes.colorMain}  `}
+                        >
+                          {path === "stylori" && "You save"} {props.save}
+                        </Typography>
+                      </Typography>
+                    )}
+                  </Hidden>
                 </Typography>
               ) : (
                 ""
@@ -205,9 +238,10 @@ export default function Pricing(props) {
                 ""
               )}
             </Grid>
+
             <Grid
               item
-              xs={12}
+              xs={6}
               xs={
                 window.location.pathname !== "/cart" &&
                 window.location.pathname.split("-")[0] !== "/account" &&
@@ -243,10 +277,37 @@ export default function Pricing(props) {
             </Grid>
           </>
         )}
+        <Hidden mdUp>
+          {props.offerDiscount ? (
+            <Typography
+              style={{
+                color: "grey",
+                fontSize: "13px",
+                whiteSpace: "nowrap",
+                marginTop: "2px",
+              }}
+              // className={`discount ${classes.backgsecondary} ${classes.off}`}
+            >
+              ({props.offerDiscount})
+            </Typography>
+          ) : (
+            <Typography style={{ display: "flex" }}>
+              <Typography
+                variant="caption"
+                component="p"
+                className={`${
+                  (props.save != null) & (props.save !== "") ? "" : "shine"
+                } ${classes.colorMain}  `}
+              >
+                {path === "stylori" && "You save"} {props.save}
+              </Typography>
+            </Typography>
+          )}
+        </Hidden>
 
-        <Grid
+        {/* <Grid
           item
-          xs={12}
+          xs={6}
           lg={
             window.location.pathname.split("-")[0] !== "/account" &&
             window.location.pathname !== "/cart" &&
@@ -254,15 +315,15 @@ export default function Pricing(props) {
               ? 6
               : 12
           }
-          style={{ display: "flex", alignItems: "normal" }}
+          style={{ display: "flex", alignItems: "normal", color: "grey" }}
         >
           <Hidden smDown>
             {props.offerDiscount ? (
               <span
-                style={props.from && { margin: "auto" }}
-                className={`discount ${classes.backgsecondary} ${classes.off}`}
+                style={props.from && { margin: "auto", color: "grey" }}
+                // className={`discount ${classes.backgsecondary} ${classes.off}`}
               >
-                {props.offerDiscount}
+                ({props.offerDiscount})
               </span>
             ) : (
               <Typography style={{ display: "flex" }}>
@@ -278,10 +339,9 @@ export default function Pricing(props) {
               </Typography>
             )}
           </Hidden>
-          {/* </Grid>
-
-                    </Grid> */}
+        
         </Grid>
+       */}
       </Grid>
 
       {/*  */}
