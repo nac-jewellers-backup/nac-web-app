@@ -27,6 +27,8 @@ export const PRODUCTDETAILS = `query MyQuery(
       discountPriceTax
       markupPriceTax
       skuUrl
+     
+      
       
       transSkuDescriptionsBySkuId {
         nodes {

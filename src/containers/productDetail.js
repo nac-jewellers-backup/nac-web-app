@@ -81,6 +81,7 @@ class ProductDetail extends Component {
   }
 
   componentDidMount() {
+    console.log(this.props.data[0].sellingPrice);
     ReactPixel.init("1464338023867789", {}, { debug: true, autoConfig: false });
     ReactPixel.track("PageView");
   }

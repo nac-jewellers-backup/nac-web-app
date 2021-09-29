@@ -318,7 +318,8 @@ class Component extends React.Component {
   };
   componentDidMount() {
     let sku_id = this.props?.data[0]?.skuId;
-    //alert(JSON.stringify(sku_id));
+    //alert(JSON.stringify(this.props?.data[0]?.price));
+
     let params = {
       sku_id: sku_id,
       current_datetime: new Date(),

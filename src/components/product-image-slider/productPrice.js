@@ -209,6 +209,7 @@ const Productprice = (
               {data[0]?.price === data[0]?.offerPrice ? (
                 <Pricing
                   offerPrice={data[0]?.offerPrice}
+                  price={data[0]?.sellingPrice}
                   pdpage={true}
                 ></Pricing>
               ) : (

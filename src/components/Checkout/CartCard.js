@@ -2,10 +2,10 @@ import { Container, Grid, Hidden } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import axios from "axios";
-import { API_URL } from "config";
 import { CartContext } from "context";
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { API_URL } from "../../config";
 import Buynowbutton from "../Buynow/buynowbutton";
 import Pricing from "../Pricing/index";
 import "./Cart.css";
@@ -17,7 +17,40 @@ class Checkoutcard extends React.Component {
     super(props);
     this.state = {
       cart: true,
+      shipby_arr: [],
     };
+  }
+  async componentDidMount() {
+    let skuId_arr = this.props?.data;
+    console.log(this.props.data);
+    let shipby_arr_object = [];
+    for (var i = 0; i < skuId_arr.length; i++) {
+      let params = {
+        sku_id: skuId_arr[i]?.generatedSku,
+        current_datetime: new Date(),
+      };
+      await axios.post(`${API_URL}/getshippingdate`, params).then((res) => {
+        console.log(res?.data);
+        let productShipBy = res?.data?.shipping_date;
+        let dateObj = "";
+        let shipByDate = "";
+        if (productShipBy) {
+          dateObj = new Date(productShipBy);
+          shipByDate = `Ships by ${dateObj.getUTCDate()} ${dateObj.toLocaleString("default", {
+            month: "long",
+          })} ${dateObj.getUTCFullYear()}`;
+        }
+
+        shipby_arr_object.push({
+          shipby: shipByDate,
+          skuId: skuId_arr[i]?.generatedSku,
+        });
+      });
+      this.setState({
+        ...this.state.shipby_arr,
+        shipby_arr: shipby_arr_object,
+      });
+    }
   }
   handleCartQuantity = (skuId) => {
     const filters =
@@ -122,17 +155,7 @@ class Checkoutcard extends React.Component {
       slidesToShow: 1,
       arrows: false,
     };
-    let dateObj = "";
-    let shipByDate = "";
-    if (this.state.productShipBy) {
-      dateObj = new Date(this.state.productShipBy);
-      shipByDate = `Ships by ${dateObj.getUTCDate()} ${dateObj.toLocaleString(
-        "default",
-        {
-          month: "long",
-        }
-      )} ${dateObj.getUTCFullYear()}`;
-    }
+
     const { classes, data } = this.props;
     const { productsDetails, fadeImages, dataCard1 } = this.props.data;
     const filter_image = (imges__val, name, details) => {
@@ -155,6 +178,7 @@ class Checkoutcard extends React.Component {
           <Grid xs={12}>{this.checkoutbutton()}</Grid>
         </Grid>
         <br />
+
         {this.props.data.map((dataval) =>
           dataval.productsDetails.map((val) => (
             <div
@@ -192,7 +216,6 @@ class Checkoutcard extends React.Component {
                     )}
                   </>
                 </Grid>
-
                 <Grid item xs={5} sm={7} lg={6} style={{ padding: "13px" }}>
                   {window.location.pathname !== "/checkout" ? (
                     <NavLink to={dataval.skuUrl} style={{ textDecoration: "none" }}>
@@ -223,12 +246,15 @@ class Checkoutcard extends React.Component {
                     </Grid>
 
                     <Grid item xs={4}>
-                      <Typography
-                        className={`subhesder ${classes.normalfonts}`}
-                      >
-                        {shipByDate}
-                      </Typography>
-                      {/* : ""} */}
+                      {this.state.shipby_arr.map((val) => (
+                        <>
+                          {val.skuId === dataval.generatedSku ? (
+                            <Typography className={`subhesder ${classes.normalfonts}`}>{val.shipby}</Typography>
+                          ) : (
+                            ""
+                          )}
+                        </>
+                      ))}
 
                       {window.location.pathname !== "/checkout" ? (
                         <div>
@@ -242,8 +268,8 @@ class Checkoutcard extends React.Component {
                             &nbsp;Remove
                           </span>
                           <span>&nbsp;</span>
-
-                          {console.log(dataval.isActive)}
+                          {/* 
+                          {console.log(dataval.isActive)} */}
                           {!dataval.isActive ? (
                             <span
                               style={{
@@ -270,12 +296,14 @@ class Checkoutcard extends React.Component {
                   <div style={{ marginTop: "15%" }}>
                     {dataval.dataCard1.map((val) => {
                       return (
-                        <Pricing
-                          detail={dataval}
-                          offerDiscount={val.discount ? `${val.discount}% - OFF` : null}
-                          price={val.price}
-                          offerPrice={val.offerPrice}
-                        ></Pricing>
+                        <>
+                          <Pricing
+                            detail={dataval}
+                            offerDiscount={val.discount ? `${val.discount}% - OFF` : null}
+                            price={val.offerPrice}
+                            offerPrice={val.price}
+                          ></Pricing>
+                        </>
                       );
                     })}
                   </div>
@@ -319,9 +347,9 @@ class Checkoutcard extends React.Component {
               }}
             >
               <Buynowbutton
-             productURL={productURL}
-             productIsActive={productIsActive ?? ""}
-             class={`chckout-page-buynow ${classes.buttons}`}
+                productURL={productURL}
+                productIsActive={productIsActive ?? ""}
+                class={`chckout-page-buynow ${classes.buttons}`}
               />
             </div>
           </div>
@@ -417,21 +445,7 @@ class Checkoutcard extends React.Component {
       </div>
     );
   };
-  componentDidMount() {
-    let sku_id = this.props?.data[0]?.generatedSku;
-    let params = {
-      sku_id: sku_id,
-      current_datetime: new Date(),
-    };
-    axios
-      .post(`${API_URL}/getshippingdate`, params)
-      .then((res) => {
-        this.setState({ productShipBy: res?.data?.shipping_date });
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }
+
   render() {
     const dataCarousel = {
       slidesToShow: 1,
