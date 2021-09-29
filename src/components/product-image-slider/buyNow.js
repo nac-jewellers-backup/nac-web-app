@@ -1,5 +1,6 @@
 import { Avatar, Box, Button, Grid, Hidden } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
+import axios from "axios";
 import Buynowfixed from "components/SilverComponents/ProductDetail/buynowfixed";
 import { CartContext } from "context";
 import { ProductDetailContext } from "context/ProductDetailContext";
@@ -8,30 +9,31 @@ import PropTypes from "prop-types";
 import { CheckForCod } from "queries/productdetail";
 import React from "react";
 import { withRouter } from "react-router";
+import { API_URL } from "../../config";
 import Buynowbutton from "../Buynow/buynowbutton";
 import "./product-images.css";
 import ProductPrice from "./productPrice";
 import styles from "./style";
-
 const inputsearch = (props, state, handleChanges, handleCodChange) => {
   const { data } = props;
   const { classes } = props;
-
-  // const [] = React.useState()
-
+  let { productShipBy } = state;
+  let dateObj = "";
+  let shipByDate = "";
+  if (productShipBy) {
+    dateObj = new Date(state.productShipBy);
+    shipByDate = `Ships by ${dateObj.getUTCDate()} ${dateObj.toLocaleString(
+      "default",
+      {
+        month: "long",
+      }
+    )} ${dateObj.getUTCFullYear()}`;
+  }
   return (
     <div className={classes.searchCheck} style={{}}>
       {data[0]?.ProductContactNum?.map((val) => (
         <Grid container spacing={12}>
           <Grid item xs={7} md={4} lg={4} sm={7}>
-            {/* <input
-                            placeholder='&#xf041; &nbsp; Enter Pin Code'
-                            className='buynow-search'
-                            type="text"
-                            value={state.values}
-                            onChange={(event) => { handleChanges(event) }}
-                            onKeyPress={(e) => { if (!(e.which >= 48 && e.which <= 57)) e.preventDefault(); }}
-                        /> */}
             <input
               onkeyup="this.value=this.value.replace(/[^0-9]/g,'');"
               type="tel"
@@ -129,7 +131,7 @@ const inputsearch = (props, state, handleChanges, handleCodChange) => {
                   }}
                 >
                   <i style={{ fontSize: "20px" }} class="fa fa-truck"></i>
-                  &nbsp;&nbsp;{val.shipby}
+                  &nbsp;&nbsp;{shipByDate}
                 </span>
               </b>
             </Grid>
@@ -285,6 +287,7 @@ class Component extends React.Component {
       isRequired: false,
       pincodeNotFound: false,
       modelOpen: false,
+      productShipBy: "",
       ringSize:
         this.props &&
         this.props.data &&
@@ -313,6 +316,26 @@ class Component extends React.Component {
       });
     return vals;
   };
+  componentDidMount() {
+    let sku_id = this.props?.data[0]?.skuId;
+    //alert(JSON.stringify(sku_id));
+    let params = {
+      sku_id: sku_id,
+      current_datetime: new Date(),
+    };
+    axios
+      .post(`${API_URL}/getshippingdate`, params)
+      .then((res) => {
+        this.setState({ productShipBy: res?.data?.shipping_date });
+
+        //alert(JSON.stringify(res?.data?.shipping_date));
+      })
+      .catch((error) => {
+        console.error(error);
+        alert("error");
+      });
+  }
+
   componentDidUpdate(prevProps) {
     // Typical usage (don't forget to compare props):
     var variab = {};

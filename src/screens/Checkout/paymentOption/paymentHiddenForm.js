@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { API_URL } from "../../../../src/config";
 import "./payment.css";
 import { Grid } from "@material-ui/core";
@@ -18,15 +18,15 @@ export default function PaymentHiddenForm(props) {
     isocurrency: "",
     chmod: "",
     checksum: "",
-    buyerEmail: "jay@gmail.com",
-    buyerFirstName: "Jay",
-    buyerLastName: "Soorya",
-    buyerAddress: "Address",
-    buyerCity: "Chennai",
-    buyerState: "state",
-    buyerCountry: "country",
+    buyerEmail: "",
+    buyerFirstName: "",
+    buyerLastName: "",
+    buyerAddress: "",
+    buyerCity: "",
+    buyerState: "",
+    buyerCountry: "",
     buyerPhone: 9841348263,
-    buyerPinCode: "600087",
+    buyerPinCode: "",
   });
   const [orderId, setOrderId] = React.useState(null);
   const obj = {};
@@ -35,10 +35,7 @@ export default function PaymentHiddenForm(props) {
   let cart_id =
     cartFilters && cartFilters._cart_id && Object.keys(cartFilters._cart_id).length > 0 ? cartFilters._cart_id.cart_id : "";
   var cart_ids = cart_id.length > 0 ? cart_id : cart_id_lo;
-  // var hash = null
-  // var day = null
-  // var currentutc = null
-  // let cart_id = localStorage.getItem("cart_id") ? JSON.parse(localStorage.getItem("cart_id")).cart_id : "";
+
   let user_id = localStorage.getItem("user_id") ? localStorage.getItem("user_id") : "";
   obj["payment_mode"] = "Prepaid";
   obj["user_id"] = user_id;
@@ -51,9 +48,18 @@ export default function PaymentHiddenForm(props) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
+        buyerEmail: hash.buyerEmail,
+        buyerPhone: hash.buyerPhone,
+        buyerFirstName: hash.buyerFirstName,
+        buyerLastName: hash.buyerLastName,
+        buyerAddress: hash.buyerAddress,
+        buyerCity: hash.buyerCity,
+        buyerState: hash.buyerState,
+        buyerCountry: hash.buyerCountry,
+        buyerPinCode: hash.buyerPinCode,
         orderid: orderId,
-        amount: props.data,
-        //props.data
+        amount: 1,
+
         customvar: "",
         subtype: "",
       }),
@@ -62,31 +68,16 @@ export default function PaymentHiddenForm(props) {
       .then((data) => {
         sethash({
           ...hash,
-          // hashvalue: data.hash,
-          // timedate: data.day
+
           ...data,
-          buyerEmail: data.buyerEmail,
-          buyerPhone: data.buyerPhone,
-          buyerFirstName: data.buyerFirstName,
-          buyerLastName: data.buyerLastName,
-          buyerAddress: data.buyerAddress,
-          buyerCity: data.buyerCity,
-          buyerState: data.buyerState,
-          buyerCountry: data.buyerCountry,
-          buyerPinCode: data.buyerPinCode,
           privatekey: data.privatekey,
           mercid: data.mercid,
           currency: data.currency,
           isocurrency: data.isocurrency,
           chmod: data.chmod,
           checksum: data.checksum,
-          amount: data.amount,
+          amount: 1,
         });
-     
-        console.log(hash);
-        //  hash=data.hash
-        //  day = data.day
-        //  currentutc = data.currentutc
       })
 
       .catch((error) => {
@@ -110,18 +101,13 @@ export default function PaymentHiddenForm(props) {
       method: "post",
       headers: {
         "Content-Type": "application/json",
-        // 'Content-Type': 'application/x-www-form-urlencoded',
       },
-      // then(async(response) =>await response.json()).
       body: JSON.stringify(obj),
     })
       .then(status)
       .then(json)
       .then((data) => {
-     
-        console.log(hash);
         localStorage.removeItem("order_id");
-        // if (localStorage.getItem('gut_lg')) localStorage.removeItem("user_id")
         sessionStorage.removeItem("updatedProduct");
         if (data !== null && data !== undefined) {
           localStorage.setItem("order_id", JSON.stringify(data.order.id));
@@ -133,19 +119,10 @@ export default function PaymentHiddenForm(props) {
       .catch((error) => {
         console.error("Error:", error);
       });
-
-    // document.getElementsByName("form_payment").submit();
-
-    // document.getElementById("sendtoairpay").submit();
   };
   useEffect(() => {
- 
-    console.log(hash);
     if (hash.checksum) document.getElementById("sendtoairpay").submit();
   }, [hash]);
- 
-  console.log(hash);
-  // useEffect(()=>{if(hash.checksum) console.log(hash,orderId,"hashandorderid")},[hash])
   return (
     <div container>
       <form method="POST" action="https://payments.airpay.co.in/pay/index.php" id="sendtoairpay">
