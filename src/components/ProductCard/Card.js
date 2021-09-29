@@ -151,7 +151,7 @@ const useStyles = makeStyles((theme) => ({
       cursor: "pointer",
     },
     [theme.breakpoints.down("sm")]: {
-      height: "40px",
+      height: "50px",
       padding: "0 !important",
     },
     "& div": {
@@ -164,10 +164,12 @@ const useStyles = makeStyles((theme) => ({
   offerMainPrice: {
     color: "gray",
     fontWeight: "bold",
-    fontSize: "15px !important",
+    fontSize: "16px !important",
     [theme.breakpoints.down("sm")]: {
-      fontSize: "12px !important",
+      fontSize: "15px !important",
     },
+    lineHeight: 1.6,
+    letterSpacing: " 0.0075em",
 
     "& i": {
       fontSize: "26px",
@@ -181,9 +183,9 @@ const useStyles = makeStyles((theme) => ({
     color: "#b78231",
     fontWeight: "bold",
     fontSize: "15px !important",
-
     [theme.breakpoints.down("sm")]: {
-      fontSize: "11px !important",
+      fontSize: "13px !important",
+      marginBottom: "0px !important",
     },
   },
   offerPrice: {
@@ -358,8 +360,8 @@ function Component(props) {
                   <Grid items>
                     {props.data.offerPrice === props.data.price ? (
                       <Typography
-                        variant="h6"
-                        component="h6"
+                        variant="h5"
+                        component="h5"
                         className={classes.offerMainPrice}
                         style={{
                           justifyContent: "flex-start",
@@ -539,13 +541,13 @@ function Component(props) {
                   <Typography
                     variant="body1"
                     component="span"
-                    style={{ paddingLeft: "5px" }}
+                    style={{ paddingLeft: "5px", marginTop: "-4px" }}
                     className={`${classes.titles}`}
                   >
-                    {props.data.price}
                     {props.data.title.charAt(0).toUpperCase() +
                       props.data.title.slice(1)}
                   </Typography>
+                  <br />
                 </Grid>
               </Hidden>
             </Grid>

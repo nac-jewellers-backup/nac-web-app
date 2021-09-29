@@ -146,7 +146,6 @@ class Component extends React.Component {
       },
       selected: [],
       filtercheck: "",
-      productDisplay: true,
       check: true,
       numOne: 0,
       numTwo: 0,
@@ -154,6 +153,7 @@ class Component extends React.Component {
       Price_button_click: false,
       chipData: [],
       errorPriceMessage: false,
+      productDisplay: true,
     };
   }
   componentDidMount() {
@@ -297,21 +297,6 @@ class Component extends React.Component {
           .then(status)
           .then(json)
           .then(async function (data) {
-            // alert(data)
-            // var {checked} = this.state
-            //    data.data.allSeoUrlPriorities.nodes.map(val => {
-            //     alert(JSON.stringify(data))
-            //     let attrName = val.attributeName.replace(/\s/g, '')
-            //     let attrVal = val.attributeValue
-            //     checked[attrName] = {[attrVal]:true}
-            //     data.allSeoUrlPriorities.nodes.map(val =>{return val})
-            //     this.setState({checked},()=>{alert(JSON.stringify(checked))})
-            //     return abcd = a
-
-            //     // this.handleChange(()=>{}, true, ()=>{}, {}, paramsfilter)
-
-            // })
-
             paramsfilter =
               data &&
               data.data &&
@@ -373,13 +358,6 @@ class Component extends React.Component {
               }
             });
 
-            //prakash inga paaru
-            // data && data.data && data.data.allSeoUrlPriorities && data.data.allSeoUrlPriorities.nodes && data.data.allSeoUrlPriorities.nodes.map(val => {
-            //       var attrName = val.attributeName
-            //       selected.push(attrName)
-            //     })
-            // this.setState(selected)
-            // this.setState(checked)
             this.setState(chipData, selected, checked);
           })
           .catch(function (error) {});
@@ -396,7 +374,6 @@ class Component extends React.Component {
       );
     }
   }
-
   componentDidUpdate(prevProps, prevState) {
     // Typical usage (don't forget to compare props):
     if (this.state.checked !== prevState.checked) {
@@ -429,7 +406,6 @@ class Component extends React.Component {
       //   this.props.setFilters({pricemax:numberTwo, pricemin:numberOne})}
     }
   }
-
   delete_val_chips = (value) =>
     Object.entries(this.state.checked).map((val) => {
       const { checked } = this.state;
@@ -547,11 +523,8 @@ class Component extends React.Component {
           let checkedvalue = {};
           checkedvalue[keyNameFilter] = true;
           checked[nameFilter] = checkedvalue;
-          // arr.push({  label: nameFilter, title: title });
-          // chipData = arr;
           this.setState(
             {
-              // chipData,
               checked,
             },
             () => this.props.setFilters(checked)
@@ -587,10 +560,7 @@ class Component extends React.Component {
     this.setState({
       chipData,
     });
-    // , () => this.props.setFilters(checked)
-    // alert(JSON.stringify(this.state.checked))
   };
-
   handleDelete = (value) => {
     // alert(JSON.stringify(value));
     this.handlebye();
@@ -654,18 +624,6 @@ class Component extends React.Component {
         }
       }
     });
-
-    // var bb = {}
-    // bb["delete_fil"] = "12345"
-    // this.props && this.props.setdelete_fil && this.props.setdelete_fil(bb)
-
-    // alert(JSON.stringify(data))
-    // this.setState(state => {
-    //   const chipData = [...state.chipData];
-    //   const chipToDelete = chipData.indexOf(data);
-    //   chipData.splice(chipToDelete, 1);
-    //   return { chipData };
-    // });
   };
   handlebye = () => {};
   check_goldCoins = (values_) => {
@@ -693,19 +651,26 @@ class Component extends React.Component {
     document.documentElement.scrollTop = 180;
   };
   handleDrawerOpenMobile = () => {
+    const { productDisplay } = this.state;
     this.setState({ openMobile: false, productDisplay: false });
     this.setState({ CardRadio: false });
   };
   handleDrawerCloseMobile = () => {
-    this.setState({ openMobile: true, productDisplay: true });
+    alert("lllll");
+    this.setState({ openMobile: true });
+    this.setState({ productDisplay: true });
   };
   handleClearAllData = () => {
-    this.setState({ filtercheck: "" });
+    const { productDisplay } = this.state;
+    this.setState({ filtercheck: "", productDisplay: true });
     return (window.location.href = "/jewellery");
   };
   handleDrawerClose = () => {
-    this.setState({ open: false });
+    const { productDisplay } = this.state;
+    this.setState({ filtercheck: "", productDisplay: true });
+    return (window.location.href = "/jewellery");
   };
+
   selectItem = (name) => {
     var arr1;
     let { selected } = this.state;
@@ -738,12 +703,10 @@ class Component extends React.Component {
     console.log("filtercheck", filtercheck);
     // }
   };
-
   handleChangeDrawer = () => {
     this.setState({ check: !this.state.check });
     this.setState({ open: !this.state.open });
   };
-
   onCurrencyChange_click = (e, silverPrice) => {
     const { checked } = this.state;
 
@@ -830,19 +793,9 @@ class Component extends React.Component {
   handleChangesort = (event) => {
     if (this.props.offset > 0) this.props.setOffset(0);
     this.props.setSort({ values: event.target.value });
-
     this.setState({ CardRadio: false });
-
     this.setState({ productDisplay: true });
   };
-  // chck_res = () => this.state.chipData.map(data => {
-  //
-  //   var value;
-  //   if (data.label.length > 0 && data.label !== "" && data.label !== undefined) {
-  //     value = <>{data.label}</>
-  //   }
-  //   return value
-  // })
 
   render() {
     const found = window.location.pathname
@@ -854,12 +807,7 @@ class Component extends React.Component {
     let { selected, check } = this.state;
     const { open, openMobile } = this.state;
     const isTopFilter = true;
-    //  const chck_res =  this.state.chipData.map(data => {
-    //   return (
-    //     data.label
-    //   );
-    // })
-    // alert(JSON.stringify(this.state.selected))
+
     return (
       <>
         {isTopFilter && (
@@ -879,7 +827,6 @@ class Component extends React.Component {
             />
           </Hidden>
         )}
-        {/* <TempTest onchangefunc={this.handleChange}/> */}
 
         {!isTopFilter && (
           <Hidden smDown>
@@ -890,7 +837,6 @@ class Component extends React.Component {
               check={this.state.check}
               checked={this.state.checked}
             />
-            {/*  handleDrawerOpen={this.handleDrawerOpen.bind(this)} */}
           </Hidden>
         )}
         <div className={classes.root}>
@@ -918,9 +864,6 @@ class Component extends React.Component {
                       variant="persistent"
                       anchor="left"
                       open={open}
-                      // classes={{
-                      //   paper: classes.drawerPaper,
-                      // }}
                     >
                       <Divider />
                       <List className="fil-main-list">
@@ -1514,11 +1457,12 @@ class Component extends React.Component {
               }}
               className={`${classes.colorMain}`}
             >
-              <i
-                onClick={this.handleDrawerCloseMobile}
-                className={`fa fa-times ${classes.colorMain}`}
-                style={{ color: "#20205A" }}
-              ></i>
+              <button onClick={this.handleDrawerCloseMobile}>
+                <i
+                  className={`fa fa-times ${classes.colorMain}`}
+                  style={{ color: "#20205A" }}
+                ></i>
+              </button>
               <button
                 style={{
                   background: "none",
@@ -1528,9 +1472,7 @@ class Component extends React.Component {
                   padding: "6px 8px",
                   fontFamily: "notoSerif-regular",
                 }}
-              >
-                FILTER
-              </button>
+              ></button>
               <Button
                 onClick={this.handleClearAllData}
                 style={{
@@ -1561,13 +1503,6 @@ class Component extends React.Component {
             >
               <Grid container item xs={12}>
                 <Grid item xs={6} className={classes.filterMain}>
-                  {/* {chck_res ?
-                    <ListItemText
-                      className='filter-mbl-font filter-mbl-fonts'
-                    >
-                      llllccc
-                        </ListItemText>
-                    : ""} */}
                   <List className="mbl-filter-list" style={{ padding: "0px " }}>
                     {filter &&
                       filter.map((row) => {
@@ -1975,13 +1910,16 @@ class Component extends React.Component {
               </Container>
             </AppBar>
           </div>
+
           {this.state.CardRadio ? (
-            <div style={{ position: "fixed", top: "5px" }}>
+            <div style={{ position: "fixed", top: "3px" }}>
               <CardRadioButton
                 cardWidth="cardSortSmallScreen"
                 data={sortOptions}
                 onChange={this.handleChangesort}
                 values={this.props.sort}
+                close={this.handleDrawerClose}
+                clear={this.handleClearAllData}
               />
             </div>
           ) : (
@@ -2002,8 +1940,3 @@ Component.propTypes = {
 export default withRouter(
   withStyles(styles, { withTheme: true })(PersistentDrawerLeft)
 );
-// (props => {
-//   const { mapped } = useDummyRequest(filterParams);
-//   if (Object.keys(mapped).length === 0) return ''
-//   return < PersistentDrawerLeft {...props} data={mapped} />
-// });

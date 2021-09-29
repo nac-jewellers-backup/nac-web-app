@@ -63,10 +63,12 @@ export default function RadioBtn(props) {
   const handleChange = (e) => {
     props.onChange(e);
   };
-  // function handleChange(event) {
-  //   setValue({...value, values:event.target.value, helperText: !Boolean((event.target.value != null && event.target.value !== ""))});
-  // }
-  // console.info('objectvaluesobjectvalues', props.values.values)
+  const handleDrawerCloseMobile = () => {
+    props.close();
+  };
+  const handleClearAllData = () => {
+    props.clear();
+  };
   return (
     <div style={{ alignItems: "flex-end" }} className="classSort">
       <div
@@ -80,7 +82,7 @@ export default function RadioBtn(props) {
         className={`${classes.colorMain}`}
       >
         <i
-          // onClick={this.handleDrawerCloseMobile}
+          onClick={handleDrawerCloseMobile}
           className={`fa fa-times ${classes.colorMain}`}
           style={{ color: "#20205A" }}
         ></i>
@@ -97,7 +99,7 @@ export default function RadioBtn(props) {
           FILTER
         </button>
         <Button
-          // onClick={this.handleClearAllData}
+          onClick={handleClearAllData}
           style={{
             float: "right",
             border: "1px solid #c0bcbc",
