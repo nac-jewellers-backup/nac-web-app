@@ -253,7 +253,7 @@ export default function Pricing(props) {
                             minimumFractionDigits: 0,
                           }).format(Math.round(props.offerPrice))}
                         </span>
-                        <span style={{ display: "block" }}>
+                        <span style={{ display: "block", marginTop: "-5px" }}>
                           <del
                             style={{
                               fontSize: "0.8rem",

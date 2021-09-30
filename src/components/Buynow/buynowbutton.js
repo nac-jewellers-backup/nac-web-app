@@ -64,7 +64,7 @@ class Buynowbutton extends React.Component {
       }
     };
     return (
-      <div style={{ padding: "5px" }}>
+      <div>
         <Button
           className={this.props.class}
           style={{ borderRadius: "5px", ...this.props.style }}

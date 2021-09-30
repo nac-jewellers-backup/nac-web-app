@@ -667,7 +667,7 @@ class Component extends React.Component {
   };
   handleDrawerClose = () => {
     const { productDisplay } = this.state;
-    this.setState({ filtercheck: "", productDisplay: true });
+    this.setState({ productDisplay: true });
     return (window.location.href = "/jewellery");
   };
 

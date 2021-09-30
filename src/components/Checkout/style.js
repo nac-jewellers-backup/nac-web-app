@@ -27,7 +27,7 @@ const styles = (theme) => ({
     flexDirection: "column",
     padding: "2%",
     width: "100%",
-    marginLeft: "10px",
+    marginLeft: "4px",
   },
   content: {
     flex: "1 0 auto",
