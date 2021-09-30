@@ -17,7 +17,7 @@ export default function Pricing(props) {
     <div>
       {props.title ? (
         <Typography
-          style={props.from && { margin: "auto" }}
+          style={props.from && { margin: "auto", textTransform: "capitalize" }}
           className={`pricing  ${
             (props.title != null) & (props.title !== "") ? "" : "shine"
           } ${path == "stylori" && "pricingTitle"}`}
@@ -43,15 +43,17 @@ export default function Pricing(props) {
                 {props.offerPrice ? (
                   <Typography style={{ display: "flex", width: "100%" }}>
                     <Typography
-                      style={{ fontSize: "0.9rem" }}
-                      style={props.from && { margin: "auto" }}
-                      className={`pricing-p${
-                        (props.price != null) & (props.price !== "")
-                          ? ""
-                          : "shine"
-                      }${classes.colorMain} ${classes.h6FontSizeStrike} ${
-                        classes.offerPricePadding
-                      } ${classes.dis} ${classes.boldFont}`}
+                      style={{
+                        fontSize: "0.8rem",
+                        fontWeight: "lighter",
+                        color: "gray",
+                      }}
+                      // className={`pricing-p${
+                      //   (props.price != null) & (props.price !== "")
+                      //     ? ""
+                      //     : "shine"
+                      // }${classes.colorMain} ${classes.h6FontSizeStrike}
+                      //  ${classes.dis} ${classes.boldFont}`}
                     >
                       {props.offerPrice === props.price ? (
                         ""
@@ -71,46 +73,68 @@ export default function Pricing(props) {
                 )}
               </Grid>
             )}
-            <Grid
-              item
-              xs={6}
-              style={{ display: "flex", alignItems: "normal", color: "grey" }}
-            >
+            <Grid item xs={12} style={{ color: "grey" }}>
               {props.price ? (
-                <Typography style={{ display: "flex", width: "100%" }}>
-                  <Typography
-                    style={{
-                      margin: props.from ? "auto" : "unset",
-                      fontWeight: "bold",
-                    }}
-                    className={`${
-                      (props.offerPrice != null) & (props.offerPrice !== "")
-                        ? ""
-                        : "shine"
-                    } ${classes.colorMain} ${classes.h6FontSize} ${
-                      classes.offerPricePadding
-                    } `}
-                  >
-                    {new Intl.NumberFormat("en-IN", {
-                      style: "currency",
-                      currency: "INR",
-                      minimumFractionDigits: 0,
-                    }).format(Math.round(props.price))}
-
-                    {/* <Hidden smDown>
-                      <span className={classes.spanIcon1}>i</span>
-                    </Hidden> */}
+                <>
+                  <Typography style={{ display: "flex", width: "100%" }}>
+                    <Typography
+                      style={{
+                        margin: props.from ? "auto" : "unset",
+                        fontWeight: "bold",
+                      }}
+                      className={`${
+                        (props.offerPrice != null) & (props.offerPrice !== "")
+                          ? ""
+                          : "shine"
+                      } ${classes.colorMain} ${classes.h6FontSize} ${
+                        classes.offerPricePadding
+                      } `}
+                    >
+                      {new Intl.NumberFormat("en-IN", {
+                        style: "currency",
+                        currency: "INR",
+                        minimumFractionDigits: 0,
+                      }).format(Math.round(props.price))}
+                    </Typography>
+                    <Hidden smDown>
+                      {props.offerDiscount ? (
+                        <Typography
+                          style={{
+                            color: "grey",
+                            fontSize: "17px",
+                            marginLeft: "4px",
+                            marginTop: "3px",
+                          }}
+                        >
+                          ({props.offerDiscount})
+                        </Typography>
+                      ) : (
+                        <Typography style={{ display: "flex" }}>
+                          <Typography
+                            variant="caption"
+                            component="p"
+                            className={`${
+                              (props.save != null) & (props.save !== "")
+                                ? ""
+                                : "shine"
+                            } ${classes.colorMain}  `}
+                          >
+                            {path === "stylori" && "You save"} {props.save}
+                          </Typography>
+                        </Typography>
+                      )}
+                    </Hidden>
                   </Typography>
-                  <Hidden smDown>
+                  <Hidden mdUp>
                     {props.offerDiscount ? (
                       <Typography
                         style={{
                           color: "grey",
-                          fontSize: "17px",
+                          fontSize: "12px",
+                          whiteSpace: "nowrap",
                           marginLeft: "4px",
                           marginTop: "3px",
                         }}
-                        // className={`discount ${classes.backgsecondary} ${classes.off}`}
                       >
                         ({props.offerDiscount})
                       </Typography>
@@ -130,7 +154,7 @@ export default function Pricing(props) {
                       </Typography>
                     )}
                   </Hidden>
-                </Typography>
+                </>
               ) : (
                 ""
               )}
@@ -149,8 +173,9 @@ export default function Pricing(props) {
                     className={classes.resetpadd}
                   >
                     <Typography
-                      style={{ fontSize: "10px" }}
-                      style={props.from && { margin: "auto" }}
+                      style={
+                        props.from && { margin: "auto", paddingBottom: "10px" }
+                      }
                       className={`pricing-p${
                         (props.price != null) & (props.price !== "")
                           ? ""
@@ -163,7 +188,13 @@ export default function Pricing(props) {
                         ""
                       ) : (
                         <>
-                          <del style={{ fontSize: "15px", float: "right" }}>
+                          <del
+                            style={{
+                              fontSize: "15px",
+                              float: "right",
+                              paddingBottom: "10px",
+                            }}
+                          >
                             ₹&nbsp;{Math.round(props.offerPrice)}
                           </del>
                         </>
@@ -192,7 +223,6 @@ export default function Pricing(props) {
               {props.price ? (
                 <Typography style={{ display: "flex", width: "100%" }}>
                   <Typography
-                    // variant="caption"
                     style={props.from && { margin: "auto" }}
                     className={`pricing-p${
                       (props.price != null) & (props.price !== "")
@@ -201,7 +231,6 @@ export default function Pricing(props) {
                     }${classes.colorMain} ${classes.h6FontSizeStrike} ${
                       classes.offerPricePadding
                     } ${classes.dis} ${classes.boldFont}`}
-                    // component="p"
                   >
                     {props.offerPrice === props.price ? (
                       <span>
@@ -214,7 +243,9 @@ export default function Pricing(props) {
                       </span>
                     ) : (
                       <>
-                        <span>
+                        <span
+                          style={{ fontSize: "1.2rem", paddingBottom: "6px" }}
+                        >
                           {" "}
                           {new Intl.NumberFormat("en-IN", {
                             style: "currency",
@@ -222,14 +253,22 @@ export default function Pricing(props) {
                             minimumFractionDigits: 0,
                           }).format(Math.round(props.offerPrice))}
                         </span>
-                        <br />
-                        <del>
-                          {new Intl.NumberFormat("en-IN", {
-                            style: "currency",
-                            currency: "INR",
-                            minimumFractionDigits: 0,
-                          }).format(Math.round(props.price))}
-                        </del>
+                        <span style={{ display: "block" }}>
+                          <del
+                            style={{
+                              fontSize: "0.8rem",
+                              marginLeft: "14px",
+                              fontWeight: "lighter",
+                              paddingBottom: "6px",
+                            }}
+                          >
+                            {new Intl.NumberFormat("en-IN", {
+                              style: "currency",
+                              currency: "INR",
+                              minimumFractionDigits: 0,
+                            }).format(Math.round(props.price))}
+                          </del>
+                        </span>
                       </>
                     )}
                   </Typography>
@@ -268,7 +307,6 @@ export default function Pricing(props) {
                       currency: "INR",
                       minimumFractionDigits: 0,
                     }).format(Math.round(props.Price))}
-                    {/* ₹&nbsp;{Math.round(props.offerPrice)} */}
                   </Typography>
                 </Typography>
               ) : (
@@ -277,53 +315,37 @@ export default function Pricing(props) {
             </Grid>
           </>
         )}
-        <Hidden mdUp>
-          {props.offerDiscount ? (
-            <Typography
-              style={{
-                color: "grey",
-                fontSize: "13px",
-                whiteSpace: "nowrap",
-                marginTop: "2px",
-              }}
-              // className={`discount ${classes.backgsecondary} ${classes.off}`}
-            >
-              ({props.offerDiscount})
-            </Typography>
-          ) : (
-            <Typography style={{ display: "flex" }}>
-              <Typography
-                variant="caption"
-                component="p"
-                className={`${
-                  (props.save != null) & (props.save !== "") ? "" : "shine"
-                } ${classes.colorMain}  `}
-              >
-                {path === "stylori" && "You save"} {props.save}
-              </Typography>
-            </Typography>
-          )}
-        </Hidden>
 
-        {/* <Grid
-          item
-          xs={6}
-          lg={
-            window.location.pathname.split("-")[0] !== "/account" &&
-            window.location.pathname !== "/cart" &&
-            window.location.pathname.split("-")[1] !== "allorders"
-              ? 6
-              : 12
-          }
-          style={{ display: "flex", alignItems: "normal", color: "grey" }}
-        >
-          <Hidden smDown>
+        {props.pdpage !== true && (
+          <Grid
+            item
+            xs={6}
+            lg={
+              window.location.pathname.split("-")[0] !== "/account" &&
+              window.location.pathname !== "/cart" &&
+              window.location.pathname.split("-")[1] !== "allorders"
+                ? 6
+                : 12
+            }
+            style={{
+              paddingBottom: "10px",
+              display: "inline",
+              color: "white",
+              marginLeft: "8px",
+              fontSize: "0.6rem",
+              marginTop: "3px",
+            }}
+          >
             {props.offerDiscount ? (
               <span
-                style={props.from && { margin: "auto", color: "grey" }}
-                // className={`discount ${classes.backgsecondary} ${classes.off}`}
+                style={{
+                  padding: "5px",
+                  backgroundColor: "#33346D",
+                  textAlign: "center",
+                  borderRadius: "5px",
+                }}
               >
-                ({props.offerDiscount})
+                {props.offerDiscount}
               </span>
             ) : (
               <Typography style={{ display: "flex" }}>
@@ -338,10 +360,8 @@ export default function Pricing(props) {
                 </Typography>
               </Typography>
             )}
-          </Hidden>
-        
-        </Grid>
-       */}
+          </Grid>
+        )}
       </Grid>
 
       {/*  */}

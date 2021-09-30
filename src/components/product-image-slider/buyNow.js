@@ -528,10 +528,12 @@ class Component extends React.Component {
             <ProductPrice
               data={this.props.data}
               wishlist={this.props.wishlist}
+              pdpage={true}
             />
 
-            <Grid container style={{ marginTop: "35x" }}>
+            <Grid container style={{ marginTop: "40x" }}>
               <Grid item xs={12}>
+                <br />
                 <Box display="flex" flexDirection="row" justifyContent="center">
                   {this.props &&
                     this.props.data &&

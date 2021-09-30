@@ -107,7 +107,10 @@ const Productprice = (
                         <Grid container item xs={8}>
                           <h1
                             className={`pdp-title ${classes.title}`}
-                            style={{ width: "100%" }}
+                            style={{
+                              width: "100%",
+                              fontFamily: "notoSerif-regular",
+                            }}
                           >
                             {val?.title}
                           </h1>
@@ -154,6 +157,7 @@ const Productprice = (
                                 offerPrice={data[0]?.offerPrice}
                                 offerDiscount={val?.offerDiscount}
                                 pdpagesm={true}
+                                pdpage={true}
                               ></Pricing>
                             </div>
                           </Hidden>

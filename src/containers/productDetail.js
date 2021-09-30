@@ -30,10 +30,7 @@ const styles = (theme) => ({
 
     // }
   },
-  // '& .slick-prev':{
-  //   left:'0px !important'},
-  // '& .slick-next':{
-  //   right:'0px !important'},
+
   spanIcon: {
     width: "6px",
     height: "6px",
@@ -43,8 +40,8 @@ const styles = (theme) => ({
     display: "inline-flex",
     alignItems: "center",
     justifyContent: "center",
-    fontSize: "8px",
-    marginLeft: "5px",
+    fontSize: "7px",
+    marginLeft: "2px",
   },
   // similarProducts:{
   //   "& .svg":{
@@ -470,12 +467,19 @@ class ProductDetail extends Component {
                   }}
                 >
                   <Grid item>
-                    <span>Model No:</span>
-                  </Grid>
-                  <Grid item>
                     <span>
                       {" "}
-                      &nbsp;{this?.props?.data[0]?.skuId ?? " "} &nbsp; &nbsp;{" "}
+                      <span
+                        style={{
+                          color: "gray",
+                          fontWeight: "bold",
+                          fontSize: 12,
+                        }}
+                      >
+                        Model No:{" "}
+                      </span>{" "}
+                      &nbsp;
+                      {this?.props?.data[0]?.skuId ?? " "} &nbsp; &nbsp;{" "}
                       <span style={{ fontSize: "10px", fontStyle: "normal " }}>
                         |
                       </span>{" "}
@@ -486,7 +490,7 @@ class ProductDetail extends Component {
                         color: "gray",
                         fontWeight: "bold",
                         fontSize: 12,
-                        marginBottom: 8,
+                        marginTop: 4,
                       }}
                     >
                       Product Information:{" "}

@@ -198,19 +198,25 @@ const styles = (theme) => ({
   title: {
     marginTop: "0 !important",
     [theme.breakpoints.down("lg")]: {
-      fontSize: "15px",
-      // fontWeight: 'bold'
+      fontSize: "20px !important",
+      fontWeight: "600",
+      color: "black",
+      lineHeight: "20px",
+      fontFamily: "notoSerif-regular !important",
     },
     [theme.breakpoints.down("xs")]: {
       fontSize: "16px !important",
       marginTop: "10px",
       color: "#33346D",
+      lineHeight: "20px",
       padding: 4,
       fontWeight: "bold !important",
     },
   },
   dis: {
     color: theme.palette.text.secondary,
+    fontSize: "14px !important",
+    lineHeight: "20px",
   },
   disEllipises: {
     width: "80%",

@@ -64,7 +64,7 @@ class Buynowbutton extends React.Component {
       }
     };
     return (
-      <div style={{ width: "200px" }}>
+      <div style={{ padding: "5px" }}>
         <Button
           className={this.props.class}
           style={{ borderRadius: "5px", ...this.props.style }}
@@ -87,8 +87,6 @@ class Buynowbutton extends React.Component {
                     <span
                       className={this.props.button}
                       style={{ fontSize: "1rem" }}
-                      // onClick={() => window.open("https://wa.me/919952625252?text=Hi")}
-                      // href="https://wa.me/919952625252?text=Hi"
                       onClick={enquireLink}
                     >
                       Enquire now
@@ -105,6 +103,7 @@ class Buynowbutton extends React.Component {
                   <>
                     <span
                       style={{
+                        marginTop: "-10px",
                         fontWeight: "bolder",
                         fontSize: "8px !important",
                       }}

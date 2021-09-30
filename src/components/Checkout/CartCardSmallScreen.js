@@ -1,27 +1,22 @@
-import React from "react";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { Grid } from "@material-ui/core";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
-import { Button, Grid } from "@material-ui/core";
-import Typography from "@material-ui/core/Typography";
-// import { productsDetails } from '../product-image-slider/producthoverData';
-// import { dataCard1 } from '../ProductCard/ProductData';
-import { useDummyRequest } from "../../hooks";
-import Pricing from "../Pricing/index";
-import { productcarddatas } from "../../mappers";
 import { withStyles } from "@material-ui/core/styles";
-import styles from "./style";
-import { NavLink } from "react-router-dom";
-import Cart from "./Cart.css";
+import Typography from "@material-ui/core/Typography";
 import { API_URL, CDN_URL } from "config";
+import React from "react";
+import { NavLink } from "react-router-dom";
+import Pricing from "../Pricing/index";
 import Quantity from "../quantity/index";
+import styles from "./style";
 function MediaControlCard(props) {
   const { classes } = props;
   const { dataCard1 } = props.data;
 
   const handleDeleteLocalStorage = (e, val) => {
     var local_storage = JSON.parse(localStorage.getItem("cartDetails"));
-    var currentValue = e.target.id && e.target.id.length > 0 ? e.target.id : e.currentTarget.id;
+    var currentValue =
+      e.target.id && e.target.id.length > 0 ? e.target.id : e.currentTarget.id;
     // console.clear()
     var a = local_storage.products.filter((val) => {
       if (currentValue !== val.sku_id) {
@@ -40,7 +35,10 @@ function MediaControlCard(props) {
     }
     if (JSON.parse(localStorage.getItem("cart_id"))) {
       let cart_id = JSON.parse(localStorage.getItem("cart_id")).cart_id;
-      let bodyVariableRemoveCartItem = { cart_id: cart_id, product_id: currentValue };
+      let bodyVariableRemoveCartItem = {
+        cart_id: cart_id,
+        product_id: currentValue,
+      };
       fetch(`${API_URL}/removecartitem`, {
         method: "post",
         // body: {query:seoUrlResult,variables:splitHiphen()}
@@ -59,12 +57,18 @@ function MediaControlCard(props) {
           alert(val.message);
           var cartId = JSON.parse(localStorage.getItem("cartDetails")).cart_id;
           var userId = JSON.parse(localStorage.getItem("cartDetails")).user_id;
-          var localstorage = JSON.stringify({ cart_id: `${cartId}`, user_id: `${userId}`, products: a });
+          var localstorage = JSON.stringify({
+            cart_id: `${cartId}`,
+            user_id: `${userId}`,
+            products: a,
+          });
           localStorage.setItem("cartDetails", localstorage);
           window.location.reload();
         });
     } else {
-      var _products = JSON.parse(localStorage.getItem("cartDetails")).products.filter((val) => {
+      var _products = JSON.parse(
+        localStorage.getItem("cartDetails")
+      ).products.filter((val) => {
         if (val.sku_id !== currentValue) return val;
       });
       var cartId = JSON.parse(localStorage.getItem("cartDetails")).cart_id;
@@ -101,11 +105,17 @@ function MediaControlCard(props) {
         if ((cnt_c && cnt_c[1]) === valu2) {
           var browser_type = JSON.parse(localStorage.getItem("browserDetails"));
           var resolution = 500;
-          var _resolutions = width < 960 ? `${resolution * 2}X${resolution * 2}` : `${resolution}X${resolution}`;
+          var _resolutions =
+            width < 960
+              ? `${resolution * 2}X${resolution * 2}`
+              : `${resolution}X${resolution}`;
           var url_split = imges__val && imges__val.imageUrl.split("/");
           var extension_split = url_split && url_split[url_split.length - 1];
           var browser_type_append =
-            extension_split && extension_split.split(".")[0].concat(`${browser_type && browser_type.browser_type}`);
+            extension_split &&
+            extension_split
+              .split(".")[0]
+              .concat(`${browser_type && browser_type.browser_type}`);
           url_split[url_split && url_split.length - 1] = browser_type_append;
           url_split.splice(2, 0, _resolutions);
           var url_construct = url_split.join().replace(/\,/g, "/");
@@ -141,12 +151,11 @@ function MediaControlCard(props) {
     <div style={{ paddingTop: "10px" }}>
       {/* <Grid container>
         <Grid xs={6} > */}
-      <span style={{ color: "#666", fontSize: "14px", margin: "0px 0px 10px" }}> Shopping cart </span> <br />
-      {/* <div> <span style={{ color: "#394578", fontSize: "14px", fontWeight: "bold" }}>Item:</span> ({props.data.length})</div><br /> */}
-      {/* </Grid>
-        <Grid xs={6}  >
-          jh</Grid>
-      </Grid><br /> */}
+      <span style={{ color: "#666", fontSize: "14px", margin: "0px 0px 10px" }}>
+        {" "}
+        Shopping cart{" "}
+      </span>{" "}
+      <br />
       {props.checkoutbutton}
       <br />
       <br />
@@ -155,91 +164,119 @@ function MediaControlCard(props) {
         dataval.productsDetails.map((val) => {
           return (
             <Card className={classes.card}>
-              <Grid xs={6}>
-                {window.location.pathname !== "/checkout" ? (
-                  <NavLink to={dataval?.skuUrl} style={{ textDecoration: "none" }}>
-                    <img width="100%" height="100%" src={dataval?.fadeImages[0]?.imageUrl}></img>
-                  </NavLink>
-                ) : (
-                  <img width="100%" height="100%" src={dataval?.fadeImages[0]?.imageUrl}></img>
-                )}
-              </Grid>
-              <Grid xs={6}>
-                <div className={classes.details}>
-                  <CardContent className={classes.content}>
-                    {window.location.pathname !== "/checkout" ? (
-                      <NavLink
-                        to={`jewellery/${dataval.productType}/${dataval.materialName[0]}/${val.pro_header}?skuId=${dataval.generatedSku}`}
-                        style={{ textDecoration: "none" }}
-                      >
-                        <Typography component="div" variant="subtitle1" className={`${classes.contents} ${classes.normalfonts}`}>
+              <Grid container>
+                <Grid xs={6}>
+                  {window.location.pathname !== "/checkout" ? (
+                    <NavLink
+                      to={dataval?.skuUrl}
+                      style={{ textDecoration: "none" }}
+                    >
+                      <img
+                        width="100%"
+                        height="100%"
+                        src={dataval?.fadeImages[0]?.imageUrl}
+                      ></img>
+                    </NavLink>
+                  ) : (
+                    <img
+                      width="100%"
+                      height="100%"
+                      src={dataval?.fadeImages[0]?.imageUrl}
+                    ></img>
+                  )}
+                </Grid>
+                <Grid xs={6}>
+                  <div className={classes.details}>
+                    <CardContent className={classes.content}>
+                      {window.location.pathname !== "/checkout" ? (
+                        <NavLink
+                          to={`jewellery/${dataval.productType}/${dataval.materialName[0]}/${val.pro_header}?skuId=${dataval.generatedSku}`}
+                          style={{
+                            textDecoration: "none",
+                            textTransform: "capitalize",
+                          }}
+                        >
+                          <Typography
+                            component="div"
+                            variant="subtitle1"
+                            className={`${classes.contents} ${classes.normalfonts}`}
+                          >
+                            {val.pro_header}
+                          </Typography>
+                        </NavLink>
+                      ) : (
+                        <Typography
+                          component="div"
+                          variant="subtitle1"
+                          style={{ textTransform: "capitalize" }}
+                          className={`${classes.contents} ${classes.normalfonts}`}
+                        >
                           {val.pro_header}
                         </Typography>
-                      </NavLink>
-                    ) : (
-                      <Typography component="div" variant="subtitle1" className={`${classes.contents} ${classes.normalfonts}`}>
-                        {val.pro_header}
-                      </Typography>
-                    )}
-                    <Typography className={`subhesder ${classes.normalfonts}`}>
-                      {window.location.pathname === "/checkout" ||
-                      checkMaterial(dataval.materialName) ||
-                      !Boolean(dataval?.[0]?.maxOrderQty) ||
-                      dataval?.[0]?.maxOrderQty < 2 ? (
-                        `Quantity ${JSON.parse(localStorage.getItem("quantity"))[dataval.generatedSku]}`
-                      ) : (
-                        <Quantity data={[dataval]} cart={true} />
                       )}
-                    </Typography>
-                    {dataval.dataCard1.map((val) => (
-                      <Pricing
-                        price={val.price}
-                        offerPrice={val.offerPrice}
-                        offerDiscount={"25% - OFF"}
-                        quantity={JSON.parse(localStorage.getItem("quantity"))[dataval.generatedSku]}
+                      <Typography
+                        className={`subhesder ${classes.normalfonts}`}
                       >
-                        {/* <label className={classes.labelPrice}>
-                          <Typography variant="subtitle1" color="textSecondary" className={classes.labelPriceDel}>
-                            <del>{val.offerPrice}</del>
-                          </Typography>
-                          &nbsp;
-                          <Typography variant="subtitle1" style={{ color: "#ED1165" }} className={classes.labelPriceOff}>
-                            {val.price}
-                          </Typography>
-                          <Typography variant="subtitle1" color="textSecondary" className={classes.labelPriceDel}>
-                            <del>{val.offerPrice}</del>
-                          </Typography>
-                        </label> */}
-                      </Pricing>
-                    ))}
-                  </CardContent>
-                  <div>
-                    {window.location.pathname !== "/checkout" ? (
-                      <div
-                        variant="contained"
-                        style={{ cursor: "pointer", fontSize: "0.9rem" }}
-                        className={`${classes.normalfonts} ${classes.controls}`}
-                        className="highliter"
-                      >
-                        &nbsp;
+                        {window.location.pathname === "/checkout" ||
+                        checkMaterial(dataval.materialName) ||
+                        !Boolean(dataval?.[0]?.maxOrderQty) ||
+                        dataval?.[0]?.maxOrderQty < 2 ? (
+                          `Quantity ${
+                            JSON.parse(localStorage.getItem("quantity"))[
+                              dataval.generatedSku
+                            ]
+                          }`
+                        ) : (
+                          <Quantity data={[dataval]} cart={true} />
+                        )}
+                      </Typography>
+                      {dataval.dataCard1.map((val) => (
+                        <Pricing
+                          price={val.price}
+                          offerPrice={val.offerPrice}
+                          offerDiscount={"25% - OFF"}
+                          quantity={
+                            JSON.parse(localStorage.getItem("quantity"))[
+                              dataval.generatedSku
+                            ]
+                          }
+                        ></Pricing>
+                      ))}
+                    </CardContent>
+                    <div>
+                      {window.location.pathname !== "/checkout" ? (
                         <div
-                          id={dataval.generatedSku}
+                          variant="contained"
+                          style={{ cursor: "pointer", fontSize: "0.9rem" }}
+                          className={`${classes.normalfonts} ${classes.controls}`}
                           className="highliter"
-                          productid={dataval}
-                          onClick={(e) => handleDeleteLocalStorage(e, val)}
                         >
-                          <i style={{ fontSize: "16px" }} class="fa">
-                            {" "}
-                            &#xf014;
-                          </i>
-                          &nbsp;<span className="highliter">Remove</span>
+                          &nbsp;
+                          <div
+                            style={{
+                              display: "flex",
+                              justifyContent: "center",
+                              float: "right",
+                              marginRight: "1rem",
+                            }}
+                            id={dataval.generatedSku}
+                            className="highliter"
+                            productid={dataval}
+                            onClick={(e) => handleDeleteLocalStorage(e, val)}
+                          >
+                            <i style={{ fontSize: "16px" }} class="fa">
+                              {" "}
+                              &#xf014;
+                            </i>
+                            &nbsp;<span className="highliter">Remove</span>
+                          </div>
                         </div>
-                      </div>
-                    ) : (
-                      ""
-                    )}{" "}
+                      ) : (
+                        ""
+                      )}{" "}
+                    </div>
                   </div>
-                </div>
+                </Grid>
               </Grid>
             </Card>
           );
