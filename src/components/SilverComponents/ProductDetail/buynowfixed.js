@@ -36,6 +36,21 @@ class Buynowfixed extends React.Component {
         modelOpen: false,
       });
     };
+    const enquireLink = () => {
+      if (!productIsActive) {
+        if (this.props?.productURL) {
+          window.open(
+            `https://wa.me/919952625252?text=Hi - ${
+              window.location.hostname + "/" + this.props.productURL ?? ""
+            }`
+          );
+        } else {
+          window.open(
+            `https://wa.me/919952625252?text=Hi - ${window.location.href}`
+          );
+        }
+      }
+    };
 
     const handleLocalStorage = () => {
       if (this.valus(this.props.data[0].skuId) === 1) {
@@ -67,7 +82,11 @@ class Buynowfixed extends React.Component {
     return (
       <div style={{ width: "100%" }}>
         <AppBar color="primary" className="product-page-fixed-footer">
-          <Grid container spacing={12}>
+          <Grid
+            container
+            spacing={12}
+            style={{ boxShadow: "8px 10px 8px 10px #888888" }}
+          >
             {isSilver ? (
               <>
                 {" "}
@@ -77,7 +96,7 @@ class Buynowfixed extends React.Component {
                   className={`fixed-grid ${
                     isSilver ? classes.fixedGridsilver : ""
                   }`}
-                  style={{ textAlign: "center", background: "#EBEAEA" }}
+                  style={{ textAlign: "center", background: "#e87236" }}
                 >
                   <div
                     onClick={() =>
@@ -106,7 +125,7 @@ class Buynowfixed extends React.Component {
                   className={`fixed-grid ${
                     isSilver ? classes.fixedGridsilver : ""
                   }`}
-                  style={{ textAlign: "center", background: "#EBEAEA" }}
+                  style={{ textAlign: "center", background: "#e87236" }}
                 >
                   <div
                     onClick={
@@ -142,7 +161,7 @@ class Buynowfixed extends React.Component {
                 <Grid
                   item
                   xs={6}
-                  style={{ textAlign: "center", backgroundColor: "#ccc" }}
+                  style={{ textAlign: "center", backgroundColor: "#white" }}
                 >
                   <div
                     onClick={() =>
@@ -168,41 +187,26 @@ class Buynowfixed extends React.Component {
               <>
                 {" "}
                 <Grid
-                  className="talk-to-us"
                   item
                   xs={6}
-                  style={{
-                    justifyContent: "center",
-                    display: "flex",
-                    backgroundColor: "white",
-                  }}
+                  style={{ textAlign: "center", backgroundColor: "white" }}
                 >
-                  <a
-                    href={isSilver ? "#" : "tel:18001020330"}
-                    style={{
-                      textDecoration: "none",
-                      color: "#394578",
-                      fontWeight: "600",
-                      fontSize: "14px",
-                      letterSpacing: "1.5px",
-                    }}
+                  <div
+                    onClick={() =>
+                      productIsActive ? this.props.deleteComment() : ""
+                    }
                   >
-                    {isSilver ? null : <i class="fa fa-comments"></i>}
-                    &nbsp;
-                    {isSilver ? (
-                      <span
-                        style={{
-                          fontFamily: "Roboto-bold",
-                          whiteSpace: "nowrap",
-                        }}
-                      >
-                        Add To Cart
-                      </span>
-                    ) : (
-                      "Talk To Us"
-                    )}
-                  </a>
-                </Grid>
+                    <Buynowbutton
+                      sku={data[0].skuId}
+                      class={`product-footer-buynow1 ${classes.addtoCartToBuyNowStyle}`}
+                      addtoCartToBuyNow={true}
+                      onClick={
+                        productIsActive ? handleLocalStorage.bind(this) : ""
+                      }
+                      // productIsActive={productIsActive ?? ""}
+                    />
+                  </div>
+                </Grid>{" "}
               </>
             )}
           </Grid>

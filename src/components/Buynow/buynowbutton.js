@@ -103,7 +103,6 @@ class Buynowbutton extends React.Component {
                   <>
                     <span
                       style={{
-                        marginTop: "-10px",
                         fontWeight: "bolder",
                         fontSize: "8px !important",
                       }}
