@@ -364,6 +364,7 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
 
   try {
     mapperdata = data.data.allTransSkuLists.nodes;
+    console.log(mapperdata);
 
     if (mapperdata[0]?.skuId === undefined) {
       history.push("/");
@@ -1170,11 +1171,36 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
             ? like_data.data.youMayalsolike1 &&
               like_data.data.youMayalsolike1.nodes.length > 0
               ? like_data.data.youMayalsolike1.nodes.map((val) => {
+                  console.log(val);
+                  //debugger;
                   return {
                     offerDiscount: val?.transSkuListsByProductId?.nodes[0]
                       ?.discount
                       ? `${val?.transSkuListsByProductId?.nodes[0]?.discount}% OFF`
                       : " ",
+                    price:
+                      val &&
+                      val.transSkuListsByProductId &&
+                      val.transSkuListsByProductId.nodes &&
+                      val.transSkuListsByProductId.nodes.length > 0 &&
+                      val.transSkuListsByProductId.nodes[0].discountPrice &&
+                      val.transSkuListsByProductId.nodes[0].discountPrice
+                        ? Math.round(
+                            val.transSkuListsByProductId.nodes[0].discountPrice
+                          )
+                        : 0,
+                    offerPrice:
+                      val &&
+                      val.transSkuListsByProductId &&
+                      val.transSkuListsByProductId.nodes &&
+                      val.transSkuListsByProductId.nodes.length > 0 &&
+                      val.transSkuListsByProductId.nodes[0].discountPrice &&
+                      val.transSkuListsByProductId.nodes[0].discountPrice
+                        ? Math.round(
+                            val.transSkuListsByProductId.nodes[0].discountPrice
+                          )
+                        : 0,
+
                     save: " ",
                     img: val.productImagesByProductId.nodes[0].imageUrl,
                     image: {
@@ -1187,18 +1213,6 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                     },
                     title: val && val.productName && val.productName,
 
-                    offerPrice:
-                      val &&
-                      val.transSkuListsByProductId &&
-                      val.transSkuListsByProductId.nodes &&
-                      val.transSkuListsByProductId.nodes.length > 0 &&
-                      val.transSkuListsByProductId.nodes[0] &&
-                      val.transSkuListsByProductId.nodes[0].markupPrice &&
-                      val.transSkuListsByProductId.nodes[0].markupPrice
-                        ? Math.round(
-                            val.transSkuListsByProductId.nodes[0].markupPrice
-                          )
-                        : 0,
                     skuID:
                       val &&
                       val.transSkuListsByProductId &&
@@ -1213,9 +1227,7 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                         .productListByProductId?.transSkuListsByProductId
                         ?.nodes[0]?.transSkuDescriptionsBySkuId?.nodes[0]
                         ?.skuDescription ?? " ",
-                    price:
-                      val?.transSkuListsByProductId?.nodes[0]?.discountPrice ??
-                      " ",
+
                     skuUrl:
                       val?.transSkuListsByProductId?.nodes[0]?.skuUrl ?? " ",
                   };
@@ -1234,12 +1246,17 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                       val.transSkuListsByProductId &&
                       val.transSkuListsByProductId.nodes &&
                       val.transSkuListsByProductId.nodes.length > 0 &&
-                      val.transSkuListsByProductId.nodes[0].discountPrice &&
-                      val.transSkuListsByProductId.nodes[0].discountPrice
+                      val.transSkuListsByProductId.nodes[0].sellingPrice &&
+                      val.transSkuListsByProductId.nodes[0].sellingPrice
                         ? Math.round(
-                            val.transSkuListsByProductId.nodes[0].discountPrice
+                            val.transSkuListsByProductId.nodes[0].sellingPrice
                           )
                         : 0,
+                    offerPrice:
+                      val?.productListByProductSku?.productImagesByProductId
+                        ?.nodes[0].productListByProductId
+                        ?.transSkuListsByProductId?.nodes[0]?.discountPrice ??
+                      " ",
                     url:
                       val &&
                       val.transSkuListsByProductId &&
@@ -1266,6 +1283,7 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
             ? viewedddatas.data.allProductMaterials &&
               viewedddatas.data.allProductMaterials.nodes.length > 0
               ? viewedddatas.data.allProductMaterials.nodes.map((val) => {
+                  //debugger;
                   return {
                     img:
                       val &&
@@ -1323,7 +1341,7 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                     offerPrice:
                       val?.productListByProductSku?.productImagesByProductId
                         ?.nodes[0].productListByProductId
-                        ?.transSkuListsByProductId?.nodes[0]?.discountPrice ??
+                        ?.transSkuListsByProductId?.nodes[0]?.sellingPrice ??
                       " ",
 
                     save: " ",
