@@ -153,8 +153,8 @@ const Productprice = (
                           <Hidden mdUp>
                             <div className={classes.width}>
                               <Pricing
-                                price={data[0]?.offerPrice}
-                                offerPrice={data[0]?.price}
+                                price={data[0]?.price}
+                                offerPrice={data[0]?.offerPrice}
                                 offerDiscount={val?.offerDiscount}
                                 pdpagesm={true}
                                 pdpage={true}
