@@ -21,7 +21,8 @@ export const ImgMediaCard = (props) => {
   const { ProductDetailCtx, setFilters } =
     React.useContext(ProductDetailContext);
   const loc = window.location.search;
-
+  console.log(props);
+  // debugger;
   return (
     <Component
       filters={ProductDetailCtx.filters}
@@ -30,69 +31,8 @@ export const ImgMediaCard = (props) => {
     />
   );
 };
-// const MyImage = ( props, callmouseover, callmouseout, cardstate ) => {
-//   return(
 
-//   <LazyLoadImage
-//     alt={'props.data.title'}
-//     effect="blur"
-//     srcset={renderImages(props, cardstate)}
-//     sizes="(max-width: 320px) 320w,
-//             (max-width: 480px) 375w,
-//             (max-width: 600px) 600w,
-//             (max-width: 992px) 768w,
-//             (max-width: 1440px) 1440w,
-//             (max-width: 2560px) 2560w,
-//             2560w
-
-// "
-// title={props.data.title}
-// onMouseOver={() => {
-//  callmouseover()
-// }}
-// onMouseOut={() => {
-//   callmouseout()
-// }}
-// style={{width:'100%',height:'100%'}}
-// visibleByDefault={renderImages(props, cardstate) === 'https://alpha-assets.stylori.com/276x276/images/static/Image_Not_Available.jpg'}
-//     />
-// );
-// }
 const imageOnError = (event, res) => {
-  // var e = event
-  // e.target.src.lastIndexOf('\.')
-  // var src_img = (e.target.src).lastIndexOf('\.')
-  // var _arr = e.target.src.split('/')
-  // _arr.splice(_arr.length - 2, 1, '1000X1000')
-  // const URL_1000x1000 = _arr.join('/')
-  // var URL_JPG = (e.target.src).substr(0, src_img).concat('.jpg')
-
-  // try {
-
-  //   var _image = ''
-  //   e.target.onerror = null;
-
-  //   const testImage = (URL, e) => {
-  //     var tester = new Image();
-  //     tester.src = URL;
-  //     tester.onload = imageFound;
-  //     tester.onerror = imageNotFound;
-  //     // tester.on("error" , imageNotFound)
-
-  //   }
-  //   const imageFound = (e) => {
-  //     e.target.src = URL_1000x1000
-
-  //   }
-  //   const imageNotFound = (e) => {
-  //     e.target.src = `${CDN_URL}product/${res.img_res}X${res.img_res}/productnotfound.webp`
-
-  //   }
-  //   return testImage(URL_1000x1000, e);
-  //   // e.target.src = (e.target.src).substr(0, src_img).concat('.jpg')
-  // } catch (error) {
-  // }
-
   event.target.src = `${CDN_URL}product/${res.img_res}X${res.img_res}/productnotfound.webp`;
 };
 const Gallery = (
@@ -122,16 +62,6 @@ const Gallery = (
       alt={"props.data.title"}
       effect="blur"
       src={renderImages(props, cardstate)}
-      //  srcset={renderImages(props, cardstate)}
-      //      sizes="(max-width: 320px) 320w,
-      //              (max-width: 480px) 375w,
-      //              (max-width: 600px) 600w,
-      //              (max-width: 992px) 768w,
-      //              (max-width: 1440px) 1440w,
-      //              (max-width: 2560px) 2560w,
-      //              2560w
-
-      //  "
       onError={(e) => imageOnError(e, props.data.imageResolution)}
       title={props.data.title}
       onMouseOver={() => {
@@ -142,12 +72,6 @@ const Gallery = (
       }}
       style={{ width: "100%" }}
       scrollPosition={scrollPosition}
-
-      // If the image we are creating here has the same src than before,
-      // we can directly display it with no need to lazy-load.
-      // onerror={this.src=}
-      // placeholderSrc={renderImages(props, cardstate) === '' ? 'https://alpha-assets.stylori.com/1000x1000/images/static/Image_Not_Available.jpg' : ''}
-      // placeholder	= { <div >loading.....</div> }
     />
   </div>
 );

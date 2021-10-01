@@ -232,9 +232,11 @@ function MediaControlCard(props) {
                       </Typography>
                       {dataval.dataCard1.map((val) => (
                         <Pricing
-                          price={val.price}
-                          offerPrice={val.offerPrice}
-                          offerDiscount={"25% - OFF"}
+                          price={val.offerPrice}
+                          offerPrice={val.price}
+                          offerDiscount={
+                            val.discount ? `${val.discount}% - OFF` : null
+                          }
                           quantity={
                             JSON.parse(localStorage.getItem("quantity"))[
                               dataval.generatedSku

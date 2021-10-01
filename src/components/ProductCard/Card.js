@@ -392,7 +392,7 @@ function Component(props) {
                           style: "currency",
                           currency: "INR",
                           minimumFractionDigits: 0,
-                        }).format(Math.round(props.data.price))}
+                        }).format(Math.round(props.data.offerPrice))}
                         <span style={{ display: "flex", alignSelf: "center" }}>
                           {" "}
                           <Typography
@@ -414,9 +414,7 @@ function Component(props) {
                                       style: "currency",
                                       currency: "INR",
                                       minimumFractionDigits: 0,
-                                    }).format(
-                                      Math.round(props.data.offerPrice)
-                                    )}
+                                    }).format(Math.round(props.data.price))}
                               </span>
                             </span>
                           </Typography>
@@ -429,7 +427,7 @@ function Component(props) {
                     <Typography className={classes.discountPercentage}>
                       {props.data.save == 0
                         ? " "
-                        : ` ${Math.round(props.data.save)}% OFF`}
+                        : ` ${Math.abs(Math.round(props.data.save))}% OFF`}
                       &nbsp;&nbsp;
                     </Typography>
                   </Grid>
@@ -477,7 +475,7 @@ function Component(props) {
                           style: "currency",
                           currency: "INR",
                           minimumFractionDigits: 0,
-                        }).format(Math.round(props.data.price))}
+                        }).format(Math.round(props.data.offerPrice))}
                       </Typography>
                     ) : (
                       <Typography
@@ -495,7 +493,7 @@ function Component(props) {
                           style: "currency",
                           currency: "INR",
                           minimumFractionDigits: 0,
-                        }).format(Math.round(props.data.price))}
+                        }).format(Math.round(props.data.offerPrice))}
                         <span style={{ display: "flex", alignSelf: "center" }}>
                           {" "}
                           <Typography
@@ -517,9 +515,7 @@ function Component(props) {
                                       style: "currency",
                                       currency: "INR",
                                       minimumFractionDigits: 0,
-                                    }).format(
-                                      Math.round(props.data.offerPrice)
-                                    )}
+                                    }).format(Math.round(props.data.price))}
                               </span>
                             </span>
                           </Typography>
