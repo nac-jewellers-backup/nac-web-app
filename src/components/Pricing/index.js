@@ -43,7 +43,6 @@ export default function Pricing(props) {
 
                         color: "#6E6E71",
                       }}
-                      I
                     >
                       {props.offerPrice === props.price ? (
                         ""
@@ -209,7 +208,7 @@ export default function Pricing(props) {
                             style: "currency",
                             currency: "INR",
                             minimumFractionDigits: 0,
-                          }).format(Math.round(props.offerPrice))}
+                          }).format(Math.round(props.price))}
                         </span>
                         <span style={{ display: "block", marginTop: "-5px" }}>
                           <del
@@ -224,7 +223,7 @@ export default function Pricing(props) {
                               style: "currency",
                               currency: "INR",
                               minimumFractionDigits: 0,
-                            }).format(Math.round(props.price))}
+                            }).format(Math.round(props.offerPrice))}
                           </del>
                         </span>
                       </>

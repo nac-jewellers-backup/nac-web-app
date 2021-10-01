@@ -1,28 +1,34 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import { Hidden } from "@material-ui/core";
 import Card from "@material-ui/core/Card";
-import Grid from "@material-ui/core/Grid";
-import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
-import Button from "@material-ui/core/Button";
+import Grid from "@material-ui/core/Grid";
+import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
-import { Link } from "react-router-dom";
-import { Hidden } from "@material-ui/core";
-import "./productCard.css";
-import { CDN_URL } from "config";
-
-import { ProductDetailContext } from "context";
-import { LazyLoadImage, trackWindowScroll } from "react-lazy-load-image-component";
-import "react-lazy-load-image-component/src/effects/blur.css";
 import Wishlist from "components/wishlist/wishlist";
+import { CDN_URL } from "config";
+import { ProductDetailContext } from "context";
+import React from "react";
+import {
+  LazyLoadImage,
+  trackWindowScroll,
+} from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
+import { Link } from "react-router-dom";
+import "./productCard.css";
 
 export const ImgMediaCard = (props) => {
-  const { ProductDetailCtx, setFilters } = React.useContext(ProductDetailContext);
+  const { ProductDetailCtx, setFilters } =
+    React.useContext(ProductDetailContext);
   const loc = window.location.search;
 
-  return <Component filters={ProductDetailCtx.filters} setFilters={setFilters} {...props} />;
+  return (
+    <Component
+      filters={ProductDetailCtx.filters}
+      setFilters={setFilters}
+      {...props}
+    />
+  );
 };
 // const MyImage = ( props, callmouseover, callmouseout, cardstate ) => {
 //   return(
@@ -89,7 +95,13 @@ const imageOnError = (event, res) => {
 
   event.target.src = `${CDN_URL}product/${res.img_res}X${res.img_res}/productnotfound.webp`;
 };
-const Gallery = (props, callmouseover, callmouseout, cardstate, scrollPosition) => (
+const Gallery = (
+  props,
+  callmouseover,
+  callmouseout,
+  cardstate,
+  scrollPosition
+) => (
   <div className="imageHeight">
     {props.data.oneDayShipping ? (
       <div class="one-day-ship-listing-page" style={{ zIndex: 2 }}>
@@ -99,7 +111,11 @@ const Gallery = (props, callmouseover, callmouseout, cardstate, scrollPosition) 
       ""
     )}
     <div class="wishListStyle">
-      <Wishlist sku={props.data.skuId} productId={props.data.productId} wishlist={props.wishlist} />
+      <Wishlist
+        sku={props.data.skuId}
+        productId={props.data.productId}
+        wishlist={props.wishlist}
+      />
     </div>
 
     <LazyLoadImage
@@ -161,7 +177,6 @@ export default trackWindowScroll(Gallery);
 
 //           />
 const handleProductDetatiContext = (props) => {
- 
   props.filters["defaultVariants"]["diamondType"] = props.data.diamondType;
   props.filters["defaultVariants"]["metalColor"] = props.data.metalColor;
   props.filters["defaultVariants"]["purity"] = props.data.purity;
@@ -358,10 +373,13 @@ function Component(props) {
   const callmouseout = () => {
     setCardState({ ...cardstate, hovered: !cardstate.hovered });
   };
- 
+
   return (
     <div className={classes.root} style={{ marginLeft: "0px !important" }}>
-      <Card className={`${classes.card} ${"imageHeight"}`} style={{ marginLeft: "0px !important" }}>
+      <Card
+        className={`${classes.card} ${"imageHeight"}`}
+        style={{ marginLeft: "0px !important" }}
+      >
         {/* <CardActions className={classes.cardAtionspadding}>
           <Grid container xs={12}>
             <Grid container item xs={6} justify="flex-start">
@@ -424,7 +442,13 @@ sizes="(max-width: 320px) 320w,
           </CardActions>
           <Card className={classes.priceClass}>
             <CardContent className={classes.cardContent}>
-              <Grid container item xs={12} className={classes.textPriceCardGrid} alignItems="center">
+              <Grid
+                container
+                item
+                xs={12}
+                className={classes.textPriceCardGrid}
+                alignItems="center"
+              >
                 <Grid
                   container
                   item
@@ -436,7 +460,11 @@ sizes="(max-width: 320px) 320w,
                   alignItems="center"
                   className={`${classes.priceClassMain}`}
                 >
-                  <Typography variant="h6" component="h6" className={classes.offerMainPrice}>
+                  <Typography
+                    variant="h6"
+                    component="h6"
+                    className={classes.offerMainPrice}
+                  >
                     {/* <i
                     
                     className="fa"
@@ -444,34 +472,64 @@ sizes="(max-width: 320px) 320w,
                     &#xf156;
                   </i> */}
                     {/* {Math.round(props.data.offerPrice)} */}
-                    {new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", minimumFractionDigits: 0 }).format(
-                      Math.round(props.data.offerPrice)
-                    )}
+                    {new Intl.NumberFormat("en-IN", {
+                      style: "currency",
+                      currency: "INR",
+                      minimumFractionDigits: 0,
+                    }).format(Math.round(props.data.price))}
                   </Typography>
                 </Grid>
                 {/*  */}
-                <Grid item xs={12} sm={12} md={5} lg={5} xl={5} className={`${classes.priceOffGrid}`}>
-                  <Grid container item xs={12} alignItems="center" className={`${classes.priceOffGridsub}`}>
-                    <Typography gutterBottom variant="body1" component="span" className={classes.offerPrice}>
-                      {Math.round(props.data.offerPrice) === Math.round(props.data.price) ? (
-                        new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", minimumFractionDigits: 0 }).format(
-                          Math.round(props.data.price)
-                        )
+                <Grid
+                  item
+                  xs={12}
+                  sm={12}
+                  md={5}
+                  lg={5}
+                  xl={5}
+                  className={`${classes.priceOffGrid}`}
+                >
+                  <Grid
+                    container
+                    item
+                    xs={12}
+                    alignItems="center"
+                    className={`${classes.priceOffGridsub}`}
+                  >
+                    <Typography
+                      gutterBottom
+                      variant="body1"
+                      component="span"
+                      className={classes.offerPrice}
+                    >
+                      {Math.round(props.data.offerPrice) ===
+                      Math.round(props.data.price) ? (
+                        new Intl.NumberFormat("en-IN", {
+                          style: "currency",
+                          currency: "INR",
+                          minimumFractionDigits: 0,
+                        }).format(Math.round(props.data.price))
                       ) : (
                         <del>
                           {new Intl.NumberFormat("en-IN", {
                             style: "currency",
                             currency: "INR",
                             minimumFractionDigits: 0,
-                          }).format(Math.round(props.data.price))}
+                          }).format(Math.round(props.data.offerPrice))}
                         </del>
                       )}
                     </Typography>
                   </Grid>
-                  {Math.round(props.data.offerPrice) === Math.round(props.data.price) ? (
+                  {Math.round(props.data.offerPrice) ===
+                  Math.round(props.data.price) ? (
                     ""
                   ) : (
-                    <Grid container item xs={12} className={`${classes.offerPricesMain}`}>
+                    <Grid
+                      container
+                      item
+                      xs={12}
+                      className={`${classes.offerPricesMain}`}
+                    >
                       {/* <Typography
                     gutterBottom
                     variant="body1"
@@ -488,7 +546,9 @@ sizes="(max-width: 320px) 320w,
                       >
                         {/* 20% Off */}
                         {Math.round(
-                          ((Math.round(props.data.price) - Math.round(props.data.offerPrice)) / Math.round(props.data.price)) *
+                          ((Math.round(props.data.price) -
+                            Math.round(props.data.offerPrice)) /
+                            Math.round(props.data.price)) *
                             100
                         ) + "% off"}
                       </Typography>
@@ -499,7 +559,11 @@ sizes="(max-width: 320px) 320w,
                 <Hidden smDown>
                   <Grid container xs={12}>
                     <Grid item xs={12} className={`${classes.titles}`}>
-                      <Typography variant="body1" component="span" className={`${classes.titles}`}>
+                      <Typography
+                        variant="body1"
+                        component="span"
+                        className={`${classes.titles}`}
+                      >
                         {props.data.title}
                       </Typography>
                     </Grid>
