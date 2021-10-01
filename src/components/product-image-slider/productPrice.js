@@ -153,8 +153,8 @@ const Productprice = (
                           <Hidden mdUp>
                             <div className={classes.width}>
                               <Pricing
-                                price={data[0]?.sellingPrice}
-                                offerPrice={data[0]?.offerPrice}
+                                price={data[0]?.offerPrice}
+                                offerPrice={data[0]?.sellingPrice}
                                 offerDiscount={val?.offerDiscount}
                                 pdpagesm={true}
                                 pdpage={true}
@@ -211,11 +211,15 @@ const Productprice = (
           <Hidden smDown>
             <div className={classes.width}>
               {data[0]?.price === data[0]?.offerPrice ? (
-                <Pricing price={data[0]?.price} pdpage={true}></Pricing>
+                <Pricing
+                  price={data[0]?.offerPrice}
+                  offerPrice={data[0]?.sellingPrice}
+                  pdpage={true}
+                ></Pricing>
               ) : (
                 <Pricing
-                  price={data[0]?.price}
-                  offerPrice={data[0]?.offerPrice}
+                  price={data[0]?.offerPrice}
+                  offerPrice={data[0]?.sellingPrice}
                   offerDiscount={val?.offerDiscount}
                   pdpage={true}
                 ></Pricing>

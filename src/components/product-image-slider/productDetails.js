@@ -52,45 +52,49 @@ class ProductDetails extends React.Component {
                       </span>
                       <hr class="bottom-line"></hr>
                       <>
-                        {valueofproductdetail.namedetail !== undefined &&
-                          valueofproductdetail.namedetail.map((res) => {
-                            return (
-                              <>
-                                {res.details !== null &&
-                                res.details !== undefined &&
-                                res.details.length === 0 ? (
-                                  false
-                                ) : (
-                                  <span>
-                                    {
-                                      <>
-                                        {res.name &&
-                                          res.details !== null &&
-                                          res.details !== undefined && (
-                                            <Grid container item xs={12}>
-                                              <Grid xs={4} lg={4}>
-                                                <ListItemText
-                                                  variant=""
-                                                  className={`product-subhead ${classes.normalfonts}`}
-                                                >
-                                                  <span
-                                                    style={{ fontSize: "12px" }}
+                        {valueofproductdetail.namedetail == undefined
+                          ? " "
+                          : valueofproductdetail.namedetail.map((res) => {
+                              return (
+                                <>
+                                  {res.details !== null &&
+                                  res.details !== undefined &&
+                                  res.details.length === 0 &&
+                                  res.details == 0 ? (
+                                    false
+                                  ) : (
+                                    <span>
+                                      {
+                                        <>
+                                          {res.name &&
+                                            res.details !== null &&
+                                            res.details !== undefined &&
+                                            res.details !== 0 && (
+                                              <Grid container item xs={12}>
+                                                <Grid xs={4} lg={4}>
+                                                  <ListItemText
+                                                    variant=""
+                                                    className={`product-subhead ${classes.normalfonts}`}
                                                   >
-                                                    {" "}
-                                                    {res.name}
-                                                  </span>
-                                                </ListItemText>
-                                              </Grid>
-                                              <Grid
-                                                container
-                                                item
-                                                xs={8}
-                                                style={{ alignItems: "center" }}
-                                              >
-                                                {
-                                                  // valueofproductdetail.header === 'Price Breakup' &&
-
-                                                  isArray(res.details) ? (
+                                                    <span
+                                                      style={{
+                                                        fontSize: "12px",
+                                                      }}
+                                                    >
+                                                      {" "}
+                                                      {res.name}
+                                                    </span>
+                                                  </ListItemText>
+                                                </Grid>
+                                                <Grid
+                                                  container
+                                                  item
+                                                  xs={8}
+                                                  style={{
+                                                    alignItems: "center",
+                                                  }}
+                                                >
+                                                  {isArray(res.details) ? (
                                                     <ListItemText
                                                       variant=""
                                                       className={`product-subhead-list ${classes.fontgray}`}
@@ -106,7 +110,6 @@ class ProductDetails extends React.Component {
                                                                   "left",
                                                               }}
                                                             >
-                                                              {" "}
                                                               {valueofproductdetail.header ===
                                                               "Price Breakup" ? (
                                                                 Index === 0 &&
@@ -115,13 +118,22 @@ class ProductDetails extends React.Component {
                                                                 ] !==
                                                                   res.details[
                                                                     Index + 1
-                                                                  ] ? (
-                                                                  <del>
-                                                                    {Item}
-                                                                  </del>
-                                                                ) : Index ===
+                                                                  ] &&
+                                                                res.details
+                                                                  .Item !==
                                                                   0 ? (
-                                                                  ""
+                                                                  Item == 0 ? (
+                                                                    " "
+                                                                  ) : (
+                                                                    <>
+                                                                      <del>
+                                                                        {Item}
+                                                                      </del>
+                                                                    </>
+                                                                  )
+                                                                ) : Index ==
+                                                                  0 ? (
+                                                                  " "
                                                                 ) : (
                                                                   Item
                                                                 )
@@ -150,18 +162,17 @@ class ProductDetails extends React.Component {
                                                         </span>
                                                       }
                                                     </ListItemText>
-                                                  )
-                                                }
+                                                  )}
+                                                </Grid>
                                               </Grid>
-                                            </Grid>
-                                          )}
-                                      </>
-                                    }
-                                  </span>
-                                )}
-                              </>
-                            );
-                          })}
+                                            )}
+                                        </>
+                                      }
+                                    </span>
+                                  )}
+                                </>
+                              );
+                            })}
                       </>
                     </div>
                   </div>
