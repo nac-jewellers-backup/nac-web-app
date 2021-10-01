@@ -14,8 +14,7 @@ class ProductDetails extends React.Component {
 
   productsDetails = (data) => {
     const { classes } = this.props;
-    console.log(this.props);
-    debugger;
+ 
     return (
       <Grid container>
         {data &&

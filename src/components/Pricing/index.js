@@ -6,6 +6,7 @@ import styles from "./style";
 
 export default function Pricing(props) {
   console.log(props);
+
   const classes = styles();
   let path = window.location.pathname.split("/").pop();
   const { globalContext, quantity } = props;
@@ -209,7 +210,7 @@ export default function Pricing(props) {
                             minimumFractionDigits: 0,
                           }).format(Math.round(props.price))}
                         </span>
-                        <span style={{ display: "block", marginTop: "-5px" }}>
+                        <span style={{ display: "block", marginTop: "-5px", marginBottom: "5px" }}>
                           <del
                             style={{
                               fontSize: "0.8rem",

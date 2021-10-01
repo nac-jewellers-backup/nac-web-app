@@ -188,6 +188,7 @@ class Checkoutcard extends React.Component {
                 marginBottom: "25px",
                 boxShadow: "1px 2px 13px 7px #DEDADA",
                 padding: "10px",
+                marginTop: "10px",
               }}
               className={classes.cart}
             >
@@ -387,7 +388,6 @@ class Checkoutcard extends React.Component {
     const { classes } = this.props;
     console.log(Math.round(props.cartFilters.gross_amount));
     console.log(Math.round(dataCard1));
-    debugger;
 
     return (
       <div style={{ marginTop: "10px" }}>
@@ -427,7 +427,7 @@ class Checkoutcard extends React.Component {
                   <Typography className={`subhesder ${classes.normalfonts}`}>{props.cartFilters.tax_price}</Typography>
                 ) : null}
                 <Typography className={`subhesder ${classes.normalfonts}`}>{props.shipping_charge} </Typography>
-                <Typography className={`subhesder-totsl-size ${classes.normalfonts}`} style={{fontWeight : "bold"}}>
+                <Typography className={`subhesder-totsl-size ${classes.normalfonts}`} style={{ fontWeight: "bold" }}>
                   {props.cartFilters.discounted_amount
                     ? Math.round(props.cartFilters.discounted_amount)
                     : Math.round(dataCard1 - discounted_price)}

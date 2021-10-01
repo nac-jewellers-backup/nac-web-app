@@ -1073,12 +1073,12 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                     style: "currency",
                     currency: "INR",
                     minimumFractionDigits: 0,
-                  }).format(Math.round(PD.discountPriceTax)),
+                  }).format(Math.round(PD.discountPriceTax)) ,
                   new Intl.NumberFormat("en-IN", {
                     style: "currency",
                     currency: "INR",
                     minimumFractionDigits: 0,
-                  }).format(Math.round(PD.markupPriceTax)),
+                  }).format(Math.round(PD.markupPriceTax)) ,
                 ],
               },
               {
