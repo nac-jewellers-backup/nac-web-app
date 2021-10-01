@@ -213,14 +213,14 @@ const Productprice = (
               {console.log(data[0])}
               {data[0]?.price === data[0]?.offerPrice ? (
                 <Pricing
-                  price={data[0]?.offerPrice}
-                  offerPrice={data[0]?.price}
+                  price={data[0]?.price}
+                  offerPrice={data[0]?.offerPrice}
                   pdpage={true}
                 ></Pricing>
               ) : (
                 <Pricing
-                  price={data[0]?.offerPrice}
-                  offerPrice={data[0]?.price}
+                  price={data[0]?.price}
+                  offerPrice={data[0]?.offerPrice}
                   offerDiscount={val?.offerDiscount}
                   pdpage={true}
                 ></Pricing>

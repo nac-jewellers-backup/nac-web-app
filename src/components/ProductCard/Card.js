@@ -392,7 +392,7 @@ function Component(props) {
                           style: "currency",
                           currency: "INR",
                           minimumFractionDigits: 0,
-                        }).format(Math.round(props.data.offerPrice))}
+                        }).format(Math.round(props.data.price))}
                         <span style={{ display: "flex", alignSelf: "center" }}>
                           {" "}
                           <Typography
@@ -414,7 +414,9 @@ function Component(props) {
                                       style: "currency",
                                       currency: "INR",
                                       minimumFractionDigits: 0,
-                                    }).format(Math.round(props.data.price))}
+                                    }).format(
+                                      Math.round(props.data.offerPrice)
+                                    )}
                               </span>
                             </span>
                           </Typography>
