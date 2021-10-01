@@ -13,8 +13,10 @@ class ProductDetails extends React.Component {
   };
 
   productsDetails = (data) => {
-    
     const { classes } = this.props;
+
+    
+
     return (
       <div>
         <Grid container spacing={12} style={{ paddingRight: "20px" }}>
