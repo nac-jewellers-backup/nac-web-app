@@ -1,22 +1,20 @@
-import React from "react";
-import { Redirect } from "react-router-dom";
+import { Container, Grid, Hidden } from "@material-ui/core";
+import { withStyles } from "@material-ui/core/styles";
 // import Checkoutbreadcrum from '../../components/Checkout/checkoutbreadcrum';
 // import BreadCrumb from '../../components/BreadCrumb/index'
 import CartCard from "components/Checkout/CartCard";
 import Footer from "components/Footer/Footer";
-import { Grid, Container, Hidden } from "@material-ui/core";
 // import CustomSeparator from '../../components/BreadCrumb/index'
 import Header from "components/SilverComponents/Header";
-import "screens/Stylori/index.css";
 import { CartContext } from "context";
 import cart from "mappers/cart";
+import React from "react";
+import ReactPixel from "react-facebook-pixel";
 import "screens/screens.css";
+import "screens/Stylori/index.css";
 import CustomSeparator from "../components/BreadCrumb/index";
 import styles from "../components/Checkout/style";
-import { withStyles } from "@material-ui/core/styles";
 import "./index.css";
-import { NavLink } from "react-router-dom";
-import ReactPixel from "react-facebook-pixel";
 // data.map(data=>{
 // return(
 //     <Grid item xs={12}>
@@ -72,8 +70,16 @@ class Cart extends React.Component {
               className={`breadcrums-header ${classes.normalcolorback} ${classes.marginTopBreadCrums} `}
               classsubhed={`breadcrums-sub ${classes.normalcolorback}`}
               list={`MuiBreadcrumbs-li ${classes.fontwhite}`}
-              data={this.props.data.length > 0 ? this.props.data[0].breadcrumsdata : breadcrumsdata}
-              subdata={this.props.data.length > 0 ? this.props.data[0].cartsubdata : cartsubdata}
+              data={
+                this.props.data.length > 0
+                  ? this.props.data[0].breadcrumsdata
+                  : breadcrumsdata
+              }
+              subdata={
+                this.props.data.length > 0
+                  ? this.props.data[0].cartsubdata
+                  : cartsubdata
+              }
             />
           )}
 
@@ -85,7 +91,9 @@ class Cart extends React.Component {
                 </Grid>
               ) : (
                 <>
-                  <div className="noproductsfound">There are no items in this cart. </div>
+                  <div className="noproductsfound">
+                    There are no items in this cart.{" "}
+                  </div>
                   <a href="/jewellery" className="highlighter">
                     <div className="continueshopping"> Continue shopping</div>
                   </a>
@@ -118,7 +126,9 @@ class Cart extends React.Component {
                 </Grid>
               ) : (
                 <>
-                  <div className="noproductsfound">There are no items in this cart.</div>
+                  <div className="noproductsfound">
+                    There are no items in this cart.
+                  </div>
                   <a href="/jewellery">
                     {" "}
                     <div className="continueshopping"> Continue shopping</div>
@@ -141,7 +151,15 @@ class Cart extends React.Component {
 
 const Components = (props) => {
   let {
-    CartCtx: { cartFilters, data, loading, error, allorderdata, wishlistdata, NewUser },
+    CartCtx: {
+      cartFilters,
+      data,
+      loading,
+      error,
+      allorderdata,
+      wishlistdata,
+      NewUser,
+    },
   } = React.useContext(CartContext);
 
   let content, mapped;
@@ -165,7 +183,15 @@ const Components = (props) => {
         <div id="loading"></div>
       </div>
     );
-  else content = <Cart {...props} data={mapped} allorderdata={allorderdata} wishlistdata={wishlistdata} />;
+  else
+    content = (
+      <Cart
+        {...props}
+        data={mapped}
+        allorderdata={allorderdata}
+        wishlistdata={wishlistdata}
+      />
+    );
   // if (mapped !== undefined && mapped !== null) {
   //     localStorage.setItem("a__c_t", mapped && mapped.length)
   // }

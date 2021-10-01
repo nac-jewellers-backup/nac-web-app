@@ -127,7 +127,7 @@ const Productprice = (props, anchorEl, handleClick, handleClose, handleReadMore,
                             <div className={classes.width}>
                               <Pricing
                                 price={data[0]?.offerPrice}
-                                offerPrice={data[0]?.sellingPrice}
+                                offerPrice={data[0]?.price}
                                 offerDiscount={val?.offerDiscount}
                                 pdpagesm={true}
                                 pdpage={true}
@@ -172,16 +172,17 @@ const Productprice = (props, anchorEl, handleClick, handleClose, handleReadMore,
 
           <Hidden smDown>
             <div className={classes.width}>
+              {console.log(data[0])}
               {data[0]?.price === data[0]?.offerPrice ? (
                 <Pricing
                   price={data[0]?.offerPrice}
-                  offerPrice={data[0]?.sellingPrice}
+                  offerPrice={data[0]?.price}
                   pdpage={true}
                 ></Pricing>
               ) : (
                 <Pricing
                   price={data[0]?.offerPrice}
-                  offerPrice={data[0]?.sellingPrice}
+                  offerPrice={data[0]?.price}
                   offerDiscount={val?.offerDiscount}
                   pdpage={true}
                 ></Pricing>
@@ -219,7 +220,10 @@ class ProductPrice extends Component {
       anchorEl: false,
     });
   };
-
+  // componentDidMount = () => {
+  //   console.log(this.props);
+  //   debugger;
+  // };
   render() {
     const { anchorEl, viewMore } = this.state;
     // alert(JSON.stringify(this.props.wishlist))

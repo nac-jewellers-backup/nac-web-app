@@ -397,10 +397,11 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
 
         productDescription: PD.productListByProductId.prodDescription,
         skuId: PD && PD === undefined ? "" : PD.generatedSku,
-        price: PD && PD.discountPrice ? PD.discountPrice : "",
-        offerPrice: PD && PD.markupPrice ? PD.markupPrice : "",
+        offerPrice: PD && PD.discountPrice ? PD.discountPrice : "",
+        price: PD && PD.markupPrice ? PD.markupPrice : "",
         save: "5999.9",
-        offerDiscount: PD && PD.discount ? `${PD.discount}% OFF` : null,
+        offerDiscount:
+          PD && PD.discount ? `${Math.abs(PD.discount)}% OFF` : null,
         dis:
           PD &&
           PD !== undefined &&
@@ -1174,9 +1175,7 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                       ?.discount
                       ? `${val?.transSkuListsByProductId?.nodes[0]?.discount}% OFF`
                       : " ",
-                    save: val?.transSkuListsByProductId?.nodes[0]?.discount
-                      ? val?.transSkuListsByProductId?.nodes[0]?.discount
-                      : " ",
+                    save: " ",
                     img: val.productImagesByProductId.nodes[0].imageUrl,
                     image: {
                       placeImage: {
@@ -1187,16 +1186,17 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                       },
                     },
                     title: val && val.productName && val.productName,
+
                     offerPrice:
                       val &&
                       val.transSkuListsByProductId &&
                       val.transSkuListsByProductId.nodes &&
                       val.transSkuListsByProductId.nodes.length > 0 &&
                       val.transSkuListsByProductId.nodes[0] &&
-                      val.transSkuListsByProductId.nodes[0].sellingPrice &&
-                      val.transSkuListsByProductId.nodes[0].sellingPrice
+                      val.transSkuListsByProductId.nodes[0].markupPrice &&
+                      val.transSkuListsByProductId.nodes[0].markupPrice
                         ? Math.round(
-                            val.transSkuListsByProductId.nodes[0].sellingPrice
+                            val.transSkuListsByProductId.nodes[0].markupPrice
                           )
                         : 0,
                     skuID:
@@ -1214,7 +1214,7 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                         ?.nodes[0]?.transSkuDescriptionsBySkuId?.nodes[0]
                         ?.skuDescription ?? " ",
                     price:
-                      val?.transSkuListsByProductId?.nodes[0]?.sellingPrice ??
+                      val?.transSkuListsByProductId?.nodes[0]?.discountPrice ??
                       " ",
                     skuUrl:
                       val?.transSkuListsByProductId?.nodes[0]?.skuUrl ?? " ",
@@ -1320,8 +1320,13 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                       val.productListByProductSku.productType
                         ? val.productListByProductSku.productType
                         : "",
-                    offerPrice: "",
-                    save: "",
+                    offerPrice:
+                      val?.productListByProductSku?.productImagesByProductId
+                        ?.nodes[0].productListByProductId
+                        ?.transSkuListsByProductId?.nodes[0]?.discountPrice ??
+                      " ",
+
+                    save: " ",
                     skuID: val && val.productSku ? val.productSku : "",
                     description:
                       val?.productListByProductSku?.productImagesByProductId
