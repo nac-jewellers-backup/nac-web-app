@@ -306,7 +306,7 @@ const LoginComponent = (props) => {
               </h5>
             </Hidden>
             <h5 className={`title ${classes.normalfonts2}`}>
-              Email Login For registered Users
+              Email Login For Registered Users
             </h5>
 
             <Input
