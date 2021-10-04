@@ -285,7 +285,7 @@ const LoginComponent = (props) => {
   }
   return (
     <>
-      <div className={classes.root}>
+      <div>
         <form
           action="javascript:void(0)"
           onSubmit={(e) => {

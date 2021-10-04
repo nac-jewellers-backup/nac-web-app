@@ -50,19 +50,22 @@ const LoginComponent = (props) => {
               <img
                 width="100%"
                 height="380px"
-                className="login-image1"
+                style={{
+                  objectFit: "cover",
+                  objectPosition: "40% 5%",
+                }}
                 src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/login+register/Group+72.png"
               />
             </div>
           </Grid>
         </Hidden>
-        <Grid item xs={6} lg={6} xs={12}>
+        <Grid item xs={12} lg={6}>
           <Container>
             <Login />
           </Container>{" "}
         </Grid>
         <Hidden smDown>
-          <Grid item xs={6} lg={6} xs={12}>
+          <Grid item xs={12} lg={6}>
             <div>
               <img
                 width="100%"
