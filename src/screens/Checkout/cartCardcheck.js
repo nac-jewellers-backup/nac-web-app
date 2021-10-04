@@ -1,41 +1,41 @@
-import React from "react";
-import "./chckout.css";
 import {
-  Container,
-  ExpansionPanel,
-  ExpansionPanelSummary,
-  ExpansionPanelDetails,
-  Typography,
   Avatar,
-  Grid,
   Button,
+  ExpansionPanel,
+  ExpansionPanelDetails,
+  ExpansionPanelSummary,
+  Grid,
   Hidden,
+  Typography,
 } from "@material-ui/core";
-import "../../components/Checkout/Cart.css";
-import "./chckout.css";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import Addressform from "./addressDetails/addressForm";
-import ProductList from "./orderSummary/productList";
-import Cart from "containers/Cart";
-import LoginRegisterIndex from "./loginRegister";
 import { withStyles } from "@material-ui/core/styles";
-import PaymentIndex from "./paymentOption/paymentindex";
-import { useDummyRequest } from "../../hooks";
-import { cartdatas } from "../../mappers";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import Header from "components/SilverComponents/Header";
+import { useCheckForCod } from "hooks/CheckForCodHook";
+import { CheckForCod } from "queries/productdetail";
+import React from "react";
+import ReactPixel from "react-facebook-pixel";
+import { withRouter } from "react-router-dom";
 import CustomSeparator from "../../components/BreadCrumb/index";
-import styles from "../Checkout/loginRegister/style";
+import "../../components/Checkout/Cart.css";
 import CartCard from "../../components/Checkout/CartCard";
 import { CartContext, ProductDetailContext } from "../../context";
 import cart from "../../mappers/cart";
-import { CheckForCod } from "queries/productdetail";
-import { useCheckForCod } from "hooks/CheckForCodHook";
-import Header from "components/SilverComponents/Header";
-import { withRouter } from "react-router-dom";
-import ReactPixel from "react-facebook-pixel";
+import styles from "../Checkout/loginRegister/style";
+import Addressform from "./addressDetails/addressForm";
+import "./chckout.css";
+import LoginRegisterIndex from "./loginRegister";
+import ProductList from "./orderSummary/productList";
+import PaymentIndex from "./paymentOption/paymentindex";
 var adres = {};
 var variab = {};
 const CartCardCheck = (props) => {
-  const { loading, error, data: CodData, makeRequestCod } = useCheckForCod(CheckForCod, () => {}, {});
+  const {
+    loading,
+    error,
+    data: CodData,
+    makeRequestCod,
+  } = useCheckForCod(CheckForCod, () => {}, {});
   let {
     CartCtx: { setCartFilters },
   } = React.useContext(CartContext);
@@ -53,7 +53,9 @@ const CartCardCheck = (props) => {
 var obj_values = {};
 class Component extends React.Component {
   state = {
-    expanded: "panel" + (localStorage.getItem("panel") ? localStorage.getItem("panel") : 1),
+    expanded:
+      "panel" +
+      (localStorage.getItem("panel") ? localStorage.getItem("panel") : 1),
     // expanded: 'panel2',
     // expandedlimit: localStorage.getItem("panel") ? localStorage.getItem("panel") : 1,
     // expandedlimit: 1,
@@ -64,7 +66,8 @@ class Component extends React.Component {
     ReactPixel.init("1464338023867789", {}, { debug: true, autoConfig: false });
     ReactPixel.fbq("track", "PageView");
     ReactPixel.track("InitiateCheckout");
-  }e
+  }
+  e;
   handleChange = (panel) => (event) => {
     // alert(JSON.stringify(panel))
 
@@ -86,7 +89,8 @@ class Component extends React.Component {
     const { expanded } = this.state;
     // if (value && value.pincode && value.pincode.length > 2) {
     if (
-      (localStorage.getItem("bil_isactive") || localStorage.getItem("ship_isactive")) &&
+      (localStorage.getItem("bil_isactive") ||
+        localStorage.getItem("ship_isactive")) &&
       adres.value &&
       adres.value.pincode &&
       adres.value.pincode.length > 2 &&
@@ -103,7 +107,10 @@ class Component extends React.Component {
           expanded: "panel" + panel,
         });
       }
-      if ((expanded === "panel3" || expanded === "panel4") && "panel" + panel === "panel2") {
+      if (
+        (expanded === "panel3" || expanded === "panel4") &&
+        "panel" + panel === "panel2"
+      ) {
         localStorage.removeItem("bil_isactive");
         localStorage.removeItem("ship_isactive");
         localStorage.removeItem("select_addres");
@@ -162,7 +169,9 @@ class Component extends React.Component {
   };
   pincodeapi = () => {
     var obj_user = {};
-    let user_id = localStorage.getItem("user_id") ? localStorage.getItem("user_id") : "";
+    let user_id = localStorage.getItem("user_id")
+      ? localStorage.getItem("user_id")
+      : "";
     // let set_check = localStorage.getItem("set_check") ? localStorage.getItem("set_check") : ""
     this.props.makeRequestCod(variab);
     obj_user["user_id"] = user_id;
@@ -178,7 +187,9 @@ class Component extends React.Component {
     const { expanded, mailId, expandedlimit } = this.state;
     const { classes, data } = this.props;
     const { breadcrumsdata, cartsubdata } = this.props.data;
-    let email = localStorage.getItem("email") ? localStorage.getItem("email") : "";
+    let email = localStorage.getItem("email")
+      ? localStorage.getItem("email")
+      : "";
     variab["pincode"] = adres.value && adres.value.pincode;
     // alert(JSON.stringify(this.props.data))
     const breadcrumsdata_static = [
@@ -206,7 +217,9 @@ class Component extends React.Component {
         icon: "https://assets.stylori.com/images/static/icon-return.png",
       },
     ];
-    adres["value"] = localStorage.getItem("select_addres") ? JSON.parse(localStorage.getItem("select_addres")) : {};
+    adres["value"] = localStorage.getItem("select_addres")
+      ? JSON.parse(localStorage.getItem("select_addres"))
+      : {};
 
     // if (Object.keys(adres.value).length <= 0) {
     //     if (panel === 1) {
@@ -227,10 +240,12 @@ class Component extends React.Component {
           ProductIsActiveUrl = val.skuUrl;
         }
       });
-      window.open(`https://wa.me/919952625252?text=Hi - ${window.location.hostname + "/" + ProductIsActiveUrl ?? ""}`);
+      window.open(
+        `https://wa.me/919952625252?text=Hi - ${
+          window.location.hostname + "/" + ProductIsActiveUrl ?? ""
+        }`
+      );
     };
-
-  
 
     let ProductIsActive = true;
     this.props.data.map((val) => {
@@ -246,193 +261,272 @@ class Component extends React.Component {
           className={`breadcrums-header ${classes.normalcolorback}`}
           classsubhed={`breadcrums-sub ${classes.normalcolorback}`}
           list={`MuiBreadcrumbs-li ${classes.fontwhite}`}
-          data={this.props.data.length > 0 ? this.props.data[0].breadcrumsdata : breadcrumsdata_static}
-          subdata={this.props.data.length > 0 ? this.props.data[0].cartsubdata : cartsubdata_static}
+          data={
+            this.props.data.length > 0
+              ? this.props.data[0].breadcrumsdata
+              : breadcrumsdata_static
+          }
+          subdata={
+            this.props.data.length > 0
+              ? this.props.data[0].cartsubdata
+              : cartsubdata_static
+          }
           changePanel={this.changePanel}
         />
         <div className="pt-sm checkout-ovralldiv-media marginTop">
           <div style={{ marginTop: "20px" }}>
-            <ExpansionPanel square expanded={expanded === "panel1"} onChange={this.handleChange(1)} style={{ boxShadow: "none" }}>
-              <ExpansionPanelSummary
-                style={{ boxShadow: "rgb(222, 218, 218) 1px 2px 6px 0px" }}
-                expandIcon={<ExpandMoreIcon className="arrow-chek" />}
-                className="ckcut-main-body"
-              >
-                <Avatar className={`avart-ckc ${classes.normalcolorback}`}>1</Avatar>
-                <Typography className="text-chck">
-                  {" "}
-                  Login or Register
-                  <div className="ch-d-vl">{email}</div>
-                </Typography>
-              </ExpansionPanelSummary>
-              <ExpansionPanelDetails style={{ boxShadow: "rgb(222, 218, 218) 1px 2px 6px 0px" }}>
-                <LoginRegisterIndex changePanel={this.changePanel} />
-              </ExpansionPanelDetails>
-            </ExpansionPanel>
-
-            <ExpansionPanel
-              xs={6}
-              square
-              expanded={expanded === "panel2"}
-              onChange={this.handleChange(2)}
-              style={{ boxShadow: "none" }}
-            >
-              <ExpansionPanelSummary
-                style={{ width: "100%", overflow: "hidden", boxShadow: "rgb(222, 218, 218) 1px 2px 6px 0px" }}
-                expandIcon={<ExpandMoreIcon className="arrow-chek" />}
-                className="ckcut-main-body"
-              >
-                <Avatar className={`avart-ckc ${classes.normalcolorback}`}>2</Avatar>
-                <Typography className="text-chck">
-                  Address Detail
-                  <div className="ch-d-vl">
-                    {obj_values &&
-                    obj_values.adres_details &&
-                    obj_values.adres_details.firstname &&
-                    obj_values.adres_details.firstname.length > 0
-                      ? obj_values.adres_details && obj_values.adres_details.firstname
-                      : adres.value && adres.value.firstname}
-                    &nbsp;
-                    {obj_values &&
-                    obj_values.adres_details &&
-                    obj_values.adres_details.firstname &&
-                    obj_values.adres_details.firstname.length > 0
-                      ? obj_values.adres_details && obj_values.adres_details.lastname
-                      : adres.value && adres.value.lastname}
-                    &nbsp;
-                    {obj_values &&
-                    obj_values.adres_details &&
-                    obj_values.adres_details.firstname &&
-                    obj_values.adres_details.firstname.length > 0
-                      ? obj_values.adres_details && obj_values.adres_details.addressline1
-                      : adres.value && adres.value.addressline1}
-                    &nbsp;
-                    {obj_values &&
-                    obj_values.adres_details &&
-                    obj_values.adres_details.firstname &&
-                    obj_values.adres_details.firstname.length > 0
-                      ? obj_values.adres_details && obj_values.adres_details.city
-                      : adres.value && adres.value.city}
-                    {obj_values &&
-                    obj_values.adres_details &&
-                    obj_values.adres_details.firstname &&
-                    obj_values.adres_details.firstname.length > 0
-                      ? obj_values.adres_details && obj_values.adres_details.state
-                      : adres.value && adres.value.state}
-                    &nbsp;
-                    {obj_values &&
-                    obj_values.adres_details &&
-                    obj_values.adres_details.firstname &&
-                    obj_values.adres_details.firstname.length > 0
-                      ? obj_values.adres_details && obj_values.adres_details.pincode
-                      : adres.value && adres.value.pincode}
-                  </div>
-                </Typography>
-              </ExpansionPanelSummary>
-              <ExpansionPanelDetails style={{ boxShadow: "rgb(222, 218, 218) 1px 2px 6px 0px" }}>
-                <Grid container>
-                  <Grid item xs={12} lg={12}>
-                    <Addressform changePanel={this.changePanel} />
-                  </Grid>
-                </Grid>
-              </ExpansionPanelDetails>
-            </ExpansionPanel>
-            <ExpansionPanel
-              square
-              expanded={expanded === "panel3"}
-              onChange={this.handleChange(3)}
-              style={{ boxShadow: "none", boxShadow: "rgb(222, 218, 218) 1px 2px 6px 0px" }}
-            >
-              <ExpansionPanelSummary expandIcon={<ExpandMoreIcon className="arrow-chek" />} className="ckcut-main-body">
-                <Avatar className={`avart-ckc ${classes.normalcolorback}`}>3</Avatar>
-                <Typography className="text-chck">Order Summary</Typography>
-              </ExpansionPanelSummary>
-              <ExpansionPanelDetails style={{ boxShadow: "rgb(222, 218, 218) 1px 2px 6px 0px" }}>
-                <Grid container>
-                  <Grid item xs={12} lg={12}>
+            <Grid container>
+              <Grid xs={12} lg={6}>
+                <ExpansionPanel
+                  square
+                  expanded={expanded === "panel1"}
+                  onChange={this.handleChange(1)}
+                  style={{ boxShadow: "none" }}
+                >
+                  <ExpansionPanelSummary
+                    style={{ boxShadow: "rgb(222, 218, 218) 1px 2px 6px 0px" }}
+                    expandIcon={<ExpandMoreIcon className="arrow-chek" />}
+                    className="ckcut-main-body"
+                  >
+                    <Avatar className={`avart-ckc ${classes.normalcolorback}`}>
+                      1
+                    </Avatar>
+                    <Typography className="text-chck">
+                      {" "}
+                      Login or Register
+                      <div className="ch-d-vl">{email}</div>
+                    </Typography>
+                  </ExpansionPanelSummary>
+                  <ExpansionPanelDetails
+                    style={{ boxShadow: "rgb(222, 218, 218) 1px 2px 6px 0px" }}
+                  >
+                    <LoginRegisterIndex changePanel={this.changePanel} />
+                  </ExpansionPanelDetails>
+                </ExpansionPanel>
+                <ExpansionPanel
+                  xs={6}
+                  square
+                  expanded={expanded === "panel2"}
+                  onChange={this.handleChange(2)}
+                  style={{ boxShadow: "none" }}
+                >
+                  <ExpansionPanelSummary
+                    style={{
+                      width: "100%",
+                      overflow: "hidden",
+                      boxShadow: "rgb(222, 218, 218) 1px 2px 6px 0px",
+                    }}
+                    expandIcon={<ExpandMoreIcon className="arrow-chek" />}
+                    className="ckcut-main-body"
+                  >
+                    <Avatar className={`avart-ckc ${classes.normalcolorback}`}>
+                      2
+                    </Avatar>
+                    <Typography className="text-chck">
+                      Address Detail
+                      <div className="ch-d-vl">
+                        {obj_values &&
+                        obj_values.adres_details &&
+                        obj_values.adres_details.firstname &&
+                        obj_values.adres_details.firstname.length > 0
+                          ? obj_values.adres_details &&
+                            obj_values.adres_details.firstname
+                          : adres.value && adres.value.firstname}
+                        &nbsp;
+                        {obj_values &&
+                        obj_values.adres_details &&
+                        obj_values.adres_details.firstname &&
+                        obj_values.adres_details.firstname.length > 0
+                          ? obj_values.adres_details &&
+                            obj_values.adres_details.lastname
+                          : adres.value && adres.value.lastname}
+                        &nbsp;
+                        {obj_values &&
+                        obj_values.adres_details &&
+                        obj_values.adres_details.firstname &&
+                        obj_values.adres_details.firstname.length > 0
+                          ? obj_values.adres_details &&
+                            obj_values.adres_details.addressline1
+                          : adres.value && adres.value.addressline1}
+                        &nbsp;
+                        {obj_values &&
+                        obj_values.adres_details &&
+                        obj_values.adres_details.firstname &&
+                        obj_values.adres_details.firstname.length > 0
+                          ? obj_values.adres_details &&
+                            obj_values.adres_details.city
+                          : adres.value && adres.value.city}
+                        {obj_values &&
+                        obj_values.adres_details &&
+                        obj_values.adres_details.firstname &&
+                        obj_values.adres_details.firstname.length > 0
+                          ? obj_values.adres_details &&
+                            obj_values.adres_details.state
+                          : adres.value && adres.value.state}
+                        &nbsp;
+                        {obj_values &&
+                        obj_values.adres_details &&
+                        obj_values.adres_details.firstname &&
+                        obj_values.adres_details.firstname.length > 0
+                          ? obj_values.adres_details &&
+                            obj_values.adres_details.pincode
+                          : adres.value && adres.value.pincode}
+                      </div>
+                    </Typography>
+                  </ExpansionPanelSummary>
+                  <ExpansionPanelDetails
+                    style={{ boxShadow: "rgb(222, 218, 218) 1px 2px 6px 0px" }}
+                  >
                     <Grid container>
-                      <Grid xs={12} lg={7} />
-                      <Grid xs={12} lg={4}>
-                        <div style={{ float: "right" }}>
-                          {ProductIsActive ? (
-                            <Button onClick={() => this.pincodeapi()} className="summaryOrder-pay-btn">
-                              Continue to Pay
-                            </Button>
-                          ) : (
-                            <Button className="summaryOrder-pay-btn" onClick={enquireLink}>
-                              Enquire Now
-                            </Button>
-                          )}
-                        </div>
+                      <Grid item xs={12} lg={12}>
+                        <Addressform changePanel={this.changePanel} />
                       </Grid>
                     </Grid>
-                    <br />
-
-                    <CartCard
-                      data={data}
-                      isStateFilterContextQty={this.props.isdatafromstate}
-                      isdatafromstate={this.props.isdatafromstate}
-                    />
-
-                    <Hidden smDown>
-                      <Grid container>
-                        <Grid xs={12} lg={7} />
-                        <Grid xs={12} lg={4}>
-                          <div style={{ float: "right", marginBottom: "5px" }}>
-                            {ProductIsActive ? (
-                              <Button onClick={() => this.pincodeapi()} className="summaryOrder-pay-btn">
-                                Continue to Pay
-                              </Button>
-                            ) : (
-                              <Button className="summaryOrder-pay-btn" onClick={enquireLink}>
-                                Enquire Now
-                              </Button>
-                            )}
-                          </div>
+                  </ExpansionPanelDetails>
+                </ExpansionPanel>
+                <ExpansionPanel
+                  square
+                  expanded={expanded === "panel3"}
+                  onChange={this.handleChange(3)}
+                  style={{
+                    boxShadow: "none",
+                    boxShadow: "rgb(222, 218, 218) 1px 2px 6px 0px",
+                  }}
+                >
+                  <ExpansionPanelSummary
+                    expandIcon={<ExpandMoreIcon className="arrow-chek" />}
+                    className="ckcut-main-body"
+                  >
+                    <Avatar className={`avart-ckc ${classes.normalcolorback}`}>
+                      3
+                    </Avatar>
+                    <Typography className="text-chck">Order Summary</Typography>
+                  </ExpansionPanelSummary>
+                  <ExpansionPanelDetails
+                    style={{ boxShadow: "rgb(222, 218, 218) 1px 2px 6px 0px" }}
+                  >
+                    <Grid container>
+                      <Grid item xs={12} lg={12}>
+                        <Grid container>
+                          <Grid xs={12} lg={7} />
+                          <Grid xs={12} lg={4}>
+                            <div style={{ float: "right" }}>
+                              {ProductIsActive ? (
+                                <Button
+                                  onClick={() => this.pincodeapi()}
+                                  className="summaryOrder-pay-btn"
+                                >
+                                  Continue to Pay
+                                </Button>
+                              ) : (
+                                <Button
+                                  className="summaryOrder-pay-btn"
+                                  onClick={enquireLink}
+                                >
+                                  Enquire Now
+                                </Button>
+                              )}
+                            </div>
+                          </Grid>
                         </Grid>
+                        <br />
+
+                        <CartCard
+                          data={data}
+                          isStateFilterContextQty={this.props.isdatafromstate}
+                          isdatafromstate={this.props.isdatafromstate}
+                        />
+
+                        <Hidden smDown>
+                          <Grid container>
+                            <Grid xs={12} lg={7} />
+                            <Grid xs={12} lg={4}>
+                              <div
+                                style={{ float: "right", marginBottom: "5px" }}
+                              >
+                                {ProductIsActive ? (
+                                  <Button
+                                    onClick={() => this.pincodeapi()}
+                                    className="summaryOrder-pay-btn"
+                                  >
+                                    Continue to Pay
+                                  </Button>
+                                ) : (
+                                  <Button
+                                    className="summaryOrder-pay-btn"
+                                    onClick={enquireLink}
+                                  >
+                                    Enquire Now
+                                  </Button>
+                                )}
+                              </div>
+                            </Grid>
+                          </Grid>
+                          <br />
+                        </Hidden>
                       </Grid>
-                      <br />
-                    </Hidden>
-                  </Grid>
-                  <Grid item xs={12} lg={12} className={classes.cart}>
-                    <ProductList />
-                  </Grid>
-                  <Hidden mdUp>
-                    <Grid container style={{ marginTop: "10px" }}>
-                      <Grid xs={12} lg={7} />
-                      <Grid xs={12} lg={4}>
-                        <div style={{ float: "right", marginBottom: "5px" }}>
-                          {ProductIsActive ? (
-                            <Button onClick={() => this.pincodeapi()} className="summaryOrder-pay-btn">
-                              Continue to Pay
-                            </Button>
-                          ) : (
-                            <Button className="summaryOrder-pay-btn" onClick={enquireLink}>
-                              Enquire Now
-                            </Button>
-                          )}
-                        </div>
+                      <Grid item xs={12} lg={12} className={classes.cart}>
+                        <ProductList />
                       </Grid>
+                      <Hidden mdUp>
+                        <Grid container style={{ marginTop: "10px" }}>
+                          <Grid xs={12} lg={7} />
+                          <Grid xs={12} lg={4}>
+                            <div
+                              style={{ float: "right", marginBottom: "5px" }}
+                            >
+                              {ProductIsActive ? (
+                                <Button
+                                  onClick={() => this.pincodeapi()}
+                                  className="summaryOrder-pay-btn"
+                                >
+                                  Continue to Pay
+                                </Button>
+                              ) : (
+                                <Button
+                                  className="summaryOrder-pay-btn"
+                                  onClick={enquireLink}
+                                >
+                                  Enquire Now
+                                </Button>
+                              )}
+                            </div>
+                          </Grid>
+                        </Grid>
+                        <br />
+                      </Hidden>
                     </Grid>
-                    <br />
-                  </Hidden>
-                </Grid>
-              </ExpansionPanelDetails>
-            </ExpansionPanel>
-            <ExpansionPanel
-              square
-              expanded={expanded === "panel4"}
-              onChange={this.handleChange(4)}
-              style={{ boxShadow: "none", boxShadow: "rgb(222, 218, 218) 1px 2px 6px 0px" }}
-            >
-              <ExpansionPanelSummary expandIcon={<ExpandMoreIcon className="arrow-chek" />} className="ckcut-main-body">
-                <Avatar className={`avart-ckc ${classes.normalcolorback}`}>4</Avatar>
-                <Typography className="text-chck">Payment Options</Typography>
-              </ExpansionPanelSummary>
-              <ExpansionPanelDetails style={{ boxShadow: "rgb(222, 218, 218) 1px 2px 6px 0px" }}>
-                <PaymentIndex data={data} CodData={this.props.CodData} />
-              </ExpansionPanelDetails>
-            </ExpansionPanel>
+                  </ExpansionPanelDetails>
+                </ExpansionPanel>
+                <ExpansionPanel
+                  square
+                  expanded={expanded === "panel4"}
+                  onChange={this.handleChange(4)}
+                  style={{
+                    boxShadow: "none",
+                    boxShadow: "rgb(222, 218, 218) 1px 2px 6px 0px",
+                  }}
+                >
+                  <ExpansionPanelSummary
+                    expandIcon={<ExpandMoreIcon className="arrow-chek" />}
+                    className="ckcut-main-body"
+                  >
+                    <Avatar className={`avart-ckc ${classes.normalcolorback}`}>
+                      4
+                    </Avatar>
+                    <Typography className="text-chck">
+                      Payment Options
+                    </Typography>
+                  </ExpansionPanelSummary>
+                  <ExpansionPanelDetails
+                    style={{ boxShadow: "rgb(222, 218, 218) 1px 2px 6px 0px" }}
+                  >
+                    <PaymentIndex data={data} CodData={this.props.CodData} />
+                  </ExpansionPanelDetails>
+                </ExpansionPanel>
+              </Grid>
+              <Grid xs={12} lg={6}></Grid>
+            </Grid>
           </div>
         </div>
       </Grid>
@@ -441,7 +535,6 @@ class Component extends React.Component {
 }
 
 const Components = (props) => {
- 
   let {
     CartCtx: { data, loading, error, allorderdata, wishlistdata },
   } = React.useContext(CartContext);
@@ -459,7 +552,10 @@ const Components = (props) => {
     alert("Your cart is empty");
     props.history.push("/jewellery");
   };
-  if (Object.keys(data).length === 0 || data.data.allTransSkuLists.nodes.length === 0)
+  if (
+    Object.keys(data).length === 0 ||
+    data.data.allTransSkuLists.nodes.length === 0
+  )
     content = <div className="overall-loader">{/* {cartValueEmpty() */}</div>;
   else
     content = (

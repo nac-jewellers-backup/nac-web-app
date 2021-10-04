@@ -292,21 +292,20 @@ const LoginComponent = (props) => {
             handlers.handelSubmit(e, props.history.push);
           }}
         >
-          <Grid
-            container
-            item
-            xs={12}
-            lg={window.location.pathname === "/login" ? 12 : 6}
-          >
+          <Grid container item xs={12}>
             <Hidden smDown>
-              <h5 className={`title ${classes.normalfonts}`}>
-                {window.location.pathname === "/login"
-                  ? "Login"
-                  : "I already have an account"}
-              </h5>
+              {props.checkoutpage ? (
+                " "
+              ) : (
+                <h5 className={`title ${classes.normalfonts}`}>
+                  {window.location.pathname === "/login"
+                    ? "Login"
+                    : "I already have an account"}
+                </h5>
+              )}
             </Hidden>
             <h5 className={`title ${classes.normalfonts2}`}>
-              Email Login For registered Users
+              Email Login For Registered Users
             </h5>
 
             <Input
@@ -323,8 +322,6 @@ const LoginComponent = (props) => {
               {values.error.emerr && values.errortext.emerr}
             </label>
             <Input
-              // variant="outlined"
-
               type="password"
               name="password"
               value={values.password}
@@ -355,9 +352,12 @@ const LoginComponent = (props) => {
             {window.location.pathname === "/login" ? (
               ""
             ) : (
+                <>
               <Button className="back-b" onClick={() => clear()}>
-                Back
-              </Button>
+                  Back
+                </Button>
+                <br/>
+                  </>
             )}
 
             <Button className="apply-b" type="submit">
@@ -420,7 +420,7 @@ const LoginComponent = (props) => {
                       <Button
                         variant="contained"
                         style={{
-                          padding: "4px 5px",
+                          padding: "5px 7px",
                           backgroundColor: "#F3F3F3",
                           borderRadius: "0px",
                           boxShadow: "0px 2px 4px 1px #888888",
@@ -448,7 +448,7 @@ const LoginComponent = (props) => {
                       <Button
                         variant="contained"
                         style={{
-                          padding: "4px 5px",
+                          padding: "5px 7px",
                           textTransform: "Capitailze",
                           backgroundColor: "#F3F3F3",
                           borderRadius: "0px",

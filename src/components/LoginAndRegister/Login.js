@@ -61,7 +61,9 @@ const LoginComponent = (props) => {
         </Hidden>
         <Grid item xs={12} lg={6}>
           <Container>
-            <Login />
+            <div className={classes.root}>
+              <Login />
+            </div>
           </Container>{" "}
         </Grid>
         <Hidden smDown>

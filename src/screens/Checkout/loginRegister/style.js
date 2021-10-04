@@ -16,10 +16,10 @@ export const styles = (theme) => ({
     fontWeight: "590px",
     textTransform: "capitalize",
     [theme.breakpoints.down("xs")]: {
-      fontSize: "0.7rem !important",
+      fontSize: "0.9rem;!important",
     },
     [theme.breakpoints.up("lg")]: {
-      fontSize: "0.8rem !important",
+      fontSize: "0.9rem !important",
     },
   },
   btnicon: {
@@ -45,14 +45,7 @@ export const styles = (theme) => ({
     borderTop: "1.3px solid gray",
     paddingTop: "8%",
   },
-  root: {
-    [theme.breakpoints.down("xs")]: {
-      padding: 0,
-    },
-    [theme.breakpoints.up("lg")]: {
-      padding: "15%",
-    },
-  },
+
   normalfonts: {
     color: "gray !important",
     textTransform: "uppercase",

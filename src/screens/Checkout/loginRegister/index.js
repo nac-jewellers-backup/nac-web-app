@@ -138,6 +138,7 @@ class LoginRegisterIndex extends React.Component {
                     Login: false,
                   });
                 }}
+                checkoutpage="true"
               />
             </div>
             <div

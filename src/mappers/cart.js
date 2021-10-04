@@ -204,7 +204,7 @@ export default function (data) {
         dataCard1: [
           {
             offerPrice: k.markupPrice,
-            price: k.sellingPrice,
+            price: k.discountPrice,
             title: "Diamond Pendant Ring",
             dis: "Pendants set in 18 Kt Yellow Gold 3.95 gm with Diamonds (0.52 ct, GH - SI )",
             save: "5999.9",

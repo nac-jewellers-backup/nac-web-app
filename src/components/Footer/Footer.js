@@ -366,6 +366,10 @@ export default function Footer(props) {
           url: "/return",
           Title: "30 Day Return",
         },
+        {
+          url: "/",
+          Title: "Blog",
+        },
       ],
     },
     {
@@ -428,6 +432,10 @@ export default function Footer(props) {
     {
       url: "",
       Title: "30 Day Return",
+    },
+    {
+      url: "",
+      Title: "Blog",
     },
     // {
     //   url:
@@ -512,6 +520,10 @@ export default function Footer(props) {
         },
         {
           subTitle: "30 Day Return",
+          url: "/temple-work",
+        },
+        {
+          subTitle: "Blog",
           url: "/temple-work",
         },
       ],
