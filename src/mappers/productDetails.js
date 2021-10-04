@@ -1171,8 +1171,6 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
             ? like_data.data.youMayalsolike1 &&
               like_data.data.youMayalsolike1.nodes.length > 0
               ? like_data.data.youMayalsolike1.nodes.map((val) => {
-                  console.log(val);
-                  //debugger;
                   return {
                     offerDiscount: val?.transSkuListsByProductId?.nodes[0]
                       ?.discount
@@ -1183,10 +1181,10 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                       val.transSkuListsByProductId &&
                       val.transSkuListsByProductId.nodes &&
                       val.transSkuListsByProductId.nodes.length > 0 &&
-                      val.transSkuListsByProductId.nodes[0].discountPrice &&
-                      val.transSkuListsByProductId.nodes[0].discountPrice
+                      val.transSkuListsByProductId.nodes[0].markupPrice &&
+                      val.transSkuListsByProductId.nodes[0].markupPrice
                         ? Math.round(
-                            val.transSkuListsByProductId.nodes[0].discountPrice
+                            val.transSkuListsByProductId.nodes[0].markupPrice
                           )
                         : 0,
                     offerPrice:
@@ -1283,6 +1281,7 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
             ? viewedddatas.data.allProductMaterials &&
               viewedddatas.data.allProductMaterials.nodes.length > 0
               ? viewedddatas.data.allProductMaterials.nodes.map((val) => {
+                  console.log(val);
                   //debugger;
                   return {
                     img:

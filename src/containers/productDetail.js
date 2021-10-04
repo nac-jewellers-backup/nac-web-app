@@ -505,9 +505,6 @@ class ProductDetail extends Component {
                       dataCarousel={dataCarouselcollections}
                     >
                       {this.props?.data[0]?.fadeImageSublistRecentlyViewed?.map((val) => {
-                        {
-                          console.log(val);
-                        }
                         return <ImgMediaCard data={val} cardSize="auto" hoverText={true} />;
                       })}
                     </Slideshow>
