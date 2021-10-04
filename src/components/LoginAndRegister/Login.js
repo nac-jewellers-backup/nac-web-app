@@ -43,14 +43,14 @@ const LoginComponent = (props) => {
   return (
     <Grid container>
       <Header wishlist={wishlistdata} cartcount={cartcount} />
-      <Grid spacing={12} container style={{ padding: "3%" }}>
+      <Grid spacing={12} container>
         <Hidden mdUp>
-          <Grid item xs={6} lg={6} xs={12}>
+          <Grid item xs={12}>
             <div>
               <img
                 width="100%"
                 height="380px"
-                style={{ objectFit: "contain" }}
+                className="login-image1"
                 src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/login+register/Group+72.png"
               />
             </div>
@@ -67,7 +67,10 @@ const LoginComponent = (props) => {
               <img
                 width="100%"
                 height="600px"
-                style={{ objectFit: "contain" }}
+                style={{
+                  objectFit: "cover",
+                  objectPosition: "40% 5%",
+                }}
                 src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/login+register/Group+72.png"
               />
             </div>

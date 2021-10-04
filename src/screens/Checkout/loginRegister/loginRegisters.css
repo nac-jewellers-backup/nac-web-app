@@ -24,6 +24,7 @@
 }
 
 .back-b {
+  box-shadow: 0px 3px 0px 3px #888888;
   background: #fff !important;
   color: #394578 !important;
   border-radius: 0px !important;
@@ -35,6 +36,7 @@
 }
 
 .apply-b {
+  box-shadow: 2px 3px 6px 2px #888888;
   border-radius: 0px !important;
   text-align: center !important;
   font-size: 16px !important;
@@ -118,20 +120,24 @@
 
 .my-facebook-button-class {
   background: #f3f3f3;
-  padding: 3px 8px;
-  box-shadow: 5px 5px 5px #aaaaaa;
+  padding: 7px 8px;
+
   border: none;
   font-weight: 545;
-  color: rgb(148, 143, 143);
+  box-shadow: 0px 2px 4px 1px #888888;
+  color: gray;
   white-space: nowrap;
   cursor: pointer;
+  font-weight: 590px;
+  font-family: notoSerif-regular;
   outline: none;
 }
 @media screen and (max-width: 429px) {
   .my-facebook-button-class {
     background: #f3f3f3;
+    font-family: notoSerif-regular;
     padding: 3px 7px;
-    box-shadow: 5px 5px 5px #aaaaaa;
+    box-shadow: 2px 3px 6px 2px #888888;
     border: none;
     font-weight: 545;
     color: rgb(148, 143, 143);
