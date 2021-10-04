@@ -58,7 +58,7 @@ export const Input = (props) => {
       <TextField
         autoComplete={props && props.autoComplete && props.autoComplete}
         inputProps={{ pattern, maxLength, minLength }}
-        style={{ width: "100%" }}
+        style={{ width: "100%", marginTop: "26px" }}
         onInvalid={handleInvalid}
         error={invalid}
         multiline={multiline}

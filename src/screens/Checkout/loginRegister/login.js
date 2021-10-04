@@ -323,8 +323,8 @@ const LoginComponent = (props) => {
               {values.error.emerr && values.errortext.emerr}
             </label>
             <Input
-              margin="normal"
               // variant="outlined"
+
               type="password"
               name="password"
               value={values.password}

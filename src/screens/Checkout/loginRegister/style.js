@@ -64,7 +64,7 @@ export const styles = (theme) => ({
     color: "gray !important",
     marginTop: "30px",
     fontSize: "1.1rem !important",
-    paddingBottom: "24px",
+    paddingBottom: "14px !important",
   },
   normalcolorback: {
     background: theme.palette.text.primary,

@@ -130,6 +130,7 @@
   font-weight: 590px;
   font-family: notoSerif-regular;
   outline: none;
+  text-transform: capitalize;
 }
 @media screen and (max-width: 429px) {
   .my-facebook-button-class {
