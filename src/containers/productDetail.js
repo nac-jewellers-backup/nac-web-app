@@ -789,9 +789,6 @@ class ProductDetail extends Component {
                     >
                       {this.props?.data[0]?.fadeImageSublistRecentlyViewed?.map(
                         (val) => {
-                          {
-                            console.log(val);
-                          }
                           return (
                             <ImgMediaCard
                               data={val}
