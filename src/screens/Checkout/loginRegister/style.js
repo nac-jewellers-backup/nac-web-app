@@ -12,6 +12,25 @@ export const styles = (theme) => ({
       background: "#1c8454",
     },
   },
+  btntext: {
+    fontWeight: "590px",
+    textTransform: "capitalize",
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "0.7rem !important",
+    },
+    [theme.breakpoints.up("lg")]: {
+      fontSize: "0.8rem !important",
+    },
+  },
+  btnicon: {
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "0.8rem !important",
+    },
+    [theme.breakpoints.up("lg")]: {
+      fontSize: "0.9rem !important",
+    },
+  },
+
   //   input: {
   //     borderBottom: "2px solid gray",
   //     borderRadius: "4px",
@@ -31,7 +50,7 @@ export const styles = (theme) => ({
       padding: 0,
     },
     [theme.breakpoints.up("lg")]: {
-      padding: 20,
+      padding: "15%",
     },
   },
   normalfonts: {
@@ -39,11 +58,12 @@ export const styles = (theme) => ({
     textTransform: "uppercase",
     borderBottom: "1.5px solid gray",
     paddingBottom: "10px",
+    fontSize: "1.1rem !important",
   },
   normalfonts2: {
     color: "gray !important",
-    marginTop: "20px",
-    fontSize: "1.2rem",
+    marginTop: "30px",
+    fontSize: "1.1rem !important",
     paddingBottom: "24px",
   },
   normalcolorback: {

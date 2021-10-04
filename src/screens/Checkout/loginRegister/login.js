@@ -6,6 +6,9 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 import React from "react";
 import FacebookLogin from "react-facebook-login";
+import { AiOutlineMobile } from "react-icons/ai";
+import { FcGoogle } from "react-icons/fc";
+import { ImFacebook } from "react-icons/im";
 import { withRouter } from "react-router-dom";
 import { Input } from "../../../components/InputComponents/TextField/Input";
 import "./loginRegisters.css";
@@ -359,7 +362,7 @@ const LoginComponent = (props) => {
 
             <Button className="apply-b" type="submit">
               {" "}
-              {window.location.pathname === "/login" ? "Login" : "Login"}
+              {window.location.pathname === "/login" ? "SIGN IN" : "Login"}
             </Button>
           </div>
           <div
@@ -379,20 +382,91 @@ const LoginComponent = (props) => {
               </span>
             </center>
           </div>
-          <Grid container justifyContent="center" className={classes.other}>
+          <Grid
+            container
+            justifyContent="center"
+            className={classes.other}
+            style={{ padding: "10px" }}
+          >
             <Grid item xs={12}>
+              <br />
               <Box display="flex" flexDirection="row" justifyContent="center">
-                <Box padding="10px">
+                <Box padding="5px">
                   <div style={{ cursor: "pointer" }}>
                     <FacebookLogin
+                      id="facebook"
                       appId="183747199380935"
                       // autoLoad={true}
+                      textButton="Sign in with Facebook"
                       fields="name,email,id,first_name,last_name"
-                      callback={responseFacebook}
                       cssClass="my-facebook-button-class"
-                      icon="fab fa-facebook-square fb"
                       disableMobileRedirect={true}
+                      callback={responseFacebook}
+                      icon={
+                        <ImFacebook
+                          style={{
+                            color: "#335B9A",
+                            marginRight: "3px",
+                            paddingRight: "2px",
+                          }}
+                        />
+                      }
                     />
+                  </div>
+                </Box>
+                <Box padding="5px">
+                  <div style={{ cursor: "pointer" }}>
+                    <label>
+                      <Button
+                        variant="contained"
+                        style={{
+                          padding: "4px 5px",
+                          backgroundColor: "#F3F3F3",
+                          borderRadius: "0px",
+                          boxShadow: "0px 2px 4px 1px #888888",
+                          color: "gray",
+                          whiteSpace: "nowrap",
+                        }}
+                        className={classes.btntext}
+                        startIcon={
+                          <FcGoogle
+                            style={{ marginLeft: "4px" }}
+                            className={classes.btnicon}
+                          />
+                        }
+                      >
+                        Sign in with Google
+                      </Button>
+                    </label>
+                  </div>
+                </Box>
+              </Box>
+              <Box display="flex" flexDirection="row" justifyContent="center">
+                <Box padding="5px">
+                  <div style={{ cursor: "pointer" }}>
+                    <label>
+                      <Button
+                        variant="contained"
+                        style={{
+                          padding: "4px 5px",
+                          textTransform: "Capitailze",
+                          backgroundColor: "#F3F3F3",
+                          borderRadius: "0px",
+                          boxShadow: "0px 2px 4px 1px #888888",
+                          color: "gray",
+                          whiteSpace: "nowrap",
+                        }}
+                        className={classes.btntext}
+                        startIcon={
+                          <AiOutlineMobile
+                            style={{ marginLeft: "4px", color: "#E28CAB" }}
+                            className={classes.btnicon}
+                          />
+                        }
+                      >
+                        Sign in with OTP
+                      </Button>
+                    </label>
                   </div>
                 </Box>
               </Box>
