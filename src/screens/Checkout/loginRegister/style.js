@@ -1,4 +1,22 @@
 export const styles = (theme) => ({
+  ordersummery: {
+    [theme.breakpoints.down("xs")]: {
+      paddingRight: "10px",
+      paddingLeft: "10px",
+    },
+    [theme.breakpoints.up("lg")]: {
+      paddingRight: "40px",
+      paddingLeft: "40px",
+    },
+  },
+  padding: {
+    [theme.breakpoints.down("xs")]: {
+      padding: "15px",
+    },
+    [theme.breakpoints.up("lg")]: {
+      padding: "40px",
+    },
+  },
   summaryOrder: {
     background: theme.palette.primary.main,
     color: " #FFF !important",

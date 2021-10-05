@@ -29,32 +29,22 @@
   text-transform: none !important;
   box-shadow: #f55d07 1px 2px 6px 0px !important;
 }
-
+.ch-d-vl {
+  padding: 0px 15px;
+}
 .text-chck {
   padding: 8px 15px;
   color: gray;
   font-weight: 500 !important;
   text-transform: capitalize !important;
   width: 100% !important;
-  float: left !important;
 }
 .text-chck-bold {
-  padding: 8px 15px;
   color: gray;
-  font-weight: bold !important;
+
   text-transform: capitalize !important;
   width: 100% !important;
   float: left !important;
-}
-
-@media screen and (max-width: 347px) {
-  .text-chck {
-    padding: 8px 0px;
-    color: #394578;
-    font-weight: 700 !important;
-    width: 100% !important;
-    float: left !important;
-  }
 }
 
 @media screen and (min-width: 1221px) {

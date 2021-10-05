@@ -1,4 +1,7 @@
 const styles = (theme) => ({
+  padding: {
+    padding: "40px",
+  },
   cartheader: {
     color: "gray",
     fontSize: "14px",
@@ -33,12 +36,6 @@ const styles = (theme) => ({
       padding: "10px",
     },
     [theme.breakpoints.up("lg")]: {
-      // width: "100%",
-      // border: "0.5px solid #ccc",
-      //boxShadow: "0px 1px 9px 4px #DEDADA!important",
-      // padding: "10px",
-      marginBottom: "20px",
-      padding: "10px",
       outline: "none !important",
     },
   },
@@ -47,7 +44,8 @@ const styles = (theme) => ({
     margin: "auto",
     display: "flex",
     marginBottom: "15px",
-    boxShadow: "rgb(222, 218, 218) 1px 2px 13px 7px",
+    borderBottom: "1px solid #C1C1C1",
+    outline: "none !important",
   },
   details: {
     display: "flex",

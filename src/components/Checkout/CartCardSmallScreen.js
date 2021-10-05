@@ -1,5 +1,4 @@
-import { Grid } from "@material-ui/core";
-import Card from "@material-ui/core/Card";
+import { Button, Grid } from "@material-ui/core";
 import CardContent from "@material-ui/core/CardContent";
 import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
@@ -146,26 +145,19 @@ function MediaControlCard(props) {
     slidesToShow: 1,
     arrows: false,
   };
-  console.log(props, "aaaaaaaaaaaaaaaaaaaaaaaaaaa");
+
   return (
     <div style={{ paddingTop: "10px" }}>
-      {/* <Grid container>
-        <Grid xs={6} > */}
-      <span style={{ color: "#666", fontSize: "14px", margin: "0px 0px 10px" }}>
-        {" "}
-        Shopping cart{" "}
-      </span>{" "}
-      <br />
-      {props.checkoutbutton}
-      <br />
-      <br />
-      <br />
+      {/* {props.checkoutbutton} */}
       {props.data.map((dataval) =>
         dataval.productsDetails.map((val) => {
           return (
-            <Card className={classes.card}>
-              <Grid container>
-                <Grid xs={6}>
+            <div className={classes.card}>
+              <Grid
+                container
+                style={{ paddingTop: "20px", paddingBottom: "20px" }}
+              >
+                <Grid xs={4}>
                   {window.location.pathname !== "/checkout" ? (
                     <NavLink
                       to={dataval?.skuUrl}
@@ -185,7 +177,7 @@ function MediaControlCard(props) {
                     ></img>
                   )}
                 </Grid>
-                <Grid xs={6}>
+                <Grid xs={8}>
                   <div className={classes.details}>
                     <CardContent className={classes.content}>
                       {window.location.pathname !== "/checkout" ? (
@@ -196,42 +188,58 @@ function MediaControlCard(props) {
                             textTransform: "capitalize",
                           }}
                         >
-                          <Typography
-                            component="div"
-                            variant="subtitle1"
-                            className={`${classes.contents} ${classes.normalfonts}`}
+                          <span
+                            style={{
+                              color: "gray",
+                              fontSize: "0.9rem",
+                              textTransform: "capitalize",
+                            }}
                           >
                             {val.pro_header}
-                          </Typography>
+                          </span>
                         </NavLink>
                       ) : (
-                        <Typography
-                          component="div"
-                          variant="subtitle1"
-                          style={{ textTransform: "capitalize" }}
-                          className={`${classes.contents} ${classes.normalfonts}`}
+                        <span
+                          style={{
+                            color: "gray",
+                            fontSize: "0.9rem",
+                            textTransform: "capitalize",
+                          }}
                         >
                           {val.pro_header}
-                        </Typography>
+                        </span>
                       )}
-                      <Typography
-                        className={`subhesder ${classes.normalfonts}`}
-                      >
-                        {window.location.pathname === "/checkout" ||
-                        checkMaterial(dataval.materialName) ||
-                        !Boolean(dataval?.[0]?.maxOrderQty) ||
-                        dataval?.[0]?.maxOrderQty < 2 ? (
-                          `Quantity ${
-                            JSON.parse(localStorage.getItem("quantity"))[
-                              dataval.generatedSku
-                            ]
-                          }`
-                        ) : (
-                          <Quantity data={[dataval]} cart={true} />
-                        )}
-                      </Typography>
+
+                      <Grid container style={{ marginTop: "10px" }}>
+                        <Grid item xs={6}>
+                          <Typography
+                            className={`subhesder ${classes.normalfonts}`}
+                          >
+                            Size
+                          </Typography>
+                        </Grid>
+                        <Grid item xs={6}>
+                          <Typography
+                            className={`subhesder ${classes.normalfonts}`}
+                          >
+                            {window.location.pathname === "/checkout" ||
+                            checkMaterial(dataval.materialName) ||
+                            !Boolean(dataval?.[0]?.maxOrderQty) ||
+                            dataval?.[0]?.maxOrderQty < 2 ? (
+                              `Quantity ${
+                                JSON.parse(localStorage.getItem("quantity"))[
+                                  dataval.generatedSku
+                                ]
+                              }`
+                            ) : (
+                              <Quantity data={[dataval]} cart={true} />
+                            )}
+                          </Typography>
+                        </Grid>
+                      </Grid>
                       {dataval.dataCard1.map((val) => (
                         <Pricing
+                          cartsm={true}
                           price={val.offerPrice}
                           offerPrice={val.price}
                           offerDiscount={
@@ -245,42 +253,55 @@ function MediaControlCard(props) {
                         ></Pricing>
                       ))}
                     </CardContent>
-                    <div>
-                      {window.location.pathname !== "/checkout" ? (
-                        <div
-                          variant="contained"
-                          style={{ cursor: "pointer", fontSize: "0.9rem" }}
-                          className={`${classes.normalfonts} ${classes.controls}`}
-                          className="highliter"
-                        >
-                          &nbsp;
-                          <div
-                            style={{
-                              display: "flex",
-                              justifyContent: "center",
-                              float: "right",
-                              marginRight: "1rem",
-                            }}
-                            id={dataval.generatedSku}
-                            className="highliter"
-                            productid={dataval}
-                            onClick={(e) => handleDeleteLocalStorage(e, val)}
-                          >
-                            <i style={{ fontSize: "16px" }} class="fa">
-                              {" "}
-                              &#xf014;
-                            </i>
-                            &nbsp;<span className="highliter">Remove</span>
-                          </div>
-                        </div>
-                      ) : (
-                        ""
-                      )}{" "}
-                    </div>
                   </div>
                 </Grid>
+                <Grid
+                  item
+                  xs={12}
+                  style={{ display: "flex", justifyContent: "space-between" }}
+                >
+                  <Button
+                    id={dataval.generatedSku}
+                    className="highliter"
+                    productid={dataval}
+                    onClick={(e) => handleDeleteLocalStorage(e, val)}
+                    variant="contained"
+                    style={{
+                      color: "gray",
+                      border: "2px solid #C1C1C1",
+                      backgroundColor: "white",
+                      borderRadius: "0px",
+                      boxShadow: "none",
+
+                      whiteSpace: "nowrap",
+                      marginTop: "10px",
+                    }}
+                  >
+                    REMOVE
+                  </Button>
+                  <div>&nbsp;&nbsp;</div>
+                  <Button
+                    id={dataval.generatedSku}
+                    className="highliter"
+                    productid={dataval}
+                    onClick={(e) => handleDeleteLocalStorage(e, val)}
+                    variant="contained"
+                    style={{
+                      color: "gray",
+                      border: "2px solid #C1C1C1",
+                      backgroundColor: "white",
+                      borderRadius: "0px",
+                      boxShadow: "none",
+
+                      whiteSpace: "nowrap",
+                      marginTop: "10px",
+                    }}
+                  >
+                    MOVE TO WISHLIST
+                  </Button>
+                </Grid>
               </Grid>
-            </Card>
+            </div>
           );
         })
       )}

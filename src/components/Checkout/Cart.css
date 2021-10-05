@@ -259,6 +259,20 @@
   text-transform: none !important;
   width: 100%;
 }
+@media screen and (max-width: 800px) {
+  .chckout-page-buynow {
+    box-shadow: 2px 3px 6px 2px #888888;
+    border-radius: 0px !important;
+    text-align: center !important;
+    font-size: 16px !important;
+    background: #e87236 !important;
+    border: 1px solid #e87236 !important;
+    display: block;
+    color: #fff !important;
+    text-transform: none !important;
+    width: 100%;
+  }
+}
 
 .checkout-page-total {
 }

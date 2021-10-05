@@ -237,58 +237,99 @@ export default function Pricing(props) {
                       </span>
                     ) : (
                       <>
-                        <span
-                          style={{ fontSize: "0.9rem", paddingBottom: "6px" }}
-                        >
-                          {new Intl.NumberFormat("en-IN", {
-                            style: "currency",
-                            currency: "INR",
-                            minimumFractionDigits: 0,
-                          }).format(Math.round(props.price))}
-                        </span>
-                        <span>
-                          &nbsp;&nbsp;
-                          <del
-                            style={{
-                              fontSize: "0.9rem",
-                              fontWeight: "lighter",
-                              paddingBottom: "6px",
-                            }}
-                          >
-                            {new Intl.NumberFormat("en-IN", {
-                              style: "currency",
-                              currency: "INR",
-                              minimumFractionDigits: 0,
-                            }).format(Math.round(props.offerPrice))}
-                          </del>
-                        </span>
-                        {props.offerDiscount ? (
-                          <span
-                            style={{
-                              color: "grey",
-                              fontSize: "0.9rem",
-                              whiteSpace: "nowrap",
-                              marginLeft: "6px",
-
-                              fontWeight: "lighter",
-                            }}
-                          >
-                            ({props.offerDiscount})
-                          </span>
-                        ) : (
-                          <Typography style={{ display: "flex" }}>
-                            <Typography
-                              variant="caption"
-                              component="p"
-                              className={`${
-                                (props.save != null) & (props.save !== "")
-                                  ? ""
-                                  : "shine"
-                              } ${classes.colorMain}  `}
+                        {props.checkoutpage ? (
+                          <>
+                            <span
+                              style={{
+                                fontSize: "0.9rem",
+                                paddingBottom: "6px",
+                              }}
                             >
-                              {path === "stylori" && "You save"} {props.save}
-                            </Typography>
-                          </Typography>
+                              {new Intl.NumberFormat("en-IN", {
+                                style: "currency",
+                                currency: "INR",
+                                minimumFractionDigits: 0,
+                              }).format(Math.round(props.price))}
+                            </span>
+                            <br />
+                            <span>
+                              &nbsp;&nbsp;
+                              <del
+                                style={{
+                                  fontSize: "0.9rem",
+                                  fontWeight: "lighter",
+                                  paddingBottom: "6px",
+                                }}
+                              >
+                                {new Intl.NumberFormat("en-IN", {
+                                  style: "currency",
+                                  currency: "INR",
+                                  minimumFractionDigits: 0,
+                                }).format(Math.round(props.offerPrice))}
+                              </del>
+                            </span>
+                          </>
+                        ) : (
+                          <>
+                            <span
+                              style={{
+                                fontSize: "0.9rem",
+                                paddingBottom: "6px",
+                              }}
+                              className={classes.price}
+                            >
+                              {new Intl.NumberFormat("en-IN", {
+                                style: "currency",
+                                currency: "INR",
+                                minimumFractionDigits: 0,
+                              }).format(Math.round(props.price))}
+                            </span>
+                            <span className={classes.price}>
+                              &nbsp;&nbsp;
+                              <del
+                                style={{
+                                  fontSize: "0.9rem",
+                                  fontWeight: "lighter",
+                                  paddingBottom: "6px",
+                                }}
+                              >
+                                {new Intl.NumberFormat("en-IN", {
+                                  style: "currency",
+                                  currency: "INR",
+                                  minimumFractionDigits: 0,
+                                }).format(Math.round(props.offerPrice))}
+                              </del>
+                            </span>
+                            {props.offerDiscount ? (
+                              <span
+                                style={{
+                                  color: "grey",
+                                  fontSize: "0.9rem",
+                                  whiteSpace: "nowrap",
+                                  marginLeft: "6px",
+
+                                  fontWeight: "lighter",
+                                }}
+                              >
+                                ({props.offerDiscount})
+                              </span>
+                            ) : (
+                              <Typography style={{ display: "flex" }}>
+                                <Typography
+                                  variant="caption"
+                                  component="p"
+                                  className={`${
+                                    (props.save != null) & (props.save !== "")
+                                      ? ""
+                                      : "shine"
+                                  } ${classes.colorMain}  `}
+                                >
+                                  {path === "stylori" && "You save"}{" "}
+                                  {props.save}
+                                </Typography>
+                              </Typography>
+                            )}
+                          </>
                         )}
                       </>
                     )}

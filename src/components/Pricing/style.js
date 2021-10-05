@@ -3,6 +3,7 @@ const styles = makeStyles((theme) => ({
   pricing: {
     float: "left",
   },
+
   colorMain: {
     color: theme.palette.darkGray.main,
     [theme.breakpoints.down("sm")]: {
