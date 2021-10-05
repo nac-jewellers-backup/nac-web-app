@@ -1,4 +1,31 @@
 const styles = (theme) => ({
+  cartheader: {
+    color: "gray",
+    fontSize: "14px",
+  },
+  title: {
+    color: theme.palette.gold.main,
+    textAlign: "center",
+    fontStyle: "italic",
+    fontSize: "2.1rem",
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "1.8rem",
+    },
+    marginBottom: 15,
+    fontWeight: "540",
+    marginTop: -4,
+    whiteSpace: "noWrap",
+    padding: 2,
+  },
+  img: {
+    height: 32,
+    width: 32,
+    [theme.breakpoints.down("xs")]: {
+      height: 22,
+      width: 22,
+    },
+    marginTop: 2,
+  },
   cart: {
     [theme.breakpoints.down("xs")]: {
       width: "100%",
@@ -8,7 +35,7 @@ const styles = (theme) => ({
     [theme.breakpoints.up("lg")]: {
       // width: "100%",
       // border: "0.5px solid #ccc",
-      boxShadow: "0px 1px 9px 4px #DEDADA!important",
+      //boxShadow: "0px 1px 9px 4px #DEDADA!important",
       // padding: "10px",
       marginBottom: "20px",
       padding: "10px",
@@ -73,7 +100,8 @@ const styles = (theme) => ({
     color: theme.palette.overallButoon.contrastText,
   },
   normalfonts: {
-    color: theme.palette.text.primary,
+    color: "gray",
+    float: "right !important",
   },
   backgsecondary: {
     background: theme.palette.secondary.dark,

@@ -107,6 +107,7 @@
   font-weight: 400;
   height: 15px !important;
   text-align: center;
+  color: gray !important;
 }
 
 .title-response,
@@ -172,9 +173,10 @@
 
 .subhesder {
   padding: 4px 3px !important;
-  font-size: 12px !important;
+  font-size: 0.9rem !important;
   width: 100% !important;
   overflow: hidden;
+  float: right !important;
 }
 
 .totsl-size {
@@ -231,19 +233,31 @@
   float: right !important;
 }
 
-.chckout-page-buynow:hover {
+/* .chckout-page-buynow:hover {
   background: #4ba063 !important;
   color: #fff !important;
+} */
+.backhomepagebtn {
+  box-shadow: 2px 3px 6px 2px #888888;
+  border-radius: 0px !important;
+  text-align: center !important;
+  font-size: 16px !important;
+  background: #394579 !important;
+  border: 1px solid #394579 !important;
+  color: #fff !important;
+  text-transform: none !important;
 }
-
 .chckout-page-buynow {
-  background: #4ba063 !important;
-  border: 1px solid #4ba063 !important;
+  box-shadow: 2px 3px 6px 2px #888888;
+  border-radius: 0px !important;
+  text-align: center !important;
+  font-size: 16px !important;
+  background: #394579 !important;
+  border: 1px solid #394579 !important;
+  display: block;
   color: #fff !important;
-  font-size: 17px;
-  min-width: 230px !important;
-  padding: 9px 12px !important;
-  font-weight: 400 !important;
+  text-transform: none !important;
+  width: 100%;
 }
 
 .checkout-page-total {

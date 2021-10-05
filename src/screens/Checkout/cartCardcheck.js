@@ -1,5 +1,4 @@
 import {
-  Avatar,
   Button,
   ExpansionPanel,
   ExpansionPanelDetails,
@@ -275,34 +274,34 @@ class Component extends React.Component {
         />
         <div className="pt-sm checkout-ovralldiv-media marginTop">
           <div style={{ marginTop: "20px" }}>
-            <Grid container>
+            <Grid container spacing={5}>
               <Grid xs={12} lg={6}>
                 <ExpansionPanel
                   square
                   expanded={expanded === "panel1"}
                   onChange={this.handleChange(1)}
-                  style={{ boxShadow: "none" }}
+                  style={{
+                    boxShadow: "none",
+                  }}
                 >
                   <ExpansionPanelSummary
-                    style={{ boxShadow: "rgb(222, 218, 218) 1px 2px 6px 0px" }}
+                    style={{
+                      borderBottom: "1.3px solid #C1C1C1",
+                    }}
                     expandIcon={<ExpandMoreIcon className="arrow-chek" />}
                     className="ckcut-main-body"
                   >
-                    <Avatar className={`avart-ckc ${classes.normalcolorback}`}>
-                      1
-                    </Avatar>
                     <Typography className="text-chck">
                       {" "}
-                      Login or Register
+                      1.&nbsp;&nbsp;Login or Register
                       <div className="ch-d-vl">{email}</div>
                     </Typography>
                   </ExpansionPanelSummary>
-                  <ExpansionPanelDetails
-                    style={{ boxShadow: "rgb(222, 218, 218) 1px 2px 6px 0px" }}
-                  >
+                  <ExpansionPanelDetails>
                     <LoginRegisterIndex changePanel={this.changePanel} />
                   </ExpansionPanelDetails>
                 </ExpansionPanel>
+
                 <ExpansionPanel
                   xs={6}
                   square
@@ -314,16 +313,13 @@ class Component extends React.Component {
                     style={{
                       width: "100%",
                       overflow: "hidden",
-                      boxShadow: "rgb(222, 218, 218) 1px 2px 6px 0px",
+                      borderBottom: "1.3px solid #C1C1C1",
                     }}
                     expandIcon={<ExpandMoreIcon className="arrow-chek" />}
                     className="ckcut-main-body"
                   >
-                    <Avatar className={`avart-ckc ${classes.normalcolorback}`}>
-                      2
-                    </Avatar>
                     <Typography className="text-chck">
-                      Address Detail
+                      2.&nbsp;&nbsp;Address Detail
                       <div className="ch-d-vl">
                         {obj_values &&
                         obj_values.adres_details &&
@@ -374,9 +370,7 @@ class Component extends React.Component {
                       </div>
                     </Typography>
                   </ExpansionPanelSummary>
-                  <ExpansionPanelDetails
-                    style={{ boxShadow: "rgb(222, 218, 218) 1px 2px 6px 0px" }}
-                  >
+                  <ExpansionPanelDetails>
                     <Grid container>
                       <Grid item xs={12} lg={12}>
                         <Addressform changePanel={this.changePanel} />
@@ -390,21 +384,20 @@ class Component extends React.Component {
                   onChange={this.handleChange(3)}
                   style={{
                     boxShadow: "none",
-                    boxShadow: "rgb(222, 218, 218) 1px 2px 6px 0px",
                   }}
                 >
                   <ExpansionPanelSummary
+                    style={{
+                      borderBottom: "1.3px solid #C1C1C1",
+                    }}
                     expandIcon={<ExpandMoreIcon className="arrow-chek" />}
                     className="ckcut-main-body"
                   >
-                    <Avatar className={`avart-ckc ${classes.normalcolorback}`}>
-                      3
-                    </Avatar>
-                    <Typography className="text-chck">Order Summary</Typography>
+                    <Typography className="text-chck">
+                      3.&nbsp;&nbsp;Order Summary
+                    </Typography>
                   </ExpansionPanelSummary>
-                  <ExpansionPanelDetails
-                    style={{ boxShadow: "rgb(222, 218, 218) 1px 2px 6px 0px" }}
-                  >
+                  <ExpansionPanelDetails>
                     <Grid container>
                       <Grid item xs={12} lg={12}>
                         <Grid container>
@@ -504,28 +497,118 @@ class Component extends React.Component {
                   onChange={this.handleChange(4)}
                   style={{
                     boxShadow: "none",
-                    boxShadow: "rgb(222, 218, 218) 1px 2px 6px 0px",
                   }}
                 >
                   <ExpansionPanelSummary
+                    style={{
+                      borderBottom: "1.3px solid #C1C1C1",
+                    }}
                     expandIcon={<ExpandMoreIcon className="arrow-chek" />}
                     className="ckcut-main-body"
                   >
-                    <Avatar className={`avart-ckc ${classes.normalcolorback}`}>
-                      4
-                    </Avatar>
                     <Typography className="text-chck">
-                      Payment Options
+                      4.&nbsp;&nbsp;Payment Options
                     </Typography>
                   </ExpansionPanelSummary>
-                  <ExpansionPanelDetails
-                    style={{ boxShadow: "rgb(222, 218, 218) 1px 2px 6px 0px" }}
-                  >
+                  <ExpansionPanelDetails>
                     <PaymentIndex data={data} CodData={this.props.CodData} />
                   </ExpansionPanelDetails>
                 </ExpansionPanel>
               </Grid>
-              <Grid xs={12} lg={6}></Grid>
+              <Grid xs={12} lg={6}>
+                <Typography className="text-chck-bold">
+                  Order Summary
+                </Typography>
+
+                <Grid container>
+                  <Grid item xs={12} lg={12}>
+                    {/* <Grid container>
+                      <Grid xs={12} lg={7} />
+                      <Grid xs={12} lg={4}>
+                        <div style={{ float: "right" }}>
+                          {ProductIsActive ? (
+                            <Button
+                              onClick={() => this.pincodeapi()}
+                              className="summaryOrder-pay-btn"
+                            >
+                              Continue to Pay
+                            </Button>
+                          ) : (
+                            <Button
+                              className="summaryOrder-pay-btn"
+                              onClick={enquireLink}
+                            >
+                              Enquire Now
+                            </Button>
+                          )}
+                        </div>
+                      </Grid>
+                    </Grid>
+                    <br /> */}
+
+                    <CartCard
+                      data={data}
+                      isStateFilterContextQty={this.props.isdatafromstate}
+                      isdatafromstate={this.props.isdatafromstate}
+                      checkoutpage={true}
+                    />
+
+                    <Hidden smDown>
+                      <Grid container>
+                        <Grid xs={12} lg={7} />
+                        <Grid xs={12} lg={4}>
+                          <div style={{ float: "right", marginBottom: "5px" }}>
+                            {ProductIsActive ? (
+                              <Button
+                                onClick={() => this.pincodeapi()}
+                                className="summaryOrder-pay-btn"
+                              >
+                                Continue to Pay
+                              </Button>
+                            ) : (
+                              <Button
+                                className="summaryOrder-pay-btn"
+                                onClick={enquireLink}
+                              >
+                                Enquire Now
+                              </Button>
+                            )}
+                          </div>
+                        </Grid>
+                      </Grid>
+                      <br />
+                    </Hidden>
+                  </Grid>
+                  <Grid item xs={12} lg={12} className={classes.cart}>
+                    <ProductList />
+                  </Grid>
+                  <Hidden mdUp>
+                    <Grid container style={{ marginTop: "10px" }}>
+                      <Grid xs={12} lg={7} />
+                      <Grid xs={12} lg={4}>
+                        <div style={{ float: "right", marginBottom: "5px" }}>
+                          {ProductIsActive ? (
+                            <Button
+                              onClick={() => this.pincodeapi()}
+                              className="summaryOrder-pay-btn"
+                            >
+                              Continue to Pay
+                            </Button>
+                          ) : (
+                            <Button
+                              className="summaryOrder-pay-btn"
+                              onClick={enquireLink}
+                            >
+                              Enquire Now
+                            </Button>
+                          )}
+                        </div>
+                      </Grid>
+                    </Grid>
+                    <br />
+                  </Hidden>
+                </Grid>
+              </Grid>
             </Grid>
           </div>
         </div>

@@ -25,21 +25,6 @@ export const Title = (props) => {
           </Box>
         </Box>
       </Grid>
-      {/* <Grid item xs={1}>
-        <img
-          src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/Group+160.svg"
-          alt="title images"
-        />
-      </Grid>
-      <Grid item xs={10} className={classes.title}>
-        {props.title.toUpperCase()}
-      </Grid>
-      <Grid item xs={1}>
-        <img
-          src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/Group+159.svg"
-          alt="title images"
-        />
-      </Grid> */}
     </Grid>
   );
 };
