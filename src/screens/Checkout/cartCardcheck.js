@@ -729,7 +729,7 @@ class Component extends React.Component {
                         expandIcon={<ExpandMoreIcon className="arrow-chek" />}
                       >
                         <Typography className="text-chck">
-                          2. DELIVERY/PICKUP INFORMATION
+                          2.&nbsp;DELIVERY/PICKUP&nbsp;INFORMATION
                           <br />
                           <span className="ch-d-vl">
                             {obj_values &&
