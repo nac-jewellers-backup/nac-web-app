@@ -1099,8 +1099,8 @@ class Checkoutcard extends React.Component {
                   style={{
                     fontWeight: "bold",
                     color: "#2F348A",
-                    fontSize: "1.3rem",
                   }}
+                  className={classes.totalcost}
                 >
                   TOTAL&nbsp;COST
                 </Typography>
@@ -1111,8 +1111,8 @@ class Checkoutcard extends React.Component {
                     fontWeight: "bold",
                     color: "#2F348A",
                     float: "right",
-                    fontSize: "1.3rem",
                   }}
+                  className={classes.totalcost}
                 >
                   &#8377;
                   {props.cartFilters.discounted_amount
@@ -1259,8 +1259,8 @@ class Checkoutcard extends React.Component {
                   style={{
                     fontWeight: "bold",
                     color: "#2F348A",
-                    fontSize: "1.3rem",
                   }}
+                  className={classes.totalcost}
                 >
                   TOTAL&nbsp;COST
                 </Typography>
@@ -1271,8 +1271,8 @@ class Checkoutcard extends React.Component {
                     fontWeight: "bold",
                     color: "#2F348A",
                     float: "right",
-                    fontSize: "1.3rem",
                   }}
+                  className={classes.totalcost}
                 >
                   &#8377;
                   {props.cartFilters.discounted_amount

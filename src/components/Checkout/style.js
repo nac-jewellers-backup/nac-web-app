@@ -133,7 +133,21 @@ const styles = (theme) => ({
     background: theme.palette.overallButoon.primary,
     color: theme.palette.overallButoon.contrastText,
   },
+  totalcost: {
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "1.1rem;!important",
+    },
+    [theme.breakpoints.up("lg")]: {
+      fontSize: "1.3rem !important",
+    },
+  },
   normalfonts: {
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "0.8rem;!important",
+    },
+    [theme.breakpoints.up("lg")]: {
+      fontSize: "0.9rem !important",
+    },
     color: "gray",
     float: "right !important",
   },

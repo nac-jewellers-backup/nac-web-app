@@ -275,6 +275,7 @@ export default function Pricing(props) {
                               style={{
                                 fontSize: "0.9rem",
                                 paddingBottom: "6px",
+                                color: "gray",
                               }}
                               className={classes.price}
                             >
@@ -291,6 +292,7 @@ export default function Pricing(props) {
                                   fontSize: "0.9rem",
                                   fontWeight: "lighter",
                                   paddingBottom: "6px",
+                                  color: "gray",
                                 }}
                               >
                                 {new Intl.NumberFormat("en-IN", {
@@ -314,7 +316,9 @@ export default function Pricing(props) {
                                 ({props.offerDiscount})
                               </span>
                             ) : (
-                              <Typography style={{ display: "flex" }}>
+                              <Typography
+                                style={{ display: "flex", color: "gray" }}
+                              >
                                 <Typography
                                   variant="caption"
                                   component="p"
