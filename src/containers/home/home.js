@@ -818,6 +818,8 @@ class HomeComp extends React.Component {
                   }}
                 >
                   <InstagramFeed />
+                  <br />
+                  <br />
                 </Grid>
               </Hidden>
               <Grid
@@ -831,6 +833,8 @@ class HomeComp extends React.Component {
               >
                 <div className={classes.testimonial}>
                   <Testimonial customerreview={this.state.reviews} />
+                  <br />
+                  <br />
                 </div>
               </Grid>
             </Grid>
@@ -855,6 +859,8 @@ class HomeComp extends React.Component {
                   <InstagramFeed />
                 </center>
               </Grid>
+              <br />
+              <br />
             </Hidden>
           </Container>
 

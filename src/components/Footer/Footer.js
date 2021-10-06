@@ -665,7 +665,7 @@ export default function Footer(props) {
       direction="row"
       justify="center"
       alignItems="center"
-      style={{ marginTop: "30px", backgroundColor: "#efefef" }}
+      style={{ backgroundColor: "#efefef" }}
     >
       <Hidden only={["sm", "xs"]}>
         <Container>

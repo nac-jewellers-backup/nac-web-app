@@ -873,7 +873,7 @@ class Checkoutcard extends React.Component {
                   </Button>
                 </div>
               </Grid>
-              <Grid item xs={12} lg={6} style={{ backgroundColor: "#F3F3F3" }}>
+              <Grid item xs={12} lg={6} style={{ backgroundColor: "#EFEFEF" }}>
                 <Hidden smDown>
                   <div className={classes.paddingCart1}>
                     <br />
