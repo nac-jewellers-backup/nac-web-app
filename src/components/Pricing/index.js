@@ -226,7 +226,7 @@ export default function Pricing(props) {
                     }
                   >
                     {props.offerPrice === props.price ? (
-                      <span style={{ color: "gray" }}>
+                      <span style={{ color: "gray", fontSize: "0.9rem" }}>
                         {" "}
                         {new Intl.NumberFormat("en-IN", {
                           style: "currency",
