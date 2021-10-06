@@ -52,6 +52,16 @@
     margin-top: 4% !important;
   }
 }
+@media screen and (max-width: 450px) {
+  .text-chck {
+    padding: 8px 15px;
+    color: gray;
+    font-size: 0.8rem !important;
+    font-weight: 500 !important;
+    text-transform: capitalize !important;
+    width: 100% !important;
+  }
+}
 
 .marginTop {
   margin-top: 0%;
