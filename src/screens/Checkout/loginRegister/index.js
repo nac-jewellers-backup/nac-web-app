@@ -118,7 +118,7 @@ class LoginRegisterIndex extends React.Component {
                               this.toggle(val.button);
                             }}
                           >
-                            {val.buttonval}s
+                            {val.buttonval}
                           </Button>
                         </div>
                       </Card>

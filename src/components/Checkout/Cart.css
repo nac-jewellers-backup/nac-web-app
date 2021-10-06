@@ -166,8 +166,7 @@
   top: 8px !important;
   width: 15px;
   height: 15px;
-  background: url(https://assets.stylori.com/images/static/icon-close.png)
-    no-repeat;
+  background: url(https://assets.stylori.com/images/static/icon-close.png) no-repeat;
   position: relative;
 }
 
@@ -231,6 +230,7 @@
 .ckeckout-top {
   margin-top: 1% !important;
   float: right !important;
+  width: 100%;
 }
 
 /* .chckout-page-buynow:hover {

@@ -14,8 +14,7 @@ function MediaControlCard(props) {
 
   const handleDeleteLocalStorage = (e, val) => {
     var local_storage = JSON.parse(localStorage.getItem("cartDetails"));
-    var currentValue =
-      e.target.id && e.target.id.length > 0 ? e.target.id : e.currentTarget.id;
+    var currentValue = e.target.id && e.target.id.length > 0 ? e.target.id : e.currentTarget.id;
     // console.clear()
     var a = local_storage.products.filter((val) => {
       if (currentValue !== val.sku_id) {
@@ -65,9 +64,7 @@ function MediaControlCard(props) {
           window.location.reload();
         });
     } else {
-      var _products = JSON.parse(
-        localStorage.getItem("cartDetails")
-      ).products.filter((val) => {
+      var _products = JSON.parse(localStorage.getItem("cartDetails")).products.filter((val) => {
         if (val.sku_id !== currentValue) return val;
       });
       var cartId = JSON.parse(localStorage.getItem("cartDetails")).cart_id;
@@ -104,17 +101,11 @@ function MediaControlCard(props) {
         if ((cnt_c && cnt_c[1]) === valu2) {
           var browser_type = JSON.parse(localStorage.getItem("browserDetails"));
           var resolution = 500;
-          var _resolutions =
-            width < 960
-              ? `${resolution * 2}X${resolution * 2}`
-              : `${resolution}X${resolution}`;
+          var _resolutions = width < 960 ? `${resolution * 2}X${resolution * 2}` : `${resolution}X${resolution}`;
           var url_split = imges__val && imges__val.imageUrl.split("/");
           var extension_split = url_split && url_split[url_split.length - 1];
           var browser_type_append =
-            extension_split &&
-            extension_split
-              .split(".")[0]
-              .concat(`${browser_type && browser_type.browser_type}`);
+            extension_split && extension_split.split(".")[0].concat(`${browser_type && browser_type.browser_type}`);
           url_split[url_split && url_split.length - 1] = browser_type_append;
           url_split.splice(2, 0, _resolutions);
           var url_construct = url_split.join().replace(/\,/g, "/");
@@ -154,28 +145,14 @@ function MediaControlCard(props) {
         dataval.productsDetails.map((val) => {
           return (
             <div className={classes.card}>
-              <Grid
-                container
-                style={{ paddingTop: "20px", paddingBottom: "20px" }}
-              >
+              <Grid container style={{ paddingTop: "20px", paddingBottom: "20px" }}>
                 <Grid xs={4}>
                   {window.location.pathname !== "/checkout" ? (
-                    <NavLink
-                      to={dataval?.skuUrl}
-                      style={{ textDecoration: "none" }}
-                    >
-                      <img
-                        width="100%"
-                        height="100%"
-                        src={dataval?.fadeImages[0]?.imageUrl}
-                      ></img>
+                    <NavLink to={dataval?.skuUrl} style={{ textDecoration: "none" }}>
+                      <img width="100%" height="100%" src={dataval?.fadeImages[0]?.imageUrl}></img>
                     </NavLink>
                   ) : (
-                    <img
-                      width="100%"
-                      height="100%"
-                      src={dataval?.fadeImages[0]?.imageUrl}
-                    ></img>
+                    <img width="100%" height="100%" src={dataval?.fadeImages[0]?.imageUrl}></img>
                   )}
                 </Grid>
                 <Grid xs={8}>
@@ -213,25 +190,15 @@ function MediaControlCard(props) {
 
                       <Grid container style={{ marginTop: "10px" }}>
                         <Grid item xs={6}>
-                          <Typography
-                            className={`subhesder ${classes.normalfonts}`}
-                          >
-                            Size
-                          </Typography>
+                          <Typography className={`subhesder ${classes.normalfonts}`}>Size</Typography>
                         </Grid>
                         <Grid item xs={6}>
-                          <Typography
-                            className={`subhesder ${classes.normalfonts}`}
-                          >
+                          <Typography className={`subhesder ${classes.normalfonts}`}>
                             {window.location.pathname === "/checkout" ||
                             checkMaterial(dataval.materialName) ||
                             !Boolean(dataval?.[0]?.maxOrderQty) ||
                             dataval?.[0]?.maxOrderQty < 2 ? (
-                              `Quantity ${
-                                JSON.parse(localStorage.getItem("quantity"))[
-                                  dataval.generatedSku
-                                ]
-                              }`
+                              `Quantity ${JSON.parse(localStorage.getItem("quantity"))[dataval.generatedSku]}`
                             ) : (
                               <Quantity data={[dataval]} cart={true} />
                             )}
@@ -243,24 +210,14 @@ function MediaControlCard(props) {
                           cartsm={true}
                           price={val.offerPrice}
                           offerPrice={val.price}
-                          offerDiscount={
-                            val.discount ? `${val.discount}% - OFF` : null
-                          }
-                          quantity={
-                            JSON.parse(localStorage.getItem("quantity"))[
-                              dataval.generatedSku
-                            ]
-                          }
+                          offerDiscount={val.discount ? `${val.discount}% - OFF` : null}
+                          quantity={JSON.parse(localStorage.getItem("quantity"))[dataval.generatedSku]}
                         ></Pricing>
                       ))}
                     </CardContent>
                   </div>
                 </Grid>
-                <Grid
-                  item
-                  xs={12}
-                  style={{ display: "flex", justifyContent: "space-between" }}
-                >
+                <Grid item xs={12} style={{ display: "flex", justifyContent: "space-between" }}>
                   <Button
                     id={dataval.generatedSku}
                     className="highliter"
@@ -296,6 +253,7 @@ function MediaControlCard(props) {
 
                       whiteSpace: "nowrap",
                       marginTop: "10px",
+                      fontWeight: "bold",
                     }}
                   >
                     MOVE TO WISHLIST
