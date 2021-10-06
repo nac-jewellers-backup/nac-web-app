@@ -217,17 +217,16 @@ export default function Pricing(props) {
               {props.price ? (
                 <Typography style={{ display: "flex", width: "100%" }}>
                   <Typography
-                    style={props.from && { margin: "auto" }}
-                    className={`pricing-p${
-                      (props.price != null) & (props.price !== "")
-                        ? ""
-                        : "shine"
-                    }${classes.colorMain} ${classes.h6FontSizeStrike} ${
-                      classes.offerPricePadding
-                    } ${classes.dis} ${classes.boldFont}`}
+                    style={
+                      props.from && {
+                        margin: "auto",
+                        fontSize: "0.9rem",
+                        color: "gray",
+                      }
+                    }
                   >
                     {props.offerPrice === props.price ? (
-                      <span>
+                      <span style={{ color: "gray" }}>
                         {" "}
                         {new Intl.NumberFormat("en-IN", {
                           style: "currency",
@@ -243,6 +242,7 @@ export default function Pricing(props) {
                               style={{
                                 fontSize: "0.9rem",
                                 paddingBottom: "6px",
+                                color: "gray",
                               }}
                             >
                               {new Intl.NumberFormat("en-IN", {
@@ -253,9 +253,9 @@ export default function Pricing(props) {
                             </span>
                             <br />
                             <span>
-                              &nbsp;&nbsp;
                               <del
                                 style={{
+                                  color: "gray",
                                   fontSize: "0.9rem",
                                   fontWeight: "lighter",
                                   paddingBottom: "6px",

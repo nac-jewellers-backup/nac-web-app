@@ -208,7 +208,7 @@ class Checkoutcard extends React.Component {
       if (_data.indexOf("silver") > -1) return false;
       else return true;
     };
-
+    const { expand } = this.state;
     return (
       <div style={{ marginTop: "10px" }}>
         {/* <Grid container spacing={12} xs={12}>
@@ -404,25 +404,15 @@ class Checkoutcard extends React.Component {
               </Hidden>
               <Hidden mdUp>
                 <Accordion
-                  expanded={this.state.expanded === "panel1"}
-                  onChange={handleChange("panel1")}
+                  defaultExpanded
+                  elevation={3}
                   style={{
                     border: "0px",
                     outline: "0px",
                     borderRadius: "0px",
                   }}
-                  square
                 >
-                  <AccordionSummary
-                    expandIcon={<ExpandMoreIcon />}
-                    aria-controls="panel1bh-content"
-                    id="panel1bh-header"
-                    style={{
-                      border: "0px",
-                      outline: "0px",
-                      borderRadius: "0px",
-                    }}
-                  >
+                  <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                     <div>
                       <Typography className={classes.cartheader} noWrap>
                         Hide order summery : &#8377;
@@ -430,13 +420,7 @@ class Checkoutcard extends React.Component {
                       </Typography>
                     </div>
                   </AccordionSummary>
-                  <AccordionDetails
-                    style={{
-                      border: "0px",
-                      outline: "0px",
-                      borderRadius: "0px",
-                    }}
-                  >
+                  <AccordionDetails>
                     <Grid container>
                       <Grid item xs={12}>
                         {this.props.data.map((dataval) =>
@@ -496,7 +480,7 @@ class Checkoutcard extends React.Component {
                                 </Grid>
                                 <Grid
                                   item
-                                  xs={5}
+                                  xs={6}
                                   sm={6}
                                   style={{ padding: "13px" }}
                                 >
@@ -546,7 +530,7 @@ class Checkoutcard extends React.Component {
                                     </Grid>
                                   </Grid>
                                 </Grid>
-                                <Grid item xs={4} sm={2} lg={3}>
+                                <Grid item xs={3} sm={3} lg={3}>
                                   {window.location.pathname == "/checkout" ? (
                                     <div>
                                       <br />
@@ -583,6 +567,7 @@ class Checkoutcard extends React.Component {
                       </Grid>
                     </Grid>
                   </AccordionDetails>
+                  <AccordionActions></AccordionActions>
                 </Accordion>
               </Hidden>
             </Grid>
