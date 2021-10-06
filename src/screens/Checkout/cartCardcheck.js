@@ -268,7 +268,7 @@ class Component extends React.Component {
           <div>
             <Grid container style={{ overflow: "hidden" }}>
               <Hidden smDown>
-                <Grid xs={12} lg={6}>
+                <Grid xs={12} lg={6} style={{ minHeight: "80vh" }}>
                   <div className={classes.padding}>
                     <ExpansionPanel
                       square
@@ -489,7 +489,11 @@ class Component extends React.Component {
                     </ExpansionPanel>
                   </div>
                 </Grid>
-                <Grid xs={12} lg={6} style={{ backgroundColor: "#F3F3F3" }}>
+                <Grid
+                  xs={12}
+                  lg={6}
+                  style={{ backgroundColor: "#F3F3F3", minHeight: "80vh" }}
+                >
                   <Grid container>
                     <Grid item xs={12} lg={12}>
                       <div className={classes.padding}>
@@ -588,20 +592,97 @@ class Component extends React.Component {
               </Hidden>
               <Hidden mdUp>
                 <Grid xs={12} lg={6}>
-                  <div className={classes.padding}>
-                    <Grid container>
-                      <Grid item xs={12} lg={12}>
-                        <div>
-                          <CartCard
-                            data={data}
-                            isStateFilterContextQty={this.props.isdatafromstate}
-                            isdatafromstate={this.props.isdatafromstate}
-                            checkoutpage={true}
-                          />
+                  <Grid container>
+                    <Grid item xs={12} lg={12}>
+                      <div className={classes.hideorder}>
+                        {/* <Grid container>
+                      <Grid xs={12} lg={7} />
+                      <Grid xs={12} lg={4}>
+                        <div style={{ float: "right" }}>
+                          {ProductIsActive ? (
+                            <Button
+                              onClick={() => this.pincodeapi()}
+                              className="summaryOrder-pay-btn"
+                            >
+                              Continue to Pay
+                            </Button>
+                          ) : (
+                            <Button
+                              className="summaryOrder-pay-btn"
+                              onClick={enquireLink}
+                            >
+                              Enquire Now
+                            </Button>
+                          )}
                         </div>
                       </Grid>
                     </Grid>
-                  </div>
+                    <br /> */}
+
+                        <CartCard
+                          data={data}
+                          isStateFilterContextQty={this.props.isdatafromstate}
+                          isdatafromstate={this.props.isdatafromstate}
+                          checkoutpage={true}
+                        />
+
+                        {/* <Hidden smDown>
+                      <Grid container>
+                        <Grid xs={12} lg={7} />
+                        <Grid xs={12} lg={4}>
+                          <div style={{ float: "right", marginBottom: "5px" }}>
+                            {ProductIsActive ? (
+                              <Button
+                                onClick={() => this.pincodeapi()}
+                                className="summaryOrder-pay-btn"
+                              >
+                                Continue to Pay
+                              </Button>
+                            ) : (
+                              <Button
+                                className="summaryOrder-pay-btn"
+                                onClick={enquireLink}
+                              >
+                                Enquire Now
+                              </Button>
+                            )}
+                          </div>
+                        </Grid>
+                      </Grid>
+                      <br />
+                    </Hidden> */}
+                      </div>
+                    </Grid>
+                    {/* <Grid item xs={12} lg={12} className={classes.cart}>
+                    <ProductList />
+                  </Grid>
+                  <Hidden mdUp>
+                    <Grid container style={{ marginTop: "10px" }}>
+                      <Grid xs={12} lg={7} />
+                      <Grid xs={12} lg={4}>
+                        <div style={{ float: "right", marginBottom: "5px" }}>
+                          {ProductIsActive ? (
+                            <Button
+                              onClick={() => this.pincodeapi()}
+                              className="summaryOrder-pay-btn"
+                            >
+                              Continue to Pay
+                            </Button>
+                          ) : (
+                            <Button
+                              className="summaryOrder-pay-btn"
+                              onClick={enquireLink}
+                            >
+                              Enquire Now
+                            </Button>
+                          )}
+                        </div>
+                      </Grid>
+                    </Grid>
+                    <br />
+                  </Hidden>
+                 */}
+                  </Grid>
                 </Grid>
                 <Grid xs={12} lg={6} style={{ backgroundColor: "#F3F3F3" }}>
                   <div className={classes.padding}>

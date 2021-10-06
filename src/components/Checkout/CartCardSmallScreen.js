@@ -3,7 +3,7 @@ import CardContent from "@material-ui/core/CardContent";
 import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import { API_URL, CDN_URL } from "config";
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import Pricing from "../Pricing/index";
 import Quantity from "../quantity/index";
@@ -135,6 +135,7 @@ function MediaControlCard(props) {
       // alert(JSON.stringify( [image_urls]))
     }
   };
+  const [expanded, setExpanded] = useState(true);
 
   const checkMaterial = (material) => {
     let _data = material.map((val) => val.toLowerCase());

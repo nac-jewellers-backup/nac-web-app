@@ -1,10 +1,46 @@
 const styles = (theme) => ({
   padding: {
-    padding: "40px",
+    padding: "40px !important",
+  },
+  paddingCart: {
+    paddingRight: "40px",
+    paddingLeft: "40px",
+    paddingBottom: "40px",
+  },
+  paddingCart1: {
+    paddingRight: "40px",
+    paddingLeft: "40px",
+    paddingTop: "40px",
+  },
+  cardimg: {
+    [theme.breakpoints.down("xs")]: {
+      width: "100%",
+    },
+    [theme.breakpoints.up("md")]: {
+      width: "60%",
+    },
+  },
+  cardtitle: {
+    color: "gray",
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "0.8rem !important",
+    },
+    [theme.breakpoints.up("lg")]: {
+      fontSize: "0.9rem",
+    },
   },
   cartheader: {
     color: "gray",
     fontSize: "14px",
+  },
+  cardpad: {
+    [theme.breakpoints.down("xs")]: {
+      padding: "0px",
+    },
+    [theme.breakpoints.up("md")]: {
+      paddingTop: "20px",
+      paddingBottom: "20px",
+    },
   },
   title: {
     color: theme.palette.gold.main,

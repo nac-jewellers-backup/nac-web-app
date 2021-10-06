@@ -1,10 +1,16 @@
 import { Box, Button, Grid, Hidden } from "@material-ui/core";
+import Accordion from "@material-ui/core/Accordion";
+import AccordionActions from "@material-ui/core/AccordionActions";
+import AccordionDetails from "@material-ui/core/AccordionDetails";
+import AccordionSummary from "@material-ui/core/AccordionSummary";
 import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import axios from "axios";
 import { CartContext } from "context";
 import React from "react";
-import { AiFillCaretLeft } from "react-icons/ai";
+import { AiFillCaretLeft, AiFillCaretRight } from "react-icons/ai";
+import { IoPricetagsOutline } from "react-icons/io5";
 import { NavLink } from "react-router-dom";
 import { API_URL } from "../../config";
 import Buynowbutton from "../Buynow/buynowbutton";
@@ -19,6 +25,9 @@ class Checkoutcard extends React.Component {
     this.state = {
       cart: true,
       shipby_arr: [],
+      expanded: false,
+      open: true,
+      expend: true,
     };
   }
   async componentDidMount() {
@@ -178,6 +187,12 @@ class Checkoutcard extends React.Component {
       slidesToShow: 1,
       arrows: false,
     };
+    const handleChange = (panel) => (event, isExpanded) => {
+      console.log(panel);
+      this.setState({
+        expanded: isExpanded ? panel : false,
+      });
+    };
 
     const { classes, data } = this.props;
     const { productsDetails, fadeImages, dataCard1 } = this.props.data;
@@ -206,103 +221,105 @@ class Checkoutcard extends React.Component {
         {this.props.checkoutpage ? (
           <>
             <Grid container direction="row">
-              <Grid item xs={12}>
-                {this.props.data.map((dataval) =>
-                  dataval.productsDetails.map((val) => (
-                    <div
-                      style={{
-                        outline: "none",
-                      }}
-                      className={classes.cart}
-                    >
-                      <Grid
-                        container
-                        spacing={12}
-                        xs={12}
+              <Hidden smDown>
+                <Grid item xs={12}>
+                  {this.props.data.map((dataval) =>
+                    dataval.productsDetails.map((val) => (
+                      <div
                         style={{
-                          borderBottom: "1.3px solid #C1C1C1",
-                          padding: "20px",
+                          outline: "none",
                         }}
+                        className={classes.cart}
                       >
                         <Grid
-                          item
-                          xs={3}
-                          sm={3}
+                          container
+                          spacing={12}
+                          xs={12}
+                          className={classes.cardpad}
                           style={{
-                            display: "flex",
-                            alignContent: "center",
-                            alignItems: "center",
-                            padding: "1px",
+                            borderBottom: "1.3px solid #C1C1C1",
                           }}
                         >
-                          <>
-                            {window.location.pathname !== "/checkout" ? (
-                              <NavLink
-                                to={dataval?.skuUrl}
-                                style={{ textDecoration: "none" }}
-                              >
-                                <center>
+                          <Grid
+                            item
+                            xs={3}
+                            sm={3}
+                            style={{
+                              display: "flex",
+                              alignContent: "center",
+                              alignItems: "center",
+                            }}
+                          >
+                            <>
+                              {window.location.pathname !== "/checkout" ? (
+                                <NavLink
+                                  to={dataval?.skuUrl}
+                                  style={{ textDecoration: "none" }}
+                                >
                                   <img
-                                    style={{ width: "70%" }}
+                                    style={{
+                                      objectFit: "contain",
+                                    }}
                                     src={dataval?.fadeImages[0]?.imageUrl}
                                   ></img>
-                                </center>
+                                </NavLink>
+                              ) : (
+                                <img
+                                  style={{
+                                    objectFit: "contain",
+                                  }}
+                                  src={dataval?.fadeImages[0]?.imageUrl}
+                                  className={classes.cardimg}
+                                ></img>
+                              )}
+                            </>
+                          </Grid>
+                          <Grid item xs={5} sm={6} style={{ padding: "13px" }}>
+                            {window.location.pathname !== "/checkout" ? (
+                              <NavLink
+                                to={dataval.skuUrl}
+                                style={{ textDecoration: "none" }}
+                              >
+                                <span
+                                  style={{
+                                    color: "gray",
+                                    textTransform: "capitalize",
+                                  }}
+                                >
+                                  {val.pro_header}
+                                </span>
                               </NavLink>
                             ) : (
-                              <center>
-                                <img
-                                  style={{ width: "50%", objectFit: "contain" }}
-                                  src={dataval?.fadeImages[0]?.imageUrl}
-                                ></img>
-                              </center>
-                            )}
-                          </>
-                        </Grid>
-                        <Grid item xs={5} sm={6} style={{ padding: "13px" }}>
-                          {window.location.pathname !== "/checkout" ? (
-                            <NavLink
-                              to={dataval.skuUrl}
-                              style={{ textDecoration: "none" }}
-                            >
                               <span
                                 style={{
                                   color: "gray",
                                   textTransform: "capitalize",
                                 }}
+                                className={classes.cardtitle}
                               >
                                 {val.pro_header}
                               </span>
-                            </NavLink>
-                          ) : (
-                            <span
-                              style={{
-                                color: "gray",
-                                textTransform: "capitalize",
-                              }}
-                            >
-                              {val.pro_header}
-                            </span>
-                          )}
-                          <Grid container spacing={12}>
-                            <Grid item xs={12}>
-                              <div>
-                                {this.state.shipby_arr.map((val) => (
-                                  <>
-                                    {val.skuId === dataval.generatedSku ? (
-                                      <Typography
-                                        className={`subhesder ${classes.normalfonts}`}
-                                      >
-                                        {val.shipby}
-                                      </Typography>
-                                    ) : (
-                                      ""
-                                    )}
-                                  </>
-                                ))}
-                              </div>
-                            </Grid>
+                            )}
+                            <Grid container spacing={12}>
+                              <Grid item xs={12}>
+                                <div>
+                                  {this.state.shipby_arr.map((val) => (
+                                    <>
+                                      {val.skuId === dataval.generatedSku ? (
+                                        <Typography
+                                          className={classes.cardtitle}
+                                        >
+                                          {val.shipby}
+                                        </Typography>
+                                      ) : (
+                                        ""
+                                      )}
+                                    </>
+                                  ))}
+                                </div>
+                              </Grid>
 
-                            {/* <Grid item xs={8}>
+                              {/* <Grid item xs={8}>
                      {val.namedetail !== undefined &&
                        val.namedetail.map((val) => {
                          return (
@@ -347,43 +364,227 @@ class Checkoutcard extends React.Component {
                     
                    </Grid>
                   */}
+                            </Grid>
+                          </Grid>
+                          <Grid item xs={4} sm={2} lg={3}>
+                            {window.location.pathname == "/checkout" ? (
+                              <div>
+                                <br />
+
+                                {dataval.dataCard1.map((val) => {
+                                  return (
+                                    <>
+                                      <Pricing
+                                        detail={dataval}
+                                        offerDiscount={
+                                          val.discount
+                                            ? `${val.discount}% - OFF`
+                                            : null
+                                        }
+                                        price={val.offerPrice}
+                                        offerPrice={val.price}
+                                        checkoutpage={true}
+                                      ></Pricing>
+                                    </>
+                                  );
+                                })}
+                              </div>
+                            ) : (
+                              ""
+                            )}
                           </Grid>
                         </Grid>
-                        <Grid item xs={4} sm={2} lg={3}>
-                          {window.location.pathname == "/checkout" ? (
-                            <div>
-                              <br />
-
-                              {dataval.dataCard1.map((val) => {
-                                return (
-                                  <>
-                                    <Pricing
-                                      detail={dataval}
-                                      offerDiscount={
-                                        val.discount
-                                          ? `${val.discount}% - OFF`
-                                          : null
-                                      }
-                                      price={val.offerPrice}
-                                      offerPrice={val.price}
-                                      checkoutpage={true}
-                                    ></Pricing>
-                                  </>
-                                );
-                              })}
-                            </div>
-                          ) : (
-                            ""
-                          )}
-                        </Grid>
-                      </Grid>
+                      </div>
+                    ))
+                  )}
+                </Grid>
+                <Grid item xs={12}>
+                  {this.subtotalsCheckout(props)}
+                </Grid>
+              </Hidden>
+              <Hidden mdUp>
+                <Accordion
+                  expanded={this.state.expanded === "panel1"}
+                  onChange={handleChange("panel1")}
+                  style={{
+                    border: "0px",
+                    outline: "0px",
+                    borderRadius: "0px",
+                  }}
+                  square
+                >
+                  <AccordionSummary
+                    expandIcon={<ExpandMoreIcon />}
+                    aria-controls="panel1bh-content"
+                    id="panel1bh-header"
+                    style={{
+                      border: "0px",
+                      outline: "0px",
+                      borderRadius: "0px",
+                    }}
+                  >
+                    <div>
+                      <Typography className={classes.cartheader} noWrap>
+                        Hide order summery : &#8377;
+                        {this.subtotalsHead(this.props)}
+                      </Typography>
                     </div>
-                  ))
-                )}
-              </Grid>
-              <Grid item xs={12}>
-                {this.subtotalsCheckout(props)}
-              </Grid>
+                  </AccordionSummary>
+                  <AccordionDetails
+                    style={{
+                      border: "0px",
+                      outline: "0px",
+                      borderRadius: "0px",
+                    }}
+                  >
+                    <Grid container>
+                      <Grid item xs={12}>
+                        {this.props.data.map((dataval) =>
+                          dataval.productsDetails.map((val) => (
+                            <div
+                              style={{
+                                outline: "none",
+                              }}
+                              className={classes.cart}
+                            >
+                              <Grid
+                                container
+                                spacing={12}
+                                xs={12}
+                                className={classes.cardpad}
+                                style={{
+                                  borderBottom: "1.3px solid #C1C1C1",
+                                }}
+                              >
+                                <Grid
+                                  item
+                                  xs={3}
+                                  style={{
+                                    display: "flex",
+                                    alignContent: "center",
+                                    alignItems: "center",
+                                  }}
+                                >
+                                  <>
+                                    {window.location.pathname !==
+                                    "/checkout" ? (
+                                      <NavLink
+                                        to={dataval?.skuUrl}
+                                        style={{ textDecoration: "none" }}
+                                      >
+                                        <img
+                                          style={{
+                                            width: "100%",
+                                            height: "100%",
+                                            objectFit: "contain",
+                                          }}
+                                          src={dataval?.fadeImages[0]?.imageUrl}
+                                        ></img>
+                                      </NavLink>
+                                    ) : (
+                                      <img
+                                        style={{
+                                          width: "100%",
+                                          height: "100%",
+                                          objectFit: "contain",
+                                        }}
+                                        src={dataval?.fadeImages[0]?.imageUrl}
+                                        className={classes.cardimg}
+                                      ></img>
+                                    )}
+                                  </>
+                                </Grid>
+                                <Grid
+                                  item
+                                  xs={5}
+                                  sm={6}
+                                  style={{ padding: "13px" }}
+                                >
+                                  {window.location.pathname !== "/checkout" ? (
+                                    <NavLink
+                                      to={dataval.skuUrl}
+                                      style={{ textDecoration: "none" }}
+                                    >
+                                      <span
+                                        style={{
+                                          color: "gray",
+                                          textTransform: "capitalize",
+                                        }}
+                                      >
+                                        {val.pro_header}
+                                      </span>
+                                    </NavLink>
+                                  ) : (
+                                    <span
+                                      style={{
+                                        color: "gray",
+                                        textTransform: "capitalize",
+                                      }}
+                                      className={classes.cardtitle}
+                                    >
+                                      {val.pro_header}
+                                    </span>
+                                  )}
+                                  <Grid container spacing={12}>
+                                    <Grid item xs={12}>
+                                      <div>
+                                        {this.state.shipby_arr.map((val) => (
+                                          <>
+                                            {val.skuId ===
+                                            dataval.generatedSku ? (
+                                              <Typography
+                                                className={classes.cardtitle}
+                                              >
+                                                {val.shipby}
+                                              </Typography>
+                                            ) : (
+                                              ""
+                                            )}
+                                          </>
+                                        ))}
+                                      </div>
+                                    </Grid>
+                                  </Grid>
+                                </Grid>
+                                <Grid item xs={4} sm={2} lg={3}>
+                                  {window.location.pathname == "/checkout" ? (
+                                    <div>
+                                      <br />
+
+                                      {dataval.dataCard1.map((val) => {
+                                        return (
+                                          <>
+                                            <Pricing
+                                              detail={dataval}
+                                              offerDiscount={
+                                                val.discount
+                                                  ? `${val.discount}% - OFF`
+                                                  : null
+                                              }
+                                              price={val.offerPrice}
+                                              offerPrice={val.price}
+                                              checkoutpage={true}
+                                            ></Pricing>
+                                          </>
+                                        );
+                                      })}
+                                    </div>
+                                  ) : (
+                                    ""
+                                  )}
+                                </Grid>
+                              </Grid>
+                            </div>
+                          ))
+                        )}
+                      </Grid>
+                      <Grid item xs={12}>
+                        {this.subtotalsCheckout(props)}
+                      </Grid>
+                    </Grid>
+                  </AccordionDetails>
+                </Accordion>
+              </Hidden>
             </Grid>
           </>
         ) : (
@@ -688,12 +889,55 @@ class Checkoutcard extends React.Component {
                 </div>
               </Grid>
               <Grid item xs={12} lg={6} style={{ backgroundColor: "#F3F3F3" }}>
-                <div className={classes.padding}>{this.subtotals(props)}</div>
+                <Hidden smDown>
+                  <div className={classes.paddingCart1}>
+                    <br />
+                    <div>{this.applycoupon()}</div>
+                  </div>
+                </Hidden>
+
+                <div className={classes.paddingCart}>
+                  {this.subtotals(props)}
+                </div>
               </Grid>
             </Grid>
           </>
         )}
       </div>
+    );
+  };
+  applycoupon = (props) => {
+    const { expanded } = this.state;
+    const { classes } = this.props;
+    return (
+      <Accordion
+        //defaultExpanded
+        elevation={3}
+        style={{
+          border: "0px",
+          outline: "0px",
+          borderRadius: "0px",
+        }}
+      >
+        <AccordionSummary
+          expandIcon={
+            expanded ? (
+              <AiFillCaretLeft fontSize="18px" />
+            ) : (
+              <AiFillCaretRight fontSize="18px" />
+            )
+          }
+        >
+          <Typography className={classes.cartheader} noWrap>
+            <IoPricetagsOutline color="#394579" fontSize="18px" />
+            &nbsp;&nbsp;&nbsp;<b>Apply Coupon</b>
+          </Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>content</Typography>
+        </AccordionDetails>
+        <AccordionActions></AccordionActions>
+      </Accordion>
     );
   };
   checkoutbutton = () => {
@@ -790,6 +1034,12 @@ class Checkoutcard extends React.Component {
             >
               <b>Order Summery</b>
             </div>
+            <Hidden mdUp>
+              <div>
+                <div>{this.applycoupon()}</div>
+                <br />
+              </div>
+            </Hidden>
             <Grid container>
               <Grid xs={6}>
                 <Typography className={`subhesder ${classes.normalfonts}`}>
@@ -1118,65 +1368,81 @@ class Checkoutcard extends React.Component {
             <>{this.row(this.props)}</>
           )}
         </Hidden>
-        <Hidden mdUp>
-          <br />
-          {window.location.pathname === "/cart" ? (
-            <Grid container direction="row">
-              <Grid item xs={12}>
-                <Box display="flex" flexDirection="row" justifyContent="center">
-                  <Box>
-                    <img
-                      className={classes.img}
-                      src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/Group+160.svg"
-                      alt="title images"
-                    />
+        {window.location.pathname == "/checkout" ? (
+          <Hidden mdUp>
+            {window.location.pathname === "/cart" ||
+            window.location.pathname === "/checkout" ? (
+              <>{this.row(this.props)}</>
+            ) : (
+              <>{this.row(this.props)}</>
+            )}
+          </Hidden>
+        ) : (
+          <Hidden mdUp>
+            <br />
+            {window.location.pathname === "/cart" ? (
+              <Grid container direction="row">
+                <Grid item xs={12}>
+                  <Box
+                    display="flex"
+                    flexDirection="row"
+                    justifyContent="center"
+                  >
+                    <Box>
+                      <img
+                        className={classes.img}
+                        src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/Group+160.svg"
+                        alt="title images"
+                      />
+                    </Box>
+                    <Box className={classes.title}>SHOPING CART</Box>
+                    <Box>
+                      <img
+                        className={classes.img}
+                        src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/Group+159.svg"
+                        alt="title images"
+                      />
+                    </Box>
                   </Box>
-                  <Box className={classes.title}>SHOPING CART</Box>
-                  <Box>
-                    <img
-                      className={classes.img}
-                      src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/Group+159.svg"
-                      alt="title images"
-                    />
-                  </Box>
-                </Box>
+                </Grid>
               </Grid>
-            </Grid>
-          ) : (
-            " "
-          )}
-          <div
-            style={{
-              borderBottom: "1.3px solid #C1C1C1",
-              paddingBottom: "6px",
-              marginTop: "20px",
-            }}
-          >
-            <Typography className={classes.cartheader} noWrap>
-              Total({this.props.data.length}&nbsp;Items)&nbsp;:&nbsp; &#8377;
-              {this.subtotalsHead(this.props)}
-            </Typography>
-          </div>
-          <CardSmallScreen
-            data={this.props.data}
-            handleDeleteLocalStorage={(event) =>
-              this.handleDeleteLocalStorage(event)
-            }
-            checkoutbutton={this.checkoutbutton()}
-          />
-          <div>{this.subtotals(this.props)}</div>
-          <br />
-          <Button
-            startIcon={<AiFillCaretLeft />}
-            className="apply-b"
-            onClick={(e) => {
-              e.preventDefault();
-              window.location.href = "/";
-            }}
-          >
-            Back To HomePage
-          </Button>
-        </Hidden>
+            ) : (
+              " "
+            )}
+            <div
+              style={{
+                borderBottom: "1.3px solid #C1C1C1",
+                paddingBottom: "6px",
+                marginTop: "20px",
+              }}
+            >
+              <Typography className={classes.cartheader} noWrap>
+                Total({this.props.data.length}&nbsp;Items)&nbsp;:&nbsp; &#8377;
+                {this.subtotalsHead(this.props)}
+              </Typography>
+            </div>
+            <CardSmallScreen
+              data={this.props.data}
+              handleDeleteLocalStorage={(event) =>
+                this.handleDeleteLocalStorage(event)
+              }
+              checkoutbutton={this.checkoutbutton()}
+            />
+
+            <div>{this.subtotals(this.props)}</div>
+            <br />
+            <Button
+              startIcon={<AiFillCaretLeft />}
+              className="apply-b"
+              onClick={(e) => {
+                e.preventDefault();
+                window.location.href = "/";
+              }}
+            >
+              Back To HomePage
+            </Button>
+          </Hidden>
+        )}
       </Grid>
     );
   }

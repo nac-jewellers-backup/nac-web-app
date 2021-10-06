@@ -9,11 +9,19 @@ export const styles = (theme) => ({
       paddingLeft: "40px",
     },
   },
-  padding: {
+  hideorder: {
     [theme.breakpoints.down("xs")]: {
-      padding: "15px",
+      marginTop: "0%",
     },
-    [theme.breakpoints.up("lg")]: {
+    [theme.breakpoints.up("sm")]: {
+      marginTop: "5%",
+    },
+  },
+  padding: {
+    [theme.breakpoints.down("sm")]: {
+      padding: "20px",
+    },
+    [theme.breakpoints.up("md")]: {
       padding: "40px",
     },
   },
