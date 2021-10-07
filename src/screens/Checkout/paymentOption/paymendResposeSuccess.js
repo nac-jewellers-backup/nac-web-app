@@ -80,6 +80,9 @@ class PaymentResponseSuccess extends React.Component {
     let gut_lg = localStorage.getItem("gut_lg")
       ? JSON.parse(localStorage.getItem("gut_lg"))
       : {};
+    let email = localStorage.getItem("email")
+      ? localStorage.getItem("email")
+      : "";
 
     return (
       <>
@@ -101,12 +104,13 @@ class PaymentResponseSuccess extends React.Component {
                   variant="subtitle2"
                   style={{
                     color: "gray",
+                    textAlign: "center",
                   }}
                 >
                   <Hidden smDown>
-                    Welcome to the NAC family! We’ll take it from here.
+                    Welcome to the <b>NAC</b> family! We’ll take it from here.
                     <br />
-                    We’ve sent a confirmation email to abc@gmail.com.
+                    We’ve sent a confirmation email to <b>{email}</b>.
                   </Hidden>
                 </Typography>
               </Box>
@@ -126,9 +130,9 @@ class PaymentResponseSuccess extends React.Component {
               }}
             >
               <Hidden mdUp>
-                Welcome to the NAC family! We’ll take it from here.
+                Welcome to the <b>NAC</b> family! We’ll take it from here.
                 <br />
-                We’ve sent a confirmation email to abc@gmail.com.
+                We’ve sent a confirmation email to <b>{email}</b>.
               </Hidden>
             </Typography>
           </Grid>
