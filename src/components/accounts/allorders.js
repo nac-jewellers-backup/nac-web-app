@@ -1144,7 +1144,6 @@ class Allorders extends React.Component {
                                               </Grid>
                                             </Grid>
                                           </Grid>
-
                                           <Grid
                                             item
                                             xs={12}

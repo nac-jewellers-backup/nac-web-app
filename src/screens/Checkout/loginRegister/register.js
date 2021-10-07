@@ -38,7 +38,7 @@ const RegisterComponent = (props) => {
           <Grid
             item
             xs={12}
-            lg={window.location.pathname === "/registers" || paths ? 12 : 6}
+            lg={window.location.pathname === "/registers" || paths ? 6 : 12}
           >
             <Grid class="topPaddingwish">
               {window.location.pathname.split("-")[0] !== "/account" && (
@@ -49,7 +49,7 @@ const RegisterComponent = (props) => {
                     <>
                       {window.location.pathname === "/registers"
                         ? "Register"
-                        : "New user registration"}
+                        : " "}
                     </>
                   )}
                 </h5>

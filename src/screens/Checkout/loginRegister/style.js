@@ -68,16 +68,22 @@ export const styles = (theme) => ({
   },
   other: {
     marginTop: "10%",
-    borderTop: "1.3px solid gray",
+    borderTop: "1.3px solid #c1c1c1",
     paddingTop: "8%",
   },
 
   normalfonts: {
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "0.8rem !important",
+    },
+    [theme.breakpoints.up("lg")]: {
+      fontSize: "1.1rem !important",
+      whiteSpace: "noWrap !important",
+    },
     color: "gray !important",
     textTransform: "uppercase",
     borderBottom: "1.5px solid gray",
     paddingBottom: "10px",
-    fontSize: "1.1rem !important",
   },
   normalfonts2: {
     color: "gray !important",
