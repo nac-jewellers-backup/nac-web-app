@@ -775,7 +775,7 @@ class Checkoutcard extends React.Component {
     );
   };
   subtotals = (props) => {
-    debugger;
+    
     var discounted_price = this.props.cartFilters.discounted_price ? this.props.cartFilters.discounted_price : "";
     const dataCard1 = this.props.data
       .map((val) => {

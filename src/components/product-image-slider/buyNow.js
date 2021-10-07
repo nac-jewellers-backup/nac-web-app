@@ -22,12 +22,9 @@ const inputsearch = (props, state, handleChanges, handleCodChange) => {
   let shipByDate = "";
   if (productShipBy) {
     dateObj = new Date(state.productShipBy);
-    shipByDate = `Ships by ${dateObj.getUTCDate()} ${dateObj.toLocaleString(
-      "default",
-      {
-        month: "long",
-      }
-    )} ${dateObj.getUTCFullYear()}`;
+    shipByDate = `Ships by ${dateObj.getUTCDate()} ${dateObj.toLocaleString("default", {
+      month: "long",
+    })} ${dateObj.getUTCFullYear()}`;
   }
   return (
     <div className={classes.searchCheck} style={{}}>
@@ -66,8 +63,7 @@ const inputsearch = (props, state, handleChanges, handleCodChange) => {
                 boxShadow: "4px 5px 6px #BEBFBF !important",
               }}
               className={
-                state.pincodeNotFound ||
-                state.CheckForCodtitle === "COD Not Available"
+                state.pincodeNotFound || state.CheckForCodtitle === "COD Not Available"
                   ? "pincodeNotFound"
                   : state.CheckForCodtitle === "COD is Available"
                   ? "selectedGreen"
@@ -79,29 +75,15 @@ const inputsearch = (props, state, handleChanges, handleCodChange) => {
             >
               {state.pincodeNotFound ? (
                 <>
-                  <i
-                    class="fa fa-close"
-                    style={{ paddingRight: "3px" }}
-                    aria-hidden="true"
-                  ></i>{" "}
-                  Pincode not found
+                  <i class="fa fa-close" style={{ paddingRight: "3px" }} aria-hidden="true"></i> Pincode not found
                 </>
               ) : state.CheckForCodtitle === "COD Not Available" ? (
                 <>
-                  <i
-                    class="fa fa-close"
-                    style={{ paddingRight: "3px" }}
-                    aria-hidden="true"
-                  ></i>{" "}
-                  COD Not Available
+                  <i class="fa fa-close" style={{ paddingRight: "3px" }} aria-hidden="true"></i> COD Not Available
                 </>
               ) : state.CheckForCodtitle === "COD is Available" ? (
                 <>
-                  <i
-                    class="fa fa-check"
-                    style={{ paddingRight: "3px" }}
-                    aria-hidden="true"
-                  ></i>
+                  <i class="fa fa-check" style={{ paddingRight: "3px" }} aria-hidden="true"></i>
                   {state.CheckForCodtitle}
                 </>
               ) : (
@@ -111,16 +93,7 @@ const inputsearch = (props, state, handleChanges, handleCodChange) => {
           </Grid>
 
           <Hidden smDown>
-            <Grid
-              container
-              item
-              justify="center"
-              xs={12}
-              sm={12}
-              lg={5}
-              md={5}
-              className="content"
-            >
+            <Grid container item justify="center" xs={12} sm={12} lg={5} md={5} className="content">
               <b className={`ships-by ${classes.normalfonts}`}>
                 <span
                   style={{
@@ -242,14 +215,8 @@ const Buydetails = (
 };
 
 const PriceBuynow = (props) => {
-  const {
-    loading,
-    error,
-    data: CodData,
-    makeRequestCod,
-  } = useCheckForCod(CheckForCod, () => {}, {});
-  const { ProductDetailCtx, setFilters } =
-    React.useContext(ProductDetailContext);
+  const { loading, error, data: CodData, makeRequestCod } = useCheckForCod(CheckForCod, () => {}, {});
+  const { ProductDetailCtx, setFilters } = React.useContext(ProductDetailContext);
   const { setCartFilters } = React.useContext(CartContext);
 
   return (
@@ -299,9 +266,7 @@ class Component extends React.Component {
     };
   }
   valus = (valueId) => {
-    var valus_locl = localStorage.getItem("cartDetails")
-      ? JSON.parse(localStorage.getItem("cartDetails")).products
-      : "";
+    var valus_locl = localStorage.getItem("cartDetails") ? JSON.parse(localStorage.getItem("cartDetails")).products : "";
 
     var vals;
     valus_locl &&
@@ -344,10 +309,7 @@ class Component extends React.Component {
     if (prevProps.CodData !== this.props.CodData) {
       // Here i have handeled the "check for COD" condition because the response is not setting to the props instantly
       if (this.props.CodData.data.allPincodeMasters.nodes.length > 0) {
-        if (
-          this.props.data[0].price >
-          this.props.CodData.data.allPincodeMasters.nodes[0].maxCartvalue
-        ) {
+        if (this.props.data[0].price > this.props.CodData.data.allPincodeMasters.nodes[0].maxCartvalue) {
           this.setState({ CheckForCodtitle: "COD Not Available" });
         } else {
           this.setState({ CheckForCodtitle: "COD is Available" });
@@ -408,47 +370,42 @@ class Component extends React.Component {
     this.props.setCartFilters({
       skuId: this.props.data[0].skuId,
       qty:
-        this.props.quantity &&
-        this.props.data &&
-        this.props.quantity[this.props.data[0].skuId]
+        this.props.quantity && this.props.data && this.props.quantity[this.props.data[0].skuId]
           ? this.props.quantity[this.props.data[0].skuId]
           : 1,
       price: this.props.data[0].offerPrice,
     });
 
     const _qty =
-      this.props.quantity &&
-      this.props.data &&
-      this.props.quantity[this.props.data[0].skuId]
+      this.props.quantity && this.props.data && this.props.quantity[this.props.data[0].skuId]
         ? this.props.quantity[this.props.data[0].skuId]
         : 1;
     this.props.setFilters({
       ...this.props.filters,
       quantity: _qty,
     });
-    let localStorageQuantity = localStorage.getItem("quantity")
-      ? JSON.parse(localStorage.getItem("quantity"))
-      : null;
+    let localStorageQuantity = localStorage.getItem("quantity") ? JSON.parse(localStorage.getItem("quantity")) : null;
     if (!localStorageQuantity) {
-      if (
-        localStorageQuantity &&
-        !localStorageQuantity[this.props.data[0].skuId]
-      ) {
+      if (localStorageQuantity && !localStorageQuantity[this.props.data[0].skuId]) {
         let _obj = {};
         localStorageQuantity[this.props.data[0].skuId] = _qty;
         localStorage.setItem("quantity", JSON.stringify(localStorageQuantity));
         this.props.filters.quantity[this.props.data[0].skuId] = _qty;
       } else {
         let _obj = {};
+        debugger;
+
         _obj[this.props.data[0].skuId] = _qty;
         localStorage.setItem("quantity", JSON.stringify(_obj));
-        this.props.filters.quantity[this.props.data[0].skuId] = _qty;
+        if (this.props.filters.quantity) {
+          this.props.filters.quantity[this.props.data[0].skuId] = _qty ?? "";
+        }
+        // this.props && this.props.filters &&
       }
     } else {
       localStorageQuantity[this.props.data[0].skuId] = _qty;
       localStorage.setItem("quantity", JSON.stringify(localStorageQuantity));
-      this.props.filters.quantity[this.props?.data[0]?.skuId] =
-        localStorageQuantity[this.props?.data[0]?.skuId];
+      this.props.filters.quantity[this.props?.data[0]?.skuId] = localStorageQuantity[this.props?.data[0]?.skuId];
     }
 
     sessionStorage.setItem(
@@ -456,9 +413,7 @@ class Component extends React.Component {
       JSON.stringify({
         sku_id: this.props.data[0].skuId,
         qty:
-          this.props.quantity &&
-          this.props.data &&
-          this.props.quantity[this.props.data[0].skuId]
+          this.props.quantity && this.props.data && this.props.quantity[this.props.data[0].skuId]
             ? this.props.quantity[this.props.data[0].skuId]
             : 1,
         price: this.props.data[0].offerPrice,
@@ -489,10 +444,7 @@ class Component extends React.Component {
       this.setState({ isRequired: false });
       var variab = {};
       variab["pincode"] = this.state.values;
-      if (
-        Object.entries(variab).length !== 0 &&
-        variab.constructor === Object
-      ) {
+      if (Object.entries(variab).length !== 0 && variab.constructor === Object) {
         this.props.makeRequestCod(variab);
 
         // this.setState({pincodeValues:this.props.CodData})
@@ -525,11 +477,7 @@ class Component extends React.Component {
 
         <Hidden mdUp>
           <div style={{ marginTop: "25px" }}>
-            <ProductPrice
-              data={this.props.data}
-              wishlist={this.props.wishlist}
-              pdpage={true}
-            />
+            <ProductPrice data={this.props.data} wishlist={this.props.wishlist} pdpage={true} />
 
             <Grid container style={{ marginTop: "40x" }}>
               <Grid item xs={12}>
@@ -541,11 +489,9 @@ class Component extends React.Component {
                     this.props.data[0] &&
                     this.props.data[0].productsDetails.length > 0 &&
                     this.props.data[0].productsDetails[0] &&
-                    this.props.data[0].productsDetails[0].namedetail.length >
-                      0 &&
+                    this.props.data[0].productsDetails[0].namedetail.length > 0 &&
                     this.props.data[0].productsDetails[0].namedetail[2] &&
-                    this.props.data[0].productsDetails[0].namedetail[2]
-                      .details && (
+                    this.props.data[0].productsDetails[0].namedetail[2].details && (
                       <Box padding="10px" textAlign="center">
                         <Avatar alt="NAC" style={{ padding: "10px" }}>
                           <img
@@ -563,8 +509,7 @@ class Component extends React.Component {
                         >
                           Metal Weight
                           <br />
-                          {this.props.data[0].productsDetails[0].namedetail[2]
-                            .details ?? ""}
+                          {this.props.data[0].productsDetails[0].namedetail[2].details ?? ""}
                         </p>
                       </Box>
                     )}
@@ -575,11 +520,9 @@ class Component extends React.Component {
                     this.props.data[0] &&
                     this.props.data[0].productsDetails.length > 0 &&
                     this.props.data[0].productsDetails[0] &&
-                    this.props.data[0].productsDetails[0].namedetail.length >
-                      0 &&
+                    this.props.data[0].productsDetails[0].namedetail.length > 0 &&
                     this.props.data[0].productsDetails[0].namedetail[1] &&
-                    this.props.data[0].productsDetails[0].namedetail[1]
-                      .details && (
+                    this.props.data[0].productsDetails[0].namedetail[1].details && (
                       <Box padding="10px" textAlign="center">
                         <Avatar alt="NAC" style={{ padding: "10px" }}>
                           <img
@@ -597,8 +540,7 @@ class Component extends React.Component {
                         >
                           Metal Purity
                           <br />
-                          {this.props.data[0].productsDetails[0].namedetail[1]
-                            .details ?? ""}
+                          {this.props.data[0].productsDetails[0].namedetail[1].details ?? ""}
                         </p>
                       </Box>
                     )}
@@ -608,11 +550,9 @@ class Component extends React.Component {
                     this.props.data[0] &&
                     this.props.data[0].productsDetails.length > 0 &&
                     this.props.data[0].productsDetails[1] &&
-                    this.props.data[0].productsDetails[1].namedetail.length >
-                      0 &&
+                    this.props.data[0].productsDetails[1].namedetail.length > 0 &&
                     this.props.data[0].productsDetails[1].namedetail[3] &&
-                    this.props.data[0].productsDetails[1].namedetail[3]
-                      .details && (
+                    this.props.data[0].productsDetails[1].namedetail[3].details && (
                       <Box padding="10px" textAlign="center">
                         <Avatar alt="NAC" style={{ padding: "10px" }}>
                           <img
@@ -635,13 +575,10 @@ class Component extends React.Component {
                           this.props.data[0] &&
                           this.props.data[0].productsDetails.length > 0 &&
                           this.props.data[0].productsDetails[1] &&
-                          this.props.data[0].productsDetails[1].namedetail
-                            .length > 0 &&
+                          this.props.data[0].productsDetails[1].namedetail.length > 0 &&
                           this.props.data[0].productsDetails[1].namedetail[3] &&
-                          this.props.data[0].productsDetails[1].namedetail[3]
-                            .details
-                            ? this.props.data[0].productsDetails[1]
-                                .namedetail[3].details
+                          this.props.data[0].productsDetails[1].namedetail[3].details
+                            ? this.props.data[0].productsDetails[1].namedetail[3].details
                             : ""}
                         </p>
                       </Box>
@@ -651,12 +588,7 @@ class Component extends React.Component {
             </Grid>
 
             {/* <PriceTabs data={this.props.data} wishlist={this.props.wishlist} /> */}
-            {inputsearch(
-              this.props,
-              this.state,
-              this.handleChanges,
-              this.handleCodChange
-            )}
+            {inputsearch(this.props, this.state, this.handleChanges, this.handleCodChange)}
             <Buynowfixed
               deleteComment={this.deletechecklists}
               data={this.props.data}
