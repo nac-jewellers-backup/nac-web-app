@@ -49,7 +49,7 @@ const RegisterComponent = (props) => {
                     <>
                       {window.location.pathname === "/registers"
                         ? "Register"
-                        : " "}
+                        : "Register New Users"}
                     </>
                   )}
                 </h5>
@@ -355,14 +355,17 @@ const RegisterComponent = (props) => {
                 {paths || pathreg ? (
                   ""
                 ) : (
-                  <Button
-                    className="back-b"
-                    onClick={() => {
-                      props.change();
-                    }}
-                  >
-                    Back
-                  </Button>
+                  <>
+                    <Button
+                      className="back-b"
+                      onClick={() => {
+                        props.change();
+                      }}
+                    >
+                      Back
+                    </Button>
+                    <br />
+                  </>
                 )}
                 <Button className="apply-b" type="submit">
                   {paths ? "Save" : "Register"}

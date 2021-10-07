@@ -353,9 +353,7 @@ const LoginComponent = (props) => {
               </div>
             </Grid>
           </div>
-          <Button type="submit" className="apply-b">
-            SIGN IN
-          </Button>
+
           {window.location.pathname === "/login" ? (
             <div
               style={{
@@ -373,6 +371,9 @@ const LoginComponent = (props) => {
                   New to <b>NAC</b>? Sign Up
                 </span>
               </center>
+              <Button type="submit" className="apply-b">
+                SIGN IN
+              </Button>
             </div>
           ) : (
             <div
@@ -392,6 +393,12 @@ const LoginComponent = (props) => {
                   New to <b>NAC</b>? Sign Up
                 </span>
               </center>
+              <br />
+              <div hidden={show1}>
+                <Button type="submit" className="apply-b">
+                  SIGN IN
+                </Button>
+              </div>
               <div hidden={show}>
                 <Register
                   change={() => {
