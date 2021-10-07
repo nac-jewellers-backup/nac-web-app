@@ -354,7 +354,6 @@ class Checkoutcard extends React.Component {
                                     display: "flex",
                                     alignContent: "center",
                                     alignItems: "center",
-                                   
                                   }}
                                 >
                                   <>
@@ -566,10 +565,18 @@ class Checkoutcard extends React.Component {
                               <Grid item xs={12}>
                                 {/* <Grid container spacing={12}>
                                   <Grid item xs={6}>
-                                    <Typography className={`subhesder ${classes.normalfonts}`}>Size :</Typography>
+                                    <Typography
+                                      className={`subhesder ${classes.normalfonts}`}
+                                    >
+                                      Size :
+                                    </Typography>
                                   </Grid>
                                   <Grid item xs={6}>
-                                    <Typography className={`subhesder ${classes.normalfonts}`}>Quantity :</Typography>
+                                    <Typography
+                                      className={`subhesder ${classes.normalfonts}`}
+                                    >
+                                      Quantity :
+                                    </Typography>
                                   </Grid>
                                 </Grid> */}
                                 <div style={{ marginTop: "15px" }}>
@@ -621,7 +628,7 @@ class Checkoutcard extends React.Component {
                                 </Button>
                                 <Button
                                   id={dataval.generatedSku}
-                                  // onClick={(event) => this.handleDeleteLocalStorage(event)}
+                                  onClick={(event) => this.handleDeleteLocalStorage(event)}
                                   variant="contained"
                                   style={{
                                     color: "gray",
@@ -713,7 +720,7 @@ class Checkoutcard extends React.Component {
         }}
       >
         <AccordionSummary expandIcon={expanded ? <AiFillCaretLeft fontSize="18px" /> : <AiFillCaretRight fontSize="18px" />}>
-          <Typography className={classes.cartheader} noWrap>
+          <Typography className={classes.cartheader} noWrap style={{ display: "flex", justifyContent: "center" }}>
             <IoPricetagsOutline color="#394579" fontSize="18px" />
             &nbsp;&nbsp;&nbsp;<b>Apply Coupon</b>
           </Typography>
@@ -768,6 +775,7 @@ class Checkoutcard extends React.Component {
     );
   };
   subtotals = (props) => {
+    debugger;
     var discounted_price = this.props.cartFilters.discounted_price ? this.props.cartFilters.discounted_price : "";
     const dataCard1 = this.props.data
       .map((val) => {

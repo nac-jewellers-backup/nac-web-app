@@ -341,6 +341,108 @@ export default function Pricing(props) {
             </Grid>
           </>
         )}
+
+        {props.success ? (
+          <>
+            {props.offerPrice == props.price ? (
+              <span
+                style={{
+                  fontSize: "0.9rem",
+                  paddingBottom: "6px",
+                  color: "gray",
+                }}
+              >
+                {new Intl.NumberFormat("en-IN", {
+                  style: "currency",
+                  currency: "INR",
+                  minimumFractionDigits: 0,
+                }).format(Math.round(props.offerPrice))}
+              </span>
+            ) : (
+              <>
+                <span
+                  style={{
+                    fontSize: "0.9rem",
+                    paddingBottom: "6px",
+                    color: "gray",
+                  }}
+                  className={classes.price}
+                >
+                  {new Intl.NumberFormat("en-IN", {
+                    style: "currency",
+                    currency: "INR",
+                    minimumFractionDigits: 0,
+                  }).format(Math.round(props.offerPrice))}
+                </span>
+                <span className={classes.price}>
+                  &nbsp;&nbsp;
+                  <del
+                    style={{
+                      fontSize: "0.9rem",
+                      fontWeight: "lighter",
+                      paddingBottom: "6px",
+                      color: "gray",
+                    }}
+                  >
+                    {new Intl.NumberFormat("en-IN", {
+                      style: "currency",
+                      currency: "INR",
+                      minimumFractionDigits: 0,
+                    }).format(Math.round(props.price))}
+                  </del>
+                </span>
+              </>
+            )}
+          </>
+        ) : (
+          " "
+        )}
+        {/* {props.pdpage !== true && (
+          <Grid
+            item
+            xs={6}
+            lg={
+              window.location.pathname.split("-")[0] !== "/account" &&
+              window.location.pathname !== "/cart" &&
+              window.location.pathname.split("-")[1] !== "allorders"
+                ? 6
+                : 12
+            }
+            style={{
+              paddingBottom: "10px",
+              display: "inline",
+              color: "white",
+              marginLeft: "8px",
+              fontSize: "0.6rem",
+              marginTop: "3px",
+            }}
+          >
+            {props.offerDiscount ? (
+              <span
+                style={{
+                  padding: "5px",
+                  backgroundColor: "#33346D",
+                  textAlign: "center",
+                  borderRadius: "5px",
+                }}
+              >
+                {props.offerDiscount}
+              </span>
+            ) : (
+              <Typography style={{ display: "flex" }}>
+                <Typography
+                  variant="caption"
+                  component="p"
+                  className={`${
+                    (props.save != null) & (props.save !== "") ? "" : "shine"
+                  } ${classes.colorMain}  `}
+                >
+                  {path === "stylori" && "You save"} {props.save}
+                </Typography>
+              </Typography>
+            )}
+          </Grid>
+        )} */}
       </Grid>
     </div>
   );

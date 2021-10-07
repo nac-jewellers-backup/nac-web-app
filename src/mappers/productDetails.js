@@ -400,7 +400,7 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
         skuId: PD && PD === undefined ? "" : PD.generatedSku,
         offerPrice: PD && PD.discountPrice ? PD.discountPrice : "",
         price: PD && PD.markupPrice ? PD.markupPrice : "",
-        save: "5999.9",
+        save: " ",
         offerDiscount:
           PD && PD.discount ? `${Math.abs(PD.discount)}% OFF` : null,
         dis:
