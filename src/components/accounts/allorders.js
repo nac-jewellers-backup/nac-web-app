@@ -843,7 +843,6 @@ class Allorders extends React.Component {
                                             </Grid>
                                           </Grid>
                                         </Grid>
-
                                         <Grid item xs={12} lg={6} style={{ color: "gray" }}>
                                           {/* SHIP To */}
                                           <b style={{ display: "block" }}>Ship To</b>

@@ -38,7 +38,7 @@ const RegisterComponent = (props) => {
           <Grid
             item
             xs={12}
-            lg={window.location.pathname === "/registers" || paths ? 12 : 12}
+            lg={window.location.pathname === "/registers" || paths ? 6 : 12}
           >
             <Grid class="topPaddingwish">
               {window.location.pathname.split("-")[0] !== "/account" && (
@@ -49,7 +49,7 @@ const RegisterComponent = (props) => {
                     <>
                       {window.location.pathname === "/registers"
                         ? "Register"
-                        : "New user registration"}
+                        : "Register New Users"}
                     </>
                   )}
                 </h5>
@@ -355,14 +355,17 @@ const RegisterComponent = (props) => {
                 {paths || pathreg ? (
                   ""
                 ) : (
-                  <Button
-                    className="back-b"
-                    onClick={() => {
-                      props.change();
-                    }}
-                  >
-                    Back
-                  </Button>
+                  <>
+                    <Button
+                      className="back-b"
+                      onClick={() => {
+                        props.change();
+                      }}
+                    >
+                      Back
+                    </Button>
+                    <br />
+                  </>
                 )}
                 <br/>
                 <Button className="apply-b" type="submit">

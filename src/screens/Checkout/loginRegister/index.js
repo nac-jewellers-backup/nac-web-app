@@ -1,4 +1,4 @@
-import { Button, Card, CardContent, Grid } from "@material-ui/core";
+import { Button, Grid } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 import React from "react";
 import { CartContext } from "../../../context/CartContext";
@@ -16,8 +16,8 @@ class LoginRegisterIndex extends React.Component {
     this.state = {
       show: true,
       Register: false,
-      Continue: false,
-      Login: false,
+      Continue: true,
+      Login: true,
       isActive: "",
     };
   }
@@ -62,12 +62,6 @@ class LoginRegisterIndex extends React.Component {
             <Button
               onClick={() => {
                 obj_user["user_id"] = user_id;
-                // obj_user["jewellery"] = "jewellery"
-                // if (!set_check.length > 0) {
-                //
-                //     localStorage.removeItem("cart_id")
-                //     this.props.setCartFilters(obj_user)
-                // }
                 this.props.changePanel(2);
               }}
               style={{
@@ -87,7 +81,7 @@ class LoginRegisterIndex extends React.Component {
           </div>
         ) : (
           <div style={{ width: "100%" }}>
-            <div
+            {/* <div
               className="pt-sm"
               style={{ display: this.state.show == true ? "block" : "none" }}
             >
@@ -126,20 +120,65 @@ class LoginRegisterIndex extends React.Component {
                   ))}
                 </Grid>
               </>
-            </div>
-            <div
-              style={{ display: this.state.Login == true ? "block" : "none" }}
-            >
-              <Login
-                changePanel={this.props.changePanel}
-                change={() => {
-                  this.setState({
-                    show: true,
-                    Login: false,
-                  });
+            </div>*/}
+            <div>
+              <div
+                style={{
+                  display: this.state.Continue === true ? "block" : "none",
                 }}
-                checkoutpage="true"
-              />
+              >
+                <Login
+                  changePanel={this.props.changePanel}
+                  change={() => {
+                    this.setState({
+                      show: true,
+                      Login: false,
+                    });
+                  }}
+                  changeRegister={() => {
+                    this.setState({
+                      show: true,
+                      Register: false,
+                    });
+                  }}
+                  checkoutpage="true"
+                />
+              </div>
+              <div
+                style={{
+                  display: this.state.Continue === true ? "block" : "none",
+                  color: "gray",
+                  textAlign: "center",
+                  borderTop: "1px solid #c1c1c1",
+                }}
+              >
+                <br />
+                Guest Checkout Not ready to become a member just yet?
+                <br />
+                <br />
+                <Button
+                  className="apply-b"
+                  onClick={() => {
+                    this.setState({
+                      Continue: this.state.Continue ? false : true,
+                    });
+                  }}
+                >
+                  Continue As a Guest
+                </Button>
+              </div>
+              <div hidden={this.state.Continue}>
+                <Continues
+                  changePanel={this.props.changePanel}
+                  local_mail_id={local_mail_id}
+                  change={() => {
+                    // this.setState({
+                    //   Continue: this.state.Continue === true ? false : true,
+                    // });
+                    window.location.reload();
+                  }}
+                />
+              </div>
             </div>
             <div
               style={{
@@ -156,7 +195,7 @@ class LoginRegisterIndex extends React.Component {
                 }}
               />
             </div>
-            <div
+            {/* <div
               style={{
                 display: this.state.Continue == true ? "block" : "none",
               }}
@@ -171,7 +210,7 @@ class LoginRegisterIndex extends React.Component {
                   });
                 }}
               />
-            </div>
+            </div> */}
           </div>
         )}
       </Grid>

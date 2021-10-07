@@ -708,7 +708,7 @@ class Component extends React.Component {
                           <div className="ch-d-vl">{email}</div>
                         </Typography>
                       </ExpansionPanelSummary>
-                      <ExpansionPanelDetails>
+                      <ExpansionPanelDetails style={{ padding: "10px" }}>
                         <LoginRegisterIndex changePanel={this.changePanel} />
                       </ExpansionPanelDetails>
                     </ExpansionPanel>
