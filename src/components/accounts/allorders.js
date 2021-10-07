@@ -1149,21 +1149,14 @@ class Allorders extends React.Component {
                                             xs={12}
                                             lg={6}
                                             style={{ color: "gray" }}
+                                            className="fullgray"
                                           >
                                             {/* SHIP To */}
                                             <b style={{ display: "block" }}>
                                               Ship To
                                             </b>
                                             <br />
-                                            <div
-                                              style={{
-                                                backgroundColor: "#F3F3F3",
-                                                color: "gray",
-                                                boxShadow:
-                                                  "4px 5px 3px #888888",
-                                                padding: "10px 0px",
-                                              }}
-                                            >
+                                            <div className="ship">
                                               <div className="cardpadding">
                                                 <div className="cardpadding1">
                                                   <Grid
@@ -1289,15 +1282,7 @@ class Allorders extends React.Component {
                                               Bill To
                                             </b>
                                             <br />
-                                            <div
-                                              style={{
-                                                backgroundColor: "#F3F3F3",
-                                                color: "gray",
-                                                boxShadow:
-                                                  "4px 5px 3px #888888",
-                                                padding: "10px 0px",
-                                              }}
-                                            >
+                                            <div className="ship">
                                               <div className="cardpadding">
                                                 <div className="cardpadding1">
                                                   <Grid

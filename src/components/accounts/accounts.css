@@ -190,6 +190,15 @@
   .address {
     padding-left: 10px;
   }
+  .ship {
+    background-color: white !important;
+    color: "gray";
+    box-shadow: none !important;
+    padding: 10px 0px !important;
+  }
+  .fullgray {
+    background-color: #f3f3f3;
+  }
 }
 
 @media screen and (min-width: 600px) {
@@ -198,6 +207,12 @@
     font-size: 0.9rem !important;
     text-transform: capitalize;
     line-height: 1.6rem !important;
+  }
+  .ship {
+    background-color: #f3f3f3 !important;
+    color: "gray";
+    box-shadow: 4px 5px 3px #888888 !important;
+    padding: 10px 0px !important;
   }
 }
 .cardpadding {
