@@ -247,7 +247,7 @@ class Component extends React.Component {
     return (
       <Grid>
         <Header wishlist={this.props.wishlistdata} />
-        <CustomSeparator
+        {/* <CustomSeparator
           arrowicon="cart-head-arrows"
           className={`breadcrums-header ${classes.normalcolorback}`}
           classsubhed={`breadcrums-sub ${classes.normalcolorback}`}
@@ -263,7 +263,7 @@ class Component extends React.Component {
               : cartsubdata_static
           }
           changePanel={this.changePanel}
-        />
+        /> */}
         <div>
           <div>
             <Grid container style={{ overflow: "hidden" }}>
