@@ -1047,7 +1047,7 @@ class Allorders extends React.Component {
                                   </Hidden>
 
                                   {/* SUB TOTAL */}
-                                  <Hidden smDown>
+                                  <Hidden xsDown>
                                     <br />
                                   </Hidden>
 
