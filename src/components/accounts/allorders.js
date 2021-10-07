@@ -671,7 +671,7 @@ class Allorders extends React.Component {
                                         item
                                         lg={2}
                                         sm={2}
-                                        style={{ padding: "16px" }}
+                                        style={{ padding: "17px" }}
                                       >
                                         <Grid container spacing={12} lg={12}>
                                           <Typography className="subhesder">
@@ -977,6 +977,7 @@ class Allorders extends React.Component {
                                             {/* ORDER DETAILS */}
                                             <Hidden smDown>
                                               <br />
+                                              <br />
                                               <b style={{ display: "block" }}>
                                                 Order Details
                                               </b>
@@ -1056,7 +1057,10 @@ class Allorders extends React.Component {
                                                     SUBTOTAL
                                                   </Typography>
 
-                                                  <Typography className="data1">
+                                                  <Typography
+                                                    className="data1"
+                                                    style={{ marginTop: "6px" }}
+                                                  >
                                                     DISCOUNT&nbsp;CART
                                                   </Typography>
                                                   <Typography className="data1">
@@ -1080,6 +1084,7 @@ class Allorders extends React.Component {
                                                     className="data1"
                                                     style={{
                                                       textAlign: "right",
+                                                      marginTop: "7px",
                                                     }}
                                                   >
                                                     DISCOUNT
@@ -1278,6 +1283,7 @@ class Allorders extends React.Component {
                                                 </div>
                                               </div>
                                             </div>
+                                            <br />
                                             <br />
                                             {/* Bill To */}
                                             <b style={{ display: "block" }}>
