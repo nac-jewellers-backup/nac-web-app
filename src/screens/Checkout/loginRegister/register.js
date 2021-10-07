@@ -38,7 +38,7 @@ const RegisterComponent = (props) => {
           <Grid
             item
             xs={12}
-            lg={window.location.pathname === "/registers" || paths ? 12 : 6}
+            lg={window.location.pathname === "/registers" || paths ? 12 : 12}
           >
             <Grid class="topPaddingwish">
               {window.location.pathname.split("-")[0] !== "/account" && (
@@ -364,6 +364,7 @@ const RegisterComponent = (props) => {
                     Back
                   </Button>
                 )}
+                <br/>
                 <Button className="apply-b" type="submit">
                   {paths ? "Save" : "Register"}
                 </Button>

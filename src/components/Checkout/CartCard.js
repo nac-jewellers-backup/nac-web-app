@@ -18,7 +18,7 @@ import Pricing from "../Pricing/index";
 import "./Cart.css";
 import CardSmallScreen from "./CartCardSmallScreen.js";
 import styles from "./style";
-
+import Wishlist from "components/wishlist/wishlist";
 class Checkoutcard extends React.Component {
   constructor(props) {
     super(props);
@@ -32,7 +32,6 @@ class Checkoutcard extends React.Component {
   }
   async componentDidMount() {
     let skuId_arr = this.props?.data;
-    console.log(this.props.data);
     let shipby_arr_object = [];
     for (var i = 0; i < skuId_arr.length; i++) {
       let params = {
@@ -40,7 +39,6 @@ class Checkoutcard extends React.Component {
         current_datetime: new Date(),
       };
       await axios.post(`${API_URL}/getshippingdate`, params).then((res) => {
-        console.log(res?.data);
         let productShipBy = res?.data?.shipping_date;
         let dateObj = "";
         let shipByDate = "";
@@ -75,8 +73,6 @@ class Checkoutcard extends React.Component {
 
     // var currentValue = e.target.id
     var currentValue = e.target.id && e.target.id.length > 0 ? e.target.id : e.currentTarget.id;
-
-    // console.clear()
 
     var a = local_storage.products.filter((val) => {
       if (currentValue !== val.sku_id) {
@@ -166,7 +162,6 @@ class Checkoutcard extends React.Component {
       arrows: false,
     };
     const handleChange = (panel) => (event, isExpanded) => {
-      console.log(panel);
       this.setState({
         expanded: isExpanded ? panel : false,
       });
@@ -187,15 +182,9 @@ class Checkoutcard extends React.Component {
       else return true;
     };
     const { expand } = this.state;
+
     return (
       <div style={{ marginTop: "10px" }}>
-        {/* <Grid container spacing={12} xs={12}>
-          <Grid item xs={6} />
-          <Grid item xs={6}>
-            {this.checkoutbutton()}
-            <br />
-          </Grid>
-        </Grid> */}
         {this.props.checkoutpage ? (
           <>
             <Grid container direction="row">
@@ -286,52 +275,6 @@ class Checkoutcard extends React.Component {
                                   ))}
                                 </div>
                               </Grid>
-
-                              {/* <Grid item xs={8}>
-                     {val.namedetail !== undefined &&
-                       val.namedetail.map((val) => {
-                         return (
-                           <>
-                             {val.name || val.detail ? (
-                               <Grid container spacing={12}>
-                                 <Grid item xs={6}>
-                                   <Typography
-                                     className={`subhesder ${classes.normalfonts}`}
-                                   >
-                                     {val.name}
-                                   </Typography>
-                                 </Grid>
-                                 <Grid item xs={6}>
-                                   <Typography
-                                     className={`subhesder ${classes.normalfonts}`}
-                                   >
-                                     {val.details}
-                                   </Typography>
-                                 </Grid>
-                               </Grid>
-                             ) : null}
-                           </>
-                         );
-                       })}
-                   </Grid>
-
-                   <Grid item xs={4}>
-                     {this.state.shipby_arr.map((val) => (
-                       <>
-                         {val.skuId === dataval.generatedSku ? (
-                           <Typography
-                             className={`subhesder ${classes.normalfonts}`}
-                           >
-                             {val.shipby}
-                           </Typography>
-                         ) : (
-                           ""
-                         )}
-                       </>
-                     ))}
-                    
-                   </Grid>
-                  */}
                             </Grid>
                           </Grid>
                           <Grid item xs={4} sm={2} lg={3}>
@@ -411,6 +354,7 @@ class Checkoutcard extends React.Component {
                                     display: "flex",
                                     alignContent: "center",
                                     alignItems: "center",
+                                   
                                   }}
                                 >
                                   <>
@@ -530,7 +474,7 @@ class Checkoutcard extends React.Component {
                             alt="title images"
                           />
                         </Box>
-                        <Box className={classes.title}>SHOPING CART</Box>
+                        <Box className={classes.title}>SHOPPING CART</Box>
                         <Box>
                           <img
                             className={classes.img}
@@ -578,6 +522,7 @@ class Checkoutcard extends React.Component {
                               alignContent: "center",
                               alignItems: "center",
                               padding: "1px",
+                              border: "1px solid #D2D3D4",
                             }}
                           >
                             <>
@@ -612,19 +557,21 @@ class Checkoutcard extends React.Component {
                             <Grid
                               container
                               spacing={12}
-                              style={{
-                                marginTop: "15px",
-                              }}
+                              style={
+                                {
+                                  // marginTop: "15px",
+                                }
+                              }
                             >
                               <Grid item xs={12}>
-                                <Grid container spacing={12}>
+                                {/* <Grid container spacing={12}>
                                   <Grid item xs={6}>
                                     <Typography className={`subhesder ${classes.normalfonts}`}>Size :</Typography>
                                   </Grid>
                                   <Grid item xs={6}>
                                     <Typography className={`subhesder ${classes.normalfonts}`}>Quantity :</Typography>
                                   </Grid>
-                                </Grid>
+                                </Grid> */}
                                 <div style={{ marginTop: "15px" }}>
                                   {this.state.shipby_arr.map((val) => (
                                     <>
@@ -649,52 +596,6 @@ class Checkoutcard extends React.Component {
                                   })}
                                 </div>
                               </Grid>
-
-                              {/* <Grid item xs={8}>
-                          {val.namedetail !== undefined &&
-                            val.namedetail.map((val) => {
-                              return (
-                                <>
-                                  {val.name || val.detail ? (
-                                    <Grid container spacing={12}>
-                                      <Grid item xs={6}>
-                                        <Typography
-                                          className={`subhesder ${classes.normalfonts}`}
-                                        >
-                                          {val.name}
-                                        </Typography>
-                                      </Grid>
-                                      <Grid item xs={6}>
-                                        <Typography
-                                          className={`subhesder ${classes.normalfonts}`}
-                                        >
-                                          {val.details}
-                                        </Typography>
-                                      </Grid>
-                                    </Grid>
-                                  ) : null}
-                                </>
-                              );
-                            })}
-                        </Grid>
-
-                        <Grid item xs={4}>
-                          {this.state.shipby_arr.map((val) => (
-                            <>
-                              {val.skuId === dataval.generatedSku ? (
-                                <Typography
-                                  className={`subhesder ${classes.normalfonts}`}
-                                >
-                                  {val.shipby}
-                                </Typography>
-                              ) : (
-                                ""
-                              )}
-                            </>
-                          ))}
-                         
-                        </Grid>
-                       */}
                             </Grid>
                           </Grid>
                           <Grid item xs={4} sm={2} lg={3}>
@@ -720,7 +621,7 @@ class Checkoutcard extends React.Component {
                                 </Button>
                                 <Button
                                   id={dataval.generatedSku}
-                                  onClick={(event) => this.handleDeleteLocalStorage(event)}
+                                  // onClick={(event) => this.handleDeleteLocalStorage(event)}
                                   variant="contained"
                                   style={{
                                     color: "gray",
@@ -735,7 +636,13 @@ class Checkoutcard extends React.Component {
                                     fontWeight: "bold",
                                   }}
                                 >
-                                  MOVE TO WISHLIST
+                                  <Wishlist
+                                    style={{ display: "none" }}
+                                    sku={dataval.generatedSku}
+                                    productId={dataval.productId}
+                                    // wishlist={props.wishlist}
+                                  />
+                                  Move to Wishlist
                                 </Button>
                                 {/* 
                                {console.log(dataval.isActive)} */}
@@ -772,7 +679,7 @@ class Checkoutcard extends React.Component {
                       window.location.href = "/";
                     }}
                   >
-                   Go back to Homepage
+                    Go back to Homepage
                   </Button>
                 </div>
               </Grid>
@@ -887,8 +794,6 @@ class Checkoutcard extends React.Component {
       .reduce(myFunc);
     let path = window.location.pathname.split("/").pop();
     const { classes } = this.props;
-    console.log(Math.round(props.cartFilters.gross_amount));
-    console.log(Math.round(dataCard1));
 
     return (
       <div style={{ marginTop: "15px" }}>
@@ -933,28 +838,57 @@ class Checkoutcard extends React.Component {
               <Grid xs={6}>
                 <Typography className={`subhesder ${classes.normalfonts}`}>
                   <span style={{ float: "right" }}>
-                    &#8377;
-                    {props.cartFilters.gross_amount ? Math.round(props.cartFilters.gross_amount) : Math.round(dataCard1)}
+                    {props.cartFilters.gross_amount
+                      ? new Intl.NumberFormat("en-IN", {
+                          style: "currency",
+                          currency: "INR",
+                          minimumFractionDigits: 0,
+                        }).format(Math.round(props.cartFilters.gross_amount))
+                      : new Intl.NumberFormat("en-IN", {
+                          style: "currency",
+                          currency: "INR",
+                          minimumFractionDigits: 0,
+                        }).format(Math.round(dataCard1))}
                   </span>
                 </Typography>
                 {yousave !== 0 || props.cartFilters.tax_price ? (
                   <Typography className={`subhesder ${classes.normalfonts}`}>
                     <span style={{ float: "right" }}>
-                      &#8377;
                       {props.cartFilters.tax_price
-                        ? Math.abs(Math.round(yousave) + props.cartFilters.tax_price)
-                        : Math.abs(Math.round(yousave))}
+                        ? new Intl.NumberFormat("en-IN", {
+                            style: "currency",
+                            currency: "INR",
+                            minimumFractionDigits: 0,
+                          }).format(Math.round(yousave + props.cartFilters.tax_price))
+                        : new Intl.NumberFormat("en-IN", {
+                            style: "currency",
+                            currency: "INR",
+                            minimumFractionDigits: 0,
+                          }).format(Math.round(yousave))}{" "}
                     </span>
                   </Typography>
                 ) : null}
 
                 {props.cartFilters.tax_price ? (
                   <Typography className={`subhesder ${classes.normalfonts}`}>
-                    <span style={{ float: "right" }}>{props.cartFilters.tax_price}</span>
+                    <span style={{ float: "right" }}>
+                      {new Intl.NumberFormat("en-IN", {
+                        style: "currency",
+                        currency: "INR",
+                        minimumFractionDigits: 0,
+                      }).format(Math.round(props.cartFilters.tax_price))}
+                    </span>
                   </Typography>
                 ) : null}
                 <Typography className={`subhesder ${classes.normalfonts}`}>
-                  <span style={{ float: "right" }}>{props.shipping_charge} </span>
+                  <span style={{ float: "right" }}>
+                    {props.shipping_charge ??
+                      new Intl.NumberFormat("en-IN", {
+                        style: "currency",
+                        currency: "INR",
+                        minimumFractionDigits: 0,
+                      }).format(Math.round(props.shipping_charge))}
+                  </span>
                 </Typography>
               </Grid>
             </Grid>
@@ -981,10 +915,17 @@ class Checkoutcard extends React.Component {
                   }}
                   className={classes.totalcost}
                 >
-                  &#8377;
                   {props.cartFilters.discounted_amount
-                    ? Math.round(props.cartFilters.discounted_amount)
-                    : Math.round(dataCard1 - discounted_price)}
+                    ? new Intl.NumberFormat("en-IN", {
+                        style: "currency",
+                        currency: "INR",
+                        minimumFractionDigits: 0,
+                      }).format(Math.round(props.cartFilters.discounted_amount))
+                    : new Intl.NumberFormat("en-IN", {
+                        style: "currency",
+                        currency: "INR",
+                        minimumFractionDigits: 0,
+                      }).format(Math.round(dataCard1 - discounted_price))}
                 </Typography>
               </Grid>
             </Grid>
@@ -996,12 +937,12 @@ class Checkoutcard extends React.Component {
           ) : (
             <>
               <Grid xs={12} style={{ backgroundColor: "transparent" }}>
-                <NavLink to="/jewellery">
+                {/* <NavLink to="/jewellery">
                   <div className="btn-plain" style={{ backgroundColor: "transparent" }}>
                     {" "}
                     Continue shopping
                   </div>
-                </NavLink>
+                </NavLink> */}
               </Grid>
             </>
           )}
@@ -1037,8 +978,6 @@ class Checkoutcard extends React.Component {
       .reduce(myFunc);
     let path = window.location.pathname.split("/").pop();
     const { classes } = this.props;
-    console.log(Math.round(props.cartFilters.gross_amount));
-    console.log(Math.round(dataCard1));
 
     return (
       <div style={{ marginTop: "15px" }}>
@@ -1064,8 +1003,17 @@ class Checkoutcard extends React.Component {
               <Grid xs={6}>
                 <Typography className={`subhesder ${classes.normalfonts}`}>
                   <span style={{ float: "right" }}>
-                    &#8377;
-                    {props.cartFilters.gross_amount ? Math.round(props.cartFilters.gross_amount) : Math.round(dataCard1)}
+                    {props.cartFilters.gross_amount
+                      ? new Intl.NumberFormat("en-IN", {
+                          style: "currency",
+                          currency: "INR",
+                          minimumFractionDigits: 0,
+                        }).format(Math.round(props.cartFilters.gross_amount))
+                      : new Intl.NumberFormat("en-IN", {
+                          style: "currency",
+                          currency: "INR",
+                          minimumFractionDigits: 0,
+                        }).format(Math.round(dataCard1))}
                   </span>
                 </Typography>
                 <br />
@@ -1073,21 +1021,41 @@ class Checkoutcard extends React.Component {
                 {yousave !== 0 || props.cartFilters.tax_price ? (
                   <Typography className={`subhesder ${classes.normalfonts}`}>
                     <span style={{ float: "right" }}>
-                      &#8377;
                       {props.cartFilters.tax_price
-                        ? Math.abs(Math.round(yousave) + props.cartFilters.tax_price)
-                        : Math.abs(Math.round(yousave))}
+                        ? new Intl.NumberFormat("en-IN", {
+                            style: "currency",
+                            currency: "INR",
+                            minimumFractionDigits: 0,
+                          }).format(Math.round(yousave + props.cartFilters.tax_price))
+                        : new Intl.NumberFormat("en-IN", {
+                            style: "currency",
+                            currency: "INR",
+                            minimumFractionDigits: 0,
+                          }).format(Math.round(yousave))}
                     </span>
                   </Typography>
                 ) : null}
 
                 {props.cartFilters.tax_price ? (
                   <Typography className={`subhesder ${classes.normalfonts}`}>
-                    <span style={{ float: "right" }}>{props.cartFilters.tax_price}</span>
+                    <span style={{ float: "right" }}>
+                      {new Intl.NumberFormat("en-IN", {
+                        style: "currency",
+                        currency: "INR",
+                        minimumFractionDigits: 0,
+                      }).format(Math.round(props.cartFilters.tax_price))}
+                    </span>
                   </Typography>
                 ) : null}
                 <Typography className={`subhesder ${classes.normalfonts}`}>
-                  <span style={{ float: "right" }}>{props.shipping_charge} </span>
+                  <span style={{ float: "right" }}>
+                    {props.shipping_charge ??
+                      new Intl.NumberFormat("en-IN", {
+                        style: "currency",
+                        currency: "INR",
+                        minimumFractionDigits: 0,
+                      }).format(Math.round(props.shipping_charge))}
+                  </span>
                 </Typography>
               </Grid>
             </Grid>
@@ -1114,10 +1082,17 @@ class Checkoutcard extends React.Component {
                   }}
                   className={classes.totalcost}
                 >
-                  &#8377;
                   {props.cartFilters.discounted_amount
-                    ? Math.round(props.cartFilters.discounted_amount)
-                    : Math.round(dataCard1 - discounted_price)}
+                    ? new Intl.NumberFormat("en-IN", {
+                        style: "currency",
+                        currency: "INR",
+                        minimumFractionDigits: 0,
+                      }).format(Math.round(props.cartFilters.discounted_amount))
+                    : new Intl.NumberFormat("en-IN", {
+                        style: "currency",
+                        currency: "INR",
+                        minimumFractionDigits: 0,
+                      }).format(Math.round(dataCard1 - discounted_price))}
                 </Typography>
               </Grid>
             </Grid>
@@ -1209,7 +1184,7 @@ class Checkoutcard extends React.Component {
                         alt="title images"
                       />
                     </Box>
-                    <Box className={classes.title}>SHOPING CART</Box>
+                    <Box className={classes.title}>SHOPPING CART</Box>
                     <Box>
                       <img
                         className={classes.img}
@@ -1251,7 +1226,7 @@ class Checkoutcard extends React.Component {
                 window.location.href = "/";
               }}
             >
-            Go back to Homepage
+              Go back to Homepage
             </Button>
           </Hidden>
         )}

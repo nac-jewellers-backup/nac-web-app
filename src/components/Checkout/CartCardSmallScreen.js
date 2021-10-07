@@ -149,10 +149,22 @@ function MediaControlCard(props) {
                 <Grid xs={4}>
                   {window.location.pathname !== "/checkout" ? (
                     <NavLink to={dataval?.skuUrl} style={{ textDecoration: "none" }}>
-                      <img width="100%" height="100%" src={dataval?.fadeImages[0]?.imageUrl}></img>
+                      <img
+                        width="100%"
+                        height="100%"
+                        alt="images"
+                        style={{ border: "1px solid #D2D3D4", objectFit: "cover" }}
+                        src={dataval?.fadeImages[0]?.imageUrl}
+                      ></img>
                     </NavLink>
                   ) : (
-                    <img width="100%" height="100%" src={dataval?.fadeImages[0]?.imageUrl}></img>
+                    <img
+                      width="100%"
+                      height="100%"
+                      alt="img"
+                      style={{ border: "1px solid #D2D3D4", objectFit: "cover" }}
+                      src={dataval?.fadeImages[0]?.imageUrl}
+                    ></img>
                   )}
                 </Grid>
                 <Grid xs={8}>
@@ -188,7 +200,7 @@ function MediaControlCard(props) {
                         </span>
                       )}
 
-                      <Grid container style={{ marginTop: "10px" }}>
+                      {/* <Grid container style={{ marginTop: "10px" }}>
                         <Grid item xs={6}>
                           <Typography className={`subhesder ${classes.normalfonts}`}>Size</Typography>
                         </Grid>
@@ -204,7 +216,7 @@ function MediaControlCard(props) {
                             )}
                           </Typography>
                         </Grid>
-                      </Grid>
+                      </Grid> */}
                       {dataval.dataCard1.map((val) => (
                         <Pricing
                           cartsm={true}
@@ -217,47 +229,52 @@ function MediaControlCard(props) {
                     </CardContent>
                   </div>
                 </Grid>
-                <Grid item xs={12} style={{ display: "flex", justifyContent: "space-between" }}>
-                  <Button
-                    id={dataval.generatedSku}
-                    className="highliter"
-                    productid={dataval}
-                    onClick={(e) => handleDeleteLocalStorage(e, val)}
-                    variant="contained"
-                    style={{
-                      color: "gray",
-                      border: "2px solid #C1C1C1",
-                      backgroundColor: "white",
-                      borderRadius: "0px",
-                      boxShadow: "none",
-
-                      whiteSpace: "nowrap",
-                      marginTop: "10px",
-                    }}
-                  >
-                    REMOVE
-                  </Button>
-                  <div>&nbsp;&nbsp;</div>
-                  <Button
-                    id={dataval.generatedSku}
-                    className="highliter"
-                    productid={dataval}
-                    onClick={(e) => handleDeleteLocalStorage(e, val)}
-                    variant="contained"
-                    style={{
-                      color: "gray",
-                      border: "2px solid #C1C1C1",
-                      backgroundColor: "white",
-                      borderRadius: "0px",
-                      boxShadow: "none",
-
-                      whiteSpace: "nowrap",
-                      marginTop: "10px",
-                      fontWeight: "bold",
-                    }}
-                  >
-                    MOVE TO WISHLIST
-                  </Button>
+                <Grid container xs={12} style={{ display: "flex" }}>
+                  <Grid item xs={6}>
+                    <Button
+                      id={dataval.generatedSku}
+                      className="highliter"
+                      productid={dataval}
+                      onClick={(e) => handleDeleteLocalStorage(e, val)}
+                      variant="contained"
+                      style={{
+                        color: "gray",
+                        border: "2px solid #C1C1C1",
+                        backgroundColor: "white",
+                        borderRadius: "0px",
+                        boxShadow: "none",
+                        width: "100%",
+                        whiteSpace: "nowrap",
+                        marginTop: "10px",
+                        marginRight: "3px",
+                      }}
+                    >
+                      REMOVE
+                    </Button>
+                  </Grid>
+                  <Grid item xs={6}>
+                    <Button
+                      id={dataval.generatedSku}
+                      className="highliter"
+                      productid={dataval}
+                      onClick={(e) => handleDeleteLocalStorage(e, val)}
+                      variant="contained"
+                      style={{
+                        color: "gray",
+                        border: "2px solid #C1C1C1",
+                        backgroundColor: "white",
+                        borderRadius: "0px",
+                        boxShadow: "none",
+                        width: "100%",
+                        whiteSpace: "nowrap",
+                        marginTop: "10px",
+                        fontWeight: "bold",
+                        marginLeft: "3px",
+                      }}
+                    >
+                      MOVE TO WISHLIST
+                    </Button>
+                  </Grid>
                 </Grid>
               </Grid>
             </div>

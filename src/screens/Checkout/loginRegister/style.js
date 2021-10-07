@@ -79,6 +79,34 @@ export const styles = (theme) => ({
     paddingBottom: "10px",
     fontSize: "1.1rem !important",
   },
+  loginheaders: {
+    color: "gray !important",
+    textTransform: "uppercase",
+    borderBottom: "1.5px solid gray",
+    paddingBottom: "10px",
+    fontSize: "18px !important",
+    [theme.breakpoints.down("md")]: {
+      paddingBottom: "22px",
+      fontSize: "14px !important",
+    },
+  },
+  guestheader: {
+    fontSize: "14px",
+    borderBottom: "1.5px solid gray",
+    color: "gray !important",
+    textTransform: "uppercase",
+    paddingBottom: "3px",
+    textAlign: "center",
+    margin: "10px",
+  },
+
+  normalfonts3: {
+    color: "gray !important",
+    margin: "0px !important",
+    fontSize: "10px !important",
+    textAlign: "center",
+    textTransform: "uppercase",
+  },
   normalfonts2: {
     color: "gray !important",
     marginTop: "30px",

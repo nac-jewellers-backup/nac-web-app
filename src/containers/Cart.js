@@ -63,7 +63,7 @@ class Cart extends React.Component {
         <Hidden smDown>
           <Header wishlist={this.props.wishlistdata} />
 
-          {path === "checkout" ? (
+          {/* {path === "checkout" ? (
             ""
           ) : (
             <CustomSeparator
@@ -82,9 +82,9 @@ class Cart extends React.Component {
                   : cartsubdata
               }
             />
-          )}
+          )} */}
 
-          <div className="cart-ovralldiv-media " style={{ marginTop: "-1%" }}>
+          <div className="cart-ovralldiv-media " style={{ marginTop: "-3%" }}>
             <Grid Container spacing={12}>
               {this.props.data.length > 0 ? (
                 <Grid item xs={12}>

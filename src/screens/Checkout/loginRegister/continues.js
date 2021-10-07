@@ -54,7 +54,7 @@ const ContinuesComponent = (props) => {
                 <form action="javascript:void(0)" onSubmit={(e) => handleSubmit(e)}>
                     <Grid container spacing={12}>
                         <Grid item lg={1} />
-                        <Grid item xs={12} lg={6}>
+                        <Grid item xs={12} lg={12}>
                             {enterotp &&
                                 <>
                                     <h5 className={`title ${classes.normalfonts}`}> OTP Number </h5>
@@ -80,8 +80,8 @@ const ContinuesComponent = (props) => {
                                 </>}
                             {!enterotp &&
                                 <>
-                                    <h5 className={`title ${classes.normalfonts}`}>  Skip registration or login. continue as a guest  </h5>
-                                    <p className={`form-group tp ${classes.normalfonts}`} > (please note, you will need to login in to use a gift voucher) </p>
+                                    <h5 className={` ${classes.guestheader}`}>  Skip registration or login. continue as a guest  </h5>
+                                    <p className={`form-group tp ${classes.normalfonts3}`} > (please note, you will need to login in to use a gift voucher) </p>
                                     <Input
                                         margin="normal"
                                         // variant="outlined"
@@ -94,11 +94,12 @@ const ContinuesComponent = (props) => {
                                         helperText="Please enter your email id"
                                         required
                                     />
-                                    <p className={`form-group ${classes.normalfonts}`}> We don't share these with anybody. Your contact details are secure with us. </p>
+                                    <p className={`form-group ${classes.normalfonts3}`}> We don't share these with anybody. Your contact details are secure with us. </p>
                                 </>}
                             {/* <MailForm/> */}
                             <div className='login-butn'>
                                 <Button className='back-b' onClick={() => clear()} >Back</Button>
+                                <br/>
                                 {enterotp ? <Button className='apply-b' type='submit'>Verify</Button>
                                     : <Button className='apply-b' type='submit' >Apply</Button>}
                             </div>

@@ -92,7 +92,7 @@ class LoginRegisterIndex extends React.Component {
               style={{ display: this.state.show == true ? "block" : "none" }}
             >
               <>
-                <h5 className={`title ${classes.normalfonts}`}>
+                <h5 className={`title ${classes.loginheaders}`}>
                   {" "}
                   Please click to choose an action
                 </h5>
