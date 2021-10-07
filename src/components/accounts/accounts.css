@@ -147,13 +147,59 @@
   font-size: 0.9rem !important;
   text-transform: capitalize;
 }
-.data1 {
-  color: "gray";
-  font-size: 0.9rem !important;
-  text-transform: capitalize;
-  line-height: 2rem !important;
+.rootdiv {
+  background-color: #f3f3f3;
+  color: gray;
+  box-shadow: 4px 5px 3px #888888;
+  padding: 10px 0px;
+}
+.rootdiv1 {
+  background-color: #f3f3f3;
+  color: gray;
+  box-shadow: 4px 5px 3px #888888;
+  padding: 10px 0px;
+}
+@media screen and (max-width: 450px) {
+  .data {
+    color: "gray";
+    font-size: 0.8rem !important;
+    text-transform: capitalize;
+  }
+  .rootdiv1 {
+    background-color: white;
+    color: gray;
+    box-shadow: none;
+    padding: 10px 0px;
+  }
+  .rootdiv {
+    box-shadow: none;
+    padding: 10px 0px;
+  }
+  .data1 {
+    color: "gray";
+    font-size: 0.74rem !important;
+    text-transform: capitalize;
+    line-height: 1.4rem !important;
+  }
+  .cardpadding {
+    padding: 0px !important;
+  }
+  .cardpadding1 {
+    padding: 0px !important;
+  }
+  .address {
+    padding-left: 10px;
+  }
 }
 
+@media screen and (min-width: 600px) {
+  .data1 {
+    color: "gray";
+    font-size: 0.9rem !important;
+    text-transform: capitalize;
+    line-height: 1.6rem !important;
+  }
+}
 .cardpadding {
   padding: 8px 8px 20px 20px;
 }

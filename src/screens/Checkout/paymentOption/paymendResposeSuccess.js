@@ -1,4 +1,4 @@
-import { Box, Grid, Typography } from "@material-ui/core";
+import { Box, Grid, Hidden, Typography } from "@material-ui/core";
 import Allorders from "components/accounts/allorders";
 import Header from "components/SilverComponents/Header";
 import { CartContext } from "context";
@@ -84,7 +84,7 @@ class PaymentResponseSuccess extends React.Component {
     return (
       <>
         <Header wishlist={this.props.wishlistdata} paymentSucces={true} />
-        <Grid container direction="row">
+        <Grid container direction="row" className="titlecartdiv">
           <Grid item xs={12}>
             <Box display="flex" flexDirection="row" justifyContent="center">
               <Box>
@@ -103,9 +103,11 @@ class PaymentResponseSuccess extends React.Component {
                     color: "gray",
                   }}
                 >
-                  Welcome to the NAC family! We’ll take it from here.
-                  <br />
-                  We’ve sent a confirmation email to abc@gmail.com.
+                  <Hidden smDown>
+                    Welcome to the NAC family! We’ll take it from here.
+                    <br />
+                    We’ve sent a confirmation email to abc@gmail.com.
+                  </Hidden>
                 </Typography>
               </Box>
               <Box>
@@ -116,6 +118,19 @@ class PaymentResponseSuccess extends React.Component {
                 />
               </Box>
             </Box>
+            <Typography
+              variant="subtitle2"
+              style={{
+                color: "gray",
+                textAlign: "center",
+              }}
+            >
+              <Hidden mdUp>
+                Welcome to the NAC family! We’ll take it from here.
+                <br />
+                We’ve sent a confirmation email to abc@gmail.com.
+              </Hidden>
+            </Typography>
           </Grid>
         </Grid>
 
@@ -125,6 +140,10 @@ class PaymentResponseSuccess extends React.Component {
               allorderdata={this.props.allorderdata}
               history={this.props.history}
             />
+            <Hidden smDown>
+              <br />
+              <br />
+            </Hidden>
           </Grid>
         </Grid>
       </>
