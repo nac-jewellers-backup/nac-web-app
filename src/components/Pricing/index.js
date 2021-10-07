@@ -382,6 +382,61 @@ export default function Pricing(props) {
           </>
         )}
 
+        {props.success ? (
+          <>
+            {props.offerPrice == props.price ? (
+              <span
+                style={{
+                  fontSize: "0.9rem",
+                  paddingBottom: "6px",
+                  color: "gray",
+                }}
+              >
+                {new Intl.NumberFormat("en-IN", {
+                  style: "currency",
+                  currency: "INR",
+                  minimumFractionDigits: 0,
+                }).format(Math.round(props.offerPrice))}
+              </span>
+            ) : (
+              <>
+                <span
+                  style={{
+                    fontSize: "0.9rem",
+                    paddingBottom: "6px",
+                    color: "gray",
+                  }}
+                  className={classes.price}
+                >
+                  {new Intl.NumberFormat("en-IN", {
+                    style: "currency",
+                    currency: "INR",
+                    minimumFractionDigits: 0,
+                  }).format(Math.round(props.offerPrice))}
+                </span>
+                <span className={classes.price}>
+                  &nbsp;&nbsp;
+                  <del
+                    style={{
+                      fontSize: "0.9rem",
+                      fontWeight: "lighter",
+                      paddingBottom: "6px",
+                      color: "gray",
+                    }}
+                  >
+                    {new Intl.NumberFormat("en-IN", {
+                      style: "currency",
+                      currency: "INR",
+                      minimumFractionDigits: 0,
+                    }).format(Math.round(props.price))}
+                  </del>
+                </span>
+              </>
+            )}
+          </>
+        ) : (
+          " "
+        )}
         {/* {props.pdpage !== true && (
           <Grid
             item
