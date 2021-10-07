@@ -353,6 +353,9 @@ const LoginComponent = (props) => {
               </div>
             </Grid>
           </div>
+          <Button type="submit" className="apply-b">
+            SIGN IN
+          </Button>
           {window.location.pathname === "/login" ? (
             <div
               style={{
