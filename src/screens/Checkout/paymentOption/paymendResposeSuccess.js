@@ -104,6 +104,7 @@ class PaymentResponseSuccess extends React.Component {
                   variant="subtitle2"
                   style={{
                     color: "gray",
+                    textAlign: "center",
                   }}
                 >
                   <Hidden smDown>
