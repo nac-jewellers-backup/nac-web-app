@@ -808,658 +808,582 @@ class Allorders extends React.Component {
                       <div>
                         <div style={{ marginTop: "20px", boxShadow: "none" }}>
                           <div>
-                            {val &&
-                              val.shoppingCartByCartId &&
-                              val.shoppingCartByCartId
-                                .shoppingCartItemsByShoppingCartId &&
-                              val.shoppingCartByCartId.shoppingCartItemsByShoppingCartId.nodes.map(
-                                (cart) => {
-                                  if (cart && cart.transSkuListByProductSku)
-                                    return (
-                                      <>
-                                        <Grid container spacing={6}>
-                                          <Grid
-                                            item
-                                            xs={12}
-                                            lg={6}
-                                            style={{ color: "gray" }}
-                                          >
-                                            {/* ORDER SUMMERY */}
-                                            <b style={{ display: "block" }}>
-                                              Order Summery
-                                            </b>
-                                            <br />
-
-                                            <div className="rootdiv1">
-                                              <div className="cardpadding">
-                                                <div className="cardpadding1">
-                                                  <Grid
-                                                    container
-                                                    spacing={3}
-                                                    style={{
-                                                      overflow: "hidden",
-                                                      outline: "none",
-                                                      color: "gray",
-                                                      borderBottom:
-                                                        "1px solid #c1c1c1",
-                                                    }}
-                                                  >
-                                                    <Grid item lg={3} xs={3}>
-                                                      {cart &&
-                                                        cart.transSkuListByProductSku &&
-                                                        cart.transSkuListByProductSku.productListByProductId.productImagesByProductId.nodes.map(
-                                                          (imgs) =>
-                                                            this.ImageUrl(
-                                                              imgs,
-                                                              cart &&
-                                                                cart.transSkuListByProductSku &&
-                                                                cart
-                                                                  .transSkuListByProductSku
-                                                                  .generatedSku,
-                                                              cart
-                                                                .transSkuListByProductSku
-                                                                .metalColor,
-                                                              paymentsuccess
-                                                            ) ? (
-                                                              <div className="viewport-img-border ">
-                                                                <img
-                                                                  className="viewport-img"
-                                                                  src={this.ImageUrl(
-                                                                    imgs,
-                                                                    cart &&
-                                                                      cart.transSkuListByProductSku &&
-                                                                      cart
-                                                                        .transSkuListByProductSku
-                                                                        .generatedSku,
-                                                                    cart
-                                                                      .transSkuListByProductSku
-                                                                      .metalColor,
-                                                                    paymentsuccess
-                                                                  )}
-                                                                  alt=""
-                                                                />
-                                                              </div>
-                                                            ) : (
-                                                              <div className="viewport-img-border">
-                                                                <img
-                                                                  className="viewport-img"
-                                                                  src="https://styloriimages.s3.ap-south-1.amazonaws.com/Banners/Stylori+Silver/StyloriSilver+nemonic.png"
-                                                                  alt=""
-                                                                />
-                                                              </div>
-                                                            )
-                                                        )}
-                                                    </Grid>
-                                                    <Grid item lg={6} xs={6}>
-                                                      <div>
-                                                        <Hidden smDown>
-                                                          <br />
-                                                        </Hidden>
-                                                        <Typography className="data">
-                                                          {
-                                                            cart
-                                                              .transSkuListByProductSku
-                                                              .productListByProductId
-                                                              .productName
-                                                          }
-                                                        </Typography>
-                                                        <Typography className="data">
-                                                          {
-                                                            cart
-                                                              .transSkuListByProductSku
-                                                              .generatedSku
-                                                          }
-                                                        </Typography>
-                                                        <Typography className="data">
-                                                          {this.generateShipsBy(
-                                                            cart
-                                                              .transSkuListByProductSku
-                                                              .readytoship,
-                                                            cart
-                                                              .transSkuListByProductSku
-                                                              .vendorDeliveryTime
-                                                          )}
-                                                        </Typography>
-                                                      </div>
-                                                    </Grid>
-                                                    <Grid
-                                                      item
-                                                      lg={3}
-                                                      xs={3}
-                                                      style={{
-                                                        alignItems: "center",
-                                                      }}
-                                                    >
-                                                      <Hidden smDown>
-                                                        <br />
-                                                        <br />
-                                                      </Hidden>
-                                                      {Math.round(
-                                                        cart.discountPrice
-                                                      ) >
-                                                      Math.round(
-                                                        cart
-                                                          .transSkuListByProductSku
-                                                          .markupPrice
-                                                      ) ? (
-                                                        <Pricing
-                                                          price={
-                                                            cart
-                                                              .transSkuListByProductSku
-                                                              .discountPrice
-                                                          }
-                                                          offerPrice={
-                                                            cart
-                                                              .transSkuListByProductSku
-                                                              .markupPrice
-                                                          }
-                                                          offerDiscount={
-                                                            "25% - OFF"
-                                                          }
-                                                          success={true}
-                                                        />
-                                                      ) : (
-                                                        <Pricing
-                                                          offerPrice={
-                                                            cart
-                                                              .transSkuListByProductSku
-                                                              .markupPrice
-                                                          }
-                                                          success={true}
-                                                        />
-                                                      )}
-                                                      <br />
-                                                    </Grid>
-                                                  </Grid>
-                                                </div>
-                                              </div>
-                                            </div>
-                                            {/* ORDER DETAILS */}
-                                            <Hidden smDown>
-                                              <br />
-                                              <br />
-                                              <b style={{ display: "block" }}>
-                                                Order Details
-                                              </b>
-                                              <br />
-                                              <div className="rootdiv">
+                            <>
+                              <Grid container spacing={6}>
+                                <Grid
+                                  item
+                                  xs={12}
+                                  lg={6}
+                                  style={{ color: "gray" }}
+                                >
+                                  {/* ORDER SUMMERY */}
+                                  <b style={{ display: "block" }}>
+                                    Order Summery
+                                  </b>
+                                  <br />
+                                  {val &&
+                                    val.shoppingCartByCartId &&
+                                    val.shoppingCartByCartId
+                                      .shoppingCartItemsByShoppingCartId &&
+                                    val.shoppingCartByCartId.shoppingCartItemsByShoppingCartId.nodes.map(
+                                      (cart) => {
+                                        if (
+                                          cart &&
+                                          cart.transSkuListByProductSku
+                                        )
+                                          return (
+                                            <>
+                                              <div className="rootdiv1">
                                                 <div className="cardpadding">
                                                   <div className="cardpadding1">
                                                     <Grid
                                                       container
                                                       spacing={3}
                                                       style={{
+                                                        overflow: "hidden",
+                                                        outline: "none",
                                                         color: "gray",
                                                         borderBottom:
                                                           "1px solid #c1c1c1",
                                                       }}
                                                     >
-                                                      <Grid item lg={4} xs={4}>
+                                                      <Grid item lg={3} xs={3}>
+                                                        {cart &&
+                                                          cart.transSkuListByProductSku &&
+                                                          cart.transSkuListByProductSku.productListByProductId.productImagesByProductId.nodes.map(
+                                                            (imgs) =>
+                                                              this.ImageUrl(
+                                                                imgs,
+                                                                cart &&
+                                                                  cart.transSkuListByProductSku &&
+                                                                  cart
+                                                                    .transSkuListByProductSku
+                                                                    .generatedSku,
+                                                                cart
+                                                                  .transSkuListByProductSku
+                                                                  .metalColor,
+                                                                paymentsuccess
+                                                              ) ? (
+                                                                <div className="viewport-img-border ">
+                                                                  <img
+                                                                    className="viewport-img"
+                                                                    src={this.ImageUrl(
+                                                                      imgs,
+                                                                      cart &&
+                                                                        cart.transSkuListByProductSku &&
+                                                                        cart
+                                                                          .transSkuListByProductSku
+                                                                          .generatedSku,
+                                                                      cart
+                                                                        .transSkuListByProductSku
+                                                                        .metalColor,
+                                                                      paymentsuccess
+                                                                    )}
+                                                                    alt=""
+                                                                  />
+                                                                </div>
+                                                              ) : (
+                                                                <div className="viewport-img-border">
+                                                                  <img
+                                                                    className="viewport-img"
+                                                                    src="https://styloriimages.s3.ap-south-1.amazonaws.com/Banners/Stylori+Silver/StyloriSilver+nemonic.png"
+                                                                    alt=""
+                                                                  />
+                                                                </div>
+                                                              )
+                                                          )}
+                                                      </Grid>
+                                                      <Grid item lg={6} xs={6}>
                                                         <div>
-                                                          <Typography className="data1">
-                                                            ORDER&nbsp;NUMBER
+                                                          <Hidden smDown>
+                                                            <br />
+                                                          </Hidden>
+                                                          <Typography className="data">
+                                                            {
+                                                              cart
+                                                                .transSkuListByProductSku
+                                                                .productListByProductId
+                                                                .productName
+                                                            }
                                                           </Typography>
-                                                          <Typography className="data1">
-                                                            ORDER&nbsp;PLACED&nbsp;ON
+                                                          <Typography className="data">
+                                                            {
+                                                              cart
+                                                                .transSkuListByProductSku
+                                                                .generatedSku
+                                                            }
                                                           </Typography>
-                                                          <Typography className="data1">
-                                                            PAYMENT&nbsp;METHOD
+                                                          <Typography className="data">
+                                                            {this.generateShipsBy(
+                                                              cart
+                                                                .transSkuListByProductSku
+                                                                .readytoship,
+                                                              cart
+                                                                .transSkuListByProductSku
+                                                                .vendorDeliveryTime
+                                                            )}
                                                           </Typography>
                                                         </div>
                                                       </Grid>
                                                       <Grid
                                                         item
-                                                        lg={8}
-                                                        xs={8}
+                                                        lg={3}
+                                                        xs={3}
                                                         style={{
                                                           alignItems: "center",
                                                         }}
                                                       >
-                                                        <div>
-                                                          <Typography className="data1">
-                                                            #{val && val.id}
-                                                          </Typography>
-                                                          <Typography className="data1">
-                                                            {moment(
-                                                              val &&
-                                                                val.createdAt
-                                                            ).format(
-                                                              "Do MMMM YYYY"
-                                                            )}
-                                                          </Typography>
-                                                          <Typography className="data1">
-                                                            {val.paymentMode}
-                                                          </Typography>
-                                                        </div>
+                                                        <Hidden smDown>
+                                                          <br />
+                                                          <br />
+                                                        </Hidden>
+                                                        {Math.round(
+                                                          cart.discountPrice
+                                                        ) >
+                                                        Math.round(
+                                                          cart
+                                                            .transSkuListByProductSku
+                                                            .markupPrice
+                                                        ) ? (
+                                                          <Pricing
+                                                            price={
+                                                              cart
+                                                                .transSkuListByProductSku
+                                                                .discountPrice
+                                                            }
+                                                            offerPrice={
+                                                              cart
+                                                                .transSkuListByProductSku
+                                                                .markupPrice
+                                                            }
+                                                            offerDiscount={
+                                                              "25% - OFF"
+                                                            }
+                                                            success={true}
+                                                          />
+                                                        ) : (
+                                                          <Pricing
+                                                            offerPrice={
+                                                              cart
+                                                                .transSkuListByProductSku
+                                                                .markupPrice
+                                                            }
+                                                            success={true}
+                                                          />
+                                                        )}
+                                                        <br />
                                                       </Grid>
                                                     </Grid>
                                                   </div>
                                                 </div>
                                               </div>
-                                              <br />
-                                            </Hidden>
-
-                                            {/* SUB TOTAL */}
-                                            <br />
+                                            </>
+                                          );
+                                      }
+                                    )}
+                                  <Hidden smDown>
+                                    <br />
+                                    <br />
+                                    <b style={{ display: "block" }}>
+                                      Order Details
+                                    </b>
+                                    <br />
+                                    <div className="rootdiv">
+                                      <div className="cardpadding">
+                                        <div className="cardpadding1">
+                                          <Grid
+                                            container
+                                            spacing={3}
+                                            style={{
+                                              color: "gray",
+                                              borderBottom: "1px solid #c1c1c1",
+                                            }}
+                                          >
+                                            <Grid item lg={4} xs={4}>
+                                              <div>
+                                                <Typography className="data1">
+                                                  ORDER&nbsp;NUMBER
+                                                </Typography>
+                                                <Typography className="data1">
+                                                  ORDER&nbsp;PLACED&nbsp;ON
+                                                </Typography>
+                                                <Typography className="data1">
+                                                  PAYMENT&nbsp;METHOD
+                                                </Typography>
+                                              </div>
+                                            </Grid>
                                             <Grid
-                                              container
+                                              item
+                                              lg={8}
+                                              xs={8}
                                               style={{
-                                                overflow: "hidden",
-                                                outline: "none",
-                                                color: "gray",
-                                                borderBottom:
-                                                  "1px solid #c1c1c1",
+                                                alignItems: "center",
                                               }}
                                             >
-                                              <Grid item xs={6}>
-                                                <div>
-                                                  <Typography className="data1">
-                                                    SUBTOTAL
-                                                  </Typography>
-
-                                                  <Typography
-                                                    className="data1"
-                                                    style={{ marginTop: "6px" }}
-                                                  >
-                                                    DISCOUNT&nbsp;CART
-                                                  </Typography>
-                                                  <Typography className="data1">
-                                                    SHIPPING&nbsp;CHARGES(Standard)
-                                                  </Typography>
-                                                </div>
-                                                <br />
-                                              </Grid>
-                                              <Grid item xs={6}>
-                                                <div>
-                                                  <Typography
-                                                    className="data1"
-                                                    style={{
-                                                      textAlign: "right",
-                                                    }}
-                                                  >
-                                                    TOTAL
-                                                  </Typography>
-
-                                                  <Typography
-                                                    className="data1"
-                                                    style={{
-                                                      textAlign: "right",
-                                                      marginTop: "7px",
-                                                    }}
-                                                  >
-                                                    DISCOUNT
-                                                  </Typography>
-                                                  <Typography
-                                                    className="data1"
-                                                    style={{
-                                                      textAlign: "right",
-                                                    }}
-                                                  >
-                                                    SHIPPING
-                                                  </Typography>
-                                                </div>
-                                                <br />
-                                              </Grid>
-                                            </Grid>
-                                            {/*  TOTAL COST */}
-                                            <Grid container>
-                                              <Grid
-                                                item
-                                                xs={6}
-                                                style={{
-                                                  color: "#2F348A",
-                                                }}
-                                              >
-                                                <Typography variant="body1">
-                                                  <b> TOTAL&nbsp;COST</b>
+                                              <div>
+                                                <Typography className="data1">
+                                                  #{val && val.id}
                                                 </Typography>
-                                              </Grid>
-                                              <Grid
-                                                item
-                                                xs={6}
-                                                style={{
-                                                  color: "#2F348A",
-                                                }}
-                                              >
-                                                <Typography
-                                                  variant="body1"
-                                                  style={{ float: "right" }}
-                                                >
-                                                  <b>
-                                                    {new Intl.NumberFormat(
-                                                      "en-IN",
-                                                      {
-                                                        style: "currency",
-                                                        currency: "INR",
-                                                        minimumFractionDigits: 0,
-                                                      }
-                                                    ).format(
-                                                      Math.round(
-                                                        val.shoppingCartByCartId
-                                                          .discountedPrice
-                                                      )
-                                                    )}
-                                                  </b>
+                                                <Typography className="data1">
+                                                  {moment(
+                                                    val && val.createdAt
+                                                  ).format("Do MMMM YYYY")}
                                                 </Typography>
-                                              </Grid>
+                                                <Typography className="data1">
+                                                  {val.paymentMode}
+                                                </Typography>
+                                              </div>
                                             </Grid>
                                           </Grid>
-                                          <Grid
-                                            item
-                                            xs={12}
-                                            lg={6}
-                                            style={{ color: "gray" }}
-                                            className="fullgray"
-                                          >
-                                            {/* SHIP To */}
-                                            <b style={{ display: "block" }}>
-                                              Ship To
-                                            </b>
-                                            <br />
-                                            <div className="ship">
-                                              <div className="cardpadding">
-                                                <div className="cardpadding1">
-                                                  <Grid
-                                                    container
-                                                    spacing={3}
-                                                    style={{
-                                                      overflow: "hidden",
-                                                      outline: "none",
-                                                      color: "gray",
-                                                    }}
-                                                  >
-                                                    <Grid item lg={6} xs={12}>
-                                                      <div className="address">
-                                                        <Typography className="data">
-                                                          <div>
-                                                            {" "}
-                                                            {val.shoppingCartByCartId &&
-                                                              val
-                                                                .shoppingCartByCartId
-                                                                .cartAddressesByCartId &&
-                                                              val
-                                                                .shoppingCartByCartId
-                                                                .cartAddressesByCartId
-                                                                .nodes &&
-                                                              val
-                                                                .shoppingCartByCartId
-                                                                .cartAddressesByCartId
-                                                                .nodes[0] &&
-                                                              val
-                                                                .shoppingCartByCartId
-                                                                .cartAddressesByCartId
-                                                                .nodes[0]
-                                                                .firstname}
-                                                            &nbsp;
-                                                            {val.shoppingCartByCartId &&
-                                                              val
-                                                                .shoppingCartByCartId
-                                                                .cartAddressesByCartId &&
-                                                              val
-                                                                .shoppingCartByCartId
-                                                                .cartAddressesByCartId
-                                                                .nodes &&
-                                                              val
-                                                                .shoppingCartByCartId
-                                                                .cartAddressesByCartId
-                                                                .nodes[0] &&
-                                                              val
-                                                                .shoppingCartByCartId
-                                                                .cartAddressesByCartId
-                                                                .nodes[0]
-                                                                .lastname}
-                                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <br />
+                                  </Hidden>
 
-                                                          <div>
-                                                            {" "}
-                                                            {val.shoppingCartByCartId &&
-                                                              val
-                                                                .shoppingCartByCartId
-                                                                .cartAddressesByCartId &&
-                                                              val
-                                                                .shoppingCartByCartId
-                                                                .cartAddressesByCartId
-                                                                .nodes &&
-                                                              val
-                                                                .shoppingCartByCartId
-                                                                .cartAddressesByCartId
-                                                                .nodes[0] &&
-                                                              val
-                                                                .shoppingCartByCartId
-                                                                .cartAddressesByCartId
-                                                                .nodes[0]
-                                                                .addressline1}
-                                                          </div>
+                                  {/* SUB TOTAL */}
+                                  <br />
+                                  <Grid
+                                    container
+                                    style={{
+                                      overflow: "hidden",
+                                      outline: "none",
+                                      color: "gray",
+                                      borderBottom: "1px solid #c1c1c1",
+                                    }}
+                                  >
+                                    <Grid item xs={6}>
+                                      <div>
+                                        <Typography className="data1">
+                                          SUBTOTAL
+                                        </Typography>
 
-                                                          <div>
-                                                            {" "}
-                                                            {val.shoppingCartByCartId &&
-                                                              val
-                                                                .shoppingCartByCartId
-                                                                .cartAddressesByCartId &&
-                                                              val
-                                                                .shoppingCartByCartId
-                                                                .cartAddressesByCartId
-                                                                .nodes &&
-                                                              val
-                                                                .shoppingCartByCartId
-                                                                .cartAddressesByCartId
-                                                                .nodes[0] &&
-                                                              val
-                                                                .shoppingCartByCartId
-                                                                .cartAddressesByCartId
-                                                                .nodes[0].city +
-                                                                "-"}
-                                                            {val.shoppingCartByCartId &&
-                                                              val
-                                                                .shoppingCartByCartId
-                                                                .cartAddressesByCartId &&
-                                                              val
-                                                                .shoppingCartByCartId
-                                                                .cartAddressesByCartId
-                                                                .nodes &&
-                                                              val
-                                                                .shoppingCartByCartId
-                                                                .cartAddressesByCartId
-                                                                .nodes[0] &&
-                                                              val
-                                                                .shoppingCartByCartId
-                                                                .cartAddressesByCartId
-                                                                .nodes[0]
-                                                                .pincode}
-                                                          </div>
-                                                        </Typography>
-                                                      </div>
-                                                    </Grid>
-                                                  </Grid>
+                                        <Typography
+                                          className="data1"
+                                          style={{ marginTop: "6px" }}
+                                        >
+                                          DISCOUNT&nbsp;CART
+                                        </Typography>
+                                        <Typography className="data1">
+                                          SHIPPING&nbsp;CHARGES(Standard)
+                                        </Typography>
+                                      </div>
+                                      <br />
+                                    </Grid>
+                                    <Grid item xs={6}>
+                                      <div>
+                                        <Typography
+                                          className="data1"
+                                          style={{
+                                            textAlign: "right",
+                                          }}
+                                        >
+                                          TOTAL
+                                        </Typography>
+
+                                        <Typography
+                                          className="data1"
+                                          style={{
+                                            textAlign: "right",
+                                            marginTop: "7px",
+                                          }}
+                                        >
+                                          DISCOUNT
+                                        </Typography>
+                                        <Typography
+                                          className="data1"
+                                          style={{
+                                            textAlign: "right",
+                                          }}
+                                        >
+                                          SHIPPING
+                                        </Typography>
+                                      </div>
+                                      <br />
+                                    </Grid>
+                                  </Grid>
+                                  {/*  TOTAL COST */}
+                                  <Grid container>
+                                    <Grid
+                                      item
+                                      xs={6}
+                                      style={{
+                                        color: "#2F348A",
+                                      }}
+                                    >
+                                      <Typography variant="body1">
+                                        <b> TOTAL&nbsp;COST</b>
+                                      </Typography>
+                                    </Grid>
+                                    <Grid
+                                      item
+                                      xs={6}
+                                      style={{
+                                        color: "#2F348A",
+                                      }}
+                                    >
+                                      <Typography
+                                        variant="body1"
+                                        style={{ float: "right" }}
+                                      >
+                                        <b>
+                                          {new Intl.NumberFormat("en-IN", {
+                                            style: "currency",
+                                            currency: "INR",
+                                            minimumFractionDigits: 0,
+                                          }).format(
+                                            Math.round(
+                                              val.shoppingCartByCartId
+                                                .discountedPrice
+                                            )
+                                          )}
+                                        </b>
+                                      </Typography>
+                                    </Grid>
+                                  </Grid>
+                                </Grid>
+                                <Grid
+                                  item
+                                  xs={12}
+                                  lg={6}
+                                  style={{ color: "gray" }}
+                                  className="fullgray"
+                                >
+                                  {/* SHIP To */}
+                                  <b style={{ display: "block" }}>Ship To</b>
+                                  <br />
+                                  <div className="ship">
+                                    <div className="cardpadding">
+                                      <div className="cardpadding1">
+                                        <Grid
+                                          container
+                                          spacing={3}
+                                          style={{
+                                            overflow: "hidden",
+                                            outline: "none",
+                                            color: "gray",
+                                          }}
+                                        >
+                                          <Grid item lg={6} xs={12}>
+                                            <div className="address">
+                                              <Typography className="data">
+                                                <div>
+                                                  {" "}
+                                                  {val.shoppingCartByCartId &&
+                                                    val.shoppingCartByCartId
+                                                      .cartAddressesByCartId &&
+                                                    val.shoppingCartByCartId
+                                                      .cartAddressesByCartId
+                                                      .nodes &&
+                                                    val.shoppingCartByCartId
+                                                      .cartAddressesByCartId
+                                                      .nodes[0] &&
+                                                    val.shoppingCartByCartId
+                                                      .cartAddressesByCartId
+                                                      .nodes[0].firstname}
+                                                  &nbsp;
+                                                  {val.shoppingCartByCartId &&
+                                                    val.shoppingCartByCartId
+                                                      .cartAddressesByCartId &&
+                                                    val.shoppingCartByCartId
+                                                      .cartAddressesByCartId
+                                                      .nodes &&
+                                                    val.shoppingCartByCartId
+                                                      .cartAddressesByCartId
+                                                      .nodes[0] &&
+                                                    val.shoppingCartByCartId
+                                                      .cartAddressesByCartId
+                                                      .nodes[0].lastname}
                                                 </div>
-                                              </div>
-                                            </div>
-                                            <br />
-                                            <br />
-                                            {/* Bill To */}
-                                            <b style={{ display: "block" }}>
-                                              Bill To
-                                            </b>
-                                            <br />
-                                            <div className="ship">
-                                              <div className="cardpadding">
-                                                <div className="cardpadding1">
-                                                  <Grid
-                                                    container
-                                                    spacing={3}
-                                                    style={{
-                                                      overflow: "hidden",
-                                                      outline: "none",
-                                                      color: "gray",
-                                                    }}
-                                                  >
-                                                    <Grid item lg={6} xs={12}>
-                                                      <div className="address">
-                                                        <Typography className="data">
-                                                          <div>
-                                                            {" "}
-                                                            {val.shoppingCartByCartId &&
-                                                              val
-                                                                .shoppingCartByCartId
-                                                                .cartAddressesByCartId &&
-                                                              val
-                                                                .shoppingCartByCartId
-                                                                .cartAddressesByCartId
-                                                                .nodes &&
-                                                              val
-                                                                .shoppingCartByCartId
-                                                                .cartAddressesByCartId
-                                                                .nodes[0] &&
-                                                              val
-                                                                .shoppingCartByCartId
-                                                                .cartAddressesByCartId
-                                                                .nodes[0]
-                                                                .firstname}
-                                                            &nbsp;
-                                                            {val.shoppingCartByCartId &&
-                                                              val
-                                                                .shoppingCartByCartId
-                                                                .cartAddressesByCartId &&
-                                                              val
-                                                                .shoppingCartByCartId
-                                                                .cartAddressesByCartId
-                                                                .nodes &&
-                                                              val
-                                                                .shoppingCartByCartId
-                                                                .cartAddressesByCartId
-                                                                .nodes[0] &&
-                                                              val
-                                                                .shoppingCartByCartId
-                                                                .cartAddressesByCartId
-                                                                .nodes[0]
-                                                                .lastname}
-                                                          </div>
 
-                                                          <div>
-                                                            {" "}
-                                                            {val.shoppingCartByCartId &&
-                                                              val
-                                                                .shoppingCartByCartId
-                                                                .cartAddressesByCartId &&
-                                                              val
-                                                                .shoppingCartByCartId
-                                                                .cartAddressesByCartId
-                                                                .nodes &&
-                                                              val
-                                                                .shoppingCartByCartId
-                                                                .cartAddressesByCartId
-                                                                .nodes[0] &&
-                                                              val
-                                                                .shoppingCartByCartId
-                                                                .cartAddressesByCartId
-                                                                .nodes[0]
-                                                                .addressline1}
-                                                          </div>
-
-                                                          <div>
-                                                            {" "}
-                                                            {val.shoppingCartByCartId &&
-                                                              val
-                                                                .shoppingCartByCartId
-                                                                .cartAddressesByCartId &&
-                                                              val
-                                                                .shoppingCartByCartId
-                                                                .cartAddressesByCartId
-                                                                .nodes &&
-                                                              val
-                                                                .shoppingCartByCartId
-                                                                .cartAddressesByCartId
-                                                                .nodes[0] &&
-                                                              val
-                                                                .shoppingCartByCartId
-                                                                .cartAddressesByCartId
-                                                                .nodes[0].city +
-                                                                "-"}
-                                                            {val.shoppingCartByCartId &&
-                                                              val
-                                                                .shoppingCartByCartId
-                                                                .cartAddressesByCartId &&
-                                                              val
-                                                                .shoppingCartByCartId
-                                                                .cartAddressesByCartId
-                                                                .nodes &&
-                                                              val
-                                                                .shoppingCartByCartId
-                                                                .cartAddressesByCartId
-                                                                .nodes[0] &&
-                                                              val
-                                                                .shoppingCartByCartId
-                                                                .cartAddressesByCartId
-                                                                .nodes[0]
-                                                                .pincode}
-                                                          </div>
-                                                        </Typography>
-                                                      </div>
-                                                    </Grid>
-                                                  </Grid>
+                                                <div>
+                                                  {" "}
+                                                  {val.shoppingCartByCartId &&
+                                                    val.shoppingCartByCartId
+                                                      .cartAddressesByCartId &&
+                                                    val.shoppingCartByCartId
+                                                      .cartAddressesByCartId
+                                                      .nodes &&
+                                                    val.shoppingCartByCartId
+                                                      .cartAddressesByCartId
+                                                      .nodes[0] &&
+                                                    val.shoppingCartByCartId
+                                                      .cartAddressesByCartId
+                                                      .nodes[0].addressline1}
                                                 </div>
-                                              </div>
+
+                                                <div>
+                                                  {" "}
+                                                  {val.shoppingCartByCartId &&
+                                                    val.shoppingCartByCartId
+                                                      .cartAddressesByCartId &&
+                                                    val.shoppingCartByCartId
+                                                      .cartAddressesByCartId
+                                                      .nodes &&
+                                                    val.shoppingCartByCartId
+                                                      .cartAddressesByCartId
+                                                      .nodes[0] &&
+                                                    val.shoppingCartByCartId
+                                                      .cartAddressesByCartId
+                                                      .nodes[0].city + "-"}
+                                                  {val.shoppingCartByCartId &&
+                                                    val.shoppingCartByCartId
+                                                      .cartAddressesByCartId &&
+                                                    val.shoppingCartByCartId
+                                                      .cartAddressesByCartId
+                                                      .nodes &&
+                                                    val.shoppingCartByCartId
+                                                      .cartAddressesByCartId
+                                                      .nodes[0] &&
+                                                    val.shoppingCartByCartId
+                                                      .cartAddressesByCartId
+                                                      .nodes[0].pincode}
+                                                </div>
+                                              </Typography>
                                             </div>
-                                            <br />
-                                            {/* Buttons */}
-                                            <Button
-                                              className="continue-to"
-                                              onClick={(e) => {
-                                                e.preventDefault();
-                                                window.location.href =
-                                                  "/jewellery";
-                                              }}
-                                            >
-                                              Continue To Shopping
-                                            </Button>
-                                            <br />
-                                            <br />
-                                            <Button
-                                              startIcon={<AiFillCaretLeft />}
-                                              className="apply-b"
-                                              onClick={(e) => {
-                                                localStorage.removeItem(
-                                                  "a__c_t"
-                                                );
-                                                localStorage.removeItem(
-                                                  "panel"
-                                                );
-                                                localStorage.removeItem(
-                                                  "order_id"
-                                                );
-                                                localStorage.removeItem(
-                                                  "cartDetails"
-                                                );
-                                                localStorage.removeItem(
-                                                  "ship_isactive"
-                                                );
-                                                localStorage.removeItem(
-                                                  "select_addres"
-                                                );
-                                                localStorage.removeItem(
-                                                  "bil_isactive"
-                                                );
-                                                if (gut_lg === true) {
-                                                  localStorage.clear();
-                                                }
-                                                this.props.history.push(
-                                                  "/home"
-                                                );
-                                              }}
-                                            >
-                                              Go back to Homepage
-                                            </Button>
-                                            <Hidden mdUp>
-                                              <br />
-                                              <br />
-                                            </Hidden>
                                           </Grid>
                                         </Grid>
-                                      </>
-                                    );
-                                }
-                              )}
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <br />
+                                  <br />
+                                  {/* Bill To */}
+                                  <b style={{ display: "block" }}>Bill To</b>
+                                  <br />
+                                  <div className="ship">
+                                    <div className="cardpadding">
+                                      <div className="cardpadding1">
+                                        <Grid
+                                          container
+                                          spacing={3}
+                                          style={{
+                                            overflow: "hidden",
+                                            outline: "none",
+                                            color: "gray",
+                                          }}
+                                        >
+                                          <Grid item lg={6} xs={12}>
+                                            <div className="address">
+                                              <Typography className="data">
+                                                <div>
+                                                  {" "}
+                                                  {val.shoppingCartByCartId &&
+                                                    val.shoppingCartByCartId
+                                                      .cartAddressesByCartId &&
+                                                    val.shoppingCartByCartId
+                                                      .cartAddressesByCartId
+                                                      .nodes &&
+                                                    val.shoppingCartByCartId
+                                                      .cartAddressesByCartId
+                                                      .nodes[0] &&
+                                                    val.shoppingCartByCartId
+                                                      .cartAddressesByCartId
+                                                      .nodes[0].firstname}
+                                                  &nbsp;
+                                                  {val.shoppingCartByCartId &&
+                                                    val.shoppingCartByCartId
+                                                      .cartAddressesByCartId &&
+                                                    val.shoppingCartByCartId
+                                                      .cartAddressesByCartId
+                                                      .nodes &&
+                                                    val.shoppingCartByCartId
+                                                      .cartAddressesByCartId
+                                                      .nodes[0] &&
+                                                    val.shoppingCartByCartId
+                                                      .cartAddressesByCartId
+                                                      .nodes[0].lastname}
+                                                </div>
+
+                                                <div>
+                                                  {" "}
+                                                  {val.shoppingCartByCartId &&
+                                                    val.shoppingCartByCartId
+                                                      .cartAddressesByCartId &&
+                                                    val.shoppingCartByCartId
+                                                      .cartAddressesByCartId
+                                                      .nodes &&
+                                                    val.shoppingCartByCartId
+                                                      .cartAddressesByCartId
+                                                      .nodes[0] &&
+                                                    val.shoppingCartByCartId
+                                                      .cartAddressesByCartId
+                                                      .nodes[0].addressline1}
+                                                </div>
+
+                                                <div>
+                                                  {" "}
+                                                  {val.shoppingCartByCartId &&
+                                                    val.shoppingCartByCartId
+                                                      .cartAddressesByCartId &&
+                                                    val.shoppingCartByCartId
+                                                      .cartAddressesByCartId
+                                                      .nodes &&
+                                                    val.shoppingCartByCartId
+                                                      .cartAddressesByCartId
+                                                      .nodes[0] &&
+                                                    val.shoppingCartByCartId
+                                                      .cartAddressesByCartId
+                                                      .nodes[0].city + "-"}
+                                                  {val.shoppingCartByCartId &&
+                                                    val.shoppingCartByCartId
+                                                      .cartAddressesByCartId &&
+                                                    val.shoppingCartByCartId
+                                                      .cartAddressesByCartId
+                                                      .nodes &&
+                                                    val.shoppingCartByCartId
+                                                      .cartAddressesByCartId
+                                                      .nodes[0] &&
+                                                    val.shoppingCartByCartId
+                                                      .cartAddressesByCartId
+                                                      .nodes[0].pincode}
+                                                </div>
+                                              </Typography>
+                                            </div>
+                                          </Grid>
+                                        </Grid>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <br />
+                                  {/* Buttons */}
+                                  <Button
+                                    className="continue-to"
+                                    onClick={(e) => {
+                                      e.preventDefault();
+                                      window.location.href = "/jewellery";
+                                    }}
+                                  >
+                                    Continue To Shopping
+                                  </Button>
+                                  <br />
+                                  <br />
+                                  <Button
+                                    startIcon={<AiFillCaretLeft />}
+                                    className="apply-b"
+                                    onClick={(e) => {
+                                      localStorage.removeItem("a__c_t");
+                                      localStorage.removeItem("panel");
+                                      localStorage.removeItem("order_id");
+                                      localStorage.removeItem("cartDetails");
+                                      localStorage.removeItem("ship_isactive");
+                                      localStorage.removeItem("select_addres");
+                                      localStorage.removeItem("bil_isactive");
+                                      if (gut_lg === true) {
+                                        localStorage.clear();
+                                      }
+                                      this.props.history.push("/home");
+                                    }}
+                                  >
+                                    Go back to Homepage
+                                  </Button>
+                                  <Hidden mdUp>
+                                    <br />
+                                    <br />
+                                  </Hidden>
+                                </Grid>
+                              </Grid>
+                            </>
                           </div>
                         </div>
                       </div>
