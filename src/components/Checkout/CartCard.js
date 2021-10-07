@@ -636,12 +636,12 @@ class Checkoutcard extends React.Component {
                                     fontWeight: "bold",
                                   }}
                                 >
-                                  <Wishlist
+                                  {/* <Wishlist
                                     style={{ display: "none" }}
                                     sku={dataval.generatedSku}
                                     productId={dataval.productId}
                                     // wishlist={props.wishlist}
-                                  />
+                                  /> */}
                                   Move to Wishlist
                                 </Button>
                                 {/* 

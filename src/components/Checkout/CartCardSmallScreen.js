@@ -8,6 +8,7 @@ import { NavLink } from "react-router-dom";
 import Pricing from "../Pricing/index";
 import Quantity from "../quantity/index";
 import styles from "./style";
+import Wishlist from "components/wishlist/wishlist";
 function MediaControlCard(props) {
   const { classes } = props;
   const { dataCard1 } = props.data;

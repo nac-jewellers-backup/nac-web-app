@@ -36,6 +36,7 @@ const styles = (theme) => ({
   cardpad: {
     [theme.breakpoints.down("xs")]: {
       padding: "0px",
+      paddingBottom: "10px",
     },
     [theme.breakpoints.up("md")]: {
       paddingTop: "20px",
