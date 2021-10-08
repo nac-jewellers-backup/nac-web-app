@@ -1,4 +1,4 @@
-import { Box, Button, Grid, Hidden, TextField } from "@material-ui/core";
+import { Box, Button, Grid, Hidden, TextField, Select, MenuItem } from "@material-ui/core";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import Accordion from "@material-ui/core/Accordion";
 import AccordionActions from "@material-ui/core/AccordionActions";
@@ -333,8 +333,7 @@ class Checkoutcard extends React.Component {
                   <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                     <div>
                       <Typography className={classes.cartheader} noWrap>
-                        Hide order summery : &#8377;
-                        {this.subtotalsHead(this.props)}
+                        Hide order summery :{this.subtotalsHead(this.props)}
                       </Typography>
                     </div>
                   </AccordionSummary>
@@ -503,7 +502,7 @@ class Checkoutcard extends React.Component {
                     }}
                   >
                     <Typography className={classes.cartheader} noWrap>
-                      Total({this.props.data.length}&nbsp;Items)&nbsp;:&nbsp; &#8377;
+                      Total({this.props.data.length}&nbsp;Items)&nbsp;:&nbsp;
                       {this.subtotalsHead(this.props)}
                     </Typography>
                   </div>
@@ -584,14 +583,40 @@ class Checkoutcard extends React.Component {
                                     </Typography>
                                   </Grid> */}
                                   <Grid container xs={6} direction="row">
-                                    <Grid item>
-                                      <Typography className={`subhesder ${classes.normalfonts}`}>Quantity :</Typography>
-                                    </Grid>
-                                    <Grid item>
-                                      {dataval.maxOrderQty === 1 ? (
-                                        " "
-                                      ) : (
-                                        <Autocomplete
+                                    {dataval.maxOrderQty === 1 ? (
+                                      " "
+                                    ) : (
+                                      <>
+                                        <Grid item>
+                                          <Typography className={`subhesder ${classes.normalfonts}`}>Quantity :</Typography>
+                                        </Grid>
+                                        <Grid item>
+                                          {/* <Select
+                                            labelId="demo-simple-select-label"
+                                            id="demo-simple-select"
+                                            value={10}
+                                            onChange={handleChange}
+                                          >
+                                            <MenuItem value={10}>10</MenuItem>
+                                            <MenuItem value={20}>20</MenuItem>
+                                            <MenuItem value={30}>30</MenuItem>
+                                          </Select> */}
+
+                                          {/* <Select
+                                            native
+                                            value={10}
+                                            onChange={handleChange}
+                                            inputProps={{
+                                              name: "age",
+                                              id: "age-native-simple",
+                                            }}
+                                          >
+                                            <option aria-label="None" value="" />
+                                            <option value={10}>10</option>
+                                            <option value={20}>20</option>
+                                            <option value={30}>Thirty</option>
+                                          </Select> */}
+                                          {/* <Autocomplete
                                           style={{ padding: "1px !important" }}
                                           id="flat-demo"
                                           value={{ id: "" + dataval.minOrderQty }}
@@ -601,9 +626,10 @@ class Checkoutcard extends React.Component {
                                           size="small"
                                           onChange={(e) => onChangeQty(e)}
                                           renderInput={(params) => <TextField {...params} label=""  />}
-                                        />
-                                      )}
-                                    </Grid>
+                                        /> */}
+                                        </Grid>
+                                      </>
+                                    )}
                                   </Grid>
                                 </Grid>
                                 <div style={{ marginTop: "15px" }}>
@@ -1173,9 +1199,15 @@ class Checkoutcard extends React.Component {
 
     return (
       <>
-        {props.cartFilters.discounted_amount
-          ? Math.round(props.cartFilters.discounted_amount)
-          : Math.round(dataCard1 - discounted_price)}
+        {new Intl.NumberFormat("en-IN", {
+          style: "currency",
+          currency: "INR",
+          minimumFractionDigits: 0,
+        }).format(
+          props.cartFilters.discounted_amount
+            ? Math.round(props.cartFilters.discounted_amount)
+            : Math.round(dataCard1 - discounted_price)
+        )}
       </>
     );
   };
@@ -1242,7 +1274,7 @@ class Checkoutcard extends React.Component {
               }}
             >
               <Typography className={classes.cartheader} noWrap>
-                Total({this.props.data.length}&nbsp;Items)&nbsp;:&nbsp; &#8377;
+                Total({this.props.data.length}&nbsp;Items)&nbsp;:&nbsp;
                 {this.subtotalsHead(this.props)}
               </Typography>
             </div>

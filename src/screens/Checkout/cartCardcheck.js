@@ -62,6 +62,7 @@ class Component extends React.Component {
     mailId: null,
     adres_details: null,
     expand: false,
+    show: true,
   };
   componentDidMount() {
     ReactPixel.init("1464338023867789", {}, { debug: true, autoConfig: false });
@@ -130,7 +131,8 @@ class Component extends React.Component {
   };
 
   changePanel = (panel, adres_detail) => {
-    if (panel === 2) {
+    console.log(panel);
+    if (panel == 2) {
       adres["value"] = {};
       localStorage.removeItem("bil_isactive");
       localStorage.removeItem("ship_isactive");
@@ -158,8 +160,46 @@ class Component extends React.Component {
       if (panel === 1) {
         return localStorage.setItem("panel", 1);
       }
-      if (panel === 2) {
-        return localStorage.setItem("panel", 2);
+      if (panel === 3) {
+        return localStorage.setItem("panel", 3);
+      }
+      localStorage.setItem("panel", 1);
+    }
+    // alert(JSON.stringify(obj_values))
+  };
+  changePanel1 = (panel, adres_detail) => {
+    console.log(panel);
+    this.setState({ show: false });
+    if (panel === 3) {
+      adres["value"] = {};
+      localStorage.removeItem("bil_isactive");
+      localStorage.removeItem("ship_isactive");
+      obj_values["adres_details"] = {};
+      localStorage.removeItem("select_addres");
+    }
+    if (panel === 1) {
+      adres["value"] = {};
+      localStorage.removeItem("bil_isactive");
+      localStorage.removeItem("ship_isactive");
+      localStorage.removeItem("select_addres");
+      obj_values["adres_details"] = {};
+    }
+    // if(!panel===null){
+    localStorage.setItem("panel", panel);
+    obj_values["adres_details"] = adres_detail;
+    this.setState({
+      expanded: "panel" + panel,
+      expandedlimit: panel,
+      // mailId: mailId ? mailId : this.state.mailId
+    });
+    // }
+
+    if (Object.keys(adres.value).length <= 0 && obj_values.length <= 0) {
+      if (panel === 1) {
+        return localStorage.setItem("panel", 1);
+      }
+      if (panel === 3) {
+        return localStorage.setItem("panel", 3);
       }
       localStorage.setItem("panel", 1);
     }
@@ -170,15 +210,10 @@ class Component extends React.Component {
     let user_id = localStorage.getItem("user_id")
       ? localStorage.getItem("user_id")
       : "";
-    // let set_check = localStorage.getItem("set_check") ? localStorage.getItem("set_check") : ""
     this.props.makeRequestCod(variab);
     obj_user["user_id"] = user_id;
-    // obj_user["jewellery"] = "jewellery"
-    // if (!set_check.length > 0) {
-    // localStorage.removeItem("cart_id")
-    // this.props.setCartFilters(obj_user)
-    // }
-    this.changePanel(4);
+
+    this.changePanel(3);
   };
   handleChangedown = (panel) => (event, isExpanded) => {
     console.log(panel);
@@ -300,6 +335,104 @@ class Component extends React.Component {
                       square
                       expanded={expanded === "panel2"}
                       onChange={this.handleChange(2)}
+                      style={{
+                        boxShadow: "none",
+                      }}
+                    >
+                      <ExpansionPanelSummary
+                        style={{
+                          borderBottom: "1.3px solid #C1C1C1",
+                        }}
+                        expandIcon={<ExpandMoreIcon className="arrow-chek" />}
+                        className="ckcut-main-body"
+                      >
+                        <Typography className="text-chck">
+                          2.&nbsp;&nbsp;ADD A GIFT MESSAGE
+                        </Typography>
+                      </ExpansionPanelSummary>
+                      <ExpansionPanelDetails>
+                        <Grid container>
+                          <Grid item xs={12} lg={12}>
+                            <Hidden smDown>
+                              <Grid container>
+                                <Grid
+                                  item
+                                  xs={12}
+                                  lg={12}
+                                  className={classes.cart}
+                                >
+                                  <ProductList checkout={true} />
+                                  <br />
+                                </Grid>
+
+                                <Grid xs={12} lg={7} />
+                                <Grid xs={12} lg={4}>
+                                  <div
+                                    style={{
+                                      float: "right",
+                                      marginBottom: "5px",
+                                    }}
+                                  >
+                                    {ProductIsActive ? (
+                                      <Button
+                                        onClick={() => this.pincodeapi()}
+                                        className="summaryOrder-pay-btn"
+                                      >
+                                        Continue to Pay
+                                      </Button>
+                                    ) : (
+                                      <Button
+                                        className="summaryOrder-pay-btn"
+                                        onClick={enquireLink}
+                                      >
+                                        Enquire Now
+                                      </Button>
+                                    )}
+                                  </div>
+                                </Grid>
+                              </Grid>
+                              <br />
+                            </Hidden>
+                          </Grid>
+
+                          <Hidden mdUp>
+                            <Grid container style={{ marginTop: "10px" }}>
+                              <Grid xs={12} lg={7} />
+                              <Grid xs={12} lg={4}>
+                                <div
+                                  style={{
+                                    float: "right",
+                                    marginBottom: "5px",
+                                  }}
+                                >
+                                  {ProductIsActive ? (
+                                    <Button
+                                      onClick={() => this.pincodeapi()}
+                                      className="summaryOrder-pay-btn"
+                                    >
+                                      Continue to Pay
+                                    </Button>
+                                  ) : (
+                                    <Button
+                                      className="summaryOrder-pay-btn"
+                                      onClick={enquireLink}
+                                    >
+                                      Enquire Now
+                                    </Button>
+                                  )}
+                                </div>
+                              </Grid>
+                            </Grid>
+                            <br />
+                          </Hidden>
+                        </Grid>
+                      </ExpansionPanelDetails>
+                    </ExpansionPanel>
+
+                    <ExpansionPanel
+                      square
+                      expanded={expanded === "panel3"}
+                      onChange={this.handleChange(3)}
                       style={{ boxShadow: "none" }}
                     >
                       <ExpansionPanelSummary
@@ -312,7 +445,7 @@ class Component extends React.Component {
                         className="ckcut-main-body"
                       >
                         <Typography className="text-chck">
-                          2.&nbsp;&nbsp;DELIVERY/PICKUP INFORMATION
+                          3.&nbsp;&nbsp;DELIVERY/PICKUP INFORMATION
                           <div className="ch-d-vl">
                             {obj_values &&
                             obj_values.adres_details &&
@@ -366,97 +499,16 @@ class Component extends React.Component {
                       <ExpansionPanelDetails>
                         <Grid container>
                           <Grid item xs={12} lg={12}>
-                            <Addressform changePanel={this.changePanel} />
-                          </Grid>
-                        </Grid>
-                      </ExpansionPanelDetails>
-                    </ExpansionPanel>
-                    <ExpansionPanel
-                      square
-                      expanded={expanded === "panel3"}
-                      onChange={this.handleChange(3)}
-                      style={{
-                        boxShadow: "none",
-                      }}
-                    >
-                      <ExpansionPanelSummary
-                        style={{
-                          borderBottom: "1.3px solid #C1C1C1",
-                        }}
-                        expandIcon={<ExpandMoreIcon className="arrow-chek" />}
-                        className="ckcut-main-body"
-                      >
-                        <Typography className="text-chck">
-                          3.&nbsp;&nbsp;ADD A GIFT MESSAGE
-                        </Typography>
-                      </ExpansionPanelSummary>
-                      <ExpansionPanelDetails>
-                        <Grid container>
-                          <Grid item xs={12} lg={12}>
-                            <Hidden smDown>
-                              <Grid container>
-                                <Grid xs={12} lg={7} />
-                                <Grid xs={12} lg={4}>
-                                  <div
-                                    style={{
-                                      float: "right",
-                                      marginBottom: "5px",
-                                    }}
-                                  >
-                                    {ProductIsActive ? (
-                                      <Button
-                                        onClick={() => this.pincodeapi()}
-                                        className="summaryOrder-pay-btn"
-                                      >
-                                        Continue to Pay
-                                      </Button>
-                                    ) : (
-                                      <Button
-                                        className="summaryOrder-pay-btn"
-                                        onClick={enquireLink}
-                                      >
-                                        Enquire Now
-                                      </Button>
-                                    )}
-                                  </div>
-                                </Grid>
-                              </Grid>
-                              <br />
-                            </Hidden>
-                          </Grid>
-                          <Grid item xs={12} lg={12} className={classes.cart}>
-                            <ProductList />
-                          </Grid>
-                          <Hidden mdUp>
-                            <Grid container style={{ marginTop: "10px" }}>
+                            <Grid container>
                               <Grid xs={12} lg={7} />
-                              <Grid xs={12} lg={4}>
-                                <div
-                                  style={{
-                                    float: "right",
-                                    marginBottom: "5px",
-                                  }}
-                                >
-                                  {ProductIsActive ? (
-                                    <Button
-                                      onClick={() => this.pincodeapi()}
-                                      className="summaryOrder-pay-btn"
-                                    >
-                                      Continue to Pay
-                                    </Button>
-                                  ) : (
-                                    <Button
-                                      className="summaryOrder-pay-btn"
-                                      onClick={enquireLink}
-                                    >
-                                      Enquire Now
-                                    </Button>
-                                  )}
-                                </div>
-                              </Grid>
+                              <Grid xs={12} lg={4}></Grid>
                             </Grid>
-                            <br />
-                          </Hidden>
+
+                            <Addressform
+                              changePanel={this.changePanel}
+                              changeaddress={this.changePanel1}
+                            />
+                          </Grid>
                         </Grid>
                       </ExpansionPanelDetails>
                     </ExpansionPanel>
@@ -500,29 +552,6 @@ class Component extends React.Component {
                         <Typography className="text-chck-bold">
                           <b>Order Summary</b>
                         </Typography>
-                        {/* <Grid container>
-                      <Grid xs={12} lg={7} />
-                      <Grid xs={12} lg={4}>
-                        <div style={{ float: "right" }}>
-                          {ProductIsActive ? (
-                            <Button
-                              onClick={() => this.pincodeapi()}
-                              className="summaryOrder-pay-btn"
-                            >
-                              Continue to Pay
-                            </Button>
-                          ) : (
-                            <Button
-                              className="summaryOrder-pay-btn"
-                              onClick={enquireLink}
-                            >
-                              Enquire Now
-                            </Button>
-                          )}
-                        </div>
-                      </Grid>
-                    </Grid>
-                    <br /> */}
 
                         <CartCard
                           data={data}
@@ -530,63 +559,8 @@ class Component extends React.Component {
                           isdatafromstate={this.props.isdatafromstate}
                           checkoutpage={true}
                         />
-
-                        {/* <Hidden smDown>
-                      <Grid container>
-                        <Grid xs={12} lg={7} />
-                        <Grid xs={12} lg={4}>
-                          <div style={{ float: "right", marginBottom: "5px" }}>
-                            {ProductIsActive ? (
-                              <Button
-                                onClick={() => this.pincodeapi()}
-                                className="summaryOrder-pay-btn"
-                              >
-                                Continue to Pay
-                              </Button>
-                            ) : (
-                              <Button
-                                className="summaryOrder-pay-btn"
-                                onClick={enquireLink}
-                              >
-                                Enquire Now
-                              </Button>
-                            )}
-                          </div>
-                        </Grid>
-                      </Grid>
-                      <br />
-                    </Hidden> */}
                       </div>
                     </Grid>
-                    {/* <Grid item xs={12} lg={12} className={classes.cart}>
-                    <ProductList />
-                  </Grid>
-                  <Hidden mdUp>
-                    <Grid container style={{ marginTop: "10px" }}>
-                      <Grid xs={12} lg={7} />
-                      <Grid xs={12} lg={4}>
-                        <div style={{ float: "right", marginBottom: "5px" }}>
-                          {ProductIsActive ? (
-                            <Button
-                              onClick={() => this.pincodeapi()}
-                              className="summaryOrder-pay-btn"
-                            >
-                              Continue to Pay
-                            </Button>
-                          ) : (
-                            <Button
-                              className="summaryOrder-pay-btn"
-                              onClick={enquireLink}
-                            >
-                              Enquire Now
-                            </Button>
-                          )}
-                        </div>
-                      </Grid>
-                    </Grid>
-                    <br />
-                  </Hidden>
-                 */}
                   </Grid>
                 </Grid>
               </Hidden>
@@ -595,93 +569,14 @@ class Component extends React.Component {
                   <Grid container>
                     <Grid item xs={12} lg={12}>
                       <div className={classes.hideorder}>
-                        {/* <Grid container>
-                      <Grid xs={12} lg={7} />
-                      <Grid xs={12} lg={4}>
-                        <div style={{ float: "right" }}>
-                          {ProductIsActive ? (
-                            <Button
-                              onClick={() => this.pincodeapi()}
-                              className="summaryOrder-pay-btn"
-                            >
-                              Continue to Pay
-                            </Button>
-                          ) : (
-                            <Button
-                              className="summaryOrder-pay-btn"
-                              onClick={enquireLink}
-                            >
-                              Enquire Now
-                            </Button>
-                          )}
-                        </div>
-                      </Grid>
-                    </Grid>
-                    <br /> */}
-
                         <CartCard
                           data={data}
                           isStateFilterContextQty={this.props.isdatafromstate}
                           isdatafromstate={this.props.isdatafromstate}
                           checkoutpage={true}
                         />
-
-                        {/* <Hidden smDown>
-                      <Grid container>
-                        <Grid xs={12} lg={7} />
-                        <Grid xs={12} lg={4}>
-                          <div style={{ float: "right", marginBottom: "5px" }}>
-                            {ProductIsActive ? (
-                              <Button
-                                onClick={() => this.pincodeapi()}
-                                className="summaryOrder-pay-btn"
-                              >
-                                Continue to Pay
-                              </Button>
-                            ) : (
-                              <Button
-                                className="summaryOrder-pay-btn"
-                                onClick={enquireLink}
-                              >
-                                Enquire Now
-                              </Button>
-                            )}
-                          </div>
-                        </Grid>
-                      </Grid>
-                      <br />
-                    </Hidden> */}
                       </div>
                     </Grid>
-                    {/* <Grid item xs={12} lg={12} className={classes.cart}>
-                    <ProductList />
-                  </Grid>
-                  <Hidden mdUp>
-                    <Grid container style={{ marginTop: "10px" }}>
-                      <Grid xs={12} lg={7} />
-                      <Grid xs={12} lg={4}>
-                        <div style={{ float: "right", marginBottom: "5px" }}>
-                          {ProductIsActive ? (
-                            <Button
-                              onClick={() => this.pincodeapi()}
-                              className="summaryOrder-pay-btn"
-                            >
-                              Continue to Pay
-                            </Button>
-                          ) : (
-                            <Button
-                              className="summaryOrder-pay-btn"
-                              onClick={enquireLink}
-                            >
-                              Enquire Now
-                            </Button>
-                          )}
-                        </div>
-                      </Grid>
-                    </Grid>
-                    <br />
-                  </Hidden>
-                 */}
                   </Grid>
                 </Grid>
                 <Grid xs={12} lg={6} style={{ backgroundColor: "#F3F3F3" }}>
@@ -712,11 +607,101 @@ class Component extends React.Component {
                         <LoginRegisterIndex changePanel={this.changePanel} />
                       </ExpansionPanelDetails>
                     </ExpansionPanel>
-
                     <ExpansionPanel
                       square
                       expanded={expanded === "panel2"}
                       onChange={this.handleChange(2)}
+                      style={{
+                        boxShadow: "none",
+                        backgroundColor: "#F3F3F3",
+                      }}
+                    >
+                      <ExpansionPanelSummary
+                        style={{
+                          borderBottom: "1.3px solid #C1C1C1",
+                          backgroundColor: "#F3F3F3",
+                        }}
+                        expandIcon={<ExpandMoreIcon className="arrow-chek" />}
+                      >
+                        <Typography className="text-chck">
+                          2.&nbsp;&nbsp;ADD A GIFT MESSAGE
+                        </Typography>
+                      </ExpansionPanelSummary>
+                      <ExpansionPanelDetails>
+                        <Grid container>
+                          <Grid item xs={12} lg={12}>
+                            <Hidden smDown>
+                              <Grid container>
+                                <Grid xs={12} lg={7} />
+                                <Grid xs={12} lg={4}>
+                                  <div
+                                    style={{
+                                      float: "right",
+                                      marginBottom: "5px",
+                                    }}
+                                  >
+                                    {ProductIsActive ? (
+                                      <Button
+                                        onClick={() => this.pincodeapi()}
+                                        className="summaryOrder-pay-btn"
+                                      >
+                                        Continue to Pay
+                                      </Button>
+                                    ) : (
+                                      <Button
+                                        className="summaryOrder-pay-btn"
+                                        onClick={enquireLink}
+                                      >
+                                        Enquire Now
+                                      </Button>
+                                    )}
+                                  </div>
+                                </Grid>
+                              </Grid>
+                              <br />
+                            </Hidden>
+                          </Grid>
+                          <Grid item xs={12} lg={12} className={classes.cart}>
+                            <ProductList checkout={true} />
+                          </Grid>
+                          <Hidden mdUp>
+                            <Grid container style={{ marginTop: "10px" }}>
+                              <Grid xs={12} lg={7} />
+                              <Grid xs={12} lg={4}>
+                                <div
+                                  style={{
+                                    float: "right",
+                                    marginBottom: "5px",
+                                  }}
+                                >
+                                  {ProductIsActive ? (
+                                    <Button
+                                      onClick={() => this.pincodeapi()}
+                                      className="summaryOrder-pay-btn"
+                                    >
+                                      Continue to Pay
+                                    </Button>
+                                  ) : (
+                                    <Button
+                                      className="summaryOrder-pay-btn"
+                                      onClick={enquireLink}
+                                    >
+                                      Enquire Now
+                                    </Button>
+                                  )}
+                                </div>
+                              </Grid>
+                            </Grid>
+                            <br />
+                          </Hidden>
+                        </Grid>
+                      </ExpansionPanelDetails>
+                    </ExpansionPanel>
+
+                    <ExpansionPanel
+                      square
+                      expanded={expanded === "panel3"}
+                      onChange={this.handleChange(3)}
                       style={{ boxShadow: "none", backgroundColor: "#F3F3F3" }}
                     >
                       <ExpansionPanelSummary
@@ -729,7 +714,7 @@ class Component extends React.Component {
                         expandIcon={<ExpandMoreIcon className="arrow-chek" />}
                       >
                         <Typography className="text-chck">
-                          2.&nbsp;DELIVERY/PICKUP&nbsp;INFORMATION
+                          3.&nbsp;DELIVERY/PICKUP&nbsp;INFORMATION
                           <br />
                           <span className="ch-d-vl">
                             {obj_values &&
@@ -784,98 +769,11 @@ class Component extends React.Component {
                       <ExpansionPanelDetails>
                         <Grid container>
                           <Grid item xs={12} lg={12}>
-                            <Addressform changePanel={this.changePanel} />
+                            <Addressform
+                              changePanel={this.changePanel}
+                              changeaddress={this.changePanel1}
+                            />
                           </Grid>
-                        </Grid>
-                      </ExpansionPanelDetails>
-                    </ExpansionPanel>
-                    <ExpansionPanel
-                      square
-                      expanded={expanded === "panel3"}
-                      onChange={this.handleChange(3)}
-                      style={{
-                        boxShadow: "none",
-                        backgroundColor: "#F3F3F3",
-                      }}
-                    >
-                      <ExpansionPanelSummary
-                        style={{
-                          borderBottom: "1.3px solid #C1C1C1",
-                          backgroundColor: "#F3F3F3",
-                        }}
-                        expandIcon={<ExpandMoreIcon className="arrow-chek" />}
-                      >
-                        <Typography className="text-chck">
-                          3.&nbsp;&nbsp;ADD A GIFT MESSAGE
-                        </Typography>
-                      </ExpansionPanelSummary>
-                      <ExpansionPanelDetails>
-                        <Grid container>
-                          <Grid item xs={12} lg={12}>
-                            <Hidden smDown>
-                              <Grid container>
-                                <Grid xs={12} lg={7} />
-                                <Grid xs={12} lg={4}>
-                                  <div
-                                    style={{
-                                      float: "right",
-                                      marginBottom: "5px",
-                                    }}
-                                  >
-                                    {ProductIsActive ? (
-                                      <Button
-                                        onClick={() => this.pincodeapi()}
-                                        className="summaryOrder-pay-btn"
-                                      >
-                                        Continue to Pay
-                                      </Button>
-                                    ) : (
-                                      <Button
-                                        className="summaryOrder-pay-btn"
-                                        onClick={enquireLink}
-                                      >
-                                        Enquire Now
-                                      </Button>
-                                    )}
-                                  </div>
-                                </Grid>
-                              </Grid>
-                              <br />
-                            </Hidden>
-                          </Grid>
-                          <Grid item xs={12} lg={12} className={classes.cart}>
-                            <ProductList />
-                          </Grid>
-                          <Hidden mdUp>
-                            <Grid container style={{ marginTop: "10px" }}>
-                              <Grid xs={12} lg={7} />
-                              <Grid xs={12} lg={4}>
-                                <div
-                                  style={{
-                                    float: "right",
-                                    marginBottom: "5px",
-                                  }}
-                                >
-                                  {ProductIsActive ? (
-                                    <Button
-                                      onClick={() => this.pincodeapi()}
-                                      className="summaryOrder-pay-btn"
-                                    >
-                                      Continue to Pay
-                                    </Button>
-                                  ) : (
-                                    <Button
-                                      className="summaryOrder-pay-btn"
-                                      onClick={enquireLink}
-                                    >
-                                      Enquire Now
-                                    </Button>
-                                  )}
-                                </div>
-                              </Grid>
-                            </Grid>
-                            <br />
-                          </Hidden>
                         </Grid>
                       </ExpansionPanelDetails>
                     </ExpansionPanel>

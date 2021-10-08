@@ -1,25 +1,23 @@
-import React from "react";
 import {
-  Container,
+  ExpansionPanel,
+  ExpansionPanelDetails,
+  ExpansionPanelSummary,
   Grid,
   Hidden,
-  ExpansionPanel,
-  ExpansionPanelSummary,
-  ExpansionPanelDetails,
   Typography,
 } from "@material-ui/core";
-import "./payment.css";
-import Creditform from "./creditForm";
-import Debitform from "./debitForm";
-import CashonDelivey from "./cashonDelivery";
-import Netbanking from "./netBanking";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import { API_URL } from "config";
 import { CartContext } from "context";
 import cart from "mappers/cart";
-import { useCheckForCod } from "hooks/CheckForCodHook";
-import { CheckForCod } from "queries/productdetail";
 import { cartCodPincode } from "queries/pincode";
-import { API_URL } from "config";
+import { CheckForCod } from "queries/productdetail";
+import React from "react";
+import CashonDelivey from "./cashonDelivery";
+import Creditform from "./creditForm";
+import Debitform from "./debitForm";
+import Netbanking from "./netBanking";
+import "./payment.css";
 var va = {};
 class PaymentIndex extends React.Component {
   constructor() {
@@ -57,19 +55,12 @@ class PaymentIndex extends React.Component {
           <Grid container spacing={12} lg={12} className="panel-body">
             <Grid item lg={3}>
               <div className="pay-index-subhed">
-                {/* <p style={{ background: this.state.isActive == "Creditform" ? "#dfdfdf" : "" }}
-                                    style={{ background: "#a8a1a1" }}
-                                onClick={() => this.toggleCollapsed('Creditform')}
-                                >
-                                    <div className="cc-icon"></div> &nbsp; Credit card </p>
-                                <p style={{ background: this.state.isActive == "Debitform" ? "#dfdfdf" : "" }}
-                                    onClick={() => this.toggleCollapsed('Debitform')}
-                                    style={{ background: "#a8a1a1" }}
-
-                                >
-                                    <div className="dc-icon"></div> &nbsp; Debit card </p> */}
                 <p
-                  className={this.state.isActive == "Netbanking" ? "selectedcolor" : "unselected"}
+                  className={
+                    this.state.isActive == "Netbanking"
+                      ? "selectedcolor"
+                      : "unselected"
+                  }
                   onClick={() => this.toggleCollapsed("Netbanking")}
                   // style={{ background: "#dfdfdf" }}
                 >
@@ -77,16 +68,27 @@ class PaymentIndex extends React.Component {
                 </p>
 
                 <p
-                  className={`${this.state.isActive == "CashonDelivey" ? "selectedcolor" : "unselected"} 
-                            ${this.state.disabledCOD ? "paragraph_onclick" : null}`}
+                  className={`${
+                    this.state.isActive == "CashonDelivey"
+                      ? "selectedcolor"
+                      : "unselected"
+                  } 
+                            ${
+                              this.state.disabledCOD
+                                ? "paragraph_onclick"
+                                : null
+                            }`}
                   onClick={() => this.toggleCollapsed("CashonDelivey")}
                 >
                   <div className="code-icon"></div>&nbsp; Cash on Delivery (COD)
                 </p>
               </div>
             </Grid>
-            <Grid item lg={7}>
-              <div style={{ marginTop: "20px" }} className="pay-index-subhed_datas ">
+            <Grid item lg={5} md={5} xs={7}>
+              <div
+                style={{ marginTop: "20px" }}
+                className="pay-index-subhed_datas "
+              >
                 {this.state.isActive == "Creditform" && <Creditform />}
                 {this.state.isActive == "Debitform" && <Debitform />}
                 {this.state.isActive == "Netbanking" && <Netbanking />}
@@ -128,12 +130,15 @@ class PaymentIndex extends React.Component {
                 <div className="net-bnk-icon"></div> &nbsp; Online Pay{" "}
               </Typography>
             </ExpansionPanelSummary>
-            <ExpansionPanelDetails style={{ padding: "0px" }}>
+            <ExpansionPanelDetails>
               <Netbanking />
             </ExpansionPanelDetails>
           </ExpansionPanel>
 
-          <ExpansionPanel className="respone-div" disabled={this.state.disabledCOD ? true : false}>
+          <ExpansionPanel
+            className="respone-div"
+            disabled={this.state.disabledCOD ? true : false}
+          >
             <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
               <Typography className="py-head">
                 {" "}
@@ -184,7 +189,6 @@ const Components = (props) => {
     if (
       data.data.allTransSkuLists.nodes
         .map((val) => {
-         
           return val.productListByProductId.productMaterialsByProductSku.nodes;
         })
         .flat()
@@ -233,7 +237,9 @@ const Components = (props) => {
                 if (mapped && mapped.length > 0 && val) {
                   // const min_cart_value = val.data ? val.data.allPincodeMasters.nodes[0].minCartvalue : null
                   const min_cart_value = 5000;
-                  const max_cart_value = val.data ? val.data.allPincodeMasters.nodes[0].maxCartvalue : null;
+                  const max_cart_value = val.data
+                    ? val.data.allPincodeMasters.nodes[0].maxCartvalue
+                    : null;
                   const data = mapped ? mapped : [];
                   var dataCard1;
                   var cart_price;
@@ -242,7 +248,9 @@ const Components = (props) => {
                     function myFunc(total, num, discounted_price) {
                       discounted_price =
                         this && this.props.cartFilters.discounted_price
-                          ? JSON.stringify(this.props.cartFilters.discounted_price)
+                          ? JSON.stringify(
+                              this.props.cartFilters.discounted_price
+                            )
                           : "";
                       if (discounted_price.length > 0) {
                         var a = Math.round(total + num);
@@ -262,7 +270,10 @@ const Components = (props) => {
                         .reduce(myFunc);
 
                     if (min_cart_value && max_cart_value) {
-                      if (dataCard1 >= min_cart_value && dataCard1 <= max_cart_value) {
+                      if (
+                        dataCard1 >= min_cart_value &&
+                        dataCard1 <= max_cart_value
+                      ) {
                         // var cart_prices = cart_price;
                         setCodAvailability(true);
                         return false;
@@ -292,7 +303,15 @@ const Components = (props) => {
         <div id="loading"></div>
       </div>
     );
-  else content = <PaymentIndex {...props} data={mapped} cartFilters={cartFilters} isCodAvailable={codAvailability} />;
+  else
+    content = (
+      <PaymentIndex
+        {...props}
+        data={mapped}
+        cartFilters={cartFilters}
+        isCodAvailable={codAvailability}
+      />
+    );
   return content;
 };
 export default Components;

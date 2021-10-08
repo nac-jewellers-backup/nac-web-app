@@ -1,11 +1,10 @@
-import React from "react";
-import { Container, Grid, Button } from "@material-ui/core";
-import "./payment.css";
+import { Button, Grid } from "@material-ui/core";
 // import SimpleSelect from '../../../components/InputComponents/Select/Select';
 import { CartContext } from "context";
 import cart from "mappers/cart";
-import { useNetworkRequest } from "hooks/index";
-import { API_URL, HOME_PAGE_URL, CDN_URL } from "../../../config";
+import React from "react";
+import { API_URL } from "../../../config";
+import "./payment.css";
 
 var obj = {};
 var obj_user = {};
@@ -73,8 +72,7 @@ class CashonDelivey extends React.Component {
         alert(resdata.message);
         window.location.pathname = `/paymentsuccess/${resdata.order.id}`;
       })
-      .catch((err) => {
-      });
+      .catch((err) => {});
     // localStorage.removeItem("cart_id")
 
     // }
@@ -92,15 +90,22 @@ class CashonDelivey extends React.Component {
     }
   }
   render() {
-    let cart_id_lo = localStorage.getItem("cart_id") ? JSON.parse(localStorage.getItem("cart_id")).cart_id : "";
+    let cart_id_lo = localStorage.getItem("cart_id")
+      ? JSON.parse(localStorage.getItem("cart_id")).cart_id
+      : "";
     let cart_id =
-      this.props.cartFilters._cart_id && Object.keys(this.props.cartFilters._cart_id).length > 0
+      this.props.cartFilters._cart_id &&
+      Object.keys(this.props.cartFilters._cart_id).length > 0
         ? this.props.cartFilters._cart_id.cart_id
         : "";
     var cart_ids = cart_id.length > 0 ? cart_id : cart_id_lo;
-    let user_id = localStorage.getItem("user_id") ? localStorage.getItem("user_id") : "";
+    let user_id = localStorage.getItem("user_id")
+      ? localStorage.getItem("user_id")
+      : "";
     const data = this.props.data ? this.props.data : "";
-    var discounted_price = this.props.cartFilters.discounted_price ? this.props.cartFilters.discounted_price : "";
+    var discounted_price = this.props.cartFilters.discounted_price
+      ? this.props.cartFilters.discounted_price
+      : "";
     // var { data:coddata, error, loading, makeFetch} = useNetworkRequest('/api/auth/signin', {}, false);
     var dataCard1;
     if (data.length > 0 && data !== undefined && data !== null) {
@@ -113,7 +118,9 @@ class CashonDelivey extends React.Component {
           .reduce(myFunc);
       function myFunc(total, num) {
         discounted_price =
-          this && this.props.cartFilters.discounted_price ? JSON.stringify(this.props.cartFilters.discounted_price) : "";
+          this && this.props.cartFilters.discounted_price
+            ? JSON.stringify(this.props.cartFilters.discounted_price)
+            : "";
         if (discounted_price.length > 0) {
           var a = Math.round(total + num);
           var cart_price = a - discounted_price;
@@ -131,13 +138,15 @@ class CashonDelivey extends React.Component {
     return (
       <div>
         <Grid spacing={12} container lg={12} xs={12} style={{ width: "100%" }}>
-          <Grid item lg={12} xs={12}>
+          <Grid item lg={12} xs={12} style={{ padding: "15px" }}>
             <div className="amout-pay"> Amount Payable </div>
             <div className="credit-btn-div">
               <span className="rups">
-                {Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", minimumFractionDigits: 0 }).format(
-                  Math.round(dataCard1 - discounted_price)
-                )}
+                {Intl.NumberFormat("en-IN", {
+                  style: "currency",
+                  currency: "INR",
+                  minimumFractionDigits: 0,
+                }).format(Math.round(dataCard1 - discounted_price))}
               </span>
               &nbsp;
               <Button
@@ -150,7 +159,9 @@ class CashonDelivey extends React.Component {
               </Button>
             </div>
           </Grid>
-          <div className="code-btn-top">COD orders are subject to telephonic verification.</div>
+          <div className="code-btn-top">
+            COD orders are subject to telephonic verification.
+          </div>
         </Grid>
       </div>
     );
@@ -172,7 +183,15 @@ const Components = (props) => {
         <div id="loading"></div>
       </div>
     );
-  else content = <CashonDelivey {...props} data={mapped} cartFilters={cartFilters} setCartFilters={setCartFilters} />;
+  else
+    content = (
+      <CashonDelivey
+        {...props}
+        data={mapped}
+        cartFilters={cartFilters}
+        setCartFilters={setCartFilters}
+      />
+    );
   return content;
 };
 export default Components;
