@@ -19,7 +19,7 @@ export const styles = (theme) => ({
   },
   padding: {
     [theme.breakpoints.down("sm")]: {
-      padding: "20px",
+      padding: "10px",
     },
     [theme.breakpoints.up("md")]: {
       padding: "40px",

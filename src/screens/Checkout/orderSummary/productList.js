@@ -4,6 +4,7 @@ import {
   ExpansionPanelDetails,
   ExpansionPanelSummary,
   Grid,
+  Hidden,
 } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 import React from "react";
@@ -94,8 +95,14 @@ const ProductlistComponent = (props) => {
                         handlers.handleChange("message", e.target.value)
                       }
                     />
+                    <span style={{ float: "right", color: "gray" }}>
+                      Max : 255
+                    </span>
 
                     <br />
+                    <Hidden mdUp>
+                      <br />
+                    </Hidden>
                     <label
                       style={{
                         color: "gray",
