@@ -492,7 +492,8 @@ class Checkoutcard extends React.Component {
                     }}
                   >
                     <Typography className={classes.cartheader} noWrap>
-                      Total({this.props.data.length}&nbsp;Items)&nbsp;:&nbsp; &#8377;{this.subtotalsHead(this.props)}
+                      Total({this.props.data.length}&nbsp;Items)&nbsp;:&nbsp; &#8377;
+                      {this.subtotalsHead(this.props)}
                     </Typography>
                   </div>
                   {this.props.data.map((dataval) =>
@@ -775,11 +776,12 @@ class Checkoutcard extends React.Component {
     );
   };
   subtotals = (props) => {
-    
+    console.log(props);
+
     var discounted_price = this.props.cartFilters.discounted_price ? this.props.cartFilters.discounted_price : "";
     const dataCard1 = this.props.data
       .map((val) => {
-        return val.dataCard1[0].offerPrice * JSON.parse(localStorage.getItem("quantity"))[val.generatedSku];
+        return val.dataCard1[0].offerPrice * (JSON.parse(localStorage.getItem("quantity"))[val.generatedSku] ?? 1);
       })
       .reduce(myFunc);
     function myFunc(total, num) {
@@ -795,8 +797,8 @@ class Checkoutcard extends React.Component {
     var yousave = this.props.data
       .map((_data) => {
         return (
-          _data.dataCard1[0].price * JSON.parse(localStorage.getItem("quantity"))[_data.generatedSku] -
-          _data.dataCard1[0].offerPrice * JSON.parse(localStorage.getItem("quantity"))[_data.generatedSku]
+          _data.dataCard1[0].price * (JSON.parse(localStorage.getItem("quantity"))[_data.generatedSku] ?? 1) -
+          _data.dataCard1[0].offerPrice * (JSON.parse(localStorage.getItem("quantity"))[_data.generatedSku] ?? 1)
         );
       })
       .reduce(myFunc);
@@ -963,7 +965,7 @@ class Checkoutcard extends React.Component {
     var discounted_price = this.props.cartFilters.discounted_price ? this.props.cartFilters.discounted_price : "";
     const dataCard1 = this.props.data
       .map((val) => {
-        return val.dataCard1[0].offerPrice * JSON.parse(localStorage.getItem("quantity"))[val.generatedSku];
+        return val.dataCard1[0].offerPrice * (JSON.parse(localStorage.getItem("quantity"))[val.generatedSku] ?? 1);
       })
       .reduce(myFunc);
     function myFunc(total, num) {
@@ -979,8 +981,8 @@ class Checkoutcard extends React.Component {
     var yousave = this.props.data
       .map((_data) => {
         return (
-          _data.dataCard1[0].price * JSON.parse(localStorage.getItem("quantity"))[_data.generatedSku] -
-          _data.dataCard1[0].offerPrice * JSON.parse(localStorage.getItem("quantity"))[_data.generatedSku]
+          _data.dataCard1[0].price * (JSON.parse(localStorage.getItem("quantity"))[_data.generatedSku] ?? 1) -
+          _data.dataCard1[0].offerPrice * (JSON.parse(localStorage.getItem("quantity"))[_data.generatedSku] ?? 1)
         );
       })
       .reduce(myFunc);
@@ -1127,7 +1129,7 @@ class Checkoutcard extends React.Component {
     var discounted_price = this.props.cartFilters.discounted_price ? this.props.cartFilters.discounted_price : "";
     const dataCard1 = this.props.data
       .map((val) => {
-        return val.dataCard1[0].offerPrice * JSON.parse(localStorage.getItem("quantity"))[val.generatedSku];
+        return val.dataCard1[0].offerPrice * (JSON.parse(localStorage.getItem("quantity"))[val.generatedSku] ?? 1);
       })
       .reduce(myFunc);
     function myFunc(total, num) {
