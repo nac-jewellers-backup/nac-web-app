@@ -12,7 +12,6 @@ import { ImFacebook } from "react-icons/im";
 import { withRouter } from "react-router-dom";
 import { Input } from "../../../components/InputComponents/TextField/Input";
 import "./loginRegisters.css";
-import Register from "./register";
 import styles from "./style";
 import useLogin from "./useLogin";
 const Login = (props) => {
@@ -295,64 +294,62 @@ const LoginComponent = (props) => {
             handlers.handelSubmit(e, props.history.push);
           }}
         >
-          <div hidden={show1}>
-            <Grid container item xs={12}>
-              <Hidden smDown>
-                {props.checkoutpage ? (
-                  " "
-                ) : (
-                  <h5 className={`title ${classes.normalfonts}`}>
-                    {window.location.pathname === "/login"
-                      ? "Login"
-                      : "I already have an account"}
-                  </h5>
-                )}
-              </Hidden>
-              <h5 className={`title ${classes.normalfonts2}`}>
-                Email Login For Registered Users
-              </h5>
+          <Grid container item xs={12}>
+            <Hidden smDown>
+              {props.checkoutpage ? (
+                " "
+              ) : (
+                <h5 className={`title ${classes.normalfonts}`}>
+                  {window.location.pathname === "/login"
+                    ? "Login"
+                    : "I already have an account"}
+                </h5>
+              )}
+            </Hidden>
+            <h5 className={`title ${classes.normalfonts2}`}>
+              Email Login For Registered Users
+            </h5>
 
-              <Input
-                className={classes1.input}
-                name="email"
-                value={values.email}
-                error={values.error && values.error.emerr ? true : false}
-                helperText={values.errortext && values.errortext.emerr}
-                onChange={(e) => handlers.handleChange("email", e.target.value)}
-                placeholder="Email address"
-              />
-              <label className="errtext">
-                {" "}
-                {values.error.emerr && values.errortext.emerr}
-              </label>
-              <Input
-                type="password"
-                name="password"
-                value={values.password}
-                error={values.error && values.error.passerr ? true : false}
-                helperText={values.errortext && values.errortext.passerr}
-                placeholder="Password"
-                onChange={(e) =>
-                  handlers.handleChange("password", e.target.value)
-                }
-              />
-              <label className="errtext">
-                {" "}
-                {values.error.passerr && values.errortext.passerr}
-              </label>
-              <div className="log-pas">
-                <span
-                  onClick={() => {
-                    window.location.href = "/forgotPassword";
-                  }}
-                  className={`pas-fr`}
-                  style={{ cursor: "pointer" }}
-                >
-                  Forgot Password ?
-                </span>
-              </div>
-            </Grid>
-          </div>
+            <Input
+              className={classes1.input}
+              name="email"
+              value={values.email}
+              error={values.error && values.error.emerr ? true : false}
+              helperText={values.errortext && values.errortext.emerr}
+              onChange={(e) => handlers.handleChange("email", e.target.value)}
+              placeholder="Email address"
+            />
+            <label className="errtext">
+              {" "}
+              {values.error.emerr && values.errortext.emerr}
+            </label>
+            <Input
+              type="password"
+              name="password"
+              value={values.password}
+              error={values.error && values.error.passerr ? true : false}
+              helperText={values.errortext && values.errortext.passerr}
+              placeholder="Password"
+              onChange={(e) =>
+                handlers.handleChange("password", e.target.value)
+              }
+            />
+            <label className="errtext">
+              {" "}
+              {values.error.passerr && values.errortext.passerr}
+            </label>
+            <div className="log-pas">
+              <span
+                onClick={() => {
+                  window.location.href = "/forgotPassword";
+                }}
+                className={`pas-fr`}
+                style={{ cursor: "pointer" }}
+              >
+                Forgot Password ?
+              </span>
+            </div>
+          </Grid>
 
           {window.location.pathname === "/login" ? (
             <div
@@ -383,124 +380,109 @@ const LoginComponent = (props) => {
                 padding: "10px",
                 color: "gray",
               }}
-              onClick={() => {
-                setShow(!show);
-                setShow1(!show1);
-              }}
+              onClick={props.change}
             >
               <center>
-                <span hidden={show1}>
-                  New to <b>NAC</b>? Sign Up
-                </span>
+                New to <b>NAC</b>? Sign Up
               </center>
               <br />
-              <div hidden={show1}>
-                <Button type="submit" className="apply-b">
-                  SIGN IN
-                </Button>
-              </div>
-              <div hidden={show}>
-                <Register
-                  change={() => {
-                    setShow(!show);
-                    setShow1(!show1);
-                  }}
-                />
-              </div>
+
+              <Button type="submit" className="apply-b">
+                SIGN IN
+              </Button>
             </div>
           )}
-          <hidden hidden={show1}>
-            <Grid
-              container
-              justifyContent="center"
-              className={classes.other}
-              style={{ padding: "10px" }}
-            >
-              <Grid item xs={12}>
-                <br />
-                <Box display="flex" flexDirection="row" justifyContent="center">
-                  <Box padding="5px">
-                    <div style={{ cursor: "pointer" }}>
-                      <FacebookLogin
-                        id="facebook"
-                        appId="183747199380935"
-                        // autoLoad={true}
-                        textButton="Sign in with Facebook"
-                        fields="name,email,id,first_name,last_name"
-                        cssClass="my-facebook-button-class"
-                        disableMobileRedirect={true}
-                        callback={responseFacebook}
-                        icon={
-                          <ImFacebook
-                            style={{
-                              color: "#335B9A",
-                              marginRight: "3px",
-                              paddingRight: "2px",
-                            }}
+
+          <Grid
+            container
+            justifyContent="center"
+            className={classes.other}
+            style={{ padding: "10px" }}
+          >
+            <Grid item xs={12}>
+              <br />
+              <Box display="flex" flexDirection="row" justifyContent="center">
+                <Box padding="5px">
+                  <div style={{ cursor: "pointer" }}>
+                    <FacebookLogin
+                      id="facebook"
+                      appId="183747199380935"
+                      // autoLoad={true}
+                      textButton="Sign in with Facebook"
+                      fields="name,email,id,first_name,last_name"
+                      cssClass="my-facebook-button-class"
+                      disableMobileRedirect={true}
+                      callback={responseFacebook}
+                      icon={
+                        <ImFacebook
+                          style={{
+                            color: "#335B9A",
+                            marginRight: "3px",
+                            paddingRight: "2px",
+                          }}
+                        />
+                      }
+                    />
+                  </div>
+                </Box>
+                <Box padding="5px">
+                  <div style={{ cursor: "pointer" }}>
+                    <label>
+                      <Button
+                        variant="contained"
+                        style={{
+                          padding: "5px 7px",
+                          backgroundColor: "#F3F3F3",
+                          borderRadius: "0px",
+                          boxShadow: "0px 2px 4px 1px #888888",
+                          color: "gray",
+                          whiteSpace: "nowrap",
+                        }}
+                        className={classes.btntext}
+                        startIcon={
+                          <FcGoogle
+                            style={{ marginLeft: "4px" }}
+                            className={classes.btnicon}
                           />
                         }
-                      />
-                    </div>
-                  </Box>
-                  <Box padding="5px">
-                    <div style={{ cursor: "pointer" }}>
-                      <label>
-                        <Button
-                          variant="contained"
-                          style={{
-                            padding: "5px 7px",
-                            backgroundColor: "#F3F3F3",
-                            borderRadius: "0px",
-                            boxShadow: "0px 2px 4px 1px #888888",
-                            color: "gray",
-                            whiteSpace: "nowrap",
-                          }}
-                          className={classes.btntext}
-                          startIcon={
-                            <FcGoogle
-                              style={{ marginLeft: "4px" }}
-                              className={classes.btnicon}
-                            />
-                          }
-                        >
-                          Sign in with Google
-                        </Button>
-                      </label>
-                    </div>
-                  </Box>
+                      >
+                        Sign in with Google
+                      </Button>
+                    </label>
+                  </div>
                 </Box>
-                <Box display="flex" flexDirection="row" justifyContent="center">
-                  <Box padding="5px">
-                    <div style={{ cursor: "pointer" }}>
-                      <label>
-                        <Button
-                          variant="contained"
-                          style={{
-                            padding: "5px 7px",
-                            textTransform: "Capitailze",
-                            backgroundColor: "#F3F3F3",
-                            borderRadius: "0px",
-                            boxShadow: "0px 2px 4px 1px #888888",
-                            color: "gray",
-                            whiteSpace: "nowrap",
-                          }}
-                          className={classes.btntext}
-                          startIcon={
-                            <AiOutlineMobile
-                              style={{ marginLeft: "4px", color: "#E28CAB" }}
-                              className={classes.btnicon}
-                            />
-                          }
-                        >
-                          Sign in with OTP
-                        </Button>
-                      </label>
-                    </div>
-                  </Box>
+              </Box>
+              <Box display="flex" flexDirection="row" justifyContent="center">
+                <Box padding="5px">
+                  <div style={{ cursor: "pointer" }}>
+                    <label>
+                      <Button
+                        variant="contained"
+                        style={{
+                          padding: "5px 7px",
+                          textTransform: "Capitailze",
+                          backgroundColor: "#F3F3F3",
+                          borderRadius: "0px",
+                          boxShadow: "0px 2px 4px 1px #888888",
+                          color: "gray",
+                          whiteSpace: "nowrap",
+                        }}
+                        className={classes.btntext}
+                        startIcon={
+                          <AiOutlineMobile
+                            style={{ marginLeft: "4px", color: "#E28CAB" }}
+                            className={classes.btnicon}
+                          />
+                        }
+                      >
+                        Sign in with OTP
+                      </Button>
+                    </label>
+                  </div>
                 </Box>
-              </Grid>
+              </Box>
             </Grid>
-          </hidden>
+          </Grid>
         </form>
       </div>
 
