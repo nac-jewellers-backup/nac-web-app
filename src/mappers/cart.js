@@ -145,6 +145,8 @@ export default function (data) {
         isActive: k.productListByProductId.isactive,
         // sellingPrice: k?.sellingPrice,
         // markupPrice: k?.markupPrice,
+        minOrderQty: k.minOrderQty ?? 1,
+        maxOrderQty: k.maxOrderQty ?? 1,
         productsDetails: [
           //                     Quality
           // Metal
@@ -201,6 +203,7 @@ export default function (data) {
         ],
         //
         //
+
         dataCard1: [
           {
             offerPrice: k.markupPrice,
@@ -213,6 +216,8 @@ export default function (data) {
               placeImage: "https://assets-cdn.stylori.com/313x313/images/product/SE0176/SE0176-1R.jpg",
               hoverImage: "https://assets-cdn.stylori.com/313x313/images/product/SE0176/HOVER-SE0176-2R.jpg",
             },
+            minOrderQty: k.minOrderQty ?? 1,
+            maxOrderQty: k.maxOrderQty ?? 1,
           },
         ],
         // fadeImages: (k.productListByProductId.productImagesByProductId.nodes.map(val => (

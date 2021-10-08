@@ -1,4 +1,5 @@
-import { Box, Button, Grid, Hidden } from "@material-ui/core";
+import { Box, Button, Grid, Hidden, TextField } from "@material-ui/core";
+import Autocomplete from "@material-ui/lab/Autocomplete";
 import Accordion from "@material-ui/core/Accordion";
 import AccordionActions from "@material-ui/core/AccordionActions";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
@@ -181,6 +182,16 @@ class Checkoutcard extends React.Component {
       if (_data.indexOf("silver") > -1) return false;
       else return true;
     };
+
+    const QuantityCaluculation = (min, max) => {
+      let quantityArr = [];
+      console.log(min, max);
+      for (let i = 1; i <= max; i++) {
+        quantityArr.push({ id: "" + i });
+      }
+      return quantityArr;
+    };
+    const onChangeQty = (e) => {};
     const { expand } = this.state;
 
     return (
@@ -564,22 +575,37 @@ class Checkoutcard extends React.Component {
                               }
                             >
                               <Grid item xs={12}>
-                                {/* <Grid container spacing={12}>
-                                  <Grid item xs={6}>
+                                <Grid container spacing={12}>
+                                  {/* <Grid item xs={6}>
                                     <Typography
                                       className={`subhesder ${classes.normalfonts}`}
                                     >
                                       Size :
                                     </Typography>
+                                  </Grid> */}
+                                  <Grid container xs={6} direction="row">
+                                    <Grid item>
+                                      <Typography className={`subhesder ${classes.normalfonts}`}>Quantity :</Typography>
+                                    </Grid>
+                                    <Grid item>
+                                      {dataval.maxOrderQty === 1 ? (
+                                        " "
+                                      ) : (
+                                        <Autocomplete
+                                          style={{ padding: "1px !important" }}
+                                          id="flat-demo"
+                                          value={{ id: "" + dataval.minOrderQty }}
+                                          options={QuantityCaluculation(dataval.minOrderQty, dataval.maxOrderQty)}
+                                          getOptionLabel={(option) => option.id}
+                                          style={{ width: 30 }}
+                                          size="small"
+                                          onChange={(e) => onChangeQty(e)}
+                                          renderInput={(params) => <TextField {...params} label=""  />}
+                                        />
+                                      )}
+                                    </Grid>
                                   </Grid>
-                                  <Grid item xs={6}>
-                                    <Typography
-                                      className={`subhesder ${classes.normalfonts}`}
-                                    >
-                                      Quantity :
-                                    </Typography>
-                                  </Grid>
-                                </Grid> */}
+                                </Grid>
                                 <div style={{ marginTop: "15px" }}>
                                   {this.state.shipby_arr.map((val) => (
                                     <>

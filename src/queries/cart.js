@@ -16,6 +16,8 @@ export const CART = `query myquerycart($productList: [String!]) {
       discount
       markupPrice
       markupPriceTax
+      minOrderQty
+      maxOrderQty
 
       productListByProductId {
         productMaterialsByProductSku {
