@@ -62,6 +62,7 @@ class Component extends React.Component {
     mailId: null,
     adres_details: null,
     expand: false,
+    show: true,
   };
   componentDidMount() {
     ReactPixel.init("1464338023867789", {}, { debug: true, autoConfig: false });
@@ -130,7 +131,8 @@ class Component extends React.Component {
   };
 
   changePanel = (panel, adres_detail) => {
-    if (panel === 2) {
+    console.log(panel);
+    if (panel == 2) {
       adres["value"] = {};
       localStorage.removeItem("bil_isactive");
       localStorage.removeItem("ship_isactive");
@@ -158,8 +160,46 @@ class Component extends React.Component {
       if (panel === 1) {
         return localStorage.setItem("panel", 1);
       }
-      if (panel === 2) {
-        return localStorage.setItem("panel", 2);
+      if (panel === 3) {
+        return localStorage.setItem("panel", 3);
+      }
+      localStorage.setItem("panel", 1);
+    }
+    // alert(JSON.stringify(obj_values))
+  };
+  changePanel1 = (panel, adres_detail) => {
+    console.log(panel);
+    this.setState({ show: false });
+    if (panel === 3) {
+      adres["value"] = {};
+      localStorage.removeItem("bil_isactive");
+      localStorage.removeItem("ship_isactive");
+      obj_values["adres_details"] = {};
+      localStorage.removeItem("select_addres");
+    }
+    if (panel === 1) {
+      adres["value"] = {};
+      localStorage.removeItem("bil_isactive");
+      localStorage.removeItem("ship_isactive");
+      localStorage.removeItem("select_addres");
+      obj_values["adres_details"] = {};
+    }
+    // if(!panel===null){
+    localStorage.setItem("panel", panel);
+    obj_values["adres_details"] = adres_detail;
+    this.setState({
+      expanded: "panel" + panel,
+      expandedlimit: panel,
+      // mailId: mailId ? mailId : this.state.mailId
+    });
+    // }
+
+    if (Object.keys(adres.value).length <= 0 && obj_values.length <= 0) {
+      if (panel === 1) {
+        return localStorage.setItem("panel", 1);
+      }
+      if (panel === 3) {
+        return localStorage.setItem("panel", 3);
       }
       localStorage.setItem("panel", 1);
     }
@@ -173,7 +213,7 @@ class Component extends React.Component {
     this.props.makeRequestCod(variab);
     obj_user["user_id"] = user_id;
 
-    this.changePanel(4);
+    this.changePanel(3);
   };
   handleChangedown = (panel) => (event, isExpanded) => {
     console.log(panel);
@@ -293,8 +333,8 @@ class Component extends React.Component {
 
                     <ExpansionPanel
                       square
-                      expanded={expanded === "panel3"}
-                      onChange={this.handleChange(3)}
+                      expanded={expanded === "panel2"}
+                      onChange={this.handleChange(2)}
                       style={{
                         boxShadow: "none",
                       }}
@@ -307,7 +347,7 @@ class Component extends React.Component {
                         className="ckcut-main-body"
                       >
                         <Typography className="text-chck">
-                          3.&nbsp;&nbsp;ADD A GIFT MESSAGE
+                          2.&nbsp;&nbsp;ADD A GIFT MESSAGE
                         </Typography>
                       </ExpansionPanelSummary>
                       <ExpansionPanelDetails>
@@ -391,8 +431,8 @@ class Component extends React.Component {
 
                     <ExpansionPanel
                       square
-                      expanded={expanded === "panel2"}
-                      onChange={this.handleChange(2)}
+                      expanded={expanded === "panel3"}
+                      onChange={this.handleChange(3)}
                       style={{ boxShadow: "none" }}
                     >
                       <ExpansionPanelSummary
@@ -405,7 +445,7 @@ class Component extends React.Component {
                         className="ckcut-main-body"
                       >
                         <Typography className="text-chck">
-                          2.&nbsp;&nbsp;DELIVERY/PICKUP INFORMATION
+                          3.&nbsp;&nbsp;DELIVERY/PICKUP INFORMATION
                           <div className="ch-d-vl">
                             {obj_values &&
                             obj_values.adres_details &&
@@ -459,7 +499,15 @@ class Component extends React.Component {
                       <ExpansionPanelDetails>
                         <Grid container>
                           <Grid item xs={12} lg={12}>
-                            <Addressform changePanel={this.changePanel} />
+                            <Grid container>
+                              <Grid xs={12} lg={7} />
+                              <Grid xs={12} lg={4}></Grid>
+                            </Grid>
+
+                            <Addressform
+                              changePanel={this.changePanel}
+                              changeaddress={this.changePanel1}
+                            />
                           </Grid>
                         </Grid>
                       </ExpansionPanelDetails>
@@ -539,15 +587,14 @@ class Component extends React.Component {
                       onChange={this.handleChange(1)}
                       style={{
                         boxShadow: "none",
-                        backgroundColor: "#F3F3F3",
                       }}
                     >
                       <ExpansionPanelSummary
                         style={{
                           borderBottom: "1.3px solid #C1C1C1",
-                          backgroundColor: "#F3F3F3",
                         }}
                         expandIcon={<ExpandMoreIcon className="arrow-chek" />}
+                        className="ckcut-main-body"
                       >
                         <Typography className="text-chck">
                           {" "}
@@ -555,7 +602,7 @@ class Component extends React.Component {
                           <div className="ch-d-vl">{email}</div>
                         </Typography>
                       </ExpansionPanelSummary>
-                      <ExpansionPanelDetails style={{ padding: "10px" }}>
+                      <ExpansionPanelDetails>
                         <LoginRegisterIndex changePanel={this.changePanel} />
                       </ExpansionPanelDetails>
                     </ExpansionPanel>
@@ -564,21 +611,118 @@ class Component extends React.Component {
                       square
                       expanded={expanded === "panel2"}
                       onChange={this.handleChange(2)}
-                      style={{ boxShadow: "none", backgroundColor: "#F3F3F3" }}
+                      style={{
+                        boxShadow: "none",
+                      }}
+                    >
+                      <ExpansionPanelSummary
+                        style={{
+                          borderBottom: "1.3px solid #C1C1C1",
+                        }}
+                        expandIcon={<ExpandMoreIcon className="arrow-chek" />}
+                        className="ckcut-main-body"
+                      >
+                        <Typography className="text-chck">
+                          2.&nbsp;&nbsp;ADD A GIFT MESSAGE
+                        </Typography>
+                      </ExpansionPanelSummary>
+                      <ExpansionPanelDetails>
+                        <Grid container>
+                          <Grid item xs={12} lg={12}>
+                            <Hidden smDown>
+                              <Grid container>
+                                <Grid
+                                  item
+                                  xs={12}
+                                  lg={12}
+                                  className={classes.cart}
+                                >
+                                  <ProductList checkout={true} />
+                                  <br />
+                                </Grid>
+
+                                <Grid xs={12} lg={7} />
+                                <Grid xs={12} lg={4}>
+                                  <div
+                                    style={{
+                                      float: "right",
+                                      marginBottom: "5px",
+                                    }}
+                                  >
+                                    {ProductIsActive ? (
+                                      <Button
+                                        onClick={() => this.pincodeapi()}
+                                        className="summaryOrder-pay-btn"
+                                      >
+                                        Continue to Pay
+                                      </Button>
+                                    ) : (
+                                      <Button
+                                        className="summaryOrder-pay-btn"
+                                        onClick={enquireLink}
+                                      >
+                                        Enquire Now
+                                      </Button>
+                                    )}
+                                  </div>
+                                </Grid>
+                              </Grid>
+                              <br />
+                            </Hidden>
+                          </Grid>
+
+                          <Hidden mdUp>
+                            <Grid container style={{ marginTop: "10px" }}>
+                              <Grid xs={12} lg={7} />
+                              <Grid xs={12} lg={4}>
+                                <div
+                                  style={{
+                                    float: "right",
+                                    marginBottom: "5px",
+                                  }}
+                                >
+                                  {ProductIsActive ? (
+                                    <Button
+                                      onClick={() => this.pincodeapi()}
+                                      className="summaryOrder-pay-btn"
+                                    >
+                                      Continue to Pay
+                                    </Button>
+                                  ) : (
+                                    <Button
+                                      className="summaryOrder-pay-btn"
+                                      onClick={enquireLink}
+                                    >
+                                      Enquire Now
+                                    </Button>
+                                  )}
+                                </div>
+                              </Grid>
+                            </Grid>
+                            <br />
+                          </Hidden>
+                        </Grid>
+                      </ExpansionPanelDetails>
+                    </ExpansionPanel>
+
+                    <ExpansionPanel
+                      square
+                      expanded={expanded === "panel3"}
+                      onChange={this.handleChange(3)}
+                      style={{ boxShadow: "none" }}
                     >
                       <ExpansionPanelSummary
                         style={{
                           width: "100%",
                           overflow: "hidden",
                           borderBottom: "1.3px solid #C1C1C1",
-                          backgroundColor: "#F3F3F3",
                         }}
                         expandIcon={<ExpandMoreIcon className="arrow-chek" />}
+                        className="ckcut-main-body"
                       >
                         <Typography className="text-chck">
-                          2.&nbsp;DELIVERY/PICKUP&nbsp;INFORMATION
-                          <br />
-                          <span className="ch-d-vl">
+                          3.&nbsp;&nbsp;DELIVERY/PICKUP INFORMATION
+                          <div className="ch-d-vl">
                             {obj_values &&
                             obj_values.adres_details &&
                             obj_values.adres_details.firstname &&
@@ -625,104 +769,22 @@ class Component extends React.Component {
                               ? obj_values.adres_details &&
                                 obj_values.adres_details.pincode
                               : adres.value && adres.value.pincode}
-                          </span>
+                          </div>
                         </Typography>
                       </ExpansionPanelSummary>
                       <ExpansionPanelDetails>
                         <Grid container>
                           <Grid item xs={12} lg={12}>
-                            <Addressform changePanel={this.changePanel} />
-                          </Grid>
-                        </Grid>
-                      </ExpansionPanelDetails>
-                    </ExpansionPanel>
-                    <ExpansionPanel
-                      square
-                      expanded={expanded === "panel3"}
-                      onChange={this.handleChange(3)}
-                      style={{
-                        boxShadow: "none",
-                        backgroundColor: "#F3F3F3",
-                      }}
-                    >
-                      <ExpansionPanelSummary
-                        style={{
-                          borderBottom: "1.3px solid #C1C1C1",
-                          backgroundColor: "#F3F3F3",
-                        }}
-                        expandIcon={<ExpandMoreIcon className="arrow-chek" />}
-                      >
-                        <Typography className="text-chck">
-                          3.&nbsp;&nbsp;ADD A GIFT MESSAGE
-                        </Typography>
-                      </ExpansionPanelSummary>
-                      <ExpansionPanelDetails>
-                        <Grid container>
-                          <Grid item xs={12} lg={12}>
-                            <Hidden smDown>
-                              <Grid container>
-                                <Grid xs={12} lg={7} />
-                                <Grid xs={12} lg={4}>
-                                  <div
-                                    style={{
-                                      float: "right",
-                                      marginBottom: "5px",
-                                    }}
-                                  >
-                                    {ProductIsActive ? (
-                                      <Button
-                                        onClick={() => this.pincodeapi()}
-                                        className="summaryOrder-pay-btn"
-                                      >
-                                        Continue to Pay
-                                      </Button>
-                                    ) : (
-                                      <Button
-                                        className="summaryOrder-pay-btn"
-                                        onClick={enquireLink}
-                                      >
-                                        Enquire Now
-                                      </Button>
-                                    )}
-                                  </div>
-                                </Grid>
-                              </Grid>
-                              <br />
-                            </Hidden>
-                          </Grid>
-                          <Grid item xs={12} lg={12} className={classes.cart}>
-                            <ProductList checkout={true} />
-                          </Grid>
-                          <Hidden mdUp>
-                            <Grid container style={{ marginTop: "10px" }}>
+                            <Grid container>
                               <Grid xs={12} lg={7} />
-                              <Grid xs={12} lg={4}>
-                                <div
-                                  style={{
-                                    float: "right",
-                                    marginBottom: "5px",
-                                  }}
-                                >
-                                  {ProductIsActive ? (
-                                    <Button
-                                      onClick={() => this.pincodeapi()}
-                                      className="summaryOrder-pay-btn"
-                                    >
-                                      Continue to Pay
-                                    </Button>
-                                  ) : (
-                                    <Button
-                                      className="summaryOrder-pay-btn"
-                                      onClick={enquireLink}
-                                    >
-                                      Enquire Now
-                                    </Button>
-                                  )}
-                                </div>
-                              </Grid>
+                              <Grid xs={12} lg={4}></Grid>
                             </Grid>
-                            <br />
-                          </Hidden>
+
+                            <Addressform
+                              changePanel={this.changePanel}
+                              changeaddress={this.changePanel1}
+                            />
+                          </Grid>
                         </Grid>
                       </ExpansionPanelDetails>
                     </ExpansionPanel>
@@ -733,15 +795,14 @@ class Component extends React.Component {
                       onChange={this.handleChange(4)}
                       style={{
                         boxShadow: "none",
-                        backgroundColor: "#F3F3F3",
                       }}
                     >
                       <ExpansionPanelSummary
                         style={{
                           borderBottom: "1.3px solid #C1C1C1",
-                          backgroundColor: "#F3F3F3",
                         }}
                         expandIcon={<ExpandMoreIcon className="arrow-chek" />}
+                        className="ckcut-main-body"
                       >
                         <Typography className="text-chck">
                           4.&nbsp;&nbsp;PAYMENT METHOD

@@ -71,6 +71,7 @@ export const Input = (props) => {
             {...rest}
             disabled={props.disabled}
             rowsMax={rowsMax}
+            minRows={4}
           />
         </>
       ) : (

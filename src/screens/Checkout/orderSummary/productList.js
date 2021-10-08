@@ -61,14 +61,50 @@ const ProductlistComponent = (props) => {
           <div>
             <Grid container spacing={12}>
               <Grid item xs={12}>
-                <h5 style={{ textAlign: "center", color: "gray" }}>
+                <h4 style={{ textAlign: "center", color: "gray" }}>
                   Gift Wrap
-                </h5>
+                </h4>
                 <div style={{ width: "100%" }}>
                   <form
                     action="javascript:void(0)"
                     onSubmit={() => handlers.handleSubmit()}
                   >
+                    <label style={{ color: "gray", fontWeight: "bold" }}>
+                      Add a Special Message!&nbsp;
+                      <b style={{ color: "#c1c1c1" }}>(Optinal)</b>
+                    </label>
+                    <Input
+                      checkoutgift={true}
+                      msg={true}
+                      multiline={true}
+                      helperText="Message is required"
+                      placeholder="Message"
+                      name="message"
+                      type="text"
+                      value={values.message}
+                      required
+                      maxLength={255}
+                      disabled={
+                        (data && data.message === "Success") ||
+                        values.haveAlready
+                          ? true
+                          : false
+                      }
+                      onChange={(e) =>
+                        handlers.handleChange("message", e.target.value)
+                      }
+                    />
+
+                    <br />
+                    <label
+                      style={{
+                        color: "gray",
+                        fontWeight: "bold",
+                      }}
+                    >
+                      Gift Recipient’s Email!&nbsp;
+                      <b style={{ color: "#c1c1c1" }}>(Optinal)</b>
+                    </label>
                     <Input
                       checkoutgift={true}
                       helperText="To is required"
@@ -87,26 +123,7 @@ const ProductlistComponent = (props) => {
                         handlers.handleChange("gift_to", e.target.value)
                       }
                     />
-                    <Input
-                      checkoutgift={true}
-                      msg={true}
-                      multiline={true}
-                      helperText="Message is required"
-                      placeholder="Message"
-                      name="message"
-                      type="text"
-                      value={values.message}
-                      required
-                      disabled={
-                        (data && data.message === "Success") ||
-                        values.haveAlready
-                          ? true
-                          : false
-                      }
-                      onChange={(e) =>
-                        handlers.handleChange("message", e.target.value)
-                      }
-                    />
+
                     <div className="login-butn">
                       {(data && data.message === "Success") ||
                       values.haveAlready ? (

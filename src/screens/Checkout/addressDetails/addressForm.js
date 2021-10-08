@@ -71,7 +71,7 @@ const AddressComponent = (props) => {
                   lg={
                     window.location.pathname.split("-")[0] === "/account"
                       ? 12
-                      : 12
+                      : 5
                   }
                 >
                   {window.location.pathname.split("-")[0] === "/account" ||
@@ -569,6 +569,7 @@ const AddressComponent = (props) => {
             changevalue={props.changePanel}
             redirectForm1={handle.redirectForm1}
             redirectForm={handle.redirectForm}
+            changeaddress={props.changeaddress}
           />
         )}
       </div>
