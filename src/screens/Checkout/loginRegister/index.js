@@ -81,104 +81,29 @@ class LoginRegisterIndex extends React.Component {
           </div>
         ) : (
           <div style={{ width: "100%" }}>
-            {/* <div
-              className="pt-sm"
-              style={{ display: this.state.show == true ? "block" : "none" }}
+            <div
+              style={{
+                display: this.state.Login === true ? "block" : "none",
+              }}
             >
-              <>
-                <h5 className={`title ${classes.loginheaders}`}>
-                  {" "}
-                  Please click to choose an action
-                </h5>
-                <Grid container spacing={12}>
-                  {LogRegData.map((val) => (
-                    <Grid item xs={12} lg={4}>
-                      <Card className="form-card">
-                        <CardContent style={{ height: "70px" }}>
-                          <div>
-                            <p className={`card-reg ${classes.dis}`}>
-                              {" "}
-                              {val.title}
-                            </p>
-                            <b className={`card-reg blt ${classes.dis}`}>
-                              {val.dis}
-                            </b>
-                          </div>
-                        </CardContent>
-                        <div className="login-butn">
-                          <Button
-                            className="apply-b"
-                            onClick={() => {
-                              this.toggle(val.button);
-                            }}
-                          >
-                            {val.buttonval}
-                          </Button>
-                        </div>
-                      </Card>
-                    </Grid>
-                  ))}
-                </Grid>
-              </>
-            </div>*/}
-            <div>
-              <div
-                style={{
-                  display: this.state.Continue === true ? "block" : "none",
+              <Login
+                changePanel={this.props.changePanel}
+                change={() => {
+                  this.setState({
+                    Register: this.state.Register ? false : true,
+                  });
+                  this.setState({
+                    Login: this.state.Login ? false : true,
+                  });
                 }}
-              >
-                <Login
-                  changePanel={this.props.changePanel}
-                  change={() => {
-                    this.setState({
-                      show: true,
-                      Login: false,
-                    });
-                  }}
-                  changeRegister={() => {
-                    this.setState({
-                      show: true,
-                      Register: false,
-                    });
-                  }}
-                  checkoutpage="true"
-                />
-              </div>
-              <div
-                style={{
-                  display: this.state.Continue === true ? "block" : "none",
-                  color: "gray",
-                  textAlign: "center",
-                  borderTop: "1px solid #c1c1c1",
+                changeRegister={() => {
+                  this.setState({
+                    show: true,
+                    Register: false,
+                  });
                 }}
-              >
-                <br />
-                Guest Checkout Not ready to become a member just yet?
-                <br />
-                <br />
-                <Button
-                  className="apply-b"
-                  onClick={() => {
-                    this.setState({
-                      Continue: this.state.Continue ? false : true,
-                    });
-                  }}
-                >
-                  Continue As a Guest
-                </Button>
-              </div>
-              <div hidden={this.state.Continue}>
-                <Continues
-                  changePanel={this.props.changePanel}
-                  local_mail_id={local_mail_id}
-                  change={() => {
-                    // this.setState({
-                    //   Continue: this.state.Continue === true ? false : true,
-                    // });
-                    window.location.reload();
-                  }}
-                />
-              </div>
+                checkoutpage="true"
+              />
             </div>
             <div
               style={{
@@ -186,31 +111,56 @@ class LoginRegisterIndex extends React.Component {
               }}
             >
               <Register
-                changePanel={this.props.changePanel}
                 change={() => {
                   this.setState({
-                    show: true,
-                    Register: false,
+                    Register: this.state.Register ? false : true,
+                  });
+                  this.setState({
+                    Login: this.state.Login ? false : true,
                   });
                 }}
               />
             </div>
-            {/* <div
+            <div
               style={{
-                display: this.state.Continue == true ? "block" : "none",
+                display: this.state.Continue === true ? "block" : "none",
+                color: "gray",
+                textAlign: "center",
+                borderTop: "1px solid #c1c1c1",
               }}
             >
+              <br />
+              Guest Checkout Not ready to become a member just yet?
+              <br />
+              <br />
+              <Button
+                className="apply-b"
+                onClick={() => {
+                  this.setState({
+                    Continue: this.state.Continue ? false : true,
+                  });
+                  this.setState({
+                    Login: this.state.Login ? false : true,
+                  });
+                }}
+              >
+                Continue As a Guest
+              </Button>
+            </div>
+            <div hidden={this.state.Continue}>
               <Continues
                 changePanel={this.props.changePanel}
                 local_mail_id={local_mail_id}
                 change={() => {
                   this.setState({
-                    show: true,
-                    Continue: false,
+                    Continue: this.state.Continue === true ? false : true,
+                  });
+                  this.setState({
+                    Login: this.state.Login === true ? false : true,
                   });
                 }}
               />
-            </div> */}
+            </div>
           </div>
         )}
       </Grid>

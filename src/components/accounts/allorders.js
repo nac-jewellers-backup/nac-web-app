@@ -618,7 +618,6 @@ class Allorders extends React.Component {
                                                       overflow: "hidden",
                                                       outline: "none",
                                                       color: "gray",
-                                                      borderBottom: "1px solid #c1c1c1",
                                                     }}
                                                   >
                                                     <Grid item lg={3} xs={3}>
@@ -707,6 +706,12 @@ class Allorders extends React.Component {
                                                       <br />
                                                     </Grid>
                                                   </Grid>
+                                                  <br />
+                                                  <hr
+                                                    style={{
+                                                      border: "1px solid #c1c1c1",
+                                                    }}
+                                                  />
                                                 </div>
                                               </div>
                                             </div>
@@ -760,7 +765,10 @@ class Allorders extends React.Component {
                                   </Hidden>
 
                                   {/* SUB TOTAL */}
-                                  <br />
+                                  <Hidden xsDown>
+                                    <br />
+                                  </Hidden>
+
                                   <Grid
                                     container
                                     style={{
@@ -822,7 +830,7 @@ class Allorders extends React.Component {
                                         color: "#2F348A",
                                       }}
                                     >
-                                      <Typography variant="body1">
+                                      <Typography variant="body1" style={{ marginTop: "8px" }}>
                                         <b> TOTAL&nbsp;COST</b>
                                       </Typography>
                                     </Grid>
@@ -833,7 +841,13 @@ class Allorders extends React.Component {
                                         color: "#2F348A",
                                       }}
                                     >
-                                      <Typography variant="body1" style={{ float: "right" }}>
+                                      <Typography
+                                        variant="body1"
+                                        style={{
+                                          float: "right",
+                                          marginTop: "8px",
+                                        }}
+                                      >
                                         <b>
                                           {new Intl.NumberFormat("en-IN", {
                                             style: "currency",
