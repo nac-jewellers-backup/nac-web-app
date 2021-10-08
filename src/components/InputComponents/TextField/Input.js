@@ -55,21 +55,45 @@ export const Input = (props) => {
 
   return (
     <Grid item xs={12}>
-      <TextField
-        autoComplete={props && props.autoComplete && props.autoComplete}
-        inputProps={{ pattern, maxLength, minLength }}
-        style={{ width: "100%", marginTop: "26px" }}
-        onInvalid={handleInvalid}
-        error={invalid}
-        multiline={multiline}
-        rowsMax={rowsMax}
-        disabled={props.disabled}
-        helperText={invalid && <b>{helperText}</b>}
-        onKeyPress={handleKeyPress}
-        onChange={handleChange}
-        {...defaultStyle}
-        {...rest}
-      />
+      {props.checkoutgift ? (
+        <>
+          <TextField
+            variant="filled"
+            autoComplete={props && props.autoComplete && props.autoComplete}
+            inputProps={{ pattern, maxLength, minLength }}
+            multiline={props.multiline}
+            onInvalid={handleInvalid}
+            style={{ width: "100%", marginTop: "20px" }}
+            error={invalid}
+            helperText={invalid && <b>{helperText}</b>}
+            onKeyPress={handleKeyPress}
+            onChange={handleChange}
+            {...rest}
+            disabled={props.disabled}
+            rowsMax={rowsMax}
+          />
+        </>
+      ) : (
+        <TextField
+          autoComplete={props && props.autoComplete && props.autoComplete}
+          inputProps={{
+            pattern,
+            maxLength,
+            minLength,
+          }}
+          style={{ width: "100%", marginTop: "26px" }}
+          onInvalid={handleInvalid}
+          error={invalid}
+          multiline={multiline}
+          rowsMax={rowsMax}
+          disabled={props.disabled}
+          helperText={invalid && <b>{helperText}</b>}
+          onKeyPress={handleKeyPress}
+          onChange={handleChange}
+          {...defaultStyle}
+          {...rest}
+        />
+      )}
     </Grid>
   );
 };

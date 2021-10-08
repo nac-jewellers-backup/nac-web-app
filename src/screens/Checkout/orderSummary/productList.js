@@ -11,6 +11,7 @@ import { Input } from "../../../components/InputComponents/TextField/Input";
 import "./ordersummary.css";
 import Promo from "./promocode";
 import useGift from "./usegift";
+
 const styles = (theme) => ({
   cart: {
     [theme.breakpoints.down("xs")]: {
@@ -34,6 +35,7 @@ const ProductlistComponent = (props) => {
   let value = localStorage.getItem("select_addres")
     ? JSON.parse(localStorage.getItem("select_addres"))
     : {};
+
   const { expanded1, expanded2, expanded3 } = val;
 
   const handleChange1 = (panel) => (event) => {
@@ -55,211 +57,285 @@ const ProductlistComponent = (props) => {
     <Grid>
       <div className="pt-sm">
         {/* <Checkoutcard /> */}
-        <div>
-          <Grid container spacing={12}>
-            <Grid item xs={12} lg={4} sm={6}>
-              <ExpansionPanel
-                style={{ marginTop: "12px" }}
-                class="extra-box"
-                className={classes.cart}
-                square
-                className={classes.cart}
-                expanded={expanded1 === 1}
-                onChange={handleChange1(1)}
-              >
-                <ExpansionPanelSummary
-                  aria-controls="panel1d-content"
-                  id="panel1d-header"
-                  expandIcon={
-                    <span className="side-arrow-symbol ">
-                      <i class="fa fa-sort-up sml"></i>
-                    </span>
-                  }
-                  aria-controls="panel1a-content"
-                  id="panel1a-header"
-                  className="order-ship"
-                >
-                  <h5 className="title" style={{ textAlign: "center" }}>
-                    {" "}
-                    Shipping Address
-                  </h5>
-                </ExpansionPanelSummary>
-                <ExpansionPanelDetails className="order-ship pdng">
-                  <div style={{ width: "100%" }}>
-                    <p className="dis-phn btm">
-                      {/* {aa ? aa + ' ' : ""} */}
-                      {value && value.firstname}
-                      &nbsp;
-                      {value && value.lastname}
-                    </p>
-                    <p className="dis-phn btm">
-                      <div
-                        style={{
-                          width: "100%",
-                          overflow: "hidden",
-                          textOverflow: "ellipsis",
-                        }}
-                      >
-                        {value && value.addressline1}
-                      </div>
-                      {value && value.city} <br />
-                      {value.state + "-"}
-                      {value && value.pincode}
-                      <br />
-                      IN
-                    </p>
-                    <p className="dis-phn">
-                      Phone : +91{" "}
-                      {value.contactNumber
-                        ? value.contactNumber
-                        : value.contactno}{" "}
-                    </p>
-                  </div>
-                </ExpansionPanelDetails>
-              </ExpansionPanel>
+        {props.checkout ? (
+          <div>
+            <Grid container spacing={12}>
+              <Grid item xs={12}>
+                <h5 style={{ textAlign: "center", color: "gray" }}>
+                  Gift Wrap
+                </h5>
+                <div style={{ width: "100%" }}>
+                  <form
+                    action="javascript:void(0)"
+                    onSubmit={() => handlers.handleSubmit()}
+                  >
+                    <Input
+                      checkoutgift={true}
+                      helperText="To is required"
+                      placeholder="To"
+                      name="to"
+                      type="text"
+                      value={values.gift_to}
+                      required
+                      disabled={
+                        (data && data.message === "Success") ||
+                        values.haveAlready
+                          ? true
+                          : false
+                      }
+                      onChange={(e) =>
+                        handlers.handleChange("gift_to", e.target.value)
+                      }
+                    />
+                    <Input
+                      checkoutgift={true}
+                      msg={true}
+                      multiline={true}
+                      helperText="Message is required"
+                      placeholder="Message"
+                      name="message"
+                      type="text"
+                      value={values.message}
+                      required
+                      disabled={
+                        (data && data.message === "Success") ||
+                        values.haveAlready
+                          ? true
+                          : false
+                      }
+                      onChange={(e) =>
+                        handlers.handleChange("message", e.target.value)
+                      }
+                    />
+                    <div className="login-butn">
+                      {(data && data.message === "Success") ||
+                      values.haveAlready ? (
+                        <Button
+                          style={{ filter: "grayscale(5)" }}
+                          disabled
+                          className="apply-b"
+                          type="submit"
+                        >
+                          Saved
+                        </Button>
+                      ) : (
+                        <Button className="apply-b" type="submit">
+                          Saves
+                        </Button>
+                      )}
+                    </div>
+                  </form>
+                </div>
+              </Grid>
             </Grid>
+          </div>
+        ) : (
+          <div>
+            <Grid container spacing={12}>
+              <Grid item xs={12} lg={4} sm={6}>
+                <ExpansionPanel
+                  style={{ marginTop: "12px" }}
+                  class="extra-box"
+                  className={classes.cart}
+                  square
+                  className={classes.cart}
+                  expanded={expanded1 === 1}
+                  onChange={handleChange1(1)}
+                >
+                  <ExpansionPanelSummary
+                    aria-controls="panel1d-content"
+                    id="panel1d-header"
+                    expandIcon={
+                      <span className="side-arrow-symbol ">
+                        <i class="fa fa-sort-up sml"></i>
+                      </span>
+                    }
+                    aria-controls="panel1a-content"
+                    id="panel1a-header"
+                    className="order-ship"
+                  >
+                    <h5 className="title" style={{ textAlign: "center" }}>
+                      {" "}
+                      Shipping Address
+                    </h5>
+                  </ExpansionPanelSummary>
+                  <ExpansionPanelDetails className="order-ship pdng">
+                    <div style={{ width: "100%" }}>
+                      <p className="dis-phn btm">
+                        {/* {aa ? aa + ' ' : ""} */}
+                        {value && value.firstname}
+                        &nbsp;
+                        {value && value.lastname}
+                      </p>
+                      <p className="dis-phn btm">
+                        <div
+                          style={{
+                            width: "100%",
+                            overflow: "hidden",
+                            textOverflow: "ellipsis",
+                          }}
+                        >
+                          {value && value.addressline1}
+                        </div>
+                        {value && value.city} <br />
+                        {value.state + "-"}
+                        {value && value.pincode}
+                        <br />
+                        IN
+                      </p>
+                      <p className="dis-phn">
+                        Phone : +91{" "}
+                        {value.contactNumber
+                          ? value.contactNumber
+                          : value.contactno}{" "}
+                      </p>
+                    </div>
+                  </ExpansionPanelDetails>
+                </ExpansionPanel>
+              </Grid>
 
-            <Grid item xs={12} lg={4} sm={6}>
-              <ExpansionPanel
-                square
-                class="extra-box"
-                style={{ marginTop: "12px" }}
-                className={classes.cart}
-                expanded={expanded2 === 1}
-                onChange={handleChange2(1)}
-              >
-                <ExpansionPanelSummary
-                  aria-controls="panel1d-content"
-                  id="panel1d-header"
-                  expandIcon={
-                    <span className="side-arrow-symbol">
-                      <i class="fa fa-sort-up sml"></i>
-                    </span>
-                  }
-                  aria-controls="panel1a-content"
-                  id="panel1a-header"
-                  className="order-ship"
+              <Grid item xs={12} lg={4} sm={6}>
+                <ExpansionPanel
+                  square
+                  class="extra-box"
+                  style={{ marginTop: "12px" }}
+                  className={classes.cart}
+                  expanded={expanded2 === 1}
+                  onChange={handleChange2(1)}
                 >
-                  <h5 className="title" style={{ textAlign: "center" }}>
-                    {" "}
-                    Gift Wrap
-                  </h5>
-                </ExpansionPanelSummary>
-                <ExpansionPanelDetails className="order-ship pdng">
-                  <div style={{ width: "100%" }}>
-                    <form
-                      action="javascript:void(0)"
-                      onSubmit={() => handlers.handleSubmit()}
-                    >
-                      <Input
-                        name="from"
-                        type="text"
-                        value={values.gift_from}
-                        placeholder="From"
-                        required
-                        disabled={
-                          (data && data.message === "Success") ||
-                          values.haveAlready
-                            ? true
-                            : false
-                        }
-                        onChange={(e) =>
-                          handlers.handleChange("gift_from", e.target.value)
-                        }
-                        helperText="From is required"
-                      />
-                      <Input
-                        helperText="To is required"
-                        placeholder="To"
-                        name="to"
-                        type="text"
-                        value={values.gift_to}
-                        required
-                        disabled={
-                          (data && data.message === "Success") ||
-                          values.haveAlready
-                            ? true
-                            : false
-                        }
-                        onChange={(e) =>
-                          handlers.handleChange("gift_to", e.target.value)
-                        }
-                      />
-                      <Input
-                        helperText="Message is required"
-                        placeholder="Message"
-                        name="message"
-                        type="text"
-                        value={values.message}
-                        required
-                        disabled={
-                          (data && data.message === "Success") ||
-                          values.haveAlready
-                            ? true
-                            : false
-                        }
-                        onChange={(e) =>
-                          handlers.handleChange("message", e.target.value)
-                        }
-                      />
-                      <div className="login-butn">
-                        {(data && data.message === "Success") ||
-                        values.haveAlready ? (
-                          <Button
-                            style={{ filter: "grayscale(5)" }}
-                            disabled
-                            className="apply-b"
-                            type="submit"
-                          >
-                            Saved
-                          </Button>
-                        ) : (
-                          <Button className="apply-b" type="submit">
-                            Saves
-                          </Button>
-                        )}
-                      </div>
-                    </form>
-                  </div>
-                </ExpansionPanelDetails>
-              </ExpansionPanel>
+                  <ExpansionPanelSummary
+                    aria-controls="panel1d-content"
+                    id="panel1d-header"
+                    expandIcon={
+                      <span className="side-arrow-symbol">
+                        <i class="fa fa-sort-up sml"></i>
+                      </span>
+                    }
+                    aria-controls="panel1a-content"
+                    id="panel1a-header"
+                    className="order-ship"
+                  >
+                    <h5 className="title" style={{ textAlign: "center" }}>
+                      {" "}
+                      Gift Wrap
+                    </h5>
+                  </ExpansionPanelSummary>
+                  <ExpansionPanelDetails className="order-ship pdng">
+                    <div style={{ width: "100%" }}>
+                      <form
+                        action="javascript:void(0)"
+                        onSubmit={() => handlers.handleSubmit()}
+                      >
+                        <Input
+                          name="from"
+                          type="text"
+                          value={values.gift_from}
+                          placeholder="From"
+                          required
+                          disabled={
+                            (data && data.message === "Success") ||
+                            values.haveAlready
+                              ? true
+                              : false
+                          }
+                          onChange={(e) =>
+                            handlers.handleChange("gift_from", e.target.value)
+                          }
+                          helperText="From is required"
+                        />
+                        <Input
+                          helperText="To is required"
+                          placeholder="To"
+                          name="to"
+                          type="text"
+                          value={values.gift_to}
+                          required
+                          disabled={
+                            (data && data.message === "Success") ||
+                            values.haveAlready
+                              ? true
+                              : false
+                          }
+                          onChange={(e) =>
+                            handlers.handleChange("gift_to", e.target.value)
+                          }
+                        />
+                        <Input
+                          helperText="Message is required"
+                          placeholder="Message"
+                          name="message"
+                          type="text"
+                          value={values.message}
+                          required
+                          disabled={
+                            (data && data.message === "Success") ||
+                            values.haveAlready
+                              ? true
+                              : false
+                          }
+                          onChange={(e) =>
+                            handlers.handleChange("message", e.target.value)
+                          }
+                        />
+                        <div className="login-butn">
+                          {(data && data.message === "Success") ||
+                          values.haveAlready ? (
+                            <Button
+                              style={{ filter: "grayscale(5)" }}
+                              disabled
+                              className="apply-b"
+                              type="submit"
+                            >
+                              Saved
+                            </Button>
+                          ) : (
+                            <Button className="apply-b" type="submit">
+                              Saves
+                            </Button>
+                          )}
+                        </div>
+                      </form>
+                    </div>
+                  </ExpansionPanelDetails>
+                </ExpansionPanel>
+              </Grid>
+              <Grid item xs={12} lg={4} sm={6}>
+                <ExpansionPanel
+                  style={{ marginTop: "12px" }}
+                  className={classes.cart}
+                  square
+                  class="extra-box"
+                  expanded={expanded3 === 1}
+                  onChange={handleChange3(1)}
+                >
+                  <ExpansionPanelSummary
+                    aria-controls="panel1d-content"
+                    id="panel1d-header"
+                    expandIcon={
+                      <span className="side-arrow-symbol">
+                        <i class="fa fa-sort-up sml"></i>
+                      </span>
+                    }
+                    aria-controls="panel1a-content"
+                    id="panel1a-header"
+                    className="order-ship"
+                  >
+                    <h5 className="title" style={{ textAlign: "center" }}>
+                      {" "}
+                      Promo Code
+                    </h5>
+                  </ExpansionPanelSummary>
+                  <ExpansionPanelDetails
+                    style={{ boxShadow: "rgb(222, 218, 218) 1px 2px 6px 0px" }}
+                    className="order-ship pdng"
+                  >
+                    <Promo />
+                  </ExpansionPanelDetails>
+                </ExpansionPanel>
+              </Grid>
             </Grid>
-            <Grid item xs={12} lg={4} sm={6}>
-              <ExpansionPanel
-                style={{ marginTop: "12px" }}
-                className={classes.cart}
-                square
-                class="extra-box"
-                expanded={expanded3 === 1}
-                onChange={handleChange3(1)}
-              >
-                <ExpansionPanelSummary
-                  aria-controls="panel1d-content"
-                  id="panel1d-header"
-                  expandIcon={
-                    <span className="side-arrow-symbol">
-                      <i class="fa fa-sort-up sml"></i>
-                    </span>
-                  }
-                  aria-controls="panel1a-content"
-                  id="panel1a-header"
-                  className="order-ship"
-                >
-                  <h5 className="title" style={{ textAlign: "center" }}>
-                    {" "}
-                    Promo Code
-                  </h5>
-                </ExpansionPanelSummary>
-                <ExpansionPanelDetails
-                  style={{ boxShadow: "rgb(222, 218, 218) 1px 2px 6px 0px" }}
-                  className="order-ship pdng"
-                >
-                  <Promo />
-                </ExpansionPanelDetails>
-              </ExpansionPanel>
-            </Grid>
-          </Grid>
-        </div>
+          </div>
+        )}
       </div>
     </Grid>
   );
