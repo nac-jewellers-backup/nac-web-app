@@ -352,45 +352,49 @@ const LoginComponent = (props) => {
           </Grid>
 
           {window.location.pathname === "/login" ? (
-            <div
-              style={{
-                cursor: "pointer",
-                fontSize: "14px",
-                padding: "10px",
-                color: "gray",
-              }}
-              onClick={() => {
-                window.location.href = "/registers";
-              }}
-            >
-              <center>
-                <span>
-                  New to <b>NAC</b>? Sign Up
-                </span>
-              </center>
+            <>
+              <div
+                style={{
+                  cursor: "pointer",
+                  fontSize: "14px",
+                  padding: "10px",
+                  color: "gray",
+                }}
+                onClick={() => {
+                  window.location.href = "/registers";
+                }}
+              >
+                <center>
+                  <span>
+                    New to <b>NAC</b>? Sign Up
+                  </span>
+                </center>
+                <br />
+              </div>
               <Button type="submit" className="apply-b">
                 SIGN IN
               </Button>
-            </div>
+            </>
           ) : (
-            <div
-              style={{
-                cursor: "pointer",
-                fontSize: "14px",
-                padding: "10px",
-                color: "gray",
-              }}
-              onClick={props.change}
-            >
-              <center>
-                New to <b>NAC</b>? Sign Up
-              </center>
-              <br />
-
+            <>
+              <div
+                style={{
+                  cursor: "pointer",
+                  fontSize: "14px",
+                  padding: "10px",
+                  color: "gray",
+                }}
+                onClick={props.change}
+              >
+                <center>
+                  New to <b>NAC</b>? Sign Up
+                </center>
+                <br />
+              </div>
               <Button type="submit" className="apply-b">
                 SIGN IN
               </Button>
-            </div>
+            </>
           )}
 
           <Grid
