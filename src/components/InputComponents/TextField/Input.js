@@ -72,6 +72,7 @@ export const Input = (props) => {
             disabled={props.disabled}
             rowsMax={rowsMax}
             minRows={4}
+            color="secondary"
           />
         </>
       ) : (
@@ -86,6 +87,7 @@ export const Input = (props) => {
           onInvalid={handleInvalid}
           error={invalid}
           multiline={multiline}
+          color="secondary"
           rowsMax={rowsMax}
           disabled={props.disabled}
           helperText={invalid && <b>{helperText}</b>}
