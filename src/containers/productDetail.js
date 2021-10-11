@@ -23,6 +23,7 @@ import MetaTags from "react-meta-tags";
 import { withRouter } from "react-router-dom";
 import "screens/screens.css";
 import Slideshow from "../components/Carousel/carosul";
+import NeedHelp from "../components/needHelp";
 const styles = (theme) => ({
   collectionSection: {
     // "& svg":{
@@ -624,6 +625,7 @@ class ProductDetail extends Component {
             <Footer />
           </Grid>
         </Hidden>
+        <NeedHelp/>
       </div>
     );
   }

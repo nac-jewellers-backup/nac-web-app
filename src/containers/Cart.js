@@ -15,6 +15,7 @@ import "screens/Stylori/index.css";
 import CustomSeparator from "../components/BreadCrumb/index";
 import styles from "../components/Checkout/style";
 import "./index.css";
+import NeedHelp from "components/needHelp";
 // data.map(data=>{
 // return(
 //     <Grid item xs={12}>
@@ -92,9 +93,7 @@ class Cart extends React.Component {
                 </Grid>
               ) : (
                 <>
-                  <div className="noproductsfound">
-                    There are no items in this cart.{" "}
-                  </div>
+                  <div className="noproductsfound">There are no items in this cart. </div>
                   <a href="/jewellery" className="highlighter">
                     <div className="continueshopping"> Continue shopping</div>
                   </a>
@@ -127,9 +126,7 @@ class Cart extends React.Component {
                 </Grid>
               ) : (
                 <>
-                  <div className="noproductsfound">
-                    There are no items in this cart.
-                  </div>
+                  <div className="noproductsfound">There are no items in this cart.</div>
                   <a href="/jewellery">
                     {" "}
                     <div className="continueshopping"> Continue shopping</div>
@@ -144,6 +141,7 @@ class Cart extends React.Component {
             </Grid>
           </Grid>
         </Hidden>
+        <NeedHelp />
       </Grid>
     );
   }
@@ -152,15 +150,7 @@ class Cart extends React.Component {
 
 const Components = (props) => {
   let {
-    CartCtx: {
-      cartFilters,
-      data,
-      loading,
-      error,
-      allorderdata,
-      wishlistdata,
-      NewUser,
-    },
+    CartCtx: { cartFilters, data, loading, error, allorderdata, wishlistdata, NewUser },
   } = React.useContext(CartContext);
 
   let content, mapped;
@@ -184,15 +174,7 @@ const Components = (props) => {
         <div id="loading"></div>
       </div>
     );
-  else
-    content = (
-      <Cart
-        {...props}
-        data={mapped}
-        allorderdata={allorderdata}
-        wishlistdata={wishlistdata}
-      />
-    );
+  else content = <Cart {...props} data={mapped} allorderdata={allorderdata} wishlistdata={wishlistdata} />;
   // if (mapped !== undefined && mapped !== null) {
   //     localStorage.setItem("a__c_t", mapped && mapped.length)
   // }

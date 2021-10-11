@@ -13,7 +13,7 @@ import filterData from "mappers/filterData";
 import productList from "mappers/productlist";
 import React from "react";
 import ReactPixel from "react-facebook-pixel";
-import LiveChat from "react-livechat";
+import NeedHelp from "components/needHelp";
 import MetaTags from "react-meta-tags";
 import { withRouter } from "react-router";
 import "screens/screens.css";
@@ -50,12 +50,8 @@ class Stylori extends React.Component {
       .then((res) => res.json())
       .then((data) => {
         let bannerFullData = data.data.allBanners.nodes;
-        const specificPageData = bannerFullData.filter(
-          (item) => item.urlParam === window.location.pathname
-        );
-        const listedPageData = bannerFullData.filter(
-          (item) => item.urlParam === "listingPage"
-        );
+        const specificPageData = bannerFullData.filter((item) => item.urlParam === window.location.pathname);
+        const listedPageData = bannerFullData.filter((item) => item.urlParam === "listingPage");
 
         if (specificPageData.length > 0) {
           this.setState({ bannerData: specificPageData });
@@ -96,46 +92,24 @@ class Stylori extends React.Component {
 
     return (
       <>
-        <LiveChat license={5807571} />
+        {/* <LiveChat license={5807571} /> */}
         <Grid container>
           <div>
-            {this.props &&
-            this.props.mappedFilters &&
-            this.props.mappedFilters.seo_url ? (
+            {this.props && this.props.mappedFilters && this.props.mappedFilters.seo_url ? (
               <MetaTags>
                 <title>{this.props.mappedFilters.seo_url}</title>
-                <meta
-                  name="description"
-                  content={this.props.mappedFilters.seo_text}
-                />
-                <meta
-                  name="keywords"
-                  content={this.props.dataFilter[0].filter}
-                />
+                <meta name="description" content={this.props.mappedFilters.seo_text} />
+                <meta name="keywords" content={this.props.dataFilter[0].filter} />
 
-                <meta
-                  property="og:title"
-                  id="fb-title"
-                  content={this.props.mappedFilters.seo_url}
-                />
-                <meta
-                  property="og:description"
-                  content={this.props.mappedFilters.seo_text}
-                />
+                <meta property="og:title" id="fb-title" content={this.props.mappedFilters.seo_url} />
+                <meta property="og:description" content={this.props.mappedFilters.seo_text} />
                 <meta property="og:type" content="website" />
-                <meta
-                  property="og:url"
-                  id="fb-product-url"
-                  content={window.location.href}
-                />
+                <meta property="og:url" id="fb-product-url" content={window.location.href} />
                 <meta
                   property="og:image"
                   id="fb_imageUrl"
                   content={
-                    this.props.data &&
-                    this.props.data[0] &&
-                    this.props.data[0].image &&
-                    this.props.data[0].image.placeImage.img
+                    this.props.data && this.props.data[0] && this.props.data[0].image && this.props.data[0].image.placeImage.img
                   }
                 />
                 <meta property="og:image:width" content="200" />
@@ -143,23 +117,13 @@ class Stylori extends React.Component {
 
                 <meta name="twitter:card" content="summary" />
                 <meta name="twitter:site" content="@StyloriLove" />
-                <meta
-                  name="twitter:title"
-                  id="twitter-title"
-                  content={this.props.mappedFilters.seo_url}
-                />
-                <meta
-                  name="twitter:description"
-                  content={this.props.mappedFilters.seo_text}
-                />
+                <meta name="twitter:title" id="twitter-title" content={this.props.mappedFilters.seo_url} />
+                <meta name="twitter:description" content={this.props.mappedFilters.seo_text} />
                 <meta
                   property="og:image"
                   id="fb_imageUrl"
                   content={
-                    this.props.data &&
-                    this.props.data[0] &&
-                    this.props.data[0].image &&
-                    this.props.data[0].image.placeImage.img
+                    this.props.data && this.props.data[0] && this.props.data[0].image && this.props.data[0].image.placeImage.img
                   }
                 />
               </MetaTags>
@@ -189,11 +153,7 @@ class Stylori extends React.Component {
                         data-aos-offset="0"
                       >
                         <a href={val.url} style={{ width: "100%" }}>
-                          <img
-                            src={val.web}
-                            alt="banner"
-                            style={{ width: "100%", height: "100%" }}
-                          />
+                          <img src={val.web} alt="banner" style={{ width: "100%", height: "100%" }} />
                         </a>
                       </Grid>
                     </Hidden>
@@ -204,9 +164,7 @@ class Stylori extends React.Component {
                             src={val.mobile}
                             alt="banner"
                             style={{ width: "100%", height: "100%" }}
-                            className={`image-${
-                              this.state.imageLoading ? "visible" : "hidden"
-                            }`}
+                            className={`image-${this.state.imageLoading ? "visible" : "hidden"}`}
                             onLoad={this.imageLoader}
                           />
                         </a>
@@ -216,12 +174,7 @@ class Stylori extends React.Component {
                 ))}
               </Slideshow>
             ) : (
-              <Skeleton
-                variant="rect"
-                style={{ width: "100%" }}
-                className="skeletonHeight"
-                animation="wave"
-              />
+              <Skeleton variant="rect" style={{ width: "100%" }} className="skeletonHeight" animation="wave" />
             )}
           </Grid>
           <Grid item xs={12}>
@@ -232,10 +185,7 @@ class Stylori extends React.Component {
                 margin: "28px 0px 0px 0px",
               }}
             >
-              {this.props?.location?.pathname
-                ?.replaceAll("/", " ")
-                .replaceAll("-", " ")
-                .replaceAll("+", " ") ?? " "}
+              {this.props?.location?.pathname?.replaceAll("/", " ").replaceAll("-", " ").replaceAll("+", " ") ?? " "}
             </h3>
           </Grid>
 
@@ -243,36 +193,16 @@ class Stylori extends React.Component {
             <Container maxWidth="lg">
               <Grid item xs={12}>
                 {/* <Filterlisting title="Jewellery" data={dataFilter} datalisting={data} wishlist={this.props.wishlistdata} /> */}
-                <ProductDescription
-                  title="Jewellery"
-                  data={dataFilter}
-                  datalisting={data}
-                  wishlist={this.props.wishlistdata}
-                />
-                <Filter
-                  datas={data}
-                  data={dataFilter}
-                  loading={loading}
-                  wishlist={this.props.wishlistdata}
-                />
+                <ProductDescription title="Jewellery" data={dataFilter} datalisting={data} wishlist={this.props.wishlistdata} />
+                <Filter datas={data} data={dataFilter} loading={loading} wishlist={this.props.wishlistdata} />
               </Grid>
             </Container>
           </Hidden>
           <Hidden mdUp>
             <Grid item xs={12}>
               {/* <Filterlisting title="Jewellery" data={dataFilter} datalisting={data} wishlist={this.props.wishlistdata} /> */}
-              <ProductDescription
-                title="Jewellery"
-                data={dataFilter}
-                datalisting={data}
-                wishlist={this.props.wishlistdata}
-              />
-              <Filter
-                datas={data}
-                data={dataFilter}
-                loading={loading}
-                wishlist={this.props.wishlistdata}
-              />
+              <ProductDescription title="Jewellery" data={dataFilter} datalisting={data} wishlist={this.props.wishlistdata} />
+              <Filter datas={data} data={dataFilter} loading={loading} wishlist={this.props.wishlistdata} />
             </Grid>
           </Hidden>
           <Grid item xs={12}>
@@ -282,6 +212,7 @@ class Stylori extends React.Component {
               <Footer />
             </Hidden>
           </Grid>
+          <NeedHelp />
         </Grid>
       </>
     );
@@ -295,16 +226,7 @@ const Components = (props) => {
     CartCtx: { allorderdata, wishlistdata },
   } = React.useContext(CartContext);
   let {
-    FilterOptionsCtx: {
-      data,
-      loading,
-      error,
-      dataArr,
-      mappedFilters,
-      cartcount,
-      loadingfilters,
-      wishlist_count,
-    },
+    FilterOptionsCtx: { data, loading, error, dataArr, mappedFilters, cartcount, loadingfilters, wishlist_count },
     setloadingfilters,
   } = React.useContext(FilterOptionsContext);
   let content,

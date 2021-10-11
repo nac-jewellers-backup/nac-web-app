@@ -10,15 +10,17 @@ import ProductLayout from 'components/SilverComponents/ProductCard/ProductLayout
 import { ListingPageContext } from 'context'
 import { CDN_URL } from 'config';
 import ProductDescription from 'components/SilverComponents/productDescription';
+
 class ListingPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
         };
     }
-    
+   
     // https://img-static.tradesy.com/item/13076758/clear-crystal-and-silver-rhodium-elegant-rhinestone-sunflower-droplet-earrings-0-1-960-960.jpg
     render() {
+    
         const {dataFilters } = this.props
         return (
             <Grid container>

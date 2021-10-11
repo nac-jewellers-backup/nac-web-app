@@ -9,10 +9,9 @@ import "../../../components/Checkout/Cart.css";
 import { API_URL } from "../../../config";
 import "../chckout.css";
 import "./payment.css";
-
-const order_id = localStorage.getItem("order_id")
-  ? JSON.parse(localStorage.getItem("order_id"))
-  : "";
+import Footer from "components/Footer/Footer";
+import NeedHelp from "components/needHelp";
+const order_id = localStorage.getItem("order_id") ? JSON.parse(localStorage.getItem("order_id")) : "";
 const breadcrumsdata = [
   { title: "Shopping Bag" },
   { title: "Login/ Register" },
@@ -71,18 +70,13 @@ class PaymentResponseSuccess extends React.Component {
   };
 
   componentDidMount() {
-    if (localStorage.getItem("gut_lg") && localStorage.getItem("user_id"))
-      localStorage.removeItem("user_id");
+    if (localStorage.getItem("gut_lg") && localStorage.getItem("user_id")) localStorage.removeItem("user_id");
   }
   render() {
     const { classes } = this.props;
     // alert(JSON.stringify(this.props.data))
-    let gut_lg = localStorage.getItem("gut_lg")
-      ? JSON.parse(localStorage.getItem("gut_lg"))
-      : {};
-    let email = localStorage.getItem("email")
-      ? localStorage.getItem("email")
-      : "";
+    let gut_lg = localStorage.getItem("gut_lg") ? JSON.parse(localStorage.getItem("gut_lg")) : {};
+    let email = localStorage.getItem("email") ? localStorage.getItem("email") : "";
 
     return (
       <>
@@ -140,15 +134,14 @@ class PaymentResponseSuccess extends React.Component {
 
         <Grid container>
           <Grid item xs={12}>
-            <Allorders
-              allorderdata={this.props.allorderdata}
-              history={this.props.history}
-            />
+            <Allorders allorderdata={this.props.allorderdata} history={this.props.history} />
             <Hidden smDown>
               <br />
               <br />
             </Hidden>
           </Grid>
+          <NeedHelp />
+          <Footer />
         </Grid>
       </>
     );
@@ -156,15 +149,7 @@ class PaymentResponseSuccess extends React.Component {
 }
 const Components = (props) => {
   let {
-    CartCtx: {
-      cartFilters,
-      data,
-      loading,
-      error,
-      allorderdata,
-      allordersuccesful,
-      wishlistdata,
-    },
+    CartCtx: { cartFilters, data, loading, error, allorderdata, allordersuccesful, wishlistdata },
   } = React.useContext(CartContext);
   let content, mapped;
   if (!loading && !error) {
@@ -178,15 +163,7 @@ const Components = (props) => {
         <div id="loading"></div>
       </div>
     );
-  else
-    content = (
-      <PaymentResponseSuccess
-        {...props}
-        data={mapped}
-        allorderdata={allordersuccesful}
-        wishlistdata={wishlistdata}
-      />
-    );
+  else content = <PaymentResponseSuccess {...props} data={mapped} allorderdata={allordersuccesful} wishlistdata={wishlistdata} />;
   return content;
 };
 
