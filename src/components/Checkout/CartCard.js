@@ -29,6 +29,7 @@ class Checkoutcard extends React.Component {
       expanded: false,
       open: true,
       expend: true,
+    
     };
   }
   async componentDidMount() {
@@ -183,17 +184,9 @@ class Checkoutcard extends React.Component {
       else return true;
     };
 
-    const QuantityCaluculation = (min, max) => {
-      let quantityArr = [];
-      console.log(min, max);
-      for (let i = 1; i <= max; i++) {
-        quantityArr.push({ id: "" + i });
-      }
-      return quantityArr;
-    };
-    const onChangeQty = (e) => {};
     const { expand } = this.state;
-
+    console.log(this.props);
+    debugger;
     return (
       <div style={{ marginTop: "10px" }}>
         {this.props.checkoutpage ? (
@@ -591,7 +584,7 @@ class Checkoutcard extends React.Component {
                                           <Typography className={`subhesder ${classes.normalfonts}`}>Quantity :</Typography>
                                         </Grid>
                                         <Grid item>
-                                          {/* <Select
+                                          <Select
                                             labelId="demo-simple-select-label"
                                             id="demo-simple-select"
                                             value={10}
@@ -600,33 +593,7 @@ class Checkoutcard extends React.Component {
                                             <MenuItem value={10}>10</MenuItem>
                                             <MenuItem value={20}>20</MenuItem>
                                             <MenuItem value={30}>30</MenuItem>
-                                          </Select> */}
-
-                                          {/* <Select
-                                            native
-                                            value={10}
-                                            onChange={handleChange}
-                                            inputProps={{
-                                              name: "age",
-                                              id: "age-native-simple",
-                                            }}
-                                          >
-                                            <option aria-label="None" value="" />
-                                            <option value={10}>10</option>
-                                            <option value={20}>20</option>
-                                            <option value={30}>Thirty</option>
-                                          </Select> */}
-                                          {/* <Autocomplete
-                                          style={{ padding: "1px !important" }}
-                                          id="flat-demo"
-                                          value={{ id: "" + dataval.minOrderQty }}
-                                          options={QuantityCaluculation(dataval.minOrderQty, dataval.maxOrderQty)}
-                                          getOptionLabel={(option) => option.id}
-                                          style={{ width: 30 }}
-                                          size="small"
-                                          onChange={(e) => onChangeQty(e)}
-                                          renderInput={(params) => <TextField {...params} label=""  />}
-                                        /> */}
+                                          </Select>
                                         </Grid>
                                       </>
                                     )}

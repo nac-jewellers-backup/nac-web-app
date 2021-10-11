@@ -220,10 +220,6 @@ export default function (data) {
             maxOrderQty: k.maxOrderQty ?? 1,
           },
         ],
-        // fadeImages: (k.productListByProductId.productImagesByProductId.nodes.map(val => (
-        //     // `https://assets.stylori.net/base_images/${val.imageUrl}`
-        //     val.imageUrl
-        // ))),
         fadeImages: k.productListByProductId.productImagesByProductId.nodes,
         breadcrumsdata: [
           { title: "Shopping Bag" },
