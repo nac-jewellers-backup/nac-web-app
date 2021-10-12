@@ -34,85 +34,96 @@ export default function WishlistButton(props) {
         });
     }
     //--------------------------------------------------------------------------->
-    var local_storage = JSON.parse(localStorage.getItem("cartDetails"));
+    if (option) {
+      var local_storage = JSON.parse(localStorage.getItem("cartDetails"));
 
-    var _localStorageQuantity = JSON.parse(localStorage.getItem("quantity"));
+      var _localStorageQuantity = JSON.parse(localStorage.getItem("quantity"));
 
-    // var currentValue = e.target.id
-    var currentValue =
-      e.target.id && e.target.id.length > 0 ? e.target.id : e.currentTarget.id;
+      // var currentValue = e.target.id
+      var currentValue =
+        e.target.id && e.target.id.length > 0
+          ? e.target.id
+          : e.currentTarget.id;
 
-    var a = local_storage.products.filter((val) => {
-      if (currentValue !== val.sku_id) {
-        return val;
+      var a = local_storage.products.filter((val) => {
+        if (currentValue !== val.sku_id) {
+          return val;
+        }
+      });
+
+      function status(response) {
+        if (response.status >= 200 && response.status < 300) {
+          return Promise.resolve(response);
+        } else {
+          return Promise.reject(new Error(response.statusText));
+        }
       }
-    });
 
-    function status(response) {
-      if (response.status >= 200 && response.status < 300) {
-        return Promise.resolve(response);
-      } else {
-        return Promise.reject(new Error(response.statusText));
+      function json(response) {
+        return response.json();
       }
-    }
-
-    function json(response) {
-      return response.json();
-    }
-    if (JSON.parse(localStorage.getItem("cart_id"))) {
-      let cart_id = JSON.parse(localStorage.getItem("cart_id")).cart_id;
-      let bodyVariableRemoveCartItem = {
-        cart_id: cart_id,
-        product_id: currentValue,
-      };
-      fetch(`${API_URL}/removecartitem`, {
-        method: "post",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          ...bodyVariableRemoveCartItem,
-        }),
-      })
-        .then(status)
-        .then(json)
-        .then((val) => {
-          sessionStorage.removeItem("updatedProduct");
-          alert(val.message);
-          var cartId = JSON.parse(localStorage.getItem("cartDetails")).cart_id;
-          var userId = JSON.parse(localStorage.getItem("cartDetails")).user_id;
-          var localstorage = JSON.stringify({
-            cart_id: `${cartId}`,
-            user_id: `${userId}`,
-            products: a,
+      if (JSON.parse(localStorage.getItem("cart_id"))) {
+        let cart_id = JSON.parse(localStorage.getItem("cart_id")).cart_id;
+        let bodyVariableRemoveCartItem = {
+          cart_id: cart_id,
+          product_id: currentValue,
+        };
+        fetch(`${API_URL}/removecartitem`, {
+          method: "post",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            ...bodyVariableRemoveCartItem,
+          }),
+        })
+          .then(status)
+          .then(json)
+          .then((val) => {
+            sessionStorage.removeItem("updatedProduct");
+            alert(val.message);
+            var cartId = JSON.parse(
+              localStorage.getItem("cartDetails")
+            ).cart_id;
+            var userId = JSON.parse(
+              localStorage.getItem("cartDetails")
+            ).user_id;
+            var localstorage = JSON.stringify({
+              cart_id: `${cartId}`,
+              user_id: `${userId}`,
+              products: a,
+            });
+            delete _localStorageQuantity[currentValue];
+            localStorage.setItem(
+              "quantity",
+              JSON.stringify(_localStorageQuantity)
+            );
+            localStorage.setItem("cartDetails", localstorage);
+            window.location.reload();
           });
+      } else {
+        var _products = JSON.parse(
+          localStorage.getItem("cartDetails")
+        ).products.filter((val) => {
+          if (val.sku_id !== currentValue) return val;
+        });
+        var cartId = JSON.parse(localStorage.getItem("cartDetails")).cart_id;
+        var userId = JSON.parse(localStorage.getItem("cartDetails")).user_id;
+        var _obj = { cart_id: cartId, user_id: userId, products: _products };
+        if (_products.length > 0) {
+          localStorage.setItem("cartDetails", JSON.stringify(_obj));
           delete _localStorageQuantity[currentValue];
           localStorage.setItem(
             "quantity",
             JSON.stringify(_localStorageQuantity)
           );
-          localStorage.setItem("cartDetails", localstorage);
+
           window.location.reload();
-        });
-    } else {
-      var _products = JSON.parse(
-        localStorage.getItem("cartDetails")
-      ).products.filter((val) => {
-        if (val.sku_id !== currentValue) return val;
-      });
-      var cartId = JSON.parse(localStorage.getItem("cartDetails")).cart_id;
-      var userId = JSON.parse(localStorage.getItem("cartDetails")).user_id;
-      var _obj = { cart_id: cartId, user_id: userId, products: _products };
-      if (_products.length > 0) {
-        localStorage.setItem("cartDetails", JSON.stringify(_obj));
-        delete _localStorageQuantity[currentValue];
-        localStorage.setItem("quantity", JSON.stringify(_localStorageQuantity));
+        } else {
+          localStorage.removeItem("cartDetails", _products);
 
-        window.location.reload();
-      } else {
-        localStorage.removeItem("cartDetails", _products);
-
-        window.location.reload();
+          window.location.reload();
+        }
       }
     }
   };
@@ -133,8 +144,8 @@ export default function WishlistButton(props) {
         backgroundColor: "white",
         borderRadius: "0px",
         boxShadow: "none",
-        paddingRight: "10px",
-        paddingLeft: "10px",
+        paddingRight: "6px",
+        paddingLeft: "6px",
         whiteSpace: "nowrap",
         marginTop: "10px",
       }}

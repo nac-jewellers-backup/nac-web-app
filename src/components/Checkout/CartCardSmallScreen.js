@@ -1,8 +1,8 @@
-import { Button, Grid, Select, MenuItem, Typography } from "@material-ui/core";
+import { Button, Grid, MenuItem, Select, Typography } from "@material-ui/core";
 import CardContent from "@material-ui/core/CardContent";
 import { withStyles } from "@material-ui/core/styles";
 import { API_URL, CDN_URL } from "config";
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import Pricing from "../Pricing/index";
 import styles from "./style";
@@ -174,7 +174,6 @@ function MediaControlCard(props) {
                     >
                       <img
                         width="100%"
-                        height="100%"
                         alt="images"
                         style={{
                           border: "1px solid #D2D3D4",
@@ -186,7 +185,6 @@ function MediaControlCard(props) {
                   ) : (
                     <img
                       width="100%"
-                      height="100%"
                       alt="img"
                       style={{
                         border: "1px solid #D2D3D4",
@@ -229,35 +227,55 @@ function MediaControlCard(props) {
                         </span>
                       )}
 
-                      <Grid container style={{ marginTop: "10px" }}>
-                        <Grid item xs={6}>
+                      <Grid container style={{ marginTop: "4px" }}>
+                        <Grid item xs={12} lg={6}>
                           {dataval.maxOrderQty === 1 ? (
                             <Grid container>
-                              <Grid item xs={6}>
-                                <Typography className={`subhesder ${classes.normalfonts}`}>Quantity :</Typography>
+                              <Grid item xs={4}>
+                                <Typography
+                                  className={`subhesder ${classes.normalfonts}`}
+                                >
+                                  Quantity :
+                                </Typography>
                               </Grid>
-                              <Grid item xs={6}>
-                                <Typography className={`subhesder ${classes.normalfonts}`}>{dataval.maxOrderQty}</Typography>
+                              <Grid item xs={4}>
+                                <Typography
+                                  className={`subhesder ${classes.normalfonts}`}
+                                >
+                                  {dataval.maxOrderQty}
+                                </Typography>
                               </Grid>
                             </Grid>
                           ) : (
                             <>
-                              <Grid item>
-                                <Typography className={`subhesder ${classes.normalfonts}`}>Quantity :</Typography>
-                              </Grid>
-                              <Grid item>
-                                <Select
-                                  labelId="demo-simple-select-label"
-                                  id="demo-simple-select"
-                                  variant="standard"
-                                  value={quantity[index]?.Qty ?? 1}
-                                  onChange={(e) => onChangeQuantity(e, quantity[index].generateSku, index)}
-                                  color="secondary"
-                                >
-                                  {quantity[index]?.QtyArr?.map((data) => (
-                                    <MenuItem value={data}>{data}</MenuItem>
-                                  ))}
-                                </Select>
+                              <Grid container>
+                                <Grid item xs={4}>
+                                  <Typography
+                                    className={`subhesder ${classes.normalfonts}`}
+                                  >
+                                    Quantity :
+                                  </Typography>
+                                </Grid>
+                                <Grid item xs={4}>
+                                  <Select
+                                    labelId="demo-simple-select-label"
+                                    id="demo-simple-select"
+                                    variant="standard"
+                                    value={quantity[index]?.Qty ?? 1}
+                                    onChange={(e) =>
+                                      onChangeQuantity(
+                                        e,
+                                        quantity[index].generateSku,
+                                        index
+                                      )
+                                    }
+                                    color="secondary"
+                                  >
+                                    {quantity[index]?.QtyArr?.map((data) => (
+                                      <MenuItem value={data}>{data}</MenuItem>
+                                    ))}
+                                  </Select>
+                                </Grid>
                               </Grid>
                             </>
                           )}
@@ -266,9 +284,21 @@ function MediaControlCard(props) {
                       {dataval.dataCard1.map((val) => (
                         <Pricing
                           cartsm={true}
-                          price={val.offerPrice * (JSON.parse(localStorage.getItem("quantity"))[val.generatedSku] ?? 1)}
-                          offerPrice={val.price * (JSON.parse(localStorage.getItem("quantity"))[val.generatedSku] ?? 1)}
-                          offerDiscount={val.discount ? `${val.discount}% - OFF` : null}
+                          price={
+                            val.offerPrice *
+                            (JSON.parse(localStorage.getItem("quantity"))[
+                              val.generatedSku
+                            ] ?? 1)
+                          }
+                          offerPrice={
+                            val.price *
+                            (JSON.parse(localStorage.getItem("quantity"))[
+                              val.generatedSku
+                            ] ?? 1)
+                          }
+                          offerDiscount={
+                            val.discount ? `${val.discount}% - OFF` : null
+                          }
                           // quantity={JSON.parse(localStorage.getItem("quantity"))[dataval.generatedSku]}
                           quantity={quantity}
                         ></Pricing>
@@ -280,7 +310,6 @@ function MediaControlCard(props) {
                   <Grid item xs={6}>
                     <Button
                       id={dataval.generatedSku}
-                      className="highliter"
                       productid={dataval}
                       onClick={(e) => handleDeleteLocalStorage(e, val)}
                       variant="contained"
@@ -290,7 +319,7 @@ function MediaControlCard(props) {
                         backgroundColor: "white",
                         borderRadius: "0px",
                         boxShadow: "none",
-                        width: "100%",
+                        width: "90%",
                         whiteSpace: "nowrap",
                         marginTop: "10px",
                         marginRight: "3px",
