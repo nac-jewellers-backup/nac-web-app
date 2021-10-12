@@ -129,7 +129,10 @@ export default function MoreFilters(props) {
                   val !== "Material" &&
                   val !== "Collection" &&
                   val !== "Offers" &&
-                  val !== "Gender"
+                  val !== "Gender" &&
+                  val != "Style" &&
+                  val !== "Gemstones" &&
+                  val !== "Weight"
                 ) {
                   return (
                     <Grid

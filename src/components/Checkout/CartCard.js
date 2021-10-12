@@ -13,11 +13,13 @@ import { AiFillCaretLeft, AiFillCaretRight } from "react-icons/ai";
 import { IoPricetagsOutline } from "react-icons/io5";
 import { NavLink } from "react-router-dom";
 import { API_URL } from "../../config";
+import ProductList from "../../screens/Checkout/orderSummary/promocode";
 import Buynowbutton from "../Buynow/buynowbutton";
 import Pricing from "../Pricing/index";
 import "./Cart.css";
 import CardSmallScreen from "./CartCardSmallScreen.js";
 import styles from "./style";
+import WishlistButton from "./Wishlistadd";
 class Checkoutcard extends React.Component {
   constructor(props) {
     super(props);
@@ -28,8 +30,12 @@ class Checkoutcard extends React.Component {
       open: true,
       expend: true,
       quantity: [],
+      userid: " ",
+      productid: " ",
+      generatedSku: " ",
     };
   }
+
   async componentDidMount() {
     let skuId_arr = this.props?.data;
     let shipby_arr_object = [];
@@ -701,26 +707,13 @@ class Checkoutcard extends React.Component {
                                 >
                                   Remove
                                 </Button>
-                                <Button
-                                  id={dataval.generatedSku}
-                                  onClick={(event) => this.handleDeleteLocalStorage(event)}
-                                  variant="contained"
-                                  style={{
-                                    color: "gray",
-                                    border: "2px solid #C1C1C1",
-                                    backgroundColor: "white",
-                                    borderRadius: "0px",
-                                    boxShadow: "none",
-                                    paddingRight: "10px",
-                                    paddingLeft: "10px",
-                                    whiteSpace: "nowrap",
-                                    marginTop: "10px",
-                                    fontWeight: "bold",
-                                  }}
-                                >
-                                  Move to Wishlist
-                                </Button>
+                                <WishlistButton
+                                  sku={dataval.generatedSku}
+                                  productId={dataval.productId}
+                                />
 
+                                {/* 
+                               {console.log(dataval.isActive)} */}
                                 {!dataval.isActive ? (
                                   <span
                                     style={{
@@ -761,8 +754,13 @@ class Checkoutcard extends React.Component {
               <Grid item xs={12} lg={6} style={{ backgroundColor: "#EFEFEF" }}>
                 <Hidden smDown>
                   <div className={classes.paddingCart1}>
-                    <br />
-                    <div>{this.applycoupon()}</div>
+                      <br />
+                      <Grid container>
+                        <Grid item xs={12}>
+                        <div>{this.applycoupon()}</div>
+                        </Grid>
+                      </Grid>
+                    
                   </div>
                 </Hidden>
 
@@ -794,7 +792,7 @@ class Checkoutcard extends React.Component {
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>content</Typography>
+          <ProductList />
         </AccordionDetails>
         <AccordionActions></AccordionActions>
       </Accordion>
