@@ -13,6 +13,7 @@ import { AiFillCaretLeft, AiFillCaretRight } from "react-icons/ai";
 import { IoPricetagsOutline } from "react-icons/io5";
 import { NavLink } from "react-router-dom";
 import { API_URL } from "../../config";
+import ProductList from "../../screens/Checkout/orderSummary/promocode";
 import Buynowbutton from "../Buynow/buynowbutton";
 import Pricing from "../Pricing/index";
 import "./Cart.css";
@@ -179,33 +180,6 @@ class Checkoutcard extends React.Component {
       }
     }
   };
-  // handlewishlist = (generatedSkuid, productids) => {
-  //   const { userid, productid, generatedSku } = this.state;
-  //   let user_ids = localStorage.getItem("user_id")
-  //     ? localStorage.getItem("user_id")
-  //     : {};
-  //   this.setState({ userid: "prem" });
-  //   const obj = {
-  //     userid: this.state.userid,
-  //     productid: this.state.productid,
-  //     generatedSkus: this.state.generatedSku,
-  //   };
-  //   console.log(obj);
-
-  //   // fetch(`${API_URL}/addwishlist`, {
-  //   //   method: "POST",
-  //   //   headers: {
-  //   //     "Content-Type": "application/json",
-  //   //   },
-  //   //   body: JSON.stringify(this.state.values),
-  //   // })
-  //   //   .then((response) => {
-  //   //     return response.json();
-  //   //   })
-  //   //   .catch((err) => {
-  //   //     console.log(err);
-  //   //   });
-  // };
   handlereloadcart = (val) => {
     const data = this.props.data;
     if (val.skuId == undefined) {
@@ -880,8 +854,13 @@ class Checkoutcard extends React.Component {
               <Grid item xs={12} lg={6} style={{ backgroundColor: "#EFEFEF" }}>
                 <Hidden smDown>
                   <div className={classes.paddingCart1}>
-                    <br />
-                    <div>{this.applycoupon()}</div>
+                      <br />
+                      <Grid container>
+                        <Grid item xs={12}>
+                        <div>{this.applycoupon()}</div>
+                        </Grid>
+                      </Grid>
+                    
                   </div>
                 </Hidden>
 
@@ -927,7 +906,7 @@ class Checkoutcard extends React.Component {
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>content</Typography>
+          <ProductList />
         </AccordionDetails>
         <AccordionActions></AccordionActions>
       </Accordion>

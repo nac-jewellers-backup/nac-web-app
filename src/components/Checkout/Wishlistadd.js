@@ -137,7 +137,6 @@ export default function WishlistButton(props) {
         paddingLeft: "10px",
         whiteSpace: "nowrap",
         marginTop: "10px",
-        fontWeight: "bold",
       }}
     >
       Move to Wishlist
