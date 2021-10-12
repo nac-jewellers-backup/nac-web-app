@@ -18,6 +18,7 @@ import Pricing from "../Pricing/index";
 import "./Cart.css";
 import CardSmallScreen from "./CartCardSmallScreen.js";
 import styles from "./style";
+import WishlistButton from "./Wishlistadd";
 class Checkoutcard extends React.Component {
   constructor(props) {
     super(props);
@@ -33,8 +34,12 @@ class Checkoutcard extends React.Component {
           qty: "1",
         },
       ],
+      userid: " ",
+      productid: " ",
+      generatedSku: " ",
     };
   }
+
   async componentDidMount() {
     let skuId_arr = this.props?.data;
     let shipby_arr_object = [];
@@ -70,7 +75,7 @@ class Checkoutcard extends React.Component {
       {
         this.props.data.map((data) => {
           console.log(data);
-          debugger;
+
           this.setState({
             ...this.state.quantity,
             id: data.generatedSku,
@@ -174,6 +179,33 @@ class Checkoutcard extends React.Component {
       }
     }
   };
+  // handlewishlist = (generatedSkuid, productids) => {
+  //   const { userid, productid, generatedSku } = this.state;
+  //   let user_ids = localStorage.getItem("user_id")
+  //     ? localStorage.getItem("user_id")
+  //     : {};
+  //   this.setState({ userid: "prem" });
+  //   const obj = {
+  //     userid: this.state.userid,
+  //     productid: this.state.productid,
+  //     generatedSkus: this.state.generatedSku,
+  //   };
+  //   console.log(obj);
+
+  //   // fetch(`${API_URL}/addwishlist`, {
+  //   //   method: "POST",
+  //   //   headers: {
+  //   //     "Content-Type": "application/json",
+  //   //   },
+  //   //   body: JSON.stringify(this.state.values),
+  //   // })
+  //   //   .then((response) => {
+  //   //     return response.json();
+  //   //   })
+  //   //   .catch((err) => {
+  //   //     console.log(err);
+  //   //   });
+  // };
   handlereloadcart = (val) => {
     const data = this.props.data;
     if (val.skuId == undefined) {
@@ -610,6 +642,7 @@ class Checkoutcard extends React.Component {
                       {this.subtotalsHead(this.props)}
                     </Typography>
                   </div>
+
                   {this.props.data.map((dataval) =>
                     dataval.productsDetails.map((val) => (
                       <div
@@ -800,33 +833,11 @@ class Checkoutcard extends React.Component {
                                 >
                                   Remove
                                 </Button>
-                                <Button
-                                  id={dataval.generatedSku}
-                                  onClick={(event) =>
-                                    this.handleDeleteLocalStorage(event)
-                                  }
-                                  variant="contained"
-                                  style={{
-                                    color: "gray",
-                                    border: "2px solid #C1C1C1",
-                                    backgroundColor: "white",
-                                    borderRadius: "0px",
-                                    boxShadow: "none",
-                                    paddingRight: "10px",
-                                    paddingLeft: "10px",
-                                    whiteSpace: "nowrap",
-                                    marginTop: "10px",
-                                    fontWeight: "bold",
-                                  }}
-                                >
-                                  {/* <Wishlist
-                                    style={{ display: "none" }}
-                                    sku={dataval.generatedSku}
-                                    productId={dataval.productId}
-                                    // wishlist={props.wishlist}
-                                  /> */}
-                                  Move to Wishlist
-                                </Button>
+                                <WishlistButton
+                                  sku={dataval.generatedSku}
+                                  productId={dataval.productId}
+                                />
+
                                 {/* 
                                {console.log(dataval.isActive)} */}
                                 {!dataval.isActive ? (
