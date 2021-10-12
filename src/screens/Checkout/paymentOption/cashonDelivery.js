@@ -90,22 +90,15 @@ class CashonDelivey extends React.Component {
     }
   }
   render() {
-    let cart_id_lo = localStorage.getItem("cart_id")
-      ? JSON.parse(localStorage.getItem("cart_id")).cart_id
-      : "";
+    let cart_id_lo = localStorage.getItem("cart_id") ? JSON.parse(localStorage.getItem("cart_id")).cart_id : "";
     let cart_id =
-      this.props.cartFilters._cart_id &&
-      Object.keys(this.props.cartFilters._cart_id).length > 0
+      this.props.cartFilters._cart_id && Object.keys(this.props.cartFilters._cart_id).length > 0
         ? this.props.cartFilters._cart_id.cart_id
         : "";
     var cart_ids = cart_id.length > 0 ? cart_id : cart_id_lo;
-    let user_id = localStorage.getItem("user_id")
-      ? localStorage.getItem("user_id")
-      : "";
+    let user_id = localStorage.getItem("user_id") ? localStorage.getItem("user_id") : "";
     const data = this.props.data ? this.props.data : "";
-    var discounted_price = this.props.cartFilters.discounted_price
-      ? this.props.cartFilters.discounted_price
-      : "";
+    var discounted_price = this.props.cartFilters.discounted_price ? this.props.cartFilters.discounted_price : "";
     // var { data:coddata, error, loading, makeFetch} = useNetworkRequest('/api/auth/signin', {}, false);
     var dataCard1;
     if (data.length > 0 && data !== undefined && data !== null) {
@@ -113,14 +106,12 @@ class CashonDelivey extends React.Component {
         this.props.data &&
         this.props.data
           .map((val) => {
-            return val.dataCard1[0].offerPrice;
+            return val.dataCard1[0].offerPrice * JSON.parse(localStorage.getItem("quantity"))[val.generatedSku];
           })
           .reduce(myFunc);
       function myFunc(total, num) {
         discounted_price =
-          this && this.props.cartFilters.discounted_price
-            ? JSON.stringify(this.props.cartFilters.discounted_price)
-            : "";
+          this && this.props.cartFilters.discounted_price ? JSON.stringify(this.props.cartFilters.discounted_price) : "";
         if (discounted_price.length > 0) {
           var a = Math.round(total + num);
           var cart_price = a - discounted_price;
@@ -159,9 +150,7 @@ class CashonDelivey extends React.Component {
               </Button>
             </div>
           </Grid>
-          <div className="code-btn-top">
-            COD orders are subject to telephonic verification.
-          </div>
+          <div className="code-btn-top">COD orders are subject to telephonic verification.</div>
         </Grid>
       </div>
     );
@@ -183,15 +172,7 @@ const Components = (props) => {
         <div id="loading"></div>
       </div>
     );
-  else
-    content = (
-      <CashonDelivey
-        {...props}
-        data={mapped}
-        cartFilters={cartFilters}
-        setCartFilters={setCartFilters}
-      />
-    );
+  else content = <CashonDelivey {...props} data={mapped} cartFilters={cartFilters} setCartFilters={setCartFilters} />;
   return content;
 };
 export default Components;

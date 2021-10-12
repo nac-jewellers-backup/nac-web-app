@@ -10,7 +10,7 @@ import { API_URL } from "../../../config";
 import "../chckout.css";
 import "./payment.css";
 import Footer from "components/Footer/Footer";
-import NeedHelp from "components/needHelp";
+// import NeedHelp from "components/needHelp";
 const order_id = localStorage.getItem("order_id") ? JSON.parse(localStorage.getItem("order_id")) : "";
 const breadcrumsdata = [
   { title: "Shopping Bag" },
@@ -140,7 +140,7 @@ class PaymentResponseSuccess extends React.Component {
               <br />
             </Hidden>
           </Grid>
-          <NeedHelp />
+          {/* <NeedHelp /> */}
           <Footer />
         </Grid>
       </>

@@ -26,7 +26,7 @@ import "./chckout.css";
 import LoginRegisterIndex from "./loginRegister";
 import ProductList from "./orderSummary/productList";
 import PaymentIndex from "./paymentOption/paymentindex";
-import NeedHelp from "components/needHelp";
+// import NeedHelp from "components/needHelp";
 var adres = {};
 var variab = {};
 const CartCardCheck = (props) => {
@@ -725,7 +725,7 @@ class Component extends React.Component {
             </Grid>
           </div>
         </div>
-        <NeedHelp />
+        {/* <NeedHelp /> */}
       </Grid>
     );
   }

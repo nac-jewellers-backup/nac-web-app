@@ -15,7 +15,7 @@ import "screens/Stylori/index.css";
 import CustomSeparator from "../components/BreadCrumb/index";
 import styles from "../components/Checkout/style";
 import "./index.css";
-import NeedHelp from "components/needHelp";
+// import NeedHelp from "components/needHelp";
 // data.map(data=>{
 // return(
 //     <Grid item xs={12}>
@@ -141,7 +141,7 @@ class Cart extends React.Component {
             </Grid>
           </Grid>
         </Hidden>
-        <NeedHelp />
+        {/* <NeedHelp /> */}
       </Grid>
     );
   }

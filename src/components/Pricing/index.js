@@ -1,11 +1,15 @@
 import { Grid, Hidden, Typography } from "@material-ui/core";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../product-image-slider/product-images.css";
 import "./pricing.css";
 import styles from "./style";
 
 export default function Pricing(props) {
-  
+  const [allquantity, setAllQuantity] = useState([]);
+
+  useEffect(() => {
+    setAllQuantity(props.quantity);
+  }, [props.quantity]);
   const classes = styles();
   let path = window.location.pathname.split("/").pop();
   const { globalContext, quantity } = props;
@@ -396,52 +400,6 @@ export default function Pricing(props) {
         ) : (
           " "
         )}
-        {/* {props.pdpage !== true && (
-          <Grid
-            item
-            xs={6}
-            lg={
-              window.location.pathname.split("-")[0] !== "/account" &&
-              window.location.pathname !== "/cart" &&
-              window.location.pathname.split("-")[1] !== "allorders"
-                ? 6
-                : 12
-            }
-            style={{
-              paddingBottom: "10px",
-              display: "inline",
-              color: "white",
-              marginLeft: "8px",
-              fontSize: "0.6rem",
-              marginTop: "3px",
-            }}
-          >
-            {props.offerDiscount ? (
-              <span
-                style={{
-                  padding: "5px",
-                  backgroundColor: "#33346D",
-                  textAlign: "center",
-                  borderRadius: "5px",
-                }}
-              >
-                {props.offerDiscount}
-              </span>
-            ) : (
-              <Typography style={{ display: "flex" }}>
-                <Typography
-                  variant="caption"
-                  component="p"
-                  className={`${
-                    (props.save != null) & (props.save !== "") ? "" : "shine"
-                  } ${classes.colorMain}  `}
-                >
-                  {path === "stylori" && "You save"} {props.save}
-                </Typography>
-              </Typography>
-            )}
-          </Grid>
-        )} */}
       </Grid>
     </div>
   );

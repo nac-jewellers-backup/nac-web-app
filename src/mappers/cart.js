@@ -206,6 +206,7 @@ export default function (data) {
 
         dataCard1: [
           {
+            generatedSku: k.generatedSku,
             offerPrice: k.markupPrice,
             price: k.discountPrice,
             title: "Diamond Pendant Ring",

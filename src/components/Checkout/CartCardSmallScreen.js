@@ -1,9 +1,9 @@
-import { Button, Grid } from "@material-ui/core";
+import { Button, Grid, Select, MenuItem } from "@material-ui/core";
 import CardContent from "@material-ui/core/CardContent";
 import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import { API_URL, CDN_URL } from "config";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import Pricing from "../Pricing/index";
 import Quantity from "../quantity/index";
@@ -12,6 +12,12 @@ import Wishlist from "components/wishlist/wishlist";
 function MediaControlCard(props) {
   const { classes } = props;
   const { dataCard1 } = props.data;
+  const [quantity, setQuantity] = useState([]);
+  console.log(quantity);
+
+  useEffect(() => {
+    setQuantity(props.quantity);
+  }, [props.quantity]);
 
   const handleDeleteLocalStorage = (e, val) => {
     var local_storage = JSON.parse(localStorage.getItem("cartDetails"));
@@ -113,21 +119,12 @@ function MediaControlCard(props) {
           image_urls = `${CDN_URL}${url_construct}`;
           return [image_urls];
         }
-        // })
       }
-      // return url
-      // })
-      // }
-      // return image
-      // })
-      // }
-      // return detail
-      // })
-      // }
-      // alert(JSON.stringify( [image_urls]))
     }
   };
   const [expanded, setExpanded] = useState(true);
+
+  //
 
   const checkMaterial = (material) => {
     let _data = material.map((val) => val.toLowerCase());
@@ -139,10 +136,22 @@ function MediaControlCard(props) {
     arrows: false,
   };
 
+  const onChangeQuantity = (e, skuId, index) => {
+    let stateCopy = Object.assign({}, quantity);
+    stateCopy[index].Qty = e.target.value;
+    setQuantity(stateCopy);
+
+    let local_storage = JSON.parse(localStorage.getItem("quantity"));
+    console.log(quantity);
+
+    local_storage[skuId] = e.target.value;
+    localStorage.setItem("quantity", JSON.stringify(local_storage));
+    props.totalcost(props.subtotaldata);
+  };
   return (
     <div style={{ paddingTop: "10px" }}>
       {/* {props.checkoutbutton} */}
-      {props.data.map((dataval) =>
+      {props.data.map((dataval, index) =>
         dataval.productsDetails.map((val) => {
           return (
             <div className={classes.card}>
@@ -201,30 +210,48 @@ function MediaControlCard(props) {
                         </span>
                       )}
 
-                      {/* <Grid container style={{ marginTop: "10px" }}>
+                      <Grid container style={{ marginTop: "10px" }}>
                         <Grid item xs={6}>
-                          <Typography className={`subhesder ${classes.normalfonts}`}>Size</Typography>
+                          {dataval.maxOrderQty === 1 ? (
+                            <Grid container>
+                              <Grid item xs={6}>
+                                <Typography className={`subhesder ${classes.normalfonts}`}>Quantity :</Typography>
+                              </Grid>
+                              <Grid item xs={6}>
+                                <Typography className={`subhesder ${classes.normalfonts}`}>{dataval.maxOrderQty}</Typography>
+                              </Grid>
+                            </Grid>
+                          ) : (
+                            <>
+                              <Grid item>
+                                <Typography className={`subhesder ${classes.normalfonts}`}>Quantity :</Typography>
+                              </Grid>
+                              <Grid item>
+                                <Select
+                                  labelId="demo-simple-select-label"
+                                  id="demo-simple-select"
+                                  variant="standard"
+                                  value={quantity[index]?.Qty ?? 1}
+                                  onChange={(e) => onChangeQuantity(e, quantity[index].generateSku, index)}
+                                  color="secondary"
+                                >
+                                  {quantity[index]?.QtyArr?.map((data) => (
+                                    <MenuItem value={data}>{data}</MenuItem>
+                                  ))}
+                                </Select>
+                              </Grid>
+                            </>
+                          )}
                         </Grid>
-                        <Grid item xs={6}>
-                          <Typography className={`subhesder ${classes.normalfonts}`}>
-                            {window.location.pathname === "/checkout" ||
-                            checkMaterial(dataval.materialName) ||
-                            !Boolean(dataval?.[0]?.maxOrderQty) ||
-                            dataval?.[0]?.maxOrderQty < 2 ? (
-                              `Quantity ${JSON.parse(localStorage.getItem("quantity"))[dataval.generatedSku]}`
-                            ) : (
-                              <Quantity data={[dataval]} cart={true} />
-                            )}
-                          </Typography>
-                        </Grid>
-                      </Grid> */}
+                      </Grid>
                       {dataval.dataCard1.map((val) => (
                         <Pricing
                           cartsm={true}
-                          price={val.offerPrice}
-                          offerPrice={val.price}
+                          price={val.offerPrice * (JSON.parse(localStorage.getItem("quantity"))[val.generatedSku] ?? 1)}
+                          offerPrice={val.price * (JSON.parse(localStorage.getItem("quantity"))[val.generatedSku] ?? 1)}
                           offerDiscount={val.discount ? `${val.discount}% - OFF` : null}
-                          quantity={JSON.parse(localStorage.getItem("quantity"))[dataval.generatedSku]}
+                          // quantity={JSON.parse(localStorage.getItem("quantity"))[dataval.generatedSku]}
+                          quantity={quantity}
                         ></Pricing>
                       ))}
                     </CardContent>
