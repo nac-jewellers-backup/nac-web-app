@@ -258,6 +258,7 @@ function MediaControlCard(props) {
                                 </Grid>
                                 <Grid item xs={4}>
                                   <Select
+                                    style={{ marginBottom: "10px" }}
                                     labelId="demo-simple-select-label"
                                     id="demo-simple-select"
                                     variant="standard"
