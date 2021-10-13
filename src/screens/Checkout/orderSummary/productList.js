@@ -62,9 +62,14 @@ const ProductlistComponent = (props) => {
           <div>
             <Grid container spacing={12}>
               <Grid item xs={12}>
-                <h4 style={{ textAlign: "center", color: "gray" }}>
-                  Gift Wrap
-                </h4>
+                {props.order ? (
+                  " "
+                ) : (
+                  <h4 style={{ textAlign: "center", color: "gray" }}>
+                    Gift Wrap
+                  </h4>
+                )}
+
                 <div style={{ width: "100%" }}>
                   <form
                     action="javascript:void(0)"
