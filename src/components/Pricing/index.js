@@ -261,7 +261,7 @@ export default function Pricing(props) {
                               &nbsp;&nbsp;
                               <del
                                 style={{
-                                  fontSize: "0.9rem",
+                                  fontSize: "0.7rem",
                                   fontWeight: "lighter",
                                   paddingBottom: "6px",
                                   color: "gray",
@@ -278,7 +278,7 @@ export default function Pricing(props) {
                               <span
                                 style={{
                                   color: "grey",
-                                  fontSize: "0.9rem",
+                                  fontSize: "0.8rem",
                                   whiteSpace: "nowrap",
                                   marginLeft: "6px",
 

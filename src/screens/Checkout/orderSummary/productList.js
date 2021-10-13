@@ -144,7 +144,7 @@ const ProductlistComponent = (props) => {
                         </Button>
                       ) : (
                         <Button className="apply-b" type="submit">
-                          Saves
+                          Save
                         </Button>
                       )}
                     </div>
@@ -314,7 +314,7 @@ const ProductlistComponent = (props) => {
                             </Button>
                           ) : (
                             <Button className="apply-b" type="submit">
-                              Saves
+                              Save
                             </Button>
                           )}
                         </div>

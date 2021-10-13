@@ -26,11 +26,11 @@ const styles = (theme) => ({
   },
   cardtitle: {
     color: "gray",
-    [theme.breakpoints.down("xs")]: {
-      fontSize: "20px !important",
+    [theme.breakpoints.down("md")]: {
+      fontSize: "13px ",
     },
-    [theme.breakpoints.up("lg")]: {
-      fontSize: "13px",
+    [theme.breakpoints.up("md")]: {
+      fontSize: "15px",
     },
   },
   cartheader: {
