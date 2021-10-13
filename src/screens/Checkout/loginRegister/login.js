@@ -36,10 +36,11 @@ const LoginComponent = (props) => {
   let url = "https://api-staging.stylori.com";
   const classes1 = useStyle();
   const { classes } = props;
-  const { values, handlers, setValues, data } = useLogin(() =>
-    props.changePanel(2)
-  );
+  const { values, handlers, setValues, data } = useLogin(() => props.changePanel(2));
   const [open, setopen] = React.useState(false);
+  const [emailForm, setEmailForm] = React.useState(true);
+  const [phoneNum, setPhoneNum] = React.useState("");
+  const [numError, setNumError] = React.useState(false);
   const email_regex =
     /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
   const [loginInfo, setLoginInfo] = React.useState({
@@ -127,18 +128,9 @@ const LoginComponent = (props) => {
                 .then((res) => res.json())
                 .then((fetchValue1) => {
                   if (fetchValue1.accessToken) {
-                    localStorage.setItem(
-                      "accessToken",
-                      fetchValue1.accessToken
-                    );
-                    localStorage.setItem(
-                      "user_id",
-                      fetchValue1.user_profile.id
-                    );
-                    localStorage.setItem(
-                      "email",
-                      fetchValue1.user_profile.email
-                    );
+                    localStorage.setItem("accessToken", fetchValue1.accessToken);
+                    localStorage.setItem("user_id", fetchValue1.user_profile.id);
+                    localStorage.setItem("email", fetchValue1.user_profile.email);
 
                     localStorage.setItem("panel", 2);
                     localStorage.setItem("isedit", 1);
@@ -285,127 +277,126 @@ const LoginComponent = (props) => {
       setopen(false);
     }
   }
+
+  const ShowOtpForm = () => {
+    setEmailForm(!emailForm);
+  };
+  const onChangeNumber = (e) => {
+    setPhoneNum(e.target.value);
+    debugger;
+    console.log(phoneNum.length);
+    console.log(phoneNum);
+    if (phoneNum.length > 9) {
+      setNumError(true);
+    } else {
+      setNumError(false);
+    }
+  };
   return (
     <>
       <div>
-        <form
-          action="javascript:void(0)"
-          onSubmit={(e) => {
-            handlers.handelSubmit(e, props.history.push);
-          }}
-        >
-          <Grid container item xs={12}>
-            <Hidden smDown>
-              {props.checkoutpage ? (
-                " "
-              ) : (
-                <h5 className={`title ${classes.normalfonts}`}>
-                  {window.location.pathname === "/login"
-                    ? "Login"
-                    : "I already have an account"}
-                </h5>
-              )}
-            </Hidden>
-            <h5 className={`title ${classes.normalfonts2}`}>
-              Email Login For Registered Users
-            </h5>
-
-            <Input
-              className={classes1.input}
-              name="email"
-              value={values.email}
-              error={values.error && values.error.emerr ? true : false}
-              helperText={values.errortext && values.errortext.emerr}
-              onChange={(e) => handlers.handleChange("email", e.target.value)}
-              placeholder="Email address"
-            />
-            <label className="errtext">
-              {" "}
-              {values.error.emerr && values.errortext.emerr}
-            </label>
-            <Input
-              type="password"
-              name="password"
-              value={values.password}
-              error={values.error && values.error.passerr ? true : false}
-              helperText={values.errortext && values.errortext.passerr}
-              placeholder="Password"
-              onChange={(e) =>
-                handlers.handleChange("password", e.target.value)
-              }
-            />
-            <label className="errtext">
-              {" "}
-              {values.error.passerr && values.errortext.passerr}
-            </label>
-            <div className="log-pas">
-              <span
-                onClick={() => {
-                  window.location.href = "/forgotPassword";
-                }}
-                className={`pas-fr`}
-                style={{ cursor: "pointer" }}
-              >
-                Forgot Password ?
-              </span>
-            </div>
-          </Grid>
-
-          {window.location.pathname === "/login" ? (
-            <>
-              <div
-                style={{
-                  cursor: "pointer",
-                  fontSize: "14px",
-                  padding: "10px",
-                  color: "gray",
-                }}
-                onClick={() => {
-                  window.location.href = "/registers";
-                }}
-              >
-                <center>
-                  <span>
-                    New to <b>NAC</b>? Sign Up
-                  </span>
-                </center>
-                <br />
-              </div>
-              <Button type="submit" className="apply-b">
-                SIGN IN
-              </Button>
-            </>
-          ) : (
-            <>
-              <div
-                style={{
-                  cursor: "pointer",
-                  fontSize: "14px",
-                  padding: "10px",
-                  color: "gray",
-                }}
-                onClick={props.change}
-              >
-                <center>
-                  New to <b>NAC</b>? Sign Up
-                </center>
-                <br />
-              </div>
-              <Button type="submit" className="apply-b">
-                SIGN IN
-              </Button>
-            </>
-          )}
-
-          <Grid
-            container
-            justifyContent="center"
-            className={classes.other}
-            style={{ padding: "10px" }}
+        {emailForm ? (
+          <form
+            action="javascript:void(0)"
+            onSubmit={(e) => {
+              handlers.handelSubmit(e, props.history.push);
+            }}
           >
-            <Grid item xs={12}>
-              <br />
-              <Box display="flex" flexDirection="row" justifyContent="center">
+            <Grid container item xs={12}>
+              <Hidden smDown>
+                {props.checkoutpage ? (
+                  " "
+                ) : (
+                  <h5 className={`title ${classes.normalfonts}`}>
+                    {window.location.pathname === "/login" ? "Login" : "I already have an account"}
+                  </h5>
+                )}
+              </Hidden>
+              <h5 className={`title ${classes.normalfonts2}`}>Email Login For Registered Users</h5>
+
+              <Input
+                className={classes1.input}
+                name="email"
+                value={values.email}
+                error={values.error && values.error.emerr ? true : false}
+                helperText={values.errortext && values.errortext.emerr}
+                onChange={(e) => handlers.handleChange("email", e.target.value)}
+                placeholder="Email address"
+              />
+              <label className="errtext"> {values.error.emerr && values.errortext.emerr}</label>
+              <Input
+                type="password"
+                name="password"
+                value={values.password}
+                error={values.error && values.error.passerr ? true : false}
+                helperText={values.errortext && values.errortext.passerr}
+                placeholder="Password"
+                onChange={(e) => handlers.handleChange("password", e.target.value)}
+              />
+              <label className="errtext"> {values.error.passerr && values.errortext.passerr}</label>
+              <div className="log-pas">
+                <span
+                  onClick={() => {
+                    window.location.href = "/forgotPassword";
+                  }}
+                  className={`pas-fr`}
+                  style={{ cursor: "pointer" }}
+                >
+                  Forgot Password ?
+                </span>
+              </div>
+            </Grid>
+
+            {window.location.pathname === "/login" ? (
+              <>
+                <div
+                  style={{
+                    cursor: "pointer",
+                    fontSize: "14px",
+                    padding: "10px",
+                    color: "gray",
+                  }}
+                  onClick={() => {
+                    window.location.href = "/registers";
+                  }}
+                >
+                  <center>
+                    <span>
+                      New to <b>NAC</b>? Sign Up
+                    </span>
+                  </center>
+                  <br />
+                </div>
+                <Button type="submit" className="apply-b">
+                  SIGN IN
+                </Button>
+              </>
+            ) : (
+              <>
+                <div
+                  style={{
+                    cursor: "pointer",
+                    fontSize: "14px",
+                    padding: "10px",
+                    color: "gray",
+                  }}
+                  onClick={props.change}
+                >
+                  <center>
+                    New to <b>NAC</b>? Sign Up
+                  </center>
+                  <br />
+                </div>
+                <Button type="submit" className="apply-b">
+                  SIGN IN
+                </Button>
+              </>
+            )}
+
+            <Grid container justifyContent="center" className={classes.other} style={{ padding: "10px" }}>
+              <Grid item xs={12}>
+                <br />
+                {/* <Box display="flex" flexDirection="row" justifyContent="center">
                 <Box padding="5px">
                   <div style={{ cursor: "pointer" }}>
                     <FacebookLogin
@@ -455,8 +446,112 @@ const LoginComponent = (props) => {
                     </label>
                   </div>
                 </Box>
-              </Box>
-              <Box display="flex" flexDirection="row" justifyContent="center">
+              </Box> */}
+                <Box display="flex" flexDirection="row" justifyContent="center">
+                  <Box padding="5px">
+                    <div style={{ cursor: "pointer" }}>
+                      <label>
+                        <Button
+                          variant="contained"
+                          style={{
+                            padding: "5px 7px",
+                            textTransform: "Capitailze",
+                            backgroundColor: "#F3F3F3",
+                            borderRadius: "0px",
+                            boxShadow: "0px 2px 4px 1px #888888",
+                            color: "gray",
+                            whiteSpace: "nowrap",
+                          }}
+                          onClick={() => ShowOtpForm()}
+                          className={classes.btntext}
+                          startIcon={
+                            <AiOutlineMobile style={{ marginLeft: "4px", color: "#E28CAB" }} className={classes.btnicon} />
+                          }
+                        >
+                          Sign in with OTP
+                        </Button>
+                      </label>
+                    </div>
+                  </Box>
+                </Box>
+              </Grid>
+            </Grid>
+          </form>
+        ) : (
+          <Grid>
+            <form
+              action="javascript:void(0)"
+              onSubmit={(e) => {
+                handlers.handelSubmit(e, props.history.push);
+              }}
+            >
+              <Grid container item xs={12}>
+                <Hidden smDown>
+                  {props.checkoutpage ? (
+                    " "
+                  ) : (
+                    <h5 className={`title ${classes.normalfonts}`}>
+                      {window.location.pathname === "/login" ? "Login" : "I already have an account"}
+                    </h5>
+                  )}
+                </Hidden>
+                <h5 className={`title ${classes.normalfonts2}`}>OTP Login For Registered Users</h5>
+
+                <Input
+                  className={classes1.input}
+                  name="number"
+                  type="number"
+                  value={phoneNum}
+                  error={values.error && values.error.emerr ? true : false}
+                  helperText={values.errortext && values.errortext.emerr}
+                  onChange={(e) => onChangeNumber(e)}
+                  placeholder="Enter Mobile Number"
+                />
+                {/* <label className="errtext"> {numError ? "Phone number length must be less than 10" : ""}</label> */}
+                <Input
+                  type="password"
+                  name="password"
+                  value={values.password}
+                  error={values.error && values.error.passerr ? true : false}
+                  helperText={values.errortext && values.errortext.passerr}
+                  placeholder="Enter OTP"
+                  onChange={(e) => handlers.handleChange("password", e.target.value)}
+                />
+                <label className="errtext"> {values.error.passerr && values.errortext.passerr}</label>
+              </Grid>
+              <br />
+              <br />
+              <Button type="submit" className="apply-b">
+                SIGN IN
+              </Button>
+
+              <Grid container justifyContent="center" className={classes.other} style={{ padding: "10px" }}>
+                <Grid item xs={12}>
+                  <br />
+                  {/* <Box display="flex" flexDirection="row" justifyContent="center">
+                <Box padding="5px">
+                  <div style={{ cursor: "pointer" }}>
+                    <FacebookLogin
+                      id="facebook"
+                      appId="183747199380935"
+                      // autoLoad={true}
+                      textButton="Sign in with Facebook"
+                      fields="name,email,id,first_name,last_name"
+                      cssClass="my-facebook-button-class"
+                      disableMobileRedirect={true}
+                      callback={responseFacebook}
+                      icon={
+                        <ImFacebook
+                          style={{
+                            color: "#335B9A",
+                            marginRight: "3px",
+                            paddingRight: "2px",
+                          }}
+                        />
+                      }
+                    />
+                  </div>
+                </Box>
                 <Box padding="5px">
                   <div style={{ cursor: "pointer" }}>
                     <label>
@@ -464,7 +559,6 @@ const LoginComponent = (props) => {
                         variant="contained"
                         style={{
                           padding: "5px 7px",
-                          textTransform: "Capitailze",
                           backgroundColor: "#F3F3F3",
                           borderRadius: "0px",
                           boxShadow: "0px 2px 4px 1px #888888",
@@ -473,32 +567,55 @@ const LoginComponent = (props) => {
                         }}
                         className={classes.btntext}
                         startIcon={
-                          <AiOutlineMobile
-                            style={{ marginLeft: "4px", color: "#E28CAB" }}
+                          <FcGoogle
+                            style={{ marginLeft: "4px" }}
                             className={classes.btnicon}
                           />
                         }
                       >
-                        Sign in with OTP
+                        Sign in with Google
                       </Button>
                     </label>
                   </div>
                 </Box>
-              </Box>
-            </Grid>
+              </Box> */}
+                  <Box display="flex" flexDirection="row" justifyContent="center">
+                    <Box padding="5px">
+                      <div style={{ cursor: "pointer" }}>
+                        <label>
+                          <Button
+                            variant="contained"
+                            style={{
+                              padding: "5px 7px",
+                              textTransform: "Capitailze",
+                              backgroundColor: "#F3F3F3",
+                              borderRadius: "0px",
+                              boxShadow: "0px 2px 4px 1px #888888",
+                              color: "gray",
+                              whiteSpace: "nowrap",
+                            }}
+                            onClick={() => ShowOtpForm()}
+                            className={classes.btntext}
+                            startIcon={
+                              <AiOutlineMobile style={{ marginLeft: "4px", color: "#E28CAB" }} className={classes.btnicon} />
+                            }
+                          >
+                            Sign in with Email
+                          </Button>
+                        </label>
+                      </div>
+                    </Box>
+                  </Box>
+                </Grid>
+              </Grid>
+            </form>
           </Grid>
-        </form>
+        )}
       </div>
 
       <div>
-        <Dialog
-          open={open}
-          aria-labelledby="alert-dialog-title"
-          aria-describedby="alert-dialog-description"
-        >
-          <DialogTitle id="alert-dialog-title">
-            We Need Some More of Your Details to Log you in
-          </DialogTitle>
+        <Dialog open={open} aria-labelledby="alert-dialog-title" aria-describedby="alert-dialog-description">
+          <DialogTitle id="alert-dialog-title">We Need Some More of Your Details to Log you in</DialogTitle>
           <DialogContent>
             <Grid container>
               <Grid item xs={12} sm={12} md={12} lg={12}>
@@ -513,11 +630,7 @@ const LoginComponent = (props) => {
                   onChange={(e) => handleUserInfo(e, "email")}
                   name="email"
                   label="Email*"
-                  helperText={
-                    loginInfo.error &&
-                    loginInfo.error.email &&
-                    loginInfo.email_error_msg
-                  }
+                  helperText={loginInfo.error && loginInfo.error.email && loginInfo.email_error_msg}
                 />
               </Grid>
               <Grid item xs={12} sm={12} md={6} lg={6}>
@@ -528,17 +641,11 @@ const LoginComponent = (props) => {
                   fullWidth
                   defaultValue={loginInfo.first_name}
                   id="first_name"
-                  error={
-                    loginInfo && loginInfo.error && loginInfo.error.first_name
-                  }
+                  error={loginInfo && loginInfo.error && loginInfo.error.first_name}
                   onChange={(e) => handleUserInfo(e, "first_name")}
                   name="first_name"
                   label="First Name*"
-                  helperText={
-                    loginInfo.error &&
-                    loginInfo.error.first_name &&
-                    loginInfo.first_name_invalid
-                  }
+                  helperText={loginInfo.error && loginInfo.error.first_name && loginInfo.first_name_invalid}
                 />
                 {/* <label className='errtext'> {values.error.passerr && values.errortext.passerr}</label> */}
               </Grid>
@@ -550,17 +657,11 @@ const LoginComponent = (props) => {
                   fullWidth
                   defaultValue={loginInfo.last_name}
                   id="last_name"
-                  error={
-                    loginInfo && loginInfo.error && loginInfo.error.last_name
-                  }
+                  error={loginInfo && loginInfo.error && loginInfo.error.last_name}
                   onChange={(e) => handleUserInfo(e, "last_name")}
                   name="last_name"
                   label="Last Name*"
-                  helperText={
-                    loginInfo.error &&
-                    loginInfo.error.last_name &&
-                    loginInfo.last_name_invalid
-                  }
+                  helperText={loginInfo.error && loginInfo.error.last_name && loginInfo.last_name_invalid}
                 />
                 {/* <label className='errtext'> {values.error.passerr && values.errortext.passerr}</label> */}
               </Grid>
@@ -583,18 +684,10 @@ const LoginComponent = (props) => {
             </Grid>
           </DialogContent>
           <DialogActions>
-            <Button
-              variant="contained"
-              onClick={() => handleButton("save")}
-              color="primary"
-            >
+            <Button variant="contained" onClick={() => handleButton("save")} color="primary">
               Save
             </Button>
-            <Button
-              variant="contained"
-              onClick={() => handleButton("cancel")}
-              color="default"
-            >
+            <Button variant="contained" onClick={() => handleButton("cancel")} color="default">
               Cancel
             </Button>
           </DialogActions>
