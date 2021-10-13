@@ -239,6 +239,7 @@ const LoginComponent = (props) => {
           email: loginInfo.email,
           mobile: loginInfo.phone_no,
         };
+        debugger
         const opts = {
           method: "POST",
           headers: { "Content-Type": "application/json" },

@@ -26,10 +26,12 @@ const useLogin = (changePanel, props) => {
     });
     const [invalids, setInvalids] = React.useState({ username: false, password: false });
     const [history, setHistory] = React.useState({});
+    debugger
     const { data, error, loading, makeFetch, mapped, status } = useNetworkRequest('/api/auth/signin', {}, []);
     const { setCartFilters } = React.useContext(CartContext);
     const { setValues: addressetValues } = Addressforms();
     const pathnames = window.location.pathname === "/login"
+    debugger
     const { loading: codloading, error: coderror, data: addresData, makeRequestCod } = useCheckForCod(ADDRESSDETAILS, () => { }, {});
     React.useEffect(() => {
         var ms = data && data.message
