@@ -774,7 +774,7 @@ class Checkoutcard extends React.Component {
                                     )}
                                   </Grid>
                                 </Grid>
-                                <div style={{ marginTop: "15px" }}>
+                                <div style={{ marginTop: "10px" }}>
                                   {this.state.shipby_arr.map((val) => (
                                     <>
                                       {val.skuId === dataval.generatedSku ? (

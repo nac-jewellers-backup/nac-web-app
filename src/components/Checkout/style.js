@@ -117,7 +117,7 @@ const styles = (theme) => ({
     width: 38,
   },
   contents: {
-    fontSize: "0.8rem",
+    fontSize: "20px",
   },
   labelPrice: {
     display: "flex",
@@ -136,18 +136,18 @@ const styles = (theme) => ({
   },
   totalcost: {
     [theme.breakpoints.down("xs")]: {
-      fontSize: "1.1rem;!important",
+      fontSize: "15px;!important",
     },
     [theme.breakpoints.up("lg")]: {
-      fontSize: "1.3rem !important",
+      fontSize: "20px !important",
     },
   },
   normalfonts: {
     [theme.breakpoints.down("xs")]: {
-      fontSize: "0.8rem;!important",
+      fontSize: "12px;!important",
     },
     [theme.breakpoints.up("lg")]: {
-      fontSize: "0.9rem !important",
+      fontSize: "14px !important",
     },
     color: "gray",
     float: "right !important",
