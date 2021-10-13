@@ -19,14 +19,14 @@
 }
 
 .summaryOrder-pay-btn {
-  background: #fe6c00 !important;
+  background: #394578 !important;
   color: #fff !important;
   border-radius: 0px !important;
-  border: 1px solid #fe6c00 !important;
+  border: 1px solid #394578 !important;
   font-size: 16px !important;
   min-width: 100px !important;
   text-transform: none !important;
-  box-shadow: #f55d07 1px 2px 6px 0px !important;
+  box-shadow: gray 1px 2px 6px 0px !important;
 }
 .ch-d-vl {
   padding: 0px 15px;

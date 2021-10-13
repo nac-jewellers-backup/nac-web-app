@@ -71,12 +71,13 @@ class LoginRegisterIndex extends React.Component {
                 borderLeft: "none !important",
                 border: "0px !important",
                 borderRadius: "0px",
-                fontSize: "12px",
+                marginTop: "14px",
+                fontSize: "14px",
                 textTransform: "none",
               }}
             >
               {" "}
-              Continue
+              Continue To Add Gift
             </Button>
           </div>
         ) : (

@@ -393,7 +393,6 @@ class Component extends React.Component {
         this.props.filters.quantity[this.props.data[0].skuId] = _qty;
       } else {
         let _obj = {};
-        debugger;
 
         _obj[this.props.data[0].skuId] = _qty;
         localStorage.setItem("quantity", JSON.stringify(_obj));

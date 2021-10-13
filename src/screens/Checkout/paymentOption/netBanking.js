@@ -7,16 +7,10 @@ import "./payment.css";
 import PaymentHiddenForm from "./paymentHiddenForm";
 class Netbanking extends React.Component {
   render() {
-    let cart_id = localStorage.getItem("cart_id")
-      ? JSON.parse(localStorage.getItem("cart_id")).cart_id
-      : "";
-    let user_id = localStorage.getItem("user_id")
-      ? localStorage.getItem("user_id")
-      : "";
+    let cart_id = localStorage.getItem("cart_id") ? JSON.parse(localStorage.getItem("cart_id")).cart_id : "";
+    let user_id = localStorage.getItem("user_id") ? localStorage.getItem("user_id") : "";
     const data = this.props.data ? this.props.data : "";
-    var discounted_price = this.props.cartFilters.discounted_price
-      ? this.props.cartFilters.discounted_price
-      : "";
+    var discounted_price = this.props.cartFilters.discounted_price ? this.props.cartFilters.discounted_price : "";
 
     // var { data:coddata, error, loading, makeFetch} = useNetworkRequest('/api/auth/signin', {}, false);
     var dataCard1;
@@ -26,8 +20,7 @@ class Netbanking extends React.Component {
         this.props.data
           .map((val) => {
             return (
-              val.dataCard1[0].offerPrice *
-              JSON.parse(localStorage.getItem("quantity"))[val.generatedSku]
+              Math.round(val.dataCard1[0].offerPrice) * (JSON.parse(localStorage.getItem("quantity"))[val.generatedSku] ?? 1)
             );
           })
           .reduce(myFunc);
@@ -56,9 +49,7 @@ class Netbanking extends React.Component {
             </span>{" "}
             &nbsp;&nbsp;&nbsp;
             <Grid item container>
-              <PaymentHiddenForm
-                data={Math.round(dataCard1 - discounted_price)}
-              />
+              <PaymentHiddenForm data={Math.round(dataCard1 - discounted_price)} />
             </Grid>
           </div>
         </Grid>
@@ -84,15 +75,7 @@ const Components = (props) => {
         <div id="loading"></div>
       </div>
     );
-  else
-    content = (
-      <Netbanking
-        {...props}
-        data={mapped}
-        cartFilters={cartFilters}
-        setCartFilters={setCartFilters}
-      />
-    );
+  else content = <Netbanking {...props} data={mapped} cartFilters={cartFilters} setCartFilters={setCartFilters} />;
   return content;
 };
 export default Components;

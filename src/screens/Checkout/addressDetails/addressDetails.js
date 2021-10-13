@@ -735,7 +735,7 @@ class Addressdetails extends React.Component {
                   onClick={() => this.props.changeaddress(4)}
                   className="summaryOrder-pay-btn"
                 >
-                  Continue to Pay
+                  Continue to Payment Method
                 </Button>
               ) : (
                 ""

@@ -239,7 +239,7 @@ const LoginComponent = (props) => {
           email: loginInfo.email,
           mobile: loginInfo.phone_no,
         };
-        debugger
+
         const opts = {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -284,7 +284,6 @@ const LoginComponent = (props) => {
   };
   const onChangeNumber = (e) => {
     setPhoneNum(e.target.value);
-    debugger;
     console.log(phoneNum.length);
     console.log(phoneNum);
     if (phoneNum.length > 9) {

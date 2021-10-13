@@ -100,13 +100,15 @@ class CashonDelivey extends React.Component {
     const data = this.props.data ? this.props.data : "";
     var discounted_price = this.props.cartFilters.discounted_price ? this.props.cartFilters.discounted_price : "";
     // var { data:coddata, error, loading, makeFetch} = useNetworkRequest('/api/auth/signin', {}, false);
-    var dataCard1;
+    var dataCard1 = null;
     if (data.length > 0 && data !== undefined && data !== null) {
       dataCard1 =
         this.props.data &&
         this.props.data
           .map((val) => {
-            return val.dataCard1[0].offerPrice * JSON.parse(localStorage.getItem("quantity"))[val.generatedSku];
+            return (
+              Math.round(val.dataCard1[0].offerPrice) * (JSON.parse(localStorage.getItem("quantity"))[val.generatedSku] ?? 1)
+            );
           })
           .reduce(myFunc);
       function myFunc(total, num) {
@@ -125,7 +127,7 @@ class CashonDelivey extends React.Component {
     obj["payment_mode"] = "COD";
     obj["user_id"] = user_id;
     obj["cart_id"] = cart_ids;
-    // alert(JSON.stringify(dataCard1))
+
     return (
       <div>
         <Grid spacing={12} container lg={12} xs={12} style={{ width: "100%" }}>
@@ -138,6 +140,7 @@ class CashonDelivey extends React.Component {
                   currency: "INR",
                   minimumFractionDigits: 0,
                 }).format(Math.round(dataCard1 - discounted_price))}
+                {/* {Math.round(dataCard1 - discounted_price)} */}
               </span>
               &nbsp;
               <Button
