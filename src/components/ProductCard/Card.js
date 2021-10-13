@@ -151,7 +151,7 @@ const useStyles = makeStyles((theme) => ({
       cursor: "pointer",
     },
     [theme.breakpoints.down("sm")]: {
-      height: "50px",
+      height: "60px",
       padding: "0 !important",
     },
     "& div": {
@@ -455,87 +455,79 @@ function Component(props) {
                   sm={12}
                   className={`${classes.priceClassMain}`}
                   style={{
-                    display: "flex",
-                    alignItems: "baseline",
                     justifyContent: "space-between",
                   }}
                 >
-                  <Grid items>
-                    {props.data.offerPrice === props.data.price ? (
-                      <Typography
-                        variant="h5"
-                        component="h5"
-                        className={classes.offerMainPrice}
-                        style={{
-                          justifyContent: "flex-start",
-                          display: "flex",
-                          paddingLeft: "5px",
-                          color: "rgb(109,110,112)",
-                        }}
-                      >
-                        {new Intl.NumberFormat("en-IN", {
-                          style: "currency",
-                          currency: "INR",
-                          minimumFractionDigits: 0,
-                        }).format(Math.round(props.data.price))}
-                      </Typography>
-                    ) : (
-                      <Typography
-                        className={classes.offerMainPrice}
-                        style={{
-                          justifyContent: "flex-start",
-                          display: "flex",
-                          paddingLeft: "5px",
-                          color: "rgb(109,110,112)",
-                        }}
-                      >
-                        {new Intl.NumberFormat("en-IN", {
-                          style: "currency",
-                          currency: "INR",
-                          minimumFractionDigits: 0,
-                        }).format(Math.round(props.data.price))}
-                        <span style={{ display: "flex", alignSelf: "center" }}>
-                          {" "}
-                          <Typography
-                            className={classes.strikeText}
-                            style={{
-                              paddingLeft: "6px",
-                            }}
-                          >
-                            <span
-                              style={{
-                                color: "rgb(109,110,112)",
-                                textDecoration: "line-through",
-                              }}
-                            >
-                              <span>
-                                {props.data.offerPrice == 0
-                                  ? " "
-                                  : new Intl.NumberFormat("en-IN", {
-                                      style: "currency",
-                                      currency: "INR",
-                                      minimumFractionDigits: 0,
-                                    }).format(
-                                      Math.round(props.data.offerPrice)
-                                    )}
-                              </span>
-                            </span>
-                            <span
-                              style={{ fontWeight: "bold", color: "#B78231" }}
-                            >
-                              {props.data.save == 0
-                                ? " "
-                                : ` ${Math.abs(
-                                    Math.round(props.data.save)
-                                  )}% OFF`}
-                            </span>
-                          </Typography>
+                  {props.data.offerPrice === props.data.price ? (
+                    <Typography
+                      variant="h5"
+                      component="h5"
+                      className={classes.offerMainPrice}
+                      style={{
+                        justifyContent: "flex-start",
+                        display: "flex",
+                        paddingLeft: "5px",
+                        color: "rgb(109,110,112)",
+                      }}
+                    >
+                      {new Intl.NumberFormat("en-IN", {
+                        style: "currency",
+                        currency: "INR",
+                        minimumFractionDigits: 0,
+                      }).format(Math.round(props.data.price))}
+                    </Typography>
+                  ) : (
+                    <Grid container>
+                      <Grid item xs={6}>
+                        <Typography
+                          className={classes.offerMainPrice}
+                          style={{
+                            justifyContent: "flex-start",
+                            display: "flex",
+                            paddingLeft: "5px",
+                            color: "rgb(109,110,112)",
+                          }}
+                        >
+                          {new Intl.NumberFormat("en-IN", {
+                            style: "currency",
+                            currency: "INR",
+                            minimumFractionDigits: 0,
+                          }).format(Math.round(props.data.price))}
+                        </Typography>
+                        <span
+                          style={{
+                            color: "rgb(109,110,112)",
+                            textDecoration: "line-through",
+                            fontSize: "12px",
+                            paddingLeft: "5px",
+                          }}
+                        >
+                          {props.data.offerPrice == 0
+                            ? " "
+                            : new Intl.NumberFormat("en-IN", {
+                                style: "currency",
+                                currency: "INR",
+                                minimumFractionDigits: 0,
+                              }).format(Math.round(props.data.offerPrice))}
                         </span>
-                      </Typography>
-                    )}{" "}
-                  </Grid>
+                      </Grid>
 
-                  <Grid items></Grid>
+                      <Grid item xs={6}>
+                        <span
+                          style={{
+                            fontWeight: "bold",
+                            color: "#B78231",
+                            fontSize: "12px",
+                            paddingLeft: "5px",
+                          }}
+                        >
+                          {props.data.save == 0
+                            ? " "
+                            : ` ${Math.abs(Math.round(props.data.save))}% OFF`}
+                        </span>
+                      </Grid>
+                    </Grid>
+                  )}{" "}
                 </Grid>
                 <Grid container xs={12}>
                   <Typography
