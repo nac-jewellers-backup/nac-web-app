@@ -364,8 +364,8 @@ class Component extends React.Component {
                                   <br />
                                 </Grid>
 
-                                <Grid xs={12} lg={7} />
-                                <Grid xs={12} lg={4}>
+                                <Grid xs={12} lg={4} />
+                                <Grid xs={12} lg={7}>
                                   <div
                                     style={{
                                       float: "right",
@@ -376,8 +376,9 @@ class Component extends React.Component {
                                       <Button
                                         onClick={() => this.pincodeapi()}
                                         className="summaryOrder-pay-btn"
+                                        color="secondary"
                                       >
-                                        Continue to Pay
+                                        Continue to Delivery Information
                                       </Button>
                                     ) : (
                                       <Button
@@ -678,7 +679,7 @@ class Component extends React.Component {
                                         onClick={() => this.pincodeapi()}
                                         className="summaryOrder-pay-btn"
                                       >
-                                        Continue to Pay
+                                        Continue to Delivery Information
                                       </Button>
                                     ) : (
                                       <Button
