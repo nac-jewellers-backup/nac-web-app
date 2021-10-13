@@ -7,6 +7,10 @@ const styles = (theme) => ({
     paddingLeft: "40px",
     paddingBottom: "40px",
   },
+  paddingsm: {
+    paddingRight: "10px",
+    paddingLeft: "10px",
+  },
   paddingCart1: {
     paddingRight: "40px",
     paddingLeft: "40px",
@@ -23,10 +27,10 @@ const styles = (theme) => ({
   cardtitle: {
     color: "gray",
     [theme.breakpoints.down("xs")]: {
-      fontSize: "0.8rem !important",
+      fontSize: "20px !important",
     },
     [theme.breakpoints.up("lg")]: {
-      fontSize: "0.9rem",
+      fontSize: "13px",
     },
   },
   cartheader: {
@@ -117,7 +121,7 @@ const styles = (theme) => ({
     width: 38,
   },
   contents: {
-    fontSize: "0.8rem",
+    fontSize: "20px",
   },
   labelPrice: {
     display: "flex",
@@ -136,18 +140,18 @@ const styles = (theme) => ({
   },
   totalcost: {
     [theme.breakpoints.down("xs")]: {
-      fontSize: "1.1rem;!important",
+      fontSize: "15px;!important",
     },
     [theme.breakpoints.up("lg")]: {
-      fontSize: "1.3rem !important",
+      fontSize: "20px !important",
     },
   },
   normalfonts: {
     [theme.breakpoints.down("xs")]: {
-      fontSize: "0.8rem;!important",
+      fontSize: "12px;!important",
     },
     [theme.breakpoints.up("lg")]: {
-      fontSize: "0.9rem !important",
+      fontSize: "14px !important",
     },
     color: "gray",
     float: "right !important",

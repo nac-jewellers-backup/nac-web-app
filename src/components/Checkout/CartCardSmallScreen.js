@@ -308,7 +308,7 @@ function MediaControlCard(props) {
                   </div>
                 </Grid>
                 <Grid container xs={12} style={{ display: "flex" }}>
-                  <Grid item xs={6}>
+                  <Grid item xs={5} sm={6}>
                     <Button
                       id={dataval.generatedSku}
                       productid={dataval}
@@ -329,7 +329,7 @@ function MediaControlCard(props) {
                       REMOVE
                     </Button>
                   </Grid>
-                  <Grid item xs={6}>
+                  <Grid item xs={7} sm={6}>
                     <WishlistButton
                       sku={dataval.generatedSku}
                       productId={dataval.productId}

@@ -42,18 +42,18 @@ export const styles = (theme) => ({
     fontWeight: "590px",
     textTransform: "capitalize",
     [theme.breakpoints.down("xs")]: {
-      fontSize: "0.9rem;!important",
+      fontSize: "12px;!important",
     },
     [theme.breakpoints.up("lg")]: {
-      fontSize: "0.9rem !important",
+      fontSize: "14px !important",
     },
   },
   btnicon: {
     [theme.breakpoints.down("xs")]: {
-      fontSize: "0.8rem !important",
+      fontSize: "14px !important",
     },
     [theme.breakpoints.up("lg")]: {
-      fontSize: "0.9rem !important",
+      fontSize: "16px !important",
     },
   },
 
