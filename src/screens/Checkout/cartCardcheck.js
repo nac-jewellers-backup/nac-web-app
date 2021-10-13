@@ -15,7 +15,6 @@ import { CheckForCod } from "queries/productdetail";
 import React from "react";
 import ReactPixel from "react-facebook-pixel";
 import { withRouter } from "react-router-dom";
-import CustomSeparator from "../../components/BreadCrumb/index";
 import "../../components/Checkout/Cart.css";
 import CartCard from "../../components/Checkout/CartCard";
 import { CartContext, ProductDetailContext } from "../../context";
@@ -30,7 +29,12 @@ import PaymentIndex from "./paymentOption/paymentindex";
 var adres = {};
 var variab = {};
 const CartCardCheck = (props) => {
-  const { loading, error, data: CodData, makeRequestCod } = useCheckForCod(CheckForCod, () => {}, {});
+  const {
+    loading,
+    error,
+    data: CodData,
+    makeRequestCod,
+  } = useCheckForCod(CheckForCod, () => {}, {});
   let {
     CartCtx: { setCartFilters },
   } = React.useContext(CartContext);
@@ -48,7 +52,9 @@ const CartCardCheck = (props) => {
 var obj_values = {};
 class Component extends React.Component {
   state = {
-    expanded: "panel" + (localStorage.getItem("panel") ? localStorage.getItem("panel") : 1),
+    expanded:
+      "panel" +
+      (localStorage.getItem("panel") ? localStorage.getItem("panel") : 1),
     // expanded: 'panel2',
     // expandedlimit: localStorage.getItem("panel") ? localStorage.getItem("panel") : 1,
     // expandedlimit: 1,
@@ -84,7 +90,8 @@ class Component extends React.Component {
     const { expanded } = this.state;
     // if (value && value.pincode && value.pincode.length > 2) {
     if (
-      (localStorage.getItem("bil_isactive") || localStorage.getItem("ship_isactive")) &&
+      (localStorage.getItem("bil_isactive") ||
+        localStorage.getItem("ship_isactive")) &&
       adres.value &&
       adres.value.pincode &&
       adres.value.pincode.length > 2 &&
@@ -101,7 +108,10 @@ class Component extends React.Component {
           expanded: "panel" + panel,
         });
       }
-      if ((expanded === "panel3" || expanded === "panel4") && "panel" + panel === "panel2") {
+      if (
+        (expanded === "panel3" || expanded === "panel4") &&
+        "panel" + panel === "panel2"
+      ) {
         localStorage.removeItem("bil_isactive");
         localStorage.removeItem("ship_isactive");
         localStorage.removeItem("select_addres");
@@ -196,7 +206,9 @@ class Component extends React.Component {
   };
   pincodeapi = () => {
     var obj_user = {};
-    let user_id = localStorage.getItem("user_id") ? localStorage.getItem("user_id") : "";
+    let user_id = localStorage.getItem("user_id")
+      ? localStorage.getItem("user_id")
+      : "";
     this.props.makeRequestCod(variab);
     obj_user["user_id"] = user_id;
 
@@ -212,7 +224,9 @@ class Component extends React.Component {
     const { expanded, mailId, expandedlimit } = this.state;
     const { classes, data } = this.props;
     const { breadcrumsdata, cartsubdata } = this.props.data;
-    let email = localStorage.getItem("email") ? localStorage.getItem("email") : "";
+    let email = localStorage.getItem("email")
+      ? localStorage.getItem("email")
+      : "";
     variab["pincode"] = adres.value && adres.value.pincode;
 
     const breadcrumsdata_static = [
@@ -240,7 +254,9 @@ class Component extends React.Component {
         icon: "https://assets.stylori.com/images/static/icon-return.png",
       },
     ];
-    adres["value"] = localStorage.getItem("select_addres") ? JSON.parse(localStorage.getItem("select_addres")) : {};
+    adres["value"] = localStorage.getItem("select_addres")
+      ? JSON.parse(localStorage.getItem("select_addres"))
+      : {};
 
     const enquireLink = () => {
       let ProductIsActiveUrl;
@@ -249,7 +265,11 @@ class Component extends React.Component {
           ProductIsActiveUrl = val.skuUrl;
         }
       });
-      window.open(`https://wa.me/919952625252?text=Hi - ${window.location.hostname + "/" + ProductIsActiveUrl ?? ""}`);
+      window.open(
+        `https://wa.me/919952625252?text=Hi - ${
+          window.location.hostname + "/" + ProductIsActiveUrl ?? ""
+        }`
+      );
     };
 
     let ProductIsActive = true;
@@ -325,14 +345,21 @@ class Component extends React.Component {
                         expandIcon={<ExpandMoreIcon className="arrow-chek" />}
                         className="ckcut-main-body"
                       >
-                        <Typography className="text-chck">2.&nbsp;&nbsp;ADD A GIFT MESSAGE</Typography>
+                        <Typography className="text-chck">
+                          2.&nbsp;&nbsp;ADD A GIFT MESSAGE
+                        </Typography>
                       </ExpansionPanelSummary>
                       <ExpansionPanelDetails>
                         <Grid container>
                           <Grid item xs={12} lg={12}>
                             <Hidden smDown>
                               <Grid container>
-                                <Grid item xs={12} lg={12} className={classes.cart}>
+                                <Grid
+                                  item
+                                  xs={12}
+                                  lg={12}
+                                  className={classes.cart}
+                                >
                                   <ProductList checkout={true} />
                                   <br />
                                 </Grid>
@@ -346,11 +373,17 @@ class Component extends React.Component {
                                     }}
                                   >
                                     {ProductIsActive ? (
-                                      <Button onClick={() => this.pincodeapi()} className="summaryOrder-pay-btn">
+                                      <Button
+                                        onClick={() => this.pincodeapi()}
+                                        className="summaryOrder-pay-btn"
+                                      >
                                         Continue to Pay
                                       </Button>
                                     ) : (
-                                      <Button className="summaryOrder-pay-btn" onClick={enquireLink}>
+                                      <Button
+                                        className="summaryOrder-pay-btn"
+                                        onClick={enquireLink}
+                                      >
                                         Enquire Now
                                       </Button>
                                     )}
@@ -372,11 +405,17 @@ class Component extends React.Component {
                                   }}
                                 >
                                   {ProductIsActive ? (
-                                    <Button onClick={() => this.pincodeapi()} className="summaryOrder-pay-btn">
+                                    <Button
+                                      onClick={() => this.pincodeapi()}
+                                      className="summaryOrder-pay-btn"
+                                    >
                                       Continue to Pay
                                     </Button>
                                   ) : (
-                                    <Button className="summaryOrder-pay-btn" onClick={enquireLink}>
+                                    <Button
+                                      className="summaryOrder-pay-btn"
+                                      onClick={enquireLink}
+                                    >
                                       Enquire Now
                                     </Button>
                                   )}
@@ -411,41 +450,47 @@ class Component extends React.Component {
                             obj_values.adres_details &&
                             obj_values.adres_details.firstname &&
                             obj_values.adres_details.firstname.length > 0
-                              ? obj_values.adres_details && obj_values.adres_details.firstname
+                              ? obj_values.adres_details &&
+                                obj_values.adres_details.firstname
                               : adres.value && adres.value.firstname}
                             &nbsp;
                             {obj_values &&
                             obj_values.adres_details &&
                             obj_values.adres_details.firstname &&
                             obj_values.adres_details.firstname.length > 0
-                              ? obj_values.adres_details && obj_values.adres_details.lastname
+                              ? obj_values.adres_details &&
+                                obj_values.adres_details.lastname
                               : adres.value && adres.value.lastname}
                             &nbsp;
                             {obj_values &&
                             obj_values.adres_details &&
                             obj_values.adres_details.firstname &&
                             obj_values.adres_details.firstname.length > 0
-                              ? obj_values.adres_details && obj_values.adres_details.addressline1
+                              ? obj_values.adres_details &&
+                                obj_values.adres_details.addressline1
                               : adres.value && adres.value.addressline1}
                             &nbsp;
                             {obj_values &&
                             obj_values.adres_details &&
                             obj_values.adres_details.firstname &&
                             obj_values.adres_details.firstname.length > 0
-                              ? obj_values.adres_details && obj_values.adres_details.city
+                              ? obj_values.adres_details &&
+                                obj_values.adres_details.city
                               : adres.value && adres.value.city}
                             {obj_values &&
                             obj_values.adres_details &&
                             obj_values.adres_details.firstname &&
                             obj_values.adres_details.firstname.length > 0
-                              ? obj_values.adres_details && obj_values.adres_details.state
+                              ? obj_values.adres_details &&
+                                obj_values.adres_details.state
                               : adres.value && adres.value.state}
                             &nbsp;
                             {obj_values &&
                             obj_values.adres_details &&
                             obj_values.adres_details.firstname &&
                             obj_values.adres_details.firstname.length > 0
-                              ? obj_values.adres_details && obj_values.adres_details.pincode
+                              ? obj_values.adres_details &&
+                                obj_values.adres_details.pincode
                               : adres.value && adres.value.pincode}
                           </div>
                         </Typography>
@@ -458,7 +503,10 @@ class Component extends React.Component {
                               <Grid xs={12} lg={4}></Grid>
                             </Grid>
 
-                            <Addressform changePanel={this.changePanel} changeaddress={this.changePanel1} />
+                            <Addressform
+                              changePanel={this.changePanel}
+                              changeaddress={this.changePanel1}
+                            />
                           </Grid>
                         </Grid>
                       </ExpansionPanelDetails>
@@ -479,15 +527,58 @@ class Component extends React.Component {
                         expandIcon={<ExpandMoreIcon className="arrow-chek" />}
                         className="ckcut-main-body"
                       >
-                        <Typography className="text-chck">4.&nbsp;&nbsp;PAYMENT METHOD</Typography>
+                        <Typography className="text-chck">
+                          4.&nbsp;&nbsp;PAYMENT METHOD
+                        </Typography>
                       </ExpansionPanelSummary>
                       <ExpansionPanelDetails>
-                        <PaymentIndex data={data} CodData={this.props.CodData} />
+                        <Grid container>
+                          <Grid item xs={12}>
+                            <PaymentIndex
+                              data={data}
+                              CodData={this.props.CodData}
+                            />
+                          </Grid>
+                          <Grid item xs={12}>
+                            <br />
+                            <Typography
+                              style={{
+                                color: "gray",
+                                paddingBottom: "10px",
+                                paddingTop: "10px",
+                              }}
+                            >
+                              <b> Gifting Messages&nbsp;&#38;&nbsp;Pakaging</b>
+                            </Typography>
+                            <ProductList order={true} checkout={true} />
+                            <br />
+                          </Grid>
+                          <Grid item xs={12}>
+                            <Typography
+                              style={{
+                                color: "gray",
+                                paddingBottom: "10px",
+                                paddingTop: "10px",
+                              }}
+                            >
+                              <b>Shiping Address</b>
+                            </Typography>
+                            <Addressform
+                              changePanel={this.changePanel}
+                              changeaddress={this.changePanel1}
+                              order={true}
+                            />
+                          </Grid>
+                        </Grid>
                       </ExpansionPanelDetails>
                     </ExpansionPanel>
                   </div>
                 </Grid>
-                <Grid xs={12} lg={6} style={{ backgroundColor: "#F3F3F3", minHeight: "80vh" }}>
+                <Grid
+                  xs={12}
+                  lg={6}
+                  style={{ backgroundColor: "#F3F3F3", minHeight: "80vh" }}
+                >
                   <Grid container>
                     <Grid item xs={12} lg={12}>
                       <div className={classes.padding}>
@@ -565,7 +656,9 @@ class Component extends React.Component {
                         }}
                         expandIcon={<ExpandMoreIcon className="arrow-chek" />}
                       >
-                        <Typography className="text-chck">2.&nbsp;&nbsp;ADD A GIFT MESSAGE</Typography>
+                        <Typography className="text-chck">
+                          2.&nbsp;&nbsp;ADD A GIFT MESSAGE
+                        </Typography>
                       </ExpansionPanelSummary>
                       <ExpansionPanelDetails>
                         <Grid container>
@@ -581,11 +674,17 @@ class Component extends React.Component {
                                     }}
                                   >
                                     {ProductIsActive ? (
-                                      <Button onClick={() => this.pincodeapi()} className="summaryOrder-pay-btn">
+                                      <Button
+                                        onClick={() => this.pincodeapi()}
+                                        className="summaryOrder-pay-btn"
+                                      >
                                         Continue to Pay
                                       </Button>
                                     ) : (
-                                      <Button className="summaryOrder-pay-btn" onClick={enquireLink}>
+                                      <Button
+                                        className="summaryOrder-pay-btn"
+                                        onClick={enquireLink}
+                                      >
                                         Enquire Now
                                       </Button>
                                     )}
@@ -609,11 +708,17 @@ class Component extends React.Component {
                                   }}
                                 >
                                   {ProductIsActive ? (
-                                    <Button onClick={() => this.pincodeapi()} className="summaryOrder-pay-btn">
+                                    <Button
+                                      onClick={() => this.pincodeapi()}
+                                      className="summaryOrder-pay-btn"
+                                    >
                                       Continue to Pay
                                     </Button>
                                   ) : (
-                                    <Button className="summaryOrder-pay-btn" onClick={enquireLink}>
+                                    <Button
+                                      className="summaryOrder-pay-btn"
+                                      onClick={enquireLink}
+                                    >
                                       Enquire Now
                                     </Button>
                                   )}
@@ -649,41 +754,47 @@ class Component extends React.Component {
                             obj_values.adres_details &&
                             obj_values.adres_details.firstname &&
                             obj_values.adres_details.firstname.length > 0
-                              ? obj_values.adres_details && obj_values.adres_details.firstname
+                              ? obj_values.adres_details &&
+                                obj_values.adres_details.firstname
                               : adres.value && adres.value.firstname}
                             &nbsp;
                             {obj_values &&
                             obj_values.adres_details &&
                             obj_values.adres_details.firstname &&
                             obj_values.adres_details.firstname.length > 0
-                              ? obj_values.adres_details && obj_values.adres_details.lastname
+                              ? obj_values.adres_details &&
+                                obj_values.adres_details.lastname
                               : adres.value && adres.value.lastname}
                             &nbsp;
                             {obj_values &&
                             obj_values.adres_details &&
                             obj_values.adres_details.firstname &&
                             obj_values.adres_details.firstname.length > 0
-                              ? obj_values.adres_details && obj_values.adres_details.addressline1
+                              ? obj_values.adres_details &&
+                                obj_values.adres_details.addressline1
                               : adres.value && adres.value.addressline1}
                             &nbsp;
                             {obj_values &&
                             obj_values.adres_details &&
                             obj_values.adres_details.firstname &&
                             obj_values.adres_details.firstname.length > 0
-                              ? obj_values.adres_details && obj_values.adres_details.city
+                              ? obj_values.adres_details &&
+                                obj_values.adres_details.city
                               : adres.value && adres.value.city}
                             {obj_values &&
                             obj_values.adres_details &&
                             obj_values.adres_details.firstname &&
                             obj_values.adres_details.firstname.length > 0
-                              ? obj_values.adres_details && obj_values.adres_details.state
+                              ? obj_values.adres_details &&
+                                obj_values.adres_details.state
                               : adres.value && adres.value.state}
                             &nbsp;
                             {obj_values &&
                             obj_values.adres_details &&
                             obj_values.adres_details.firstname &&
                             obj_values.adres_details.firstname.length > 0
-                              ? obj_values.adres_details && obj_values.adres_details.pincode
+                              ? obj_values.adres_details &&
+                                obj_values.adres_details.pincode
                               : adres.value && adres.value.pincode}
                           </span>
                         </Typography>
@@ -691,7 +802,10 @@ class Component extends React.Component {
                       <ExpansionPanelDetails>
                         <Grid container>
                           <Grid item xs={12} lg={12}>
-                            <Addressform changePanel={this.changePanel} changeaddress={this.changePanel1} />
+                            <Addressform
+                              changePanel={this.changePanel}
+                              changeaddress={this.changePanel1}
+                            />
                           </Grid>
                         </Grid>
                       </ExpansionPanelDetails>
@@ -713,10 +827,15 @@ class Component extends React.Component {
                         }}
                         expandIcon={<ExpandMoreIcon className="arrow-chek" />}
                       >
-                        <Typography className="text-chck">4.&nbsp;&nbsp;PAYMENT METHOD</Typography>
+                        <Typography className="text-chck">
+                          4.&nbsp;&nbsp;PAYMENT METHOD
+                        </Typography>
                       </ExpansionPanelSummary>
                       <ExpansionPanelDetails>
-                        <PaymentIndex data={data} CodData={this.props.CodData} />
+                        <PaymentIndex
+                          data={data}
+                          CodData={this.props.CodData}
+                        />
                       </ExpansionPanelDetails>
                     </ExpansionPanel>
                   </div>
@@ -749,7 +868,10 @@ const Components = (props) => {
     alert("Your cart is empty");
     props.history.push("/jewellery");
   };
-  if (Object.keys(data).length === 0 || data.data.allTransSkuLists.nodes.length === 0)
+  if (
+    Object.keys(data).length === 0 ||
+    data.data.allTransSkuLists.nodes.length === 0
+  )
     content = <div className="overall-loader">{/* {cartValueEmpty() */}</div>;
   else
     content = (

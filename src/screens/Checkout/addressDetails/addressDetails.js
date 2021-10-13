@@ -147,6 +147,8 @@ class Addressdetails extends React.Component {
         <Grid container spacing={12}>
           {window.location.pathname.split("-")[0] === "/account" ? (
             ""
+          ) : this.props.order ? (
+            " "
           ) : (
             <h5 className="title"> Shipping Address</h5>
           )}
@@ -719,23 +721,26 @@ class Addressdetails extends React.Component {
         ) : (
           ""
         )}
-        {_add_data_addres() &&
-          _add_data_addres().map((val_addrs1, index) => {
-            return JSON.parse(localStorage.getItem("bil_isactive")) ===
-              index ? (
-              false
-            ) : JSON.parse(localStorage.getItem("ship_isactive")) === index ||
-              JSON.parse(localStorage.getItem("bil_isactive")) === index ? (
-              <Button
-                onClick={() => this.props.changeaddress(4)}
-                className="summaryOrder-pay-btn"
-              >
-                Continue to Pay
-              </Button>
-            ) : (
-              ""
-            );
-          })}
+
+        {this.props.order
+          ? " "
+          : _add_data_addres() &&
+            _add_data_addres().map((val_addrs1, index) => {
+              return JSON.parse(localStorage.getItem("bil_isactive")) ===
+                index ? (
+                false
+              ) : JSON.parse(localStorage.getItem("ship_isactive")) === index ||
+                JSON.parse(localStorage.getItem("bil_isactive")) === index ? (
+                <Button
+                  onClick={() => this.props.changeaddress(4)}
+                  className="summaryOrder-pay-btn"
+                >
+                  Continue to Pay
+                </Button>
+              ) : (
+                ""
+              );
+            })}
       </div>
     );
   };

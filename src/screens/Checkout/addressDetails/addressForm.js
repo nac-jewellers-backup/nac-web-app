@@ -71,7 +71,7 @@ const AddressComponent = (props) => {
                   lg={
                     window.location.pathname.split("-")[0] === "/account"
                       ? 12
-                      : 5
+                      : 12
                   }
                 >
                   {window.location.pathname.split("-")[0] === "/account" ||
@@ -80,7 +80,7 @@ const AddressComponent = (props) => {
                     ""
                   ) : (
                     <>
-                      <h5 className="title">Shipping Address</h5>
+                      <h5 className="title">Shipping Addresss</h5>
                       <>
                         {!values.checkValue &&
                           "If your Billing address is same as your shipping address, please check the box and fill up the shipping address in the form."}
@@ -570,6 +570,7 @@ const AddressComponent = (props) => {
             redirectForm1={handle.redirectForm1}
             redirectForm={handle.redirectForm}
             changeaddress={props.changeaddress}
+            order={props.order}
           />
         )}
       </div>
