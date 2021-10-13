@@ -7,6 +7,10 @@ const styles = (theme) => ({
     paddingLeft: "40px",
     paddingBottom: "40px",
   },
+  paddingsm: {
+    paddingRight: "10px",
+    paddingLeft: "10px",
+  },
   paddingCart1: {
     paddingRight: "40px",
     paddingLeft: "40px",

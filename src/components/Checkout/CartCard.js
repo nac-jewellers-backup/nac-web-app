@@ -17,7 +17,6 @@ import ProductList from "../../screens/Checkout/orderSummary/promocode";
 import Buynowbutton from "../Buynow/buynowbutton";
 import Pricing from "../Pricing/index";
 import "./Cart.css";
-import CardSmallScreen from "./CartCardSmallScreen.js";
 import styles from "./style";
 import WishlistButton from "./Wishlistadd";
 class Checkoutcard extends React.Component {
@@ -832,12 +831,13 @@ class Checkoutcard extends React.Component {
                                   variant="contained"
                                   style={{
                                     color: "gray",
+                                    width: "100%",
                                     border: "2px solid #C1C1C1",
                                     backgroundColor: "white",
                                     borderRadius: "0px",
                                     boxShadow: "none",
-                                    paddingRight: "44px",
-                                    paddingLeft: "44px",
+                                    paddingRight: "40px",
+                                    paddingLeft: "40px",
                                   }}
                                 >
                                   Remove
@@ -906,6 +906,297 @@ class Checkoutcard extends React.Component {
             </Grid>
           </>
         )}
+      </div>
+    );
+  };
+  rowsm = (props) => {
+    const dataCarousel = {
+      slidesToShow: 1,
+      arrows: false,
+    };
+    const handleChange = (panel) => (event, isExpanded) => {
+      this.setState({
+        expanded: isExpanded ? panel : false,
+      });
+    };
+
+    const { classes, data } = this.props;
+    const { productsDetails, fadeImages, dataCard1 } = this.props.data;
+    const filter_image = (imges__val, name, details) => {
+      var image_urls;
+      const width = window.innerWidth;
+      if (imges__val.imageUrl && imges__val.imageUrl.length > 0) {
+        return imges__val.imageUrl;
+      }
+    };
+    const checkMaterial = (material) => {
+      let _data = material.map((val) => val.toLowerCase());
+      if (_data.indexOf("silver") > -1) return false;
+      else return true;
+    };
+
+    const { expand } = this.state;
+    return (
+      <div style={{ marginTop: "10px" }}>
+        <>
+          <Grid container direction="row">
+            <Grid item xs={12}>
+              <div className={classes.paddingsm}>
+                <br />
+                {window.location.pathname === "/cart" ? (
+                  <Grid container direction="row">
+                    <Grid item xs={12}>
+                      <Box
+                        display="flex"
+                        flexDirection="row"
+                        justifyContent="center"
+                      >
+                        <Box>
+                          <img
+                            className={classes.img}
+                            src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/Group+160.svg"
+                            alt="title images"
+                          />
+                        </Box>
+                        <Box className={classes.title}>SHOPPING CART</Box>
+                        <Box>
+                          <img
+                            className={classes.img}
+                            src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/Group+159.svg"
+                            alt="title images"
+                          />
+                        </Box>
+                      </Box>
+                    </Grid>
+                  </Grid>
+                ) : (
+                  " "
+                )}
+                <div
+                  style={{
+                    borderBottom: "1.3px solid #C1C1C1",
+                    paddingBottom: "6px",
+                    marginTop: "10px",
+                  }}
+                >
+                  <Typography className={classes.cartheader} noWrap>
+                    Total({this.props.data.length}&nbsp;Items)&nbsp;:&nbsp;
+                    {this.subtotalsHead(this.props)}
+                  </Typography>
+                </div>
+                <br />
+                {this.props.data.map((dataval, index) =>
+                  dataval.productsDetails.map((val) => (
+                    <div className={classes.cardmap}>
+                      <Grid
+                        container
+                        spacing={3}
+                        style={{
+                          paddingTop: "20px",
+                          paddingBottom: "20px",
+                          borderBottom: "1px solid #C1C1C1",
+                        }}
+                      >
+                        <Grid xs={4}>
+                          {window.location.pathname !== "/checkout" ? (
+                            <NavLink
+                              to={dataval?.skuUrl}
+                              style={{ textDecoration: "none" }}
+                            >
+                              <img
+                                width="100%"
+                                alt="images"
+                                style={{
+                                  border: "1px solid #D2D3D4",
+                                  objectFit: "cover",
+                                }}
+                                src={dataval?.fadeImages[0]?.imageUrl}
+                              ></img>
+                            </NavLink>
+                          ) : (
+                            <img
+                              width="100%"
+                              alt="img"
+                              style={{
+                                border: "1px solid #D2D3D4",
+                                objectFit: "cover",
+                              }}
+                              src={dataval?.fadeImages[0]?.imageUrl}
+                            ></img>
+                          )}
+                        </Grid>
+                        <Grid xs={8}>
+                          <div className={classes.details}>
+                            {window.location.pathname !== "/checkout" ? (
+                              <NavLink
+                                to={`jewellery/${dataval.productType}/${dataval.materialName[0]}/${val.pro_header}?skuId=${dataval.generatedSku}`}
+                                style={{
+                                  textDecoration: "none",
+                                  textTransform: "capitalize",
+                                }}
+                              >
+                                <span
+                                  style={{
+                                    color: "gray",
+                                    fontSize: "0.9rem",
+                                    textTransform: "capitalize",
+                                  }}
+                                >
+                                  {val.pro_header}
+                                </span>
+                              </NavLink>
+                            ) : (
+                              <span
+                                style={{
+                                  color: "gray",
+                                  fontSize: "0.9rem",
+                                  textTransform: "capitalize",
+                                }}
+                              >
+                                {val.pro_header}
+                              </span>
+                            )}
+
+                            <Grid container style={{ marginTop: "4px" }}>
+                              <Grid item xs={12} lg={6}>
+                                {dataval.maxOrderQty === 1 ? (
+                                  <Grid container>
+                                    <Grid item xs={4}>
+                                      <Typography
+                                        className={`subhesder ${classes.normalfonts}`}
+                                      >
+                                        Quantity :
+                                      </Typography>
+                                    </Grid>
+                                    <Grid item xs={4}>
+                                      <Typography
+                                        className={`subhesder ${classes.normalfonts}`}
+                                      >
+                                        {dataval.maxOrderQty}
+                                      </Typography>
+                                    </Grid>
+                                  </Grid>
+                                ) : (
+                                  <>
+                                    <Grid container>
+                                      <Grid item xs={4}>
+                                        <Typography
+                                          className={`subhesder ${classes.normalfonts}`}
+                                        >
+                                          Quantity :
+                                        </Typography>
+                                      </Grid>
+                                      <Grid item xs={4}>
+                                        <Select
+                                          style={{ marginBottom: "10px" }}
+                                          labelId="demo-simple-select-label"
+                                          id="demo-simple-select"
+                                          variant="standard"
+                                          value={
+                                            this?.state?.quantity[index]?.Qty ??
+                                            1
+                                          }
+                                          onChange={(e) =>
+                                            this.onChangeQuantity(
+                                              e,
+                                              this.state.quantity[index]
+                                                .generateSku,
+                                              index
+                                            )
+                                          }
+                                          color="secondary"
+                                        >
+                                          {this?.state?.quantity[
+                                            index
+                                          ]?.QtyArr?.map((data) => (
+                                            <MenuItem value={data}>
+                                              {data}
+                                            </MenuItem>
+                                          ))}
+                                        </Select>
+                                      </Grid>
+                                    </Grid>
+                                  </>
+                                )}
+                              </Grid>
+                            </Grid>
+                            {dataval.dataCard1.map((val) => (
+                              <Pricing
+                                detail={dataval}
+                                offerDiscount={
+                                  val.discount ? `${val.discount}% - OFF` : null
+                                }
+                                price={
+                                  val.offerPrice *
+                                  (JSON.parse(localStorage.getItem("quantity"))[
+                                    val.generatedSku
+                                  ] ?? 1)
+                                }
+                                offerPrice={
+                                  val.price *
+                                  (JSON.parse(localStorage.getItem("quantity"))[
+                                    val.generatedSku
+                                  ] ?? 1)
+                                }
+                                quantity={this.state.quantity}
+                              ></Pricing>
+                            ))}
+                          </div>{" "}
+                        </Grid>
+
+                        <Grid container spacing={2}>
+                          <Grid item xs={5} sm={6}>
+                            <Button
+                              id={dataval.generatedSku}
+                              onClick={(event) =>
+                                this.handleDeleteLocalStorage(event)
+                              }
+                              variant="contained"
+                              style={{
+                                color: "gray",
+                                border: "2px solid #C1C1C1",
+                                backgroundColor: "white",
+                                width: "100%",
+                                borderRadius: "0px",
+                                marginTop: "10px",
+                                boxShadow: "none",
+                                paddingRight: "24px",
+                                paddingLeft: "24px",
+                              }}
+                            >
+                              Remove
+                            </Button>
+                          </Grid>
+                          <Grid item xs={7} sm={6}>
+                            <WishlistButton
+                              sku={dataval.generatedSku}
+                              productId={dataval.productId}
+                            />
+                            {!dataval.isActive ? (
+                              <span
+                                style={{
+                                  backgroundColor: "red",
+                                  fontSize: "10px",
+                                  color: "white",
+                                  padding: "2px 4px",
+                                  borderRadius: "2px",
+                                }}
+                              >
+                                Sold Out
+                              </span>
+                            ) : (
+                              ""
+                            )}
+                          </Grid>
+                        </Grid>
+                      </Grid>
+                    </div>
+                  ))
+                )}
+              </div>
+            </Grid>
+          </Grid>
+        </>
       </div>
     );
   };
@@ -1451,49 +1742,7 @@ class Checkoutcard extends React.Component {
           </Hidden>
         ) : (
           <Hidden mdUp>
-            <br />
-            {window.location.pathname === "/cart" ? (
-              <Grid container direction="row">
-                <Grid item xs={12}>
-                  <Box
-                    display="flex"
-                    flexDirection="row"
-                    justifyContent="center"
-                  >
-                    <Box>
-                      <img
-                        className={classes.img}
-                        src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/Group+160.svg"
-                        alt="title images"
-                      />
-                    </Box>
-                    <Box className={classes.title}>SHOPPING CART</Box>
-                    <Box>
-                      <img
-                        className={classes.img}
-                        src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/Group+159.svg"
-                        alt="title images"
-                      />
-                    </Box>
-                  </Box>
-                </Grid>
-              </Grid>
-            ) : (
-              " "
-            )}
-            <div
-              style={{
-                borderBottom: "1.3px solid #C1C1C1",
-                paddingBottom: "6px",
-                marginTop: "20px",
-              }}
-            >
-              <Typography className={classes.cartheader} noWrap>
-                Total({this.props.data.length}&nbsp;Items)&nbsp;:&nbsp;
-                {this.subtotalsHead(this.props)}
-              </Typography>
-            </div>
-            <CardSmallScreen
+            {/* <CardSmallScreen
               data={this.props.data}
               handleDeleteLocalStorage={(event) =>
                 this.handleDeleteLocalStorage(event)
@@ -1502,8 +1751,8 @@ class Checkoutcard extends React.Component {
               totalcost={this.subtotals}
               quantity={this.state.quantity}
               subtotaldata={this.props}
-            />
-
+            /> */}
+            {this.rowsm(this.props)}
             <div>{this.subtotals(this.props, this.state.quantity)}</div>
             <br />
             <Button
