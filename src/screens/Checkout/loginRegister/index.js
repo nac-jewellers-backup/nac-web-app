@@ -158,12 +158,13 @@ class LoginRegisterIndex extends React.Component {
                 changePanel={this.props.changePanel}
                 local_mail_id={local_mail_id}
                 change={() => {
-                  this.setState({
-                    Continue: this.state.Continue === true ? false : true,
-                  });
-                  this.setState({
-                    Login: this.state.Login === true ? false : true,
-                  });
+                  window.location.reload();
+                  // this.setState({
+                  //   Continue: this.state.Continue === true ? false : true,
+                  // });
+                  // this.setState({
+                  //   Register: this.state.Register === true ? false : true,
+                  // });
                 }}
               />
             </div>
