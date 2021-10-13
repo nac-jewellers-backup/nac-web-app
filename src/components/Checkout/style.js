@@ -23,10 +23,10 @@ const styles = (theme) => ({
   cardtitle: {
     color: "gray",
     [theme.breakpoints.down("xs")]: {
-      fontSize: "0.8rem !important",
+      fontSize: "20px !important",
     },
     [theme.breakpoints.up("lg")]: {
-      fontSize: "0.9rem",
+      fontSize: "13px",
     },
   },
   cartheader: {

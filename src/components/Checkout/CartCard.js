@@ -836,8 +836,8 @@ class Checkoutcard extends React.Component {
                                     backgroundColor: "white",
                                     borderRadius: "0px",
                                     boxShadow: "none",
-                                    paddingRight: "48px",
-                                    paddingLeft: "48px",
+                                    paddingRight: "44px",
+                                    paddingLeft: "44px",
                                   }}
                                 >
                                   Remove
