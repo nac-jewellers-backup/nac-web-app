@@ -83,69 +83,75 @@ class LoginRegisterIndex extends React.Component {
           <div style={{ width: "100%" }}>
             <div
               style={{
-                display: this.state.Login === true ? "block" : "none",
-              }}
-            >
-              <Login
-                changePanel={this.props.changePanel}
-                change={() => {
-                  this.setState({
-                    Register: this.state.Register ? false : true,
-                  });
-                  this.setState({
-                    Login: this.state.Login ? false : true,
-                  });
-                }}
-                changeRegister={() => {
-                  this.setState({
-                    show: true,
-                    Register: false,
-                  });
-                }}
-                checkoutpage="true"
-              />
-            </div>
-            <div
-              style={{
-                display: this.state.Register == true ? "block" : "none",
-              }}
-            >
-              <Register
-                change={() => {
-                  this.setState({
-                    Register: this.state.Register ? false : true,
-                  });
-                  this.setState({
-                    Login: this.state.Login ? false : true,
-                  });
-                }}
-              />
-            </div>
-            <div
-              style={{
                 display: this.state.Continue === true ? "block" : "none",
-                color: "gray",
-                textAlign: "center",
-                borderTop: "1px solid #c1c1c1",
               }}
             >
-              <br />
-              Guest Checkout Not ready to become a member just yet?
-              <br />
-              <br />
-              <Button
-                className="apply-b"
-                onClick={() => {
-                  this.setState({
-                    Continue: this.state.Continue ? false : true,
-                  });
-                  this.setState({
-                    Login: this.state.Login ? false : true,
-                  });
+              <div
+                style={{
+                  display: this.state.Login === true ? "block" : "none",
                 }}
               >
-                Continue As a Guest
-              </Button>
+                <Login
+                  changePanel={this.props.changePanel}
+                  change={() => {
+                    this.setState({
+                      Register: this.state.Register ? false : true,
+                    });
+                    this.setState({
+                      Login: this.state.Login ? false : true,
+                    });
+                  }}
+                  changeRegister={() => {
+                    this.setState({
+                      show: true,
+                      Register: false,
+                    });
+                  }}
+                  checkoutpage="true"
+                />
+              </div>
+              <div
+                style={{
+                  display: this.state.Register == true ? "block" : "none",
+                }}
+              >
+                <Register
+                  change={() => {
+                    this.setState({
+                      Register: this.state.Register ? false : true,
+                    });
+                    this.setState({
+                      Login: this.state.Login ? false : true,
+                    });
+                  }}
+                />
+              </div>
+              <div
+                style={{
+                  display: this.state.Continue === true ? "block" : "none",
+                  color: "gray",
+                  textAlign: "center",
+                  borderTop: "1px solid #c1c1c1",
+                }}
+              >
+                <br />
+                Guest Checkout Not ready to become a member just yet?
+                <br />
+                <br />
+                <Button
+                  className="apply-b"
+                  onClick={() => {
+                    this.setState({
+                      Continue: this.state.Continue ? false : true,
+                    });
+                    this.setState({
+                      Login: this.state.Login ? false : true,
+                    });
+                  }}
+                >
+                  Continue As a Guest
+                </Button>
+              </div>
             </div>
             <div hidden={this.state.Continue}>
               <Continues
