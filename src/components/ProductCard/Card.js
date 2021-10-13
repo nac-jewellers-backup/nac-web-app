@@ -463,8 +463,8 @@ function Component(props) {
                   <Grid items>
                     {props.data.offerPrice === props.data.price ? (
                       <Typography
-                        variant="h6"
-                        component="h6"
+                        variant="h5"
+                        component="h5"
                         className={classes.offerMainPrice}
                         style={{
                           justifyContent: "flex-start",
@@ -477,12 +477,10 @@ function Component(props) {
                           style: "currency",
                           currency: "INR",
                           minimumFractionDigits: 0,
-                        }).format(Math.round(props.data.offerPrice))}
+                        }).format(Math.round(props.data.price))}
                       </Typography>
                     ) : (
                       <Typography
-                        variant="h6"
-                        component="h6"
                         className={classes.offerMainPrice}
                         style={{
                           justifyContent: "flex-start",
@@ -495,7 +493,7 @@ function Component(props) {
                           style: "currency",
                           currency: "INR",
                           minimumFractionDigits: 0,
-                        }).format(Math.round(props.data.offerPrice))}
+                        }).format(Math.round(props.data.price))}
                         <span style={{ display: "flex", alignSelf: "center" }}>
                           {" "}
                           <Typography
@@ -511,14 +509,25 @@ function Component(props) {
                               }}
                             >
                               <span>
-                                {props.data.offerPrice
+                                {props.data.offerPrice == 0
                                   ? " "
                                   : new Intl.NumberFormat("en-IN", {
                                       style: "currency",
                                       currency: "INR",
                                       minimumFractionDigits: 0,
-                                    }).format(Math.round(props.data.price))}
+                                    }).format(
+                                      Math.round(props.data.offerPrice)
+                                    )}
                               </span>
+                            </span>
+                            <span
+                              style={{ fontWeight: "bold", color: "#B78231" }}
+                            >
+                              {props.data.save == 0
+                                ? " "
+                                : ` ${Math.abs(
+                                    Math.round(props.data.save)
+                                  )}% OFF`}
                             </span>
                           </Typography>
                         </span>
@@ -526,26 +535,19 @@ function Component(props) {
                     )}{" "}
                   </Grid>
 
-                  <Grid items>
-                    <Typography className={classes.discountPercentage}>
-                      {props.data.save == 0
-                        ? " "
-                        : ` ${Math.round(props.data.save)}% OFF`}
-                      &nbsp;&nbsp;
-                    </Typography>
-                  </Grid>
+                  <Grid items></Grid>
                 </Grid>
                 <Grid container xs={12}>
                   <Typography
                     variant="body1"
                     component="span"
-                    style={{ paddingLeft: "5px", marginTop: "-4px" }}
+                    style={{ paddingLeft: "5px" }}
                     className={`${classes.titles}`}
                   >
+                    {" "}
                     {props.data.title.charAt(0).toUpperCase() +
                       props.data.title.slice(1)}
                   </Typography>
-                  <br />
                 </Grid>
               </Hidden>
             </Grid>
