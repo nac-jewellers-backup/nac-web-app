@@ -581,6 +581,7 @@ class ProductDetail extends Component {
                         (val) => {
                           return (
                             <ImgMediaCard
+                              shopothercategories={true}
                               data={val}
                               cardSize="auto"
                               hoverText={true}
@@ -714,6 +715,7 @@ class ProductDetail extends Component {
                     (val) => {
                       return (
                         <ImgMediaCard
+                          shopothercategories={true}
                           data={val}
                           cardSize="auto"
                           hoverText={true}
