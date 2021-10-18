@@ -1,5 +1,5 @@
 import { Grid, Hidden, Typography } from "@material-ui/core";
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "../product-image-slider/product-images.css";
 import "./pricing.css";
 import styles from "./style";
@@ -21,9 +21,9 @@ export default function Pricing(props) {
       {props.title ? (
         <Typography
           style={props.from && { margin: "auto", textTransform: "capitalize" }}
-          className={`pricing  ${(props.title != null) & (props.title !== "") ? "" : "shine"} ${
-            path == "stylori" && "pricingTitle"
-          }`}
+          className={`pricing  ${
+            (props.title != null) & (props.title !== "") ? "" : "shine"
+          } ${path == "stylori" && "pricingTitle"}`}
         >
           {props.title}
         </Typography>
@@ -37,7 +37,12 @@ export default function Pricing(props) {
         window.location.pathname !== "/checkout" ? (
           <Grid container>
             {props.pdpage && (
-              <Grid item xs={12} style={{ display: "flex", alignItems: "center" }} className={classes.alignval}>
+              <Grid
+                item
+                xs={12}
+                style={{ display: "flex", alignItems: "center" }}
+                className={classes.alignval}
+              >
                 {props.offerPrice ? (
                   <Typography style={{ display: "flex", width: "100%" }}>
                     <Typography
@@ -66,7 +71,7 @@ export default function Pricing(props) {
               </Grid>
             )}
             <Grid item xs={12} style={{ color: "grey" }}>
-              {props.price ? (
+              {props.price && window.location.pathname !== "/paymentsuccess" ? (
                 <>
                   <Typography style={{ display: "flex", width: "100%" }}>
                     <Typography
@@ -74,9 +79,13 @@ export default function Pricing(props) {
                         margin: props.from ? "auto" : "unset",
                         fontWeight: "bold",
                       }}
-                      className={`${(props.offerPrice != null) & (props.offerPrice !== "") ? "" : "shine"} ${classes.colorMain} ${
-                        classes.h6FontSize
-                      } ${classes.offerPricePadding} `}
+                      className={`${
+                        (props.offerPrice != null) & (props.offerPrice !== "")
+                          ? ""
+                          : "shine"
+                      } ${classes.colorMain} ${classes.h6FontSize} ${
+                        classes.offerPricePadding
+                      } `}
                     >
                       {new Intl.NumberFormat("en-IN", {
                         style: "currency",
@@ -101,7 +110,11 @@ export default function Pricing(props) {
                           <Typography
                             variant="caption"
                             component="p"
-                            className={`${(props.save != null) & (props.save !== "") ? "" : "shine"} ${classes.colorMain}  `}
+                            className={`${
+                              (props.save != null) & (props.save !== "")
+                                ? ""
+                                : "shine"
+                            } ${classes.colorMain}  `}
                           >
                             {path === "stylori" && "You save"} {props.save}
                           </Typography>
@@ -127,7 +140,11 @@ export default function Pricing(props) {
                         <Typography
                           variant="caption"
                           component="p"
-                          className={`${(props.save != null) & (props.save !== "") ? "" : "shine"} ${classes.colorMain}  `}
+                          className={`${
+                            (props.save != null) & (props.save !== "")
+                              ? ""
+                              : "shine"
+                          } ${classes.colorMain}  `}
                         >
                           {path === "stylori" && "You save"} {props.save}
                         </Typography>
@@ -141,14 +158,28 @@ export default function Pricing(props) {
             </Grid>
 
             {!props.pdpage && (
-              <Grid item xs={12} style={{ display: "flex", alignItems: "center" }} className={classes.alignval}>
+              <Grid
+                item
+                xs={12}
+                style={{ display: "flex", alignItems: "center" }}
+                className={classes.alignval}
+              >
                 {props.price ? (
-                  <Typography style={{ display: "flex", width: "100%" }} className={classes.resetpadd}>
+                  <Typography
+                    style={{ display: "flex", width: "100%" }}
+                    className={classes.resetpadd}
+                  >
                     <Typography
-                      style={props.from && { margin: "auto", paddingBottom: "10px" }}
-                      className={`pricing-p${(props.price != null) & (props.price !== "") ? "" : "shine"}${classes.colorMain} ${
-                        classes.h6FontSizeStrike
-                      } ${classes.offerPricePadding} ${classes.dis} ${classes.boldFont}`}
+                      style={
+                        props.from && { margin: "auto", paddingBottom: "10px" }
+                      }
+                      className={`pricing-p${
+                        (props.price != null) & (props.price !== "")
+                          ? ""
+                          : "shine"
+                      }${classes.colorMain} ${classes.h6FontSizeStrike} ${
+                        classes.offerPricePadding
+                      } ${classes.dis} ${classes.boldFont}`}
                     >
                       {props.offerPrice === props.price ? (
                         ""
@@ -288,15 +319,20 @@ export default function Pricing(props) {
                                 ({props.offerDiscount})
                               </span>
                             ) : (
-                              <Typography style={{ display: "flex", color: "gray" }}>
+                              <Typography
+                                style={{ display: "flex", color: "gray" }}
+                              >
                                 <Typography
                                   variant="caption"
                                   component="p"
-                                  className={`${(props.save != null) & (props.save !== "") ? "" : "shine"} ${
-                                    classes.colorMain
-                                  }  `}
+                                  className={`${
+                                    (props.save != null) & (props.save !== "")
+                                      ? ""
+                                      : "shine"
+                                  } ${classes.colorMain}  `}
                                 >
-                                  {path === "stylori" && "You save"} {props.save}
+                                  {path === "stylori" && "You save"}{" "}
+                                  {props.save}
                                 </Typography>
                               </Typography>
                             )}
@@ -326,9 +362,13 @@ export default function Pricing(props) {
                 <Typography style={{ display: "flex", width: "100%" }}>
                   <Typography
                     style={props.from && { margin: "auto" }}
-                    className={`${(props.offerPrice != null) & (props.offerPrice !== "") ? "" : "shine"} ${classes.colorMain} ${
-                      classes.h6FontSize
-                    } ${classes.offerPricePadding} `}
+                    className={`${
+                      (props.offerPrice != null) & (props.offerPrice !== "")
+                        ? ""
+                        : "shine"
+                    } ${classes.colorMain} ${classes.h6FontSize} ${
+                      classes.offerPricePadding
+                    } `}
                   >
                     {/* ₹&nbsp;{props.offerPrice} */}
                     {new Intl.NumberFormat("en-IN ", {
@@ -347,7 +387,7 @@ export default function Pricing(props) {
 
         {props.success ? (
           <>
-            {props.offerPrice == props.price ? (
+            {props.successofferPrice == props.successprice ? (
               <span
                 style={{
                   fontSize: "0.9rem",
@@ -359,7 +399,7 @@ export default function Pricing(props) {
                   style: "currency",
                   currency: "INR",
                   minimumFractionDigits: 0,
-                }).format(Math.round(props.offerPrice))}
+                }).format(Math.round(props.successofferPrice))}
               </span>
             ) : (
               <>
@@ -375,7 +415,7 @@ export default function Pricing(props) {
                     style: "currency",
                     currency: "INR",
                     minimumFractionDigits: 0,
-                  }).format(Math.round(props.offerPrice))}
+                  }).format(Math.round(props.successofferPrice))}
                 </span>
                 <span className={classes.price}>
                   &nbsp;&nbsp;
@@ -391,7 +431,7 @@ export default function Pricing(props) {
                       style: "currency",
                       currency: "INR",
                       minimumFractionDigits: 0,
-                    }).format(Math.round(props.price))}
+                    }).format(Math.round(props.successprice))}
                   </del>
                 </span>
               </>

@@ -1100,17 +1100,19 @@ class Allorders extends React.Component {
                                                                   .transSkuListByProductSku
                                                                   .markupPrice
                                                               }
-                                                              offerDiscount={
-                                                                "25% - OFF"
-                                                              }
                                                               success={true}
                                                             />
                                                           ) : (
                                                             <Pricing
-                                                              offerPrice={
+                                                              successofferPrice={
                                                                 cart
                                                                   .transSkuListByProductSku
                                                                   .markupPrice
+                                                              }
+                                                              successprice={
+                                                                cart
+                                                                  .transSkuListByProductSku
+                                                                  .discountPrice
                                                               }
                                                               success={true}
                                                             />
