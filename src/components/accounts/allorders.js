@@ -973,7 +973,34 @@ class Allorders extends React.Component {
                                                           lg={3}
                                                           xs={3}
                                                         >
-                                                          {cart &&
+                                                          <div
+                                                            className="viewport-img "
+                                                            style={{
+                                                              border:
+                                                                "1px solid gray",
+                                                            }}
+                                                          >
+                                                            <img
+                                                              height="100%"
+                                                              width="100%"
+                                                              src={
+                                                                cart
+                                                                  .transSkuListByProductSku
+                                                                  .productListByProductId
+                                                                  .productImagesByProductId
+                                                                  .nodes[0]
+                                                                  .imageUrl
+                                                                  ? cart
+                                                                      .transSkuListByProductSku
+                                                                      .productListByProductId
+                                                                      .productImagesByProductId
+                                                                      .nodes[0]
+                                                                      .imageUrl
+                                                                  : "https://styloriimages.s3.ap-south-1.amazonaws.com/Banners/Stylori+Silver/StyloriSilver+nemonic.png"
+                                                              }
+                                                            />
+                                                          </div>
+                                                          {/* {cart &&
                                                             cart.transSkuListByProductSku &&
                                                             cart.transSkuListByProductSku.productListByProductId.productImagesByProductId.nodes.map(
                                                               (imgs) =>
@@ -1030,7 +1057,7 @@ class Allorders extends React.Component {
                                                                     />
                                                                   </div>
                                                                 )
-                                                            )}
+                                                            )} */}
                                                         </Grid>
                                                         <Grid
                                                           item
