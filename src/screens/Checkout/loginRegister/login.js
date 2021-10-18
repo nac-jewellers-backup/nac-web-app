@@ -289,6 +289,10 @@ const LoginComponent = (props) => {
   };
   console.log(numberForm);
   const MobileNumSubmit = (e, history) => {};
+  const SendOTP = () => {
+    debugger;
+    React.useState({ ...numberForm, NumberSubmit: true });
+  };
   return (
     <>
       <div>
@@ -525,7 +529,7 @@ const LoginComponent = (props) => {
               </Grid>
               <br />
               <br />
-              <Button type="submit" className="apply-b">
+              <Button onClick={() => SendOTP()} className="apply-b">
                 SIGN IN
               </Button>
 
