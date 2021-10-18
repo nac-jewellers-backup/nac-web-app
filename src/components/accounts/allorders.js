@@ -15,6 +15,7 @@ import React from "react";
 import ReactPixel from "react-facebook-pixel";
 import { AiFillCaretLeft } from "react-icons/ai";
 import { withRouter } from "react-router-dom";
+import { API_URL } from "../../config";
 import "../Checkout/Cart.css";
 import Pricing from "../Pricing/index";
 // import "../../components/Checkout/Cart.css";
@@ -32,6 +33,7 @@ class Allorders extends React.Component {
   state = {
     expanded: [],
     check_img: null,
+    ShippingCharge: 0,
   };
   componentDidMount() {
     ReactPixel.init("1464338023867789", {}, { debug: true, autoConfig: false });
@@ -42,6 +44,18 @@ class Allorders extends React.Component {
           ?.shoppingCartByCartId?.discountedPrice,
       currency: "INR",
     });
+    fetch(`${API_URL}/getshippingcharge`, {
+      headers: {
+        "Content-Type": "application/json;charset=utf-8",
+      },
+      body: localStorage.getItem("cart_id"),
+      method: "POST",
+    })
+      .then(async (response) => response.json())
+      .then((val) => {
+        if (val) this.setState({ ShippingCharge: val.shipping_charge });
+      })
+      .catch((err) => {});
   }
   handleChange = (panel) => (event) => {
     const { expanded } = this.state;
@@ -157,7 +171,7 @@ class Allorders extends React.Component {
                   textAlign: "right",
                 }}
               >
-                SHIPPING
+                {this.state.ShippingCharge}
               </Typography>
             </div>
             <br />
@@ -929,170 +943,190 @@ class Allorders extends React.Component {
                                     Order Summery
                                   </b>
                                   <br />
-                                  {val &&
-                                    val.shoppingCartByCartId &&
-                                    val.shoppingCartByCartId
-                                      .shoppingCartItemsByShoppingCartId &&
-                                    val.shoppingCartByCartId.shoppingCartItemsByShoppingCartId.nodes.map(
-                                      (cart) => {
-                                        if (
-                                          cart &&
-                                          cart.transSkuListByProductSku
-                                        )
-                                          return (
-                                            <>
-                                              <div className="rootdiv1">
-                                                <div className="cardpadding">
-                                                  <div className="cardpadding1">
-                                                    <Grid
-                                                      container
-                                                      spacing={3}
-                                                      style={{
-                                                        overflow: "hidden",
-                                                        outline: "none",
-                                                        color: "gray",
-                                                      }}
-                                                    >
-                                                      <Grid item lg={3} xs={3}>
-                                                        {cart &&
-                                                          cart.transSkuListByProductSku &&
-                                                          cart.transSkuListByProductSku.productListByProductId.productImagesByProductId.nodes.map(
-                                                            (imgs) =>
-                                                              this.ImageUrl(
-                                                                imgs,
-                                                                cart &&
-                                                                  cart.transSkuListByProductSku &&
-                                                                  cart
-                                                                    .transSkuListByProductSku
-                                                                    .generatedSku,
-                                                                cart
-                                                                  .transSkuListByProductSku
-                                                                  .metalColor,
-                                                                paymentsuccess
-                                                              ) ? (
-                                                                <div className="viewport-img-border ">
-                                                                  <img
-                                                                    className="viewport-img"
-                                                                    src={this.ImageUrl(
-                                                                      imgs,
-                                                                      cart &&
-                                                                        cart.transSkuListByProductSku &&
-                                                                        cart
-                                                                          .transSkuListByProductSku
-                                                                          .generatedSku,
-                                                                      cart
-                                                                        .transSkuListByProductSku
-                                                                        .metalColor,
-                                                                      paymentsuccess
-                                                                    )}
-                                                                    alt=""
-                                                                  />
-                                                                </div>
-                                                              ) : (
-                                                                <div className="viewport-img-border">
-                                                                  <img
-                                                                    className="viewport-img"
-                                                                    src="https://styloriimages.s3.ap-south-1.amazonaws.com/Banners/Stylori+Silver/StyloriSilver+nemonic.png"
-                                                                    alt=""
-                                                                  />
-                                                                </div>
-                                                              )
-                                                          )}
-                                                      </Grid>
-                                                      <Grid item lg={6} xs={6}>
-                                                        <div>
-                                                          <Hidden smDown>
-                                                            <br />
-                                                          </Hidden>
-                                                          <Typography className="data">
-                                                            {
-                                                              cart
-                                                                .transSkuListByProductSku
-                                                                .productListByProductId
-                                                                .productName
-                                                            }
-                                                          </Typography>
-                                                          <Typography className="data">
-                                                            {
-                                                              cart
-                                                                .transSkuListByProductSku
-                                                                .generatedSku
-                                                            }
-                                                          </Typography>
-                                                          <Typography className="data">
-                                                            {this.generateShipsBy(
-                                                              cart
-                                                                .transSkuListByProductSku
-                                                                .readytoship,
-                                                              cart
-                                                                .transSkuListByProductSku
-                                                                .vendorDeliveryTime
-                                                            )}
-                                                          </Typography>
-                                                        </div>
-                                                      </Grid>
+                                  <div style={{ backgroundColor: "#f3f3f3" }}>
+                                    {val &&
+                                      val.shoppingCartByCartId &&
+                                      val.shoppingCartByCartId
+                                        .shoppingCartItemsByShoppingCartId &&
+                                      val.shoppingCartByCartId.shoppingCartItemsByShoppingCartId.nodes.map(
+                                        (cart) => {
+                                          if (
+                                            cart &&
+                                            cart.transSkuListByProductSku
+                                          )
+                                            return (
+                                              <>
+                                                <div className="rootdiv1">
+                                                  <div className="cardpadding">
+                                                    <div className="cardpadding1">
                                                       <Grid
-                                                        item
-                                                        lg={3}
-                                                        xs={3}
+                                                        container
+                                                        spacing={3}
                                                         style={{
-                                                          alignItems: "center",
+                                                          overflow: "hidden",
+                                                          outline: "none",
+                                                          color: "gray",
                                                         }}
                                                       >
-                                                        <Hidden smDown>
+                                                        <Grid
+                                                          item
+                                                          lg={3}
+                                                          xs={3}
+                                                        >
+                                                          {cart &&
+                                                            cart.transSkuListByProductSku &&
+                                                            cart.transSkuListByProductSku.productListByProductId.productImagesByProductId.nodes.map(
+                                                              (imgs) =>
+                                                                this.ImageUrl(
+                                                                  imgs,
+                                                                  cart &&
+                                                                    cart.transSkuListByProductSku &&
+                                                                    cart
+                                                                      .transSkuListByProductSku
+                                                                      .generatedSku,
+                                                                  cart
+                                                                    .transSkuListByProductSku
+                                                                    .metalColor,
+                                                                  paymentsuccess
+                                                                ) ? (
+                                                                  <div
+                                                                    className="viewport-img "
+                                                                    style={{
+                                                                      border:
+                                                                        "1px solid gray",
+                                                                    }}
+                                                                  >
+                                                                    <img
+                                                                      height="100%"
+                                                                      width="100%"
+                                                                      src={this.ImageUrl(
+                                                                        imgs,
+                                                                        cart &&
+                                                                          cart.transSkuListByProductSku &&
+                                                                          cart
+                                                                            .transSkuListByProductSku
+                                                                            .generatedSku,
+                                                                        cart
+                                                                          .transSkuListByProductSku
+                                                                          .metalColor,
+                                                                        paymentsuccess
+                                                                      )}
+                                                                      alt=""
+                                                                    />
+                                                                  </div>
+                                                                ) : (
+                                                                  <div
+                                                                    className="viewport-img"
+                                                                    style={{
+                                                                      border:
+                                                                        "1px solid gray",
+                                                                    }}
+                                                                  >
+                                                                    <img
+                                                                      height="100%"
+                                                                      width="100%"
+                                                                      src="https://styloriimages.s3.ap-south-1.amazonaws.com/Banners/Stylori+Silver/StyloriSilver+nemonic.png"
+                                                                      alt=""
+                                                                    />
+                                                                  </div>
+                                                                )
+                                                            )}
+                                                        </Grid>
+                                                        <Grid
+                                                          item
+                                                          lg={6}
+                                                          xs={6}
+                                                        >
+                                                          <div>
+                                                            <Hidden smDown>
+                                                              <br />
+                                                            </Hidden>
+                                                            <Typography className="data">
+                                                              {
+                                                                cart
+                                                                  .transSkuListByProductSku
+                                                                  .productListByProductId
+                                                                  .productName
+                                                              }
+                                                            </Typography>
+                                                            <Typography className="data">
+                                                              {
+                                                                cart
+                                                                  .transSkuListByProductSku
+                                                                  .generatedSku
+                                                              }
+                                                            </Typography>
+                                                            <Typography className="data">
+                                                              {this.generateShipsBy(
+                                                                cart
+                                                                  .transSkuListByProductSku
+                                                                  .readytoship,
+                                                                cart
+                                                                  .transSkuListByProductSku
+                                                                  .vendorDeliveryTime
+                                                              )}
+                                                            </Typography>
+                                                          </div>
+                                                        </Grid>
+                                                        <Grid
+                                                          item
+                                                          lg={3}
+                                                          xs={3}
+                                                          style={{
+                                                            alignItems:
+                                                              "center",
+                                                          }}
+                                                        >
+                                                          <Hidden smDown>
+                                                            <br />
+                                                            <br />
+                                                          </Hidden>
+                                                          {Math.round(
+                                                            cart.discountPrice
+                                                          ) >
+                                                          Math.round(
+                                                            cart
+                                                              .transSkuListByProductSku
+                                                              .markupPrice
+                                                          ) ? (
+                                                            <Pricing
+                                                              price={
+                                                                cart
+                                                                  .transSkuListByProductSku
+                                                                  .discountPrice
+                                                              }
+                                                              offerPrice={
+                                                                cart
+                                                                  .transSkuListByProductSku
+                                                                  .markupPrice
+                                                              }
+                                                              offerDiscount={
+                                                                "25% - OFF"
+                                                              }
+                                                              success={true}
+                                                            />
+                                                          ) : (
+                                                            <Pricing
+                                                              offerPrice={
+                                                                cart
+                                                                  .transSkuListByProductSku
+                                                                  .markupPrice
+                                                              }
+                                                              success={true}
+                                                            />
+                                                          )}
                                                           <br />
-                                                          <br />
-                                                        </Hidden>
-                                                        {Math.round(
-                                                          cart.discountPrice
-                                                        ) >
-                                                        Math.round(
-                                                          cart
-                                                            .transSkuListByProductSku
-                                                            .markupPrice
-                                                        ) ? (
-                                                          <Pricing
-                                                            price={
-                                                              cart
-                                                                .transSkuListByProductSku
-                                                                .discountPrice
-                                                            }
-                                                            offerPrice={
-                                                              cart
-                                                                .transSkuListByProductSku
-                                                                .markupPrice
-                                                            }
-                                                            offerDiscount={
-                                                              "25% - OFF"
-                                                            }
-                                                            success={true}
-                                                          />
-                                                        ) : (
-                                                          <Pricing
-                                                            offerPrice={
-                                                              cart
-                                                                .transSkuListByProductSku
-                                                                .markupPrice
-                                                            }
-                                                            success={true}
-                                                          />
-                                                        )}
-                                                        <br />
+                                                        </Grid>
                                                       </Grid>
-                                                    </Grid>
+                                                    </div>
+                                                    <div className="bordercard"></div>
                                                   </div>
-                                                  <hr
-                                                    style={{
-                                                      border:
-                                                        "1px solid #c1c1c1",
-                                                    }}
-                                                  />
                                                 </div>
-                                              </div>
-                                            </>
-                                          );
-                                      }
-                                    )}
+                                              </>
+                                            );
+                                        }
+                                      )}
+                                  </div>
                                   <Hidden smDown>
                                     <br />
                                     <br />

@@ -50,9 +50,12 @@ class Checkoutcard extends React.Component {
         let shipByDate = "";
         if (productShipBy) {
           dateObj = new Date(productShipBy);
-          shipByDate = `Ships by ${dateObj.getUTCDate()} ${dateObj.toLocaleString("default", {
-            month: "long",
-          })} ${dateObj.getUTCFullYear()}`;
+          shipByDate = `Ships by ${dateObj.getUTCDate()} ${dateObj.toLocaleString(
+            "default",
+            {
+              month: "long",
+            }
+          )} ${dateObj.getUTCFullYear()}`;
         }
 
         shipby_arr_object.push({
@@ -87,7 +90,11 @@ class Checkoutcard extends React.Component {
 
   handleCartQuantity = (skuId) => {
     const filters =
-      this.props.filters && this.props.filters.quantity && Object.keys(this.props.filters.quantity).length > 0 ? true : false;
+      this.props.filters &&
+      this.props.filters.quantity &&
+      Object.keys(this.props.filters.quantity).length > 0
+        ? true
+        : false;
     if (filters) return this.props.filters.quantity[skuId];
     else return JSON.parse(localStorage.getItem("quantity"))[skuId];
   };
@@ -97,7 +104,8 @@ class Checkoutcard extends React.Component {
     var _localStorageQuantity = JSON.parse(localStorage.getItem("quantity"));
 
     // var currentValue = e.target.id
-    var currentValue = e.target.id && e.target.id.length > 0 ? e.target.id : e.currentTarget.id;
+    var currentValue =
+      e.target.id && e.target.id.length > 0 ? e.target.id : e.currentTarget.id;
 
     var a = local_storage.products.filter((val) => {
       if (currentValue !== val.sku_id) {
@@ -144,12 +152,17 @@ class Checkoutcard extends React.Component {
             products: a,
           });
           delete _localStorageQuantity[currentValue];
-          localStorage.setItem("quantity", JSON.stringify(_localStorageQuantity));
+          localStorage.setItem(
+            "quantity",
+            JSON.stringify(_localStorageQuantity)
+          );
           localStorage.setItem("cartDetails", localstorage);
           window.location.reload();
         });
     } else {
-      var _products = JSON.parse(localStorage.getItem("cartDetails")).products.filter((val) => {
+      var _products = JSON.parse(
+        localStorage.getItem("cartDetails")
+      ).products.filter((val) => {
         if (val.sku_id !== currentValue) return val;
       });
       var cartId = JSON.parse(localStorage.getItem("cartDetails")).cart_id;
@@ -175,7 +188,16 @@ class Checkoutcard extends React.Component {
     }
     var redirect_url;
     redirect_url = data.map(
-      (val) => "/jewellery" + "/" + val.productType + "/" + val.materialName + "/" + val.prdheader + "/" + val.generatedSku
+      (val) =>
+        "/jewellery" +
+        "/" +
+        val.productType +
+        "/" +
+        val.materialName +
+        "/" +
+        val.prdheader +
+        "/" +
+        val.generatedSku
     );
     return alert(JSON.stringify(redirect_url));
   };
@@ -252,30 +274,52 @@ class Checkoutcard extends React.Component {
                           >
                             <>
                               {window.location.pathname !== "/checkout" ? (
-                                <NavLink to={dataval?.skuUrl} style={{ textDecoration: "none" }}>
+                                <NavLink
+                                  to={dataval?.skuUrl}
+                                  style={{ textDecoration: "none" }}
+                                >
+                                  <div
+                                    style={{
+                                      border: "1px solid #D2D3D4",
+                                      display: "inline-block",
+                                    }}
+                                  >
+                                    <img
+                                      style={{
+                                        objectFit: "contain",
+                                      }}
+                                      alt="img"
+                                      src={dataval?.fadeImages[0]?.imageUrl}
+                                    ></img>
+                                  </div>
+                                </NavLink>
+                              ) : (
+                                <div
+                                  style={{
+                                    border: "1px solid #D2D3D4",
+                                    display: "inline-block",
+                                  }}
+                                  className={classes.cardimg}
+                                >
                                   <img
                                     style={{
                                       objectFit: "contain",
                                     }}
                                     alt="img"
+                                    height="100%"
+                                    width="100%"
                                     src={dataval?.fadeImages[0]?.imageUrl}
                                   ></img>
-                                </NavLink>
-                              ) : (
-                                <img
-                                  style={{
-                                    objectFit: "contain",
-                                  }}
-                                  alt="img"
-                                  src={dataval?.fadeImages[0]?.imageUrl}
-                                  className={classes.cardimg}
-                                ></img>
+                                </div>
                               )}
                             </>
                           </Grid>
                           <Grid item xs={5} sm={6} style={{ padding: "13px" }}>
                             {window.location.pathname !== "/checkout" ? (
-                              <NavLink to={dataval.skuUrl} style={{ textDecoration: "none" }}>
+                              <NavLink
+                                to={dataval.skuUrl}
+                                style={{ textDecoration: "none" }}
+                              >
                                 <span
                                   style={{
                                     color: "gray",
@@ -302,7 +346,11 @@ class Checkoutcard extends React.Component {
                                   {this.state.shipby_arr.map((val) => (
                                     <>
                                       {val.skuId === dataval.generatedSku ? (
-                                        <Typography className={classes.cardtitle}>{val.shipby}</Typography>
+                                        <Typography
+                                          className={classes.cardtitle}
+                                        >
+                                          {val.shipby}
+                                        </Typography>
                                       ) : (
                                         ""
                                       )}
@@ -322,12 +370,22 @@ class Checkoutcard extends React.Component {
                                     <>
                                       <Pricing
                                         detail={dataval}
-                                        offerDiscount={val.discount ? `${val.discount}% - OFF` : null}
+                                        offerDiscount={
+                                          val.discount
+                                            ? `${val.discount}% - OFF`
+                                            : null
+                                        }
                                         price={
-                                          val.offerPrice * (JSON.parse(localStorage.getItem("quantity"))[val.generatedSku] ?? 1)
+                                          val.offerPrice *
+                                          (JSON.parse(
+                                            localStorage.getItem("quantity")
+                                          )[val.generatedSku] ?? 1)
                                         }
                                         offerPrice={
-                                          val.price * (JSON.parse(localStorage.getItem("quantity"))[val.generatedSku] ?? 1)
+                                          val.price *
+                                          (JSON.parse(
+                                            localStorage.getItem("quantity")
+                                          )[val.generatedSku] ?? 1)
                                         }
                                         checkoutpage={true}
                                         quantity={this.state.quantity}
@@ -396,8 +454,12 @@ class Checkoutcard extends React.Component {
                                   }}
                                 >
                                   <>
-                                    {window.location.pathname !== "/checkout" ? (
-                                      <NavLink to={dataval?.skuUrl} style={{ textDecoration: "none" }}>
+                                    {window.location.pathname !==
+                                    "/checkout" ? (
+                                      <NavLink
+                                        to={dataval?.skuUrl}
+                                        style={{ textDecoration: "none" }}
+                                      >
                                         <img
                                           style={{
                                             width: "100%",
@@ -422,9 +484,17 @@ class Checkoutcard extends React.Component {
                                     )}
                                   </>
                                 </Grid>
-                                <Grid item xs={6} sm={6} style={{ padding: "12px" }}>
+                                <Grid
+                                  item
+                                  xs={6}
+                                  sm={6}
+                                  style={{ padding: "12px" }}
+                                >
                                   {window.location.pathname !== "/checkout" ? (
-                                    <NavLink to={dataval.skuUrl} style={{ textDecoration: "none" }}>
+                                    <NavLink
+                                      to={dataval.skuUrl}
+                                      style={{ textDecoration: "none" }}
+                                    >
                                       <span
                                         style={{
                                           color: "gray",
@@ -450,8 +520,13 @@ class Checkoutcard extends React.Component {
                                       <div>
                                         {this.state.shipby_arr.map((val) => (
                                           <>
-                                            {val.skuId === dataval.generatedSku ? (
-                                              <Typography className={classes.cardtitle}>{val.shipby}</Typography>
+                                            {val.skuId ===
+                                            dataval.generatedSku ? (
+                                              <Typography
+                                                className={classes.cardtitle}
+                                              >
+                                                {val.shipby}
+                                              </Typography>
                                             ) : (
                                               ""
                                             )}
@@ -471,13 +546,26 @@ class Checkoutcard extends React.Component {
                                           <>
                                             <Pricing
                                               detail={dataval}
-                                              offerDiscount={val.discount ? `${val.discount}% - OFF` : null}
+                                              offerDiscount={
+                                                val.discount
+                                                  ? `${val.discount}% - OFF`
+                                                  : null
+                                              }
                                               price={
                                                 val.offerPrice *
-                                                (JSON.parse(localStorage.getItem("quantity"))[val.generatedSku] ?? 1)
+                                                (JSON.parse(
+                                                  localStorage.getItem(
+                                                    "quantity"
+                                                  )
+                                                )[val.generatedSku] ?? 1)
                                               }
                                               offerPrice={
-                                                val.price * (JSON.parse(localStorage.getItem("quantity"))[val.generatedSku] ?? 1)
+                                                val.price *
+                                                (JSON.parse(
+                                                  localStorage.getItem(
+                                                    "quantity"
+                                                  )
+                                                )[val.generatedSku] ?? 1)
                                               }
                                               checkoutpage={true}
                                               quantity={this.state.quantity}
@@ -574,26 +662,55 @@ class Checkoutcard extends React.Component {
                               alignContent: "center",
                               alignItems: "center",
                               padding: "1px",
-                              border: "1px solid #D2D3D4",
                             }}
                           >
                             <>
                               {window.location.pathname !== "/checkout" ? (
-                                <NavLink to={dataval?.skuUrl} style={{ textDecoration: "none" }}>
+                                <NavLink
+                                  to={dataval?.skuUrl}
+                                  style={{ textDecoration: "none" }}
+                                >
                                   <center>
-                                    <img style={{ width: "70%" }} src={dataval?.fadeImages[0]?.imageUrl}></img>
+                                    <div
+                                      style={{
+                                        border: "1px solid #D2D3D4",
+                                      }}
+                                    >
+                                      <img
+                                        style={{ width: "70%" }}
+                                        src={dataval?.fadeImages[0]?.imageUrl}
+                                      ></img>
+                                    </div>
                                   </center>
                                 </NavLink>
                               ) : (
                                 <center>
-                                  <img style={{ width: "50%" }} src={dataval?.fadeImages[0]?.imageUrl}></img>
+                                  <div
+                                    style={{
+                                      border: "1px solid #D2D3D4",
+                                    }}
+                                  >
+                                    <img
+                                      style={{ width: "50%" }}
+                                      src={dataval?.fadeImages[0]?.imageUrl}
+                                    ></img>
+                                  </div>
                                 </center>
                               )}
                             </>
                           </Grid>
-                          <Grid item xs={5} sm={7} lg={6} style={{ padding: "13px" }}>
+                          <Grid
+                            item
+                            xs={5}
+                            sm={7}
+                            lg={6}
+                            style={{ padding: "13px" }}
+                          >
                             {window.location.pathname !== "/checkout" ? (
-                              <NavLink to={dataval.skuUrl} style={{ textDecoration: "none" }}>
+                              <NavLink
+                                to={dataval.skuUrl}
+                                style={{ textDecoration: "none" }}
+                              >
                                 <span
                                   style={{
                                     color: "gray",
@@ -604,7 +721,9 @@ class Checkoutcard extends React.Component {
                                 </span>
                               </NavLink>
                             ) : (
-                              <h3 className={`title ${classes.normalfonts}`}>{val.pro_header}</h3>
+                              <h3 className={`title ${classes.normalfonts}`}>
+                                {val.pro_header}
+                              </h3>
                             )}
                             <Grid
                               container
@@ -628,10 +747,16 @@ class Checkoutcard extends React.Component {
                                     {dataval.maxOrderQty === 1 ? (
                                       <Grid container>
                                         <Grid item xs={6}>
-                                          <Typography className={`subhesder ${classes.normalfonts}`}>Quantity :</Typography>
+                                          <Typography
+                                            className={`subhesder ${classes.normalfonts}`}
+                                          >
+                                            Quantity :
+                                          </Typography>
                                         </Grid>
                                         <Grid item xs={6}>
-                                          <Typography className={`subhesder ${classes.normalfonts}`}>
+                                          <Typography
+                                            className={`subhesder ${classes.normalfonts}`}
+                                          >
                                             {dataval.maxOrderQty}
                                           </Typography>
                                         </Grid>
@@ -639,21 +764,37 @@ class Checkoutcard extends React.Component {
                                     ) : (
                                       <>
                                         <Grid item>
-                                          <Typography className={`subhesder ${classes.normalfonts}`}>Quantity :</Typography>
+                                          <Typography
+                                            className={`subhesder ${classes.normalfonts}`}
+                                          >
+                                            Quantity :
+                                          </Typography>
                                         </Grid>
                                         <Grid item>
                                           <Select
                                             labelId="demo-simple-select-label"
                                             id="demo-simple-select"
                                             variant="standard"
-                                            value={this?.state?.quantity[index]?.Qty ?? 1}
+                                            value={
+                                              this?.state?.quantity[index]
+                                                ?.Qty ?? 1
+                                            }
                                             onChange={(e) =>
-                                              this.onChangeQuantity(e, this.state.quantity[index].generateSku, index)
+                                              this.onChangeQuantity(
+                                                e,
+                                                this.state.quantity[index]
+                                                  .generateSku,
+                                                index
+                                              )
                                             }
                                             color="secondary"
                                           >
-                                            {this?.state?.quantity[index]?.QtyArr?.map((data) => (
-                                              <MenuItem value={data}>{data}</MenuItem>
+                                            {this?.state?.quantity[
+                                              index
+                                            ]?.QtyArr?.map((data) => (
+                                              <MenuItem value={data}>
+                                                {data}
+                                              </MenuItem>
                                             ))}
                                           </Select>
                                         </Grid>
@@ -665,7 +806,11 @@ class Checkoutcard extends React.Component {
                                   {this.state.shipby_arr.map((val) => (
                                     <>
                                       {val.skuId === dataval.generatedSku ? (
-                                        <Typography className={`subhesder ${classes.normalfonts}`}>{val.shipby}</Typography>
+                                        <Typography
+                                          className={`subhesder ${classes.normalfonts}`}
+                                        >
+                                          {val.shipby}
+                                        </Typography>
                                       ) : (
                                         ""
                                       )}
@@ -676,12 +821,22 @@ class Checkoutcard extends React.Component {
                                       <>
                                         <Pricing
                                           detail={dataval}
-                                          offerDiscount={val.discount ? `${val.discount}% - OFF` : null}
+                                          offerDiscount={
+                                            val.discount
+                                              ? `${val.discount}% - OFF`
+                                              : null
+                                          }
                                           price={
-                                            val.offerPrice * (JSON.parse(localStorage.getItem("quantity"))[val.generatedSku] ?? 1)
+                                            val.offerPrice *
+                                            (JSON.parse(
+                                              localStorage.getItem("quantity")
+                                            )[val.generatedSku] ?? 1)
                                           }
                                           offerPrice={
-                                            val.price * (JSON.parse(localStorage.getItem("quantity"))[val.generatedSku] ?? 1)
+                                            val.price *
+                                            (JSON.parse(
+                                              localStorage.getItem("quantity")
+                                            )[val.generatedSku] ?? 1)
                                           }
                                           quantity={this.state.quantity}
                                         ></Pricing>
@@ -699,7 +854,9 @@ class Checkoutcard extends React.Component {
 
                                 <Button
                                   id={dataval.generatedSku}
-                                  onClick={(event) => this.handleDeleteLocalStorage(event)}
+                                  onClick={(event) =>
+                                    this.handleDeleteLocalStorage(event)
+                                  }
                                   variant="contained"
                                   style={{
                                     color: "gray",
@@ -714,7 +871,10 @@ class Checkoutcard extends React.Component {
                                 >
                                   Remove
                                 </Button>
-                                <WishlistButton sku={dataval.generatedSku} productId={dataval.productId} />
+                                <WishlistButton
+                                  sku={dataval.generatedSku}
+                                  productId={dataval.productId}
+                                />
 
                                 {/* 
                                {console.log(dataval.isActive)} */}
@@ -767,7 +927,9 @@ class Checkoutcard extends React.Component {
                       </Grid>
                     </div>
                   </Hidden>
-                  <div className={classes.paddingCart}>{this.subtotals(props)}</div>
+                  <div className={classes.paddingCart}>
+                    {this.subtotals(props)}
+                  </div>
                 </div>
               </Grid>
             </Grid>
@@ -813,7 +975,11 @@ class Checkoutcard extends React.Component {
                 {window.location.pathname === "/cart" ? (
                   <Grid container direction="row">
                     <Grid item xs={12}>
-                      <Box display="flex" flexDirection="row" justifyContent="center">
+                      <Box
+                        display="flex"
+                        flexDirection="row"
+                        justifyContent="center"
+                      >
                         <Box>
                           <img
                             className={classes.img}
@@ -862,7 +1028,10 @@ class Checkoutcard extends React.Component {
                       >
                         <Grid xs={4}>
                           {window.location.pathname !== "/checkout" ? (
-                            <NavLink to={dataval?.skuUrl} style={{ textDecoration: "none" }}>
+                            <NavLink
+                              to={dataval?.skuUrl}
+                              style={{ textDecoration: "none" }}
+                            >
                               <img
                                 width="100%"
                                 alt="images"
@@ -922,10 +1091,16 @@ class Checkoutcard extends React.Component {
                                 {dataval.maxOrderQty === 1 ? (
                                   <Grid container>
                                     <Grid item xs={4}>
-                                      <Typography className={`subhesder ${classes.normalfonts}`}>Quantity :</Typography>
+                                      <Typography
+                                        className={`subhesder ${classes.normalfonts}`}
+                                      >
+                                        Quantity :
+                                      </Typography>
                                     </Grid>
                                     <Grid item xs={4}>
-                                      <Typography className={`subhesder ${classes.normalfonts}`}>
+                                      <Typography
+                                        className={`subhesder ${classes.normalfonts}`}
+                                      >
                                         {dataval.maxOrderQty}
                                       </Typography>
                                     </Grid>
@@ -934,7 +1109,11 @@ class Checkoutcard extends React.Component {
                                   <>
                                     <Grid container>
                                       <Grid item xs={4}>
-                                        <Typography className={`subhesder ${classes.normalfonts}`}>Quantity :</Typography>
+                                        <Typography
+                                          className={`subhesder ${classes.normalfonts}`}
+                                        >
+                                          Quantity :
+                                        </Typography>
                                       </Grid>
                                       <Grid item xs={4}>
                                         <Select
@@ -942,14 +1121,26 @@ class Checkoutcard extends React.Component {
                                           labelId="demo-simple-select-label"
                                           id="demo-simple-select"
                                           variant="standard"
-                                          value={this?.state?.quantity[index]?.Qty ?? 1}
+                                          value={
+                                            this?.state?.quantity[index]?.Qty ??
+                                            1
+                                          }
                                           onChange={(e) =>
-                                            this.onChangeQuantity(e, this.state.quantity[index].generateSku, index)
+                                            this.onChangeQuantity(
+                                              e,
+                                              this.state.quantity[index]
+                                                .generateSku,
+                                              index
+                                            )
                                           }
                                           color="secondary"
                                         >
-                                          {this?.state?.quantity[index]?.QtyArr?.map((data) => (
-                                            <MenuItem value={data}>{data}</MenuItem>
+                                          {this?.state?.quantity[
+                                            index
+                                          ]?.QtyArr?.map((data) => (
+                                            <MenuItem value={data}>
+                                              {data}
+                                            </MenuItem>
                                           ))}
                                         </Select>
                                       </Grid>
@@ -961,9 +1152,21 @@ class Checkoutcard extends React.Component {
                             {dataval.dataCard1.map((val) => (
                               <Pricing
                                 detail={dataval}
-                                offerDiscount={val.discount ? `${val.discount}% - OFF` : null}
-                                price={val.offerPrice * (JSON.parse(localStorage.getItem("quantity"))[val.generatedSku] ?? 1)}
-                                offerPrice={val.price * (JSON.parse(localStorage.getItem("quantity"))[val.generatedSku] ?? 1)}
+                                offerDiscount={
+                                  val.discount ? `${val.discount}% - OFF` : null
+                                }
+                                price={
+                                  val.offerPrice *
+                                  (JSON.parse(localStorage.getItem("quantity"))[
+                                    val.generatedSku
+                                  ] ?? 1)
+                                }
+                                offerPrice={
+                                  val.price *
+                                  (JSON.parse(localStorage.getItem("quantity"))[
+                                    val.generatedSku
+                                  ] ?? 1)
+                                }
                                 quantity={this.state.quantity}
                               ></Pricing>
                             ))}
@@ -974,7 +1177,9 @@ class Checkoutcard extends React.Component {
                           <Grid item xs={5} sm={6}>
                             <Button
                               id={dataval.generatedSku}
-                              onClick={(event) => this.handleDeleteLocalStorage(event)}
+                              onClick={(event) =>
+                                this.handleDeleteLocalStorage(event)
+                              }
                               variant="contained"
                               style={{
                                 color: "gray",
@@ -992,7 +1197,10 @@ class Checkoutcard extends React.Component {
                             </Button>
                           </Grid>
                           <Grid item xs={7} sm={6}>
-                            <WishlistButton sku={dataval.generatedSku} productId={dataval.productId} />
+                            <WishlistButton
+                              sku={dataval.generatedSku}
+                              productId={dataval.productId}
+                            />
                             {!dataval.isActive ? (
                               <span
                                 style={{
@@ -1034,8 +1242,20 @@ class Checkoutcard extends React.Component {
           borderRadius: "0px",
         }}
       >
-        <AccordionSummary expandIcon={expanded ? <AiFillCaretLeft fontSize="18px" /> : <AiFillCaretRight fontSize="18px" />}>
-          <Typography className={classes.cartheader} noWrap style={{ display: "flex", justifyContent: "center" }}>
+        <AccordionSummary
+          expandIcon={
+            expanded ? (
+              <AiFillCaretLeft fontSize="18px" />
+            ) : (
+              <AiFillCaretRight fontSize="18px" />
+            )
+          }
+        >
+          <Typography
+            className={classes.cartheader}
+            noWrap
+            style={{ display: "flex", justifyContent: "center" }}
+          >
             <IoPricetagsOutline color="#394579" fontSize="18px" />
             &nbsp;&nbsp;&nbsp;<b>Apply Coupon</b>
           </Typography>
@@ -1090,10 +1310,15 @@ class Checkoutcard extends React.Component {
     );
   };
   subtotals = (props, quantity) => {
-    var discounted_price = this.props.cartFilters.discounted_price ? this.props.cartFilters.discounted_price : "";
+    var discounted_price = this.props.cartFilters.discounted_price
+      ? this.props.cartFilters.discounted_price
+      : "";
     const dataCard1 = this.props.data
       .map((val) => {
-        return val.dataCard1[0].offerPrice * (JSON.parse(localStorage.getItem("quantity"))[val.generatedSku] ?? 1);
+        return (
+          val.dataCard1[0].offerPrice *
+          (JSON.parse(localStorage.getItem("quantity"))[val.generatedSku] ?? 1)
+        );
       })
       .reduce(myFunc);
     function myFunc(total, num) {
@@ -1109,8 +1334,12 @@ class Checkoutcard extends React.Component {
     var yousave = this.props.data
       .map((_data) => {
         return (
-          _data.dataCard1[0].price * (JSON.parse(localStorage.getItem("quantity"))[_data.generatedSku] ?? 1) -
-          _data.dataCard1[0].offerPrice * (JSON.parse(localStorage.getItem("quantity"))[_data.generatedSku] ?? 1)
+          _data.dataCard1[0].price *
+            (JSON.parse(localStorage.getItem("quantity"))[_data.generatedSku] ??
+              1) -
+          _data.dataCard1[0].offerPrice *
+            (JSON.parse(localStorage.getItem("quantity"))[_data.generatedSku] ??
+              1)
         );
       })
       .reduce(myFunc);
@@ -1140,17 +1369,25 @@ class Checkoutcard extends React.Component {
             </Hidden>
             <Grid container>
               <Grid xs={6}>
-                <Typography className={`subhesder ${classes.normalfonts}`}>Subtotal</Typography>
+                <Typography className={`subhesder ${classes.normalfonts}`}>
+                  Subtotal
+                </Typography>
                 {yousave !== 0 || props.cartFilters.tax_price ? (
-                  <Typography className={`subhesder ${classes.normalfonts}`}>You Saved</Typography>
+                  <Typography className={`subhesder ${classes.normalfonts}`}>
+                    You Saved
+                  </Typography>
                 ) : null}
 
                 {props.cartFilters.tax_price ? (
-                  <Typography className={`subhesder ${classes.normalfonts}`}>{props.cartFilters.coupon_type}</Typography>
+                  <Typography className={`subhesder ${classes.normalfonts}`}>
+                    {props.cartFilters.coupon_type}
+                  </Typography>
                 ) : (
                   ""
                 )}
-                <Typography className={`subhesder ${classes.normalfonts}`}>Coupon Prize</Typography>
+                <Typography className={`subhesder ${classes.normalfonts}`}>
+                  Coupon Prize
+                </Typography>
                 <Typography className={`subhesder ${classes.normalfonts}`}>
                   Delivery Charge
                   <br />
@@ -1181,7 +1418,9 @@ class Checkoutcard extends React.Component {
                             style: "currency",
                             currency: "INR",
                             minimumFractionDigits: 0,
-                          }).format(Math.round(yousave + props.cartFilters.tax_price))
+                          }).format(
+                            Math.round(yousave + props.cartFilters.tax_price)
+                          )
                         : new Intl.NumberFormat("en-IN", {
                             style: "currency",
                             currency: "INR",
@@ -1216,7 +1455,10 @@ class Checkoutcard extends React.Component {
             </Grid>
             <br />
 
-            <Grid container style={{ borderTop: "1px solid #C1C1C1", padding: "10px" }}>
+            <Grid
+              container
+              style={{ borderTop: "1px solid #C1C1C1", padding: "10px" }}
+            >
               <Grid xs={6}>
                 <Typography
                   style={{
@@ -1274,10 +1516,15 @@ class Checkoutcard extends React.Component {
     );
   };
   subtotalsCheckout = (props) => {
-    var discounted_price = this.props.cartFilters.discounted_price ? this.props.cartFilters.discounted_price : "";
+    var discounted_price = this.props.cartFilters.discounted_price
+      ? this.props.cartFilters.discounted_price
+      : "";
     const dataCard1 = this.props.data
       .map((val) => {
-        return val.dataCard1[0].offerPrice * (JSON.parse(localStorage.getItem("quantity"))[val.generatedSku] ?? 1);
+        return (
+          val.dataCard1[0].offerPrice *
+          (JSON.parse(localStorage.getItem("quantity"))[val.generatedSku] ?? 1)
+        );
       })
       .reduce(myFunc);
     function myFunc(total, num) {
@@ -1293,8 +1540,12 @@ class Checkoutcard extends React.Component {
     var yousave = this.props.data
       .map((_data) => {
         return (
-          _data.dataCard1[0].price * (JSON.parse(localStorage.getItem("quantity"))[_data.generatedSku] ?? 1) -
-          _data.dataCard1[0].offerPrice * (JSON.parse(localStorage.getItem("quantity"))[_data.generatedSku] ?? 1)
+          _data.dataCard1[0].price *
+            (JSON.parse(localStorage.getItem("quantity"))[_data.generatedSku] ??
+              1) -
+          _data.dataCard1[0].offerPrice *
+            (JSON.parse(localStorage.getItem("quantity"))[_data.generatedSku] ??
+              1)
         );
       })
       .reduce(myFunc);
@@ -1307,20 +1558,28 @@ class Checkoutcard extends React.Component {
           <Grid item xs={12}>
             <Grid container>
               <Grid xs={6}>
-                <Typography className={`subhesder ${classes.normalfonts}`}>SUBTOTAL</Typography>
+                <Typography className={`subhesder ${classes.normalfonts}`}>
+                  SUBTOTAL
+                </Typography>
                 <br />
                 <br />
                 {yousave !== 0 || props.cartFilters.tax_price ? (
-                  <Typography className={`subhesder ${classes.normalfonts}`}>CART DISCOUNT</Typography>
+                  <Typography className={`subhesder ${classes.normalfonts}`}>
+                    CART DISCOUNT
+                  </Typography>
                 ) : null}
 
                 {props.cartFilters.tax_price ? (
-                  <Typography className={`subhesder ${classes.normalfonts}`}>{props.cartFilters.coupon_type}</Typography>
+                  <Typography className={`subhesder ${classes.normalfonts}`}>
+                    {props.cartFilters.coupon_type}
+                  </Typography>
                 ) : (
                   ""
                 )}
 
-                <Typography className={`subhesder ${classes.normalfonts}`}>SHIPPING CHARGES(Standred)</Typography>
+                <Typography className={`subhesder ${classes.normalfonts}`}>
+                  SHIPPING CHARGES(Standred)
+                </Typography>
               </Grid>
               <Grid xs={6}>
                 <Typography className={`subhesder ${classes.normalfonts}`}>
@@ -1348,7 +1607,9 @@ class Checkoutcard extends React.Component {
                             style: "currency",
                             currency: "INR",
                             minimumFractionDigits: 0,
-                          }).format(Math.round(yousave + props.cartFilters.tax_price))
+                          }).format(
+                            Math.round(yousave + props.cartFilters.tax_price)
+                          )
                         : new Intl.NumberFormat("en-IN", {
                             style: "currency",
                             currency: "INR",
@@ -1383,7 +1644,10 @@ class Checkoutcard extends React.Component {
             </Grid>
             <br />
 
-            <Grid container style={{ borderTop: "1px solid #C1C1C1", padding: "10px" }}>
+            <Grid
+              container
+              style={{ borderTop: "1px solid #C1C1C1", padding: "10px" }}
+            >
               <Grid xs={6}>
                 <Typography
                   style={{
@@ -1438,10 +1702,15 @@ class Checkoutcard extends React.Component {
     );
   };
   subtotalsHead = (props) => {
-    var discounted_price = this.props.cartFilters.discounted_price ? this.props.cartFilters.discounted_price : "";
+    var discounted_price = this.props.cartFilters.discounted_price
+      ? this.props.cartFilters.discounted_price
+      : "";
     const dataCard1 = this.props.data
       .map((val) => {
-        return val.dataCard1[0].offerPrice * (JSON.parse(localStorage.getItem("quantity"))[val.generatedSku] ?? 1);
+        return (
+          val.dataCard1[0].offerPrice *
+          (JSON.parse(localStorage.getItem("quantity"))[val.generatedSku] ?? 1)
+        );
       })
       .reduce(myFunc);
     function myFunc(total, num) {
@@ -1484,7 +1753,8 @@ class Checkoutcard extends React.Component {
     return (
       <Grid>
         <Hidden smDown>
-          {window.location.pathname === "/cart" || window.location.pathname === "/checkout" ? (
+          {window.location.pathname === "/cart" ||
+          window.location.pathname === "/checkout" ? (
             <>{this.row(this.props)}</>
           ) : (
             <>{this.row(this.props)}</>
@@ -1492,7 +1762,8 @@ class Checkoutcard extends React.Component {
         </Hidden>
         {window.location.pathname == "/checkout" ? (
           <Hidden mdUp>
-            {window.location.pathname === "/cart" || window.location.pathname === "/checkout" ? (
+            {window.location.pathname === "/cart" ||
+            window.location.pathname === "/checkout" ? (
               <>{this.row(this.props)}</>
             ) : (
               <>{this.row(this.props)}</>

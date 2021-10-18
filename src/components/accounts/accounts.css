@@ -73,7 +73,16 @@
   /* box-shadow: 1px 2px 35px 3px #DEDADA !important; */
   /* box-shadow: 1px 0px 10px 0px #DEDADA !important; */
 }
-
+.bordercard {
+  border-bottom: 1px solid #c1c1c1;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  display: "block";
+}
+.cardpadding {
+  padding: 0px 12px !important;
+  background-color: #f3f3f3;
+}
 /* .topPadding{
     padding-top: 5px;
 }
@@ -155,8 +164,14 @@
 }
 .rootdiv1 {
   background-color: #f3f3f3;
+  box-shadow: 4px 5px 3px #888888 !important;
 }
 @media screen and (max-width: 450px) {
+  .viewport-img {
+    width: 100% !important;
+    height: 90% !important;
+    object-fit: contain;
+  }
   .data {
     color: "gray";
     font-size: 0.8rem !important;
@@ -165,7 +180,7 @@
   .rootdiv1 {
     background-color: white;
     color: gray;
-    box-shadow: none;
+    box-shadow: none !important;
     padding: 10px 0px;
   }
   .rootdiv {
@@ -185,7 +200,7 @@
     box-shadow: none;
   }
   .cardpadding1 {
-    padding: 0px !important;
+    padding: 4px 0px !important;
     background-color: white !important;
   }
   .address {
@@ -203,6 +218,11 @@
 }
 
 @media screen and (min-width: 600px) {
+  .viewport-img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain;
+  }
   .data1 {
     color: "gray";
     font-size: 0.9rem !important;
@@ -218,7 +238,7 @@
 }
 
 .cardpadding1 {
-  padding: 12px 20px 6px 20px;
+  padding: 12px 20px 8px 20px;
   background-color: #f3f3f3;
 }
 @media screen and (max-width: 599px) {
@@ -256,6 +276,11 @@
     /* width: 77% !important; */
     border: 1px solid #eee !important;
     margin-right: 5px;
+  }
+  .viewport-img {
+    width: 80% !important;
+    height: 90% !important;
+    object-fit: contain;
   }
 
   .inner-page-title1 {
@@ -430,11 +455,6 @@
   border: 1px solid #eee !important;
 }
 
-.viewport-img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: contain;
-}
 .viewport-img-border {
   border: 1px solid #c1c1c1;
 }

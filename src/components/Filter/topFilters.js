@@ -316,6 +316,7 @@ export const TopFilters = (props) => {
                       textTransform: "uppercase",
                       boxShadow: "4px 4px 4px #bebfbf",
                       fontFamily: "notoSerif-regular",
+                      cursor: "pointer",
                     }}
                     onDelete={() => {
                       props.history.push("/jewellery");
@@ -346,6 +347,7 @@ export const TopFilters = (props) => {
                           backgroundColor: "#8080802e",
                           borderRadius: "0px",
                           textTransform: "uppercase",
+                          cursor: "pointer",
                         }}
                         onDelete={() => props.click(data.label)}
                         deleteIcon={
