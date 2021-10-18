@@ -977,7 +977,7 @@ class Allorders extends React.Component {
                                                             className="viewport-img "
                                                             style={{
                                                               border:
-                                                                "1px solid gray",
+                                                                "1px solid #C1C1C1",
                                                             }}
                                                           >
                                                             <img
