@@ -1,5 +1,6 @@
 import { Box, Grid, Hidden, Typography } from "@material-ui/core";
 import Allorders from "components/accounts/allorders";
+import Footer from "components/Footer/Footer";
 import Header from "components/SilverComponents/Header";
 import { CartContext } from "context";
 import cart from "mappers/cart";
@@ -9,9 +10,10 @@ import "../../../components/Checkout/Cart.css";
 import { API_URL } from "../../../config";
 import "../chckout.css";
 import "./payment.css";
-import Footer from "components/Footer/Footer";
 // import NeedHelp from "components/needHelp";
-const order_id = localStorage.getItem("order_id") ? JSON.parse(localStorage.getItem("order_id")) : "";
+const order_id = localStorage.getItem("order_id")
+  ? JSON.parse(localStorage.getItem("order_id"))
+  : "";
 const breadcrumsdata = [
   { title: "Shopping Bag" },
   { title: "Login/ Register" },
@@ -70,20 +72,30 @@ class PaymentResponseSuccess extends React.Component {
   };
 
   componentDidMount() {
-    if (localStorage.getItem("gut_lg") && localStorage.getItem("user_id")) localStorage.removeItem("user_id");
+    if (localStorage.getItem("gut_lg") && localStorage.getItem("user_id"))
+      localStorage.removeItem("user_id");
   }
   render() {
     const { classes } = this.props;
     // alert(JSON.stringify(this.props.data))
-    let gut_lg = localStorage.getItem("gut_lg") ? JSON.parse(localStorage.getItem("gut_lg")) : {};
-    let email = localStorage.getItem("email") ? localStorage.getItem("email") : "";
+    let gut_lg = localStorage.getItem("gut_lg")
+      ? JSON.parse(localStorage.getItem("gut_lg"))
+      : {};
+    let email = localStorage.getItem("email")
+      ? localStorage.getItem("email")
+      : "";
 
     return (
       <>
         <Header wishlist={this.props.wishlistdata} paymentSucces={true} />
         <Grid container direction="row" className="titlecartdiv">
           <Grid item xs={12}>
-            <Box display="flex" flexDirection="row" justifyContent="center">
+            <Box
+              display="flex"
+              flexDirection="row"
+              justifyContent="center"
+              marginTop={2}
+            >
               <Box>
                 <img
                   className="img"
@@ -134,7 +146,10 @@ class PaymentResponseSuccess extends React.Component {
 
         <Grid container>
           <Grid item xs={12}>
-            <Allorders allorderdata={this.props.allorderdata} history={this.props.history} />
+            <Allorders
+              allorderdata={this.props.allorderdata}
+              history={this.props.history}
+            />
             <Hidden smDown>
               <br />
               <br />
@@ -149,7 +164,15 @@ class PaymentResponseSuccess extends React.Component {
 }
 const Components = (props) => {
   let {
-    CartCtx: { cartFilters, data, loading, error, allorderdata, allordersuccesful, wishlistdata },
+    CartCtx: {
+      cartFilters,
+      data,
+      loading,
+      error,
+      allorderdata,
+      allordersuccesful,
+      wishlistdata,
+    },
   } = React.useContext(CartContext);
   let content, mapped;
   if (!loading && !error) {
@@ -163,7 +186,15 @@ const Components = (props) => {
         <div id="loading"></div>
       </div>
     );
-  else content = <PaymentResponseSuccess {...props} data={mapped} allorderdata={allordersuccesful} wishlistdata={wishlistdata} />;
+  else
+    content = (
+      <PaymentResponseSuccess
+        {...props}
+        data={mapped}
+        allorderdata={allordersuccesful}
+        wishlistdata={wishlistdata}
+      />
+    );
   return content;
 };
 
