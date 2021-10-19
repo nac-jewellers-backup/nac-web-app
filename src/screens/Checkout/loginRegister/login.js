@@ -39,8 +39,12 @@ const LoginComponent = (props) => {
   const { values, handlers, setValues, data } = useLogin(() => props.changePanel(2));
   const [open, setopen] = React.useState(false);
   const [emailForm, setEmailForm] = React.useState(true);
-  const [phoneNum, setPhoneNum] = React.useState("");
-  const [numError, setNumError] = React.useState(false);
+  const [numberForm, setNumberForm] = React.useState({
+    number: null,
+    NumberSubmit: false,
+    Otp: null,
+  });
+
   const email_regex =
     /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
   const [loginInfo, setLoginInfo] = React.useState({
@@ -59,8 +63,6 @@ const LoginComponent = (props) => {
     first_name_invalid: "Enter the first name",
     last_name_invalid: "Enter the last name",
   });
-  const [show, setShow] = React.useState(true);
-  const [show1, setShow1] = React.useState(false);
 
   const clear = () => {
     setValues({
@@ -283,14 +285,13 @@ const LoginComponent = (props) => {
     setEmailForm(!emailForm);
   };
   const onChangeNumber = (e) => {
-    setPhoneNum(e.target.value);
-    console.log(phoneNum.length);
-    console.log(phoneNum);
-    if (phoneNum.length > 9) {
-      setNumError(true);
-    } else {
-      setNumError(false);
-    }
+    setNumberForm({ ...numberForm, [e.target.name]: e.target.value });
+  };
+  console.log(numberForm);
+  const MobileNumSubmit = (e, history) => {};
+  const SendOTP = () => {
+    debugger;
+    React.useState({ ...numberForm, NumberSubmit: true });
   };
   return (
     <>
@@ -482,7 +483,7 @@ const LoginComponent = (props) => {
             <form
               action="javascript:void(0)"
               onSubmit={(e) => {
-                handlers.handelSubmit(e, props.history.push);
+                MobileNumSubmit(e, props.history.push);
               }}
             >
               <Grid container item xs={12}>
@@ -497,88 +498,45 @@ const LoginComponent = (props) => {
                 </Hidden>
                 <h5 className={`title ${classes.normalfonts2}`}>OTP Login For Registered Users</h5>
 
-                <Input
-                  className={classes1.input}
-                  name="number"
-                  type="number"
-                  value={phoneNum}
-                  error={values.error && values.error.emerr ? true : false}
-                  helperText={values.errortext && values.errortext.emerr}
-                  onChange={(e) => onChangeNumber(e)}
-                  placeholder="Enter Mobile Number"
-                />
+                {numberForm.NumberSubmit ? (
+                  <Input
+                    name="otp"
+                    type="number"
+                    // InputProps={{ inputProps: { min: 10, max: 10 } }}
+                    value={values.password}
+                    error={values.error && values.error.passerr ? true : false}
+                    helperText={values.errortext && values.errortext.passerr}
+                    placeholder="Enter OTP"
+                    onChange={(e) => onChangeNumber(e)}
+                    min="10"
+                    max="10"
+                  />
+                ) : (
+                  <Input
+                    className={classes1.input}
+                    name="number"
+                    type="number"
+                    value={numberForm.number}
+                    error={values.error && values.error.emerr ? true : false}
+                    helperText={values.errortext && values.errortext.emerr}
+                    onChange={(e) => onChangeNumber(e)}
+                    placeholder="Enter Mobile Number"
+                  />
+                )}
                 {/* <label className="errtext"> {numError ? "Phone number length must be less than 10" : ""}</label> */}
-                <Input
-                  type="password"
-                  name="password"
-                  value={values.password}
-                  error={values.error && values.error.passerr ? true : false}
-                  helperText={values.errortext && values.errortext.passerr}
-                  placeholder="Enter OTP"
-                  onChange={(e) => handlers.handleChange("password", e.target.value)}
-                />
+
                 <label className="errtext"> {values.error.passerr && values.errortext.passerr}</label>
               </Grid>
               <br />
               <br />
-              <Button type="submit" className="apply-b">
+              <Button onClick={() => SendOTP()} className="apply-b">
                 SIGN IN
               </Button>
 
               <Grid container justifyContent="center" className={classes.other} style={{ padding: "10px" }}>
                 <Grid item xs={12}>
                   <br />
-                  {/* <Box display="flex" flexDirection="row" justifyContent="center">
-                <Box padding="5px">
-                  <div style={{ cursor: "pointer" }}>
-                    <FacebookLogin
-                      id="facebook"
-                      appId="183747199380935"
-                      // autoLoad={true}
-                      textButton="Sign in with Facebook"
-                      fields="name,email,id,first_name,last_name"
-                      cssClass="my-facebook-button-class"
-                      disableMobileRedirect={true}
-                      callback={responseFacebook}
-                      icon={
-                        <ImFacebook
-                          style={{
-                            color: "#335B9A",
-                            marginRight: "3px",
-                            paddingRight: "2px",
-                          }}
-                        />
-                      }
-                    />
-                  </div>
-                </Box>
-                <Box padding="5px">
-                  <div style={{ cursor: "pointer" }}>
-                    <label>
-                      <Button
-                        variant="contained"
-                        style={{
-                          padding: "5px 7px",
-                          backgroundColor: "#F3F3F3",
-                          borderRadius: "0px",
-                          boxShadow: "0px 2px 4px 1px #888888",
-                          color: "gray",
-                          whiteSpace: "nowrap",
-                        }}
-                        className={classes.btntext}
-                        startIcon={
-                          <FcGoogle
-                            style={{ marginLeft: "4px" }}
-                            className={classes.btnicon}
-                          />
-                        }
-                      >
-                        Sign in with Google
-                      </Button>
-                    </label>
-                  </div>
-                </Box>
-              </Box> */}
+
                   <Box display="flex" flexDirection="row" justifyContent="center">
                     <Box padding="5px">
                       <div style={{ cursor: "pointer" }}>
