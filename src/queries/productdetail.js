@@ -27,6 +27,8 @@ export const PRODUCTDETAILS = `query MyQuery(
       discountPriceTax
       markupPriceTax
       skuUrl
+     
+      
       
       transSkuDescriptionsBySkuId {
         nodes {
@@ -221,6 +223,7 @@ export const YouMayAlsoLike = `query MyQuery(
           generatedSku
           skuUrl
           sellingPrice
+          markupPrice
           productId
           discount
           productListByProductId {
@@ -346,6 +349,8 @@ export const youRecentlyViewed = `query MyQuery {
               transSkuListsByProductId {
                 nodes {
                   sellingPrice
+                  markupPrice
+                  discountPrice                  
                   skuUrl
                   transSkuDescriptionsBySkuId {
                     nodes {

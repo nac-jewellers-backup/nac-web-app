@@ -22,7 +22,6 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   colorMain: {
-    // backgroundColor: "#b78231",
   },
   colorWhiteBackground: {
     backgroundColor: theme.palette.common.white,
@@ -45,7 +44,6 @@ const useStyles = makeStyles((theme) => ({
   buynowSearch: {
     color: theme.palette.primary.main,
     fontSize: "13px",
-    // width: '100%',
     backgroundColor: "#b78231",
 
     height: "34px",
@@ -84,8 +82,7 @@ const useStyles = makeStyles((theme) => ({
     color: "#6b6b6b",
     fontSize: "12px",
     lineHeight: "16px",
-    // backgroundColor: "#b78231",
-    // padding: "3% 0px 2% 0px",
+    
     margin: "auto",
     [theme.breakpoints.down("sm")]: {
       padding: "0px",
@@ -366,6 +363,10 @@ export default function Footer(props) {
           url: "/return",
           Title: "30 Day Return",
         },
+        {
+          url: "/blog",
+          Title: "Blog",
+        },
       ],
     },
     {
@@ -426,8 +427,12 @@ export default function Footer(props) {
       Title: "Track Your Order",
     },
     {
-      url: "",
+      url: "/return",
       Title: "30 Day Return",
+    },
+    {
+      url: "/blog",
+      Title: "Blog",
     },
     // {
     //   url:
@@ -512,7 +517,11 @@ export default function Footer(props) {
         },
         {
           subTitle: "30 Day Return",
-          url: "/temple-work",
+          url: "/return",
+        },
+        {
+          subTitle: "Blog",
+          url: "/blog",
         },
       ],
     },
@@ -653,7 +662,7 @@ export default function Footer(props) {
       direction="row"
       justify="center"
       alignItems="center"
-      style={{ marginTop: "30px", backgroundColor: "#efefef" }}
+      style={{ backgroundColor: "#efefef" }}
     >
       <Hidden only={["sm", "xs"]}>
         <Container>
@@ -718,6 +727,7 @@ export default function Footer(props) {
                           src={
                             "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_footer/Path+52.svg"
                           }
+                          alt="img"
                           style={{
                             width: "40px",
                             height: "auto",
@@ -747,6 +757,7 @@ export default function Footer(props) {
                           src={
                             "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_footer/Path+53.svg"
                           }
+                          alt="img"
                           style={{
                             width: "40px",
                             height: "auto",
@@ -777,6 +788,7 @@ export default function Footer(props) {
                           src={
                             "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_footer/Path+54.svg"
                           }
+                          alt="img"
                           style={{
                             width: "40px",
                             height: "auto",
@@ -808,6 +820,7 @@ export default function Footer(props) {
                           src={
                             "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_footer/Path+57.svg"
                           }
+                          alt="img"
                           style={{
                             width: "40px",
                             height: "auto",
@@ -836,6 +849,7 @@ export default function Footer(props) {
                           src={
                             " https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_footer/nQjOPg.tif.svg"
                           }
+                          alt="img"
                           style={{
                             width: "40px",
                             height: "auto",
@@ -928,6 +942,7 @@ export default function Footer(props) {
                   src={
                     "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_footer/k77ABP.tif%402x.png"
                   }
+                   alt="img"
                   style={{ width: "100%", height: "auto" }}
                 />
               </Grid>

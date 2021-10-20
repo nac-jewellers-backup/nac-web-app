@@ -105,6 +105,7 @@ const Quantity = (props) => {
       JSON.parse(localStorage.getItem("cart_id")).cart_id
     ) {
       let updateVariables = {};
+   
       let _price =
         props.data[0] &&
         props.data[0].dataCard1 &&

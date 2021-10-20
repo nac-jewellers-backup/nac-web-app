@@ -145,6 +145,8 @@ export default function (data) {
         isActive: k.productListByProductId.isactive,
         // sellingPrice: k?.sellingPrice,
         // markupPrice: k?.markupPrice,
+        minOrderQty: k.minOrderQty ?? 1,
+        maxOrderQty: k.maxOrderQty ?? 1,
         productsDetails: [
           //                     Quality
           // Metal
@@ -201,24 +203,24 @@ export default function (data) {
         ],
         //
         //
+
         dataCard1: [
           {
+            generatedSku: k.generatedSku,
             offerPrice: k.markupPrice,
-            price: k.sellingPrice,
+            price: k.discountPrice,
             title: "Diamond Pendant Ring",
             dis: "Pendants set in 18 Kt Yellow Gold 3.95 gm with Diamonds (0.52 ct, GH - SI )",
-            save: "5999.9",
+            save: " ",
             discount: k && k.discount ? k.discount : null,
             image: {
               placeImage: "https://assets-cdn.stylori.com/313x313/images/product/SE0176/SE0176-1R.jpg",
               hoverImage: "https://assets-cdn.stylori.com/313x313/images/product/SE0176/HOVER-SE0176-2R.jpg",
             },
+            minOrderQty: k.minOrderQty ?? 1,
+            maxOrderQty: k.maxOrderQty ?? 1,
           },
         ],
-        // fadeImages: (k.productListByProductId.productImagesByProductId.nodes.map(val => (
-        //     // `https://assets.stylori.net/base_images/${val.imageUrl}`
-        //     val.imageUrl
-        // ))),
         fadeImages: k.productListByProductId.productImagesByProductId.nodes,
         breadcrumsdata: [
           { title: "Shopping Bag" },

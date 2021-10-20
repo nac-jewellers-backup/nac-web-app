@@ -1,18 +1,17 @@
 import {
   Container,
+  ExpansionPanel,
+  ExpansionPanelDetails,
+  ExpansionPanelSummary,
   Grid,
   Hidden,
-  ExpansionPanel,
-  ExpansionPanelSummary,
-  ExpansionPanelDetails,
   Typography,
 } from "@material-ui/core";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import PropTypes from "prop-types";
 import React from "react";
-import "./product-images.css";
 import Slideshow from "../Carousel/carosul";
-import styles from "./style";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import "./product-images.css";
 class Sublistcarousel extends React.Component {
   constructor(props) {
     super(props);
@@ -89,37 +88,31 @@ class Sublistcarousel extends React.Component {
     const productsubHead = [
       {
         name: "From the House of NAC",
-        icon:
-          "https://assets.stylori.com/images/Static+Pages/Other+Pages/fromthehouseofnac-pink.svg",
+        icon: "https://assets.stylori.com/images/Static+Pages/Other+Pages/fromthehouseofnac-pink.svg",
         class: "image1",
       },
       {
         name: "Certified Jewellery",
-        icon:
-          "https://assets.stylori.com/images/Static%20Pages/Other%20Pages/certifiedjewellery-pink.svg",
+        icon: "https://assets.stylori.com/images/Static%20Pages/Other%20Pages/certifiedjewellery-pink.svg",
         class: "image2",
       },
       {
         name: "Free Shipping",
-        icon:
-          "https://assets.stylori.com/images/Static+Pages/Other+Pages/securepayments-pink.svg",
+        icon: "https://assets.stylori.com/images/Static+Pages/Other+Pages/securepayments-pink.svg",
         class: "image3",
       },
       {
         name: "Diverse Styles",
-        icon:
-          "https://assets.stylori.com/images/Static+Pages/Other+Pages/diversestyles-pink.svg",
+        icon: "https://assets.stylori.com/images/Static+Pages/Other+Pages/diversestyles-pink.svg",
         class: "image4",
       },
       {
         name: "Easy Returns",
-        icon:
-          "https://assets.stylori.com/images/Static+Pages/Other+Pages/easyreturns-pink.svg",
+        icon: "https://assets.stylori.com/images/Static+Pages/Other+Pages/easyreturns-pink.svg",
         class: "image5",
       },
     ];
-  
-  
+
     return (
       <div style={{ width: "100%" }}>
         <Hidden smDown>

@@ -1,24 +1,19 @@
-import React, { useEffect, useRef } from "react";
-import { Redirect } from "react-router-dom";
-import { Grid, Button, Hidden } from "@material-ui/core";
-import Typography from "@material-ui/core/Typography";
-import "./payment.css";
-import Divider from "@material-ui/core/Divider";
-import CheckCircleOutlineIcon from "@material-ui/icons/CheckCircleOutline";
-import { CartContext } from "context";
-import { withRouter } from "react-router-dom";
-import cart from "mappers/cart";
+import { Box, Grid, Hidden, Typography } from "@material-ui/core";
 import Allorders from "components/accounts/allorders";
-import { API_URL, HOME_PAGE_URL, CDN_URL } from "../../../config";
-import Header from "components/SilverComponents/Header";
-import styles from "../../../components/Checkout/style";
-import CustomSeparator from "../../../components/BreadCrumb/index";
-import { withStyles } from "@material-ui/core/styles";
-import "../../../components/Checkout/Cart.css";
-import "../chckout.css";
 import Footer from "components/Footer/Footer";
-
-const order_id = localStorage.getItem("order_id") ? JSON.parse(localStorage.getItem("order_id")) : "";
+import Header from "components/SilverComponents/Header";
+import { CartContext } from "context";
+import cart from "mappers/cart";
+import React from "react";
+import { withRouter } from "react-router-dom";
+import "../../../components/Checkout/Cart.css";
+import { API_URL } from "../../../config";
+import "../chckout.css";
+import "./payment.css";
+// import NeedHelp from "components/needHelp";
+const order_id = localStorage.getItem("order_id")
+  ? JSON.parse(localStorage.getItem("order_id"))
+  : "";
 const breadcrumsdata = [
   { title: "Shopping Bag" },
   { title: "Login/ Register" },
@@ -77,81 +72,90 @@ class PaymentResponseSuccess extends React.Component {
   };
 
   componentDidMount() {
-    if (localStorage.getItem("gut_lg") && localStorage.getItem("user_id")) localStorage.removeItem("user_id");
+    if (localStorage.getItem("gut_lg") && localStorage.getItem("user_id"))
+      localStorage.removeItem("user_id");
   }
   render() {
+    const { classes } = this.props;
     // alert(JSON.stringify(this.props.data))
-    let gut_lg = localStorage.getItem("gut_lg") ? JSON.parse(localStorage.getItem("gut_lg")) : {};
-    const { data, classes } = this.props;
+    let gut_lg = localStorage.getItem("gut_lg")
+      ? JSON.parse(localStorage.getItem("gut_lg"))
+      : {};
+    let email = localStorage.getItem("email")
+      ? localStorage.getItem("email")
+      : "";
+
     return (
       <>
         <Header wishlist={this.props.wishlistdata} paymentSucces={true} />
-        {/* <CustomSeparator
-             arrowicon='cart-head-arrows'  
-             className={"breadcrums-header bcjk "}
-             classsubhed={"breadcrums-sub bcjk"}
-             list={"MuiBreadcrumbs-li whi"}
-             data={this.props.data.length > 0 ? this.props.data[0].breadcrumsdata : breadcrumsdata}
-             subdata={this.props.data.length > 0 ? this.props.data[0].cartsubdata : cartsubdata}
-          /> */}
-        <Grid container justify="center" style={{ paddingTop: "10px" }}>
-          <Hidden smDown>
-            <Grid container justify="center" style={{ padding: "15px 5px 5px 15px" }}>
-              <Grid container>
-                <Grid item style={{ display: "flex", marginRight: "auto", paddingRight: "2px" }}>
-                  <Button
-                    style={{ background: "#ed1165", color: "#fff", padding: "5px 20px" }}
-                    onClick={() => {
-                      localStorage.removeItem("a__c_t");
-                      localStorage.removeItem("panel");
-                      localStorage.removeItem("order_id");
-                      localStorage.removeItem("cartDetails");
-                      localStorage.removeItem("ship_isactive");
-                      localStorage.removeItem("select_addres");
-                      localStorage.removeItem("bil_isactive");
-                      if (gut_lg === true) {
-                        localStorage.clear();
-                      }
-                      this.props.history.push("/home");
-                    }}
-                  >
-                    Go back Home
-                  </Button>
-                </Grid>
-              </Grid>
-            </Grid>
-          </Hidden>
-          <Grid container justify="center" className="smallScreenClass">
-            <Grid item xs={10} sm={10} md={6} className="contant-center">
-              <Grid item className="container-font-size">
-                {" "}
-                <CheckCircleOutlineIcon className="svgiconsuccess"></CheckCircleOutlineIcon>&nbsp;&nbsp;Thank you!&nbsp;&nbsp;Your
-                order has been placed.
-              </Grid>
-            </Grid>
-          </Grid>
-          <Grid container justify="center">
-            <Grid item xs={12} sm={12} md={6} className="contant-center" style={{ paddingLeft: "10px" }}>
-              We've send you an email confirmation.&nbsp;
-              <a
-                onClick={() => {
-                  this.makeFetch_resend_mail();
-                }}
-                style={{
-                  fontSize: "12px",
-                  color: "blue",
-                  textDecoration: "underline",
-                  cursor: "pointer",
-                }}
-              >
-                Resend Email
-              </a>
-            </Grid>
-          </Grid>
+        <Grid container direction="row" className="titlecartdiv">
+          <Grid item xs={12}>
+            <Box
+              display="flex"
+              flexDirection="row"
+              justifyContent="center"
+              marginTop={2}
+            >
+              <Box>
+                <img
+                  className="img"
+                  src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/Group+160.svg"
+                  alt="title images"
+                />
+              </Box>
+              <Box>
+                <span className="titlecart">A BIG THANK YOU!</span>
 
-          <Grid container>
-            <Allorders allorderdata={this.props.allorderdata} />
+                <Typography
+                  variant="subtitle2"
+                  style={{
+                    color: "gray",
+                    textAlign: "center",
+                  }}
+                >
+                  <Hidden smDown>
+                    Welcome to the <b>NAC</b> family! We’ll take it from here.
+                    <br />
+                    We’ve sent a confirmation email to <b>{email}</b>.
+                  </Hidden>
+                </Typography>
+              </Box>
+              <Box>
+                <img
+                  className="img"
+                  src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/Group+159.svg"
+                  alt="title images"
+                />
+              </Box>
+            </Box>
+            <Typography
+              variant="subtitle2"
+              style={{
+                color: "gray",
+                textAlign: "center",
+              }}
+            >
+              <Hidden mdUp>
+                Welcome to the <b>NAC</b> family! We’ll take it from here.
+                <br />
+                We’ve sent a confirmation email to <b>{email}</b>.
+              </Hidden>
+            </Typography>
           </Grid>
+        </Grid>
+
+        <Grid container>
+          <Grid item xs={12}>
+            <Allorders
+              allorderdata={this.props.allorderdata}
+              history={this.props.history}
+            />
+            <Hidden smDown>
+              <br />
+              <br />
+            </Hidden>
+          </Grid>
+          {/* <NeedHelp /> */}
           <Footer />
         </Grid>
       </>
@@ -160,7 +164,15 @@ class PaymentResponseSuccess extends React.Component {
 }
 const Components = (props) => {
   let {
-    CartCtx: { cartFilters, data, loading, error, allorderdata, allordersuccesful, wishlistdata },
+    CartCtx: {
+      cartFilters,
+      data,
+      loading,
+      error,
+      allorderdata,
+      allordersuccesful,
+      wishlistdata,
+    },
   } = React.useContext(CartContext);
   let content, mapped;
   if (!loading && !error) {
@@ -174,7 +186,15 @@ const Components = (props) => {
         <div id="loading"></div>
       </div>
     );
-  else content = <PaymentResponseSuccess {...props} data={mapped} allorderdata={allordersuccesful} wishlistdata={wishlistdata} />;
+  else
+    content = (
+      <PaymentResponseSuccess
+        {...props}
+        data={mapped}
+        allorderdata={allordersuccesful}
+        wishlistdata={wishlistdata}
+      />
+    );
   return content;
 };
 

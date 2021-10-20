@@ -190,35 +190,69 @@ export function PaperSheetProduct(props) {
 
   // "#D91965"
   return (
-    <Grid container justifyContent="center">
-      <Hidden smUp>
-        <Grid
-          item
-          xs={4}
-          sm={3}
-          className={`silverSvg ${classes.mainsource} ${
-            isSilver ? classes.silverSvg : ""
-          }`}
-        >
-          <Certified color={color} />
-        </Grid>
-        <Grid item xs={4} sm={3} className={classes.mainsource}>
-          <Diversestyles color={color} />
-        </Grid>
-        <Grid item xs={4} sm={3} className={classes.mainsource}>
-          {!isSilver ? (
-            <Easyreturns color={color} />
-          ) : (
-            <Hypoallergenic color={color} />
-          )}
-        </Grid>
-        <Grid item xs={4} sm={3} className={classes.mainsource}>
-          <Fromthehouseofnac color={color} />
-        </Grid>
-        <Grid item xs={4} sm={3} className={classes.mainsource}>
-          <Securepayments color={color} />
+    <>
+      <Hidden smDown>
+        <Grid container>
+          <Grid
+            item
+            xs={4}
+            sm={3}
+            lg={2}
+            className={`silverSvg ${classes.mainsource} ${
+              isSilver ? classes.silverSvg : ""
+            }`}
+          >
+            <Certified color={color} />
+          </Grid>
+          <Grid item xs={4} sm={3} lg={2} className={classes.mainsource}>
+            <Diversestyles color={color} />
+          </Grid>
+          <Grid item xs={4} sm={3} lg={2} className={classes.mainsource}>
+            {!isSilver ? (
+              <Easyreturns color={color} />
+            ) : (
+              <Hypoallergenic color={color} />
+            )}
+          </Grid>
+          <Grid item xs={4} sm={3} lg={2} className={classes.mainsource}>
+            <Fromthehouseofnac color={color} />
+          </Grid>
+          <Grid item xs={4} sm={3} lg={2} className={classes.mainsource}>
+            <Securepayments color={color} />
+          </Grid>
         </Grid>
       </Hidden>
-    </Grid>
+      <Hidden mdUp>
+        <Grid container justifyContent="center">
+          <Grid
+            item
+            xs={4}
+            sm={3}
+            lg={2}
+            className={`silverSvg ${classes.mainsource} ${
+              isSilver ? classes.silverSvg : ""
+            }`}
+          >
+            <Certified color={color} />
+          </Grid>
+          <Grid item xs={4} sm={3} lg={2} className={classes.mainsource}>
+            <Diversestyles color={color} />
+          </Grid>
+          <Grid item xs={4} sm={3} lg={2} className={classes.mainsource}>
+            {!isSilver ? (
+              <Easyreturns color={color} />
+            ) : (
+              <Hypoallergenic color={color} />
+            )}
+          </Grid>
+          <Grid item xs={4} sm={3} lg={2} className={classes.mainsource}>
+            <Fromthehouseofnac color={color} />
+          </Grid>
+          <Grid item xs={4} sm={3} lg={2} className={classes.mainsource}>
+            <Securepayments color={color} />
+          </Grid>
+        </Grid>
+      </Hidden>
+    </>
   );
 }

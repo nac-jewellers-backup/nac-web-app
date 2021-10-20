@@ -155,7 +155,7 @@ export const styles = makeStyles((theme) => ({
     [theme.breakpoints.only("md")]: {
       minWidth: "100px",
     },
-    minWidth: "150px ",
+    minWidth: "130px ",
   },
   shortby: {
     maxWidth: "150px",
@@ -211,7 +211,7 @@ export const styles = makeStyles((theme) => ({
       minWidth: "100px",
       marginBottom: "10px",
     },
-    minWidth: "150px ",
+    minWidth: "130px ",
     marginLeft: "10px",
     alignItems: "center",
     color: theme.palette.secondary.main,

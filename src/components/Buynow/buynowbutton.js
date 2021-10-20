@@ -64,11 +64,10 @@ class Buynowbutton extends React.Component {
       }
     };
     return (
-      <div style={{ width: "200px" }}>
+      <div>
         <Button
           className={this.props.class}
           style={{ borderRadius: "5px", ...this.props.style }}
-          // disabled={productIsActive ? false : true}
         >
           {window.location.pathname.split("/").pop() !== "cart" &&
           window.location.pathname.split("/").pop() !== "checkout" &&
@@ -87,8 +86,6 @@ class Buynowbutton extends React.Component {
                     <span
                       className={this.props.button}
                       style={{ fontSize: "1rem" }}
-                      // onClick={() => window.open("https://wa.me/919952625252?text=Hi")}
-                      // href="https://wa.me/919952625252?text=Hi"
                       onClick={enquireLink}
                     >
                       Enquire now
@@ -124,7 +121,9 @@ class Buynowbutton extends React.Component {
                 ) : (
                   <>
                     {productIsActive ? (
-                      <span className={this.props.button}>Buy Now</span>
+                      <span className={this.props.button}>
+                        {this.props.cartpage ? "Checkout Securely" : "Buy Now"}
+                      </span>
                     ) : (
                       <span
                         className={this.props.button}

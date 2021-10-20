@@ -9,6 +9,7 @@ import "aos/dist/aos.css";
 import Slideshow from "components/Carousel/carosul";
 import Footer from "components/Footer/Footer";
 import GadgetsNac from "components/Gagetstylori/GadgetsNac";
+import NeedHelp from "components/needHelp";
 import { ImgMediaCard } from "components/ProductCard/Card";
 import Header from "components/SilverComponents/Header";
 import { homeNac } from "mappers/dummydata/homeNac";
@@ -22,7 +23,6 @@ import Homenote from "./Homenote";
 import "./index.css";
 import InstagramFeed from "./InstagramFeed";
 import { Title } from "./titles";
-
 const styles = (theme) => ({
   root: {
     overflow: "hidden",
@@ -222,11 +222,13 @@ class HomeComp extends React.Component {
     this.state = {
       loading: false,
       count: "",
+      imageLoading: false,
       timelineImage:
         "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_page/Group+213%402x.png",
       bannerHome: [],
       featuredProduct: [],
       newarrival: [],
+      starting: false,
       reviews: [],
       starting: false,
       imageLoading: false,
@@ -251,18 +253,18 @@ class HomeComp extends React.Component {
         this.setState({ bannerHome: bannerDataFull });
         if (data.data.allBanners.nodes.length > 0) {
           this.setState({ starting: true });
-          console.log("initial", this.state.starting);
         }
         //feature product
         let featureproductdata = data?.data?.allFeaturedProducts?.nodes;
+
         let featureproductDetails = featureproductdata.map((val) => ({
           price:
             val?.productListByProductId?.transSkuListsByProductId?.nodes[0]
-              ?.sellingPrice ?? " ",
+              ?.markupPrice ?? " ",
 
           offerPrice:
             val?.productListByProductId?.transSkuListsByProductId?.nodes[0]
-              ?.markupPrice ?? " ",
+              ?.discountPrice ?? " ",
           title: val?.productListByProductId?.productName ?? " ",
           save:
             val?.productListByProductId?.transSkuListsByProductId?.nodes[0]
@@ -296,20 +298,19 @@ class HomeComp extends React.Component {
             val?.productListByProductId?.transSkuListsByProductId?.nodes[0]
               ?.transSkuDescriptionsBySkuId?.nodes[0]?.skuDescription ?? " ",
         }));
-        console.log("--------feature product------");
+
         this.setState({ featuredProduct: featureproductDetails });
-        console.log(this.state.featuredProduct);
 
         //new arrival
         let newarrivaldataresponse = data?.data?.allNewArrivalProducts.nodes;
         let productDetails = newarrivaldataresponse.map((val) => ({
           price:
             val?.productListByProductId?.transSkuListsByProductId?.nodes[0]
-              ?.sellingPrice ?? " ",
+              ?.markupPrice ?? " ",
 
           offerPrice:
             val?.productListByProductId?.transSkuListsByProductId?.nodes[0]
-              ?.markupPrice ?? " ",
+              ?.discountPrice ?? " ",
           title: val?.productListByProductId?.productName ?? " ",
           save: " ",
           image: {
@@ -341,14 +342,10 @@ class HomeComp extends React.Component {
             val?.productListByProductId?.transSkuListsByProductId?.nodes[0]
               ?.transSkuDescriptionsBySkuId?.nodes[0]?.skuDescription ?? " ",
         }));
-        console.log("--------new arrival------");
+
         this.setState({ newarrival: productDetails });
-        console.log(this.state.newarrival);
-        //customer review
         let reviewresponse = data?.data?.allCustomerReviews.nodes;
-        console.log("--------reviews------");
         this.setState({ reviews: reviewresponse });
-        console.log(this.state.reviews);
       });
     Aos.init({ duration: 1500 });
   }
@@ -358,6 +355,9 @@ class HomeComp extends React.Component {
   };
   previous = () => {
     this.slider.current.slickPrev();
+  };
+  imageLoader = () => {
+    this.setState({ imageLoading: true });
   };
 
   render() {
@@ -551,7 +551,6 @@ class HomeComp extends React.Component {
                 </Grid>
               )}
               {/* </Hidden> */}
-
               <Slideshow
                 sliderRef={this.slider}
                 dataCarousel={homeNac.carouselTop.setting}
@@ -559,7 +558,14 @@ class HomeComp extends React.Component {
                 {this.state.bannerHome.map((val, index) => (
                   <>
                     <Hidden smDown>
-                      <Grid container key={index}>
+                      <Grid
+                        container
+                        key={index}
+                        data-aos="fade-zoom-in"
+                        data-aos-easing="ease-in-back"
+                        data-aos-delay="150"
+                        data-aos-offset="0"
+                      >
                         <a href={val.url} style={{ width: "100%" }}>
                           <img
                             src={val.web}
@@ -574,6 +580,10 @@ class HomeComp extends React.Component {
                           <img
                             src={val.mobile}
                             style={{ width: "100%", height: "100%" }}
+                            className={`image-${
+                              this.state.imageLoading ? "visible" : "hidden"
+                            }`}
+                            onLoad={this.imageLoader}
                           />
                         </a>
                       </Grid>
@@ -601,6 +611,7 @@ class HomeComp extends React.Component {
               <GadgetsNac />
             </Grid>
           </Grid>
+          {/* <faqsHelp/> */}
           <Container maxWidth="xl">
             <Hidden mdUp>
               <Grid container>
@@ -813,6 +824,8 @@ class HomeComp extends React.Component {
                   }}
                 >
                   <InstagramFeed />
+                  <br />
+                  <br />
                 </Grid>
               </Hidden>
               <Grid
@@ -826,6 +839,8 @@ class HomeComp extends React.Component {
               >
                 <div className={classes.testimonial}>
                   <Testimonial customerreview={this.state.reviews} />
+                  <br />
+                  <br />
                 </div>
               </Grid>
             </Grid>
@@ -850,8 +865,11 @@ class HomeComp extends React.Component {
                   <InstagramFeed />
                 </center>
               </Grid>
+              <br />
+              <br />
             </Hidden>
           </Container>
+          <NeedHelp />
 
           <Footer />
         </Grid>

@@ -1,8 +1,9 @@
-import { Hidden } from "@material-ui/core";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
+//import Skeleton from "@material-ui/lab/Skeleton";
 import Grid from "@material-ui/core/Grid";
+import Hidden from "@material-ui/core/Hidden";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Wishlist from "components/wishlist/wishlist";
@@ -27,6 +28,7 @@ export const ImgMediaCard = (props) => {
       filters={ProductDetailCtx.filters}
       setFilters={setFilters}
       {...props}
+      offerPrice={props.data.offerPrice}
     />
   );
 };
@@ -41,13 +43,8 @@ const Gallery = (
   cardstate,
   scrollPosition
 ) => {
-  const [loading, setLoading] = React.useState(false);
-
   return (
     <div className="imageHeight" style={{ position: "relative" }}>
-      {/* {props.data.price < 20000 ? <span className="newarraival">NEW ARRIVAL</span> : ""}
-      {props.data.price > 20000 ? <span className="bestsell">BEST SELLER</span> : ""} */}
-
       <div class="wishListStyle">
         <Wishlist
           sku={props.data.skuId}
@@ -72,6 +69,7 @@ const Gallery = (
           alt={"props.data.title"}
           effect="blur"
           src={renderImages(props, cardstate)}
+          //onError={(e) => imageOnError(e, props.data.imageResolution)}
           title={
             props.data.title.charAt(0).toUpperCase() + props.data.title.slice(1)
           }
@@ -153,7 +151,7 @@ const useStyles = makeStyles((theme) => ({
       cursor: "pointer",
     },
     [theme.breakpoints.down("sm")]: {
-      height: "40px",
+      height: "60px",
       padding: "0 !important",
     },
     "& div": {
@@ -166,10 +164,12 @@ const useStyles = makeStyles((theme) => ({
   offerMainPrice: {
     color: "gray",
     fontWeight: "bold",
-    fontSize: "15px !important",
+    fontSize: "16px !important",
     [theme.breakpoints.down("sm")]: {
-      fontSize: "12px !important",
+      fontSize: "15px !important",
     },
+    lineHeight: 1.6,
+    letterSpacing: " 0.0075em",
 
     "& i": {
       fontSize: "26px",
@@ -183,9 +183,9 @@ const useStyles = makeStyles((theme) => ({
     color: "#b78231",
     fontWeight: "bold",
     fontSize: "15px !important",
-
     [theme.breakpoints.down("sm")]: {
-      fontSize: "11px !important",
+      fontSize: "13px !important",
+      marginBottom: "0px !important",
     },
   },
   offerPrice: {
@@ -254,6 +254,21 @@ const useStyles = makeStyles((theme) => ({
     flex: 1,
     display: "flex",
   },
+  titlesshopother: {
+    fontSize: "30px",
+    fontWeight: "bold",
+    textAlign: "center",
+    whiteSpace: "nowrap",
+    // flex: 0.6,
+    color: "gray",
+    overflow: "hidden",
+    textOverflow: "ellipsis",
+    width: "100%",
+    marginTop: "-10px",
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "25px",
+    },
+  },
   titles: {
     fontSize: "0.8rem",
     whiteSpace: "nowrap",
@@ -295,14 +310,32 @@ const renderImages = (props, cardstate) => {
   if (props.static) {
     return props.image;
   } else {
-    const filterType = cardstate.hovered ? "hoverImage" : "placeImage";
+    const filterType = cardstate?.hovered ? "hoverImage" : "placeImage";
 
-    return props.data &&
-      props.data.image &&
-      props.data.image["hoverImage"] &&
-      props.data.image["hoverImage"].length === 0
+    // return props?.data && props?.data?.image && props?.data?.image["placeImage"] && props?.data?.image["placeImage"].length === 0
+    //   ? "https://styloriimages-staging.s3.ap-south-1.amazonaws.com/product/1000X1000/productnotfound.webp"
+    //   : props?.data?.image[filterType]?.img;
+    // return (
+    //   props?.data?.image[filterType]?.img ?? "https://alpha-assets.stylori.com/1000x1000/images/static/Image_Not_Available.jpg"
+    // );
+
+    return props?.data &&
+      props?.data?.image &&
+      props?.data?.image["hoverImage"] &&
+      props?.data?.image["hoverImage"].length === 0
       ? "https://alpha-assets.stylori.com/1000x1000/images/static/Image_Not_Available.jpg"
-      : props.data.image[filterType].img;
+      : props?.data?.image[filterType]?.img;
+
+    // props?.data?.image[filterType]?.img ?? "https://alpha-assets.stylori.com/1000x1000/images/static/Image_Not_Available.jpg"
+
+    // (
+    //   (props?.data && props?.data?.image && props?.data?.image["hoverImage"] && props?.data?.image["hoverImage"].length === 0
+    //     ? "https://alpha-assets.stylori.com/1000x1000/images/static/Image_Not_Available.jpg"
+    //     : props?.data?.image[filterType]?.img) ??
+    //   (props?.data && props?.data?.image && props?.data?.image["placeImage"] && props?.data?.image["placeImage"].length === 0
+    //     ? "https://alpha-assets.stylori.com/1000x1000/images/static/Image_Not_Available.jpg"
+    //     : props?.data?.image[filterType]?.img)
+    // );
   }
 };
 
@@ -313,7 +346,6 @@ function Component(props) {
     loaded: false,
     dataLoaded: true,
   });
-  // const _height = props.data.imageResolution.img_res
   const callmouseover = () => {
     setCardState({ ...cardstate, hovered: !cardstate.hovered });
   };
@@ -334,240 +366,239 @@ function Component(props) {
           {Gallery(props, callmouseover, callmouseout, cardstate)}
         </CardActions>
         <Card className={classes.priceClass}>
-          {Math.round(props.data.offerPrice) ===
-          Math.round(props.data.price) ? (
-            <CardContent
-              className={classes.cardContent}
-              style={{ display: "flex" }}
+          <CardContent
+            className={classes.cardContent}
+            style={{ display: "flex" }}
+          >
+            <Grid
+              container
+              item
+              xs={12}
+              className={classes.textPriceCardGrid}
+              alignItems="center"
             >
-              <Grid
-                container
-                item
-                xs={12}
-                className={classes.textPriceCardGrid}
-                alignItems="center"
-              >
-                <Hidden smDown>
-                  <Grid
-                    container
-                    item
-                    xs={12}
-                    sm={12}
-                    className={`${classes.priceClassMain}`}
-                    style={{
-                      display: "flex",
-                      alignItems: "baseline",
-                      justifyContent: "space-between",
-                    }}
-                  >
-                    <Grid items>
-                      <Typography
-                        variant="h6"
-                        component="h6"
-                        className={classes.offerMainPrice}
-                        style={{
-                          justifyContent: "flex-start",
-                          display: "flex",
-                          paddingLeft: "5px",
-                          color: "rgb(109,110,112)",
-                        }}
-                      >
-                        {new Intl.NumberFormat("en-IN", {
-                          style: "currency",
-                          currency: "INR",
-                          minimumFractionDigits: 0,
-                        }).format(Math.round(props.data.price))}
-                        <span style={{ display: "flex", alignSelf: "center" }}>
-                          {" "}
-                          <Typography
-                            className={classes.strikeText}
-                            style={{
-                              paddingLeft: "6px",
-                            }}
-                          >
-                            <span
-                              style={{
-                                color: "rgb(109,110,112)",
-                                textDecoration: "line-through",
-                              }}
-                            >
-                              <span>
-                                {props.data.offerPrice === 0
-                                  ? " "
-                                  : new Intl.NumberFormat("en-IN", {
-                                      style: "currency",
-                                      currency: "INR",
-                                      minimumFractionDigits: 0,
-                                    }).format(
-                                      Math.round(props.data.offerPrice)
-                                    )}
-                              </span>
-                            </span>
-                            {/* <s style={{ color: "#5d5d5d" }}>
-                              {props.data.offerPrice === 0 ? "" : Math.round(props.data.offerPrice)}
-                            </s> */}
-                          </Typography>
-                        </span>
-                      </Typography>
-                    </Grid>
-
-                    <Grid items>
-                      <Typography className={classes.discountPercentage}>
-                        {props.data.save === 0
-                          ? " "
-                          : ` ${Math.round(props.data.save)}% OFF`}
-                        &nbsp;&nbsp;
-                      </Typography>
-                    </Grid>
-                  </Grid>
+              {props.shopothercategories ? (
+                <>
                   <Grid container xs={12}>
                     <Typography
                       variant="body1"
-                      component="span"
                       style={{ paddingLeft: "5px" }}
-                      className={`${classes.titles}`}
+                      className={`${classes.titlesshopother}`}
                     >
+                      {" "}
                       {props.data.title.charAt(0).toUpperCase() +
                         props.data.title.slice(1)}
                     </Typography>
                   </Grid>
-                </Hidden>
-                <Hidden mdUp>
-                  <Grid
-                    container
-                    item
-                    xs={12}
-                    sm={12}
-                    className={`${classes.priceClassMain}`}
-                    style={{
-                      display: "flex",
-                      alignItems: "baseline",
-                      justifyContent: "space-between",
-                    }}
-                  >
-                    <Grid items>
-                      <Typography
-                        variant="h6"
-                        component="h6"
-                        className={classes.offerMainPrice}
-                        style={{
-                          justifyContent: "flex-start",
-                          display: "flex",
-                          paddingLeft: "5px",
-                          color: "rgb(109,110,112)",
-                        }}
-                      >
-                        {new Intl.NumberFormat("en-IN", {
-                          style: "currency",
-                          currency: "INR",
-                          minimumFractionDigits: 0,
-                        }).format(Math.round(props.data.price))}
-                        <span style={{ display: "flex", alignSelf: "center" }}>
-                          {" "}
+                </>
+              ) : (
+                <>
+                  <Hidden smDown>
+                    <Grid
+                      container
+                      item
+                      xs={12}
+                      sm={12}
+                      className={`${classes.priceClassMain}`}
+                      style={{
+                        display: "flex",
+                        alignItems: "baseline",
+                        justifyContent: "space-between",
+                      }}
+                    >
+                      <Grid items>
+                        {props.data.offerPrice === props.data.price ? (
                           <Typography
-                            className={classes.strikeText}
+                            variant="h5"
+                            component="h5"
+                            className={classes.offerMainPrice}
                             style={{
-                              paddingLeft: "6px",
+                              justifyContent: "flex-start",
+                              display: "flex",
+                              paddingLeft: "5px",
+                              color: "rgb(109,110,112)",
                             }}
                           >
+                            {new Intl.NumberFormat("en-IN", {
+                              style: "currency",
+                              currency: "INR",
+                              minimumFractionDigits: 0,
+                            }).format(Math.round(props.data.price))}
+                          </Typography>
+                        ) : (
+                          <Typography
+                            variant="h6"
+                            component="h6"
+                            className={classes.offerMainPrice}
+                            style={{
+                              justifyContent: "flex-start",
+                              display: "flex",
+                              paddingLeft: "5px",
+                              color: "rgb(109,110,112)",
+                            }}
+                          >
+                            {new Intl.NumberFormat("en-IN", {
+                              style: "currency",
+                              currency: "INR",
+                              minimumFractionDigits: 0,
+                            }).format(Math.round(props.data.price))}
                             <span
-                              style={{
-                                color: "rgb(109,110,112)",
-                                textDecoration: "line-through",
-                              }}
+                              style={{ display: "flex", alignSelf: "center" }}
                             >
-                              <span>
-                                {props.data.offerPrice === 0
-                                  ? " "
-                                  : new Intl.NumberFormat("en-IN", {
-                                      style: "currency",
-                                      currency: "INR",
-                                      minimumFractionDigits: 0,
-                                    }).format(
-                                      Math.round(props.data.offerPrice)
-                                    )}
-                              </span>
+                              {" "}
+                              <Typography
+                                className={classes.strikeText}
+                                style={{
+                                  paddingLeft: "6px",
+                                }}
+                              >
+                                <span
+                                  style={{
+                                    color: "rgb(109,110,112)",
+                                    textDecoration: "line-through",
+                                  }}
+                                >
+                                  <span>
+                                    {props.data.offerPrice == 0
+                                      ? " "
+                                      : new Intl.NumberFormat("en-IN", {
+                                          style: "currency",
+                                          currency: "INR",
+                                          minimumFractionDigits: 0,
+                                        }).format(
+                                          Math.round(props.data.offerPrice)
+                                        )}
+                                  </span>
+                                </span>
+                              </Typography>
                             </span>
                           </Typography>
-                        </span>
-                      </Typography>
-                    </Grid>
+                        )}{" "}
+                      </Grid>
 
-                    <Grid items>
-                      <Typography className={classes.discountPercentage}>
-                        {props.data.save === 0
-                          ? " "
-                          : ` ${Math.round(props.data.save)}% OFF`}
-                        &nbsp;&nbsp;
-                      </Typography>
+                      <Grid items>
+                        <Typography className={classes.discountPercentage}>
+                          {props.data.save == 0
+                            ? " "
+                            : ` ${Math.abs(Math.round(props.data.save))}% OFF`}
+                          &nbsp;&nbsp;
+                        </Typography>
+                      </Grid>
                     </Grid>
-                  </Grid>
-                  <Grid container xs={12}>
-                    <Typography
-                      variant="body1"
-                      component="span"
-                      style={{ paddingLeft: "5px" }}
-                      className={`${classes.titles}`}
-                    >
-                      {props.data.price}
-                      {props.data.title.charAt(0).toUpperCase() +
-                        props.data.title.slice(1)}
-                    </Typography>
-                  </Grid>
-                </Hidden>
-              </Grid>
-            </CardContent>
-          ) : (
-            <CardContent className={classes.cardContent}>
-              <Grid
-                container
-                item
-                xs={12}
-                className={classes.textPriceCardGrid}
-                alignItems="center"
-              >
-                <Grid
-                  container
-                  item
-                  xs={12}
-                  sm={12}
-                  className={`${classes.priceClassMain}`}
-                >
-                  <Typography
-                    variant="h6"
-                    component="h6"
-                    className={classes.offerMainPrice}
-                    style={{
-                      width: "100%",
-                      justifyContent: "flex-start",
-                      display: "flex",
-                      paddingLeft: "5px",
-                    }}
-                  >
-                    {new Intl.NumberFormat("en-IN", {
-                      style: "currency",
-                      currency: "INR",
-                      minimumFractionDigits: 0,
-                    }).format(Math.round(props.data.price))}
-                  </Typography>
-
-                  <Grid container xs={12}>
-                    <Typography
-                      variant="body1"
-                      component="span"
-                      style={{ paddingLeft: "5px" }}
-                      className={`${classes.titles}`}
-                    >
-                      {props.static
-                        ? "Jazzy Gypsy Diamond Hoop Earrings"
-                        : props.data.title.charAt(0).toUpperCase() +
+                    <Grid container xs={12}>
+                      <Typography
+                        variant="body1"
+                        component="span"
+                        style={{ paddingLeft: "5px" }}
+                        className={`${classes.titles}`}
+                      >
+                        {" "}
+                        {props.data.title.charAt(0).toUpperCase() +
                           props.data.title.slice(1)}
-                    </Typography>
-                  </Grid>
-                </Grid>
-              </Grid>
-            </CardContent>
-          )}
+                      </Typography>
+                    </Grid>
+                  </Hidden>
+                  <Hidden mdUp>
+                    <Grid
+                      container
+                      item
+                      xs={12}
+                      sm={12}
+                      className={`${classes.priceClassMain}`}
+                      style={{
+                        justifyContent: "space-between",
+                      }}
+                    >
+                      {props.data.offerPrice === props.data.price ? (
+                        <Typography
+                          variant="h5"
+                          component="h5"
+                          className={classes.offerMainPrice}
+                          style={{
+                            justifyContent: "flex-start",
+                            display: "flex",
+                            paddingLeft: "5px",
+                            color: "rgb(109,110,112)",
+                          }}
+                        >
+                          {new Intl.NumberFormat("en-IN", {
+                            style: "currency",
+                            currency: "INR",
+                            minimumFractionDigits: 0,
+                          }).format(Math.round(props.data.price))}
+                        </Typography>
+                      ) : (
+                        <Grid container>
+                          <Grid item xs={6}>
+                            <Typography
+                              className={classes.offerMainPrice}
+                              style={{
+                                justifyContent: "flex-start",
+                                display: "flex",
+                                paddingLeft: "5px",
+                                color: "rgb(109,110,112)",
+                              }}
+                            >
+                              {new Intl.NumberFormat("en-IN", {
+                                style: "currency",
+                                currency: "INR",
+                                minimumFractionDigits: 0,
+                              }).format(Math.round(props.data.price))}
+                            </Typography>
+                            <span
+                              style={{
+                                color: "rgb(109,110,112)",
+                                textDecoration: "line-through",
+                                fontSize: "12px",
+                                paddingLeft: "5px",
+                              }}
+                            >
+                              {props.data.offerPrice == 0
+                                ? " "
+                                : new Intl.NumberFormat("en-IN", {
+                                    style: "currency",
+                                    currency: "INR",
+                                    minimumFractionDigits: 0,
+                                  }).format(Math.round(props.data.offerPrice))}
+                            </span>
+                          </Grid>
+
+                          <Grid item xs={6}>
+                            <span
+                              style={{
+                                fontWeight: "bold",
+                                color: "#B78231",
+                                fontSize: "12px",
+                                paddingLeft: "5px",
+                              }}
+                            >
+                              {props.data.save == 0
+                                ? " "
+                                : ` ${Math.abs(
+                                    Math.round(props.data.save)
+                                  )}% OFF`}
+                            </span>
+                          </Grid>
+                        </Grid>
+                      )}{" "}
+                    </Grid>
+                    <Grid container xs={12}>
+                      <Typography
+                        variant="body1"
+                        component="span"
+                        style={{ paddingLeft: "5px" }}
+                        className={`${classes.titles}`}
+                      >
+                        {" "}
+                        {props.data.title.charAt(0).toUpperCase() +
+                          props.data.title.slice(1)}
+                      </Typography>
+                    </Grid>
+                  </Hidden>
+                </>
+              )}
+            </Grid>
+          </CardContent>
         </Card>
       </Card>
     </div>

@@ -53,6 +53,10 @@ export const mainlist = [
     url: "/jewellery-shipping+in+1+day",
   },
   {
+    name: "OTHER JEWELLERY",
+    url: "/jewellery/kada/csk_kada?sku_id=1000000",
+  },
+  {
     name: "SOLITAIRE",
     url: "/jewellery/kada/csk_kada?sku_id=1000000",
   },
@@ -64,14 +68,11 @@ export const mainlist = [
     name: "COLLECTIONS",
     url: "/jewellery/kada/csk_kada?sku_id=1000000",
   },
-  {
-    name: "OTHER JEWELLERY",
-    url: "/jewellery/kada/csk_kada?sku_id=1000000",
-  },
-  {
-    name: "GIFITING",
-    url: "/jewellery/kada/csk_kada?sku_id=1000000",
-  },
+ 
+  // {
+  //   name: "GIFITING",
+  //   url: "/jewellery/kada/csk_kada?sku_id=1000000",
+  // },
   {
     name: "SAVING SCHEME",
     url: "/jewellery/kada/csk_kada?sku_id=1000000",
@@ -949,7 +950,7 @@ export const Jewellery = {
   STYLORI: {
     option: {
       hr: "",
-      option: ["STYLORI GOLD", "STYLORI SILVER", "CSK MERCHANDISE"],
+      option: ["STYLORI GOLDs", "STYLORI SILVER", "CSK MERCHANDISE"],
     },
   },
   SOLITAIRE: {
@@ -1162,6 +1163,10 @@ export const menuListHeader = [
     url: "bangles-jewellery",
   },
   {
+    title: "Other jewellery".toUpperCase(),
+    url: "#",
+  },
+  {
     title: "Solitaire".toUpperCase(),
     url: "/solitaire-jewellery",
   },
@@ -1173,10 +1178,7 @@ export const menuListHeader = [
     title: "Collections".toUpperCase(),
     url: "/CollectionFullPage",
   },
-  {
-    title: "Other jewellery".toUpperCase(),
-    url: "#",
-  },
+  
   {
     title: "Saving scheme".toUpperCase(),
     url: "#",

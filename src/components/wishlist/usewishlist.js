@@ -137,7 +137,7 @@ const useWishlists = (props) => {
        
         localStorageQuantity[values.product_sku] = _qty;
         localStorage.setItem("quantity", JSON.stringify(localStorageQuantity));
-        filters.quantity[values.product_sku] = localStorageQuantity[values.product_sku];
+        // filters.quantity[values.product_sku] = localStorageQuantity[values.product_sku];
       }
       fetch(`${API_URL}/removewishlist`, {
         method: "POST",

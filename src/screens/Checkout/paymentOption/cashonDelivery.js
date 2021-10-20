@@ -1,11 +1,10 @@
-import React from "react";
-import { Container, Grid, Button } from "@material-ui/core";
-import "./payment.css";
+import { Button, Grid } from "@material-ui/core";
 // import SimpleSelect from '../../../components/InputComponents/Select/Select';
 import { CartContext } from "context";
 import cart from "mappers/cart";
-import { useNetworkRequest } from "hooks/index";
-import { API_URL, HOME_PAGE_URL, CDN_URL } from "../../../config";
+import React from "react";
+import { API_URL } from "../../../config";
+import "./payment.css";
 
 var obj = {};
 var obj_user = {};
@@ -73,8 +72,7 @@ class CashonDelivey extends React.Component {
         alert(resdata.message);
         window.location.pathname = `/paymentsuccess/${resdata.order.id}`;
       })
-      .catch((err) => {
-      });
+      .catch((err) => {});
     // localStorage.removeItem("cart_id")
 
     // }
@@ -102,13 +100,15 @@ class CashonDelivey extends React.Component {
     const data = this.props.data ? this.props.data : "";
     var discounted_price = this.props.cartFilters.discounted_price ? this.props.cartFilters.discounted_price : "";
     // var { data:coddata, error, loading, makeFetch} = useNetworkRequest('/api/auth/signin', {}, false);
-    var dataCard1;
+    var dataCard1 = null;
     if (data.length > 0 && data !== undefined && data !== null) {
       dataCard1 =
         this.props.data &&
         this.props.data
           .map((val) => {
-            return val.dataCard1[0].offerPrice;
+            return (
+              Math.round(val.dataCard1[0].offerPrice) * (JSON.parse(localStorage.getItem("quantity"))[val.generatedSku] ?? 1)
+            );
           })
           .reduce(myFunc);
       function myFunc(total, num) {
@@ -127,17 +127,20 @@ class CashonDelivey extends React.Component {
     obj["payment_mode"] = "COD";
     obj["user_id"] = user_id;
     obj["cart_id"] = cart_ids;
-    // alert(JSON.stringify(dataCard1))
+
     return (
       <div>
         <Grid spacing={12} container lg={12} xs={12} style={{ width: "100%" }}>
-          <Grid item lg={12} xs={12}>
+          <Grid item lg={12} xs={12} style={{ padding: "15px" }}>
             <div className="amout-pay"> Amount Payable </div>
             <div className="credit-btn-div">
               <span className="rups">
-                {Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", minimumFractionDigits: 0 }).format(
-                  Math.round(dataCard1 - discounted_price)
-                )}
+                {Intl.NumberFormat("en-IN", {
+                  style: "currency",
+                  currency: "INR",
+                  minimumFractionDigits: 0,
+                }).format(Math.round(dataCard1 - discounted_price))}
+                {/* {Math.round(dataCard1 - discounted_price)} */}
               </span>
               &nbsp;
               <Button

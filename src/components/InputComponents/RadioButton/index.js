@@ -11,6 +11,8 @@ export default function CardRadioButton(props) {
         radioValues={props.data}
         onChange={props.onChange}
         values={props.values}
+        close={props.close}
+        clear={props.clear}
       />
     </Paper>
   );

@@ -22,6 +22,7 @@ class ProductDetails extends React.Component {
 
   productsDetails = (data) => {
     const { classes } = this.props;
+
     return (
       <Grid container>
         {data &&
@@ -52,116 +53,196 @@ class ProductDetails extends React.Component {
                       </span>
                       <hr class="bottom-line"></hr>
                       <>
-                        {valueofproductdetail.namedetail !== undefined &&
-                          valueofproductdetail.namedetail.map((res) => {
-                            return (
-                              <>
-                                {res.details !== null &&
-                                res.details !== undefined &&
-                                res.details.length === 0 ? (
-                                  false
-                                ) : (
-                                  <span>
-                                    {
-                                      <>
-                                        {res.name &&
-                                          res.details !== null &&
-                                          res.details !== undefined && (
-                                            <Grid container item xs={12}>
-                                              <Grid xs={4} lg={4}>
-                                                <ListItemText
-                                                  variant=""
-                                                  className={`product-subhead ${classes.normalfonts}`}
-                                                >
-                                                  <span
-                                                    style={{ fontSize: "12px" }}
-                                                  >
-                                                    {" "}
-                                                    {res.name}
-                                                  </span>
-                                                </ListItemText>
-                                              </Grid>
-                                              <Grid
-                                                container
-                                                item
-                                                xs={8}
-                                                style={{ alignItems: "center" }}
-                                              >
-                                                {
-                                                  // valueofproductdetail.header === 'Price Breakup' &&
-
-                                                  isArray(res.details) ? (
-                                                    <ListItemText
-                                                      variant=""
-                                                      className={`product-subhead-list ${classes.fontgray}`}
-                                                    >
-                                                      {res.details.map(
-                                                        (Item, Index) => {
-                                                          return (
-                                                            <span
-                                                              style={{
-                                                                fontSize:
-                                                                  "12px",
-                                                                textAlign:
-                                                                  "left",
-                                                              }}
-                                                            >
-                                                              {" "}
-                                                              {valueofproductdetail.header ===
-                                                              "Price Breakup" ? (
-                                                                Index === 0 &&
-                                                                res.details[
-                                                                  Index
-                                                                ] !==
+                        {valueofproductdetail.namedetail == undefined
+                          ? " "
+                          : valueofproductdetail.namedetail.map(
+                              (res, Index) => {
+                                return (
+                                  <>
+                                    {res.details !== null &&
+                                    res.details !== undefined &&
+                                    res.details.length === 0 &&
+                                    res.details == 0 ? (
+                                      false
+                                    ) : (
+                                      <span>
+                                        {
+                                          <>
+                                            {res.name &&
+                                              res.details !== null &&
+                                              res.details !== undefined &&
+                                              res.details !== 0 && (
+                                                <Grid container item xs={12}>
+                                                  <Grid xs={4} lg={4}>
+                                                    {res.details == 0 ? (
+                                                      ""
+                                                    ) : isArray(res.details) ? (
+                                                      <ListItemText
+                                                        variant=""
+                                                        className={`product-subhead-list ${classes.fontgray}`}
+                                                      >
+                                                        {res.details.map(
+                                                          (Item, Index) => {
+                                                            return (
+                                                              <span
+                                                                style={{
+                                                                  fontSize:
+                                                                    "12px",
+                                                                  textAlign:
+                                                                    "left",
+                                                                }}
+                                                              >
+                                                                {valueofproductdetail.header ===
+                                                                "Price Breakup" ? (
+                                                                  Index === 0 &&
                                                                   res.details[
-                                                                    Index + 1
-                                                                  ] ? (
-                                                                  <del>
-                                                                    {Item}
-                                                                  </del>
-                                                                ) : Index ===
-                                                                  0 ? (
-                                                                  ""
+                                                                    Index
+                                                                  ] !==
+                                                                    res.details[
+                                                                      Index + 1
+                                                                    ] &&
+                                                                  res.details
+                                                                    .Item !==
+                                                                    0 ? (
+                                                                    Item ==
+                                                                    0 ? (
+                                                                      " "
+                                                                    ) : (
+                                                                      <>
+                                                                        {
+                                                                          res.name
+                                                                        }
+                                                                      </>
+                                                                    )
+                                                                  ) : Index ==
+                                                                    0 ? (
+                                                                    " "
+                                                                  ) : Item ==
+                                                                    0 ? (
+                                                                    " "
+                                                                  ) : (
+                                                                    " "
+                                                                  )
+                                                                ) : (
+                                                                  res.name
+                                                                )}{" "}
+                                                              </span>
+                                                            );
+                                                          }
+                                                        )}
+                                                      </ListItemText>
+                                                    ) : (
+                                                      <ListItemText
+                                                        variant=""
+                                                        className={`product-subhead-list ${classes.fontgray}`}
+                                                      >
+                                                        {
+                                                          <span
+                                                            style={{
+                                                              fontSize: "12px",
+                                                            }}
+                                                          >
+                                                            {" "}
+                                                            {res.name}
+                                                          </span>
+                                                        }
+                                                      </ListItemText>
+                                                    )}
+                                                  </Grid>
+                                                  <Grid
+                                                    container
+                                                    item
+                                                    xs={8}
+                                                    style={{
+                                                      alignItems: "center",
+                                                    }}
+                                                  >
+                                                    {res.details == 0 ? (
+                                                      ""
+                                                    ) : isArray(res.details) ? (
+                                                      <ListItemText
+                                                        variant=""
+                                                        className={`product-subhead-list ${classes.fontgray}`}
+                                                      >
+                                                        {res.details.map(
+                                                          (Item, Index) => {
+                                                            return (
+                                                              <span
+                                                                style={{
+                                                                  fontSize:
+                                                                    "12px",
+                                                                  textAlign:
+                                                                    "left",
+                                                                }}
+                                                              >
+                                                                {valueofproductdetail.header ===
+                                                                "Price Breakup" ? (
+                                                                  Index === 0 &&
+                                                                  res.details[
+                                                                    Index
+                                                                  ] !==
+                                                                    res.details[
+                                                                      Index + 1
+                                                                    ] &&
+                                                                  res.details
+                                                                    .Item !==
+                                                                    0 ? (
+                                                                    Item ==
+                                                                    0 ? (
+                                                                      " "
+                                                                    ) : (
+                                                                      <>
+                                                                        <del>
+                                                                          {Item}
+                                                                        </del>
+                                                                      </>
+                                                                    )
+                                                                  ) : Index ==
+                                                                    0 ? (
+                                                                    " "
+                                                                  ) : Item ==
+                                                                    0 ? (
+                                                                    " "
+                                                                  ) : (
+                                                                    Item
+                                                                  )
                                                                 ) : (
                                                                   Item
-                                                                )
-                                                              ) : (
-                                                                Item
-                                                              )}{" "}
-                                                            </span>
-                                                          );
+                                                                )}{" "}
+                                                              </span>
+                                                            );
+                                                          }
+                                                        )}
+                                                      </ListItemText>
+                                                    ) : (
+                                                      <ListItemText
+                                                        variant=""
+                                                        className={`product-subhead-list ${classes.fontgray}`}
+                                                      >
+                                                        {/* {data[0].productsDetails[3].namedetail[1].length > 0} */}
+                                                        {
+                                                          <span
+                                                            style={{
+                                                              fontSize: "12px",
+                                                            }}
+                                                          >
+                                                            {" "}
+                                                            {res.details}
+                                                          </span>
                                                         }
-                                                      )}
-                                                    </ListItemText>
-                                                  ) : (
-                                                    <ListItemText
-                                                      variant=""
-                                                      className={`product-subhead-list ${classes.fontgray}`}
-                                                    >
-                                                      {/* {data[0].productsDetails[3].namedetail[1].length > 0} */}
-                                                      {
-                                                        <span
-                                                          style={{
-                                                            fontSize: "12px",
-                                                          }}
-                                                        >
-                                                          {" "}
-                                                          {res.details}
-                                                        </span>
-                                                      }
-                                                    </ListItemText>
-                                                  )
-                                                }
-                                              </Grid>
-                                            </Grid>
-                                          )}
-                                      </>
-                                    }
-                                  </span>
-                                )}
-                              </>
-                            );
-                          })}
+                                                      </ListItemText>
+                                                    )}
+                                                  </Grid>
+                                                </Grid>
+                                              )}
+                                          </>
+                                        }
+                                      </span>
+                                    )}
+                                  </>
+                                );
+                              }
+                            )}
                       </>
                     </div>
                   </div>
@@ -233,6 +314,7 @@ class ProductDetails extends React.Component {
                                   {" "}
                                   {res.name &&
                                     res.details !== null &&
+                                    res.details !== 0 &&
                                     res.details !== undefined && (
                                       <Grid
                                         container
@@ -243,15 +325,53 @@ class ProductDetails extends React.Component {
                                         }}
                                       >
                                         <Grid xs={4} lg={4}>
-                                          <ListItemText
-                                            variant=""
-                                            className={`product-subhead ${classes.normalfonts}`}
-                                          >
-                                            <span style={{ fontSize: "12px" }}>
-                                              {" "}
-                                              {res.name}
-                                            </span>
-                                          </ListItemText>
+                                          {isArray(res.details) ? (
+                                            <ListItemText
+                                              variant=""
+                                              className={`product-subhead-list ${classes.fontgray}`}
+                                            >
+                                              {res.details.map(
+                                                (Item, Index) => {
+                                                  return (
+                                                    <span
+                                                      style={{
+                                                        fontSize: "12px",
+                                                        textAlign: "left",
+                                                      }}
+                                                    >
+                                                      {" "}
+                                                      {val.header ===
+                                                      "Price Breakup"
+                                                        ? Index === 0 &&
+                                                          res.details[Index] !==
+                                                            res.details[
+                                                              Index + 1
+                                                            ]
+                                                          ? res.name
+                                                          : Index === 0
+                                                          ? ""
+                                                          : Item === 0
+                                                          ? " "
+                                                          : ""
+                                                        : Item}{" "}
+                                                    </span>
+                                                  );
+                                                }
+                                              )}
+                                            </ListItemText>
+                                          ) : (
+                                            <ListItemText
+                                              variant=""
+                                              className={`product-subhead-list ${classes.fontgray}`}
+                                            >
+                                              <span
+                                                style={{ fontSize: "12px" }}
+                                              >
+                                                {" "}
+                                                {res.name}
+                                              </span>
+                                            </ListItemText>
+                                          )}
                                         </Grid>
                                         <Grid
                                           container
@@ -284,6 +404,8 @@ class ProductDetails extends React.Component {
                                                           <del>{Item}</del>
                                                         ) : Index === 0 ? (
                                                           ""
+                                                        ) : Item === 0 ? (
+                                                          " "
                                                         ) : (
                                                           Item
                                                         )

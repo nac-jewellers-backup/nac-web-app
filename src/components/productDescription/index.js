@@ -43,13 +43,23 @@ class ProductDescription extends Component {
       { title: "jewellery", url: "/jewellery" },
     ];
     // const descriptionData = this.props.data;
-    const settings = this.props.data && this.props.data[0] && this.props.data[0].dataCarousel;
+    const settings =
+      this.props.data && this.props.data[0] && this.props.data[0].dataCarousel;
     // const fadeImages = this.props.data && this.props.data[0] && this.props.data[0].carouselImage;
     const fadeImages =
-      this.props.datalisting && this.props.datalisting && this.props.datalisting.length > 0
+      this.props.datalisting &&
+      this.props.datalisting &&
+      this.props.datalisting.length > 0
         ? this.props.datalisting.map((val) => {
-            if (val && val.image && val.image.placeImage && val.image.placeImage.img) return val.image.placeImage.img;
-            else return "https://assets.stylori.com/product/SP0384/1000X1000/SP0384-1W.webp";
+            if (
+              val &&
+              val.image &&
+              val.image.placeImage &&
+              val.image.placeImage.img
+            )
+              return val.image.placeImage.img;
+            else
+              return "https://assets.stylori.com/product/SP0384/1000X1000/SP0384-1W.webp";
           })
         : [
             "https://assets.stylori.com/product/SP0384/500X500/SP0384-1W.webp",
@@ -83,28 +93,54 @@ class ProductDescription extends Component {
     return (
       <>
         <Container maxWidth="lg">
-          <Grid style={{ marginTop: "15px", textAlign: "center" }} container direction="row" justify="space-around">
+          <Grid
+            style={{ marginTop: "15px", textAlign: "center" }}
+            container
+            direction="row"
+            justify="space-around"
+          >
             <Grid item container></Grid>
             <Grid item container alignItems="center">
-              <Grid item xs={12} sm={12} md={12} lg={12} xl={12} style={{ textAlign: "center" }}>
+              <Grid
+                item
+                xs={12}
+                sm={12}
+                md={12}
+                lg={12}
+                xl={12}
+                style={{ textAlign: "center" }}
+              >
                 <p>
                   <div className="DescriptionContent">
                     {this.state.showLess === true ? (
                       <>
-                        <span id="moreDots" style={{ display: "inline" }}>
+                        <span
+                          id="moreDots"
+                          style={{ display: "inline", lineHeight: "19px" }}
+                        >
                           {datadescription.slice(0, 320)}...
                         </span>
 
-                        <p onClick={this.handleReadMore} className={`know-txt ${classes.colorLight}`} id="readMore">
+                        <p
+                          onClick={this.handleReadMore}
+                          className={`know-txt ${classes.colorLight}`}
+                          id="readMore"
+                        >
                           {/* <span ><i className="fa faMore">&#xf0da;</i></span> */}
                           READ MORE
                         </p>
                       </>
                     ) : (
                       <>
-                        {datadescription}
+                        <span style={{ display: "inline", lineHeight: "19px" }}>
+                          {datadescription}
+                        </span>
 
-                        <p onClick={this.handleReadMore} className={`know-txt ${classes.colorLight}`} id="readLess">
+                        <p
+                          onClick={this.handleReadMore}
+                          className={`know-txt ${classes.colorLight}`}
+                          id="readLess"
+                        >
                           {/* <span ><i className="fa faMore">&#xf0d8;</i></span>  */}
                           READ LESS
                         </p>

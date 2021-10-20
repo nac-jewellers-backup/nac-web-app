@@ -1,39 +1,37 @@
-import React from "react";
-import Header from "components/SilverComponents/Header";
-import Filterlisting from "components/Filterlisting";
-import { Grid, Hidden, Container } from "@material-ui/core";
+import { Container, Grid, Hidden } from "@material-ui/core";
+import Skeleton from "@material-ui/lab/Skeleton";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import Slideshow from "components/Carousel/carosul";
 import Filter from "components/Filter/filter";
 import Footer from "components/Footer/Footer";
-import { ChatHelp } from "components/ChatHelp";
-import { FilterOptionsContext } from "context";
-import productList from "mappers/productlist";
+import ProductDescription from "components/productDescription";
+import Header from "components/SilverComponents/Header";
 import { CDN_URL } from "config";
+import { CartContext, FilterOptionsContext } from "context";
+import filterData from "mappers/filterData";
+import productList from "mappers/productlist";
+import React from "react";
+import ReactPixel from "react-facebook-pixel";
+import NeedHelp from "components/needHelp";
+import MetaTags from "react-meta-tags";
 import { withRouter } from "react-router";
 import "screens/screens.css";
-import filterData from "mappers/filterData";
-import { async } from "q";
-import MetaTags from "react-meta-tags";
-import { CartContext } from "context";
-import LiveChat from "react-livechat";
-import Slideshow from "components/Carousel/carosul";
-import { homePageStylori } from "./dummydatahome";
-import ProductDescription from "components/productDescription";
 import { API_URL } from "../config";
 import { LISTINGBANNER } from "../queries/home";
-import ReactPixel from "react-facebook-pixel";
 class Stylori extends React.Component {
   constructor(props) {
     super();
     this.state = {
       loading: false,
+      starting: false,
       bannerData: [],
+      imageLoader: false,
     };
   }
   componentDidUpdate(prevProps) {
-
     if (this.props.loading !== prevProps.loading) {
       this.props.setloadingfilters(false);
-
     }
   }
 
@@ -60,9 +58,16 @@ class Stylori extends React.Component {
         } else {
           this.setState({ bannerData: listedPageData });
         }
+        if (data.data.allBanners.nodes.length > 0) {
+          this.setState({ starting: true });
+          console.log("initial", this.state.starting);
+        }
       });
+    Aos.init({ duration: 1500 });
   }
-
+  imageLoader = () => {
+    this.setState({ imageLoading: true });
+  };
   render() {
     // alert(JSON.stringify(this.props.wishlist))
     const { data, dataFilter, loading } = this.props;
@@ -87,7 +92,7 @@ class Stylori extends React.Component {
 
     return (
       <>
-        <LiveChat license={5807571} />
+        {/* <LiveChat license={5807571} /> */}
         <Grid container>
           <div>
             {this.props && this.props.mappedFilters && this.props.mappedFilters.seo_url ? (
@@ -133,30 +138,53 @@ class Stylori extends React.Component {
             wishlist={this.props.wishlistdata}
             wishlist_count={this.props.wishlist_count}
           />
-          <Grid item xs={12}>
-            <Slideshow sliderRef={this.slider} dataCarousel={setting}>
-              {this.state.bannerData.map((val, index) => (
-                <>
-                  <Hidden smDown>
-                    <Grid container key={index}>
-                      <a href={val.url} style={{ width: "100%" }}>
-                        <img src={val.web} alt="banner" style={{ width: "100%", height: "100%" }} />
-                      </a>
-                    </Grid>
-                  </Hidden>
-                  <Hidden mdUp>
-                    <Grid container key={index}>
-                      <a href={val.url}>
-                        <img src={val.mobile} alt="banner" style={{ width: "100%", height: "100%" }} />
-                      </a>
-                    </Grid>
-                  </Hidden>
-                </>
-              ))}
-            </Slideshow>
+          <Grid item xs={12} style={{ backgroundColor: "#ebebeb" }}>
+            {this.state.starting ? (
+              <Slideshow sliderRef={this.slider} dataCarousel={setting}>
+                {this.state.bannerData.map((val, index) => (
+                  <>
+                    <Hidden smDown>
+                      <Grid
+                        container
+                        key={index}
+                        data-aos="fade-zoom-in"
+                        data-aos-easing="ease-in-back"
+                        data-aos-delay="150"
+                        data-aos-offset="0"
+                      >
+                        <a href={val.url} style={{ width: "100%" }}>
+                          <img src={val.web} alt="banner" style={{ width: "100%", height: "100%" }} />
+                        </a>
+                      </Grid>
+                    </Hidden>
+                    <Hidden mdUp>
+                      <Grid container key={index}>
+                        <a href={val.url}>
+                          <img
+                            src={val.mobile}
+                            alt="banner"
+                            style={{ width: "100%", height: "100%" }}
+                            className={`image-${this.state.imageLoading ? "visible" : "hidden"}`}
+                            onLoad={this.imageLoader}
+                          />
+                        </a>
+                      </Grid>
+                    </Hidden>
+                  </>
+                ))}
+              </Slideshow>
+            ) : (
+              <Skeleton variant="rect" style={{ width: "100%" }} className="skeletonHeight" animation="wave" />
+            )}
           </Grid>
           <Grid item xs={12}>
-            <h3 style={{ textTransform: "capitalize", textAlign: "center", margin: "28px 0px 0px 0px" }}>
+            <h3
+              style={{
+                textTransform: "capitalize",
+                textAlign: "center",
+                margin: "28px 0px 0px 0px",
+              }}
+            >
               {this.props?.location?.pathname?.replaceAll("/", " ").replaceAll("-", " ").replaceAll("+", " ") ?? " "}
             </h3>
           </Grid>
@@ -184,6 +212,7 @@ class Stylori extends React.Component {
               <Footer />
             </Hidden>
           </Grid>
+          <NeedHelp />
         </Grid>
       </>
     );

@@ -23,6 +23,7 @@ import MetaTags from "react-meta-tags";
 import { withRouter } from "react-router-dom";
 import "screens/screens.css";
 import Slideshow from "../components/Carousel/carosul";
+import NeedHelp from "../components/needHelp";
 const styles = (theme) => ({
   collectionSection: {
     // "& svg":{
@@ -30,10 +31,7 @@ const styles = (theme) => ({
 
     // }
   },
-  // '& .slick-prev':{
-  //   left:'0px !important'},
-  // '& .slick-next':{
-  //   right:'0px !important'},
+
   spanIcon: {
     width: "6px",
     height: "6px",
@@ -43,8 +41,8 @@ const styles = (theme) => ({
     display: "inline-flex",
     alignItems: "center",
     justifyContent: "center",
-    fontSize: "8px",
-    marginLeft: "5px",
+    fontSize: "7px",
+    marginLeft: "2px",
   },
   // similarProducts:{
   //   "& .svg":{
@@ -81,6 +79,8 @@ class ProductDetail extends Component {
   }
 
   componentDidMount() {
+    console.log(this.props.data[0]);
+
     ReactPixel.init("1464338023867789", {}, { debug: true, autoConfig: false });
     ReactPixel.track("PageView");
   }
@@ -97,228 +97,12 @@ class ProductDetail extends Component {
   };
 
   render() {
-    // alert(JSON.stringify(this.props.data))
-    // alert(JSON.stringify(this.props.data))
-    console.log(this.props.data);
+    //console.log(JSON.stringify(this.props.data));
     const { classes } = this.props;
-
-    const dummyData = [
-      {
-        totalCount: 2788,
-        price: 31157.05,
-        offerPrice: 23367.79,
-        title: "Elegant Drops Diamond Earrings",
-        save: "5999.9",
-        image: {
-          placeImage: {
-            img: "https://assets.stylori.com/product/SE0016/1000X1000/SE0016-1Y.webp",
-          },
-          hoverImage: {
-            img: "https://assets.stylori.com/product/SE0016/1000X1000/HOVER-SE0016-2Y.webp",
-          },
-        },
-        productId: "SE0016",
-        diamondType: "SIIJ",
-        purity: "18K",
-        skuSize: null,
-        productType: "Earrings",
-        skuId: "SE0016-18110000",
-        oneDayShipping: true,
-        imageResolution: {
-          img_res: 250,
-          url_1000x1000: "product/SE0016/1000X1000/HOVER-SE0016-2Y.webp",
-        },
-        skuUrl: "jewellery/earrings/diamond/Metis-Studs?skuid=22969",
-        skuID: "22969",
-        discount: 25,
-      },
-      {
-        totalCount: 2788,
-        price: 77940.39,
-        offerPrice: 58455.29,
-        title: "Jazzy Gypsy Diamond Hoop Earrings",
-        save: "5999.9",
-        image: {
-          placeImage: {
-            img: "https://assets.stylori.com/product/SE0015/1000X1000/SE0015-1YW.webp",
-          },
-          hoverImage: {
-            img: "https://assets.stylori.com/product/SE0015/1000X1000/HOVER-SE0015-2YW.webp",
-          },
-        },
-        productId: "SE0015",
-        diamondType: "SIIJ",
-        purity: "18K",
-        skuSize: null,
-        productType: "Earrings",
-        skuId: "SE0015-18410000",
-        oneDayShipping: false,
-        imageResolution: {
-          img_res: 250,
-          url_1000x1000: "product/SE0015/1000X1000/HOVER-SE0015-2YW.webp",
-        },
-        skuUrl: "jewellery/earrings/diamond/Nuages-Hoops?skuid=22975",
-        skuID: "22975",
-        discount: 25,
-      },
-      {
-        totalCount: 2788,
-        price: 86653.95,
-        offerPrice: 64990,
-        title: "Gorgeous Solitaire Diamond Marquise Earrings",
-        save: "5999.9",
-        image: {
-          placeImage: {
-            img: "https://assets.stylori.com/product/SE0024/1000X1000/SE0024-1Y.webp",
-          },
-          hoverImage: {
-            img: "https://assets.stylori.com/product/SE0024/1000X1000/HOVER-SE0024-2Y.webp",
-          },
-        },
-        productId: "SE0024",
-        diamondType: "SIIJ",
-        purity: "18K",
-        skuSize: null,
-        productType: "Earrings",
-        skuId: "SE0024-18110000",
-        oneDayShipping: false,
-        imageResolution: {
-          img_res: 250,
-          url_1000x1000: "product/SE0024/1000X1000/HOVER-SE0024-2Y.webp",
-        },
-        skuUrl: "jewellery/bouquetoflove/Navis-Earring?skuid=21569",
-        skuID: "21569",
-        discount: 25,
-      },
-      {
-        totalCount: 2788,
-        price: 86653.95,
-        offerPrice: 64990.46,
-        title: "Gorgeous Solitaire Diamond Marquise Earrings",
-        save: "5999.9",
-        image: {
-          placeImage: {
-            img: "https://assets.stylori.com/product/SE0024/1000X1000/SE0024-1Y.webp",
-          },
-          hoverImage: {
-            img: "https://assets.stylori.com/product/SE0024/1000X1000/HOVER-SE0024-2Y.webp",
-          },
-        },
-        productId: "SE0024",
-        diamondType: "SIIJ",
-        purity: "18K",
-        skuSize: null,
-        productType: "Earrings",
-        skuId: "SE0024-18110000",
-        oneDayShipping: false,
-        imageResolution: {
-          img_res: 250,
-          url_1000x1000: "product/SE0024/1000X1000/HOVER-SE0024-2Y.webp",
-        },
-        skuUrl: "jewellery/bouquetoflove/Navis-Earring?skuid=21569",
-        skuID: "21569",
-        discount: 25,
-      },
-      {
-        totalCount: 2788,
-        price: 86653.95,
-        offerPrice: 64990.46,
-        title: "Gorgeous Solitaire Diamond Marquise Earrings",
-        save: "5999.9",
-        image: {
-          placeImage: {
-            img: "https://assets.stylori.com/product/SE0024/1000X1000/SE0024-1Y.webp",
-          },
-          hoverImage: {
-            img: "https://assets.stylori.com/product/SE0024/1000X1000/HOVER-SE0024-2Y.webp",
-          },
-        },
-        productId: "SE0024",
-        diamondType: "SIIJ",
-        purity: "18K",
-        skuSize: null,
-        productType: "Earrings",
-        skuId: "SE0024-18110000",
-        oneDayShipping: false,
-        imageResolution: {
-          img_res: 250,
-          url_1000x1000: "product/SE0024/1000X1000/HOVER-SE0024-2Y.webp",
-        },
-        skuUrl: "jewellery/bouquetoflove/Navis-Earring?skuid=21569",
-        skuID: "21569",
-        discount: 25,
-      },
-      {
-        totalCount: 2788,
-        price: 86653.95,
-        offerPrice: 64990.46,
-        title: "Gorgeous Solitaire Diamond Marquise Earrings",
-        save: "5999.9",
-        image: {
-          placeImage: {
-            img: "https://assets.stylori.com/product/SE0024/1000X1000/SE0024-1Y.webp",
-          },
-          hoverImage: {
-            img: "https://assets.stylori.com/product/SE0024/1000X1000/HOVER-SE0024-2Y.webp",
-          },
-        },
-        productId: "SE0024",
-        diamondType: "SIIJ",
-        purity: "18K",
-        skuSize: null,
-        productType: "Earrings",
-        skuId: "SE0024-18110000",
-        oneDayShipping: false,
-        imageResolution: {
-          img_res: 250,
-          url_1000x1000: "product/SE0024/1000X1000/HOVER-SE0024-2Y.webp",
-        },
-        skuUrl: "jewellery/bouquetoflove/Navis-Earring?skuid=21569",
-        skuID: "21569",
-        discount: 25,
-      },
-      {
-        totalCount: 2788,
-        price: 40798.7,
-        offerPrice: 30599.03,
-        title: "Striking Diamond Shape Earrings",
-        save: "5999.9",
-        image: {
-          placeImage: {
-            img: "https://assets.stylori.com/product/SE0031/1000X1000/SE0031-1Y.webp",
-          },
-          hoverImage: {
-            img: "https://assets.stylori.com/product/SE0031/1000X1000/HOVER-SE0031-2Y.webp",
-          },
-        },
-        productId: "SE0031",
-        diamondType: "SIIJ",
-        purity: "18K",
-        skuSize: null,
-        productType: "Earrings",
-        skuId: "SE0031-18110000",
-        oneDayShipping: false,
-        imageResolution: {
-          img_res: 250,
-          url_1000x1000: "product/SE0031/1000X1000/HOVER-SE0031-2Y.webp",
-        },
-        skuUrl: "jewellery/earrings/diamond/Starbust-Inn?skuid=22356",
-        skuID: "22356",
-        discount: 25,
-      },
-    ];
 
     var loc = this.props.location.pathname;
     var path = loc.split("/");
-    var data_json = [
-      { title: "home", url: "/" },
-      { title: path[2], url: this.renderUrl() },
-      {
-        title:
-          this.props.data && this.props.data[0] && this.props.data[0].title,
-      },
-    ];
-    // alert(JSON.stringify(this.props.wishlistdata))
+
     const clear_rating = (bool) => {
       if (bool === false) {
         this.setState({
@@ -377,9 +161,6 @@ class ProductDetail extends Component {
       prevArrow: <ArrowLeft />,
       nextArrow: <ArrowRight />,
     };
-
-    // alert(JSON.stringify(this.props.setratingcountsclear))
-    // let diamondWeight = this.props.data[0].productsDetails[1].namedetail[3].details ?? "";
 
     return (
       <div style={{ overflow: "hidden" }}>
@@ -453,6 +234,7 @@ class ProductDetail extends Component {
             <Grid xs={11} container spacing={12} style={{ marginTop: 70 }}>
               <Grid item xs={6}>
                 <ProductImageZoom data={this.props.data} />
+                <PaperSheetProduct />
               </Grid>
               <Grid item xs={6}>
                 <div className={classes.priceNowOverallBox}>
@@ -476,12 +258,19 @@ class ProductDetail extends Component {
                   }}
                 >
                   <Grid item>
-                    <span>Model No:</span>
-                  </Grid>
-                  <Grid item>
                     <span>
                       {" "}
-                      &nbsp;{this?.props?.data[0]?.skuId ?? " "} &nbsp; &nbsp;{" "}
+                      <span
+                        style={{
+                          color: "gray",
+                          fontWeight: "bold",
+                          fontSize: 12,
+                        }}
+                      >
+                        Model No:{" "}
+                      </span>{" "}
+                      &nbsp;
+                      {this?.props?.data[0]?.skuId ?? " "} &nbsp; &nbsp;{" "}
                       <span style={{ fontSize: "10px", fontStyle: "normal " }}>
                         |
                       </span>{" "}
@@ -492,7 +281,7 @@ class ProductDetail extends Component {
                         color: "gray",
                         fontWeight: "bold",
                         fontSize: 12,
-                        marginBottom: 8,
+                        marginTop: 4,
                       }}
                     >
                       Product Information:{" "}
@@ -702,8 +491,6 @@ class ProductDetail extends Component {
                       dataCarousel={dataCarouselcollections}
                     >
                       {this.props?.data[0]?.fadeImageSublist.map((val) => {
-                        console.log(this.props?.data);
-                        console.log("pppppp");
                         return (
                           <ImgMediaCard
                             data={val}
@@ -794,6 +581,7 @@ class ProductDetail extends Component {
                         (val) => {
                           return (
                             <ImgMediaCard
+                              shopothercategories={true}
                               data={val}
                               cardSize="auto"
                               hoverText={true}
@@ -839,8 +627,6 @@ class ProductDetail extends Component {
                   dataCarousel={dataCarouselcollectionsSm}
                 >
                   {this.props?.data[0]?.fadeImageSublist?.map((val) => {
-                    console.log(val);
-
                     return (
                       <ImgMediaCard
                         data={val}
@@ -929,6 +715,7 @@ class ProductDetail extends Component {
                     (val) => {
                       return (
                         <ImgMediaCard
+                          shopothercategories={true}
                           data={val}
                           cardSize="auto"
                           hoverText={true}
@@ -944,6 +731,7 @@ class ProductDetail extends Component {
             <Footer />
           </Grid>
         </Hidden>
+        <NeedHelp />
       </div>
     );
   }

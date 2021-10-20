@@ -56,14 +56,7 @@ const mobilecarousel = (props, val, wishlist) => {
   );
 };
 
-const Productprice = (
-  props,
-  anchorEl,
-  handleClick,
-  handleClose,
-  handleReadMore,
-  viewMore
-) => {
+const Productprice = (props, anchorEl, handleClick, handleClose, handleReadMore, viewMore) => {
   // const [prodDesc, setProdDesc] = useState(false);
   const { data } = props;
   const { classes } = props;
@@ -90,36 +83,25 @@ const Productprice = (
               </div>
               <br />
             </Hidden>
-            <Paper
-              elevation={0}
-              style={{ width: "100%", padding: "0px", margin: "0px " }}
-            >
+            <Paper elevation={0} style={{ width: "100%", padding: "0px", margin: "0px " }}>
               <Grid container>
                 <Grid item xs={12} lg={12} md={12}>
                   <div className="price-div">
                     <Hidden mdUp>
-                      <Grid
-                        container
-                        spacing={12}
-                        xs={12}
-                        style={{ padding: 5 }}
-                      >
+                      <Grid container spacing={12} xs={12} style={{ padding: 5 }}>
                         <Grid container item xs={8}>
                           <h1
                             className={`pdp-title ${classes.title}`}
-                            style={{ width: "100%" }}
+                            style={{
+                              width: "100%",
+                              fontFamily: "notoSerif-regular",
+                            }}
                           >
                             {val?.title}
                           </h1>
                           <span className={`pdp-desc ${classes.dis} `}>
-                            {val?.dis?.length > 30 && viewMore
-                              ? val?.dis
-                              : `${val?.dis?.substring(0, 30)}...`}
-                            <span
-                              className={`pdp-desc ${
-                                viewMore ? "" : classes.disDescriptionPD
-                              }`}
-                            >
+                            {val?.dis?.length > 30 && viewMore ? val?.dis : `${val?.dis?.substring(0, 60)}...`}
+                            <span className={`pdp-desc ${viewMore ? "" : classes.disDescriptionPD}`}>
                               <span>
                                 <span
                                   style={{
@@ -133,27 +115,22 @@ const Productprice = (
                                     handleReadMore();
                                   }}
                                 >
-                                  {viewMore ? "" : "Read More"}
+                                  {viewMore ? "Read Less" : "Read More"}
                                 </span>
                               </span>
                             </span>
                           </span>
                         </Grid>
 
-                        <Grid
-                          container
-                          item
-                          xs={4}
-                          alignContent="center"
-                          alignItems="cennpm cache cleanter"
-                        >
+                        <Grid container item xs={4} style={{ paddingTop: "20px" }} alignItems="cennpm cache cleanter">
                           <Hidden mdUp>
                             <div className={classes.width}>
                               <Pricing
-                                price={data[0]?.sellingPrice}
+                                price={data[0]?.price}
                                 offerPrice={data[0]?.offerPrice}
                                 offerDiscount={val?.offerDiscount}
                                 pdpagesm={true}
+                                pdpage={true}
                               ></Pricing>
                             </div>
                           </Hidden>
@@ -161,25 +138,14 @@ const Productprice = (
                       </Grid>
                     </Hidden>
                     <Hidden smDown>
-                      <h1 className={`pdp-title ${classes.title} `}>
-                        {val?.title}
-                      </h1>
+                      <h1 className={`pdp-title ${classes.title} `}>{val?.title}</h1>
                     </Hidden>
                     <Hidden smDown>
-                      <p
-                        className={`pdp-desc ${classes.dis}`}
-                        style={{ marginBottom: 0, paddingTop: "5px" }}
-                      >
-                        {val?.dis?.length > 100 && viewMore
-                          ? val?.dis
-                          : val?.dis.substring(0, 100)}
+                      <p className={`pdp-desc ${classes.dis}`} style={{ marginBottom: 0, paddingTop: "5px" }}>
+                        {val?.dis?.length > 100 && viewMore ? val?.dis : val?.dis.substring(0, 100)}
                         {/* {val.dis} */}
                         <span>
-                          <p
-                            className={`pdp-desc ${
-                              viewMore ? "" : classes.disDescriptionPD
-                            }`}
-                          >
+                          <p className={`pdp-desc ${viewMore ? "" : classes.disDescriptionPD}`}>
                             <span style={{ width: "80%" }}>
                               <span
                                 style={{
@@ -191,7 +157,7 @@ const Productprice = (
                                   handleReadMore();
                                 }}
                               >
-                                {viewMore ? "" : "Read More"}
+                                {viewMore ? "Read Less" : "Read More"}
                               </span>
                             </span>
                           </p>
@@ -206,18 +172,19 @@ const Productprice = (
 
           <Hidden smDown>
             <div className={classes.width}>
+              {console.log(data[0])}
               {data[0]?.price === data[0]?.offerPrice ? (
                 <Pricing
+                  price={data[0]?.price}
                   offerPrice={data[0]?.offerPrice}
                   pdpage={true}
                 ></Pricing>
               ) : (
                 <Pricing
+                  price={data[0]?.price}
                   offerPrice={data[0]?.offerPrice}
-                  price={data[0]?.sellingPrice}
+                  offerDiscount={val?.offerDiscount}
                   pdpage={true}
-
-                  // offerDiscount={val.offerDiscount}
                 ></Pricing>
               )}
             </div>
@@ -253,33 +220,22 @@ class ProductPrice extends Component {
       anchorEl: false,
     });
   };
-
+  // componentDidMount = () => {
+  //   console.log(this.props);
+  //   debugger;
+  // };
   render() {
     const { anchorEl, viewMore } = this.state;
     // alert(JSON.stringify(this.props.wishlist))
     return (
       <div>
         <Hidden smDown>
-          {Productprice(
-            this.props,
-            anchorEl,
-            this.handleClick,
-            this.handleClose,
-            this.handleReadMore,
-            viewMore
-          )}
+          {Productprice(this.props, anchorEl, this.handleClick, this.handleClose, this.handleReadMore, viewMore)}
         </Hidden>
 
         <Hidden mdUp>
           <Container style={{ paddingBottom: "6px" }}>
-            {Productprice(
-              this.props,
-              anchorEl,
-              this.handleClick,
-              this.handleClose,
-              this.handleReadMore,
-              viewMore
-            )}
+            {Productprice(this.props, anchorEl, this.handleClick, this.handleClose, this.handleReadMore, viewMore)}
           </Container>
         </Hidden>
       </div>

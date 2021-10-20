@@ -1,6 +1,6 @@
-import React from "react";
-import { TextField, Grid } from "@material-ui/core";
+import { Grid, TextField } from "@material-ui/core";
 import propTypes from "prop-types";
+import React from "react";
 
 // NOTABLE POINTS
 //  Min and Max
@@ -14,7 +14,7 @@ import propTypes from "prop-types";
 // On Moving Out
 // Live
 
-export const Input = props => {
+export const Input = (props) => {
   let {
     isNumber = false,
     pattern,
@@ -31,50 +31,76 @@ export const Input = props => {
 
   const defaultStyle = {
     margin: "normal",
-    variant: "outlined"
   };
 
   const [invalid, setInvalid] = React.useState(false);
 
   // INTEGRATE THEME HERE
 
-  const handleKeyPress = e => {
+  const handleKeyPress = (e) => {
     if (isNumber) {
       if (!(e.which >= 48 && e.which <= 57)) e.preventDefault();
     }
   };
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     setInvalid(false);
     onChange(e);
-  }
+  };
 
-  const handleInvalid = e => {
+  const handleInvalid = (e) => {
     e.preventDefault();
     setInvalid(true);
-  }
+  };
 
   return (
     <Grid item xs={12}>
-      <TextField
-        autoComplete={props && props.autoComplete && props.autoComplete}
-        inputProps={{ pattern, maxLength, minLength }}
-        style={{ width: "100%" }}
-        onInvalid={handleInvalid}
-        error={invalid}
-        multiline={multiline}
-        rowsMax={rowsMax}
-        disabled={props.disabled}
-        helperText={invalid && <b>{helperText}</b>}
-        onKeyPress={handleKeyPress}
-        onChange={handleChange}
-        {...defaultStyle}
-        {...rest}
-      />
+      {props.checkoutgift ? (
+        <>
+          <TextField
+            variant="filled"
+            autoComplete={props && props.autoComplete && props.autoComplete}
+            inputProps={{ pattern, maxLength, minLength }}
+            multiline={props.multiline}
+            onInvalid={handleInvalid}
+            style={{ width: "100%", marginTop: "20px" }}
+            error={invalid}
+            helperText={invalid && <b>{helperText}</b>}
+            onKeyPress={handleKeyPress}
+            onChange={handleChange}
+            {...rest}
+            disabled={props.disabled}
+            rowsMax={rowsMax}
+            minRows={4}
+            color="secondary"
+          />
+        </>
+      ) : (
+        <TextField
+          autoComplete={props && props.autoComplete && props.autoComplete}
+          inputProps={{
+            pattern,
+            maxLength,
+            minLength,
+          }}
+          style={{ width: "100%", marginTop: "26px" }}
+          onInvalid={handleInvalid}
+          error={invalid}
+          multiline={multiline}
+          color="secondary"
+          rowsMax={rowsMax}
+          disabled={props.disabled}
+          helperText={invalid && <b>{helperText}</b>}
+          onKeyPress={handleKeyPress}
+          onChange={handleChange}
+          {...defaultStyle}
+          {...rest}
+        />
+      )}
     </Grid>
   );
 };
 
 Input.propTypes = {
-  isNumber: propTypes.bool
+  isNumber: propTypes.bool,
 };

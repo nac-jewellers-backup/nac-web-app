@@ -198,19 +198,26 @@ const styles = (theme) => ({
   title: {
     marginTop: "0 !important",
     [theme.breakpoints.down("lg")]: {
-      fontSize: "15px",
-      // fontWeight: 'bold'
+      fontSize: "22px !important",
+      fontWeight: "bold !important",
+      color: "#33346D",
+      lineHeight: "20px",
+      fontFamily: "notoSerif-regular !important",
     },
     [theme.breakpoints.down("xs")]: {
-      fontSize: "16px !important",
+      fontSize: "18px !important",
       marginTop: "10px",
       color: "#33346D",
+      lineHeight: "26px",
       padding: 4,
       fontWeight: "bold !important",
     },
   },
   dis: {
+    textAlign: "justify",
     color: theme.palette.text.secondary,
+    fontSize: "12px !important",
+    lineHeight: "20px",
   },
   disEllipises: {
     width: "80%",
@@ -412,8 +419,7 @@ const styles = (theme) => ({
     background: theme.palette.secondary.main,
   },
   shadow: {
-    boxShadow:
-      "0px 2px 4px 4px rgba(0, 0, 0, 0.1), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12)",
+    boxShadow: "0px 2px 4px 4px rgba(0, 0, 0, 0.1), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12)",
   },
   expansionHere: {
     borderBottomLeftRadius: "unset !important",

@@ -3,6 +3,7 @@ const styles = makeStyles((theme) => ({
   pricing: {
     float: "left",
   },
+
   colorMain: {
     color: theme.palette.darkGray.main,
     [theme.breakpoints.down("sm")]: {
@@ -12,21 +13,19 @@ const styles = makeStyles((theme) => ({
   h6FontSize: {
     [theme.breakpoints.down("lg")]: {
       fontSize: "20px ",
-      // fontWeight: 'bold'
     },
     [theme.breakpoints.down("xs")]: {
       fontSize: "0.98rem",
-      // letterSpacing:"1px"
     },
   },
   h6FontSizeStrike: {
     [theme.breakpoints.down("lg")]: {
       fontSize: "16px ",
-      // fontWeight: 'bold'
+      fontWeight: "lighter !important",
     },
     [theme.breakpoints.down("xs")]: {
-      fontSize: "0.88rem",
-      // letterSpacing:"1px"
+      fontSize: "0.77rem",
+      fontWeight: "lighter !important",
     },
   },
   spanIcon1: {
@@ -59,7 +58,6 @@ const styles = makeStyles((theme) => ({
       paddingLeft: "0px",
       color: "#33346D",
       fontSize: "18px",
-      fontWeight: "bold !important",
     },
   },
   deletePrice: {
