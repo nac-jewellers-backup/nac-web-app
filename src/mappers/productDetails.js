@@ -376,7 +376,6 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
 
   const _format = mapperdata.map((PD) => {
     let _d;
-
     try {
       _d = {
         message:
@@ -981,19 +980,17 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
           {
             header: "Price Breakup",
             namedetail: [
-              {
-                name: "Metal",
-                details: [
-                  PD?.pricingSkuMetalsByProductSku?.nodes[0]?.sellingPrice
-                    ? PD?.pricingSkuMetalsByProductSku?.nodes[0]?.sellingPrice
-                    : "",
-                  PD?.pricingSkuMetalsByProductSku?.nodes[0]?.sellingPrice
-                    ? PD?.pricingSkuMetalsByProductSku?.nodes[1]?.sellingPrice
-                    : "",
-                  // calculatetotalss(PD.pricingSkuMetalsByProductSku.nodes, "goldprice", "makingcharge"),
-                  // calculatetotalm(PD.pricingSkuMetalsByProductSku.nodes, "goldprice", "sellingPrice"),
-                ],
-              },
+              // {
+              //   name: "Metal",
+              //   details: [
+              //     PD?.pricingSkuMetalsByProductSku?.nodes[0]?.sellingPrice
+              //       ? PD?.pricingSkuMetalsByProductSku?.nodes[0]?.sellingPrice
+              //       : "",
+              //     PD?.pricingSkuMetalsByProductSku?.nodes[0]?.sellingPrice
+              //       ? PD?.pricingSkuMetalsByProductSku?.nodes[1]?.sellingPrice
+              //       : "",
+              //   ],
+              // },
               {
                 name: "Diamond",
                 details:
@@ -1067,20 +1064,48 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                 ],
               },
               {
+                name: "Gold Price",
+                details: [
+                  calculatetotal(
+                    PD.pricingSkuMetalsByProductSku.nodes,
+                    "goldprice"
+                  ),
+                  calculatetotals(
+                    PD.pricingSkuMetalsByProductSku.nodes,
+                    "goldprice"
+                  ),
+                ],
+              },
+              {
+                name: "Wastage",
+                details: [
+                  calculatetotal(
+                    PD.pricingSkuMetalsByProductSku.nodes,
+                    "wastage"
+                  ),
+                  calculatetotals(
+                    PD.pricingSkuMetalsByProductSku.nodes,
+                    "wastage"
+                  ),
+                ],
+              },
+
+              {
                 name: "GST",
                 details: [
                   new Intl.NumberFormat("en-IN", {
                     style: "currency",
                     currency: "INR",
                     minimumFractionDigits: 0,
-                  }).format(Math.round(PD.discountPriceTax)) ,
+                  }).format(Math.round(PD.discountPriceTax)),
                   new Intl.NumberFormat("en-IN", {
                     style: "currency",
                     currency: "INR",
                     minimumFractionDigits: 0,
-                  }).format(Math.round(PD.markupPriceTax)) ,
+                  }).format(Math.round(PD.markupPriceTax)),
                 ],
               },
+
               {
                 name: "Total",
                 details: [
@@ -1281,7 +1306,6 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
             ? viewedddatas.data.allProductMaterials &&
               viewedddatas.data.allProductMaterials.nodes.length > 0
               ? viewedddatas.data.allProductMaterials.nodes.map((val) => {
-                  console.log(val);
                   //debugger;
                   return {
                     img:
