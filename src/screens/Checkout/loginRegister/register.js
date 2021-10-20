@@ -38,21 +38,24 @@ const RegisterComponent = (props) => {
           <Grid
             item
             xs={12}
-            lg={window.location.pathname === "/registers" || paths ? 6 : 12}
+            lg={window.location.pathname === "/registers" || paths ? 12 : 12}
           >
             <Grid class="topPaddingwish">
               {window.location.pathname.split("-")[0] !== "/account" && (
-                <h5 className="title">
-                  {window.location.pathname.split("-")[0] === "/account" ? (
-                    ""
-                  ) : (
-                    <>
-                      {window.location.pathname === "/registers"
-                        ? "Register"
-                        : "Register New Users"}
-                    </>
-                  )}
-                </h5>
+                <>
+                  <br />
+                  <h5 className="title">
+                    {window.location.pathname.split("-")[0] === "/account" ? (
+                      ""
+                    ) : (
+                      <>
+                        {window.location.pathname === "/registers"
+                          ? "Register"
+                          : "Register New Users"}
+                      </>
+                    )}
+                  </h5>
+                </>
               )}
               <Grid container spacing={12}>
                 {paths && (
@@ -133,7 +136,7 @@ const RegisterComponent = (props) => {
                     value={values.email}
                     error={values.error && values.error.emerr ? true : false}
                     // helperText={values.errortext && values.errortext.emerr}
-                    placeholder="Enter your email id"
+                    placeholder="Email address"
                     onChange={(e) =>
                       handlers.handleChange("email", e.target.value)
                     }
@@ -154,7 +157,7 @@ const RegisterComponent = (props) => {
                       name="password"
                       value={"........"}
                       // helperText={values.errortext && values.errortext.passerr}
-                      placeholder="Enter your password"
+                      placeholder="Password"
                       onChange={(e) =>
                         handlers.handleChange("password", e.target.value)
                       }
@@ -190,7 +193,7 @@ const RegisterComponent = (props) => {
                     value={values.password}
                     error={values.error && values.error.passerr ? true : false}
                     // helperText={values.errortext && values.errortext.passerr}
-                    placeholder="Enter your password"
+                    placeholder="Password"
                     onChange={(e) =>
                       handlers.handleChange("password", e.target.value)
                     }
@@ -215,7 +218,7 @@ const RegisterComponent = (props) => {
                       values.error && values.error.cnfpasserr ? true : false
                     }
                     // helperText={values.errortext && values.errortext.cnfpasserr}
-                    placeholder="Enter your confirm password"
+                    placeholder=" Confirm Password"
                     onChange={(e) =>
                       handlers.handleChange("confirmpassword", e.target.value)
                     }
@@ -367,7 +370,7 @@ const RegisterComponent = (props) => {
                     <br />
                   </>
                 )}
-                <br/>
+                <br />
                 <Button className="apply-b" type="submit">
                   {paths ? "Save" : "Register"}
                 </Button>
