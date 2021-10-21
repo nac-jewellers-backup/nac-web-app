@@ -10,26 +10,47 @@ import Wishlist from "components/wishlist/wishlist";
 import { CDN_URL } from "config";
 import { ProductDetailContext } from "context";
 import React from "react";
-import { LazyLoadImage, trackWindowScroll } from "react-lazy-load-image-component";
+import {
+  LazyLoadImage,
+  trackWindowScroll,
+} from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { Link } from "react-router-dom";
 import "./productCard.css";
 
 export const ImgMediaCard = (props) => {
-  const { ProductDetailCtx, setFilters } = React.useContext(ProductDetailContext);
+  const { ProductDetailCtx, setFilters } =
+    React.useContext(ProductDetailContext);
   const loc = window.location.search;
 
-  return <Component filters={ProductDetailCtx.filters} setFilters={setFilters} {...props} offerPrice={props.data.offerPrice} />;
+  return (
+    <Component
+      filters={ProductDetailCtx.filters}
+      setFilters={setFilters}
+      {...props}
+      offerPrice={props.data.offerPrice}
+    />
+  );
 };
 
 const imageOnError = (event, res) => {
   event.target.src = `${CDN_URL}product/${res.img_res}X${res.img_res}/productnotfound.webp`;
 };
-const Gallery = (props, callmouseover, callmouseout, cardstate, scrollPosition) => {
+const Gallery = (
+  props,
+  callmouseover,
+  callmouseout,
+  cardstate,
+  scrollPosition
+) => {
   return (
     <div className="imageHeight" style={{ position: "relative" }}>
       <div class="wishListStyle">
-        <Wishlist sku={props.data.skuId} productId={props.data.productId} wishlist={props.wishlist} />
+        <Wishlist
+          sku={props.data.skuId}
+          productId={props.data.productId}
+          wishlist={props.wishlist}
+        />
       </div>
 
       <Link
@@ -49,7 +70,9 @@ const Gallery = (props, callmouseover, callmouseout, cardstate, scrollPosition) 
           effect="blur"
           src={renderImages(props, cardstate)}
           //onError={(e) => imageOnError(e, props.data.imageResolution)}
-          title={props.data.title.charAt(0).toUpperCase() + props.data.title.slice(1)}
+          title={
+            props.data.title.charAt(0).toUpperCase() + props.data.title.slice(1)
+          }
           onMouseOver={
             !props.hoverText
               ? () => {
@@ -71,7 +94,9 @@ const Gallery = (props, callmouseover, callmouseout, cardstate, scrollPosition) 
           scrollPosition={scrollPosition}
         ></LazyLoadImage>
 
-        {props.hoverText && <div className="overlayImage">{props.data.description}</div>}
+        {props.hoverText && (
+          <div className="overlayImage">{props.data.description}</div>
+        )}
       </Link>
     </div>
   );
@@ -285,29 +310,17 @@ const renderImages = (props, cardstate) => {
   if (props.static) {
     return props.image;
   } else {
+    // console.log(props.data);
+    // console.log(cardstate);
+    //debugger;
     const filterType = cardstate?.hovered ? "hoverImage" : "placeImage";
 
-    // return props?.data && props?.data?.image && props?.data?.image["placeImage"] && props?.data?.image["placeImage"].length === 0
-    //   ? "https://styloriimages-staging.s3.ap-south-1.amazonaws.com/product/1000X1000/productnotfound.webp"
-    //   : props?.data?.image[filterType]?.img;
-    // return (
-    //   props?.data?.image[filterType]?.img ?? "https://alpha-assets.stylori.com/1000x1000/images/static/Image_Not_Available.jpg"
-    // );
-
-    return props?.data && props?.data?.image && props?.data?.image["hoverImage"] && props?.data?.image["hoverImage"].length === 0
+    return props?.data &&
+      props?.data?.image &&
+      props?.data?.image["hoverImage"] &&
+      props?.data?.image["hoverImage"].length === 0
       ? "https://alpha-assets.stylori.com/1000x1000/images/static/Image_Not_Available.jpg"
-      : props?.data?.image[filterType]?.img;
-
-    // props?.data?.image[filterType]?.img ?? "https://alpha-assets.stylori.com/1000x1000/images/static/Image_Not_Available.jpg"
-
-    // (
-    //   (props?.data && props?.data?.image && props?.data?.image["hoverImage"] && props?.data?.image["hoverImage"].length === 0
-    //     ? "https://alpha-assets.stylori.com/1000x1000/images/static/Image_Not_Available.jpg"
-    //     : props?.data?.image[filterType]?.img) ??
-    //   (props?.data && props?.data?.image && props?.data?.image["placeImage"] && props?.data?.image["placeImage"].length === 0
-    //     ? "https://alpha-assets.stylori.com/1000x1000/images/static/Image_Not_Available.jpg"
-    //     : props?.data?.image[filterType]?.img)
-    // );
+      : props?.data?.image?.[filterType]?.img;
   }
 };
 
@@ -326,20 +339,40 @@ function Component(props) {
   };
 
   return (
-    <div className={classes.root} style={{ marginLeft: "0px !important", overflow: "hidden" }}>
+    <div
+      className={classes.root}
+      style={{ marginLeft: "0px !important", overflow: "hidden" }}
+    >
       <Card className={classes.card} style={{ marginLeft: "0px !important" }}>
-        <CardActions style={{}} className={`${classes.cardAtionspadding} ${classes.cardActionsImage}`}>
+        <CardActions
+          style={{}}
+          className={`${classes.cardAtionspadding} ${classes.cardActionsImage}`}
+        >
           {Gallery(props, callmouseover, callmouseout, cardstate)}
         </CardActions>
         <Card className={classes.priceClass}>
-          <CardContent className={classes.cardContent} style={{ display: "flex" }}>
-            <Grid container item xs={12} className={classes.textPriceCardGrid} alignItems="center">
+          <CardContent
+            className={classes.cardContent}
+            style={{ display: "flex" }}
+          >
+            <Grid
+              container
+              item
+              xs={12}
+              className={classes.textPriceCardGrid}
+              alignItems="center"
+            >
               {props.shopothercategories ? (
                 <>
                   <Grid container xs={12}>
-                    <Typography variant="body1" style={{ paddingLeft: "5px" }} className={`${classes.titlesshopother}`}>
+                    <Typography
+                      variant="body1"
+                      style={{ paddingLeft: "5px" }}
+                      className={`${classes.titlesshopother}`}
+                    >
                       {" "}
-                      {props.data.title.charAt(0).toUpperCase() + props.data.title.slice(1)}
+                      {props.data.title.charAt(0).toUpperCase() +
+                        props.data.title.slice(1)}
                     </Typography>
                   </Grid>
                 </>
@@ -394,7 +427,9 @@ function Component(props) {
                               currency: "INR",
                               minimumFractionDigits: 0,
                             }).format(Math.round(props.data.price))}
-                            <span style={{ display: "flex", alignSelf: "center" }}>
+                            <span
+                              style={{ display: "flex", alignSelf: "center" }}
+                            >
                               {" "}
                               <Typography
                                 className={classes.strikeText}
@@ -415,7 +450,9 @@ function Component(props) {
                                           style: "currency",
                                           currency: "INR",
                                           minimumFractionDigits: 0,
-                                        }).format(Math.round(props.data.offerPrice))}
+                                        }).format(
+                                          Math.round(props.data.offerPrice)
+                                        )}
                                   </span>
                                 </span>
                               </Typography>
@@ -426,15 +463,23 @@ function Component(props) {
 
                       <Grid items>
                         <Typography className={classes.discountPercentage}>
-                          {props.data.save == 0 ? " " : ` ${Math.abs(Math.round(props.data.save))}% OFF`}
+                          {props.data.save == 0
+                            ? " "
+                            : ` ${Math.abs(Math.round(props.data.save))}% OFF`}
                           &nbsp;&nbsp;
                         </Typography>
                       </Grid>
                     </Grid>
                     <Grid container xs={12}>
-                      <Typography variant="body1" component="span" style={{ paddingLeft: "5px" }} className={`${classes.titles}`}>
+                      <Typography
+                        variant="body1"
+                        component="span"
+                        style={{ paddingLeft: "5px" }}
+                        className={`${classes.titles}`}
+                      >
                         {" "}
-                        {props.data.title.charAt(0).toUpperCase() + props.data.title.slice(1)}
+                        {props.data.title.charAt(0).toUpperCase() +
+                          props.data.title.slice(1)}
                       </Typography>
                     </Grid>
                   </Hidden>
@@ -512,16 +557,26 @@ function Component(props) {
                                 paddingLeft: "5px",
                               }}
                             >
-                              {props.data.save == 0 ? " " : ` ${Math.abs(Math.round(props.data.save))}% OFF`}
+                              {props.data.save == 0
+                                ? " "
+                                : ` ${Math.abs(
+                                    Math.round(props.data.save)
+                                  )}% OFF`}
                             </span>
                           </Grid>
                         </Grid>
                       )}{" "}
                     </Grid>
                     <Grid container xs={12}>
-                      <Typography variant="body1" component="span" style={{ paddingLeft: "5px" }} className={`${classes.titles}`}>
+                      <Typography
+                        variant="body1"
+                        component="span"
+                        style={{ paddingLeft: "5px" }}
+                        className={`${classes.titles}`}
+                      >
                         {" "}
-                        {props.data.title.charAt(0).toUpperCase() + props.data.title.slice(1)}
+                        {props.data.title.charAt(0).toUpperCase() +
+                          props.data.title.slice(1)}
                       </Typography>
                     </Grid>
                   </Hidden>

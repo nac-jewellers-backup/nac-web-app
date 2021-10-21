@@ -376,6 +376,8 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
 
   const _format = mapperdata.map((PD) => {
     let _d;
+    console.log(_d);
+
     try {
       _d = {
         message:
@@ -754,8 +756,7 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                           name: "Diamond Name",
                           details:
                             PD?.productListByProductId
-                              ?.productDiamondsByProductSku?.nodes[0]
-                              ?.subItemName,
+                              ?.productDiamondsByProductSku?.nodes[0]?.itemName,
                         }
                       : "",
                     PD?.productListByProductId?.productDiamondsByProductSku
@@ -1053,13 +1054,15 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
               {
                 name: "Making Charges",
                 details: [
-                  calculatetotal(
+                  calculatetotalmaking(
                     PD.pricingSkuMetalsByProductSku.nodes,
-                    "makingcharge"
+                    "makingcharge",
+                    "wastage"
                   ),
-                  calculatetotals(
+                  calculatetotalsmaking(
                     PD.pricingSkuMetalsByProductSku.nodes,
-                    "makingcharge"
+                    "makingcharge",
+                    "wastage"
                   ),
                 ],
               },
@@ -1073,19 +1076,6 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                   calculatetotals(
                     PD.pricingSkuMetalsByProductSku.nodes,
                     "goldprice"
-                  ),
-                ],
-              },
-              {
-                name: "Wastage",
-                details: [
-                  calculatetotal(
-                    PD.pricingSkuMetalsByProductSku.nodes,
-                    "wastage"
-                  ),
-                  calculatetotals(
-                    PD.pricingSkuMetalsByProductSku.nodes,
-                    "wastage"
                   ),
                 ],
               },
@@ -1416,10 +1406,35 @@ const calculatetotals = (arr, name) => {
         style: "currency",
         currency: "INR",
         minimumFractionDigits: 0,
-      }).format(Math.round(a + val.markup));
+      }).format(Math.round(parseInt(a + val.markup)));
     }
   });
   return a;
+};
+const calculatetotalsmaking = (arr, arr1, name, name1) => {
+  var a = 0;
+  var b = 0;
+  var arr1;
+  var a1 = 0;
+  var b1 = 0;
+  arr.map((val) => {
+    if (val.materialName === "makingcharge" || name === "makingcharge") {
+      a = a + val.markup;
+      a1 = parseInt(a);
+    }
+  });
+  arr.map((val) => {
+    if (val.materialName === "wastage" || name1 === "wastage") {
+      b = b + val.markup;
+      b1 = parseInt(b);
+    }
+  });
+
+  return new Intl.NumberFormat("en-IN", {
+    style: "currency",
+    currency: "INR",
+    minimumFractionDigits: 0,
+  }).format(Math.round(a1 + b1));
 };
 const calculatetotalm = (arr, name) => {
   var a = 0;
@@ -1433,6 +1448,31 @@ const calculatetotalm = (arr, name) => {
     }
   });
   return a;
+};
+const calculatetotalmaking = (arr, arr1, name, name1) => {
+  var a = 0;
+  var b = 0;
+  var arr1;
+  var a1 = 0;
+  var b1 = 0;
+  arr.map((val) => {
+    if (val.materialName === "makingcharge" || name === "makingcharge") {
+      a = a + val.discountPrice;
+      a1 = parseInt(a);
+    }
+  });
+  arr.map((val) => {
+    if (val.materialName === "wastage" || name1 === "wastage") {
+      b = b + val.discountPrice;
+      b1 = parseInt(b);
+    }
+  });
+
+  return new Intl.NumberFormat("en-IN", {
+    style: "currency",
+    currency: "INR",
+    minimumFractionDigits: 0,
+  }).format(Math.round(a1 + b1));
 };
 const calculatetotalss = (arr, name) => {
   var a = 0;

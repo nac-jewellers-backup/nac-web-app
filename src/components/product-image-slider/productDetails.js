@@ -22,7 +22,8 @@ class ProductDetails extends React.Component {
 
   productsDetails = (data) => {
     const { classes } = this.props;
-
+    // console.log(data);
+    // debugger;
     return (
       <Grid container>
         {data &&
@@ -36,9 +37,9 @@ class ProductDetails extends React.Component {
               <Grid item xs={6} style={{ paddingRight: "20px" }}>
                 {valueofproductdetail.header !== "Price Breakup" ||
                 (valueofproductdetail.header === "Price Breakup" &&
-                  valueofproductdetail.namedetail[6].name === "Total" &&
+                  valueofproductdetail.namedetail[5].name === "Total" &&
                   Number(
-                    valueofproductdetail.namedetail[6].details[1]
+                    valueofproductdetail.namedetail[5].details[1]
                       .replace(/,/g, "")
                       .replace(/₹/g, "")
                   ) > 13000) ? (
