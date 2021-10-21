@@ -96,17 +96,7 @@ class ProductDetails extends React.Component {
                                                     alignItems: "center",
                                                   }}
                                                 >
-                                                  {res.details == 0 ? (
-                                                    <span
-                                                      style={{
-                                                        fontSize: "12px",
-                                                        textAlign: "left",
-                                                        color: "gray",
-                                                      }}
-                                                    >
-                                                      0
-                                                    </span>
-                                                  ) : isArray(res.details) ? (
+                                                  {isArray(res.details) ? (
                                                     <ListItemText
                                                       variant=""
                                                       className={`product-subhead-list ${classes.fontgray}`}
