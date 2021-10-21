@@ -376,7 +376,8 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
 
   const _format = mapperdata.map((PD) => {
     let _d;
-    console.log(_d);
+    console.log(data);
+    //debugger;
 
     try {
       _d = {
