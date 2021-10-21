@@ -255,7 +255,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
   },
   titlesshopother: {
-    fontSize: "30px",
+    fontSize: "24px",
     fontWeight: "bold",
     textAlign: "center",
     whiteSpace: "nowrap",
@@ -266,7 +266,7 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     marginTop: "-10px",
     [theme.breakpoints.down("sm")]: {
-      fontSize: "25px",
+      fontSize: "20px",
     },
   },
   titles: {
@@ -310,32 +310,17 @@ const renderImages = (props, cardstate) => {
   if (props.static) {
     return props.image;
   } else {
+    // console.log(props.data);
+    // console.log(cardstate);
+    //debugger;
     const filterType = cardstate?.hovered ? "hoverImage" : "placeImage";
-
-    // return props?.data && props?.data?.image && props?.data?.image["placeImage"] && props?.data?.image["placeImage"].length === 0
-    //   ? "https://styloriimages-staging.s3.ap-south-1.amazonaws.com/product/1000X1000/productnotfound.webp"
-    //   : props?.data?.image[filterType]?.img;
-    // return (
-    //   props?.data?.image[filterType]?.img ?? "https://alpha-assets.stylori.com/1000x1000/images/static/Image_Not_Available.jpg"
-    // );
 
     return props?.data &&
       props?.data?.image &&
       props?.data?.image["hoverImage"] &&
       props?.data?.image["hoverImage"].length === 0
       ? "https://alpha-assets.stylori.com/1000x1000/images/static/Image_Not_Available.jpg"
-      : props?.data?.image[filterType]?.img;
-
-    // props?.data?.image[filterType]?.img ?? "https://alpha-assets.stylori.com/1000x1000/images/static/Image_Not_Available.jpg"
-
-    // (
-    //   (props?.data && props?.data?.image && props?.data?.image["hoverImage"] && props?.data?.image["hoverImage"].length === 0
-    //     ? "https://alpha-assets.stylori.com/1000x1000/images/static/Image_Not_Available.jpg"
-    //     : props?.data?.image[filterType]?.img) ??
-    //   (props?.data && props?.data?.image && props?.data?.image["placeImage"] && props?.data?.image["placeImage"].length === 0
-    //     ? "https://alpha-assets.stylori.com/1000x1000/images/static/Image_Not_Available.jpg"
-    //     : props?.data?.image[filterType]?.img)
-    // );
+      : props?.data?.image?.[filterType]?.img;
   }
 };
 
