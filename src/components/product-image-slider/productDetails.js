@@ -97,7 +97,15 @@ class ProductDetails extends React.Component {
                                                   }}
                                                 >
                                                   {res.details == 0 ? (
-                                                    ""
+                                                    <span
+                                                      style={{
+                                                        fontSize: "12px",
+                                                        textAlign: "left",
+                                                        color: "gray",
+                                                      }}
+                                                    >
+                                                      0
+                                                    </span>
                                                   ) : isArray(res.details) ? (
                                                     <ListItemText
                                                       variant=""
