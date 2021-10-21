@@ -278,9 +278,9 @@ const renderImages = (props, cardstate) => {
   // console.info('props.data.image[filterType]',props.data.image[filterType]);
   // return props.data.image['hoverImage'].length === 0 ?"https://alpha-assets.stylori.com/1000x1000/images/static/Image_Not_Available.jpg" : props.data.image[filterType].map(imgs => `${imgs.img} ${imgs.size}`).toString()
 
-  return props.data.image["hoverImage"].length === 0
+  return props.data.image.hoverImage.length === 0
     ? "https://alpha-assets.stylori.com/1000x1000/images/static/Image_Not_Available.jpg"
-    : props.data.image[filterType].img;
+    : props.data.image.filterType.img;
 };
 
 function Component(props) {

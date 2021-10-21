@@ -195,7 +195,6 @@ class ProductDetails extends React.Component {
               <>
                 {val.header !== "Price Breakup" ||
                 (val.header === "Price Breakup" &&
-                  val.namedetail[5].name === "Total" &&
                   Number(
                     val.namedetail[5].details[1]
                       .replace(/,/g, "")
@@ -251,59 +250,21 @@ class ProductDetails extends React.Component {
                                           padding: "0px 10px 0px 10px ",
                                         }}
                                       >
-                                        <Grid xs={4} lg={4}>
-                                          {isArray(res.details) ? (
-                                            <ListItemText
-                                              variant=""
-                                              className={`product-subhead-list ${classes.fontgray}`}
-                                            >
-                                              {res.details.map(
-                                                (Item, Index) => {
-                                                  return (
-                                                    <span
-                                                      style={{
-                                                        fontSize: "12px",
-                                                        textAlign: "left",
-                                                      }}
-                                                    >
-                                                      {" "}
-                                                      {val.header ===
-                                                      "Price Breakup"
-                                                        ? Index === 0 &&
-                                                          res.details[Index] !==
-                                                            res.details[
-                                                              Index + 1
-                                                            ]
-                                                          ? res.name
-                                                          : Index === 0
-                                                          ? ""
-                                                          : Item === 0
-                                                          ? " "
-                                                          : ""
-                                                        : Item}{" "}
-                                                    </span>
-                                                  );
-                                                }
-                                              )}
-                                            </ListItemText>
-                                          ) : (
-                                            <ListItemText
-                                              variant=""
-                                              className={`product-subhead-list ${classes.fontgray}`}
-                                            >
-                                              <span
-                                                style={{ fontSize: "12px" }}
-                                              >
-                                                {" "}
-                                                {res.name}
-                                              </span>
-                                            </ListItemText>
-                                          )}
+                                        <Grid xs={5} lg={5}>
+                                          <ListItemText
+                                            variant=""
+                                            className={`product-subhead-list ${classes.fontgray}`}
+                                          >
+                                            <span style={{ fontSize: "12px" }}>
+                                              {" "}
+                                              {res.name}
+                                            </span>
+                                          </ListItemText>
                                         </Grid>
                                         <Grid
                                           container
                                           item
-                                          xs={8}
+                                          xs={7}
                                           style={{ alignItems: "center" }}
                                         >
                                           {isArray(res.details) ? (
@@ -320,7 +281,6 @@ class ProductDetails extends React.Component {
                                                         textAlign: "left",
                                                       }}
                                                     >
-                                                      {" "}
                                                       {val.header ===
                                                       "Price Breakup" ? (
                                                         Index === 0 &&
@@ -328,11 +288,13 @@ class ProductDetails extends React.Component {
                                                           res.details[
                                                             Index + 1
                                                           ] ? (
-                                                          <del>{Item}</del>
-                                                        ) : Index === 0 ? (
-                                                          ""
-                                                        ) : Item === 0 ? (
-                                                          " "
+                                                          Item == 0 ? (
+                                                            " "
+                                                          ) : (
+                                                            <>
+                                                              <del>{Item}</del>
+                                                            </>
+                                                          )
                                                         ) : (
                                                           Item
                                                         )

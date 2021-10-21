@@ -200,6 +200,7 @@
 }
 .cardImage:hover .overlayImage {
   opacity: 1;
+  color: white !important;
 }
 /* .imageHeight {
   min-height: 144px;

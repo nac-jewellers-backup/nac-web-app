@@ -494,6 +494,7 @@ class ProductDetail extends Component {
                         return (
                           <ImgMediaCard
                             data={val}
+                            similarProducts={true}
                             cardSize="auto"
                             hoverText={true}
                           />
@@ -632,6 +633,7 @@ class ProductDetail extends Component {
                         data={val}
                         cardSize="auto"
                         hoverText={true}
+                        similarProducts={true}
                       />
                     );
                   })}

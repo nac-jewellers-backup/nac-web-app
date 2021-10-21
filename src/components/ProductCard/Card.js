@@ -60,39 +60,77 @@ const Gallery = (
         target="_blank"
         onClick={handleProductDetatiContext(props)}
       >
-        <LazyLoadImage
-          style={{
-            objectFit: "cover",
-            backgroundColor: "white",
-            width: "100%",
-          }}
-          alt={"props.data.title"}
-          effect="blur"
-          src={renderImages(props, cardstate)}
-          //onError={(e) => imageOnError(e, props.data.imageResolution)}
-          title={
-            props.data.title.charAt(0).toUpperCase() + props.data.title.slice(1)
-          }
-          onMouseOver={
-            !props.hoverText
-              ? () => {
-                  callmouseover();
-                }
-              : () => {
-                  return null;
-                }
-          }
-          onMouseOut={
-            !props.hoverText
-              ? () => {
-                  callmouseout();
-                }
-              : () => {
-                  return null;
-                }
-          }
-          scrollPosition={scrollPosition}
-        ></LazyLoadImage>
+        {props.similarProducts ? (
+          <LazyLoadImage
+            style={{
+              objectFit: "cover",
+              backgroundColor: "white",
+              width: "100%",
+            }}
+            alt={"props.data.title"}
+            effect="blur"
+            src={similarProductrenderImages(props, cardstate)}
+            //onError={(e) => imageOnError(e, props.data.imageResolution)}
+            title={
+              props.data.title.charAt(0).toUpperCase() +
+              props.data.title.slice(1)
+            }
+            onMouseOver={
+              !props.hoverText
+                ? () => {
+                    callmouseover();
+                  }
+                : () => {
+                    return null;
+                  }
+            }
+            onMouseOut={
+              !props.hoverText
+                ? () => {
+                    callmouseout();
+                  }
+                : () => {
+                    return null;
+                  }
+            }
+            scrollPosition={scrollPosition}
+          ></LazyLoadImage>
+        ) : (
+          <LazyLoadImage
+            style={{
+              objectFit: "cover",
+              backgroundColor: "white",
+              width: "100%",
+            }}
+            alt={"props.data.title"}
+            effect="blur"
+            src={renderImages(props, cardstate)}
+            //onError={(e) => imageOnError(e, props.data.imageResolution)}
+            title={
+              props.data.title.charAt(0).toUpperCase() +
+              props.data.title.slice(1)
+            }
+            onMouseOver={
+              !props.hoverText
+                ? () => {
+                    callmouseover();
+                  }
+                : () => {
+                    return null;
+                  }
+            }
+            onMouseOut={
+              !props.hoverText
+                ? () => {
+                    callmouseout();
+                  }
+                : () => {
+                    return null;
+                  }
+            }
+            scrollPosition={scrollPosition}
+          ></LazyLoadImage>
+        )}
 
         {props.hoverText && (
           <div className="overlayImage">{props.data.description}</div>
@@ -323,7 +361,23 @@ const renderImages = (props, cardstate) => {
       : props?.data?.image?.[filterType]?.img;
   }
 };
+const similarProductrenderImages = (props, cardstate) => {
+  if (props.static) {
+    return props.image;
+  } else {
+    // console.log(props.data);
+    // console.log(cardstate);
+    //debugger;
+    const filterType = cardstate?.hovered ? "hoverImage" : "placeImage";
 
+    return props?.data &&
+      props?.data?.image &&
+      props?.data?.image["hoverImage"] &&
+      props?.data?.image["hoverImage"].length === 0
+      ? "https://alpha-assets.stylori.com/1000x1000/images/static/Image_Not_Available.jpg"
+      : props?.data?.img;
+  }
+};
 function Component(props) {
   const classes = useStyles();
   const [cardstate, setCardState] = React.useState({
@@ -460,15 +514,20 @@ function Component(props) {
                           </Typography>
                         )}{" "}
                       </Grid>
-
-                      <Grid items>
-                        <Typography className={classes.discountPercentage}>
-                          {props.data.save == 0
-                            ? " "
-                            : ` ${Math.abs(Math.round(props.data.save))}% OFF`}
-                          &nbsp;&nbsp;
-                        </Typography>
-                      </Grid>
+                      {props.similarProducts ? (
+                        " "
+                      ) : (
+                        <Grid items>
+                          <Typography className={classes.discountPercentage}>
+                            {props.data.save == 0
+                              ? " "
+                              : ` ${Math.abs(
+                                  Math.round(props.data.save)
+                                )}% OFF`}
+                            &nbsp;&nbsp;
+                          </Typography>
+                        </Grid>
+                      )}
                     </Grid>
                     <Grid container xs={12}>
                       <Typography
@@ -557,7 +616,9 @@ function Component(props) {
                                 paddingLeft: "5px",
                               }}
                             >
-                              {props.data.save == 0
+                              {props.similarProducts
+                                ? " "
+                                : props.data.save == 0
                                 ? " "
                                 : ` ${Math.abs(
                                     Math.round(props.data.save)

@@ -364,7 +364,7 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
 
   try {
     mapperdata = data.data.allTransSkuLists.nodes;
-    console.log(mapperdata);
+    //console.log(mapperdata);
 
     if (mapperdata[0]?.skuId === undefined) {
       history.push("/");
@@ -376,8 +376,6 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
 
   const _format = mapperdata.map((PD) => {
     let _d;
-    console.log(data);
-    //debugger;
 
     try {
       _d = {
