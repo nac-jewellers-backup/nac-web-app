@@ -60,77 +60,39 @@ const Gallery = (
         target="_blank"
         onClick={handleProductDetatiContext(props)}
       >
-        {props.similarProducts ? (
-          <LazyLoadImage
-            style={{
-              objectFit: "cover",
-              backgroundColor: "white",
-              width: "100%",
-            }}
-            alt={"props.data.title"}
-            effect="blur"
-            src={similarProductrenderImages(props, cardstate)}
-            //onError={(e) => imageOnError(e, props.data.imageResolution)}
-            title={
-              props.data.title.charAt(0).toUpperCase() +
-              props.data.title.slice(1)
-            }
-            onMouseOver={
-              !props.hoverText
-                ? () => {
-                    callmouseover();
-                  }
-                : () => {
-                    return null;
-                  }
-            }
-            onMouseOut={
-              !props.hoverText
-                ? () => {
-                    callmouseout();
-                  }
-                : () => {
-                    return null;
-                  }
-            }
-            scrollPosition={scrollPosition}
-          ></LazyLoadImage>
-        ) : (
-          <LazyLoadImage
-            style={{
-              objectFit: "cover",
-              backgroundColor: "white",
-              width: "100%",
-            }}
-            alt={"props.data.title"}
-            effect="blur"
-            src={renderImages(props, cardstate)}
-            //onError={(e) => imageOnError(e, props.data.imageResolution)}
-            title={
-              props.data.title.charAt(0).toUpperCase() +
-              props.data.title.slice(1)
-            }
-            onMouseOver={
-              !props.hoverText
-                ? () => {
-                    callmouseover();
-                  }
-                : () => {
-                    return null;
-                  }
-            }
-            onMouseOut={
-              !props.hoverText
-                ? () => {
-                    callmouseout();
-                  }
-                : () => {
-                    return null;
-                  }
-            }
-            scrollPosition={scrollPosition}
-          ></LazyLoadImage>
-        )}
+        <LazyLoadImage
+          style={{
+            objectFit: "cover",
+            backgroundColor: "white",
+            width: "100%",
+          }}
+          alt={"props.data.title"}
+          effect="blur"
+          src={renderImages(props, cardstate)}
+          //onError={(e) => imageOnError(e, props.data.imageResolution)}
+          title={
+            props.data.title.charAt(0).toUpperCase() + props.data.title.slice(1)
+          }
+          onMouseOver={
+            !props.hoverText
+              ? () => {
+                  callmouseover();
+                }
+              : () => {
+                  return null;
+                }
+          }
+          onMouseOut={
+            !props.hoverText
+              ? () => {
+                  callmouseout();
+                }
+              : () => {
+                  return null;
+                }
+          }
+          scrollPosition={scrollPosition}
+        ></LazyLoadImage>
 
         {props.hoverText && (
           <div className="overlayImage">{props.data.description}</div>
@@ -358,7 +320,7 @@ const renderImages = (props, cardstate) => {
       props?.data?.image["hoverImage"] &&
       props?.data?.image["hoverImage"].length === 0
       ? "https://alpha-assets.stylori.com/1000x1000/images/static/Image_Not_Available.jpg"
-      : props?.data?.image?.[filterType]?.img;
+      : props?.data?.image[filterType]?.img;
   }
 };
 const similarProductrenderImages = (props, cardstate) => {
