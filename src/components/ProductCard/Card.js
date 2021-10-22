@@ -22,6 +22,7 @@ export const ImgMediaCard = (props) => {
   const { ProductDetailCtx, setFilters } =
     React.useContext(ProductDetailContext);
   const loc = window.location.search;
+  console.log(props.hoverImagesss);
 
   return (
     <Component
@@ -310,36 +311,18 @@ const renderImages = (props, cardstate) => {
   if (props.static) {
     return props.image;
   } else {
-    // console.log(props.data);
-    // console.log(cardstate);
-    //debugger;
     const filterType = cardstate?.hovered ? "hoverImage" : "placeImage";
 
     return props?.data &&
       props?.data?.image &&
-      props?.data?.image["hoverImage"] &&
+      filterType === undefined &&
+      props?.data?.image[filterType] === undefined &&
       props?.data?.image["hoverImage"].length === 0
-      ? "https://alpha-assets.stylori.com/1000x1000/images/static/Image_Not_Available.jpg"
-      : props?.data?.image[filterType]?.img;
+      ? "https://styloriimages.s3.ap-south-1.amazonaws.com/Banners/Stylori+Silver/StyloriSilver+nemonic.png"
+      : props?.data?.image[filterType].img;
   }
 };
-const similarProductrenderImages = (props, cardstate) => {
-  if (props.static) {
-    return props.image;
-  } else {
-    // console.log(props.data);
-    // console.log(cardstate);
-    //debugger;
-    const filterType = cardstate?.hovered ? "hoverImage" : "placeImage";
 
-    return props?.data &&
-      props?.data?.image &&
-      props?.data?.image["hoverImage"] &&
-      props?.data?.image["hoverImage"].length === 0
-      ? "https://alpha-assets.stylori.com/1000x1000/images/static/Image_Not_Available.jpg"
-      : props?.data?.img;
-  }
-};
 function Component(props) {
   const classes = useStyles();
   const [cardstate, setCardState] = React.useState({

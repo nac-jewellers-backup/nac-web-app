@@ -1185,6 +1185,8 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
             ? like_data.data.youMayalsolike1 &&
               like_data.data.youMayalsolike1.nodes.length > 0
               ? like_data.data.youMayalsolike1.nodes.map((val) => {
+                  console.log(val);
+
                   return {
                     offerDiscount: val?.transSkuListsByProductId?.nodes[0]
                       ?.discount
@@ -1265,11 +1267,19 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                           )
                         : 0,
                     offerPrice:
-                      val?.productListByProductSku?.productImagesByProductId
-                        ?.nodes[0].productListByProductId
-                        ?.transSkuListsByProductId?.nodes[0]?.discountPrice ??
-                      " ",
-                    url:
+                      val?.transSkuListsByProductId?.nodes[0].discountPrice,
+
+                    image: {
+                      placeImage: {
+                        img: val.productImagesByProductId.nodes[0].imageUrl,
+                      },
+                      hoverImage: {
+                        img: val.productImagesByProductId.nodes[0].imageUrl,
+                      },
+                    },
+                    title: val && val.productName && val.productName,
+
+                    skuID:
                       val &&
                       val.transSkuListsByProductId &&
                       val.transSkuListsByProductId.nodes &&
@@ -1279,9 +1289,13 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                         ? val.transSkuListsByProductId.nodes[0].generatedSku
                         : "",
                     description:
-                      val?.transSkuDescriptionsBySkuId
-                        ?.transSkuDescriptionsBySkuId?.nodes[0]
-                        ?.skuDescription ?? "",
+                      val?.transSkuListsByProductId?.nodes[0]
+                        .productListByProductId?.transSkuListsByProductId
+                        ?.nodes[0]?.transSkuDescriptionsBySkuId?.nodes[0]
+                        ?.skuDescription ?? " ",
+
+                    skuUrl:
+                      val?.transSkuListsByProductId?.nodes[0]?.skuUrl ?? " ",
                   };
                 })
               : []
