@@ -491,7 +491,6 @@ class ProductDetail extends Component {
                       dataCarousel={dataCarouselcollections}
                     >
                       {this.props?.data[0]?.fadeImageSublist.map((val) => {
-                        console.log(val.skuUrl);
                         return (
                           <ImgMediaCard
                             data={val}

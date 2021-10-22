@@ -22,7 +22,6 @@ export const ImgMediaCard = (props) => {
   const { ProductDetailCtx, setFilters } =
     React.useContext(ProductDetailContext);
   const loc = window.location.search;
-  console.log(props.hoverImagesss);
 
   return (
     <Component
@@ -430,7 +429,7 @@ function Component(props) {
                               style={{ display: "flex", alignSelf: "center" }}
                             >
                               {" "}
-                              <Typography
+                              <span
                                 className={classes.strikeText}
                                 style={{
                                   paddingLeft: "6px",
@@ -454,7 +453,7 @@ function Component(props) {
                                         )}
                                   </span>
                                 </span>
-                              </Typography>
+                              </span>
                             </span>
                           </Typography>
                         )}{" "}
@@ -513,8 +512,8 @@ function Component(props) {
                         </Typography>
                       ) : (
                         <Grid container>
-                          <Grid item xs={6}>
-                            <Typography
+                          <Grid item xs={8}>
+                            <span
                               className={classes.offerMainPrice}
                               style={{
                                 justifyContent: "flex-start",
@@ -523,31 +522,37 @@ function Component(props) {
                                 color: "rgb(109,110,112)",
                               }}
                             >
-                              {new Intl.NumberFormat("en-IN", {
-                                style: "currency",
-                                currency: "INR",
-                                minimumFractionDigits: 0,
-                              }).format(Math.round(props.data.price))}
-                            </Typography>
-                            <span
-                              style={{
-                                color: "rgb(109,110,112)",
-                                textDecoration: "line-through",
-                                fontSize: "12px",
-                                paddingLeft: "5px",
-                              }}
-                            >
-                              {props.data.offerPrice == 0
-                                ? " "
-                                : new Intl.NumberFormat("en-IN", {
-                                    style: "currency",
-                                    currency: "INR",
-                                    minimumFractionDigits: 0,
-                                  }).format(Math.round(props.data.offerPrice))}
+                              <span>
+                                {new Intl.NumberFormat("en-IN", {
+                                  style: "currency",
+                                  currency: "INR",
+                                  minimumFractionDigits: 0,
+                                }).format(Math.round(props.data.price))}
+                              </span>
+                              <span
+                                style={{
+                                  color: "rgb(109,110,112)",
+                                  textDecoration: "line-through",
+                                  fontSize: "13px",
+                                  paddingLeft: "5px",
+                                  fontWeight: "lighter",
+                                  marginTop: "2px",
+                                }}
+                              >
+                                {props.data.offerPrice == 0
+                                  ? " "
+                                  : new Intl.NumberFormat("en-IN", {
+                                      style: "currency",
+                                      currency: "INR",
+                                      minimumFractionDigits: 0,
+                                    }).format(
+                                      Math.round(props.data.offerPrice)
+                                    )}
+                              </span>
                             </span>
                           </Grid>
 
-                          <Grid item xs={6}>
+                          <Grid item xs={4}>
                             <span
                               style={{
                                 fontWeight: "bold",
@@ -556,9 +561,7 @@ function Component(props) {
                                 paddingLeft: "5px",
                               }}
                             >
-                              {props.similarProducts
-                                ? " "
-                                : props.data.save == 0
+                              {props.data.save == 0
                                 ? " "
                                 : ` ${Math.abs(
                                     Math.round(props.data.save)
