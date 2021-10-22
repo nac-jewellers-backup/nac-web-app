@@ -459,20 +459,15 @@ function Component(props) {
                           </Typography>
                         )}{" "}
                       </Grid>
-                      {props.similarProducts ? (
-                        " "
-                      ) : (
-                        <Grid items>
-                          <Typography className={classes.discountPercentage}>
-                            {props.data.save == 0
-                              ? " "
-                              : ` ${Math.abs(
-                                  Math.round(props.data.save)
-                                )}% OFF`}
-                            &nbsp;&nbsp;
-                          </Typography>
-                        </Grid>
-                      )}
+
+                      <Grid items>
+                        <Typography className={classes.discountPercentage}>
+                          {props.data.save == 0
+                            ? " "
+                            : ` ${Math.abs(Math.round(props.data.save))}% OFF`}
+                          &nbsp;&nbsp;
+                        </Typography>
+                      </Grid>
                     </Grid>
                     <Grid container xs={12}>
                       <Typography

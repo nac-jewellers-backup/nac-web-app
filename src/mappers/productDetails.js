@@ -1185,8 +1185,6 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
             ? like_data.data.youMayalsolike1 &&
               like_data.data.youMayalsolike1.nodes.length > 0
               ? like_data.data.youMayalsolike1.nodes.map((val) => {
-                  console.log(val);
-
                   return {
                     offerDiscount: val?.transSkuListsByProductId?.nodes[0]
                       ?.discount
@@ -1215,7 +1213,9 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                           )
                         : 0,
 
-                    save: " ",
+                    save: val?.transSkuListsByProductId?.nodes[0]?.discount
+                      ? val?.transSkuListsByProductId?.nodes[0]?.discount
+                      : " ",
                     img: val.productImagesByProductId.nodes[0].imageUrl,
                     image: {
                       placeImage: {
@@ -1252,6 +1252,9 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                 like_data.data.youMayalsolike2.nodes
               ? like_data.data.youMayalsolike2.nodes.map((val) => {
                   return {
+                    save: val?.transSkuListsByProductId?.nodes[0]?.discount
+                      ? val?.transSkuListsByProductId?.nodes[0]?.discount
+                      : " ",
                     img: val.productImagesByProductId.nodes[0].imageUrl ?? "",
 
                     title: val && val.productName ? val.productName : "",
