@@ -462,6 +462,7 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
             : null,
         maxOrderQty: PD && PD.maxOrderQty ? PD.maxOrderQty : 100000,
         minOrderQty: PD && PD.minOrderQty ? PD.minOrderQty : 1,
+        show: PD.showPriceBreakup,
         productsubHeaderlist: [
           {
             name: "From the House of NAC",
@@ -541,6 +542,7 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
         productsDetails: [
           {
             header: "Product Details",
+            show: PD.showPriceBreakup,
             namedetail: [
               {
                 name: "Product Code",
@@ -586,7 +588,6 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
               },
             ],
           },
-
           {
             header: "Diamond Details",
             namedetail:
@@ -976,7 +977,6 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                   ]
                 : [],
           },
-
           {
             header: "Price Breakup",
             namedetail: [
@@ -1109,6 +1109,56 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                     minimumFractionDigits: 0,
                   }).format(Math.round(PD.markupPrice)),
                 ],
+              },
+            ],
+          },
+        ],
+        productsDetailsonly: [
+          {
+            header: "Product Details",
+            show: PD.showPriceBreakup,
+            namedetail: [
+              {
+                name: "Product Code",
+                details: PD && PD.generatedSku !== "" ? PD.generatedSku : null,
+              },
+              {
+                name: "Metal Type / Finish",
+                details: PD && PD.purity + " " + PD.metalColor,
+              },
+              {
+                name: "Approx Metal Weight (in gm)",
+                details: PD && PD.skuWeight ? PD.skuWeight : null,
+              },
+              {
+                name: PD && PD.skuSize ? "Size" : null,
+                details: PD && PD.generatedSku !== "" ? PD.skuSize : null,
+              },
+              {
+                name:
+                  PD && PD.productListByProductId.width
+                    ? "Height (in mm)"
+                    : null,
+                details:
+                  PD && PD.productListByProductId.width !== ""
+                    ? PD.productListByProductId.width
+                    : null,
+              },
+              {
+                name:
+                  PD && PD.productListByProductId.height
+                    ? "Width (in mm)"
+                    : null,
+                details:
+                  PD && PD.productListByProductId.height !== ""
+                    ? PD.productListByProductId.height
+                    : null,
+              },
+              {
+                name: "Fastening",
+                details: PD?.productListByProductId?.earringBacking
+                  ? PD.productListByProductId.earringBacking
+                  : null,
               },
             ],
           },
