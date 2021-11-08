@@ -27,6 +27,7 @@ export const PRODUCTDETAILS = `query MyQuery(
       discountPriceTax
       markupPriceTax
       skuUrl
+      showPriceBreakup
      
       
       

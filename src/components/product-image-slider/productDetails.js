@@ -31,7 +31,7 @@ class ProductDetails extends React.Component {
           data[0] &&
           data[0].productsDetails &&
           data[0].productsDetails.map((valueofproductdetail) => {
-            return valueofproductdetail.namedetail.length === 0 ? (
+            return valueofproductdetail.length === 0 ? (
               false
             ) : (
               <Grid item xs={6} style={{ paddingRight: "20px" }}>
@@ -189,7 +189,7 @@ class ProductDetails extends React.Component {
       <div>
         <Container>
           {data[0]?.productsDetails?.map((val) => {
-            return val.namedetail.length === 0 ? (
+            return val.namedetail === 0 ? (
               false
             ) : (
               <>
