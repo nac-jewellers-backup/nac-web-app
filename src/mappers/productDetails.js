@@ -364,7 +364,7 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
 
   try {
     mapperdata = data.data.allTransSkuLists.nodes;
-    console.log(data);
+    //console.log(mapperdata);
 
     if (mapperdata[0]?.skuId === undefined) {
       history.push("/");
@@ -462,6 +462,7 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
             : null,
         maxOrderQty: PD && PD.maxOrderQty ? PD.maxOrderQty : 100000,
         minOrderQty: PD && PD.minOrderQty ? PD.minOrderQty : 1,
+        show: PD.showPriceBreakup,
         productsubHeaderlist: [
           {
             name: "From the House of NAC",
@@ -541,6 +542,7 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
         productsDetails: [
           {
             header: "Product Details",
+            show: PD.showPriceBreakup,
             namedetail: [
               {
                 name: "Product Code",
@@ -586,9 +588,7 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
               },
             ],
           },
-
           {
-            show: PD.showPriceBreakup,
             header: "Diamond Details",
             namedetail:
               PD &&
@@ -773,7 +773,6 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                 : [],
           },
           {
-            show: PD.showPriceBreakup,
             header: "Gemstone Details",
             namedetail:
               PD &&
@@ -979,7 +978,6 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                 : [],
           },
           {
-            show: PD.showPriceBreakup,
             header: "Price Breakup",
             namedetail: [
               // {
@@ -1118,6 +1116,7 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
         productsDetailsonly: [
           {
             header: "Product Details",
+            show: PD.showPriceBreakup,
             namedetail: [
               {
                 name: "Product Code",
@@ -1264,9 +1263,7 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                           )
                         : 0,
 
-                    save: val?.transSkuListsByProductId?.nodes[0]?.discount
-                      ? val?.transSkuListsByProductId?.nodes[0]?.discount
-                      : " ",
+                    save: " ",
                     img: val.productImagesByProductId.nodes[0].imageUrl,
                     image: {
                       placeImage: {
@@ -1303,9 +1300,6 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                 like_data.data.youMayalsolike2.nodes
               ? like_data.data.youMayalsolike2.nodes.map((val) => {
                   return {
-                    save: val?.transSkuListsByProductId?.nodes[0]?.discount
-                      ? val?.transSkuListsByProductId?.nodes[0]?.discount
-                      : " ",
                     img: val.productImagesByProductId.nodes[0].imageUrl ?? "",
 
                     title: val && val.productName ? val.productName : "",
@@ -1321,19 +1315,11 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                           )
                         : 0,
                     offerPrice:
-                      val?.transSkuListsByProductId?.nodes[0].discountPrice,
-
-                    image: {
-                      placeImage: {
-                        img: val.productImagesByProductId.nodes[0].imageUrl,
-                      },
-                      hoverImage: {
-                        img: val.productImagesByProductId.nodes[0].imageUrl,
-                      },
-                    },
-                    title: val && val.productName && val.productName,
-
-                    skuID:
+                      val?.productListByProductSku?.productImagesByProductId
+                        ?.nodes[0].productListByProductId
+                        ?.transSkuListsByProductId?.nodes[0]?.discountPrice ??
+                      " ",
+                    url:
                       val &&
                       val.transSkuListsByProductId &&
                       val.transSkuListsByProductId.nodes &&
@@ -1343,13 +1329,9 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                         ? val.transSkuListsByProductId.nodes[0].generatedSku
                         : "",
                     description:
-                      val?.transSkuListsByProductId?.nodes[0]
-                        .productListByProductId?.transSkuListsByProductId
-                        ?.nodes[0]?.transSkuDescriptionsBySkuId?.nodes[0]
-                        ?.skuDescription ?? " ",
-
-                    skuUrl:
-                      val?.transSkuListsByProductId?.nodes[0]?.skuUrl ?? " ",
+                      val?.transSkuDescriptionsBySkuId
+                        ?.transSkuDescriptionsBySkuId?.nodes[0]
+                        ?.skuDescription ?? "",
                   };
                 })
               : []
