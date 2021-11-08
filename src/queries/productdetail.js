@@ -28,7 +28,6 @@ export const PRODUCTDETAILS = `query MyQuery(
       markupPriceTax
       skuUrl
       showPriceBreakup
-     
       
       
       transSkuDescriptionsBySkuId {
