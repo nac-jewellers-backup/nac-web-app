@@ -18,15 +18,15 @@ export default function PaymentHiddenForm(props) {
     isocurrency: "",
     chmod: "",
     checksum: "",
-    buyerEmail: "jay@gmail.com",
-    buyerFirstName: "Jay",
-    buyerLastName: "Soorya",
-    buyerAddress: "Address",
-    buyerCity: "Chennai",
-    buyerState: "state",
-    buyerCountry: "country",
-    buyerPhone: 9841348263,
-    buyerPinCode: "600087",
+    buyerEmail: "",
+    buyerFirstName: "",
+    buyerLastName: "",
+    buyerAddress: "",
+    buyerCity: "",
+    buyerState: "",
+    buyerCountry: "",
+    buyerPhone: "",
+    buyerPinCode: "",
   });
   const [orderId, setOrderId] = React.useState(null);
   const obj = {};
@@ -115,7 +115,7 @@ export default function PaymentHiddenForm(props) {
       return response.json();
     };
 
-    await fetch(`https://api.stylori.com/createorder`, {
+    await fetch(`${API_URL}/createorder`, {
       method: "post",
       headers: {
         "Content-Type": "application/json",
