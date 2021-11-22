@@ -1,6 +1,10 @@
 const styles = (theme) => ({
   padding: {
     padding: "40px !important",
+    height: "100vh",
+  },
+  padding1: {
+    padding: "40px !important",
   },
   paddingCart: {
     paddingRight: "40px",
@@ -29,8 +33,8 @@ const styles = (theme) => ({
     [theme.breakpoints.down("md")]: {
       fontSize: "13px ",
     },
-    [theme.breakpoints.up("md")]: {
-      fontSize: "15px",
+    [theme.breakpoints.up("lg")]: {
+      fontSize: "16px",
     },
   },
   cartheader: {
@@ -137,6 +141,7 @@ const styles = (theme) => ({
   buttons: {
     background: theme.palette.overallButoon.primary,
     color: theme.palette.overallButoon.contrastText,
+    fontWeight: "bold",
   },
   totalcost: {
     [theme.breakpoints.down("xs")]: {
@@ -151,7 +156,7 @@ const styles = (theme) => ({
       fontSize: "12px;!important",
     },
     [theme.breakpoints.up("lg")]: {
-      fontSize: "14px !important",
+      fontSize: "16px !important",
     },
     color: "gray",
     float: "right !important",

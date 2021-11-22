@@ -1,4 +1,4 @@
-import { Container, Grid, Hidden, Paper } from "@material-ui/core";
+import { Container, Grid, Hidden, Paper, Typography } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 import ArrowLeftIcon from "@material-ui/icons/ArrowLeft";
 import ArrowRightIcon from "@material-ui/icons/ArrowRight";
@@ -17,7 +17,11 @@ const mobilecarousel = (props, val, wishlist) => {
       <ArrowLeftIcon
         className={`${className} ${classes.collectionSection}`}
         onClick={onClick}
-        style={{ ...style, fill: "theme.palette.secondary.main !important" }}
+        style={{
+          ...style,
+          fill: "theme.palette.secondary.main !important",
+          fontSize: "40px",
+        }}
       />
     );
   };
@@ -27,7 +31,11 @@ const mobilecarousel = (props, val, wishlist) => {
       <ArrowRightIcon
         className={`${className} ${classes.collectionSection}`}
         onClick={onClick}
-        style={{ ...style, fill: "theme.palette.secondary.main !important" }}
+        style={{
+          ...style,
+          fill: "theme.palette.secondary.main !important",
+          fontSize: "40px",
+        }}
       />
     );
   };
@@ -44,15 +52,17 @@ const mobilecarousel = (props, val, wishlist) => {
   };
 
   return (
-    <Slideshow
-      zindex="1000"
-      class="middle"
-      className="responseve-carousel testingcur"
-      imgClass="responseve-carousel-img"
-      fadeImages={data[0]?.fadeImages?.arrOfurls}
-      dataCarousel={dataCarousel}
-      videoControls={true}
-    />
+    <div className={classes.mobilecarousel}>
+      <Slideshow
+        zindex="1000"
+        class="middle"
+        className="responseve-carousel testingcur"
+        imgClass="responseve-carousel-img"
+        fadeImages={data[0]?.fadeImages?.arrOfurls}
+        dataCarousel={dataCarousel}
+        videoControls={true}
+      />
+    </div>
   );
 };
 
@@ -105,7 +115,8 @@ const Productprice = (
                         style={{ padding: 5 }}
                       >
                         <Grid container item xs={8}>
-                          <h1
+                          <Typography
+                            variant="h4"
                             className={`pdp-title ${classes.title}`}
                             style={{
                               width: "100%",
@@ -113,7 +124,7 @@ const Productprice = (
                             }}
                           >
                             {val?.title}
-                          </h1>
+                          </Typography>
                           <span className={`pdp-desc ${classes.dis} `}>
                             {val?.dis?.length > 30 && viewMore
                               ? val?.dis
@@ -123,21 +134,18 @@ const Productprice = (
                                 viewMore ? "" : classes.disDescriptionPD
                               }`}
                             >
-                              <span>
-                                <span
-                                  style={{
-                                    float: "right",
-                                    cursor: "pointer",
-                                    color: "#33346D",
-                                    fontSize: "10px",
-                                    marginTop: "5px",
-                                  }}
-                                  onClick={() => {
-                                    handleReadMore();
-                                  }}
-                                >
-                                  {viewMore ? "Read Less" : "Read More"}
-                                </span>
+                              <span
+                                style={{
+                                  float: "right",
+                                  cursor: "pointer",
+
+                                  marginTop: "5px",
+                                }}
+                                onClick={() => {
+                                  handleReadMore();
+                                }}
+                              >
+                                {viewMore ? "Read Less" : "Read More"}
                               </span>
                             </span>
                           </span>
@@ -172,33 +180,38 @@ const Productprice = (
                     <Hidden smDown>
                       <p
                         className={`pdp-desc ${classes.dis}`}
-                        style={{ marginBottom: 0, paddingTop: "5px" }}
+                        style={{
+                          marginBottom: 0,
+                          paddingTop: "5px",
+                        }}
                       >
-                        {val?.dis?.length > 100 && viewMore
-                          ? val?.dis
-                          : val?.dis.substring(0, 100)}
-                        {/* {val.dis} */}
-                        <span>
-                          <p
-                            className={`pdp-desc ${
-                              viewMore ? "" : classes.disDescriptionPD
-                            }`}
-                          >
-                            <span style={{ width: "80%" }}>
-                              <span
-                                style={{
-                                  float: "right",
-                                  cursor: "pointer",
-                                  color: "#33346D",
-                                }}
-                                onClick={() => {
-                                  handleReadMore();
-                                }}
-                              >
-                                {viewMore ? "Read Less" : "Read More"}
-                              </span>
+                        <span style={{ textOverflow: "ellipsis" }}>
+                          {val?.dis?.length > 100 && viewMore
+                            ? val?.dis
+                            : val?.dis.substring(0, 80)}
+                          {/* {val.dis} */}
+                        </span>
+                        <br />
+                        <span
+                          className={`pdp-desc ${
+                            viewMore ? "" : classes.disDescriptionPD
+                          }`}
+                        >
+                          <span style={{ width: "80%" }}>
+                            <span
+                              style={{
+                                float: "right",
+                                cursor: "pointer",
+                                color: "#33346D",
+                                fontSize: "14px",
+                              }}
+                              onClick={() => {
+                                handleReadMore();
+                              }}
+                            >
+                              {viewMore ? "Read Less" : "Read More"}
                             </span>
-                          </p>
+                          </span>
                         </span>
                       </p>
                     </Hidden>

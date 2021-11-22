@@ -1,4 +1,4 @@
-import { Box, Grid } from "@material-ui/core";
+import { Box, Grid, Typography } from "@material-ui/core";
 import React from "react";
 import styles from "./titlestyle";
 
@@ -7,7 +7,12 @@ export const Title = (props) => {
   return (
     <Grid container direction="row">
       <Grid item xs={12}>
-        <Box display="flex" flexDirection="row" justifyContent="center">
+        <Box
+          display="flex"
+          flexDirection="row"
+          justifyContent="center"
+          alignItems="center"
+        >
           <Box>
             <img
               className={classes.img}
@@ -15,7 +20,11 @@ export const Title = (props) => {
               alt="title images"
             />
           </Box>
-          <Box className={classes.title}>{props.title.toUpperCase()}</Box>
+          <Box>
+            <Typography className={classes.title}>
+              {props.title.toUpperCase()}
+            </Typography>
+          </Box>
           <Box>
             <img
               className={classes.img}

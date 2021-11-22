@@ -5,6 +5,7 @@ import React from "react";
 import { GlassMagnifier } from "react-image-magnifiers";
 import Slideshow from "../Carousel/carosul";
 import styles from "../Header/styles";
+import Wishlist from "../wishlist/wishlist";
 import "./product-images.css";
 // window.onload = function () {
 //   var flashlight = document.querySelector('#flashlight');
@@ -28,6 +29,7 @@ class ProductImageZoom extends React.Component {
     img.onerror = bad;
     img.src = imageSrc;
   };
+
   check_image_exists_in_server = (url) => {
     // var _url = url.replace(res.img_res, '1000X1000');
 
@@ -182,7 +184,8 @@ class ProductImageZoom extends React.Component {
   };
 
   productImageZoom = (_isSilver) => {
-    const { classes, data, customLimit } = this.props;
+    const { classes, data, customLimit, wishlist } = this.props;
+
     const limit = customLimit ? customLimit : 4;
 
     const { showimage, largeImage, showimageBig, largeImageBig } = this.state;
@@ -240,14 +243,6 @@ class ProductImageZoom extends React.Component {
                 className={_isSilver ? "imagecardSilver" : "imagecardSilver"}
                 id="divs"
                 style={{
-                  height:
-                    window.innerWidth > 2250
-                      ? _isSilver
-                        ? "500px"
-                        : "800px"
-                      : _isSilver
-                      ? this.props?.data[0]?.size - 100
-                      : this.props?.data[0]?.size,
                   display: "flex",
                   alignItem: "center",
                 }}
@@ -268,13 +263,7 @@ class ProductImageZoom extends React.Component {
                 
               </Grid>
             </Grid> */}
-                {data.map((val) => {
-                  return !this.props?.isSilver && val?.offerDiscount ? (
-                    <span style={{ color: "#fff" }} className="overlayCss11">
-                      {val?.offerDiscount}
-                    </span>
-                  ) : null;
-                })}
+
                 {/* !this.props.isSilver &&  */}
                 {/* {data[0]?.ProductContactNum[0]?.isReadyToShip == true ? (
                   this.props?.isSilver ? (
@@ -298,28 +287,49 @@ class ProductImageZoom extends React.Component {
                     <source src={showimage} type="video/mp4" />
                   </video>
                 ) : (
-                  <GlassMagnifier
-                    imageSrc={[
-                      largeImage,
-                      showimageBig,
-                      `https://styloriimages-staging.s3.ap-south-1.amazonaws.com/product/1000X1000/productnotfound.webp`,
-                    ]}
-                    // imageSrc={largeImage}
-                    // onImageLoad={this.imageSrc=`${CDN_URL}product/1000X1000/productnotfound.webp`}
-                    imageAlt="Stylori"
-                    magnifierSize={this.props.isSilver ? "40%" : "50%"}
-                    largeImageSrc={[
-                      largeImage,
-                      largeImageBig,
-                      `https://styloriimages-staging.s3.ap-south-1.amazonaws.com/product/2400X2400/productnotfound.webp`,
-                      `https://styloriimages-staging.s3.ap-south-1.amazonaws.com/product/1000X1000/productnotfound.webp`,
-                    ]}
-                    magnifierBoxShadow="0px 1px 3px 0px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 2px 1px -1px rgba(0,0,0,0.12)"
-                    magnifierBorderColor={
-                      this.props.isSilver ? "rgb(58,69,120)" : "#f5003240"
-                    }
-                    // magnifierBackgroundColor="#f5003240"
-                  />
+                  <div
+                    style={{
+                      boxShadow: "4px 4px 4px #a5a4a5",
+                      border: "1px solid gray",
+                      position: "relative",
+                    }}
+                  >
+                    <div
+                      style={{
+                        position: "absolute",
+                        left: "10px",
+                        zIndex: "1",
+                      }}
+                    >
+                      <Wishlist
+                        sku={data.skuId}
+                        productId={data.productId}
+                        wishlist={wishlist}
+                      />
+                    </div>
+                    <GlassMagnifier
+                      imageSrc={[
+                        largeImage,
+                        showimageBig,
+                        `https://styloriimages-staging.s3.ap-south-1.amazonaws.com/product/1000X1000/productnotfound.webp`,
+                      ]}
+                      // imageSrc={largeImage}
+                      // onImageLoad={this.imageSrc=`${CDN_URL}product/1000X1000/productnotfound.webp`}
+                      imageAlt="Stylori"
+                      magnifierSize={this.props.isSilver ? "40%" : "50%"}
+                      largeImageSrc={[
+                        largeImage,
+                        largeImageBig,
+                        `https://styloriimages-staging.s3.ap-south-1.amazonaws.com/product/2400X2400/productnotfound.webp`,
+                        `https://styloriimages-staging.s3.ap-south-1.amazonaws.com/product/1000X1000/productnotfound.webp`,
+                      ]}
+                      magnifierBoxShadow="4px 4px 4px #a5a4a5"
+                      magnifierBorderColor={
+                        this.props.isSilver ? "rgb(58,69,120)" : "#f5003240"
+                      }
+                      // magnifierBackgroundColor="#f5003240"
+                    />
+                  </div>
                 )}
               </div>
 
@@ -486,7 +496,6 @@ class ProductImageZoom extends React.Component {
 
   render() {
     const _isSilver = this.props.isSilver ? true : false;
-
     return (
       <div>
         <Hidden smDown>{this.productImageZoom(_isSilver)}</Hidden>

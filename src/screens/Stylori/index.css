@@ -13,11 +13,10 @@
 }
 
 .cart-ovralldiv-media {
-  width: 100%
+  width: 100%;
 }
 
-@media screen and (max-width: 1220px),
-(min-width: 1220px) {
+@media screen and (max-width: 1220px), (min-width: 1220px) {
   .cart-ovralldiv-media {
     /* padding-left: 5% !important;
     padding-right: 5% !important; */
@@ -166,14 +165,14 @@
   font-family: sans-serif;
   width: 100% !important;
   /* height: 35px; */
-  color: #394578 !important;
+  color: #2f348b !important;
   display: flex !important;
   justify-content: center;
 }
 
 .transition {
   height: 1px;
-  background-color: #394578;
+  background-color: #2f348b;
   margin: 0;
   z-index: 11;
   position: relative;

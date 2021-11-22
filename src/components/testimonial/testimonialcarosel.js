@@ -56,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
     },
     Button: {
       fontSize: "9px !important",
-      backgroundColor: "#394578",
+      backgroundColor: "#2F348B",
       /* margin-top: 18px !important; */
       marginTop: "3px !important",
       color: "#fff",
@@ -78,7 +78,12 @@ const useStyles = makeStyles((theme) => ({
       marginTop: "21% !important",
     },
   },
-
+  customerName: {
+    color: "#787878",
+    textTransform: "capitalize",
+    fontWeight: "normal",
+    fontSize: "18px",
+  },
   containerRoot: {
     width: "100%",
     backgroundImage:
@@ -161,7 +166,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: " center",
     alignContent: "center",
     minHeight: "45px",
-    color: "#394578",
+    color: "#2F348B",
     fontWeight: "500",
     fontSize: "13px",
     marginBottom: "0px",
@@ -188,7 +193,7 @@ const useStyles = makeStyles((theme) => ({
   },
   Button: {
     fontSize: "12px",
-    backgroundColor: "#394578",
+    backgroundColor: "#2F348B",
     /* margin-top: 18px !important; */
     marginTop: "8px !important",
     color: "#fff",
@@ -230,15 +235,18 @@ const useStyles = makeStyles((theme) => ({
     maxHeight: "140px ",
     overflow: "hidden",
     textAlign: "center",
+    fontSize: "14px",
+    textTransform: "capitalize",
+    color: "#808080",
   },
   name: {
     fontSize: "16px",
     fontWeight: 600,
-    color: "#394578",
+    color: "#2F348B",
   },
   namecountry: {
     fontSize: "13px",
-    color: "#394578",
+    color: "#2F348B",
   },
   excliconright: {
     backgroundImage:
@@ -350,7 +358,12 @@ export default function ImageGridList(props) {
                         </Grid>
                         {/* <span className={classes.exclIcon}></span> */}
                         <Grid container item xs={12} justify={"center"}>
-                          <Typography>{val.customerName ?? " "}</Typography>
+                          <Typography
+                            variant="body2"
+                            className={classes.customerName}
+                          >
+                            {val.customerName ?? " "}
+                          </Typography>
                           <br />
                           <br />
                         </Grid>
@@ -374,7 +387,10 @@ export default function ImageGridList(props) {
                           className={classes.testimonialInner}
                         >
                           <div>
-                            <Typography className={classes.textInner}>
+                            <Typography
+                              variant="body2"
+                              className={classes.textInner}
+                            >
                               {val.message}
                             </Typography>
                           </div>
@@ -386,7 +402,10 @@ export default function ImageGridList(props) {
                           justify={"center"}
                           style={{ padding: "8px 0px 10px 0px" }}
                         >
-                          <Typography>
+                          <Typography
+                            variant="body2"
+                            className={classes.customerName}
+                          >
                             {val.title ?? "Testing Title"}
                           </Typography>
                         </Grid>

@@ -26,9 +26,9 @@
 .back-b {
   box-shadow: 2px 3px 6px 2px #888888;
   background: #fff !important;
-  color: #394578 !important;
+  color: #2f348b !important;
   border-radius: 0px !important;
-  border: 1px solid #394578 !important;
+  border: 1px solid #2f348b !important;
   display: block !important;
   font-size: 16px !important;
   margin-right: 5px !important;
@@ -40,8 +40,8 @@
   border-radius: 0px !important;
   text-align: center !important;
   font-size: 16px !important;
-  background: #394579 !important;
-  border: 1px solid #394579 !important;
+  background: #2f348b !important;
+  border: 1px solid #2f348b !important;
   display: block;
   color: #fff !important;
   text-transform: none !important;
@@ -49,8 +49,8 @@
 }
 
 .back-b:hover {
-  background: #394579 !important;
-  border: 1px solid #394579 !important;
+  background: #2f348b !important;
+  border: 1px solid #2f348b !important;
   color: #fff !important;
 }
 

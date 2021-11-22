@@ -19,22 +19,22 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: "notoSerif-regular",
   },
   fromControlTwo: {
-    fill: "#394578",
+    fill: "#2F348B",
     "& span": {
       fontSize: "12px !important",
-      fill: "#394578",
+      fill: "#2F348B",
       fontWeight: 600,
       "& svg": {
         width: "0.99rem",
-        fill: "#394578",
+        fill: "#2F348B",
       },
     },
   },
   group: {
-    color: "#394578",
+    color: "#2F348B",
   },
   radio: {
-    color: "#394578",
+    color: "#2F348B",
   },
   hoverClass: {
     paddingRight: "10px",

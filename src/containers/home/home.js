@@ -27,6 +27,7 @@ const styles = (theme) => ({
   root: {
     overflow: "hidden",
   },
+
   preButton: {
     opacity: "1!important",
 
@@ -369,7 +370,7 @@ class HomeComp extends React.Component {
         <ArrowLeftIcon
           className={`${className} ${classes.collectionSection}`}
           onClick={onClick}
-          style={{ ...style }}
+          style={{ ...style, fontSize: "3em" }}
         />
       );
     };
@@ -379,7 +380,7 @@ class HomeComp extends React.Component {
         <ArrowRightIcon
           className={`${className} ${classes.collectionSection}`}
           onClick={onClick}
-          style={{ ...style }}
+          style={{ ...style, fontSize: "3em" }}
         />
       );
     };
@@ -647,11 +648,13 @@ class HomeComp extends React.Component {
                             class="subslider-carousel"
                             dataCarousel={dataCarouselcollectionsSm}
                           >
-                            {this.state.newarrival.map((val) => {
-                              return (
-                                <ImgMediaCard data={val} cardSize="auto" />
-                              );
-                            })}
+                            <div className={classes.cardContainer}>
+                              {this.state.newarrival.map((val) => {
+                                return (
+                                  <ImgMediaCard data={val} cardSize="auto" />
+                                );
+                              })}
+                            </div>
                           </Slideshow>
                         </Container>
                       </Hidden>
@@ -821,6 +824,7 @@ class HomeComp extends React.Component {
                     overflow: "auto",
                     borderRadius: "3px",
                     border: "1px solid #D9D9D9",
+                    overflow: "hidden",
                   }}
                 >
                   <InstagramFeed />

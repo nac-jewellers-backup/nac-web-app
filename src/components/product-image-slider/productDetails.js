@@ -45,6 +45,7 @@ class ProductDetails extends React.Component {
                     <div className="overall-bo">
                       <span
                         key={valueofproductdetail.name}
+                        style={{ fontSize: "15px" }}
                         className={`product-details ${classes.normalfonts}`}
                       >
                         {" "}
@@ -77,7 +78,7 @@ class ProductDetails extends React.Component {
                                                     {
                                                       <span
                                                         style={{
-                                                          fontSize: "12px",
+                                                          fontSize: "13px",
                                                         }}
                                                       >
                                                         {" "}
@@ -119,17 +120,20 @@ class ProductDetails extends React.Component {
                                                                   res.details[
                                                                     Index + 1
                                                                   ] ? (
-                                                                  Item == 0 ? (
-                                                                    " "
-                                                                  ) : (
-                                                                    <>
-                                                                      <del>
-                                                                        {Item}
-                                                                      </del>
-                                                                    </>
-                                                                  )
-                                                                ) : (
+                                                                  <>
+                                                                    <del>
+                                                                      {Item}
+                                                                    </del>
+                                                                  </>
+                                                                ) : res.details[
+                                                                    Index
+                                                                  ] !==
+                                                                  res.details[
+                                                                    Index + 1
+                                                                  ] ? (
                                                                   Item
+                                                                ) : (
+                                                                  " "
                                                                 )
                                                               ) : (
                                                                 Item

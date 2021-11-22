@@ -122,7 +122,12 @@ class Buynowbutton extends React.Component {
                   <>
                     {productIsActive ? (
                       <span className={this.props.button}>
-                        {this.props.cartpage ? "Checkout Securely" : "Buy Now"}
+                        <b>
+                          {" "}
+                          {this.props.cartpage
+                            ? "Checkout Securely"
+                            : "Buy Now"}
+                        </b>
                       </span>
                     ) : (
                       <span

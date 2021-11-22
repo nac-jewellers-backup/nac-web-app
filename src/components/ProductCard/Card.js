@@ -44,14 +44,18 @@ const Gallery = (
   scrollPosition
 ) => {
   return (
-    <div className="imageHeight" style={{ position: "relative" }}>
-      <div class="wishListStyle">
-        <Wishlist
-          sku={props.data.skuId}
-          productId={props.data.productId}
-          wishlist={props.wishlist}
-        />
-      </div>
+    <div style={{ position: "relative" }} className="imageHeight">
+      {props.shopothercategories ? (
+        ""
+      ) : (
+        <div class="wishListStyle">
+          <Wishlist
+            sku={props.data.skuId}
+            productId={props.data.productId}
+            wishlist={props.wishlist}
+          />
+        </div>
+      )}
 
       <Link
         className={"cardImage"}
@@ -61,40 +65,45 @@ const Gallery = (
         onClick={handleProductDetatiContext(props)}
       >
         {props.similarProducts ? (
-          <LazyLoadImage
-            style={{
-              objectFit: "cover",
-              backgroundColor: "white",
-              width: "100%",
-            }}
-            alt={"props.data.title"}
-            effect="blur"
-            src={similarProductrenderImages(props, cardstate)}
-            //onError={(e) => imageOnError(e, props.data.imageResolution)}
-            title={
-              props.data.title.charAt(0).toUpperCase() +
-              props.data.title.slice(1)
-            }
-            onMouseOver={
-              !props.hoverText
-                ? () => {
-                    callmouseover();
-                  }
-                : () => {
-                    return null;
-                  }
-            }
-            onMouseOut={
-              !props.hoverText
-                ? () => {
-                    callmouseout();
-                  }
-                : () => {
-                    return null;
-                  }
-            }
-            scrollPosition={scrollPosition}
-          ></LazyLoadImage>
+          <>
+            <LazyLoadImage
+              style={{
+                objectFit: "cover",
+                backgroundColor: "white",
+                width: "100%",
+              }}
+              alt={"props.data.title"}
+              effect="blur"
+              src={similarProductrenderImages(props, cardstate)}
+              //onError={(e) => imageOnError(e, props.data.imageResolution)}
+              title={
+                props.data.title.charAt(0).toUpperCase() +
+                props.data.title.slice(1)
+              }
+              onMouseOver={
+                !props.hoverText
+                  ? () => {
+                      callmouseover();
+                    }
+                  : () => {
+                      return null;
+                    }
+              }
+              onMouseOut={
+                !props.hoverText
+                  ? () => {
+                      callmouseout();
+                    }
+                  : () => {
+                      return null;
+                    }
+              }
+              scrollPosition={scrollPosition}
+            ></LazyLoadImage>
+            {props.hoverText && (
+              <div className="overlayImage">{props.data.description}</div>
+            )}
+          </>
         ) : (
           <LazyLoadImage
             style={{
@@ -130,10 +139,6 @@ const Gallery = (
             }
             scrollPosition={scrollPosition}
           ></LazyLoadImage>
-        )}
-
-        {props.hoverText && (
-          <div className="overlayImage">{props.data.description}</div>
         )}
       </Link>
     </div>
@@ -178,7 +183,7 @@ const useStyles = makeStyles((theme) => ({
   },
   priceClass: {
     padding: "10px",
-    height: "40px",
+    height: "50px",
     backgroundColor: "#c8ced480",
     display: "flex",
     boxShadow: " 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)",
@@ -301,6 +306,7 @@ const useStyles = makeStyles((theme) => ({
     color: "gray",
     overflow: "hidden",
     textOverflow: "ellipsis",
+
     width: "100%",
     marginTop: "-10px",
     [theme.breakpoints.down("sm")]: {
@@ -308,10 +314,12 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   titles: {
-    fontSize: "0.8rem",
+    fontSize: "0.9rem",
     whiteSpace: "nowrap",
     // flex: 0.6,
     color: "gray",
+    fontWeight: "560px",
+    fontFamily: "notoSerif-regular",
     overflow: "hidden",
     textOverflow: "ellipsis",
     width: "90%",
@@ -407,7 +415,7 @@ function Component(props) {
         <Card className={classes.priceClass}>
           <CardContent
             className={classes.cardContent}
-            style={{ display: "flex" }}
+            style={{ display: "flex", marginBottom: "10px" }}
           >
             <Grid
               container
@@ -425,6 +433,7 @@ function Component(props) {
                       className={`${classes.titlesshopother}`}
                     >
                       {" "}
+                      Shop&nbsp;
                       {props.data.title.charAt(0).toUpperCase() +
                         props.data.title.slice(1)}
                     </Typography>
@@ -456,6 +465,7 @@ function Component(props) {
                               display: "flex",
                               paddingLeft: "5px",
                               color: "rgb(109,110,112)",
+                              fontFamily: "notoSerif-regular",
                             }}
                           >
                             {new Intl.NumberFormat("en-IN", {
@@ -473,6 +483,7 @@ function Component(props) {
                               justifyContent: "flex-start",
                               display: "flex",
                               paddingLeft: "5px",
+                              fontFamily: "notoSerif-regular",
                               color: "rgb(109,110,112)",
                             }}
                           >

@@ -5,7 +5,7 @@
 }
 
 .backgrund {
-  background: #d51f63 !important;
+  background: #2f348b !important;
   color: #fff;
 }
 
@@ -26,7 +26,7 @@
 }
 
 .logedout {
-  color: #d51f63 !important;
+  color: #2f348b !important;
 }
 
 @media screen and (min-width: 959px) {
@@ -250,7 +250,7 @@
     font-size: 20px;
     /* position: fixed !important; */
     padding-bottom: 10px;
-    color: #ed1165;
+    color: #2f348b;
 
     font-weight: bold !important;
     position: sticky;
@@ -304,7 +304,7 @@
     font-size: 20px;
     /* position: fixed !important; */
     padding-bottom: 10px;
-    color: #ed1165;
+    color: #2f348b;
 
     font-weight: bold !important;
     position: sticky;
@@ -332,7 +332,7 @@
     font-size: 20px;
     /* position: fixed !important; */
     padding-bottom: 10px;
-    color: #ed1165;
+    color: #2f348b;
 
     font-weight: bold !important;
     position: sticky;
@@ -355,7 +355,7 @@
     font-size: 20px;
     /* position: fixed !important; */
     padding-bottom: 10px;
-    color: #ed1165;
+    color: #2f348b;
 
     font-weight: bold !important;
     position: sticky;
@@ -384,7 +384,7 @@
   font-size: 22px;
   /* position: fixed !important; */
   padding-bottom: 10px;
-  color: #ed1165;
+  color: #2f348b;
   margin-top: 0px;
   font-weight: bold !important;
   position: sticky;
@@ -401,7 +401,7 @@
   font-size: 22px;
   /* position: fixed !important; */
   padding-bottom: 10px;
-  color: #ed1165;
+  color: #2f348b;
   margin-top: 0px;
   font-weight: bold !important;
   position: sticky;
@@ -431,7 +431,7 @@
   margin-top: 6% !important;
   /* overflow-y: scroll ! important; */
   /* height: 70vh !important; */
-  width: 90% !important;
+
   margin: auto !important;
   border: none !important;
   /* box-shadow: 1px 0px 90px 18px #DEDADA !important; */
@@ -477,7 +477,7 @@
   border: 1px solid #333 !important;
   text-align: center !important;
   float: left !important;
-  font-size: 12px !important;
+  font-size: 14px !important;
   border-radius: 5%;
   line-height: 30px;
   height: 30px;
@@ -487,12 +487,13 @@
 }
 
 .wislist_title {
-  color: #394578;
+  color: #2f348b;
+  text-transform: capitalize;
   padding-bottom: 10px;
 }
 
 .wislist_price {
-  color: rgba(241, 72, 128, 1);
+  color: gray;
   padding-bottom: 10px;
 }
 
@@ -503,7 +504,7 @@
   }
 
   .wislist_title {
-    color: #394578;
+    color: #2f348b;
     padding-bottom: 5px;
   }
 }
@@ -547,7 +548,7 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  color: #394578;
+  color: #2f348b;
   font-weight: 700;
   padding-left: 8px;
 }
@@ -557,6 +558,6 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  color: #394578;
+  color: #2f348b;
   font-weight: 700;
 }

@@ -1,7 +1,7 @@
 import { Grid, TextField } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
 import propTypes from "prop-types";
 import React from "react";
-
 // NOTABLE POINTS
 //  Min and Max
 // Email ID
@@ -13,6 +13,11 @@ import React from "react";
 // On Button Submit
 // On Moving Out
 // Live
+const useStyles = makeStyles({
+  root: {
+    borderRadius: "0px",
+  },
+});
 
 export const Input = (props) => {
   let {
@@ -52,7 +57,7 @@ export const Input = (props) => {
     e.preventDefault();
     setInvalid(true);
   };
-
+  const classes = useStyles();
   return (
     <Grid item xs={12}>
       {props.checkoutgift ? (
@@ -63,7 +68,7 @@ export const Input = (props) => {
             inputProps={{ pattern, maxLength, minLength }}
             multiline={props.multiline}
             onInvalid={handleInvalid}
-            style={{ width: "100%", marginTop: "20px" }}
+            style={{ width: "100%", marginTop: "20px", borderRadius: "0px" }}
             error={invalid}
             helperText={invalid && <b>{helperText}</b>}
             onKeyPress={handleKeyPress}
@@ -73,6 +78,7 @@ export const Input = (props) => {
             rowsMax={rowsMax}
             minRows={4}
             color="secondary"
+            className={classes.root}
           />
         </>
       ) : (

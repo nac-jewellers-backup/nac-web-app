@@ -197,7 +197,7 @@
   height: 18px;
   fill: #ccc;
   padding: 13px 10px 10px 10px;
-  /* background: #d51f63 */
+  /* background: #2F348B */
 }
 
 .header-appbar-moblie1 {
@@ -218,7 +218,7 @@
 .mobli-icon1 i {
   font-size: 17px;
   cursor: pointer;
-  /* color: #d51f63 !important; */
+  /* color: #2F348B !important; */
   margin-left: 5px;
   text-align: center !important;
   width: 25px;
@@ -229,7 +229,7 @@
     margin-top: 5px;
     font-size: 17px;
     cursor: pointer;
-    /* color: #d51f63 !important; */
+    /* color: #2F348B !important; */
     margin-left: 5px;
     text-align: center !important;
     width: 25px;
@@ -241,7 +241,7 @@
     margin-top: 5px;
     font-size: 17px;
     cursor: pointer;
-    /* color: #d51f63 !important; */
+    /* color: #2F348B !important; */
     margin-left: 5px;
     text-align: center !important;
     width: 25px;
@@ -274,7 +274,7 @@
   font-weight: bold;
   font-size: 11px !important;
   letter-spacing: 1px;
-  color: #33346d;
+  color: #2f348b;
   text-transform: capitalize;
   font-family: notoSerif-regular;
 }
@@ -286,7 +286,7 @@
   font-weight: bold;
   font-size: 13px !important;
   letter-spacing: 1px;
-  color: #33346d;
+  color: #2f348b;
   text-transform: capitalize;
   font-family: notoSerif-regular;
 }
@@ -316,7 +316,7 @@
   border-bottom: 1px solid #ed1165;
 }
 
-/* color: #394578;
+/* color: #2F348B;
     line-height: 1.42857143;
     letter-spacing: 1px !important;
   } */
@@ -325,7 +325,7 @@
   background-color: #ededed;
   font-size: 18px !important;
   font-weight: normal;
-  color: #394578 !important;
+  color: #2f348b !important;
 }
 
 .logoImgHeader1 {
@@ -375,7 +375,7 @@ i {
   font-family: "FontAwesome" !important;
   font-size: 15px !important;
   line-height: 1;
-  color: #394578 !important;
+  color: #2f348b !important;
 }
 
 .header-drawer1 {
@@ -424,21 +424,21 @@ i {
 }
 
 .drawer-arrow {
-  color: #33346d;
+  color: #2f348b;
   font-size: 20px;
   width: 22px;
   justify-content: center;
   display: flex;
 }
 .drawer-arrow-submenu1 {
-  color: #394578;
+  color: #2f348b;
   font-size: 20px;
   width: 22px;
   justify-content: center;
   display: flex;
 }
 .drawer-arrow-submenu2 {
-  color: #394578;
+  color: #2f348b;
   font-size: 14px;
   width: 22px;
   justify-content: center;
@@ -524,7 +524,7 @@ i {
   flex-direction: row;
   justify-content: center;
   transform-origin: 100% 0%;
-  background: #d51f63 !important;
+  background: #2f348b !important;
   top: -6px !important;
   margin-top: 7px;
   margin-right: 2px;

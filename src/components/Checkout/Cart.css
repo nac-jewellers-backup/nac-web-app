@@ -1,5 +1,5 @@
 .bread-header {
-  background: #394578 !important;
+  background: #2f348b !important;
   height: 40px !important;
   width: 100% !important;
   color: #fff !important;
@@ -18,7 +18,7 @@
   height: 0;
   border-top: 35px solid transparent;
   border-bottom: 25px solid transparent;
-  border-left: 30px solid #394578;
+  border-left: 30px solid #2f348b;
   position: absolute;
   top: 50% !important;
   margin-top: -40px;
@@ -72,7 +72,7 @@
   color: #fff;
   text-decoration: none;
   padding: 12px 0 10px 35px;
-  background: #394578;
+  background: #2f348b;
   position: relative;
   display: block;
   float: left;
@@ -112,7 +112,7 @@
 
 .title-response,
 .MuiCardHeader-root {
-  color: #394578;
+  color: #2f348b;
   line-height: 1.5em;
   height: 2em;
   overflow: hidden;
@@ -166,7 +166,8 @@
   top: 8px !important;
   width: 15px;
   height: 15px;
-  background: url(https://assets.stylori.com/images/static/icon-close.png) no-repeat;
+  background: url(https://assets.stylori.com/images/static/icon-close.png)
+    no-repeat;
   position: relative;
 }
 
@@ -188,7 +189,7 @@
 .subhesder-response {
   padding: 4px 3px !important;
   font-size: 11px !important;
-  color: #394578;
+  color: #2f348b;
   width: 100% !important;
 }
 
@@ -224,7 +225,7 @@
   min-height: 1px;
   padding-right: 15px;
   padding-left: 15px;
-  color: #394578;
+  color: #2f348b;
 }
 
 .ckeckout-top {
@@ -242,8 +243,8 @@
   border-radius: 0px !important;
   text-align: center !important;
   font-size: 16px !important;
-  background: #394579 !important;
-  border: 1px solid #394579 !important;
+  background: #2f348b !important;
+  border: 1px solid #2f348b !important;
   color: #fff !important;
   text-transform: none !important;
 }
@@ -252,8 +253,8 @@
   border-radius: 0px !important;
   text-align: center !important;
   font-size: 16px !important;
-  background: #394579 !important;
-  border: 1px solid #394579 !important;
+  background: #2f348b !important;
+  border: 1px solid #2f348b !important;
   display: block;
   color: #fff !important;
   text-transform: none !important;
@@ -298,7 +299,7 @@ i,
 }
 
 .btn-plain {
-  color: #394578;
+  color: #2f348b;
   background: #fff;
   font-weight: 400;
   text-decoration: underline;
@@ -322,7 +323,7 @@ i,
   /* padding: 0 5px;
         border-top: 18px solid transparent !important;
         border-bottom: 18px solid transparent !important;
-        border-left: 25px solid #394578 !important;
+        border-left: 25px solid #2F348B !important;
         border: 1px solid #CCC !important;*/
   font-size: 12px !important;
 }

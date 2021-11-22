@@ -64,7 +64,7 @@ export const styles = makeStyles((theme) => ({
     alignItems: "center",
     display: "flex",
     fontSize: "17px",
-    fill: "#d51f63",
+    fill: "#2F348B",
     [theme.breakpoints.only("xs")]: {
       marginLeft: "6px",
       letterSpacing: "2px",
@@ -391,6 +391,6 @@ export const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.darkFade,
   },
   drawer: {
-    backgroundColor: "#394578",
+    backgroundColor: "#2F348B",
   },
 }));

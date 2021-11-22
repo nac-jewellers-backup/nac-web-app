@@ -4,7 +4,7 @@
   box-shadow: none !important;
   min-height: 40px;
   font-size: 14px;
-  color: #394578;
+  color: #2f348b;
   /* margin-bottom: 10px !important; */
 }
 .extra-box {
@@ -46,8 +46,8 @@
   text-align: center;
   min-width: 100px;
   font-size: 16px !important;
-  background: #394579 !important;
-  border: 1px solid #394579 !important;
+  background: #2f348b !important;
+  border: 1px solid #2f348b !important;
   color: #fff !important;
   text-transform: none !important;
 }
@@ -58,7 +58,7 @@
 .side-arrow-symbol {
   font-family: "FontAwesome" !important;
   font-size: 18px !important;
-  color: #394578 !important;
+  color: #2f348b !important;
   /* margin-right: 30px !important; */
 }
 

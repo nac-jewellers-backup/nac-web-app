@@ -704,7 +704,7 @@ class Addressdetails extends React.Component {
                   values.addressvalues.data &&
                   values.addressvalues.data.allUserAddresses.nodes.length >
                     4) ? (
-                  ""
+                  " "
                 ) : (
                   <Button
                     onClick={() => this.props.redirectForm1()}
@@ -721,8 +721,7 @@ class Addressdetails extends React.Component {
         ) : (
           ""
         )}
-
-        {this.props.order
+        {window.location.pathname == "/checkout" && this.props.order
           ? " "
           : _add_data_addres() &&
             _add_data_addres().map((val_addrs1, index) => {

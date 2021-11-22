@@ -69,6 +69,14 @@ const styles = (theme) => ({
       marginBottom: "12px !important",
     },
   },
+  productmaterial: {
+    [theme.breakpoints.only("xs")]: {
+      fontSize: "13px",
+    },
+    [theme.breakpoints.up("lg")]: {
+      fontSize: "14px",
+    },
+  },
 });
 class ProductDetail extends Component {
   constructor(props) {
@@ -79,8 +87,6 @@ class ProductDetail extends Component {
   }
 
   componentDidMount() {
-    console.log(this.props.data[0]);
-
     ReactPixel.init("1464338023867789", {}, { debug: true, autoConfig: false });
     ReactPixel.track("PageView");
   }
@@ -121,7 +127,10 @@ class ProductDetail extends Component {
         <ArrowLeftIcon
           className={`${className} ${classes.collectionSection}`}
           onClick={onClick}
-          style={{ ...style, fill: "theme.palette.secondary.main !important" }}
+          style={{
+            fill: "theme.palette.secondary.main !important",
+            fontSize: "40px",
+          }}
         />
       );
     };
@@ -131,7 +140,11 @@ class ProductDetail extends Component {
         <ArrowRightIcon
           className={`${className} ${classes.collectionSection}`}
           onClick={onClick}
-          style={{ ...style, fill: "theme.palette.secondary.main !important" }}
+          style={{
+            ...style,
+            fill: "theme.palette.secondary.main !important",
+            fontSize: "40px",
+          }}
         />
       );
     };
@@ -233,7 +246,10 @@ class ProductDetail extends Component {
           >
             <Grid xs={11} container spacing={12} style={{ marginTop: 70 }}>
               <Grid item xs={6}>
-                <ProductImageZoom data={this.props.data} />
+                <ProductImageZoom
+                  data={this.props.data}
+                  wishlist={this.props.wishlistdata}
+                />
                 <PaperSheetProduct />
               </Grid>
               <Grid item xs={6}>
@@ -244,7 +260,7 @@ class ProductDetail extends Component {
                   />
                 </div>
                 <div className={classes.priceNowOverallBox}>
-                  <PriceBuynow data={this.props.data} />
+                  <PriceBuynow data={this.props.data} pdpage={true} />
                 </div>
                 <Grid
                   container
@@ -258,13 +274,19 @@ class ProductDetail extends Component {
                   }}
                 >
                   <Grid item>
-                    <span>
+                    <span
+                      style={{
+                        color: "gray",
+
+                        fontSize: "15px",
+                      }}
+                    >
                       {" "}
                       <span
                         style={{
                           color: "gray",
                           fontWeight: "bold",
-                          fontSize: 12,
+                          fontSize: "15px",
                         }}
                       >
                         Model No:{" "}
@@ -282,6 +304,7 @@ class ProductDetail extends Component {
                         fontWeight: "bold",
                         fontSize: 12,
                         marginTop: 4,
+                        fontSize: "15px",
                       }}
                     >
                       Product Information:{" "}
@@ -311,7 +334,7 @@ class ProductDetail extends Component {
                         item
                         xs={4}
                         sm={3}
-                        style={{ paddingTop: "8px" }}
+                        style={{ paddingTop: "10px" }}
                       >
                         <Grid container item xs={3}>
                           <Avatar alt="NAC">
@@ -335,11 +358,15 @@ class ProductDetail extends Component {
                           }}
                         >
                           <Grid itex xs={12}>
-                            Metal Weight
+                            <span className={classes.productmaterial}>
+                              Metal Weight
+                            </span>
                           </Grid>
                           <Grid itex xs={12}>
-                            {this.props.data[0].productsDetails[0].namedetail[2]
-                              .details ?? ""}
+                            <span className={classes.productmaterial}>
+                              {this.props.data[0].productsDetails[0]
+                                .namedetail[2].details ?? ""}
+                            </span>
                           </Grid>
                         </Grid>
                       </Grid>
@@ -378,11 +405,15 @@ class ProductDetail extends Component {
                           }}
                         >
                           <Grid itex xs={12}>
-                            Metal Purity
+                            <span className={classes.productmaterial}>
+                              Metal Purity
+                            </span>
                           </Grid>
                           <Grid itex xs={12}>
-                            {this.props.data[0].productsDetails[0].namedetail[1]
-                              .details ?? ""}
+                            <span className={classes.productmaterial}>
+                              {this.props.data[0].productsDetails[0]
+                                .namedetail[1].details ?? ""}
+                            </span>
                             {/* 22K Yellow Gold */}
                           </Grid>
                         </Grid>
@@ -422,7 +453,9 @@ class ProductDetail extends Component {
                           }}
                         >
                           <Grid itex xs={12}>
-                            Diamond Weight
+                            <span className={classes.productmaterial}>
+                              Diamond Weight
+                            </span>
                           </Grid>
                           <Grid itex xs={12}>
                             {this.props &&
@@ -436,26 +469,35 @@ class ProductDetail extends Component {
                             this.props.data[0].productsDetails[1]
                               .namedetail[3] &&
                             this.props.data[0].productsDetails[1].namedetail[3]
-                              .details
-                              ? this.props.data[0].productsDetails[1]
-                                  .namedetail[3].details
-                              : ""}
+                              .details ? (
+                              <span className={classes.productmaterial}>
+                                {
+                                  this.props.data[0].productsDetails[1]
+                                    .namedetail[3].details
+                                }
+                              </span>
+                            ) : (
+                              ""
+                            )}
                           </Grid>
                         </Grid>
                       </Grid>
                     )}
                 </Grid>
-                <div>
-                  <p
-                    style={{
-                      color: "gray",
-                      paddingBottom: "8px",
-                      borderBottom: "1px solid gray",
-                    }}
-                  >
-                    CERTIFICATES
-                  </p>
-                </div>
+                {this.props.data[0].certificate && (
+                  <div>
+                    <p
+                      style={{
+                        color: "gray",
+                        paddingBottom: "8px",
+                        borderBottom: "1px solid gray",
+                      }}
+                    >
+                      CERTIFICATES
+                    </p>
+                    <img src={this.props.data[0].certificate} />
+                  </div>
+                )}
               </Grid>
             </Grid>
           </Grid>
@@ -481,6 +523,7 @@ class ProductDetail extends Component {
                         color: "gray",
                         marginLeft: 15,
                         paddingBottom: 10,
+                        fontSize: "16px",
                       }}
                     >
                       SIMILAR PRODUCTS
@@ -519,7 +562,6 @@ class ProductDetail extends Component {
               <br />
             </Grid>
           </div>
-
           <div
             style={{
               maxWidth: "1600px",
@@ -568,6 +610,7 @@ class ProductDetail extends Component {
                         fontWeight: "bold",
                         color: "gray",
                         marginLeft: 15,
+                        fontSize: "16px",
                         paddingBottom: 10,
                       }}
                     >
@@ -614,9 +657,10 @@ class ProductDetail extends Component {
               <div
                 style={{
                   fontWeight: "bold",
-                  color: "#20205a",
+                  color: "#2F348B",
                   marginLeft: 15,
                   marginTop: 35,
+                  fontSize: "14px",
                 }}
               >
                 SIMILAR PRODUCTS
@@ -652,25 +696,27 @@ class ProductDetail extends Component {
             />
           </Grid>
           <Grid item xs={12}>
-            <div
-              style={{
-                margin: "auto",
-                paddingLeft: "5%",
-                paddingRight: "5%",
-                marginTop: "25px",
-              }}
-            >
-              <p
+            {this.props.data[0].certificate && (
+              <div
                 style={{
-                  color: "gray",
-                  padding: "8px",
-                  fontSize: "12px",
-                  borderBottom: "1px solid gray",
+                  margin: "auto",
+                  paddingLeft: "5%",
+                  paddingRight: "5%",
+                  marginTop: "25px",
                 }}
               >
-                CERTIFICATES
-              </p>
-            </div>
+                <p
+                  style={{
+                    color: "gray",
+                    padding: "8px",
+                    fontSize: "12px",
+                    borderBottom: "1px solid gray",
+                  }}
+                >
+                  CERTIFICATES
+                </p>
+              </div>
+            )}
             <PriceCertification data={this.props.data} />
           </Grid>
           <Grid item xs={12}>
@@ -700,9 +746,10 @@ class ProductDetail extends Component {
               <div
                 style={{
                   fontWeight: "bold",
-                  color: "#20205a",
+                  color: "#2F348B",
                   marginLeft: 15,
                   marginTop: 35,
+                  fontSize: "14px",
                 }}
               >
                 SHOP OTHER CATEGORIES

@@ -6,7 +6,7 @@ import "./index.css";
 const useStyles = makeStyles((theme) => ({
   typo: {
     margin: "0 0 10px",
-    color: "#394578",
+    color: "#2F348B",
     fontSize: "11px",
     marginBottom: 0,
     // textAlign: "center",

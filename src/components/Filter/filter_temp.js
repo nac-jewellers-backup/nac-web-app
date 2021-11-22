@@ -197,7 +197,7 @@ class PersistentDrawerLeft extends React.Component {
                         style={{ float: "right" }}
                       >
                         <i
-                          style={{ color: "#394578", margin: "45%" }}
+                          style={{ color: "#2F348B", margin: "45%" }}
                           class="fa fa-times"
                         ></i>
                       </IconButton>

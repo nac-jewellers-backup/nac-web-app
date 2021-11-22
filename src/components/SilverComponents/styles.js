@@ -154,7 +154,7 @@ export const styles = (theme) => ({
     alignItems: "center",
     display: "flex",
     fontSize: "17px",
-    fill: "#d51f63",
+    fill: "#2F348B",
     [theme.breakpoints.only("xs")]: {
       marginLeft: "6px",
       letterSpacing: "2px",
@@ -493,6 +493,7 @@ export const useStyles = makeStyles((theme) => ({
       color: "#fff",
     },
   },
+
   secondSection: {
     paddingBottom: 10,
     "& .MuiTypography-body1": {
@@ -513,7 +514,7 @@ export const useStyles = makeStyles((theme) => ({
     backgroundColor: "#33346d",
   },
   drawer: {
-    backgroundColor: "#394578",
+    backgroundColor: "#2F348B",
   },
   AppbarMobilePadding: {
     paddingTop: "33px",
@@ -544,10 +545,7 @@ export const useStyles = makeStyles((theme) => ({
       color: "#fff",
     },
   },
-  mouseOverPopoverfiltersselected: {
-    backgroundColor: "#33346d !important",
-    color: "#fff",
-  },
+  mouseOverPopoverfiltersselected: {},
 
   mouseOverPopoverfilterslist: {
     paddingTop: "0px !important",

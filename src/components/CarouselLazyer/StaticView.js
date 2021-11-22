@@ -86,7 +86,7 @@ const useStyles = makeStyles((theme) => ({
     margin: "3px 0px auto",
     float: "left",
     width: "100%",
-    color: "#394578",
+    color: "#2F348B",
     fontSize: "11px",
   },
   fullWidth: {

@@ -314,7 +314,7 @@ class Checkoutcard extends React.Component {
                               )}
                             </>
                           </Grid>
-                          <Grid item xs={5} sm={6} style={{ padding: "13px" }}>
+                          <Grid item xs={5} sm={7} style={{ padding: "13px" }}>
                             {window.location.pathname !== "/checkout" ? (
                               <NavLink
                                 to={dataval.skuUrl}
@@ -360,7 +360,7 @@ class Checkoutcard extends React.Component {
                               </Grid>
                             </Grid>
                           </Grid>
-                          <Grid item xs={4} sm={2} lg={3}>
+                          <Grid item xs={4} sm={2} lg={2}>
                             {window.location.pathname == "/checkout" ? (
                               <div>
                                 <br />
@@ -597,7 +597,7 @@ class Checkoutcard extends React.Component {
           <>
             <Grid container direction="row">
               <Grid item xs={12} lg={6}>
-                <div className={classes.padding}>
+                <div className={classes.padding1}>
                   <Grid container direction="row">
                     <Grid item xs={12}>
                       <Hidden smDown>
@@ -703,7 +703,7 @@ class Checkoutcard extends React.Component {
                             item
                             xs={5}
                             sm={7}
-                            lg={6}
+                            lg={5}
                             style={{ padding: "13px" }}
                           >
                             {window.location.pathname !== "/checkout" ? (
@@ -736,24 +736,17 @@ class Checkoutcard extends React.Component {
                             >
                               <Grid item xs={12}>
                                 <Grid container spacing={12}>
-                                  {/* <Grid item xs={6}>
-                                    <Typography
-                                      className={`subhesder ${classes.normalfonts}`}
-                                    >
-                                      Size :
-                                    </Typography>
-                                  </Grid> */}
-                                  <Grid container xs={6} direction="row">
+                                  <Grid container xs={12} direction="row">
                                     {dataval.maxOrderQty === 1 ? (
                                       <Grid container>
-                                        <Grid item xs={6}>
+                                        <Grid item xs={5}>
                                           <Typography
                                             className={`subhesder ${classes.normalfonts}`}
                                           >
                                             Quantity :
                                           </Typography>
                                         </Grid>
-                                        <Grid item xs={6}>
+                                        <Grid item xs={7}>
                                           <Typography
                                             className={`subhesder ${classes.normalfonts}`}
                                           >
@@ -802,7 +795,7 @@ class Checkoutcard extends React.Component {
                                     )}
                                   </Grid>
                                 </Grid>
-                                <div style={{ marginTop: "10px" }}>
+                                <div>
                                   {this.state.shipby_arr.map((val) => (
                                     <>
                                       {val.skuId === dataval.generatedSku ? (
@@ -847,7 +840,7 @@ class Checkoutcard extends React.Component {
                               </Grid>
                             </Grid>
                           </Grid>
-                          <Grid item xs={4} sm={2} lg={3}>
+                          <Grid item xs={4} sm={2} lg={4}>
                             {window.location.pathname !== "/checkout" ? (
                               <div>
                                 <br />
@@ -860,7 +853,7 @@ class Checkoutcard extends React.Component {
                                   variant="contained"
                                   style={{
                                     color: "gray",
-                                    width: "100%",
+                                    width: "95%",
                                     border: "2px solid #C1C1C1",
                                     backgroundColor: "white",
                                     borderRadius: "0px",
@@ -913,24 +906,52 @@ class Checkoutcard extends React.Component {
                   >
                     Go back to Homepage
                   </Button>
+                  <br />
+                  <br />
+                  <br />
                 </div>
               </Grid>
-              <Grid item xs={12} lg={6} style={{ backgroundColor: "#EFEFEF" }}>
-                <div className={classes.padding}>
-                  <Hidden smDown>
-                    <div className={classes.paddingCart1}>
-                      <br />
-                      <Grid container>
-                        <Grid item xs={12}>
-                          <div>{this.applycoupon()}</div>
-                        </Grid>
-                      </Grid>
+              <Grid
+                item
+                xs={12}
+                lg={6}
+                style={{
+                  backgroundColor: "rgb(224, 225, 225)",
+                  height: "100%",
+                }}
+              >
+                <Grid container>
+                  <Grid
+                    item
+                    xs={12}
+                    style={{
+                      width:
+                        window.location.pathname == "/cart" ? "50%" : "100%",
+                      position:
+                        window.location.pathname == "/cart"
+                          ? "fixed"
+                          : "relative",
+                      backgroundColor: "rgb(224, 225, 225)",
+                      zIndex: 999,
+                    }}
+                  >
+                    <div className={classes.padding}>
+                      <Hidden smDown>
+                        <div className={classes.paddingCart1}>
+                          <br />
+                          <Grid container>
+                            <Grid item xs={12}>
+                              <div>{this.applycoupon()}</div>
+                            </Grid>
+                          </Grid>
+                        </div>
+                      </Hidden>
+                      <div className={classes.paddingCart}>
+                        {this.subtotals(props)}
+                      </div>
                     </div>
-                  </Hidden>
-                  <div className={classes.paddingCart}>
-                    {this.subtotals(props)}
-                  </div>
-                </div>
+                  </Grid>
+                </Grid>
               </Grid>
             </Grid>
           </>
@@ -1254,9 +1275,13 @@ class Checkoutcard extends React.Component {
           <Typography
             className={classes.cartheader}
             noWrap
-            style={{ display: "flex", justifyContent: "center" }}
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              fontSize: "16px",
+            }}
           >
-            <IoPricetagsOutline color="#394579" fontSize="18px" />
+            <IoPricetagsOutline color="#2F348B" fontSize="18px" />
             &nbsp;&nbsp;&nbsp;<b>Apply Coupon</b>
           </Typography>
         </AccordionSummary>
@@ -1354,7 +1379,7 @@ class Checkoutcard extends React.Component {
               style={{
                 borderTop: "1.3px solid #C1C1C1",
                 paddingBottom: "10px",
-                paddingTop: "14px",
+                paddingTop: "17px",
                 marginTop: "25px",
                 color: "gray",
               }}

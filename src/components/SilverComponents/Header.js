@@ -64,6 +64,7 @@ class Header extends Component {
     };
     this.topZero = React.createRef();
   }
+
   componentDidMount() {
     var _pathname = window.location.pathname.split("/");
     if (
@@ -184,6 +185,8 @@ class Header extends Component {
     const opened = this.state;
     var a = window.location.pathname;
     var b = a.split("/");
+    console.log(this.props.wishlist);
+
     return (
       <div
         style={{ top: "0", zIndex: "1000", width: "100%" }}
@@ -365,6 +368,7 @@ class Header extends Component {
                               </span>
                             </div>
                           )}
+
                           <div className="tooltip">
                             <Badge
                               // style={{ marginTop: "9px" }}
@@ -912,7 +916,7 @@ class Header extends Component {
                                           <div
                                             style={{
                                               borderBottom:
-                                                "1.5px solid #33346d",
+                                                "1.5px solid#2F348B",
                                             }}
                                           ></div>
                                         )}
@@ -981,7 +985,7 @@ class Header extends Component {
                                         </Typography>
                                         <div
                                           style={{
-                                            borderBottom: "1.5px solid #33346d",
+                                            borderBottom: "1.5px solid#2F348B",
                                           }}
                                         ></div>
                                       </ListItemText>
@@ -1069,7 +1073,7 @@ class Header extends Component {
                                             <div
                                               style={{
                                                 borderBottom:
-                                                  "1.5px solid #33346d",
+                                                  "1.5px solid#2F348B",
                                               }}
                                             ></div>
                                           </ListItemText>
@@ -1142,7 +1146,7 @@ class Header extends Component {
                                         </Typography>
                                         <div
                                           style={{
-                                            borderBottom: "1.5px solid #33346d",
+                                            borderBottom: "1.5px solid#2F348B",
                                           }}
                                         ></div>
                                       </ListItemText>

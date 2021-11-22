@@ -44,8 +44,8 @@
   border-radius: 0px !important;
   text-align: center !important;
   font-size: 16px !important;
-  background: #394579 !important;
-  border: 1px solid #394579 !important;
+  background: #2f348b !important;
+  border: 1px solid #2f348b !important;
   display: block;
   color: #fff !important;
   text-transform: none !important;
@@ -91,10 +91,10 @@
   margin: 8px 0px 0px 0px !important;
   padding: 7px 15px !important;
   border-radius: 0px !important;
-  border: 1px solid #394579 !important;
+  border: 1px solid #2f348b !important;
   font-size: 16px !important;
   min-width: 100px !important;
-  background: #394579 !important;
+  background: #2f348b !important;
   color: #fff !important;
   font-weight: 400 !important;
   line-height: 1.42857143 !important;
@@ -108,7 +108,7 @@
 }
 
 .font-netbanking {
-  color: #394578 !important;
+  color: #2F348B !important;
   padding-right: 15px !important;
   padding-left: 15px;
   text-align: center;
@@ -178,12 +178,12 @@
 
 .selectedcolor {
   color: #fff;
-  background-color: #d51f63;
+  background-color: #2f348b;
 }
 
 .selectedcolor:hover {
   color: #fff;
-  background-color: #d51f63 !important;
+  background-color: #2f348b !important;
 }
 
 .respone-div {
@@ -323,7 +323,7 @@ h6 {
 }
 
 .bcjk {
-  background: #394578 !important;
+  background: #2f348b !important;
 }
 
 .whi {

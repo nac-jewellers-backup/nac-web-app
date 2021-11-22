@@ -1,4 +1,11 @@
-import { Grid, List, ListItem, ListItemText, Popper, Typography } from "@material-ui/core";
+import {
+  Grid,
+  List,
+  ListItem,
+  ListItemText,
+  Popper,
+  Typography,
+} from "@material-ui/core";
 import PropTypes from "prop-types";
 import React, { useEffect } from "react";
 import { useStyles } from "../styles";
@@ -137,8 +144,19 @@ function HeaderHoverMenuItem(props) {
       url3: "#",
     },
   ];
-  const gender = [{ title: "Woman" }, { title: "Men" }, { title: "Unisex" }, { title: "Kids" }];
-  const occassion = [{ title: "Everyday" }, { title: "Office" }, { title: "Party" }, { title: "Bridal" }, { title: "Festive" }];
+  const gender = [
+    { title: "Woman" },
+    { title: "Men" },
+    { title: "Unisex" },
+    { title: "Kids" },
+  ];
+  const occassion = [
+    { title: "Everyday" },
+    { title: "Office" },
+    { title: "Party" },
+    { title: "Bridal" },
+    { title: "Festive" },
+  ];
   const productTypes = [
     { title: "Rings" },
     { title: "Pendants" },
@@ -147,12 +165,19 @@ function HeaderHoverMenuItem(props) {
     { title: "Bracelet" },
     { title: "Nosepin" },
   ];
-  const gifts1 = ["For Her", "For Him", "For Mother", "For Father"].map((val) => {
-    return {
-      title: val,
-    };
-  });
-  const gifts2 = ["Anniversary", "Wedding", "Valentine", "Corporate/Bulk Gifting"].map((val) => {
+  const gifts1 = ["For Her", "For Him", "For Mother", "For Father"].map(
+    (val) => {
+      return {
+        title: val,
+      };
+    }
+  );
+  const gifts2 = [
+    "Anniversary",
+    "Wedding",
+    "Valentine",
+    "Corporate/Bulk Gifting",
+  ].map((val) => {
     return {
       title: val,
     };
@@ -533,7 +558,11 @@ function HeaderHoverMenuItem(props) {
     { title: "Super Quick silver" },
   ];
 
-  const styloridata = [{ title: "Stylori Gold" }, { title: "Stylori Silver" }, { title: "Csk Merchandise" }];
+  const styloridata = [
+    { title: "Stylori Gold" },
+    { title: "Stylori Silver" },
+    { title: "Csk Merchandise" },
+  ];
 
   const silverItems = [
     {
@@ -655,7 +684,11 @@ function HeaderHoverMenuItem(props) {
   const silverItems2 = [
     {
       title: <>CORPORATE&nbsp;GIFTING</>,
-      contents: [{ item: "Below ₹3,000" }, { item: "₹3,001 - ₹5,001" }, { item: "Above ₹5,001" }],
+      contents: [
+        { item: "Below ₹3,000" },
+        { item: "₹3,001 - ₹5,001" },
+        { item: "Above ₹5,001" },
+      ],
     },
     {
       title: "TANGORE",
@@ -663,11 +696,23 @@ function HeaderHoverMenuItem(props) {
     },
     {
       title: "LEG CHAIN",
-      contents: [{ item: "Anklets" }, { item: "Metti" }, { item: "Velli Paavai Set" }, { item: "Antique" }, { item: "Others" }],
+      contents: [
+        { item: "Anklets" },
+        { item: "Metti" },
+        { item: "Velli Paavai Set" },
+        { item: "Antique" },
+        { item: "Others" },
+      ],
     },
     {
       title: "FURNITURE",
-      contents: [{ item: "Chairs" }, { item: "Tables" }, { item: "Centre Tables" }, { item: "Sofa sets" }, { item: "Others" }],
+      contents: [
+        { item: "Chairs" },
+        { item: "Tables" },
+        { item: "Centre Tables" },
+        { item: "Sofa sets" },
+        { item: "Others" },
+      ],
     },
   ];
 
@@ -761,7 +806,12 @@ function HeaderHoverMenuItem(props) {
         }}
       >
         <Grid container item xs={12}>
-          <Grid item xs={9} className={classes.gridmultiplesection} style={{ paddingTop: "20px" }}>
+          <Grid
+            item
+            xs={9}
+            className={classes.gridmultiplesection}
+            style={{ paddingTop: "20px" }}
+          >
             <Grid container item xs={12}>
               {collectionsData.map((val, index) => {
                 return (
@@ -783,7 +833,7 @@ function HeaderHoverMenuItem(props) {
                           className={classes.imgtitle}
                           style={{ paddingBottom: "5px" }}
                         >
-                          {val.title}
+                          {val.title}s
                         </Typography>
                       </Grid>
                       <Grid
@@ -794,7 +844,14 @@ function HeaderHoverMenuItem(props) {
                           display: "flex",
                         }}
                       >
-                        {val.image && <img style={{ paddingBottom: "10px" }} src={val.image} width="40%" height="45%" />}
+                        {val.image && (
+                          <img
+                            style={{ paddingBottom: "10px" }}
+                            src={val.image}
+                            width="40%"
+                            height="45%"
+                          />
+                        )}
                       </Grid>
                     </Grid>
                   </Grid>
@@ -828,7 +885,12 @@ function HeaderHoverMenuItem(props) {
         }}
       >
         <Grid container item xs={12}>
-          <Grid item xs={9} className={classes.gridmultiplesection} style={{ padding: "20px 30px 40px 0px" }}>
+          <Grid
+            item
+            xs={9}
+            className={classes.gridmultiplesection}
+            style={{ padding: "20px 30px 40px 0px" }}
+          >
             <Grid container item xs={12}>
               {otherJewels.map((val, index) => {
                 return (
@@ -841,9 +903,16 @@ function HeaderHoverMenuItem(props) {
                       alignItems="center"
                       style={{ cursor: "pointer" }}
                     >
-                      <Grid xs={12} item style={{ margin: "auto", textAlign: "center" }}>
-                        <Typography style={{ margin: "auto", color: "#33346d" }} className={classes.listedItemstitle}>
-                          {val.title}
+                      <Grid
+                        xs={12}
+                        item
+                        style={{ margin: "auto", textAlign: "center" }}
+                      >
+                        <Typography
+                          style={{ margin: "auto", color: "#33346d" }}
+                          className={classes.listedItemstitle}
+                        >
+                          {val.title}s
                         </Typography>
                       </Grid>
                       {val.content.map((item, i) => (
@@ -860,7 +929,9 @@ function HeaderHoverMenuItem(props) {
                             window.location.href = item.url;
                           }}
                         >
-                          <Typography className={classes.listedItemsvalue}>{item.itm}</Typography>
+                          <Typography className={classes.listedItemsvalue}>
+                            {item.itm}
+                          </Typography>
                         </Grid>
                       ))}
                     </Grid>
@@ -911,7 +982,9 @@ function HeaderHoverMenuItem(props) {
                 paddingRight: "30px",
               }}
             >
-              <Typography className={classes.phovertitile}>{val.title.toUpperCase()}</Typography>
+              <Typography className={classes.phovertitile}>
+                {val.title.toUpperCase()}
+              </Typography>
             </Grid>
           ))}
         </Grid>
@@ -937,8 +1010,14 @@ function HeaderHoverMenuItem(props) {
           className={classes.gridmultiplesection}
         >
           {styloridata.map((val, i) => (
-            <Grid item xs={2} style={{ display: "flex", justifyContent: "flex-start" }}>
-              <Typography className={classes.phovertitile}>{val.title.toUpperCase()}</Typography>
+            <Grid
+              item
+              xs={2}
+              style={{ display: "flex", justifyContent: "flex-start" }}
+            >
+              <Typography className={classes.phovertitile}>
+                {val.title.toUpperCase()}
+              </Typography>
             </Grid>
           ))}
         </Grid>
@@ -961,7 +1040,9 @@ function HeaderHoverMenuItem(props) {
         <Grid container item xs={12}>
           <Grid item xs={3} className={classes.gridmultiplesection}>
             <Grid item xs={12} style={{ textAlign: "center" }}>
-              <Typography className={classes.shoptitle}>SHOP BY STYLE</Typography>
+              <Typography className={classes.shoptitle}>
+                SHOP BY STYLE
+              </Typography>
             </Grid>
             <Grid container item xs={12} style={{ padding: "0 25px" }}>
               {valueForData().map((val, index) => {
@@ -979,7 +1060,10 @@ function HeaderHoverMenuItem(props) {
                       style={{ cursor: "pointer", paddingBottom: "17px" }}
                     >
                       <Grid item style={{ margin: "auto" }}>
-                        <Typography style={{ margin: "auto", textAlign: "center" }} className={classes.imgtitle}>
+                        <Typography
+                          style={{ margin: "auto", textAlign: "center" }}
+                          className={classes.imgtitle}
+                        >
                           {val.content}
                         </Typography>
                       </Grid>
@@ -1007,12 +1091,21 @@ function HeaderHoverMenuItem(props) {
               })}{" "}
             </Grid>
           </Grid>
-          <Grid item xs={6} className={classes.gridmultiplesection} style={{ padding: "0 20px" }}>
+          <Grid
+            item
+            xs={6}
+            className={classes.gridmultiplesection}
+            style={{ padding: "0 20px" }}
+          >
             <Grid container item xs={12}>
               <Grid item xs={4} style={{ padding: "0 6px 0 2px" }}>
                 {/* second section */}
                 <Grid item xs={12} style={{ textAlign: "center" }}>
-                  <Typography className={classes.listedItemstitlemultiplesection}>SHOP BY STONE & METAL</Typography>
+                  <Typography
+                    className={classes.listedItemstitlemultiplesection}
+                  >
+                    SHOP BY STONE & METAL
+                  </Typography>
                 </Grid>
                 {stones.map((val, index) => {
                   return (
@@ -1038,7 +1131,9 @@ function HeaderHoverMenuItem(props) {
                       >
                         <div style={{ display: "flex" }}>
                           <img src={val.img} width="17px" height="25px" />
-                          <Typography className={classes.listedItemsvalue}>{val.title}</Typography>
+                          <Typography className={classes.listedItemsvalue}>
+                            {val.title}
+                          </Typography>
                         </div>
                       </Grid>
                     </Grid>
@@ -1048,7 +1143,11 @@ function HeaderHoverMenuItem(props) {
               <Grid item xs={4} style={{ padding: "0 6px 0 30px" }}>
                 {/* second section */}
                 <Grid item xs={12} style={{ textAlign: "center" }}>
-                  <Typography className={classes.listedItemstitlemultiplesection}>SHOP BY PRICE</Typography>
+                  <Typography
+                    className={classes.listedItemstitlemultiplesection}
+                  >
+                    SHOP BY PRICE
+                  </Typography>
                 </Grid>
                 {data.map((val, index) => {
                   return (
@@ -1070,7 +1169,10 @@ function HeaderHoverMenuItem(props) {
                         alignItems="center"
                         style={{ cursor: "pointer" }}
                       >
-                        <Typography style={{ margin: "auto", textAlign: "center" }} className={classes.listedItemsvalue}>
+                        <Typography
+                          style={{ margin: "auto", textAlign: "center" }}
+                          className={classes.listedItemsvalue}
+                        >
                           {val.title}
                         </Typography>
                       </Grid>
@@ -1081,7 +1183,11 @@ function HeaderHoverMenuItem(props) {
               <Grid item xs={4} style={{ padding: "0 6px 0 30px" }}>
                 {/* second section */}
                 <Grid item xs={12} style={{ textAlign: "center" }}>
-                  <Typography className={classes.listedItemstitlemultiplesection}>GIFTING</Typography>
+                  <Typography
+                    className={classes.listedItemstitlemultiplesection}
+                  >
+                    GIFTING
+                  </Typography>
                 </Grid>
                 {gifts3.map((val, index) => {
                   return (
@@ -1103,7 +1209,10 @@ function HeaderHoverMenuItem(props) {
                         alignItems="center"
                         style={{ cursor: "pointer" }}
                       >
-                        <Typography style={{ margin: "auto", textAlign: "center" }} className={classes.listedItemsvalue}>
+                        <Typography
+                          style={{ margin: "auto", textAlign: "center" }}
+                          className={classes.listedItemsvalue}
+                        >
                           {val.title}
                         </Typography>
                       </Grid>
@@ -1140,7 +1249,9 @@ function HeaderHoverMenuItem(props) {
             <Grid item xs={12} style={{ display: "flex" }}>
               <Grid item xs={4} className={classes.gridmultiplesection}>
                 <Grid item xs={12} style={{ textAlign: "center" }}>
-                  <Typography className={classes.listedItemstitle}>SHOP BY STYLE</Typography>
+                  <Typography className={classes.listedItemstitle}>
+                    SHOP BY STYLE
+                  </Typography>
                 </Grid>
                 <Grid container item xs={12} style={{ padding: "0 25px" }}>
                   {solitaireData.map((val, index) => {
@@ -1158,7 +1269,9 @@ function HeaderHoverMenuItem(props) {
                           style={{ cursor: "pointer" }}
                         >
                           <Grid item style={{ margin: "auto" }}>
-                            <Typography className={classes.imgtitle}>{val.title}</Typography>
+                            <Typography className={classes.imgtitle}>
+                              {val.title}
+                            </Typography>
                           </Grid>
                           <Grid
                             item
@@ -1190,8 +1303,18 @@ function HeaderHoverMenuItem(props) {
                 <Grid container item xs={12}>
                   {solitaireData2.map((val, i) => (
                     <Grid item xs={12}>
-                      <Grid item xs={12} justify="center" alignContent="center" alignItems="center" style={{ cursor: "pointer" }}>
-                        <Typography className={classes.listedItemstitle} style={{ textAlign: "center" }}>
+                      <Grid
+                        item
+                        xs={12}
+                        justify="center"
+                        alignContent="center"
+                        alignItems="center"
+                        style={{ cursor: "pointer" }}
+                      >
+                        <Typography
+                          className={classes.listedItemstitle}
+                          style={{ textAlign: "center" }}
+                        >
                           {val.title.toUpperCase()}
                         </Typography>
                       </Grid>
@@ -1209,9 +1332,14 @@ function HeaderHoverMenuItem(props) {
                       >
                         <div>
                           {val.contents.map((x, i) => (
-                            <div style={{ display: "flex", paddingBottom: "13px" }}>
+                            <div
+                              style={{ display: "flex", paddingBottom: "13px" }}
+                            >
                               <img src={x.img} width="17px" height="25px" />
-                              <Typography style={{ margin: "0px" }} className={classes.listedItemsvalue}>
+                              <Typography
+                                style={{ margin: "0px" }}
+                                className={classes.listedItemsvalue}
+                              >
                                 {x.sub}
                               </Typography>
                             </div>
@@ -1227,13 +1355,19 @@ function HeaderHoverMenuItem(props) {
                 {solitaireData3.map((val, i) => (
                   <Grid container item xs={12}>
                     <Grid item xs={12}>
-                      <Typography className={classes.listedItemstitle} style={{ textAlign: "center" }}>
+                      <Typography
+                        className={classes.listedItemstitle}
+                        style={{ textAlign: "center" }}
+                      >
                         {val.title.toUpperCase()}
                       </Typography>
                     </Grid>
                     <Grid item xs={12} style={{ marginBottom: "40px" }}>
                       {val.contents.map((cont, i) => (
-                        <Typography className={classes.listedItemsvalue} style={{ paddingBottom: "13px" }}>
+                        <Typography
+                          className={classes.listedItemsvalue}
+                          style={{ paddingBottom: "13px" }}
+                        >
                           {cont.itm}
                         </Typography>
                       ))}
@@ -1242,7 +1376,7 @@ function HeaderHoverMenuItem(props) {
                 ))}
                 <div
                   style={{
-                    borderBottom: "1px solid #33346d",
+                    borderBottom: "1px solid#2F348B",
                     width: "75%",
                     margin: "auto",
                   }}
@@ -1294,7 +1428,9 @@ function HeaderHoverMenuItem(props) {
             <Grid item xs={12} style={{ display: "flex" }}>
               <Grid item xs={5} className={classes.gridmultiplesection}>
                 <Grid item xs={12} style={{ textAlign: "center" }}>
-                  <Typography className={classes.listedItemstitle}>SILVER ARTICLES</Typography>
+                  <Typography className={classes.listedItemstitle}>
+                    SILVER ARTICLES
+                  </Typography>
                 </Grid>
                 <Grid container item xs={12} style={{ padding: "0 25px" }}>
                   {silverItems.map((val, index) => {
@@ -1312,7 +1448,9 @@ function HeaderHoverMenuItem(props) {
                           style={{ cursor: "pointer" }}
                         >
                           <Grid item style={{ margin: "auto" }}>
-                            <Typography className={classes.imgtitle}>{val.title}</Typography>
+                            <Typography className={classes.imgtitle}>
+                              {val.title}
+                            </Typography>
                           </Grid>
                           <Grid
                             item
@@ -1343,14 +1481,34 @@ function HeaderHoverMenuItem(props) {
                 <Grid container item xs={12}>
                   {silverItems2.map((val, i) => (
                     <Grid item xs={6}>
-                      <Grid item xs={12} justify="center" alignContent="center" alignItems="center" style={{ cursor: "pointer" }}>
-                        <Typography className={classes.listedItemstitle} style={{ textAlign: "center", marginBottom: "12px" }}>
+                      <Grid
+                        item
+                        xs={12}
+                        justify="center"
+                        alignContent="center"
+                        alignItems="center"
+                        style={{ cursor: "pointer" }}
+                      >
+                        <Typography
+                          className={classes.listedItemstitle}
+                          style={{ textAlign: "center", marginBottom: "12px" }}
+                        >
                           {val.title}
                         </Typography>
                       </Grid>
-                      <Grid item xs={12} justify="center" alignContent="center" alignItems="center" style={{ cursor: "pointer" }}>
+                      <Grid
+                        item
+                        xs={12}
+                        justify="center"
+                        alignContent="center"
+                        alignItems="center"
+                        style={{ cursor: "pointer" }}
+                      >
                         {val.contents.map((x, i) => (
-                          <Typography className={classes.listedItemsvalue} style={{ paddingTop: "12px" }}>
+                          <Typography
+                            className={classes.listedItemsvalue}
+                            style={{ paddingTop: "12px" }}
+                          >
                             {x.item}
                           </Typography>
                         ))}
@@ -1363,13 +1521,19 @@ function HeaderHoverMenuItem(props) {
                 {silverItems3.map((val, i) => (
                   <Grid container item xs={12}>
                     <Grid item xs={12}>
-                      <Typography className={classes.listedItemstitle} style={{ textAlign: "center", marginBottom: "12px" }}>
+                      <Typography
+                        className={classes.listedItemstitle}
+                        style={{ textAlign: "center", marginBottom: "12px" }}
+                      >
                         {val.title}
                       </Typography>
                     </Grid>
                     <Grid item xs={12}>
                       {val.contents.map((itms, i) => (
-                        <Typography className={classes.listedItemsvalue} style={{ paddingTop: "12px" }}>
+                        <Typography
+                          className={classes.listedItemsvalue}
+                          style={{ paddingTop: "12px" }}
+                        >
                           {itms.item}
                         </Typography>
                       ))}
@@ -1402,15 +1566,27 @@ function HeaderHoverMenuItem(props) {
           open={opens}
           anchorEl={target}
           transition
-          className={props.scroll ? classes.mouseOverPopoversubscroll : classes.mouseOverPopoversub}
+          className={
+            props.scroll
+              ? classes.mouseOverPopoversubscroll
+              : classes.mouseOverPopoversub
+          }
         >
-          <List component="nav" onMouseOver={onMouseOver} onMouseLeave={onMouseLeave}>
+          <List
+            component="nav"
+            onMouseOver={onMouseOver}
+            onMouseLeave={onMouseLeave}
+          >
             {/* {props.data && props.data.imageContainer && ( */}
             {props.listitem === "EARRINGS" && <ImageWithTextMultipleColumns />}
             {props.listitem === "NECKLACE" && <OtherJewellery />}
             {props.listitem === "RINGS" && <ImageWithTextMultipleColumns />}
-            {props.listitem === "BANGLES & BRACELETS" && <ImageWithTextMultipleColumns />}
-            {props.listitem === "SOLITAIRE" && <ImageWithTextMultipleColumnsSOLITAIRE />}
+            {props.listitem === "BANGLES & BRACELETS" && (
+              <ImageWithTextMultipleColumns />
+            )}
+            {props.listitem === "SOLITAIRE" && (
+              <ImageWithTextMultipleColumnsSOLITAIRE />
+            )}
             {props.listitem === "SILVER" && <Silver />}
             {props.listitem === "COLLECTIONS" && <ForCollections />}
             {props.listitem === "OTHER JEWELLERY" && <OtherJewellery />}
@@ -1429,7 +1605,9 @@ function HeaderHoverMenuItem(props) {
                     }}
                   >
                     <ListItemText variant>
-                      <Typography className={classes.listedItemsvalue2}>{val.content.toUpperCase()}</Typography>
+                      <Typography className={classes.listedItemsvalue2}>
+                        {val.content.toUpperCase()}
+                      </Typography>
                     </ListItemText>
                   </ListItem>
                 </>

@@ -51,7 +51,7 @@ class LoginRegisterIndex extends React.Component {
             {" "}
             <span
               style={{
-                color: "#394578",
+                color: "#2F348B",
                 fontSize: "15px",
                 fontWeight: "700",
               }}
@@ -67,7 +67,7 @@ class LoginRegisterIndex extends React.Component {
               style={{
                 height: "42px",
                 color: "#fff",
-                background: "#394578",
+                background: "#2F348B",
                 borderLeft: "none !important",
                 border: "0px !important",
                 borderRadius: "0px",

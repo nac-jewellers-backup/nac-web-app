@@ -1,19 +1,19 @@
-import React from 'react';
-import { Grid, Typography } from '@material-ui/core';
+import { Grid, Typography } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
+import React from "react";
 import Slideshow from "../../components/Carousel/carosul";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   containItems: {
     padding: "0px 15px",
-    width: "100%"
+    width: "100%",
   },
   [theme.breakpoints.up("lg")]: {
     containItems: {
       padding: "0px 15px",
       margin: "auto",
-      width: " 1170px"
-    }
+      width: " 1170px",
+    },
   },
   containerRoot: {
     width: "100%",
@@ -21,16 +21,16 @@ const useStyles = makeStyles(theme => ({
       "url(https://alpha-assets.stylori.com/images/static/home/box_bg.png)",
     boxShadow: "0 0 5px #888 !important",
     padding: "15px 0px 7px 0px",
-    marginBottom: "25px"
+    marginBottom: "25px",
   },
   threeContain: {
-    padding: "0px 15px"
+    padding: "0px 15px",
   },
   Title: {
-    color: "#394578",
+    color: "#2F348B",
     marginBottom: "15px",
     float: "left",
-    fontSize: "15px"
+    fontSize: "15px",
   },
   photo: {
     padding: "5px",
@@ -38,7 +38,7 @@ const useStyles = makeStyles(theme => ({
     height: "390px",
     width: "100% !important",
     border: "1px solid #eee !important",
-    borderRadius: "5px"
+    borderRadius: "5px",
   },
   photonews: {
     padding: "5px",
@@ -46,7 +46,7 @@ const useStyles = makeStyles(theme => ({
     height: "390px",
     // width: "100% !important",
     border: "1px solid #eee !important",
-    borderRadius: "5px"
+    borderRadius: "5px",
   },
   newcontent: {
     color: "rgb(57, 69, 120)",
@@ -54,14 +54,14 @@ const useStyles = makeStyles(theme => ({
     maxHeight: 26,
     minHeight: 26,
     maxWidth: "250px",
-    overflow: "hidden"
+    overflow: "hidden",
   },
   newscontain: {
     padding: "4px 4px",
     margin: "0px",
     borderBottom: "1px dotted #555",
     display: "flex !important",
-    backgroundColor: "#fff"
+    backgroundColor: "#fff",
   },
   newstop: {
     // alignContent: "center",
@@ -73,7 +73,7 @@ const useStyles = makeStyles(theme => ({
     borderTop: "1px solid #ddd",
     borderBottomRightRadius: "3px",
     borderbottomleftRadius: "3px",
-    height: "31px"
+    height: "31px",
   },
   downArrow: {
     position: "relative",
@@ -81,13 +81,13 @@ const useStyles = makeStyles(theme => ({
     padding: "3px 10px",
     marginLeft: "-1px",
     lineHeight: 1.42857143,
-    color: "#3a4578",
+    color: "#2F348B",
     textDecoration: "none",
     backgroundColor: "#fff",
     border: "1px solid #ddd",
     marginLeft: 0,
     borderTopLeftRadius: "4px",
-    borderBottomLeftRadius: "4px"
+    borderBottomLeftRadius: "4px",
   },
   glyphicon: {
     position: "relative",
@@ -96,8 +96,8 @@ const useStyles = makeStyles(theme => ({
     fontFamily: "Glyphicons Halflings",
     fontStyle: "normal",
     fontWeight: 400,
-    lineHeight: 1
-  }
+    lineHeight: 1,
+  },
 }));
 
 export default function StyloriNews(props) {
@@ -130,7 +130,11 @@ export default function StyloriNews(props) {
                 <Grid item className={classes.newstop}>
                   <Typography
                     className={classes.newcontent}
-                    style={{ fontSize: "12px", fontWeight: 600, lineHeight: 1.1 }}
+                    style={{
+                      fontSize: "12px",
+                      fontWeight: 600,
+                      lineHeight: 1.1,
+                    }}
                   >
                     {val.content}
                   </Typography>
@@ -138,12 +142,11 @@ export default function StyloriNews(props) {
                     <Typography
                       style={{
                         fontSize: "12px",
-                        color: "rgb(51, 122, 183)"
+                        color: "rgb(51, 122, 183)",
                       }}
-
                     >
                       Read more
-                          </Typography>
+                    </Typography>
                   </Grid>
                 </Grid>
               </Grid>
@@ -152,16 +155,13 @@ export default function StyloriNews(props) {
           {props.dataCarousel.arrowsImg ? (
             <Grid className={classes.footerNews}>
               <Grid style={{ float: "right" }}>
-                <Grid
-                  onClick={() => previous()}
-                  className={classes.downArrow}
-                >
+                <Grid onClick={() => previous()} className={classes.downArrow}>
                   <span className={classes.glyphicon}>
                     <img
                       style={{
                         width: "12x",
                         height: "12px",
-                        fill: "rgb(58, 69, 120)"
+                        fill: "rgb(58, 69, 120)",
                       }}
                       src={
                         "https://image.flaticon.com/icons/svg/2089/2089720.svg"
@@ -169,16 +169,13 @@ export default function StyloriNews(props) {
                     />
                   </span>
                 </Grid>
-                <Grid
-                  onClick={() => next()}
-                  className={classes.downArrow}
-                >
+                <Grid onClick={() => next()} className={classes.downArrow}>
                   <span className={classes.glyphicon}>
                     <img
                       style={{
                         width: "12x",
                         height: "12px",
-                        fill: "rgb(58, 69, 120)"
+                        fill: "rgb(58, 69, 120)",
                       }}
                       src={
                         "https://image.flaticon.com/icons/svg/2089/2089724.svg"
@@ -189,10 +186,10 @@ export default function StyloriNews(props) {
               </Grid>
             </Grid>
           ) : (
-              ""
-            )}
+            ""
+          )}
         </Grid>
       </Grid>
     </>
-  )
+  );
 }
