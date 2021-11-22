@@ -415,6 +415,7 @@ const styles = (theme) => ({
   },
   AddtoCartbuttons: {
     background: "#2F348B ",
+
     color: theme.palette.overallButoon.contrastText,
     borderRadius: "unset !important",
     boxShadow: "4px 5px 6px #BEBFBF !important",

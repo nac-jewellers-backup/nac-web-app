@@ -449,15 +449,18 @@ class ProductDetails extends React.Component {
                                                           res.details[
                                                             Index + 1
                                                           ] ? (
-                                                          Item == 0 ? (
-                                                            " "
-                                                          ) : (
-                                                            <>
-                                                              <del>{Item}</del>
-                                                            </>
-                                                          )
-                                                        ) : (
+                                                          <>
+                                                            <del>{Item}</del>
+                                                          </>
+                                                        ) : res.details[
+                                                            Index
+                                                          ] !==
+                                                          res.details[
+                                                            Index + 1
+                                                          ] ? (
                                                           Item
+                                                        ) : (
+                                                          " "
                                                         )
                                                       ) : (
                                                         Item

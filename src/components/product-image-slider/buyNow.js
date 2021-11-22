@@ -646,7 +646,7 @@ class Component extends React.Component {
                           this.props.data[0].productsDetails[1].namedetail[3]
                             .details
                             ? this.props.data[0].productsDetails[1]
-                                .namedetail[3].details
+                                .namedetail[3].details[0]
                             : ""}
                         </p>
                       </Box>

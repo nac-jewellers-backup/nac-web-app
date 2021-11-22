@@ -429,11 +429,11 @@ function Component(props) {
                   <Grid container xs={12}>
                     <Typography
                       variant="body1"
-                      style={{ paddingLeft: "5px" }}
+                      style={{ paddingLeft: "5px", textTransform: "uppercase" }}
                       className={`${classes.titlesshopother}`}
                     >
                       {" "}
-                      Shop&nbsp;
+                      SHOP&nbsp;
                       {props.data.title.charAt(0).toUpperCase() +
                         props.data.title.slice(1)}
                     </Typography>

@@ -834,9 +834,11 @@ body {
 
 .vertical-carousel {
   float: left !important;
+  display: flex;
+  justify-content: center;
   border: 1px solid #ccc;
   margin-bottom: 15px !important;
-  width: 88% !important;
+  /* width: 74% !important; */
   /* height: 80px !important; */
   outline: none !important;
   cursor: pointer;

@@ -1,4 +1,4 @@
-import { Button } from "@material-ui/core";
+import { Button, Hidden } from "@material-ui/core";
 import React from "react";
 import { withRouter } from "react-router";
 import "../product-image-slider/product-images.css";
@@ -81,7 +81,20 @@ class Buynowbutton extends React.Component {
               ) : (
                 <>
                   {productIsActive ? (
-                    <span> In bag!</span>
+                    <>
+                      <Hidden smDown>
+                        <span style={{ fontSize: "18px", fontWeight: "bold" }}>
+                          {" "}
+                          In bag!
+                        </span>
+                      </Hidden>
+                      <Hidden mdUp>
+                        <span style={{ fontWeight: "bold", fontSize: "16px" }}>
+                          {" "}
+                          In bag!
+                        </span>
+                      </Hidden>
+                    </>
                   ) : (
                     <span
                       className={this.props.button}
@@ -100,35 +113,67 @@ class Buynowbutton extends React.Component {
               {
                 this.props.addtoCartToBuyNow ? (
                   <>
+                    <Hidden smDown>
+                      <span style={{ fontSize: "18px", fontWeight: "bold" }}>
+                        {" "}
+                        &nbsp;Add&nbsp;to&nbsp;Cart&nbsp;
+                      </span>
+                      <i class={`fa fa-shopping-cart`}></i>
+                    </Hidden>
+                    <Hidden mdUp>
+                      <i class={`fa fa-shopping-cart`}></i>
+                      <span style={{ fontWeight: "bold", fontSize: "16px" }}>
+                        {" "}
+                        &nbsp;Add&nbsp;to&nbsp;Cart&nbsp;
+                      </span>
+                    </Hidden>
+
                     <span
                       style={{
                         fontWeight: "bolder",
-                        fontSize: "8px !important",
+                        fontSize: "16px ",
                       }}
                     >
                       {" "}
-                      <i class="fa fa-shopping-bag buynow-icon"></i>
-                    </span>
-                    <span
-                      style={{
-                        fontWeight: "bolder",
-                        fontSize: "8px !important",
-                      }}
-                    >
-                      &nbsp;Add&nbsp;to&nbsp;Cart
                     </span>
                   </>
                 ) : (
                   <>
                     {productIsActive ? (
-                      <span className={this.props.button}>
-                        <b>
-                          {" "}
-                          {this.props.cartpage
-                            ? "Checkout Securely"
-                            : "Buy Now"}
-                        </b>
-                      </span>
+                      <>
+                        <Hidden smDown>
+                          <span
+                            className={this.props.button}
+                            style={{
+                              fontWeight: "bolder",
+                              fontSize: "20px",
+                            }}
+                          >
+                            <b>
+                              {" "}
+                              {this.props.cartpage
+                                ? "Checkout Securely"
+                                : "Buy Now"}
+                            </b>
+                          </span>
+                        </Hidden>
+                        <Hidden mdUp>
+                          <span
+                            className={this.props.button}
+                            style={{
+                              fontWeight: "bolder",
+                              fontSize: "16px",
+                            }}
+                          >
+                            <b>
+                              {" "}
+                              {this.props.cartpage
+                                ? "Checkout Securely"
+                                : "Buy Now"}
+                            </b>
+                          </span>
+                        </Hidden>
+                      </>
                     ) : (
                       <span
                         className={this.props.button}

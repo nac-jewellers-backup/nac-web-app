@@ -217,16 +217,14 @@ class ProductImageZoom extends React.Component {
     // var c = a.replace(b[5], data[0].image_resolution_two + 'X' + data[0].image_resolution_two)
     var c = a?.length > 0 && a?.replace(b[5], "1000X1000");
     // alert(JSON.stringify(CDN_URL))consle
+    // console.log(this.props.data[0].productId, "ssss");
+    // //debugger;
 
     return (
       <div>
         {/* {JSON.stringify(showimage)} */}
-        <Grid
-          container
-          spacing={_isSilver ? 2 : 12}
-          style={{ paddingRight: _isSilver ? "auto" : "20px" }}
-        >
-          <Grid item xs={_isSilver ? 9 : 11}>
+        <Grid container>
+          <Grid item xs={10}>
             {/* <div className='imagecard' id="divs" onMouseOut={event => this.zoomOut(event)} onMouseMove={event => this.zoomIn(event)}>
                 {data[0].ProductContactNum[0].isReadyToShip == true ? <div class="one-day-ship" ></div> : ""} */}
             {/* <div id='flashlight'></div> */}
@@ -245,6 +243,7 @@ class ProductImageZoom extends React.Component {
                 style={{
                   display: "flex",
                   alignItem: "center",
+                  width: "97%",
                 }}
               >
                 {/* {alert(JSON.stringify(this.props.data[0].fadeImages.arrOfurls_2X[0]))} */}
@@ -290,7 +289,7 @@ class ProductImageZoom extends React.Component {
                   <div
                     style={{
                       boxShadow: "4px 4px 4px #a5a4a5",
-                      border: "1px solid gray",
+                      border: "1px solid #1a181866",
                       position: "relative",
                     }}
                   >
@@ -298,12 +297,12 @@ class ProductImageZoom extends React.Component {
                       style={{
                         position: "absolute",
                         left: "10px",
-                        zIndex: "1",
+                        zIndex: "999",
                       }}
                     >
                       <Wishlist
-                        sku={data.skuId}
-                        productId={data.productId}
+                        sku={data[0].skuId}
+                        productId={data[0].productId}
                         wishlist={wishlist}
                       />
                     </div>
@@ -349,111 +348,100 @@ class ProductImageZoom extends React.Component {
 
               <div></div>
             </div>
-            <Grid
-              container
-              xs={12}
-              style={{
-                paddingTop: "20px",
-                display: "flex",
-                justifyContent: "center",
-              }}
-            >
-              <Grid item xs={11}>
-                <div
-                  style={{ textAlign: !_isSilver && "center" }}
-                  className="imgzom-sidecraousel-media"
+          </Grid>
+        </Grid>
+        <Grid
+          container
+          style={{
+            paddingTop: "20px",
+          }}
+        >
+          <Grid item xs={10}>
+            <div className="imgzom-sidecraousel-media">
+              {data &&
+              data.length > 0 &&
+              data[0] &&
+              data[0].fadeImages.arrOfurls.length > 3 ? (
+                <span
+                  className={
+                    data &&
+                    data.length > 0 &&
+                    data[0] &&
+                    data[0].fadeImages.arrOfurls.length === 4
+                      ? classes.cursor_notallowed
+                      : null
+                  }
                 >
-                  {data &&
-                  data.length > 0 &&
-                  data[0] &&
-                  data[0].fadeImages.arrOfurls.length > 3 ? (
-                    <span
-                      className={
-                        data &&
-                        data.length > 0 &&
-                        data[0] &&
-                        data[0].fadeImages.arrOfurls.length === 4
-                          ? classes.cursor_notallowed
-                          : null
-                      }
-                    >
-                      <Button
-                        onClick={this.previous}
-                        disabled={
-                          data &&
-                          data.length > 0 &&
-                          data[0] &&
-                          data[0].fadeImages.arrOfurls.length === 4
-                            ? true
-                            : false
-                        }
-                      >
-                        <i
-                          className={`fa fa-angle-up ${
-                            _isSilver
-                              ? classes.iconfill
-                              : classes.iconfillStylori
-                          }`}
-                          style={{ fontSize: "35px" }}
-                        ></i>
-                      </Button>
-                    </span>
-                  ) : null}
-                  <Slideshow
-                    sliderRef={this.slider}
-                    height={30}
-                    getmsg={this.getimage}
-                    class={
-                      this.props.isSilver
-                        ? "vertical-carousel-silver"
-                        : `vertical-carousel`
+                  <Button
+                    onClick={this.previous}
+                    disabled={
+                      data &&
+                      data.length > 0 &&
+                      data[0] &&
+                      data[0].fadeImages.arrOfurls.length === 4
+                        ? true
+                        : false
                     }
-                    imgClass="vertical-carousel-img"
-                    fadeImages={data[0]?.fadeImages?.arrOfurls_2X}
-                    dataCarousel={dataCarousel}
-                    currentImage={this.state.showimage}
-                  />
+                  >
+                    <i
+                      className={`fa fa-angle-up ${
+                        _isSilver ? classes.iconfill : classes.iconfillStylori
+                      }`}
+                      style={{ fontSize: "35px" }}
+                    ></i>
+                  </Button>
+                </span>
+              ) : null}
+              <Slideshow
+                sliderRef={this.slider}
+                getmsg={this.getimage}
+                class={
+                  this.props.isSilver
+                    ? "vertical-carousel-silver"
+                    : `vertical-carousel`
+                }
+                imgClass="vertical-carousel-img"
+                fadeImages={data[0]?.fadeImages?.arrOfurls_2X}
+                dataCarousel={dataCarousel}
+                currentImage={this.state.showimage}
+              />
 
-                  {data &&
-                  data.length > 0 &&
-                  data[0] &&
-                  data[0].fadeImages.arrOfurls.length > 3 ? (
-                    <span
-                      className={
-                        data &&
-                        data.length > 0 &&
-                        data[0] &&
-                        data[0].fadeImages.arrOfurls.length === 4
-                          ? classes.cursor_notallowed
-                          : null
-                      }
-                    >
-                      <Button
-                        onClick={this.next}
-                        disabled={
-                          data &&
-                          data.length > 0 &&
-                          data[0] &&
-                          data[0].fadeImages.arrOfurls.length === 4
-                            ? true
-                            : false
-                        }
-                      >
-                        <i
-                          className={`fa fa-angle-down ${
-                            _isSilver
-                              ? classes.iconfill
-                              : classes.iconfillStylori
-                          }`}
-                          style={{ fontSize: "35px" }}
-                          // className={`${classes.colorMain}`}
-                        ></i>
-                      </Button>
-                    </span>
-                  ) : null}
-                </div>
-              </Grid>
-            </Grid>
+              {data &&
+              data.length > 0 &&
+              data[0] &&
+              data[0].fadeImages.arrOfurls.length > 3 ? (
+                <span
+                  className={
+                    data &&
+                    data.length > 0 &&
+                    data[0] &&
+                    data[0].fadeImages.arrOfurls.length === 4
+                      ? classes.cursor_notallowed
+                      : null
+                  }
+                >
+                  <Button
+                    onClick={this.next}
+                    disabled={
+                      data &&
+                      data.length > 0 &&
+                      data[0] &&
+                      data[0].fadeImages.arrOfurls.length === 4
+                        ? true
+                        : false
+                    }
+                  >
+                    <i
+                      className={`fa fa-angle-down ${
+                        _isSilver ? classes.iconfill : classes.iconfillStylori
+                      }`}
+                      style={{ fontSize: "35px", fill: "#A66E1D" }}
+                      // className={`${classes.colorMain}`}
+                    ></i>
+                  </Button>
+                </span>
+              ) : null}
+            </div>
           </Grid>
         </Grid>
       </div>

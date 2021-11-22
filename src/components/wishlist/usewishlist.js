@@ -80,6 +80,9 @@ const useWishlists = (props) => {
           values["user_id"] = user_id;
           setValues({ values, ...values });
           makeFetch();
+          // setTimeout(() => {
+          //   window.location.reload();
+          // }, 1500);
         }
       });
   };

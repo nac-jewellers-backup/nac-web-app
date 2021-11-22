@@ -1,8 +1,10 @@
 import {
   Button,
+  Checkbox,
   ExpansionPanel,
   ExpansionPanelDetails,
   ExpansionPanelSummary,
+  FormControlLabel,
   Grid,
   Hidden,
 } from "@material-ui/core";
@@ -77,7 +79,7 @@ const ProductlistComponent = (props) => {
                   >
                     <label style={{ color: "gray", fontWeight: "bold" }}>
                       Add a Special Message!&nbsp;
-                      <b style={{ color: "#c1c1c1" }}>(Optinal)</b>
+                      <b style={{ color: "#c1c1c1" }}>(Optional)</b>
                     </label>
                     <Input
                       checkoutgift={true}
@@ -115,7 +117,7 @@ const ProductlistComponent = (props) => {
                       }}
                     >
                       Gift Recipient’s Email!&nbsp;
-                      <b style={{ color: "#c1c1c1" }}>(Optinal)</b>
+                      <b style={{ color: "#c1c1c1" }}>(Optional)</b>
                     </label>
                     <Input
                       checkoutgift={true}
@@ -153,6 +155,14 @@ const ProductlistComponent = (props) => {
                         </Button>
                       )}
                     </div>
+                    <FormControlLabel
+                      control={<Checkbox defaultChecked />}
+                      label={
+                        <span style={{ color: "gray", whiteSpace: "nowrap" }}>
+                          Send order updates to the Gift Recipient
+                        </span>
+                      }
+                    />
                   </form>
                 </div>
               </Grid>

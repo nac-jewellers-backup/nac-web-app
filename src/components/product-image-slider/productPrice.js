@@ -1,4 +1,11 @@
-import { Container, Grid, Hidden, Paper, Typography } from "@material-ui/core";
+import {
+  Box,
+  Container,
+  Grid,
+  Hidden,
+  Paper,
+  Typography,
+} from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 import ArrowLeftIcon from "@material-ui/icons/ArrowLeft";
 import ArrowRightIcon from "@material-ui/icons/ArrowRight";
@@ -88,7 +95,7 @@ const Productprice = (
             <Hidden mdUp>
               <div
                 style={{
-                  width: "100%",
+                  width: "96%",
                   height: "auto",
                   marginBottom: "10px",
                   marginTop: "18px",
@@ -125,10 +132,11 @@ const Productprice = (
                           >
                             {val?.title}
                           </Typography>
+
                           <span className={`pdp-desc ${classes.dis} `}>
                             {val?.dis?.length > 30 && viewMore
                               ? val?.dis
-                              : `${val?.dis?.substring(0, 60)}...`}
+                              : `${val?.dis?.substring(0, 30)}...`}
                             <span
                               className={`pdp-desc ${
                                 viewMore ? "" : classes.disDescriptionPD
@@ -176,44 +184,33 @@ const Productprice = (
                       <h1 className={`pdp-title ${classes.title} `}>
                         {val?.title}
                       </h1>
+                      <h4>{val.shortDis}</h4>
                     </Hidden>
                     <Hidden smDown>
-                      <p
-                        className={`pdp-desc ${classes.dis}`}
-                        style={{
-                          marginBottom: 0,
-                          paddingTop: "5px",
-                        }}
-                      >
-                        <span style={{ textOverflow: "ellipsis" }}>
-                          {val?.dis?.length > 100 && viewMore
+                      <Box display="flex" className={`pdp-desc ${classes.dis}`}>
+                        <Box>
+                          {val?.dis?.length > 70 && viewMore
                             ? val?.dis
-                            : val?.dis.substring(0, 80)}
+                            : `${val?.dis.substring(0, 70)}..`}
+
                           {/* {val.dis} */}
-                        </span>
-                        <br />
-                        <span
-                          className={`pdp-desc ${
-                            viewMore ? "" : classes.disDescriptionPD
-                          }`}
-                        >
-                          <span style={{ width: "80%" }}>
-                            <span
-                              style={{
-                                float: "right",
-                                cursor: "pointer",
-                                color: "#33346D",
-                                fontSize: "14px",
-                              }}
-                              onClick={() => {
-                                handleReadMore();
-                              }}
-                            >
-                              {viewMore ? "Read Less" : "Read More"}
-                            </span>
+                        </Box>
+                        <Box>
+                          <span
+                            style={{
+                              cursor: "pointer",
+                              color: "#33346D",
+                              fontSize: "14px",
+                              whiteSpace: "nowrap",
+                            }}
+                            onClick={() => {
+                              handleReadMore();
+                            }}
+                          >
+                            {viewMore ? "Read Less" : "Read More"}
                           </span>
-                        </span>
-                      </p>
+                        </Box>
+                      </Box>
                     </Hidden>
                   </div>
                 </Grid>
@@ -222,6 +219,7 @@ const Productprice = (
           </Grid>
 
           <Hidden smDown>
+            <br />
             <div className={classes.width}>
               {data[0]?.price === data[0]?.offerPrice ? (
                 <Pricing

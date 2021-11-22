@@ -22,15 +22,6 @@ const RegisterComponent = (props) => {
       <Header />
       <Grid spacing={12} container lg={12} style={{ padding: "3%" }}>
         <Grid item xs={6} lg={6} xs={12}>
-          <div>
-            <img
-              width="100%"
-              height="100%"
-              src="https://assets.stylori.com/images/static/inner-page/banner.png"
-            />
-          </div>
-        </Grid>
-        <Grid item xs={6} lg={6} xs={12}>
           <Container>
             {/* <div className='pt-sm' style={{ width: "90%", float: "right" }}>
                         <form action="javascript:void(0)" onSubmit={(e) => {
@@ -132,6 +123,20 @@ const RegisterComponent = (props) => {
             </div>
           </Container>{" "}
         </Grid>
+        <Grid item xs={6} lg={6} xs={12}>
+          <div>
+            <img
+              width="100%"
+              height="420px"
+              style={{
+                objectFit: "cover",
+                objectPosition: "40% 5%",
+              }}
+              src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/login+register/Group+72.png"
+            />
+          </div>
+        </Grid>
+
         {/* </Grid> */}
         {/* </form>
                     </div> */}

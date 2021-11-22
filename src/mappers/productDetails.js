@@ -376,7 +376,8 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
 
   const _format = mapperdata.map((PD) => {
     let _d;
-
+    // console.log(mapperdata);
+    // debugger;
     try {
       _d = {
         message:
@@ -403,6 +404,14 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
         save: " ",
         offerDiscount:
           PD && PD.discount ? `${Math.abs(PD.discount)}% OFF` : null,
+        shortDis:
+          PD &&
+          PD !== undefined &&
+          PD.transSkuDescriptionsBySkuId.nodes &&
+          PD.transSkuDescriptionsBySkuId.nodes.length > 0 &&
+          PD.transSkuDescriptionsBySkuId.nodes[0].shortDescription !== ""
+            ? PD.transSkuDescriptionsBySkuId.nodes[0].shortDescription
+            : "Testing Short Description",
         dis:
           PD &&
           PD !== undefined &&
@@ -463,6 +472,7 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
         maxOrderQty: PD && PD.maxOrderQty ? PD.maxOrderQty : 100000,
         minOrderQty: PD && PD.minOrderQty ? PD.minOrderQty : 1,
         show: PD.showPriceBreakup,
+
         productsubHeaderlist: [
           {
             name: "From the House of NAC",
@@ -581,9 +591,11 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                     : null,
               },
               {
-                name: "Fastening",
                 details: PD?.productListByProductId?.earringBacking
-                  ? PD.productListByProductId.earringBacking
+                  ? {
+                      name: "Fastening",
+                      details: PD.productListByProductId.earringBacking,
+                    }
                   : null,
               },
             ],

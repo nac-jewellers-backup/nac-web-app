@@ -364,11 +364,9 @@ class Component extends React.Component {
                                   <br />
                                 </Grid>
 
-                                <Grid xs={12} lg={4} />
-                                <Grid xs={12} lg={7}>
+                                <Grid xs={12} lg={12}>
                                   <div
                                     style={{
-                                      float: "right",
                                       marginBottom: "5px",
                                     }}
                                   >
@@ -377,6 +375,8 @@ class Component extends React.Component {
                                         onClick={() => this.pincodeapi()}
                                         className="summaryOrder-pay-btn"
                                         color="secondary"
+                                        style={{ width: "100%" }}
+                                        fullWidth={true}
                                       >
                                         Continue to Delivery Information
                                       </Button>
@@ -678,6 +678,7 @@ class Component extends React.Component {
                                       <Button
                                         onClick={() => this.pincodeapi()}
                                         className="summaryOrder-pay-btn"
+                                        fullWidth={true}
                                       >
                                         Continue to Delivery Information
                                       </Button>
@@ -700,11 +701,9 @@ class Component extends React.Component {
                           </Grid>
                           <Hidden mdUp>
                             <Grid container style={{ marginTop: "10px" }}>
-                              <Grid xs={12} lg={7} />
-                              <Grid xs={12} lg={4}>
+                              <Grid xs={12} lg={12}>
                                 <div
                                   style={{
-                                    float: "right",
                                     marginBottom: "5px",
                                   }}
                                 >
@@ -712,6 +711,7 @@ class Component extends React.Component {
                                     <Button
                                       onClick={() => this.pincodeapi()}
                                       className="summaryOrder-pay-btn"
+                                      fullWidth={true}
                                     >
                                       Continue to Pay
                                     </Button>

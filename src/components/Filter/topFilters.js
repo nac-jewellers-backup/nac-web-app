@@ -270,23 +270,28 @@ export const TopFilters = (props) => {
                 {/* </nav> */}
               </Grid>
               {state.Menuopen && props.subFilter[state.listHoverItem] ? (
-                <HeaderHoverMenuItem
-                  tabdata={props.subFilter}
-                  listHoverItem={props.subFilter[state.listHoverItem]}
-                  // onMouseOver={(event) => { setState({ Menuopen: true }) }}
-                  filters={true}
-                  opened={state.Menuopen}
-                  targetopened={state.targetopen}
-                  // submenuDetails={()=>submenuDetails()}
-                  filtercheck={state.listHoverItem}
-                  checked={props.checked}
-                  onchoosetype={props.onchangefunc}
-                  state={props.state}
-                  onchoosetypeprice={props.onpricechange}
-                  onMouseLeave={() => {
-                    setState({ ...state, targetopen: null });
-                  }}
-                />
+                <div>
+                  <HeaderHoverMenuItem
+                    tabdata={props.subFilter}
+                    listHoverItem={props.subFilter[state.listHoverItem]}
+                    // onMouseOver={(event) => { setState({ Menuopen: true }) }}
+                    filters={true}
+                    opened={state.Menuopen}
+                    targetopened={state.targetopen}
+                    // submenuDetails={()=>submenuDetails()}
+                    filtercheck={state.listHoverItem}
+                    checked={props.checked}
+                    onchoosetype={props.onchangefunc}
+                    state={props.state}
+                    onchoosetypeprice={props.onpricechange}
+                    // onMouseLeave={() => {
+                    //   setState({ ...state, targetopen: null });
+                    // }}
+                    onMouseLeave={() => {
+                      setState({ ...state, Menuopen: false });
+                    }}
+                  />
+                </div>
               ) : (
                 ""
               )}

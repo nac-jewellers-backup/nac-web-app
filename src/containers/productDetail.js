@@ -473,7 +473,7 @@ class ProductDetail extends Component {
                               <span className={classes.productmaterial}>
                                 {
                                   this.props.data[0].productsDetails[1]
-                                    .namedetail[3].details
+                                    .namedetail[3].details[0]
                                 }
                               </span>
                             ) : (

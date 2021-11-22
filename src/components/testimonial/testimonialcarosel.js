@@ -50,6 +50,7 @@ const useStyles = makeStyles((theme) => ({
       backgroundImage: "none !important",
       // boxShadow: "0 0 5px #888 !important",
       border: "1px solid #8080804d",
+      boxShadow: "4px 4px 4px #bebfbf",
     },
     smleftGrid: {
       marginTop: "50% !important",

@@ -49,9 +49,11 @@ const RegisterComponent = (props) => {
                       ""
                     ) : (
                       <>
-                        {window.location.pathname === "/registers"
-                          ? "Register"
-                          : "Register New Users"}
+                        <h2>
+                          {window.location.pathname === "/registers"
+                            ? "Register"
+                            : "Register New Users"}
+                        </h2>
                       </>
                     )}
                   </h5>

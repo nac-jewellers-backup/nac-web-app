@@ -102,7 +102,7 @@ class Component extends React.Component {
                         }
                       />
                     </Grid>
-                    <Grid item xs={5} sm={3} lg={4}>
+                    <Grid item xs={5} sm={3} lg={3}>
                       <div className="wishlist_img">
                         <img
                           style={{

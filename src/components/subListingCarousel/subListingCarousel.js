@@ -1,20 +1,12 @@
-import {
-  Container,
-  Grid,
-  Hidden,
-  ExpansionPanel,
-  ExpansionPanelSummary,
-  ExpansionPanelDetails,
-  Typography,
-} from "@material-ui/core";
-import PropTypes from "prop-types";
-import React from "react";
-import { YoungOnes } from "mappers/dummydata/collectionNac";
+import { Container, Grid, Hidden, Typography } from "@material-ui/core";
+import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
+import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 //   import './product-images.css'
 import Slideshow from "components/Carousel/carosul";
+import { YoungOnes } from "mappers/dummydata/collectionNac";
+import PropTypes from "prop-types";
+import React from "react";
 import styles from "./style";
-import ChevronRightIcon from "@material-ui/icons/ChevronRight";
-import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 export default function Sublistcarousel(props) {
   const slider = React.createRef();
   const classes = styles();

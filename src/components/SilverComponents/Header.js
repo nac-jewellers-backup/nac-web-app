@@ -38,6 +38,7 @@ let user_id = localStorage.getItem("user_id")
   ? localStorage.getItem("user_id")
   : {};
 // var path = window.location.pathname.split('/').pop();
+
 class Header extends Component {
   constructor(props) {
     super(props);
@@ -82,6 +83,8 @@ class Header extends Component {
         return true;
       }
     }
+    console.log(this.props);
+    debugger;
   }
 
   handleDrawerOpen = () => {
@@ -185,7 +188,6 @@ class Header extends Component {
     const opened = this.state;
     var a = window.location.pathname;
     var b = a.split("/");
-    console.log(this.props.wishlist);
 
     return (
       <div

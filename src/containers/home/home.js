@@ -349,6 +349,7 @@ class HomeComp extends React.Component {
         this.setState({ reviews: reviewresponse });
       });
     Aos.init({ duration: 1500 });
+    //wishlist
   }
 
   next = () => {
@@ -841,11 +842,9 @@ class HomeComp extends React.Component {
                 xl={8}
                 data-aos="fade-left"
               >
-                <div className={classes.testimonial}>
-                  <Testimonial customerreview={this.state.reviews} />
-                  <br />
-                  <br />
-                </div>
+                <Testimonial customerreview={this.state.reviews} />
+                <br />
+                <br />
               </Grid>
             </Grid>
             <Hidden mdUp>

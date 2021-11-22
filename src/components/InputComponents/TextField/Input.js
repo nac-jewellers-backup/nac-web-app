@@ -74,6 +74,7 @@ export const Input = (props) => {
             onKeyPress={handleKeyPress}
             onChange={handleChange}
             {...rest}
+            value={props.value}
             disabled={props.disabled}
             rowsMax={rowsMax}
             minRows={4}

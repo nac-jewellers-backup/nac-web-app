@@ -1,7 +1,6 @@
 const styles = (theme) => ({
   padding: {
     padding: "40px !important",
-    height: "100vh",
   },
   padding1: {
     padding: "40px !important",
