@@ -192,10 +192,6 @@ const Productprice = (
                           {val?.dis?.length > 70 && viewMore
                             ? val?.dis
                             : `${val?.dis.substring(0, 70)}..`}
-
-                          {/* {val.dis} */}
-                        </Box>
-                        <Box>
                           <span
                             style={{
                               cursor: "pointer",
@@ -209,6 +205,8 @@ const Productprice = (
                           >
                             {viewMore ? "Read Less" : "Read More"}
                           </span>
+
+                          {/* {val.dis} */}
                         </Box>
                       </Box>
                     </Hidden>

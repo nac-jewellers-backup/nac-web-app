@@ -54,16 +54,7 @@ const AddressComponent = (props) => {
               ) : (
                 ""
               )}
-              <p class="form-group tp" style={{ width: "480px" }}>
-                {/* {localStorage.getItem("valuessetdata") || localStorage.getItem("vals") ? "" : <>{cl}</>} */}
-                {window.location.pathname.split("-")[0] === "/account" ||
-                values.edit_addresId === true ? (
-                  ""
-                ) : (
-                  <>{cl}</>
-                )}
-                {/* {JSON.stringify(values.errortext && values.errortext.pinerr)} */}
-              </p>{" "}
+
               <Grid container item xs={12} lg={12}>
                 <Grid
                   item
@@ -77,20 +68,18 @@ const AddressComponent = (props) => {
                   {window.location.pathname.split("-")[0] === "/account" ||
                   values.hidebilling === true ||
                   values.addrs === true ? (
-                    ""
+                    <>
+                      <h5 className="title">Shipping Addresss</h5>
+                      <br />
+                      <br />
+                    </>
                   ) : (
                     <>
                       <h5 className="title">Shipping Addresss</h5>
-                      <>
-                        {!values.checkValue &&
-                          "If your Billing address is same as your shipping address, please check the box and fill up the shipping address in the form."}
-                        {values.checkValue &&
-                          "If your Billing address is different from your shipping address, please uncheck the box to the left and fill up the billing address in the form."}
-                      </>
                     </>
                   )}
                   <Grid container spacing={12}>
-                    <Grid item xs={4} lg={4}>
+                    <Grid item lg={2}>
                       {/* <FormControl variant="outlined" className={classes.formControl}>
         <Select
           labelId="demo-simple-select-outlined-label"
@@ -113,7 +102,7 @@ const AddressComponent = (props) => {
                         selectData={["Mr", "Mrs", "Ms"]}
                       />
                     </Grid>
-                    <Grid item xs={4} lg={4}>
+                    <Grid item lg={5}>
                       <Input
                         name="firstname"
                         className="text-f"
@@ -131,7 +120,7 @@ const AddressComponent = (props) => {
                         helperText="First name is required"
                       />
                     </Grid>
-                    <Grid item xs={4} lg={4}>
+                    <Grid item lg={5}>
                       <Input
                         className="text-f"
                         type="text"
@@ -305,7 +294,24 @@ const AddressComponent = (props) => {
                     </Grid>
                   </Grid>
                 </Grid>
-
+                <p class="form-group tp">
+                  {/* {localStorage.getItem("valuessetdata") || localStorage.getItem("vals") ? "" : <>{cl}</>} */}
+                  {window.location.pathname.split("-")[0] === "/account" ||
+                  values.edit_addresId === true ? (
+                    ""
+                  ) : (
+                    <>
+                      {cl}
+                      <span>
+                        {!values.checkValue &&
+                          "If your Billing address is same as your shipping address, please check the box and fill up the shipping address in the form."}
+                        {values.checkValue &&
+                          "If your Billing address is different from your shipping address, please uncheck the box to the left and fill up the billing address in the form."}
+                      </span>
+                    </>
+                  )}
+                  {/* {JSON.stringify(values.errortext && values.errortext.pinerr)} */}
+                </p>{" "}
                 {/*  */}
                 {/*  */}
                 {/* {localStorage.getItem("valuessetdata") || localStorage.getItem("vals") ? "" : <> */}
@@ -316,19 +322,19 @@ const AddressComponent = (props) => {
                   <>
                     <Grid container item lg={1} />
                     {!values.checkValue && (
-                      <Grid item xs={12} lg={5}>
+                      <Grid item xs={12} lg={12}>
                         <br />
                         <br />
                         <h5 className="title"> Billing Address</h5>
                         <Grid container spacing={12}>
-                          <Grid item xs={4} lg={4}>
+                          <Grid lg={2}>
                             <SimpleSelect
                               val={"2"}
                               name={["Select"]}
                               selectData={["Mr", "Mrs", "Ms"]}
                             />
                           </Grid>
-                          <Grid item xs={4} lg={4}>
+                          <Grid item xs={4} lg={5}>
                             <Input
                               name="firstnametwo"
                               className="text-f"
@@ -346,7 +352,7 @@ const AddressComponent = (props) => {
                               helperText="First name is required"
                             />
                           </Grid>
-                          <Grid item xs={4} lg={4}>
+                          <Grid item xs={4} lg={5}>
                             <Input
                               className="text-f"
                               type="text"

@@ -16,6 +16,7 @@ import { homeNac } from "mappers/dummydata/homeNac";
 import React from "react";
 import Testimonial from "../../components/testimonial/testimonial";
 import { API_URL } from "../../config";
+import { CARTALL, WISHLIST } from "../../queries/collection";
 import { AllHOMEQUERY } from "../../queries/home";
 import Card from "./CardGrid";
 import { AdvancedGridList } from "./collectionsGrid";
@@ -228,11 +229,14 @@ class HomeComp extends React.Component {
         "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_page/Group+213%402x.png",
       bannerHome: [],
       featuredProduct: [],
+      wishlistdata: [],
       newarrival: [],
       starting: false,
       reviews: [],
       starting: false,
       imageLoading: false,
+      whishlistcount: "",
+      cartdata: [],
     };
   }
 
@@ -251,6 +255,7 @@ class HomeComp extends React.Component {
       .then((data) => {
         //set banner
         let bannerDataFull = data.data.allBanners.nodes;
+
         this.setState({ bannerHome: bannerDataFull });
         if (data.data.allBanners.nodes.length > 0) {
           this.setState({ starting: true });
@@ -349,7 +354,46 @@ class HomeComp extends React.Component {
         this.setState({ reviews: reviewresponse });
       });
     Aos.init({ duration: 1500 });
+
     //wishlist
+    fetch(`${API_URL}/graphql`, {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        query: WISHLIST,
+        variables: {
+          userprofileId: localStorage.getItem("user_id"),
+        },
+      }),
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        this.setState({ wishlistdata: res.data });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    fetch(`${API_URL}/graphql`, {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        query: CARTALL,
+        variables: {
+          userprofileId: localStorage.getItem("user_id"),
+        },
+      }),
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        this.setState({ cartdata: res.data });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
 
   next = () => {
@@ -527,7 +571,10 @@ class HomeComp extends React.Component {
     return (
       <div className={classes.root}>
         <Grid container>
-          <Header />
+          <Header
+            wishlist={this.state.wishlistdata}
+            cartcount={this.state.cartdata}
+          />
           {this.state.starting ? (
             <Grid item xs={12} style={{ backgroundColor: "#ebebeb" }}>
               {/* <Stack spacing={1}>

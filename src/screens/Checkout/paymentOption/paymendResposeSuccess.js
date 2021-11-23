@@ -4,10 +4,11 @@ import Footer from "components/Footer/Footer";
 import Header from "components/SilverComponents/Header";
 import { CartContext } from "context";
 import cart from "mappers/cart";
-import React from "react";
+import React, { useContext } from "react";
 import { withRouter } from "react-router-dom";
 import "../../../components/Checkout/Cart.css";
 import { API_URL } from "../../../config";
+import { TaskListContext } from "../../../context/WishListContext";
 import "../chckout.css";
 import "./payment.css";
 // import NeedHelp from "components/needHelp";
@@ -39,8 +40,10 @@ const cartsubdata = [
     icon: "https://assets.stylori.com/images/static/icon-return.png",
   },
 ];
+
 var obj = {};
 obj["order_id"] = order_id;
+
 class PaymentResponseSuccess extends React.Component {
   makeFetch_resend_mail = async (props) => {
     await fetch(`${API_URL}/resendorderemail`, {
@@ -75,7 +78,9 @@ class PaymentResponseSuccess extends React.Component {
     if (localStorage.getItem("gut_lg") && localStorage.getItem("user_id"))
       localStorage.removeItem("user_id");
   }
+
   render() {
+    const { addtask } = useContext(TaskListContext);
     const { classes } = this.props;
     // alert(JSON.stringify(this.props.data))
     let gut_lg = localStorage.getItem("gut_lg")
