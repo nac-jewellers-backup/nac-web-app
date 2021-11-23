@@ -6,6 +6,7 @@ import Modal from "@material-ui/core/Modal";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 import CancelIcon from "@material-ui/icons/Cancel";
 import React from "react";
+import "./filter.css";
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -18,9 +19,10 @@ const useStyles = makeStyles((theme) => ({
     border: "none",
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
+
     width: "calc(100% - 200px)",
     height: "calc(100vh - 200px)",
-    overflowY: "auto",
+    overflowY: "scroll",
     "& b": {
       color: `${theme.palette.primary.main} !important`,
       fontSize: "18px",
@@ -111,8 +113,8 @@ export default function MoreFilters(props) {
           timeout: 500,
         }}
       >
-        <Fade in={props.open}>
-          <div className={classes.paper}>
+        <Fade in={props.open} style={{ padding: "10px" }}>
+          <div className={`${classes.paper} scroll`}>
             <Grid container item xs={12}>
               <div
                 className={classes.closeIcon}

@@ -100,9 +100,9 @@ const Gallery = (
               }
               scrollPosition={scrollPosition}
             ></LazyLoadImage>
-            {props.hoverText && (
+            {/* {props.hoverText && (
               <div className="overlayImage">{props.data.description}</div>
-            )}
+            )} */}
           </>
         ) : (
           <LazyLoadImage

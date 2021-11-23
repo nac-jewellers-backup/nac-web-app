@@ -114,7 +114,7 @@ class Buynowbutton extends React.Component {
                 this.props.addtoCartToBuyNow ? (
                   <>
                     <Hidden smDown>
-                      <span style={{ fontSize: "18px", fontWeight: "bold" }}>
+                      <span style={{ fontSize: "16px", fontWeight: "bold" }}>
                         {" "}
                         &nbsp;Add&nbsp;to&nbsp;Cart&nbsp;
                       </span>

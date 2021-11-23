@@ -151,7 +151,8 @@ const Buydetails = (
   handleCodChange,
   canceldeletechecklist,
   deletechecklists,
-  handleLocalStorage
+  handleLocalStorage,
+  deletechecklistsAddtoCart
 ) => {
   const { data } = props;
   const { classes } = props;
@@ -162,7 +163,7 @@ const Buydetails = (
         <>
           <Grid container direction="column" spacing={12}>
             <Grid xs={12} md={5} lg={4} className={classes.buynowItem}>
-              <div onClick={isactive ? deletechecklists : ""}>
+              <div onClick={isactive ? deletechecklistsAddtoCart : ""}>
                 {isactive ? (
                   <>
                     {" "}
@@ -319,6 +320,7 @@ class Component extends React.Component {
   };
   componentDidMount() {
     let sku_id = this.props?.data[0]?.skuId;
+
     //alert(JSON.stringify(this.props?.data[0]?.price));
 
     let params = {
@@ -373,7 +375,7 @@ class Component extends React.Component {
         price: this.props.data[0].offerPrice,
       })
     );
-    window.location.pathname = "/cart";
+    //window.location.pathname = "/cart";
   };
 
   handleLocalStorage = () => {
@@ -391,7 +393,7 @@ class Component extends React.Component {
           price: this.props.data[0].offerPrice,
         })
       );
-      window.location.pathname = "/cart";
+      //window.location.pathname = "/cart";
     } else {
       this.setState({
         modelOpen: true,
@@ -469,7 +471,83 @@ class Component extends React.Component {
         price: this.props.data[0].offerPrice,
       })
     );
+
     window.location.pathname = "/cart";
+
+    this.setState({
+      modelOpen: false,
+    });
+  };
+  deletechecklistsAddtoCart = () => {
+    this.props.setCartFilters({
+      skuId: this.props.data[0].skuId,
+      qty:
+        this.props.quantity &&
+        this.props.data &&
+        this.props.quantity[this.props.data[0].skuId]
+          ? this.props.quantity[this.props.data[0].skuId]
+          : 1,
+      price: this.props.data[0].offerPrice,
+    });
+
+    const _qty =
+      this.props.quantity &&
+      this.props.data &&
+      this.props.quantity[this.props.data[0].skuId]
+        ? this.props.quantity[this.props.data[0].skuId]
+        : 1;
+    this.props.setFilters({
+      ...this.props.filters,
+      quantity: _qty,
+    });
+    let localStorageQuantity = localStorage.getItem("quantity")
+      ? JSON.parse(localStorage.getItem("quantity"))
+      : null;
+    if (!localStorageQuantity) {
+      if (
+        localStorageQuantity &&
+        !localStorageQuantity[this.props.data[0].skuId]
+      ) {
+        let _obj = {};
+        localStorageQuantity[this.props.data[0].skuId] = _qty;
+        localStorage.setItem("quantity", JSON.stringify(localStorageQuantity));
+        this.props.filters.quantity[this.props.data[0].skuId] = _qty;
+      } else {
+        let _obj = {};
+
+        _obj[this.props.data[0].skuId] = _qty;
+        localStorage.setItem("quantity", JSON.stringify(_obj));
+        if (this.props.filters.quantity) {
+          this.props.filters.quantity[this.props.data[0].skuId] = _qty ?? "";
+        }
+        // this.props && this.props.filters &&
+      }
+    } else {
+      localStorageQuantity[this.props.data[0].skuId] = _qty;
+      localStorage.setItem("quantity", JSON.stringify(localStorageQuantity));
+      this.props.filters.quantity[this.props?.data[0]?.skuId] =
+        localStorageQuantity[this.props?.data[0]?.skuId];
+    }
+
+    sessionStorage.setItem(
+      "updatedProduct",
+      JSON.stringify({
+        sku_id: this.props.data[0].skuId,
+        qty:
+          this.props.quantity &&
+          this.props.data &&
+          this.props.quantity[this.props.data[0].skuId]
+            ? this.props.quantity[this.props.data[0].skuId]
+            : 1,
+        price: this.props.data[0].offerPrice,
+      })
+    );
+    {
+      alert("Added to cart!");
+      setTimeout(() => {
+        window.location.reload();
+      }, 1500);
+    }
 
     this.setState({
       modelOpen: false,
@@ -524,7 +602,8 @@ class Component extends React.Component {
             this.handleCodChange,
             this.canceldeletechecklist,
             this.deletechecklists,
-            this.handleLocalStorage
+            this.handleLocalStorage,
+            this.deletechecklistsAddtoCart
           )}
         </Hidden>
 
@@ -664,6 +743,7 @@ class Component extends React.Component {
             )}
             <Buynowfixed
               deleteComment={this.deletechecklists}
+              addtoCartToBuyNow={this.deletechecklistsAddtoCart}
               data={this.props.data}
               onClick={this.handleLocalStorage.bind(this)}
               productIsActive={isactive ?? ""}

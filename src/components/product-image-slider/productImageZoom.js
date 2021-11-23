@@ -1,5 +1,6 @@
-import { Button, Grid, Hidden } from "@material-ui/core";
+import { Grid, Hidden, IconButton } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
+import { ArrowLeft, ArrowRight } from "@material-ui/icons";
 import PropTypes from "prop-types";
 import React from "react";
 import { GlassMagnifier } from "react-image-magnifiers";
@@ -191,12 +192,7 @@ class ProductImageZoom extends React.Component {
     const { showimage, largeImage, showimageBig, largeImageBig } = this.state;
     const dataCarousel = {
       infinite: false,
-      slidesToShow:
-        data && data.length > 0
-          ? data[0] && data[0]?.fadeImages?.arrOfurls?.length > 3
-            ? limit
-            : data[0]?.fadeImages?.arrOfurls?.length
-          : 0,
+      slidesToShow: 3,
       slidesToScroll: 1,
       // vertical: true,
       // verticalSwiping: true,
@@ -224,18 +220,7 @@ class ProductImageZoom extends React.Component {
       <div>
         {/* {JSON.stringify(showimage)} */}
         <Grid container>
-          <Grid item xs={10}>
-            {/* <div className='imagecard' id="divs" onMouseOut={event => this.zoomOut(event)} onMouseMove={event => this.zoomIn(event)}>
-                {data[0].ProductContactNum[0].isReadyToShip == true ? <div class="one-day-ship" ></div> : ""} */}
-            {/* <div id='flashlight'></div> */}
-            {/* <img className='img-zooming-' id="imgZoom" width="100%" height="100%" className={`${showimage ? '' : 'shine'}`} src={showimage} alt="" />
-              </div>
-              <div className='overly-img' id="overlay"
-                style={{ backgroundImage: `url(${showimage})` }} onMouseOut={event => this.zoomOut(event)}>
-                </div> */}
-
-            {/* <div class="zoomreact" style={{  boxShadow: "0px 2px 4px 4px rgba(0, 0, 0, 0.1), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12)" , width: "100%" }}><ReactImageZoom {...props} /></div> */}
-
+          <Grid item xs={11}>
             <div>
               <div
                 className={_isSilver ? "imagecardSilver" : "imagecardSilver"}
@@ -246,35 +231,6 @@ class ProductImageZoom extends React.Component {
                   width: "97%",
                 }}
               >
-                {/* {alert(JSON.stringify(this.props.data[0].fadeImages.arrOfurls_2X[0]))} */}
-                {/* <Grid container >
-                <Grid item lg={1}>
-                {data.map(val => {
-                
-                var split = val.offerDiscount.split(" ")
-                  return < span style={{ color: "#fff" }}>
-                < div class="ribbon_dic" > {split[0]} < br /> {split[1]}</div>
-                  </span>
-                })}
-                </Grid>
-                <Grid item lg={3}>
-                {data[0].ProductContactNum[0].isReadyToShip == true ? <div class="one-day-ship" ></div> : ""}
-                
-              </Grid>
-            </Grid> */}
-
-                {/* !this.props.isSilver &&  */}
-                {/* {data[0]?.ProductContactNum[0]?.isReadyToShip == true ? (
-                  this.props?.isSilver ? (
-                    <div class={"one-day-ship_only_silver"}>
-                      <img src={""} alt="" />
-                    </div>
-                  ) : (
-                    <div class={data && data[0] && data[0]?.offerDiscount ? "one-day-ship_" : "one-day-ship_only"}></div>
-                  )
-                ) : (
-                  ""
-                )} */}
                 {this.handleVideoCheck(showimage) ? (
                   <video
                     preload="auto"
@@ -356,7 +312,7 @@ class ProductImageZoom extends React.Component {
             paddingTop: "20px",
           }}
         >
-          <Grid item xs={10}>
+          <Grid item xs={9}>
             <div className="imgzom-sidecraousel-media">
               {data &&
               data.length > 0 &&
@@ -372,24 +328,14 @@ class ProductImageZoom extends React.Component {
                       : null
                   }
                 >
-                  <Button
-                    onClick={this.previous}
-                    disabled={
-                      data &&
-                      data.length > 0 &&
-                      data[0] &&
-                      data[0].fadeImages.arrOfurls.length === 4
-                        ? true
-                        : false
-                    }
-                  >
-                    <i
-                      className={`fa fa-angle-up ${
-                        _isSilver ? classes.iconfill : classes.iconfillStylori
-                      }`}
-                      style={{ fontSize: "35px" }}
-                    ></i>
-                  </Button>
+                  <IconButton size="small" onClick={this.previous}>
+                    <ArrowLeft
+                      style={{
+                        color: "#A66E1D",
+                        fontSize: "40px",
+                      }}
+                    />
+                  </IconButton>
                 </span>
               ) : null}
               <Slideshow
@@ -420,25 +366,14 @@ class ProductImageZoom extends React.Component {
                       : null
                   }
                 >
-                  <Button
-                    onClick={this.next}
-                    disabled={
-                      data &&
-                      data.length > 0 &&
-                      data[0] &&
-                      data[0].fadeImages.arrOfurls.length === 4
-                        ? true
-                        : false
-                    }
-                  >
-                    <i
-                      className={`fa fa-angle-down ${
-                        _isSilver ? classes.iconfill : classes.iconfillStylori
-                      }`}
-                      style={{ fontSize: "35px", fill: "#A66E1D" }}
-                      // className={`${classes.colorMain}`}
-                    ></i>
-                  </Button>
+                  <IconButton size="small" onClick={this.next}>
+                    <ArrowRight
+                      style={{
+                        color: "#A66E1D",
+                        fontSize: "40px",
+                      }}
+                    />
+                  </IconButton>
                 </span>
               ) : null}
             </div>

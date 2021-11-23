@@ -14,6 +14,9 @@ const styles = (theme) => ({
     paddingRight: "10px",
     paddingLeft: "10px",
   },
+  padding1acc: {
+    padding: "10px",
+  },
   paddingCart1: {
     paddingRight: "40px",
     paddingLeft: "40px",

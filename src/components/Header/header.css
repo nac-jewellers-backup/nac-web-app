@@ -71,7 +71,7 @@ html {
   animation-timing-function: linear;
 }
 
-.shine {
+/* .shine {
   animation-duration: 1s;
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
@@ -87,9 +87,9 @@ html {
     #f6f7f8 100%
   );
   background-size: 980px 898px;
-  /* height: 898px; */
+
   position: relative;
-}
+} */
 
 .menuListHoverDiv {
   width: 120px;

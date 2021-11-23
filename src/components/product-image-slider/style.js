@@ -302,7 +302,7 @@ const styles = (theme) => ({
     [theme.breakpoints.up("lg")]: {
       background: "#fff !important",
       height: "100%",
-      overflowY: "scroll",
+      //overflowY: "scroll",
       width: "60%",
       marginTop: "3%",
       marginBottom: "3%",
@@ -415,13 +415,13 @@ const styles = (theme) => ({
   },
   AddtoCartbuttons: {
     background: "#2F348B ",
-
     color: theme.palette.overallButoon.contrastText,
     borderRadius: "unset !important",
     boxShadow: "4px 5px 6px #BEBFBF !important",
     "&:hover, &:focus": {
       background: "#2F348B  !important",
     },
+    height: "36px !important",
   },
 
   backgsecondary: {
