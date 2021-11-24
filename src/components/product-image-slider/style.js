@@ -2,7 +2,14 @@ const styles = (theme) => ({
   root: {
     overflow: "hidden",
   },
-
+  shortdis: {
+    [theme.breakpoints.down("lg")]: {
+      fontSize: "15px !important",
+    },
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "12px !important",
+    },
+  },
   preButton: {
     opacity: "1!important",
 
@@ -204,6 +211,7 @@ const styles = (theme) => ({
       color: "#2F348B",
       lineHeight: "20px",
       fontFamily: "notoSerif-regular !important",
+      display: "inline-block",
     },
     [theme.breakpoints.down("xs")]: {
       fontSize: "18px !important",

@@ -184,7 +184,8 @@ const Productprice = (
                       <h1 className={`pdp-title ${classes.title} `}>
                         {val?.title}
                       </h1>
-                      <h4>{val.shortDis}</h4>
+
+                      {/* <span className={classes.shortdis}>{val.shortDis}</span> */}
                     </Hidden>
                     <Hidden smDown>
                       <Box display="flex" className={`pdp-desc ${classes.dis}`}>
