@@ -153,20 +153,19 @@ export const TopFilters = (props) => {
                   >
                     <Grid item className={classes.filtersLabel}>
                       <a
-                        style={{ color: "#fff", fontSize: 13, fontWeight: 550 }}
+                        style={{ color: "gray", fontSize: 14, fontWeight: 550 }}
                       >
                         {"Price (₹)"}
                       </a>
                     </Grid>
                     <Grid
                       item
-                      xs={3}
                       style={{ display: "flex", justifyContent: "flex-end" }}
                     >
                       {state.listHoverItem === "price" ? (
-                        <ArrowDropUpIcon color="primary" />
+                        <ArrowDropUpIcon />
                       ) : (
-                        <ArrowDropDownIcon color="primary" />
+                        <ArrowDropDownIcon />
                       )}
                     </Grid>
                   </Grid>
@@ -210,8 +209,7 @@ export const TopFilters = (props) => {
                           <Grid item xs={9} className={classes.filtersLabel}>
                             <a
                               style={{
-                                color: "#fff",
-                                fontSize: 13,
+                                fontSize: 14,
                                 fontWeight: 550,
                               }}
                               href={listName.url}
@@ -226,11 +224,12 @@ export const TopFilters = (props) => {
                               display: "flex",
                               justifyContent: "flex-end",
                             }}
+                            className={classes.arrow}
                           >
                             {state.listHoverItem === listName ? (
-                              <ArrowDropUpIcon color="primary" />
+                              <ArrowDropUpIcon />
                             ) : (
-                              <ArrowDropDownIcon color="primary" />
+                              <ArrowDropDownIcon style={{ color: "gray" }} />
                             )}
                           </Grid>
                         </Grid>
@@ -256,14 +255,22 @@ export const TopFilters = (props) => {
                     className={classes.spacingfilterdiv}
                   >
                     <Grid item xs={6}>
-                      <div style={{ fontSize: 13, fontWeight: 550 }}>More</div>
+                      <div
+                        style={{ fontSize: 14, color: "gray", fontWeight: 550 }}
+                      >
+                        More
+                      </div>
                     </Grid>
                     <Grid
                       item
                       xs={6}
                       style={{ display: "flex", justifyContent: "flex-end" }}
                     >
-                      <AddBoxIcon color="primary" />
+                      <AddBoxIcon
+                        style={{
+                          color: "gray",
+                        }}
+                      />
                     </Grid>
                   </Grid>
                 </Grid>
@@ -310,29 +317,24 @@ export const TopFilters = (props) => {
                   <Chip
                     style
                     size="small"
-                    label={"Clear All Search"}
+                    label={"Clear All Fillters"}
                     style={{
                       padding: "14px 14px",
                       marginRight: 5,
                       backgroundColor: "#FFFFFF",
-                      border: "1px solid #0C2879",
+                      border: "1px solid gray",
                       color: "#0C2879",
                       borderRadius: "0px",
                       textTransform: "uppercase",
-                      boxShadow: "4px 4px 4px #bebfbf",
+
                       fontFamily: "notoSerif-regular",
                       cursor: "pointer",
                     }}
-                    onDelete={() => {
+                    deleteIcon={false}
+                    onClick={() => {
                       props.history.push("/jewellery");
                       window.location.reload();
                     }}
-                    deleteIcon={
-                      <i
-                        className="search-choice-close"
-                        class="fa fa-times"
-                      ></i>
-                    }
                   />
                 ) : (
                   ""
@@ -349,9 +351,10 @@ export const TopFilters = (props) => {
                           padding: "14px 14px",
                           marginRight: 6,
                           marginLeft: 2,
-                          backgroundColor: "#8080802e",
+                          border: "1px solid gray",
                           borderRadius: "0px",
                           textTransform: "uppercase",
+                          backgroundColor: "white",
                           cursor: "pointer",
                         }}
                         onDelete={() => props.click(data.label)}
@@ -392,18 +395,16 @@ export const TopFilters = (props) => {
                 }}
               >
                 <Grid item xs={6} style={{ margin: "auto" }}>
-                  <div style={{ fontSize: 13, fontWeight: 550 }}>Sort by</div>
+                  <div style={{ fontSize: 14, fontWeight: 550, color: "gray" }}>
+                    Sort by
+                  </div>
                 </Grid>
                 <Grid
                   item
                   xs={6}
                   style={{ display: "flex", justifyContent: "flex-end" }}
                 >
-                  {state.expanded ? (
-                    <ArrowDropUpIcon color="primary" />
-                  ) : (
-                    <ArrowDropDownIcon color="primary" />
-                  )}
+                  {state.expanded ? <ArrowDropUpIcon /> : <ArrowDropDownIcon />}
                 </Grid>
               </Grid>
 

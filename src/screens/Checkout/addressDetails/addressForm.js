@@ -20,6 +20,7 @@ const AddressComponent = (props) => {
   const { values, handle, setValues } = Addressforms(() =>
     props.changePanel(3, values.selest_my_address)
   );
+  const [state, setState] = React.useState(null);
   const cl = (
     <input
       onChange={() =>
@@ -33,6 +34,15 @@ const AddressComponent = (props) => {
       checked={values.checkValue}
     />
   );
+  const redirectAdd = (num) => {
+    handle.redirectForm1();
+    setState(num);
+  };
+  const redirectAdd2 = (num) => {
+    handle.redirectForm1();
+    setState(num);
+  };
+
   var isedit = localStorage.getItem("isedit");
   const aa = localStorage.getItem("m")
     ? localStorage.getItem("m")
@@ -65,37 +75,14 @@ const AddressComponent = (props) => {
                       : 12
                   }
                 >
-                  {window.location.pathname.split("-")[0] === "/account" ||
-                  values.hidebilling === true ||
-                  values.addrs === true ? (
-                    <>
-                      <h5 className="title">Shipping Addresss</h5>
-                      <br />
-                      <br />
-                    </>
+                  {state == 1 || state == null ? (
+                    <h5 className="title"> Shipping Address</h5>
                   ) : (
-                    <>
-                      <h5 className="title">Shipping Addresss</h5>
-                    </>
+                    <h5 className="title"> Billing Address</h5>
                   )}
+
                   <Grid container spacing={12}>
                     <Grid item lg={2}>
-                      {/* <FormControl variant="outlined" className={classes.formControl}>
-        <Select
-          labelId="demo-simple-select-outlined-label"
-          id="demo-simple-select-outlined"
-          value={values.addressOne.salutation}
-          onChange={(e)=>handle.handleChange_selsect(e)}
-        //   labelWidth={labelWidth}
-        >
-          <MenuItem value="">
-            <em>None</em>
-          </MenuItem>
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
-        </Select> */}
-                      {/* </FormControl> */}
                       <SimpleSelect
                         // val={'1'}
                         name={aa ? [aa] : ["Select"]}
@@ -247,7 +234,6 @@ const AddressComponent = (props) => {
                       />
                     </Grid>
                   </Grid>
-
                   <Grid container spacing={12}>
                     <Grid item xs={3} lg={3}>
                       <SimpleSelect
@@ -312,9 +298,6 @@ const AddressComponent = (props) => {
                   )}
                   {/* {JSON.stringify(values.errortext && values.errortext.pinerr)} */}
                 </p>{" "}
-                {/*  */}
-                {/*  */}
-                {/* {localStorage.getItem("valuessetdata") || localStorage.getItem("vals") ? "" : <> */}
                 {window.location.pathname.split("-")[0] === "/account" ||
                 values.edit_addresId === true ? (
                   ""
@@ -533,11 +516,8 @@ const AddressComponent = (props) => {
                     )}
                   </>
                 )}
-                {/* </>} */}
               </Grid>
-              {/* <div style={{float:"right"}}>
-                                
-                            </div> */}
+
               <div style={{ display: "flex", justifyContent: "flex-end" }}>
                 {values.edit_addresId === true ? (
                   <Button
@@ -573,7 +553,8 @@ const AddressComponent = (props) => {
             values={values}
             setValues={setValues}
             changevalue={props.changePanel}
-            redirectForm1={handle.redirectForm1}
+            redirectForm1={redirectAdd}
+            redirectForm2={redirectAdd2}
             redirectForm={handle.redirectForm}
             changeaddress={props.changeaddress}
             order={props.order}

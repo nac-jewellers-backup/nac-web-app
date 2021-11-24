@@ -404,14 +404,7 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
         save: " ",
         offerDiscount:
           PD && PD.discount ? `${Math.abs(PD.discount)}% OFF` : null,
-        shortDis:
-          PD &&
-          PD !== undefined &&
-          PD.transSkuDescriptionsBySkuId.nodes &&
-          PD.transSkuDescriptionsBySkuId.nodes.length > 0 &&
-          PD.transSkuDescriptionsBySkuId.nodes[0].shortDescription !== ""
-            ? PD.transSkuDescriptionsBySkuId.nodes[0].shortDescription
-            : "Testing Short Description",
+        shortDis: "Testing Short Description",
         dis:
           PD &&
           PD !== undefined &&
@@ -1248,6 +1241,12 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
               like_data.data.youMayalsolike1.nodes.length > 0
               ? like_data.data.youMayalsolike1.nodes.map((val) => {
                   return {
+                    skuId:
+                      val?.transSkuListsByProductId?.nodes[0]
+                        ?.productListByProductId?.transSkuListsByProductId
+                        ?.nodes[0]?.skuId,
+                    productId:
+                      val?.transSkuListsByProductId?.nodes[0].productId,
                     offerDiscount: val?.transSkuListsByProductId?.nodes[0]
                       ?.discount
                       ? `${val?.transSkuListsByProductId?.nodes[0]?.discount}% OFF`

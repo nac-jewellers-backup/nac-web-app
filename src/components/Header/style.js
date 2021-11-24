@@ -281,6 +281,7 @@ export const useStyles = makeStyles((theme) => ({
     padding: "2px 16px 2px 16px",
     fontSize: "0.7rem !important",
     letterSpacing: 2,
+
     cursor: "pointer",
   },
   listedItemsvalue2: {

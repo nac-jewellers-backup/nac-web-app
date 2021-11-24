@@ -74,7 +74,7 @@ query MyQuery {
             markupPrice
             discountPrice
             discount
-         skuId
+             skuId
             skuUrl
             transSkuDescriptionsBySkuId {
               nodes {

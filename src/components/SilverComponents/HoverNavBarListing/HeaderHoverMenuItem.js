@@ -506,7 +506,10 @@ function HeaderHoverMenuItem(props) {
         >
           <Grid
             className={classes.subtopic1}
-            style={{ width: `${props._width}` }}
+            style={{
+              width: `${props._width}`,
+              color: "gray",
+            }}
           >
             {!props.filters &&
               !props.sort &&
@@ -566,10 +569,6 @@ function HeaderHoverMenuItem(props) {
                       style={{ fontSize: "0.9rem" }}
                     >
                       {menuList.label ? menuList.label : menuList}
-                      {/* {props.filtercheck === 'price' && 
-                      (<span> &nbsp;
-                        (<i style={{fontSize:'14px'}} class="fa">&#xf156;</i>)
-                      </span>)} */}
                     </ListItemText>
                   </ListItem>
                 ) : (

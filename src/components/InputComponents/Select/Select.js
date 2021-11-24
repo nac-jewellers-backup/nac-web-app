@@ -1,4 +1,4 @@
-import { OutlinedInput, Select } from "@material-ui/core";
+import { Select } from "@material-ui/core";
 import FormHelperText from "@material-ui/core/FormHelperText";
 import MenuItem from "@material-ui/core/MenuItem";
 import { makeStyles } from "@material-ui/core/styles";
@@ -10,10 +10,10 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: "wrap",
   },
   formControl: {
-    margin: theme.spacing(1),
+    margin: theme.spacing(1.8),
   },
   selectEmpty: {
-    marginTop: theme.spacing(2),
+    marginTop: theme.spacing(3.3),
   },
 }));
 export default function SimpleSelect(props) {
@@ -48,6 +48,7 @@ export default function SimpleSelect(props) {
       <Select
         style={{
           width: "100%",
+
           background: props.disabled ? "rgba(192, 192, 192, 0.41)" : "",
         }}
         displayEmpty
@@ -62,11 +63,9 @@ export default function SimpleSelect(props) {
         value={values[props.name]}
         disabled={props.disabled ? props.disabled : ""}
         name={props.name ? props.name : "select"}
-        input={<OutlinedInput id="outlined-age-native-simple" />}
         inputProps={{ id: "outlined-age-native-simple", "aria-required": true }}
         MenuProps={{ "aria-required": true }}
         className={classes.selectEmpty}
-        variant="outlined"
         color="secondary"
       >
         {props.selectData.map((data) => (

@@ -508,7 +508,7 @@ class Addressdetails extends React.Component {
           ""
         ) : (
           <Button
-            onClick={() => this.props.redirectForm1()}
+            onClick={() => this.props.redirectForm1(1)}
             className={`add-new-address ${classes.normalfonts}`}
           >
             <div></div> Add New Address
@@ -723,7 +723,7 @@ class Addressdetails extends React.Component {
                   " "
                 ) : (
                   <Button
-                    onClick={() => this.props.redirectForm1()}
+                    onClick={() => this.props.redirectForm2(2)}
                     style={{
                       marginBottom: "18px",
                     }}

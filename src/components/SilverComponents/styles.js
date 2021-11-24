@@ -342,9 +342,9 @@ export const useStyles = makeStyles((theme) => ({
     zIndex: 1000,
     top: "4px !important",
     backgroundColor: "white",
-    border: `1px solid ${theme.palette.background.fade}`,
-    boxShadow: "6px 7px 6px #bebfbf !important",
-    color: theme.palette.background.fade,
+    //border: `1px solid ${theme.palette.background.fade}`,
+    //boxShadow: "6px 7px 6px #bebfbf !important",
+    //color: theme.palette.background.fade,
     "& span": {
       fontFamily: "notoSerif-regular",
       letterSpacing: "1px",
