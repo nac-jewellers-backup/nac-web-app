@@ -1,4 +1,4 @@
-import { Container, Grid, Hidden } from "@material-ui/core";
+import { Button, Container, Grid, Hidden, Typography } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 // import Checkoutbreadcrum from '../../components/Checkout/checkoutbreadcrum';
 // import BreadCrumb from '../../components/BreadCrumb/index'
@@ -93,11 +93,30 @@ class Cart extends React.Component {
               ) : (
                 <>
                   <div className="noproductsfound">
-                    There are no items in this cart.{" "}
+                    <Typography
+                      variant="body1"
+                      style={{
+                        fontSize: "20px",
+                        color: "gray",
+                        fontWeight: "bold",
+                      }}
+                    >
+                      There are no items in this cart.{" "}
+                    </Typography>
                   </div>
-                  <a href="/jewellery" className="highlighter">
-                    <div className="continueshopping"> Continue shopping</div>
-                  </a>
+                  <br />
+                  <center>
+                    <Button
+                      color="secondary"
+                      onClick={() => {
+                        window.location.href = "/jewellery";
+                      }}
+                      style={{ fontWeight: "bold" }}
+                      variant="contained"
+                    >
+                      Continue shopping
+                    </Button>
+                  </center>
                 </>
               )}
             </Grid>
@@ -122,12 +141,32 @@ class Cart extends React.Component {
               ) : (
                 <>
                   <div className="noproductsfound">
-                    There are no items in this cart.
+                    <Typography
+                      variant="body1"
+                      style={{
+                        fontSize: "20px",
+                        color: "gray",
+                        fontWeight: "bold",
+                      }}
+                    >
+                      There are no items in this cart.{" "}
+                    </Typography>
                   </div>
-                  <a href="/jewellery">
-                    {" "}
-                    <div className="continueshopping"> Continue shopping</div>
-                  </a>
+                  <br />
+                  <center>
+                    <Button
+                      color="secondary"
+                      onClick={() => {
+                        window.location.href = "/jewellery";
+                      }}
+                      style={{ fontWeight: "bold" }}
+                      variant="contained"
+                    >
+                      Continue shopping
+                    </Button>
+                    <br />
+                    <br />
+                  </center>
                 </>
               )}
             </Grid>

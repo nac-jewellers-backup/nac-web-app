@@ -219,8 +219,8 @@ class ProductImageZoom extends React.Component {
     return (
       <div>
         {/* {JSON.stringify(showimage)} */}
-        <Grid container>
-          <Grid item xs={11}>
+        <Grid container justifyContent="center">
+          <Grid item xs={10}>
             <div>
               <div
                 className={_isSilver ? "imagecardSilver" : "imagecardSilver"}
@@ -308,75 +308,89 @@ class ProductImageZoom extends React.Component {
         </Grid>
         <Grid
           container
+          justifyContent="center"
           style={{
             paddingTop: "20px",
           }}
         >
-          <Grid item xs={9}>
-            <div className="imgzom-sidecraousel-media">
-              {data &&
-              data.length > 0 &&
-              data[0] &&
-              data[0].fadeImages.arrOfurls.length > 3 ? (
-                <span
-                  className={
-                    data &&
-                    data.length > 0 &&
-                    data[0] &&
-                    data[0].fadeImages.arrOfurls.length === 4
-                      ? classes.cursor_notallowed
-                      : null
+          <Grid item xs={12}>
+            <Grid container>
+              <Grid
+                item
+                xs={1}
+                style={{ display: "flex", alignSelf: "center" }}
+              >
+                {data &&
+                data.length > 0 &&
+                data[0] &&
+                data[0].fadeImages.arrOfurls.length > 3 ? (
+                  <span
+                    className={
+                      data &&
+                      data.length > 0 &&
+                      data[0] &&
+                      data[0].fadeImages.arrOfurls.length === 4
+                        ? classes.cursor_notallowed
+                        : null
+                    }
+                  >
+                    <IconButton size="small" onClick={this.previous}>
+                      <ArrowLeft
+                        style={{
+                          color: "#A66E1D",
+                          fontSize: "40px",
+                        }}
+                      />
+                    </IconButton>
+                  </span>
+                ) : null}
+              </Grid>
+              <Grid item xs={10}>
+                <Slideshow
+                  sliderRef={this.slider}
+                  getmsg={this.getimage}
+                  class={
+                    this.props.isSilver
+                      ? "vertical-carousel-silver"
+                      : `vertical-carousel`
                   }
-                >
-                  <IconButton size="small" onClick={this.previous}>
-                    <ArrowLeft
-                      style={{
-                        color: "#A66E1D",
-                        fontSize: "40px",
-                      }}
-                    />
-                  </IconButton>
-                </span>
-              ) : null}
-              <Slideshow
-                sliderRef={this.slider}
-                getmsg={this.getimage}
-                class={
-                  this.props.isSilver
-                    ? "vertical-carousel-silver"
-                    : `vertical-carousel`
-                }
-                imgClass="vertical-carousel-img"
-                fadeImages={data[0]?.fadeImages?.arrOfurls_2X}
-                dataCarousel={dataCarousel}
-                currentImage={this.state.showimage}
-              />
-
-              {data &&
-              data.length > 0 &&
-              data[0] &&
-              data[0].fadeImages.arrOfurls.length > 3 ? (
-                <span
-                  className={
-                    data &&
-                    data.length > 0 &&
-                    data[0] &&
-                    data[0].fadeImages.arrOfurls.length === 4
-                      ? classes.cursor_notallowed
-                      : null
-                  }
-                >
-                  <IconButton size="small" onClick={this.next}>
-                    <ArrowRight
-                      style={{
-                        color: "#A66E1D",
-                        fontSize: "40px",
-                      }}
-                    />
-                  </IconButton>
-                </span>
-              ) : null}
-            </div>
+                  imgClass="vertical-carousel-img"
+                  fadeImages={data[0]?.fadeImages?.arrOfurls_2X}
+                  dataCarousel={dataCarousel}
+                  currentImage={this.state.showimage}
+                />
+              </Grid>
+              <Grid
+                item
+                xs={1}
+                style={{ display: "flex", alignSelf: "center" }}
+              >
+                {data &&
+                data.length > 0 &&
+                data[0] &&
+                data[0].fadeImages.arrOfurls.length > 3 ? (
+                  <span
+                    className={
+                      data &&
+                      data.length > 0 &&
+                      data[0] &&
+                      data[0].fadeImages.arrOfurls.length === 4
+                        ? classes.cursor_notallowed
+                        : null
+                    }
+                  >
+                    <IconButton size="small" onClick={this.next}>
+                      <ArrowRight
+                        style={{
+                          color: "#A66E1D",
+                          fontSize: "40px",
+                        }}
+                      />
+                    </IconButton>
+                  </span>
+                ) : null}
+              </Grid>
+            </Grid>
           </Grid>
         </Grid>
       </div>

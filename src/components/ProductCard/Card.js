@@ -12,7 +12,7 @@ import { ProductDetailContext } from "context";
 import React from "react";
 import {
   LazyLoadImage,
-  trackWindowScroll,
+  trackWindowScroll
 } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { Link } from "react-router-dom";
@@ -22,7 +22,7 @@ export const ImgMediaCard = (props) => {
   const { ProductDetailCtx, setFilters } =
     React.useContext(ProductDetailContext);
   const loc = window.location.search;
-
+  //console.log(this.props.data)
   return (
     <Component
       filters={ProductDetailCtx.filters}
@@ -425,7 +425,9 @@ function Component(props) {
               alignItems="center"
             >
               {props.shopothercategories ? (
+               
                 <>
+                  { console.log(props.data.title)}
                   <Grid container xs={12}>
                     <Typography
                       variant="body1"

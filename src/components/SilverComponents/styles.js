@@ -53,7 +53,8 @@ export const styles = (theme) => ({
     color: "white",
     "& .MuiNativeSelect-select:not([multiple])": {
       "& option": {
-        color: "gold",
+        color: "white",
+        backgroundColor:theme.palette.gold.main,
       },
     },
     "& .MuiInputBase-input": {

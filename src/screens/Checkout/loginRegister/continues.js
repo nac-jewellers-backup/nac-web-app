@@ -85,15 +85,7 @@ const ContinuesComponent = (props) => {
               )}
               {!enterotp && (
                 <>
-                  <h5 className={`title ${classes.normalfonts}`}>
-                    {" "}
-                    Skip registration or login. continue as a guest{" "}
-                  </h5>
-                  <p className={`form-group tp ${classes.normalfonts}`}>
-                    {" "}
-                    (please note, you will need to login in to use a gift
-                    voucher){" "}
-                  </p>
+                 
                   <Input
                     margin="normal"
                     // variant="outlined"
@@ -108,18 +100,16 @@ const ContinuesComponent = (props) => {
                     helperText="Please enter your email id"
                     required
                   />
-                  <p className={`form-group ${classes.normalfonts}`}>
-                    {" "}
-                    We don't share these with anybody. Your contact details are
-                    <br />
-                    secure with us.{" "}
-                  </p>
+                  <span style={{color:"gray",fontSize:"12px"}}>
+                 
+                    We don't share these with anybody. Your contact details are secure with us.{" "}
+                  </span>
                 </>
               )}
               {/* <MailForm/> */}
               <div className="login-butn">
                 <Button className="back-b" onClick={() => clear()}>
-                  Back
+                  Back To Login
                 </Button>
                 <br />
                 {enterotp ? (

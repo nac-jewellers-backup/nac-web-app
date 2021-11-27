@@ -165,6 +165,8 @@ export const GIFTWRAPS = `query MyQuery($cardId: UUID) {
       giftTo
       giftFrom
       message
+      cartId
+      id
     }
   }
 }
@@ -368,24 +370,42 @@ export const youRecentlyViewed = `query MyQuery {
   }
 }
   `;
-export const shopByStyloriSilver = (data) => {
+export const otherCategeries = (data) => {
   return `query MyQuery {
    ${data.map((val) => {
-     return `${val}: allProductMaterials(filter: {and: {materialName: {includes: "Silver"}, productListByProductSku: {isactive: {equalTo: true}, productType: {equalTo: "${val}"}}}}) {
-        nodes {
-          materialName
-          productListByProductSku {
-            productType
-            productImagesByProductId {
-              nodes {
-                imageUrl
-                imagePosition
+     return `${val}:allProductMaterials(
+      filter: {
+        and: {
+          productListByProductSku: {
+            isactive: { equalTo: true }
+            productType: { equalTo: "pendants" }                  
+          }
+        }
+      }
+      first: 1
+    ) {
+      nodes {
+        productSku
+        isActive
+        productListByProductSku {
+          productType     
+          productImagesByProductId {
+            nodes {
+              imageUrl
+              productId
+              isActive
+              productListByProductId {
+                transSkuListsByProductId {
+                  nodes {
+                    skuUrl
+                  }
+                }
               }
             }
           }
         }
-        totalCount
-      }`;
+      }
+    } `;
    })}
   }
   

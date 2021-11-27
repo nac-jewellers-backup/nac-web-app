@@ -17,10 +17,11 @@ import {
   NativeSelect,
   Select,
   Toolbar,
-  Typography,
+  Typography
 } from "@material-ui/core";
 // import HeaderNotification from './Notification/HeaderNotification'
 import { withStyles } from "@material-ui/core/styles";
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import MenuIcon from "@material-ui/icons/Menu";
 import classNames from "classnames";
 import ElasticSearch from "components/ElasticSearch/ElasticSearch";
@@ -235,7 +236,26 @@ class Header extends Component {
                     justify="flex-end"
                     alignItems="center"
                   >
-                    <Grid item xs={3} className="logoImgHeader1">
+                    <Grid item xs={3}
+                      style={{
+                        marginTop: window.location.pathname =="/cart" || window.location.pathname =="/checkout" ? "20px":""
+                      }}
+                    
+                      className="logoImgHeader1" alignItems="center">
+
+                      {
+                        window.location.pathname =="/cart" || window.location.pathname =="/checkout" ?
+                        
+                          <IconButton size="small" onClick={() =>
+                          {
+                            window.history.back()
+                          }}>
+                            <ArrowBackIcon color="secondary"/>&nbsp;&nbsp;
+                        </IconButton>
+                          :" "
+                      }
+
+                     
                       <div
                         id="logoDiv1"
                         className="logoDiv1"
@@ -244,6 +264,7 @@ class Header extends Component {
                         }}
                         style={{ cursor: "pointer" }}
                       >
+                      
                         <img
                           style={{
                             transition: "height 0.2s",
@@ -304,6 +325,9 @@ class Header extends Component {
                                 inputProps={{
                                   name: "name",
                                   id: "uncontrolled-native",
+                                  className: {
+                                    root:classes.selects
+                                  }
                                 }}
                               >
                                 <option value={10}>Ten</option>

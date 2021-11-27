@@ -1159,12 +1159,15 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                     ? PD.productListByProductId.height
                     : null,
               },
-              {
-                name: "Fastening",
-                details: PD?.productListByProductId?.earringBacking
-                  ? PD.productListByProductId.earringBacking
-                  : null,
-              },
+
+              PD.productListByProductId.earringBacking
+                ? {
+                    name: "Fastening",
+                    details: PD?.productListByProductId?.earringBacking
+                      ? PD.productListByProductId.earringBacking
+                      : null,
+                  }
+                : "",
             ],
           },
         ],

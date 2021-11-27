@@ -24,6 +24,8 @@ import { withRouter } from "react-router-dom";
 import "screens/screens.css";
 import Slideshow from "../components/Carousel/carosul";
 import NeedHelp from "../components/needHelp";
+import { API_URL } from "../config";
+import { otherCategeries } from "../queries/productdetail";
 const styles = (theme) => ({
   collectionSection: {
     // "& svg":{
@@ -83,13 +85,29 @@ class ProductDetail extends Component {
     super(props);
     this.state = {
       clear: "",
+      otherCategeriesdata:[],
     };
   }
+ 
 
   componentDidMount() {
     ReactPixel.init("1464338023867789", {}, { debug: true, autoConfig: false });
     ReactPixel.track("PageView");
-  }
+    fetch(`${API_URL}/graphql`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        query: `${otherCategeries(["Earrings", "Pendants", "Rings", "Bracelets", "Bangles"])}`,
+      }),
+    })
+      .then((res) => res.json()).
+      then((data) => {
+        this.setState({ otherCategeriesdata: data })
+       
+      }).catch((err) =>{
+        console.log(err)
+      })
+    }
 
   renderUrl = () => {
     var loc = this.props.location.pathname;
@@ -240,11 +258,9 @@ class ProductDetail extends Component {
             style={{
               maxWidth: "1600px",
               margin: "auto",
-              display: "flex",
-              justifyContent: "center",
             }}
           >
-            <Grid xs={11} container spacing={12} style={{ marginTop: 70 }}>
+            <Grid xs={12} container spacing={12} style={{ marginTop: "70px" }}>
               <Grid item xs={6}>
                 <ProductImageZoom
                   data={this.props.data}
@@ -556,6 +572,7 @@ class ProductDetail extends Component {
           >
             <Grid container spacing={12}>
               <Grid item xs={12}>
+                <br />
                 <ProductDetails data={this.props.data} />
               </Grid>
 
@@ -621,6 +638,7 @@ class ProductDetail extends Component {
                       class="subslider-carousel"
                       dataCarousel={dataCarouselcollections}
                     >
+                      {console.log(this.state.otherCategeriesdata)}
                       {this.props?.data[0]?.fadeImageSublistRecentlyViewed?.map(
                         (val) => {
                           return (

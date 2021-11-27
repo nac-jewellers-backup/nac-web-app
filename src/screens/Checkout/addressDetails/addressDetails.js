@@ -751,8 +751,10 @@ class Addressdetails extends React.Component {
                 JSON.parse(localStorage.getItem("bil_isactive")) === index ? (
                 <Button
                   onClick={() => this.props.changeaddress(4)}
-                  className="summaryOrder-pay-btn"
-                  fullWidth={true}
+                  //className="summaryOrder-pay-btn"
+                      fullWidth={true}
+                      color="primary"
+                      variant="contained"
                 >
                   Continue to Payment Method
                 </Button>

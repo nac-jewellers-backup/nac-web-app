@@ -11,8 +11,10 @@ const useGift = () => {
     gift_from: email,
     message: "",
     haveAlready: false,
-    cart_id: null,
+    cart_id: "",
+    id:"",
   });
+  const [datas,setDatas]= React.useState()
   const [val, setval] = React.useState({
     expanded1: 1,
     expanded2: 1,
@@ -41,19 +43,29 @@ const useGift = () => {
     }
   }, [data]);
   useEffect(() => {
+    
     var messageGift =
       CodData &&
       CodData.data &&
       CodData.data.allGiftwraps &&
       CodData.data.allGiftwraps.nodes;
+    
+  
     if (messageGift && messageGift.length > 0) {
+    
+      setDatas(messageGift);
+      console.log(datas);
       setValues({
         ...values,
         gift_to: messageGift[0].giftTo,
         gift_from: messageGift[0].giftFrom,
         message: messageGift[0].message,
+        id: messageGift[0].id,
+        cardId:messageGift[0].cartId,
         haveAlready: true,
       });
+      
+     
     }
   }, [CodData]);
 
@@ -76,7 +88,7 @@ const useGift = () => {
 
   const handlers = { handleSubmit, handleChange };
 
-  return { values, handlers, val, data, setval };
+  return { values, handlers, val, data, setval,CodData };
 };
 
 export default useGift;

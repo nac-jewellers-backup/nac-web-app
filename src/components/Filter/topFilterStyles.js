@@ -159,14 +159,7 @@ export const styles = makeStyles((theme) => ({
     },
     minWidth: "130px ",
   },
-  shortby: {
-    maxWidth: "150px",
-    marginBottom: "10px",
-
-    [theme.breakpoints.only("md")]: {
-      maxWidth: "100px !important",
-    },
-  },
+ 
   spacingfilterdiv: {
     display: "flex",
     alignItems: "center",
@@ -180,7 +173,7 @@ export const styles = makeStyles((theme) => ({
   menuListCursorSort: {
     cursor: "pointer",
     fontFamily: "Roboto",
-    padding: "5px 4px 5px 15px",
+    //padding: "5px 4px 5px 15px",
     // marginRight: 15,
     color: theme.palette.secondary.main,
     // boxShadow: `6px 7px 6px #bebfbf !important`,

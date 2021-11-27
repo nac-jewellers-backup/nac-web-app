@@ -164,7 +164,6 @@ export default function MoreFilters(props) {
                     val !== "Material" &&
                     val !== "Collection" &&
                     val !== "Offers" &&
-                    val !== "Gender" &&
                     val != "Style" &&
                     val !== "Gemstones" &&
                     val !== "Weight"
@@ -172,7 +171,7 @@ export default function MoreFilters(props) {
                     return (
                       <Grid
                         item
-                        xs={3}
+                        xs={2}
                         style={{ marginBottom: "3%", padding: 20 }}
                       >
                         <div

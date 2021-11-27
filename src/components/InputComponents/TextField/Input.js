@@ -15,8 +15,18 @@ import React from "react";
 // Live
 const useStyles = makeStyles({
   root: {
-    borderRadius: "0px",
+   
+   
+  "& .MuiFilledInput-root":{
+    borderRadius:"0px"
+    },
+    "& .MuiFilledInput-root:before": {
+      border:"none"
+    }
   },
+
+
+
 });
 
 export const Input = (props) => {
@@ -37,6 +47,8 @@ export const Input = (props) => {
   const defaultStyle = {
     margin: "normal",
   };
+    
+
 
   const [invalid, setInvalid] = React.useState(false);
 
@@ -63,6 +75,7 @@ export const Input = (props) => {
       {props.checkoutgift ? (
         <>
           <TextField
+           
             variant="filled"
             autoComplete={props && props.autoComplete && props.autoComplete}
             inputProps={{ pattern, maxLength, minLength }}
@@ -79,6 +92,7 @@ export const Input = (props) => {
             rowsMax={rowsMax}
             minRows={4}
             color="secondary"
+            
             className={classes.root}
           />
         </>

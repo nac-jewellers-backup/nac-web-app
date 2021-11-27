@@ -192,7 +192,7 @@ export function PaperSheetProduct(props) {
   return (
     <>
       <Hidden smDown>
-        <Grid container>
+        <Grid container justifyContent="center">
           <Grid
             item
             xs={4}

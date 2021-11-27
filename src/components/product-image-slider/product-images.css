@@ -918,7 +918,7 @@ body {
   border: 1px solid #ccc;
   margin-bottom: 15px !important;
   width: 88% !important;
-  box-shadow: 7px 7px 5px #1a181866;
+  box-shadow: rgb(165 164 165) 4px 4px 4px;
   overflow: hidden;
   /* height: 80px !important; */
   outline: none !important;
