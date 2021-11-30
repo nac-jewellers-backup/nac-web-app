@@ -64,7 +64,7 @@ const Gallery = (
         target="_blank"
         onClick={handleProductDetatiContext(props)}
       >
-        {props?.similarProducts ? (
+        {props.similarProducts ? (
           <>
             <LazyLoadImage
               style={{
@@ -356,18 +356,36 @@ const renderImages = (props, cardstate) => {
   if (props.static) {
     return props.image;
   } else {
+    // console.log(props.data);
+    // console.log(cardstate);
+    //debugger;
     const filterType = cardstate?.hovered ? "hoverImage" : "placeImage";
 
     return props?.data &&
       props?.data?.image &&
-      filterType === undefined &&
-      props?.data?.image[filterType] === undefined &&
+      props?.data?.image["hoverImage"] &&
       props?.data?.image["hoverImage"].length === 0
-      ? "https://styloriimages.s3.ap-south-1.amazonaws.com/Banners/Stylori+Silver/StyloriSilver+nemonic.png"
-      : props?.data?.image[filterType].img;
+      ? "https://alpha-assets.stylori.com/1000x1000/images/static/Image_Not_Available.jpg"
+      : props?.data?.image?.[filterType]?.img;
   }
 };
+const similarProductrenderImages = (props, cardstate) => {
+  if (props.static) {
+    return props.image;
+  } else {
+    // console.log(props.data);
+    // console.log(cardstate);
+    //debugger;
+    const filterType = cardstate?.hovered ? "hoverImage" : "placeImage";
 
+    return props?.data &&
+      props?.data?.image &&
+      props?.data?.image["hoverImage"] &&
+      props?.data?.image["hoverImage"].length === 0
+      ? "https://alpha-assets.stylori.com/1000x1000/images/static/Image_Not_Available.jpg"
+      : props?.data?.img;
+  }
+};
 function Component(props) {
   const classes = useStyles();
   const [cardstate, setCardState] = React.useState({
@@ -480,7 +498,7 @@ function Component(props) {
                               style={{ display: "flex", alignSelf: "center" }}
                             >
                               {" "}
-                              <span
+                              <Typography
                                 className={classes.strikeText}
                                 style={{
                                   paddingLeft: "6px",
@@ -504,20 +522,25 @@ function Component(props) {
                                         )}
                                   </span>
                                 </span>
-                              </span>
+                              </Typography>
                             </span>
                           </Typography>
                         )}{" "}
                       </Grid>
-
-                      <Grid items>
-                        <Typography className={classes.discountPercentage}>
-                          {props.data.save == 0
-                            ? " "
-                            : ` ${Math.abs(Math.round(props.data.save))}% OFF`}
-                          &nbsp;&nbsp;
-                        </Typography>
-                      </Grid>
+                      {props.similarProducts ? (
+                        " "
+                      ) : (
+                        <Grid items>
+                          <Typography className={classes.discountPercentage}>
+                            {props.data.save == 0
+                              ? " "
+                              : ` ${Math.abs(
+                                  Math.round(props.data.save)
+                                )}% OFF`}
+                            &nbsp;&nbsp;
+                          </Typography>
+                        </Grid>
+                      )}
                     </Grid>
                     <Grid container xs={12}>
                       <Typography
@@ -563,8 +586,8 @@ function Component(props) {
                         </Typography>
                       ) : (
                         <Grid container>
-                          <Grid item xs={8}>
-                            <span
+                          <Grid item xs={6}>
+                            <Typography
                               className={classes.offerMainPrice}
                               style={{
                                 justifyContent: "flex-start",
@@ -573,37 +596,31 @@ function Component(props) {
                                 color: "rgb(109,110,112)",
                               }}
                             >
-                              <span>
-                                {new Intl.NumberFormat("en-IN", {
-                                  style: "currency",
-                                  currency: "INR",
-                                  minimumFractionDigits: 0,
-                                }).format(Math.round(props.data.price))}
-                              </span>
-                              <span
-                                style={{
-                                  color: "rgb(109,110,112)",
-                                  textDecoration: "line-through",
-                                  fontSize: "13px",
-                                  paddingLeft: "5px",
-                                  fontWeight: "lighter",
-                                  marginTop: "2px",
-                                }}
-                              >
-                                {props.data.offerPrice == 0
-                                  ? " "
-                                  : new Intl.NumberFormat("en-IN", {
-                                      style: "currency",
-                                      currency: "INR",
-                                      minimumFractionDigits: 0,
-                                    }).format(
-                                      Math.round(props.data.offerPrice)
-                                    )}
-                              </span>
+                              {new Intl.NumberFormat("en-IN", {
+                                style: "currency",
+                                currency: "INR",
+                                minimumFractionDigits: 0,
+                              }).format(Math.round(props.data.price))}
+                            </Typography>
+                            <span
+                              style={{
+                                color: "rgb(109,110,112)",
+                                textDecoration: "line-through",
+                                fontSize: "12px",
+                                paddingLeft: "5px",
+                              }}
+                            >
+                              {props.data.offerPrice == 0
+                                ? " "
+                                : new Intl.NumberFormat("en-IN", {
+                                    style: "currency",
+                                    currency: "INR",
+                                    minimumFractionDigits: 0,
+                                  }).format(Math.round(props.data.offerPrice))}
                             </span>
                           </Grid>
 
-                          <Grid item xs={4}>
+                          <Grid item xs={6}>
                             <span
                               style={{
                                 fontWeight: "bold",
@@ -612,7 +629,9 @@ function Component(props) {
                                 paddingLeft: "5px",
                               }}
                             >
-                              {props.data.save == 0
+                              {props.similarProducts
+                                ? " "
+                                : props.data.save == 0
                                 ? " "
                                 : ` ${Math.abs(
                                     Math.round(props.data.save)
