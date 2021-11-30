@@ -61,23 +61,16 @@ class Buynowfixed extends React.Component {
         });
       }
     };
-    const deletechecklists = () => {
-      var skuId = this.props.data[0].skuId;
-      var products = [];
-      var cartId = "";
-      var userId = "";
-      var obj = { sku_id: "", qty: "", price: "" };
-      obj["sku_id"] = skuId;
-      obj["qty"] = 1;
-      obj["price"] = this.props.data[0].offerPrice[0];
-      products.push(obj);
-      var skuObj = { cart_id: cartId, user_id: userId, products: products };
-      localStorage.setItem("cartDetails", JSON.stringify(skuObj));
-      window.location.href = "/cart";
-      this.setState({
-        modelOpen: false,
-      });
+    const handleLocalStorageAddtoCart = () => {
+      if (this.valus(this.props.data[0].skuId) === 1) {
+        this.props.deleteComment();
+      } else {
+        this.setState({
+          modelOpen: true,
+        });
+      }
     };
+
     let productIsActive = this.props.productIsActive ?? "";
     return (
       <div style={{ width: "100%" }}>
@@ -163,11 +156,7 @@ class Buynowfixed extends React.Component {
                   xs={6}
                   style={{ textAlign: "center", backgroundColor: "#white" }}
                 >
-                  <div
-                    onClick={() =>
-                      productIsActive ? this.props.deleteComment() : ""
-                    }
-                  >
+                  <div onClick={() => this.props.addtoCartToBuyNow()}>
                     <Buynowbutton
                       sku={data[0].skuId}
                       // class={`product-footer-buynow ${
@@ -176,7 +165,9 @@ class Buynowfixed extends React.Component {
                       class={`product-footer-buynow ${classes.addtoCartToBuyNowStyle}`}
                       addtoCartToBuyNow={true}
                       onClick={
-                        productIsActive ? handleLocalStorage.bind(this) : ""
+                        productIsActive
+                          ? handleLocalStorageAddtoCart.bind(this)
+                          : ""
                       }
                       productIsActive={productIsActive ?? ""}
                     />
@@ -193,7 +184,7 @@ class Buynowfixed extends React.Component {
                 >
                   <div
                     onClick={() =>
-                      productIsActive ? this.props.deleteComment() : ""
+                      productIsActive ? this.props.addtoCartToBuyNow() : ""
                     }
                   >
                     <Buynowbutton
@@ -201,7 +192,9 @@ class Buynowfixed extends React.Component {
                       class={`product-footer-buynow1 ${classes.addtoCartToBuyNowStyle}`}
                       addtoCartToBuyNow={true}
                       onClick={
-                        productIsActive ? handleLocalStorage.bind(this) : ""
+                        productIsActive
+                          ? handleLocalStorageAddtoCart.bind(this)
+                          : ""
                       }
                       // productIsActive={productIsActive ?? ""}
                     />

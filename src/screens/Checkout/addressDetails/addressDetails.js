@@ -308,6 +308,8 @@ class Addressdetails extends React.Component {
                                   >
                                     Select to continue{" "}
                                   </Button>
+                                  <br />
+                                  <br />
                                 </>
                               )}
                             </>
@@ -448,7 +450,10 @@ class Addressdetails extends React.Component {
                                   <>
                                     <Button
                                       disabled
-                                      style={{ float: "right" }}
+                                      style={{
+                                        float: "right",
+                                        marginBottom: "18px",
+                                      }}
                                       className="apply-b address_card_disabled"
                                       onClick={() => {}}
                                     >
@@ -465,6 +470,9 @@ class Addressdetails extends React.Component {
                                     <Button
                                       style={{ float: "right" }}
                                       className="apply-b"
+                                      style={{
+                                        marginBottom: "18px",
+                                      }}
                                       onClick={() => {
                                         this.props.selectaddreses(
                                           val_addrs1,
@@ -500,7 +508,7 @@ class Addressdetails extends React.Component {
           ""
         ) : (
           <Button
-            onClick={() => this.props.redirectForm1()}
+            onClick={() => this.props.redirectForm1(1)}
             className={`add-new-address ${classes.normalfonts}`}
           >
             <div></div> Add New Address
@@ -522,6 +530,7 @@ class Addressdetails extends React.Component {
             </div>
             {values.checkValue1 === false ? (
               <>
+                <br />
                 <h5 className="title"> Billing Address</h5>
                 <br />
                 <Grid container spacing={12}>
@@ -537,7 +546,7 @@ class Addressdetails extends React.Component {
                             <Grid
                               item
                               xs={12}
-                              lg={6}
+                              lg={12}
                               style={{ paddingRight: "15px" }}
                             >
                               <div
@@ -669,11 +678,16 @@ class Addressdetails extends React.Component {
                                           ></i>{" "}
                                           &nbsp;Selected
                                         </Button>
+                                        <br />
+                                        <br />
                                       </>
                                     ) : (
                                       <>
                                         <Button
-                                          style={{ float: "right" }}
+                                          style={{
+                                            float: "right",
+                                            marginBottom: "18px",
+                                          }}
                                           className="apply-b"
                                           onClick={() => {
                                             this.props.selectaddreses(
@@ -687,6 +701,8 @@ class Addressdetails extends React.Component {
                                         >
                                           Select to continue{" "}
                                         </Button>
+                                        <br />
+                                        <br />
                                       </>
                                     )}
                                   </>
@@ -704,10 +720,13 @@ class Addressdetails extends React.Component {
                   values.addressvalues.data &&
                   values.addressvalues.data.allUserAddresses.nodes.length >
                     4) ? (
-                  ""
+                  " "
                 ) : (
                   <Button
-                    onClick={() => this.props.redirectForm1()}
+                    onClick={() => this.props.redirectForm2(2)}
+                    style={{
+                      marginBottom: "18px",
+                    }}
                     className={`add-new-address ${classes.normalfonts}`}
                   >
                     <div></div> Add New Address
@@ -721,8 +740,7 @@ class Addressdetails extends React.Component {
         ) : (
           ""
         )}
-
-        {this.props.order
+        {window.location.pathname == "/checkout" && this.props.order
           ? " "
           : _add_data_addres() &&
             _add_data_addres().map((val_addrs1, index) => {
@@ -733,7 +751,10 @@ class Addressdetails extends React.Component {
                 JSON.parse(localStorage.getItem("bil_isactive")) === index ? (
                 <Button
                   onClick={() => this.props.changeaddress(4)}
-                  className="summaryOrder-pay-btn"
+                  //className="summaryOrder-pay-btn"
+                      fullWidth={true}
+                      color="primary"
+                      variant="contained"
                 >
                   Continue to Payment Method
                 </Button>

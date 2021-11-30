@@ -1,12 +1,13 @@
 import {
-  ExpansionPanel,
-  ExpansionPanelDetails,
-  ExpansionPanelSummary,
-  Grid,
-  Hidden,
-  Typography,
+  Checkbox,
+
+
+
+
+
+  FormControlLabel,
+  Hidden
 } from "@material-ui/core";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { API_URL } from "config";
 import { CartContext } from "context";
 import cart from "mappers/cart";
@@ -14,10 +15,9 @@ import { cartCodPincode } from "queries/pincode";
 import { CheckForCod } from "queries/productdetail";
 import React from "react";
 import CashonDelivey from "./cashonDelivery";
-import Creditform from "./creditForm";
-import Debitform from "./debitForm";
 import Netbanking from "./netBanking";
 import "./payment.css";
+
 var va = {};
 class PaymentIndex extends React.Component {
   constructor() {
@@ -25,6 +25,10 @@ class PaymentIndex extends React.Component {
     this.state = {
       isActive: "CashonDelivey",
       disabledCOD: false,
+      cod: false,
+      payonline: false,
+      payment: null,
+      show:false,
     };
   }
 
@@ -48,109 +52,113 @@ class PaymentIndex extends React.Component {
     var a = 1;
 
     const dataCard1 = this.props.data ? this.props.data : [];
+    const datacheck = [
+      {
+        id: 1,
+        title: "Credit card",
+        value:"Netbanking"
+      },
+      {
+        id: 2,
+        title: "Debit card",
+        value:"Netbanking"
+      },
+      {
+        id: 3,
+        title: "Net Banking",
+        value:"Netbanking"
+        
+      },
+      {
+        id: 4,
+        title: "Cash on Delivery",
+        value:"CashonDelivey"
+      },
+      {
+        id: 5,
+        title: "Offline Payment",
+        value:"CashonDelivey"
+      },
+    ]
+
+    const checked = (checked,id) => {
+      this.setState({payment: checked ? id : null})
+    };
 
     return (
-      <div className="payment-div" style={{ width: "100%" }}>
+      <div >
         <Hidden smDown>
-          <Grid container spacing={12} lg={12} className="panel-body">
-            <Grid item lg={3}>
-              <div className="pay-index-subhed">
-                <p
-                  className={
-                    this.state.isActive == "Netbanking"
-                      ? "selectedcolor"
-                      : "unselected"
-                  }
-                  onClick={() => this.toggleCollapsed("Netbanking")}
-                  // style={{ background: "#dfdfdf" }}
-                >
-                  <div className="net-bnk-icon"></div> &nbsp; Pay Online{" "}
-                </p>
-
-                <p
-                  className={`${
-                    this.state.isActive == "CashonDelivey"
-                      ? "selectedcolor"
-                      : "unselected"
-                  } 
-                            ${
-                              this.state.disabledCOD
-                                ? "paragraph_onclick"
-                                : null
-                            }`}
-                  onClick={() => this.toggleCollapsed("CashonDelivey")}
-                >
-                  <div className="code-icon"></div>&nbsp; Cash on Delivery (COD)
-                </p>
+        {
+              datacheck.map((val) => {
+                return (
+                  <>
+                  <div key={val.id}>
+                      <FormControlLabel
+                        onChange={(e) => {
+                          checked(e.target.checked, val.id);
+                          this.toggleCollapsed(val.value);
+                          
+                        }}
+                        
+                        control={<Checkbox  checked={this.state.payment === val.id}/>}
+                        label={
+                          <span style={{ color: "gray", whiteSpace: "nowrap" }}>
+                           {val.title}
+                          </span>
+                        }
+                    />
+                    <br/>
+                  </div>
+                   
+                    </>)  
+              })
+          }
+          <div
+          >
+                {this.state.payment == 1 && <Netbanking />}
+                {this.state.payment == 2 && <Netbanking />}
+                {this.state.payment == 3 && <Netbanking />}
+                {this.state.payment == 4 && <CashonDelivey />}
+               {this.state.payment == 5 && <CashonDelivey />}
               </div>
-            </Grid>
-            <Grid item lg={5} md={5} xs={7}>
-              <div
-                style={{ marginTop: "20px" }}
-                className="pay-index-subhed_datas "
-              >
-                {this.state.isActive == "Creditform" && <Creditform />}
-                {this.state.isActive == "Debitform" && <Debitform />}
-                {this.state.isActive == "Netbanking" && <Netbanking />}
-                {
-                  // !dataCard1.length > 0 ?
-                  this.state.isActive == "CashonDelivey" && <CashonDelivey />
-                  // :"cash on delivery is not available"
-                }
-              </div>
-            </Grid>
-          </Grid>
         </Hidden>
 
         <Hidden mdUp>
-          {/* <ExpansionPanel className="respone-div div_DARK"
-                    >
-                        <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-                            <Typography className="py-head"><div className="cc-icon">&nbsp;</div>Credit card  </Typography>
-                        </ExpansionPanelSummary>
-                        <ExpansionPanelDetails style={{ padding: "0px" }}>
-                            <Creditform data={this.props.data} dataCard1={dataCard1}/>
-                        </ExpansionPanelDetails> 
-                    </ExpansionPanel> */}
-
-          {/* <ExpansionPanel className="respone-div div_DARK"
-                    >
-                        <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-                            <Typography className="py-head">  <div className="dc-icon"></div> &nbsp; Debit card </Typography>
-                        </ExpansionPanelSummary>
-                        <ExpansionPanelDetails style={{ padding: "0px" }}>
-                            <Debitform data={this.props.data} dataCard1={dataCard1}/>
-                        </ExpansionPanelDetails>
-                    </ExpansionPanel>  */}
-
-          <ExpansionPanel className="respone-div">
-            <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography className="py-head">
-                {" "}
-                <div className="net-bnk-icon"></div> &nbsp; Online Pay{" "}
-              </Typography>
-            </ExpansionPanelSummary>
-            <ExpansionPanelDetails>
-              <Netbanking />
-            </ExpansionPanelDetails>
-          </ExpansionPanel>
-
-          <ExpansionPanel
-            className="respone-div"
-            disabled={this.state.disabledCOD ? true : false}
+        {
+              datacheck.map((val) => {
+                return (
+                  <>
+                  <div key={val.id}>
+                      <FormControlLabel
+                        onChange={(e) => {
+                          checked(e.target.checked, val.id);
+                          this.toggleCollapsed(val.value);
+                          
+                        }}
+                        
+                        control={<Checkbox  checked={this.state.payment === val.id}/>}
+                        label={
+                          <span style={{ color: "gray", whiteSpace: "nowrap" }}>
+                           {val.title}
+                          </span>
+                        }
+                    />
+                    <br/>
+                  </div>
+                   
+                    </>)  
+              })
+          }
+          <div
           >
-            <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography className="py-head">
-                {" "}
-                <div className="code-icon"></div>&nbsp; Cash On Delivery (COD){" "}
-              </Typography>
-            </ExpansionPanelSummary>
-            <ExpansionPanelDetails style={{ padding: "0px" }}>
-              <CashonDelivey data={this.props.data} dataCard1={dataCard1} />
-            </ExpansionPanelDetails>
-          </ExpansionPanel>
+                {this.state.payment == 1 && <Netbanking />}
+                {this.state.payment == 2 && <Netbanking />}
+                {this.state.payment == 3 && <Netbanking />}
+                {this.state.payment == 4 && <CashonDelivey />}
+               {this.state.payment == 5 && <CashonDelivey />}
+              </div>
         </Hidden>
-      </div>
+     </div>
     );
   }
 }

@@ -5,7 +5,7 @@ import {
   Grid,
   Hidden,
   ListItemText,
-  Typography,
+  Typography
 } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
@@ -45,6 +45,7 @@ class ProductDetails extends React.Component {
                     <div className="overall-bo">
                       <span
                         key={valueofproductdetail.name}
+                        style={{ fontSize: "15px",fontWeight:"bold" }}
                         className={`product-details ${classes.normalfonts}`}
                       >
                         {" "}
@@ -77,7 +78,7 @@ class ProductDetails extends React.Component {
                                                     {
                                                       <span
                                                         style={{
-                                                          fontSize: "12px",
+                                                          fontSize: "14px",
                                                         }}
                                                       >
                                                         {" "}
@@ -105,7 +106,7 @@ class ProductDetails extends React.Component {
                                                             <span
                                                               style={{
                                                                 fontSize:
-                                                                  "12px",
+                                                                  "14px",
                                                                 textAlign:
                                                                   "left",
                                                               }}
@@ -119,17 +120,20 @@ class ProductDetails extends React.Component {
                                                                   res.details[
                                                                     Index + 1
                                                                   ] ? (
-                                                                  Item == 0 ? (
-                                                                    " "
-                                                                  ) : (
-                                                                    <>
-                                                                      <del>
-                                                                        {Item}
-                                                                      </del>
-                                                                    </>
-                                                                  )
-                                                                ) : (
+                                                                  <>
+                                                                    <del>
+                                                                      {Item}
+                                                                    </del>
+                                                                  </>
+                                                                ) : res.details[
+                                                                    Index
+                                                                  ] !==
+                                                                  res.details[
+                                                                    Index + 1
+                                                                  ] ? (
                                                                   Item
+                                                                ) : (
+                                                                  " "
                                                                 )
                                                               ) : (
                                                                 Item
@@ -148,7 +152,7 @@ class ProductDetails extends React.Component {
                                                       {
                                                         <span
                                                           style={{
-                                                            fontSize: "12px",
+                                                            fontSize: "14px",
                                                           }}
                                                         >
                                                           {" "}
@@ -203,6 +207,7 @@ class ProductDetails extends React.Component {
                   <div className="overall-boxz">
                     <div className="overall-bo">
                       <span
+                        style={{ fontSize: "15px", fontWeight: "bold" }}
                         key={valueofproductdetail.name}
                         className={`product-details ${classes.normalfonts}`}
                       >
@@ -236,7 +241,7 @@ class ProductDetails extends React.Component {
                                                     {
                                                       <span
                                                         style={{
-                                                          fontSize: "12px",
+                                                          fontSize: "15px",
                                                         }}
                                                       >
                                                         {" "}
@@ -264,7 +269,7 @@ class ProductDetails extends React.Component {
                                                             <span
                                                               style={{
                                                                 fontSize:
-                                                                  "12px",
+                                                                  "15px",
                                                                 textAlign:
                                                                   "left",
                                                               }}
@@ -307,7 +312,7 @@ class ProductDetails extends React.Component {
                                                       {
                                                         <span
                                                           style={{
-                                                            fontSize: "12px",
+                                                            fontSize: "15px",
                                                           }}
                                                         >
                                                           {" "}
@@ -362,7 +367,7 @@ class ProductDetails extends React.Component {
                     style={{
                       boxShadow: "rgb(190, 191, 191) 5px 5px 5px",
                       border: "1px solid #ccc",
-                      margin: "12px 0px",
+                      margin: "14px 0px",
                       padding: "0 5px 5px 5px",
                     }}
                     expanded={expanded === val.header}
@@ -412,7 +417,7 @@ class ProductDetails extends React.Component {
                                             variant=""
                                             className={`product-subhead-list ${classes.fontgray}`}
                                           >
-                                            <span style={{ fontSize: "12px" }}>
+                                            <span style={{ fontSize: "14px" }}>
                                               {" "}
                                               {res.name}
                                             </span>
@@ -434,7 +439,7 @@ class ProductDetails extends React.Component {
                                                   return (
                                                     <span
                                                       style={{
-                                                        fontSize: "12px",
+                                                        fontSize: "14px",
                                                         textAlign: "left",
                                                       }}
                                                     >
@@ -445,15 +450,18 @@ class ProductDetails extends React.Component {
                                                           res.details[
                                                             Index + 1
                                                           ] ? (
-                                                          Item == 0 ? (
-                                                            " "
-                                                          ) : (
-                                                            <>
-                                                              <del>{Item}</del>
-                                                            </>
-                                                          )
-                                                        ) : (
+                                                          <>
+                                                            <del>{Item}</del>
+                                                          </>
+                                                        ) : res.details[
+                                                            Index
+                                                          ] !==
+                                                          res.details[
+                                                            Index + 1
+                                                          ] ? (
                                                           Item
+                                                        ) : (
+                                                          " "
                                                         )
                                                       ) : (
                                                         Item
@@ -469,7 +477,7 @@ class ProductDetails extends React.Component {
                                               className={`product-subhead-list ${classes.fontgray}`}
                                             >
                                               <span
-                                                style={{ fontSize: "12px" }}
+                                                style={{ fontSize: "14px" }}
                                               >
                                                 {" "}
                                                 {res.details}
@@ -519,7 +527,7 @@ class ProductDetails extends React.Component {
                     style={{
                       boxShadow: "rgb(190, 191, 191) 5px 5px 5px",
                       border: "1px solid #ccc",
-                      margin: "12px 0px",
+                      margin: "14px 0px",
                       padding: "0 5px 5px 5px",
                     }}
                     expanded={expanded === val.header}
@@ -569,7 +577,7 @@ class ProductDetails extends React.Component {
                                             variant=""
                                             className={`product-subhead-list ${classes.fontgray}`}
                                           >
-                                            <span style={{ fontSize: "12px" }}>
+                                            <span style={{ fontSize: "14px" }}>
                                               {" "}
                                               {res.name}
                                             </span>
@@ -591,7 +599,7 @@ class ProductDetails extends React.Component {
                                                   return (
                                                     <span
                                                       style={{
-                                                        fontSize: "12px",
+                                                        fontSize: "14px",
                                                         textAlign: "left",
                                                       }}
                                                     >
@@ -626,7 +634,7 @@ class ProductDetails extends React.Component {
                                               className={`product-subhead-list ${classes.fontgray}`}
                                             >
                                               <span
-                                                style={{ fontSize: "12px" }}
+                                                style={{ fontSize: "14px" }}
                                               >
                                                 {" "}
                                                 {res.details}

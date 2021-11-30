@@ -1,4 +1,11 @@
-import { Container, Grid, Hidden, Paper } from "@material-ui/core";
+import {
+  Box,
+  Container,
+  Grid,
+  Hidden,
+  Paper,
+  Typography,
+} from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 import ArrowLeftIcon from "@material-ui/icons/ArrowLeft";
 import ArrowRightIcon from "@material-ui/icons/ArrowRight";
@@ -17,7 +24,11 @@ const mobilecarousel = (props, val, wishlist) => {
       <ArrowLeftIcon
         className={`${className} ${classes.collectionSection}`}
         onClick={onClick}
-        style={{ ...style, fill: "theme.palette.secondary.main !important" }}
+        style={{
+          ...style,
+          fill: "theme.palette.secondary.main !important",
+          fontSize: "40px",
+        }}
       />
     );
   };
@@ -27,7 +38,11 @@ const mobilecarousel = (props, val, wishlist) => {
       <ArrowRightIcon
         className={`${className} ${classes.collectionSection}`}
         onClick={onClick}
-        style={{ ...style, fill: "theme.palette.secondary.main !important" }}
+        style={{
+          ...style,
+          fill: "theme.palette.secondary.main !important",
+          fontSize: "40px",
+        }}
       />
     );
   };
@@ -44,15 +59,17 @@ const mobilecarousel = (props, val, wishlist) => {
   };
 
   return (
-    <Slideshow
-      zindex="1000"
-      class="middle"
-      className="responseve-carousel testingcur"
-      imgClass="responseve-carousel-img"
-      fadeImages={data[0]?.fadeImages?.arrOfurls}
-      dataCarousel={dataCarousel}
-      videoControls={true}
-    />
+    <div className={classes.mobilecarousel}>
+      <Slideshow
+        zindex="1000"
+        class="middle"
+        className="responseve-carousel testingcur"
+        imgClass="responseve-carousel-img"
+        fadeImages={data[0]?.fadeImages?.arrOfurls}
+        dataCarousel={dataCarousel}
+        videoControls={true}
+      />
+    </div>
   );
 };
 
@@ -78,7 +95,7 @@ const Productprice = (
             <Hidden mdUp>
               <div
                 style={{
-                  width: "100%",
+                  width: "96%",
                   height: "auto",
                   marginBottom: "10px",
                   marginTop: "18px",
@@ -105,7 +122,8 @@ const Productprice = (
                         style={{ padding: 5 }}
                       >
                         <Grid container item xs={8}>
-                          <h1
+                          <Typography
+                            variant="h4"
                             className={`pdp-title ${classes.title}`}
                             style={{
                               width: "100%",
@@ -113,31 +131,29 @@ const Productprice = (
                             }}
                           >
                             {val?.title}
-                          </h1>
+                          </Typography>
+
                           <span className={`pdp-desc ${classes.dis} `}>
                             {val?.dis?.length > 30 && viewMore
                               ? val?.dis
-                              : `${val?.dis?.substring(0, 60)}...`}
+                              : `${val?.dis?.substring(0, 30)}...`}
                             <span
                               className={`pdp-desc ${
                                 viewMore ? "" : classes.disDescriptionPD
                               }`}
                             >
-                              <span>
-                                <span
-                                  style={{
-                                    float: "right",
-                                    cursor: "pointer",
-                                    color: "#33346D",
-                                    fontSize: "10px",
-                                    marginTop: "5px",
-                                  }}
-                                  onClick={() => {
-                                    handleReadMore();
-                                  }}
-                                >
-                                  {viewMore ? "Read Less" : "Read More"}
-                                </span>
+                              <span
+                                style={{
+                                  float: "right",
+                                  cursor: "pointer",
+
+                                  marginTop: "5px",
+                                }}
+                                onClick={() => {
+                                  handleReadMore();
+                                }}
+                              >
+                                {viewMore ? "Read Less" : "Read More"}
                               </span>
                             </span>
                           </span>
@@ -168,39 +184,32 @@ const Productprice = (
                       <h1 className={`pdp-title ${classes.title} `}>
                         {val?.title}
                       </h1>
+
+                      {/* <span className={classes.shortdis}>{val.shortDis}</span> */}
                     </Hidden>
                     <Hidden smDown>
-                      <p
-                        className={`pdp-desc ${classes.dis}`}
-                        style={{ marginBottom: 0, paddingTop: "5px" }}
-                      >
-                        {val?.dis?.length > 100 && viewMore
-                          ? val?.dis
-                          : val?.dis.substring(0, 100)}
-                        {/* {val.dis} */}
-                        <span>
-                          <p
-                            className={`pdp-desc ${
-                              viewMore ? "" : classes.disDescriptionPD
-                            }`}
+                      <Box display="flex" className={`pdp-desc ${classes.dis}`}>
+                        <Box>
+                          {val?.dis?.length > 70 && viewMore
+                            ? val?.dis
+                            : `${val?.dis.substring(0, 70)}..`}
+                          <span
+                            style={{
+                              cursor: "pointer",
+                              color: "#33346D",
+                              fontSize: "14px",
+                              whiteSpace: "nowrap",
+                            }}
+                            onClick={() => {
+                              handleReadMore();
+                            }}
                           >
-                            <span style={{ width: "80%" }}>
-                              <span
-                                style={{
-                                  float: "right",
-                                  cursor: "pointer",
-                                  color: "#33346D",
-                                }}
-                                onClick={() => {
-                                  handleReadMore();
-                                }}
-                              >
-                                {viewMore ? "Read Less" : "Read More"}
-                              </span>
-                            </span>
-                          </p>
-                        </span>
-                      </p>
+                            {viewMore ? "Read Less" : "Read More"}
+                          </span>
+
+                          {/* {val.dis} */}
+                        </Box>
+                      </Box>
                     </Hidden>
                   </div>
                 </Grid>
@@ -209,6 +218,7 @@ const Productprice = (
           </Grid>
 
           <Hidden smDown>
+            <br />
             <div className={classes.width}>
               {data[0]?.price === data[0]?.offerPrice ? (
                 <Pricing

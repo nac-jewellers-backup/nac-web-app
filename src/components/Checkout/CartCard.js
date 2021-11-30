@@ -314,7 +314,7 @@ class Checkoutcard extends React.Component {
                               )}
                             </>
                           </Grid>
-                          <Grid item xs={5} sm={6} style={{ padding: "13px" }}>
+                          <Grid item xs={5} sm={7} style={{ padding: "13px" }}>
                             {window.location.pathname !== "/checkout" ? (
                               <NavLink
                                 to={dataval.skuUrl}
@@ -360,7 +360,7 @@ class Checkoutcard extends React.Component {
                               </Grid>
                             </Grid>
                           </Grid>
-                          <Grid item xs={4} sm={2} lg={3}>
+                          <Grid item xs={4} sm={2} lg={2}>
                             {window.location.pathname == "/checkout" ? (
                               <div>
                                 <br />
@@ -597,7 +597,13 @@ class Checkoutcard extends React.Component {
           <>
             <Grid container direction="row">
               <Grid item xs={12} lg={6}>
-                <div className={classes.padding}>
+                <div
+                  className={
+                    window.location.pathname !== "/account-shoppingcart"
+                      ? classes.padding1
+                      : classes.padding1acc
+                  }
+                >
                   <Grid container direction="row">
                     <Grid item xs={12}>
                       <Hidden smDown>
@@ -644,32 +650,47 @@ class Checkoutcard extends React.Component {
                         }}
                         className={classes.cart}
                       >
-                        <Grid
-                          container
-                          spacing={12}
-                          xs={12}
-                          style={{
-                            borderBottom: "1.3px solid #C1C1C1",
-                            padding: "15px",
-                          }}
-                        >
+                        {window.location.pathname == "/account-shoppingcart" ? (
                           <Grid
-                            item
-                            xs={3}
-                            sm={3}
+                            container
+                            spacing={12}
+                            xs={12}
                             style={{
-                              display: "flex",
-                              alignContent: "center",
-                              alignItems: "center",
-                              padding: "1px",
+                              borderBottom: "1.3px solid #C1C1C1",
+                              paddingBottom: "10px",
                             }}
                           >
-                            <>
-                              {window.location.pathname !== "/checkout" ? (
-                                <NavLink
-                                  to={dataval?.skuUrl}
-                                  style={{ textDecoration: "none" }}
-                                >
+                            <Grid
+                              item
+                              xs={3}
+                              sm={3}
+                              style={{
+                                display: "flex",
+                                alignContent: "center",
+                                alignItems: "center",
+                                padding: "1px",
+                              }}
+                            >
+                              <>
+                                {window.location.pathname !== "/checkout" ? (
+                                  <NavLink
+                                    to={dataval?.skuUrl}
+                                    style={{ textDecoration: "none" }}
+                                  >
+                                    <center>
+                                      <div
+                                        style={{
+                                          border: "1px solid #D2D3D4",
+                                        }}
+                                      >
+                                        <img
+                                          style={{ width: "70%" }}
+                                          src={dataval?.fadeImages[0]?.imageUrl}
+                                        ></img>
+                                      </div>
+                                    </center>
+                                  </NavLink>
+                                ) : (
                                   <center>
                                     <div
                                       style={{
@@ -677,228 +698,467 @@ class Checkoutcard extends React.Component {
                                       }}
                                     >
                                       <img
-                                        style={{ width: "70%" }}
+                                        style={{ width: "50%" }}
                                         src={dataval?.fadeImages[0]?.imageUrl}
                                       ></img>
                                     </div>
                                   </center>
-                                </NavLink>
-                              ) : (
-                                <center>
-                                  <div
+                                )}
+                              </>
+                            </Grid>
+                            <Grid
+                              item
+                              xs={5}
+                              sm={7}
+                              lg={9}
+                              style={{ padding: "13px" }}
+                            >
+                              {window.location.pathname !== "/checkout" ? (
+                                <NavLink
+                                  to={dataval.skuUrl}
+                                  style={{ textDecoration: "none" }}
+                                >
+                                  <span
                                     style={{
-                                      border: "1px solid #D2D3D4",
+                                      color: "gray",
+                                      textTransform: "capitalize",
                                     }}
                                   >
-                                    <img
-                                      style={{ width: "50%" }}
-                                      src={dataval?.fadeImages[0]?.imageUrl}
-                                    ></img>
-                                  </div>
-                                </center>
-                              )}
-                            </>
-                          </Grid>
-                          <Grid
-                            item
-                            xs={5}
-                            sm={7}
-                            lg={6}
-                            style={{ padding: "13px" }}
-                          >
-                            {window.location.pathname !== "/checkout" ? (
-                              <NavLink
-                                to={dataval.skuUrl}
-                                style={{ textDecoration: "none" }}
-                              >
-                                <span
-                                  style={{
-                                    color: "gray",
-                                    textTransform: "capitalize",
-                                  }}
-                                >
+                                    {val.pro_header}
+                                  </span>
+                                </NavLink>
+                              ) : (
+                                <h3 className={`title ${classes.normalfonts}`}>
                                   {val.pro_header}
-                                </span>
-                              </NavLink>
-                            ) : (
-                              <h3 className={`title ${classes.normalfonts}`}>
-                                {val.pro_header}
-                              </h3>
-                            )}
-                            <Grid
-                              container
-                              spacing={12}
-                              style={
-                                {
-                                  // marginTop: "15px",
+                                </h3>
+                              )}
+                              <Grid
+                                container
+                                spacing={12}
+                                style={
+                                  {
+                                    // marginTop: "15px",
+                                  }
                                 }
-                              }
-                            >
-                              <Grid item xs={12}>
-                                <Grid container spacing={12}>
-                                  {/* <Grid item xs={6}>
-                                    <Typography
-                                      className={`subhesder ${classes.normalfonts}`}
-                                    >
-                                      Size :
-                                    </Typography>
-                                  </Grid> */}
-                                  <Grid container xs={6} direction="row">
-                                    {dataval.maxOrderQty === 1 ? (
-                                      <Grid container>
-                                        <Grid item xs={6}>
-                                          <Typography
-                                            className={`subhesder ${classes.normalfonts}`}
-                                          >
-                                            Quantity :
-                                          </Typography>
+                              >
+                                <Grid item xs={12}>
+                                  <Grid container spacing={12}>
+                                    <Grid container xs={12} direction="row">
+                                      {dataval.maxOrderQty === 1 ? (
+                                        <Grid container>
+                                          <Grid item xs={5}>
+                                            <Typography
+                                              className={`subhesder ${classes.normalfonts}`}
+                                            >
+                                              Quantity :
+                                            </Typography>
+                                          </Grid>
+                                          <Grid item xs={7}>
+                                            <Typography
+                                              className={`subhesder ${classes.normalfonts}`}
+                                            >
+                                              {dataval.maxOrderQty}
+                                            </Typography>
+                                          </Grid>
                                         </Grid>
-                                        <Grid item xs={6}>
-                                          <Typography
-                                            className={`subhesder ${classes.normalfonts}`}
-                                          >
-                                            {dataval.maxOrderQty}
-                                          </Typography>
-                                        </Grid>
-                                      </Grid>
-                                    ) : (
-                                      <>
-                                        <Grid item>
-                                          <Typography
-                                            className={`subhesder ${classes.normalfonts}`}
-                                          >
-                                            Quantity :
-                                          </Typography>
-                                        </Grid>
-                                        <Grid item>
-                                          <Select
-                                            labelId="demo-simple-select-label"
-                                            id="demo-simple-select"
-                                            variant="standard"
-                                            value={
-                                              this?.state?.quantity[index]
-                                                ?.Qty ?? 1
-                                            }
-                                            onChange={(e) =>
-                                              this.onChangeQuantity(
-                                                e,
-                                                this.state.quantity[index]
-                                                  .generateSku,
+                                      ) : (
+                                        <>
+                                          <Grid item>
+                                            <Typography
+                                              className={`subhesder ${classes.normalfonts}`}
+                                            >
+                                              Quantity :
+                                            </Typography>
+                                          </Grid>
+                                          <Grid item>
+                                            <Select
+                                              labelId="demo-simple-select-label"
+                                              id="demo-simple-select"
+                                              variant="standard"
+                                              value={
+                                                this?.state?.quantity[index]
+                                                  ?.Qty ?? 1
+                                              }
+                                              onChange={(e) =>
+                                                this.onChangeQuantity(
+                                                  e,
+                                                  this.state.quantity[index]
+                                                    .generateSku,
+                                                  index
+                                                )
+                                              }
+                                              color="secondary"
+                                            >
+                                              {this?.state?.quantity[
                                                 index
-                                              )
-                                            }
-                                            color="secondary"
-                                          >
-                                            {this?.state?.quantity[
-                                              index
-                                            ]?.QtyArr?.map((data) => (
-                                              <MenuItem value={data}>
-                                                {data}
-                                              </MenuItem>
-                                            ))}
-                                          </Select>
-                                        </Grid>
-                                      </>
-                                    )}
+                                              ]?.QtyArr?.map((data) => (
+                                                <MenuItem value={data}>
+                                                  {data}
+                                                </MenuItem>
+                                              ))}
+                                            </Select>
+                                          </Grid>
+                                        </>
+                                      )}
+                                    </Grid>
                                   </Grid>
+                                  <div>
+                                    {this.state.shipby_arr.map((val) => (
+                                      <>
+                                        {val.skuId === dataval.generatedSku ? (
+                                          <Typography
+                                            className={`subhesder ${classes.normalfonts}`}
+                                          >
+                                            {val.shipby}
+                                          </Typography>
+                                        ) : (
+                                          ""
+                                        )}
+                                      </>
+                                    ))}
+                                    {dataval.dataCard1.map((val) => {
+                                      return (
+                                        <>
+                                          <Pricing
+                                            detail={dataval}
+                                            offerDiscount={
+                                              val.discount
+                                                ? `${val.discount}% - OFF`
+                                                : null
+                                            }
+                                            price={
+                                              val.offerPrice *
+                                              (JSON.parse(
+                                                localStorage.getItem("quantity")
+                                              )[val.generatedSku] ?? 1)
+                                            }
+                                            offerPrice={
+                                              val.price *
+                                              (JSON.parse(
+                                                localStorage.getItem("quantity")
+                                              )[val.generatedSku] ?? 1)
+                                            }
+                                            quantity={this.state.quantity}
+                                          ></Pricing>
+                                        </>
+                                      );
+                                    })}
+                                  </div>
                                 </Grid>
-                                <div style={{ marginTop: "10px" }}>
-                                  {this.state.shipby_arr.map((val) => (
-                                    <>
-                                      {val.skuId === dataval.generatedSku ? (
-                                        <Typography
-                                          className={`subhesder ${classes.normalfonts}`}
+                              </Grid>
+                            </Grid>
+                            <Grid item xs={4} sm={2} lg={12}>
+                              <Grid container>
+                                <Grid item xs={5}>
+                                  {window.location.pathname !== "/checkout" ? (
+                                    <div>
+                                      <Button
+                                        id={dataval.generatedSku}
+                                        onClick={(event) =>
+                                          this.handleDeleteLocalStorage(event)
+                                        }
+                                        variant="contained"
+                                        style={{
+                                          color: "gray",
+                                          width: "96%",
+                                          border: "2px solid #C1C1C1",
+                                          backgroundColor: "white",
+                                          borderRadius: "0px",
+                                          boxShadow: "none",
+                                          paddingRight: "40px",
+                                          paddingLeft: "40px",
+                                        }}
+                                      >
+                                        Remove
+                                      </Button>
+                                    </div>
+                                  ) : (
+                                    ""
+                                  )}
+                                </Grid>
+                                <Grid item xs={7}>
+                                  {window.location.pathname !== "/checkout" ? (
+                                    <div>
+                                      <WishlistButton
+                                        sku={dataval.generatedSku}
+                                        productId={dataval.productId}
+                                      />
+
+                                      {/* 
+                               {console.log(dataval.isActive)} */}
+                                      {!dataval.isActive ? (
+                                        <span
+                                          style={{
+                                            backgroundColor: "red",
+                                            fontSize: "10px",
+                                            color: "white",
+                                            padding: "2px 4px",
+                                            borderRadius: "2px",
+                                          }}
                                         >
-                                          {val.shipby}
-                                        </Typography>
+                                          Sold Out
+                                        </span>
                                       ) : (
                                         ""
                                       )}
-                                    </>
-                                  ))}
-                                  {dataval.dataCard1.map((val) => {
-                                    return (
-                                      <>
-                                        <Pricing
-                                          detail={dataval}
-                                          offerDiscount={
-                                            val.discount
-                                              ? `${val.discount}% - OFF`
-                                              : null
-                                          }
-                                          price={
-                                            val.offerPrice *
-                                            (JSON.parse(
-                                              localStorage.getItem("quantity")
-                                            )[val.generatedSku] ?? 1)
-                                          }
-                                          offerPrice={
-                                            val.price *
-                                            (JSON.parse(
-                                              localStorage.getItem("quantity")
-                                            )[val.generatedSku] ?? 1)
-                                          }
-                                          quantity={this.state.quantity}
-                                        ></Pricing>
-                                      </>
-                                    );
-                                  })}
-                                </div>
+                                    </div>
+                                  ) : (
+                                    ""
+                                  )}
+                                </Grid>
                               </Grid>
                             </Grid>
                           </Grid>
-                          <Grid item xs={4} sm={2} lg={3}>
-                            {window.location.pathname !== "/checkout" ? (
-                              <div>
-                                <br />
-
-                                <Button
-                                  id={dataval.generatedSku}
-                                  onClick={(event) =>
-                                    this.handleDeleteLocalStorage(event)
-                                  }
-                                  variant="contained"
-                                  style={{
-                                    color: "gray",
-                                    width: "100%",
-                                    border: "2px solid #C1C1C1",
-                                    backgroundColor: "white",
-                                    borderRadius: "0px",
-                                    boxShadow: "none",
-                                    paddingRight: "40px",
-                                    paddingLeft: "40px",
-                                  }}
+                        ) : (
+                          <Grid
+                            container
+                            spacing={12}
+                            xs={12}
+                            style={{
+                              borderBottom: "1.3px solid #C1C1C1",
+                              padding: "15px",
+                            }}
+                          >
+                            <Grid
+                              item
+                              xs={3}
+                              sm={3}
+                              style={{
+                                display: "flex",
+                                alignContent: "center",
+                                alignItems: "center",
+                                padding: "1px",
+                              }}
+                            >
+                              <>
+                                {window.location.pathname !== "/checkout" ? (
+                                  <NavLink
+                                    to={dataval?.skuUrl}
+                                    style={{ textDecoration: "none" }}
+                                  >
+                                    <center>
+                                      <div
+                                        style={{
+                                          border: "1px solid #D2D3D4",
+                                        }}
+                                      >
+                                        <img
+                                          style={{ width: "70%" }}
+                                          src={dataval?.fadeImages[0]?.imageUrl}
+                                        ></img>
+                                      </div>
+                                    </center>
+                                  </NavLink>
+                                ) : (
+                                  <center>
+                                    <div
+                                      style={{
+                                        border: "1px solid #D2D3D4",
+                                      }}
+                                    >
+                                      <img
+                                        style={{ width: "50%" }}
+                                        src={dataval?.fadeImages[0]?.imageUrl}
+                                      ></img>
+                                    </div>
+                                  </center>
+                                )}
+                              </>
+                            </Grid>
+                            <Grid
+                              item
+                              xs={5}
+                              sm={7}
+                              lg={5}
+                              style={{ padding: "13px" }}
+                            >
+                              {window.location.pathname !== "/checkout" ? (
+                                <NavLink
+                                  to={dataval.skuUrl}
+                                  style={{ textDecoration: "none" }}
                                 >
-                                  Remove
-                                </Button>
-                                <WishlistButton
-                                  sku={dataval.generatedSku}
-                                  productId={dataval.productId}
-                                />
-
-                                {/* 
-                               {console.log(dataval.isActive)} */}
-                                {!dataval.isActive ? (
                                   <span
                                     style={{
-                                      backgroundColor: "red",
-                                      fontSize: "10px",
-                                      color: "white",
-                                      padding: "2px 4px",
-                                      borderRadius: "2px",
+                                      color: "gray",
+                                      textTransform: "capitalize",
                                     }}
                                   >
-                                    Sold Out
+                                    {val.pro_header}
                                   </span>
-                                ) : (
-                                  ""
-                                )}
-                              </div>
-                            ) : (
-                              ""
-                            )}
+                                </NavLink>
+                              ) : (
+                                <h3 className={`title ${classes.normalfonts}`}>
+                                  {val.pro_header}
+                                </h3>
+                              )}
+                              <Grid
+                                container
+                                spacing={12}
+                                style={
+                                  {
+                                    // marginTop: "15px",
+                                  }
+                                }
+                              >
+                                <Grid item xs={12}>
+                                  <Grid container spacing={12}>
+                                    <Grid container xs={12} direction="row">
+                                      {dataval.maxOrderQty === 1 ? (
+                                        <Grid container>
+                                          <Grid item xs={5}>
+                                            <Typography
+                                              className={`subhesder ${classes.normalfonts}`}
+                                            >
+                                              Quantity :
+                                            </Typography>
+                                          </Grid>
+                                          <Grid item xs={7}>
+                                            <Typography
+                                              className={`subhesder ${classes.normalfonts}`}
+                                            >
+                                              {dataval.maxOrderQty}
+                                            </Typography>
+                                          </Grid>
+                                        </Grid>
+                                      ) : (
+                                        <>
+                                          <Grid item>
+                                            <Typography
+                                              className={`subhesder ${classes.normalfonts}`}
+                                            >
+                                              Quantity :
+                                            </Typography>
+                                          </Grid>
+                                          <Grid item>
+                                            <Select
+                                              labelId="demo-simple-select-label"
+                                              id="demo-simple-select"
+                                              variant="standard"
+                                              value={
+                                                this?.state?.quantity[index]
+                                                  ?.Qty ?? 1
+                                              }
+                                              onChange={(e) =>
+                                                this.onChangeQuantity(
+                                                  e,
+                                                  this.state.quantity[index]
+                                                    .generateSku,
+                                                  index
+                                                )
+                                              }
+                                              color="secondary"
+                                            >
+                                              {this?.state?.quantity[
+                                                index
+                                              ]?.QtyArr?.map((data) => (
+                                                <MenuItem value={data}>
+                                                  {data}
+                                                </MenuItem>
+                                              ))}
+                                            </Select>
+                                          </Grid>
+                                        </>
+                                      )}
+                                    </Grid>
+                                  </Grid>
+                                  <div>
+                                    {this.state.shipby_arr.map((val) => (
+                                      <>
+                                        {val.skuId === dataval.generatedSku ? (
+                                          <Typography
+                                            className={`subhesder ${classes.normalfonts}`}
+                                          >
+                                            {val.shipby}
+                                          </Typography>
+                                        ) : (
+                                          ""
+                                        )}
+                                      </>
+                                    ))}
+                                    {dataval.dataCard1.map((val) => {
+                                      return (
+                                        <>
+                                          <Pricing
+                                            detail={dataval}
+                                            offerDiscount={
+                                              val.discount
+                                                ? `${val.discount}% - OFF`
+                                                : null
+                                            }
+                                            price={
+                                              val.offerPrice *
+                                              (JSON.parse(
+                                                localStorage.getItem("quantity")
+                                              )[val.generatedSku] ?? 1)
+                                            }
+                                            offerPrice={
+                                              val.price *
+                                              (JSON.parse(
+                                                localStorage.getItem("quantity")
+                                              )[val.generatedSku] ?? 1)
+                                            }
+                                            quantity={this.state.quantity}
+                                          ></Pricing>
+                                        </>
+                                      );
+                                    })}
+                                  </div>
+                                </Grid>
+                              </Grid>
+                            </Grid>
+                            <Grid item xs={4} sm={2} lg={4}>
+                              {window.location.pathname !== "/checkout" ? (
+                                <div>
+                                  <br />
+
+                                  <Button
+                                    id={dataval.generatedSku}
+                                    onClick={(event) =>
+                                      this.handleDeleteLocalStorage(event)
+                                    }
+                                    variant="contained"
+                                    style={{
+                                      color: "gray",
+                                      width: "95%",
+                                      border: "2px solid #C1C1C1",
+                                      backgroundColor: "white",
+                                      borderRadius: "0px",
+                                      boxShadow: "none",
+                                      paddingRight: "40px",
+                                      paddingLeft: "40px",
+                                    }}
+                                  >
+                                    Remove
+                                  </Button>
+                                  <WishlistButton
+                                    sku={dataval.generatedSku}
+                                    productId={dataval.productId}
+                                  />
+
+                                  {/* 
+                                 {console.log(dataval.isActive)} */}
+                                  {!dataval.isActive ? (
+                                    <span
+                                      style={{
+                                        backgroundColor: "red",
+                                        fontSize: "10px",
+                                        color: "white",
+                                        padding: "2px 4px",
+                                        borderRadius: "2px",
+                                      }}
+                                    >
+                                      Sold Out
+                                    </span>
+                                  ) : (
+                                    ""
+                                  )}
+                                </div>
+                              ) : (
+                                ""
+                              )}
+                            </Grid>
                           </Grid>
-                        </Grid>
+                        )}
                       </div>
                     ))
                   )}
@@ -913,24 +1173,58 @@ class Checkoutcard extends React.Component {
                   >
                     Go back to Homepage
                   </Button>
+                  <br />
+                  <br />
+                  <br />
                 </div>
               </Grid>
-              <Grid item xs={12} lg={6} style={{ backgroundColor: "#EFEFEF" }}>
-                <div className={classes.padding}>
-                  <Hidden smDown>
-                    <div className={classes.paddingCart1}>
-                      <br />
-                      <Grid container>
-                        <Grid item xs={12}>
-                          <div>{this.applycoupon()}</div>
-                        </Grid>
-                      </Grid>
+              <Grid
+                item
+                xs={12}
+                lg={6}
+                style={{
+                  backgroundColor: "rgb(224, 225, 225)",
+                  height: "100%",
+                }}
+              >
+                <Grid container>
+                  <Grid
+                    item
+                    xs={12}
+                    style={{
+                      width:
+                        window.location.pathname == "/cart" ? "50%" : "100%",
+                      position:
+                        window.location.pathname == "/cart"
+                          ? "fixed"
+                          : "relative",
+                      backgroundColor: "rgb(224, 225, 225)",
+                      zIndex: 999,
+                    }}
+                  >
+                    <div
+                      className={
+                        window.location.pathname == "/account-shoppingcart"
+                          ? " "
+                          : classes.padding
+                      }
+                    >
+                      <Hidden smDown>
+                        <div className={classes.paddingCart1}>
+                          <br />
+                          <Grid container>
+                            <Grid item xs={12}>
+                              <div>{this.applycoupon()}</div>
+                            </Grid>
+                          </Grid>
+                        </div>
+                      </Hidden>
+                      <div className={classes.paddingCart}>
+                        {this.subtotals(props)}
+                      </div>
                     </div>
-                  </Hidden>
-                  <div className={classes.paddingCart}>
-                    {this.subtotals(props)}
-                  </div>
-                </div>
+                  </Grid>
+                </Grid>
               </Grid>
             </Grid>
           </>
@@ -1254,9 +1548,13 @@ class Checkoutcard extends React.Component {
           <Typography
             className={classes.cartheader}
             noWrap
-            style={{ display: "flex", justifyContent: "center" }}
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              fontSize: "16px",
+            }}
           >
-            <IoPricetagsOutline color="#394579" fontSize="18px" />
+            <IoPricetagsOutline color="#2F348B" fontSize="18px" />
             &nbsp;&nbsp;&nbsp;<b>Apply Coupon</b>
           </Typography>
         </AccordionSummary>
@@ -1354,7 +1652,7 @@ class Checkoutcard extends React.Component {
               style={{
                 borderTop: "1.3px solid #C1C1C1",
                 paddingBottom: "10px",
-                paddingTop: "14px",
+                paddingTop: "17px",
                 marginTop: "25px",
                 color: "gray",
               }}

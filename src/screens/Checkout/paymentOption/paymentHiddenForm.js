@@ -1,8 +1,8 @@
-import React, { useEffect, useRef, useState } from "react";
+import { Button, Grid } from "@material-ui/core";
+import { CartContext } from "context";
+import React, { useEffect, useState } from "react";
 import { API_URL } from "../../../../src/config";
 import "./payment.css";
-import { Grid } from "@material-ui/core";
-import { CartContext } from "context";
 
 export default function PaymentHiddenForm(props) {
   let {
@@ -145,11 +145,13 @@ export default function PaymentHiddenForm(props) {
 
     // document.getElementById("sendtoairpay").submit();
   };
+
   useEffect(() => {
     if (hash.checksum) document.getElementById("sendtoairpay").submit();
   }, [hash]);
-  // useEffect(()=>{if(hash.checksum) console.log(hash,orderId,"hashandorderid")},[hash])
+ 
   return (
+  
     <div container>
       <form
         method="POST"
@@ -320,14 +322,25 @@ export default function PaymentHiddenForm(props) {
         </div>
       </form>
       <Grid item container>
-        <input
-          style={{ cursor: "pointer" }}
+        {/* <input
+          style={{ cursor: "pointer"
+         }}
           type="button"
           onClick={generateOrderdId}
           className="credit-button"
           name="submitBtn"
-          value="Pay now"
-        />
+          value={`Pay ${props.data1}`
+          }
+        /> */}
+        <Button
+          color="primary"
+          variant="contained"
+                className="credit-button"
+                type="submit"
+                onClick={() => generateOrderdId}
+              >
+              Pay {props.data1}
+              </Button>
       </Grid>
     </div>
   );

@@ -1,9 +1,9 @@
 .noproductsfound {
-  height: 125px;
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 10%;
 }
 
 .continueshopping {
@@ -633,13 +633,13 @@
 }
 
 .storiesData {
-  color: #394578;
+  color: #2f348b;
   cursor: pointer;
   padding: 10px;
 }
 
 .selectedTab {
-  color: #394578;
+  color: #2f348b;
   cursor: pointer;
   padding: 10px;
   background: #f3f3f3 !important;

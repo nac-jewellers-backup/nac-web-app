@@ -2,6 +2,10 @@
 import { makeStyles } from "@material-ui/core/styles";
 
 export const styles = makeStyles((theme) => ({
+  arrow: {
+    color: "gray !important",
+    fill: "gray !important",
+  },
   headIcons: {
     color: theme.palette.secondary.dark,
     fontFamily: "fontawesome",
@@ -64,7 +68,7 @@ export const styles = makeStyles((theme) => ({
     alignItems: "center",
     display: "flex",
     fontSize: "17px",
-    fill: "#d51f63",
+    fill: "#2F348B",
     [theme.breakpoints.only("xs")]: {
       marginLeft: "6px",
       letterSpacing: "2px",
@@ -95,7 +99,7 @@ export const styles = makeStyles((theme) => ({
     // margin-left: 5%;
   },
   chips: {
-    background: "#8080802e !important",
+    //background: "#8080802e !important",
     color: "#666",
     padding: "5px",
     display: "inline-flex",
@@ -114,7 +118,8 @@ export const styles = makeStyles((theme) => ({
     //  margin : "auto",
     marginLeft: "10px",
     alignItems: "center",
-    color: "white",
+    color: "gray",
+
     [theme.breakpoints.only("md")]: {
       minWidth: "100px",
       marginBottom: "10px",
@@ -122,17 +127,14 @@ export const styles = makeStyles((theme) => ({
     },
     minWidth: "150px ",
     // #80808061
-    boxShadow: `6px 7px 6px #bebfbf !important`,
-    background: theme.palette.secondary.main,
+
     // borderBottom: "1px solid #fff",
     "&:hover": {
-      background: theme.palette.secondary.dark,
+      //background: theme.palette.secondary.dark,
       // paddingBottom: "2px",
       //   borderBottom: "1px solid " + theme.palette.secondary.dark,
     },
-    "& svg": {
-      fill: `white !important`,
-    },
+
     "&.mouseOverPopover": {
       top: 0,
     },
@@ -157,14 +159,7 @@ export const styles = makeStyles((theme) => ({
     },
     minWidth: "130px ",
   },
-  shortby: {
-    maxWidth: "150px",
-    marginBottom: "10px",
-
-    [theme.breakpoints.only("md")]: {
-      maxWidth: "100px !important",
-    },
-  },
+ 
   spacingfilterdiv: {
     display: "flex",
     alignItems: "center",
@@ -178,22 +173,19 @@ export const styles = makeStyles((theme) => ({
   menuListCursorSort: {
     cursor: "pointer",
     fontFamily: "Roboto",
-    padding: "5px 4px 5px 15px",
+    //padding: "5px 4px 5px 15px",
     // marginRight: 15,
     color: theme.palette.secondary.main,
-    boxShadow: `6px 7px 6px #bebfbf !important`,
+    // boxShadow: `6px 7px 6px #bebfbf !important`,
     background: "white",
-    border: `1px solid ${theme.palette.secondary.main}`,
+    //border: `1px solid ${theme.palette.secondary.main}`,
     "&:hover": {
-      border: `1px solid ${theme.palette.secondary.dark}`,
-      boxShadow: `6px 7px 6px #bebfbf !important`,
+      //border: `1px solid ${theme.palette.secondary.dark}`,
+      //boxShadow: `6px 7px 6px #bebfbf !important`,
       color: theme.palette.secondary.dark,
-      "& svg": {
-        fill: `${theme.palette.secondary.dark} !important`,
-      },
     },
     "& svg": {
-      fill: `${theme.palette.secondary.main} !important`,
+      fill: "gray",
     },
     "&.mouseOverPopover": {
       top: 0,
@@ -214,20 +206,20 @@ export const styles = makeStyles((theme) => ({
     minWidth: "130px ",
     marginLeft: "10px",
     alignItems: "center",
-    color: theme.palette.secondary.main,
-    boxShadow: `6px 7px 6px #bebfbf !important`,
-    border: `1px solid ${theme.palette.secondary.main}`,
+    color: "gray",
+    //boxShadow: `6px 7px 6px #bebfbf !important`,
+    //border: `1px solid ${theme.palette.secondary.main}`,
     background: "white",
     "&:hover": {
-      border: `1px solid ${theme.palette.secondary.dark}`,
-      boxShadow: `6px 7px 6px  ${theme.palette.secondary.light}`,
-      color: theme.palette.secondary.main,
+      // border: `1px solid ${theme.palette.secondary.dark}`,
+      //boxShadow: `6px 7px 6px  ${theme.palette.secondary.light}`,
+      //color: theme.palette.secondary.main,
       "& svg": {
-        fill: `${theme.palette.secondary.dark} !important`,
+        fill: "gray !important",
       },
     },
     "& svg": {
-      fill: `${theme.palette.secondary.main} !important`,
+      fill: "gray !important",
     },
     "&.mouseOverPopover": {
       top: 0,
@@ -391,6 +383,6 @@ export const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.darkFade,
   },
   drawer: {
-    backgroundColor: "#394578",
+    backgroundColor: "#2F348B",
   },
 }));

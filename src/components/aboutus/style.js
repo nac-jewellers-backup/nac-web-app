@@ -38,21 +38,21 @@ const styles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
     // .MuiListItem-root.Mui-selected, .MuiListItem-root.Mui-selected:hover
     "& .Mui-selected": {
-      backgroundColor: "#20205a !important",
+      backgroundColor: "#2F348B !important",
       color: "white",
       "&::hover": {
-        backgroundColor: "#20205a !important",
+        backgroundColor: "#2F348B !important",
         color: "white",
       },
       // "& .MuiSvgIcon-root": {
       //   fill: "#white !important",
       // },
       "& a": {
-        backgroundColor: "#20205a !important",
+        backgroundColor: "#2F348B !important",
         color: "white",
       },
       leftInnerContent: {
-        color: "#20205a !important",
+        color: "#2F348B !important",
       },
     },
   },
@@ -106,26 +106,26 @@ const styles = makeStyles((theme) => ({
     boxShadow: "0 0 5px #888 !important;",
   },
   link: {
-    color: "#394578",
+    color: "#2F348B",
     textDecoration: "none",
     cursor: "pointer !important",
   },
   list: {
     "& .MuiSvgIcon-root": {
-      fill: "#394578 !important",
+      fill: "#2F348B !important",
       cursor: "pointer !important",
     },
   },
   sublist: {
     "& .Mui-selected": {
-      color: "#20205a !important",
+      color: "#2F348B !important",
       background: "none !important",
       "&::hover": {
-        color: "#20205a !important",
+        color: "#2F348B !important",
         background: "none !important",
       },
       "& a": {
-        color: "#20205a !important",
+        color: "#2F348B !important",
         background: "none !important",
       },
     },
@@ -137,7 +137,7 @@ const styles = makeStyles((theme) => ({
     fontWeight: "bold !important",
     textDecoration: "underline",
     lineHeight: "1.427",
-    color: "#20205a !important",
+    color: "#2F348B !important",
     // fontFamily:"Source Sans Pro",
     width: "100%",
     // fontWeight:"400"

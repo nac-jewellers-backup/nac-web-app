@@ -124,6 +124,8 @@ export const ALLORDERS = `query MyQuery($userProfileId: [UUID!]) {
           nodes {
             message
             giftTo
+            id
+            cartId
           }
         }
       }
@@ -327,3 +329,30 @@ export const USERPROFILE = `query MyQuery($id: UUID!) {
 }
 
 `;
+export const UPDATEGIFT = `mutation MyMutation ($cartId:UUID,$id:UUID!,$message:String,$giftTo:String) {
+  updateGiftwrapById(
+    input: {giftwrapPatch: {cartId:$cartId , message: $message,giftTo:$giftTo}, id: $id}
+  ) {
+    giftwrap {
+      cartId
+      message
+      id
+      giftTo
+    }
+  }
+}
+
+
+`;
+export const ALLGIFT = `
+query($cartId:UUID){
+  allGiftwraps(condition: {cartId: $cartId}) {
+    nodes {
+      cartId
+      id
+      message
+     
+    }
+  }
+}
+`

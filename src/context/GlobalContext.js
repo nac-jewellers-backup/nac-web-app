@@ -19,6 +19,7 @@ export const GlobalConsumer = GlobalContext.Consumer;
 
 export const GlobalProvider = (props) => {
   const [Globalctx, setGlobalCtx] = React.useState(initialCtx.GLobalCtx);
+  const [wishlist, setWishlist] = React.useState([]);
 
   React.useEffect(() => {
     var loc = window.location.pathname
@@ -28,15 +29,27 @@ export const GlobalProvider = (props) => {
         if (val === "silver") return val;
       });
     var locsilverStaticPage = window.location.pathname.split("/")[1];
-    console.log("locsilverStaticPage", routes.Silver, `/${locsilverStaticPage}`);
+    console.log(
+      "locsilverStaticPage",
+      routes.Silver,
+      `/${locsilverStaticPage}`
+    );
     var loc_PD = window.location.pathname.split("/").filter((val) => {
       if (val === "silverjewellery") return val;
     });
-    if (`/${locsilverStaticPage}` === routes.Silver) setGlobalCtx({ ...Globalctx, pathName: true });
-    else if (`/${locsilverStaticPage}` === routes.styloriSilverCollections) setGlobalCtx({ ...Globalctx, pathName: true });
+    if (`/${locsilverStaticPage}` === routes.Silver)
+      setGlobalCtx({ ...Globalctx, pathName: true });
+    else if (`/${locsilverStaticPage}` === routes.styloriSilverCollections)
+      setGlobalCtx({ ...Globalctx, pathName: true });
     else if (loc_PD.length > 0) setGlobalCtx({ ...Globalctx, pathName: true });
     else if (loc.length > 0) setGlobalCtx({ ...Globalctx, pathName: true });
     else setGlobalCtx({ ...Globalctx, pathName: false });
   }, []);
-  return <GlobalContext.Provider value={{ Globalctx, setGlobalCtx }}>{props.children}</GlobalContext.Provider>;
+  return (
+    <GlobalContext.Provider
+      value={{ Globalctx, setGlobalCtx, wishlist, setWishlist }}
+    >
+      {props.children}
+    </GlobalContext.Provider>
+  );
 };

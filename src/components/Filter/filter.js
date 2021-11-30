@@ -14,7 +14,7 @@ import {
   Paper,
   Slide,
   TextField,
-  Typography,
+  Typography
 } from "@material-ui/core";
 import FormGroup from "@material-ui/core/FormGroup";
 import { withStyles } from "@material-ui/core/styles";
@@ -656,7 +656,7 @@ class Component extends React.Component {
     this.setState({ CardRadio: false });
   };
   handleDrawerCloseMobile = () => {
-    alert("lllll");
+   
     this.setState({ openMobile: true });
     this.setState({ productDisplay: true });
   };

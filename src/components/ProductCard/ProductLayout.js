@@ -25,11 +25,11 @@ const styles = (theme) => ({
     },
   },
   viewmoreColor: {
-    backgroundColor: "#3a4578",
+    backgroundColor: "#2F348B",
     color: "white",
     padding: "6px 12px",
     "&:hover": {
-      backgroundColor: "#3a4578",
+      backgroundColor: "#2F348B",
       opacity: "0.8",
     },
   },

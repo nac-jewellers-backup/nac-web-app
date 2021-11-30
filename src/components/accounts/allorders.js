@@ -909,7 +909,7 @@ class Allorders extends React.Component {
                 })}
               </div>
             ) : (
-              <div style={{ textAlign: "center", color: "#394578" }}>
+              <div style={{ textAlign: "center", color: "#2F348B" }}>
                 No orders yet
               </div>
             )}
@@ -1515,7 +1515,7 @@ class Allorders extends React.Component {
                   })}
               </Container>
             ) : (
-              <div style={{ textAlign: "center", color: "#394578" }}>
+              <div style={{ textAlign: "center", color: "#2F348B" }}>
                 No orders yet
               </div>
             )}

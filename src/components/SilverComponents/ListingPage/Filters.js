@@ -1,26 +1,25 @@
-import React from "react";
 import {
+  AppBar,
+  Button,
+  Checkbox,
+  Container,
   Grid,
   Hidden,
-  Button,
+  IconButton,
   List,
   ListItem,
   ListItemText,
-  Checkbox,
-  Typography,
-  AppBar,
-  Container,
   Toolbar,
-  IconButton,
+  Typography,
 } from "@material-ui/core";
-import styles from "./style";
+import CheckBoxIcon from "@material-ui/icons/CheckBox";
 import CheckBoxOutlineBlankIcon from "@material-ui/icons/CheckBoxOutlineBlank";
 import CardRadioButton from "components/InputComponents/RadioButton/index";
-import HeaderHoverMenuItem from "./../HoverNavBarListing/HeaderHoverMenuItem";
 import { ListingPageContext } from "context";
-import CheckBoxIcon from "@material-ui/icons/CheckBox";
+import React from "react";
+import HeaderHoverMenuItem from "./../HoverNavBarListing/HeaderHoverMenuItem";
+import styles from "./style";
 const Filters = (props) => {
-
   const {
     // setSort, setloadingfilters, setPriceMax, setPriceMin,
     ListingPageCtx,
@@ -32,7 +31,14 @@ const Filters = (props) => {
     listHoverItem: "",
     filtercheck: "",
     _width: null,
-    filters: { offers: {}, price: {}, ProductType: {}, Theme: {}, Collection: {}, Material: { Silver: true } },
+    filters: {
+      offers: {},
+      price: {},
+      ProductType: {},
+      Theme: {},
+      Collection: {},
+      Material: { Silver: true },
+    },
   });
   const [openFilters, setOpenFilters] = React.useState(true);
   const [productDisplay, setProductDisplay] = React.useState(true);
@@ -45,7 +51,10 @@ const Filters = (props) => {
         if (Object.values(state.filters[hoverFilter]).length === 0) return true;
         else return !Object.values(state.filters[hoverFilter])[0];
       };
-      var filterState = { ...state.filters, [hoverFilter]: { [came]: filters_uncheck() } };
+      var filterState = {
+        ...state.filters,
+        [hoverFilter]: { [came]: filters_uncheck() },
+      };
       state["filters"] = filterState;
       setState({ ...state, filters: filterState });
       ListingPageCtx.setSilverFilters(state.filters);
@@ -101,7 +110,13 @@ const Filters = (props) => {
             container
             className={classes.FilterGrid}
             onMouseLeave={() => {
-              setState({ ...state, Menuopen: false, Checked: false, targetopen: null, listHoverItem: "" });
+              setState({
+                ...state,
+                Menuopen: false,
+                Checked: false,
+                targetopen: null,
+                listHoverItem: "",
+              });
             }}
           >
             {
@@ -123,14 +138,23 @@ const Filters = (props) => {
                         });
                       }}
                     >
-                      <Grid item xs={10} className={`${classes.filterName}`} aria-describedby={id}>
+                      <Grid
+                        item
+                        xs={10}
+                        className={`${classes.filterName}`}
+                        aria-describedby={id}
+                      >
                         {val}
                       </Grid>
                       <Grid item xs={2} container>
                         {state.listHoverItem === val ? (
-                          <i className={`${classes.filterArrow} fa`}>&#xf0d8;</i>
+                          <i className={`${classes.filterArrow} fa`}>
+                            &#xf0d8;
+                          </i>
                         ) : (
-                          <i className={`${classes.filterArrow} fa`}>&#xf0d7;</i>
+                          <i className={`${classes.filterArrow} fa`}>
+                            &#xf0d7;
+                          </i>
                         )}
                       </Grid>
                     </Grid>
@@ -171,7 +195,14 @@ const Filters = (props) => {
       </Hidden>
 
       <Hidden mdUp>
-        <div style={{ top: "60px", position: "absolute", backgroundColor: "white", width: "100%" }}>
+        <div
+          style={{
+            top: "60px",
+            position: "absolute",
+            backgroundColor: "white",
+            width: "100%",
+          }}
+        >
           <div
             style={{
               height: "23px",
@@ -185,12 +216,23 @@ const Filters = (props) => {
           >
             <button
               onClick={handleDrawerCloseMobile}
-              style={{ background: "none", border: "none", fontWeight: "600", color: "rgba(58, 69, 120, 1)", padding: "6px 8px" }}
+              style={{
+                background: "none",
+                border: "none",
+                fontWeight: "600",
+                color: "rgba(58, 69, 120, 1)",
+                padding: "6px 8px",
+              }}
             >
-              <i className={`fa fa-times ${classes.colorMain}`}></i>&nbsp; Filter
+              <i className={`fa fa-times ${classes.colorMain}`}></i>&nbsp;
+              Filter
             </button>
             <Button
-              style={{ float: "right", border: "1px solid #ececec", lineHeight: "15px" }}
+              style={{
+                float: "right",
+                border: "1px solid #ececec",
+                lineHeight: "15px",
+              }}
               className={`${classes.colorMain}`}
             >
               {" "}
@@ -202,10 +244,22 @@ const Filters = (props) => {
             container
             xs={12}
             className="p"
-            style={{ overflow: "scroll", height: "100%", display: openFilters ? "none" : "block" }}
+            style={{
+              overflow: "scroll",
+              height: "100%",
+              display: openFilters ? "none" : "block",
+            }}
           >
             <Grid container item xs={12}>
-              <Grid item xs={6} style={{ backgroundColor: "#F2F2F2", overflow: "scroll", height: "73vh" }}>
+              <Grid
+                item
+                xs={6}
+                style={{
+                  backgroundColor: "#F2F2F2",
+                  overflow: "scroll",
+                  height: "73vh",
+                }}
+              >
                 {/* {chck_res ?
                     <ListItemText
                       className='filter-mbl-font filter-mbl-fonts'
@@ -215,24 +269,42 @@ const Filters = (props) => {
                     : ""} */}
                 <List className="mbl-filter-list">
                   {props.data[0].filter.map((row) => (
-                    <ListItem key={row} className="mbl-filter-list" onClick={() => filterValue(row)}>
-                      <ListItemText className="filter-mbl-font filter-mbl-fonts">{row}</ListItemText>
+                    <ListItem
+                      key={row}
+                      className="mbl-filter-list"
+                      onClick={() => filterValue(row)}
+                    >
+                      <ListItemText className="filter-mbl-font filter-mbl-fonts">
+                        {row}
+                      </ListItemText>
                     </ListItem>
                   ))}
                 </List>
                 {/* {console.info('data-filter', subFilter, state.filtercheck)} */}
               </Grid>
               {filtercheck !== "" && (
-                <Grid item xs={6} style={{ overflow: "scroll", height: "73vh" }}>
+                <Grid
+                  item
+                  xs={6}
+                  style={{ overflow: "scroll", height: "73vh" }}
+                >
                   <>
                     {props.data[0].subFilter[state.listHoverItem].map((row) => {
                       return (
-                        <ListItem key={row} style={{ paddingLeft: "0px", paddingRight: "0px", width: "100%" }}>
+                        <ListItem
+                          key={row}
+                          style={{
+                            paddingLeft: "0px",
+                            paddingRight: "0px",
+                            width: "100%",
+                          }}
+                        >
                           <Checkbox
                             value="checked"
                             color="primary"
                             checked={
-                              filters[filtercheck.replace(/\s/g, "")][row] !== undefined
+                              filters[filtercheck.replace(/\s/g, "")][row] !==
+                              undefined
                                 ? filters[filtercheck.replace(/\s/g, "")][row]
                                 : false
                             }
@@ -240,8 +312,11 @@ const Filters = (props) => {
                               selectType(
                                 {},
                                 row,
-                                filters[filtercheck.replace(/\s/g, "")][row] !== undefined
-                                  ? !filters[filtercheck.replace(/\s/g, "")][row]
+                                filters[filtercheck.replace(/\s/g, "")][row] !==
+                                  undefined
+                                  ? !filters[filtercheck.replace(/\s/g, "")][
+                                      row
+                                    ]
                                   : true,
                                 e
                               )
@@ -253,8 +328,14 @@ const Filters = (props) => {
                             onClick={handleDrawerCloseMobile}
                           />
                           <ListItemText>
-                            <Typography variant="" className={`filter-mbl-font fnts ${classes.colorMain}`}>
-                              <div onClick={handleDrawerCloseMobile}> {row}</div>
+                            <Typography
+                              variant=""
+                              className={`filter-mbl-font fnts ${classes.colorMain}`}
+                            >
+                              <div onClick={handleDrawerCloseMobile}>
+                                {" "}
+                                {row}
+                              </div>
                             </Typography>
                           </ListItemText>
                         </ListItem>
@@ -266,13 +347,21 @@ const Filters = (props) => {
             </Grid>
           </Grid>
 
-          <AppBar color="primary" className="filter-fixed header" style={{ display: !openFilters ? "none" : "block" }}>
+          <AppBar
+            color="primary"
+            className="filter-fixed header"
+            style={{ display: !openFilters ? "none" : "block" }}
+          >
             <Container>
               <Container>
                 <Toolbar>
                   <div onClick={handleDrawerOpenMobile}>
-                    <Typography variant="" className={`filter-mbl-font ${classes.colorMain}`}>
-                      <i className="filter-icon" class="fa fa-filter"></i> &nbsp; Filter
+                    <Typography
+                      variant=""
+                      className={`filter-mbl-font ${classes.colorMain}`}
+                    >
+                      <i className="filter-icon" class="fa fa-filter"></i>{" "}
+                      &nbsp; Filter
                     </Typography>
                   </div>
 
@@ -281,10 +370,21 @@ const Filters = (props) => {
                   <IconButton
                     edge="end"
                     color="inherit"
-                    onClick={() => setState({ ...state, CardRadio: !CardRadio, productDisplay: !productDisplay })}
+                    onClick={() =>
+                      setState({
+                        ...state,
+                        CardRadio: !CardRadio,
+                        productDisplay: !productDisplay,
+                      })
+                    }
                   >
-                    <Typography variant="" className={`filter-mbl-font ${classes.colorMain}`} style={{ fontSize: "1rem" }}>
-                      <i className="filter-icon" class="fa fa-sort"></i>&nbsp; Sort
+                    <Typography
+                      variant=""
+                      className={`filter-mbl-font ${classes.colorMain}`}
+                      style={{ fontSize: "1rem" }}
+                    >
+                      <i className="filter-icon" class="fa fa-sort"></i>&nbsp;
+                      Sort
                     </Typography>
                   </IconButton>
                 </Toolbar>
@@ -294,7 +394,12 @@ const Filters = (props) => {
         </div>
         {CardRadio ? (
           <div style={{ position: "fixed", bottom: "42px" }}>
-            <CardRadioButton cardWidth="cardSortSmallScreen" data={sortOptions} onChange={handleChangesort} values={props.sort} />
+            <CardRadioButton
+              cardWidth="cardSortSmallScreen"
+              data={sortOptions}
+              onChange={handleChangesort}
+              values={props.sort}
+            />
           </div>
         ) : (
           ""

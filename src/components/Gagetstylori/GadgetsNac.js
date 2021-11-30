@@ -15,7 +15,7 @@ import { Securepayments } from "./Securepayments-pink";
 const useStyles = makeStyles((theme) => ({
   typo: {
     margin: "0 0 10px",
-    color: "#394578",
+    color: "#2F348B",
     fontSize: "11px",
     marginBottom: 0,
     // textAlign: "center",
@@ -192,7 +192,7 @@ export function PaperSheetProduct(props) {
   return (
     <>
       <Hidden smDown>
-        <Grid container>
+        <Grid container justifyContent="center">
           <Grid
             item
             xs={4}

@@ -1,7 +1,7 @@
 import { Grid, TextField } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
 import propTypes from "prop-types";
 import React from "react";
-
 // NOTABLE POINTS
 //  Min and Max
 // Email ID
@@ -13,6 +13,21 @@ import React from "react";
 // On Button Submit
 // On Moving Out
 // Live
+const useStyles = makeStyles({
+  root: {
+   
+   
+  "& .MuiFilledInput-root":{
+    borderRadius:"0px"
+    },
+    "& .MuiFilledInput-root:before": {
+      border:"none"
+    }
+  },
+
+
+
+});
 
 export const Input = (props) => {
   let {
@@ -32,6 +47,8 @@ export const Input = (props) => {
   const defaultStyle = {
     margin: "normal",
   };
+    
+
 
   const [invalid, setInvalid] = React.useState(false);
 
@@ -52,27 +69,31 @@ export const Input = (props) => {
     e.preventDefault();
     setInvalid(true);
   };
-
+  const classes = useStyles();
   return (
     <Grid item xs={12}>
       {props.checkoutgift ? (
         <>
           <TextField
+           
             variant="filled"
             autoComplete={props && props.autoComplete && props.autoComplete}
             inputProps={{ pattern, maxLength, minLength }}
             multiline={props.multiline}
             onInvalid={handleInvalid}
-            style={{ width: "100%", marginTop: "20px" }}
+            style={{ width: "100%", marginTop: "20px", borderRadius: "0px" }}
             error={invalid}
             helperText={invalid && <b>{helperText}</b>}
             onKeyPress={handleKeyPress}
             onChange={handleChange}
             {...rest}
+            value={props.value}
             disabled={props.disabled}
             rowsMax={rowsMax}
             minRows={4}
             color="secondary"
+            
+            className={classes.root}
           />
         </>
       ) : (

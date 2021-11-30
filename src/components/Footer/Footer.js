@@ -21,8 +21,7 @@ const useStyles = makeStyles((theme) => ({
       textDecoration: "underline",
     },
   },
-  colorMain: {
-  },
+  colorMain: {},
   colorWhiteBackground: {
     backgroundColor: theme.palette.common.white,
   },
@@ -82,7 +81,7 @@ const useStyles = makeStyles((theme) => ({
     color: "#6b6b6b",
     fontSize: "12px",
     lineHeight: "16px",
-    
+
     margin: "auto",
     [theme.breakpoints.down("sm")]: {
       padding: "0px",
@@ -204,8 +203,9 @@ const useStyles = makeStyles((theme) => ({
     textDecoration: "none",
   },
   linkTextmlg: {
-    fontSize: "13px",
+    fontSize: "14px",
     color: "#6b6b6b",
+    fontWeight: 549,
     textDecoration: "none",
   },
 
@@ -247,13 +247,13 @@ const useStyles = makeStyles((theme) => ({
     position: "relative",
   },
   signup: {
-    background: "#33366D",
+    background: "#2F348B ",
     color: "white",
     fontSize: "15px",
     boxShadow: "2px 3px 6px 2px #888888",
     borderRadius: "0",
     "&:hover": {
-      background: "#33366D",
+      background: "#2F348B ",
       color: "white",
     },
   },
@@ -662,7 +662,7 @@ export default function Footer(props) {
       direction="row"
       justify="center"
       alignItems="center"
-      style={{ backgroundColor: "#efefef" }}
+      style={{ backgroundColor: "#E0E1E1" }}
     >
       <Hidden only={["sm", "xs"]}>
         <Container>
@@ -688,7 +688,7 @@ export default function Footer(props) {
 
                               // href="#"
                             >
-                              <b style={{ fontSize: "14px" }}>{v.heading}</b>
+                              <b style={{ fontSize: "16px" }}>{v.heading}</b>
                             </Link>
 
                             <Link
@@ -867,18 +867,18 @@ export default function Footer(props) {
             <Grid item xs={3} style={{ margin: "10px 0 10px 0" }}>
               <Button
                 style={{
-                  background: "#33366D",
+                  background: "#2F348B",
                   color: "white",
                   fontSize: "14px",
                   borderRadius: "0px",
-                  fontWeight: "580px",
+                  fontWeight: "bold",
                   boxShadow: "4px 4px 4px #A5A4A5",
                 }}
                 onClick={() => {
                   window.location.href = "/store";
                 }}
               >
-                Store Locator
+                &nbsp;Store Locator&nbsp;
               </Button>
             </Grid>
 
@@ -892,7 +892,7 @@ export default function Footer(props) {
               }}
               spacing={1}
             >
-              <Grid item xs={5}>
+              <Grid item lg={6}>
                 <Grid
                   container
                   item
@@ -932,17 +932,17 @@ export default function Footer(props) {
                 </Grid>
               </Grid>
 
-              <Grid item xs={3}>
+              <Grid item lg={3}>
                 <p className={classes.rights}>
                   @NAC Jewellers Pvt.Ltd. All rights reserved
                 </p>
               </Grid>
-              <Grid item xs={4} className={"imageClass"}>
+              <Grid item lg={3} className={"imageClass"}>
                 <img
                   src={
                     "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_footer/k77ABP.tif%402x.png"
                   }
-                   alt="img"
+                  alt="img"
                   style={{ width: "100%", height: "auto" }}
                 />
               </Grid>
@@ -969,7 +969,7 @@ export default function Footer(props) {
             {MobilefooterData1.map((data) => (
               <Accordion
                 style={{
-                  backgroundColor: "rgb(239, 239, 239)",
+                  backgroundColor: "rgb(224, 225, 225)",
                   boxShadow: "none",
                   margin: "0px !important",
                 }}
@@ -1029,7 +1029,7 @@ export default function Footer(props) {
           >
             <Button
               style={{
-                background: "#33366D",
+                background: "#2F348B ",
                 color: "white",
                 fontSize: "11px",
                 borderRadius: "0px",

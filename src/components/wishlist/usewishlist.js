@@ -1,9 +1,8 @@
-import React from "react";
-
 import { CartContext, ProductDetailContext } from "context";
-import { API_URL } from "../../config";
 import { FetchCartId } from "queries/cart";
 import { checkProductAlreadyExistInCart } from "queries/productdetail";
+import React from "react";
+import { API_URL } from "../../config";
 
 var orderobj_cart = {};
 const useWishlists = (props) => {
@@ -14,14 +13,22 @@ const useWishlists = (props) => {
     product_sku: "",
     isactive: null,
   });
-  const [invalids, setInvalids] = React.useState({ user_id: false, product_id: false, product_sku: false });
+  const [invalids, setInvalids] = React.useState({
+    user_id: false,
+    product_id: false,
+    product_sku: false,
+  });
   const { setCartFilters, setwishlistdata } = React.useContext(CartContext);
   const {
     ProductDetailCtx: { filters },
     setFilters,
   } = React.useContext(ProductDetailContext);
-  let user_id = localStorage.getItem("user_id") ? localStorage.getItem("user_id") : {};
-  const check_gustlog = localStorage.getItem("true") ? localStorage.getItem("true") : {};
+  let user_id = localStorage.getItem("user_id")
+    ? localStorage.getItem("user_id")
+    : {};
+  const check_gustlog = localStorage.getItem("true")
+    ? localStorage.getItem("true")
+    : {};
 
   const handleChange = (type, value) => {
     setValues({
@@ -58,7 +65,10 @@ const useWishlists = (props) => {
       },
 
       body: JSON.stringify({
-        query: checkProductAlreadyExistInCart({ skuId: values.product_sku, cartId: cartId }),
+        query: checkProductAlreadyExistInCart({
+          skuId: values.product_sku,
+          cartId: cartId,
+        }),
       }),
     })
       .then((res) => res.json())
@@ -70,6 +80,9 @@ const useWishlists = (props) => {
           values["user_id"] = user_id;
           setValues({ values, ...values });
           makeFetch();
+          setTimeout(() => {
+            window.location.reload();
+          }, 1500);
         }
       });
   };
@@ -114,18 +127,26 @@ const useWishlists = (props) => {
       var _conditionfetchCartId = {
         UserId: { userprofileId: localStorage.getItem("user_id") },
       };
-      const _qty = filters && values.product_sku && filters[values.product_sku] ? filters[values.product_sku] : 1;
+      const _qty =
+        filters && values.product_sku && filters[values.product_sku]
+          ? filters[values.product_sku]
+          : 1;
       setFilters({
         ...filters,
         quantity: _qty,
       });
-      let localStorageQuantity = localStorage.getItem("quantity") ? JSON.parse(localStorage.getItem("quantity")) : null;
+      let localStorageQuantity = localStorage.getItem("quantity")
+        ? JSON.parse(localStorage.getItem("quantity"))
+        : null;
 
       if (!localStorageQuantity) {
         if (localStorageQuantity && !localStorageQuantity[values.product_sku]) {
           let _obj = {};
           localStorageQuantity[values.product_sku] = _qty;
-          localStorage.setItem("quantity", JSON.stringify(localStorageQuantity));
+          localStorage.setItem(
+            "quantity",
+            JSON.stringify(localStorageQuantity)
+          );
           filters.quantity[values.product_sku] = _qty;
         } else {
           let _obj = {};
@@ -134,7 +155,6 @@ const useWishlists = (props) => {
           filters.quantity[values.product_sku] = _qty;
         }
       } else {
-       
         localStorageQuantity[values.product_sku] = _qty;
         localStorage.setItem("quantity", JSON.stringify(localStorageQuantity));
         // filters.quantity[values.product_sku] = localStorageQuantity[values.product_sku];
@@ -198,15 +218,24 @@ const useWishlists = (props) => {
                     val.data.allShoppingCarts.nodes[0] &&
                     val.data.allShoppingCarts.nodes[0].id
                   ) {
-                    localStorage.setItem("cart_id", JSON.stringify({ cart_id: val.data.allShoppingCarts.nodes[0].id }));
+                    localStorage.setItem(
+                      "cart_id",
+                      JSON.stringify({
+                        cart_id: val.data.allShoppingCarts.nodes[0].id,
+                      })
+                    );
                     var _conditionfetch = {
-                      CartId: { shoppingCartId: val.data.allShoppingCarts.nodes[0].id },
+                      CartId: {
+                        shoppingCartId: val.data.allShoppingCarts.nodes[0].id,
+                      },
                     };
                     // var _products_obj = {}
                     _products_obj["sku_id"] = values.product_sku;
                     _products_obj["price"] = values.add;
                     _products_obj["qty"] = 1;
-                    var _cart_id = { cart_id: val.data.allShoppingCarts.nodes[0].id };
+                    var _cart_id = {
+                      cart_id: val.data.allShoppingCarts.nodes[0].id,
+                    };
 
                     _products = { products: [_products_obj] };
                     _obj = { ..._user_id, ..._products, ..._cart_id };
@@ -228,7 +257,9 @@ const useWishlists = (props) => {
                       ) {
                         window.location.pathname = `/account${"-shoppingcart"}`;
                       } else {
-                        if (window.location.pathname.split("-")[0] === "/account") {
+                        if (
+                          window.location.pathname.split("-")[0] === "/account"
+                        ) {
                           window.location.reload();
                         }
                       }

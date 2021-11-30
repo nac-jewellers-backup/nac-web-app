@@ -130,30 +130,24 @@ class CashonDelivey extends React.Component {
 
     return (
       <div>
-        <Grid spacing={12} container lg={12} xs={12} style={{ width: "100%" }}>
-          <Grid item lg={12} xs={12} style={{ padding: "15px" }}>
-            <div className="amout-pay"> Amount Payable </div>
-            <div className="credit-btn-div">
-              <span className="rups">
-                {Intl.NumberFormat("en-IN", {
+        <Grid container>
+          <Grid item lg={12} xs={12}>
+             
+              <Button
+               style={{borderRadius:"0px"}}
+              type="submit"
+              color="primary"
+              variant="contained"
+                onClick={() => this.makeFetch(this.props)}
+              >
+               Pay&nbsp;{Intl.NumberFormat("en-IN", {
                   style: "currency",
                   currency: "INR",
                   minimumFractionDigits: 0,
                 }).format(Math.round(dataCard1 - discounted_price))}
-                {/* {Math.round(dataCard1 - discounted_price)} */}
-              </span>
-              &nbsp;
-              <Button
-                style={{ display: "flex" }}
-                className="credit-button"
-                type="submit"
-                onClick={() => this.makeFetch(this.props)}
-              >
-                Place order
               </Button>
-            </div>
+          
           </Grid>
-          <div className="code-btn-top">COD orders are subject to telephonic verification.</div>
         </Grid>
       </div>
     );

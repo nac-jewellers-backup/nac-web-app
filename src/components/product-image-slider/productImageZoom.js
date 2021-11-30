@@ -1,10 +1,12 @@
-import { Button, Grid, Hidden } from "@material-ui/core";
+import { Grid, Hidden, IconButton } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
+import { ArrowLeft, ArrowRight } from "@material-ui/icons";
 import PropTypes from "prop-types";
 import React from "react";
 import { GlassMagnifier } from "react-image-magnifiers";
 import Slideshow from "../Carousel/carosul";
 import styles from "../Header/styles";
+import Wishlist from "../wishlist/wishlist";
 import "./product-images.css";
 // window.onload = function () {
 //   var flashlight = document.querySelector('#flashlight');
@@ -28,6 +30,7 @@ class ProductImageZoom extends React.Component {
     img.onerror = bad;
     img.src = imageSrc;
   };
+
   check_image_exists_in_server = (url) => {
     // var _url = url.replace(res.img_res, '1000X1000');
 
@@ -182,18 +185,14 @@ class ProductImageZoom extends React.Component {
   };
 
   productImageZoom = (_isSilver) => {
-    const { classes, data, customLimit } = this.props;
+    const { classes, data, customLimit, wishlist } = this.props;
+
     const limit = customLimit ? customLimit : 4;
 
     const { showimage, largeImage, showimageBig, largeImageBig } = this.state;
     const dataCarousel = {
       infinite: false,
-      slidesToShow:
-        data && data.length > 0
-          ? data[0] && data[0]?.fadeImages?.arrOfurls?.length > 3
-            ? limit
-            : data[0]?.fadeImages?.arrOfurls?.length
-          : 0,
+      slidesToShow: 3,
       slidesToScroll: 1,
       // vertical: true,
       // verticalSwiping: true,
@@ -214,79 +213,24 @@ class ProductImageZoom extends React.Component {
     // var c = a.replace(b[5], data[0].image_resolution_two + 'X' + data[0].image_resolution_two)
     var c = a?.length > 0 && a?.replace(b[5], "1000X1000");
     // alert(JSON.stringify(CDN_URL))consle
+    // console.log(this.props.data[0].productId, "ssss");
+    // //debugger;
 
     return (
       <div>
         {/* {JSON.stringify(showimage)} */}
-        <Grid
-          container
-          spacing={_isSilver ? 2 : 12}
-          style={{ paddingRight: _isSilver ? "auto" : "20px" }}
-        >
-          <Grid item xs={_isSilver ? 9 : 11}>
-            {/* <div className='imagecard' id="divs" onMouseOut={event => this.zoomOut(event)} onMouseMove={event => this.zoomIn(event)}>
-                {data[0].ProductContactNum[0].isReadyToShip == true ? <div class="one-day-ship" ></div> : ""} */}
-            {/* <div id='flashlight'></div> */}
-            {/* <img className='img-zooming-' id="imgZoom" width="100%" height="100%" className={`${showimage ? '' : 'shine'}`} src={showimage} alt="" />
-              </div>
-              <div className='overly-img' id="overlay"
-                style={{ backgroundImage: `url(${showimage})` }} onMouseOut={event => this.zoomOut(event)}>
-                </div> */}
-
-            {/* <div class="zoomreact" style={{  boxShadow: "0px 2px 4px 4px rgba(0, 0, 0, 0.1), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12)" , width: "100%" }}><ReactImageZoom {...props} /></div> */}
-
+        <Grid container justifyContent="center">
+          <Grid item xs={10}>
             <div>
               <div
                 className={_isSilver ? "imagecardSilver" : "imagecardSilver"}
                 id="divs"
                 style={{
-                  height:
-                    window.innerWidth > 2250
-                      ? _isSilver
-                        ? "500px"
-                        : "800px"
-                      : _isSilver
-                      ? this.props?.data[0]?.size - 100
-                      : this.props?.data[0]?.size,
                   display: "flex",
                   alignItem: "center",
+                  width: "97%",
                 }}
               >
-                {/* {alert(JSON.stringify(this.props.data[0].fadeImages.arrOfurls_2X[0]))} */}
-                {/* <Grid container >
-                <Grid item lg={1}>
-                {data.map(val => {
-                
-                var split = val.offerDiscount.split(" ")
-                  return < span style={{ color: "#fff" }}>
-                < div class="ribbon_dic" > {split[0]} < br /> {split[1]}</div>
-                  </span>
-                })}
-                </Grid>
-                <Grid item lg={3}>
-                {data[0].ProductContactNum[0].isReadyToShip == true ? <div class="one-day-ship" ></div> : ""}
-                
-              </Grid>
-            </Grid> */}
-                {data.map((val) => {
-                  return !this.props?.isSilver && val?.offerDiscount ? (
-                    <span style={{ color: "#fff" }} className="overlayCss11">
-                      {val?.offerDiscount}
-                    </span>
-                  ) : null;
-                })}
-                {/* !this.props.isSilver &&  */}
-                {/* {data[0]?.ProductContactNum[0]?.isReadyToShip == true ? (
-                  this.props?.isSilver ? (
-                    <div class={"one-day-ship_only_silver"}>
-                      <img src={""} alt="" />
-                    </div>
-                  ) : (
-                    <div class={data && data[0] && data[0]?.offerDiscount ? "one-day-ship_" : "one-day-ship_only"}></div>
-                  )
-                ) : (
-                  ""
-                )} */}
                 {this.handleVideoCheck(showimage) ? (
                   <video
                     preload="auto"
@@ -298,28 +242,49 @@ class ProductImageZoom extends React.Component {
                     <source src={showimage} type="video/mp4" />
                   </video>
                 ) : (
-                  <GlassMagnifier
-                    imageSrc={[
-                      largeImage,
-                      showimageBig,
-                      `https://styloriimages-staging.s3.ap-south-1.amazonaws.com/product/1000X1000/productnotfound.webp`,
-                    ]}
-                    // imageSrc={largeImage}
-                    // onImageLoad={this.imageSrc=`${CDN_URL}product/1000X1000/productnotfound.webp`}
-                    imageAlt="Stylori"
-                    magnifierSize={this.props.isSilver ? "40%" : "50%"}
-                    largeImageSrc={[
-                      largeImage,
-                      largeImageBig,
-                      `https://styloriimages-staging.s3.ap-south-1.amazonaws.com/product/2400X2400/productnotfound.webp`,
-                      `https://styloriimages-staging.s3.ap-south-1.amazonaws.com/product/1000X1000/productnotfound.webp`,
-                    ]}
-                    magnifierBoxShadow="0px 1px 3px 0px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 2px 1px -1px rgba(0,0,0,0.12)"
-                    magnifierBorderColor={
-                      this.props.isSilver ? "rgb(58,69,120)" : "#f5003240"
-                    }
-                    // magnifierBackgroundColor="#f5003240"
-                  />
+                  <div
+                    style={{
+                      boxShadow: "4px 4px 4px #a5a4a5",
+                      border: "1px solid #1a181866",
+                      position: "relative",
+                    }}
+                  >
+                    <div
+                      style={{
+                        position: "absolute",
+                        left: "10px",
+                        zIndex: "999",
+                      }}
+                    >
+                      <Wishlist
+                        sku={data[0].skuId}
+                        productId={data[0].productId}
+                        wishlist={wishlist}
+                      />
+                    </div>
+                    <GlassMagnifier
+                      imageSrc={[
+                        largeImage,
+                        showimageBig,
+                        `https://styloriimages-staging.s3.ap-south-1.amazonaws.com/product/1000X1000/productnotfound.webp`,
+                      ]}
+                      // imageSrc={largeImage}
+                      // onImageLoad={this.imageSrc=`${CDN_URL}product/1000X1000/productnotfound.webp`}
+                      imageAlt="Stylori"
+                      magnifierSize={this.props.isSilver ? "40%" : "50%"}
+                      largeImageSrc={[
+                        largeImage,
+                        largeImageBig,
+                        `https://styloriimages-staging.s3.ap-south-1.amazonaws.com/product/2400X2400/productnotfound.webp`,
+                        `https://styloriimages-staging.s3.ap-south-1.amazonaws.com/product/1000X1000/productnotfound.webp`,
+                      ]}
+                      magnifierBoxShadow="4px 4px 4px #a5a4a5"
+                      magnifierBorderColor={
+                        this.props.isSilver ? "rgb(58,69,120)" : "#f5003240"
+                      }
+                      // magnifierBackgroundColor="#f5003240"
+                    />
+                  </div>
                 )}
               </div>
 
@@ -339,109 +304,91 @@ class ProductImageZoom extends React.Component {
 
               <div></div>
             </div>
-            <Grid
-              container
-              xs={12}
-              style={{
-                paddingTop: "20px",
-                display: "flex",
-                justifyContent: "center",
-              }}
-            >
-              <Grid item xs={11}>
-                <div
-                  style={{ textAlign: !_isSilver && "center" }}
-                  className="imgzom-sidecraousel-media"
-                >
-                  {data &&
-                  data.length > 0 &&
-                  data[0] &&
-                  data[0].fadeImages.arrOfurls.length > 3 ? (
-                    <span
-                      className={
-                        data &&
-                        data.length > 0 &&
-                        data[0] &&
-                        data[0].fadeImages.arrOfurls.length === 4
-                          ? classes.cursor_notallowed
-                          : null
-                      }
-                    >
-                      <Button
-                        onClick={this.previous}
-                        disabled={
-                          data &&
-                          data.length > 0 &&
-                          data[0] &&
-                          data[0].fadeImages.arrOfurls.length === 4
-                            ? true
-                            : false
-                        }
-                      >
-                        <i
-                          className={`fa fa-angle-up ${
-                            _isSilver
-                              ? classes.iconfill
-                              : classes.iconfillStylori
-                          }`}
-                          style={{ fontSize: "35px" }}
-                        ></i>
-                      </Button>
-                    </span>
-                  ) : null}
-                  <Slideshow
-                    sliderRef={this.slider}
-                    height={30}
-                    getmsg={this.getimage}
-                    class={
-                      this.props.isSilver
-                        ? "vertical-carousel-silver"
-                        : `vertical-carousel`
+          </Grid>
+        </Grid>
+        <Grid
+          container
+          justifyContent="center"
+          style={{
+            paddingTop: "20px",
+          }}
+        >
+          <Grid item xs={12}>
+            <Grid container>
+              <Grid
+                item
+                xs={1}
+                style={{ display: "flex", alignSelf: "center" }}
+              >
+                {data &&
+                data.length > 0 &&
+                data[0] &&
+                data[0].fadeImages.arrOfurls.length > 3 ? (
+                  <span
+                    className={
+                      data &&
+                      data.length > 0 &&
+                      data[0] &&
+                      data[0].fadeImages.arrOfurls.length === 4
+                        ? classes.cursor_notallowed
+                        : null
                     }
-                    imgClass="vertical-carousel-img"
-                    fadeImages={data[0]?.fadeImages?.arrOfurls_2X}
-                    dataCarousel={dataCarousel}
-                    currentImage={this.state.showimage}
-                  />
-
-                  {data &&
-                  data.length > 0 &&
-                  data[0] &&
-                  data[0].fadeImages.arrOfurls.length > 3 ? (
-                    <span
-                      className={
-                        data &&
-                        data.length > 0 &&
-                        data[0] &&
-                        data[0].fadeImages.arrOfurls.length === 4
-                          ? classes.cursor_notallowed
-                          : null
-                      }
-                    >
-                      <Button
-                        onClick={this.next}
-                        disabled={
-                          data &&
-                          data.length > 0 &&
-                          data[0] &&
-                          data[0].fadeImages.arrOfurls.length === 4
-                            ? true
-                            : false
-                        }
-                      >
-                        <i
-                          className={`fa fa-angle-down ${
-                            _isSilver
-                              ? classes.iconfill
-                              : classes.iconfillStylori
-                          }`}
-                          style={{ fontSize: "35px" }}
-                          // className={`${classes.colorMain}`}
-                        ></i>
-                      </Button>
-                    </span>
-                  ) : null}
-                </div>
+                  >
+                    <IconButton size="small" onClick={this.previous}>
+                      <ArrowLeft
+                        style={{
+                          color: "#A66E1D",
+                          fontSize: "40px",
+                        }}
+                      />
+                    </IconButton>
+                  </span>
+                ) : null}
+              </Grid>
+              <Grid item xs={10}>
+                <Slideshow
+                  sliderRef={this.slider}
+                  getmsg={this.getimage}
+                  class={
+                    this.props.isSilver
+                      ? "vertical-carousel-silver"
+                      : `vertical-carousel`
+                  }
+                  imgClass="vertical-carousel-img"
+                  fadeImages={data[0]?.fadeImages?.arrOfurls_2X}
+                  dataCarousel={dataCarousel}
+                  currentImage={this.state.showimage}
+                />
+              </Grid>
+              <Grid
+                item
+                xs={1}
+                style={{ display: "flex", alignSelf: "center" }}
+              >
+                {data &&
+                data.length > 0 &&
+                data[0] &&
+                data[0].fadeImages.arrOfurls.length > 3 ? (
+                  <span
+                    className={
+                      data &&
+                      data.length > 0 &&
+                      data[0] &&
+                      data[0].fadeImages.arrOfurls.length === 4
+                        ? classes.cursor_notallowed
+                        : null
+                    }
+                  >
+                    <IconButton size="small" onClick={this.next}>
+                      <ArrowRight
+                        style={{
+                          color: "#A66E1D",
+                          fontSize: "40px",
+                        }}
+                      />
+                    </IconButton>
+                  </span>
+                ) : null}
               </Grid>
             </Grid>
           </Grid>
@@ -486,7 +433,6 @@ class ProductImageZoom extends React.Component {
 
   render() {
     const _isSilver = this.props.isSilver ? true : false;
-
     return (
       <div>
         <Hidden smDown>{this.productImageZoom(_isSilver)}</Hidden>

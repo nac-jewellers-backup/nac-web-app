@@ -51,7 +51,9 @@ class CustomerReviews extends React.Component {
       var value;
       if (
         (val.title !== "" && val.title !== undefined && val.title !== null) ||
-        (val.message !== "" && val.message !== undefined && val.message !== null) ||
+        (val.message !== "" &&
+          val.message !== undefined &&
+          val.message !== null) ||
         (val.rating !== "" && val.rating !== undefined && val.rating !== null)
       ) {
         value = (
@@ -65,7 +67,7 @@ class CustomerReviews extends React.Component {
               style={{
                 borderRadius: "0px",
                 textTransform: "none",
-                border: "1px solid #394579",
+                border: "1px solid #2F348B",
                 textAlign: "center",
                 marginRight: " 5px",
                 minWidth: "100px",
@@ -97,7 +99,11 @@ class CustomerReviews extends React.Component {
             </div>
             <div style={{ display: "flex" }}>
               {[1, 2, 3, 4, 5].map((n, i) => (
-                <Star key={i} selected={i < val.rating} onClick={() => this.change(i + 1)} />
+                <Star
+                  key={i}
+                  selected={i < val.rating}
+                  onClick={() => this.change(i + 1)}
+                />
               ))}
             </div>
 
@@ -126,18 +132,32 @@ class CustomerReviews extends React.Component {
       var value;
       if (
         (val.title !== "" && val.title !== undefined && val.title !== null) ||
-        (val.message !== "" && val.message !== undefined && val.message !== null) ||
+        (val.message !== "" &&
+          val.message !== undefined &&
+          val.message !== null) ||
         (val.rating !== "" && val.rating !== undefined && val.rating !== null)
       ) {
         value = (
           <>
             <div style={{ display: "flex" }}>
               {[1, 2, 3, 4, 5].map((n, i) => (
-                <Star key={i} selected={i < val.rating} onClick={() => this.change(i + 1)} />
+                <Star
+                  key={i}
+                  selected={i < val.rating}
+                  onClick={() => this.change(i + 1)}
+                />
               ))}
             </div>
-            <div style={{ width: "100%", fontSize: "16px", marginBottom: "5px" }}>{val.customerName}</div>
-            <div style={{ width: "100%", fontSize: "14px", marginBottom: "5px" }}>{val.message}</div>
+            <div
+              style={{ width: "100%", fontSize: "16px", marginBottom: "5px" }}
+            >
+              {val.customerName}
+            </div>
+            <div
+              style={{ width: "100%", fontSize: "14px", marginBottom: "5px" }}
+            >
+              {val.message}
+            </div>
 
             <br />
             <div className="brder-btom"></div>
@@ -160,11 +180,23 @@ class CustomerReviews extends React.Component {
   render() {
     const ArrowLeft = (props) => {
       const { className, style, onClick } = props;
-      return <ArrowLeftIcon onClick={onClick} className={`${className} ${classes.collectionSection}`} style={{ ...style }} />;
+      return (
+        <ArrowLeftIcon
+          onClick={onClick}
+          className={`${className} ${classes.collectionSection}`}
+          style={{ ...style }}
+        />
+      );
     };
     const ArrowRight = (props) => {
       const { className, style, onClick } = props;
-      return <ArrowRightIcon className={`${className} ${classes.collectionSection}`} onClick={onClick} style={{ ...style }} />;
+      return (
+        <ArrowRightIcon
+          className={`${className} ${classes.collectionSection}`}
+          onClick={onClick}
+          style={{ ...style }}
+        />
+      );
     };
 
     const dataCarouselcollectionsSm = {
@@ -186,62 +218,82 @@ class CustomerReviews extends React.Component {
     const { starsSelected } = this.state;
     return (
       <div style={{ width: "100%" }}>
-        <Hidden smDown>
-          {/* <Container style={{ paddingLeft: "15px", paddingRight: "15px", paddingTop: "5px" }}> */}
-          <div style={{ padding: " 20px 0px 0px 0px !important" }}>
-            <div className="reviews-header">
-              <span className={`reviews-customer ${classes.normalfonts}`}>Customer Reviews</span>
-            </div>
-            <div className="reviews">
-              <span className={`data-reviews ${classes.normalfonts}`}>
-                <Grid
-                  spacing={12}
-                  container
-                  style={{
-                    justifyContent: "center",
-                    padding: "2%",
-                    lineHeight: "23px",
-                  }}
-                >
-                  <Grid item lg={12}>
-                    {this.rat_map_title() ? (
-                      this.rat_map_title()
-                    ) : (
-                      <div style={{ textAlign: "center", fontWeight: "bold" }}> No reviews found</div>
-                    )}
-                  </Grid>
-                </Grid>
-              </span>
-            </div>
-          </div>
-          {/* </Container> */}
-        </Hidden>
-        <Hidden mdUp>
-          <div style={{ padding: " 20px 0px 0px 0px !important" }}>
-            <div className="reviews">
-              <span className={`data-reviews ${classes.normalfonts}`}>
-                <Grid
-                  spacing={12}
-                  container
-                  style={{
-                    padding: "2%",
-                    lineHeight: "23px",
-                  }}
-                >
-                  <Grid item xs={12}>
-                    {this.rat_map_titlesm() ? (
-                      <>
-                        <Slideshow dataCarousel={dataCarouselcollectionsSm}>{this.rat_map_titlesm()}</Slideshow>
-                      </>
-                    ) : (
-                      <div style={{ textAlign: "center", fontWeight: "bold" }}> No reviews found</div>
-                    )}
-                  </Grid>
-                </Grid>
-              </span>
-            </div>
-          </div>
-        </Hidden>
+        {this.rat_map_title() ? (
+          <>
+            <Hidden smDown>
+              {/* <Container style={{ paddingLeft: "15px", paddingRight: "15px", paddingTop: "5px" }}> */}
+              <div style={{ padding: " 20px 0px 0px 0px !important" }}>
+                <div className="reviews-header">
+                  <span className={`reviews-customer ${classes.normalfonts}`}>
+                    Customer Reviews
+                  </span>
+                </div>
+                <div className="reviews">
+                  <span className={`data-reviews ${classes.normalfonts}`}>
+                    <Grid
+                      spacing={12}
+                      container
+                      style={{
+                        justifyContent: "center",
+                        padding: "2%",
+                        lineHeight: "23px",
+                      }}
+                    >
+                      <Grid item lg={12}>
+                        {this.rat_map_title() ? (
+                          this.rat_map_title()
+                        ) : (
+                          <div
+                            style={{ textAlign: "center", fontWeight: "bold" }}
+                          >
+                            {" "}
+                            No reviews found
+                          </div>
+                        )}
+                      </Grid>
+                    </Grid>
+                  </span>
+                </div>
+              </div>
+              {/* </Container> */}
+            </Hidden>
+            <Hidden mdUp>
+              <div style={{ padding: " 20px 0px 0px 0px !important" }}>
+                <div className="reviews">
+                  <span className={`data-reviews ${classes.normalfonts}`}>
+                    <Grid
+                      spacing={12}
+                      container
+                      style={{
+                        padding: "2%",
+                        lineHeight: "23px",
+                      }}
+                    >
+                      <Grid item xs={12}>
+                        {this.rat_map_titlesm() ? (
+                          <>
+                            <Slideshow dataCarousel={dataCarouselcollectionsSm}>
+                              {this.rat_map_titlesm()}
+                            </Slideshow>
+                          </>
+                        ) : (
+                          <div
+                            style={{ textAlign: "center", fontWeight: "bold" }}
+                          >
+                            {" "}
+                            No reviews found
+                          </div>
+                        )}
+                      </Grid>
+                    </Grid>
+                  </span>
+                </div>
+              </div>
+            </Hidden>
+          </>
+        ) : (
+          " "
+        )}
       </div>
     );
   }
@@ -262,7 +314,14 @@ const Components = (props) => {
       </div>
     );
   else {
-    return <CustomerReviews {...props} data={mapped} filters={filters} rating={rating} />;
+    return (
+      <CustomerReviews
+        {...props}
+        data={mapped}
+        filters={filters}
+        rating={rating}
+      />
+    );
   }
 };
 export default withStyles(styles)(Components);

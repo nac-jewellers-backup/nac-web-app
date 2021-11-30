@@ -1,25 +1,23 @@
-import React from "react";
-import { Grid, Typography, Button, Hidden } from "@material-ui/core";
-import CollectionPageStylori from "./CollectionData";
-import Slideshow from "../../components/Carousel/carosul";
+import { Button, Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
+import { NetworkContext } from "context/NetworkContext";
+import { seoUrlResult } from "queries/productListing";
+import React from "react";
+import "screens/screens.css";
 import ChildCollectionItemOne from "./ChildCollectionItemOne";
 import ChildCollectionItemTwo from "./ChildCollectionItemTwo";
 import "./Collection.css";
-import { seoUrlResult } from "queries/productListing";
-import { NetworkContext } from "context/NetworkContext";
-import { useNetworkRequest } from "hooks/NetworkHooks";
-import "screens/screens.css";
+import CollectionPageStylori from "./CollectionData";
 
 const useStyles = makeStyles((theme) => ({
   ButtonViewMoreCollections: {
     fontSize: "12px",
     textTransform: "capitalize",
-    color: "#394578",
+    color: "#2F348B",
     borderRadius: "0px !important",
     padding: "9px 29px",
     backgroundColor: "#fff",
-    border: "1px solid #394578",
+    border: "1px solid #2F348B",
   },
 }));
 export default function CollectionItem(props) {
@@ -131,7 +129,8 @@ export default function CollectionItem(props) {
         var img_url11 = val;
         var product_filter = img_url11.split("/");
         var product_filter_val = product_filter && product_filter[1].split("?");
-        var product_data = product_filter_val && product_filter_val[0].split("-");
+        var product_data =
+          product_filter_val && product_filter_val[0].split("-");
         var product_data_one = product_data && product_data[0];
         var product_data_two = product_data && product_data[1];
         if (arr.length > 0) {
@@ -176,13 +175,18 @@ export default function CollectionItem(props) {
       {(values.arr_data &&
         values.arr_data.Testimony &&
         values.arr_data.Testimony.carousel &&
-        values.arr_data.Testimony.carousel.data.length) === (img_url && img_url.length) ? (
+        values.arr_data.Testimony.carousel.data.length) ===
+      (img_url && img_url.length) ? (
         <>
           <ChildCollectionItemOne CollectionPageStylori={values.arr_data} />
-          {values.arr_data && values.arr_data.Testimony && values.arr_data.Testimony.carousel.data.length >= 2 ? (
+          {values.arr_data &&
+          values.arr_data.Testimony &&
+          values.arr_data.Testimony.carousel.data.length >= 2 ? (
             <>
               {values.onViewMoreCollection === true ? (
-                <ChildCollectionItemTwo CollectionPageStylori={values.arr_data} />
+                <ChildCollectionItemTwo
+                  CollectionPageStylori={values.arr_data}
+                />
               ) : (
                 <>
                   <Grid container>

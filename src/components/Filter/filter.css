@@ -1,7 +1,7 @@
 @import "../../fonts/font.css";
 
 /* .arrow {
-  fill: #394578 !important;
+  fill: #2F348B !important;
 } */
 .MuiTypography-h4,
 .MuiInputBase-input {
@@ -15,12 +15,12 @@
 .fil-submenu-icons {
   fill: blue !important;
   padding: 0 9px;
-} 
+}
 
 .fil-drawer-arrow {
   fill: rgba(0, 0, 0, 0.25) !important;
 }
-.filter_page_layout{
+.filter_page_layout {
   /* justify-content: center;
   width: 100%;
   height: 100%;
@@ -84,7 +84,7 @@
   border: 1px solid #e3e3e3;
   margin-top: -2px;
   box-shadow: none !important;
-  color: #394578 !important;
+  color: #2f348b !important;
 }
 
 .fil-drawer-head-filter-arrow {
@@ -125,7 +125,7 @@
 }
 
 .price-txt input {
-  color: #394578;
+  color: #2f348b;
   font-weight: 600;
   font-size: 12px !important;
   width: 65px;
@@ -145,13 +145,13 @@
 .filter-mbl-font,
 .filter-mbl-fonts {
   /* padding: 2px; */
-  /* color: #394578; */
+  /* color: #2F348B; */
   cursor: pointer;
   /* font-family: "notoSerif-regular" !important; */
   /* font-size: 15px; */
   /* font-weight: 600 !important; */
-  font-Weight: "600";
-  color: "#20205A",
+  font-weight: "600";
+  color: "#20205A";
 }
 
 .fnts {
@@ -159,13 +159,13 @@
 }
 
 .filter-mbl-fonted :hover {
-  color: #666 !important
+  color: #666 !important;
 }
 
 /*mobile filter*/
 .filter-mbl-font span {
   /* padding: 2px; */
-  /* color: #394578; */
+  /* color: #2F348B; */
   /* color: #666; */
   cursor: pointer;
   /* font-family: "notoSerif-regular" !important; */
@@ -182,8 +182,8 @@
   padding-top: 0px !important;
 } */
 .mbl-filter-list {
-  border-bottom: '1px solid #efeeee';
-  color: #20205A !important;
+  border-bottom: "1px solid #efeeee";
+  color: #20205a !important;
 }
 
 .mbl-filter-list :hover {
@@ -193,21 +193,20 @@
 }
 
 .mbl-filter-list :hover span {
-
-  /* background-color: #394578 !important; */
+  /* background-color: #2F348B !important; */
   /* background-image: linear-gradient(to left, #f9e3e3, rgba(246, 153, 163, 1)); */
   color: #fff !important;
   background-color: #b78231;
 }
 
 /* .mbl-filter-list :hover {
-  background-color: #394578 !important;
+  background-color: #2F348B !important;
   color: #fff !important;
 } */
 
 .filter-fixed {
   text-align: center;
-  background-color: whitesmoke ;
+  background-color: whitesmoke;
   position: fixed !important;
   bottom: 0 !important;
   top: auto !important;
@@ -231,10 +230,19 @@
 
 .SliderFilter ul {
   position: sticky;
-  z-index: '6';
-  top: '150px'
+  z-index: "6";
+  top: "150px";
 }
-
+.scroll::-webkit-scrollbar {
+  width: 10px;
+}
+.scroll::-webkit-scrollbar-thumb {
+  background-color: #2f348b;
+  border-radius: 10px;
+}
+.scroll::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
 
 .scrollBarFilter::-webkit-scrollbar {
   width: 0.2em;
@@ -245,7 +253,7 @@
 }
 
 .scrollBarFilter::-webkit-scrollbar-thumb {
-  background-color: #394578;
+  background-color: #2f348b;
 }
 
 .filterButtonMobile {
@@ -261,7 +269,8 @@
   background-color: rgb(251, 100, 27) !important;
 }
 
-@media only screen and (min-width: 320px) {}
+@media only screen and (min-width: 320px) {
+}
 
 .subFilterSize {
   line-height: 0.5rem !important;
@@ -284,7 +293,7 @@
 }
 
 .header-chips-text {
-  color: #3a4578 !important;
+  color: #2f348b !important;
   margin: 1px 5px 3px 0 !important;
   max-width: 100%;
   background: none !important;
@@ -305,7 +314,8 @@
   display: block;
   width: 12px !important;
   height: 12px !important;
-  background: url(https://alpha-assets.stylori.com/images/static/STY_ICON.png) -42px 1px no-repeat;
+  background: url(https://alpha-assets.stylori.com/images/static/STY_ICON.png) -42px
+    1px no-repeat;
   font-size: 1px !important;
   margin-top: -1px !important;
   margin-left: -14px;

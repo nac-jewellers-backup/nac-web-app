@@ -20,6 +20,7 @@ const AddressComponent = (props) => {
   const { values, handle, setValues } = Addressforms(() =>
     props.changePanel(3, values.selest_my_address)
   );
+  const [state, setState] = React.useState(null);
   const cl = (
     <input
       onChange={() =>
@@ -33,6 +34,15 @@ const AddressComponent = (props) => {
       checked={values.checkValue}
     />
   );
+  const redirectAdd = (num) => {
+    handle.redirectForm1();
+    setState(num);
+  };
+  const redirectAdd2 = (num) => {
+    handle.redirectForm1();
+    setState(num);
+  };
+
   var isedit = localStorage.getItem("isedit");
   const aa = localStorage.getItem("m")
     ? localStorage.getItem("m")
@@ -54,16 +64,7 @@ const AddressComponent = (props) => {
               ) : (
                 ""
               )}
-              <p class="form-group tp" style={{ width: "480px" }}>
-                {/* {localStorage.getItem("valuessetdata") || localStorage.getItem("vals") ? "" : <>{cl}</>} */}
-                {window.location.pathname.split("-")[0] === "/account" ||
-                values.edit_addresId === true ? (
-                  ""
-                ) : (
-                  <>{cl}</>
-                )}
-                {/* {JSON.stringify(values.errortext && values.errortext.pinerr)} */}
-              </p>{" "}
+
               <Grid container item xs={12} lg={12}>
                 <Grid
                   item
@@ -74,46 +75,21 @@ const AddressComponent = (props) => {
                       : 12
                   }
                 >
-                  {window.location.pathname.split("-")[0] === "/account" ||
-                  values.hidebilling === true ||
-                  values.addrs === true ? (
-                    ""
+                  {state == 1 || state == null ? (
+                    <h5 className="title"> Shipping Address</h5>
                   ) : (
-                    <>
-                      <h5 className="title">Shipping Addresss</h5>
-                      <>
-                        {!values.checkValue &&
-                          "If your Billing address is same as your shipping address, please check the box and fill up the shipping address in the form."}
-                        {values.checkValue &&
-                          "If your Billing address is different from your shipping address, please uncheck the box to the left and fill up the billing address in the form."}
-                      </>
-                    </>
+                    <h5 className="title"> Billing Address</h5>
                   )}
+
                   <Grid container spacing={12}>
-                    <Grid item xs={4} lg={4}>
-                      {/* <FormControl variant="outlined" className={classes.formControl}>
-        <Select
-          labelId="demo-simple-select-outlined-label"
-          id="demo-simple-select-outlined"
-          value={values.addressOne.salutation}
-          onChange={(e)=>handle.handleChange_selsect(e)}
-        //   labelWidth={labelWidth}
-        >
-          <MenuItem value="">
-            <em>None</em>
-          </MenuItem>
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
-        </Select> */}
-                      {/* </FormControl> */}
+                    <Grid item lg={2}>
                       <SimpleSelect
                         // val={'1'}
                         name={aa ? [aa] : ["Select"]}
                         selectData={["Mr", "Mrs", "Ms"]}
                       />
                     </Grid>
-                    <Grid item xs={4} lg={4}>
+                    <Grid item lg={5}>
                       <Input
                         name="firstname"
                         className="text-f"
@@ -131,7 +107,7 @@ const AddressComponent = (props) => {
                         helperText="First name is required"
                       />
                     </Grid>
-                    <Grid item xs={4} lg={4}>
+                    <Grid item lg={5}>
                       <Input
                         className="text-f"
                         type="text"
@@ -258,7 +234,6 @@ const AddressComponent = (props) => {
                       />
                     </Grid>
                   </Grid>
-
                   <Grid container spacing={12}>
                     <Grid item xs={3} lg={3}>
                       <SimpleSelect
@@ -305,10 +280,24 @@ const AddressComponent = (props) => {
                     </Grid>
                   </Grid>
                 </Grid>
-
-                {/*  */}
-                {/*  */}
-                {/* {localStorage.getItem("valuessetdata") || localStorage.getItem("vals") ? "" : <> */}
+                <p class="form-group tp">
+                  {/* {localStorage.getItem("valuessetdata") || localStorage.getItem("vals") ? "" : <>{cl}</>} */}
+                  {window.location.pathname.split("-")[0] === "/account" ||
+                  values.edit_addresId === true ? (
+                    ""
+                  ) : (
+                    <>
+                      {cl}
+                      <span>
+                        {!values.checkValue &&
+                          "If your Billing address is same as your shipping address, please check the box and fill up the shipping address in the form."}
+                        {values.checkValue &&
+                          "If your Billing address is different from your shipping address, please uncheck the box to the left and fill up the billing address in the form."}
+                      </span>
+                    </>
+                  )}
+                  {/* {JSON.stringify(values.errortext && values.errortext.pinerr)} */}
+                </p>{" "}
                 {window.location.pathname.split("-")[0] === "/account" ||
                 values.edit_addresId === true ? (
                   ""
@@ -316,19 +305,19 @@ const AddressComponent = (props) => {
                   <>
                     <Grid container item lg={1} />
                     {!values.checkValue && (
-                      <Grid item xs={12} lg={5}>
+                      <Grid item xs={12} lg={12}>
                         <br />
                         <br />
                         <h5 className="title"> Billing Address</h5>
                         <Grid container spacing={12}>
-                          <Grid item xs={4} lg={4}>
+                          <Grid lg={2}>
                             <SimpleSelect
                               val={"2"}
                               name={["Select"]}
                               selectData={["Mr", "Mrs", "Ms"]}
                             />
                           </Grid>
-                          <Grid item xs={4} lg={4}>
+                          <Grid item xs={4} lg={5}>
                             <Input
                               name="firstnametwo"
                               className="text-f"
@@ -346,7 +335,7 @@ const AddressComponent = (props) => {
                               helperText="First name is required"
                             />
                           </Grid>
-                          <Grid item xs={4} lg={4}>
+                          <Grid item xs={4} lg={5}>
                             <Input
                               className="text-f"
                               type="text"
@@ -527,11 +516,8 @@ const AddressComponent = (props) => {
                     )}
                   </>
                 )}
-                {/* </>} */}
               </Grid>
-              {/* <div style={{float:"right"}}>
-                                
-                            </div> */}
+
               <div style={{ display: "flex", justifyContent: "flex-end" }}>
                 {values.edit_addresId === true ? (
                   <Button
@@ -567,7 +553,8 @@ const AddressComponent = (props) => {
             values={values}
             setValues={setValues}
             changevalue={props.changePanel}
-            redirectForm1={handle.redirectForm1}
+            redirectForm1={redirectAdd}
+            redirectForm2={redirectAdd2}
             redirectForm={handle.redirectForm}
             changeaddress={props.changeaddress}
             order={props.order}

@@ -1,5 +1,4 @@
 import React from "react";
-
 import useWishlists from "./usewishlist";
 
 const Wishlist = (props) => {
@@ -12,8 +11,14 @@ const WishlistComponent = (props) => {
   const isSilver = props.isSilver ? true : false;
 
   React.useEffect(() => {
-    if ((props && props.wishlist !== undefined) || (props && props.wishlist !== null))
-      if (JSON.stringify(props.wishlist) && JSON.stringify(props.wishlist).length > 0) {
+    if (
+      (props && props.wishlist !== undefined) ||
+      (props && props.wishlist !== null)
+    )
+      if (
+        JSON.stringify(props.wishlist) &&
+        JSON.stringify(props.wishlist).length > 0
+      ) {
         props.wishlist &&
           props.wishlist.wishlistdata &&
           props.wishlist.wishlistdata.nodes.map((val) => {
@@ -25,7 +30,9 @@ const WishlistComponent = (props) => {
       }
   }, []);
 
-  let a = props.isSilverbool ? "fa fa-heart overall-icons" : "fa fa-heart-o overall-icons";
+  let a = props.isSilverbool
+    ? "fa fa-heart overall-icons"
+    : "fa fa-heart-o overall-icons";
   return (
     <>
       {values.isactive !== 2 ? (
@@ -33,7 +40,8 @@ const WishlistComponent = (props) => {
           {isSilver && props.label && (
             <span
               style={{
-                letterSpacing: props.class || props.classMobile ? "2.5px" : "unset",
+                letterSpacing:
+                  props.class || props.classMobile ? "2.5px" : "unset",
                 fontSize: props.class ? "13px" : "unset",
                 paddingRight: "5px",
               }}
@@ -47,10 +55,15 @@ const WishlistComponent = (props) => {
               {props.label}
             </span>
           )}
+
           <i
             className={`${a} 
             }`}
-            style={{ cursor: "pointer !important" }}
+            style={{
+              cursor: "pointer !important",
+              marginLeft: "10px",
+              marginTop: "12px",
+            }}
             onClick={() => {
               values["product_sku"] = props.sku;
               values["product_id"] = props.productId;
@@ -81,7 +94,11 @@ const WishlistComponent = (props) => {
           <i
             className={`fa fa-heart overall-icons
             }`}
-            style={{ cursor: "pointer !important" }}
+            style={{
+              cursor: "pointer !important",
+              marginTop: "12px",
+              marginLeft: "10px",
+            }}
             onClick={() => {
               values["product_sku"] = props.sku;
               values["product_id"] = props.productId;

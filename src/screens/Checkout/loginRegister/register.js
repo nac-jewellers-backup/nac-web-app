@@ -49,9 +49,11 @@ const RegisterComponent = (props) => {
                       ""
                     ) : (
                       <>
-                        {window.location.pathname === "/registers"
-                          ? "Register"
-                          : "Register New Users"}
+                        <h2>
+                          {window.location.pathname === "/registers"
+                            ? "Register"
+                            : "Register New Users"}
+                        </h2>
                       </>
                     )}
                   </h5>
@@ -59,7 +61,7 @@ const RegisterComponent = (props) => {
               )}
               <Grid container spacing={12}>
                 {paths && (
-                  <Grid item lg={4} xs={4}>
+                  <Grid item lg={2} xs={4}>
                     <SimpleSelect
                       val={"1"}
                       name={
@@ -73,7 +75,7 @@ const RegisterComponent = (props) => {
                 )}
                 {paths && (
                   <>
-                    <Grid item lg={4} xs={4}>
+                    <Grid item lg={5} xs={4}>
                       <Input
                         margin="normal"
                         // variant="outlined"
@@ -92,7 +94,7 @@ const RegisterComponent = (props) => {
                         required
                       />
                     </Grid>
-                    <Grid item lg={4} xs={4}>
+                    <Grid item lg={5} xs={4}>
                       <Input
                         margin="normal"
                         // variant="outlined"
@@ -231,7 +233,7 @@ const RegisterComponent = (props) => {
               )}
               <Grid container spacing={12}>
                 {!paths && (
-                  <Grid item lg={4} xs={4}>
+                  <Grid item lg={2} xs={4}>
                     <SimpleSelect
                       val={"1"}
                       name={["Select"]}
@@ -241,7 +243,7 @@ const RegisterComponent = (props) => {
                 )}
                 {!paths && (
                   <>
-                    <Grid item lg={4} xs={4}>
+                    <Grid item lg={5} xs={4}>
                       <Input
                         margin="normal"
                         // variant="outlined"
@@ -264,7 +266,7 @@ const RegisterComponent = (props) => {
                         {values.errortext && values.errortext.firstname}
                       </label>
                     </Grid>
-                    <Grid item lg={4} xs={4}>
+                    <Grid item lg={5} xs={4}>
                       <Input
                         margin="normal"
                         // variant="outlined"

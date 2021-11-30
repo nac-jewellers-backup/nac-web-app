@@ -1,21 +1,17 @@
 @import "../../fonts/font.css";
 
 body {
-
   margin: 0;
-  font-family: 'notoSerif-regular' !important;
+  font-family: "notoSerif-regular" !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
 }
 
 html {
-
   margin: 0;
-  font-family: 'notoSerif-regular' !important;
+  font-family: "notoSerif-regular" !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
 }
 
 @keyframes placeHolderShimmer {
@@ -30,7 +26,7 @@ html {
 
 .MuiTypography-body1,
 .MuiTypography-h6 {
-  font-family: 'notoSerif-regular' !important;
+  font-family: "notoSerif-regular" !important;
 }
 
 .widthSearch {
@@ -39,7 +35,7 @@ html {
   border-radius: 6px;
   padding: 1px 5px !important;
   height: 30px !important;
-  font-family: 'Robot-Black' !important;
+  font-family: "Robot-Black" !important;
 }
 
 .searchMobile {
@@ -75,7 +71,7 @@ html {
   animation-timing-function: linear;
 }
 
-.shine {
+/* .shine {
   animation-duration: 1s;
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
@@ -83,22 +79,23 @@ html {
   animation-timing-function: linear;
   background: #f6f7f8;
 
-  background-image: -webkit-linear-gradient(left,
-      #f6f7f8 0%,
-      #edeef1 20%,
-      #f6f7f8 40%,
-      #f6f7f8 100%);
+  background-image: -webkit-linear-gradient(
+    left,
+    #f6f7f8 0%,
+    #edeef1 20%,
+    #f6f7f8 40%,
+    #f6f7f8 100%
+  );
   background-size: 980px 898px;
-  /* height: 898px; */
+
   position: relative;
-}
+} */
 
 .menuListHoverDiv {
   width: 120px;
   height: 120px;
   background-color: grey;
   border: none !important;
-
 }
 
 .head-icons {
@@ -110,7 +107,7 @@ html {
   font-family: "fontello";
   font-style: normal;
   font-size: 20px;
-  color: #394578;
+  color: #2f348b;
   margin-top: 4px;
   float: left;
 }
@@ -134,7 +131,6 @@ html {
     transform: scale(0.8);
   }
 }
-
 
 .header-bottom {
   background: linear-gradient(to left, #fff, #ed1165, #fff) !important;
@@ -185,9 +181,8 @@ html {
   width: 190px !important;
   /* height: 30px !important; */
   /* padding: 1px 10px !important; */
-  font-family: 'Robot-Black' !important;
+  font-family: "Robot-Black" !important;
 }
-
 
 .header-appbar-moblie {
   background-color: #fff !important;
@@ -198,7 +193,7 @@ html {
   width: 100%;
   line-height: 1.42857143;
   font-size: 12px;
-  font-family: 'Robot-Black' !important;
+  font-family: "Robot-Black" !important;
   box-shadow: none !important;
   box-shadow: 1px 1px 1px #ccc !important;
 }
@@ -209,7 +204,7 @@ html {
 .mobli-icon i {
   font-size: 18px;
   cursor: pointer;
-  color: #394578;
+  color: #2f348b;
   margin-left: 10px;
   border-left: 1px solid #c3c3c3;
   text-align: center !important;
@@ -239,19 +234,18 @@ html {
   animation-timing-function: linear;
 }
 
-
 .list-items {
   text-align: left;
   white-space: nowrap;
   width: 100%;
   font-size: 14px;
   letter-spacing: 1px;
-  color: #394578;
+  color: #2f348b;
   text-transform: capitalize;
 }
 
 .Jew-mbl-head-list {
-  color: #394578;
+  color: #2f348b;
   width: 100%;
   margin: 0;
   float: none;
@@ -276,7 +270,7 @@ html {
   border-bottom: 1px solid #ed1165;
 }
 
-/* color: #394578;
+/* color: #2F348B;
     line-height: 1.42857143;
     letter-spacing: 1px !important;
   } */
@@ -285,7 +279,7 @@ html {
   background-color: #ededed;
   font-size: 18px !important;
   font-weight: normal;
-  color: #394578 !important;
+  color: #2f348b !important;
 }
 
 .searchClick {
@@ -305,7 +299,7 @@ html {
   font-family: "FontAwesome" !important;
   font-size: 15px !important;
   line-height: 1;
-  color: #394578 !important;
+  color: #2f348b !important;
 }
 
 .header-drawer {
@@ -392,5 +386,5 @@ html {
   transition: width .35s ease-in-out !important;
 } */
 .listHovers {
-  color: red
+  color: red;
 }

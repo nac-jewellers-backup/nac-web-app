@@ -376,7 +376,8 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
 
   const _format = mapperdata.map((PD) => {
     let _d;
-
+    // console.log(mapperdata);
+    // debugger;
     try {
       _d = {
         message:
@@ -403,6 +404,7 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
         save: " ",
         offerDiscount:
           PD && PD.discount ? `${Math.abs(PD.discount)}% OFF` : null,
+        shortDis: "Testing Short Description",
         dis:
           PD &&
           PD !== undefined &&
@@ -463,6 +465,7 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
         maxOrderQty: PD && PD.maxOrderQty ? PD.maxOrderQty : 100000,
         minOrderQty: PD && PD.minOrderQty ? PD.minOrderQty : 1,
         show: PD.showPriceBreakup,
+
         productsubHeaderlist: [
           {
             name: "From the House of NAC",
@@ -581,10 +584,147 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                     : null,
               },
               {
-                name: "Fastening",
                 details: PD?.productListByProductId?.earringBacking
-                  ? PD.productListByProductId.earringBacking
+                  ? {
+                      name: "Fastening",
+                      details: PD.productListByProductId.earringBacking,
+                    }
                   : null,
+              },
+            ],
+          },
+          {
+            header: "Price Breakup",
+            namedetail: [
+              // {
+              //   name: "Metal",
+              //   details: [
+              //     PD?.pricingSkuMetalsByProductSku?.nodes[0]?.sellingPrice
+              //       ? PD?.pricingSkuMetalsByProductSku?.nodes[0]?.sellingPrice
+              //       : "",
+              //     PD?.pricingSkuMetalsByProductSku?.nodes[0]?.sellingPrice
+              //       ? PD?.pricingSkuMetalsByProductSku?.nodes[1]?.sellingPrice
+              //       : "",
+              //   ],
+              // },
+              {
+                name: "Diamond",
+                details:
+                  PD &&
+                  PD.productListByProductId &&
+                  PD.productListByProductId.productDiamondsByProductSku &&
+                  PD.productListByProductId.productDiamondsByProductSku.nodes &&
+                  PD.productListByProductId.productDiamondsByProductSku.nodes
+                    .length > 0
+                    ? [
+                        PD.pricingSkuMaterialsByProductSku.nodes &&
+                        PD.pricingSkuMaterialsByProductSku.nodes.length > 0
+                          ? calculatetotalms(
+                              PD.pricingSkuMaterialsByProductSku.nodes,
+                              "diamond",
+                              "discountPrice"
+                            )
+                          : 0,
+                        PD.pricingSkuMaterialsByProductSku.nodes &&
+                        PD.pricingSkuMaterialsByProductSku.nodes.length > 0
+                          ? calculatetotalms(
+                              PD.pricingSkuMaterialsByProductSku.nodes,
+                              "diamond",
+                              "markup"
+                            )
+                          : 0,
+                      ]
+                    : [],
+              },
+              {
+                name: "Gemstone",
+                details:
+                  PD &&
+                  PD.productListByProductId &&
+                  PD.productListByProductId.productGemstonesByProductSku &&
+                  PD.productListByProductId.productGemstonesByProductSku
+                    .nodes &&
+                  PD.productListByProductId.productGemstonesByProductSku.nodes
+                    .length > 0
+                    ? [
+                        PD.pricingSkuMaterialsByProductSku.nodes &&
+                        PD.pricingSkuMaterialsByProductSku.nodes.length > 0
+                          ? calculatetotalms(
+                              PD.pricingSkuMaterialsByProductSku.nodes,
+                              "gemstone",
+                              "discountPrice"
+                            )
+                          : 0,
+                        PD.pricingSkuMaterialsByProductSku.nodes &&
+                        PD.pricingSkuMaterialsByProductSku.nodes.length > 0
+                          ? calculatetotalms(
+                              PD.pricingSkuMaterialsByProductSku.nodes,
+                              "gemstone",
+                              "markup"
+                            )
+                          : 0,
+                      ]
+                    : [],
+              },
+              {
+                name: "Making Charges",
+                details: [
+                  calculatetotalmaking(
+                    PD.pricingSkuMetalsByProductSku.nodes,
+                    "makingcharge",
+                    "wastage"
+                  ),
+                  calculatetotalsmaking(
+                    PD.pricingSkuMetalsByProductSku.nodes,
+                    "makingcharge",
+                    "wastage"
+                  ),
+                ],
+              },
+              {
+                name: "Gold Price",
+                details: [
+                  calculatetotal(
+                    PD.pricingSkuMetalsByProductSku.nodes,
+                    "goldprice"
+                  ),
+                  calculatetotals(
+                    PD.pricingSkuMetalsByProductSku.nodes,
+                    "goldprice"
+                  ),
+                ],
+              },
+
+              {
+                name: "GST",
+                details: [
+                  new Intl.NumberFormat("en-IN", {
+                    style: "currency",
+                    currency: "INR",
+                    minimumFractionDigits: 0,
+                  }).format(Math.round(PD.discountPriceTax)),
+                  new Intl.NumberFormat("en-IN", {
+                    style: "currency",
+                    currency: "INR",
+                    minimumFractionDigits: 0,
+                  }).format(Math.round(PD.markupPriceTax)),
+                ],
+              },
+
+              {
+                name: "Total",
+                details: [
+                  new Intl.NumberFormat("en-IN", {
+                    style: "currency",
+                    currency: "INR",
+                    minimumFractionDigits: 0,
+                  }).format(Math.round(PD.discountPrice)),
+                  new Intl.NumberFormat("en-IN", {
+                    style: "currency",
+                    currency: "INR",
+                    minimumFractionDigits: 0,
+                  }).format(Math.round(PD.markupPrice)),
+                ],
               },
             ],
           },
@@ -977,141 +1117,6 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                   ]
                 : [],
           },
-          {
-            header: "Price Breakup",
-            namedetail: [
-              // {
-              //   name: "Metal",
-              //   details: [
-              //     PD?.pricingSkuMetalsByProductSku?.nodes[0]?.sellingPrice
-              //       ? PD?.pricingSkuMetalsByProductSku?.nodes[0]?.sellingPrice
-              //       : "",
-              //     PD?.pricingSkuMetalsByProductSku?.nodes[0]?.sellingPrice
-              //       ? PD?.pricingSkuMetalsByProductSku?.nodes[1]?.sellingPrice
-              //       : "",
-              //   ],
-              // },
-              {
-                name: "Diamond",
-                details:
-                  PD &&
-                  PD.productListByProductId &&
-                  PD.productListByProductId.productDiamondsByProductSku &&
-                  PD.productListByProductId.productDiamondsByProductSku.nodes &&
-                  PD.productListByProductId.productDiamondsByProductSku.nodes
-                    .length > 0
-                    ? [
-                        PD.pricingSkuMaterialsByProductSku.nodes &&
-                        PD.pricingSkuMaterialsByProductSku.nodes.length > 0
-                          ? calculatetotalms(
-                              PD.pricingSkuMaterialsByProductSku.nodes,
-                              "diamond",
-                              "discountPrice"
-                            )
-                          : 0,
-                        PD.pricingSkuMaterialsByProductSku.nodes &&
-                        PD.pricingSkuMaterialsByProductSku.nodes.length > 0
-                          ? calculatetotalms(
-                              PD.pricingSkuMaterialsByProductSku.nodes,
-                              "diamond",
-                              "markup"
-                            )
-                          : 0,
-                      ]
-                    : [],
-              },
-              {
-                name: "Gemstone",
-                details:
-                  PD &&
-                  PD.productListByProductId &&
-                  PD.productListByProductId.productGemstonesByProductSku &&
-                  PD.productListByProductId.productGemstonesByProductSku
-                    .nodes &&
-                  PD.productListByProductId.productGemstonesByProductSku.nodes
-                    .length > 0
-                    ? [
-                        PD.pricingSkuMaterialsByProductSku.nodes &&
-                        PD.pricingSkuMaterialsByProductSku.nodes.length > 0
-                          ? calculatetotalms(
-                              PD.pricingSkuMaterialsByProductSku.nodes,
-                              "gemstone",
-                              "discountPrice"
-                            )
-                          : 0,
-                        PD.pricingSkuMaterialsByProductSku.nodes &&
-                        PD.pricingSkuMaterialsByProductSku.nodes.length > 0
-                          ? calculatetotalms(
-                              PD.pricingSkuMaterialsByProductSku.nodes,
-                              "gemstone",
-                              "markup"
-                            )
-                          : 0,
-                      ]
-                    : [],
-              },
-              {
-                name: "Making Charges",
-                details: [
-                  calculatetotalmaking(
-                    PD.pricingSkuMetalsByProductSku.nodes,
-                    "makingcharge",
-                    "wastage"
-                  ),
-                  calculatetotalsmaking(
-                    PD.pricingSkuMetalsByProductSku.nodes,
-                    "makingcharge",
-                    "wastage"
-                  ),
-                ],
-              },
-              {
-                name: "Gold Price",
-                details: [
-                  calculatetotal(
-                    PD.pricingSkuMetalsByProductSku.nodes,
-                    "goldprice"
-                  ),
-                  calculatetotals(
-                    PD.pricingSkuMetalsByProductSku.nodes,
-                    "goldprice"
-                  ),
-                ],
-              },
-
-              {
-                name: "GST",
-                details: [
-                  new Intl.NumberFormat("en-IN", {
-                    style: "currency",
-                    currency: "INR",
-                    minimumFractionDigits: 0,
-                  }).format(Math.round(PD.discountPriceTax)),
-                  new Intl.NumberFormat("en-IN", {
-                    style: "currency",
-                    currency: "INR",
-                    minimumFractionDigits: 0,
-                  }).format(Math.round(PD.markupPriceTax)),
-                ],
-              },
-
-              {
-                name: "Total",
-                details: [
-                  new Intl.NumberFormat("en-IN", {
-                    style: "currency",
-                    currency: "INR",
-                    minimumFractionDigits: 0,
-                  }).format(Math.round(PD.discountPrice)),
-                  new Intl.NumberFormat("en-IN", {
-                    style: "currency",
-                    currency: "INR",
-                    minimumFractionDigits: 0,
-                  }).format(Math.round(PD.markupPrice)),
-                ],
-              },
-            ],
-          },
         ],
         productsDetailsonly: [
           {
@@ -1154,12 +1159,15 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                     ? PD.productListByProductId.height
                     : null,
               },
-              {
-                name: "Fastening",
-                details: PD?.productListByProductId?.earringBacking
-                  ? PD.productListByProductId.earringBacking
-                  : null,
-              },
+
+              PD.productListByProductId.earringBacking
+                ? {
+                    name: "Fastening",
+                    details: PD?.productListByProductId?.earringBacking
+                      ? PD.productListByProductId.earringBacking
+                      : null,
+                  }
+                : "",
             ],
           },
         ],
@@ -1236,6 +1244,12 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
               like_data.data.youMayalsolike1.nodes.length > 0
               ? like_data.data.youMayalsolike1.nodes.map((val) => {
                   return {
+                    skuId:
+                      val?.transSkuListsByProductId?.nodes[0]
+                        ?.productListByProductId?.transSkuListsByProductId
+                        ?.nodes[0]?.skuId,
+                    productId:
+                      val?.transSkuListsByProductId?.nodes[0].productId,
                     offerDiscount: val?.transSkuListsByProductId?.nodes[0]
                       ?.discount
                       ? `${val?.transSkuListsByProductId?.nodes[0]?.discount}% OFF`

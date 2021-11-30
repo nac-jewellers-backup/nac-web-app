@@ -53,7 +53,8 @@ export const styles = (theme) => ({
     color: "white",
     "& .MuiNativeSelect-select:not([multiple])": {
       "& option": {
-        color: "gold",
+        color: "white",
+        backgroundColor:theme.palette.gold.main,
       },
     },
     "& .MuiInputBase-input": {
@@ -154,7 +155,7 @@ export const styles = (theme) => ({
     alignItems: "center",
     display: "flex",
     fontSize: "17px",
-    fill: "#d51f63",
+    fill: "#2F348B",
     [theme.breakpoints.only("xs")]: {
       marginLeft: "6px",
       letterSpacing: "2px",
@@ -342,9 +343,9 @@ export const useStyles = makeStyles((theme) => ({
     zIndex: 1000,
     top: "4px !important",
     backgroundColor: "white",
-    border: `1px solid ${theme.palette.background.fade}`,
-    boxShadow: "6px 7px 6px #bebfbf !important",
-    color: theme.palette.background.fade,
+    //border: `1px solid ${theme.palette.background.fade}`,
+    //boxShadow: "6px 7px 6px #bebfbf !important",
+    //color: theme.palette.background.fade,
     "& span": {
       fontFamily: "notoSerif-regular",
       letterSpacing: "1px",
@@ -493,6 +494,7 @@ export const useStyles = makeStyles((theme) => ({
       color: "#fff",
     },
   },
+
   secondSection: {
     paddingBottom: 10,
     "& .MuiTypography-body1": {
@@ -513,7 +515,7 @@ export const useStyles = makeStyles((theme) => ({
     backgroundColor: "#33346d",
   },
   drawer: {
-    backgroundColor: "#394578",
+    backgroundColor: "#2F348B",
   },
   AppbarMobilePadding: {
     paddingTop: "33px",
@@ -544,10 +546,7 @@ export const useStyles = makeStyles((theme) => ({
       color: "#fff",
     },
   },
-  mouseOverPopoverfiltersselected: {
-    backgroundColor: "#33346d !important",
-    color: "#fff",
-  },
+  mouseOverPopoverfiltersselected: {},
 
   mouseOverPopoverfilterslist: {
     paddingTop: "0px !important",

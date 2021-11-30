@@ -2,6 +2,14 @@ const styles = (theme) => ({
   root: {
     overflow: "hidden",
   },
+  shortdis: {
+    [theme.breakpoints.down("lg")]: {
+      fontSize: "15px !important",
+    },
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "12px !important",
+    },
+  },
   preButton: {
     opacity: "1!important",
 
@@ -198,11 +206,12 @@ const styles = (theme) => ({
   title: {
     marginTop: "0 !important",
     [theme.breakpoints.down("lg")]: {
-      fontSize: "22px !important",
+      fontSize: "26px !important",
       fontWeight: "bold !important",
-      color: "#33346D",
+      color: "#2F348B",
       lineHeight: "20px",
       fontFamily: "notoSerif-regular !important",
+      display: "inline-block",
     },
     [theme.breakpoints.down("xs")]: {
       fontSize: "18px !important",
@@ -214,10 +223,17 @@ const styles = (theme) => ({
     },
   },
   dis: {
-    textAlign: "justify",
+    [theme.breakpoints.down("lg")]: {
+      fontSize: "15px !important",
+    },
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "12px !important",
+    },
+    //textAlign: "justify",
     color: theme.palette.text.secondary,
-    fontSize: "12px !important",
+
     lineHeight: "20px",
+    textTransform: "capitalize",
   },
   disEllipises: {
     width: "80%",
@@ -294,7 +310,7 @@ const styles = (theme) => ({
     [theme.breakpoints.up("lg")]: {
       background: "#fff !important",
       height: "100%",
-      overflowY: "scroll",
+      //overflowY: "scroll",
       width: "60%",
       marginTop: "3%",
       marginBottom: "3%",
@@ -406,20 +422,22 @@ const styles = (theme) => ({
     boxShadow: "4px 5px 6px #BEBFBF !important",
   },
   AddtoCartbuttons: {
-    background: "#33366D",
+    background: "#2F348B ",
     color: theme.palette.overallButoon.contrastText,
     borderRadius: "unset !important",
     boxShadow: "4px 5px 6px #BEBFBF !important",
     "&:hover, &:focus": {
-      background: "#33366D !important",
+      background: "#2F348B  !important",
     },
+    height: "36px !important",
   },
 
   backgsecondary: {
     background: theme.palette.secondary.main,
   },
   shadow: {
-    boxShadow: "0px 2px 4px 4px rgba(0, 0, 0, 0.1), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12)",
+    boxShadow:
+      "0px 2px 4px 4px rgba(0, 0, 0, 0.1), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12)",
   },
   expansionHere: {
     borderBottomLeftRadius: "unset !important",

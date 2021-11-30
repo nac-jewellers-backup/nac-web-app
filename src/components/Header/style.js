@@ -48,7 +48,7 @@
 //         },
 //         [theme.breakpoints.only('lg')]:{
 //             maxWidth:"1280px",
-          
+
 //         },
 
 //     },
@@ -74,17 +74,16 @@
 // }))
 // export default styles;
 
-
 // import '../../fonts/font.css'
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from "@material-ui/core/styles";
 
-export const styles = theme => ({
+export const styles = (theme) => ({
   headIcons: {
     color: "#110e82",
     fontFamily: "fontawesome",
-    textAlign: 'right',
+    textAlign: "right",
     // fontSize: '20px !important',
-    marginTop: '18px !important',
+    marginTop: "18px !important",
     display: "flex",
     alignContent: "center",
     alignItems: "center",
@@ -95,14 +94,14 @@ export const styles = theme => ({
     backgroundColor: "#110e82",
     display: "flex",
     justifyContent: "center",
-    alignContent: "center"
+    alignContent: "center",
   },
   searchcontainerplain: {
     padding: "4px",
     // backgroundColor: "#110e82",
     display: "flex",
     justifyContent: "center",
-    alignContent: "center"
+    alignContent: "center",
   },
   searchcontainTop: {
     padding: "2px",
@@ -112,22 +111,22 @@ export const styles = theme => ({
     alignContent: "center",
     marginTop: "3px",
   },
-  [theme.breakpoints.only('xs')]: {
+  [theme.breakpoints.only("xs")]: {
     padding: "3px !important",
     backgroundColor: "#110e82",
     display: "flex",
     justifyContent: "center",
-    alignContent: "center"
+    alignContent: "center",
   },
   iconFafa: {
     color: "#110e82",
     marginLeft: "24px",
     letterSpacing: "4px",
-    cursor: 'pointer',
+    cursor: "pointer",
     alignItems: "center",
     // display: "flex",
     fontSize: "20px",
-    [theme.breakpoints.only('xs')]: {
+    [theme.breakpoints.only("xs")]: {
       marginLeft: "6px",
       letterSpacing: "2px",
     },
@@ -136,14 +135,14 @@ export const styles = theme => ({
     color: "#110e82",
     marginLeft: "24px",
     letterSpacing: "4px",
-    cursor: 'pointer',
+    cursor: "pointer",
     alignItems: "center",
     display: "flex",
     fontSize: "17px",
     fill: "#110e82",
-    [theme.breakpoints.only('xs')]: {
+    [theme.breakpoints.only("xs")]: {
       marginLeft: "6px",
-      letterSpacing: "2px"
+      letterSpacing: "2px",
     },
   },
   callerNum: {
@@ -154,22 +153,22 @@ export const styles = theme => ({
     textAlign: "center",
     padding: " 0px 20px 0px 0px",
     fontWeight: 600,
-    letterSpacing: 2
+    letterSpacing: 2,
   },
   headerNavbarList: {
     color: "#110e82",
-    textAlign: 'right'
+    textAlign: "right",
   },
   menuListCursor: {
-    cursor: 'pointer',
-    fontFamily:'notoSerif-regular',
+    cursor: "pointer",
+    fontFamily: "notoSerif-regular",
     fontWeight: 600,
     color: "#6e6d72",
-    '&:hover': {
+    "&:hover": {
       color: "#110e82",
       paddingBottom: "2px",
       borderBottom: "1px solid " + "#110e82",
-    }
+    },
   },
   mobileNavIcon: {
     fill: "#110e82" + "!important",
@@ -178,7 +177,7 @@ export const styles = theme => ({
     width: "230px !important",
     position: "sticky",
     top: "0px",
-    zIndex: 10000
+    zIndex: 10000,
   },
   drawerPaper: {
     maxHeight: "100% !important",
@@ -188,7 +187,7 @@ export const styles = theme => ({
   iconbuttons: {
     position: "fixed",
     left: "228px",
-    top: "-9px"
+    top: "-9px",
   },
   subtitles: {
     color: theme.palette.background.darkFade,
@@ -196,103 +195,104 @@ export const styles = theme => ({
     width: "100%",
     fontSize: "11px",
     letterSpacing: "1px",
-    fontFamily:'notoSerif-regular',
+    fontFamily: "notoSerif-regular",
   },
   subtitleContainer: {
     backgroundColor: "#fff !important",
-    '&:hover': {
+    "&:hover": {
       backgroundColor: "#fff !important",
-    }
+    },
   },
   subtitle2Container: {
     backgroundColor: theme.palette.background.darkFade,
   },
 });
 
-export const useStyles = makeStyles(theme => ({
+export const useStyles = makeStyles((theme) => ({
   imgcont: {
     marginBottom: "15px",
-    '&:hover': {
-      boxShadow: " 0px 2px 4px 4px rgba(0, 0, 0, 0.1), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12) !important",
-    }
+    "&:hover": {
+      boxShadow:
+        " 0px 2px 4px 4px rgba(0, 0, 0, 0.1), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12) !important",
+    },
   },
   paperdiv: {
-    position: 'absolute',
-    width: 'fit-content',
+    position: "absolute",
+    width: "fit-content",
   },
   root: {
-    width: '100%',
+    width: "100%",
   },
   mouseOverPopover: {
     zIndex: 1000,
     // top: '17px !important',
     backgroundColor: theme.palette.background.fade,
-    color: 'white',
-    '& span': {
-      fontFamily:'notoSerif-regular',
-      letterSpacing: '1px'
+    color: "white",
+    "& span": {
+      fontFamily: "notoSerif-regular",
+      letterSpacing: "1px",
     },
-    '& nav': {
-      padding: '0px !important'
+    "& nav": {
+      padding: "0px !important",
     },
-    '& li:hover': {
+    "& li:hover": {
       backgroundColor: "#110e82",
-    }
+    },
   },
   paperdivsub: {
-    position: 'absolute',
-    width: 'fit-content',
+    position: "absolute",
+    width: "fit-content",
   },
   rootsub: {
-    width: '100%',
-
+    width: "100%",
   },
   mouseOverPopoversub: {
     zIndex: 1000,
-    top: '0px !important',
+    top: "0px !important",
     backgroundColor: "#fff",
     color: theme.palette.background.fade,
     cursor: "pointer",
-    '& span': {
-      fontFamily:'notoSerif-regular',
-      letterSpacing: '1px',
+    "& span": {
+      fontFamily: "notoSerif-regular",
+      letterSpacing: "1px",
       cursor: "pointer",
     },
-    '& nav': {
-      padding: '0px !important',
+    "& nav": {
+      padding: "0px !important",
       cursor: "pointer",
     },
-    '& li:hover': {
+    "& li:hover": {
       backgroundColor: "#fff",
-    }
+    },
   },
   listedItems: {
     padding: "0px",
     fontSize: "0.7rem !important",
-    cursor:"pointer"
+    cursor: "pointer",
   },
   listedItemsub: {
     padding: "0px",
     fontSize: "0.7rem !important",
-    '&:hover': {
-      backgroundColor: "#000"
-    }
+    "&:hover": {
+      backgroundColor: "#000",
+    },
   },
   listedItemsvalue: {
     padding: "2px 16px 2px 16px",
     fontSize: "0.7rem !important",
     letterSpacing: 2,
-    cursor:"pointer"
+
+    cursor: "pointer",
   },
   listedItemsvalue2: {
     padding: "2px 16px 2px 16px",
     fontSize: "0.7rem !important",
     letterSpacing: 2,
     cursor: "pointer",
-    '&:hover': {
+    "&:hover": {
       backgroundColor: theme.palette.background.darkFade,
-      color: "#fff"
-    }
+      color: "#fff",
+    },
   },
   subtopic1: {
     padding: "10px 0px 10px 0px",
@@ -303,6 +303,6 @@ export const useStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.background.darkFade,
   },
   drawer: {
-    backgroundColor: "#394578",
+    backgroundColor: "#2F348B",
   },
 }));
