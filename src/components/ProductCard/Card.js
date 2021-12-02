@@ -43,7 +43,10 @@ const Gallery = (
   cardstate,
   scrollPosition
 ) => {
+ 
+  
   return (
+    
     <div style={{ position: "relative" }} className="imageHeight">
       {props.shopothercategories ? (
         ""
@@ -59,7 +62,7 @@ const Gallery = (
 
       <Link
         className={"cardImage"}
-        to={{ pathname: `/${props.data.skuUrl ?? ""}` }}
+        to={{ pathname: `/${props.data.skuUrl ?? props.data.sku_url}` }}
         style={{ textDecoration: "none" }}
         target="_blank"
         onClick={handleProductDetatiContext(props)}
@@ -105,40 +108,86 @@ const Gallery = (
             )} */}
           </>
         ) : (
-          <LazyLoadImage
-            style={{
-              objectFit: "cover",
-              backgroundColor: "white",
-              width: "100%",
-            }}
-            alt={"props.data.title"}
-            effect="blur"
-            src={renderImages(props, cardstate)}
-            //onError={(e) => imageOnError(e, props.data.imageResolution)}
-            title={
-              props.data.title.charAt(0).toUpperCase() +
-              props.data.title.slice(1)
-            }
-            onMouseOver={
-              !props.hoverText
-                ? () => {
-                    callmouseover();
-                  }
-                : () => {
-                    return null;
-                  }
-            }
-            onMouseOut={
-              !props.hoverText
-                ? () => {
-                    callmouseout();
-                  }
-                : () => {
-                    return null;
-                  }
-            }
-            scrollPosition={scrollPosition}
-          ></LazyLoadImage>
+            
+            props.shopothercategories ? (
+              <>
+                
+                <LazyLoadImage
+                style={{
+                  objectFit: "cover",
+                  backgroundColor: "white",
+                  width: "100%",
+                }}
+                alt={props?.data?.product_list?.product_name}
+                effect="blur"
+                src={props?.data?.product_list?.product_images[0]?.image_url}
+                //onError={(e) => imageOnError(e, props.data.imageResolution)}
+                title={
+                  props?.data?.product_list?.product_name.charAt(0).toUpperCase() +
+                  props.data?.product_list?.product_name.slice(1)
+                }
+                onMouseOver={
+                  !props.hoverText
+                    ? () => {
+                        callmouseover();
+                      }
+                    : () => {
+                        return null;
+                      }
+                }
+                onMouseOut={
+                  !props.hoverText
+                    ? () => {
+                        callmouseout();
+                      }
+                    : () => {
+                        return null;
+                      }
+                }
+                scrollPosition={scrollPosition}
+                ></LazyLoadImage>
+               
+                </>
+            ) : (
+              <LazyLoadImage
+              style={{
+                objectFit: "cover",
+                backgroundColor: "white",
+                width: "100%",
+              }}
+              alt={"props.data.title"}
+              effect="blur"
+              src={renderImages(props, cardstate)}
+              //onError={(e) => imageOnError(e, props.data.imageResolution)}
+              title={
+                props.data.title.charAt(0).toUpperCase() +
+                props.data.title.slice(1)
+              }
+              onMouseOver={
+                !props.hoverText
+                  ? () => {
+                      callmouseover();
+                    }
+                  : () => {
+                      return null;
+                    }
+              }
+              onMouseOut={
+                !props.hoverText
+                  ? () => {
+                      callmouseout();
+                    }
+                  : () => {
+                      return null;
+                    }
+              }
+              scrollPosition={scrollPosition}
+            ></LazyLoadImage>
+     
+              )
+            
+        
+          
         )}
       </Link>
     </div>
@@ -353,6 +402,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 const renderImages = (props, cardstate) => {
+  
   if (props.static) {
     return props.image;
   } else {
@@ -360,7 +410,7 @@ const renderImages = (props, cardstate) => {
     // console.log(cardstate);
     //debugger;
     const filterType = cardstate?.hovered ? "hoverImage" : "placeImage";
-
+    
     return props?.data &&
       props?.data?.image &&
       props?.data?.image["hoverImage"] &&
@@ -427,7 +477,7 @@ function Component(props) {
               {props.shopothercategories ? (
                
                 <>
-                  { console.log(props.data.title)}
+                 
                   <Grid container xs={12}>
                     <Typography
                       variant="body1"
@@ -436,8 +486,7 @@ function Component(props) {
                     >
                       {" "}
                       SHOP&nbsp;
-                      {props.data.title.charAt(0).toUpperCase() +
-                        props.data.title.slice(1)}
+                      {props.data.product_list.product_type}
                     </Typography>
                   </Grid>
                 </>

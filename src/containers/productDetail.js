@@ -2,6 +2,7 @@ import { Avatar, Container, Grid, Hidden } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 import ArrowLeftIcon from "@material-ui/icons/ArrowLeft";
 import ArrowRightIcon from "@material-ui/icons/ArrowRight";
+import axios from "axios";
 import Footer from "components/Footer/Footer";
 import { PaperSheetProduct } from "components/Gagetstylori/GadgetsNac";
 import PriceBuynow from "components/product-image-slider/buyNow";
@@ -25,7 +26,6 @@ import "screens/screens.css";
 import Slideshow from "../components/Carousel/carosul";
 import NeedHelp from "../components/needHelp";
 import { API_URL } from "../config";
-import { otherCategeries } from "../queries/productdetail";
 const styles = (theme) => ({
   collectionSection: {
     // "& svg":{
@@ -91,22 +91,30 @@ class ProductDetail extends Component {
  
 
   componentDidMount() {
+   
     ReactPixel.init("1464338023867789", {}, { debug: true, autoConfig: false });
     ReactPixel.track("PageView");
-    fetch(`${API_URL}/graphql`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        query: `${otherCategeries(["Earrings", "Pendants", "Rings", "Bracelets", "Bangles"])}`,
-      }),
-    })
-      .then((res) => res.json()).
-      then((data) => {
-        this.setState({ otherCategeriesdata: data })
+    // fetch(`${API_URL}/graphql`, {
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/json" },
+    //   body: JSON.stringify({
+    //     query: `${otherCategeries(["Earrings", "Pendants", "Rings", "Bracelets", "Bangles"])}`,
+    //   }),
+    // })
+    //   .then((res) => res.json()).
+    //   then((data) => {
+    //     this.setState({ otherCategeriesdata: data })
        
-      }).catch((err) =>{
-        console.log(err)
-      })
+    //   }).catch((err) =>{
+    //     console.log(err)
+    //   })
+    
+    axios.post(`${API_URL}/you_may_like`, {
+      sku_id: this.props.data[0].skuId
+    }) 
+      .then((res) => {
+      this.setState({ otherCategeriesdata: res.data });
+    })
     }
 
   renderUrl = () => {
@@ -638,9 +646,10 @@ class ProductDetail extends Component {
                       class="subslider-carousel"
                       dataCarousel={dataCarouselcollections}
                     >
-                      {console.log(this.state.otherCategeriesdata)}
-                      {this.props?.data[0]?.fadeImageSublistRecentlyViewed?.map(
+                         
+                      {this.state.otherCategeriesdata.map(
                         (val) => {
+                          
                           return (
                             <ImgMediaCard
                               shopothercategories={true}
@@ -773,24 +782,27 @@ class ProductDetail extends Component {
                 SHOP OTHER CATEGORIES
               </div>
               <div style={{ paddingTop: 8, width: "100%" }}>
-                <Slideshow
-                  // sliderRef={this.slider}
-                  class="subslider-carousel"
-                  dataCarousel={dataCarouselcollectionsSm}
-                >
-                  {this.props?.data[0]?.fadeImageSublistRecentlyViewed?.map(
-                    (val) => {
-                      return (
-                        <ImgMediaCard
-                          shopothercategories={true}
-                          data={val}
-                          cardSize="auto"
-                          hoverText={true}
-                        />
-                      );
-                    }
-                  )}
-                </Slideshow>
+              <Slideshow
+                      // sliderRef={this.slider}
+                      class="subslider-carousel"
+                      dataCarousel={dataCarouselcollectionsSm}
+                    >
+                         
+                      {this.state.otherCategeriesdata.map(
+                        (val) => {
+                          
+                          return (
+                            <ImgMediaCard
+                              shopothercategories={true}
+                              data={val}
+                              cardSize="auto"
+                              hoverText={true}
+                            />
+                          );
+                        }
+                      )}
+                    </Slideshow>
+               
               </div>
             </Container>
           </Grid>
