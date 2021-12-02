@@ -4,7 +4,7 @@ import {
   Grid,
   Hidden,
   Paper,
-  Typography,
+  Typography
 } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 import ArrowLeftIcon from "@material-ui/icons/ArrowLeft";
@@ -146,7 +146,7 @@ const Productprice = (
                                 style={{
                                   float: "right",
                                   cursor: "pointer",
-
+                                  
                                   marginTop: "5px",
                                 }}
                                 onClick={() => {
@@ -197,7 +197,7 @@ const Productprice = (
                             style={{
                               cursor: "pointer",
                               color: "#33346D",
-                              fontSize: "14px",
+                              fontSize: "18px",
                               whiteSpace: "nowrap",
                             }}
                             onClick={() => {

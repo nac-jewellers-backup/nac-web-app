@@ -4,11 +4,10 @@ import Footer from "components/Footer/Footer";
 import Header from "components/SilverComponents/Header";
 import { CartContext } from "context";
 import cart from "mappers/cart";
-import React, { useContext } from "react";
+import React from "react";
 import { withRouter } from "react-router-dom";
 import "../../../components/Checkout/Cart.css";
 import { API_URL } from "../../../config";
-import { TaskListContext } from "../../../context/WishListContext";
 import "../chckout.css";
 import "./payment.css";
 // import NeedHelp from "components/needHelp";
@@ -80,8 +79,8 @@ class PaymentResponseSuccess extends React.Component {
   }
 
   render() {
-    const { addtask } = useContext(TaskListContext);
-    const { classes } = this.props;
+   
+    
     // alert(JSON.stringify(this.props.data))
     let gut_lg = localStorage.getItem("gut_lg")
       ? JSON.parse(localStorage.getItem("gut_lg"))
@@ -93,7 +92,7 @@ class PaymentResponseSuccess extends React.Component {
     return (
       <>
         <Header wishlist={this.props.wishlistdata} paymentSucces={true} />
-        <Grid container direction="row" className="titlecartdiv">
+        <Grid container direction="row" >
           <Grid item xs={12}>
             <Box
               display="flex"
@@ -112,10 +111,11 @@ class PaymentResponseSuccess extends React.Component {
                 <span className="titlecart">A BIG THANK YOU!</span>
 
                 <Typography
-                  variant="subtitle2"
+                  
                   style={{
                     color: "gray",
                     textAlign: "center",
+                    fontSize:"19px"
                   }}
                 >
                   <Hidden smDown>
@@ -150,7 +150,12 @@ class PaymentResponseSuccess extends React.Component {
         </Grid>
 
         <Grid container>
+
           <Grid item xs={12}>
+          <Hidden smDown>
+              <br />
+              <br />
+            </Hidden>
             <Allorders
               allorderdata={this.props.allorderdata}
               history={this.props.history}

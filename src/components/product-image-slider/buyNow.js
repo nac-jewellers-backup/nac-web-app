@@ -128,7 +128,7 @@ const inputsearch = (props, state, handleChanges, handleCodChange) => {
                     alignItems: "center",
                     display: "flex",
                     alignContent: "center",
-                    fontSize: "14px",
+                    fontSize: "16px",
                   }}
                 >
                   <i style={{ fontSize: "20px" }} class="fa fa-truck"></i>

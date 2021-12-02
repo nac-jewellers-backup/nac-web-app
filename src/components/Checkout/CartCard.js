@@ -324,6 +324,7 @@ class Checkoutcard extends React.Component {
                                   style={{
                                     color: "gray",
                                     textTransform: "capitalize",
+                                   
                                   }}
                                 >
                                   {val.pro_header}
@@ -360,7 +361,7 @@ class Checkoutcard extends React.Component {
                               </Grid>
                             </Grid>
                           </Grid>
-                          <Grid item xs={4} sm={2} lg={2}>
+                          <Grid item xs={4} sm={2} lg={1}>
                             {window.location.pathname == "/checkout" ? (
                               <div>
                                 <br />
@@ -722,13 +723,14 @@ class Checkoutcard extends React.Component {
                                     style={{
                                       color: "gray",
                                       textTransform: "capitalize",
+                                     
                                     }}
                                   >
                                     {val.pro_header}
                                   </span>
                                 </NavLink>
                               ) : (
-                                <h3 className={`title ${classes.normalfonts}`}>
+                                <h3 className={`title ${classes.normalfonts2}`}>
                                   {val.pro_header}
                                 </h3>
                               )}
@@ -916,13 +918,13 @@ class Checkoutcard extends React.Component {
                             xs={12}
                             style={{
                               borderBottom: "1.3px solid #C1C1C1",
-                              padding: "15px",
+                              padding: "8px",
                             }}
                           >
                             <Grid
                               item
                               xs={3}
-                              sm={3}
+                              sm={2}
                               style={{
                                 display: "flex",
                                 alignContent: "center",
@@ -969,7 +971,7 @@ class Checkoutcard extends React.Component {
                               item
                               xs={5}
                               sm={7}
-                              lg={5}
+                              lg={6}
                               style={{ padding: "13px" }}
                             >
                               {window.location.pathname !== "/checkout" ? (
@@ -981,6 +983,7 @@ class Checkoutcard extends React.Component {
                                     style={{
                                       color: "gray",
                                       textTransform: "capitalize",
+                                      fontSize:"21.1px"
                                     }}
                                   >
                                     {val.pro_header}
@@ -1005,7 +1008,7 @@ class Checkoutcard extends React.Component {
                                     <Grid container xs={12} direction="row">
                                       {dataval.maxOrderQty === 1 ? (
                                         <Grid container>
-                                          <Grid item xs={5}>
+                                          <Grid item xs={4}>
                                             <Typography
                                               className={`subhesder ${classes.normalfonts}`}
                                             >
@@ -1023,7 +1026,8 @@ class Checkoutcard extends React.Component {
                                       ) : (
                                         <>
                                           <Grid item>
-                                            <Typography
+                                                <Typography
+                                                  
                                               className={`subhesder ${classes.normalfonts}`}
                                             >
                                               Quantity :
@@ -1117,7 +1121,8 @@ class Checkoutcard extends React.Component {
                                       this.handleDeleteLocalStorage(event)
                                     }
                                     variant="contained"
-                                    style={{
+                                      style={{
+                                        fontSize:"20.01px",
                                       color: "gray",
                                       width: "95%",
                                       border: "2px solid #C1C1C1",
@@ -1163,7 +1168,8 @@ class Checkoutcard extends React.Component {
                     ))
                   )}
                   <br />
-                  <Button
+                    <Button
+                     style={{fontSize:"22.41px"}}
                     startIcon={<AiFillCaretLeft />}
                     className="backhomepagebtn"
                     onClick={(e) => {
@@ -1476,6 +1482,7 @@ class Checkoutcard extends React.Component {
                               }
                               variant="contained"
                               style={{
+                               
                                 color: "gray",
                                 border: "2px solid #C1C1C1",
                                 backgroundColor: "white",
@@ -1545,6 +1552,21 @@ class Checkoutcard extends React.Component {
             )
           }
         >
+          <Hidden smDown>
+          <Typography
+            className={classes.cartheader}
+            noWrap
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              fontSize: "21.1px",
+            }}
+          >
+            <IoPricetagsOutline color="#2F348B" fontSize="18px" />
+            &nbsp;&nbsp;&nbsp;<b>Apply Coupon</b>
+            </Typography>
+          </Hidden>
+          <Hidden mdUp>
           <Typography
             className={classes.cartheader}
             noWrap
@@ -1556,7 +1578,8 @@ class Checkoutcard extends React.Component {
           >
             <IoPricetagsOutline color="#2F348B" fontSize="18px" />
             &nbsp;&nbsp;&nbsp;<b>Apply Coupon</b>
-          </Typography>
+            </Typography>
+            </Hidden>
         </AccordionSummary>
         <AccordionDetails>
           <ProductList />
@@ -1655,6 +1678,7 @@ class Checkoutcard extends React.Component {
                 paddingTop: "17px",
                 marginTop: "25px",
                 color: "gray",
+                fontSize:"23px"
               }}
             >
               <b>Order Summery</b>
@@ -1667,33 +1691,33 @@ class Checkoutcard extends React.Component {
             </Hidden>
             <Grid container>
               <Grid xs={6}>
-                <Typography className={`subhesder ${classes.normalfonts}`}>
+                <Typography className={`subhesder ${classes.normalfonts1}`}>
                   Subtotal
                 </Typography>
                 {yousave !== 0 || props.cartFilters.tax_price ? (
-                  <Typography className={`subhesder ${classes.normalfonts}`}>
+                  <Typography className={`subhesder ${classes.normalfonts1}`}>
                     You Saved
                   </Typography>
                 ) : null}
 
                 {props.cartFilters.tax_price ? (
-                  <Typography className={`subhesder ${classes.normalfonts}`}>
+                  <Typography className={`subhesder ${classes.normalfonts1}`}>
                     {props.cartFilters.coupon_type}
                   </Typography>
                 ) : (
                   ""
                 )}
-                <Typography className={`subhesder ${classes.normalfonts}`}>
+                <Typography className={`subhesder ${classes.normalfonts1}`}>
                   Coupon Prize
                 </Typography>
-                <Typography className={`subhesder ${classes.normalfonts}`}>
+                <Typography className={`subhesder ${classes.normalfonts1}`}>
                   Delivery Charge
                   <br />
                   (Standred)
                 </Typography>
               </Grid>
               <Grid xs={6}>
-                <Typography className={`subhesder ${classes.normalfonts}`}>
+                <Typography className={`subhesder ${classes.normalfonts1}`}>
                   <span style={{ float: "right" }}>
                     {props.cartFilters.gross_amount
                       ? new Intl.NumberFormat("en-IN", {
@@ -1709,7 +1733,7 @@ class Checkoutcard extends React.Component {
                   </span>
                 </Typography>
                 {yousave !== 0 || props.cartFilters.tax_price ? (
-                  <Typography className={`subhesder ${classes.normalfonts}`}>
+                  <Typography className={`subhesder ${classes.normalfonts1}`}>
                     <span style={{ float: "right" }}>
                       {props.cartFilters.tax_price
                         ? new Intl.NumberFormat("en-IN", {
@@ -1729,7 +1753,7 @@ class Checkoutcard extends React.Component {
                 ) : null}
 
                 {props.cartFilters.tax_price ? (
-                  <Typography className={`subhesder ${classes.normalfonts}`}>
+                  <Typography className={`subhesder ${classes.normalfonts1}`}>
                     <span style={{ float: "right" }}>
                       {new Intl.NumberFormat("en-IN", {
                         style: "currency",
@@ -1739,7 +1763,7 @@ class Checkoutcard extends React.Component {
                     </span>
                   </Typography>
                 ) : null}
-                <Typography className={`subhesder ${classes.normalfonts}`}>
+                <Typography className={`subhesder ${classes.normalfonts1}`}>
                   <span style={{ float: "right" }}>
                     {props.shipping_charge ??
                       new Intl.NumberFormat("en-IN", {
@@ -1856,31 +1880,31 @@ class Checkoutcard extends React.Component {
           <Grid item xs={12}>
             <Grid container>
               <Grid xs={6}>
-                <Typography className={`subhesder ${classes.normalfonts}`}>
+                <Typography className={`subhesder ${classes.normalfonts2}`}>
                   SUBTOTAL
                 </Typography>
                 <br />
                 <br />
                 {yousave !== 0 || props.cartFilters.tax_price ? (
-                  <Typography className={`subhesder ${classes.normalfonts}`}>
+                  <Typography className={`subhesder ${classes.normalfonts2}`}>
                     CART DISCOUNT
                   </Typography>
                 ) : null}
 
                 {props.cartFilters.tax_price ? (
-                  <Typography className={`subhesder ${classes.normalfonts}`}>
+                  <Typography className={`subhesder ${classes.normalfonts2}`}>
                     {props.cartFilters.coupon_type}
                   </Typography>
                 ) : (
                   ""
                 )}
 
-                <Typography className={`subhesder ${classes.normalfonts}`}>
+                <Typography className={`subhesder ${classes.normalfonts2}`}>
                   SHIPPING CHARGES(Standred)
                 </Typography>
               </Grid>
               <Grid xs={6}>
-                <Typography className={`subhesder ${classes.normalfonts}`}>
+                <Typography className={`subhesder ${classes.normalfonts2}`}>
                   <span style={{ float: "right" }}>
                     {props.cartFilters.gross_amount
                       ? new Intl.NumberFormat("en-IN", {
@@ -1898,7 +1922,7 @@ class Checkoutcard extends React.Component {
                 <br />
                 <br />
                 {yousave !== 0 || props.cartFilters.tax_price ? (
-                  <Typography className={`subhesder ${classes.normalfonts}`}>
+                  <Typography className={`subhesder ${classes.normalfonts2}`}>
                     <span style={{ float: "right" }}>
                       {props.cartFilters.tax_price
                         ? new Intl.NumberFormat("en-IN", {
@@ -1918,7 +1942,7 @@ class Checkoutcard extends React.Component {
                 ) : null}
 
                 {props.cartFilters.tax_price ? (
-                  <Typography className={`subhesder ${classes.normalfonts}`}>
+                  <Typography className={`subhesder ${classes.normalfonts2}`}>
                     <span style={{ float: "right" }}>
                       {new Intl.NumberFormat("en-IN", {
                         style: "currency",
@@ -1928,7 +1952,7 @@ class Checkoutcard extends React.Component {
                     </span>
                   </Typography>
                 ) : null}
-                <Typography className={`subhesder ${classes.normalfonts}`}>
+                <Typography className={`subhesder ${classes.normalfonts2}`}>
                   <span style={{ float: "right" }}>
                     {props.shipping_charge ??
                       new Intl.NumberFormat("en-IN", {

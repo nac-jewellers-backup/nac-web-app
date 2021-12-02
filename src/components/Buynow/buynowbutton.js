@@ -77,13 +77,26 @@ class Buynowbutton extends React.Component {
                 <i class="fa fa-shopping-bag buynow-icon"></i>
               )}
               {this.props.addtoCartToBuyNow ? (
-                <span style={{ fontWeight: "bolder" }}> In Cart!</span>
+                <>
+                  <Hidden smDown>
+                  <span style={{ fontSize: "20px", fontWeight: "bold" }}>
+                    {" "}
+                    In Cart!
+                  </span>
+                </Hidden>
+                <Hidden mdUp>
+                  <span style={{ fontWeight: "bold", fontSize: "16px" }}>
+                    {" "}
+                    In Cart!
+                  </span>
+                    </Hidden>
+                    </>
               ) : (
                 <>
                   {productIsActive ? (
                     <>
                       <Hidden smDown>
-                        <span style={{ fontSize: "18px", fontWeight: "bold" }}>
+                        <span style={{ fontSize: "31.44px", fontWeight: "bold" }}>
                           {" "}
                           In bag!
                         </span>
@@ -114,7 +127,7 @@ class Buynowbutton extends React.Component {
                 this.props.addtoCartToBuyNow ? (
                   <>
                     <Hidden smDown>
-                      <span style={{ fontSize: "16px", fontWeight: "bold" }}>
+                      <span style={{ fontSize: "20px", fontWeight: "bold" }}>
                         {" "}
                         &nbsp;Add&nbsp;to&nbsp;Cart&nbsp;
                       </span>

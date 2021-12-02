@@ -4,7 +4,7 @@ const styles = (theme) => ({
   },
   shortdis: {
     [theme.breakpoints.down("lg")]: {
-      fontSize: "15px !important",
+      fontSize: "18px !important",
     },
     [theme.breakpoints.down("sm")]: {
       fontSize: "12px !important",
@@ -206,7 +206,7 @@ const styles = (theme) => ({
   title: {
     marginTop: "0 !important",
     [theme.breakpoints.down("lg")]: {
-      fontSize: "26px !important",
+      fontSize: "20px !important",
       fontWeight: "bold !important",
       color: "#2F348B",
       lineHeight: "20px",
@@ -224,7 +224,7 @@ const styles = (theme) => ({
   },
   dis: {
     [theme.breakpoints.down("lg")]: {
-      fontSize: "15px !important",
+      fontSize: "18px !important",
     },
     [theme.breakpoints.down("sm")]: {
       fontSize: "12px !important",
@@ -257,6 +257,7 @@ const styles = (theme) => ({
     whiteSpace: "nowrap",
     overflow: "hidden",
     textOverflow: "ellipsis",
+    
   },
   viewReviewsTest: {
     fontSize: 12,

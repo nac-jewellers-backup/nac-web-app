@@ -32,6 +32,7 @@
   padding: 0px 15px;
 }
 .text-chck {
+ font-size: 21px !important;
   padding: 8px 15px;
   color: gray;
   font-weight: 500 !important;

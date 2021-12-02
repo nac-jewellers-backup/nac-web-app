@@ -67,7 +67,7 @@ const styles = (theme) => ({
       paddingBottom: "7px !important",
     },
     [theme.breakpoints.up("lg")]: {
-      paddingBottom: "14px !important",
+      paddingBottom: "16px !important",
       marginBottom: "12px !important",
     },
   },
@@ -76,7 +76,7 @@ const styles = (theme) => ({
       fontSize: "13px",
     },
     [theme.breakpoints.up("lg")]: {
-      fontSize: "14px",
+      fontSize: "16px",
     },
   },
 });
@@ -294,7 +294,7 @@ class ProductDetail extends Component {
                       style={{
                         color: "gray",
 
-                        fontSize: "15px",
+                        fontSize: "16px",
                       }}
                     >
                       {" "}
@@ -302,7 +302,7 @@ class ProductDetail extends Component {
                         style={{
                           color: "gray",
                           fontWeight: "bold",
-                          fontSize: "15px",
+                          fontSize: "16px",
                         }}
                       >
                         Model No:{" "}
@@ -320,7 +320,7 @@ class ProductDetail extends Component {
                         fontWeight: "bold",
                         fontSize: 12,
                         marginTop: 4,
-                        fontSize: "15px",
+                        fontSize: "16px",
                       }}
                     >
                       Product Information:{" "}
@@ -678,7 +678,7 @@ class ProductDetail extends Component {
                   color: "#2F348B",
                   marginLeft: 15,
                   marginTop: 35,
-                  fontSize: "14px",
+                  fontSize: "16px",
                 }}
               >
                 SIMILAR PRODUCTS
@@ -767,7 +767,7 @@ class ProductDetail extends Component {
                   color: "#2F348B",
                   marginLeft: 15,
                   marginTop: 35,
-                  fontSize: "14px",
+                  fontSize: "16px",
                 }}
               >
                 SHOP OTHER CATEGORIES

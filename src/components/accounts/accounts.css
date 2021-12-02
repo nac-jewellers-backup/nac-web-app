@@ -151,6 +151,11 @@
   font-size: 13px;
   float: left !important;
 }
+.data1{
+  color: "gray";
+  font-size: 21.79px !important;
+  text-transform: capitalize;
+}
 .data {
   color: "gray";
   font-size: 0.9rem !important;
@@ -205,6 +210,7 @@
   }
   .address {
     padding-left: 10px;
+    
   }
   .ship {
     background-color: white !important;
@@ -225,7 +231,7 @@
   }
   .data1 {
     color: "gray";
-    font-size: 0.9rem !important;
+    font-size: 21.11px !important;
     text-transform: capitalize;
     line-height: 1.6rem !important;
   }
@@ -238,7 +244,7 @@
 }
 
 .cardpadding1 {
-  padding: 12px 20px 8px 20px;
+  padding: 12px 10px 10px 10px;
   background-color: #f3f3f3;
 }
 @media screen and (max-width: 599px) {
