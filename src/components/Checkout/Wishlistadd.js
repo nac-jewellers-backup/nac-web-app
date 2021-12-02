@@ -1,4 +1,4 @@
-import { Button } from "@material-ui/core";
+import { Button, Hidden } from "@material-ui/core";
 import React, { useEffect } from "react";
 import { API_URL } from "../../config";
 export default function WishlistButton(props) {
@@ -134,7 +134,33 @@ export default function WishlistButton(props) {
     setValues({ values, ...values });
   });
   return (
-    <Button
+    <>
+      <Hidden smDown>
+      <Button
+      id={props.sku}
+      onClick={(event) => handlewishlist(event)}
+      variant="contained"
+          style={{
+        fontSize:"18.01px",
+        color: "gray",
+        border: "2px solid #C1C1C1",
+        backgroundColor: "white",
+        borderRadius: "0px",
+        boxShadow: "none",
+        paddingRight: "6px",
+        paddingLeft: "6px",
+        width: "95%",
+        whiteSpace: "nowrap",
+        marginTop:
+          window.location.pathname == "/account-shoppingcart" ? " " : "10px",
+      }}
+    >
+        Move to Wishlist
+    </Button>
+  
+      </Hidden>
+      <Hidden mdUp>
+      <Button
       id={props.sku}
       onClick={(event) => handlewishlist(event)}
       variant="contained"
@@ -152,7 +178,10 @@ export default function WishlistButton(props) {
           window.location.pathname == "/account-shoppingcart" ? " " : "10px",
       }}
     >
-      Move to Wishlist
+        Move to Wishlist
     </Button>
+  
+      </Hidden>
+      </>
   );
 }

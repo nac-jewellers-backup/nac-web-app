@@ -632,7 +632,7 @@ class Component extends React.Component {
                   <Grid container>
                     <Grid item xs={12} lg={12}>
                       <div className={classes.padding}>
-                        <Typography className="text-chck-bold">
+                        <Typography style={{fontSize:"23px"}} className="text-chck-bold">
                           <b>Order Summary</b>
                         </Typography>
 

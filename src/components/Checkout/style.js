@@ -36,12 +36,18 @@ const styles = (theme) => ({
       fontSize: "13px ",
     },
     [theme.breakpoints.up("lg")]: {
-      fontSize: "16px",
+      fontSize: "21.1px",
     },
   },
   cartheader: {
     color: "gray",
-    fontSize: "14px",
+    
+    [theme.breakpoints.down("md")]: {
+      fontSize: "14px",
+    },
+    [theme.breakpoints.up("lg")]: {
+      fontSize: "21px",
+    },
   },
   cardpad: {
     [theme.breakpoints.down("xs")]: {
@@ -155,10 +161,30 @@ const styles = (theme) => ({
   },
   normalfonts: {
     [theme.breakpoints.down("xs")]: {
-      fontSize: "12px;!important",
+      fontSize: "12px !important",
     },
     [theme.breakpoints.up("lg")]: {
-      fontSize: "16px !important",
+      fontSize: "17px !important",
+    },
+    color: "gray",
+    float: "right !important",
+  },
+  normalfonts1: {
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "12px !important",
+    },
+    [theme.breakpoints.up("lg")]: {
+      fontSize: "21.1px !important",
+    },
+    color: "gray",
+    float: "right !important",
+  },
+  normalfonts2: {
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "12px !important",
+    },
+    [theme.breakpoints.up("lg")]: {
+      fontSize: "21.1px !important",
     },
     color: "gray",
     float: "right !important",
