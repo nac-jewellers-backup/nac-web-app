@@ -1,13 +1,18 @@
 import { makeStyles } from "@material-ui/core/styles";
 const styles = makeStyles((theme) => ({
   titlePage: {
-    fontSize: "28px",
+    fontSize: "49px",
     fontFamily: "notoSerif-regular",
     fontWeight: "500 !important",
     lineHeight: "1.1",
-    color: "#1c1c1c",
+    color: "#B2832C",
     margin: "21px 0px 10.5px 0px",
     textAlign: "center",
+  },
+  subtitle: {
+    textAlign: "center", 
+    color: "gray",
+    fontSize: "20px",
   },
   contentTemple: {
     fontFamily: "notoSerif-regular",
@@ -36,6 +41,7 @@ const styles = makeStyles((theme) => ({
     //   paddingTop: "80px"
     // }
     paddingTop: "30px",
+    
   },
   contactImage: {
     display: "flex",
@@ -43,6 +49,9 @@ const styles = makeStyles((theme) => ({
   },
   imgClass: {
     width: "100%",
+    cursor: "pointer",
+    height: "100%",
+    objectFit:"cover"
   },
   cardName: {
     fontSize: "18px",
@@ -50,6 +59,15 @@ const styles = makeStyles((theme) => ({
     fontFamily: "notoSerif-regular",
     lineHeight: "1.42857",
     padding: "20px 0px 8px 15px",
+  },
+  cardNamead: {
+    fontSize: "20.92px",
+    color: "gray",
+    fontFamily: "notoSerif-medium",
+    lineHeight: "1.42857",
+    padding: "20px 0px 8px 15px",
+    fontWeight: "bold",
+    textAlign:"center"
   },
   link: {
     textDecoration: "none !important",
@@ -79,10 +97,38 @@ const styles = makeStyles((theme) => ({
     lineHeight: "1.42857",
     padding: "12px 0px 30px 15px",
   },
+  cardLocationad: {
+    fontSize: "16px",
+    
+    color: "#969696",
+    fontFamily: "notoSerif-regular",
+    lineHeight: "1.42857",
+    padding: "0px 0px 30px 15px",
+    textAlign: "center",
+    marginTop: "-10px"
+    
+    
+  },
+  cardfooter: {
+    backgroundColor:"#F4F4F4"
+
+  },
+  cardLocationadview: {
+    fontSize: "18px",
+    color: "#969696",
+    fontFamily: "notoSerif-regular",
+    marginTop: "-15px",
+    marginBottom:"15px",
+    textAlign: "center",
+   
+    textTransform:"capitalize"
+    
+    
+  },
   card: {
     // borderRadius: "0px !important",
     // border: "1px solid #dbdbdb !important",
-    boxShadow: "0 0 5px #888 !important",
+    boxShadow:"4px 4px 4px #a5a4a5"
   },
   linkContact: {
     textDecoration: "none !important",
@@ -118,13 +164,10 @@ const styles = makeStyles((theme) => ({
     // height : 'calc(100% - 100px)' ,
   },
   viewmoreColor: {
-    backgroundColor: "#009651",
+   
     color: "white",
     padding: "6px 12px",
-    "&:hover": {
-      backgroundColor: "#009651",
-      opacity: "0.8",
-    },
+  
   },
 }));
 

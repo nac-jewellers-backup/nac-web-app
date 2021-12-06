@@ -1,29 +1,67 @@
 import { makeStyles } from "@material-ui/core/styles";
-import useMediaQuery from '@material-ui/core/useMediaQuery';
 const styles = makeStyles(theme => ({
+  roots: {
+    "& .makeStyles-mainWidths-2": {
+      paddingLeft: "0px",
+      paddingRight:"0px",
+    },
+  },
   grid1:
   {
-    justifyContent: "center",
-    textAlign: "center",
+    
     paddingTop: "3%",
+  },
+  content1sm: {
+    marginTop:"20px",
+    backgroundColor: "#F4F4F4",
+    padding: "8px",
+    boxShadow:"4px 4px 4px #a5a4a5 !important"
+  },
+  content2sm: {
+    marginTop:"20px",
+    backgroundColor: "#F4F4F4",
+    padding: "8px",
+    boxShadow:"4px 4px 4px #a5a4a5 !important"
+  },
+  content: {
+    marginTop:"20px",
+    backgroundColor: "#F4F4F4",
+    padding: "40px",
+    boxShadow:"4px 4px 4px #a5a4a5 !important"
+  },
+  content2: {
+    backgroundColor: "#F4F4F4",
+    padding: "40px", 
+  },
+  contentParent: {
+    boxShadow:"4px 4px 4px #a5a4a5 !important"
   },
   grid2:
   {
-    paddingTop: "2%",
-    width: "600px",
+    
+   width:"100%",
     fontSize: "18px",
-    lineHeight: "1.42857",
     color: "#9c9c9c",
+    "& ..MuiFilledInput-input": {
+      backgroundColor: "white",
+     
+    },
+    "& .MuiFilledInput-root":{
+      borderRadius: "0px",
+      backgroundColor: "white",
+      
+      
+      },
+      "& .MuiFilledInput-root:before": {
+        border: "none",
+       
+
+       
+      },
+     
 
   },
-  root: {
-    '& .MuiTextField-root': {
-      margin: theme.spacing(1),
-      width: 600,
-      paddingTop: "3%",
-      color: "#9c9c9c",
-    },
-  },
+  
 
   grid5: {
     paddingTop: "3% !important",
@@ -52,11 +90,16 @@ const styles = makeStyles(theme => ({
     textAlign: "center",
   },
   head: {
-    fontSize: "40px",
+    fontSize: "49px",
     fontFamily: "notoSerif-regular",
     fontWeight: "500",
     lineHeight: "1.1",
-    color: "#1c1c1c",
+    color: "#B2832C",
+    textAlign:"center"
+  },
+  name: {
+    color: "#6E6F72",
+    fontSize:"22px"
   },
   contents: {
     paddingTop: "1%",
@@ -86,10 +129,37 @@ const styles = makeStyles(theme => ({
   grid10:
   {
     paddingTop: "1%",
-    justifyContent: "center",
-    textAlign: "center",
     
     color:"#9c9c9c",
+  },
+  sub: {
+    color: 'gray',
+    fontSize: "18px",
+    marginBottom:"16px"
+  },
+  heading: {
+    color: "gray",
+    fontSize: "30px",
+    marginBottom:"8px"
+  },
+  img: {
+    height: "100%",
+    width: "100%",
+    objectFit: "cover",
+    
+  },
+  btn: {
+    backgroundColor: "#B2832C",
+    color: "white",
+    fontWeight: "bold",
+    borderRadius: "0px",
+    boxShadow: "4px 4px 4px #a5a4a5 !important",
+    "&:hover": {
+      backgroundColor: "#B2832C",
+      color: "white",
+      fontWeight: "bold",
+    },
+    marginTop:"10px"
   },
   grid12:
   {
@@ -108,6 +178,12 @@ const styles = makeStyles(theme => ({
   },
   grid13: {
     marginTop: "2%",
+  },
+  label: {
+    fontWeight: "bold",
+    color: "gray",
+    marginBottom: "16px",
+    display:"block"
   },
   grid15:
   {
@@ -169,11 +245,7 @@ const styles = makeStyles(theme => ({
       fontSize: "15px",
 
     },
-    grid2: {
-      width: "278px",
-      fontSize: "15px",
-      marginTop:"2%"
-    },
+   
 
     root: {
       '& .MuiTextField-root': {

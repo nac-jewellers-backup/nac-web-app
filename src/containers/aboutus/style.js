@@ -32,7 +32,7 @@ const styles = makeStyles(theme => ({
         marginLeft:"auto",
         marginRight:"auto",
         [theme.breakpoints.only('xs')]:{
-            width:"88%",
+            width:"90%",
         },
 
     },
@@ -46,24 +46,7 @@ const styles = makeStyles(theme => ({
         // padding:"0px 20px",
     },
     mainContent:{
-        width:"75%",
-        // position:"relative",
-        float:"left",
-        borderLeft:"1px solid #d8d8d8",
-        borderRight:"1px solid #d8d8d8",
-        padding:"0px 20px",
-        [theme.breakpoints.down('sm')]:{
-            width:"100%",
-            paddingLeft:"0px",
-            borderLeft:"none",
-            borderRight:"none",
-        padding:"0px 0px",
-            
-        },
-        [theme.breakpoints.only('md')]:{
-            padding:"0px 10px",
-
-        },
+    
     },
     sideContent:{
         paddingLeft:"20px",

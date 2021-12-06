@@ -12,8 +12,8 @@ const useStyles = makeStyles((theme) => ({
     padding: "20px 15px 20px 15px",
   },
   contact_us: {
-    fontSize: "21px",
-    color: "#ed1165",
+    fontSize: "49px",
+    color: "#B2832C",
     fontWeight: 600,
     marginBottom: "10px",
   },
@@ -38,9 +38,7 @@ const useStyles = makeStyles((theme) => ({
     margin: "30px 0px 10px 0px",
     fontWeight: 600,
   },
-  widthFull: {
-    width: "100%",
-  },
+ 
   textFeild: {
     margin: "15px 0px 20px 0px !important",
   },

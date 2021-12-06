@@ -1,26 +1,30 @@
-import React from "react";
-import styles from "./style";
 import { Grid, Hidden } from "@material-ui/core";
-import Header from "components/SilverComponents/Header";
 import Accordian from "components/aboutus/accordian";
-import SideData from "components/aboutus/sideData";
+import Slideshow from "components/Carousel/carosul";
+import EducationPage from "components/education/education";
+import Footer from "components/Footer/Footer";
+import Header from "components/SilverComponents/Header";
+import SiteMap from "components/sitemap/sitemap";
+import ContactUs from "containers/contactus/contact";
 import {
   AboutUs,
-  Terms,
-  Return,
-  Delivery,
-  Privacy,
-  Faqs,
-  sidemenu,
-  Contacts
+
+
+
+
+
+
+  Contacts, Delivery,
+
+  Faqs, Privacy, Return,
+
+
+
+  Terms
 } from "mappers/dummydata/aboutUs";
 import { Educations, Maps } from "mappers/dummydata/education";
-import EducationPage from "components/education/education";
-import SiteMap from "components/sitemap/sitemap";
-import SocialFields from "components/socialfield/index";
-import Slideshow from "components/Carousel/carosul";
-import Footer from "components/Footer/Footer";
-import ContactUs from "containers/contactus/contact";
+import React from "react";
+import styles from "./style";
 
 export default function AboutusPage(props) {
   const [state, setState] = React.useState({
@@ -86,7 +90,7 @@ export default function AboutusPage(props) {
               ))}
           </Slideshow>
         </Hidden>
-        <Hidden smUp>
+        <Hidden mdUp>
           <Slideshow
             dataCarousel={
               values() && values().carouselTop && values().carouselTop.setting
@@ -106,22 +110,23 @@ export default function AboutusPage(props) {
           </Slideshow>
         </Hidden>
       </Grid>
+      <Hidden smDown>
       <Grid item className={classes.paddingsss}>
         <Grid container className={classes.mainWidths}>
           <Grid container className={classes.subWidth}>
-            <Hidden smDown>
+            {/* <Hidden smDown>
               <Grid item className={classes.subWidths} lg={3} sm={3} md={3}>
                 <Grid item className={classes.sideContent}>
                   <SideData value={values()} data={sidemenu} />
                 </Grid>
               </Grid>
-            </Hidden>
+            </Hidden> */}
             <Grid
               item
               className={classes.mainContent}
-              lg={6}
+              lg={12}
               xs={12}
-              md={6}
+              md={12}
               sm={12}
             >
               <>
@@ -137,16 +142,36 @@ export default function AboutusPage(props) {
                 )}
               </>
             </Grid>
-            <Hidden smDown>
+            {/* <Hidden smDown>
               <Grid item className={classes.rightContent} lg={3} sm={3} md={3}>
                 <Grid item className={classes.sideContent}>
                   <SocialFields />
                 </Grid>
               </Grid>
-            </Hidden>
+            </Hidden> */}
           </Grid>
         </Grid>
-      </Grid>
+        </Grid>
+      </Hidden>
+      
+      <Hidden mdUp>
+     
+        <Grid container style={{ padding:"12px",overflow:"hidden"}}>
+            <Grid
+              item 
+              xs={12}
+            >
+              <>
+               <br/>
+                {window.location.pathname === "/contactus" && <ContactUs />}
+              <br />
+              <br/>
+              </>
+            </Grid>
+            
+          </Grid>
+        
+        </Hidden>
       <Footer />
     </Grid>
   );

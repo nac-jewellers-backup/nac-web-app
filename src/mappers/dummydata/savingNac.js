@@ -690,7 +690,9 @@ export const IndexAdvertisingPage = {
     },
   },
   title: {
-    titlePage: "NAC Advertising",
+    titlePage: "ADVERTISEMENTS",
+    subtitle1: "Take a trip down memory lane with some",
+    subtitle2:"of our iconic advertisements"
   },
   data: [
     {

@@ -461,8 +461,8 @@ class Header extends Component {
                             >
                               <a href="/cart" className="highlighter">
                                 <i
-                                  style={{ fontSize: "20px" }}
-                                  class={`fa fa-shopping-cart  ${classes.iconFafa}`}
+                                  style={{ fontSize: "20px",marginTop:"-10px" }}
+                                  class={`fa fa-shopping-bag  ${classes.iconFafa}`}
                                 ></i>
                                 <span className="tooltip-s">Cart</span>
                               </a>{" "}

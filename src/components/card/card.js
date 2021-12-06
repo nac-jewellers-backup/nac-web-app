@@ -1,8 +1,9 @@
-import { Button, Card, Grid, Link, Typography } from "@material-ui/core";
+import { Box, Button, Card, Grid, Link, Typography } from "@material-ui/core";
 import Dialog from "@material-ui/core/Dialog";
 import { useTheme } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import React, { useState } from "react";
+import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 import styles from "./cardStyle";
 
 export default function Cards(props) {
@@ -41,9 +42,20 @@ export default function Cards(props) {
         className={classes.cardMain}
       >
         <Grid xs={12} sm={12} md={12} lg={12} xl={12}>
+         
           <Typography className={classes.titlePage}>
             {props.data.title.titlePage}
+            
           </Typography>
+          {window.location.pathname === "/advertising" ? (
+            <>
+              <Typography className={classes.subtitle}>
+              {props.data.title.subtitle1}  
+            </Typography >
+            <Typography className={classes.subtitle} style={{marginTop:"-8px"}}> {props.data.title.subtitle2}</Typography>
+           </>
+          ): ""}
+           
         </Grid>
         {window.location.pathname === "/temple-work" ? (
           <>
@@ -90,9 +102,9 @@ export default function Cards(props) {
         <Grid
           xs={12}
           sm={12}
-          md={10}
-          lg={10}
-          xl={10}
+          md={11}
+          lg={11}
+          xl={11}
           container
           className={classes.cardHeadGrid}
         >
@@ -172,6 +184,7 @@ export default function Cards(props) {
                             <img
                               src={val.img}
                               alt="Image"
+
                               className={classes.imgClass}
                             />
                           </a>
@@ -206,7 +219,8 @@ export default function Cards(props) {
                           </Dialog>
                         </>
                       ) : (
-                        <>
+                          <>
+                            
                           <a href={val.link} className={classes.link}>
                             {" "}
                             <img
@@ -225,7 +239,7 @@ export default function Cards(props) {
                 </Grid>
 
                 <Grid container>
-                  <Grid>
+                  <Grid item xs={12}  className={window.location.pathname === "/advertising"?classes.cardfooter:""}>
                     {window.location.pathname === "/newsroom" ? (
                       <>
                         <Typography className={classes.cardName}>
@@ -238,9 +252,10 @@ export default function Cards(props) {
                     ) : (
                       <>
                         {" "}
-                        <Typography className={classes.cardName}>
+                        <Typography className={classes.cardNamead}>
                           {val.name}
-                        </Typography>{" "}
+                          </Typography>{" "}
+                          
                       </>
                     )}
 
@@ -248,8 +263,8 @@ export default function Cards(props) {
                       {val.model}
                     </Typography> */}
                     <>
-                      {window.location.pathname === "/temple-work" ||
-                      window.location.pathname === "/advertising" ? (
+                      {window.location.pathname === "/temple-work" 
+                      ? (
                         <>
                           {" "}
                           <Typography className={classes.cardMetal}>
@@ -272,10 +287,40 @@ export default function Cards(props) {
                         ""
                       )}
                     </>
-
-                    <Typography className={classes.cardLocation}>
+                    {window.location.pathname === "/advertising" ? (
+                      <>
+                        
+                      <Typography className={classes.cardLocationad}>
+                      {val.location}
+                        </Typography>
+                        
+                        <Box display="flex" alignItems="center" justifyContent="center">
+                          <Box>
+                            {
+                              val.type === "video" ? (
+                                <Button className={classes.cardLocationadview} endIcon={<HiOutlineArrowNarrowRight />}  onClick={handleClickOpen}>
+                                View
+                          </Button>
+                              ) :
+                                
+                                <Button className={classes.cardLocationadview} endIcon={<HiOutlineArrowNarrowRight />} onClick={() => {
+                                  window.location.href=val.link
+                              }} >
+                              View
+                        </Button>
+                            }
+                         
+                          </Box>
+                         
+                        </Box>
+                     
+                        </>
+                    ) : (
+                      <Typography className={classes.cardLocation}>
                       {val.location}
                     </Typography>
+                    )}
+                    
                   </Grid>
                 </Grid>
               </Card>
@@ -306,13 +351,15 @@ export default function Cards(props) {
         ""
       )}
       {window.location.pathname === "/advertising" ? (
+        <>
         <Grid container>
           <Grid container item xs={12} justify="center">
             <Button
               onClick={() => {
                 setPagination(pagination + 6);
               }}
-              variant="contained"
+                variant="contained"
+                color="secondary"
               disabled={pagination >= props.data.data.length}
               className={classes.viewmoreColor}
             >
@@ -320,8 +367,12 @@ export default function Cards(props) {
                 ? `No more advertising`
                 : `View more advertising`}
             </Button>
+            
+           
           </Grid>
-        </Grid>
+          </Grid>
+         
+          </>
       ) : (
         ""
       )}

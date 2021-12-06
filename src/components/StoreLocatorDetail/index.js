@@ -1,18 +1,18 @@
-import React, { Component } from "react";
 import { Grid } from "@material-ui/core";
-import styles from "./style";
-import Header from "components/SilverComponents/Header";
-import StoreDetails from "./storeDetails";
-import Footer from "components/Footer/Footer";
 import Slideshow from "components/Carousel/carosul";
+import Footer from "components/Footer/Footer";
+import Header from "components/SilverComponents/Header";
 import { storeLocationInfo } from "mappers/dummydata/storeLocationDetails";
+import React from "react";
+import StoreDetails from "./storeDetails";
+import styles from "./style";
 
 export default function StoreLocationDetails(props) {
   const classes = styles();
   return (
     <Grid container>
       <Header />
-      <Grid item xs={12} style={{marginTop:"10px"}}>
+      <Grid item xs={12} style={{ marginTop: "10px" }}>
         <Slideshow dataCarousel={storeLocationInfo.carouselTop.setting}>
           {storeLocationInfo.carouselTop.data.map((val, index) => (
             <Grid container key={index}>
@@ -21,7 +21,8 @@ export default function StoreLocationDetails(props) {
           ))}
         </Slideshow>
       </Grid>
-      <Grid container xs={12}>
+      <Grid item xs={12}>
+
         <StoreDetails />
       </Grid>
       <Footer />

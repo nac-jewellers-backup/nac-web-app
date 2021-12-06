@@ -1,11 +1,11 @@
-import React from "react";
-import Header from "components/SilverComponents/Header";
-import { Grid, Hidden, Typography } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
+import ContactComponent from "components/ContactComponent/contactus";
 import Footer from "components/Footer/Footer";
-import { withRouter } from "react-router";
+import Header from "components/SilverComponents/Header";
 import "index.css";
+import React from "react";
+import { withRouter } from "react-router";
 import Slideshow from "../components/Carousel/carosul";
-import ContactComponent from "components/ContactComponent/contactus"
 
 
 function FaqsBlock(props) {

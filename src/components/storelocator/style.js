@@ -1,15 +1,19 @@
 import { makeStyles } from "@material-ui/core/styles";
 const styles = makeStyles(theme => ({
-
+    heading: {
+        fontSize: "35px",
+        color: "#B2832C",
+        textAlign: "center"
+    },
     pad: {
         width: "100%",
         // height:"100%",
         padding: "29px 10px",
         borderBottom: "1px solid rgb(221, 221, 221)",
         borderRight: "1px solid rgb(221, 221, 221)",
-        [theme.breakpoints.only('xs')]:{
-            padding:"10px 0px 20px 0px",
-            borderRight:"0px",
+        [theme.breakpoints.only('xs')]: {
+            padding: "10px 0px 20px 0px",
+            borderRight: "0px",
             // borderBottom: "1px solid rgb(221, 221, 221)",
 
         },
@@ -18,32 +22,45 @@ const styles = makeStyles(theme => ({
         // borderBottom: "1px solid rgb(221, 221, 221)",
         // borderRight: "1px solid rgb(221, 221, 221)",
     },
-    ViewButton:{
-        color:"white",
-        backgroundColor:"#5cb85c",
-        '&:hover':{
-            backgroundColor:"#5cb85c"
-        }    
+    ViewButton: {
+        color: "white",
+
+        '&:hover': {
+            backgroundColor: "#B2832C",
+        },
+        backgroundColor: "#B2832C",
+        borderRadius: "0px",
+        boxShadow: "4px 4px 4px #a5a4a5 !important",
     },
-    pads:{
-        padding:"0px 15px",
+    pads: {
+        padding: "24px",
+
         // boxShadow:"0 0 5px #888 !important",
-        marginBottom:"10px"
+
+
     },
-    title:{
-        fontSize:"24px"
+    btns: {
+        backgroundColor: "#B2832C !important",
+        boxShadow: "4px 4px 4px #a5a4a5 !important",
     },
-    shadow:{
-        boxShadow:"0 0 5px #888 !important",
-        marginBottom:"15px"
+    title: {
+        fontSize: "24px",
+        color: "gray !important",
+        fontWeight: "bold"
+    },
+    shadow: {
+        boxShadow: "4px 4px 4px #a5a4a5 !important",
+        color: "gray !important",
+
+        backgroundColor: "#F4F4F4"
     },
 
-    para:{
+    para: {
         fontSize: "15px",
-         color: "#000",
-         paddingBottom: "10px",
-        paddingTop:"10px",
-        lineHeight:"1.6" 
+        color: "gray",
+        paddingBottom: "10px",
+        paddingTop: "10px",
+        lineHeight: "1.6"
     }
 
 

@@ -1,7 +1,7 @@
+import { Box, Button, Grid, IconButton, Typography } from '@material-ui/core';
 import React from 'react';
-import { Grid, Typography, Button } from '@material-ui/core'
-import style from './style'
-import Maps_data from 'mappers/dummydata/googleMap'
+import { FiCornerUpRight } from "react-icons/fi";
+import style from './style';
 export default function Storelocator(props) {
 
     const value = props.value;
@@ -9,37 +9,110 @@ export default function Storelocator(props) {
 
     return (
         <>
-            {value.data.map((value, key) =>
-                <Grid container className={classes.shadow}>
-
-                    <Grid container className={classes.pad} xs={12} lg={12}>
-                        <Grid container className={classes.borders} xs={12} sm={5} md={5} lg={5} >
-                            <Grid item xs={12}>
-                                <img style={{ width: "100%" }} src={value.img} />
-                                {/* background-image: url("https://storage.googleapis.com/media.nacjewellers.com/resources/store-locator/Mylapore.jpg");
-                 background-repeat: no-repeat; background-position: center center; background-size: cover; height: 189px; */}
-                                {/* <hr /> */}
-                            </Grid>
-                        </Grid>
-                        <Grid item className={classes.pads} xs={12} sm={7} md={7} lg={7}>
-                            <Typography className={classes.title}>{value.title}</Typography>
-                            <Typography dangerouslySetInnerHTML={{ __html: value.para }} className={classes.para}>
-                            </Typography>
-                            <Grid item>
-                                <a style={{ textDecoration: "none" }} href="" target="_blank">
-                                    <Button onClick={() => {
-                                        
-                                        window.location.pathname="/loc/"+value.key
-                                    }} className={classes.ViewButton} >{value.button}</Button>
-                                </a>
-                            </Grid>
-                        </Grid>
-
-
-                    </Grid>
+            <Grid container spacing={3} justifyContent="center">
+                <Grid item xs={12}>
+                    <Typography className={classes.heading}>TAMIL NADU</Typography>
                 </Grid>
+                {value.data.map((value, key) =>
+                    <Grid item xs={12} md={12} lg={6}>
+                        <Grid container className={classes.shadow} >
 
-            )}
+                            <Grid item sm={12} md={4} lg={4} xs={12}>
+                                <img style={{ width: "100%", height: "100%", objectFit: "cover" }} src={value.img} />
+                            </Grid>
+                            <Grid item sm={12} md={1} lg={1} xs={12}></Grid>
+                            <Grid item xs={12} sm={12} md={7} lg={7} >
+                                <div className={classes.pads}>
+                                    <Typography className={classes.title}>{value.title}</Typography>
+                                    <Typography dangerouslySetInnerHTML={{ __html: value.para }} className={classes.para}>
+                                    </Typography>
+                                    <div>
+                                        <a style={{ textDecoration: "none" }} href="" target="_blank">
+                                            <Button
+
+
+                                                onClick={() => {
+
+                                                    window.location.pathname = "/loc/" + value.key
+                                                }} className={classes.ViewButton} >&nbsp;&nbsp;{value.button}&nbsp;&nbsp;</Button>
+                                        </a>
+
+                                    </div>
+                                    <Box display="flex" alignItems="center" marginTop="14px">
+
+                                        <Box>
+                                            &nbsp;
+                                        </Box>
+                                        <Box>
+                                            <IconButton size="small" style={{ backgroundColor: "#2F348B", color: "white" }}><FiCornerUpRight /></IconButton>
+
+                                        </Box>
+                                        <Box>
+                                            <span >&nbsp;&nbsp;Get directions</span>
+                                        </Box>
+                                    </Box>
+                                    <br />
+
+
+                                </div>
+                            </Grid>
+
+
+
+                        </Grid>
+                    </Grid>
+                )}
+
+                <Grid item xs={12}>
+                    <Typography className={classes.heading}>ANDHRA PRADESH</Typography>
+                </Grid>
+                {value.data1.map((value, key) =>
+                    <Grid item xs={12} md={12} lg={6}>
+                        <Grid container className={classes.shadow} >
+
+                            <Grid item xs={4}>
+                                <img style={{ width: "100%", height: "100%", objectFit: "cover" }} src={value.img} />
+                            </Grid>
+                            <Grid item xs={1}></Grid>
+                            <Grid item xs={12} sm={12} md={7} lg={7} >
+                                <div className={classes.pads}>
+                                    <Typography className={classes.title}>{value.title}</Typography>
+                                    <Typography dangerouslySetInnerHTML={{ __html: value.para }} className={classes.para}>
+                                    </Typography>
+                                    <div>
+                                        <a style={{ textDecoration: "none" }} href="" target="_blank">
+                                            <Button
+
+
+                                                onClick={() => {
+
+                                                    window.location.pathname = "/loc/" + value.key
+                                                }} className={classes.ViewButton} >&nbsp;&nbsp;{value.button}&nbsp;&nbsp;</Button>
+                                        </a>
+                                    </div>
+                                    <Box display="flex" alignItems="center" marginTop="14px">
+
+                                        <Box>
+                                            &nbsp;
+</Box>
+                                        <Box>
+                                            <IconButton size="small" style={{ backgroundColor: "#2F348B", color: "white" }}><FiCornerUpRight /></IconButton>
+
+                                        </Box>
+                                        <Box>
+                                            <span >&nbsp;&nbsp;Get directions</span>
+                                        </Box>
+                                    </Box>
+                                    <br />
+                                </div>
+                            </Grid>
+
+
+
+                        </Grid>
+                    </Grid>
+                )}
+            </Grid>
         </>
     )
 

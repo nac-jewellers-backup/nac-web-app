@@ -1,15 +1,13 @@
-import React from "react";
-import { Grid, Hidden, Button, Typography } from "@material-ui/core";
-import style from "./style";
-import Storelocator from "components/storelocator/storelocator";
-import Header from "components/SilverComponents/Header";
-import { storeLocatorData } from "mappers/dummydata/storeLocator";
-import SocialFields from "components/socialfield/index";
+import { Grid } from "@material-ui/core";
+import Menu from "@material-ui/core/Menu";
+import { withStyles } from "@material-ui/core/styles";
 import Slideshow from "components/Carousel/carosul";
 import Footer from "components/Footer/Footer";
-import { withStyles } from "@material-ui/core/styles";
-import Menu from "@material-ui/core/Menu";
-import ExpandMore from "@material-ui/icons/ExpandMore";
+import Header from "components/SilverComponents/Header";
+import Storelocator from "components/storelocator/storelocator";
+import { storeLocatorData } from "mappers/dummydata/storeLocator";
+import React from "react";
+import style from "./style";
 
 
 const StyledMenu = withStyles({
@@ -53,7 +51,7 @@ export default function Locator(props) {
       <Grid container className={classes.mainWidths}>
         <Grid container className={classes.topPadding}>
           {/* ------------------------------------------Drop Down Button------------------------------- */}
-          <Grid container className={classes.DropDownContainer}>
+          {/* <Grid container className={classes.DropDownContainer}>
             <Grid className={classes.DropDownGrid}>
               <Typography
                 aria-controls="customized-menu"
@@ -121,17 +119,17 @@ export default function Locator(props) {
                 </Typography>
               </StyledMenu>
             </Grid>
-          </Grid>
+          </Grid> */}
 
           {/* ---------------------------------------------------------------------------- */}
-          <Grid container xs={12} md={9} lg={9}>
+          <Grid container xs={12} md={12} lg={12}>
             <Storelocator value={storeLocatorData} />
           </Grid>
-          <Hidden smDown>
+          {/* <Hidden smDown>
             <Grid item lg={3} md={3} className={classes.sideContent}>
               <SocialFields />
             </Grid>
-          </Hidden>
+          </Hidden> */}
         </Grid>
       </Grid>
       <Footer />

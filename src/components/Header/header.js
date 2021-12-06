@@ -12,7 +12,7 @@ import {
   ListItem,
   ListItemText,
   Toolbar,
-  Typography,
+  Typography
 } from "@material-ui/core";
 import Popover from "@material-ui/core/Popover";
 import { withStyles } from "@material-ui/core/styles";

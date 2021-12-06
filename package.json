@@ -38,6 +38,7 @@
     "express": "^4.17.1",
     "file-loader": "3.0.1",
     "fs-extra": "7.0.1",
+    "google-map-react": "^2.1.10",
     "google-maps-react": "^2.0.6",
     "graphql": "^14.7.0",
     "graphql-request": "^3.6.1",

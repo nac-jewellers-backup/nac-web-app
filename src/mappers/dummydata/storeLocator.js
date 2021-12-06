@@ -20,7 +20,7 @@ export const storeLocatorData = {
     data: [
       {
         img:
-        "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori+CSK-banner-1920-X-656-px.jpg"
+          "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori+CSK-banner-1920-X-656-px.jpg"
       },
     ],
   },
@@ -84,16 +84,7 @@ export const storeLocatorData = {
       button: "View Store Details",
       key: "ChIJq_WsMidkUjoRH7FAOtdaXis",
     },
-    {
-      img:
-        "https://storage.googleapis.com/media.nacjewellers.com/resources/store-locator/Vijayawada.jpg",
-      href: "",
-      title: "Vijayawada",
-      para:
-        "41, 40-1-0, Mahatma Gandhi Rd, Near petrol Bunk, Labbipet,<br>Vijayawada, Andhra Pradesh 520010",
-      button: "View Store Details",
-      key: "ChIJlZ2oZrr6NToRG4kJpSN1uf8",
-    },
+
     {
       img:
         "https://storage.googleapis.com/media.nacjewellers.com/resources/store-locator/OLDWASHERMENPET.jpg",
@@ -114,5 +105,19 @@ export const storeLocatorData = {
       button: "View Store Details",
       key: "ChIJ423xiS1mUjoR_LOZTgQBMMM",
     },
+
   ],
+  data1: [
+    {
+      img:
+        "https://storage.googleapis.com/media.nacjewellers.com/resources/store-locator/Vijayawada.jpg",
+      href: "",
+      title: "Vijayawada",
+      para:
+        "41, 40-1-0, Mahatma Gandhi Rd, Near petrol Bunk, Labbipet,<br>Vijayawada, Andhra Pradesh 520010",
+      button: "View Store Details",
+      state: "andhra",
+      key: "ChIJlZ2oZrr6NToRG4kJpSN1uf8",
+    },
+  ]
 };

@@ -1,16 +1,15 @@
-import React from "react";
-import { Grid,Hidden } from "@material-ui/core";
-import Header from "components/SilverComponents/Header";
+import { Grid, Hidden } from "@material-ui/core";
 import CardIndexPage from "components/card/index";
-import styles from "../savings/savingsstyle";
 import Slideshow from "components/Carousel/carosul";
+import Footer from "components/Footer/Footer";
+import Header from "components/SilverComponents/Header";
 // import {IndexTemplePage , IndexAdvertisingPage } from 'mappers/dummydata/savingNac';
 import {
-  IndexTemplePage,
   IndexAdvertisingPage,
-  IndexNewsRoomPage,
+  IndexNewsRoomPage, IndexTemplePage
 } from "mappers/dummydata/savingNac";
-import Footer from "components/Footer/Footer";
+import React from "react";
+import styles from "../savings/savingsstyle";
 // import { IndexAdvertisingPage } from 'mappers/dummydata/savingNac';
 
 export default function Advertising(props) {
@@ -85,6 +84,8 @@ export default function Advertising(props) {
 
       <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
         <CardIndexPage value={values()} />
+        <br />
+            <br />
       </Grid>
       <Footer />
     </Grid>

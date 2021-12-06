@@ -367,6 +367,10 @@ export default function Footer(props) {
           url: "/blog",
           Title: "Blog",
         },
+        {
+          url: "#",
+          Title: "Jewellery guide",
+        },
       ],
     },
     {

@@ -89,7 +89,7 @@ export const sidemenu = [
   },
   { title: "Education", link: "/education", subHeading: [] },
   { title: "Sitemap", link: "/sitemap", subHeading: [] },
-  { title: "Contact Us", link: "/contactus", subHeading: [] },
+  // { title: "Contact Us", link: "/contactus", subHeading: [] },
   {
     title: "FAQs",
     link: "/faqs",
