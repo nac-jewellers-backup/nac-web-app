@@ -2,7 +2,7 @@ import { useGraphql } from "hooks/GraphqlHook";
 import {
   PRODUCTDETAILS,
   YouMayAlsoLike,
-  youRecentlyViewed,
+  youRecentlyViewed
 } from "queries/productdetail";
 import React, { useEffect } from "react";
 import { withRouter } from "react-router-dom";
@@ -31,12 +31,12 @@ const initialCtx = {
     ratingcounts: [],
     registerurl: "",
   },
-  setFilters: () => {},
-  setlikedata: () => {},
-  setrating: () => {},
-  setregisterurl: () => {},
-  setratingcounts: () => {},
-  setratingcountsclear: () => {},
+  setFilters: () => { },
+  setlikedata: () => { },
+  setrating: () => { },
+  setregisterurl: () => { },
+  setratingcounts: () => { },
+  setratingcountsclear: () => { },
 };
 export const ProductDetailContext = React.createContext(initialCtx);
 export const ProductDetailConsumer = ProductDetailContext.Consumer;
@@ -64,7 +64,7 @@ export const TabsProvider = (props) => {
 
   const { loading, error, data, makeRequest } = useGraphql(
     PRODUCTDETAILS,
-    () => {},
+    () => { },
     {}
   );
   const {
@@ -72,7 +72,7 @@ export const TabsProvider = (props) => {
     error: likeerror,
     data: likedata,
     makeRequest: likemakeRequest,
-  } = useGraphql(YouMayAlsoLike, () => {}, {}, false);
+  } = useGraphql(YouMayAlsoLike, () => { }, {}, false);
   // youRecentlyViewed
   // "filtersku": {"skuId": {"in": ["SB0013-18110000","SB0013-18210000"]}}
   const {
@@ -80,7 +80,7 @@ export const TabsProvider = (props) => {
     error: viewederror,
     data: vieweddata,
     makeRequest: viewmakeRequest,
-  } = useGraphql(youRecentlyViewed, () => {}, {}, false);
+  } = useGraphql(youRecentlyViewed, () => { }, {}, false);
   // useEffect(()=>{
   //     likemakeRequest(vardata)
   // },[])
@@ -375,10 +375,10 @@ export const TabsProvider = (props) => {
     var variants = filters["defaultVariants"];
     var metalColors =
       filters &&
-      filters.defaultVariants &&
-      filters.defaultVariants.metalColor &&
-      filters.defaultVariants.metalColor.length &&
-      filters.defaultVariants.metalColor.length > 0
+        filters.defaultVariants &&
+        filters.defaultVariants.metalColor &&
+        filters.defaultVariants.metalColor.length &&
+        filters.defaultVariants.metalColor.length > 0
         ? { productColor: filters.defaultVariants.metalColor }
         : null;
     var ProductVariants = {
@@ -439,7 +439,7 @@ export const TabsProvider = (props) => {
         );
     }
   }, [data, loading, error]);
-  useEffect(() => {}, [
+  useEffect(() => { }, [
     likedata,
     likeerror,
     likeloading,
@@ -475,6 +475,8 @@ export const TabsProvider = (props) => {
     rating,
     registerurl,
   };
+
+
 
   return (
     <ProductDetailContext.Provider

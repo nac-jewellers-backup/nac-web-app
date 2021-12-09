@@ -189,6 +189,7 @@ const Productprice = (
                     <Hidden smDown>
                       <Typography style={{ marginTop: "-8px" }} className={`pdp-desc ${classes.dis}`}> {val?.shortDis}</Typography>
                       <br />
+                      <br />
                       <Box display="flex" className={`pdp-desc ${classes.dis}`}>
                         <Box>
                           {val?.dis?.length > 70 && viewMore

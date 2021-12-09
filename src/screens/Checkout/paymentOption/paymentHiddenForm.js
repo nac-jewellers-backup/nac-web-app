@@ -38,8 +38,8 @@ export default function PaymentHiddenForm(props) {
     : "";
   let cart_id =
     cartFilters &&
-    cartFilters._cart_id &&
-    Object.keys(cartFilters._cart_id).length > 0
+      cartFilters._cart_id &&
+      Object.keys(cartFilters._cart_id).length > 0
       ? cartFilters._cart_id.cart_id
       : "";
   var cart_ids = cart_id.length > 0 ? cart_id : cart_id_lo;
@@ -149,9 +149,9 @@ export default function PaymentHiddenForm(props) {
   useEffect(() => {
     if (hash.checksum) document.getElementById("sendtoairpay").submit();
   }, [hash]);
- 
+
   return (
-  
+
     <div container>
       <form
         method="POST"
@@ -335,12 +335,12 @@ export default function PaymentHiddenForm(props) {
         <Button
           color="primary"
           variant="contained"
-                className="credit-button"
-                type="submit"
-                onClick={() => generateOrderdId}
-              >
-              Pay {props.data1}
-              </Button>
+          className="credit-button"
+          type="submit"
+          onClick={() => generateOrderdId()}
+        >
+          Pay {props.data1}
+        </Button>
       </Grid>
     </div>
   );

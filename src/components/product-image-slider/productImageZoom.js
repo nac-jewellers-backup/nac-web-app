@@ -52,60 +52,60 @@ class ProductImageZoom extends React.Component {
     backgroundPosition: "0% 0%",
     showimage:
       this.props &&
-      this.props.data &&
-      this.props.data.length > 0 &&
-      this.props.data[0] &&
-      this.props.data[0].fadeImages &&
-      this.props.data[0].fadeImages.arrOfurls &&
-      this.props.data[0].fadeImages.arrOfurls.length > 0 &&
-      this.props.data[0].fadeImages.arrOfurls[0]
+        this.props.data &&
+        this.props.data.length > 0 &&
+        this.props.data[0] &&
+        this.props.data[0].fadeImages &&
+        this.props.data[0].fadeImages.arrOfurls &&
+        this.props.data[0].fadeImages.arrOfurls.length > 0 &&
+        this.props.data[0].fadeImages.arrOfurls[0]
         ? this.check_image_exists_in_server(
-            this.props.data[0].fadeImages.arrOfurls[0]
-          )
+          this.props.data[0].fadeImages.arrOfurls[0]
+        )
           ? this.props.data[0].fadeImages.arrOfurls[0]
           : this.props.data[0].fadeImages.arrOfurls[0].replace(
-              `${this.props.data[0].size}X${this.props.data[0].size}`,
-              "2400X2400"
-            )
-        : "",
-    largeImage:
-      this.props &&
-      this.props.data &&
-      this.props.data.length > 0 &&
-      this.props.data[0] &&
-      this.props.data[0].fadeImages &&
-      this.props.data[0].fadeImages.arrOfurls_2X &&
-      this.props.data[0].fadeImages.arrOfurls_2X.length > 0 &&
-      this.props.data[0].fadeImages.arrOfurls_2X[0]
-        ? this.props.data[0].fadeImages.arrOfurls_2X[0]
-        : "",
-    showimageBig:
-      this.props &&
-      this.props.data &&
-      this.props.data.length > 0 &&
-      this.props.data[0] &&
-      this.props.data[0].fadeImages &&
-      this.props.data[0].fadeImages.arrOfurls &&
-      this.props.data[0].fadeImages.arrOfurls.length > 0 &&
-      this.props.data[0].fadeImages.arrOfurls[0]
-        ? this.props.data[0].fadeImages.arrOfurls[0].replace(
             `${this.props.data[0].size}X${this.props.data[0].size}`,
             "2400X2400"
           )
         : "",
+    largeImage:
+      this.props &&
+        this.props.data &&
+        this.props.data.length > 0 &&
+        this.props.data[0] &&
+        this.props.data[0].fadeImages &&
+        this.props.data[0].fadeImages.arrOfurls_2X &&
+        this.props.data[0].fadeImages.arrOfurls_2X.length > 0 &&
+        this.props.data[0].fadeImages.arrOfurls_2X[0]
+        ? this.props.data[0].fadeImages.arrOfurls_2X[0]
+        : "",
+    showimageBig:
+      this.props &&
+        this.props.data &&
+        this.props.data.length > 0 &&
+        this.props.data[0] &&
+        this.props.data[0].fadeImages &&
+        this.props.data[0].fadeImages.arrOfurls &&
+        this.props.data[0].fadeImages.arrOfurls.length > 0 &&
+        this.props.data[0].fadeImages.arrOfurls[0]
+        ? this.props.data[0].fadeImages.arrOfurls[0].replace(
+          `${this.props.data[0].size}X${this.props.data[0].size}`,
+          "2400X2400"
+        )
+        : "",
     largeImageBig:
       this.props &&
-      this.props.data &&
-      this.props.data.length > 0 &&
-      this.props.data[0] &&
-      this.props.data[0].fadeImages &&
-      this.props.data[0].fadeImages.arrOfurls_2X &&
-      this.props.data[0].fadeImages.arrOfurls_2X.length > 0 &&
-      this.props.data[0].fadeImages.arrOfurls_2X[0]
+        this.props.data &&
+        this.props.data.length > 0 &&
+        this.props.data[0] &&
+        this.props.data[0].fadeImages &&
+        this.props.data[0].fadeImages.arrOfurls_2X &&
+        this.props.data[0].fadeImages.arrOfurls_2X.length > 0 &&
+        this.props.data[0].fadeImages.arrOfurls_2X[0]
         ? this.props.data[0].fadeImages.arrOfurls_2X[0].replace(
-            "1000X1000",
-            "2400X2400"
-          )
+          "1000X1000",
+          "2400X2400"
+        )
         : "",
   };
 
@@ -242,50 +242,50 @@ class ProductImageZoom extends React.Component {
                     <source src={showimage} type="video/mp4" />
                   </video>
                 ) : (
-                  <div
-                    style={{
-                      boxShadow: "4px 4px 4px #a5a4a5",
-                      border: "1px solid #1a181866",
-                      position: "relative",
-                    }}
-                  >
                     <div
                       style={{
-                        position: "absolute",
-                        left: "10px",
-                        zIndex: "999",
+                        boxShadow: "4px 4px 4px #a5a4a5",
+                        border: "1px solid #1a181866",
+                        position: "relative",
                       }}
                     >
-                      <Wishlist
-                        sku={data[0].skuId}
-                        productId={data[0].productId}
-                        wishlist={wishlist}
+                      <div
+                        style={{
+                          position: "absolute",
+                          left: "10px",
+                          zIndex: "999",
+                        }}
+                      >
+                        <Wishlist
+                          sku={data[0]?.skuId ?? ""}
+                          productId={data[0]?.productId}
+                          wishlist={wishlist}
+                        />
+                      </div>
+                      <GlassMagnifier
+                        imageSrc={[
+                          largeImage,
+                          showimageBig,
+                          `https://styloriimages-staging.s3.ap-south-1.amazonaws.com/product/1000X1000/productnotfound.webp`,
+                        ]}
+                        // imageSrc={largeImage}
+                        // onImageLoad={this.imageSrc=`${CDN_URL}product/1000X1000/productnotfound.webp`}
+                        imageAlt="Stylori"
+                        magnifierSize={this.props.isSilver ? "40%" : "50%"}
+                        largeImageSrc={[
+                          largeImage,
+                          largeImageBig,
+                          `https://styloriimages-staging.s3.ap-south-1.amazonaws.com/product/2400X2400/productnotfound.webp`,
+                          `https://styloriimages-staging.s3.ap-south-1.amazonaws.com/product/1000X1000/productnotfound.webp`,
+                        ]}
+                        magnifierBoxShadow="4px 4px 4px #a5a4a5"
+                        magnifierBorderColor={
+                          this.props.isSilver ? "rgb(58,69,120)" : "#f5003240"
+                        }
+                      // magnifierBackgroundColor="#f5003240"
                       />
                     </div>
-                    <GlassMagnifier
-                      imageSrc={[
-                        largeImage,
-                        showimageBig,
-                        `https://styloriimages-staging.s3.ap-south-1.amazonaws.com/product/1000X1000/productnotfound.webp`,
-                      ]}
-                      // imageSrc={largeImage}
-                      // onImageLoad={this.imageSrc=`${CDN_URL}product/1000X1000/productnotfound.webp`}
-                      imageAlt="Stylori"
-                      magnifierSize={this.props.isSilver ? "40%" : "50%"}
-                      largeImageSrc={[
-                        largeImage,
-                        largeImageBig,
-                        `https://styloriimages-staging.s3.ap-south-1.amazonaws.com/product/2400X2400/productnotfound.webp`,
-                        `https://styloriimages-staging.s3.ap-south-1.amazonaws.com/product/1000X1000/productnotfound.webp`,
-                      ]}
-                      magnifierBoxShadow="4px 4px 4px #a5a4a5"
-                      magnifierBorderColor={
-                        this.props.isSilver ? "rgb(58,69,120)" : "#f5003240"
-                      }
-                      // magnifierBackgroundColor="#f5003240"
-                    />
-                  </div>
-                )}
+                  )}
               </div>
 
               {/*              
@@ -321,29 +321,29 @@ class ProductImageZoom extends React.Component {
                 style={{ display: "flex", alignSelf: "center" }}
               >
                 {data &&
-                data.length > 0 &&
-                data[0] &&
-                data[0].fadeImages.arrOfurls.length > 3 ? (
-                  <span
-                    className={
-                      data &&
-                      data.length > 0 &&
-                      data[0] &&
-                      data[0].fadeImages.arrOfurls.length === 4
-                        ? classes.cursor_notallowed
-                        : null
-                    }
-                  >
-                    <IconButton size="small" onClick={this.previous}>
-                      <ArrowLeft
-                        style={{
-                          color: "#A66E1D",
-                          fontSize: "40px",
-                        }}
-                      />
-                    </IconButton>
-                  </span>
-                ) : null}
+                  data.length > 0 &&
+                  data[0] &&
+                  data[0].fadeImages.arrOfurls.length > 3 ? (
+                    <span
+                      className={
+                        data &&
+                          data.length > 0 &&
+                          data[0] &&
+                          data[0].fadeImages.arrOfurls.length === 4
+                          ? classes.cursor_notallowed
+                          : null
+                      }
+                    >
+                      <IconButton size="small" onClick={this.previous}>
+                        <ArrowLeft
+                          style={{
+                            color: "#A66E1D",
+                            fontSize: "40px",
+                          }}
+                        />
+                      </IconButton>
+                    </span>
+                  ) : null}
               </Grid>
               <Grid item xs={10}>
                 <Slideshow
@@ -366,29 +366,29 @@ class ProductImageZoom extends React.Component {
                 style={{ display: "flex", alignSelf: "center" }}
               >
                 {data &&
-                data.length > 0 &&
-                data[0] &&
-                data[0].fadeImages.arrOfurls.length > 3 ? (
-                  <span
-                    className={
-                      data &&
-                      data.length > 0 &&
-                      data[0] &&
-                      data[0].fadeImages.arrOfurls.length === 4
-                        ? classes.cursor_notallowed
-                        : null
-                    }
-                  >
-                    <IconButton size="small" onClick={this.next}>
-                      <ArrowRight
-                        style={{
-                          color: "#A66E1D",
-                          fontSize: "40px",
-                        }}
-                      />
-                    </IconButton>
-                  </span>
-                ) : null}
+                  data.length > 0 &&
+                  data[0] &&
+                  data[0].fadeImages.arrOfurls.length > 3 ? (
+                    <span
+                      className={
+                        data &&
+                          data.length > 0 &&
+                          data[0] &&
+                          data[0].fadeImages.arrOfurls.length === 4
+                          ? classes.cursor_notallowed
+                          : null
+                      }
+                    >
+                      <IconButton size="small" onClick={this.next}>
+                        <ArrowRight
+                          style={{
+                            color: "#A66E1D",
+                            fontSize: "40px",
+                          }}
+                        />
+                      </IconButton>
+                    </span>
+                  ) : null}
               </Grid>
             </Grid>
           </Grid>

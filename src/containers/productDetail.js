@@ -129,7 +129,7 @@ class ProductDetail extends Component {
   };
 
   render() {
-    //console.log(JSON.stringify(this.props.data));
+
     const { classes } = this.props;
 
     var loc = this.props.location.pathname;
@@ -201,60 +201,65 @@ class ProductDetail extends Component {
       nextArrow: <ArrowRight />,
     };
 
+
+
     return (
       <div style={{ overflow: "hidden" }}>
+
         <div>
           <MetaTags>
-            {this.props.data &&
-              this.props.data[0] &&
-              this.props.data[0].length > 0 ? (
-                <>
-                  <title>{this.props.data[0].title}</title>
-                  <meta name="description" content={this.props.data[0].dis} />
-                  <meta
-                    name="keywords"
-                    content={this.props.data[0].productsPendants[0].name}
-                  />
-                  <meta
-                    property="og:title"
-                    id="fb-title"
-                    content={this.props.data[0].title}
-                  />
-                  <meta
-                    property="og:description"
-                    content={this.props.data[0].dis}
-                  />
-                  <meta property="og:type" content="product" />
-                  <meta
-                    property="og:url"
-                    id="fb-product-url"
-                    content={window.location.href}
-                  />
-                  <meta
-                    property="og:image"
-                    id="fb_imageUrl"
-                    content={this.props.data[0].fadeImages}
-                  />
-                  <meta name="twitter:card" content="summary" />
-                  <meta name="twitter:site" content="@StyloriLove" />
-                  <meta
-                    name="twitter:title"
-                    id="twitter-title"
-                    content={this.props.data[0].title}
-                  />
-                  <meta
-                    name="twitter:description"
-                    content={this.props.data[0].dis}
-                  />
-                  <meta
-                    name="twitter:image"
-                    id="twitter_imageUrl"
-                    content={this.props.data[0].fadeImages}
-                  />
-                </>
-              ) : (
-                ""
-              )}
+            {
+              this?.props &&
+                this.props?.data &&
+                this.props?.data[0] &&
+                this.props?.data[0].length > 0 ? (
+                  <>
+                    <title>{this.props.data[0].title}</title>
+                    <meta name="description" content={this.props.data[0].dis} />
+                    <meta
+                      name="keywords"
+                      content={this.props.data[0].productsPendants[0].name}
+                    />
+                    <meta
+                      property="og:title"
+                      id="fb-title"
+                      content={this.props.data[0].title}
+                    />
+                    <meta
+                      property="og:description"
+                      content={this.props.data[0].dis}
+                    />
+                    <meta property="og:type" content="product" />
+                    <meta
+                      property="og:url"
+                      id="fb-product-url"
+                      content={window.location.href}
+                    />
+                    <meta
+                      property="og:image"
+                      id="fb_imageUrl"
+                      content={this.props.data[0].fadeImages}
+                    />
+                    <meta name="twitter:card" content="summary" />
+                    <meta name="twitter:site" content="@StyloriLove" />
+                    <meta
+                      name="twitter:title"
+                      id="twitter-title"
+                      content={this.props.data[0].title}
+                    />
+                    <meta
+                      name="twitter:description"
+                      content={this.props.data[0].dis}
+                    />
+                    <meta
+                      name="twitter:image"
+                      id="twitter_imageUrl"
+                      content={this.props.data[0].fadeImages}
+                    />
+                  </>
+                ) : (
+                  ""
+                )}
           </MetaTags>
         </div>
 
@@ -503,15 +508,38 @@ class ProductDetail extends Component {
                               ) : (
                                 ""
                               )}
+
                           </Grid>
                         </Grid>
                       </Grid>
                     )}
                 </Grid>
+                <Grid container>
+                  <Grid item xs={12}>
+                    {
+                      this.props.data[0].certificate &&
+                      <div>
+                        <p
+                          style={{
+                            color: "gray",
+                            paddingBottom: "8px",
+                            borderBottom: "1px solid gray",
+                          }}
+                        >
+                          CERTIFICATES
+                    </p>
+                        <img src={this.props.data[0].certificate} />
+                      </div>
+                    }
 
+                  </Grid>
+                </Grid>
               </Grid>
             </Grid>
           </Grid>
+
+
+
           <Grid
             container
             item
@@ -802,6 +830,7 @@ class ProductDetail extends Component {
     );
   }
 }
+
 const Components = (props) => {
   let {
     CartCtx: { allorderdata, wishlistdata, setratingcountsclear },
@@ -812,6 +841,7 @@ const Components = (props) => {
     ProductDetailCtx: { data, loading, error, likedatas, viewedddatas, rating },
   } = React.useContext(ProductDetailContext);
   const datas = data;
+
   let mapped = datas;
 
   if (!loading && !error) {
@@ -822,13 +852,15 @@ const Components = (props) => {
       rating,
       Globalctx.tabsChange
     );
+
   }
-  if (Object.keys(mapped).length === 0)
+  if (Object.keys(mapped).length === 0) {
     return (
-      <div className="overall-loader">
+      < div className="overall-loader" >
         <div id="loading"></div>
-      </div>
-    );
+      </div >
+    )
+  }
   else {
     return (
       <ProductDetail
