@@ -67,11 +67,11 @@ const inputsearch = (props, state, handleChanges, handleCodChange) => {
               }}
               className={
                 state.pincodeNotFound ||
-                state.CheckForCodtitle === "COD Not Available"
+                  state.CheckForCodtitle === "COD Not Available"
                   ? "pincodeNotFound"
                   : state.CheckForCodtitle === "COD is Available"
-                  ? "selectedGreen"
-                  : "search-button"
+                    ? "selectedGreen"
+                    : "search-button"
               }
               onClick={() => {
                 handleCodChange();
@@ -105,8 +105,8 @@ const inputsearch = (props, state, handleChanges, handleCodChange) => {
                   {state.CheckForCodtitle}
                 </>
               ) : (
-                state.CheckForCodtitle.toUpperCase()
-              )}
+                      state.CheckForCodtitle.toUpperCase()
+                    )}
             </Button>
           </Grid>
 
@@ -129,6 +129,7 @@ const inputsearch = (props, state, handleChanges, handleCodChange) => {
                     display: "flex",
                     alignContent: "center",
                     fontSize: "16px",
+                    color: "gray"
                   }}
                 >
                   <i style={{ fontSize: "20px" }} class="fa fa-truck"></i>
@@ -181,8 +182,8 @@ const Buydetails = (
                     />{" "}
                   </>
                 ) : (
-                  ""
-                )}
+                    ""
+                  )}
               </div>
             </Grid>
             <Grid xs={12} md={5} lg={4} className={classes.buynowItem}>
@@ -249,7 +250,7 @@ const PriceBuynow = (props) => {
     error,
     data: CodData,
     makeRequestCod,
-  } = useCheckForCod(CheckForCod, () => {}, {});
+  } = useCheckForCod(CheckForCod, () => { }, {});
   const { ProductDetailCtx, setFilters } =
     React.useContext(ProductDetailContext);
   const { setCartFilters } = React.useContext(CartContext);
@@ -272,13 +273,13 @@ class Component extends React.Component {
     this.state = {
       showimage:
         this.props &&
-        this.props.data &&
-        this.props.data.length > 0 &&
-        this.props.data[0] &&
-        this.props.data[0].fadeImages &&
-        this.props.data[0].fadeImages.arrOfurls &&
-        this.props.data[0].fadeImages.arrOfurls.length > 0 &&
-        this.props.data[0].fadeImages.arrOfurls[0]
+          this.props.data &&
+          this.props.data.length > 0 &&
+          this.props.data[0] &&
+          this.props.data[0].fadeImages &&
+          this.props.data[0].fadeImages.arrOfurls &&
+          this.props.data[0].fadeImages.arrOfurls.length > 0 &&
+          this.props.data[0].fadeImages.arrOfurls[0]
           ? this.props.data[0].fadeImages.arrOfurls[0]
           : [],
       open: false,
@@ -412,8 +413,8 @@ class Component extends React.Component {
       skuId: this.props.data[0].skuId,
       qty:
         this.props.quantity &&
-        this.props.data &&
-        this.props.quantity[this.props.data[0].skuId]
+          this.props.data &&
+          this.props.quantity[this.props.data[0].skuId]
           ? this.props.quantity[this.props.data[0].skuId]
           : 1,
       price: this.props.data[0].offerPrice,
@@ -421,8 +422,8 @@ class Component extends React.Component {
 
     const _qty =
       this.props.quantity &&
-      this.props.data &&
-      this.props.quantity[this.props.data[0].skuId]
+        this.props.data &&
+        this.props.quantity[this.props.data[0].skuId]
         ? this.props.quantity[this.props.data[0].skuId]
         : 1;
     this.props.setFilters({
@@ -464,8 +465,8 @@ class Component extends React.Component {
         sku_id: this.props.data[0].skuId,
         qty:
           this.props.quantity &&
-          this.props.data &&
-          this.props.quantity[this.props.data[0].skuId]
+            this.props.data &&
+            this.props.quantity[this.props.data[0].skuId]
             ? this.props.quantity[this.props.data[0].skuId]
             : 1,
         price: this.props.data[0].offerPrice,
@@ -483,8 +484,8 @@ class Component extends React.Component {
       skuId: this.props.data[0].skuId,
       qty:
         this.props.quantity &&
-        this.props.data &&
-        this.props.quantity[this.props.data[0].skuId]
+          this.props.data &&
+          this.props.quantity[this.props.data[0].skuId]
           ? this.props.quantity[this.props.data[0].skuId]
           : 1,
       price: this.props.data[0].offerPrice,
@@ -492,8 +493,8 @@ class Component extends React.Component {
 
     const _qty =
       this.props.quantity &&
-      this.props.data &&
-      this.props.quantity[this.props.data[0].skuId]
+        this.props.data &&
+        this.props.quantity[this.props.data[0].skuId]
         ? this.props.quantity[this.props.data[0].skuId]
         : 1;
     this.props.setFilters({
@@ -535,8 +536,8 @@ class Component extends React.Component {
         sku_id: this.props.data[0].skuId,
         qty:
           this.props.quantity &&
-          this.props.data &&
-          this.props.quantity[this.props.data[0].skuId]
+            this.props.data &&
+            this.props.quantity[this.props.data[0].skuId]
             ? this.props.quantity[this.props.data[0].skuId]
             : 1,
         price: this.props.data[0].offerPrice,
@@ -626,7 +627,7 @@ class Component extends React.Component {
                     this.props.data[0].productsDetails.length > 0 &&
                     this.props.data[0].productsDetails[0] &&
                     this.props.data[0].productsDetails[0].namedetail.length >
-                      0 &&
+                    0 &&
                     this.props.data[0].productsDetails[0].namedetail[2] &&
                     this.props.data[0].productsDetails[0].namedetail[2]
                       .details && (
@@ -660,7 +661,7 @@ class Component extends React.Component {
                     this.props.data[0].productsDetails.length > 0 &&
                     this.props.data[0].productsDetails[0] &&
                     this.props.data[0].productsDetails[0].namedetail.length >
-                      0 &&
+                    0 &&
                     this.props.data[0].productsDetails[0].namedetail[1] &&
                     this.props.data[0].productsDetails[0].namedetail[1]
                       .details && (
@@ -693,7 +694,7 @@ class Component extends React.Component {
                     this.props.data[0].productsDetails.length > 0 &&
                     this.props.data[0].productsDetails[1] &&
                     this.props.data[0].productsDetails[1].namedetail.length >
-                      0 &&
+                    0 &&
                     this.props.data[0].productsDetails[1].namedetail[3] &&
                     this.props.data[0].productsDetails[1].namedetail[3]
                       .details && (
@@ -714,18 +715,18 @@ class Component extends React.Component {
                           Diamond Weight
                           <br />
                           {this.props &&
-                          this.props.data &&
-                          this.props.data.length > 0 &&
-                          this.props.data[0] &&
-                          this.props.data[0].productsDetails.length > 0 &&
-                          this.props.data[0].productsDetails[1] &&
-                          this.props.data[0].productsDetails[1].namedetail
-                            .length > 0 &&
-                          this.props.data[0].productsDetails[1].namedetail[3] &&
-                          this.props.data[0].productsDetails[1].namedetail[3]
-                            .details
+                            this.props.data &&
+                            this.props.data.length > 0 &&
+                            this.props.data[0] &&
+                            this.props.data[0].productsDetails.length > 0 &&
+                            this.props.data[0].productsDetails[1] &&
+                            this.props.data[0].productsDetails[1].namedetail
+                              .length > 0 &&
+                            this.props.data[0].productsDetails[1].namedetail[3] &&
+                            this.props.data[0].productsDetails[1].namedetail[3]
+                              .details
                             ? this.props.data[0].productsDetails[1]
-                                .namedetail[3].details[0]
+                              .namedetail[3].details[0]
                             : ""}
                         </p>
                       </Box>

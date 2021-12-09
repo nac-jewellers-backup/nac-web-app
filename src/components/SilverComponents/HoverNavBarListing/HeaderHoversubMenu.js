@@ -4,7 +4,7 @@ import {
   ListItem,
   ListItemText,
   Popper,
-  Typography,
+  Typography
 } from "@material-ui/core";
 import PropTypes from "prop-types";
 import React, { useEffect } from "react";
@@ -833,7 +833,7 @@ function HeaderHoverMenuItem(props) {
                           className={classes.imgtitle}
                           style={{ paddingBottom: "5px" }}
                         >
-                          {val.title}s
+                          {val.title}
                         </Typography>
                       </Grid>
                       <Grid
@@ -912,7 +912,7 @@ function HeaderHoverMenuItem(props) {
                           style={{ margin: "auto", color: "#33346d" }}
                           className={classes.listedItemstitle}
                         >
-                          {val.title}s
+                          {val.title}
                         </Typography>
                       </Grid>
                       {val.content.map((item, i) => (

@@ -138,15 +138,14 @@ const Productprice = (
                               ? val?.dis
                               : `${val?.dis?.substring(0, 30)}...`}
                             <span
-                              className={`pdp-desc ${
-                                viewMore ? "" : classes.disDescriptionPD
-                              }`}
+                              className={`pdp-desc ${viewMore ? "" : classes.disDescriptionPD
+                                }`}
                             >
                               <span
                                 style={{
                                   float: "right",
                                   cursor: "pointer",
-                                  
+
                                   marginTop: "5px",
                                 }}
                                 onClick={() => {
@@ -188,6 +187,8 @@ const Productprice = (
                       {/* <span className={classes.shortdis}>{val.shortDis}</span> */}
                     </Hidden>
                     <Hidden smDown>
+                      <Typography style={{ marginTop: "-8px" }} className={`pdp-desc ${classes.dis}`}> {val?.shortDis}</Typography>
+                      <br />
                       <Box display="flex" className={`pdp-desc ${classes.dis}`}>
                         <Box>
                           {val?.dis?.length > 70 && viewMore
@@ -227,13 +228,13 @@ const Productprice = (
                   pdpage={true}
                 ></Pricing>
               ) : (
-                <Pricing
-                  price={data[0]?.price}
-                  offerPrice={data[0]?.offerPrice}
-                  offerDiscount={val?.offerDiscount}
-                  pdpage={true}
-                ></Pricing>
-              )}
+                  <Pricing
+                    price={data[0]?.price}
+                    offerPrice={data[0]?.offerPrice}
+                    offerDiscount={val?.offerDiscount}
+                    pdpage={true}
+                  ></Pricing>
+                )}
             </div>
           </Hidden>
         </>

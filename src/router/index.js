@@ -1,63 +1,57 @@
-import React from "react";
-import { Switch, Route, Redirect } from "react-router-dom";
-import { Stylori } from "screens";
-import PricingPage from "screens/Stylori/PricingPage";
-
-import Cart from "screens/Stylori/Cart";
-import Account from "screens/Stylori/accounts";
-import Checkout from "screens/Stylori/Checkout";
-
-import HomePageStylori from "screens/Stylori/HomePage";
-import { GlobalContext } from "context";
-import Faqs from "screens/Stylori/faqs";
-import Register from "screens/Checkout/loginRegister/register";
-import UserLogin from "../components/LoginAndRegister/Login";
-import UserRegister from "../components/LoginAndRegister/Register";
-import routes from "router/routes";
-import { withRouter } from "react-router";
-import { createBrowserHistory } from "history";
-import Collection from "screens/Stylori/Collection";
-import stories from "screens/Stylori/stories";
-import AboutPage from "components/faqs/aboutPage";
 import ResetPassword from "components/ForgotPassword/ConfirmPass";
 import ForgotPassword from "components/ForgotPassword/ForgetPassword";
-import PaymentHiddenForm from "../screens/Checkout/paymentOption/paymentHiddenForm";
-import Success from "../screens/Stylori/success";
-import Fail from "../screens/Stylori/fail";
-import Contactus from "../screens/Stylori/contactUs";
-import Careers from "../screens/Stylori/careers";
-
-// const Tacos = ({ props }) => {
-//     if (window.location.search !== null) {
-
-// Static pages
-import HomeComp from "../containers/home/home";
-import SavingsPage from "containers/savings/savings";
-import AdvertisingPage from "containers/advertising/advertising";
-import TempleWorkPage from "containers/templework/templework";
 import AboutusPage from "containers/aboutus/aboutus";
-import ContactPage from "containers/contactus/contact";
+import AdvertisingPage from "containers/advertising/advertising";
 import careersPage from "containers/careers/careers";
-import Locator from "containers/storelocator/index";
-import StoreLocationDetails from "../components/StoreLocatorDetail/index";
-import DigitalMarketing from "containers/digitalmarketing/digitalmarketing";
-import Diamonds from "containers/diamonds/looseDiamonds";
-import CollectionHomePage from "containers/collectionhomepage/collectionHomePage";
-import rudramadeviBlog from "containers/collection/rudramadeviBlog";
 import Blog from "containers/collection/bloagPost";
 import CollectionPage from "containers/collection/collectionPage";
-import Solitaires from "../containers/solitaires/solitaires";
-import ExperiencePage from "../containers/experiences/experiences";
-import CollectionFullPage from "../containers/collection/collectionsFullPage";
-import AkshyaTritiya from "../containers/SpecificPage/akshyaTritiya";
+import rudramadeviBlog from "containers/collection/rudramadeviBlog";
+import CollectionHomePage from "containers/collectionhomepage/collectionHomePage";
+import Diamonds from "containers/diamonds/looseDiamonds";
+import DigitalMarketing from "containers/digitalmarketing/digitalmarketing";
+import NewsRoomPage from "containers/newsroom/newsroom";
+import SavingsPage from "containers/savings/savings";
+import Locator from "containers/storelocator/index";
+import TempleWorkPage from "containers/templework/templework";
+import { GlobalContext } from "context";
+import { createBrowserHistory } from "history";
+import React from "react";
+import ReactPixel from "react-facebook-pixel";
+import { withRouter } from "react-router";
+import { Redirect, Route, Switch } from "react-router-dom";
+import routes from "router/routes";
+import { Stylori } from "screens";
+import ChangePassword from "screens/Checkout/loginRegister/ChangePassword";
+import Register from "screens/Checkout/loginRegister/register";
 // SILVER SCREENS
-
 import Silver from "screens/SilverStylori";
 import SilverListingPage from "screens/SilverStylori/listingpage";
 import SilverProductDetail from "screens/SilverStylori/productDetail";
-import ChangePassword from "screens/Checkout/loginRegister/ChangePassword";
-import NewsRoomPage from "containers/newsroom/newsroom";
-import ReactPixel from "react-facebook-pixel";
+import Account from "screens/Stylori/accounts";
+import Cart from "screens/Stylori/Cart";
+import Checkout from "screens/Stylori/Checkout";
+import Collection from "screens/Stylori/Collection";
+import Faqs from "screens/Stylori/faqs";
+import PricingPage from "screens/Stylori/PricingPage";
+import stories from "screens/Stylori/stories";
+import UserLogin from "../components/LoginAndRegister/Login";
+import UserRegister from "../components/LoginAndRegister/Register";
+import StoreLocationDetails from "../components/StoreLocatorDetail/index";
+import CollectionFullPage from "../containers/collection/collectionsFullPage";
+import ExperiencePage from "../containers/experiences/experiences";
+// const Tacos = ({ props }) => {
+//     if (window.location.search !== null) {
+// Static pages
+import HomeComp from "../containers/home/home";
+import Solitaires from "../containers/solitaires/solitaires";
+import AkshyaTritiya from "../containers/SpecificPage/akshyaTritiya";
+import BridalCollection from "../screens/BridalCollection/index";
+import PaymentHiddenForm from "../screens/Checkout/paymentOption/paymentHiddenForm";
+import Careers from "../screens/Stylori/careers";
+import Fail from "../screens/Stylori/fail";
+import Success from "../screens/Stylori/success";
+
+
 // SILVER SCREENS ENDS
 
 const browserHistory = createBrowserHistory();
@@ -114,6 +108,7 @@ export const RouterApp = (props) => {
       {/* <Route key="Terms" component={AboutusPage} exact path={routes.Terms} /> */}
       <Route key="Return" component={AboutusPage} exact path={routes.Return} />
       <Route key="Delivery" component={AboutusPage} exact path={routes.Delivery} />
+      <Route key="bridalCollection" component={BridalCollection} exact path={routes.BridalCollection} />
       {/* <Route key="Privacy" component={AboutusPage} exact path={routes.Privacy} /> */}
       <Route key="Education" component={AboutusPage} exact path={routes.Education} />
       <Route key="careersni" component={careersPage} exact path={routes.CareersPage} />
@@ -210,21 +205,21 @@ export const RouterApp = (props) => {
       {Globalctx && Globalctx.pathName && loc_PD.length > 0 ? (
         <Route exact component={SilverProductDetail} path={paths} />
       ) : (
-        <Route exact component={PricingPage} path={paths} />
-      )}
+          <Route exact component={PricingPage} path={paths} />
+        )}
       <Route key="cart" exact component={Cart} path={routes.Cart} />
       <Route key="Register" component={Register} exact path={routes.Register} />
       {localStorage.getItem("user_id") ? (
         <Redirect key="stylori-redirect" from="/login" exact to={"/"} />
       ) : (
-        <Route key="login" component={UserLogin} exact path={routes.UserLogin} />
-      )}
+          <Route key="login" component={UserLogin} exact path={routes.UserLogin} />
+        )}
 
       {Boolean(localStorage.getItem("user_id")) ? (
         <Route key="Account" component={Account} exact path={routes.Account} />
       ) : (
-        <Redirect key="stylori-redirect" from={routes.Account} exact to={"/login"} />
-      )}
+          <Redirect key="stylori-redirect" from={routes.Account} exact to={"/login"} />
+        )}
       <Route key="registers" component={UserRegister} exact path={routes.UserRegister} />
       {/* Static Pages */}
 

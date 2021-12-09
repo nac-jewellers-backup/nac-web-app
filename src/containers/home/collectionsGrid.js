@@ -79,14 +79,14 @@ export function AdvancedGridList() {
   return (
     <>
       <Hidden smDown>
-        <Grid container spacing={1} style={{ padding: "30px" }}>
+        <Grid container spacing={1} style={{ padding: "40px" }}>
           <Grid item xs={4}>
             <div className="parent">
               <img
                 src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Collection+tile/Fabula_tile_385+X+300_px.jpg"
                 alt="NAC"
                 width="100%"
-                height="300"
+                height="340"
                 className={classes.gridimg}
               />
               <div className="child" style={{ width: "100%" }}>
@@ -101,7 +101,7 @@ export function AdvancedGridList() {
                 src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Collection+tile/Diamond_tile_385+X+600_px.jpg"
                 alt="NAC"
                 width="100%"
-                height="600"
+                height="680"
                 className={classes.gridimg}
               />
               <div className="child" style={{ width: "100%" }}>
@@ -120,7 +120,7 @@ export function AdvancedGridList() {
                     src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Collection+tile/Rewind_tile_385+X+300_px.jpg"
                     alt="NAC"
                     width="100%"
-                    height="300"
+                    height="340"
                     className={classes.gridimg}
                   />
                   <div className="child" style={{ width: "100%" }}>
@@ -135,7 +135,7 @@ export function AdvancedGridList() {
                     src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Collection+tile/Nagas_tile_385+X+300_px.jpg"
                     alt="NAC"
                     width="100%"
-                    height="300"
+                    height="340"
                     className={classes.gridimg}
                   />
                   <div className="child" style={{ width: "100%" }}>
@@ -152,7 +152,7 @@ export function AdvancedGridList() {
                     src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Collection+tile/Muhurtham_tile_385+X+600_px.jpg"
                     alt="NAC"
                     width="100%"
-                    height="604"
+                    height="684"
                   />
                   <div className="child" style={{ width: "100%" }}>
                     <div className={classes.coverfooter}>
@@ -170,7 +170,7 @@ export function AdvancedGridList() {
                     src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Collection+tile/Stylori_tile_770+X+300_px.jpg"
                     alt="NAC"
                     width="100%"
-                    height="296"
+                    height="336"
                     style={{
                       objectFit: "cover",
                       objectPosition: "40% 5%",
@@ -197,7 +197,7 @@ export function AdvancedGridList() {
                   src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Collection+tile/StyloriSilver_tile_770+X+300_px.jpg"
                   alt="NAC"
                   width="100%"
-                  height="300"
+                  height="340"
                   className={classes.gridimg}
                 />
                 <div className="child" style={{ width: "100%" }}>
@@ -214,7 +214,7 @@ export function AdvancedGridList() {
                   src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Collection+tile/Youngones_tile_385+X+300_px.jpg"
                   alt="NAC"
                   width="100%"
-                  height="300"
+                  height="340"
                   className={classes.gridimg}
                 />
                 <div className="child" style={{ width: "100%" }}>
