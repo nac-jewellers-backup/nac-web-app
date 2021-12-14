@@ -1,5 +1,7 @@
 import { Box, Grid, Typography } from "@material-ui/core";
 import React from "react";
+import ArrowLeft from "../../assets/arrowleft";
+import ArrowRight from "../../assets/arrowright";
 import styles from "./titlestyle";
 
 export const Title = (props) => {
@@ -14,11 +16,7 @@ export const Title = (props) => {
           alignItems="center"
         >
           <Box>
-            <img
-              className={classes.img}
-              src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/Group+160.svg"
-              alt="title images"
-            />
+            <ArrowLeft />
           </Box>
           <Box>
             <Typography className={classes.title}>
@@ -26,11 +24,7 @@ export const Title = (props) => {
             </Typography>
           </Box>
           <Box>
-            <img
-              className={classes.img}
-              src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/Group+159.svg"
-              alt="title images"
-            />
+            <ArrowRight />
           </Box>
         </Box>
       </Grid>

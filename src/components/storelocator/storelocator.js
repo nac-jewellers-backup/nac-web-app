@@ -1,6 +1,7 @@
 import { Box, Button, Grid, IconButton, Typography } from '@material-ui/core';
 import React from 'react';
 import { FiCornerUpRight } from "react-icons/fi";
+import { Title } from "../../screens/BridalCollection/title";
 import style from './style';
 export default function Storelocator(props) {
 
@@ -11,7 +12,8 @@ export default function Storelocator(props) {
         <>
             <Grid container spacing={3} justifyContent="center">
                 <Grid item xs={12}>
-                    <Typography className={classes.heading}>TAMIL NADU</Typography>
+                    <Title title="TAMIL NADU" />
+
                 </Grid>
                 {value.data.map((value, key) =>
                     <Grid item xs={12} md={12} lg={6}>
@@ -62,10 +64,11 @@ export default function Storelocator(props) {
                         </Grid>
                     </Grid>
                 )}
-
                 <Grid item xs={12}>
-                    <Typography className={classes.heading}>ANDHRA PRADESH</Typography>
+                    <Title title="ANDHRA PRADESH" />
+
                 </Grid>
+
                 {value.data1.map((value, key) =>
                     <Grid item xs={12} md={12} lg={6}>
                         <Grid container className={classes.shadow} >
@@ -94,7 +97,7 @@ export default function Storelocator(props) {
 
                                         <Box>
                                             &nbsp;
-</Box>
+                                        </Box>
                                         <Box>
                                             <IconButton size="small" style={{ backgroundColor: "#2F348B", color: "white" }}><FiCornerUpRight /></IconButton>
 

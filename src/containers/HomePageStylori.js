@@ -1,19 +1,19 @@
-import React from "react";
-import Header from "components/SilverComponents/Header";
 import { Grid, Hidden, Typography } from "@material-ui/core";
 import Footer from "components/Footer/Footer";
-import { withRouter } from "react-router";
+import Header from "components/SilverComponents/Header";
 import "index.css";
+import React from "react";
+import ReactPixel from "react-facebook-pixel";
+import MetaTags from "react-meta-tags";
+import { withRouter } from "react-router";
 import Slideshow from "../components/Carousel/carosul";
 import StaticView from "../components/CarouselLazyer/StaticView";
-import GridList from "../components/GridList/GridList";
-import { homePageStylori } from "./dummydatahome";
-import Testimony from "../components/testimonial/testimonial";
 import Feedes from "../components/Feedes/Index";
+import GridList from "../components/GridList/GridList";
 import Stories from "../components/Stories/Index";
-import MetaTags from "react-meta-tags";
 import { storyData } from "../components/storyTemplate/storyTemplateData";
-import ReactPixel from "react-facebook-pixel";
+import Testimony from "../components/testimonial/testimonial";
+import { homePageStylori } from "./dummydatahome";
 class HomeStylori extends React.Component {
   constructor(props) {
     super(props);

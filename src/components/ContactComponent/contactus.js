@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
     margin: "30px 0px 10px 0px",
     fontWeight: 600,
   },
- 
+
   textFeild: {
     margin: "15px 0px 20px 0px !important",
   },
@@ -146,7 +146,7 @@ export default function CustomizedInputs() {
     <Grid container className={classes.root}>
       <Grid item className={classes.widthFull}>
         <Typography variant="h2" className={classes.contact_us}>
-          Contact us
+
         </Typography>
         <Grid container>
           <Grid item xs={12} sm={12} md={12} lg={4} xl={4}>

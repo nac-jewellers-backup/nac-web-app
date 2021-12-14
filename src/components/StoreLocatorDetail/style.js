@@ -1,5 +1,26 @@
 import { makeStyles } from "@material-ui/core/styles";
 const styles = makeStyles(theme => ({
+    titles: {
+        fontSize: "30px",
+        fontWeight: "bold",
+        color: "gray",
+        marginTop: "10px"
+    },
+    address: {
+        fontSize: "18px",
+        color: "gray",
+        marginTop: "10px"
+    },
+    phone: {
+        fontSize: "18px",
+        color: "gray",
+        marginTop: "10px"
+    },
+    mapcontainer: {
+        padding: "20px",
+
+    },
+
     pads: {
         padding: "0px 15px",
         // boxShadow:"0 0 5px #888 !important",

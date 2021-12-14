@@ -136,52 +136,52 @@ export default function WishlistButton(props) {
   return (
     <>
       <Hidden smDown>
-      <Button
-      id={props.sku}
-      onClick={(event) => handlewishlist(event)}
-      variant="contained"
+        <Button
+          id={props.sku}
+          onClick={(event) => handlewishlist(event)}
+          variant="contained"
           style={{
-        fontSize:"18.01px",
-        color: "gray",
-        border: "2px solid #C1C1C1",
-        backgroundColor: "white",
-        borderRadius: "0px",
-        boxShadow: "none",
-        paddingRight: "6px",
-        paddingLeft: "6px",
-        width: "95%",
-        whiteSpace: "nowrap",
-        marginTop:
-          window.location.pathname == "/account-shoppingcart" ? " " : "10px",
-      }}
-    >
-        Move to Wishlist
-    </Button>
-  
+            fontSize: "16px",
+            color: "gray",
+            border: "2px solid #C1C1C1",
+            backgroundColor: "white",
+            borderRadius: "0px",
+            boxShadow: "none",
+            paddingRight: "6px",
+            paddingLeft: "6px",
+            width: "95%",
+            whiteSpace: "nowrap",
+            marginTop:
+              window.location.pathname == "/account-shoppingcart" ? " " : "10px",
+          }}
+        >
+          Move to Wishlist
+        </Button>
+
       </Hidden>
       <Hidden mdUp>
-      <Button
-      id={props.sku}
-      onClick={(event) => handlewishlist(event)}
-      variant="contained"
-      style={{
-        color: "gray",
-        border: "2px solid #C1C1C1",
-        backgroundColor: "white",
-        borderRadius: "0px",
-        boxShadow: "none",
-        paddingRight: "6px",
-        paddingLeft: "6px",
-        width: "95%",
-        whiteSpace: "nowrap",
-        marginTop:
-          window.location.pathname == "/account-shoppingcart" ? " " : "10px",
-      }}
-    >
-        Move to Wishlist
-    </Button>
-  
+        <Button
+          id={props.sku}
+          onClick={(event) => handlewishlist(event)}
+          variant="contained"
+          style={{
+            color: "gray",
+            border: "2px solid #C1C1C1",
+            backgroundColor: "white",
+            borderRadius: "0px",
+            boxShadow: "none",
+            paddingRight: "6px",
+            paddingLeft: "6px",
+            width: "95%",
+            whiteSpace: "nowrap",
+            marginTop:
+              window.location.pathname == "/account-shoppingcart" ? " " : "10px",
+          }}
+        >
+          Move to Wishlist
+        </Button>
+
       </Hidden>
-      </>
+    </>
   );
 }

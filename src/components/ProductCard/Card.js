@@ -43,10 +43,10 @@ const Gallery = (
   cardstate,
   scrollPosition
 ) => {
- 
-  
+
+
   return (
-    
+
     <div style={{ position: "relative" }} className="imageHeight">
       {props.shopothercategories ? (
         ""
@@ -86,20 +86,20 @@ const Gallery = (
               onMouseOver={
                 !props.hoverText
                   ? () => {
-                      callmouseover();
-                    }
+                    callmouseover();
+                  }
                   : () => {
-                      return null;
-                    }
+                    return null;
+                  }
               }
               onMouseOut={
                 !props.hoverText
                   ? () => {
-                      callmouseout();
-                    }
+                    callmouseout();
+                  }
                   : () => {
-                      return null;
-                    }
+                    return null;
+                  }
               }
               scrollPosition={scrollPosition}
             ></LazyLoadImage>
@@ -108,11 +108,11 @@ const Gallery = (
             )} */}
           </>
         ) : (
-            
-            props.shopothercategories ? (
-              <>
-                
-                <LazyLoadImage
+
+          props.shopothercategories ? (
+            <>
+
+              <LazyLoadImage
                 style={{
                   objectFit: "cover",
                   backgroundColor: "white",
@@ -129,27 +129,27 @@ const Gallery = (
                 onMouseOver={
                   !props.hoverText
                     ? () => {
-                        callmouseover();
-                      }
+                      callmouseover();
+                    }
                     : () => {
-                        return null;
-                      }
+                      return null;
+                    }
                 }
                 onMouseOut={
                   !props.hoverText
                     ? () => {
-                        callmouseout();
-                      }
+                      callmouseout();
+                    }
                     : () => {
-                        return null;
-                      }
+                      return null;
+                    }
                 }
                 scrollPosition={scrollPosition}
-                ></LazyLoadImage>
-               
-                </>
-            ) : (
-              <LazyLoadImage
+              ></LazyLoadImage>
+
+            </>
+          ) : (
+            <LazyLoadImage
               style={{
                 objectFit: "cover",
                 backgroundColor: "white",
@@ -166,28 +166,28 @@ const Gallery = (
               onMouseOver={
                 !props.hoverText
                   ? () => {
-                      callmouseover();
-                    }
+                    callmouseover();
+                  }
                   : () => {
-                      return null;
-                    }
+                    return null;
+                  }
               }
               onMouseOut={
                 !props.hoverText
                   ? () => {
-                      callmouseout();
-                    }
+                    callmouseout();
+                  }
                   : () => {
-                      return null;
-                    }
+                    return null;
+                  }
               }
               scrollPosition={scrollPosition}
             ></LazyLoadImage>
-     
-              )
-            
-        
-          
+
+          )
+
+
+
         )}
       </Link>
     </div>
@@ -347,7 +347,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
   },
   titlesshopother: {
-    fontSize: "24px",
+    fontSize: "20px",
     fontWeight: "bold",
     textAlign: "center",
     whiteSpace: "nowrap",
@@ -402,7 +402,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 const renderImages = (props, cardstate) => {
-  
+
   if (props.static) {
     return props.image;
   } else {
@@ -410,7 +410,7 @@ const renderImages = (props, cardstate) => {
     // console.log(cardstate);
     //debugger;
     const filterType = cardstate?.hovered ? "hoverImage" : "placeImage";
-    
+
     return props?.data &&
       props?.data?.image &&
       props?.data?.image["hoverImage"] &&
@@ -475,9 +475,9 @@ function Component(props) {
               alignItems="center"
             >
               {props.shopothercategories ? (
-               
+
                 <>
-                 
+
                   <Grid container xs={12}>
                     <Typography
                       variant="body1"
@@ -563,12 +563,12 @@ function Component(props) {
                                     {props.data.offerPrice == 0
                                       ? " "
                                       : new Intl.NumberFormat("en-IN", {
-                                          style: "currency",
-                                          currency: "INR",
-                                          minimumFractionDigits: 0,
-                                        }).format(
-                                          Math.round(props.data.offerPrice)
-                                        )}
+                                        style: "currency",
+                                        currency: "INR",
+                                        minimumFractionDigits: 0,
+                                      }).format(
+                                        Math.round(props.data.offerPrice)
+                                      )}
                                   </span>
                                 </span>
                               </Typography>
@@ -584,8 +584,8 @@ function Component(props) {
                             {props.data.save == 0
                               ? " "
                               : ` ${Math.abs(
-                                  Math.round(props.data.save)
-                                )}% OFF`}
+                                Math.round(props.data.save)
+                              )}% OFF`}
                             &nbsp;&nbsp;
                           </Typography>
                         </Grid>
@@ -662,10 +662,10 @@ function Component(props) {
                               {props.data.offerPrice == 0
                                 ? " "
                                 : new Intl.NumberFormat("en-IN", {
-                                    style: "currency",
-                                    currency: "INR",
-                                    minimumFractionDigits: 0,
-                                  }).format(Math.round(props.data.offerPrice))}
+                                  style: "currency",
+                                  currency: "INR",
+                                  minimumFractionDigits: 0,
+                                }).format(Math.round(props.data.offerPrice))}
                             </span>
                           </Grid>
 
@@ -681,8 +681,8 @@ function Component(props) {
                               {props.similarProducts
                                 ? " "
                                 : props.data.save == 0
-                                ? " "
-                                : ` ${Math.abs(
+                                  ? " "
+                                  : ` ${Math.abs(
                                     Math.round(props.data.save)
                                   )}% OFF`}
                             </span>

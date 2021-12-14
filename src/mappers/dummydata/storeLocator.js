@@ -27,7 +27,7 @@ export const storeLocatorData = {
   data: [
     {
       img:
-        "https://storage.googleapis.com/media.nacjewellers.com/resources/store-locator/Mylapore.jpg",
+        "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/bridalcollection/mylapor.png",
       href: "",
       title: "Mylapore",
       para:
@@ -37,7 +37,7 @@ export const storeLocatorData = {
     },
     {
       img:
-        "https://storage.googleapis.com/media.nacjewellers.com/resources/store-locator/velachery.jpg",
+        "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/bridalcollection/velachary.png",
       href: "",
       title: "Velachery",
       para:
@@ -47,7 +47,7 @@ export const storeLocatorData = {
     },
     {
       img:
-        "https://storage.googleapis.com/media.nacjewellers.com/resources/store-locator/Perambur.jpg",
+        "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/bridalcollection/perumbur.png",
       href: "",
       title: "Perambur",
       para:
@@ -57,7 +57,7 @@ export const storeLocatorData = {
     },
     {
       img:
-        "https://storage.googleapis.com/media.nacjewellers.com/resources/store-locator/KANCHIPURAM%20SHOWROOM.jpg",
+        "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/bridalcollection/kanchipuram.png",
       href: "",
       title: "Kanchipuram",
       para: "No: 30, Kamarajar Salai, Kanchipuram,<br>Tamil Nadu 631502",
@@ -76,7 +76,7 @@ export const storeLocatorData = {
     },
     {
       img:
-        "https://storage.googleapis.com/media.nacjewellers.com/resources/store-locator/Anna%20Nagar.jpg",
+        "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/bridalcollection/annanagar.png",
       href: "",
       title: "Anna Nagar",
       para:
@@ -110,7 +110,7 @@ export const storeLocatorData = {
   data1: [
     {
       img:
-        "https://storage.googleapis.com/media.nacjewellers.com/resources/store-locator/Vijayawada.jpg",
+        "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/bridalcollection/vijayawada.png",
       href: "",
       title: "Vijayawada",
       para:

@@ -3,65 +3,68 @@ const styles = makeStyles(theme => ({
   roots: {
     "& .makeStyles-mainWidths-2": {
       paddingLeft: "0px",
-      paddingRight:"0px",
+      paddingRight: "0px",
     },
   },
   grid1:
   {
-    
+
     paddingTop: "3%",
   },
   content1sm: {
-    marginTop:"20px",
+    marginTop: "20px",
     backgroundColor: "#F4F4F4",
     padding: "8px",
-    boxShadow:"4px 4px 4px #a5a4a5 !important"
+    boxShadow: "4px 4px 4px #a5a4a5 !important"
   },
   content2sm: {
-    marginTop:"20px",
+    marginTop: "20px",
     backgroundColor: "#F4F4F4",
     padding: "8px",
-    boxShadow:"4px 4px 4px #a5a4a5 !important"
+    boxShadow: "4px 4px 4px #a5a4a5 !important"
   },
   content: {
-    marginTop:"20px",
+    marginTop: "20px",
     backgroundColor: "#F4F4F4",
     padding: "40px",
-    boxShadow:"4px 4px 4px #a5a4a5 !important"
+    boxShadow: "4px 4px 4px #a5a4a5 !important",
+    backgroundImage: "url('/logflower.svg')",
+    backgroundRepeat: "no-repeat",
+    backgroundPositionX: "100%"
   },
   content2: {
     backgroundColor: "#F4F4F4",
-    padding: "40px", 
+    padding: "40px",
   },
   contentParent: {
-    boxShadow:"4px 4px 4px #a5a4a5 !important"
+    boxShadow: "4px 4px 4px #a5a4a5 !important"
   },
   grid2:
   {
-    
-   width:"100%",
+
+    width: "100%",
     fontSize: "18px",
     color: "#9c9c9c",
     "& ..MuiFilledInput-input": {
       backgroundColor: "white",
-     
+
     },
-    "& .MuiFilledInput-root":{
+    "& .MuiFilledInput-root": {
       borderRadius: "0px",
       backgroundColor: "white",
-      
-      
-      },
-      "& .MuiFilledInput-root:before": {
-        border: "none",
-       
 
-       
-      },
-     
+
+    },
+    "& .MuiFilledInput-root:before": {
+      border: "none",
+
+
+
+    },
+
 
   },
-  
+
 
   grid5: {
     paddingTop: "3% !important",
@@ -95,11 +98,14 @@ const styles = makeStyles(theme => ({
     fontWeight: "500",
     lineHeight: "1.1",
     color: "#B2832C",
-    textAlign:"center"
+    textAlign: "center",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center"
   },
   name: {
     color: "#6E6F72",
-    fontSize:"22px"
+    fontSize: "22px"
   },
   contents: {
     paddingTop: "1%",
@@ -129,24 +135,24 @@ const styles = makeStyles(theme => ({
   grid10:
   {
     paddingTop: "1%",
-    
-    color:"#9c9c9c",
+
+    color: "#9c9c9c",
   },
   sub: {
     color: 'gray',
     fontSize: "18px",
-    marginBottom:"16px"
+    marginBottom: "16px"
   },
   heading: {
     color: "gray",
     fontSize: "30px",
-    marginBottom:"8px"
+    marginBottom: "8px"
   },
   img: {
     height: "100%",
     width: "100%",
     objectFit: "cover",
-    
+
   },
   btn: {
     backgroundColor: "#B2832C",
@@ -159,7 +165,7 @@ const styles = makeStyles(theme => ({
       color: "white",
       fontWeight: "bold",
     },
-    marginTop:"10px"
+    marginTop: "10px"
   },
   grid12:
   {
@@ -183,7 +189,7 @@ const styles = makeStyles(theme => ({
     fontWeight: "bold",
     color: "gray",
     marginBottom: "16px",
-    display:"block"
+    display: "block"
   },
   grid15:
   {
@@ -245,7 +251,7 @@ const styles = makeStyles(theme => ({
       fontSize: "15px",
 
     },
-   
+
 
     root: {
       '& .MuiTextField-root': {
@@ -253,18 +259,18 @@ const styles = makeStyles(theme => ({
         width: 300,
         paddingTop: "3%",
         color: "#9c9c9c",
-        }
+      }
+    },
+
+    [theme.breakpoints.only('md')]: {
+      grid16: {
+        fontSize: "15px",
+        color: "#5d5d5d",
+        paddingLeft: "none",
+        marginTop: "4%"
       },
 
-      [theme.breakpoints.only('md')]: {
-        grid16: {
-          fontSize: "15px",
-          color: "#5d5d5d",
-          paddingLeft:"none",
-          marginTop: "4%"
-        },
-        
-      }
+    }
   }
 }))
 export default styles;

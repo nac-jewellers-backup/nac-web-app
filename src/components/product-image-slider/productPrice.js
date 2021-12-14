@@ -229,13 +229,13 @@ const Productprice = (
                   pdpage={true}
                 ></Pricing>
               ) : (
-                  <Pricing
-                    price={data[0]?.price}
-                    offerPrice={data[0]?.offerPrice}
-                    offerDiscount={val?.offerDiscount}
-                    pdpage={true}
-                  ></Pricing>
-                )}
+                <Pricing
+                  price={data[0]?.price}
+                  offerPrice={data[0]?.offerPrice}
+                  offerDiscount={val?.offerDiscount}
+                  pdpage={true}
+                ></Pricing>
+              )}
             </div>
           </Hidden>
         </>

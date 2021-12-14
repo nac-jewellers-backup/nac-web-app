@@ -205,7 +205,7 @@
 .child {
   position: absolute;
 
-  bottom: 0;
+  bottom: -4px;
   /* bottom: 0;
  
   display: flex;

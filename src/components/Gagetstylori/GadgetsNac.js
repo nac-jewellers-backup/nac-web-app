@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Logo = () => {};
+const Logo = () => { };
 export default function PaperSheet(props) {
   const isSilver = props.isSilver ? true : false;
   const color = "#33346d";
@@ -85,12 +85,11 @@ export default function PaperSheet(props) {
       <Hidden smDown>
         <Grid
           item
-          className={`silverSvg ${classes.mainsource} ${
-            isSilver ? classes.silverSvg : ""
-          }`}
+          className={`silverSvg ${classes.mainsource} ${isSilver ? classes.silverSvg : ""
+            }`}
         >
-          {/* <img style={{ width: "70%", height: '100%' }} src={"https://assets.stylori.com/images/Static+Pages/Other+Pages/fromthehouseofnac-pink.svg"} /> */}
-          <Certified color={color} />
+          <Fromthehouseofnac color={color} />
+
         </Grid>
         <Grid item className={classes.mainsource}>
           {/* <img style={{ width: "70%", height: '100%' }} src={"https://assets.stylori.com/images/Static%20Pages/Other%20Pages/certifiedjewellery-pink.svg"} /> */}
@@ -106,7 +105,7 @@ export default function PaperSheet(props) {
         </Grid>
         <Grid item className={classes.mainsource}>
           {/* <img style={{ width: "70%", height: '100%' }} src={"https://assets.stylori.com/images/Static+Pages/Other+Pages/diversestyles-pink.svg"} /> */}
-          <Fromthehouseofnac color={color} />
+          <Certified color={color} />
         </Grid>
         <Grid item className={classes.mainsource}>
           {/* <img style={{ width: "70%", height: '100%' }} src={"https://assets.stylori.com/images/Static+Pages/Other+Pages/easyreturns-pink.svg"} /> */}
@@ -123,9 +122,8 @@ export default function PaperSheet(props) {
           <Grid
             item
             xs={4}
-            className={`silverSvg ${classes.mainsource} ${
-              isSilver ? classes.silverSvg : ""
-            }`}
+            className={`silverSvg ${classes.mainsource} ${isSilver ? classes.silverSvg : ""
+              }`}
           >
             <Certified color={color} />
           </Grid>
@@ -198,9 +196,8 @@ export function PaperSheetProduct(props) {
             xs={4}
             sm={3}
             lg={2}
-            className={`silverSvg ${classes.mainsource} ${
-              isSilver ? classes.silverSvg : ""
-            }`}
+            className={`silverSvg ${classes.mainsource} ${isSilver ? classes.silverSvg : ""
+              }`}
           >
             <Certified color={color} />
           </Grid>
@@ -229,9 +226,8 @@ export function PaperSheetProduct(props) {
             xs={4}
             sm={3}
             lg={2}
-            className={`silverSvg ${classes.mainsource} ${
-              isSilver ? classes.silverSvg : ""
-            }`}
+            className={`silverSvg ${classes.mainsource} ${isSilver ? classes.silverSvg : ""
+              }`}
           >
             <Certified color={color} />
           </Grid>

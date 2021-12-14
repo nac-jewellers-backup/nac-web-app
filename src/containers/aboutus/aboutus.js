@@ -1,6 +1,5 @@
 import { Grid, Hidden } from "@material-ui/core";
 import Accordian from "components/aboutus/accordian";
-import Slideshow from "components/Carousel/carosul";
 import EducationPage from "components/education/education";
 import Footer from "components/Footer/Footer";
 import Header from "components/SilverComponents/Header";
@@ -56,10 +55,10 @@ export default function AboutusPage(props) {
     } else if (window.location.pathname === "/contactus") {
       return Contacts;
     }
-     else return null;
+    else return null;
   };
   React.useEffect(() => {
-   
+
     let hashedLocation = window.location.hash.replace("#", "");
     if (hashedLocation) {
       let elmnt = document.getElementById(hashedLocation);
@@ -71,7 +70,7 @@ export default function AboutusPage(props) {
     <Grid container xs={12}>
       <Header />
       <Grid item xs={12}>
-        <Hidden smDown>
+        {/* <Hidden smDown>
           <Slideshow
             dataCarousel={
               values() && values().carouselTop && values().carouselTop.setting
@@ -108,70 +107,70 @@ export default function AboutusPage(props) {
                 </Grid>
               ))}
           </Slideshow>
-        </Hidden>
+        </Hidden> */}
       </Grid>
       <Hidden smDown>
-      <Grid item className={classes.paddingsss}>
-        <Grid container className={classes.mainWidths}>
-          <Grid container className={classes.subWidth}>
-            {/* <Hidden smDown>
+        <Grid item className={classes.paddingsss}>
+          <Grid container className={classes.mainWidths}>
+            <Grid container className={classes.subWidth}>
+              {/* <Hidden smDown>
               <Grid item className={classes.subWidths} lg={3} sm={3} md={3}>
                 <Grid item className={classes.sideContent}>
                   <SideData value={values()} data={sidemenu} />
                 </Grid>
               </Grid>
             </Hidden> */}
-            <Grid
-              item
-              className={classes.mainContent}
-              lg={12}
-              xs={12}
-              md={12}
-              sm={12}
-            >
-              <>
-                {window.location.pathname === "/education" && (
-                  <EducationPage value={values()} />
-                )}
-                {window.location.pathname === "/sitemap" && (
-                  <SiteMap value={values()} />
-                )}
-                {window.location.pathname === "/contactus" && <ContactUs />}
-                {window.location.pathname !== "/education" && (
-                  <Accordian value={values()} />
-                )}
-              </>
-            </Grid>
-            {/* <Hidden smDown>
+              <Grid
+                item
+                className={classes.mainContent}
+                lg={12}
+                xs={12}
+                md={12}
+                sm={12}
+              >
+                <>
+                  {window.location.pathname === "/education" && (
+                    <EducationPage value={values()} />
+                  )}
+                  {window.location.pathname === "/sitemap" && (
+                    <SiteMap value={values()} />
+                  )}
+                  {window.location.pathname === "/contactus" && <ContactUs />}
+                  {window.location.pathname !== "/education" && (
+                    <Accordian value={values()} />
+                  )}
+                </>
+              </Grid>
+              {/* <Hidden smDown>
               <Grid item className={classes.rightContent} lg={3} sm={3} md={3}>
                 <Grid item className={classes.sideContent}>
                   <SocialFields />
                 </Grid>
               </Grid>
             </Hidden> */}
+            </Grid>
           </Grid>
-        </Grid>
         </Grid>
       </Hidden>
-      
+
       <Hidden mdUp>
-     
-        <Grid container style={{ padding:"12px",overflow:"hidden"}}>
-            <Grid
-              item 
-              xs={12}
-            >
-              <>
-               <br/>
-                {window.location.pathname === "/contactus" && <ContactUs />}
+
+        <Grid container style={{ padding: "12px", overflow: "hidden" }}>
+          <Grid
+            item
+            xs={12}
+          >
+            <>
               <br />
-              <br/>
-              </>
-            </Grid>
-            
+              {window.location.pathname === "/contactus" && <ContactUs />}
+              <br />
+              <br />
+            </>
           </Grid>
-        
-        </Hidden>
+
+        </Grid>
+
+      </Hidden>
       <Footer />
     </Grid>
   );

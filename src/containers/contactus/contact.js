@@ -4,6 +4,8 @@ import CallIcon from "@material-ui/icons/Call";
 import ChatIcon from "@material-ui/icons/Chat";
 import styles from "containers/contactus/stylecontact";
 import React from "react";
+import ArrowLeft from "../../assets/arrowleft";
+import ArrowRight from "../../assets/arrowright";
 import {
   contact
 } from "../../mappers/dummydata/savingNac";
@@ -23,77 +25,77 @@ export default function Contact(props) {
   return (
     <>
       <Hidden smDown>
-      <Container maxWidth="lg">
-  
+        <Container maxWidth="lg">
 
-    
-  <form>
-    <Grid
-      container
-     
-      className={classes.grid1}
-      xs={12}
-      sm={12}
-      md={12}
-      xl={12}
-    >
-      <Grid item xs={12} sm={12} md={12} xl={12}>
-        <div className={classes.head}>{contact.head}   </div>
-      </Grid>
-      <Grid item xs={12} sm={12} md={12} xl={12} className={classes.content}>
-        <Grid container>
-          <Grid item xs={12}>
-           
-            <Box display="flex" alignItems="center">
-              <Box >
-                <Avatar style={{backgroundColor:"#2F348B"}}>
-                  <CallIcon/>
-                </Avatar>
-             
 
-              </Box>
-              <Box>
-                <Typography variant="body1" className={classes.name}>
-                  &nbsp;&nbsp;&nbsp;+91 44 4399 6666
-                  </Typography>
-              </Box>
-            </Box>
-            <Box display="flex" alignItems="center" marginTop="8px">
-              <Box >
-                <Avatar src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_footer/nQjOPg.tif.svg"/>
-             
 
-              </Box>
-              <Box>
-                <Typography variant="body1" className={classes.name}>
-                  &nbsp;&nbsp;&nbsp;care@nacjewellers.com
-                  </Typography>
-              </Box>
-            </Box>
-            <Box display="flex" alignItems="center" marginTop="8px">
-              <Box >
-                <Avatar style={{backgroundColor:"#2F348B"}}>
-                  <ChatIcon/>
-                </Avatar>
-             
+          <form>
+            <Grid
+              container
 
-              </Box>
-              <Box>
-                <Typography variant="body1" className={classes.name}>
-                  &nbsp;&nbsp;&nbsp;+ 91 000 000000
-                  </Typography>
-              </Box>
-            </Box>
-   
-         
-          </Grid>
-        </Grid>
-      
-      </Grid>
-      {/* <Grid item xs={12} sm={12} md={12} xl={12}>
+              className={classes.grid1}
+              xs={12}
+              sm={12}
+              md={12}
+              xl={12}
+            >
+              <Grid item xs={12} sm={12} md={12} xl={12}>
+                <div className={classes.head}><ArrowLeft />&nbsp;{contact.head}&nbsp; <ArrowRight /></div>
+              </Grid>
+              <Grid item xs={12} sm={12} md={12} xl={12} className={classes.content}>
+                <Grid container>
+                  <Grid item xs={12}>
+
+                    <Box display="flex" alignItems="center">
+                      <Box >
+                        <Avatar style={{ backgroundColor: "#2F348B" }}>
+                          <CallIcon />
+                        </Avatar>
+
+
+                      </Box>
+                      <Box>
+                        <Typography variant="body1" className={classes.name}>
+                          &nbsp;&nbsp;&nbsp;+91 44 4399 6666
+                        </Typography>
+                      </Box>
+                    </Box>
+                    <Box display="flex" alignItems="center" marginTop="8px">
+                      <Box >
+                        <Avatar src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_footer/nQjOPg.tif.svg" />
+
+
+                      </Box>
+                      <Box>
+                        <Typography variant="body1" className={classes.name}>
+                          &nbsp;&nbsp;&nbsp;care@nacjewellers.com
+                        </Typography>
+                      </Box>
+                    </Box>
+                    <Box display="flex" alignItems="center" marginTop="8px">
+                      <Box >
+                        <Avatar style={{ backgroundColor: "#2F348B" }}>
+                          <ChatIcon />
+                        </Avatar>
+
+
+                      </Box>
+                      <Box>
+                        <Typography variant="body1" className={classes.name}>
+                          &nbsp;&nbsp;&nbsp;+ 91 000 000000
+                        </Typography>
+                      </Box>
+                    </Box>
+
+
+                  </Grid>
+                </Grid>
+
+              </Grid>
+              {/* <Grid item xs={12} sm={12} md={12} xl={12}>
         <div className={classes.contents}>{contact.content}</div>
       </Grid> */}
-      {/* <Grid
+              {/* <Grid
         container
         xs={6}
         sm={6}
@@ -120,8 +122,8 @@ export default function Contact(props) {
         ))}
       </Grid>
    */}
-  
-      {/* <Grid container xs={12} sm={12} md={12} xl={12} className="">
+
+              {/* <Grid container xs={12} sm={12} md={12} xl={12} className="">
         {contactpage.dataall.map((data, index) => (
           <>
             <Grid
@@ -149,112 +151,112 @@ export default function Contact(props) {
           </>
         ))}
       </Grid> */}
-        <Grid item xs={12} xs={12} sm={12} md={12} xl={12}>
-          <br/>
-       </Grid>
-        <Grid item xs={12}xs={12} sm={12} md={12} xl={12}  className={classes.contentParent}>
-        <Grid container >
-            <Grid item xs={12} md={8} className={classes.content2}>
-              <Typography className={classes.heading}>Send Enquiry</Typography>
-              <Typography className={classes.sub}>Please submit your query and a member of our team will call you with 24 hours</Typography>
-             
-           
-              <Grid
-      container spacing={4}>
-          <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
-         <label className={classes.label}>First Name :</label>         
-        <TextField
-                variant="filled"
-                    color="secondary"
-                    
-          
-          className={classes.grid2}
-        
-        />
-      </Grid>
-                <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
-                <label className={classes.label}>Last Name :</label> 
-              <TextField
-                variant="filled"
-                color="secondary"
-         
-          className={classes.grid2}
-          
-        />
-      </Grid>
-                <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
-                <label className={classes.label}>Contact No :</label> 
-              <TextField
-                variant="filled"
-                color="secondary"
-          
-          className={classes.grid2}
-          
-        />
-      </Grid>
-                <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
-                <label className={classes.label}>Email Id :</label> 
-              <TextField
-                variant="filled"
-                color="secondary"
-          className={classes.grid2}
-         
-        />
-      </Grid>
-      <Grid item xs={12} sm={12} md={12} xl={12} >
-      <label className={classes.label}>Message :</label> 
-          
-                    <TextField
-                      className={classes.grid2}
-            fullWidth
-            id="outlined-multiline-static"
-            label=""
-            multiline
-            rows="6"
-                    variant="filled"
-                  color="secondary"
-          />
-      
-      </Grid>
-      <Grid
-        container
-        
-        justifyContent="flex-end"
-       
-      >
-      <Grid
-        container
-        xs={12}
-        sm={12}
-        md={8}
-        lg={5}
-        xl={5}
-        
-       
-                  >
-                    <Button
-            variant="contained"
-            size="large"
-           fullWidth={true}
-            className={classes.btn}
-          >
-            SUBMIT
-          </Button>
-      </Grid>
-          
-     
-          </Grid>
-          </Grid>
-        </Grid>
-            <Grid item xs={12} md={4}>
-              <img
-                className={classes.img}
-              
-                src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/akshaya+page/Group+63%402x.png" alt="img" />
-          </Grid>
-          </Grid>
-          </Grid>
-      {/* <Grid
+              <Grid item xs={12} xs={12} sm={12} md={12} xl={12}>
+                <br />
+              </Grid>
+              <Grid item xs={12} xs={12} sm={12} md={12} xl={12} className={classes.contentParent}>
+                <Grid container >
+                  <Grid item xs={12} md={8} className={classes.content2}>
+                    <Typography className={classes.heading}>Send Enquiry</Typography>
+                    <Typography className={classes.sub}>Please submit your query and a member of our team will call you with 24 hours</Typography>
+
+
+                    <Grid
+                      container spacing={4}>
+                      <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
+                        <label className={classes.label}>First Name :</label>
+                        <TextField
+                          variant="filled"
+                          color="secondary"
+
+
+                          className={classes.grid2}
+
+                        />
+                      </Grid>
+                      <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
+                        <label className={classes.label}>Last Name :</label>
+                        <TextField
+                          variant="filled"
+                          color="secondary"
+
+                          className={classes.grid2}
+
+                        />
+                      </Grid>
+                      <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
+                        <label className={classes.label}>Contact No :</label>
+                        <TextField
+                          variant="filled"
+                          color="secondary"
+
+                          className={classes.grid2}
+
+                        />
+                      </Grid>
+                      <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
+                        <label className={classes.label}>Email Id :</label>
+                        <TextField
+                          variant="filled"
+                          color="secondary"
+                          className={classes.grid2}
+
+                        />
+                      </Grid>
+                      <Grid item xs={12} sm={12} md={12} xl={12} >
+                        <label className={classes.label}>Message :</label>
+
+                        <TextField
+                          className={classes.grid2}
+                          fullWidth
+                          id="outlined-multiline-static"
+                          label=""
+                          multiline
+                          rows="6"
+                          variant="filled"
+                          color="secondary"
+                        />
+
+                      </Grid>
+                      <Grid
+                        container
+
+                        justifyContent="flex-end"
+
+                      >
+                        <Grid
+                          container
+                          xs={12}
+                          sm={12}
+                          md={8}
+                          lg={5}
+                          xl={5}
+
+
+                        >
+                          <Button
+                            variant="contained"
+                            size="large"
+                            fullWidth={true}
+                            className={classes.btn}
+                          >
+                            SUBMIT
+                          </Button>
+                        </Grid>
+
+
+                      </Grid>
+                    </Grid>
+                  </Grid>
+                  <Grid item xs={12} md={4}>
+                    <img
+                      className={classes.img}
+
+                      src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/akshaya+page/Group+63%402x.png" alt="img" />
+                  </Grid>
+                </Grid>
+              </Grid>
+              {/* <Grid
         container
         xs={12}
         sm={12}
@@ -308,182 +310,182 @@ export default function Contact(props) {
         </Grid>
       </Grid>
     */}
-   
-    </Grid>
-  </form>
-  
 
-</Container>
+            </Grid>
+          </form>
 
-    </Hidden>
+
+        </Container>
+
+      </Hidden>
       <Hidden mdUp>
-         
 
-    <Grid
-    container 
-    className={classes.roots}
-          
-    >
-      <Grid item xs={12} sm={12} md={12} xl={12}>
-        <div className={classes.head}>{contact.head}   </div>
-      </Grid>
-      <Grid item xs={12} sm={12} md={12} xl={12} >
-        <Grid container className={classes.content1sm}>
-          <Grid item xs={12}>
-           
-            <Box display="flex" alignItems="center">
-              <Box >
-                <Avatar style={{backgroundColor:"#2F348B"}}>
-                  <CallIcon/>
-                </Avatar>
-             
 
-              </Box>
-              <Box>
-                <Typography variant="body1" className={classes.name}>
-                  &nbsp;&nbsp;&nbsp;+91 44 4399 6666
-                  </Typography>
-              </Box>
-            </Box>
-            <Box display="flex" alignItems="center" marginTop="8px">
-              <Box >
-                <Avatar src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_footer/nQjOPg.tif.svg"/>
-             
+        <Grid
+          container
+          className={classes.roots}
 
-              </Box>
-              <Box>
-                <Typography variant="body1" className={classes.name}>
-                  &nbsp;&nbsp;&nbsp;care@nacjewellers.com
-                  </Typography>
-              </Box>
-            </Box>
-            <Box display="flex" alignItems="center" marginTop="8px">
-              <Box >
-                <Avatar style={{backgroundColor:"#2F348B"}}>
-                  <ChatIcon/>
-                </Avatar>
-             
-
-              </Box>
-              <Box>
-                <Typography variant="body1" className={classes.name}>
-                  &nbsp;&nbsp;&nbsp;+ 91 000 000000
-                  </Typography>
-              </Box>
-            </Box>
-   
-         
+        >
+          <Grid item xs={12} sm={12} md={12} xl={12}>
+            <div className={classes.head}>{contact.head}   </div>
           </Grid>
-        </Grid>
-      
-      </Grid>
-      <Grid item xs={12} sm={12} md={12} xl={12}>
-          <br/>
-       </Grid>
-      <Grid item xs={12} sm={12} md={12} xl={12}  >
-        <Grid container className={classes.content2sm}>
-            <Grid item xs={12} >
-              <Typography className={classes.heading}>Send Enquiry</Typography>
-              <Typography className={classes.sub}>Please submit your query and a member of our team will call you with 24 hours</Typography>
-             
-           
-              <Grid
-      container spacing={4}>
-          <Grid item xs={12} >
-         <label className={classes.label}>First Name :</label>         
-        <TextField
-                variant="filled"
-                    color="secondary"
-                    
-          
-               className={classes.grid2}
-        
-        />
-      </Grid>
-                <Grid item xs={12} >
-                <label className={classes.label}>Last Name :</label> 
-              <TextField
-                variant="filled"
-                color="secondary"
-         
-          className={classes.grid2}
-          
-        />
-      </Grid>
-                <Grid item xs={12} >
-                <label className={classes.label}>Contact No :</label> 
-              <TextField
-                variant="filled"
-                color="secondary"
-          
-          className={classes.grid2}
-          
-        />
-      </Grid>
-                <Grid item xs={12} >
-                <label className={classes.label}>Email Id :</label> 
-              <TextField
-                variant="filled"
-                color="secondary"
-          className={classes.grid2}
-         
-        />
-      </Grid>
-      <Grid item xs={12} sm={12} md={12} xl={12} >
-      <label className={classes.label}>Message :</label> 
-          
+          <Grid item xs={12} sm={12} md={12} xl={12} >
+            <Grid container className={classes.content1sm}>
+              <Grid item xs={12}>
+
+                <Box display="flex" alignItems="center">
+                  <Box >
+                    <Avatar style={{ backgroundColor: "#2F348B" }}>
+                      <CallIcon />
+                    </Avatar>
+
+
+                  </Box>
+                  <Box>
+                    <Typography variant="body1" className={classes.name}>
+                      &nbsp;&nbsp;&nbsp;+91 44 4399 6666
+                    </Typography>
+                  </Box>
+                </Box>
+                <Box display="flex" alignItems="center" marginTop="8px">
+                  <Box >
+                    <Avatar src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_footer/nQjOPg.tif.svg" />
+
+
+                  </Box>
+                  <Box>
+                    <Typography variant="body1" className={classes.name}>
+                      &nbsp;&nbsp;&nbsp;care@nacjewellers.com
+                    </Typography>
+                  </Box>
+                </Box>
+                <Box display="flex" alignItems="center" marginTop="8px">
+                  <Box >
+                    <Avatar style={{ backgroundColor: "#2F348B" }}>
+                      <ChatIcon />
+                    </Avatar>
+
+
+                  </Box>
+                  <Box>
+                    <Typography variant="body1" className={classes.name}>
+                      &nbsp;&nbsp;&nbsp;+ 91 000 000000
+                    </Typography>
+                  </Box>
+                </Box>
+
+
+              </Grid>
+            </Grid>
+
+          </Grid>
+          <Grid item xs={12} sm={12} md={12} xl={12}>
+            <br />
+          </Grid>
+          <Grid item xs={12} sm={12} md={12} xl={12}  >
+            <Grid container className={classes.content2sm}>
+              <Grid item xs={12} >
+                <Typography className={classes.heading}>Send Enquiry</Typography>
+                <Typography className={classes.sub}>Please submit your query and a member of our team will call you with 24 hours</Typography>
+
+
+                <Grid
+                  container spacing={4}>
+                  <Grid item xs={12} >
+                    <label className={classes.label}>First Name :</label>
+                    <TextField
+                      variant="filled"
+                      color="secondary"
+
+
+                      className={classes.grid2}
+
+                    />
+                  </Grid>
+                  <Grid item xs={12} >
+                    <label className={classes.label}>Last Name :</label>
+                    <TextField
+                      variant="filled"
+                      color="secondary"
+
+                      className={classes.grid2}
+
+                    />
+                  </Grid>
+                  <Grid item xs={12} >
+                    <label className={classes.label}>Contact No :</label>
+                    <TextField
+                      variant="filled"
+                      color="secondary"
+
+                      className={classes.grid2}
+
+                    />
+                  </Grid>
+                  <Grid item xs={12} >
+                    <label className={classes.label}>Email Id :</label>
+                    <TextField
+                      variant="filled"
+                      color="secondary"
+                      className={classes.grid2}
+
+                    />
+                  </Grid>
+                  <Grid item xs={12} sm={12} md={12} xl={12} >
+                    <label className={classes.label}>Message :</label>
+
                     <TextField
                       className={classes.grid2}
-            fullWidth
-            id="outlined-multiline-static"
-            label=""
-            multiline
-            rows="6"
-                    variant="filled"
-                  color="secondary"
-          />
-      
-      </Grid>
-      <Grid
-        container
-        
-        justifyContent="flex-end"
-       
-      >
-      <Grid
-        container
-        xs={12}
-        sm={12}
-        md={8}
-        lg={5}
-        xl={5}
-        
-       
+                      fullWidth
+                      id="outlined-multiline-static"
+                      label=""
+                      multiline
+                      rows="6"
+                      variant="filled"
+                      color="secondary"
+                    />
+
+                  </Grid>
+                  <Grid
+                    container
+
+                    justifyContent="flex-end"
+
                   >
-                    <Button
-            variant="contained"
-            size="large"
-           fullWidth={true}
-            className={classes.btn}
-          >
-            SUBMIT
-          </Button>
-      </Grid>
-          
-     
-          </Grid>
+                    <Grid
+                      container
+                      xs={12}
+                      sm={12}
+                      md={8}
+                      lg={5}
+                      xl={5}
+
+
+                    >
+                      <Button
+                        variant="contained"
+                        size="large"
+                        fullWidth={true}
+                        className={classes.btn}
+                      >
+                        SUBMIT
+                      </Button>
+                    </Grid>
+
+
+                  </Grid>
+                </Grid>
+              </Grid>
+
+            </Grid>
           </Grid>
         </Grid>
-        
-          </Grid>
-          </Grid>  
-    </Grid>
- 
-  
+
+
 
 
 
       </Hidden>
-      </>
+    </>
   );
 }

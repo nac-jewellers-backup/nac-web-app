@@ -5,9 +5,10 @@ import "aos/dist/aos.css";
 import Footer from "components/Footer/Footer";
 import Header from "components/SilverComponents/Header";
 import React, { useEffect } from "react";
+import ArrowLeft from "../../assets/arrowleft";
+import ArrowRight from "../../assets/arrowright";
 import { header } from "../../mappers/dummydata/collectionFulldata";
 import "./collection.css";
-
 function CollectionFullPage() {
   useEffect(() => {
     Aos.init({ duration: 2000 });
@@ -33,13 +34,16 @@ function CollectionFullPage() {
               display: "flex",
               justifyContent: "center",
               paddingBottom: "10px",
+              alignItems: "center"
             }}
           >
+            <ArrowLeft />
             {/* <img
               className="logoEdit"
               src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/collection+page/urn_aaid_sc_US_4f2880c9-1910-41e4-b332-90c4513a4ca7+(1).png"
             /> */}
             <Typography className="heading">COLLECTIONS</Typography>
+            <ArrowRight />
             {/* <img
               className="logoEdit"
               src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/collection+page/urn_aaid_sc_US_4f2880c9-1910-41e4-b332-90c4513a4ca7+(2).png"

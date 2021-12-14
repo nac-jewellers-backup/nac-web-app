@@ -36,17 +36,17 @@ const styles = (theme) => ({
       fontSize: "13px ",
     },
     [theme.breakpoints.up("lg")]: {
-      fontSize: "21.1px",
+      fontSize: "18px",
     },
   },
   cartheader: {
     color: "gray",
-    
+
     [theme.breakpoints.down("md")]: {
       fontSize: "14px",
     },
     [theme.breakpoints.up("lg")]: {
-      fontSize: "21px",
+      fontSize: "18px",
     },
   },
   cardpad: {
@@ -156,7 +156,7 @@ const styles = (theme) => ({
       fontSize: "15px;!important",
     },
     [theme.breakpoints.up("lg")]: {
-      fontSize: "20px !important",
+      fontSize: "18px !important",
     },
   },
   normalfonts: {
@@ -174,7 +174,7 @@ const styles = (theme) => ({
       fontSize: "12px !important",
     },
     [theme.breakpoints.up("lg")]: {
-      fontSize: "21.1px !important",
+      fontSize: "16px !important",
     },
     color: "gray",
     float: "right !important",
@@ -184,7 +184,7 @@ const styles = (theme) => ({
       fontSize: "12px !important",
     },
     [theme.breakpoints.up("lg")]: {
-      fontSize: "21.1px !important",
+      fontSize: "18px !important",
     },
     color: "gray",
     float: "right !important",
