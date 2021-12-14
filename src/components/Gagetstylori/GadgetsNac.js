@@ -73,7 +73,7 @@ export default function PaperSheet(props) {
     accessibility: true,
     speed: 2500,
     // fade: true,
-    slidesToShow: 3,
+    slidesToShow: 2,
     slidesToScroll: 1,
     prevArrow: <ArrowLeft />,
     nextArrow: <ArrowRight />,
@@ -81,36 +81,18 @@ export default function PaperSheet(props) {
 
   // "#D91965"
   return (
-    <Grid container>
+    <Grid container spacing={2}>
       <Hidden smDown>
-        <Grid
-          item
-          className={`silverSvg ${classes.mainsource} ${isSilver ? classes.silverSvg : ""
-            }`}
-        >
-          <Fromthehouseofnac color={color} />
+        {
+          props.dadgetdata.map((val) => {
+            return (
+              <Grid item xs={2}>
+                <img src={val.img} alt="img" height="100px" width="100px" style={{ objectFit: "contain" }} />
+              </Grid>
+            )
 
-        </Grid>
-        <Grid item className={classes.mainsource}>
-          {/* <img style={{ width: "70%", height: '100%' }} src={"https://assets.stylori.com/images/Static%20Pages/Other%20Pages/certifiedjewellery-pink.svg"} /> */}
-          <Diversestyles color={color} />
-        </Grid>
-        <Grid item className={classes.mainsource}>
-          {/* <img style={{ width: "70%", height: '100%' }} src={"https://assets.stylori.com/images/Static+Pages/Other+Pages/securepayments-pink.svg"} /> */}
-          {!isSilver ? (
-            <Easyreturns color={color} />
-          ) : (
-            <Hypoallergenic color={color} />
-          )}
-        </Grid>
-        <Grid item className={classes.mainsource}>
-          {/* <img style={{ width: "70%", height: '100%' }} src={"https://assets.stylori.com/images/Static+Pages/Other+Pages/diversestyles-pink.svg"} /> */}
-          <Certified color={color} />
-        </Grid>
-        <Grid item className={classes.mainsource}>
-          {/* <img style={{ width: "70%", height: '100%' }} src={"https://assets.stylori.com/images/Static+Pages/Other+Pages/easyreturns-pink.svg"} /> */}
-          <Securepayments color={color} />
-        </Grid>
+          })
+        }
       </Hidden>
 
       <Hidden smUp>
@@ -119,7 +101,17 @@ export default function PaperSheet(props) {
           class="subslider-carousel"
           dataCarousel={dataCarouselcollections}
         >
-          <Grid
+          {
+            props.dadgetdata.map((val) => {
+              return (
+                <Grid item xs={5}>
+                  <img src={val.img} alt="img" height="100px" width="100px" style={{ objectFit: "contain", marginLeft: "12px", padding: "20px" }} />
+                </Grid>
+              )
+
+            })
+          }
+          {/* <Grid
             item
             xs={4}
             className={`silverSvg ${classes.mainsource} ${isSilver ? classes.silverSvg : ""
@@ -142,7 +134,7 @@ export default function PaperSheet(props) {
           </Grid>
           <Grid item xs={4} className={classes.mainsource}>
             <Securepayments color={color} />
-          </Grid>
+          </Grid> */}
         </Slideshow>
       </Hidden>
     </Grid>

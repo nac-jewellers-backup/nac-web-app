@@ -4,6 +4,8 @@ import { useTheme } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import React, { useState } from "react";
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
+import ArrowLeft from "../../assets/arrowleft";
+import ArrowRight from "../../assets/arrowright";
 import styles from "./cardStyle";
 
 export default function Cards(props) {
@@ -42,20 +44,20 @@ export default function Cards(props) {
         className={classes.cardMain}
       >
         <Grid xs={12} sm={12} md={12} lg={12} xl={12}>
-         
+
           <Typography className={classes.titlePage}>
-            {props.data.title.titlePage}
-            
+            <ArrowLeft />&nbsp;{props.data.title.titlePage}&nbsp;<ArrowRight />
+
           </Typography>
           {window.location.pathname === "/advertising" ? (
             <>
-              <Typography className={classes.subtitle}>
-              {props.data.title.subtitle1}  
-            </Typography >
-            <Typography className={classes.subtitle} style={{marginTop:"-8px"}}> {props.data.title.subtitle2}</Typography>
-           </>
-          ): ""}
-           
+              <Typography className={classes.subtitless}>
+                {props.data.title.subtitle1}
+              </Typography >
+              <Typography className={classes.subtitle} style={{ marginTop: "-8px" }}> {props.data.title.subtitle2}</Typography>
+            </>
+          ) : ""}
+
         </Grid>
         {window.location.pathname === "/temple-work" ? (
           <>
@@ -195,7 +197,7 @@ export default function Cards(props) {
                             open={open}
                             onClose={handleClose}
                             contentStyle={{ width: "100%", maxWidth: "none" }}
-                            // aria-labelledby="responsive-dialog-title"
+                          // aria-labelledby="responsive-dialog-title"
                           >
                             <Card className={classes.dialogCard}>
                               <Grid>
@@ -219,8 +221,8 @@ export default function Cards(props) {
                           </Dialog>
                         </>
                       ) : (
-                          <>
-                            
+                        <>
+
                           <a href={val.link} className={classes.link}>
                             {" "}
                             <img
@@ -239,7 +241,7 @@ export default function Cards(props) {
                 </Grid>
 
                 <Grid container>
-                  <Grid item xs={12}  className={window.location.pathname === "/advertising"?classes.cardfooter:""}>
+                  <Grid item xs={12} className={window.location.pathname === "/advertising" ? classes.cardfooter : ""}>
                     {window.location.pathname === "/newsroom" ? (
                       <>
                         <Typography className={classes.cardName}>
@@ -254,8 +256,8 @@ export default function Cards(props) {
                         {" "}
                         <Typography className={classes.cardNamead}>
                           {val.name}
-                          </Typography>{" "}
-                          
+                        </Typography>{" "}
+
                       </>
                     )}
 
@@ -263,17 +265,17 @@ export default function Cards(props) {
                       {val.model}
                     </Typography> */}
                     <>
-                      {window.location.pathname === "/temple-work" 
-                      ? (
-                        <>
-                          {" "}
-                          <Typography className={classes.cardMetal}>
-                            {val.model}
-                          </Typography>{" "}
-                        </>
-                      ) : (
-                        ""
-                      )}
+                      {window.location.pathname === "/temple-work"
+                        ? (
+                          <>
+                            {" "}
+                            <Typography className={classes.cardMetal}>
+                              {val.model}
+                            </Typography>{" "}
+                          </>
+                        ) : (
+                          ""
+                        )}
                     </>
                     <>
                       {window.location.pathname === "/temple-work" ? (
@@ -289,38 +291,38 @@ export default function Cards(props) {
                     </>
                     {window.location.pathname === "/advertising" ? (
                       <>
-                        
-                      <Typography className={classes.cardLocationad}>
-                      {val.location}
+
+                        <Typography className={classes.cardLocationad}>
+                          {val.location}
                         </Typography>
-                        
+
                         <Box display="flex" alignItems="center" justifyContent="center">
                           <Box>
                             {
                               val.type === "video" ? (
-                                <Button className={classes.cardLocationadview} endIcon={<HiOutlineArrowNarrowRight />}  onClick={handleClickOpen}>
-                                View
-                          </Button>
+                                <Button className={classes.cardLocationadview} endIcon={<HiOutlineArrowNarrowRight />} onClick={handleClickOpen}>
+                                  View
+                                </Button>
                               ) :
-                                
+
                                 <Button className={classes.cardLocationadview} endIcon={<HiOutlineArrowNarrowRight />} onClick={() => {
-                                  window.location.href=val.link
-                              }} >
-                              View
-                        </Button>
+                                  window.location.href = val.link
+                                }} >
+                                  View
+                                </Button>
                             }
-                         
+
                           </Box>
-                         
+
                         </Box>
-                     
-                        </>
+
+                      </>
                     ) : (
                       <Typography className={classes.cardLocation}>
-                      {val.location}
-                    </Typography>
+                        {val.location}
+                      </Typography>
                     )}
-                    
+
                   </Grid>
                 </Grid>
               </Card>
@@ -352,27 +354,27 @@ export default function Cards(props) {
       )}
       {window.location.pathname === "/advertising" ? (
         <>
-        <Grid container>
-          <Grid container item xs={12} justify="center">
-            <Button
-              onClick={() => {
-                setPagination(pagination + 6);
-              }}
+          <Grid container>
+            <Grid container item xs={12} justify="center">
+              <Button
+                onClick={() => {
+                  setPagination(pagination + 6);
+                }}
                 variant="contained"
                 color="secondary"
-              disabled={pagination >= props.data.data.length}
-              className={classes.viewmoreColor}
-            >
-              {pagination >= props.data.data.length
-                ? `No more advertising`
-                : `View more advertising`}
-            </Button>
-            
-           
+                disabled={pagination >= props.data.data.length}
+                className={classes.viewmoreColor}
+              >
+                {pagination >= props.data.data.length
+                  ? `No more advertising`
+                  : `View more advertising`}
+              </Button>
+
+
+            </Grid>
           </Grid>
-          </Grid>
-         
-          </>
+
+        </>
       ) : (
         ""
       )}

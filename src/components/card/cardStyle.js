@@ -8,11 +8,20 @@ const styles = makeStyles((theme) => ({
     color: "#B2832C",
     margin: "21px 0px 10.5px 0px",
     textAlign: "center",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center"
   },
   subtitle: {
-    textAlign: "center", 
+    textAlign: "center",
     color: "gray",
     fontSize: "20px",
+  },
+  subtitless: {
+    textAlign: "center",
+    color: "gray",
+    fontSize: "20px",
+
   },
   contentTemple: {
     fontFamily: "notoSerif-regular",
@@ -41,7 +50,7 @@ const styles = makeStyles((theme) => ({
     //   paddingTop: "80px"
     // }
     paddingTop: "30px",
-    
+
   },
   contactImage: {
     display: "flex",
@@ -51,7 +60,7 @@ const styles = makeStyles((theme) => ({
     width: "100%",
     cursor: "pointer",
     height: "100%",
-    objectFit:"cover"
+    objectFit: "cover"
   },
   cardName: {
     fontSize: "18px",
@@ -67,7 +76,7 @@ const styles = makeStyles((theme) => ({
     lineHeight: "1.42857",
     padding: "20px 0px 8px 15px",
     fontWeight: "bold",
-    textAlign:"center"
+    textAlign: "center"
   },
   link: {
     textDecoration: "none !important",
@@ -99,18 +108,18 @@ const styles = makeStyles((theme) => ({
   },
   cardLocationad: {
     fontSize: "16px",
-    
+
     color: "#969696",
     fontFamily: "notoSerif-regular",
     lineHeight: "1.42857",
     padding: "0px 0px 30px 15px",
     textAlign: "center",
     marginTop: "-10px"
-    
-    
+
+
   },
   cardfooter: {
-    backgroundColor:"#F4F4F4"
+    backgroundColor: "#F4F4F4"
 
   },
   cardLocationadview: {
@@ -118,17 +127,17 @@ const styles = makeStyles((theme) => ({
     color: "#969696",
     fontFamily: "notoSerif-regular",
     marginTop: "-15px",
-    marginBottom:"15px",
+    marginBottom: "15px",
     textAlign: "center",
-   
-    textTransform:"capitalize"
-    
-    
+
+    textTransform: "capitalize"
+
+
   },
   card: {
     // borderRadius: "0px !important",
     // border: "1px solid #dbdbdb !important",
-    boxShadow:"4px 4px 4px #a5a4a5"
+    boxShadow: "4px 4px 4px #a5a4a5"
   },
   linkContact: {
     textDecoration: "none !important",
@@ -164,10 +173,10 @@ const styles = makeStyles((theme) => ({
     // height : 'calc(100% - 100px)' ,
   },
   viewmoreColor: {
-   
+
     color: "white",
     padding: "6px 12px",
-  
+
   },
 }));
 

@@ -408,6 +408,32 @@ class HomeComp extends React.Component {
 
   render() {
     const { classes } = this.props;
+    const dadgetdata = [
+      {
+        img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/badgeimagesHomepage/trustedsince.png",
+
+      },
+      {
+        img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/badgeimagesHomepage/awardwining.png",
+
+      },
+      {
+        img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/badgeimagesHomepage/internationalship.png",
+
+      },
+      {
+        img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/badgeimagesHomepage/securepayments.png",
+
+      },
+      {
+        img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/badgeimagesHomepage/easyreturns.png",
+
+      },
+      {
+        img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/badgeimagesHomepage/biscertificate.png",
+
+      }
+    ]
 
     const ArrowLeft = (props) => {
       const { className, style, onClick } = props;
@@ -510,16 +536,14 @@ class HomeComp extends React.Component {
       >
         <span
           style={{ fontFamily: "notoSerif-regular" }}
-          className={`time-range ${
-            this.state.timelineImage === image ? "active" : ""
-          } ${useBar ? "" : classes.minHeighttimerange}`}
+          className={`time-range ${this.state.timelineImage === image ? "active" : ""
+            } ${useBar ? "" : classes.minHeighttimerange}`}
         >
           {time}
         </span>
         <div
-          className={`${"timeline-icon-container"} ${
-            this.state.timelineImage === image ? "active" : ""
-          }`}
+          className={`${"timeline-icon-container"} ${this.state.timelineImage === image ? "active" : ""
+            }`}
         >
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
             <path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z" />
@@ -629,9 +653,8 @@ class HomeComp extends React.Component {
                           <img
                             src={val.mobile}
                             style={{ width: "100%", height: "100%" }}
-                            className={`image-${
-                              this.state.imageLoading ? "visible" : "hidden"
-                            }`}
+                            className={`image-${this.state.imageLoading ? "visible" : "hidden"
+                              }`}
                             onLoad={this.imageLoader}
                           />
                         </a>
@@ -656,8 +679,8 @@ class HomeComp extends React.Component {
             justify="center"
             style={{ margin: "35px 0" }}
           >
-            <Grid item xs={8} sm={8} md={6} lg={6} xl={6}>
-              <GadgetsNac />
+            <Grid item xs={8} sm={8} md={7} lg={7} xl={7}>
+              <GadgetsNac dadgetdata={dadgetdata} />
             </Grid>
           </Grid>
           {/* <faqsHelp/> */}
