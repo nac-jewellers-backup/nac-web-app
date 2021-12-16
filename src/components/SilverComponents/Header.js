@@ -341,7 +341,7 @@ class Header extends Component {
                         <div className={`head-icons1 ${classes.headIcons}`}>
                           <i class={`fa fa-phone  ${classes.iconFafa}`}></i>
                           <Typography className={classes.callerNum}>
-                            1800 102 0330
+                            +91 44 4399 6666
                           </Typography>
                           <Grid
                             onClick={this.handleClose}
