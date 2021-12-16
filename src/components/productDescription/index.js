@@ -48,25 +48,25 @@ class ProductDescription extends Component {
     // const fadeImages = this.props.data && this.props.data[0] && this.props.data[0].carouselImage;
     const fadeImages =
       this.props.datalisting &&
-      this.props.datalisting &&
-      this.props.datalisting.length > 0
+        this.props.datalisting &&
+        this.props.datalisting.length > 0
         ? this.props.datalisting.map((val) => {
-            if (
-              val &&
-              val.image &&
-              val.image.placeImage &&
-              val.image.placeImage.img
-            )
-              return val.image.placeImage.img;
-            else
-              return "https://assets.stylori.com/product/SP0384/1000X1000/SP0384-1W.webp";
-          })
+          if (
+            val &&
+            val.image &&
+            val.image.placeImage &&
+            val.image.placeImage.img
+          )
+            return val.image.placeImage.img;
+          else
+            return "https://assets.stylori.com/product/SP0384/1000X1000/SP0384-1W.webp";
+        })
         : [
-            "https://assets.stylori.com/product/SP0384/500X500/SP0384-1W.webp",
-            "https://assets.stylori.com/product/SR0783/500X500/SR0783-1Y.webp",
-            "https://assets.stylori.com/product/SR0367/500X500/SR0367-1Y.webp",
-            "https://assets.stylori.com/product/SE0891/500X500/SE0891-1Y.webp",
-          ];
+          "https://assets.stylori.com/product/SP0384/500X500/SP0384-1W.webp",
+          "https://assets.stylori.com/product/SR0783/500X500/SR0783-1Y.webp",
+          "https://assets.stylori.com/product/SR0367/500X500/SR0367-1Y.webp",
+          "https://assets.stylori.com/product/SE0891/500X500/SE0891-1Y.webp",
+        ];
 
     fadeImages.sort((a, b) => 0.5 - Math.random());
     const title = this.props.title;
@@ -116,13 +116,15 @@ class ProductDescription extends Component {
                       <>
                         <span
                           id="moreDots"
-                          style={{ display: "inline", lineHeight: "19px" }}
+                          style={{ display: "inline", lineHeight: "19px", fontSize: "16px" }}
                         >
                           {datadescription.slice(0, 320)}...
                         </span>
 
                         <p
                           onClick={this.handleReadMore}
+
+
                           className={`know-txt ${classes.colorLight}`}
                           id="readMore"
                         >
@@ -132,12 +134,14 @@ class ProductDescription extends Component {
                       </>
                     ) : (
                       <>
-                        <span style={{ display: "inline", lineHeight: "19px" }}>
+                        <span style={{ display: "inline", lineHeight: "19px", fontSize: "16px" }}>
                           {datadescription}
                         </span>
 
                         <p
                           onClick={this.handleReadMore}
+
+
                           className={`know-txt ${classes.colorLight}`}
                           id="readLess"
                         >
