@@ -76,7 +76,7 @@ const styles = (theme) => ({
       fontSize: "13px",
     },
     [theme.breakpoints.up("lg")]: {
-      fontSize: "16px",
+      fontSize: "14px",
     },
   },
 });
@@ -213,53 +213,53 @@ class ProductDetail extends Component {
                 this.props?.data &&
                 this.props?.data[0] &&
                 this.props?.data[0].length > 0 ? (
-                  <>
-                    <title>{this.props.data[0].title}</title>
-                    <meta name="description" content={this.props.data[0].dis} />
-                    <meta
-                      name="keywords"
-                      content={this.props.data[0].productsPendants[0].name}
-                    />
-                    <meta
-                      property="og:title"
-                      id="fb-title"
-                      content={this.props.data[0].title}
-                    />
-                    <meta
-                      property="og:description"
-                      content={this.props.data[0].dis}
-                    />
-                    <meta property="og:type" content="product" />
-                    <meta
-                      property="og:url"
-                      id="fb-product-url"
-                      content={window.location.href}
-                    />
-                    <meta
-                      property="og:image"
-                      id="fb_imageUrl"
-                      content={this.props.data[0].fadeImages}
-                    />
-                    <meta name="twitter:card" content="summary" />
-                    <meta name="twitter:site" content="@StyloriLove" />
-                    <meta
-                      name="twitter:title"
-                      id="twitter-title"
-                      content={this.props.data[0].title}
-                    />
-                    <meta
-                      name="twitter:description"
-                      content={this.props.data[0].dis}
-                    />
-                    <meta
-                      name="twitter:image"
-                      id="twitter_imageUrl"
-                      content={this.props.data[0].fadeImages}
-                    />
-                  </>
-                ) : (
-                  ""
-                )}
+                <>
+                  <title>{this.props.data[0].title}</title>
+                  <meta name="description" content={this.props.data[0].dis} />
+                  <meta
+                    name="keywords"
+                    content={this.props.data[0].productsPendants[0].name}
+                  />
+                  <meta
+                    property="og:title"
+                    id="fb-title"
+                    content={this.props.data[0].title}
+                  />
+                  <meta
+                    property="og:description"
+                    content={this.props.data[0].dis}
+                  />
+                  <meta property="og:type" content="product" />
+                  <meta
+                    property="og:url"
+                    id="fb-product-url"
+                    content={window.location.href}
+                  />
+                  <meta
+                    property="og:image"
+                    id="fb_imageUrl"
+                    content={this.props.data[0].fadeImages}
+                  />
+                  <meta name="twitter:card" content="summary" />
+                  <meta name="twitter:site" content="@StyloriLove" />
+                  <meta
+                    name="twitter:title"
+                    id="twitter-title"
+                    content={this.props.data[0].title}
+                  />
+                  <meta
+                    name="twitter:description"
+                    content={this.props.data[0].dis}
+                  />
+                  <meta
+                    name="twitter:image"
+                    id="twitter_imageUrl"
+                    content={this.props.data[0].fadeImages}
+                  />
+                </>
+              ) : (
+                ""
+              )}
           </MetaTags>
         </div>
 
@@ -307,7 +307,7 @@ class ProductDetail extends Component {
                       style={{
                         color: "gray",
 
-                        fontSize: "16px",
+                        fontSize: "14px",
                       }}
                     >
                       {" "}
@@ -315,7 +315,7 @@ class ProductDetail extends Component {
                         style={{
                           color: "gray",
                           fontWeight: "bold",
-                          fontSize: "16px",
+                          fontSize: "14px",
                         }}
                       >
                         Model No:{" "}
@@ -333,7 +333,7 @@ class ProductDetail extends Component {
                         fontWeight: "bold",
                         fontSize: 12,
                         marginTop: 4,
-                        fontSize: "16px",
+                        fontSize: "14px",
                       }}
                     >
                       Product Information:{" "}
@@ -394,7 +394,7 @@ class ProductDetail extends Component {
                           <Grid itex xs={12}>
                             <span className={classes.productmaterial}>
                               {this.props.data[0].productsDetails[0]
-                                .namedetail[2].details ?? ""}
+                                .namedetail[2].details ?? ""}Km
                             </span>
                           </Grid>
                         </Grid>
@@ -483,7 +483,7 @@ class ProductDetail extends Component {
                         >
                           <Grid itex xs={12}>
                             <span className={classes.productmaterial}>
-                              Diamond Weight
+                              Diamond Price
                             </span>
                           </Grid>
                           <Grid itex xs={12}>
@@ -499,15 +499,15 @@ class ProductDetail extends Component {
                                 .namedetail[3] &&
                               this.props.data[0].productsDetails[1].namedetail[3]
                                 .details ? (
-                                <span className={classes.productmaterial}>
-                                  {
-                                    this.props.data[0].productsDetails[1]
-                                      .namedetail[3].details[0]
-                                  }
-                                </span>
-                              ) : (
-                                ""
-                              )}
+                              <span className={classes.productmaterial}>
+                                {
+                                  this.props.data[0].productsDetails[1]
+                                    .namedetail[3].details[0]
+                                }
+                              </span>
+                            ) : (
+                              ""
+                            )}
 
                           </Grid>
                         </Grid>
@@ -527,7 +527,7 @@ class ProductDetail extends Component {
                           }}
                         >
                           CERTIFICATES
-                    </p>
+                        </p>
                         <img src={this.props.data[0].certificate} />
                       </div>
                     }

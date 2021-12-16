@@ -141,7 +141,7 @@ export default function WishlistButton(props) {
           onClick={(event) => handlewishlist(event)}
           variant="contained"
           style={{
-            fontSize: "16px",
+            fontSize: "14px",
             color: "gray",
             border: "2px solid #C1C1C1",
             backgroundColor: "white",

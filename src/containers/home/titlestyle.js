@@ -4,7 +4,7 @@ const styles = makeStyles((theme) => ({
     color: theme.palette.gold.main,
     textAlign: "center",
 
-    fontSize: "2.6rem",
+    fontSize: "34px",
     [theme.breakpoints.down("xs")]: {
       fontSize: "1.8rem",
     },

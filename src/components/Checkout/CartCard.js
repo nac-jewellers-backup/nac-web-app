@@ -983,7 +983,7 @@ class Checkoutcard extends React.Component {
                                     style={{
                                       color: "gray",
                                       textTransform: "capitalize",
-                                      fontSize: "18px"
+                                      fontSize: "16px"
                                     }}
                                   >
                                     {val.pro_header}
@@ -1122,7 +1122,7 @@ class Checkoutcard extends React.Component {
                                     }
                                     variant="contained"
                                     style={{
-                                      fontSize: "18px",
+                                      fontSize: "14px",
                                       color: "gray",
                                       width: "95%",
                                       border: "2px solid #C1C1C1",
@@ -1169,7 +1169,7 @@ class Checkoutcard extends React.Component {
                   )}
                   <br />
                   <Button
-                    style={{ fontSize: "18px" }}
+                    style={{ fontSize: "16px" }}
                     startIcon={<AiFillCaretLeft />}
                     className="backhomepagebtn"
                     onClick={(e) => {
@@ -1546,9 +1546,9 @@ class Checkoutcard extends React.Component {
         <AccordionSummary
           expandIcon={
             expanded ? (
-              <AiFillCaretLeft fontSize="18px" />
+              <AiFillCaretLeft fontSize="16px" />
             ) : (
-              <AiFillCaretRight fontSize="18px" />
+              <AiFillCaretRight fontSize="16px" />
             )
           }
         >
@@ -1559,10 +1559,10 @@ class Checkoutcard extends React.Component {
               style={{
                 display: "flex",
                 justifyContent: "center",
-                fontSize: "18px",
+                fontSize: "16px",
               }}
             >
-              <IoPricetagsOutline color="#2F348B" fontSize="18px" />
+              <IoPricetagsOutline color="#2F348B" fontSize="14px" />
               &nbsp;&nbsp;&nbsp;<b>Apply Coupon</b>
             </Typography>
           </Hidden>
@@ -1576,7 +1576,7 @@ class Checkoutcard extends React.Component {
                 fontSize: "16px",
               }}
             >
-              <IoPricetagsOutline color="#2F348B" fontSize="18px" />
+              <IoPricetagsOutline color="#2F348B" fontSize="16px" />
               &nbsp;&nbsp;&nbsp;<b>Apply Coupon</b>
             </Typography>
           </Hidden>
@@ -1678,7 +1678,7 @@ class Checkoutcard extends React.Component {
                 paddingTop: "17px",
                 marginTop: "25px",
                 color: "gray",
-                fontSize: "18px"
+                fontSize: "16px"
               }}
             >
               <b>Order Summery</b>

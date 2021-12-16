@@ -77,13 +77,13 @@ export default function Pricing(props) {
                     <Hidden smDown>
                       <Typography
                         style={{
-                          fontSize: "31.44px",
+                          fontSize: "24px",
                           margin: props.from ? "auto" : "unset",
                           fontWeight: "bold",
                         }}
                         className={`${(props.offerPrice != null) & (props.offerPrice !== "")
-                            ? ""
-                            : "shine"
+                          ? ""
+                          : "shine"
                           } ${classes.colorMain} ${classes.h6FontSize} ${classes.offerPricePadding
                           } `}
                       >
@@ -103,8 +103,8 @@ export default function Pricing(props) {
                           fontWeight: "bold",
                         }}
                         className={`${(props.offerPrice != null) & (props.offerPrice !== "")
-                            ? ""
-                            : "shine"
+                          ? ""
+                          : "shine"
                           } ${classes.colorMain} ${classes.h6FontSize} ${classes.offerPricePadding
                           } `}
                       >
@@ -136,8 +136,8 @@ export default function Pricing(props) {
                             variant="caption"
                             component="p"
                             className={`${(props.save != null) & (props.save !== "")
-                                ? ""
-                                : "shine"
+                              ? ""
+                              : "shine"
                               } ${classes.colorMain}  `}
                           >
                             {path === "stylori" && "You save"} {props.save}
@@ -165,8 +165,8 @@ export default function Pricing(props) {
                           variant="caption"
                           component="p"
                           className={`${(props.save != null) & (props.save !== "")
-                              ? ""
-                              : "shine"
+                            ? ""
+                            : "shine"
                             } ${classes.colorMain}  `}
                         >
                           {path === "stylori" && "You save"} {props.save}
@@ -197,8 +197,8 @@ export default function Pricing(props) {
                         props.from && { margin: "auto", paddingBottom: "10px" }
                       }
                       className={`pricing-p${(props.price != null) & (props.price !== "")
-                          ? ""
-                          : "shine"
+                        ? ""
+                        : "shine"
                         }${classes.colorMain} ${classes.h6FontSizeStrike} ${classes.offerPricePadding
                         } ${classes.dis} ${classes.boldFont}`}
                     >
@@ -246,13 +246,13 @@ export default function Pricing(props) {
                         style={
                           props.from && {
                             margin: "auto",
-                            fontSize: "18px",
+                            fontSize: "16px",
                             color: "gray",
                           }
                         }
                       >
                         {props.offerPrice === props.price ? (
-                          <span style={{ color: "gray", fontSize: "18px" }}>
+                          <span style={{ color: "gray", fontSize: "16px" }}>
                             {" "}
                             {new Intl.NumberFormat("en-IN", {
                               style: "currency",
@@ -349,8 +349,8 @@ export default function Pricing(props) {
                                       variant="caption"
                                       component="p"
                                       className={`${(props.save != null) & (props.save !== "")
-                                          ? ""
-                                          : "shine"
+                                        ? ""
+                                        : "shine"
                                         } ${classes.colorMain}  `}
                                     >
                                       {path === "stylori" && "You save"}{" "}
@@ -474,8 +474,8 @@ export default function Pricing(props) {
                                       variant="caption"
                                       component="p"
                                       className={`${(props.save != null) & (props.save !== "")
-                                          ? ""
-                                          : "shine"
+                                        ? ""
+                                        : "shine"
                                         } ${classes.colorMain}  `}
                                     >
                                       {path === "stylori" && "You save"}{" "}
@@ -513,8 +513,8 @@ export default function Pricing(props) {
                   <Typography
                     style={props.from && { margin: "auto" }}
                     className={`${(props.offerPrice != null) & (props.offerPrice !== "")
-                        ? ""
-                        : "shine"
+                      ? ""
+                      : "shine"
                       } ${classes.colorMain} ${classes.h6FontSize} ${classes.offerPricePadding
                       } `}
                   >

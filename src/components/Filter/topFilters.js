@@ -63,14 +63,14 @@ export const TopFilters = (props) => {
     window.scrollTo(0, 0);
   };
 
-  
+
   return Object.keys(mapped).length === 0 ? (
     <div>loading...</div>
   ) : (
     <div className={classes.filtersHeaderTop} id="topfilter">
       <Container style={{ marginTop: "25px" }}>
         <Grid container item xs={12}>
-          <Grid item xs={12} style={{ marginBottom: 30 }}>
+          <Grid item xs={12} style={{ marginBottom: 30, fontSize: "16px" }}>
             <div
               style={{ textAlign: "center", fontWeight: "bold", color: "#666" }}
             >
@@ -99,7 +99,7 @@ export const TopFilters = (props) => {
             }}
           >
             {/* ------------------------------- */}
-            <Grid  item xs={9} className="titleTop" id={"titleTop"}>
+            <Grid item xs={9} className="titleTop" id={"titleTop"}>
               <Grid
                 container
                 item
@@ -133,7 +133,7 @@ export const TopFilters = (props) => {
                   >
                     <Grid item className={classes.filtersLabel}>
                       <a
-                        style={{ color: "gray", fontSize: 14, fontWeight: 550 }}
+                        style={{ color: "gray", fontSize: 12, fontWeight: 550 }}
                       >
                         {"Price (₹)"}
                       </a>
@@ -157,7 +157,7 @@ export const TopFilters = (props) => {
 
                   if (
                     listName === "Style" ||
-                   
+
                     listName === "Occasion" ||
                     listName === "Collection" ||
                     listName === "Material" ||
@@ -189,11 +189,11 @@ export const TopFilters = (props) => {
                           <Grid item xs={12} className={classes.filtersLabel}
                             style={{
                               display: "flex",
-                              alignItems:"center",
-                          }}>
+                              alignItems: "center",
+                            }}>
                             <a
                               style={{
-                                fontSize: 14,
+                                fontSize: 12,
                                 fontWeight: 550,
                               }}
                               href={listName.url}
@@ -206,7 +206,7 @@ export const TopFilters = (props) => {
                               <ArrowDropDownIcon style={{ color: "gray" }} />
                             )}
                           </Grid>
-                          
+
                         </Grid>
                       </Grid>
                     );
@@ -246,104 +246,104 @@ export const TopFilters = (props) => {
               )}
             </Grid>
             <Grid
-                  item xs={1}
-                  className={`${classes.menuListCursorMoreFilters} ${classes.menuListCursorfiltersLabel}`}
-                  onClick={() => {
-                    handleMoreFilters();
-                  }}
-                >
-                  <Grid
-                    container
-                    item
-                    xs={12}
-                    className={classes.spacingfilterdiv}
-                    >
-                      <Box alignItems="center" display="flex">
-                        <Box>
-                        <div
-                        style={{ fontSize: 14, color: "gray", fontWeight: 550 }}
-                      >
-                        More&nbsp;
-                      </div>
-                        </Box>
-                        <Box>
-                        <AddBoxIcon
-                        style={{
-                          color: "gray",
-                        }}
-                      />
-                        </Box>
-                      </Box>
-                    
-                  </Grid>
-                </Grid>
-            
-       
-              <Grid
-            container
-            xs={1}
-           
-           
-          >
-            <Grid
-              item
-              xs={12}
-              onMouseLeave={() => {
-                setState({ ...state, expanded: false, targetopen: null });
+              item xs={1}
+              className={`${classes.menuListCursorMoreFilters} ${classes.menuListCursorfiltersLabel}`}
+              onClick={() => {
+                handleMoreFilters();
               }}
-              className={classes.shortby}
             >
               <Grid
                 container
                 item
                 xs={12}
-                className={`${classes.headerNavbarList1} ${classes.menuListCursorSort}`}
-                onMouseOver={(e) => {
-                  setState({
-                    ...state,
-                    targetopen: e.currentTarget,
-                    expanded: true,
-                  });
-                }}
+                className={classes.spacingfilterdiv}
               >
-                <Grid item xs={8} style={{ margin: "auto" }}>
-                  <div style={{ fontSize: 14, fontWeight: 550, color: "gray" }}>
-                    Sort 
-                  </div>
-                </Grid>
-                <Grid
-                  item
-                  xs={2}
-                  style={{ display: "flex", justifyContent: "flex-end" }}
-                >
-                  {state.expanded ? <ArrowDropUpIcon /> : <ArrowDropDownIcon />}
-                </Grid>
-              </Grid>
+                <Box alignItems="center" display="flex">
+                  <Box>
+                    <div
+                      style={{ fontSize: 14, color: "gray", fontWeight: 550 }}
+                    >
+                      More&nbsp;
+                    </div>
+                  </Box>
+                  <Box>
+                    <AddBoxIcon
+                      style={{
+                        color: "gray",
+                      }}
+                    />
+                  </Box>
+                </Box>
 
-              {state.expanded ? (
-                <HeaderHoverMenuItem
-                  tabdata={sortOptions}
-                  listHoverItem={sortOptions}
-                  // onMouseOver={(event) => { setState({ Menuopen: true }) }}
-                  sort={true}
-                  filters={true}
-                  opened={state.expanded}
-                  targetopened={state.targetopen}
-                  // submenuDetails={()=>submenuDetails()}
-                  // filtercheck={state.listHoverItem}
-                  values={FilterOptionsCtx.sort}
-                  onchoosetype={handleChange}
-                  onMouseLeave={() => {
-                    setState({ ...state, expanded: false, targetopen: null });
+              </Grid>
+            </Grid>
+
+
+            <Grid
+              container
+              xs={1}
+
+
+            >
+              <Grid
+                item
+                xs={12}
+                onMouseLeave={() => {
+                  setState({ ...state, expanded: false, targetopen: null });
+                }}
+                className={classes.shortby}
+              >
+                <Grid
+                  container
+                  item
+                  xs={12}
+                  className={`${classes.headerNavbarList1} ${classes.menuListCursorSort}`}
+                  onMouseOver={(e) => {
+                    setState({
+                      ...state,
+                      targetopen: e.currentTarget,
+                      expanded: true,
+                    });
                   }}
-                />
-              ) : (
-                ""
-              )}
+                >
+                  <Grid item xs={8} style={{ margin: "auto" }}>
+                    <div style={{ fontSize: 14, fontWeight: 550, color: "gray" }}>
+                      Sort
+                    </div>
+                  </Grid>
+                  <Grid
+                    item
+                    xs={2}
+                    style={{ display: "flex", justifyContent: "flex-end" }}
+                  >
+                    {state.expanded ? <ArrowDropUpIcon /> : <ArrowDropDownIcon />}
+                  </Grid>
+                </Grid>
+
+                {state.expanded ? (
+                  <HeaderHoverMenuItem
+                    tabdata={sortOptions}
+                    listHoverItem={sortOptions}
+                    // onMouseOver={(event) => { setState({ Menuopen: true }) }}
+                    sort={true}
+                    filters={true}
+                    opened={state.expanded}
+                    targetopened={state.targetopen}
+                    // submenuDetails={()=>submenuDetails()}
+                    // filtercheck={state.listHoverItem}
+                    values={FilterOptionsCtx.sort}
+                    onchoosetype={handleChange}
+                    onMouseLeave={() => {
+                      setState({ ...state, expanded: false, targetopen: null });
+                    }}
+                  />
+                ) : (
+                  ""
+                )}
+              </Grid>
             </Grid>
+
           </Grid>
-    
-            </Grid>
           {/* ---------------------------------------------------------- */}
           <Grid
             container
@@ -382,35 +382,35 @@ export const TopFilters = (props) => {
               </>
               {props?.chips.length > 0
                 ? props?.chips.map((data) => {
-                    return data.label === "Silver" ? null : (
-                      <Chip
-                        className={classes.chips}
-                        size="small"
-                        label={data.label}
-                        style={{
-                          padding: "14px 14px",
-                          marginRight: 6,
-                          marginLeft: 2,
-                          border: "1px solid gray",
-                          borderRadius: "0px",
-                          textTransform: "uppercase",
-                          backgroundColor: "white",
-                          cursor: "pointer",
-                        }}
-                        onDelete={() => props.click(data.label)}
-                        deleteIcon={
-                          data.label ? (
-                            <i
-                              className="search-choice-close"
-                              class="fa fa-times"
-                            ></i>
-                          ) : (
-                            ""
-                          )
-                        }
-                      />
-                    );
-                  })
+                  return data.label === "Silver" ? null : (
+                    <Chip
+                      className={classes.chips}
+                      size="small"
+                      label={data.label}
+                      style={{
+                        padding: "14px 14px",
+                        marginRight: 6,
+                        marginLeft: 2,
+                        border: "1px solid gray",
+                        borderRadius: "0px",
+                        textTransform: "uppercase",
+                        backgroundColor: "white",
+                        cursor: "pointer",
+                      }}
+                      onDelete={() => props.click(data.label)}
+                      deleteIcon={
+                        data.label ? (
+                          <i
+                            className="search-choice-close"
+                            class="fa fa-times"
+                          ></i>
+                        ) : (
+                          ""
+                        )
+                      }
+                    />
+                  );
+                })
                 : ""}
             </Grid>
             <Grid
@@ -434,7 +434,7 @@ export const TopFilters = (props) => {
                   });
                 }}
               >
-                
+
               </Grid>
 
               {state.expanded ? (

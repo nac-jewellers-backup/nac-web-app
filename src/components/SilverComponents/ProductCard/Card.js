@@ -11,7 +11,7 @@ import { ProductDetailContext } from "context";
 import React from "react";
 import {
   LazyLoadImage,
-  trackWindowScroll,
+  trackWindowScroll
 } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { Link } from "react-router-dom";
@@ -137,7 +137,7 @@ const useStyles = makeStyles((theme) => ({
   priceClass: {
     // boxShadow: "0px 0px 5px #F699A3 inset",
     padding: "10px",
-    height: "50px",
+    //height: "50px",
     display: "flex",
     boxShadow: " 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)",
     borderRadius: "0 !important",
@@ -427,7 +427,7 @@ sizes="(max-width: 320px) 320w,
                       className={classes.offerPrice}
                     >
                       {Math.round(props.data.offerPrice) ===
-                      Math.round(props.data.price) ? (
+                        Math.round(props.data.price) ? (
                         new Intl.NumberFormat("en-IN", {
                           style: "currency",
                           currency: "INR",
@@ -445,7 +445,7 @@ sizes="(max-width: 320px) 320w,
                     </Typography>
                   </Grid>
                   {Math.round(props.data.offerPrice) ===
-                  Math.round(props.data.price) ? (
+                    Math.round(props.data.price) ? (
                     ""
                   ) : (
                     <Grid
@@ -473,7 +473,7 @@ sizes="(max-width: 320px) 320w,
                           ((Math.round(props.data.price) -
                             Math.round(props.data.offerPrice)) /
                             Math.round(props.data.price)) *
-                            100
+                          100
                         ) + "% off"}
                       </Typography>
                     </Grid>

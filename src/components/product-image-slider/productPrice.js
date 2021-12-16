@@ -98,7 +98,7 @@ const Productprice = (
                   width: "96%",
                   height: "auto",
                   marginBottom: "10px",
-                  marginTop: "18px",
+                  marginTop: "16px",
                   borderBottom: "-5px",
                 }}
                 className="boxshadow"
@@ -199,7 +199,7 @@ const Productprice = (
                             style={{
                               cursor: "pointer",
                               color: "#33346D",
-                              fontSize: "18px",
+                              fontSize: "16px",
                               whiteSpace: "nowrap",
                             }}
                             onClick={() => {

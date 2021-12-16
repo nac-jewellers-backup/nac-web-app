@@ -232,7 +232,7 @@ const useStyles = makeStyles((theme) => ({
   },
   priceClass: {
     padding: "10px",
-    height: "50px",
+    //height: "50px",
     backgroundColor: "#c8ced480",
     display: "flex",
     boxShadow: " 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)",
@@ -256,7 +256,7 @@ const useStyles = makeStyles((theme) => ({
   offerMainPrice: {
     color: "gray",
     fontWeight: "bold",
-    fontSize: "16px !important",
+    fontSize: "22px !important",
     [theme.breakpoints.down("sm")]: {
       fontSize: "15px !important",
     },
@@ -347,7 +347,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
   },
   titlesshopother: {
-    fontSize: "20px",
+    fontSize: "16px",
     fontWeight: "bold",
     textAlign: "center",
     whiteSpace: "nowrap",
@@ -391,7 +391,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   strikeText: {
-    fontSize: "12px",
+    fontSize: "16px",
     color: "#5d5d5d",
     [theme.breakpoints.down("sm")]: {
       fontSize: "10px !important",
@@ -481,10 +481,11 @@ function Component(props) {
                   <Grid container xs={12}>
                     <Typography
                       variant="body1"
-                      style={{ paddingLeft: "5px", textTransform: "uppercase" }}
+                      style={{ paddingLeft: "5px", marginTop: "14px", textTransform: "uppercase" }}
                       className={`${classes.titlesshopother}`}
                     >
                       {" "}
+
                       SHOP&nbsp;
                       {props.data.product_list.product_type}
                     </Typography>

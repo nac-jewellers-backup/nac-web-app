@@ -245,8 +245,8 @@ class Header extends Component {
                           : "0"
                       }
                       color="secondary"
-                      // wishlist_count
-                      // badgeContent={this.props.wishlist_count && this.props.wishlist_count.length > 0 ? this.props.wishlist_count : "0"}
+                    // wishlist_count
+                    // badgeContent={this.props.wishlist_count && this.props.wishlist_count.length > 0 ? this.props.wishlist_count : "0"}
                     >
                       <i
                         class="fa fa-heart icons-header-sizes"
@@ -333,7 +333,7 @@ class Header extends Component {
                     </Container>
 
                     {this.state.Menuopen &&
-                    menuLists[this.state.listHoverItem] ? (
+                      menuLists[this.state.listHoverItem] ? (
                       <HeaderHoverMenuItem
                         Checked={this.state.Checked}
                         tabdata={this.props.data}

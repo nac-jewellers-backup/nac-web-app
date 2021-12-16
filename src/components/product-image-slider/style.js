@@ -4,7 +4,7 @@ const styles = (theme) => ({
   },
   shortdis: {
     [theme.breakpoints.down("lg")]: {
-      fontSize: "18px !important",
+      fontSize: "16px !important",
     },
     [theme.breakpoints.down("sm")]: {
       fontSize: "12px !important",
@@ -206,7 +206,7 @@ const styles = (theme) => ({
   title: {
     marginTop: "0 !important",
     [theme.breakpoints.down("lg")]: {
-      fontSize: "18px !important",
+      fontSize: "26px !important",
       fontWeight: "bold !important",
       color: "#2F348B",
       lineHeight: "20px",

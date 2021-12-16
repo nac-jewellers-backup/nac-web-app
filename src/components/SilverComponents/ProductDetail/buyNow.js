@@ -199,7 +199,7 @@ const PriceBuynow = (props) => {
     error,
     data: CodData,
     makeRequestCod,
-  } = useCheckForCod(CheckForCod, () => {}, {});
+  } = useCheckForCod(CheckForCod, () => { }, {});
   const { ProductDetailCtx, setFilters } =
     React.useContext(ProductDetailContext);
   const { setCartFilters } = React.useContext(CartContext);

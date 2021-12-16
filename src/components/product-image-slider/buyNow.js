@@ -105,8 +105,8 @@ const inputsearch = (props, state, handleChanges, handleCodChange) => {
                   {state.CheckForCodtitle}
                 </>
               ) : (
-                      state.CheckForCodtitle.toUpperCase()
-                    )}
+                state.CheckForCodtitle.toUpperCase()
+              )}
             </Button>
           </Grid>
 
@@ -128,7 +128,7 @@ const inputsearch = (props, state, handleChanges, handleCodChange) => {
                     alignItems: "center",
                     display: "flex",
                     alignContent: "center",
-                    fontSize: "16px",
+                    fontSize: "14px",
                     color: "gray"
                   }}
                 >
@@ -182,8 +182,8 @@ const Buydetails = (
                     />{" "}
                   </>
                 ) : (
-                    ""
-                  )}
+                  ""
+                )}
               </div>
             </Grid>
             <Grid xs={12} md={5} lg={4} className={classes.buynowItem}>
@@ -649,7 +649,7 @@ class Component extends React.Component {
                           Metal Weight
                           <br />
                           {this.props.data[0].productsDetails[0].namedetail[2]
-                            .details ?? ""}
+                            .details ?? ""}Km
                         </p>
                       </Box>
                     )}
@@ -712,7 +712,7 @@ class Component extends React.Component {
                             color: "gray",
                           }}
                         >
-                          Diamond Weight
+                          Diamond Price
                           <br />
                           {this.props &&
                             this.props.data &&

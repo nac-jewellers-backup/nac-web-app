@@ -250,7 +250,7 @@ class Header extends Component {
                             window.history.back()
                           }}>
                             <ArrowBackIcon color="secondary" />&nbsp;&nbsp;
-                        </IconButton>
+                          </IconButton>
                           : " "
                       }
 
@@ -384,25 +384,25 @@ class Header extends Component {
                               </span>
                             </div>
                           ) : (
-                              <div className="tooltip ">
-                                <span
-                                  class="MuiBadge-root"
-                                  onClick={() =>
-                                    (window.location.pathname = "/login")
-                                  }
-                                >
-                                  <i
-                                    style={{ fontSize: "20px" }}
-                                    class={`fa fa-user  ${classes.iconFafa}`}
-                                  ></i>
-                                  <span className="tooltip-slog">
-                                    {Boolean(localStorage.getItem("user_id"))
-                                      ? "Account"
-                                      : "Login"}
-                                  </span>
+                            <div className="tooltip ">
+                              <span
+                                class="MuiBadge-root"
+                                onClick={() =>
+                                  (window.location.pathname = "/login")
+                                }
+                              >
+                                <i
+                                  style={{ fontSize: "20px" }}
+                                  class={`fa fa-user  ${classes.iconFafa}`}
+                                ></i>
+                                <span className="tooltip-slog">
+                                  {Boolean(localStorage.getItem("user_id"))
+                                    ? "Account"
+                                    : "Login"}
                                 </span>
-                              </div>
-                            )}
+                              </span>
+                            </div>
+                          )}
 
                           <div className="tooltip">
                             <Badge
@@ -488,55 +488,55 @@ class Header extends Component {
                   window.location.pathname === "/checkout" ||
                   b[1] === "paymentsuccess" ||
                   b[1] === "paymentfail" ? (
-                    ""
-                  ) : (
+                  ""
+                ) : (
+                  <Grid
+                    id="headerContainer"
+                    style={{ marginTop: "15px", width: "100%" }}
+                    className={classes.menunac}
+                    container
+                  >
                     <Grid
-                      id="headerContainer"
-                      style={{ marginTop: "15px", width: "100%" }}
-                      className={classes.menunac}
-                      container
+                      item
+                      style={{ height: "40px", padding: "0px 30px" }}
+                      xs={11}
+                      xl={11}
+                      className={`header-navbar-list1 ${classes.headerNavbarList}`}
                     >
-                      <Grid
-                        item
-                        style={{ height: "40px", padding: "0px 30px" }}
-                        xs={11}
-                        xl={11}
-                        className={`header-navbar-list1 ${classes.headerNavbarList}`}
-                      >
-                        {/* <div> */}
-                        {menuListHeader.map((listName) => {
-                          let urlsmall = listName.title.toLowerCase();
-                          return (
-                            <a
-                              href={listName.url}
-                              onMouseOver={(event) => {
-                                this.setState({
-                                  Menuopen: true,
-                                  submenuOpen: true,
-                                  subTitleData: null,
-                                  targetopen: event.currentTarget,
-                                  listHoverItem: listName.title,
-                                  // .replace(
-                                  //   / +/g,
-                                  //   "ss"
-                                  // ),
-                                });
-                              }}
-                              className={
-                                //  window.location.pathname === listName.url
-                                this.Menuopen === true ||
-                                  this.submenuOpen === true
-                                  ? classes.seletectedMenu
-                                  : classes.menuListCursor
-                              }
-                            >
-                              {listName.title}
-                            </a>
-                          );
-                        })}
-                        {/* </div> */}
+                      {/* <div> */}
+                      {menuListHeader.map((listName) => {
+                        let urlsmall = listName.title.toLowerCase();
+                        return (
+                          <a
+                            href={listName.url}
+                            onMouseOver={(event) => {
+                              this.setState({
+                                Menuopen: true,
+                                submenuOpen: true,
+                                subTitleData: null,
+                                targetopen: event.currentTarget,
+                                listHoverItem: listName.title,
+                                // .replace(
+                                //   / +/g,
+                                //   "ss"
+                                // ),
+                              });
+                            }}
+                            className={
+                              //  window.location.pathname === listName.url
+                              this.Menuopen === true ||
+                                this.submenuOpen === true
+                                ? classes.seletectedMenu
+                                : classes.menuListCursor
+                            }
+                          >
+                            {listName.title}
+                          </a>
+                        );
+                      })}
+                      {/* </div> */}
 
-                        {/* {this.state.Menuopen &&
+                      {/* {this.state.Menuopen &&
         menuLists[this.state.listHoverItem] ? (
           <HeaderHoverMenuItem
             tabdata={this.props.data}
@@ -560,82 +560,82 @@ class Header extends Component {
           ""
         )} */}
 
-                        {/* <div style={{ flexGrow: 1 }}></div> */}
-                      </Grid>
-                      <Grid
-                        xs={1}
-                        xl={1}
-                        style={{ display: "flex" }}
-                        className={classes.menustylori}
-                      >
-                        <div style={{ flexGrow: 1 }}></div>
-                        <div
-                          className={classes.styloriEditing}
-                        // onMouseLeave={(event) => {
-                        //   this.setState({
-                        //     Menuopen: false,
-                        //     submenuOpen: false,
-                        //     subTitleData: null,
-                        //     targetopen: false,
-                        //     listHoverItem: "",
-                        //     // .replace(
-                        //     //   / +/g,
-                        //     //   "ss"
-                        //     // ),
-                        //   });
-                        // }}
-                        >
-                          <a
-                            href="https://www.stylori.com/"
-                            style={{
-                              textDecoration: "none",
-                              color: "#fff",
-                              padding: "8px 7px 0 7px",
-                            }}
-                            onMouseOver={(event) => {
-                              this.setState({
-                                Menuopen: true,
-                                submenuOpen: true,
-                                subTitleData: null,
-                                targetopen: event.currentTarget,
-                                listHoverItem: "STYLORI",
-                                // .replace(
-                                //   / +/g,
-                                //   "ss"
-                                // ),
-                              });
-                            }}
-                          >
-                            <img
-                              src={StyloriSLogo}
-                              width="30px"
-                              height="30px"
-                              style={{ padding: "5px 15px 0px 15px" }}
-                            ></img>
-                          </a>
-                        </div>
-                      </Grid>
+                      {/* <div style={{ flexGrow: 1 }}></div> */}
                     </Grid>
-                  )}
+                    <Grid
+                      xs={1}
+                      xl={1}
+                      style={{ display: "flex" }}
+                      className={classes.menustylori}
+                    >
+                      <div style={{ flexGrow: 1 }}></div>
+                      <div
+                        className={classes.styloriEditing}
+                      // onMouseLeave={(event) => {
+                      //   this.setState({
+                      //     Menuopen: false,
+                      //     submenuOpen: false,
+                      //     subTitleData: null,
+                      //     targetopen: false,
+                      //     listHoverItem: "",
+                      //     // .replace(
+                      //     //   / +/g,
+                      //     //   "ss"
+                      //     // ),
+                      //   });
+                      // }}
+                      >
+                        <a
+                          href="https://www.stylori.com/"
+                          style={{
+                            textDecoration: "none",
+                            color: "#fff",
+                            padding: "8px 7px 0 7px",
+                          }}
+                          onMouseOver={(event) => {
+                            this.setState({
+                              Menuopen: true,
+                              submenuOpen: true,
+                              subTitleData: null,
+                              targetopen: event.currentTarget,
+                              listHoverItem: "STYLORI",
+                              // .replace(
+                              //   / +/g,
+                              //   "ss"
+                              // ),
+                            });
+                          }}
+                        >
+                          <img
+                            src={StyloriSLogo}
+                            width="30px"
+                            height="30px"
+                            style={{ padding: "5px 15px 0px 15px" }}
+                          ></img>
+                        </a>
+                      </div>
+                    </Grid>
+                  </Grid>
+                )}
                 {/* <Grid container id="headerContainerTop"></Grid> */}
                 {["JEWELLERY", "PURCHASEPLANS"].indexOf(
                   this.state.listHoverItem
                 ) === -1 && this.state.Menuopen ? (
-                    <HeaderHoversubMenu
-                      opened={this.state.Menuopen}
-                      scroll={this.state.scroll}
-                      // onMouseOver={(event) => {
-                      //   this.setState({ submenuOpen: true });
-                      // }}
-                      listHoverItem={menuLists[this.state.listHoverItem]}
-                      listitem={this.state.listHoverItem}
-                      data={this.state.subTitleData}
-                      subMenuTarget={this.subMenuTarget}
-                      targetopened={this.state.targetopen}
-                    />
-                  ) : (
-                    ""
-                  )}
+                  <HeaderHoversubMenu
+                    opened={this.state.Menuopen}
+                    scroll={this.state.scroll}
+                    // onMouseOver={(event) => {
+                    //   this.setState({ submenuOpen: true });
+                    // }}
+                    listHoverItem={menuLists[this.state.listHoverItem]}
+                    listitem={this.state.listHoverItem}
+                    data={this.state.subTitleData}
+                    subMenuTarget={this.subMenuTarget}
+                    targetopened={this.state.targetopen}
+                  />
+                ) : (
+                  ""
+                )}
               </div>
             </AppBar>
           </div>
@@ -683,7 +683,7 @@ class Header extends Component {
                         <img
                           className={`imgsilver`}
                           src={styloriLogo}
-                          style={{ width: "65%", height: "auto" }}
+                          style={{ width: "70%", height: "auto" }}
                           onLoad={() => this.setState({ load: true })}
                           onLoadedData={() => this.setState({ load: false })}
                           alt=""
@@ -777,21 +777,21 @@ class Header extends Component {
                                     ></i>
                                   </span>
                                 ) : (
-                                    <span
-                                      onClick={() =>
-                                        (window.location.pathname = "/login")
-                                      }
-                                    >
-                                      <i
-                                        class={`fa fa-user  ${classes.iconFafa}`}
-                                        style={{
-                                          display: "flex",
-                                          alignItems: "flex-end",
-                                          justifyContent: "center",
-                                        }}
-                                      ></i>
-                                    </span>
-                                  )}
+                                  <span
+                                    onClick={() =>
+                                      (window.location.pathname = "/login")
+                                    }
+                                  >
+                                    <i
+                                      class={`fa fa-user  ${classes.iconFafa}`}
+                                      style={{
+                                        display: "flex",
+                                        alignItems: "flex-end",
+                                        justifyContent: "center",
+                                      }}
+                                    ></i>
+                                  </span>
+                                )}
                                 <Badge
                                   badgeContent={
                                     this.props.wishlist &&
@@ -912,11 +912,11 @@ class Header extends Component {
                               row.name === selected ? (
                                 <i class="fa fa-caret-up drawer-arrow"></i>
                               ) : (
-                                  <i class="fa fa-caret-down drawer-arrow"></i>
-                                )
+                                <i class="fa fa-caret-down drawer-arrow"></i>
+                              )
                             ) : (
-                                ""
-                              )}
+                              ""
+                            )}
                           </div>
                         </ListItem>
                         <div style={{ padding: "3px" }}>
@@ -1104,8 +1104,8 @@ class Header extends Component {
                                               {selected1 === val.name ? (
                                                 <i class="fa fa-chevron-up drawer-arrow-submenu2"></i>
                                               ) : (
-                                                  <i class="fa fa-chevron-down drawer-arrow-submenu2"></i>
-                                                )}
+                                                <i class="fa fa-chevron-down drawer-arrow-submenu2"></i>
+                                              )}
                                             </div>
                                             <div
                                               style={{
@@ -1275,63 +1275,63 @@ class Header extends Component {
                       </ListItem>
                     </>
                   ) : (
-                      <>
-                        <ListItem button className="drawer-list12">
-                          <ListItemText
-                            onClick={() =>
-                              (window.location.href = `/account${"-profile"}`)
-                            }
-                          >
-                            <Typography className="list-items1">
-                              VIEW PROFILE
+                    <>
+                      <ListItem button className="drawer-list12">
+                        <ListItemText
+                          onClick={() =>
+                            (window.location.href = `/account${"-profile"}`)
+                          }
+                        >
+                          <Typography className="list-items1">
+                            VIEW PROFILE
                           </Typography>
-                          </ListItemText>
-                        </ListItem>
-                        <ListItem button className="drawer-list12">
-                          <ListItemText
-                            onClick={() =>
-                              (window.location.href = `/account${"-wishlist"}`)
-                            }
-                          >
-                            <Typography className="list-items1">
-                              MY WHISLIST
+                        </ListItemText>
+                      </ListItem>
+                      <ListItem button className="drawer-list12">
+                        <ListItemText
+                          onClick={() =>
+                            (window.location.href = `/account${"-wishlist"}`)
+                          }
+                        >
+                          <Typography className="list-items1">
+                            MY WHISLIST
                           </Typography>
-                          </ListItemText>
-                        </ListItem>
-                        <ListItem button className="drawer-list12">
-                          <ListItemText
-                            onClick={() =>
-                              (window.location.href = `/account${"-allorders"}`)
-                            }
-                          >
-                            <Typography className="list-items1">
-                              ALL ORDERS
+                        </ListItemText>
+                      </ListItem>
+                      <ListItem button className="drawer-list12">
+                        <ListItemText
+                          onClick={() =>
+                            (window.location.href = `/account${"-allorders"}`)
+                          }
+                        >
+                          <Typography className="list-items1">
+                            ALL ORDERS
                           </Typography>
-                          </ListItemText>
-                        </ListItem>
-                        <ListItem button className="drawer-list12">
-                          <ListItemText>
-                            <Typography className="list-items1">
-                              CONTACT US
+                        </ListItemText>
+                      </ListItem>
+                      <ListItem button className="drawer-list12">
+                        <ListItemText>
+                          <Typography className="list-items1">
+                            CONTACT US
                           </Typography>
-                          </ListItemText>
-                        </ListItem>
-                        <ListItem button className="drawer-list12">
-                          <ListItemText
-                            onClick={() => {
-                              localStorage.clear();
-                              sessionStorage.clear();
-                              window.location.reload();
-                              window.location.pathname = "/login";
-                            }}
-                          >
-                            <Typography className="list-items1">
-                              LOGOUT
+                        </ListItemText>
+                      </ListItem>
+                      <ListItem button className="drawer-list12">
+                        <ListItemText
+                          onClick={() => {
+                            localStorage.clear();
+                            sessionStorage.clear();
+                            window.location.reload();
+                            window.location.pathname = "/login";
+                          }}
+                        >
+                          <Typography className="list-items1">
+                            LOGOUT
                           </Typography>
-                          </ListItemText>
-                        </ListItem>
-                      </>
-                    )}
+                        </ListItemText>
+                      </ListItem>
+                    </>
+                  )}
                 </List>
               </div>
             </ClickAwayListener>

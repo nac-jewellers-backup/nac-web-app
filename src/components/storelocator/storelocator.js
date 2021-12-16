@@ -46,8 +46,11 @@ export default function Storelocator(props) {
                                             &nbsp;
                                         </Box>
                                         <Box>
-                                            <IconButton size="small" style={{ backgroundColor: "#2F348B", color: "white" }}><FiCornerUpRight /></IconButton>
+                                            <a href={value.location} target="_blank">
+                                                <IconButton size="small"
 
+                                                    style={{ backgroundColor: "#2F348B", color: "white" }}><FiCornerUpRight /></IconButton>
+                                            </a>
                                         </Box>
                                         <Box>
                                             <span >&nbsp;&nbsp;Get directions</span>

@@ -36,7 +36,7 @@ const styles = (theme) => ({
       fontSize: "13px ",
     },
     [theme.breakpoints.up("lg")]: {
-      fontSize: "18px",
+      fontSize: "16px",
     },
   },
   cartheader: {
@@ -46,7 +46,7 @@ const styles = (theme) => ({
       fontSize: "14px",
     },
     [theme.breakpoints.up("lg")]: {
-      fontSize: "18px",
+      fontSize: "17px",
     },
   },
   cardpad: {
@@ -63,7 +63,7 @@ const styles = (theme) => ({
     color: theme.palette.gold.main,
     textAlign: "center",
     fontStyle: "italic",
-    fontSize: "2.1rem",
+    fontSize: "1.9rem",
     [theme.breakpoints.down("xs")]: {
       fontSize: "1.8rem",
     },
@@ -184,7 +184,7 @@ const styles = (theme) => ({
       fontSize: "12px !important",
     },
     [theme.breakpoints.up("lg")]: {
-      fontSize: "18px !important",
+      fontSize: "16px !important",
     },
     color: "gray",
     float: "right !important",
