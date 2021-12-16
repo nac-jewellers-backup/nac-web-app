@@ -54,7 +54,7 @@ export const styles = (theme) => ({
     "& .MuiNativeSelect-select:not([multiple])": {
       "& option": {
         color: "white",
-        backgroundColor:theme.palette.gold.main,
+        backgroundColor: theme.palette.gold.main,
       },
     },
     "& .MuiInputBase-input": {
@@ -178,7 +178,7 @@ export const styles = (theme) => ({
   menuListCursor: {
     cursor: "pointer",
     fontFamily: "notoSerif-regular",
-    fontWeight: 600,
+    fontWeight: 500,
     color: "white",
     fontSize: "12px",
     // borderBottom: "1px solid #fff",

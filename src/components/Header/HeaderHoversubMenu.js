@@ -4,7 +4,7 @@ import {
   ListItem,
   ListItemText,
   Popper,
-  Typography,
+  Typography
 } from "@material-ui/core";
 import PropTypes from "prop-types";
 import React, { useEffect } from "react";
