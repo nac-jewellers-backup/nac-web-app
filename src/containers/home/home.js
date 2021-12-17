@@ -410,7 +410,7 @@ class HomeComp extends React.Component {
     const { classes } = this.props;
     const dadgetdata = [
       {
-        img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/badgeimagesHomepage/trustedsince.png",
+        img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/bridalcollection/Group+1117.png",
 
       },
       {
