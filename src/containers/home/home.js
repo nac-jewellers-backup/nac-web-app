@@ -719,13 +719,15 @@ class HomeComp extends React.Component {
                             class="subslider-carousel"
                             dataCarousel={dataCarouselcollectionsSm}
                           >
-                            <div className={classes.cardContainer}>
-                              {this.state.newarrival.map((val) => {
-                                return (
-                                  <ImgMediaCard data={val} cardSize="auto" />
-                                );
-                              })}
-                            </div>
+                            {this.state.newarrival.map((val) => {
+                              return (
+                                <ImgMediaCard
+                                  data={val}
+                                  cardSize="auto"
+                                  hoverText={true}
+                                />
+                              );
+                            })}
                           </Slideshow>
                         </Container>
                       </Hidden>

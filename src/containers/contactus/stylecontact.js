@@ -6,6 +6,10 @@ const styles = makeStyles(theme => ({
       paddingRight: "0px",
     },
   },
+  book: {
+    fontSize: "16px",
+    color: "gray",
+  },
   grid1:
   {
 

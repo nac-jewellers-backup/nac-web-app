@@ -683,7 +683,7 @@ class Header extends Component {
                         <img
                           className={`imgsilver`}
                           src={styloriLogo}
-                          style={{ width: "70%", height: "auto" }}
+                          style={{ width: "70%", height: "auto", float: "left" }}
                           onLoad={() => this.setState({ load: true })}
                           onLoadedData={() => this.setState({ load: false })}
                           alt=""

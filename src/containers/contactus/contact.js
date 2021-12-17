@@ -1,4 +1,4 @@
-import { Avatar, Box, Container, Grid, Hidden, TextField, Typography } from "@material-ui/core";
+import { Avatar, Box, Container, Dialog, Grid, Hidden, TextField, Typography } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 import CallIcon from "@material-ui/icons/Call";
 import ChatIcon from "@material-ui/icons/Chat";
@@ -6,6 +6,7 @@ import styles from "containers/contactus/stylecontact";
 import React from "react";
 import ArrowLeft from "../../assets/arrowleft";
 import ArrowRight from "../../assets/arrowright";
+import BookAppoinment from "../../components/bookappoinment/index";
 import {
   contact
 } from "../../mappers/dummydata/savingNac";
@@ -19,9 +20,41 @@ import {
 //   }
 // }));
 
+const InitialState = {
+  month: "",
+  day: "",
+  year: "",
+  name: "",
+  mail: "",
+  mobile: "",
+  location: "",
+  error: {
+    month: "",
+    day: " ",
+    year: " ",
+    name: " ",
+    mail: " ",
+    mobile: " ",
+    location: " "
+
+
+  }
+}
 export default function Contact(props) {
   const classes = styles();
 
+
+  const [open, setOpen] = React.useState(false);
+
+
+  const setAppoinments = () => {
+
+    setOpen(!open);
+
+  }
+  const closes = () => {
+    setOpen(false);
+  }
   return (
     <>
       <Hidden smDown>
@@ -40,11 +73,18 @@ export default function Contact(props) {
               xl={12}
             >
               <Grid item xs={12} sm={12} md={12} xl={12}>
+                <Dialog maxWidth="md" fullWidth={true} aria-labelledby="simple-dialog-title" onClose={setAppoinments} open={open}>
+                  <BookAppoinment close={closes} />
+                </Dialog>
+
+              </Grid>
+              <Grid item xs={12} sm={12} md={12} xl={12}>
                 <div className={classes.head}><ArrowLeft />&nbsp;{contact.head}&nbsp; <ArrowRight /></div>
               </Grid>
               <Grid item xs={12} sm={12} md={12} xl={12} className={classes.content}>
                 <Grid container>
-                  <Grid item xs={12}>
+                  <Grid item xs={9}>
+
 
                     <Box display="flex" alignItems="center">
                       <Box >
@@ -84,6 +124,26 @@ export default function Contact(props) {
                         <Typography variant="body1" className={classes.name}>
                           &nbsp;&nbsp;&nbsp;+ 91 000 000000
                         </Typography>
+                      </Box>
+                    </Box>
+
+
+                  </Grid>
+                  <Grid item xs={3} >
+                    <Box display="flex" alignItems="center">
+                      <Box>
+                        <Typography className={classes.book}>
+                          Lorem
+                        </Typography>
+                        <Button
+                          variant="contained"
+                          size="large"
+                          fullWidth={true}
+                          className={classes.btn}
+                          onClick={setAppoinments}
+                        >
+                          BOOK APPOINTMENT
+                        </Button>
                       </Box>
                     </Box>
 
@@ -381,6 +441,26 @@ export default function Contact(props) {
           </Grid>
           <Grid item xs={12} sm={12} md={12} xl={12}>
             <br />
+            <Grid item xs={12} md={12} >
+              <Box display="flex" alignItems="center">
+                <Box>
+                  <Typography className={classes.book}>
+                    Lorem
+                  </Typography>
+                  <Button
+                    variant="contained"
+                    size="large"
+                    fullWidth={true}
+                    className={classes.btn}
+                    onClick={setAppoinments}
+                  >
+                    BOOK APPOINTMENT
+                  </Button>
+                </Box>
+              </Box>
+
+
+            </Grid>
           </Grid>
           <Grid item xs={12} sm={12} md={12} xl={12}  >
             <Grid container className={classes.content2sm}>
@@ -478,11 +558,15 @@ export default function Contact(props) {
               </Grid>
 
             </Grid>
+
           </Grid>
+
         </Grid>
 
 
-
+        <Dialog maxWidth="md" fullWidth={true} aria-labelledby="simple-dialog-title" onClose={setAppoinments} open={open}>
+          <BookAppoinment close={closes} />
+        </Dialog>
 
 
       </Hidden>
