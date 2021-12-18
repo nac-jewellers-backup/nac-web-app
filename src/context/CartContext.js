@@ -7,7 +7,7 @@ import {
   CART,
   FetchCartId,
   FetchSku,
-  ORDERSUCCESSFUL
+  ORDERSUCCESSFUL,
 } from "queries/cart";
 import React, { useEffect } from "react";
 import { withRouter } from "react-router-dom";
@@ -43,14 +43,14 @@ const initialCtx = {
     NewUser: {},
     loadingWishlist: false,
   },
-  setCartFilters: (filterData) => { },
-  setallorderdata: () => { },
-  setwishlist_count: () => { },
-  setwishlistdata: () => { },
-  setNoproducts: () => { },
-  setNewUser: () => { },
-  setLoading: () => { },
-  setLoadingWishlist: () => { },
+  setCartFilters: (filterData) => {},
+  setallorderdata: () => {},
+  setwishlist_count: () => {},
+  setwishlistdata: () => {},
+  setNoproducts: () => {},
+  setNewUser: () => {},
+  setLoading: () => {},
+  setLoadingWishlist: () => {},
   // setCartId:() =>{}
 };
 export const CartContext = React.createContext(initialCtx);
@@ -84,9 +84,7 @@ const Provider = (props) => {
         },
 
         body: JSON.stringify(user_ids_Obj),
-      })
-        .then((res) => res.json())
-        
+      }).then((res) => res.json());
     };
     user_ids.length > 0 && updateCart(user_ids_Obj);
   }, []);
@@ -102,23 +100,23 @@ const Provider = (props) => {
     error: crterror,
     data: crtdata,
     makeFetch: addtocart,
-  } = useNetworkRequest("/addtocart", { user_id, products }, false);
+  } = useNetworkRequest("/addtocart", { user_id, products }, false);  
   const userIds = localStorage.getItem("user_id")
     ? localStorage.getItem("user_id")
     : "";
   var cartdetails =
     JSON.parse(localStorage.getItem("cartDetails")) &&
-      JSON.parse(localStorage.getItem("cartDetails")).products.length > 0 &&
-      Object.keys(
-        JSON.parse(localStorage.getItem("cartDetails")).products.filter((val) => {
-          if (Object.keys(val).length > 0) return val;
-        })
-      ).length > 0
+    JSON.parse(localStorage.getItem("cartDetails")).products.length > 0 &&
+    Object.keys(
+      JSON.parse(localStorage.getItem("cartDetails")).products.filter((val) => {
+        if (Object.keys(val).length > 0) return val;
+      })
+    ).length > 0
       ? JSON.parse(localStorage.getItem("cartDetails")).products.filter(
-        (val) => {
-          if (Object.keys(val).length > 0) return val;
-        }
-      )[0].sku_id
+          (val) => {
+            if (Object.keys(val).length > 0) return val;
+          }
+        )[0].sku_id
       : {};
   // JSON.parse(localStorage.getItem("cartDetails")).products[0].sku_id : []
   const guestlogId = cartFilters.user_id ? cartFilters.user_id : "";
@@ -127,20 +125,20 @@ const Provider = (props) => {
     error: allordererror,
     data: allorder,
     makeRequest: allordermakeRequest,
-  } = useGraphql(ALLORDERS, () => { }, {}, false);
+  } = useGraphql(ALLORDERS, () => {}, {}, false);
   const {
     loading: allorderloadingsuccesful,
     error: allordererrorsuccesful,
     data: allordersuccesful,
     makeRequest: allordermakeRequestSuccessful,
-  } = useGraphql(ORDERSUCCESSFUL, () => { }, {}, false);
+  } = useGraphql(ORDERSUCCESSFUL, () => {}, {}, false);
   const {
     loading: wishlistloading,
     error: wishlisterror,
     data: wishlistDATA,
     makeRequest: wishlistmakeRequest,
-  } = useGraphql(ALLUSERWISHLISTS, () => { }, {}, false);
-  const { loading, error, data, makeRequest } = useGraphql(CART, () => { }, {});
+  } = useGraphql(ALLUSERWISHLISTS, () => {}, {}, false);
+  const { loading, error, data, makeRequest } = useGraphql(CART, () => {}, {});
   // const prices = cartFilters.price ? cartFilters.price : ''
   const discounted_price = cartFilters.discounted_price
     ? cartFilters.discounted_price
@@ -243,9 +241,9 @@ const Provider = (props) => {
   useEffect(() => {
     const orderall = allorder
       ? allorder &&
-      allorder.data &&
-      allorder.data.allOrders &&
-      allorder.data.allOrders.nodes
+        allorder.data &&
+        allorder.data.allOrders &&
+        allorder.data.allOrders.nodes
       : "";
     if (orderall && orderall.length > 0) {
       objallorder["allorderdata"] = allorder.data.allOrders;
@@ -268,9 +266,9 @@ const Provider = (props) => {
     var obj_aishlist_count = {};
     const wishlistdatas = allorder
       ? wishlistDATA &&
-      wishlistDATA.data &&
-      wishlistDATA.data.allUserWhislists &&
-      wishlistDATA.data.allUserWhislists.nodes
+        wishlistDATA.data &&
+        wishlistDATA.data.allUserWhislists &&
+        wishlistDATA.data.allUserWhislists.nodes
       : "";
     if (
       wishlistdatas &&
@@ -430,12 +428,12 @@ const Provider = (props) => {
   // }
   skus =
     localStorage.getItem("cartDetails") &&
-      JSON.parse(localStorage.getItem("cartDetails")).products.length > 0
+    JSON.parse(localStorage.getItem("cartDetails")).products.length > 0
       ? JSON.parse(localStorage.getItem("cartDetails"))
-        .products.filter((val) => {
-          if (Object.keys(val).length > 0) return val;
-        })
-        .map((val) => val.sku_id)
+          .products.filter((val) => {
+            if (Object.keys(val).length > 0) return val;
+          })
+          .map((val) => val.sku_id)
       : "";
   // JSON.parse(localStorage.getItem("cartDetails")).products.map(val => val.sku_id) : ''
   const _qty = () => {
@@ -500,10 +498,10 @@ const Provider = (props) => {
         .then(async (val) => {
           let cartItems = Boolean(
             val.data.allShoppingCarts.nodes?.length >
-            0?.[0]?.shoppingCartItemsByShoppingCartId?.nodes
+              0?.[0]?.shoppingCartItemsByShoppingCartId?.nodes
           )
             ? val.data.allShoppingCarts.nodes[0]
-              .shoppingCartItemsByShoppingCartId.nodes
+                .shoppingCartItemsByShoppingCartId.nodes
             : [];
 
           let localStorageCartDetails = JSON.parse(

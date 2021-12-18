@@ -45,7 +45,7 @@ const ProductlistComponent = (props) => {
   const [emailedit, Setemailedit] = React.useState([]);
   const [show, setShow] = React.useState(true);
   const { expanded1, expanded2, expanded3 } = val;
-  const cardIds = JSON.parse(localStorage.getItem("cart_id")).cart_id;
+  const cardIds = JSON.parse(localStorage.getItem("cart_id"))?.cart_id;
   
   useEffect(() => { 
     fetch(`${API_URL}/graphql`, {
@@ -86,11 +86,11 @@ const ProductlistComponent = (props) => {
   const display = () => {
     setShow(!show)
   }
-  var cardId = {
-    cardId:
-      localStorage.getItem("cart_id") &&
-      JSON.parse(localStorage.getItem("cart_id")).cart_id,
-  };
+  // var cardId = {
+  //   cardId:
+  //     localStorage.getItem("cart_id") &&
+  //     JSON.parse(localStorage.getItem("cart_id"))?.cart_id,
+  // };
   
   const editmsgform = () => {
     fetch(`${API_URL}/graphql`, {
