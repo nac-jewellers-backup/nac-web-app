@@ -450,40 +450,39 @@ class ProductDetail extends Component {
                       </Grid>
                     )}
 
-                  {this.props.data[0].dimondweight && (
-                    <Grid container item xs={4} style={{ paddingTop: "8px" }}>
-                      <Grid container item xs={2}>
-                        <Avatar alt="NAC">
-                          <img
-                            src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/Group+1022.svg"
-                            alt="Diamond Weight"
-                            height="100%"
-                            width="100%"
-                          />
-                        </Avatar>
+                  <Grid container item xs={4} style={{ paddingTop: "8px" }}>
+                    <Grid container item xs={2}>
+                      <Avatar alt="NAC">
+                        <img
+                          src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/Group+1022.svg"
+                          alt="Diamond Weight"
+                          height="100%"
+                          width="100%"
+                        />
+                      </Avatar>
+                    </Grid>
+                    <Grid
+                      container
+                      item
+                      xs={10}
+                      style={{
+                        fontSize: 12,
+                        color: "gray",
+                        paddingLeft: 15,
+                        margin: "auto",
+                      }}
+                    >
+                      <Grid itex xs={12}>
+                        <span className={classes.productmaterial}>
+                          Diamond Weight
+                        </span>
                       </Grid>
-                      <Grid
-                        container
-                        item
-                        xs={10}
-                        style={{
-                          fontSize: 12,
-                          color: "gray",
-                          paddingLeft: 15,
-                          margin: "auto",
-                        }}
-                      >
-                        <Grid itex xs={12}>
-                          <span className={classes.productmaterial}>
-                            Diamond Weight
-                          </span>
-                        </Grid>
-                        <Grid itex xs={12}>
-                          {this.props.data[0].dimondweight}gm
+                      <Grid itex xs={12}>
+                        {this.props.data[0].dimondweight}gm
 
-                        </Grid>
                       </Grid>
                     </Grid>
+                  </Grid>
                   )}
                 </Grid>
                 <Grid container>
