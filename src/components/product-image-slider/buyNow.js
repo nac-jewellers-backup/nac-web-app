@@ -648,8 +648,7 @@ class Component extends React.Component {
                         >
                           Metal Weight
                           <br />
-                          {this.props.data[0].productsDetails[0].namedetail[2]
-                            .details ?? ""}Km
+                          {this.props.data[0].Dimondweight}gm
                         </p>
                       </Box>
                     )}

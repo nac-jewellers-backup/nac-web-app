@@ -51,7 +51,7 @@ export const routes = {
   Blog: "/blog",
   Solitaires: "/solitaires",
   CollectionPage: "/collectionPage",
-  CollectionFullPage: "/CollectionFullPage",
+  CollectionFullPage: "/collection",
   AkshyaTritiya: "/akshyaTritiya",
   BridalCollection: "/bridalCollection"
 };

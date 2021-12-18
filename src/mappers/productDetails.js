@@ -378,6 +378,7 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
 
   const _format = mapperdata.map((PD) => {
     let _d;
+
     try {
       _d = {
         message:
@@ -401,6 +402,7 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
         skuId: PD && PD === undefined ? "" : PD.generatedSku,
         offerPrice: PD && PD.discountPrice ? PD.discountPrice : "",
         price: PD && PD.markupPrice ? PD.markupPrice : "",
+        dimondweight: PD.productListByProductId.productDiamondsByProductSku.nodes.length > 0 ? PD.productListByProductId.productDiamondsByProductSku.nodes[0].stoneWeight : null,
         save: " ",
         offerDiscount:
           PD && PD.discount ? `${Math.abs(PD.discount)}% OFF` : null,

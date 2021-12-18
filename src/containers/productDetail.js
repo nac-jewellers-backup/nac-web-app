@@ -201,7 +201,8 @@ class ProductDetail extends Component {
       nextArrow: <ArrowRight />,
     };
 
-
+    console.log(this.props.data[0].dimondweight)
+    debugger;
 
     return (
       <div style={{ overflow: "hidden" }}>
@@ -448,71 +449,42 @@ class ProductDetail extends Component {
                         </Grid>
                       </Grid>
                     )}
-                  {this.props &&
-                    this.props.data &&
-                    this.props.data.length > 0 &&
-                    this.props.data[0] &&
-                    this.props.data[0].productsDetails.length > 0 &&
-                    this.props.data[0].productsDetails[1] &&
-                    this.props.data[0].productsDetails[1].namedetail.length >
-                    0 &&
-                    this.props.data[0].productsDetails[1].namedetail[3] &&
-                    this.props.data[0].productsDetails[1].namedetail[3]
-                      .details && (
-                      <Grid container item xs={4} style={{ paddingTop: "8px" }}>
-                        <Grid container item xs={2}>
-                          <Avatar alt="NAC">
-                            <img
-                              src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/Group+1022.svg"
-                              alt="Diamond Weight"
-                              height="100%"
-                              width="100%"
-                            />
-                          </Avatar>
-                        </Grid>
-                        <Grid
-                          container
-                          item
-                          xs={10}
-                          style={{
-                            fontSize: 12,
-                            color: "gray",
-                            paddingLeft: 15,
-                            margin: "auto",
-                          }}
-                        >
-                          <Grid itex xs={12}>
-                            <span className={classes.productmaterial}>
-                              Diamond Price
-                            </span>
-                          </Grid>
-                          <Grid itex xs={12}>
-                            {this.props &&
-                              this.props.data &&
-                              this.props.data.length > 0 &&
-                              this.props.data[0] &&
-                              this.props.data[0].productsDetails.length > 0 &&
-                              this.props.data[0].productsDetails[1] &&
-                              this.props.data[0].productsDetails[1].namedetail
-                                .length > 0 &&
-                              this.props.data[0].productsDetails[1]
-                                .namedetail[3] &&
-                              this.props.data[0].productsDetails[1].namedetail[3]
-                                .details ? (
-                              <span className={classes.productmaterial}>
-                                {
-                                  this.props.data[0].productsDetails[1]
-                                    .namedetail[3].details[0]
-                                }
-                              </span>
-                            ) : (
-                              ""
-                            )}
 
-                          </Grid>
+                  {this.props.data[0].dimondweight && (
+                    <Grid container item xs={4} style={{ paddingTop: "8px" }}>
+                      <Grid container item xs={2}>
+                        <Avatar alt="NAC">
+                          <img
+                            src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/Group+1022.svg"
+                            alt="Diamond Weight"
+                            height="100%"
+                            width="100%"
+                          />
+                        </Avatar>
+                      </Grid>
+                      <Grid
+                        container
+                        item
+                        xs={10}
+                        style={{
+                          fontSize: 12,
+                          color: "gray",
+                          paddingLeft: 15,
+                          margin: "auto",
+                        }}
+                      >
+                        <Grid itex xs={12}>
+                          <span className={classes.productmaterial}>
+                            Diamond Weight
+                          </span>
+                        </Grid>
+                        <Grid itex xs={12}>
+                          {this.props.data[0].dimondweight}gm
+
                         </Grid>
                       </Grid>
-                    )}
+                    </Grid>
+                  )}
                 </Grid>
                 <Grid container>
                   <Grid item xs={12}>
@@ -523,7 +495,7 @@ class ProductDetail extends Component {
                           style={{
                             color: "gray",
                             paddingBottom: "8px",
-                            borderBottom: "1px solid gray",
+                            borderBotom: "1px solid gray",
                           }}
                         >
                           CERTIFICATES
