@@ -6,7 +6,7 @@ import {
   Popper,
   Radio,
   RadioGroup,
-  Typography,
+  Typography
 } from "@material-ui/core";
 import Check from "@material-ui/icons/Check";
 import PropTypes from "prop-types";
@@ -494,9 +494,8 @@ function HeaderHoverMenuItem(props) {
           id={props.id}
           anchorEl={target}
           transition
-          className={`${classes.mouseOverPopover} ${classHover}  ${
-            mapper.length > 6 ? `scroll` : ""
-          } `}
+          className={`${classes.mouseOverPopover} ${classHover}  ${mapper.length > 6 ? `scroll` : ""
+            } `}
           modifiers={{
             flip: {
               enabled: false,
@@ -520,13 +519,13 @@ function HeaderHoverMenuItem(props) {
                   onMouseOver={
                     props.submenuDetails
                       ? (event) => {
-                          props.submenuDetails(
-                            menuList.imgContainer,
-                            event.currentTarget,
-                            menuList
-                          );
-                        }
-                      : () => {}
+                        props.submenuDetails(
+                          menuList.imgContainer,
+                          event.currentTarget,
+                          menuList
+                        );
+                      }
+                      : () => { }
                   }
                   className={classes.listedItems}
                   component="li"
@@ -553,20 +552,18 @@ function HeaderHoverMenuItem(props) {
                     onClick={(e) => {
                       props.onchoosetypeprice(e, menuList);
                     }}
-                    className={`${
-                      props.state && props.state.numTwo === menuList.max
-                        ? classes.mouseOverPopoverfiltersselected
-                        : ""
-                    } ${classes.mouseOverPopoverfilterslist}`}
+                    className={`${props.state && props.state.numTwo === menuList.max
+                      ? classes.mouseOverPopoverfiltersselected
+                      : ""
+                      } ${classes.mouseOverPopoverfilterslist}`}
                   >
                     <ListItemText
                       variant
-                      className={`${
-                        props.filters
-                          ? classes.filtersListtopfilters
-                          : classes.filtersList
-                      }`}
-                      style={{ fontSize: "0.9rem" }}
+                      className={`${props.filters
+                        ? classes.filtersListtopfilters
+                        : classes.filtersList
+                        }`}
+                      style={{ fontSize: "18px" }}
                     >
                       {menuList.label ? menuList.label : menuList}
                     </ListItemText>
@@ -580,12 +577,12 @@ function HeaderHoverMenuItem(props) {
                         menuList,
                         props.checked[
                           props.filtercheck &&
-                            props.filtercheck.replace(/\s/g, "")
+                          props.filtercheck.replace(/\s/g, "")
                         ][menuList] !== undefined
                           ? !props.checked[
-                              props.filtercheck &&
-                                props.filtercheck.replace(/\s/g, "")
-                            ][menuList]
+                          props.filtercheck &&
+                          props.filtercheck.replace(/\s/g, "")
+                          ][menuList]
                           : true,
                         e,
                         props.filtercheck
@@ -598,32 +595,30 @@ function HeaderHoverMenuItem(props) {
                           : ""
                       );
                     }}
-                    className={`${
-                      props.checked[
-                        props.filtercheck &&
-                          props.filtercheck.replace(/\s/g, "")
-                      ][menuList]
-                        ? classes.mouseOverPopoverfiltersselected
-                        : ""
-                    } ${classes.mouseOverPopoverfilterslist}`}
+                    className={`${props.checked[
+                      props.filtercheck &&
+                      props.filtercheck.replace(/\s/g, "")
+                    ][menuList]
+                      ? classes.mouseOverPopoverfiltersselected
+                      : ""
+                      } ${classes.mouseOverPopoverfilterslist}`}
                   >
                     <ListItemText
                       variant
-                      className={`${
-                        props.filters
-                          ? classes.filtersListtopfilters
-                          : classes.filtersList
-                      }`}
-                      style={{ fontSize: "0.9rem", display: "inline" }}
+                      className={`${props.filters
+                        ? classes.filtersListtopfilters
+                        : classes.filtersList
+                        }`}
+                      style={{ fontSize: "18px", display: "inline" }}
                     >
                       {menuList.title
                         ? menuList.title.charAt(0).toUpperCase() +
-                          menuList.title.slice(1)
+                        menuList.title.slice(1)
                         : menuList.charAt(0).toUpperCase() + menuList.slice(1)}
                       &nbsp;&nbsp;
                       {props.checked[
                         props.filtercheck &&
-                          props.filtercheck.replace(/\s/g, "")
+                        props.filtercheck.replace(/\s/g, "")
                       ][menuList] ? (
                         <Check
                           style={{ fontSize: "17px", fontWeight: "bold" }}
@@ -652,11 +647,10 @@ function HeaderHoverMenuItem(props) {
                   >
                     <ListItemText
                       variant
-                      className={`${
-                        props.sort
-                          ? classes.filtersListtopfilters
-                          : classes.filtersList
-                      } ${classes.sortSilver}`}
+                      className={`${props.sort
+                        ? classes.filtersListtopfilters
+                        : classes.filtersList
+                        } ${classes.sortSilver}`}
                     >
                       <FormControlLabel
                         value={menuList}
@@ -683,12 +677,12 @@ function HeaderHoverMenuItem(props) {
                     onMouseOver={
                       props.submenuDetails
                         ? (event) => {
-                            props.submenuDetails(
-                              menuList.imgContainer,
-                              event.currentTarget
-                            );
-                          }
-                        : () => {}
+                          props.submenuDetails(
+                            menuList.imgContainer,
+                            event.currentTarget
+                          );
+                        }
+                        : () => { }
                     }
                     className={classes.listedItemsub}
                     component="li"

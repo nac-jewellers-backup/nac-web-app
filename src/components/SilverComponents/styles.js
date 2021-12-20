@@ -617,6 +617,7 @@ export const useStyles = makeStyles((theme) => ({
     top: "4px !important",
     backgroundColor: "white",
     color: theme.palette.secondary.main,
+    fontSize: "18px",
     "& span": {
       fontFamily: "Roboto",
       letterSpacing: "1px",
