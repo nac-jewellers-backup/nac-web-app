@@ -343,6 +343,7 @@ export const useStyles = makeStyles((theme) => ({
     zIndex: 1000,
     top: "4px !important",
     backgroundColor: "white",
+    fontSize: "12px",
     //border: `1px solid ${theme.palette.background.fade}`,
     //boxShadow: "6px 7px 6px #bebfbf !important",
     //color: theme.palette.background.fade,
@@ -416,12 +417,12 @@ export const useStyles = makeStyles((theme) => ({
   },
   listedItems: {
     padding: "0px",
-    fontSize: "0.7rem !important",
+    fontSize: "12rem !important",
     cursor: "pointer",
   },
   listedItemsub: {
     padding: "0px",
-    fontSize: "0.7rem !important",
+    fontSize: "12rem !important",
     "&:hover": {
       backgroundColor: "#33346d",
     },
@@ -486,7 +487,7 @@ export const useStyles = makeStyles((theme) => ({
   },
   listedItemsvalue2: {
     padding: "2px 16px 2px 16px",
-    fontSize: "0.7rem !important",
+    fontSize: "12px !important",
     letterSpacing: 2,
     cursor: "pointer",
     "&:hover": {
@@ -506,7 +507,7 @@ export const useStyles = makeStyles((theme) => ({
       marginRight: "0px !important",
     },
   },
-  subtopic1: {
+  paperdiv: {
     padding: "10px 0px 10px 0px",
   },
   subtopic2: {
@@ -538,7 +539,7 @@ export const useStyles = makeStyles((theme) => ({
 
   listedItemsvalue2: {
     padding: "2px 16px 2px 16px",
-    fontSize: "0.7rem !important",
+    fontSize: "12rem !important",
     letterSpacing: 2,
     cursor: "pointer",
     "&:hover": {
@@ -549,6 +550,7 @@ export const useStyles = makeStyles((theme) => ({
   mouseOverPopoverfiltersselected: {},
 
   mouseOverPopoverfilterslist: {
+    fontSize: "12px !important",
     paddingTop: "0px !important",
     paddingBottom: "0px !important",
   },
@@ -587,7 +589,7 @@ export const useStyles = makeStyles((theme) => ({
   },
   listedItemsvalue: {
     padding: "2px 16px 2px 16px",
-    fontSize: "14.4px !important",
+    fontSize: "12px !important",
     color: "#6E6F72",
     cursor: "pointer",
     margin: "auto",
@@ -613,6 +615,7 @@ export const useStyles = makeStyles((theme) => ({
     radioBtnsort: {
       color: "red",
     },
+    fontSize: "12px",
     zIndex: 1000,
     top: "4px !important",
     backgroundColor: "white",

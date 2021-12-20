@@ -89,9 +89,7 @@ class ProductDetail extends Component {
     };
   }
 
-
   componentDidMount() {
-
     ReactPixel.init("1464338023867789", {}, { debug: true, autoConfig: false });
     ReactPixel.track("PageView");
     // fetch(`${API_URL}/graphql`, {
@@ -109,12 +107,13 @@ class ProductDetail extends Component {
     //     console.log(err)
     //   })
 
-    axios.post(`${API_URL}/you_may_like`, {
-      sku_id: this.props.data[0].skuId
-    })
+    axios
+      .post(`${API_URL}/you_may_like`, {
+        sku_id: this.props.data[0].skuId,
+      })
       .then((res) => {
         this.setState({ otherCategeriesdata: res.data });
-      })
+      });
   }
 
   renderUrl = () => {
@@ -129,7 +128,6 @@ class ProductDetail extends Component {
   };
 
   render() {
-
     const { classes } = this.props;
 
     var loc = this.props.location.pathname;
@@ -201,66 +199,61 @@ class ProductDetail extends Component {
       nextArrow: <ArrowRight />,
     };
 
-    console.log(this.props.data[0].dimondweight)
-    debugger;
-
     return (
       <div style={{ overflow: "hidden" }}>
-
         <div>
           <MetaTags>
-            {
-              this?.props &&
-                this.props?.data &&
-                this.props?.data[0] &&
-                this.props?.data[0].length > 0 ? (
-                <>
-                  <title>{this.props.data[0].title}</title>
-                  <meta name="description" content={this.props.data[0].dis} />
-                  <meta
-                    name="keywords"
-                    content={this.props.data[0].productsPendants[0].name}
-                  />
-                  <meta
-                    property="og:title"
-                    id="fb-title"
-                    content={this.props.data[0].title}
-                  />
-                  <meta
-                    property="og:description"
-                    content={this.props.data[0].dis}
-                  />
-                  <meta property="og:type" content="product" />
-                  <meta
-                    property="og:url"
-                    id="fb-product-url"
-                    content={window.location.href}
-                  />
-                  <meta
-                    property="og:image"
-                    id="fb_imageUrl"
-                    content={this.props.data[0].fadeImages}
-                  />
-                  <meta name="twitter:card" content="summary" />
-                  <meta name="twitter:site" content="@StyloriLove" />
-                  <meta
-                    name="twitter:title"
-                    id="twitter-title"
-                    content={this.props.data[0].title}
-                  />
-                  <meta
-                    name="twitter:description"
-                    content={this.props.data[0].dis}
-                  />
-                  <meta
-                    name="twitter:image"
-                    id="twitter_imageUrl"
-                    content={this.props.data[0].fadeImages}
-                  />
-                </>
-              ) : (
-                ""
-              )}
+            {this?.props &&
+            this.props?.data &&
+            this.props?.data[0] &&
+            this.props?.data[0].length > 0 ? (
+              <>
+                <title>{this.props.data[0].title}</title>
+                <meta name="description" content={this.props.data[0].dis} />
+                <meta
+                  name="keywords"
+                  content={this.props.data[0].productsPendants[0].name}
+                />
+                <meta
+                  property="og:title"
+                  id="fb-title"
+                  content={this.props.data[0].title}
+                />
+                <meta
+                  property="og:description"
+                  content={this.props.data[0].dis}
+                />
+                <meta property="og:type" content="product" />
+                <meta
+                  property="og:url"
+                  id="fb-product-url"
+                  content={window.location.href}
+                />
+                <meta
+                  property="og:image"
+                  id="fb_imageUrl"
+                  content={this.props.data[0].fadeImages}
+                />
+                <meta name="twitter:card" content="summary" />
+                <meta name="twitter:site" content="@StyloriLove" />
+                <meta
+                  name="twitter:title"
+                  id="twitter-title"
+                  content={this.props.data[0].title}
+                />
+                <meta
+                  name="twitter:description"
+                  content={this.props.data[0].dis}
+                />
+                <meta
+                  name="twitter:image"
+                  id="twitter_imageUrl"
+                  content={this.props.data[0].fadeImages}
+                />
+              </>
+            ) : (
+              ""
+            )}
           </MetaTags>
         </div>
 
@@ -355,7 +348,7 @@ class ProductDetail extends Component {
                     this.props.data[0].productsDetails.length > 0 &&
                     this.props.data[0].productsDetails[0] &&
                     this.props.data[0].productsDetails[0].namedetail.length >
-                    0 &&
+                      0 &&
                     this.props.data[0].productsDetails[0].namedetail[2] &&
                     this.props.data[0].productsDetails[0].namedetail[2]
                       .details && (
@@ -395,7 +388,8 @@ class ProductDetail extends Component {
                           <Grid itex xs={12}>
                             <span className={classes.productmaterial}>
                               {this.props.data[0].productsDetails[0]
-                                .namedetail[2].details ?? ""}Km
+                                .namedetail[2].details ?? ""}
+                              Km
                             </span>
                           </Grid>
                         </Grid>
@@ -408,7 +402,7 @@ class ProductDetail extends Component {
                     this.props.data[0].productsDetails.length > 0 &&
                     this.props.data[0].productsDetails[0] &&
                     this.props.data[0].productsDetails[0].namedetail.length >
-                    0 &&
+                      0 &&
                     this.props.data[0].productsDetails[0].namedetail[1] &&
                     this.props.data[0].productsDetails[0].namedetail[1]
                       .details && (
@@ -449,7 +443,7 @@ class ProductDetail extends Component {
                         </Grid>
                       </Grid>
                     )}
-                  {this.props.data[0].dimondweight !== null ?
+                  {this.props.data[0].dimondweight !== null ? (
                     <Grid container item xs={4} style={{ paddingTop: "8px" }}>
                       <Grid container item xs={2}>
                         <Avatar alt="NAC">
@@ -479,18 +473,16 @@ class ProductDetail extends Component {
                         </Grid>
                         <Grid itex xs={12}>
                           {this.props.data[0].dimondweight}gm
-
                         </Grid>
                       </Grid>
                     </Grid>
-                    : ""
-                  }
-
+                  ) : (
+                    ""
+                  )}
                 </Grid>
                 <Grid container>
                   <Grid item xs={12}>
-                    {
-                      this.props.data[0].certificate &&
+                    {this.props.data[0].certificate && (
                       <div>
                         <p
                           style={{
@@ -503,15 +495,12 @@ class ProductDetail extends Component {
                         </p>
                         <img src={this.props.data[0].certificate} />
                       </div>
-                    }
-
+                    )}
                   </Grid>
                 </Grid>
               </Grid>
             </Grid>
           </Grid>
-
-
 
           <Grid
             container
@@ -634,20 +623,16 @@ class ProductDetail extends Component {
                       class="subslider-carousel"
                       dataCarousel={dataCarouselcollections}
                     >
-
-                      {this.state.otherCategeriesdata.map(
-                        (val) => {
-
-                          return (
-                            <ImgMediaCard
-                              shopothercategories={true}
-                              data={val}
-                              cardSize="auto"
-                              hoverText={true}
-                            />
-                          );
-                        }
-                      )}
+                      {this.state.otherCategeriesdata.map((val) => {
+                        return (
+                          <ImgMediaCard
+                            shopothercategories={true}
+                            data={val}
+                            cardSize="auto"
+                            hoverText={true}
+                          />
+                        );
+                      })}
                     </Slideshow>
                   </div>
                 </Hidden>
@@ -775,22 +760,17 @@ class ProductDetail extends Component {
                   class="subslider-carousel"
                   dataCarousel={dataCarouselcollectionsSm}
                 >
-
-                  {this.state.otherCategeriesdata.map(
-                    (val) => {
-
-                      return (
-                        <ImgMediaCard
-                          shopothercategories={true}
-                          data={val}
-                          cardSize="auto"
-                          hoverText={true}
-                        />
-                      );
-                    }
-                  )}
+                  {this.state.otherCategeriesdata.map((val) => {
+                    return (
+                      <ImgMediaCard
+                        shopothercategories={true}
+                        data={val}
+                        cardSize="auto"
+                        hoverText={true}
+                      />
+                    );
+                  })}
                 </Slideshow>
-
               </div>
             </Container>
           </Grid>
@@ -799,7 +779,7 @@ class ProductDetail extends Component {
           </Grid>
         </Hidden>
         <NeedHelp />
-      </div >
+      </div>
     );
   }
 }
@@ -825,16 +805,14 @@ const Components = (props) => {
       rating,
       Globalctx.tabsChange
     );
-
   }
   if (Object.keys(mapped).length === 0) {
     return (
-      < div className="overall-loader" >
+      <div className="overall-loader">
         <div id="loading"></div>
-      </div >
-    )
-  }
-  else {
+      </div>
+    );
+  } else {
     return (
       <ProductDetail
         {...props}

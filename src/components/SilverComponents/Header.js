@@ -17,11 +17,11 @@ import {
   NativeSelect,
   Select,
   Toolbar,
-  Typography
+  Typography,
 } from "@material-ui/core";
 // import HeaderNotification from './Notification/HeaderNotification'
 import { withStyles } from "@material-ui/core/styles";
-import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import MenuIcon from "@material-ui/icons/Menu";
 import classNames from "classnames";
 import ElasticSearch from "components/ElasticSearch/ElasticSearch";
@@ -86,7 +86,6 @@ class Header extends Component {
       }
     }
     console.log(this.props);
-    debugger;
   }
 
   handleDrawerOpen = () => {
@@ -138,7 +137,7 @@ class Header extends Component {
   scrolling = () => {
     if (
       document.getElementsByTagName("body")[0].scrollHeight >
-      window.innerHeight &&
+        window.innerHeight &&
       window.scrollY > 0
     ) {
       if (document.getElementById("topNav")) {
@@ -161,7 +160,7 @@ class Header extends Component {
     }
     if (
       document.getElementsByTagName("body")[0].scrollHeight >
-      window.innerHeight &&
+        window.innerHeight &&
       window.scrollY === 0
     ) {
       this.setState({ scroll: false });
@@ -222,9 +221,9 @@ class Header extends Component {
                   spacing={12}
                   className={
                     window.location.pathname === "/cart" ||
-                      b[1] === "paymentsuccess" ||
-                      b[1] === "paymentfail" ||
-                      window.location.pathname === "/checkout"
+                    b[1] === "paymentsuccess" ||
+                    b[1] === "paymentfail" ||
+                    window.location.pathname === "/checkout"
                       ? "cartheader"
                       : "cartcardrelese"
                   }
@@ -236,24 +235,33 @@ class Header extends Component {
                     justify="flex-end"
                     alignItems="center"
                   >
-                    <Grid item xs={3}
+                    <Grid
+                      item
+                      xs={3}
                       style={{
-                        marginTop: window.location.pathname == "/cart" || window.location.pathname == "/checkout" ? "20px" : ""
+                        marginTop:
+                          window.location.pathname == "/cart" ||
+                          window.location.pathname == "/checkout"
+                            ? "20px"
+                            : "",
                       }}
-
-                      className="logoImgHeader1" alignItems="center">
-
-                      {
-                        window.location.pathname == "/cart" || window.location.pathname == "/checkout" ?
-
-                          <IconButton size="small" onClick={() => {
-                            window.history.back()
-                          }}>
-                            <ArrowBackIcon color="secondary" />&nbsp;&nbsp;
-                          </IconButton>
-                          : " "
-                      }
-
+                      className="logoImgHeader1"
+                      alignItems="center"
+                    >
+                      {window.location.pathname == "/cart" ||
+                      window.location.pathname == "/checkout" ? (
+                        <IconButton
+                          size="small"
+                          onClick={() => {
+                            window.history.back();
+                          }}
+                        >
+                          <ArrowBackIcon color="secondary" />
+                          &nbsp;&nbsp;
+                        </IconButton>
+                      ) : (
+                        " "
+                      )}
 
                       <div
                         id="logoDiv1"
@@ -263,11 +271,9 @@ class Header extends Component {
                         }}
                         style={{ cursor: "pointer" }}
                       >
-
                         <img
                           style={{
                             transition: "height 0.2s",
-
                           }}
                           className={`imges`}
                           src={styloriLogo}
@@ -325,8 +331,8 @@ class Header extends Component {
                                   name: "name",
                                   id: "uncontrolled-native",
                                   className: {
-                                    root: classes.selects
-                                  }
+                                    root: classes.selects,
+                                  },
                                 }}
                               >
                                 <option value={10}>Ten</option>
@@ -409,15 +415,15 @@ class Header extends Component {
                               // style={{ marginTop: "9px" }}
                               badgeContent={
                                 this.props.wishlist &&
-                                  this.props.wishlist.wishlistdata &&
-                                  this.props.wishlist.wishlistdata.nodes &&
-                                  this.props.wishlist.wishlistdata.nodes.length >
+                                this.props.wishlist.wishlistdata &&
+                                this.props.wishlist.wishlistdata.nodes &&
+                                this.props.wishlist.wishlistdata.nodes.length >
                                   0
                                   ? this.props.wishlist &&
-                                  this.props.wishlist.wishlistdata &&
-                                  this.props.wishlist.wishlistdata.nodes &&
-                                  this.props.wishlist.wishlistdata.nodes
-                                    .length
+                                    this.props.wishlist.wishlistdata &&
+                                    this.props.wishlist.wishlistdata.nodes &&
+                                    this.props.wishlist.wishlistdata.nodes
+                                      .length
                                   : wishlist?.allUserWhislists?.nodes.length
                               }
                               color="secondary"
@@ -442,25 +448,28 @@ class Header extends Component {
                               // style={{ marginTop: "9px" }}
                               badgeContent={
                                 this.props.cart_count &&
-                                  this.props.cart_count.data &&
-                                  this.props.cart_count.data.allTransSkuLists &&
-                                  this.props.cart_count.data.allTransSkuLists
-                                    .nodes.length > 0
+                                this.props.cart_count.data &&
+                                this.props.cart_count.data.allTransSkuLists &&
+                                this.props.cart_count.data.allTransSkuLists
+                                  .nodes.length > 0
                                   ? this.props.cart_count &&
-                                  this.props.cart_count.data &&
-                                  this.props.cart_count.data
-                                    .allTransSkuLists &&
-                                  this.props.cart_count.data.allTransSkuLists
-                                    .nodes.length
+                                    this.props.cart_count.data &&
+                                    this.props.cart_count.data
+                                      .allTransSkuLists &&
+                                    this.props.cart_count.data.allTransSkuLists
+                                      .nodes.length
                                   : cartcount?.allShoppingCarts?.nodes[0]
-                                    ?.shoppingCartItemsByShoppingCartId
-                                    ?.totalCount
+                                      ?.shoppingCartItemsByShoppingCartId
+                                      ?.totalCount
                               }
                               color="secondary"
                             >
                               <a href="/cart" className="highlighter">
                                 <i
-                                  style={{ fontSize: "20px", marginTop: "-10px" }}
+                                  style={{
+                                    fontSize: "20px",
+                                    marginTop: "-10px",
+                                  }}
                                   class={`fa fa-shopping-bag  ${classes.iconFafa}`}
                                 ></i>
                                 <span className="tooltip-s">Cart</span>
@@ -485,9 +494,9 @@ class Header extends Component {
                 }}
               >
                 {window.location.pathname === "/cart" ||
-                  window.location.pathname === "/checkout" ||
-                  b[1] === "paymentsuccess" ||
-                  b[1] === "paymentfail" ? (
+                window.location.pathname === "/checkout" ||
+                b[1] === "paymentsuccess" ||
+                b[1] === "paymentfail" ? (
                   ""
                 ) : (
                   <Grid
@@ -525,7 +534,7 @@ class Header extends Component {
                             className={
                               //  window.location.pathname === listName.url
                               this.Menuopen === true ||
-                                this.submenuOpen === true
+                              this.submenuOpen === true
                                 ? classes.seletectedMenu
                                 : classes.menuListCursor
                             }
@@ -571,19 +580,19 @@ class Header extends Component {
                       <div style={{ flexGrow: 1 }}></div>
                       <div
                         className={classes.styloriEditing}
-                      // onMouseLeave={(event) => {
-                      //   this.setState({
-                      //     Menuopen: false,
-                      //     submenuOpen: false,
-                      //     subTitleData: null,
-                      //     targetopen: false,
-                      //     listHoverItem: "",
-                      //     // .replace(
-                      //     //   / +/g,
-                      //     //   "ss"
-                      //     // ),
-                      //   });
-                      // }}
+                        // onMouseLeave={(event) => {
+                        //   this.setState({
+                        //     Menuopen: false,
+                        //     submenuOpen: false,
+                        //     subTitleData: null,
+                        //     targetopen: false,
+                        //     listHoverItem: "",
+                        //     // .replace(
+                        //     //   / +/g,
+                        //     //   "ss"
+                        //     // ),
+                        //   });
+                        // }}
                       >
                         <a
                           href="https://www.stylori.com/"
@@ -683,7 +692,11 @@ class Header extends Component {
                         <img
                           className={`imgsilver`}
                           src={styloriLogo}
-                          style={{ width: "70%", height: "auto", float: "left" }}
+                          style={{
+                            width: "70%",
+                            height: "auto",
+                            float: "left",
+                          }}
                           onLoad={() => this.setState({ load: true })}
                           onLoadedData={() => this.setState({ load: false })}
                           alt=""
@@ -716,8 +729,8 @@ class Header extends Component {
                                   labelId="demo-simple-select-outlined-label"
                                   id="demo-simple-select-outlined"
                                   value={22}
-                                //   onChange={handleChange}
-                                // label="Age"
+                                  //   onChange={handleChange}
+                                  // label="Age"
                                 >
                                   <MenuItem value="22">
                                     <em>None</em>
@@ -795,16 +808,16 @@ class Header extends Component {
                                 <Badge
                                   badgeContent={
                                     this.props.wishlist &&
-                                      this.props.wishlist.wishlistdata &&
-                                      this.props.wishlist.wishlistdata.nodes &&
-                                      this.props.wishlist.wishlistdata.nodes
-                                        .length > 0
+                                    this.props.wishlist.wishlistdata &&
+                                    this.props.wishlist.wishlistdata.nodes &&
+                                    this.props.wishlist.wishlistdata.nodes
+                                      .length > 0
                                       ? this.props.wishlist &&
-                                      this.props.wishlist.wishlistdata &&
-                                      this.props.wishlist.wishlistdata
-                                        .nodes &&
-                                      this.props.wishlist.wishlistdata.nodes
-                                        .length
+                                        this.props.wishlist.wishlistdata &&
+                                        this.props.wishlist.wishlistdata
+                                          .nodes &&
+                                        this.props.wishlist.wishlistdata.nodes
+                                          .length
                                       : "0"
                                   }
                                   color="secondary"
@@ -824,17 +837,17 @@ class Header extends Component {
                                   style={{ fontSize: "9px" }}
                                   badgeContent={
                                     this.props.cart_count &&
-                                      this.props.cart_count.data &&
-                                      this.props.cart_count.data
-                                        .allTransSkuLists &&
-                                      this.props.cart_count.data.allTransSkuLists
-                                        .nodes.length > 0
+                                    this.props.cart_count.data &&
+                                    this.props.cart_count.data
+                                      .allTransSkuLists &&
+                                    this.props.cart_count.data.allTransSkuLists
+                                      .nodes.length > 0
                                       ? this.props.cart_count &&
-                                      this.props.cart_count.data &&
-                                      this.props.cart_count.data
-                                        .allTransSkuLists &&
-                                      this.props.cart_count.data
-                                        .allTransSkuLists.nodes.length
+                                        this.props.cart_count.data &&
+                                        this.props.cart_count.data
+                                          .allTransSkuLists &&
+                                        this.props.cart_count.data
+                                          .allTransSkuLists.nodes.length
                                       : "0"
                                   }
                                   color="secondary"
