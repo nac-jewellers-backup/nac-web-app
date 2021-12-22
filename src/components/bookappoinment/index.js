@@ -205,7 +205,6 @@ export default function Contact(props) {
     let isValid = true;
     let error = data.error;
     //month
-
     if (data.month.length === 0) {
       isValid = false;
       error.month = "Month is required";
@@ -316,8 +315,13 @@ export default function Contact(props) {
                           })}
                         </Select>
                       </FormControl>
+                      {data.error.month.length > 0 && (
+                        <Typography variant={"caption"} color={"error"}>
+                          {data.error.month}
+                        </Typography>
+                      )}
                     </Grid>
-                    <Grid item xs={2}>
+                    <Grid item xs={4}>
                       <FormControl fullWidth>
                         <InputLabel
                           color="secondary"
@@ -343,6 +347,11 @@ export default function Contact(props) {
                           })}
                         </Select>
                       </FormControl>
+                      {data.error.day.length > 0 && (
+                        <Typography variant={"caption"} color={"error"}>
+                          {data.error.day}
+                        </Typography>
+                      )}
                     </Grid>
                     <Grid item xs={4}>
                       {" "}
@@ -368,8 +377,13 @@ export default function Contact(props) {
                           <MenuItem value={year}>{year}</MenuItem>
                         </Select>
                       </FormControl>
+                      {data.error.year.length > 0 && (
+                        <Typography variant={"caption"} color={"error"}>
+                          {data.error.year}
+                        </Typography>
+                      )}
                     </Grid>
-                    <Grid item xs={10}>
+                    <Grid item xs={12}>
                       <Input
                         type="text"
                         name="Fullname"
@@ -382,8 +396,14 @@ export default function Contact(props) {
                         errorMessage={data.error.name}
                         isRequired
                       />
+
+                      {data.error.name.length > 0 && (
+                        <Typography variant={"caption"} color={"error"}>
+                          {data.error.name}
+                        </Typography>
+                      )}
                     </Grid>
-                    <Grid item xs={10}>
+                    <Grid item xs={12}>
                       <Input
                         type="text"
                         name="Email"
@@ -392,12 +412,15 @@ export default function Contact(props) {
                         value={data.mail}
                         color="secondary"
                         onChange={(e) => updateState("mail", e.target.value)}
-                        isError={data.error.mail.length > 0}
-                        errorMessage={data.error.mail}
                         isRequired
                       />
+                      {data.error.mail.length > 0 && (
+                        <Typography variant={"caption"} color={"error"}>
+                          {data.error.mail}
+                        </Typography>
+                      )}
                     </Grid>
-                    <Grid item xs={10}>
+                    <Grid item xs={12}>
                       <Input
                         type="number"
                         name="Mobile"
@@ -410,6 +433,11 @@ export default function Contact(props) {
                         errorMessage={data.error.mobile}
                         isRequired
                       />
+                      {data.error.mobile.length > 0 && (
+                        <Typography variant={"caption"} color={"error"}>
+                          {data.error.mobile}
+                        </Typography>
+                      )}
                     </Grid>
                     <Grid item xs={4}>
                       <FormControl fullWidth>
@@ -440,8 +468,13 @@ export default function Contact(props) {
                           })}
                         </Select>
                       </FormControl>
+                      {data.error.location.length > 0 && (
+                        <Typography variant={"caption"} color={"error"}>
+                          {data.error.location}
+                        </Typography>
+                      )}
                     </Grid>
-                    <Grid item xs={0} md={2}></Grid>
+                    <Grid item xs={0} md={4}></Grid>
                     <Grid item xs={4}>
                       <FormControl fullWidth>
                         <InputLabel
