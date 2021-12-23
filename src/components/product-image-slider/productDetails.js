@@ -5,7 +5,7 @@ import {
   Grid,
   Hidden,
   ListItemText,
-  Typography
+  Typography,
 } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
@@ -34,152 +34,152 @@ class ProductDetails extends React.Component {
             return valueofproductdetail.namedetail.length === 0 ? (
               false
             ) : (
-                <Grid item xs={6} style={{ paddingRight: "20px" }}>
-                  {valueofproductdetail.header !== "Price Breakup" ||
-                    (valueofproductdetail.header === "Price Breakup" &&
-                      valueofproductdetail.namedetail[5].name === "Total" &&
-                      Number(
-                        valueofproductdetail.namedetail[5].details[1]
-                          .replace(/,/g, "")
-                          .replace(/₹/g, "")
-                      ) > 13000) ? (
-                      <div className="overall-boxz">
-                        <div className="overall-bo">
-                          <span
-                            key={valueofproductdetail.name}
-                            style={{ fontSize: "16px", fontWeight: "bold" }}
-                            className={`product-details ${classes.normalfonts}`}
-                          >
-                            {" "}
-                            {valueofproductdetail.header}
-                          </span>
-                          <hr class="bottom-line"></hr>
-                          <>
-                            {valueofproductdetail.namedetail == undefined
-                              ? " "
-                              : valueofproductdetail.namedetail.map(
-                                (res, Index) => {
-                                  return (
-                                    <>
-                                      {res.details !== null &&
-                                        res.details !== undefined &&
-                                        res.details.length === 0 &&
-                                        res.details == 0 ? (
-                                          false
-                                        ) : (
-                                          <span>
-                                            {
-                                              <>
-                                                {res.name && (
-                                                  <Grid container item xs={12}>
-                                                    <Grid xs={4} lg={4}>
-                                                      <ListItemText
-                                                        variant=""
-                                                        className={`product-subhead-list ${classes.fontgray}`}
+              <Grid item xs={6} style={{ paddingRight: "20px" }}>
+                {valueofproductdetail.header !== "Price Breakup" ||
+                (valueofproductdetail.header === "Price Breakup" &&
+                  valueofproductdetail.namedetail[5].name === "Total" &&
+                  Number(
+                    valueofproductdetail.namedetail[5].details[1]
+                      .replace(/,/g, "")
+                      .replace(/₹/g, "")
+                  ) > 13000) ? (
+                  <div className="overall-boxz">
+                    <div className="overall-bo">
+                      <span
+                        key={valueofproductdetail.name}
+                        style={{ fontSize: "14px", fontWeight: "bold" }}
+                        className={`product-details ${classes.normalfonts}`}
+                      >
+                        {" "}
+                        {valueofproductdetail.header}
+                      </span>
+                      <hr class="bottom-line"></hr>
+                      <>
+                        {valueofproductdetail.namedetail == undefined
+                          ? " "
+                          : valueofproductdetail.namedetail.map(
+                              (res, Index) => {
+                                return (
+                                  <>
+                                    {res.details !== null &&
+                                    res.details !== undefined &&
+                                    res.details.length === 0 &&
+                                    res.details == 0 ? (
+                                      false
+                                    ) : (
+                                      <span>
+                                        {
+                                          <>
+                                            {res.name && (
+                                              <Grid container item xs={12}>
+                                                <Grid xs={4} lg={4}>
+                                                  <ListItemText
+                                                    variant=""
+                                                    className={`product-subhead-list ${classes.fontgray}`}
+                                                  >
+                                                    {
+                                                      <span
+                                                        style={{
+                                                          fontSize: "14px",
+                                                        }}
                                                       >
-                                                        {
-                                                          <span
-                                                            style={{
-                                                              fontSize: "16px",
-                                                            }}
-                                                          >
-                                                            {" "}
-                                                            {res.name}
-                                                          </span>
-                                                        }
-                                                      </ListItemText>
-                                                    </Grid>
-                                                    <Grid
-                                                      container
-                                                      item
-                                                      xs={8}
-                                                      style={{
-                                                        alignItems: "center",
-                                                      }}
+                                                        {" "}
+                                                        {res.name}
+                                                      </span>
+                                                    }
+                                                  </ListItemText>
+                                                </Grid>
+                                                <Grid
+                                                  container
+                                                  item
+                                                  xs={8}
+                                                  style={{
+                                                    alignItems: "center",
+                                                  }}
+                                                >
+                                                  {isArray(res.details) ? (
+                                                    <ListItemText
+                                                      variant=""
+                                                      className={`product-subhead-list ${classes.fontgray}`}
                                                     >
-                                                      {isArray(res.details) ? (
-                                                        <ListItemText
-                                                          variant=""
-                                                          className={`product-subhead-list ${classes.fontgray}`}
+                                                      {res.details.map(
+                                                        (Item, Index) => {
+                                                          return (
+                                                            <span
+                                                              style={{
+                                                                fontSize:
+                                                                  "14px",
+                                                                textAlign:
+                                                                  "left",
+                                                              }}
+                                                            >
+                                                              {valueofproductdetail.header ===
+                                                              "Price Breakup" ? (
+                                                                Index === 0 &&
+                                                                res.details[
+                                                                  Index
+                                                                ] !==
+                                                                  res.details[
+                                                                    Index + 1
+                                                                  ] ? (
+                                                                  <>
+                                                                    <del>
+                                                                      {Item}
+                                                                    </del>
+                                                                  </>
+                                                                ) : res.details[
+                                                                    Index
+                                                                  ] !==
+                                                                  res.details[
+                                                                    Index + 1
+                                                                  ] ? (
+                                                                  Item
+                                                                ) : (
+                                                                  " "
+                                                                )
+                                                              ) : (
+                                                                Item
+                                                              )}{" "}
+                                                            </span>
+                                                          );
+                                                        }
+                                                      )}
+                                                    </ListItemText>
+                                                  ) : (
+                                                    <ListItemText
+                                                      variant=""
+                                                      className={`product-subhead-list ${classes.fontgray}`}
+                                                    >
+                                                      {/* {data[0].productsDetails[3].namedetail[1].length > 0} */}
+                                                      {
+                                                        <span
+                                                          style={{
+                                                            fontSize: "14px",
+                                                          }}
                                                         >
-                                                          {res.details.map(
-                                                            (Item, Index) => {
-                                                              return (
-                                                                <span
-                                                                  style={{
-                                                                    fontSize:
-                                                                      "16px",
-                                                                    textAlign:
-                                                                      "left",
-                                                                  }}
-                                                                >
-                                                                  {valueofproductdetail.header ===
-                                                                    "Price Breakup" ? (
-                                                                      Index === 0 &&
-                                                                        res.details[
-                                                                        Index
-                                                                        ] !==
-                                                                        res.details[
-                                                                        Index + 1
-                                                                        ] ? (
-                                                                          <>
-                                                                            <del>
-                                                                              {Item}
-                                                                            </del>
-                                                                          </>
-                                                                        ) : res.details[
-                                                                          Index
-                                                                        ] !==
-                                                                          res.details[
-                                                                          Index + 1
-                                                                          ] ? (
-                                                                            Item
-                                                                          ) : (
-                                                                            " "
-                                                                          )
-                                                                    ) : (
-                                                                      Item
-                                                                    )}{" "}
-                                                                </span>
-                                                              );
-                                                            }
-                                                          )}
-                                                        </ListItemText>
-                                                      ) : (
-                                                          <ListItemText
-                                                            variant=""
-                                                            className={`product-subhead-list ${classes.fontgray}`}
-                                                          >
-                                                            {/* {data[0].productsDetails[3].namedetail[1].length > 0} */}
-                                                            {
-                                                              <span
-                                                                style={{
-                                                                  fontSize: "16px",
-                                                                }}
-                                                              >
-                                                                {" "}
-                                                                {res.details}
-                                                              </span>
-                                                            }
-                                                          </ListItemText>
-                                                        )}
-                                                    </Grid>
-                                                  </Grid>
-                                                )}
-                                              </>
-                                            }
-                                          </span>
-                                        )}
-                                    </>
-                                  );
-                                }
-                              )}
-                          </>
-                        </div>
-                      </div>
-                    ) : null}
-                </Grid>
-              );
+                                                          {" "}
+                                                          {res.details}
+                                                        </span>
+                                                      }
+                                                    </ListItemText>
+                                                  )}
+                                                </Grid>
+                                              </Grid>
+                                            )}
+                                          </>
+                                        }
+                                      </span>
+                                    )}
+                                  </>
+                                );
+                              }
+                            )}
+                      </>
+                    </div>
+                  </div>
+                ) : null}
+              </Grid>
+            );
           })}
       </Grid>
     );
@@ -197,149 +197,149 @@ class ProductDetails extends React.Component {
             return valueofproductdetail.namedetail.length === 0 ? (
               false
             ) : (
-                <Grid item xs={6} style={{ paddingRight: "20px" }}>
-                  {valueofproductdetail.header !== "Price Breakup" ||
-                    (valueofproductdetail.header === "Price Breakup" &&
-                      valueofproductdetail.namedetail[5].name === "Total" &&
-                      Number(
-                        valueofproductdetail.namedetail[5].details[1]
-                          .replace(/,/g, "")
-                          .replace(/₹/g, "")
-                      ) > 13000) ? (
-                      <div className="overall-boxz">
-                        <div className="overall-bo">
-                          <span
-                            style={{ fontSize: "16px", fontWeight: "bold" }}
-                            key={valueofproductdetail.name}
-                            className={`product-details ${classes.normalfonts}`}
-                          >
-                            {" "}
-                            {valueofproductdetail.header}
-                          </span>
-                          <hr class="bottom-line"></hr>
-                          <>
-                            {valueofproductdetail.namedetail == undefined
-                              ? " "
-                              : valueofproductdetail.namedetail.map(
-                                (res, Index) => {
-                                  return (
-                                    <>
-                                      {res.details !== null &&
-                                        res.details !== undefined &&
-                                        res.details.length === 0 &&
-                                        res.details == 0 ? (
-                                          false
-                                        ) : (
-                                          <span>
-                                            {
-                                              <>
-                                                {res.name && (
-                                                  <Grid container item xs={12}>
-                                                    <Grid xs={4} lg={4}>
-                                                      <ListItemText
-                                                        variant=""
-                                                        className={`product-subhead-list ${classes.fontgray}`}
+              <Grid item xs={6} style={{ paddingRight: "20px" }}>
+                {valueofproductdetail.header !== "Price Breakup" ||
+                (valueofproductdetail.header === "Price Breakup" &&
+                  valueofproductdetail.namedetail[5].name === "Total" &&
+                  Number(
+                    valueofproductdetail.namedetail[5].details[1]
+                      .replace(/,/g, "")
+                      .replace(/₹/g, "")
+                  ) > 13000) ? (
+                  <div className="overall-boxz">
+                    <div className="overall-bo">
+                      <span
+                        style={{ fontSize: "14px", fontWeight: "bold" }}
+                        key={valueofproductdetail.name}
+                        className={`product-details ${classes.normalfonts}`}
+                      >
+                        {" "}
+                        {valueofproductdetail.header}
+                      </span>
+                      <hr class="bottom-line"></hr>
+                      <>
+                        {valueofproductdetail.namedetail == undefined
+                          ? " "
+                          : valueofproductdetail.namedetail.map(
+                              (res, Index) => {
+                                return (
+                                  <>
+                                    {res.details !== null &&
+                                    res.details !== undefined &&
+                                    res.details.length === 0 &&
+                                    res.details == 0 ? (
+                                      false
+                                    ) : (
+                                      <span>
+                                        {
+                                          <>
+                                            {res.name && (
+                                              <Grid container item xs={12}>
+                                                <Grid xs={4} lg={4}>
+                                                  <ListItemText
+                                                    variant=""
+                                                    className={`product-subhead-list ${classes.fontgray}`}
+                                                  >
+                                                    {
+                                                      <span
+                                                        style={{
+                                                          fontSize: "14px",
+                                                        }}
                                                       >
-                                                        {
-                                                          <span
-                                                            style={{
-                                                              fontSize: "16px",
-                                                            }}
-                                                          >
-                                                            {" "}
-                                                            {res.name}
-                                                          </span>
-                                                        }
-                                                      </ListItemText>
-                                                    </Grid>
-                                                    <Grid
-                                                      container
-                                                      item
-                                                      xs={8}
-                                                      style={{
-                                                        alignItems: "center",
-                                                      }}
+                                                        {" "}
+                                                        {res.name}
+                                                      </span>
+                                                    }
+                                                  </ListItemText>
+                                                </Grid>
+                                                <Grid
+                                                  container
+                                                  item
+                                                  xs={8}
+                                                  style={{
+                                                    alignItems: "center",
+                                                  }}
+                                                >
+                                                  {isArray(res.details) ? (
+                                                    <ListItemText
+                                                      variant=""
+                                                      className={`product-subhead-list ${classes.fontgray}`}
                                                     >
-                                                      {isArray(res.details) ? (
-                                                        <ListItemText
-                                                          variant=""
-                                                          className={`product-subhead-list ${classes.fontgray}`}
+                                                      {res.details.map(
+                                                        (Item, Index) => {
+                                                          return (
+                                                            <span
+                                                              style={{
+                                                                fontSize:
+                                                                  "14px",
+                                                                textAlign:
+                                                                  "left",
+                                                              }}
+                                                            >
+                                                              {valueofproductdetail.header ===
+                                                              "Price Breakup" ? (
+                                                                Index === 0 &&
+                                                                res.details[
+                                                                  Index
+                                                                ] !==
+                                                                  res.details[
+                                                                    Index + 1
+                                                                  ] ? (
+                                                                  Item == 0 ? (
+                                                                    " "
+                                                                  ) : (
+                                                                    <>
+                                                                      <del>
+                                                                        {Item}
+                                                                      </del>
+                                                                    </>
+                                                                  )
+                                                                ) : (
+                                                                  Item
+                                                                )
+                                                              ) : (
+                                                                Item
+                                                              )}{" "}
+                                                            </span>
+                                                          );
+                                                        }
+                                                      )}
+                                                    </ListItemText>
+                                                  ) : (
+                                                    <ListItemText
+                                                      variant=""
+                                                      className={`product-subhead-list ${classes.fontgray}`}
+                                                    >
+                                                      {/* {data[0].productsDetails[3].namedetail[1].length > 0} */}
+                                                      {
+                                                        <span
+                                                          style={{
+                                                            fontSize: "14px",
+                                                          }}
                                                         >
-                                                          {res.details.map(
-                                                            (Item, Index) => {
-                                                              return (
-                                                                <span
-                                                                  style={{
-                                                                    fontSize:
-                                                                      "16px",
-                                                                    textAlign:
-                                                                      "left",
-                                                                  }}
-                                                                >
-                                                                  {valueofproductdetail.header ===
-                                                                    "Price Breakup" ? (
-                                                                      Index === 0 &&
-                                                                        res.details[
-                                                                        Index
-                                                                        ] !==
-                                                                        res.details[
-                                                                        Index + 1
-                                                                        ] ? (
-                                                                          Item == 0 ? (
-                                                                            " "
-                                                                          ) : (
-                                                                              <>
-                                                                                <del>
-                                                                                  {Item}
-                                                                                </del>
-                                                                              </>
-                                                                            )
-                                                                        ) : (
-                                                                          Item
-                                                                        )
-                                                                    ) : (
-                                                                      Item
-                                                                    )}{" "}
-                                                                </span>
-                                                              );
-                                                            }
-                                                          )}
-                                                        </ListItemText>
-                                                      ) : (
-                                                          <ListItemText
-                                                            variant=""
-                                                            className={`product-subhead-list ${classes.fontgray}`}
-                                                          >
-                                                            {/* {data[0].productsDetails[3].namedetail[1].length > 0} */}
-                                                            {
-                                                              <span
-                                                                style={{
-                                                                  fontSize: "16px",
-                                                                }}
-                                                              >
-                                                                {" "}
-                                                                {res.details}
-                                                              </span>
-                                                            }
-                                                          </ListItemText>
-                                                        )}
-                                                    </Grid>
-                                                  </Grid>
-                                                )}
-                                              </>
-                                            }
-                                          </span>
-                                        )}
-                                    </>
-                                  );
-                                }
-                              )}
-                          </>
-                        </div>
-                      </div>
-                    ) : null}
-                </Grid>
-              );
+                                                          {" "}
+                                                          {res.details}
+                                                        </span>
+                                                      }
+                                                    </ListItemText>
+                                                  )}
+                                                </Grid>
+                                              </Grid>
+                                            )}
+                                          </>
+                                        }
+                                      </span>
+                                    )}
+                                  </>
+                                );
+                              }
+                            )}
+                      </>
+                    </div>
+                  </div>
+                ) : null}
+              </Grid>
+            );
           })}
       </Grid>
     );
@@ -356,149 +356,149 @@ class ProductDetails extends React.Component {
             return val.namedetail.length === 0 ? (
               false
             ) : (
-                <>
-                  {val.header !== "Price Breakup" ||
-                    (val.header === "Price Breakup" &&
-                      Number(
-                        val.namedetail[5].details[1]
-                          .replace(/,/g, "")
-                          .replace(/₹/g, "")
-                      ) > 13000) ? (
-                      <ExpansionPanel
-                        className={classes.expansionHere}
-                        style={{
-                          boxShadow: "rgb(190, 191, 191) 5px 5px 5px",
-                          border: "1px solid #ccc",
-                          margin: "16px 0px",
-                          padding: "0 5px 5px 5px",
-                        }}
-                        expanded={expanded === val.header}
-                        onChange={this.handle(val.header)}
-                        key={val.name}
-                      >
-                        <ExpansionPanelSummary
-                          expandIcon={<ExpandMoreIcon />}
-                          aria-controls="panel1a-content"
-                          id="panel1a-header"
+              <>
+                {val.header !== "Price Breakup" ||
+                (val.header === "Price Breakup" &&
+                  Number(
+                    val.namedetail[5].details[1]
+                      .replace(/,/g, "")
+                      .replace(/₹/g, "")
+                  ) > 13000) ? (
+                  <ExpansionPanel
+                    className={classes.expansionHere}
+                    style={{
+                      boxShadow: "rgb(190, 191, 191) 5px 5px 5px",
+                      border: "1px solid #ccc",
+                      margin: "14px 0px",
+                      padding: "0 5px 5px 5px",
+                    }}
+                    expanded={expanded === val.header}
+                    onChange={this.handle(val.header)}
+                    key={val.name}
+                  >
+                    <ExpansionPanelSummary
+                      expandIcon={<ExpandMoreIcon />}
+                      aria-controls="panel1a-content"
+                      id="panel1a-header"
+                    >
+                      <div style={{ width: "100%" }}>
+                        <Typography
+                          className={`subtabs-smrt ${classes.normalfonts}`}
                         >
-                          <div style={{ width: "100%" }}>
-                            <Typography
-                              className={`subtabs-smrt ${classes.normalfonts}`}
-                            >
-                              {val.header}
-                            </Typography>
-                            {/* <hr class="bottom-line border-line-"></hr> */}
-                          </div>
-                        </ExpansionPanelSummary>
-                        <div style={{ backgroundColor: "fafafa" }}>
-                          {val.namedetail !== undefined &&
-                            val.namedetail.map((res) =>
-                              res.details !== null &&
-                                res.details !== undefined &&
-                                res.details.length === 0 ? (
-                                  false
-                                ) : (
-                                  <span>
-                                    {
-                                      <>
-                                        {" "}
-                                        {res.name &&
-                                          res.details !== null &&
-                                          res.details !== 0 &&
-                                          res.details !== undefined && (
-                                            <Grid
-                                              container
-                                              item
-                                              xs={12}
-                                              style={{
-                                                padding: "0px 10px 0px 10px ",
-                                              }}
+                          {val.header}
+                        </Typography>
+                        {/* <hr class="bottom-line border-line-"></hr> */}
+                      </div>
+                    </ExpansionPanelSummary>
+                    <div style={{ backgroundColor: "fafafa" }}>
+                      {val.namedetail !== undefined &&
+                        val.namedetail.map((res) =>
+                          res.details !== null &&
+                          res.details !== undefined &&
+                          res.details.length === 0 ? (
+                            false
+                          ) : (
+                            <span>
+                              {
+                                <>
+                                  {" "}
+                                  {res.name &&
+                                    res.details !== null &&
+                                    res.details !== 0 &&
+                                    res.details !== undefined && (
+                                      <Grid
+                                        container
+                                        item
+                                        xs={12}
+                                        style={{
+                                          padding: "0px 10px 0px 10px ",
+                                        }}
+                                      >
+                                        <Grid xs={5} lg={5}>
+                                          <ListItemText
+                                            variant=""
+                                            className={`product-subhead-list ${classes.fontgray}`}
+                                          >
+                                            <span style={{ fontSize: "14px" }}>
+                                              {" "}
+                                              {res.name}
+                                            </span>
+                                          </ListItemText>
+                                        </Grid>
+                                        <Grid
+                                          container
+                                          item
+                                          xs={7}
+                                          style={{ alignItems: "center" }}
+                                        >
+                                          {isArray(res.details) ? (
+                                            <ListItemText
+                                              variant=""
+                                              className={`product-subhead-list ${classes.fontgray}`}
                                             >
-                                              <Grid xs={5} lg={5}>
-                                                <ListItemText
-                                                  variant=""
-                                                  className={`product-subhead-list ${classes.fontgray}`}
-                                                >
-                                                  <span style={{ fontSize: "16px" }}>
-                                                    {" "}
-                                                    {res.name}
-                                                  </span>
-                                                </ListItemText>
-                                              </Grid>
-                                              <Grid
-                                                container
-                                                item
-                                                xs={7}
-                                                style={{ alignItems: "center" }}
-                                              >
-                                                {isArray(res.details) ? (
-                                                  <ListItemText
-                                                    variant=""
-                                                    className={`product-subhead-list ${classes.fontgray}`}
-                                                  >
-                                                    {res.details.map(
-                                                      (Item, Index) => {
-                                                        return (
-                                                          <span
-                                                            style={{
-                                                              fontSize: "16px",
-                                                              textAlign: "left",
-                                                            }}
-                                                          >
-                                                            {val.header ===
-                                                              "Price Breakup" ? (
-                                                                Index === 0 &&
-                                                                  res.details[Index] !==
-                                                                  res.details[
-                                                                  Index + 1
-                                                                  ] ? (
-                                                                    <>
-                                                                      <del>{Item}</del>
-                                                                    </>
-                                                                  ) : res.details[
-                                                                    Index
-                                                                  ] !==
-                                                                    res.details[
-                                                                    Index + 1
-                                                                    ] ? (
-                                                                      Item
-                                                                    ) : (
-                                                                      " "
-                                                                    )
-                                                              ) : (
-                                                                Item
-                                                              )}{" "}
-                                                          </span>
-                                                        );
-                                                      }
-                                                    )}
-                                                  </ListItemText>
-                                                ) : (
-                                                    <ListItemText
-                                                      variant=""
-                                                      className={`product-subhead-list ${classes.fontgray}`}
+                                              {res.details.map(
+                                                (Item, Index) => {
+                                                  return (
+                                                    <span
+                                                      style={{
+                                                        fontSize: "14px",
+                                                        textAlign: "left",
+                                                      }}
                                                     >
-                                                      <span
-                                                        style={{ fontSize: "16px" }}
-                                                      >
-                                                        {" "}
-                                                        {res.details}
-                                                      </span>
-                                                    </ListItemText>
-                                                  )}
-                                              </Grid>
-                                            </Grid>
+                                                      {val.header ===
+                                                      "Price Breakup" ? (
+                                                        Index === 0 &&
+                                                        res.details[Index] !==
+                                                          res.details[
+                                                            Index + 1
+                                                          ] ? (
+                                                          <>
+                                                            <del>{Item}</del>
+                                                          </>
+                                                        ) : res.details[
+                                                            Index
+                                                          ] !==
+                                                          res.details[
+                                                            Index + 1
+                                                          ] ? (
+                                                          Item
+                                                        ) : (
+                                                          " "
+                                                        )
+                                                      ) : (
+                                                        Item
+                                                      )}{" "}
+                                                    </span>
+                                                  );
+                                                }
+                                              )}
+                                            </ListItemText>
+                                          ) : (
+                                            <ListItemText
+                                              variant=""
+                                              className={`product-subhead-list ${classes.fontgray}`}
+                                            >
+                                              <span
+                                                style={{ fontSize: "14px" }}
+                                              >
+                                                {" "}
+                                                {res.details}
+                                              </span>
+                                            </ListItemText>
                                           )}
-                                      </>
-                                    }
-                                  </span>
-                                )
-                            )}
-                        </div>
-                      </ExpansionPanel>
-                    ) : null}
-                </>
-              );
+                                        </Grid>
+                                      </Grid>
+                                    )}
+                                </>
+                              }
+                            </span>
+                          )
+                        )}
+                    </div>
+                  </ExpansionPanel>
+                ) : null}
+              </>
+            );
           })}
         </Container>
       </div>
@@ -516,146 +516,146 @@ class ProductDetails extends React.Component {
             return val.namedetail.length === 0 ? (
               false
             ) : (
-                <>
-                  {val.header !== "Price Breakup" ||
-                    (val.header === "Price Breakup" &&
-                      Number(
-                        val.namedetail[5].details[1]
-                          .replace(/,/g, "")
-                          .replace(/₹/g, "")
-                      ) > 13000) ? (
-                      <ExpansionPanel
-                        className={classes.expansionHere}
-                        style={{
-                          boxShadow: "rgb(190, 191, 191) 5px 5px 5px",
-                          border: "1px solid #ccc",
-                          margin: "16px 0px",
-                          padding: "0 5px 5px 5px",
-                        }}
-                        expanded={expanded === val.header}
-                        onChange={this.handle(val.header)}
-                        key={val.name}
-                      >
-                        <ExpansionPanelSummary
-                          expandIcon={<ExpandMoreIcon />}
-                          aria-controls="panel1a-content"
-                          id="panel1a-header"
+              <>
+                {val.header !== "Price Breakup" ||
+                (val.header === "Price Breakup" &&
+                  Number(
+                    val.namedetail[5].details[1]
+                      .replace(/,/g, "")
+                      .replace(/₹/g, "")
+                  ) > 13000) ? (
+                  <ExpansionPanel
+                    className={classes.expansionHere}
+                    style={{
+                      boxShadow: "rgb(190, 191, 191) 5px 5px 5px",
+                      border: "1px solid #ccc",
+                      margin: "14px 0px",
+                      padding: "0 5px 5px 5px",
+                    }}
+                    expanded={expanded === val.header}
+                    onChange={this.handle(val.header)}
+                    key={val.name}
+                  >
+                    <ExpansionPanelSummary
+                      expandIcon={<ExpandMoreIcon />}
+                      aria-controls="panel1a-content"
+                      id="panel1a-header"
+                    >
+                      <div style={{ width: "100%" }}>
+                        <Typography
+                          className={`subtabs-smrt ${classes.normalfonts}`}
                         >
-                          <div style={{ width: "100%" }}>
-                            <Typography
-                              className={`subtabs-smrt ${classes.normalfonts}`}
-                            >
-                              {val.header}
-                            </Typography>
-                            {/* <hr class="bottom-line border-line-"></hr> */}
-                          </div>
-                        </ExpansionPanelSummary>
-                        <div style={{ backgroundColor: "fafafa" }}>
-                          {val.namedetail !== undefined &&
-                            val.namedetail.map((res) =>
-                              res.details !== null &&
-                                res.details !== undefined &&
-                                res.details.length === 0 ? (
-                                  false
-                                ) : (
-                                  <span>
-                                    {
-                                      <>
-                                        {" "}
-                                        {res.name &&
-                                          res.details !== null &&
-                                          res.details !== 0 &&
-                                          res.details !== undefined && (
-                                            <Grid
-                                              container
-                                              item
-                                              xs={12}
-                                              style={{
-                                                padding: "0px 10px 0px 10px ",
-                                              }}
+                          {val.header}
+                        </Typography>
+                        {/* <hr class="bottom-line border-line-"></hr> */}
+                      </div>
+                    </ExpansionPanelSummary>
+                    <div style={{ backgroundColor: "fafafa" }}>
+                      {val.namedetail !== undefined &&
+                        val.namedetail.map((res) =>
+                          res.details !== null &&
+                          res.details !== undefined &&
+                          res.details.length === 0 ? (
+                            false
+                          ) : (
+                            <span>
+                              {
+                                <>
+                                  {" "}
+                                  {res.name &&
+                                    res.details !== null &&
+                                    res.details !== 0 &&
+                                    res.details !== undefined && (
+                                      <Grid
+                                        container
+                                        item
+                                        xs={12}
+                                        style={{
+                                          padding: "0px 10px 0px 10px ",
+                                        }}
+                                      >
+                                        <Grid xs={5} lg={5}>
+                                          <ListItemText
+                                            variant=""
+                                            className={`product-subhead-list ${classes.fontgray}`}
+                                          >
+                                            <span style={{ fontSize: "14px" }}>
+                                              {" "}
+                                              {res.name}
+                                            </span>
+                                          </ListItemText>
+                                        </Grid>
+                                        <Grid
+                                          container
+                                          item
+                                          xs={7}
+                                          style={{ alignItems: "center" }}
+                                        >
+                                          {isArray(res.details) ? (
+                                            <ListItemText
+                                              variant=""
+                                              className={`product-subhead-list ${classes.fontgray}`}
                                             >
-                                              <Grid xs={5} lg={5}>
-                                                <ListItemText
-                                                  variant=""
-                                                  className={`product-subhead-list ${classes.fontgray}`}
-                                                >
-                                                  <span style={{ fontSize: "16px" }}>
-                                                    {" "}
-                                                    {res.name}
-                                                  </span>
-                                                </ListItemText>
-                                              </Grid>
-                                              <Grid
-                                                container
-                                                item
-                                                xs={7}
-                                                style={{ alignItems: "center" }}
-                                              >
-                                                {isArray(res.details) ? (
-                                                  <ListItemText
-                                                    variant=""
-                                                    className={`product-subhead-list ${classes.fontgray}`}
-                                                  >
-                                                    {res.details.map(
-                                                      (Item, Index) => {
-                                                        return (
-                                                          <span
-                                                            style={{
-                                                              fontSize: "16px",
-                                                              textAlign: "left",
-                                                            }}
-                                                          >
-                                                            {val.header ===
-                                                              "Price Breakup" ? (
-                                                                Index === 0 &&
-                                                                  res.details[Index] !==
-                                                                  res.details[
-                                                                  Index + 1
-                                                                  ] ? (
-                                                                    Item == 0 ? (
-                                                                      " "
-                                                                    ) : (
-                                                                        <>
-                                                                          <del>{Item}</del>
-                                                                        </>
-                                                                      )
-                                                                  ) : (
-                                                                    Item
-                                                                  )
-                                                              ) : (
-                                                                Item
-                                                              )}{" "}
-                                                          </span>
-                                                        );
-                                                      }
-                                                    )}
-                                                  </ListItemText>
-                                                ) : (
-                                                    <ListItemText
-                                                      variant=""
-                                                      className={`product-subhead-list ${classes.fontgray}`}
+                                              {res.details.map(
+                                                (Item, Index) => {
+                                                  return (
+                                                    <span
+                                                      style={{
+                                                        fontSize: "14px",
+                                                        textAlign: "left",
+                                                      }}
                                                     >
-                                                      <span
-                                                        style={{ fontSize: "16px" }}
-                                                      >
-                                                        {" "}
-                                                        {res.details}
-                                                      </span>
-                                                    </ListItemText>
-                                                  )}
-                                              </Grid>
-                                            </Grid>
+                                                      {val.header ===
+                                                      "Price Breakup" ? (
+                                                        Index === 0 &&
+                                                        res.details[Index] !==
+                                                          res.details[
+                                                            Index + 1
+                                                          ] ? (
+                                                          Item == 0 ? (
+                                                            " "
+                                                          ) : (
+                                                            <>
+                                                              <del>{Item}</del>
+                                                            </>
+                                                          )
+                                                        ) : (
+                                                          Item
+                                                        )
+                                                      ) : (
+                                                        Item
+                                                      )}{" "}
+                                                    </span>
+                                                  );
+                                                }
+                                              )}
+                                            </ListItemText>
+                                          ) : (
+                                            <ListItemText
+                                              variant=""
+                                              className={`product-subhead-list ${classes.fontgray}`}
+                                            >
+                                              <span
+                                                style={{ fontSize: "14px" }}
+                                              >
+                                                {" "}
+                                                {res.details}
+                                              </span>
+                                            </ListItemText>
                                           )}
-                                      </>
-                                    }
-                                  </span>
-                                )
-                            )}
-                        </div>
-                      </ExpansionPanel>
-                    ) : null}
-                </>
-              );
+                                        </Grid>
+                                      </Grid>
+                                    )}
+                                </>
+                              }
+                            </span>
+                          )
+                        )}
+                    </div>
+                  </ExpansionPanel>
+                ) : null}
+              </>
+            );
           })}
         </Container>
       </div>

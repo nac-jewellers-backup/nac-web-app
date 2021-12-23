@@ -206,7 +206,7 @@ const styles = (theme) => ({
   title: {
     marginTop: "0 !important",
     [theme.breakpoints.down("lg")]: {
-      fontSize: "18px !important",
+      fontSize: "16px !important",
       fontWeight: "bold !important",
       color: "#2F348B",
       lineHeight: "20px",
@@ -214,7 +214,7 @@ const styles = (theme) => ({
       display: "inline-block",
     },
     [theme.breakpoints.down("xs")]: {
-      fontSize: "18px !important",
+      fontSize: "16px !important",
       marginTop: "10px",
       color: "#33346D",
       lineHeight: "26px",
