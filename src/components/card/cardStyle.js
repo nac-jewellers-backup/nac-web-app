@@ -1,7 +1,7 @@
 import { makeStyles } from "@material-ui/core/styles";
 const styles = makeStyles((theme) => ({
   titlePage: {
-    fontSize: "49px",
+    fontSize: "35px",
     fontFamily: "notoSerif-regular",
     fontWeight: "500 !important",
     lineHeight: "1.1",
@@ -15,12 +15,12 @@ const styles = makeStyles((theme) => ({
   subtitle: {
     textAlign: "center",
     color: "gray",
-    fontSize: "20px",
+    fontSize: "16px",
   },
   subtitless: {
     textAlign: "center",
     color: "gray",
-    fontSize: "20px",
+    fontSize: "16px",
   },
   contentTemple: {
     fontFamily: "notoSerif-regular",
