@@ -4,7 +4,7 @@ import {
   Grid,
   Hidden,
   Paper,
-  Typography
+  Typography,
 } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 import ArrowLeftIcon from "@material-ui/icons/ArrowLeft";
@@ -138,8 +138,9 @@ const Productprice = (
                               ? val?.dis
                               : `${val?.dis?.substring(0, 30)}...`}
                             <span
-                              className={`pdp-desc ${viewMore ? "" : classes.disDescriptionPD
-                                }`}
+                              className={`pdp-desc ${
+                                viewMore ? "" : classes.disDescriptionPD
+                              }`}
                             >
                               <span
                                 style={{
@@ -187,7 +188,13 @@ const Productprice = (
                       {/* <span className={classes.shortdis}>{val.shortDis}</span> */}
                     </Hidden>
                     <Hidden smDown>
-                      <Typography style={{ marginTop: "-8px" }} className={`pdp-desc ${classes.dis}`}> {val?.shortDis}</Typography>
+                      <Typography
+                        style={{ marginTop: "-8px" }}
+                        className={`pdp-desc ${classes.dis}`}
+                      >
+                        {" "}
+                        {val?.shortDis}
+                      </Typography>
                       <br />
                       <br />
                       <Box display="flex" className={`pdp-desc ${classes.dis}`}>
@@ -199,7 +206,7 @@ const Productprice = (
                             style={{
                               cursor: "pointer",
                               color: "#33346D",
-                              fontSize: "16px",
+                              fontSize: "14px",
                               whiteSpace: "nowrap",
                             }}
                             onClick={() => {

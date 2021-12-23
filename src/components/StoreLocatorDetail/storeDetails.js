@@ -1,274 +1,360 @@
-import { Container, Grid, Typography } from '@material-ui/core';
-import React, { useEffect, useState } from 'react';
-import { withRouter } from 'react-router-dom';
+import { Container, Grid, Typography } from "@material-ui/core";
+import React, { useEffect, useState } from "react";
+import { withRouter } from "react-router-dom";
 // import Mapping from './mapping';
-import styles from './style';
-
-
-
+import styles from "./style";
 
 var obj_values = {};
 function StoreDetails(props) {
-    // alert(props.match.params.id)
-    // alert(obj_values&&obj_values.data&&obj_values.data.result&&obj_values.data.result.name&&obj_values.data.result.name.split("-"))
-    const classes = styles();
-    var name = obj_values && obj_values.data && obj_values.data.result && obj_values.data.result.name && obj_values.data.result.name.split("-")
-    var titleName = name && name[1]
-    var lat = obj_values && obj_values.data && obj_values.data.result && obj_values.data.result.geometry && obj_values.data.result.geometry.location && obj_values.data.result.geometry.location.lat
-    var lng = obj_values && obj_values.data && obj_values.data.result && obj_values.data.result.geometry && obj_values.data.result.geometry.location && obj_values.data.result.geometry.location.lng
+  // alert(props.match.params.id)
+  // alert(obj_values&&obj_values.data&&obj_values.data.result&&obj_values.data.result.name&&obj_values.data.result.name.split("-"))
+  const classes = styles();
+  var name =
+    obj_values &&
+    obj_values.data &&
+    obj_values.data.result &&
+    obj_values.data.result.name &&
+    obj_values.data.result.name.split("-");
+  var titleName = name && name[1];
+  var lat =
+    obj_values &&
+    obj_values.data &&
+    obj_values.data.result &&
+    obj_values.data.result.geometry &&
+    obj_values.data.result.geometry.location &&
+    obj_values.data.result.geometry.location.lat;
+  var lng =
+    obj_values &&
+    obj_values.data &&
+    obj_values.data.result &&
+    obj_values.data.result.geometry &&
+    obj_values.data.result.geometry.location &&
+    obj_values.data.result.geometry.location.lng;
 
-    //   alert(JSON.stringify(obj_values&&obj_values.data&&obj_values.data.result&&obj_values.data.result.geometry.location.lng))
-    const [state, setState] = useState({
-        formatted_phone_number: "",
-        formatted_address: "",
-        reviews: null,
-    });
-    const ids = props && props.match && props.match.params && props.match.params.id;
-    const title = () => {
-        if (props.match.params.id === "ChIJD2b_DdNnUjoRu9gobrKLB8I") {
-            return ["https://storage.googleapis.com/media.nacjewellers.com/resources/store-locator/Mylapore.jpg", "Mylapore", "Plot No. 58, North Mada Street, Mylapore,Chennai, Tamil Nadu 600004"]
-        }
-        else if (props.match.params.id === "ChIJR-r-zY5dUjoRKhDlVtRh39I") {
-            return ["https://storage.googleapis.com/media.nacjewellers.com/resources/store-locator/velachery.jpg", "Velachery", "No: 465/5, Velachery Bypass Road, Rajalakshmi Nagar, Velachery,Chennai, Tamil Nadu 600042",
-            ]
-        }
-        else if (props.match.params.id === "ChIJPyqXbLFlUjoRlijMXUh0R84") {
-            return ["https://storage.googleapis.com/media.nacjewellers.com/resources/store-locator/Perambur.jpg", "Perambur", "No: 39, 41 Paper Mills Road, Siruvallur, Perambur,Chennai, Tamil Nadu 600011"]
-        }
-        else if (props.match.params.id === "ChIJiZb4tVfCUjoRWHb4JCGQyKY") {
-            return ["https://storage.googleapis.com/media.nacjewellers.com/resources/store-locator/KANCHIPURAM%20SHOWROOM.jpg", "Kanchipuram", "No: 30, Kamarajar Salai, Kanchipuram,Tamil Nadu 631502"]
-        }
-        else if (props.match.params.id === "ChIJdUFnBRiQUjoR7wz1VkiWT3w") {
-            return ["https://storage.googleapis.com/media.nacjewellers.com/resources/store-locator/Tiruvallur.jpg", "Tiruvallur", "Plot no.216/2,216/3, S.no.196/2 part, Kakkalur village, TNHB Road, Ma. Po. Si. Nagar,Tiruvallur, Tamil Nadu 602001",]
-        }
-        else if (props.match.params.id === "ChIJq_WsMidkUjoRH7FAOtdaXis") {
-            return ["https://storage.googleapis.com/media.nacjewellers.com/resources/store-locator/Anna%20Nagar.jpg", "Anna Nagar", "New No 73, AG Block, 4th Avenue, 7th Main Road, Shanthi Colony,River View Colony,Chennai, Tamil Nadu 600040",
-            ]
-        }
-        else if (props.match.params.id === "ChIJlZ2oZrr6NToRG4kJpSN1uf8") {
-            return ["https://storage.googleapis.com/media.nacjewellers.com/resources/store-locator/Vijayawada.jpg", "Vijayawada", "41, 40-1-0, Mahatma Gandhi Rd, Near petrol Bunk, Labbipet,Vijayawada, Andhra Pradesh 520010",
-            ]
-        }
-        else if (props.match.params.id === "ChIJPSl-5WNvUjoRhtsRqpmTVTc") {
-            return ["https://storage.googleapis.com/media.nacjewellers.com/resources/store-locator/OLDWASHERMENPET.jpg", "Old Washermanpet", "456, Thiruvottiyur High Rd, Korukkupet, Old Washermanpet,Chennai, Tamil Nadu 600021"]
-        }
-        else if (props.match.params.id === "ChIJ423xiS1mUjoR_LOZTgQBMMM") {
-            return ["https://storage.googleapis.com/media.nacjewellers.com/resources/store-locator/t.nagar.jpg", "T. Nagar", "20, North Usman Road, Thiyagaraya Nagar,Chennai, Tamil Nadu 600017"]
-        }
-        else if (props.match.params.id === ":id") {
-            return ["https://storage.googleapis.com/media.nacjewellers.com/resources/store-locator/t.nagar.jpg", "T. Nagar", "20, North Usman Road, Thiyagaraya Nagar,Chennai, Tamil Nadu 600017"]
-        }
+  //   alert(JSON.stringify(obj_values&&obj_values.data&&obj_values.data.result&&obj_values.data.result.geometry.location.lng))
+  const [state, setState] = useState({
+    formatted_phone_number: "",
+    formatted_address: "",
+    reviews: null,
+  });
+  const ids =
+    props && props.match && props.match.params && props.match.params.id;
+  const title = () => {
+    if (props.match.params.id === "ChIJD2b_DdNnUjoRu9gobrKLB8I") {
+      return [
+        "https://storage.googleapis.com/media.nacjewellers.com/resources/store-locator/Mylapore.jpg",
+        "Mylapore",
+        "Plot No. 58, North Mada Street, Mylapore,Chennai, Tamil Nadu 600004",
+      ];
+    } else if (props.match.params.id === "ChIJR-r-zY5dUjoRKhDlVtRh39I") {
+      return [
+        "https://storage.googleapis.com/media.nacjewellers.com/resources/store-locator/velachery.jpg",
+        "Velachery",
+        "No: 465/5, Velachery Bypass Road, Rajalakshmi Nagar, Velachery,Chennai, Tamil Nadu 600042",
+      ];
+    } else if (props.match.params.id === "ChIJPyqXbLFlUjoRlijMXUh0R84") {
+      return [
+        "https://storage.googleapis.com/media.nacjewellers.com/resources/store-locator/Perambur.jpg",
+        "Perambur",
+        "No: 39, 41 Paper Mills Road, Siruvallur, Perambur,Chennai, Tamil Nadu 600011",
+      ];
+    } else if (props.match.params.id === "ChIJiZb4tVfCUjoRWHb4JCGQyKY") {
+      return [
+        "https://storage.googleapis.com/media.nacjewellers.com/resources/store-locator/KANCHIPURAM%20SHOWROOM.jpg",
+        "Kanchipuram",
+        "No: 30, Kamarajar Salai, Kanchipuram,Tamil Nadu 631502",
+      ];
+    } else if (props.match.params.id === "ChIJdUFnBRiQUjoR7wz1VkiWT3w") {
+      return [
+        "https://storage.googleapis.com/media.nacjewellers.com/resources/store-locator/Tiruvallur.jpg",
+        "Tiruvallur",
+        "Plot no.216/2,216/3, S.no.196/2 part, Kakkalur village, TNHB Road, Ma. Po. Si. Nagar,Tiruvallur, Tamil Nadu 602001",
+      ];
+    } else if (props.match.params.id === "ChIJq_WsMidkUjoRH7FAOtdaXis") {
+      return [
+        "https://storage.googleapis.com/media.nacjewellers.com/resources/store-locator/Anna%20Nagar.jpg",
+        "Anna Nagar",
+        "New No 73, AG Block, 4th Avenue, 7th Main Road, Shanthi Colony,River View Colony,Chennai, Tamil Nadu 600040",
+      ];
+    } else if (props.match.params.id === "ChIJlZ2oZrr6NToRG4kJpSN1uf8") {
+      return [
+        "https://storage.googleapis.com/media.nacjewellers.com/resources/store-locator/Vijayawada.jpg",
+        "Vijayawada",
+        "41, 40-1-0, Mahatma Gandhi Rd, Near petrol Bunk, Labbipet,Vijayawada, Andhra Pradesh 520010",
+      ];
+    } else if (props.match.params.id === "ChIJPSl-5WNvUjoRhtsRqpmTVTc") {
+      return [
+        "https://storage.googleapis.com/media.nacjewellers.com/resources/store-locator/OLDWASHERMENPET.jpg",
+        "Old Washermanpet",
+        "456, Thiruvottiyur High Rd, Korukkupet, Old Washermanpet,Chennai, Tamil Nadu 600021",
+      ];
+    } else if (props.match.params.id === "ChIJ423xiS1mUjoR_LOZTgQBMMM") {
+      return [
+        "https://storage.googleapis.com/media.nacjewellers.com/resources/store-locator/t.nagar.jpg",
+        "T. Nagar",
+        "20, North Usman Road, Thiyagaraya Nagar,Chennai, Tamil Nadu 600017",
+      ];
+    } else if (props.match.params.id === ":id") {
+      return [
+        "https://storage.googleapis.com/media.nacjewellers.com/resources/store-locator/t.nagar.jpg",
+        "T. Nagar",
+        "20, North Usman Road, Thiyagaraya Nagar,Chennai, Tamil Nadu 600017",
+      ];
     }
+  };
 
+  // alert(JSON.stringify(Maps_data))
 
-    // alert(JSON.stringify(Maps_data))
+  useEffect(() => {
+    // const opts = {
+    //             method: "GET",
+    //             headers: { "Access-Control-Allow-Origin": "http://localhost:3000","Access-Control-Allow-Credentials": true},
+    //           };
+    fetch(
+      `"https://cors-anywhere.herokuapp.com/"+https://maps.googleapis.com/maps/api/place/details/json?place_id=${ids}&key=AIzaSyBHtJJ5uHfhX92hxFzHsciwPCayzYB9yCk`
+    )
+      .then((res) => res.json())
+      .then((fetchValue) => {
+        obj_values["data"] = fetchValue;
 
-    useEffect(() => {
+        setState({
+          ...state,
+          formatted_phone_number: fetchValue.result.formatted_phone_number,
+          rating: fetchValue.result.rating,
+          formatted_address: fetchValue.result.formatted_address,
+        });
+        console.log(obj_values);
 
-        // const opts = {
-        //             method: "GET",
-        //             headers: { "Access-Control-Allow-Origin": "http://localhost:3000","Access-Control-Allow-Credentials": true},
-        //           };
-        fetch(
-            `"https://cors-anywhere.herokuapp.com/"+https://maps.googleapis.com/maps/api/place/details/json?place_id=${ids}&key=AIzaSyBHtJJ5uHfhX92hxFzHsciwPCayzYB9yCk`
-        )
-            .then(res => res.json())
-            .then(fetchValue => {
+        // alert(JSON.stringify(fetchValue.result.opening_hours.weekday_text))
+        // alert(JSON.stringify(days))
+        // Maps_Data(fetchValue)
+        // localStorage.setItem('accessToken',fetchValue.accessToken);
+        // localStorage.setItem('user_id', fetchValue.user_profile.id)
+        // localStorage.setItem('panel',2);
+        // localStorage.setItem('isedit',1);
+        // localStorage.setItem('true',false)
+        // props.history.push('/')
+      })
+      .catch(console.error);
+  }, []);
 
-                obj_values["data"] = fetchValue
+  const days =
+    obj_values &&
+    obj_values.data &&
+    obj_values.data.result &&
+    obj_values.data.result.opening_hours &&
+    obj_values.data.result.opening_hours.weekday_text &&
+    obj_values.data.result.opening_hours.weekday_text;
+  const len =
+    obj_values &&
+    obj_values.data &&
+    obj_values.data.result &&
+    obj_values.data.result.reviews &&
+    obj_values.data.result.reviews.length;
+  return (
+    <Grid
+      container
+      className={classes.mapcontainer}
+      style={{ overflowX: "hidden" }}
+    >
+      <Container maxWidth="lg">
+        <Grid
+          container
+          xs={12}
+          lg={12}
+          style={{ boxShadow: "4px 4px 4px #a5a4a5" }}
+        >
+          <Grid
+            item
+            xs={12}
+            md={6}
+            lg={6}
+            style={{ backgroundColor: "#E6E7E8" }}
+          >
+            <div style={{ padding: "30px" }}>
+              <Typography className={classes.titles}>{title()[1]}</Typography>
+              <Typography className={classes.address}> {title()[2]}</Typography>
+              <Typography className={classes.phone}>044 4399 6666</Typography>
+            </div>
+          </Grid>
+          <Grid item xs={12} md={6} lg={6}>
+            {/* <Mapping lat={titlea()[0]} lng={titlea()[0]} /> */}
+            {/* old */}
+            {props.match.params.id === "ChIJPSl-5WNvUjoRhtsRqpmTVTc" && (
+              <>
+                <div class="mapouter">
+                  <div class="gmap_canvas">
+                    <iframe
+                      width="100%"
+                      height="300"
+                      id="gmap_canvas"
+                      src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=456,%20Thiruvottiyur%20High%20Rd,%20Korukkupet,%20Old%20Washermanpet,Chennai,%20Tamil%20Nadu%20600021+(My%20Business%20Name)&amp;t=&amp;z=20&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                      frameborder="0"
+                      scrolling="no"
+                      marginheight="0"
+                      marginwidth="0"
+                    ></iframe>
+                    <a href="https://soap2day-to.com"></a>
+                  </div>
+                </div>
+              </>
+            )}
+            {/* mylopor */}
+            {props.match.params.id === "ChIJD2b_DdNnUjoRu9gobrKLB8I" && (
+              <>
+                <div class="mapouter">
+                  <div class="gmap_canvas">
+                    <iframe
+                      width="100%"
+                      height="300"
+                      id="gmap_canvas"
+                      src="https://maps.google.com/maps?width=100%25&amp;height=300&amp;hl=en&amp;q=Plot%20No.%2058,%20North%20Mada%20Street,%20Mylapore,%20Chennai,%20Tamil%20Nadu%20600004+(My%20Business%20Name)&amp;t=&amp;z=20&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                      frameborder="0"
+                      scrolling="no"
+                      marginheight="0"
+                      marginwidth="0"
+                    ></iframe>
+                    <a href="https://soap2day-to.com"></a>
+                  </div>
+                </div>
+              </>
+            )}
+            {/* old */}
+            {props.match.params.id === "ChIJPSl- 5WNvUjoRhtsRqpmTVTc" && (
+              <>
+                <div class="mapouter">
+                  <div class="gmap_canvas">
+                    <iframe
+                      width="100%"
+                      height="300"
+                      id="gmap_canvas"
+                      src="https://maps.google.com/maps?width=100%25&amp;height=300&amp;hl=en&amp;q=No:%20465/5,%20Velachery%20Bypass%20Road,%20Rajalakshmi%20Nagar,%20Velachery,%20Chennai,%20Tamil%20Nadu%20600042+(My%20Business%20Name)&amp;t=&amp;z=20&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                      frameborder="0"
+                      scrolling="no"
+                      marginheight="0"
+                      marginwidth="0"
+                    ></iframe>
+                    <a href="https://soap2day-to.com"></a>
+                  </div>
+                </div>
+              </>
+            )}
+            {/* Perabur */}
+            {props.match.params.id === "ChIJPyqXbLFlUjoRlijMXUh0R84" && (
+              <>
+                <div class="mapouter">
+                  <div class="gmap_canvas">
+                    <iframe
+                      width="100%"
+                      height="300"
+                      id="gmap_canvas"
+                      src="https://maps.google.com/maps?width=100%25&amp;height=300&amp;hl=en&amp;q=No:%2039,%2041%20Paper%20Mills%20Road,%20Siruvallur,%20Perambur,Chennai,%20Tamil%20Nadu%20600011+(NAC)&amp;t=&amp;z=20&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                      frameborder="0"
+                      scrolling="no"
+                      marginheight="0"
+                      marginwidth="0"
+                    ></iframe>
+                    <a href="https://soap2day-to.com"></a>
+                  </div>
+                </div>
+              </>
+            )}
+            {/* Velachery */}
+            {props.match.params.id === "ChIJR-r-zY5dUjoRKhDlVtRh39I" && (
+              <div class="mapouter">
+                <div class="gmap_canvas">
+                  <iframe
+                    width="100%"
+                    height="300"
+                    id="gmap_canvas"
+                    src="https://maps.google.com/maps?width=100%25&amp;height=300&amp;hl=en&amp;q=No:%20465/5,%20Velachery%20Bypass%20Road,%20Rajalakshmi%20Nagar,%20Velachery,%20Chennai,%20Tamil%20Nadu%20600042+(NAC)&amp;t=&amp;z=20&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                    frameborder="0"
+                    scrolling="no"
+                    marginheight="0"
+                    marginwidth="0"
+                  ></iframe>
+                  <a href="https://soap2day-to.com"></a>
+                </div>
+              </div>
+            )}
+            {/* Kanchipuram */}
 
-                setState({
-                    ...state,
-                    formatted_phone_number: fetchValue.result.formatted_phone_number,
-                    rating: fetchValue.result.rating,
-                    formatted_address: fetchValue.result.formatted_address,
+            {props.match.params.id === "ChIJiZb4tVfCUjoRWHb4JCGQyKY" && (
+              <div class="mapouter">
+                <div class="gmap_canvas">
+                  <iframe
+                    width="100%"
+                    height="300"
+                    id="gmap_canvas"
+                    src="https://maps.google.com/maps?width=100%25&amp;height=300&amp;hl=en&amp;q=No:%2030,%20Kamarajar%20Salai,%20Kanchipuram,%20Tamil%20Nadu%20631502+(NAC)&amp;t=&amp;z=20&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                    frameborder="0"
+                    scrolling="no"
+                    marginheight="0"
+                    marginwidth="0"
+                  ></iframe>
+                  <a href="https://soap2day-to.com"></a>
+                </div>
+              </div>
+            )}
+            {/*Tiruvalur */}
+            {props.match.params.id === "ChIJdUFnBRiQUjoR7wz1VkiWT3w" && (
+              <div class="mapouter">
+                <div class="gmap_canvas">
+                  <iframe
+                    width="100%"
+                    height="300"
+                    id="gmap_canvas"
+                    src="https://maps.google.com/maps?width=100%25&amp;height=300&amp;hl=en&amp;q=Plot%20no.216/2,216/3,%20S.no.196/2%20part,%20Kakkalur%20village,%20TNHB%20Road,%20Ma.%20Po.%20Si.%20Nagar,Tiruvallur,%20Tamil%20Nadu%20602001+(NAC)&amp;t=&amp;z=20&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                    frameborder="0"
+                    scrolling="no"
+                    marginheight="0"
+                    marginwidth="0"
+                  ></iframe>
+                  <a href="https://soap2day-to.com"></a>
+                </div>
+              </div>
+            )}
+            {/*Anna Nager */}
+            {props.match.params.id === "ChIJq_WsMidkUjoRH7FAOtdaXis" && (
+              <div class="mapouter">
+                <div class="gmap_canvas">
+                  <iframe
+                    width="100%"
+                    height="300"
+                    id="gmap_canvas"
+                    src="https://maps.google.com/maps?width=100%25&amp;height=300&amp;hl=en&amp;q=New%20No%2073,%20AG%20Block,%204th%20Avenue,%207th%20Main%20Road,%20Shanthi%20Colony,River%20View%20Colony,%20Chennai,%20Tamil%20Nadu%20600040+(NAC)&amp;t=&amp;z=20&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                    frameborder="0"
+                    scrolling="no"
+                    marginheight="0"
+                    marginwidth="0"
+                  ></iframe>
+                  <a href="https://soap2day-to.com"></a>
+                </div>
+              </div>
+            )}
+            {/*vijayawada */}
+            {props.match.params.id === "ChIJlZ2oZrr6NToRG4kJpSN1uf8" && (
+              <div class="mapouter">
+                <div class="gmap_canvas">
+                  <iframe
+                    width="100%"
+                    height="300"
+                    id="gmap_canvas"
+                    src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=40-1-41,%20MG%20Rd,%20Near%20petrol%20Bunk,%20Venkateswara%20Puram,%20Sidhartha%20Nagar,%20Labbipet,%20Vijayawada,%20Andhra%20Pradesh%20520010+(My%20Business%20Name)&amp;t=&amp;z=17&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                    frameborder="0"
+                    scrolling="no"
+                    marginheight="0"
+                    marginwidth="0"
+                  ></iframe>
+                  <a href="https://soap2day-to.com"></a>
+                </div>
+              </div>
+            )}
+          </Grid>
+        </Grid>
+      </Container>
 
-
-
-                })
-                console.log(obj_values)
-                debugger
-
-                // alert(JSON.stringify(fetchValue.result.opening_hours.weekday_text))
-                // alert(JSON.stringify(days))
-                // Maps_Data(fetchValue)
-                // localStorage.setItem('accessToken',fetchValue.accessToken);
-                // localStorage.setItem('user_id', fetchValue.user_profile.id)
-                // localStorage.setItem('panel',2);
-                // localStorage.setItem('isedit',1);
-                // localStorage.setItem('true',false)
-                // props.history.push('/')
-
-            })
-            .catch(console.error)
-    }, []);
-
-
-
-
-    const days = obj_values && obj_values.data && obj_values.data.result && obj_values.data.result.opening_hours && obj_values.data.result.opening_hours.weekday_text && obj_values.data.result.opening_hours.weekday_text
-    const len = obj_values && obj_values.data && obj_values.data.result && obj_values.data.result.reviews && obj_values.data.result.reviews.length;
-    return (
-        <Grid container className={classes.mapcontainer} style={{ overflowX: "hidden" }}>
-            <Container maxWidth="lg">
-                <Grid container xs={12} lg={12} style={{ boxShadow: "4px 4px 4px #a5a4a5" }}>
-                    <Grid item xs={12} md={6} lg={6} style={{ backgroundColor: "#E6E7E8", }}>
-                        <div style={{ padding: "30px" }}>
-                            <Typography className={classes.titles}>{title()[1]}</Typography>
-                            <Typography className={classes.address}> {title()[2]}</Typography>
-                            <Typography className={classes.phone}>044 4399 6666</Typography>
-
-                        </div>
-                    </Grid>
-                    <Grid item xs={12} md={6} lg={6}>
-                        {/* <Mapping lat={titlea()[0]} lng={titlea()[0]} /> */}
-                        {/* old */}
-                        {
-                            props.match.params.id === "ChIJPSl-5WNvUjoRhtsRqpmTVTc" &&
-                            <>
-                                <div class="mapouter">
-                                    <div class="gmap_canvas"><iframe width="100%" height="300" id="gmap_canvas"
-                                        src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=456,%20Thiruvottiyur%20High%20Rd,%20Korukkupet,%20Old%20Washermanpet,Chennai,%20Tamil%20Nadu%20600021+(My%20Business%20Name)&amp;t=&amp;z=20&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-                                        frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a
-                                            href="https://soap2day-to.com"></a>
-
-
-                                    </div>
-                                </div>
-
-                            </>
-                        }
-                        {/* mylopor */}
-                        {
-                            props.match.params.id === "ChIJD2b_DdNnUjoRu9gobrKLB8I" &&
-                            <>
-                                <div class="mapouter">
-                                    <div class="gmap_canvas">
-                                        <iframe width="100%" height="300" id="gmap_canvas"
-                                            src="https://maps.google.com/maps?width=100%25&amp;height=300&amp;hl=en&amp;q=Plot%20No.%2058,%20North%20Mada%20Street,%20Mylapore,%20Chennai,%20Tamil%20Nadu%20600004+(My%20Business%20Name)&amp;t=&amp;z=20&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-                                            frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a
-                                                href="https://soap2day-to.com"></a>
-
-
-                                    </div>
-                                </div>
-                            </>
-                        }
-                        {/* old */}
-                        {
-                            props.match.params.id === "ChIJPSl- 5WNvUjoRhtsRqpmTVTc" &&
-                            <>
-                                <div class="mapouter">
-                                    <div class="gmap_canvas"><iframe width="100%" height="300" id="gmap_canvas"
-                                        src="https://maps.google.com/maps?width=100%25&amp;height=300&amp;hl=en&amp;q=No:%20465/5,%20Velachery%20Bypass%20Road,%20Rajalakshmi%20Nagar,%20Velachery,%20Chennai,%20Tamil%20Nadu%20600042+(My%20Business%20Name)&amp;t=&amp;z=20&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-                                        frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a
-                                            href="https://soap2day-to.com"></a>
-
-
-                                    </div>
-                                </div>
-                            </>
-                        }
-                        {/* Perabur */}
-                        {
-                            props.match.params.id === "ChIJPyqXbLFlUjoRlijMXUh0R84" &&
-                            <>
-                                <div class="mapouter">
-                                    <div class="gmap_canvas"><iframe width="100%" height="300" id="gmap_canvas"
-                                        src="https://maps.google.com/maps?width=100%25&amp;height=300&amp;hl=en&amp;q=No:%2039,%2041%20Paper%20Mills%20Road,%20Siruvallur,%20Perambur,Chennai,%20Tamil%20Nadu%20600011+(NAC)&amp;t=&amp;z=20&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-                                        frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a
-                                            href="https://soap2day-to.com"></a>
-
-
-                                    </div>
-                                </div>
-                            </>
-                        }
-                        {/* Velachery */}
-                        {
-
-                            props.match.params.id === "ChIJR-r-zY5dUjoRKhDlVtRh39I" &&
-                            <div class="mapouter">
-                                <div class="gmap_canvas"><iframe width="100%" height="300" id="gmap_canvas"
-                                    src="https://maps.google.com/maps?width=100%25&amp;height=300&amp;hl=en&amp;q=No:%20465/5,%20Velachery%20Bypass%20Road,%20Rajalakshmi%20Nagar,%20Velachery,%20Chennai,%20Tamil%20Nadu%20600042+(NAC)&amp;t=&amp;z=20&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-                                    frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a
-                                        href="https://soap2day-to.com"></a>
-
-
-                                </div>
-                            </div>
-
-                        }
-                        {/* Kanchipuram */}
-
-                        {
-
-                            props.match.params.id === "ChIJiZb4tVfCUjoRWHb4JCGQyKY" &&
-                            <div class="mapouter">
-                                <div class="gmap_canvas"><iframe width="100%" height="300" id="gmap_canvas"
-                                    src="https://maps.google.com/maps?width=100%25&amp;height=300&amp;hl=en&amp;q=No:%2030,%20Kamarajar%20Salai,%20Kanchipuram,%20Tamil%20Nadu%20631502+(NAC)&amp;t=&amp;z=20&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-                                    frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a
-                                        href="https://soap2day-to.com"></a>
-
-
-                                </div>
-                            </div>
-
-                        }
-                        {/*Tiruvalur */}
-                        {
-
-                            props.match.params.id === "ChIJdUFnBRiQUjoR7wz1VkiWT3w" &&
-                            <div class="mapouter">
-                                <div class="gmap_canvas"><iframe width="100%" height="300" id="gmap_canvas"
-                                    src="https://maps.google.com/maps?width=100%25&amp;height=300&amp;hl=en&amp;q=Plot%20no.216/2,216/3,%20S.no.196/2%20part,%20Kakkalur%20village,%20TNHB%20Road,%20Ma.%20Po.%20Si.%20Nagar,Tiruvallur,%20Tamil%20Nadu%20602001+(NAC)&amp;t=&amp;z=20&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-                                    frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a
-                                        href="https://soap2day-to.com"></a>
-
-
-                                </div>
-                            </div>
-
-                        }
-                        {/*Anna Nager */}
-                        {
-
-                            props.match.params.id === "ChIJq_WsMidkUjoRH7FAOtdaXis" &&
-                            <div class="mapouter">
-                                <div class="gmap_canvas"><iframe width="100%" height="300" id="gmap_canvas"
-                                    src="https://maps.google.com/maps?width=100%25&amp;height=300&amp;hl=en&amp;q=New%20No%2073,%20AG%20Block,%204th%20Avenue,%207th%20Main%20Road,%20Shanthi%20Colony,River%20View%20Colony,%20Chennai,%20Tamil%20Nadu%20600040+(NAC)&amp;t=&amp;z=20&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-                                    frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a
-                                        href="https://soap2day-to.com"></a>
-
-
-                                </div>
-                            </div>
-
-                        }
-                        {/*vijayawada */}
-                        {
-
-                            props.match.params.id === "ChIJlZ2oZrr6NToRG4kJpSN1uf8" &&
-                            <div class="mapouter">
-                                <div class="gmap_canvas"><iframe width="100%" height="300" id="gmap_canvas"
-                                    src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=40-1-41,%20MG%20Rd,%20Near%20petrol%20Bunk,%20Venkateswara%20Puram,%20Sidhartha%20Nagar,%20Labbipet,%20Vijayawada,%20Andhra%20Pradesh%20520010+(My%20Business%20Name)&amp;t=&amp;z=17&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-                                    frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a
-                                        href="https://soap2day-to.com"></a>
-
-
-                                </div>
-                            </div>
-
-                        }
-
-                    </Grid>
-
-                </Grid>
-
-            </Container >
-
-
-            {/* <Grid container className={classes.sidePer} sm={12} md={12} xs={12} lg={12}>
+      {/* <Grid container className={classes.sidePer} sm={12} md={12} xs={12} lg={12}>
 
                 <Grid container xs={12} sm={12} md={12} lg={12}>
                     <Grid item className={classes.borders} xs={12} sm={12} md={5} lg={4}>
@@ -371,9 +457,8 @@ function StoreDetails(props) {
           
           
             </Grid> */}
-        </Grid >
-
-    )
+    </Grid>
+  );
 }
 
 export default withRouter(StoreDetails);

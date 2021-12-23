@@ -116,7 +116,7 @@ export const styles = (theme) => ({
   normalfonts2: {
     color: "gray !important",
     marginTop: "30px",
-    fontSize: "1.1rem !important",
+    fontSize: "14px !important",
     paddingBottom: "14px !important",
   },
   normalcolorback: {

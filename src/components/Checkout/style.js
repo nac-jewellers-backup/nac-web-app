@@ -36,7 +36,7 @@ const styles = (theme) => ({
       fontSize: "13px ",
     },
     [theme.breakpoints.up("lg")]: {
-      fontSize: "16px",
+      fontSize: "14px",
     },
   },
   cartheader: {
@@ -46,7 +46,7 @@ const styles = (theme) => ({
       fontSize: "14px",
     },
     [theme.breakpoints.up("lg")]: {
-      fontSize: "17px",
+      fontSize: "14px",
     },
   },
   cardpad: {
@@ -153,10 +153,10 @@ const styles = (theme) => ({
   },
   totalcost: {
     [theme.breakpoints.down("xs")]: {
-      fontSize: "15px;!important",
+      fontSize: "14px !important",
     },
     [theme.breakpoints.up("lg")]: {
-      fontSize: "18px !important",
+      fontSize: "15px !important",
     },
   },
   normalfonts: {
@@ -164,7 +164,7 @@ const styles = (theme) => ({
       fontSize: "12px !important",
     },
     [theme.breakpoints.up("lg")]: {
-      fontSize: "17px !important",
+      fontSize: "14px !important",
     },
     color: "gray",
     float: "right !important",
@@ -174,7 +174,7 @@ const styles = (theme) => ({
       fontSize: "12px !important",
     },
     [theme.breakpoints.up("lg")]: {
-      fontSize: "16px !important",
+      fontSize: "14px !important",
     },
     color: "gray",
     float: "right !important",
@@ -184,7 +184,7 @@ const styles = (theme) => ({
       fontSize: "12px !important",
     },
     [theme.breakpoints.up("lg")]: {
-      fontSize: "16px !important",
+      fontSize: "14px !important",
     },
     color: "gray",
     float: "right !important",

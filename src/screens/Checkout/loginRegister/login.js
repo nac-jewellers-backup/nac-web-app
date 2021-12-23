@@ -5,10 +5,7 @@ import DialogContent from "@material-ui/core/DialogContent";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 import React from "react";
-import FacebookLogin from "react-facebook-login";
 import { AiOutlineMobile } from "react-icons/ai";
-import { FcGoogle } from "react-icons/fc";
-import { ImFacebook } from "react-icons/im";
 import { withRouter } from "react-router-dom";
 import { Input } from "../../../components/InputComponents/TextField/Input";
 import "./loginRegisters.css";
@@ -36,7 +33,9 @@ const LoginComponent = (props) => {
   let url = "https://api-staging.stylori.com";
   const classes1 = useStyle();
   const { classes } = props;
-  const { values, handlers, setValues, data } = useLogin(() => props.changePanel(2));
+  const { values, handlers, setValues, data } = useLogin(() =>
+    props.changePanel(2)
+  );
   const [open, setopen] = React.useState(false);
   const [emailForm, setEmailForm] = React.useState(true);
   const [numberForm, setNumberForm] = React.useState({
@@ -130,9 +129,18 @@ const LoginComponent = (props) => {
                 .then((res) => res.json())
                 .then((fetchValue1) => {
                   if (fetchValue1.accessToken) {
-                    localStorage.setItem("accessToken", fetchValue1.accessToken);
-                    localStorage.setItem("user_id", fetchValue1.user_profile.id);
-                    localStorage.setItem("email", fetchValue1.user_profile.email);
+                    localStorage.setItem(
+                      "accessToken",
+                      fetchValue1.accessToken
+                    );
+                    localStorage.setItem(
+                      "user_id",
+                      fetchValue1.user_profile.id
+                    );
+                    localStorage.setItem(
+                      "email",
+                      fetchValue1.user_profile.email
+                    );
 
                     localStorage.setItem("panel", 2);
                     localStorage.setItem("isedit", 1);
@@ -290,7 +298,6 @@ const LoginComponent = (props) => {
   console.log(numberForm);
   const MobileNumSubmit = (e, history) => {};
   const SendOTP = () => {
-    debugger;
     React.useState({ ...numberForm, NumberSubmit: true });
   };
   return (
@@ -309,11 +316,15 @@ const LoginComponent = (props) => {
                   " "
                 ) : (
                   <h5 className={`title ${classes.normalfonts}`}>
-                    {window.location.pathname === "/login" ? "Login" : "I already have an account"}
+                    {window.location.pathname === "/login"
+                      ? "Login"
+                      : "I already have an account"}
                   </h5>
                 )}
               </Hidden>
-              <h5 className={`title ${classes.normalfonts2}`}>Email Login For Registered Users</h5>
+              <h5 className={`title ${classes.normalfonts2}`}>
+                Email Login For Registered Users
+              </h5>
 
               <Input
                 className={classes1.input}
@@ -324,7 +335,10 @@ const LoginComponent = (props) => {
                 onChange={(e) => handlers.handleChange("email", e.target.value)}
                 placeholder="Email address"
               />
-              <label className="errtext"> {values.error.emerr && values.errortext.emerr}</label>
+              <label className="errtext">
+                {" "}
+                {values.error.emerr && values.errortext.emerr}
+              </label>
               <Input
                 type="password"
                 name="password"
@@ -332,9 +346,14 @@ const LoginComponent = (props) => {
                 error={values.error && values.error.passerr ? true : false}
                 helperText={values.errortext && values.errortext.passerr}
                 placeholder="Password"
-                onChange={(e) => handlers.handleChange("password", e.target.value)}
+                onChange={(e) =>
+                  handlers.handleChange("password", e.target.value)
+                }
               />
-              <label className="errtext"> {values.error.passerr && values.errortext.passerr}</label>
+              <label className="errtext">
+                {" "}
+                {values.error.passerr && values.errortext.passerr}
+              </label>
               <div className="log-pas">
                 <span
                   onClick={() => {
@@ -394,7 +413,12 @@ const LoginComponent = (props) => {
               </>
             )}
 
-            <Grid container justifyContent="center" className={classes.other} style={{ padding: "10px" }}>
+            <Grid
+              container
+              justifyContent="center"
+              className={classes.other}
+              style={{ padding: "10px" }}
+            >
               <Grid item xs={12}>
                 <br />
                 {/* <Box display="flex" flexDirection="row" justifyContent="center">
@@ -466,7 +490,10 @@ const LoginComponent = (props) => {
                           onClick={() => ShowOtpForm()}
                           className={classes.btntext}
                           startIcon={
-                            <AiOutlineMobile style={{ marginLeft: "4px", color: "#E28CAB" }} className={classes.btnicon} />
+                            <AiOutlineMobile
+                              style={{ marginLeft: "4px", color: "#E28CAB" }}
+                              className={classes.btnicon}
+                            />
                           }
                         >
                           Sign in with OTP
@@ -492,11 +519,15 @@ const LoginComponent = (props) => {
                     " "
                   ) : (
                     <h5 className={`title ${classes.normalfonts}`}>
-                      {window.location.pathname === "/login" ? "Login" : "I already have an account"}
+                      {window.location.pathname === "/login"
+                        ? "Login"
+                        : "I already have an account"}
                     </h5>
                   )}
                 </Hidden>
-                <h5 className={`title ${classes.normalfonts2}`}>OTP Login For Registered Users</h5>
+                <h5 className={`title ${classes.normalfonts2}`}>
+                  OTP Login For Registered Users
+                </h5>
 
                 {numberForm.NumberSubmit ? (
                   <Input
@@ -525,7 +556,10 @@ const LoginComponent = (props) => {
                 )}
                 {/* <label className="errtext"> {numError ? "Phone number length must be less than 10" : ""}</label> */}
 
-                <label className="errtext"> {values.error.passerr && values.errortext.passerr}</label>
+                <label className="errtext">
+                  {" "}
+                  {values.error.passerr && values.errortext.passerr}
+                </label>
               </Grid>
               <br />
               <br />
@@ -533,11 +567,20 @@ const LoginComponent = (props) => {
                 SIGN IN
               </Button>
 
-              <Grid container justifyContent="center" className={classes.other} style={{ padding: "10px" }}>
+              <Grid
+                container
+                justifyContent="center"
+                className={classes.other}
+                style={{ padding: "10px" }}
+              >
                 <Grid item xs={12}>
                   <br />
 
-                  <Box display="flex" flexDirection="row" justifyContent="center">
+                  <Box
+                    display="flex"
+                    flexDirection="row"
+                    justifyContent="center"
+                  >
                     <Box padding="5px">
                       <div style={{ cursor: "pointer" }}>
                         <label>
@@ -555,7 +598,10 @@ const LoginComponent = (props) => {
                             onClick={() => ShowOtpForm()}
                             className={classes.btntext}
                             startIcon={
-                              <AiOutlineMobile style={{ marginLeft: "4px", color: "#E28CAB" }} className={classes.btnicon} />
+                              <AiOutlineMobile
+                                style={{ marginLeft: "4px", color: "#E28CAB" }}
+                                className={classes.btnicon}
+                              />
                             }
                           >
                             Sign in with Email
@@ -572,8 +618,14 @@ const LoginComponent = (props) => {
       </div>
 
       <div>
-        <Dialog open={open} aria-labelledby="alert-dialog-title" aria-describedby="alert-dialog-description">
-          <DialogTitle id="alert-dialog-title">We Need Some More of Your Details to Log you in</DialogTitle>
+        <Dialog
+          open={open}
+          aria-labelledby="alert-dialog-title"
+          aria-describedby="alert-dialog-description"
+        >
+          <DialogTitle id="alert-dialog-title">
+            We Need Some More of Your Details to Log you in
+          </DialogTitle>
           <DialogContent>
             <Grid container>
               <Grid item xs={12} sm={12} md={12} lg={12}>
@@ -588,7 +640,11 @@ const LoginComponent = (props) => {
                   onChange={(e) => handleUserInfo(e, "email")}
                   name="email"
                   label="Email*"
-                  helperText={loginInfo.error && loginInfo.error.email && loginInfo.email_error_msg}
+                  helperText={
+                    loginInfo.error &&
+                    loginInfo.error.email &&
+                    loginInfo.email_error_msg
+                  }
                 />
               </Grid>
               <Grid item xs={12} sm={12} md={6} lg={6}>
@@ -599,11 +655,17 @@ const LoginComponent = (props) => {
                   fullWidth
                   defaultValue={loginInfo.first_name}
                   id="first_name"
-                  error={loginInfo && loginInfo.error && loginInfo.error.first_name}
+                  error={
+                    loginInfo && loginInfo.error && loginInfo.error.first_name
+                  }
                   onChange={(e) => handleUserInfo(e, "first_name")}
                   name="first_name"
                   label="First Name*"
-                  helperText={loginInfo.error && loginInfo.error.first_name && loginInfo.first_name_invalid}
+                  helperText={
+                    loginInfo.error &&
+                    loginInfo.error.first_name &&
+                    loginInfo.first_name_invalid
+                  }
                 />
                 {/* <label className='errtext'> {values.error.passerr && values.errortext.passerr}</label> */}
               </Grid>
@@ -615,11 +677,17 @@ const LoginComponent = (props) => {
                   fullWidth
                   defaultValue={loginInfo.last_name}
                   id="last_name"
-                  error={loginInfo && loginInfo.error && loginInfo.error.last_name}
+                  error={
+                    loginInfo && loginInfo.error && loginInfo.error.last_name
+                  }
                   onChange={(e) => handleUserInfo(e, "last_name")}
                   name="last_name"
                   label="Last Name*"
-                  helperText={loginInfo.error && loginInfo.error.last_name && loginInfo.last_name_invalid}
+                  helperText={
+                    loginInfo.error &&
+                    loginInfo.error.last_name &&
+                    loginInfo.last_name_invalid
+                  }
                 />
                 {/* <label className='errtext'> {values.error.passerr && values.errortext.passerr}</label> */}
               </Grid>
@@ -642,10 +710,18 @@ const LoginComponent = (props) => {
             </Grid>
           </DialogContent>
           <DialogActions>
-            <Button variant="contained" onClick={() => handleButton("save")} color="primary">
+            <Button
+              variant="contained"
+              onClick={() => handleButton("save")}
+              color="primary"
+            >
               Save
             </Button>
-            <Button variant="contained" onClick={() => handleButton("cancel")} color="default">
+            <Button
+              variant="contained"
+              onClick={() => handleButton("cancel")}
+              color="default"
+            >
               Cancel
             </Button>
           </DialogActions>

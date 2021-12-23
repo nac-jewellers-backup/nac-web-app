@@ -49,11 +49,11 @@ const RegisterComponent = (props) => {
                       ""
                     ) : (
                       <>
-                        <h2>
-                          {window.location.pathname === "/registers"
-                            ? "Register"
-                            : "Register New Users"}
-                        </h2>
+                        {window.location.pathname === "/registers" ? (
+                          <h2>Register</h2>
+                        ) : (
+                          <h5 style={{ color: "gray" }}>Register New Users</h5>
+                        )}
                       </>
                     )}
                   </h5>

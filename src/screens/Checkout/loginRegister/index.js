@@ -133,6 +133,7 @@ class LoginRegisterIndex extends React.Component {
                   color: "gray",
                   textAlign: "center",
                   borderTop: "1px solid #c1c1c1",
+                  fontSize: "14px",
                 }}
               >
                 <br />

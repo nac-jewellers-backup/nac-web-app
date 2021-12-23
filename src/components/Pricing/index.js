@@ -21,8 +21,9 @@ export default function Pricing(props) {
       {props.title ? (
         <Typography
           style={props.from && { margin: "auto", textTransform: "capitalize" }}
-          className={`pricing  ${(props.title != null) & (props.title !== "") ? "" : "shine"
-            } ${path == "stylori" && "pricingTitle"}`}
+          className={`pricing  ${
+            (props.title != null) & (props.title !== "") ? "" : "shine"
+          } ${path == "stylori" && "pricingTitle"}`}
         >
           {props.title}
         </Typography>
@@ -32,8 +33,8 @@ export default function Pricing(props) {
       {/*  */}
       <Grid spacing={12} container lg={12}>
         {window.location.pathname !== "/cart" &&
-          window.location.pathname.split("-")[0] !== "/account" &&
-          window.location.pathname !== "/checkout" ? (
+        window.location.pathname.split("-")[0] !== "/account" &&
+        window.location.pathname !== "/checkout" ? (
           <Grid container>
             {props.pdpage && (
               <Grid
@@ -46,8 +47,6 @@ export default function Pricing(props) {
                   <Typography style={{ display: "flex", width: "100%" }}>
                     <Typography
                       style={{
-
-
                         color: "#6E6E71",
                       }}
                     >
@@ -73,7 +72,6 @@ export default function Pricing(props) {
               {props.price && window.location.pathname !== "/paymentsuccess" ? (
                 <>
                   <Typography style={{ display: "flex", width: "100%" }}>
-
                     <Hidden smDown>
                       <Typography
                         style={{
@@ -81,11 +79,13 @@ export default function Pricing(props) {
                           margin: props.from ? "auto" : "unset",
                           fontWeight: "bold",
                         }}
-                        className={`${(props.offerPrice != null) & (props.offerPrice !== "")
-                          ? ""
-                          : "shine"
-                          } ${classes.colorMain} ${classes.h6FontSize} ${classes.offerPricePadding
-                          } `}
+                        className={`${
+                          (props.offerPrice != null) & (props.offerPrice !== "")
+                            ? ""
+                            : "shine"
+                        } ${classes.colorMain} ${classes.h6FontSize} ${
+                          classes.offerPricePadding
+                        } `}
                       >
                         {new Intl.NumberFormat("en-IN", {
                           style: "currency",
@@ -93,20 +93,20 @@ export default function Pricing(props) {
                           minimumFractionDigits: 0,
                         }).format(Math.round(props.price))}
                       </Typography>
-
                     </Hidden>
                     <Hidden mdUp>
                       <Typography
                         style={{
-
                           margin: props.from ? "auto" : "unset",
                           fontWeight: "bold",
                         }}
-                        className={`${(props.offerPrice != null) & (props.offerPrice !== "")
-                          ? ""
-                          : "shine"
-                          } ${classes.colorMain} ${classes.h6FontSize} ${classes.offerPricePadding
-                          } `}
+                        className={`${
+                          (props.offerPrice != null) & (props.offerPrice !== "")
+                            ? ""
+                            : "shine"
+                        } ${classes.colorMain} ${classes.h6FontSize} ${
+                          classes.offerPricePadding
+                        } `}
                       >
                         {new Intl.NumberFormat("en-IN", {
                           style: "currency",
@@ -114,9 +114,7 @@ export default function Pricing(props) {
                           minimumFractionDigits: 0,
                         }).format(Math.round(props.price))}
                       </Typography>
-
                     </Hidden>
-
 
                     <Hidden smDown>
                       {props.offerDiscount ? (
@@ -135,10 +133,11 @@ export default function Pricing(props) {
                           <Typography
                             variant="caption"
                             component="p"
-                            className={`${(props.save != null) & (props.save !== "")
-                              ? ""
-                              : "shine"
-                              } ${classes.colorMain}  `}
+                            className={`${
+                              (props.save != null) & (props.save !== "")
+                                ? ""
+                                : "shine"
+                            } ${classes.colorMain}  `}
                           >
                             {path === "stylori" && "You save"} {props.save}
                           </Typography>
@@ -164,10 +163,11 @@ export default function Pricing(props) {
                         <Typography
                           variant="caption"
                           component="p"
-                          className={`${(props.save != null) & (props.save !== "")
-                            ? ""
-                            : "shine"
-                            } ${classes.colorMain}  `}
+                          className={`${
+                            (props.save != null) & (props.save !== "")
+                              ? ""
+                              : "shine"
+                          } ${classes.colorMain}  `}
                         >
                           {path === "stylori" && "You save"} {props.save}
                         </Typography>
@@ -196,11 +196,13 @@ export default function Pricing(props) {
                       style={
                         props.from && { margin: "auto", paddingBottom: "10px" }
                       }
-                      className={`pricing-p${(props.price != null) & (props.price !== "")
-                        ? ""
-                        : "shine"
-                        }${classes.colorMain} ${classes.h6FontSizeStrike} ${classes.offerPricePadding
-                        } ${classes.dis} ${classes.boldFont}`}
+                      className={`pricing-p${
+                        (props.price != null) & (props.price !== "")
+                          ? ""
+                          : "shine"
+                      }${classes.colorMain} ${classes.h6FontSizeStrike} ${
+                        classes.offerPricePadding
+                      } ${classes.dis} ${classes.boldFont}`}
                     >
                       {props.offerPrice === props.price ? (
                         ""
@@ -232,8 +234,8 @@ export default function Pricing(props) {
               xs={12}
               lg={
                 window.location.pathname !== "/cart" &&
-                  window.location.pathname.split("-")[0] !== "/account" &&
-                  window.location.pathname !== "/checkout"
+                window.location.pathname.split("-")[0] !== "/account" &&
+                window.location.pathname !== "/checkout"
                   ? 2
                   : 12
               }
@@ -252,7 +254,7 @@ export default function Pricing(props) {
                         }
                       >
                         {props.offerPrice === props.price ? (
-                          <span style={{ color: "gray", fontSize: "16px" }}>
+                          <span style={{ color: "gray", fontSize: "14px" }}>
                             {" "}
                             {new Intl.NumberFormat("en-IN", {
                               style: "currency",
@@ -348,10 +350,12 @@ export default function Pricing(props) {
                                     <Typography
                                       variant="caption"
                                       component="p"
-                                      className={`${(props.save != null) & (props.save !== "")
-                                        ? ""
-                                        : "shine"
-                                        } ${classes.colorMain}  `}
+                                      className={`${
+                                        (props.save != null) &
+                                        (props.save !== "")
+                                          ? ""
+                                          : "shine"
+                                      } ${classes.colorMain}  `}
                                     >
                                       {path === "stylori" && "You save"}{" "}
                                       {props.save}
@@ -473,10 +477,12 @@ export default function Pricing(props) {
                                     <Typography
                                       variant="caption"
                                       component="p"
-                                      className={`${(props.save != null) & (props.save !== "")
-                                        ? ""
-                                        : "shine"
-                                        } ${classes.colorMain}  `}
+                                      className={`${
+                                        (props.save != null) &
+                                        (props.save !== "")
+                                          ? ""
+                                          : "shine"
+                                      } ${classes.colorMain}  `}
                                     >
                                       {path === "stylori" && "You save"}{" "}
                                       {props.save}
@@ -491,7 +497,6 @@ export default function Pricing(props) {
                     </Typography>
                   </Hidden>
                 </>
-
               ) : (
                 ""
               )}
@@ -502,21 +507,23 @@ export default function Pricing(props) {
               xs={6}
               xs={
                 window.location.pathname !== "/cart" &&
-                  window.location.pathname.split("-")[0] !== "/account" &&
-                  window.location.pathname !== "/checkout"
+                window.location.pathname.split("-")[0] !== "/account" &&
+                window.location.pathname !== "/checkout"
                   ? 6
                   : 12
               }
             >
               {props.Price ? (
-                <Typography style={{ display: "flex", width: "100%", }}>
+                <Typography style={{ display: "flex", width: "100%" }}>
                   <Typography
                     style={props.from && { margin: "auto" }}
-                    className={`${(props.offerPrice != null) & (props.offerPrice !== "")
-                      ? ""
-                      : "shine"
-                      } ${classes.colorMain} ${classes.h6FontSize} ${classes.offerPricePadding
-                      } `}
+                    className={`${
+                      (props.offerPrice != null) & (props.offerPrice !== "")
+                        ? ""
+                        : "shine"
+                    } ${classes.colorMain} ${classes.h6FontSize} ${
+                      classes.offerPricePadding
+                    } `}
                   >
                     {/* ₹&nbsp;{props.offerPrice} */}
                     {new Intl.NumberFormat("en-IN ", {
@@ -576,7 +583,6 @@ export default function Pricing(props) {
                       fontSize: "181px",
                       paddingBottom: "6px",
                       color: "gray",
-
                     }}
                     className={classes.price}
                   >
@@ -610,7 +616,6 @@ export default function Pricing(props) {
                       fontSize: "0.9rem",
                       paddingBottom: "6px",
                       color: "gray",
-
                     }}
                     className={classes.price}
                   >

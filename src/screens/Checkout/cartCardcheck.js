@@ -5,10 +5,10 @@ import {
   ExpansionPanelSummary,
   Grid,
   Hidden,
-  Typography
+  Typography,
 } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
-import CheckCircleIcon from '@material-ui/icons/CheckCircle';
+import CheckCircleIcon from "@material-ui/icons/CheckCircle";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import Header from "components/SilverComponents/Header";
 import { useCheckForCod } from "hooks/CheckForCodHook";
@@ -36,7 +36,7 @@ const CartCardCheck = (props) => {
     data: CodData,
 
     makeRequestCod,
-  } = useCheckForCod(CheckForCod, () => { }, {});
+  } = useCheckForCod(CheckForCod, () => {}, {});
   let {
     CartCtx: { setCartFilters },
   } = React.useContext(CartContext);
@@ -272,7 +272,8 @@ class Component extends React.Component {
         }
       });
       window.open(
-        `https://wa.me/919952625252?text=Hi - ${window.location.hostname + "/" + ProductIsActiveUrl ?? ""
+        `https://wa.me/919952625252?text=Hi - ${
+          window.location.hostname + "/" + ProductIsActiveUrl ?? ""
         }`
       );
     };
@@ -333,9 +334,13 @@ class Component extends React.Component {
                             </Typography>
                           </Grid>
                           <Grid item xs={1}>
-                            {expanded === "panel2" || expanded === "panel3"
-                              || expanded === "panel4"
-                              ? <CheckCircleIcon /> : " "}
+                            {expanded === "panel2" ||
+                            expanded === "panel3" ||
+                            expanded === "panel4" ? (
+                              <CheckCircleIcon />
+                            ) : (
+                              " "
+                            )}
                           </Grid>
                         </Grid>
                       </ExpansionPanelSummary>
@@ -366,13 +371,13 @@ class Component extends React.Component {
                             </Typography>
                           </Grid>
                           <Grid item xs={1}>
-                            {expanded === "panel3"
-                              || expanded === "panel4"
-                              ? <CheckCircleIcon /> : " "}
+                            {expanded === "panel3" || expanded === "panel4" ? (
+                              <CheckCircleIcon />
+                            ) : (
+                              " "
+                            )}
                           </Grid>
                         </Grid>
-
-
                       </ExpansionPanelSummary>
                       <ExpansionPanelDetails>
                         <Grid container>
@@ -475,60 +480,56 @@ class Component extends React.Component {
                               3.&nbsp;&nbsp;DELIVERY/PICKUP INFORMATION
                               <div className="ch-d-vl">
                                 {obj_values &&
-                                  obj_values.adres_details &&
-                                  obj_values.adres_details.firstname &&
-                                  obj_values.adres_details.firstname.length > 0
+                                obj_values.adres_details &&
+                                obj_values.adres_details.firstname &&
+                                obj_values.adres_details.firstname.length > 0
                                   ? obj_values.adres_details &&
-                                  obj_values.adres_details.firstname
+                                    obj_values.adres_details.firstname
                                   : adres.value && adres.value.firstname}
                                 &nbsp;
                                 {obj_values &&
-                                  obj_values.adres_details &&
-                                  obj_values.adres_details.firstname &&
-                                  obj_values.adres_details.firstname.length > 0
+                                obj_values.adres_details &&
+                                obj_values.adres_details.firstname &&
+                                obj_values.adres_details.firstname.length > 0
                                   ? obj_values.adres_details &&
-                                  obj_values.adres_details.lastname
+                                    obj_values.adres_details.lastname
                                   : adres.value && adres.value.lastname}
                                 &nbsp;
                                 {obj_values &&
-                                  obj_values.adres_details &&
-                                  obj_values.adres_details.firstname &&
-                                  obj_values.adres_details.firstname.length > 0
+                                obj_values.adres_details &&
+                                obj_values.adres_details.firstname &&
+                                obj_values.adres_details.firstname.length > 0
                                   ? obj_values.adres_details &&
-                                  obj_values.adres_details.addressline1
+                                    obj_values.adres_details.addressline1
                                   : adres.value && adres.value.addressline1}
                                 &nbsp;
                                 {obj_values &&
-                                  obj_values.adres_details &&
-                                  obj_values.adres_details.firstname &&
-                                  obj_values.adres_details.firstname.length > 0
+                                obj_values.adres_details &&
+                                obj_values.adres_details.firstname &&
+                                obj_values.adres_details.firstname.length > 0
                                   ? obj_values.adres_details &&
-                                  obj_values.adres_details.city
+                                    obj_values.adres_details.city
                                   : adres.value && adres.value.city}
                                 {obj_values &&
-                                  obj_values.adres_details &&
-                                  obj_values.adres_details.firstname &&
-                                  obj_values.adres_details.firstname.length > 0
+                                obj_values.adres_details &&
+                                obj_values.adres_details.firstname &&
+                                obj_values.adres_details.firstname.length > 0
                                   ? obj_values.adres_details &&
-                                  obj_values.adres_details.state
+                                    obj_values.adres_details.state
                                   : adres.value && adres.value.state}
                                 &nbsp;
                                 {obj_values &&
-                                  obj_values.adres_details &&
-                                  obj_values.adres_details.firstname &&
-                                  obj_values.adres_details.firstname.length > 0
+                                obj_values.adres_details &&
+                                obj_values.adres_details.firstname &&
+                                obj_values.adres_details.firstname.length > 0
                                   ? obj_values.adres_details &&
-                                  obj_values.adres_details.pincode
+                                    obj_values.adres_details.pincode
                                   : adres.value && adres.value.pincode}
                               </div>
                             </Typography>
-
                           </Grid>
                           <Grid item xs={1}>
-                            {
-                              expanded === "panel4"
-                                ? <CheckCircleIcon /> : " "}
-
+                            {expanded === "panel4" ? <CheckCircleIcon /> : " "}
                           </Grid>
                         </Grid>
                       </ExpansionPanelSummary>
@@ -551,7 +552,6 @@ class Component extends React.Component {
 
                     <ExpansionPanel
                       square
-
                       expanded={expanded === "panel4"}
                       onChange={this.handleChange(4)}
                       style={{
@@ -569,16 +569,10 @@ class Component extends React.Component {
                           <Grid item xs={11}>
                             <Typography className="text-chck">
                               4.&nbsp;&nbsp;PAYMENT METHOD
-
                             </Typography>
                           </Grid>
-                          <Grid item xs={1}>
-
-
-                          </Grid>
+                          <Grid item xs={1}></Grid>
                         </Grid>
-
-
                       </ExpansionPanelSummary>
                       <ExpansionPanelDetails>
                         <Grid container>
@@ -595,11 +589,16 @@ class Component extends React.Component {
                                 color: "gray",
                                 paddingBottom: "10px",
                                 paddingTop: "10px",
+                                fontSize: "14px",
                               }}
                             >
                               <b> Gifting Messages&nbsp;&#38;&nbsp;Pakaging</b>
                             </Typography>
-                            <ProductList pay={true} order={true} checkout={true} />
+                            <ProductList
+                              pay={true}
+                              order={true}
+                              checkout={true}
+                            />
                             <br />
                           </Grid>
                           <Grid item xs={12}>
@@ -608,6 +607,7 @@ class Component extends React.Component {
                                 color: "gray",
                                 paddingBottom: "10px",
                                 paddingTop: "10px",
+                                fontSize: "14px",
                               }}
                             >
                               <b>Shipping Address</b>
@@ -631,7 +631,10 @@ class Component extends React.Component {
                   <Grid container>
                     <Grid item xs={12} lg={12}>
                       <div className={classes.padding}>
-                        <Typography style={{ fontSize: "18px" }} className="text-chck-bold">
+                        <Typography
+                          style={{ fontSize: "14px" }}
+                          className="text-chck-bold"
+                        >
                           <b>Order Summary</b>
                         </Typography>
 
@@ -648,7 +651,7 @@ class Component extends React.Component {
               </Hidden>
               <Hidden mdUp>
                 <Grid xs={12} lg={6}>
-                  <Grid container >
+                  <Grid container>
                     <Grid item xs={12} lg={12}>
                       <div className={classes.hideorder}>
                         <CartCard
@@ -688,14 +691,15 @@ class Component extends React.Component {
                             </Typography>
                           </Grid>
                           <Grid item xs={1}>
-                            {expanded === "panel2" || expanded === "panel3"
-                              || expanded === "panel4"
-                              ? <CheckCircleIcon
-
-                              /> : " "}
+                            {expanded === "panel2" ||
+                            expanded === "panel3" ||
+                            expanded === "panel4" ? (
+                              <CheckCircleIcon />
+                            ) : (
+                              " "
+                            )}
                           </Grid>
                         </Grid>
-
                       </ExpansionPanelSummary>
                       <ExpansionPanelDetails style={{ padding: "10px" }}>
                         <LoginRegisterIndex changePanel={this.changePanel} />
@@ -724,12 +728,13 @@ class Component extends React.Component {
                             </Typography>
                           </Grid>
                           <Grid item xs={1}>
-                            {expanded === "panel3"
-                              || expanded === "panel4"
-                              ? <CheckCircleIcon /> : " "}
+                            {expanded === "panel3" || expanded === "panel4" ? (
+                              <CheckCircleIcon />
+                            ) : (
+                              " "
+                            )}
                           </Grid>
                         </Grid>
-
                       </ExpansionPanelSummary>
                       <ExpansionPanelDetails>
                         <Grid container>
@@ -825,62 +830,59 @@ class Component extends React.Component {
                                 <br />
                                 <span className="ch-d-vl">
                                   {obj_values &&
-                                    obj_values.adres_details &&
-                                    obj_values.adres_details.firstname &&
-                                    obj_values.adres_details.firstname.length > 0
+                                  obj_values.adres_details &&
+                                  obj_values.adres_details.firstname &&
+                                  obj_values.adres_details.firstname.length > 0
                                     ? obj_values.adres_details &&
-                                    obj_values.adres_details.firstname
+                                      obj_values.adres_details.firstname
                                     : adres.value && adres.value.firstname}
                                   &nbsp;
                                   {obj_values &&
-                                    obj_values.adres_details &&
-                                    obj_values.adres_details.firstname &&
-                                    obj_values.adres_details.firstname.length > 0
+                                  obj_values.adres_details &&
+                                  obj_values.adres_details.firstname &&
+                                  obj_values.adres_details.firstname.length > 0
                                     ? obj_values.adres_details &&
-                                    obj_values.adres_details.lastname
+                                      obj_values.adres_details.lastname
                                     : adres.value && adres.value.lastname}
                                   &nbsp;
                                   {obj_values &&
-                                    obj_values.adres_details &&
-                                    obj_values.adres_details.firstname &&
-                                    obj_values.adres_details.firstname.length > 0
+                                  obj_values.adres_details &&
+                                  obj_values.adres_details.firstname &&
+                                  obj_values.adres_details.firstname.length > 0
                                     ? obj_values.adres_details &&
-                                    obj_values.adres_details.addressline1
+                                      obj_values.adres_details.addressline1
                                     : adres.value && adres.value.addressline1}
                                   &nbsp;
                                   {obj_values &&
-                                    obj_values.adres_details &&
-                                    obj_values.adres_details.firstname &&
-                                    obj_values.adres_details.firstname.length > 0
+                                  obj_values.adres_details &&
+                                  obj_values.adres_details.firstname &&
+                                  obj_values.adres_details.firstname.length > 0
                                     ? obj_values.adres_details &&
-                                    obj_values.adres_details.city
+                                      obj_values.adres_details.city
                                     : adres.value && adres.value.city}
                                   {obj_values &&
-                                    obj_values.adres_details &&
-                                    obj_values.adres_details.firstname &&
-                                    obj_values.adres_details.firstname.length > 0
+                                  obj_values.adres_details &&
+                                  obj_values.adres_details.firstname &&
+                                  obj_values.adres_details.firstname.length > 0
                                     ? obj_values.adres_details &&
-                                    obj_values.adres_details.state
+                                      obj_values.adres_details.state
                                     : adres.value && adres.value.state}
                                   &nbsp;
                                   {obj_values &&
-                                    obj_values.adres_details &&
-                                    obj_values.adres_details.firstname &&
-                                    obj_values.adres_details.firstname.length > 0
+                                  obj_values.adres_details &&
+                                  obj_values.adres_details.firstname &&
+                                  obj_values.adres_details.firstname.length > 0
                                     ? obj_values.adres_details &&
-                                    obj_values.adres_details.pincode
+                                      obj_values.adres_details.pincode
                                     : adres.value && adres.value.pincode}
                                 </span>
                               </Typography>
                             </Typography>
                           </Grid>
                           <Grid item xs={1}>
-                            {
-                              expanded === "panel4"
-                                ? <CheckCircleIcon /> : " "}
+                            {expanded === "panel4" ? <CheckCircleIcon /> : " "}
                           </Grid>
                         </Grid>
-
                       </ExpansionPanelSummary>
                       <ExpansionPanelDetails>
                         <Grid container>

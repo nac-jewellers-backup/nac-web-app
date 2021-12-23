@@ -1,13 +1,4 @@
-import {
-  Checkbox,
-
-
-
-
-
-  FormControlLabel,
-  Hidden
-} from "@material-ui/core";
+import { Checkbox, FormControlLabel, Hidden } from "@material-ui/core";
 import { API_URL } from "config";
 import { CartContext } from "context";
 import cart from "mappers/cart";
@@ -28,7 +19,7 @@ class PaymentIndex extends React.Component {
       cod: false,
       payonline: false,
       payment: null,
-      show:false,
+      show: false,
     };
   }
 
@@ -56,109 +47,108 @@ class PaymentIndex extends React.Component {
       {
         id: 1,
         title: "Credit card",
-        value:"Netbanking"
+        value: "Netbanking",
       },
       {
         id: 2,
         title: "Debit card",
-        value:"Netbanking"
+        value: "Netbanking",
       },
       {
         id: 3,
         title: "Net Banking",
-        value:"Netbanking"
-        
+        value: "Netbanking",
       },
       {
         id: 4,
         title: "Cash on Delivery",
-        value:"CashonDelivey"
+        value: "CashonDelivey",
       },
       {
         id: 5,
         title: "Offline Payment",
-        value:"CashonDelivey"
+        value: "CashonDelivey",
       },
-    ]
+    ];
 
-    const checked = (checked,id) => {
-      this.setState({payment: checked ? id : null})
+    const checked = (checked, id) => {
+      this.setState({ payment: checked ? id : null });
     };
 
     return (
-      <div >
+      <div>
         <Hidden smDown>
-        {
-              datacheck.map((val) => {
-                return (
-                  <>
-                  <div key={val.id}>
-                      <FormControlLabel
-                        onChange={(e) => {
-                          checked(e.target.checked, val.id);
-                          this.toggleCollapsed(val.value);
-                          
+          {datacheck.map((val) => {
+            return (
+              <>
+                <div key={val.id}>
+                  <FormControlLabel
+                    onChange={(e) => {
+                      checked(e.target.checked, val.id);
+                      this.toggleCollapsed(val.value);
+                    }}
+                    control={
+                      <Checkbox checked={this.state.payment === val.id} />
+                    }
+                    label={
+                      <span
+                        style={{
+                          color: "gray",
+                          whiteSpace: "nowrap",
+                          fontSize: "14px",
                         }}
-                        
-                        control={<Checkbox  checked={this.state.payment === val.id}/>}
-                        label={
-                          <span style={{ color: "gray", whiteSpace: "nowrap" }}>
-                           {val.title}
-                          </span>
-                        }
-                    />
-                    <br/>
-                  </div>
-                   
-                    </>)  
-              })
-          }
-          <div
-          >
-                {this.state.payment == 1 && <Netbanking />}
-                {this.state.payment == 2 && <Netbanking />}
-                {this.state.payment == 3 && <Netbanking />}
-                {this.state.payment == 4 && <CashonDelivey />}
-               {this.state.payment == 5 && <CashonDelivey />}
-              </div>
+                      >
+                        {val.title}
+                      </span>
+                    }
+                  />
+                  <br />
+                </div>
+              </>
+            );
+          })}
+          <div>
+            {this.state.payment == 1 && <Netbanking />}
+            {this.state.payment == 2 && <Netbanking />}
+            {this.state.payment == 3 && <Netbanking />}
+            {this.state.payment == 4 && <CashonDelivey />}
+            {this.state.payment == 5 && <CashonDelivey />}
+          </div>
         </Hidden>
 
         <Hidden mdUp>
-        {
-              datacheck.map((val) => {
-                return (
-                  <>
-                  <div key={val.id}>
-                      <FormControlLabel
-                        onChange={(e) => {
-                          checked(e.target.checked, val.id);
-                          this.toggleCollapsed(val.value);
-                          
-                        }}
-                        
-                        control={<Checkbox  checked={this.state.payment === val.id}/>}
-                        label={
-                          <span style={{ color: "gray", whiteSpace: "nowrap" }}>
-                           {val.title}
-                          </span>
-                        }
-                    />
-                    <br/>
-                  </div>
-                   
-                    </>)  
-              })
-          }
-          <div
-          >
-                {this.state.payment == 1 && <Netbanking />}
-                {this.state.payment == 2 && <Netbanking />}
-                {this.state.payment == 3 && <Netbanking />}
-                {this.state.payment == 4 && <CashonDelivey />}
-               {this.state.payment == 5 && <CashonDelivey />}
-              </div>
+          {datacheck.map((val) => {
+            return (
+              <>
+                <div key={val.id}>
+                  <FormControlLabel
+                    onChange={(e) => {
+                      checked(e.target.checked, val.id);
+                      this.toggleCollapsed(val.value);
+                    }}
+                    control={
+                      <Checkbox checked={this.state.payment === val.id} />
+                    }
+                    label={
+                      <span style={{ color: "gray", whiteSpace: "nowrap" }}>
+                        {val.title}
+                      </span>
+                    }
+                  />
+                  <br />
+                </div>
+              </>
+            );
+          })}
+          <div>
+            {this.state.payment == 1 && <Netbanking />}
+            {this.state.payment == 2 && <Netbanking />}
+            {this.state.payment == 3 && <Netbanking />}
+            {this.state.payment == 4 && <CashonDelivey />}
+            {this.state.payment == 5 && <CashonDelivey />}
+          </div>
         </Hidden>
-     </div>
+      </div>
     );
   }
 }

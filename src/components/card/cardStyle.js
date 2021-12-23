@@ -10,7 +10,7 @@ const styles = makeStyles((theme) => ({
     textAlign: "center",
     display: "flex",
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "center",
   },
   subtitle: {
     textAlign: "center",
@@ -21,7 +21,6 @@ const styles = makeStyles((theme) => ({
     textAlign: "center",
     color: "gray",
     fontSize: "20px",
-
   },
   contentTemple: {
     fontFamily: "notoSerif-regular",
@@ -29,7 +28,7 @@ const styles = makeStyles((theme) => ({
     textAlign: "center",
     color: "#5d5d5d",
     padding: "10px 0px 20px 0px",
-    fontSize: "16px",
+    fontSize: "14px",
   },
   gridTemple: {
     margin: "auto",
@@ -50,7 +49,6 @@ const styles = makeStyles((theme) => ({
     //   paddingTop: "80px"
     // }
     paddingTop: "30px",
-
   },
   contactImage: {
     display: "flex",
@@ -60,7 +58,7 @@ const styles = makeStyles((theme) => ({
     width: "100%",
     cursor: "pointer",
     height: "100%",
-    objectFit: "cover"
+    objectFit: "cover",
   },
   cardName: {
     fontSize: "18px",
@@ -70,13 +68,13 @@ const styles = makeStyles((theme) => ({
     padding: "20px 0px 8px 15px",
   },
   cardNamead: {
-    fontSize: "20.92px",
+    fontSize: "18px",
     color: "gray",
     fontFamily: "notoSerif-medium",
     lineHeight: "1.42857",
     padding: "20px 0px 8px 15px",
     fontWeight: "bold",
-    textAlign: "center"
+    textAlign: "center",
   },
   link: {
     textDecoration: "none !important",
@@ -107,37 +105,32 @@ const styles = makeStyles((theme) => ({
     padding: "12px 0px 30px 15px",
   },
   cardLocationad: {
-    fontSize: "16px",
+    fontSize: "14px",
 
     color: "#969696",
     fontFamily: "notoSerif-regular",
     lineHeight: "1.42857",
     padding: "0px 0px 30px 15px",
     textAlign: "center",
-    marginTop: "-10px"
-
-
+    marginTop: "-10px",
   },
   cardfooter: {
-    backgroundColor: "#F4F4F4"
-
+    backgroundColor: "#F4F4F4",
   },
   cardLocationadview: {
-    fontSize: "18px",
+    fontSize: "16px",
     color: "#969696",
     fontFamily: "notoSerif-regular",
     marginTop: "-15px",
     marginBottom: "15px",
     textAlign: "center",
 
-    textTransform: "capitalize"
-
-
+    textTransform: "capitalize",
   },
   card: {
     // borderRadius: "0px !important",
     // border: "1px solid #dbdbdb !important",
-    boxShadow: "4px 4px 4px #a5a4a5"
+    boxShadow: "4px 4px 4px #a5a4a5",
   },
   linkContact: {
     textDecoration: "none !important",
@@ -173,10 +166,8 @@ const styles = makeStyles((theme) => ({
     // height : 'calc(100% - 100px)' ,
   },
   viewmoreColor: {
-
     color: "white",
     padding: "6px 12px",
-
   },
 }));
 

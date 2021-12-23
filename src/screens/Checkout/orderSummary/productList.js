@@ -1,12 +1,10 @@
 import {
   Button,
-
   ExpansionPanel,
   ExpansionPanelDetails,
   ExpansionPanelSummary,
-
   Grid,
-  Hidden
+  Hidden,
 } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 import React, { useEffect } from "react";
@@ -35,7 +33,7 @@ const Productlist = (props) => {
 };
 
 const ProductlistComponent = (props) => {
-  const { handlers, values, val, data, setval,CodData } = useGift();
+  const { handlers, values, val, data, setval, CodData } = useGift();
   const { classes } = props;
   let value = localStorage.getItem("select_addres")
     ? JSON.parse(localStorage.getItem("select_addres"))
@@ -46,10 +44,10 @@ const ProductlistComponent = (props) => {
   const [show, setShow] = React.useState(true);
   const { expanded1, expanded2, expanded3 } = val;
   const cardIds = JSON.parse(localStorage.getItem("cart_id"))?.cart_id;
-  
-  useEffect(() => { 
+
+  useEffect(() => {
     fetch(`${API_URL}/graphql`, {
-      method: "post",     
+      method: "post",
       headers: {
         "Content-Type": "application/json",
       },
@@ -58,15 +56,15 @@ const ProductlistComponent = (props) => {
         variables: { cartId: cardIds },
       }),
     })
-      .then(res => res.json())
+      .then((res) => res.json())
       .then((data) => {
-        console.log(data.data.allGiftwraps.nodes[0].id)
-        setId(data.data.allGiftwraps.nodes[0].id)
-      }).catch((err) => {
-       console.log(err)
-     })
-  
-})
+        console.log(data.data.allGiftwraps.nodes[0].id);
+        setId(data.data.allGiftwraps.nodes[0].id);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  });
 
   const handleChange1 = (panel) => (event) => {
     var values = val.expanded1 === panel ? null : panel;
@@ -84,17 +82,17 @@ const ProductlistComponent = (props) => {
     setval({ val, ...val });
   };
   const display = () => {
-    setShow(!show)
-  }
+    setShow(!show);
+  };
   // var cardId = {
   //   cardId:
   //     localStorage.getItem("cart_id") &&
   //     JSON.parse(localStorage.getItem("cart_id"))?.cart_id,
   // };
-  
+
   const editmsgform = () => {
     fetch(`${API_URL}/graphql`, {
-      method: "post",     
+      method: "post",
       headers: {
         "Content-Type": "application/json",
       },
@@ -102,21 +100,22 @@ const ProductlistComponent = (props) => {
         query: UPDATEGIFT,
         variables: {
           cartId: cardIds,
-          id:id,
+          id: id,
           message: msgedit,
-          giftTo:emailedit,
+          giftTo: emailedit,
         },
       }),
     })
-      .then(res => res.json())
+      .then((res) => res.json())
       .then((data) => {
         setTimeout(() => {
           window.location.reload();
-       },1500)
-      }).catch((err) => {
-       console.log(err)
-     })
-  }
+        }, 1500);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   return (
     <Grid>
       <div className="pt-sm">
@@ -128,26 +127,37 @@ const ProductlistComponent = (props) => {
                 {props.order ? (
                   " "
                 ) : (
-                  <h4 style={{ textAlign: "center", color: "gray" }}>
+                  <h4
+                    style={{
+                      textAlign: "center",
+                      color: "gray",
+                      fontSize: "14px",
+                    }}
+                  >
                     Gift Wrap
                   </h4>
                 )}
 
-                <div style={{ display:show?"block":"none"}}>
+                <div style={{ display: show ? "block" : "none" }}>
                   <form
                     action="javascript:void(0)"
                     onSubmit={() => handlers.handleSubmit()}
                   >
-                    {
-                      props.pay ?
-                        "" :
-                        <label style={{ color: "gray", fontWeight: "bold" }}>
+                    {props.pay ? (
+                      ""
+                    ) : (
+                      <label
+                        style={{
+                          color: "gray",
+                          fontWeight: "bold",
+                          fontSize: "14px",
+                        }}
+                      >
                         Add a Special Message!&nbsp;
                         <b style={{ color: "#c1c1c1" }}>(Optional)</b>
                       </label>
-                    
-                    }
-                   
+                    )}
+
                     <Input
                       checkoutgift={true}
                       msg={true}
@@ -169,72 +179,72 @@ const ProductlistComponent = (props) => {
                         handlers.handleChange("message", e.target.value)
                       }
                     />
-                    {
-                      props.pay ?
-                  
-                ""        :
-                        <>
+                    {props.pay ? (
+                      ""
+                    ) : (
+                      <>
                         <span style={{ float: "right", color: "gray" }}>
-                        Max : 255
-                      </span>
-  
-                      <br />
-                      <Hidden mdUp>
+                          Max : 255
+                        </span>
+
                         <br />
-                      </Hidden>
-                      <label
-                        style={{
-                          color: "gray",
-                          fontWeight: "bold",
-                        }}
-                      >
-                        Gift Recipient’s Email!&nbsp;
-                        <b style={{ color: "#c1c1c1" }}>(Optional)</b>
-                      </label>
-                      <Input
-                        checkoutgift={true}
-                        helperText="To is required"
-                        placeholder="To"
-                        name="to"
-                        type="text"
-                        value={values.gift_to}
-                        required
-                        disabled={
-                          (data && data.message === "Success") ||
-                          values.haveAlready
-                            ? true
-                            : false
-                        }
-                        onChange={(e) =>
-                          handlers.handleChange("gift_to", e.target.value)
-                        }
-                      />
-            </>
-                          
-                  }
-                    
+                        <Hidden mdUp>
+                          <br />
+                        </Hidden>
+                        <label
+                          style={{
+                            color: "gray",
+                            fontWeight: "bold",
+                            fontSize: "14px",
+                          }}
+                        >
+                          Gift Recipient’s Email!&nbsp;
+                          <b style={{ color: "#c1c1c1" }}>(Optional)</b>
+                        </label>
+                        <Input
+                          checkoutgift={true}
+                          helperText="To is required"
+                          placeholder="To"
+                          name="to"
+                          type="text"
+                          value={values.gift_to}
+                          required
+                          disabled={
+                            (data && data.message === "Success") ||
+                            values.haveAlready
+                              ? true
+                              : false
+                          }
+                          onChange={(e) =>
+                            handlers.handleChange("gift_to", e.target.value)
+                          }
+                        />
+                      </>
+                    )}
+
                     <div className="login-butn">
                       {(data && data.message === "Success") ||
-                        values.haveAlready ? (
-                          <>
-                        <Button
-                          style={{ filter: "grayscale(5)" }}
-                          disabled
-                          className="apply-b"
-                          type="submit"
-                        >
-                              Saved
-                        </Button>
-                            <Button
-                              style={{
-                                color: "gray",
-                                float: "right",
-                                textTransform:"capitalize"
-                              }}
-                onClick={display}>
-                  Edit
-                </Button>
-                            </>
+                      values.haveAlready ? (
+                        <>
+                          <Button
+                            style={{ filter: "grayscale(5)" }}
+                            disabled
+                            className="apply-b"
+                            type="submit"
+                          >
+                            Saved
+                          </Button>
+                          <Button
+                            style={{
+                              color: "gray",
+                              float: "right",
+                              textTransform: "capitalize",
+                            }}
+                            onClick={display}
+                          >
+                            Edit
+                          </Button>
+                        </>
                       ) : (
                         <Button className="apply-b" type="submit">
                           Save
@@ -251,15 +261,16 @@ const ProductlistComponent = (props) => {
                     /> */}
                   </form>
                 </div>
-                
 
-
-                <div  style={{ display:show?"none":"block"}}>
-                  <form
-                    action="javascript:void(0)"
-                    onSubmit={editmsgform}
-                  >
-                    <label style={{ color: "gray", fontWeight: "bold" }}>
+                <div style={{ display: show ? "none" : "block" }}>
+                  <form action="javascript:void(0)" onSubmit={editmsgform}>
+                    <label
+                      style={{
+                        color: "gray",
+                        fontWeight: "bold",
+                        fontSize: "14px",
+                      }}
+                    >
                       Add a Special Message!&nbsp;
                       <b style={{ color: "#c1c1c1" }}>(Optional)</b>
                     </label>
@@ -274,12 +285,15 @@ const ProductlistComponent = (props) => {
                       value={msgedit}
                       required
                       maxLength={255}
-                     
-                      onChange={(e) =>
-                        Setmegedit(e.target.value)
-                      }
+                      onChange={(e) => Setmegedit(e.target.value)}
                     />
-                    <span style={{ float: "right", color: "gray" }}>
+                    <span
+                      style={{
+                        float: "right",
+                        color: "gray",
+                        fontSize: "14px",
+                      }}
+                    >
                       Max : 255
                     </span>
 
@@ -291,6 +305,7 @@ const ProductlistComponent = (props) => {
                       style={{
                         color: "gray",
                         fontWeight: "bold",
+                        fontSize: "14px",
                       }}
                     >
                       Gift Recipient’s Email!&nbsp;
@@ -304,23 +319,21 @@ const ProductlistComponent = (props) => {
                       type="text"
                       value={emailedit}
                       required
-                      
-                      onChange={(e) =>
-                        Setemailedit(e.target.value)
-                      }
+                      onChange={(e) => Setemailedit(e.target.value)}
                     />
 
                     <div className="login-butn">
-                      
-                        <Button className="apply-b" type="submit">
+                      <Button className="apply-b" type="submit">
                         Save
-                        </Button>
-                        <Button className="apply-b" type="submit" onClick={display}>
-                          Back To Payment
-                        </Button>
-                     
+                      </Button>
+                      <Button
+                        className="apply-b"
+                        type="submit"
+                        onClick={display}
+                      >
+                        Back To Payment
+                      </Button>
                     </div>
-                   
                   </form>
                 </div>
               </Grid>
