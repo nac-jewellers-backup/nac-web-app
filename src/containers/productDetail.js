@@ -657,10 +657,10 @@ class ProductDetail extends Component {
               <div
                 style={{
                   fontWeight: "bold",
-                  color: "#2F348B",
+                  color: "gray",
                   marginLeft: 15,
                   marginTop: 35,
-                  fontSize: "16px",
+                  fontSize: "14px",
                 }}
               >
                 SIMILAR PRODUCTS
@@ -746,10 +746,10 @@ class ProductDetail extends Component {
               <div
                 style={{
                   fontWeight: "bold",
-                  color: "#2F348B",
+                  color: "gray",
                   marginLeft: 15,
                   marginTop: 35,
-                  fontSize: "16px",
+                  fontSize: "14px",
                 }}
               >
                 SHOP OTHER CATEGORIES

@@ -146,6 +146,7 @@ const Productprice = (
                                 style={{
                                   float: "right",
                                   cursor: "pointer",
+                                  color: "#2F348B",
 
                                   marginTop: "5px",
                                 }}

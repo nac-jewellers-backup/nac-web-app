@@ -419,7 +419,7 @@ class ProductDetails extends React.Component {
                                             variant=""
                                             className={`product-subhead-list ${classes.fontgray}`}
                                           >
-                                            <span style={{ fontSize: "14px" }}>
+                                            <span style={{ fontSize: "12px" }}>
                                               {" "}
                                               {res.name}
                                             </span>
@@ -429,7 +429,10 @@ class ProductDetails extends React.Component {
                                           container
                                           item
                                           xs={7}
-                                          style={{ alignItems: "center" }}
+                                          style={{
+                                            alignItems: "center",
+                                            justifyContent: "center",
+                                          }}
                                         >
                                           {isArray(res.details) ? (
                                             <ListItemText
@@ -441,7 +444,7 @@ class ProductDetails extends React.Component {
                                                   return (
                                                     <span
                                                       style={{
-                                                        fontSize: "14px",
+                                                        fontSize: "12px",
                                                         textAlign: "left",
                                                       }}
                                                     >
@@ -479,7 +482,7 @@ class ProductDetails extends React.Component {
                                               className={`product-subhead-list ${classes.fontgray}`}
                                             >
                                               <span
-                                                style={{ fontSize: "14px" }}
+                                                style={{ fontSize: "12px" }}
                                               >
                                                 {" "}
                                                 {res.details}
@@ -568,18 +571,19 @@ class ProductDetails extends React.Component {
                                     res.details !== undefined && (
                                       <Grid
                                         container
+                                        spacing={2}
                                         item
                                         xs={12}
                                         style={{
                                           padding: "0px 10px 0px 10px ",
                                         }}
                                       >
-                                        <Grid xs={5} lg={5}>
+                                        <Grid xs={6} lg={6}>
                                           <ListItemText
                                             variant=""
                                             className={`product-subhead-list ${classes.fontgray}`}
                                           >
-                                            <span style={{ fontSize: "14px" }}>
+                                            <span style={{ fontSize: "12px" }}>
                                               {" "}
                                               {res.name}
                                             </span>
@@ -588,7 +592,7 @@ class ProductDetails extends React.Component {
                                         <Grid
                                           container
                                           item
-                                          xs={7}
+                                          xs={6}
                                           style={{ alignItems: "center" }}
                                         >
                                           {isArray(res.details) ? (
@@ -601,7 +605,7 @@ class ProductDetails extends React.Component {
                                                   return (
                                                     <span
                                                       style={{
-                                                        fontSize: "14px",
+                                                        fontSize: "12px",
                                                         textAlign: "left",
                                                       }}
                                                     >
@@ -636,7 +640,7 @@ class ProductDetails extends React.Component {
                                               className={`product-subhead-list ${classes.fontgray}`}
                                             >
                                               <span
-                                                style={{ fontSize: "14px" }}
+                                                style={{ fontSize: "12px" }}
                                               >
                                                 {" "}
                                                 {res.details}

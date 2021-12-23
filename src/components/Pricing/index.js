@@ -547,7 +547,7 @@ export default function Pricing(props) {
                 <Hidden smDown>
                   <span
                     style={{
-                      fontSize: "181px",
+                      fontSize: "18px",
                       paddingBottom: "6px",
                       color: "gray",
                     }}

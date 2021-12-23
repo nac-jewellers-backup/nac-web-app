@@ -214,7 +214,7 @@ const styles = (theme) => ({
       display: "inline-block",
     },
     [theme.breakpoints.down("xs")]: {
-      fontSize: "16px !important",
+      fontSize: "14px !important",
       marginTop: "10px",
       color: "#33346D",
       lineHeight: "26px",
@@ -401,6 +401,14 @@ const styles = (theme) => ({
   },
   normalfonts: {
     color: theme.palette.secondary.main,
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "14px",
+      fontWeight: "bold",
+    },
+    [theme.breakpoints.up("lg")]: {
+      fontSize: "16px",
+      fontWeight: "bold",
+    },
   },
   normalcolorback: {
     background: theme.palette.text.primary,

@@ -67,11 +67,11 @@ const inputsearch = (props, state, handleChanges, handleCodChange) => {
               }}
               className={
                 state.pincodeNotFound ||
-                  state.CheckForCodtitle === "COD Not Available"
+                state.CheckForCodtitle === "COD Not Available"
                   ? "pincodeNotFound"
                   : state.CheckForCodtitle === "COD is Available"
-                    ? "selectedGreen"
-                    : "search-button"
+                  ? "selectedGreen"
+                  : "search-button"
               }
               onClick={() => {
                 handleCodChange();
@@ -129,7 +129,7 @@ const inputsearch = (props, state, handleChanges, handleCodChange) => {
                     display: "flex",
                     alignContent: "center",
                     fontSize: "14px",
-                    color: "gray"
+                    color: "gray",
                   }}
                 >
                   <i style={{ fontSize: "20px" }} class="fa fa-truck"></i>
@@ -250,7 +250,7 @@ const PriceBuynow = (props) => {
     error,
     data: CodData,
     makeRequestCod,
-  } = useCheckForCod(CheckForCod, () => { }, {});
+  } = useCheckForCod(CheckForCod, () => {}, {});
   const { ProductDetailCtx, setFilters } =
     React.useContext(ProductDetailContext);
   const { setCartFilters } = React.useContext(CartContext);
@@ -273,13 +273,13 @@ class Component extends React.Component {
     this.state = {
       showimage:
         this.props &&
-          this.props.data &&
-          this.props.data.length > 0 &&
-          this.props.data[0] &&
-          this.props.data[0].fadeImages &&
-          this.props.data[0].fadeImages.arrOfurls &&
-          this.props.data[0].fadeImages.arrOfurls.length > 0 &&
-          this.props.data[0].fadeImages.arrOfurls[0]
+        this.props.data &&
+        this.props.data.length > 0 &&
+        this.props.data[0] &&
+        this.props.data[0].fadeImages &&
+        this.props.data[0].fadeImages.arrOfurls &&
+        this.props.data[0].fadeImages.arrOfurls.length > 0 &&
+        this.props.data[0].fadeImages.arrOfurls[0]
           ? this.props.data[0].fadeImages.arrOfurls[0]
           : [],
       open: false,
@@ -413,8 +413,8 @@ class Component extends React.Component {
       skuId: this.props.data[0].skuId,
       qty:
         this.props.quantity &&
-          this.props.data &&
-          this.props.quantity[this.props.data[0].skuId]
+        this.props.data &&
+        this.props.quantity[this.props.data[0].skuId]
           ? this.props.quantity[this.props.data[0].skuId]
           : 1,
       price: this.props.data[0].offerPrice,
@@ -422,8 +422,8 @@ class Component extends React.Component {
 
     const _qty =
       this.props.quantity &&
-        this.props.data &&
-        this.props.quantity[this.props.data[0].skuId]
+      this.props.data &&
+      this.props.quantity[this.props.data[0].skuId]
         ? this.props.quantity[this.props.data[0].skuId]
         : 1;
     this.props.setFilters({
@@ -465,8 +465,8 @@ class Component extends React.Component {
         sku_id: this.props.data[0].skuId,
         qty:
           this.props.quantity &&
-            this.props.data &&
-            this.props.quantity[this.props.data[0].skuId]
+          this.props.data &&
+          this.props.quantity[this.props.data[0].skuId]
             ? this.props.quantity[this.props.data[0].skuId]
             : 1,
         price: this.props.data[0].offerPrice,
@@ -484,8 +484,8 @@ class Component extends React.Component {
       skuId: this.props.data[0].skuId,
       qty:
         this.props.quantity &&
-          this.props.data &&
-          this.props.quantity[this.props.data[0].skuId]
+        this.props.data &&
+        this.props.quantity[this.props.data[0].skuId]
           ? this.props.quantity[this.props.data[0].skuId]
           : 1,
       price: this.props.data[0].offerPrice,
@@ -493,8 +493,8 @@ class Component extends React.Component {
 
     const _qty =
       this.props.quantity &&
-        this.props.data &&
-        this.props.quantity[this.props.data[0].skuId]
+      this.props.data &&
+      this.props.quantity[this.props.data[0].skuId]
         ? this.props.quantity[this.props.data[0].skuId]
         : 1;
     this.props.setFilters({
@@ -536,8 +536,8 @@ class Component extends React.Component {
         sku_id: this.props.data[0].skuId,
         qty:
           this.props.quantity &&
-            this.props.data &&
-            this.props.quantity[this.props.data[0].skuId]
+          this.props.data &&
+          this.props.quantity[this.props.data[0].skuId]
             ? this.props.quantity[this.props.data[0].skuId]
             : 1,
         price: this.props.data[0].offerPrice,
@@ -619,7 +619,11 @@ class Component extends React.Component {
             <Grid container style={{ marginTop: "40x" }}>
               <Grid item xs={12}>
                 <br />
-                <Box display="flex" flexDirection="row" justifyContent="center">
+                <Box
+                  display="flex"
+                  flexDirection="row"
+                  justifyContent="space-around"
+                >
                   {this.props &&
                     this.props.data &&
                     this.props.data.length > 0 &&
@@ -627,7 +631,7 @@ class Component extends React.Component {
                     this.props.data[0].productsDetails.length > 0 &&
                     this.props.data[0].productsDetails[0] &&
                     this.props.data[0].productsDetails[0].namedetail.length >
-                    0 &&
+                      0 &&
                     this.props.data[0].productsDetails[0].namedetail[2] &&
                     this.props.data[0].productsDetails[0].namedetail[2]
                       .details && (
@@ -660,7 +664,7 @@ class Component extends React.Component {
                     this.props.data[0].productsDetails.length > 0 &&
                     this.props.data[0].productsDetails[0] &&
                     this.props.data[0].productsDetails[0].namedetail.length >
-                    0 &&
+                      0 &&
                     this.props.data[0].productsDetails[0].namedetail[1] &&
                     this.props.data[0].productsDetails[0].namedetail[1]
                       .details && (
@@ -686,50 +690,29 @@ class Component extends React.Component {
                         </p>
                       </Box>
                     )}
-                  {this.props &&
-                    this.props.data &&
-                    this.props.data.length > 0 &&
-                    this.props.data[0] &&
-                    this.props.data[0].productsDetails.length > 0 &&
-                    this.props.data[0].productsDetails[1] &&
-                    this.props.data[0].productsDetails[1].namedetail.length >
-                    0 &&
-                    this.props.data[0].productsDetails[1].namedetail[3] &&
-                    this.props.data[0].productsDetails[1].namedetail[3]
-                      .details && (
-                      <Box padding="10px" textAlign="center">
-                        <Avatar alt="NAC" style={{ padding: "10px" }}>
-                          <img
-                            src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/Group+1022.svg"
-                            alt="Diamond Weight"
-                            height="70px"
-                          />
-                        </Avatar>
-                        <p
-                          style={{
-                            fontSize: 12,
-                            color: "gray",
-                          }}
-                        >
-                          Diamond Price
-                          <br />
-                          {this.props &&
-                            this.props.data &&
-                            this.props.data.length > 0 &&
-                            this.props.data[0] &&
-                            this.props.data[0].productsDetails.length > 0 &&
-                            this.props.data[0].productsDetails[1] &&
-                            this.props.data[0].productsDetails[1].namedetail
-                              .length > 0 &&
-                            this.props.data[0].productsDetails[1].namedetail[3] &&
-                            this.props.data[0].productsDetails[1].namedetail[3]
-                              .details
-                            ? this.props.data[0].productsDetails[1]
-                              .namedetail[3].details[0]
-                            : ""}
-                        </p>
-                      </Box>
-                    )}
+                  {this.props.data[0].dimondweight !== null ? (
+                    <Box padding="10px" textAlign="center">
+                      <Avatar alt="NAC" style={{ padding: "10px" }}>
+                        <img
+                          src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/Group+1022.svg"
+                          alt="Diamond Weight"
+                          height="70px"
+                        />
+                      </Avatar>
+                      <p
+                        style={{
+                          fontSize: 12,
+                          color: "gray",
+                        }}
+                      >
+                        Diamond Weight
+                        <br />
+                        {this.props.data[0].dimondweight}gm
+                      </p>
+                    </Box>
+                  ) : (
+                    ""
+                  )}
                 </Box>
               </Grid>
             </Grid>

@@ -1,4 +1,4 @@
-import { Button, Grid, TextField } from "@material-ui/core";
+import { Button, Grid, TextField, Typography } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 import { ProductDetailContext } from "context/ProductDetailContext";
 import React from "react";
@@ -35,9 +35,9 @@ const RatingComponent = (props) => {
             {/* <Grid item lg={1} /> */}
             <Grid item xs={12} lg={12}>
               <div className="rating-form ">
-                <h5 className={`rating-form-head ${classes.normalfonts}`}>
+                <Typography className={` ${classes.normalfonts}`}>
                   RATE THE PRODUCT
-                </h5>
+                </Typography>
 
                 <Ratings
                   ratings="starts-review"

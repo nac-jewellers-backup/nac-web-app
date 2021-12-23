@@ -68,13 +68,19 @@ const styles = makeStyles((theme) => ({
     padding: "20px 0px 8px 15px",
   },
   cardNamead: {
-    fontSize: "18px",
     color: "gray",
     fontFamily: "notoSerif-medium",
     lineHeight: "1.42857",
     padding: "20px 0px 8px 15px",
     fontWeight: "bold",
     textAlign: "center",
+    [theme.breakpoints.down("lg")]: {
+      fontSize: "18px",
+    },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "14px",
+      padding: "8px 0px",
+    },
   },
   link: {
     textDecoration: "none !important",
@@ -110,7 +116,14 @@ const styles = makeStyles((theme) => ({
     color: "#969696",
     fontFamily: "notoSerif-regular",
     lineHeight: "1.42857",
-    padding: "0px 0px 30px 15px",
+
+    [theme.breakpoints.down("lg")]: {
+      padding: "0px 0px 30px 15px",
+    },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "14px",
+      padding: "8px 0px",
+    },
     textAlign: "center",
     marginTop: "-10px",
   },
@@ -118,12 +131,17 @@ const styles = makeStyles((theme) => ({
     backgroundColor: "#F4F4F4",
   },
   cardLocationadview: {
-    fontSize: "16px",
     color: "#969696",
     fontFamily: "notoSerif-regular",
     marginTop: "-15px",
     marginBottom: "15px",
     textAlign: "center",
+    [theme.breakpoints.down("lg")]: {
+      fontSize: "16px",
+    },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "14px",
+    },
 
     textTransform: "capitalize",
   },

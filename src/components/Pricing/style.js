@@ -57,15 +57,15 @@ const styles = makeStyles((theme) => ({
     [theme.breakpoints.down("xs")]: {
       paddingLeft: "0px",
       color: "#33346D",
-      fontSize: "18px",
+      fontSize: "14px",
     },
   },
   deletePrice: {
     [theme.breakpoints.down("xs")]: {
-      fontSize: "0.9rem",
+      fontSize: "14px",
     },
     [theme.breakpoints.down("sm")]: {
-      fontSize: "0.8rem",
+      fontSize: "14px",
     },
   },
   youSave: {

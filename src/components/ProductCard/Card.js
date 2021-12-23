@@ -12,7 +12,7 @@ import { ProductDetailContext } from "context";
 import React from "react";
 import {
   LazyLoadImage,
-  trackWindowScroll
+  trackWindowScroll,
 } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { Link } from "react-router-dom";
@@ -43,10 +43,7 @@ const Gallery = (
   cardstate,
   scrollPosition
 ) => {
-
-
   return (
-
     <div style={{ position: "relative" }} className="imageHeight">
       {props.shopothercategories ? (
         ""
@@ -86,20 +83,20 @@ const Gallery = (
               onMouseOver={
                 !props.hoverText
                   ? () => {
-                    callmouseover();
-                  }
+                      callmouseover();
+                    }
                   : () => {
-                    return null;
-                  }
+                      return null;
+                    }
               }
               onMouseOut={
                 !props.hoverText
                   ? () => {
-                    callmouseout();
-                  }
+                      callmouseout();
+                    }
                   : () => {
-                    return null;
-                  }
+                      return null;
+                    }
               }
               scrollPosition={scrollPosition}
             ></LazyLoadImage>
@@ -107,87 +104,80 @@ const Gallery = (
               <div className="overlayImage">{props.data.description}</div>
             )} */}
           </>
-        ) : (
-
-          props.shopothercategories ? (
-            <>
-
-              <LazyLoadImage
-                style={{
-                  objectFit: "cover",
-                  backgroundColor: "white",
-                  width: "100%",
-                }}
-                alt={props?.data?.product_list?.product_name}
-                effect="blur"
-                src={props?.data?.product_list?.product_images[0]?.image_url}
-                //onError={(e) => imageOnError(e, props.data.imageResolution)}
-                title={
-                  props?.data?.product_list?.product_name.charAt(0).toUpperCase() +
-                  props.data?.product_list?.product_name.slice(1)
-                }
-                onMouseOver={
-                  !props.hoverText
-                    ? () => {
-                      callmouseover();
-                    }
-                    : () => {
-                      return null;
-                    }
-                }
-                onMouseOut={
-                  !props.hoverText
-                    ? () => {
-                      callmouseout();
-                    }
-                    : () => {
-                      return null;
-                    }
-                }
-                scrollPosition={scrollPosition}
-              ></LazyLoadImage>
-
-            </>
-          ) : (
+        ) : props.shopothercategories ? (
+          <>
             <LazyLoadImage
               style={{
                 objectFit: "cover",
                 backgroundColor: "white",
                 width: "100%",
               }}
-              alt={"props.data.title"}
+              alt={props?.data?.product_list?.product_name}
               effect="blur"
-              src={renderImages(props, cardstate)}
+              src={props?.data?.product_list?.product_images[0]?.image_url}
               //onError={(e) => imageOnError(e, props.data.imageResolution)}
               title={
-                props.data.title.charAt(0).toUpperCase() +
-                props.data.title.slice(1)
+                props?.data?.product_list?.product_name
+                  .charAt(0)
+                  .toUpperCase() +
+                props.data?.product_list?.product_name.slice(1)
               }
               onMouseOver={
                 !props.hoverText
                   ? () => {
-                    callmouseover();
-                  }
+                      callmouseover();
+                    }
                   : () => {
-                    return null;
-                  }
+                      return null;
+                    }
               }
               onMouseOut={
                 !props.hoverText
                   ? () => {
-                    callmouseout();
-                  }
+                      callmouseout();
+                    }
                   : () => {
-                    return null;
-                  }
+                      return null;
+                    }
               }
               scrollPosition={scrollPosition}
             ></LazyLoadImage>
-
-          )
-
-
-
+          </>
+        ) : (
+          <LazyLoadImage
+            style={{
+              objectFit: "cover",
+              backgroundColor: "white",
+              width: "100%",
+            }}
+            alt={"props.data.title"}
+            effect="blur"
+            src={renderImages(props, cardstate)}
+            //onError={(e) => imageOnError(e, props.data.imageResolution)}
+            title={
+              props.data.title.charAt(0).toUpperCase() +
+              props.data.title.slice(1)
+            }
+            onMouseOver={
+              !props.hoverText
+                ? () => {
+                    callmouseover();
+                  }
+                : () => {
+                    return null;
+                  }
+            }
+            onMouseOut={
+              !props.hoverText
+                ? () => {
+                    callmouseout();
+                  }
+                : () => {
+                    return null;
+                  }
+            }
+            scrollPosition={scrollPosition}
+          ></LazyLoadImage>
         )}
       </Link>
     </div>
@@ -359,7 +349,7 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     marginTop: "-10px",
     [theme.breakpoints.down("sm")]: {
-      fontSize: "20px",
+      fontSize: "14px",
     },
   },
   titles: {
@@ -402,7 +392,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 const renderImages = (props, cardstate) => {
-
   if (props.static) {
     return props.image;
   } else {
@@ -475,17 +464,18 @@ function Component(props) {
               alignItems="center"
             >
               {props.shopothercategories ? (
-
                 <>
-
                   <Grid container xs={12}>
                     <Typography
                       variant="body1"
-                      style={{ paddingLeft: "5px", marginTop: "14px", textTransform: "uppercase" }}
+                      style={{
+                        paddingLeft: "5px",
+                        marginTop: "14px",
+                        textTransform: "uppercase",
+                      }}
                       className={`${classes.titlesshopother}`}
                     >
                       {" "}
-
                       SHOP&nbsp;
                       {props.data.product_list.product_type}
                     </Typography>
@@ -564,12 +554,12 @@ function Component(props) {
                                     {props.data.offerPrice == 0
                                       ? " "
                                       : new Intl.NumberFormat("en-IN", {
-                                        style: "currency",
-                                        currency: "INR",
-                                        minimumFractionDigits: 0,
-                                      }).format(
-                                        Math.round(props.data.offerPrice)
-                                      )}
+                                          style: "currency",
+                                          currency: "INR",
+                                          minimumFractionDigits: 0,
+                                        }).format(
+                                          Math.round(props.data.offerPrice)
+                                        )}
                                   </span>
                                 </span>
                               </Typography>
@@ -585,8 +575,8 @@ function Component(props) {
                             {props.data.save == 0
                               ? " "
                               : ` ${Math.abs(
-                                Math.round(props.data.save)
-                              )}% OFF`}
+                                  Math.round(props.data.save)
+                                )}% OFF`}
                             &nbsp;&nbsp;
                           </Typography>
                         </Grid>
@@ -614,82 +604,87 @@ function Component(props) {
                       className={`${classes.priceClassMain}`}
                       style={{
                         justifyContent: "space-between",
+                        padding: "12px",
                       }}
                     >
-                      {props.data.offerPrice === props.data.price ? (
-                        <Typography
-                          variant="h5"
-                          component="h5"
-                          className={classes.offerMainPrice}
-                          style={{
-                            justifyContent: "flex-start",
-                            display: "flex",
-                            paddingLeft: "5px",
-                            color: "rgb(109,110,112)",
-                          }}
-                        >
-                          {new Intl.NumberFormat("en-IN", {
-                            style: "currency",
-                            currency: "INR",
-                            minimumFractionDigits: 0,
-                          }).format(Math.round(props.data.price))}
-                        </Typography>
-                      ) : (
-                        <Grid container>
-                          <Grid item xs={6}>
-                            <Typography
-                              className={classes.offerMainPrice}
-                              style={{
-                                justifyContent: "flex-start",
-                                display: "flex",
-                                paddingLeft: "5px",
-                                color: "rgb(109,110,112)",
-                              }}
-                            >
-                              {new Intl.NumberFormat("en-IN", {
-                                style: "currency",
-                                currency: "INR",
-                                minimumFractionDigits: 0,
-                              }).format(Math.round(props.data.price))}
-                            </Typography>
-                            <span
-                              style={{
-                                color: "rgb(109,110,112)",
-                                textDecoration: "line-through",
-                                fontSize: "12px",
-                                paddingLeft: "5px",
-                              }}
-                            >
-                              {props.data.offerPrice == 0
-                                ? " "
-                                : new Intl.NumberFormat("en-IN", {
+                      <div style={{ marginTop: "10px" }}>
+                        {props.data.offerPrice === props.data.price ? (
+                          <Typography
+                            variant="h5"
+                            component="h5"
+                            className={classes.offerMainPrice}
+                            style={{
+                              justifyContent: "flex-start",
+                              display: "flex",
+                              paddingLeft: "5px",
+                              color: "rgb(109,110,112)",
+                            }}
+                          >
+                            {new Intl.NumberFormat("en-IN", {
+                              style: "currency",
+                              currency: "INR",
+                              minimumFractionDigits: 0,
+                            }).format(Math.round(props.data.price))}
+                          </Typography>
+                        ) : (
+                          <Grid container>
+                            <Grid item xs={6}>
+                              <Typography
+                                className={classes.offerMainPrice}
+                                style={{
+                                  justifyContent: "flex-start",
+                                  display: "flex",
+                                  paddingLeft: "5px",
+                                  color: "rgb(109,110,112)",
+                                }}
+                              >
+                                {new Intl.NumberFormat("en-IN", {
                                   style: "currency",
                                   currency: "INR",
                                   minimumFractionDigits: 0,
-                                }).format(Math.round(props.data.offerPrice))}
-                            </span>
-                          </Grid>
+                                }).format(Math.round(props.data.price))}
+                              </Typography>
+                              <span
+                                style={{
+                                  color: "rgb(109,110,112)",
+                                  textDecoration: "line-through",
+                                  fontSize: "12px",
+                                  paddingLeft: "5px",
+                                }}
+                              >
+                                {props.data.offerPrice == 0
+                                  ? " "
+                                  : new Intl.NumberFormat("en-IN", {
+                                      style: "currency",
+                                      currency: "INR",
+                                      minimumFractionDigits: 0,
+                                    }).format(
+                                      Math.round(props.data.offerPrice)
+                                    )}
+                              </span>
+                            </Grid>
 
-                          <Grid item xs={6}>
-                            <span
-                              style={{
-                                fontWeight: "bold",
-                                color: "#B78231",
-                                fontSize: "12px",
-                                paddingLeft: "5px",
-                              }}
-                            >
-                              {props.similarProducts
-                                ? " "
-                                : props.data.save == 0
+                            <Grid item xs={6}>
+                              <span
+                                style={{
+                                  fontWeight: "bold",
+                                  color: "#B78231",
+                                  fontSize: "12px",
+                                  paddingLeft: "5px",
+                                }}
+                              >
+                                {props.similarProducts
+                                  ? " "
+                                  : props.data.save == 0
                                   ? " "
                                   : ` ${Math.abs(
-                                    Math.round(props.data.save)
-                                  )}% OFF`}
-                            </span>
+                                      Math.round(props.data.save)
+                                    )}% OFF`}
+                              </span>
+                            </Grid>
                           </Grid>
-                        </Grid>
-                      )}{" "}
+                        )}{" "}
+                      </div>
                     </Grid>
                     <Grid container xs={12}>
                       <Typography
