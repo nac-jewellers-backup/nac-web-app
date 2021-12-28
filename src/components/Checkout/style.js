@@ -61,15 +61,15 @@ const styles = (theme) => ({
   },
   title: {
     color: theme.palette.gold.main,
-    textAlign: "center",
+
     fontStyle: "italic",
-    fontSize: "1.9rem",
+    fontSize: "22px",
     [theme.breakpoints.down("xs")]: {
-      fontSize: "1.8rem",
+      fontSize: "18px",
     },
-    marginBottom: 15,
+
     fontWeight: "540",
-    marginTop: -4,
+
     whiteSpace: "noWrap",
     padding: 2,
   },

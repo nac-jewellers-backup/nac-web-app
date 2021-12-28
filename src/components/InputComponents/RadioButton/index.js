@@ -6,7 +6,6 @@ import RadioBtn from "./RadioBtn";
 export default function CardRadioButton(props) {
   return (
     <Paper className={props.cardWidth !== "" ? props.cardWidth : "card"}>
-      <br />
       <RadioBtn
         radioValues={props.data}
         onChange={props.onChange}

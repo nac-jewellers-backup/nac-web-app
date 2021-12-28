@@ -10,7 +10,7 @@ import {
   ListItem,
   ListItemText,
   Toolbar,
-  Typography
+  Typography,
 } from "@material-ui/core";
 import CheckBoxIcon from "@material-ui/icons/CheckBox";
 import CheckBoxOutlineBlankIcon from "@material-ui/icons/CheckBoxOutlineBlank";
@@ -175,9 +175,9 @@ const Filters = (props) => {
                     onchoosetype={(came) => {
                       selectType(
                         came,
-                        () => { },
-                        () => { },
-                        () => { }
+                        () => {},
+                        () => {},
+                        () => {}
                       );
                     }}
                     onMouseLeave={() => {
@@ -304,7 +304,7 @@ const Filters = (props) => {
                             color="primary"
                             checked={
                               filters[filtercheck.replace(/\s/g, "")][row] !==
-                                undefined
+                              undefined
                                 ? filters[filtercheck.replace(/\s/g, "")][row]
                                 : false
                             }
@@ -315,8 +315,8 @@ const Filters = (props) => {
                                 filters[filtercheck.replace(/\s/g, "")][row] !==
                                   undefined
                                   ? !filters[filtercheck.replace(/\s/g, "")][
-                                  row
-                                  ]
+                                      row
+                                    ]
                                   : true,
                                 e
                               )

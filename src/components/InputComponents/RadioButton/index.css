@@ -15,15 +15,14 @@
   /* text-align: center; */
 }
 
-.cardSortSmallScreen label {
+/* .cardSortSmallScreen label {
   width: 100vw;
-  /* padding-left: 20%; */
-
+ 
   font-size: 12px;
   font-family: notoSerif-regular;
 
-  /* border-bottom: 1px solid #cccccc5c; */
-}
+ 
+} */
 
 .vh {
   display: flex;

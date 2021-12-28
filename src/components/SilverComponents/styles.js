@@ -300,7 +300,7 @@ export const styles = (theme) => ({
   },
   Chip: {
     padding: "4px 0px",
-    borderRadius: "4px",
+    borderRadius: "0px",
     width: "130px",
     color: "#545465 ",
 

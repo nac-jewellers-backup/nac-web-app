@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Logo = () => { };
+const Logo = () => {};
 export default function PaperSheet(props) {
   const isSilver = props.isSilver ? true : false;
   const color = "#33346d";
@@ -83,16 +83,19 @@ export default function PaperSheet(props) {
   return (
     <Grid container spacing={2}>
       <Hidden smDown>
-        {
-          props.dadgetdata.map((val) => {
-            return (
-              <Grid item xs={2}>
-                <img src={val.img} alt="img" height="100px" width="100px" style={{ objectFit: "contain" }} />
-              </Grid>
-            )
-
-          })
-        }
+        {props.dadgetdata.map((val) => {
+          return (
+            <Grid item xs={2}>
+              <img
+                src={val.img}
+                alt="img"
+                height="100px"
+                width="100px"
+                style={{ objectFit: "contain" }}
+              />
+            </Grid>
+          );
+        })}
       </Hidden>
 
       <Hidden smUp>
@@ -101,16 +104,23 @@ export default function PaperSheet(props) {
           class="subslider-carousel"
           dataCarousel={dataCarouselcollections}
         >
-          {
-            props.dadgetdata.map((val) => {
-              return (
-                <Grid item xs={5}>
-                  <img src={val.img} alt="img" height="100px" width="100px" style={{ objectFit: "contain", marginLeft: "12px", padding: "20px" }} />
-                </Grid>
-              )
-
-            })
-          }
+          {props.dadgetdata.map((val) => {
+            return (
+              <Grid item xs={5}>
+                <img
+                  src={val.img}
+                  alt="img"
+                  width="100px"
+                  style={{
+                    objectFit: "contain",
+                    marginLeft: "12px",
+                    padding: "20px",
+                    height: "100px",
+                  }}
+                />
+              </Grid>
+            );
+          })}
           {/* <Grid
             item
             xs={4}
@@ -188,8 +198,9 @@ export function PaperSheetProduct(props) {
             xs={4}
             sm={3}
             lg={2}
-            className={`silverSvg ${classes.mainsource} ${isSilver ? classes.silverSvg : ""
-              }`}
+            className={`silverSvg ${classes.mainsource} ${
+              isSilver ? classes.silverSvg : ""
+            }`}
           >
             <Certified color={color} />
           </Grid>
@@ -218,8 +229,9 @@ export function PaperSheetProduct(props) {
             xs={4}
             sm={3}
             lg={2}
-            className={`silverSvg ${classes.mainsource} ${isSilver ? classes.silverSvg : ""
-              }`}
+            className={`silverSvg ${classes.mainsource} ${
+              isSilver ? classes.silverSvg : ""
+            }`}
           >
             <Certified color={color} />
           </Grid>

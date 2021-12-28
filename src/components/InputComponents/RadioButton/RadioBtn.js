@@ -1,3 +1,4 @@
+import { Grid } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 import FormControl from "@material-ui/core/FormControl";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
@@ -6,6 +7,7 @@ import Radio from "@material-ui/core/Radio";
 import RadioGroup from "@material-ui/core/RadioGroup";
 import { makeStyles } from "@material-ui/core/styles";
 import React from "react";
+import { AiOutlineCheck } from "react-icons/ai";
 import "./index.css";
 
 const useStyles = makeStyles((theme) => ({
@@ -38,14 +40,14 @@ const useStyles = makeStyles((theme) => ({
   },
   hoverClass: {
     paddingRight: "10px",
-    marginLeft: "0px !important",
-    marginRight: "0px !important",
+
+    margin: "10px",
     "&:hover": {
       backgroundColor: "#9e9e9e40",
     },
   },
   clearBtn: {
-    padding: "2px 7px",
+    padding: "4px 10px",
   },
   colorMain: {
     color: theme.palette.primary.main,
@@ -76,8 +78,8 @@ export default function RadioBtn(props) {
           padding: "10px 10px 10px",
           borderBottom: "1px solid #e3e3e3",
           display: "block",
-          position: "sticky",
-          top: "0px",
+          // position: "sticky",
+          // top: "0px",
         }}
         className={`${classes.colorMain}`}
       >
@@ -96,14 +98,14 @@ export default function RadioBtn(props) {
             fontFamily: "notoSerif-regular",
           }}
         >
-          FILTER
+          SORT BY
         </button>
         <Button
           onClick={handleClearAllData}
           style={{
             float: "right",
             border: "1px solid #c0bcbc",
-            lineHeight: "15px",
+
             fontSize: "12px",
             color: "#20205A",
             borderRadius: "0px",
@@ -112,37 +114,55 @@ export default function RadioBtn(props) {
           className={`${classes.colorMain}`}
           classes={{ text: classes.clearBtn }}
         >
-          Clear All
+          &nbsp;Clear All&nbsp;
         </Button>
       </div>
-      <br />
-      <FormControl
-        component="fieldset"
-        className={`${classes.fromControlTwo} ${classes.formControl}`}
-        style={{ top: "-165px" }}
-      >
-        <RadioGroup
-          aria-label="Gender"
-          name="gender1"
-          className={classes.group}
-          value={props.values.values}
-          onChange={handleChange}
-        >
-          {props.radioValues.map((data) => (
-            <FormControlLabel
-              className={classes.hoverClass}
-              value={data}
-              control={<Radio color="primary" className={classes.radio} />}
-              label={data}
-            />
-          ))}
-        </RadioGroup>
-        {value.helperText && (
-          <FormHelperText>
-            <b style={{ color: "red" }}>Required</b>
-          </FormHelperText>
-        )}
-      </FormControl>
+      <Grid container>
+        <Grid item xs={12}>
+          <FormControl
+            component="fieldset"
+            className={`${classes.fromControlTwo} ${classes.formControl}`}
+            style={{ top: "-90px" }}
+          >
+            <RadioGroup
+              aria-label="Gender"
+              name="gender1"
+              className={classes.group}
+              value={props.values.values}
+              onChange={handleChange}
+            >
+              {props.radioValues.map((data) => (
+                <>
+                  {console.log(data)}
+                  <FormControlLabel
+                    className={classes.hoverClass}
+                    value={data}
+                    control={
+                      <Radio
+                        icon={false}
+                        checkedIcon={<AiOutlineCheck />}
+                        color="primary"
+                        className={classes.radio}
+                      />
+                    }
+                    label={
+                      <span style={{ color: "gray", float: "left" }}>
+                        {data}
+                      </span>
+                    }
+                    labelPlacement="start"
+                  />
+                </>
+              ))}
+            </RadioGroup>
+            {value.helperText && (
+              <FormHelperText>
+                <b style={{ color: "red" }}>Required</b>
+              </FormHelperText>
+            )}
+          </FormControl>
+        </Grid>
+      </Grid>
     </div>
   );
 }

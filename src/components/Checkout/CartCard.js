@@ -19,6 +19,8 @@ import React from "react";
 import { AiFillCaretLeft, AiFillCaretRight } from "react-icons/ai";
 import { IoPricetagsOutline } from "react-icons/io5";
 import { NavLink } from "react-router-dom";
+import ArrowLeft from "../../assets/arrowleft";
+import ArrowRight from "../../assets/arrowright";
 import { API_URL } from "../../config";
 import ProductList from "../../screens/Checkout/orderSummary/promocode";
 import Buynowbutton from "../Buynow/buynowbutton";
@@ -619,21 +621,22 @@ class Checkoutcard extends React.Component {
                         <br />
                       </Hidden>
 
-                      <Box display="flex" flexDirection="row">
+                      <Box
+                        display="flex"
+                        flexDirection="row"
+                        alignItems="center"
+                      >
                         <Box>
-                          <img
-                            className={classes.img}
-                            src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/Group+160.svg"
-                            alt="title images"
-                          />
+                          {" "}
+                          <ArrowRight />
                         </Box>
-                        <Box className={classes.title}>SHOPPING CART</Box>
                         <Box>
-                          <img
-                            className={classes.img}
-                            src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/Group+159.svg"
-                            alt="title images"
-                          />
+                          <Typography className={classes.title}>
+                            &nbsp;&nbsp;SHOPPING CART&nbsp; &nbsp;
+                          </Typography>
+                        </Box>
+                        <Box>
+                          <ArrowLeft />
                         </Box>
                       </Box>
                     </Grid>
@@ -1284,22 +1287,18 @@ class Checkoutcard extends React.Component {
                       <Box
                         display="flex"
                         flexDirection="row"
-                        justifyContent="center"
+                        alignItems="center"
                       >
                         <Box>
-                          <img
-                            className={classes.img}
-                            src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/Group+160.svg"
-                            alt="title images"
-                          />
+                          <ArrowRight />
                         </Box>
-                        <Box className={classes.title}>SHOPPING CART</Box>
                         <Box>
-                          <img
-                            className={classes.img}
-                            src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/Group+159.svg"
-                            alt="title images"
-                          />
+                          <Typography className={classes.title}>
+                            &nbsp; SHOPPING CART &nbsp;
+                          </Typography>
+                        </Box>
+                        <Box>
+                          <ArrowLeft />
                         </Box>
                       </Box>
                     </Grid>

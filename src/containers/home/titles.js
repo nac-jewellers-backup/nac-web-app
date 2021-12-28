@@ -16,15 +16,15 @@ export const Title = (props) => {
           alignItems="center"
         >
           <Box>
-            <ArrowLeft />
+            <ArrowRight />
           </Box>
           <Box>
             <Typography className={classes.title}>
-              {props.title.toUpperCase()}
+              &nbsp;{props.title.toUpperCase()}&nbsp;
             </Typography>
           </Box>
           <Box>
-            <ArrowRight />
+            <ArrowLeft />
           </Box>
         </Box>
       </Grid>

@@ -12,10 +12,8 @@ import {
   List,
   ListItem,
   ListItemText,
-  MenuItem,
   Modal,
   NativeSelect,
-  Select,
   Toolbar,
   Typography,
 } from "@material-ui/core";
@@ -718,29 +716,22 @@ class Header extends Component {
                             <Grid item xs={12}>
                               <FormControl
                                 variant="outlined"
-                                className={
-                                  classes.goldRateformControlSmallScreen
-                                }
+                                className={classes.goldRateformControl}
                               >
-                                {/* <InputLabel id="demo-simple-select-outlined-label">
-                                Age
-                              </InputLabel> */}
-                                <Select
-                                  labelId="demo-simple-select-outlined-label"
-                                  id="demo-simple-select-outlined"
-                                  value={22}
-                                  //   onChange={handleChange}
-                                  // label="Age"
+                                <NativeSelect
+                                  defaultValue={30}
+                                  inputProps={{
+                                    name: "name",
+                                    id: "uncontrolled-native",
+                                    className: {
+                                      root: classes.selects,
+                                    },
+                                  }}
                                 >
-                                  <MenuItem value="22">
-                                    <em>None</em>
-                                  </MenuItem>
-                                  <MenuItem value={22}>
-                                    Gold 22k/1t ₹3256
-                                  </MenuItem>
-                                  <MenuItem value={24}>Twenty</MenuItem>
-                                  <MenuItem value={26}>Thirty</MenuItem>
-                                </Select>
+                                  <option value={10}>Ten</option>
+                                  <option value={20}>Twenty</option>
+                                  <option value={30}>Gold 22k/1g ₹ 3256</option>
+                                </NativeSelect>
                               </FormControl>
                             </Grid>
                           </Grid>
@@ -855,7 +846,7 @@ class Header extends Component {
                                   <a href="/cart">
                                     <i
                                       style={{ fontSize: "15px !important" }}
-                                      class={`fa fa-shopping-cart  ${classes.iconFafa}`}
+                                      class={`fa fa-shopping-bag  ${classes.iconFafa}`}
                                     ></i>
                                   </a>
                                 </Badge>
@@ -932,7 +923,7 @@ class Header extends Component {
                             )}
                           </div>
                         </ListItem>
-                        <div style={{ padding: "3px" }}>
+                        <div style={{ padding: "10px" }}>
                           {
                             selected === row.name && (
                               // Object.keys(Jewellery[selected]).map((row2) => (

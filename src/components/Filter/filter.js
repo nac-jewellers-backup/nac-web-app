@@ -14,7 +14,7 @@ import {
   Paper,
   Slide,
   TextField,
-  Typography
+  Typography,
 } from "@material-ui/core";
 import FormGroup from "@material-ui/core/FormGroup";
 import { withStyles } from "@material-ui/core/styles";
@@ -656,7 +656,6 @@ class Component extends React.Component {
     this.setState({ CardRadio: false });
   };
   handleDrawerCloseMobile = () => {
-   
     this.setState({ openMobile: true });
     this.setState({ productDisplay: true });
   };
@@ -1457,38 +1456,44 @@ class Component extends React.Component {
               }}
               className={`${classes.colorMain}`}
             >
-              <button onClick={this.handleDrawerCloseMobile}>
+              <button
+                style={{ backgroundColor: "white", border: "none" }}
+                onClick={this.handleDrawerCloseMobile}
+              >
                 <i
                   className={`fa fa-times ${classes.colorMain}`}
                   style={{ color: "#20205A" }}
                 ></i>
+                <span
+                  style={{
+                    border: "none",
+                    fontWeight: "600",
+                    color: "#20205A",
+                    padding: "6px 8px",
+                    fontFamily: "notoSerif-regular",
+                  }}
+                >
+                  &nbsp;FILTER BY
+                </span>
               </button>
+
               <button
-                style={{
-                  background: "none",
-                  border: "none",
-                  fontWeight: "600",
-                  color: "#20205A",
-                  padding: "6px 8px",
-                  fontFamily: "notoSerif-regular",
-                }}
-              ></button>
-              <Button
                 onClick={this.handleClearAllData}
                 style={{
                   float: "right",
                   border: "1px solid #c0bcbc",
-                  lineHeight: "15px",
+                  padding: "4px 8px",
                   fontSize: "12px",
                   color: "#20205A",
                   borderRadius: "0px",
                   marginTop: "3px",
+                  backgroundColor: "white",
                 }}
+                size="small"
                 className={`${classes.colorMain}`}
-                classes={{ text: classes.clearBtn }}
               >
-                Clear All
-              </Button>
+                &nbsp;CLEAR ALL&nbsp;
+              </button>
             </div>
 
             <Grid
@@ -1585,8 +1590,8 @@ class Component extends React.Component {
                           <ListItem
                             key={row}
                             style={{
-                              paddingLeft: "0px",
-                              paddingRight: "0px",
+                              padding: "0px",
+
                               width: "100%",
                               borderBottom: "1px solid #efeeee",
                             }}
@@ -1650,21 +1655,24 @@ class Component extends React.Component {
                                   }
                                   onClick={this.handleDrawerCloseMobile}
                                 />
-                                <ListItemText>
-                                  {/* <Typography variant=""
-                                    className={`filter-mbl-font fnts ${classes.colorMainSecondary}`}>
-                                    <div
-                                      // onClick={this.handleDrawerCloseMobile}
-                                      onClick={(e) => this.handleChange(row.value, this.state.checked[this.state.filtercheck && this.state.filtercheck.replace(/\s/g, "")][row.value] !== undefined ? !this.state.checked[this.state.filtercheck && this.state.filtercheck.replace(/\s/g, "")][row.value] : true, e)}
-                                    > {row.title}</div>
-                                  </Typography> */}
-                                </ListItemText>
+                                <ListItemText></ListItemText>
                               </>
                             ) : (
                               <>
                                 <FormControlLabel
                                   style={{ paddingLeft: 4 }}
-                                  label={row}
+                                  label={
+                                    <span
+                                      style={{
+                                        color: "gray",
+                                        textTransform: "capitalize",
+                                        fontWeight: "bold",
+                                        fontSize: "12px",
+                                      }}
+                                    >
+                                      {row}
+                                    </span>
+                                  }
                                   control={
                                     <div>
                                       <CheckboxWithTick
@@ -1848,9 +1856,16 @@ class Component extends React.Component {
             {openMobile ? null : (
               <AppBar
                 className="filter-fixed header"
-                style={{ backgroundColor: "#20205A ", minHeight: "35px" }}
+                style={{ backgroundColor: "#2F348B ", minHeight: "35px" }}
               >
-                <div style={{ color: "#fff", paddingTop: "7px" }}>
+                <div
+                  style={{
+                    color: "#fff",
+                    paddingTop: "7px",
+                    fontWeight: "bold",
+                    fontSize: "14px",
+                  }}
+                >
                   APPLY FILTERS
                 </div>
               </AppBar>
@@ -1864,28 +1879,13 @@ class Component extends React.Component {
                 backgroundColor: "whitesmoke",
               }}
             >
-              <Container>
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-around",
-                    minHeight: "50px",
-                  }}
-                >
-                  <div
-                    style={{ marginTop: "auto", marginBottom: "auto" }}
-                    onClick={this.handleDrawerOpenMobile}
+              <Container style={{ border: "1px solid #2F348B" }}>
+                <Grid container>
+                  <Grid
+                    item
+                    xs={6}
+                    style={{ borderRight: "1px solid #2F348B" }}
                   >
-                    <Typography
-                      variant=""
-                      className={`filter-mbl-font ${classes.colorMainSecondary}`}
-                    >
-                      <i className="filter-icon" class="fa fa-filter"></i>
-                      &nbsp; Filter
-                    </Typography>
-                  </div>
-
-                  <div style={{ marginTop: "auto", marginBottom: "auto" }}>
                     <IconButton
                       edge="end"
                       color="inherit"
@@ -1899,14 +1899,38 @@ class Component extends React.Component {
                       <Typography
                         variant=""
                         className={`filter-mbl-font ${classes.colorMainSecondary}`}
-                        style={{ fontSize: "1rem" }}
+                        style={{
+                          fontSize: "0.8rem",
+                          fontWeight: "bold",
+                          fontFamily: "notoSerif-regular",
+                        }}
                       >
-                        <i className="filter-icon" class="fa fa-sort"></i>&nbsp;
-                        Sort
+                        {/* <i className="filter-icon" class="fa fa-sort"></i> */}
+                        SORT BY
                       </Typography>
                     </IconButton>
-                  </div>
-                </div>
+                  </Grid>
+                  <Grid item xs={6}>
+                    <IconButton
+                      edge="end"
+                      color="inherit"
+                      onClick={this.handleDrawerOpenMobile}
+                    >
+                      <Typography
+                        variant=""
+                        className={`filter-mbl-font ${classes.colorMainSecondary}`}
+                        style={{
+                          fontSize: "0.8rem",
+                          fontWeight: "bold",
+                          fontFamily: "notoSerif-regular",
+                        }}
+                      >
+                        {/* <i className="filter-icon" class="fa fa-filter"></i> */}
+                        &nbsp;FILTER BY
+                      </Typography>
+                    </IconButton>
+                  </Grid>
+                </Grid>
               </Container>
             </AppBar>
           </div>
