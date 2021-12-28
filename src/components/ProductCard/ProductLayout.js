@@ -162,6 +162,7 @@ class Component extends React.Component {
                               style={{
                                 boxShadow: "6px 6px 6px #A5A4A5 ",
                                 fontWeight: "bold",
+                                borderRadius: "0px",
                               }}
                               variant="contained"
                               className={`${classes.button}  ${classes.viewmoreColor}`}
@@ -171,13 +172,14 @@ class Component extends React.Component {
                               disabled={data && data.length < 24}
                             >
                               {data && data.length === 0 && `No products found`}
-                              {data &&
+                              {/* {data &&
                                 data.length >= 24 &&
                                 ` See ${
                                   data && data.length > 0 && data[0]
                                     ? data[0].totalCount - data.length
                                     : ""
-                                } More Products`}
+                                } More Products`} */}
+                              SEE MORE
                               {data &&
                                 data.length > 0 &&
                                 data.length < 24 &&
