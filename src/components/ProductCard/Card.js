@@ -12,7 +12,7 @@ import { ProductDetailContext } from "context";
 import React from "react";
 import {
   LazyLoadImage,
-  trackWindowScroll,
+  trackWindowScroll
 } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { Link } from "react-router-dom";
@@ -232,10 +232,7 @@ const useStyles = makeStyles((theme) => ({
       boxShadow: "40 0 11px rgba(33,33,33,.2)",
       cursor: "pointer",
     },
-    [theme.breakpoints.down("sm")]: {
-      height: "80px",
-      padding: "0 !important",
-    },
+
     "& div": {
       padding: "0 !important",
     },
@@ -361,7 +358,7 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: "notoSerif-regular",
     overflow: "hidden",
     textOverflow: "ellipsis",
-    width: "90%",
+   
   },
   hashtags: {
     fontSize: "0.7rem",
@@ -596,18 +593,8 @@ function Component(props) {
                     </Grid>
                   </Hidden>
                   <Hidden mdUp>
-                    <Grid
-                      container
-                      item
-                      xs={12}
-                      sm={12}
-                      className={`${classes.priceClassMain}`}
-                      style={{
-                        justifyContent: "space-between",
-                        padding: "12px",
-                      }}
-                    >
-                      <div style={{ marginTop: "10px" }}>
+                    <Grid container xs={12}>
+                      <div>
                         {props.data.offerPrice === props.data.price ? (
                           <Typography
                             variant="h5"
@@ -685,8 +672,6 @@ function Component(props) {
                           </Grid>
                         )}{" "}
                       </div>
-                    </Grid>
-                    <Grid container xs={12}>
                       <Typography
                         variant="body1"
                         component="span"

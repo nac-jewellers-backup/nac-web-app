@@ -14,7 +14,6 @@ const useStyles = makeStyles((theme) => ({
   root: {
     padding: "6px 6px 6px 6px",
     height: "100vh",
-    display: "flex",
   },
   formControl: {
     margin: "14px",
@@ -37,6 +36,7 @@ const useStyles = makeStyles((theme) => ({
   },
   radio: {
     color: "#2F348B",
+    float: "left",
   },
   hoverClass: {
     paddingRight: "10px",
@@ -150,8 +150,8 @@ export default function RadioBtn(props) {
                         {data}
                       </span>
                     }
-                    labelPlacement="start"
-                  />
+                    labelPlacement="end"
+                  ></FormControlLabel>
                 </>
               ))}
             </RadioGroup>
