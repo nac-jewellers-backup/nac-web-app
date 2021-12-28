@@ -12,7 +12,7 @@ import { ProductDetailContext } from "context";
 import React from "react";
 import {
   LazyLoadImage,
-  trackWindowScroll
+  trackWindowScroll,
 } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { Link } from "react-router-dom";
@@ -358,7 +358,6 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: "notoSerif-regular",
     overflow: "hidden",
     textOverflow: "ellipsis",
-   
   },
   hashtags: {
     fontSize: "0.7rem",
@@ -615,7 +614,7 @@ function Component(props) {
                           </Typography>
                         ) : (
                           <Grid container>
-                            <Grid item xs={6}>
+                            <Grid item xs={12}>
                               <Typography
                                 className={classes.offerMainPrice}
                                 style={{
@@ -650,8 +649,8 @@ function Component(props) {
                                     )}
                               </span>
                             </Grid>
-
-                            <Grid item xs={6}>
+                            {/* 
+                            <Grid item xs={12}>
                               <span
                                 style={{
                                   fontWeight: "bold",
@@ -668,7 +667,7 @@ function Component(props) {
                                       Math.round(props.data.save)
                                     )}% OFF`}
                               </span>
-                            </Grid>
+                            </Grid> */}
                           </Grid>
                         )}{" "}
                       </div>

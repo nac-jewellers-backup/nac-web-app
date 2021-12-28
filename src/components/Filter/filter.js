@@ -1440,6 +1440,8 @@ class Component extends React.Component {
         <Hidden mdUp>
           <div
             style={{
+              top: "90px",
+              position: "absolute",
               backgroundColor: "white",
               width: "100%",
             }}
@@ -1455,7 +1457,11 @@ class Component extends React.Component {
               className={`${classes.colorMain}`}
             >
               <button
-                style={{ backgroundColor: "white", border: "none" }}
+                style={{
+                  backgroundColor: "white",
+                  border: "none",
+                  marginTop: "10px",
+                }}
                 onClick={this.handleDrawerCloseMobile}
               >
                 <i
@@ -1484,7 +1490,7 @@ class Component extends React.Component {
                   fontSize: "12px",
                   color: "#20205A",
                   borderRadius: "0px",
-                  marginTop: "3px",
+                  marginTop: "6px",
                   backgroundColor: "white",
                 }}
                 size="small"
@@ -1563,6 +1569,23 @@ class Component extends React.Component {
                     xs={6}
                     style={{ overflow: "scroll", height: "73vh" }}
                   >
+                    {/* <>
+                      <div className="header-chips Chip">
+                        {this.state.chipData.map(data => {
+                          return (
+                            <Chip
+                              className="header-chips-text"
+                              key={data.key}
+                              label={data.label}
+                              onClick={() => this.handleDelete}
+                              avatar={data.label ?
+                                <i className="search-choice-close" class="fa fa-times"></i>
+                                : ""}
+                            />
+                          );
+                        })}
+                      </div>
+                    </> */}
                     <>
                       {subFilter[
                         this.state.filtercheck && this.state.filtercheck
@@ -1710,6 +1733,102 @@ class Component extends React.Component {
                                   }
                                   labelPlacement="end"
                                 />
+
+                                {/* <CheckboxWithTick
+                                  color="white"
+                                  value="checked"
+                                  className={`${classes.sublistMobile}`}
+                                  checked={
+                                    this.state.checked[
+                                      this.state.filtercheck &&
+                                        this.state.filtercheck.replace(
+                                          /\s/g,
+                                          ""
+                                        )
+                                    ][row] !== undefined
+                                      ? this.state.checked[
+                                          this.state.filtercheck &&
+                                            this.state.filtercheck.replace(
+                                              /\s/g,
+                                              ""
+                                            )
+                                        ][row]
+                                      : false
+                                  }
+                                  onChange={(e) =>
+                                    this.handleChange(
+                                      row,
+                                      this.state.checked[
+                                        this.state.filtercheck &&
+                                          this.state.filtercheck.replace(
+                                            /\s/g,
+                                            ""
+                                          )
+                                      ][row] !== undefined
+                                        ? !this.state.checked[
+                                            this.state.filtercheck &&
+                                              this.state.filtercheck.replace(
+                                                /\s/g,
+                                                ""
+                                              )
+                                          ][row]
+                                        : true,
+                                      e
+                                    )
+                                  }
+                                  // onChange={(e) => this.handleChange(row12, this.state.checked[row.replace(/\s/g, "")][row12] !== undefined ? !this.state.checked[row.replace(/\s/g, "")][row12] : true, e)}
+                                  icon={
+                                    <CheckBoxOutlineBlankIcon
+                                      fontSize="small"
+                                      style={{ fill: "#000 !important" }}
+                                    />
+                                  }
+                                  checkedIcon={
+                                    <CheckBoxIcon
+                                      fontSize="small"
+                                      style={{ fill: "#000 !important" }}
+                                    />
+                                  }
+                                  name={
+                                    this.state.filtercheck &&
+                                    this.state.filtercheck.replace(/\s/g, "")
+                                  }
+                                  onClick={this.handleDrawerCloseMobile}
+                                />
+                                <ListItemText>
+                                  <Typography
+                                    variant=""
+                                    className={`filter-mbl-font fnts ${classes.colorMainSecondary}`}
+                                  >
+                                    <div
+                                      // onClick={this.handleDrawerCloseMobile}
+                                      onClick={(e) =>
+                                        this.handleChange(
+                                          row,
+                                          this.state.checked[
+                                            this.state.filtercheck &&
+                                              this.state.filtercheck.replace(
+                                                /\s/g,
+                                                ""
+                                              )
+                                          ][row] !== undefined
+                                            ? !this.state.checked[
+                                                this.state.filtercheck &&
+                                                  this.state.filtercheck.replace(
+                                                    /\s/g,
+                                                    ""
+                                                  )
+                                              ][row]
+                                            : true,
+                                          e
+                                        )
+                                      }
+                                    >
+                                      {" "}
+                                      {row}
+                                    </div>
+                                  </Typography>
+                                </ListItemText> */}
                               </>
                             )}
                           </ListItem>
@@ -1719,6 +1838,24 @@ class Component extends React.Component {
                   </Grid>
                 )}
               </Grid>
+              {/* <Grid container item xs={12} className="filterButtonMobile" justify="flex-end">
+                <Paper>
+                    <Button variant="contained" style={{backgroundColor:'rgba(58, 69, 120, 1)', color:'white'}}>
+                      Apply
+                    </Button>
+                </Paper>    
+              </Grid> */}
+              {/* <AppBar color="primary" className="filter-fixed header" >
+                <Grid container item xs={12} justify="flex-end" alignItems="center" style={{ padding: '2%' }}>
+                  <Grid item xs={6}>
+
+                    <Button variant='contained' className={`filterBtnMobile`}>
+                      Apply
+                    </Button>
+                  </Grid>
+                </Grid>
+
+              </AppBar> */}
             </Grid>
             {openMobile ? null : (
               <AppBar
@@ -1728,7 +1865,7 @@ class Component extends React.Component {
                 <div
                   style={{
                     color: "#fff",
-                    paddingTop: "7px",
+                    paddingTop: "12px",
                     fontWeight: "bold",
                     fontSize: "14px",
                   }}
