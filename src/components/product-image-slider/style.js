@@ -156,7 +156,7 @@ const styles = (theme) => ({
   },
   collectionSection: {
     // "& svg":{
-    fill: `${theme.palette.secondary.main} !important`,
+    fill: `#B78231`,
     // }
   },
   timelinegrid: {
@@ -490,8 +490,6 @@ const styles = (theme) => ({
     },
   },
   collectionSection: {
-    fill: `${theme.palette.secondary.main} !important`,
-
     //     "& .slick-prev":{
     //         left:'-500px !important'
     //     },

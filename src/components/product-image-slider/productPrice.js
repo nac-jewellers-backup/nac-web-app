@@ -26,8 +26,8 @@ const mobilecarousel = (props, val, wishlist) => {
         onClick={onClick}
         style={{
           ...style,
-          fill: "theme.palette.secondary.main !important",
-          fontSize: "40px",
+          fill: "#B78231",
+          fontSize: "30px",
         }}
       />
     );
@@ -40,8 +40,8 @@ const mobilecarousel = (props, val, wishlist) => {
         onClick={onClick}
         style={{
           ...style,
-          fill: "theme.palette.secondary.main !important",
-          fontSize: "40px",
+          fill: "#B78231",
+          fontSize: "30px",
         }}
       />
     );
@@ -95,7 +95,7 @@ const Productprice = (
             <Hidden mdUp>
               <div
                 style={{
-                  width: "96%",
+                  width: "100%",
                   height: "auto",
                   marginBottom: "10px",
                   marginTop: "16px",

@@ -130,7 +130,13 @@ class PaymentIndex extends React.Component {
                       <Checkbox checked={this.state.payment === val.id} />
                     }
                     label={
-                      <span style={{ color: "gray", whiteSpace: "nowrap" }}>
+                      <span
+                        style={{
+                          color: "gray",
+                          whiteSpace: "nowrap",
+                          fontSize: "12px",
+                        }}
+                      >
                         {val.title}
                       </span>
                     }

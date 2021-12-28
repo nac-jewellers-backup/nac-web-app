@@ -233,7 +233,7 @@ const useStyles = makeStyles((theme) => ({
       cursor: "pointer",
     },
     [theme.breakpoints.down("sm")]: {
-      height: "60px",
+      height: "80px",
       padding: "0 !important",
     },
     "& div": {

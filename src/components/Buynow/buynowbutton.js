@@ -52,7 +52,8 @@ class Buynowbutton extends React.Component {
       if (!productIsActive) {
         if (this.props?.productURL) {
           window.open(
-            `https://wa.me/919952625252?text=Hi - ${window.location.hostname + "/" + this.props.productURL ?? ""
+            `https://wa.me/919952625252?text=Hi - ${
+              window.location.hostname + "/" + this.props.productURL ?? ""
             }`
           );
         } else {
@@ -69,8 +70,8 @@ class Buynowbutton extends React.Component {
           style={{ borderRadius: "5px", ...this.props.style }}
         >
           {window.location.pathname.split("/").pop() !== "cart" &&
-            window.location.pathname.split("/").pop() !== "checkout" &&
-            this.state.vals === 1 ? (
+          window.location.pathname.split("/").pop() !== "checkout" &&
+          this.state.vals === 1 ? (
             <>
               {!this.props.withoutBag && productIsActive && (
                 <i class="fa fa-shopping-bag buynow-icon"></i>
@@ -84,7 +85,7 @@ class Buynowbutton extends React.Component {
                     </span>
                   </Hidden>
                   <Hidden mdUp>
-                    <span style={{ fontWeight: "bold", fontSize: "16px" }}>
+                    <span style={{ fontWeight: "bold", fontSize: "14px" }}>
                       {" "}
                       In Cart!
                     </span>
@@ -95,13 +96,25 @@ class Buynowbutton extends React.Component {
                   {productIsActive ? (
                     <>
                       <Hidden smDown>
-                        <span style={{ fontSize: "24px", fontWeight: "bold" }}>
+                        <span
+                          style={{
+                            fontSize: "20px",
+                            fontFamily: "notoSerif-regular",
+                            fontWeight: "bold",
+                          }}
+                        >
                           {" "}
                           In bag!
                         </span>
                       </Hidden>
                       <Hidden mdUp>
-                        <span style={{ fontWeight: "bold", fontSize: "16px" }}>
+                        <span
+                          style={{
+                            fontWeight: "bold",
+                            fontFamily: "notoSerif-regular",
+                            fontSize: "14px",
+                          }}
+                        >
                           {" "}
                           In bag!
                         </span>

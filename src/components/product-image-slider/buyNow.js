@@ -610,14 +610,13 @@ class Component extends React.Component {
 
         <Hidden mdUp>
           <div style={{ marginTop: "25px" }}>
-            <ProductPrice
-              data={this.props.data}
-              wishlist={this.props.wishlist}
-              pdpage={true}
-            />
-
             <Grid container style={{ marginTop: "40x" }}>
               <Grid item xs={12}>
+                <ProductPrice
+                  data={this.props.data}
+                  wishlist={this.props.wishlist}
+                  pdpage={true}
+                />
                 <br />
                 <Box
                   display="flex"
