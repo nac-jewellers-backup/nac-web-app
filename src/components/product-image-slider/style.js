@@ -421,6 +421,7 @@ const styles = (theme) => ({
   },
   fontgray: {
     color: theme.palette.text.disabled,
+    textTransform: "capitalize",
   },
   // buynow
   buttons: {

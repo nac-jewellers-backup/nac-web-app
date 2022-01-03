@@ -132,8 +132,18 @@ const Productprice = (
                           >
                             {val?.title}
                           </Typography>
+                          <Typography
+                            variant="h4"
+                            className={`pdp-title ${classes.dis}`}
+                            style={{
+                              width: "100%",
+                              fontFamily: "notoSerif-regular",
+                            }}
+                          >
+                            {val?.shortDis}
+                          </Typography>
 
-                          <span className={`pdp-desc ${classes.dis} `}>
+                          {/* <span className={`pdp-desc ${classes.dis} `}>
                             {val?.dis?.length > 30 && viewMore
                               ? val?.dis
                               : `${val?.dis?.substring(0, 30)}...`}
@@ -157,7 +167,7 @@ const Productprice = (
                                 {viewMore ? "Read Less" : "Read More"}
                               </span>
                             </span>
-                          </span>
+                          </span> */}
                         </Grid>
 
                         <Grid

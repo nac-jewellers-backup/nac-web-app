@@ -359,7 +359,6 @@ const handle_mapper = (val) => {
 };
 
 export default function (data, like_data, viewedddatas, rating, tabsChange) {
-
   let mapperdata = [];
   const history = useHistory();
 
@@ -374,7 +373,6 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
     mapperdata = [];
     console.log("error");
   }
-
 
   const _format = mapperdata.map((PD) => {
     let _d;
@@ -393,8 +391,8 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
           : "",
         title:
           PD &&
-            PD.productListByProductId &&
-            PD.productListByProductId.productName
+          PD.productListByProductId &&
+          PD.productListByProductId.productName
             ? PD.productListByProductId.productName
             : "",
 
@@ -402,17 +400,21 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
         skuId: PD && PD === undefined ? "" : PD.generatedSku,
         offerPrice: PD && PD.discountPrice ? PD.discountPrice : "",
         price: PD && PD.markupPrice ? PD.markupPrice : "",
-        dimondweight: PD.productListByProductId.productDiamondsByProductSku.nodes.length > 0 ? PD.productListByProductId.productDiamondsByProductSku.nodes[0].stoneWeight : null,
+        dimondweight:
+          PD.productListByProductId.productDiamondsByProductSku.nodes.length > 0
+            ? PD.productListByProductId.productDiamondsByProductSku.nodes[0]
+                .stoneWeight
+            : null,
         save: " ",
         offerDiscount:
           PD && PD.discount ? `${Math.abs(PD.discount)}% OFF` : null,
         shortDis: "Testing Short Description",
         dis:
           PD &&
-            PD !== undefined &&
-            PD.transSkuDescriptionsBySkuId.nodes &&
-            PD.transSkuDescriptionsBySkuId.nodes.length > 0 &&
-            PD.transSkuDescriptionsBySkuId.nodes[0].skuDescription !== ""
+          PD !== undefined &&
+          PD.transSkuDescriptionsBySkuId.nodes &&
+          PD.transSkuDescriptionsBySkuId.nodes.length > 0 &&
+          PD.transSkuDescriptionsBySkuId.nodes[0].skuDescription !== ""
             ? PD.transSkuDescriptionsBySkuId.nodes[0].skuDescription
             : "",
         sellingPrice: PD && PD.sellingPrice ? PD.sellingPrice : "",
@@ -422,46 +424,46 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
           PD.productListByProductId.productType,
         fadeImages:
           PD &&
-            PD.productListByProductId &&
-            PD.productListByProductId.productImagesByProductId &&
-            PD.productListByProductId.productImagesByProductId.nodes.length > 0
+          PD.productListByProductId &&
+          PD.productListByProductId.productImagesByProductId &&
+          PD.productListByProductId.productImagesByProductId.nodes.length > 0
             ? generateImgurls(
-              PD,
-              PD.productListByProductId.productImagesByProductId.nodes,
-              colSize,
-              tabsChange
-            )
+                PD,
+                PD.productListByProductId.productImagesByProductId.nodes,
+                colSize,
+                tabsChange
+              )
             : {
-              arrOfurls: [
-                `${CDN_URL}product/575X575/productnotfound.webp`,
-                `${CDN_URL}product/575X575/productnotfound.webp`,
-                `${CDN_URL}product/575X575/productnotfound.webp`,
-              ],
-              arrOfurls_2X: [
-                `${CDN_URL}product/575X575/productnotfound.webp`,
-                `${CDN_URL}product/575X575/productnotfound.webp`,
-                `${CDN_URL}product/575X575/productnotfound.webp`,
-              ],
-            },
+                arrOfurls: [
+                  `${CDN_URL}product/575X575/productnotfound.webp`,
+                  `${CDN_URL}product/575X575/productnotfound.webp`,
+                  `${CDN_URL}product/575X575/productnotfound.webp`,
+                ],
+                arrOfurls_2X: [
+                  `${CDN_URL}product/575X575/productnotfound.webp`,
+                  `${CDN_URL}product/575X575/productnotfound.webp`,
+                  `${CDN_URL}product/575X575/productnotfound.webp`,
+                ],
+              },
         image_resolution: img_res ? img_res : 1000,
         image_resolution_two: img_res_X_2 ? img_res_X_2 : 1000,
         size: my_actual_size ? my_actual_size : 500,
         size_guide:
           PD &&
-            PD.transSkuDescriptionsBySkuId &&
-            PD.transSkuDescriptionsBySkuId.nodes &&
-            PD.transSkuDescriptionsBySkuId.nodes.length > 0 &&
-            PD.transSkuDescriptionsBySkuId.nodes[0] &&
-            PD.transSkuDescriptionsBySkuId.nodes[0].ringsizeImage
+          PD.transSkuDescriptionsBySkuId &&
+          PD.transSkuDescriptionsBySkuId.nodes &&
+          PD.transSkuDescriptionsBySkuId.nodes.length > 0 &&
+          PD.transSkuDescriptionsBySkuId.nodes[0] &&
+          PD.transSkuDescriptionsBySkuId.nodes[0].ringsizeImage
             ? PD.transSkuDescriptionsBySkuId.nodes[0].ringsizeImage
             : null,
         certificates:
           PD &&
-            PD.transSkuDescriptionsBySkuId &&
-            PD.transSkuDescriptionsBySkuId.nodes &&
-            PD.transSkuDescriptionsBySkuId.nodes.length > 0 &&
-            PD.transSkuDescriptionsBySkuId.nodes[0] &&
-            PD.transSkuDescriptionsBySkuId.nodes[0].certificate
+          PD.transSkuDescriptionsBySkuId &&
+          PD.transSkuDescriptionsBySkuId.nodes &&
+          PD.transSkuDescriptionsBySkuId.nodes.length > 0 &&
+          PD.transSkuDescriptionsBySkuId.nodes[0] &&
+          PD.transSkuDescriptionsBySkuId.nodes[0].certificate
             ? handle_mapper(PD.transSkuDescriptionsBySkuId.nodes[0].certificate)
             : null,
         maxOrderQty: PD && PD.maxOrderQty ? PD.maxOrderQty : 100000,
@@ -499,14 +501,16 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
         productTabs: [
           {
             tab1: {
-              header: `${PD.productListByProductId.productType
-                ? PD.productListByProductId.productType
-                : null
-                } Size`,
-              headerBangle: `${PD.productListByProductId.productType
-                ? PD.productListByProductId.productType
-                : null
-                } Size`,
+              header: `${
+                PD.productListByProductId.productType
+                  ? PD.productListByProductId.productType
+                  : null
+              } Size`,
+              headerBangle: `${
+                PD.productListByProductId.productType
+                  ? PD.productListByProductId.productType
+                  : null
+              } Size`,
               Children:
                 PD.productListByProductId && sorting(PD.productListByProductId),
             },
@@ -548,6 +552,17 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
             show: PD.showPriceBreakup,
             namedetail: [
               {
+                name: "Product Description",
+                details:
+                  PD &&
+                  PD !== undefined &&
+                  PD.transSkuDescriptionsBySkuId.nodes &&
+                  PD.transSkuDescriptionsBySkuId.nodes.length > 0 &&
+                  PD.transSkuDescriptionsBySkuId.nodes[0].skuDescription !== ""
+                    ? PD.transSkuDescriptionsBySkuId.nodes[0].skuDescription
+                    : null,
+              },
+              {
                 name: "Product Code",
                 details: PD && PD.generatedSku !== "" ? PD.generatedSku : null,
               },
@@ -556,8 +571,8 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                 details: PD && PD.purity + " " + PD.metalColor,
               },
               {
-                name: "Approx Metal Weight (in gm)",
-                details: PD && PD.skuWeight ? PD.skuWeight : null,
+                name: "Approx Metal Weight",
+                details: PD && PD.skuWeight ? PD.skuWeight + " gm" : null,
               },
               {
                 name: PD && PD.skuSize ? "Size" : null,
@@ -586,9 +601,9 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
               {
                 details: PD?.productListByProductId?.earringBacking
                   ? {
-                    name: "Fastening",
-                    details: PD.productListByProductId.earringBacking,
-                  }
+                      name: "Fastening",
+                      details: PD.productListByProductId.earringBacking,
+                    }
                   : null,
               },
             ],
@@ -611,59 +626,59 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                 name: "Diamond",
                 details:
                   PD &&
-                    PD.productListByProductId &&
-                    PD.productListByProductId.productDiamondsByProductSku &&
-                    PD.productListByProductId.productDiamondsByProductSku.nodes &&
-                    PD.productListByProductId.productDiamondsByProductSku.nodes
-                      .length > 0
+                  PD.productListByProductId &&
+                  PD.productListByProductId.productDiamondsByProductSku &&
+                  PD.productListByProductId.productDiamondsByProductSku.nodes &&
+                  PD.productListByProductId.productDiamondsByProductSku.nodes
+                    .length > 0
                     ? [
-                      PD.pricingSkuMaterialsByProductSku.nodes &&
+                        PD.pricingSkuMaterialsByProductSku.nodes &&
                         PD.pricingSkuMaterialsByProductSku.nodes.length > 0
-                        ? calculatetotalms(
-                          PD.pricingSkuMaterialsByProductSku.nodes,
-                          "diamond",
-                          "discountPrice"
-                        )
-                        : 0,
-                      PD.pricingSkuMaterialsByProductSku.nodes &&
+                          ? calculatetotalms(
+                              PD.pricingSkuMaterialsByProductSku.nodes,
+                              "diamond",
+                              "discountPrice"
+                            )
+                          : 0,
+                        PD.pricingSkuMaterialsByProductSku.nodes &&
                         PD.pricingSkuMaterialsByProductSku.nodes.length > 0
-                        ? calculatetotalms(
-                          PD.pricingSkuMaterialsByProductSku.nodes,
-                          "diamond",
-                          "markup"
-                        )
-                        : 0,
-                    ]
+                          ? calculatetotalms(
+                              PD.pricingSkuMaterialsByProductSku.nodes,
+                              "diamond",
+                              "markup"
+                            )
+                          : 0,
+                      ]
                     : [],
               },
               {
                 name: "Gemstone",
                 details:
                   PD &&
-                    PD.productListByProductId &&
-                    PD.productListByProductId.productGemstonesByProductSku &&
-                    PD.productListByProductId.productGemstonesByProductSku
-                      .nodes &&
-                    PD.productListByProductId.productGemstonesByProductSku.nodes
-                      .length > 0
+                  PD.productListByProductId &&
+                  PD.productListByProductId.productGemstonesByProductSku &&
+                  PD.productListByProductId.productGemstonesByProductSku
+                    .nodes &&
+                  PD.productListByProductId.productGemstonesByProductSku.nodes
+                    .length > 0
                     ? [
-                      PD.pricingSkuMaterialsByProductSku.nodes &&
+                        PD.pricingSkuMaterialsByProductSku.nodes &&
                         PD.pricingSkuMaterialsByProductSku.nodes.length > 0
-                        ? calculatetotalms(
-                          PD.pricingSkuMaterialsByProductSku.nodes,
-                          "gemstone",
-                          "discountPrice"
-                        )
-                        : 0,
-                      PD.pricingSkuMaterialsByProductSku.nodes &&
+                          ? calculatetotalms(
+                              PD.pricingSkuMaterialsByProductSku.nodes,
+                              "gemstone",
+                              "discountPrice"
+                            )
+                          : 0,
+                        PD.pricingSkuMaterialsByProductSku.nodes &&
                         PD.pricingSkuMaterialsByProductSku.nodes.length > 0
-                        ? calculatetotalms(
-                          PD.pricingSkuMaterialsByProductSku.nodes,
-                          "gemstone",
-                          "markup"
-                        )
-                        : 0,
-                    ]
+                          ? calculatetotalms(
+                              PD.pricingSkuMaterialsByProductSku.nodes,
+                              "gemstone",
+                              "markup"
+                            )
+                          : 0,
+                      ]
                     : [],
               },
               {
@@ -732,37 +747,37 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
             header: "Diamond Details",
             namedetail:
               PD &&
-                PD.productListByProductId &&
-                PD.productListByProductId.productDiamondsByProductSku &&
-                PD.productListByProductId.productDiamondsByProductSku.nodes &&
-                PD.productListByProductId.productDiamondsByProductSku.nodes
-                  .length > 0
+              PD.productListByProductId &&
+              PD.productListByProductId.productDiamondsByProductSku &&
+              PD.productListByProductId.productDiamondsByProductSku.nodes &&
+              PD.productListByProductId.productDiamondsByProductSku.nodes
+                .length > 0
                 ? [
-                  PD.productListByProductId.productDiamondsByProductSku.nodes
-                    .length > 0 &&
+                    PD.productListByProductId.productDiamondsByProductSku.nodes
+                      .length > 0 &&
                     generatedDiamondType(
                       PD,
                       PD.productListByProductId.productDiamondsByProductSku
                         .nodes,
                       "stoneWeight"
                     )[0] !== null
-                    ? {
-                      name: "Total Weight (in Carat)",
-                      details:
-                        PD.productListByProductId
-                          .productDiamondsByProductSku.nodes &&
-                        PD.productListByProductId
-                          .productDiamondsByProductSku.nodes.length > 0 &&
-                        generatedDiamondType(
-                          PD,
-                          PD.productListByProductId
-                            .productDiamondsByProductSku.nodes,
-                          "stoneWeight"
-                        ),
-                    }
-                    : "",
-                  PD.productListByProductId.productDiamondsByProductSku
-                    .nodes &&
+                      ? {
+                          name: "Total Weight (in Carat)",
+                          details:
+                            PD.productListByProductId
+                              .productDiamondsByProductSku.nodes &&
+                            PD.productListByProductId
+                              .productDiamondsByProductSku.nodes.length > 0 &&
+                            generatedDiamondType(
+                              PD,
+                              PD.productListByProductId
+                                .productDiamondsByProductSku.nodes,
+                              "stoneWeight"
+                            ),
+                        }
+                      : "",
+                    PD.productListByProductId.productDiamondsByProductSku
+                      .nodes &&
                     PD.productListByProductId.productDiamondsByProductSku.nodes
                       .length > 0 &&
                     generatedDiamondType(
@@ -771,23 +786,23 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                         .nodes,
                       "stoneCount"
                     )[0] !== null
-                    ? {
-                      name: "Total No of Diamonds",
-                      details:
-                        PD.productListByProductId
-                          .productDiamondsByProductSku.nodes &&
-                        PD.productListByProductId
-                          .productDiamondsByProductSku.nodes.length > 0 &&
-                        generatedDiamondType(
-                          PD,
-                          PD.productListByProductId
-                            .productDiamondsByProductSku.nodes,
-                          "stoneCount"
-                        ),
-                    }
-                    : "",
-                  PD.productListByProductId.productDiamondsByProductSku
-                    .nodes &&
+                      ? {
+                          name: "Total No of Diamonds",
+                          details:
+                            PD.productListByProductId
+                              .productDiamondsByProductSku.nodes &&
+                            PD.productListByProductId
+                              .productDiamondsByProductSku.nodes.length > 0 &&
+                            generatedDiamondType(
+                              PD,
+                              PD.productListByProductId
+                                .productDiamondsByProductSku.nodes,
+                              "stoneCount"
+                            ),
+                        }
+                      : "",
+                    PD.productListByProductId.productDiamondsByProductSku
+                      .nodes &&
                     PD.productListByProductId.productDiamondsByProductSku.nodes
                       .length > 0 &&
                     generatedDiamondType(
@@ -796,24 +811,24 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                         .nodes,
                       "diamondClarity"
                     )[0] !== null
-                    ? {
-                      name: "Clarity",
-                      details:
-                        PD.productListByProductId
-                          .productDiamondsByProductSku.nodes &&
-                        PD.productListByProductId
-                          .productDiamondsByProductSku.nodes.length > 0 &&
-                        generatedDiamondType(
-                          PD,
-                          PD.productListByProductId
-                            .productDiamondsByProductSku.nodes,
-                          "diamondClarity"
-                        ),
-                    }
-                    : "",
+                      ? {
+                          name: "Clarity",
+                          details:
+                            PD.productListByProductId
+                              .productDiamondsByProductSku.nodes &&
+                            PD.productListByProductId
+                              .productDiamondsByProductSku.nodes.length > 0 &&
+                            generatedDiamondType(
+                              PD,
+                              PD.productListByProductId
+                                .productDiamondsByProductSku.nodes,
+                              "diamondClarity"
+                            ),
+                        }
+                      : "",
 
-                  PD.productListByProductId.productDiamondsByProductSku
-                    .nodes &&
+                    PD.productListByProductId.productDiamondsByProductSku
+                      .nodes &&
                     PD.productListByProductId.productDiamondsByProductSku.nodes
                       .length > 0 &&
                     generatedDiamondType(
@@ -822,24 +837,24 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                         .nodes,
                       "diamondColour"
                     )[0] !== null
-                    ? {
-                      name: "Color",
-                      details:
-                        PD.productListByProductId
-                          .productDiamondsByProductSku.nodes &&
-                        PD.productListByProductId
-                          .productDiamondsByProductSku.nodes.length > 0 &&
-                        generatedDiamondType(
-                          PD,
-                          PD.productListByProductId
-                            .productDiamondsByProductSku.nodes,
-                          "diamondColour"
-                        ),
-                    }
-                    : "",
+                      ? {
+                          name: "Color",
+                          details:
+                            PD.productListByProductId
+                              .productDiamondsByProductSku.nodes &&
+                            PD.productListByProductId
+                              .productDiamondsByProductSku.nodes.length > 0 &&
+                            generatedDiamondType(
+                              PD,
+                              PD.productListByProductId
+                                .productDiamondsByProductSku.nodes,
+                              "diamondColour"
+                            ),
+                        }
+                      : "",
 
-                  PD.productListByProductId.productDiamondsByProductSku
-                    .nodes &&
+                    PD.productListByProductId.productDiamondsByProductSku
+                      .nodes &&
                     PD.productListByProductId.productDiamondsByProductSku
                       .nodes &&
                     PD.productListByProductId.productDiamondsByProductSku.nodes
@@ -850,23 +865,23 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                         .nodes,
                       "diamondSettings"
                     )[0] !== null
-                    ? {
-                      name: "Setting Type",
-                      details:
-                        PD.productListByProductId
-                          .productDiamondsByProductSku.nodes &&
-                        PD.productListByProductId
-                          .productDiamondsByProductSku.nodes.length > 0 &&
-                        generatedDiamondType(
-                          PD,
-                          PD.productListByProductId
-                            .productDiamondsByProductSku.nodes,
-                          "diamondSettings"
-                        ),
-                    }
-                    : "",
-                  PD.productListByProductId.productDiamondsByProductSku
-                    .nodes &&
+                      ? {
+                          name: "Setting Type",
+                          details:
+                            PD.productListByProductId
+                              .productDiamondsByProductSku.nodes &&
+                            PD.productListByProductId
+                              .productDiamondsByProductSku.nodes.length > 0 &&
+                            generatedDiamondType(
+                              PD,
+                              PD.productListByProductId
+                                .productDiamondsByProductSku.nodes,
+                              "diamondSettings"
+                            ),
+                        }
+                      : "",
+                    PD.productListByProductId.productDiamondsByProductSku
+                      .nodes &&
                     PD.productListByProductId.productDiamondsByProductSku.nodes
                       .length > 0 &&
                     generatedDiamondType(
@@ -875,246 +890,246 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                         .nodes,
                       "diamondShape"
                     )[0] !== null
-                    ? {
-                      name: "Shape",
-                      details:
-                        PD.productListByProductId
-                          .productDiamondsByProductSku.nodes &&
-                        PD.productListByProductId
-                          .productDiamondsByProductSku.nodes.length > 0 &&
-                        generatedDiamondType(
-                          PD,
-                          PD.productListByProductId
-                            .productDiamondsByProductSku.nodes,
-                          "diamondShape"
-                        ),
-                    }
-                    : "",
-                  PD?.productListByProductId?.productDiamondsByProductSku
-                    ?.nodes[0]?.subItemName
-                    ? {
-                      name: "Diamond Name",
-                      details:
-                        PD?.productListByProductId
-                          ?.productDiamondsByProductSku?.nodes[0]?.itemName,
-                    }
-                    : "",
-                  PD?.productListByProductId?.productDiamondsByProductSku
-                    ?.nodes[0]?.description
-                    ? {
-                      name: "Description",
-                      details:
-                        PD?.productListByProductId
-                          ?.productDiamondsByProductSku?.nodes[0]
-                          ?.description,
-                    }
-                    : "",
-                ]
+                      ? {
+                          name: "Shape",
+                          details:
+                            PD.productListByProductId
+                              .productDiamondsByProductSku.nodes &&
+                            PD.productListByProductId
+                              .productDiamondsByProductSku.nodes.length > 0 &&
+                            generatedDiamondType(
+                              PD,
+                              PD.productListByProductId
+                                .productDiamondsByProductSku.nodes,
+                              "diamondShape"
+                            ),
+                        }
+                      : "",
+                    PD?.productListByProductId?.productDiamondsByProductSku
+                      ?.nodes[0]?.subItemName
+                      ? {
+                          name: "Diamond Name",
+                          details:
+                            PD?.productListByProductId
+                              ?.productDiamondsByProductSku?.nodes[0]?.itemName,
+                        }
+                      : "",
+                    PD?.productListByProductId?.productDiamondsByProductSku
+                      ?.nodes[0]?.description
+                      ? {
+                          name: "Description",
+                          details:
+                            PD?.productListByProductId
+                              ?.productDiamondsByProductSku?.nodes[0]
+                              ?.description,
+                        }
+                      : "",
+                  ]
                 : [],
           },
           {
             header: "Gemstone Details",
             namedetail:
               PD &&
-                PD.productListByProductId &&
-                PD.productListByProductId.productGemstonesByProductSku &&
-                PD.productListByProductId.productGemstonesByProductSku.nodes &&
-                PD.productListByProductId.productGemstonesByProductSku.nodes
-                  .length > 0
+              PD.productListByProductId &&
+              PD.productListByProductId.productGemstonesByProductSku &&
+              PD.productListByProductId.productGemstonesByProductSku.nodes &&
+              PD.productListByProductId.productGemstonesByProductSku.nodes
+                .length > 0
                 ? [
-                  PD.productListByProductId.productGemstonesByProductSku
-                    .nodes &&
-                    PD.productListByProductId.productGemstonesByProductSku.nodes
-                      .length === 0
-                    ? null
-                    : gemstoneType(
-                      PD.productListByProductId.productGemstonesByProductSku
-                        .nodes,
-                      PD.productListByProductId.productGemstonesByProductSku
-                        .nodes,
-                      "stoneCount"
-                    )[0] !== null
-                      ? {
-                        name: "Total No of Stones",
-                        details:
-                          PD.productListByProductId
-                            .productGemstonesByProductSku.nodes &&
-                            PD.productListByProductId
-                              .productGemstonesByProductSku.nodes.length === 0
-                            ? null
-                            : gemstoneType(
-                              PD.productListByProductId
-                                .productGemstonesByProductSku.nodes,
-                              PD.productListByProductId
-                                .productGemstonesByProductSku.nodes,
-                              "stoneCount"
-                            ),
-                      }
-                      : "",
-                  gemstoneType(
                     PD.productListByProductId.productGemstonesByProductSku
-                      .nodes,
+                      .nodes &&
+                    PD.productListByProductId.productGemstonesByProductSku.nodes
+                      .length === 0
+                      ? null
+                      : gemstoneType(
+                          PD.productListByProductId.productGemstonesByProductSku
+                            .nodes,
+                          PD.productListByProductId.productGemstonesByProductSku
+                            .nodes,
+                          "stoneCount"
+                        )[0] !== null
+                      ? {
+                          name: "Total No of Stones",
+                          details:
+                            PD.productListByProductId
+                              .productGemstonesByProductSku.nodes &&
+                            PD.productListByProductId
+                              .productGemstonesByProductSku.nodes.length === 0
+                              ? null
+                              : gemstoneType(
+                                  PD.productListByProductId
+                                    .productGemstonesByProductSku.nodes,
+                                  PD.productListByProductId
+                                    .productGemstonesByProductSku.nodes,
+                                  "stoneCount"
+                                ),
+                        }
+                      : "",
+                    gemstoneType(
+                      PD.productListByProductId.productGemstonesByProductSku
+                        .nodes,
+                      PD.productListByProductId.productGemstonesByProductSku
+                        .nodes,
+                      "gemstoneType"
+                    )[0] !== null
+                      ? {
+                          name: "Stone Type",
+                          details:
+                            PD.productListByProductId
+                              .productGemstonesByProductSku.nodes &&
+                            PD.productListByProductId
+                              .productGemstonesByProductSku.nodes.length === 0
+                              ? null
+                              : gemstoneType(
+                                  PD.productListByProductId
+                                    .productGemstonesByProductSku.nodes,
+                                  PD.productListByProductId
+                                    .productGemstonesByProductSku.nodes,
+                                  "gemstoneType"
+                                ),
+                        }
+                      : "",
                     PD.productListByProductId.productGemstonesByProductSku
-                      .nodes,
-                    "gemstoneType"
-                  )[0] !== null
-                    ? {
-                      name: "Stone Type",
-                      details:
-                        PD.productListByProductId
-                          .productGemstonesByProductSku.nodes &&
-                          PD.productListByProductId
-                            .productGemstonesByProductSku.nodes.length === 0
-                          ? null
-                          : gemstoneType(
-                            PD.productListByProductId
-                              .productGemstonesByProductSku.nodes,
-                            PD.productListByProductId
-                              .productGemstonesByProductSku.nodes,
-                            "gemstoneType"
-                          ),
-                    }
-                    : "",
-                  PD.productListByProductId.productGemstonesByProductSku
-                    .nodes &&
+                      .nodes &&
                     PD.productListByProductId.productGemstonesByProductSku.nodes
                       .length === 0
-                    ? null
-                    : gemstoneType(
-                      PD.productListByProductId.productGemstonesByProductSku
-                        .nodes,
-                      PD.productListByProductId.productGemstonesByProductSku
-                        .nodes,
-                      "gemstoneShape"
-                    )[0] !== null
+                      ? null
+                      : gemstoneType(
+                          PD.productListByProductId.productGemstonesByProductSku
+                            .nodes,
+                          PD.productListByProductId.productGemstonesByProductSku
+                            .nodes,
+                          "gemstoneShape"
+                        )[0] !== null
                       ? {
-                        name: "Shape",
-                        details:
-                          PD.productListByProductId
-                            .productGemstonesByProductSku.nodes &&
+                          name: "Shape",
+                          details:
+                            PD.productListByProductId
+                              .productGemstonesByProductSku.nodes &&
                             PD.productListByProductId
                               .productGemstonesByProductSku.nodes.length === 0
-                            ? null
-                            : gemstoneType(
-                              PD.productListByProductId
-                                .productGemstonesByProductSku.nodes,
-                              PD.productListByProductId
-                                .productGemstonesByProductSku.nodes,
-                              "gemstoneShape"
-                            ),
-                      }
+                              ? null
+                              : gemstoneType(
+                                  PD.productListByProductId
+                                    .productGemstonesByProductSku.nodes,
+                                  PD.productListByProductId
+                                    .productGemstonesByProductSku.nodes,
+                                  "gemstoneShape"
+                                ),
+                        }
                       : "",
 
-                  PD.productListByProductId.productGemstonesByProductSku
-                    .nodes &&
+                    PD.productListByProductId.productGemstonesByProductSku
+                      .nodes &&
                     PD.productListByProductId.productGemstonesByProductSku.nodes
                       .length === 0
-                    ? null
-                    : gemstoneType(
-                      PD.productListByProductId.productGemstonesByProductSku
-                        .nodes,
-                      PD.productListByProductId.productGemstonesByProductSku
-                        .nodes,
-                      "gemstoneSize"
-                    )[0] !== null
+                      ? null
+                      : gemstoneType(
+                          PD.productListByProductId.productGemstonesByProductSku
+                            .nodes,
+                          PD.productListByProductId.productGemstonesByProductSku
+                            .nodes,
+                          "gemstoneSize"
+                        )[0] !== null
                       ? {
-                        name: "Size (in mm)",
-                        details:
-                          PD.productListByProductId
-                            .productGemstonesByProductSku.nodes &&
+                          name: "Size (in mm)",
+                          details:
+                            PD.productListByProductId
+                              .productGemstonesByProductSku.nodes &&
                             PD.productListByProductId
                               .productGemstonesByProductSku.nodes.length === 0
-                            ? null
-                            : gemstoneType(
-                              PD.productListByProductId
-                                .productGemstonesByProductSku.nodes,
-                              PD.productListByProductId
-                                .productGemstonesByProductSku.nodes,
-                              "gemstoneSize"
-                            ),
-                      }
+                              ? null
+                              : gemstoneType(
+                                  PD.productListByProductId
+                                    .productGemstonesByProductSku.nodes,
+                                  PD.productListByProductId
+                                    .productGemstonesByProductSku.nodes,
+                                  "gemstoneSize"
+                                ),
+                        }
                       : "",
 
-                  PD.productListByProductId.productGemstonesByProductSku
-                    .nodes &&
+                    PD.productListByProductId.productGemstonesByProductSku
+                      .nodes &&
                     PD.productListByProductId.productGemstonesByProductSku.nodes
                       .length === 0
-                    ? null
-                    : gemstoneType(
-                      PD.productListByProductId.productGemstonesByProductSku
-                        .nodes,
-                      PD.productListByProductId.productGemstonesByProductSku
-                        .nodes,
-                      "stoneWeight"
-                    )[0] !== null
+                      ? null
+                      : gemstoneType(
+                          PD.productListByProductId.productGemstonesByProductSku
+                            .nodes,
+                          PD.productListByProductId.productGemstonesByProductSku
+                            .nodes,
+                          "stoneWeight"
+                        )[0] !== null
                       ? {
-                        name: "Weight (Carat)",
-                        details:
-                          PD.productListByProductId
-                            .productGemstonesByProductSku.nodes &&
+                          name: "Weight (Carat)",
+                          details:
+                            PD.productListByProductId
+                              .productGemstonesByProductSku.nodes &&
                             PD.productListByProductId
                               .productGemstonesByProductSku.nodes.length === 0
-                            ? null
-                            : gemstoneType(
-                              PD.productListByProductId
-                                .productGemstonesByProductSku.nodes,
-                              PD.productListByProductId
-                                .productGemstonesByProductSku.nodes,
-                              "stoneWeight"
-                            ),
-                      }
+                              ? null
+                              : gemstoneType(
+                                  PD.productListByProductId
+                                    .productGemstonesByProductSku.nodes,
+                                  PD.productListByProductId
+                                    .productGemstonesByProductSku.nodes,
+                                  "stoneWeight"
+                                ),
+                        }
                       : "",
-                  PD.productListByProductId.productGemstonesByProductSku
-                    .nodes &&
+                    PD.productListByProductId.productGemstonesByProductSku
+                      .nodes &&
                     PD.productListByProductId.productGemstonesByProductSku.nodes
                       .length === 0
-                    ? null
-                    : gemstoneType(
-                      PD.productListByProductId.productGemstonesByProductSku
-                        .nodes,
-                      PD.productListByProductId.productGemstonesByProductSku
-                        .nodes,
-                      "gemstoneSetting"
-                    )[0] !== null
+                      ? null
+                      : gemstoneType(
+                          PD.productListByProductId.productGemstonesByProductSku
+                            .nodes,
+                          PD.productListByProductId.productGemstonesByProductSku
+                            .nodes,
+                          "gemstoneSetting"
+                        )[0] !== null
                       ? {
-                        name: "Setting",
-                        details:
-                          PD.productListByProductId
-                            .productGemstonesByProductSku.nodes &&
+                          name: "Setting",
+                          details:
+                            PD.productListByProductId
+                              .productGemstonesByProductSku.nodes &&
                             PD.productListByProductId
                               .productGemstonesByProductSku.nodes.length === 0
-                            ? null
-                            : gemstoneType(
-                              PD.productListByProductId
-                                .productGemstonesByProductSku.nodes,
-                              PD.productListByProductId
-                                .productGemstonesByProductSku.nodes,
-                              "gemstoneSetting"
-                            ),
-                      }
+                              ? null
+                              : gemstoneType(
+                                  PD.productListByProductId
+                                    .productGemstonesByProductSku.nodes,
+                                  PD.productListByProductId
+                                    .productGemstonesByProductSku.nodes,
+                                  "gemstoneSetting"
+                                ),
+                        }
                       : "",
-                  PD?.productListByProductId?.productGemstonesByProductSku
-                    ?.nodes[0]?.subItemName
-                    ? {
-                      name: "Gemstone Name",
-                      details:
-                        PD?.productListByProductId
-                          ?.productGemstonesByProductSku?.nodes[0]
-                          ?.subItemName,
-                    }
-                    : "",
+                    PD?.productListByProductId?.productGemstonesByProductSku
+                      ?.nodes[0]?.subItemName
+                      ? {
+                          name: "Gemstone Name",
+                          details:
+                            PD?.productListByProductId
+                              ?.productGemstonesByProductSku?.nodes[0]
+                              ?.subItemName,
+                        }
+                      : "",
 
-                  PD?.productListByProductId?.productGemstonesByProductSku
-                    ?.nodes[0]?.description
-                    ? {
-                      name: "Description",
-                      details:
-                        PD?.productListByProductId
-                          ?.productGemstonesByProductSku?.nodes[0]
-                          ?.description,
-                    }
-                    : "",
-                ]
+                    PD?.productListByProductId?.productGemstonesByProductSku
+                      ?.nodes[0]?.description
+                      ? {
+                          name: "Description",
+                          details:
+                            PD?.productListByProductId
+                              ?.productGemstonesByProductSku?.nodes[0]
+                              ?.description,
+                        }
+                      : "",
+                  ]
                 : [],
           },
         ],
@@ -1123,6 +1138,10 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
             header: "Product Details",
             show: PD.showPriceBreakup,
             namedetail: [
+              {
+                name: "Product Desscription",
+                details: PD.productListByProductId.prodDescription,
+              },
               {
                 name: "Product Code",
                 details: PD && PD.generatedSku !== "" ? PD.generatedSku : null,
@@ -1162,11 +1181,11 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
 
               PD.productListByProductId.earringBacking
                 ? {
-                  name: "Fastening",
-                  details: PD?.productListByProductId?.earringBacking
-                    ? PD.productListByProductId.earringBacking
-                    : null,
-                }
+                    name: "Fastening",
+                    details: PD?.productListByProductId?.earringBacking
+                      ? PD.productListByProductId.earringBacking
+                      : null,
+                  }
                 : "",
             ],
           },
@@ -1207,10 +1226,10 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
           {
             header:
               PD &&
-                PD !== undefined &&
-                PD.transSkuDescriptionsBySkuId.nodes &&
-                PD.transSkuDescriptionsBySkuId.nodes.length > 0 &&
-                PD.transSkuDescriptionsBySkuId.nodes[0].skuDescription !== ""
+              PD !== undefined &&
+              PD.transSkuDescriptionsBySkuId.nodes &&
+              PD.transSkuDescriptionsBySkuId.nodes.length > 0 &&
+              PD.transSkuDescriptionsBySkuId.nodes[0].skuDescription !== ""
                 ? PD.transSkuDescriptionsBySkuId.nodes[0].skuDescription
                 : "",
             name: [
@@ -1235,98 +1254,103 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
 
         fadeImageSublist:
           like_data &&
-            like_data.data &&
-            Object.entries(like_data.data).length > 0 &&
-            like_data.data.youMayalsolike1 &&
-            (like_data.data.youMayalsolike1.nodes.length !== 0 ||
-              like_data.data.youMayalsolike2.nodes.length !== 0)
+          like_data.data &&
+          Object.entries(like_data.data).length > 0 &&
+          like_data.data.youMayalsolike1 &&
+          (like_data.data.youMayalsolike1.nodes.length !== 0 ||
+            like_data.data.youMayalsolike2.nodes.length !== 0)
             ? like_data.data.youMayalsolike1 &&
               like_data.data.youMayalsolike1.nodes.length > 0
               ? like_data.data.youMayalsolike1.nodes.map((val) => {
-                return {
-                  skuId:
-                    val?.transSkuListsByProductId?.nodes[0]
-                      ?.productListByProductId?.transSkuListsByProductId
-                      ?.nodes[0]?.skuId,
-                  productId:
-                    val?.transSkuListsByProductId?.nodes[0].productId,
-                  offerDiscount: val?.transSkuListsByProductId?.nodes[0]
-                    ?.discount
-                    ? `${val?.transSkuListsByProductId?.nodes[0]?.discount}% OFF`
-                    : " ",
-                  price:
-                    val &&
+                  return {
+                    skuId:
+                      val?.transSkuListsByProductId?.nodes[0]
+                        ?.productListByProductId?.transSkuListsByProductId
+                        ?.nodes[0]?.skuId,
+                    productId:
+                      val?.transSkuListsByProductId?.nodes[0].productId,
+                    offerDiscount: val?.transSkuListsByProductId?.nodes[0]
+                      ?.discount
+                      ? `${val?.transSkuListsByProductId?.nodes[0]?.discount}% OFF`
+                      : " ",
+                    price:
+                      val &&
                       val.transSkuListsByProductId &&
                       val.transSkuListsByProductId.nodes &&
                       val.transSkuListsByProductId.nodes.length > 0 &&
                       val.transSkuListsByProductId.nodes[0].markupPrice &&
                       val.transSkuListsByProductId.nodes[0].markupPrice
-                      ? Math.round(
-                        val.transSkuListsByProductId.nodes[0].markupPrice
-                      )
-                      : 0,
-                  offerPrice:
-                    val &&
+                        ? Math.round(
+                            val.transSkuListsByProductId.nodes[0].markupPrice
+                          )
+                        : 0,
+                    offerPrice:
+                      val &&
                       val.transSkuListsByProductId &&
                       val.transSkuListsByProductId.nodes &&
                       val.transSkuListsByProductId.nodes.length > 0 &&
                       val.transSkuListsByProductId.nodes[0].discountPrice &&
                       val.transSkuListsByProductId.nodes[0].discountPrice
-                      ? Math.round(
-                        val.transSkuListsByProductId.nodes[0].discountPrice
-                      )
-                      : 0,
+                        ? Math.round(
+                            val.transSkuListsByProductId.nodes[0].discountPrice
+                          )
+                        : 0,
 
-                  save: " ",
-                  img: val?.productImagesByProductId?.nodes[0]?.imageUrl ?? "",
-                  image: {
-                    placeImage: {
-                      img: val?.productImagesByProductId?.nodes[0]?.imageUrl ?? "",
+                    save: " ",
+                    img:
+                      val?.productImagesByProductId?.nodes[0]?.imageUrl ?? "",
+                    image: {
+                      placeImage: {
+                        img:
+                          val?.productImagesByProductId?.nodes[0]?.imageUrl ??
+                          "",
+                      },
+                      hoverImage: {
+                        img:
+                          val?.productImagesByProductId?.nodes[0]?.imageUrl ??
+                          "",
+                      },
                     },
-                    hoverImage: {
-                      img: val?.productImagesByProductId?.nodes[0]?.imageUrl ?? "",
-                    },
-                  },
-                  title: val && val.productName && val.productName,
+                    title: val && val.productName && val.productName,
 
-                  skuID:
-                    val &&
+                    skuID:
+                      val &&
                       val.transSkuListsByProductId &&
                       val.transSkuListsByProductId.nodes &&
                       val.transSkuListsByProductId.nodes.length > 0 &&
                       val.transSkuListsByProductId.nodes[0] &&
                       val.transSkuListsByProductId.nodes[0].generatedSku
-                      ? val.transSkuListsByProductId.nodes[0].generatedSku
-                      : "",
-                  description:
-                    val?.transSkuListsByProductId?.nodes[0]
-                      .productListByProductId?.transSkuListsByProductId
-                      ?.nodes[0]?.transSkuDescriptionsBySkuId?.nodes[0]
-                      ?.skuDescription ?? " ",
+                        ? val.transSkuListsByProductId.nodes[0].generatedSku
+                        : "",
+                    description:
+                      val?.transSkuListsByProductId?.nodes[0]
+                        .productListByProductId?.transSkuListsByProductId
+                        ?.nodes[0]?.transSkuDescriptionsBySkuId?.nodes[0]
+                        ?.skuDescription ?? " ",
 
-                  skuUrl:
-                    val?.transSkuListsByProductId?.nodes[0]?.skuUrl ?? " ",
-                };
-              })
+                    skuUrl:
+                      val?.transSkuListsByProductId?.nodes[0]?.skuUrl ?? " ",
+                  };
+                })
               : like_data &&
                 like_data.data &&
                 like_data.data.youMayalsolike2 &&
                 like_data.data.youMayalsolike2.nodes
-                ? like_data.data.youMayalsolike2.nodes.map((val) => {
+              ? like_data.data.youMayalsolike2.nodes.map((val) => {
                   return {
                     img: val.productImagesByProductId.nodes[0].imageUrl ?? "",
 
                     title: val && val.productName ? val.productName : "",
                     price:
                       val &&
-                        val.transSkuListsByProductId &&
-                        val.transSkuListsByProductId.nodes &&
-                        val.transSkuListsByProductId.nodes.length > 0 &&
-                        val.transSkuListsByProductId.nodes[0].sellingPrice &&
-                        val.transSkuListsByProductId.nodes[0].sellingPrice
+                      val.transSkuListsByProductId &&
+                      val.transSkuListsByProductId.nodes &&
+                      val.transSkuListsByProductId.nodes.length > 0 &&
+                      val.transSkuListsByProductId.nodes[0].sellingPrice &&
+                      val.transSkuListsByProductId.nodes[0].sellingPrice
                         ? Math.round(
-                          val.transSkuListsByProductId.nodes[0].sellingPrice
-                        )
+                            val.transSkuListsByProductId.nodes[0].sellingPrice
+                          )
                         : 0,
                     offerPrice:
                       val?.productListByProductSku?.productImagesByProductId
@@ -1335,11 +1359,11 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                       " ",
                     url:
                       val &&
-                        val.transSkuListsByProductId &&
-                        val.transSkuListsByProductId.nodes &&
-                        val.transSkuListsByProductId.nodes.length > 0 &&
-                        val.transSkuListsByProductId.nodes[0] &&
-                        val.transSkuListsByProductId.nodes[0].generatedSku
+                      val.transSkuListsByProductId &&
+                      val.transSkuListsByProductId.nodes &&
+                      val.transSkuListsByProductId.nodes.length > 0 &&
+                      val.transSkuListsByProductId.nodes[0] &&
+                      val.transSkuListsByProductId.nodes[0].generatedSku
                         ? val.transSkuListsByProductId.nodes[0].generatedSku
                         : "",
                     description:
@@ -1348,21 +1372,21 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                         ?.skuDescription ?? "",
                   };
                 })
-                : []
+              : []
             : [],
         fadeImageSublistRecentlyViewed:
           viewedddatas &&
-            viewedddatas.data &&
-            Object.entries(viewedddatas.data).length > 0 &&
-            viewedddatas.data.allProductMaterials &&
-            viewedddatas.data.allProductMaterials.nodes.length !== 0
+          viewedddatas.data &&
+          Object.entries(viewedddatas.data).length > 0 &&
+          viewedddatas.data.allProductMaterials &&
+          viewedddatas.data.allProductMaterials.nodes.length !== 0
             ? viewedddatas.data.allProductMaterials &&
               viewedddatas.data.allProductMaterials.nodes.length > 0
               ? viewedddatas.data.allProductMaterials.nodes.map((val) => {
-                //debugger;
-                return {
-                  img:
-                    val &&
+                  //debugger;
+                  return {
+                    img:
+                      val &&
                       val.productListByProductSku &&
                       val.productListByProductSku.productImagesByProductId &&
                       val.productListByProductSku.productImagesByProductId.nodes
@@ -1371,13 +1395,13 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                         .nodes[0] &&
                       val.productListByProductSku.productImagesByProductId
                         .nodes[0].imageUrl
-                      ? val.productListByProductSku.productImagesByProductId
-                        .nodes[0].imageUrl
-                      : "",
-                  image: {
-                    placeImage: {
-                      img:
-                        val &&
+                        ? val.productListByProductSku.productImagesByProductId
+                            .nodes[0].imageUrl
+                        : "",
+                    image: {
+                      placeImage: {
+                        img:
+                          val &&
                           val.productListByProductSku &&
                           val.productListByProductSku
                             .productImagesByProductId &&
@@ -1387,13 +1411,13 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                             .nodes[0] &&
                           val.productListByProductSku.productImagesByProductId
                             .nodes[0].imageUrl
-                          ? val.productListByProductSku
-                            .productImagesByProductId.nodes[0].imageUrl
-                          : "",
-                    },
-                    hoverImage: {
-                      img:
-                        val &&
+                            ? val.productListByProductSku
+                                .productImagesByProductId.nodes[0].imageUrl
+                            : "",
+                      },
+                      hoverImage: {
+                        img:
+                          val &&
                           val.productListByProductSku &&
                           val.productListByProductSku
                             .productImagesByProductId &&
@@ -1403,47 +1427,47 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                             .nodes[0] &&
                           val.productListByProductSku.productImagesByProductId
                             .nodes[0].imageUrl
-                          ? val.productListByProductSku
-                            .productImagesByProductId.nodes[0].imageUrl
-                          : "",
+                            ? val.productListByProductSku
+                                .productImagesByProductId.nodes[0].imageUrl
+                            : "",
+                      },
                     },
-                  },
-                  title:
-                    val &&
+                    title:
+                      val &&
                       val.productListByProductSku &&
                       val.productListByProductSku.productType
-                      ? val.productListByProductSku.productType
-                      : "",
-                  offerPrice:
-                    val?.productListByProductSku?.productImagesByProductId
-                      ?.nodes[0].productListByProductId
-                      ?.transSkuListsByProductId?.nodes[0]?.sellingPrice ??
-                    " ",
+                        ? val.productListByProductSku.productType
+                        : "",
+                    offerPrice:
+                      val?.productListByProductSku?.productImagesByProductId
+                        ?.nodes[0].productListByProductId
+                        ?.transSkuListsByProductId?.nodes[0]?.sellingPrice ??
+                      " ",
 
-                  save: " ",
-                  skuID: val && val.productSku ? val.productSku : "",
-                  description:
-                    val?.productListByProductSku?.productImagesByProductId
-                      ?.nodes[0].productListByProductId
-                      ?.transSkuListsByProductId?.nodes[0]
-                      ?.transSkuDescriptionsBySkuId?.nodes[0]
-                      ?.skuDescription ?? " ",
-                  price:
-                    val?.productListByProductSku?.productImagesByProductId
-                      ?.nodes[0].productListByProductId
-                      ?.transSkuListsByProductId?.nodes[0]?.sellingPrice ??
-                    " ",
-                  skuUrl:
-                    val?.productListByProductSku?.productImagesByProductId
-                      ?.nodes[0].productListByProductId
-                      ?.transSkuListsByProductId?.nodes[0]?.skuUrl ?? " ",
-                };
-              })
+                    save: " ",
+                    skuID: val && val.productSku ? val.productSku : "",
+                    description:
+                      val?.productListByProductSku?.productImagesByProductId
+                        ?.nodes[0].productListByProductId
+                        ?.transSkuListsByProductId?.nodes[0]
+                        ?.transSkuDescriptionsBySkuId?.nodes[0]
+                        ?.skuDescription ?? " ",
+                    price:
+                      val?.productListByProductSku?.productImagesByProductId
+                        ?.nodes[0].productListByProductId
+                        ?.transSkuListsByProductId?.nodes[0]?.sellingPrice ??
+                      " ",
+                    skuUrl:
+                      val?.productListByProductSku?.productImagesByProductId
+                        ?.nodes[0].productListByProductId
+                        ?.transSkuListsByProductId?.nodes[0]?.skuUrl ?? " ",
+                  };
+                })
               : []
             : [],
       };
     } catch (e) {
-      console.log(e, "error")
+      console.log(e, "error");
     }
 
     return _d;

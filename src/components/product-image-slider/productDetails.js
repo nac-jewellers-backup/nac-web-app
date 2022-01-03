@@ -390,7 +390,7 @@ class ProductDetails extends React.Component {
                         {/* <hr class="bottom-line border-line-"></hr> */}
                       </div>
                     </ExpansionPanelSummary>
-                    <div style={{ backgroundColor: "fafafa" }}>
+                    <div style={{ backgroundColor: "#fafafa" }}>
                       {val.namedetail !== undefined &&
                         val.namedetail.map((res) =>
                           res.details !== null &&
