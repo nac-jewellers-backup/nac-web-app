@@ -77,39 +77,23 @@ export const TopFilters = (props) => {
             </div>
           </Grid>
 
-          {/* ------------------------------ */}
+          {/* ooooooooooooooooo */}
 
-          <Grid
-            container
-            item
-            xs={12}
-            id={"containerTitle"}
-            justify="center"
-            alignItems="center"
-            className={`${classes.headerNavbarList1} ${classes.headerNavbarList}`}
-            onMouseLeave={() => {
-              setState({
-                ...state,
-                Menuopen: false,
-                Checked: false,
-                targetopen: null,
-                listHoverItem: null,
-              });
-            }}
-          >
-            {/* ------------------------------- */}
-            <Grid item xs={9} className="titleTop" id={"titleTop"}>
-              <Grid
-                container
-                item
-                xs={12}
-                justify="space-between"
-                style={{ display: "flex" }}
-              >
-                {/* <nav
-            // style={{height:"35px", display:"flex"}}
-            > */}
-                {/* ---------------------------------------------------------------------------- */}
+          <Grid container>
+            <Grid
+              item
+              xs={12}
+              onMouseLeave={() => {
+                setState({
+                  ...state,
+                  Menuopen: false,
+                  Checked: false,
+                  targetopen: null,
+                  listHoverItem: null,
+                });
+              }}
+            >
+              <Grid container>
                 <Grid
                   item
                   className={`${classes.menuListCursor} ${classes.menuListCursorfiltersLabel}`}
@@ -127,33 +111,33 @@ export const TopFilters = (props) => {
                   <Grid
                     container
                     item
-                    xl={9}
+                    xs={12}
                     className={classes.spacingfilterdiv}
                   >
-                    <Grid item className={classes.filtersLabel}>
-                      <a
-                        style={{ color: "gray", fontSize: 14, fontWeight: 550 }}
-                      >
-                        {"Price (₹)"}
-                      </a>
-                    </Grid>
-                    <Grid
-                      item
-                      style={{ display: "flex", justifyContent: "flex-end" }}
-                    >
-                      {state.listHoverItem === "price" ? (
-                        <ArrowDropUpIcon />
-                      ) : (
-                        <ArrowDropDownIcon />
-                      )}
-                    </Grid>
+                    <Box alignItems="center" display="flex">
+                      <Box>
+                        <div
+                          style={{
+                            fontSize: 16,
+                            color: "gray",
+                            fontWeight: 550,
+                          }}
+                        >
+                          {"PRICE (₹)"}
+                        </div>
+                      </Box>
+                      <Box>
+                        {state.listHoverItem === "price" ? (
+                          <ArrowDropUpIcon />
+                        ) : (
+                          <ArrowDropDownIcon />
+                        )}
+                      </Box>
+                    </Box>
                   </Grid>
                 </Grid>
 
-                {/* ---------------------------------------------------------- */}
                 {props.filter.map((listName, i) => {
-                  // let urlsmall = listName.title.toLowerCase()
-
                   if (
                     listName === "Style" ||
                     listName === "Occasion" ||
@@ -166,7 +150,7 @@ export const TopFilters = (props) => {
                     return (
                       <Grid
                         item
-                        className={`${classes.menuListCursor} ${classes.menuListCursorfiltersLabel}`}
+                        className={`${classes.menuListCursorMoreFilters} ${classes.menuListCursorfiltersLabel}`}
                         onMouseOver={(event) => {
                           setState({
                             ...state,
@@ -181,33 +165,31 @@ export const TopFilters = (props) => {
                         <Grid
                           container
                           item
-                          xl={12}
+                          xs={12}
                           className={classes.spacingfilterdiv}
                         >
-                          <Grid
-                            item
-                            xs={12}
-                            className={classes.filtersLabel}
-                            style={{
-                              display: "flex",
-                              alignItems: "center",
-                            }}
-                          >
-                            <a
-                              style={{
-                                fontSize: 14,
-                                fontWeight: 550,
-                              }}
-                              href={listName.url}
-                            >
-                              {listName}
-                            </a>
-                            {state.listHoverItem === listName ? (
-                              <ArrowDropUpIcon />
-                            ) : (
-                              <ArrowDropDownIcon style={{ color: "gray" }} />
-                            )}
-                          </Grid>
+                          <Box alignItems="center" display="flex">
+                            <Box>
+                              <a href={listName.url}>
+                                <div
+                                  style={{
+                                    fontSize: 16,
+                                    color: "gray",
+                                    fontWeight: 550,
+                                  }}
+                                >
+                                  {listName.toUpperCase()}
+                                </div>
+                              </a>
+                            </Box>
+                            <Box>
+                              {state.listHoverItem === listName ? (
+                                <ArrowDropUpIcon />
+                              ) : (
+                                <ArrowDropDownIcon style={{ color: "gray" }} />
+                              )}
+                            </Box>
+                          </Box>
                         </Grid>
                       </Grid>
                     );
@@ -215,10 +197,85 @@ export const TopFilters = (props) => {
                     return null;
                   }
                 })}
-                {/* ---------------------------------------------------------- */}
+                <Grid
+                  item
+                  className={`${classes.menuListCursorMoreFilters} ${classes.menuListCursorfiltersLabel}`}
+                  onClick={() => {
+                    handleMoreFilters();
+                  }}
+                >
+                  <Grid
+                    container
+                    item
+                    xs={12}
+                    className={classes.spacingfilterdiv}
+                  >
+                    <Box alignItems="center" display="flex">
+                      <Box>
+                        <div
+                          style={{
+                            fontSize: 16,
+                            color: "gray",
+                            fontWeight: 550,
+                          }}
+                        >
+                          MORE&nbsp;
+                        </div>
+                      </Box>
+                      <Box>
+                        <AddBoxIcon
+                          style={{
+                            color: "gray",
+                          }}
+                        />
+                      </Box>
+                    </Box>
+                  </Grid>
+                </Grid>
 
-                {/* </nav> */}
+                <Grid
+                  item
+                  onMouseLeave={() => {
+                    setState({ ...state, expanded: false, targetopen: null });
+                  }}
+                  className={classes.shortby}
+                >
+                  <Grid
+                    container
+                    item
+                    xs={12}
+                    className={`${classes.headerNavbarList1} ${classes.menuListCursorSort}`}
+                    onMouseOver={(e) => {
+                      setState({
+                        ...state,
+                        targetopen: e.currentTarget,
+                        expanded: true,
+                      });
+                    }}
+                  >
+                    <Grid item xs={9} style={{ margin: "auto" }}>
+                      <div
+                        style={{ fontSize: 16, fontWeight: 550, color: "gray" }}
+                      >
+                        Sort&nbsp;&nbsp;
+                      </div>
+                    </Grid>
+                    <Grid
+                      item
+                      xs={2}
+                      style={{ display: "flex", justifyContent: "flex-end" }}
+                    >
+                      {state.expanded ? (
+                        <ArrowDropUpIcon />
+                      ) : (
+                        <ArrowDropDownIcon />
+                      )}
+                    </Grid>
+                  </Grid>
+                </Grid>
               </Grid>
+
+              {/* oooooooooooo */}
               {state.Menuopen && props.subFilter[state.listHoverItem] ? (
                 <div>
                   <HeaderHoverMenuItem
@@ -246,106 +303,31 @@ export const TopFilters = (props) => {
                 ""
               )}
             </Grid>
-            <Grid
-              item
-              xs={1}
-              className={`${classes.menuListCursorMoreFilters} ${classes.menuListCursorfiltersLabel}`}
-              onClick={() => {
-                handleMoreFilters();
-              }}
-            >
-              <Grid container item xs={12} className={classes.spacingfilterdiv}>
-                <Box alignItems="center" display="flex">
-                  <Box>
-                    <div
-                      style={{ fontSize: 14, color: "gray", fontWeight: 550 }}
-                    >
-                      More&nbsp;
-                    </div>
-                  </Box>
-                  <Box>
-                    <AddBoxIcon
-                      style={{
-                        color: "gray",
-                      }}
-                    />
-                  </Box>
-                </Box>
-              </Grid>
-            </Grid>
 
-            <Grid container xs={1}>
-              <Grid
-                item
-                xs={12}
+            {state.expanded ? (
+              <HeaderHoverMenuItem
+                tabdata={sortOptions}
+                listHoverItem={sortOptions}
+                // onMouseOver={(event) => { setState({ Menuopen: true }) }}
+                sort={true}
+                filters={true}
+                opened={state.expanded}
+                targetopened={state.targetopen}
+                // submenuDetails={()=>submenuDetails()}
+                // filtercheck={state.listHoverItem}
+                values={FilterOptionsCtx.sort}
+                onchoosetype={handleChange}
                 onMouseLeave={() => {
                   setState({ ...state, expanded: false, targetopen: null });
                 }}
-                className={classes.shortby}
-              >
-                <Grid
-                  container
-                  item
-                  xs={12}
-                  className={`${classes.headerNavbarList1} ${classes.menuListCursorSort}`}
-                  onMouseOver={(e) => {
-                    setState({
-                      ...state,
-                      targetopen: e.currentTarget,
-                      expanded: true,
-                    });
-                  }}
-                >
-                  <Grid item xs={8} style={{ margin: "auto" }}>
-                    <div
-                      style={{ fontSize: 14, fontWeight: 550, color: "gray" }}
-                    >
-                      Sort
-                    </div>
-                  </Grid>
-                  <Grid
-                    item
-                    xs={2}
-                    style={{ display: "flex", justifyContent: "flex-end" }}
-                  >
-                    {state.expanded ? (
-                      <ArrowDropUpIcon />
-                    ) : (
-                      <ArrowDropDownIcon />
-                    )}
-                  </Grid>
-                </Grid>
-
-                {state.expanded ? (
-                  <HeaderHoverMenuItem
-                    tabdata={sortOptions}
-                    listHoverItem={sortOptions}
-                    // onMouseOver={(event) => { setState({ Menuopen: true }) }}
-                    sort={true}
-                    filters={true}
-                    opened={state.expanded}
-                    targetopened={state.targetopen}
-                    // submenuDetails={()=>submenuDetails()}
-                    // filtercheck={state.listHoverItem}
-                    values={FilterOptionsCtx.sort}
-                    onchoosetype={handleChange}
-                    onMouseLeave={() => {
-                      setState({ ...state, expanded: false, targetopen: null });
-                    }}
-                  />
-                ) : (
-                  ""
-                )}
-              </Grid>
-            </Grid>
+              />
+            ) : (
+              ""
+            )}
           </Grid>
+
           {/* ---------------------------------------------------------- */}
-          <Grid
-            container
-            xs={12}
-            style={{ display: "flex", justifyContent: "flex-end" }}
-            className={classes.chipContainers}
-          >
+          <Grid container xs={12} className={classes.chipContainers}>
             <Grid item xs={10}>
               <>
                 {props?.chips.length > 0 ? (

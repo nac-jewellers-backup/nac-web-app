@@ -2,6 +2,10 @@
 import { makeStyles } from "@material-ui/core/styles";
 
 export const styles = makeStyles((theme) => ({
+  shortby: {
+    padding: "10px 12px",
+    marginLeft: "8px",
+  },
   arrow: {
     color: "gray !important",
     fill: "gray !important",
@@ -159,11 +163,8 @@ export const styles = makeStyles((theme) => ({
     },
     minWidth: "130px ",
   },
- 
-  spacingfilterdiv: {
-    display: "flex",
-    alignItems: "center",
-  },
+
+  spacingfilterdiv: {},
   chipContainer: {
     [theme.breakpoints.only("md")]: {
       marginLeft: "20px",

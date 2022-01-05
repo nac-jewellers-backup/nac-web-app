@@ -184,8 +184,6 @@ export const styles = (theme) => ({
     // borderBottom: "1px solid #fff",
     "&:hover": {
       color: "#b78231",
-      // paddingBottom: "2px",
-      // borderBottom: "1px solid " + theme.palette.secondary.dark,
     },
     "&:active": {
       color: "#b78231",
