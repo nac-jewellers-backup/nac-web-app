@@ -1665,6 +1665,7 @@ class Checkoutcard extends React.Component {
           <Grid item xs={12}>
             <Hidden mdUp>
               <div>
+                <br />
                 <div>{this.applycoupon()}</div>
                 <br />
               </div>
