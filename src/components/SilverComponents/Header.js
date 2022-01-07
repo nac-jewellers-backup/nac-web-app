@@ -211,7 +211,14 @@ class Header extends Component {
             <AppBar
               className="header-appbarsilver1 "
               id="topNav"
-              style={{ transition: "height 0.2s", paddingBottom: "8px" }}
+              style={{
+                transition: "height 0.2s",
+                paddingBottom:
+                  window.location.pathname === "/cart" ||
+                  window.location.pathname === "/checkout"
+                    ? "8px"
+                    : "auto",
+              }}
             >
               <Container maxWidth="lg" id="searchcontainer">
                 <Grid
