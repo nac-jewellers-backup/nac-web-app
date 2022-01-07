@@ -91,8 +91,11 @@ export default function Pricing(props) {
                           style: "currency",
                           currency: "INR",
                           minimumFractionDigits: 0,
-                        }).format(Math.round(props.price))}
+                        }).format(Math.round(props.price))}{" "}
                       </Typography>
+                      <sup>
+                        <span className={classes.spanIcon}>i</span>
+                      </sup>
                     </Hidden>
                     <Hidden mdUp>
                       <Typography

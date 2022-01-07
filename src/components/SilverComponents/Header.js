@@ -293,21 +293,18 @@ class Header extends Component {
                         container
                         item
                         xs={12}
+                        justify="flex-end"
                         className={classes.goldCurrentRate}
                       >
-                        <Grid container item xs={4} alignItems="center">
-                          {/* <Grid item xs={6} style={{ textAlign: "right" }}>
-                            Today's Rate : &nbsp;
-                          </Grid> */}
-                          <Grid item xs={6}>
-                            <FormControl
-                              variant="outlined"
-                              className={classes.goldRateformControl}
-                            >
-                              {/* <InputLabel id="demo-simple-select-outlined-label">
+                        <Grid item xs={3}>
+                          <FormControl
+                            variant="outlined"
+                            className={classes.goldRateformControl}
+                          >
+                            {/* <InputLabel id="demo-simple-select-outlined-label">
                                 Age
                               </InputLabel> */}
-                              {/* <Select
+                            {/* <Select
                                 labelId="demo-simple-select-outlined-label"
                                 id="demo-simple-select-outlined"
                                 value={22}
@@ -323,22 +320,21 @@ class Header extends Component {
                                 <MenuItem value={24}>Twenty</MenuItem>
                                 <MenuItem value={26}>Thirty</MenuItem>
                               </Select> */}
-                              <NativeSelect
-                                defaultValue={30}
-                                inputProps={{
-                                  name: "name",
-                                  id: "uncontrolled-native",
-                                  className: {
-                                    root: classes.selects,
-                                  },
-                                }}
-                              >
-                                <option value={10}>Ten</option>
-                                <option value={20}>Twenty</option>
-                                <option value={30}>Gold 22k/1g ₹ 3256</option>
-                              </NativeSelect>
-                            </FormControl>
-                          </Grid>
+                            <NativeSelect
+                              defaultValue={30}
+                              inputProps={{
+                                name: "name",
+                                id: "uncontrolled-native",
+                                className: {
+                                  root: classes.selects,
+                                },
+                              }}
+                            >
+                              <option value={10}>Ten</option>
+                              <option value={20}>Twenty</option>
+                              <option value={30}>Gold 22k/1g ₹ 3256</option>
+                            </NativeSelect>
+                          </FormControl>
                         </Grid>
                       </Grid>
                       <Grid item xs={12}>

@@ -1,4 +1,11 @@
-import { Avatar, Container, Grid, Hidden } from "@material-ui/core";
+import {
+  Avatar,
+  Box,
+  Container,
+  Grid,
+  Hidden,
+  Typography,
+} from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 import ArrowLeftIcon from "@material-ui/icons/ArrowLeft";
 import ArrowRightIcon from "@material-ui/icons/ArrowRight";
@@ -30,6 +37,7 @@ const styles = (theme) => ({
   collectionSection: {
     // "& svg":{
     fill: `${theme.palette.secondary.main} !important`,
+    textShadow: "2px 2px 8px #FF0000",
 
     // }
   },
@@ -337,9 +345,10 @@ class ProductDetail extends Component {
                 </Grid>
                 <Grid
                   container
-                  item
-                  xs={12}
                   className={classes.productInformationGrid}
+                  style={{
+                    marginTop: "12px",
+                  }}
                 >
                   {this.props &&
                     this.props.data &&
@@ -352,47 +361,35 @@ class ProductDetail extends Component {
                     this.props.data[0].productsDetails[0].namedetail[2] &&
                     this.props.data[0].productsDetails[0].namedetail[2]
                       .details && (
-                      <Grid
-                        container
-                        item
-                        xs={4}
-                        sm={3}
-                        style={{ paddingTop: "10px" }}
-                      >
-                        <Grid container item xs={3}>
-                          <Avatar alt="NAC">
-                            <img
-                              src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/Group+1015.svg"
-                              alt="matel weight"
-                              height="100%"
-                              width="100%"
-                            />
-                          </Avatar>
-                        </Grid>
-                        <Grid
-                          container
-                          item
-                          xs={9}
-                          style={{
-                            fontSize: 12,
-                            color: "gray",
-                            paddingLeft: 15,
-                            margin: "auto",
-                          }}
-                        >
-                          <Grid itex xs={12}>
-                            <span className={classes.productmaterial}>
+                      <Grid item>
+                        <Box display="flex" alignItems="center">
+                          <Box>
+                            <Avatar alt="NAC">
+                              <img
+                                src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/Group+1015.svg"
+                                alt="matel weight"
+                                height="100%"
+                                width="100%"
+                              />
+                            </Avatar>
+                          </Box>
+                          <Box
+                            style={{
+                              fontSize: 12,
+                              color: "gray",
+                              paddingLeft: 15,
+                              margin: "auto",
+                            }}
+                          >
+                            <Typography className={classes.productmaterial}>
                               Metal Weight
-                            </span>
-                          </Grid>
-                          <Grid itex xs={12}>
-                            <span className={classes.productmaterial}>
+                            </Typography>
+                            <Typography className={classes.productmaterial}>
                               {this.props.data[0].productsDetails[0]
                                 .namedetail[2].details ?? ""}
-                              Km
-                            </span>
-                          </Grid>
-                        </Grid>
+                            </Typography>
+                          </Box>
+                        </Box>
                       </Grid>
                     )}
                   {this.props &&
@@ -406,21 +403,61 @@ class ProductDetail extends Component {
                     this.props.data[0].productsDetails[0].namedetail[1] &&
                     this.props.data[0].productsDetails[0].namedetail[1]
                       .details && (
-                      <Grid container item xs={4} style={{ paddingTop: "8px" }}>
-                        <Grid container item xs={3}>
+                      <Grid
+                        item
+                        style={{
+                          marginLeft: 18,
+                        }}
+                      >
+                        <Box display="flex" alignItems="center">
+                          <Box>
+                            <Avatar alt="NAC">
+                              <img
+                                src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/Group+1019.svg"
+                                alt=" Metal Purity"
+                                height="100%"
+                                width="100%"
+                              />
+                            </Avatar>
+                          </Box>
+                          <Box
+                            style={{
+                              fontSize: 12,
+                              color: "gray",
+                              paddingLeft: 15,
+                              margin: "auto",
+                            }}
+                          >
+                            <Typography className={classes.productmaterial}>
+                              Metal Purity
+                            </Typography>
+                            <Typography className={classes.productmaterial}>
+                              {this.props.data[0].productsDetails[0]
+                                .namedetail[1].details ?? ""}
+                            </Typography>
+                          </Box>
+                        </Box>
+                      </Grid>
+                    )}
+                  {this.props.data[0].dimondweight !== null ? (
+                    <Grid
+                      item
+                      style={{
+                        marginLeft: 18,
+                      }}
+                    >
+                      <Box display="flex" alignItems="center">
+                        <Box>
                           <Avatar alt="NAC">
                             <img
-                              src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/Group+1019.svg"
-                              alt=" Metal Purity"
+                              src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/Group+1022.svg"
+                              alt="Diamond Weight"
                               height="100%"
                               width="100%"
                             />
                           </Avatar>
-                        </Grid>
-                        <Grid
-                          container
-                          item
-                          xs={9}
+                        </Box>
+                        <Box
                           style={{
                             fontSize: 12,
                             color: "gray",
@@ -428,53 +465,14 @@ class ProductDetail extends Component {
                             margin: "auto",
                           }}
                         >
-                          <Grid itex xs={12}>
-                            <span className={classes.productmaterial}>
-                              Metal Purity
-                            </span>
-                          </Grid>
-                          <Grid itex xs={12}>
-                            <span className={classes.productmaterial}>
-                              {this.props.data[0].productsDetails[0]
-                                .namedetail[1].details ?? ""}
-                            </span>
-                            {/* 22K Yellow Gold */}
-                          </Grid>
-                        </Grid>
-                      </Grid>
-                    )}
-                  {this.props.data[0].dimondweight !== null ? (
-                    <Grid container item xs={4} style={{ paddingTop: "8px" }}>
-                      <Grid container item xs={2}>
-                        <Avatar alt="NAC">
-                          <img
-                            src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/Group+1022.svg"
-                            alt="Diamond Weight"
-                            height="100%"
-                            width="100%"
-                          />
-                        </Avatar>
-                      </Grid>
-                      <Grid
-                        container
-                        item
-                        xs={10}
-                        style={{
-                          fontSize: 12,
-                          color: "gray",
-                          paddingLeft: 15,
-                          margin: "auto",
-                        }}
-                      >
-                        <Grid itex xs={12}>
-                          <span className={classes.productmaterial}>
+                          <Typography className={classes.productmaterial}>
                             Diamond Weight
-                          </span>
-                        </Grid>
-                        <Grid itex xs={12}>
-                          {this.props.data[0].dimondweight}gm
-                        </Grid>
-                      </Grid>
+                          </Typography>
+                          <Typography className={classes.productmaterial}>
+                            {this.props.data[0].dimondweight}gm
+                          </Typography>
+                        </Box>
+                      </Box>
                     </Grid>
                   ) : (
                     ""
@@ -522,7 +520,7 @@ class ProductDetail extends Component {
                       style={{
                         fontWeight: "bold",
                         color: "gray",
-                        marginLeft: 15,
+                        marginLeft: 30,
                         paddingBottom: 10,
                         fontSize: "16px",
                       }}
@@ -556,7 +554,7 @@ class ProductDetail extends Component {
             style={{ maxWidth: "1600px", margin: "auto" }}
           >
             <Grid container spacing={12}>
-              <Grid item xs={12}>
+              <Grid item xs={12} style={{ paddingLeft: "2%" }}>
                 <br />
                 <ProductDetails data={this.props.data} />
               </Grid>
@@ -566,10 +564,8 @@ class ProductDetail extends Component {
           </div>
           <div
             style={{
-              maxWidth: "1600px",
-              margin: "auto",
-              paddingLeft: "5%",
-              paddingRight: "5%",
+              paddingLeft: "6%",
+              paddingRight: "6%",
               marginTop: "12px",
             }}
           >
@@ -580,8 +576,8 @@ class ProductDetail extends Component {
             style={{
               maxWidth: "1600px",
               margin: "auto",
-              paddingLeft: "5%",
-              paddingRight: "5%",
+              paddingLeft: "6%",
+              paddingRight: "6%",
               marginTop: "24px",
             }}
           >
@@ -611,7 +607,7 @@ class ProductDetail extends Component {
                       style={{
                         fontWeight: "bold",
                         color: "gray",
-                        marginLeft: 15,
+                        marginLeft: 30,
                         fontSize: "16px",
                         paddingBottom: 10,
                       }}

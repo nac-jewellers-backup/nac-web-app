@@ -11,18 +11,13 @@ import {
   Typography,
 } from "@material-ui/core";
 import styles from "containers/contactus/stylecontact";
+import { NetworkContext } from "context/NetworkContext";
+import { useGraphql } from "hooks/GraphqlHook";
 import React from "react";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { Input } from "../../components/InputComponents/TextField/Input";
-
-// const useStyles = makeStyles(theme => ({
-//   root: {
-//     "& > *": {
-//       margin: theme.spacing(1)
-//     }
-//   }
-// }));
-
+import { API_URL } from "../../config";
+import { Location } from "../../queries/appoinment";
 const InitialState = {
   month: "",
   day: "",
@@ -46,206 +41,155 @@ export default function Contact(props) {
   const months = [
     {
       label: "January",
-      value: "January",
+      value: "01",
     },
     {
       label: "February",
-      value: "February",
+      value: "02",
     },
     {
       label: "March",
-      value: "March",
+      value: "03",
     },
     {
       label: "April",
-      value: "April",
+      value: "04",
     },
     {
       label: "May",
-      value: "May",
+      value: "05",
     },
     {
       label: "June",
-      value: "June",
+      value: "06",
     },
     {
       label: "July",
-      value: "July",
+      value: "07",
     },
     {
       label: "August",
-      value: "August",
+      value: "08",
     },
     {
       label: "September",
-      value: "September",
+      value: "09",
     },
     {
       label: "October",
-      value: "October",
+      value: "10",
     },
     {
       label: "November",
-      value: "November",
+      value: "11",
     },
     {
       label: "December",
-      value: "December",
+      value: "12",
     },
   ];
-  const days = [
-    "1",
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9",
-    "10",
-    "11",
-    "12",
-    "13",
-    "14",
-    "15",
-    "16",
-    "17",
-    "18",
-    "19",
-    "20",
-    "21",
-    "22",
-    "23",
-    "24",
-    "25",
-    "26",
-    "27",
-    "28",
-    "29",
-    "30",
-  ];
-  const days1 = [
-    "1",
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9",
-    "10",
-    "11",
-    "12",
-    "13",
-    "14",
-    "15",
-    "16",
-    "17",
-    "18",
-    "19",
-    "20",
-    "21",
-    "22",
-    "23",
-    "24",
-    "25",
-    "26",
-    "27",
-    "28",
-    "29",
-    "30",
-    "31",
-  ];
-  const location = [
-    {
-      label: "Mylapore",
-      value: "mylapore",
-    },
-    {
-      label: "T.Nager",
-      value: "t.nager",
-    },
-    {
-      label: "Vijayawada",
-      value: "Vijayawada",
-    },
-    {
-      label: "Perambur",
-      value: "Perambur",
-    },
-    {
-      label: "Kanchipuram",
-      value: "Kanchipuram",
-    },
-    {
-      label: "Anna Nager",
-      value: "AnnaNager",
-    },
-    {
-      label: "Velachery",
-      value: "Velachery",
-    },
-  ];
+  const {
+    NetworkCtx: { graphqlUrl: uri },
+  } = React.useContext(NetworkContext);
+
   const d = new Date();
   let year = d.getFullYear();
+  let todaymonth = d.getMonth();
+  let todayday = d.getDay();
 
-  const [yeard, setYeard] = React.useState();
-  const [monthd, setMonthd] = React.useState();
-  const [open, setOpen] = React.useState(false);
-  const [dayd, setDayd] = React.useState();
-  const [data, setData] = React.useState({ ...InitialState });
+  const utcformat = `${d.getHours()}:${d.getMinutes()}:${d.getSeconds()}`;
+  const date = [];
+  const daysInMonth = new Date(year, todaymonth, 0).getDate();
+
+  const [dayd, setDayd] = React.useState([]);
+  const [storelocation, setstoreLocation] = React.useState([]);
+  const [dataappoinment, setDataappoinment] = React.useState({
+    ...InitialState,
+  });
   const updateState = (key, value) => {
-    let error = data.error;
+    let error = dataappoinment.error;
     error[key] = "";
-    setData({ ...data, [key]: value, error });
+    setDataappoinment({ ...dataappoinment, [key]: value, error });
   };
   const isIamValideToLogin = () => {
     let isValid = true;
-    let error = data.error;
+    let error = dataappoinment.error;
     //month
-    if (data.month.length === 0) {
+    if (dataappoinment.month.length === 0) {
       isValid = false;
       error.month = "Month is required";
     }
 
     //Checking day
-    if (data.day.length === 0) {
+    if (dataappoinment.day.length === 0) {
       isValid = false;
       error.day = "Day is required";
     }
     //Checking year
-    if (data.year.length === 0) {
+    if (dataappoinment.year.length === 0) {
       isValid = false;
       error.year = "Year is required";
     }
     //Checking name
-    if (data.name.length === 0) {
+    if (dataappoinment.name.length === 0) {
       isValid = false;
       error.name = "name is required";
     }
     //Checking mail
-    if (data.mail.length === 0) {
+    if (dataappoinment.mail.length === 0) {
       isValid = false;
       error.mail = "Email is required";
     }
     //Checking location
-    if (data.location.length === 0) {
+    if (dataappoinment.location.length === 0) {
       isValid = false;
       error.location = "Location is required";
     }
     //Checking mobile
-    if (data.mobile.length === 0) {
+    if (dataappoinment.mobile.length === 0) {
       isValid = false;
       error.mobile = "Mobile is required";
     }
-    setData({ ...data, error });
+    setDataappoinment({ ...dataappoinment, error });
     return isValid;
   };
+  const { data } = useGraphql(Location, () => {}, {});
 
+  React.useEffect(() => {
+    {
+      for (let i = 0; i < daysInMonth; i++) {
+        if (i < 10) {
+          date.push("0" + (i + 1));
+        } else {
+          date.push(i + 1);
+        }
+      }
+
+      setDayd(date);
+    }
+    fetch(`${API_URL}/graphql`, {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        query: Location,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setstoreLocation(data.data.allStoreLocations.nodes);
+      });
+  }, []);
   const onSendLoginBtnClicked = () => {
     if (isIamValideToLogin()) {
+      const slot =
+        `${dataappoinment.year}` +
+        "-" +
+        `${dataappoinment.month}` +
+        "-" +
+        `${dataappoinment.day} ` +
+        `${utcformat}`;
     } else {
       return false;
     }
@@ -298,13 +242,13 @@ export default function Contact(props) {
                         <Select
                           labelId="demo-simple-select-label"
                           id="demo-simple-select"
-                          value={data.month}
+                          value={dataappoinment.month}
                           color="secondary"
                           label="Month"
                           onChange={(e) => updateState("month", e.target.value)}
                           label="Month"
-                          isError={data.error.month.length > 0}
-                          errorMessage={data.error.month}
+                          isError={dataappoinment.error.month.length > 0}
+                          errorMessage={dataappoinment.error.month}
                           isRequired
                           //onChange={handleChange}
                         >
@@ -315,9 +259,9 @@ export default function Contact(props) {
                           })}
                         </Select>
                       </FormControl>
-                      {data.error.month.length > 0 && (
+                      {dataappoinment.error.month.length > 0 && (
                         <Typography variant={"caption"} color={"error"}>
-                          {data.error.month}
+                          {dataappoinment.error.month}
                         </Typography>
                       )}
                     </Grid>
@@ -334,22 +278,23 @@ export default function Contact(props) {
                           id="demo-simple-select"
                           color="secondary"
                           label="Day"
-                          value={data.day}
+                          value={dataappoinment.day}
                           color="secondary"
                           onChange={(e) => updateState("day", e.target.value)}
-                          isError={data.error.day.length > 0}
-                          errorMessage={data.error.day}
+                          isError={dataappoinment.error.day.length > 0}
+                          errorMessage={dataappoinment.error.day}
                           isRequired
                           //onChange={handleChange}
                         >
-                          {days1.map((val) => {
-                            return <MenuItem value={val}>{val}</MenuItem>;
+                          {dayd.map((val) => {
+                            return <MenuItem value={val}> {val}</MenuItem>;
                           })}
                         </Select>
+                        {/* val < 10 ? "0" + val : */}
                       </FormControl>
-                      {data.error.day.length > 0 && (
+                      {dataappoinment.error.day.length > 0 && (
                         <Typography variant={"caption"} color={"error"}>
-                          {data.error.day}
+                          {dataappoinment.error.day}
                         </Typography>
                       )}
                     </Grid>
@@ -366,20 +311,20 @@ export default function Contact(props) {
                           labelId="demo-simple-select-label"
                           id="demo-simple-select"
                           label="Day"
-                          value={data.year}
+                          value={dataappoinment.year}
                           color="secondary"
                           onChange={(e) => updateState("year", e.target.value)}
-                          isError={data.error.year.length > 0}
-                          errorMessage={data.error.year}
+                          isError={dataappoinment.error.year.length > 0}
+                          errorMessage={dataappoinment.error.year}
                           isRequired
                           //onChange={handleChange}
                         >
                           <MenuItem value={year}>{year}</MenuItem>
                         </Select>
                       </FormControl>
-                      {data.error.year.length > 0 && (
+                      {dataappoinment.error.year.length > 0 && (
                         <Typography variant={"caption"} color={"error"}>
-                          {data.error.year}
+                          {dataappoinment.error.year}
                         </Typography>
                       )}
                     </Grid>
@@ -389,17 +334,17 @@ export default function Contact(props) {
                         name="Fullname"
                         //value={valuesadrees.firstname}
                         placeholder="Fullname"
-                        value={data.name}
+                        value={dataappoinment.name}
                         color="secondary"
                         onChange={(e) => updateState("name", e.target.value)}
-                        isError={data.error.name.length > 0}
-                        errorMessage={data.error.name}
+                        isError={dataappoinment.error.name.length > 0}
+                        errorMessage={dataappoinment.error.name}
                         isRequired
                       />
 
-                      {data.error.name.length > 0 && (
+                      {dataappoinment.error.name.length > 0 && (
                         <Typography variant={"caption"} color={"error"}>
-                          {data.error.name}
+                          {dataappoinment.error.name}
                         </Typography>
                       )}
                     </Grid>
@@ -409,14 +354,14 @@ export default function Contact(props) {
                         name="Email"
                         //value={valuesadrees.firstname}
                         placeholder="Email"
-                        value={data.mail}
+                        value={dataappoinment.mail}
                         color="secondary"
                         onChange={(e) => updateState("mail", e.target.value)}
                         isRequired
                       />
-                      {data.error.mail.length > 0 && (
+                      {dataappoinment.error.mail.length > 0 && (
                         <Typography variant={"caption"} color={"error"}>
-                          {data.error.mail}
+                          {dataappoinment.error.mail}
                         </Typography>
                       )}
                     </Grid>
@@ -426,16 +371,16 @@ export default function Contact(props) {
                         name="Mobile"
                         //value={valuesadrees.firstname}
                         placeholder="Mobile"
-                        value={data.mobile}
+                        value={dataappoinment.mobile}
                         color="secondary"
                         onChange={(e) => updateState("mobile", e.target.value)}
-                        isError={data.error.mobile.length > 0}
-                        errorMessage={data.error.mobile}
+                        isError={dataappoinment.error.mobile.length > 0}
+                        errorMessage={dataappoinment.error.mobile}
                         isRequired
                       />
-                      {data.error.mobile.length > 0 && (
+                      {dataappoinment.error.mobile.length > 0 && (
                         <Typography variant={"caption"} color={"error"}>
-                          {data.error.mobile}
+                          {dataappoinment.error.mobile}
                         </Typography>
                       )}
                     </Grid>
@@ -450,27 +395,27 @@ export default function Contact(props) {
                         <Select
                           labelId="demo-simple-select-label"
                           id="demo-simple-select"
-                          value={data.location}
+                          value={dataappoinment.location}
                           color="secondary"
                           label="Location"
                           onChange={(e) =>
                             updateState("location", e.target.value)
                           }
-                          isError={data.error.location.length > 0}
-                          errorMessage={data.error.location}
+                          isError={dataappoinment.error.location.length > 0}
+                          errorMessage={dataappoinment.error.location}
                           isRequired
                           //onChange={handleChange}
                         >
-                          {location.map((val) => {
+                          {storelocation.map((val) => {
                             return (
-                              <MenuItem value={val.value}>{val.label}</MenuItem>
+                              <MenuItem value={val.id}>{val.name}</MenuItem>
                             );
                           })}
                         </Select>
                       </FormControl>
-                      {data.error.location.length > 0 && (
+                      {dataappoinment.error.location.length > 0 && (
                         <Typography variant={"caption"} color={"error"}>
-                          {data.error.location}
+                          {dataappoinment.error.location}
                         </Typography>
                       )}
                     </Grid>
@@ -488,8 +433,8 @@ export default function Contact(props) {
                           id="demo-simple-select"
                           color="secondary"
                           label="Timing"
-                          isError={data.error.location.length > 0}
-                          errorMessage={data.error.location}
+                          isError={dataappoinment.error.location.length > 0}
+                          errorMessage={dataappoinment.error.location}
                           isRequired
                           //onChange={handleChange}
                         ></Select>

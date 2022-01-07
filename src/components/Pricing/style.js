@@ -3,7 +3,18 @@ const styles = makeStyles((theme) => ({
   pricing: {
     float: "left",
   },
-
+  spanIcon: {
+    width: "6px",
+    height: "6px",
+    border: "1px solid gray",
+    borderRadius: "50%",
+    padding: "2px",
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "center",
+    fontSize: "7px",
+    cursor: "pointer",
+  },
   colorMain: {
     color: theme.palette.darkGray.main,
     [theme.breakpoints.down("sm")]: {
@@ -39,6 +50,7 @@ const styles = makeStyles((theme) => ({
     justifyContent: "center",
     fontSize: "8px",
     marginLeft: "5px",
+    position: "absolute",
   },
   off: {
     [theme.breakpoints.down("lg")]: {

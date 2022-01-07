@@ -211,7 +211,7 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: "4px 4px 4px #A5A4A5 !important",
     margin: "10px 0px ",
     borderRadius: "0 !important",
-    border: "1px solid #bebfbf70",
+    border: "2px solid #bebfbf70",
   },
   cardAtionspadding: {
     padding: 0,
@@ -350,7 +350,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   titles: {
-    fontSize: "0.9rem",
+    fontSize: "14px",
     whiteSpace: "nowrap",
     // flex: 0.6,
     color: "gray",
@@ -377,7 +377,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   strikeText: {
-    fontSize: "16px",
+    fontSize: "18px",
     color: "#5d5d5d",
     [theme.breakpoints.down("sm")]: {
       fontSize: "10px !important",
