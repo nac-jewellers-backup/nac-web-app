@@ -12,9 +12,10 @@ const useGift = () => {
     message: "",
     haveAlready: false,
     cart_id: "",
-    id:"",
+    id: "",
   });
-  const [datas,setDatas]= React.useState()
+  const [emailerr, setEmailerr] = React.useState("");
+  const [datas, setDatas] = React.useState();
   const [val, setval] = React.useState({
     expanded1: 1,
     expanded2: 1,
@@ -43,16 +44,13 @@ const useGift = () => {
     }
   }, [data]);
   useEffect(() => {
-    
     var messageGift =
       CodData &&
       CodData.data &&
       CodData.data.allGiftwraps &&
       CodData.data.allGiftwraps.nodes;
-    
-  
+
     if (messageGift && messageGift.length > 0) {
-    
       setDatas(messageGift);
       console.log(datas);
       setValues({
@@ -61,19 +59,28 @@ const useGift = () => {
         gift_from: messageGift[0].giftFrom,
         message: messageGift[0].message,
         id: messageGift[0].id,
-        cardId:messageGift[0].cartId,
+        cardId: messageGift[0].cartId,
         haveAlready: true,
       });
-      
-     
     }
   }, [CodData]);
 
   const handleChange = (type, value) => {
-    setValues({
-      ...values,
-      [type]: value,
-    });
+    if (type === "gift_to") {
+      if (value === email) {
+        setEmailerr("Please Enter Mail Id Not Equal to Registered Mail ");
+      } else {
+        setValues({
+          ...values,
+          [type]: value,
+        });
+      }
+    } else {
+      setValues({
+        ...values,
+        [type]: value,
+      });
+    }
   };
   const handleSubmit = (e) => {
     // e.preventDefault();
@@ -88,7 +95,7 @@ const useGift = () => {
 
   const handlers = { handleSubmit, handleChange };
 
-  return { values, handlers, val, data, setval,CodData };
+  return { values, handlers, val, data, setval, CodData, emailerr };
 };
 
 export default useGift;

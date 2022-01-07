@@ -33,7 +33,7 @@ const Productlist = (props) => {
 };
 
 const ProductlistComponent = (props) => {
-  const { handlers, values, val, data, setval, CodData } = useGift();
+  const { handlers, values, val, data, setval, CodData, emailerr } = useGift();
   const { classes } = props;
   let value = localStorage.getItem("select_addres")
     ? JSON.parse(localStorage.getItem("select_addres"))
@@ -44,6 +44,14 @@ const ProductlistComponent = (props) => {
   const [show, setShow] = React.useState(true);
   const { expanded1, expanded2, expanded3 } = val;
   const cardIds = JSON.parse(localStorage.getItem("cart_id"))?.cart_id;
+  const initialstate = {
+    email: "",
+
+    error: {
+      email: "",
+    },
+  };
+  const [validemail, setValidemai] = React.useState({ ...initialstate });
 
   useEffect(() => {
     fetch(`${API_URL}/graphql`, {
@@ -89,7 +97,12 @@ const ProductlistComponent = (props) => {
   //     localStorage.getItem("cart_id") &&
   //     JSON.parse(localStorage.getItem("cart_id"))?.cart_id,
   // };
-
+  let email = localStorage.getItem("email")
+    ? localStorage.getItem("email")
+    : "";
+  const gotogift = () => {
+    handlers.handleSubmit();
+  };
   const editmsgform = () => {
     fetch(`${API_URL}/graphql`, {
       method: "post",
@@ -139,10 +152,7 @@ const ProductlistComponent = (props) => {
                 )} */}
                 <br />
                 <div style={{ display: show ? "block" : "none" }}>
-                  <form
-                    action="javascript:void(0)"
-                    onSubmit={() => handlers.handleSubmit()}
-                  >
+                  <form action="javascript:void(0)" onSubmit={() => gotogift()}>
                     {props.pay ? (
                       ""
                     ) : (
@@ -225,6 +235,9 @@ const ProductlistComponent = (props) => {
                             handlers.handleChange("gift_to", e.target.value)
                           }
                         />
+                        <span style={{ fontSize: "12px", color: "red" }}>
+                          {emailerr.length > 0 && emailerr}
+                        </span>
                       </>
                     )}
 
@@ -254,9 +267,15 @@ const ProductlistComponent = (props) => {
                           )}
                         </>
                       ) : (
-                        <Button className="apply-b" type="submit">
-                          Save
-                        </Button>
+                        <>
+                          {values.gift_to || values.message ? (
+                            <Button className="apply-b" type="submit">
+                              Save
+                            </Button>
+                          ) : (
+                            ""
+                          )}
+                        </>
                       )}
                     </div>
                     {/* <FormControlLabel
