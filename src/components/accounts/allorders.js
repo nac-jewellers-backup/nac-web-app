@@ -429,6 +429,7 @@ class Allorders extends React.Component {
                                   <b>Order Number</b>:#{val.id}
                                 </div>
                                 <br />
+
                                 <div>
                                   <b>Order Date </b> :{" "}
                                   {moment(val.createdAt).format("Do MMMM YYYY")}
@@ -1207,10 +1208,20 @@ class Allorders extends React.Component {
                                                     <Typography className="data1">
                                                       ORDER&nbsp;NUMBER
                                                     </Typography>
-                                                    <Typography className="data1">
+                                                    <Typography
+                                                      className="data1"
+                                                      style={{
+                                                        marginTop: "6px",
+                                                      }}
+                                                    >
                                                       ORDER&nbsp;PLACED&nbsp;ON
                                                     </Typography>
-                                                    <Typography className="data1">
+                                                    <Typography
+                                                      className="data1"
+                                                      style={{
+                                                        marginTop: "6px",
+                                                      }}
+                                                    >
                                                       PAYMENT&nbsp;METHOD
                                                     </Typography>
                                                   </div>
@@ -1230,12 +1241,22 @@ class Allorders extends React.Component {
                                                     >
                                                       #{val && val.id}
                                                     </Typography>
-                                                    <Typography className="data1">
+                                                    <Typography
+                                                      className="data1"
+                                                      style={{
+                                                        marginTop: "6px",
+                                                      }}
+                                                    >
                                                       {moment(
                                                         val && val.createdAt
                                                       ).format("Do MMMM YYYY")}
                                                     </Typography>
-                                                    <Typography className="data1">
+                                                    <Typography
+                                                      className="data1"
+                                                      style={{
+                                                        marginTop: "6px",
+                                                      }}
+                                                    >
                                                       {val.paymentMode}
                                                     </Typography>
                                                   </div>

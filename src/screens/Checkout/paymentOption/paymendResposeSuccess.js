@@ -90,79 +90,85 @@ class PaymentResponseSuccess extends React.Component {
     return (
       <>
         <Header wishlist={this.props.wishlistdata} paymentSucces={true} />
-        <Grid container direction="row">
+        <Grid container direction="row" style={{ overflow: "hidden" }}>
           <Grid item xs={12}>
-            <Box
-              display="flex"
-              flexDirection="row"
-              justifyContent="center"
-              marginTop={2}
-            >
-              <Box>
-                <img
-                  className="img"
-                  src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/Group+160.svg"
-                  alt="title images"
-                />
-              </Box>
-              <Box>
-                <span className="titlecart">A BIG THANK YOU!</span>
-
-                <Typography
-                  style={{
-                    color: "gray",
-                    textAlign: "center",
-                    fontSize: "16px",
-                  }}
+            <Grid container direction="row">
+              <Grid item xs={12}>
+                <Box
+                  display="flex"
+                  flexDirection="row"
+                  justifyContent="center"
+                  marginTop={2}
                 >
-                  <Hidden smDown>
+                  <Box>
+                    <img
+                      className="img"
+                      src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/Group+160.svg"
+                      alt="title images"
+                    />
+                  </Box>
+                  <Box>
+                    <span className="titlecart">
+                      &nbsp;A BIG THANK YOU!&nbsp;
+                    </span>
+                  </Box>
+                  <Box>
+                    <img
+                      className="img"
+                      src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/Group+159.svg"
+                      alt="title images"
+                    />
+                  </Box>
+                </Box>
+
+                <Hidden mdUp>
+                  <Typography
+                    variant="subtitle2"
+                    style={{
+                      color: "gray",
+                      textAlign: "center",
+                    }}
+                  >
                     Welcome to the <b>NAC</b> family! We’ll take it from here.
                     <br />
                     We’ve sent a confirmation email to <b>{email}</b>.
-                  </Hidden>
-                </Typography>
-              </Box>
-              <Box>
-                <img
-                  className="img"
-                  src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/Group+159.svg"
-                  alt="title images"
-                />
-              </Box>
-            </Box>
-            <Typography
-              variant="subtitle2"
-              style={{
-                color: "gray",
-                textAlign: "center",
-              }}
-            >
-              <Hidden mdUp>
-                Welcome to the <b>NAC</b> family! We’ll take it from here.
-                <br />
-                We’ve sent a confirmation email to <b>{email}</b>.
-              </Hidden>
-            </Typography>
-          </Grid>
-        </Grid>
+                  </Typography>
+                </Hidden>
+                <Hidden smDown>
+                  <Typography
+                    style={{
+                      color: "gray",
+                      textAlign: "center",
+                      fontSize: "14px",
+                    }}
+                  >
+                    Welcome to the <b>NAC</b> family! We’ll take it from here.
+                    <br />
+                    We’ve sent a confirmation email to <b>{email}</b>.
+                  </Typography>
+                </Hidden>
+              </Grid>
+            </Grid>
 
-        <Grid container>
-          <Grid item xs={12}>
-            <Hidden smDown>
-              <br />
-              <br />
-            </Hidden>
-            <Allorders
-              allorderdata={this.props.allorderdata}
-              history={this.props.history}
-            />
-            <Hidden smDown>
-              <br />
-              <br />
-            </Hidden>
+            <Grid container>
+              <Grid item xs={12}>
+                <Hidden smDown>
+                  <br />
+                  <br />
+                </Hidden>
+                <Allorders
+                  allorderdata={this.props.allorderdata}
+                  history={this.props.history}
+                />
+                <Hidden smDown>
+                  <br />
+                  <br />
+                </Hidden>
+              </Grid>
+              {/* <NeedHelp /> */}
+              <Footer />
+            </Grid>
           </Grid>
-          {/* <NeedHelp /> */}
-          <Footer />
         </Grid>
       </>
     );

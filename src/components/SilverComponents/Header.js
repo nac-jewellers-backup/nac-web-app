@@ -246,7 +246,8 @@ class Header extends Component {
                       style={{
                         marginTop:
                           window.location.pathname == "/cart" ||
-                          window.location.pathname == "/checkout"
+                          window.location.pathname == "/checkout" ||
+                          window.location.pathname == "/paymentsuccess"
                             ? "20px"
                             : "",
                       }}
