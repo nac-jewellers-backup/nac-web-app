@@ -247,6 +247,7 @@ class Checkoutcard extends React.Component {
     };
 
     const { expand } = this.state;
+
     return (
       <div style={{ marginTop: "10px" }}>
         {this.props.checkoutpage ? (
@@ -265,22 +266,12 @@ class Checkoutcard extends React.Component {
                         <Grid
                           container
                           spacing={12}
-                          xs={12}
                           className={classes.cardpad}
                           style={{
                             borderBottom: "1.3px solid #C1C1C1",
                           }}
                         >
-                          <Grid
-                            item
-                            xs={3}
-                            sm={3}
-                            style={{
-                              display: "flex",
-                              alignContent: "center",
-                              alignItems: "center",
-                            }}
-                          >
+                          <Grid item xs={3} sm={3}>
                             <>
                               {window.location.pathname !== "/checkout" ? (
                                 <NavLink
@@ -290,12 +281,14 @@ class Checkoutcard extends React.Component {
                                   <div
                                     style={{
                                       border: "1px solid #D2D3D4",
-                                      display: "inline-block",
+                                      width: "100%",
                                     }}
                                   >
                                     <img
                                       style={{
                                         objectFit: "contain",
+                                        height: "100%",
+                                        width: "100%",
                                       }}
                                       alt="img"
                                       src={dataval?.fadeImages[0]?.imageUrl}
@@ -308,7 +301,7 @@ class Checkoutcard extends React.Component {
                                     border: "1px solid #D2D3D4",
                                     display: "inline-block",
                                   }}
-                                  className={classes.cardimg}
+                                  className={classes.cardimgcheck}
                                 >
                                   <img
                                     style={{
@@ -323,7 +316,7 @@ class Checkoutcard extends React.Component {
                               )}
                             </>
                           </Grid>
-                          <Grid item xs={5} sm={7} style={{ padding: "13px" }}>
+                          <Grid item xs={5} sm={7}>
                             {window.location.pathname !== "/checkout" ? (
                               <NavLink
                                 to={dataval.skuUrl}
@@ -430,7 +423,7 @@ class Checkoutcard extends React.Component {
                   <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                     <div>
                       <Typography className={classes.cartheader} noWrap>
-                        Hide order summery :{this.subtotalsHead(this.props)}
+                        Hide order Summary :{this.subtotalsHead(this.props)}
                       </Typography>
                     </div>
                   </AccordionSummary>
@@ -649,7 +642,7 @@ class Checkoutcard extends React.Component {
                     }}
                   >
                     <Typography className={classes.cartheader} noWrap>
-                      Total({this.props.data.length}&nbsp;Items)&nbsp;:&nbsp;
+                      Total({this.props.data.length}&nbsp;Item(s))&nbsp;:&nbsp;
                       {this.subtotalsHead(this.props)}
                     </Typography>
                   </div>
@@ -872,7 +865,7 @@ class Checkoutcard extends React.Component {
                                         style={{
                                           color: "gray",
                                           width: "96%",
-                                          border: "2px solid #C1C1C1",
+                                          border: "1.46px solid #919396",
                                           backgroundColor: "white",
                                           borderRadius: "0px",
                                           boxShadow: "none",
@@ -1018,14 +1011,14 @@ class Checkoutcard extends React.Component {
                                     <Grid container xs={12} direction="row">
                                       {dataval.maxOrderQty === 1 ? (
                                         <Grid container>
-                                          <Grid item xs={4}>
+                                          <Grid item>
                                             <Typography
                                               className={`subhesder ${classes.normalfonts}`}
                                             >
                                               Quantity :
                                             </Typography>
                                           </Grid>
-                                          <Grid item xs={7}>
+                                          <Grid item>
                                             <Typography
                                               className={`subhesder ${classes.normalfonts}`}
                                             >
@@ -1134,7 +1127,7 @@ class Checkoutcard extends React.Component {
                                       fontSize: "14px",
                                       color: "gray",
                                       width: "95%",
-                                      border: "2px solid #C1C1C1",
+                                      border: "1.46px solid #919396",
                                       backgroundColor: "white",
                                       borderRadius: "0px",
                                       boxShadow: "none",
@@ -1213,7 +1206,7 @@ class Checkoutcard extends React.Component {
                         window.location.pathname == "/cart"
                           ? "fixed"
                           : "relative",
-                      backgroundColor: "rgb(224, 225, 225)",
+                      backgroundColor: "#F3F3F3",
                       zIndex: 999,
                     }}
                   >
@@ -1314,7 +1307,7 @@ class Checkoutcard extends React.Component {
                   }}
                 >
                   <Typography className={classes.cartheader} noWrap>
-                    Total({this.props.data.length}&nbsp;Items)&nbsp;:&nbsp;
+                    Total({this.props.data.length}&nbsp;Item(s))&nbsp;:&nbsp;
                     {this.subtotalsHead(this.props)}
                   </Typography>
                 </div>
@@ -1395,32 +1388,25 @@ class Checkoutcard extends React.Component {
                               <Grid item xs={12} lg={6}>
                                 {dataval.maxOrderQty === 1 ? (
                                   <Grid container>
-                                    <Grid item xs={4}>
+                                    <Grid item>
                                       <Typography
                                         className={`subhesder ${classes.normalfonts}`}
                                       >
-                                        Quantity :
-                                      </Typography>
-                                    </Grid>
-                                    <Grid item xs={4}>
-                                      <Typography
-                                        className={`subhesder ${classes.normalfonts}`}
-                                      >
-                                        {dataval.maxOrderQty}
+                                        Quantity :{dataval.maxOrderQty}
                                       </Typography>
                                     </Grid>
                                   </Grid>
                                 ) : (
                                   <>
                                     <Grid container>
-                                      <Grid item xs={4}>
+                                      <Grid item>
                                         <Typography
                                           className={`subhesder ${classes.normalfonts}`}
                                         >
                                           Quantity :
                                         </Typography>
                                       </Grid>
-                                      <Grid item xs={4}>
+                                      <Grid item>
                                         <Select
                                           style={{ marginBottom: "10px" }}
                                           labelId="demo-simple-select-label"
@@ -1488,7 +1474,7 @@ class Checkoutcard extends React.Component {
                               variant="contained"
                               style={{
                                 color: "gray",
-                                border: "2px solid #C1C1C1",
+                                border: "1.46px solid #919396",
                                 backgroundColor: "white",
                                 width: "100%",
                                 borderRadius: "0px",
@@ -1545,6 +1531,8 @@ class Checkoutcard extends React.Component {
           border: "0px",
           outline: "0px",
           borderRadius: "0px",
+          padding: "0px",
+          minHeight: "40px",
         }}
       >
         <AccordionSummary
@@ -1563,10 +1551,11 @@ class Checkoutcard extends React.Component {
               style={{
                 display: "flex",
                 justifyContent: "center",
+                alignItems: "center",
                 fontSize: "14px",
               }}
             >
-              <IoPricetagsOutline color="#2F348B" fontSize="14px" />
+              <IoPricetagsOutline color="#2F348B" fontSize="20px" />
               &nbsp;&nbsp;&nbsp;<b>Apply Coupon</b>
             </Typography>
           </Hidden>
@@ -1588,7 +1577,6 @@ class Checkoutcard extends React.Component {
         <AccordionDetails>
           <ProductList />
         </AccordionDetails>
-        <AccordionActions></AccordionActions>
       </Accordion>
     );
   };
@@ -1673,27 +1661,30 @@ class Checkoutcard extends React.Component {
 
     return (
       <div style={{ marginTop: "15px" }}>
-        <Grid container spacing={12}>
+        <Grid container>
           <Grid item xs={12}>
-            <div
-              style={{
-                borderTop: "1.3px solid #C1C1C1",
-                paddingBottom: "10px",
-                paddingTop: "17px",
-                marginTop: "25px",
-                color: "gray",
-                fontSize: "14px",
-              }}
-            >
-              <b>Order Summery</b>
-            </div>
             <Hidden mdUp>
               <div>
                 <div>{this.applycoupon()}</div>
                 <br />
               </div>
             </Hidden>
+            <br />
             <Grid container>
+              <Grid item xs={12} style={{ borderTop: "1.3px solid #A5A7AA" }}>
+                <Typography
+                  className={`subhesder ${classes.normalfonts1}`}
+                  style={{
+                    marginTop: "18px",
+                    marginBottom: "8px",
+                    color: "gray",
+                    fontSize: "14px",
+                    fontWeight: "bold",
+                  }}
+                >
+                  Order Summary
+                </Typography>
+              </Grid>
               <Grid xs={6}>
                 <Typography className={`subhesder ${classes.normalfonts1}`}>
                   Subtotal
@@ -1717,7 +1708,7 @@ class Checkoutcard extends React.Component {
                 <Typography className={`subhesder ${classes.normalfonts1}`}>
                   Delivery Charge
                   <br />
-                  (Standred)
+                  (Standrad)
                 </Typography>
               </Grid>
               <Grid xs={6}>
@@ -1783,9 +1774,9 @@ class Checkoutcard extends React.Component {
 
             <Grid
               container
-              style={{ borderTop: "1px solid #C1C1C1", padding: "10px" }}
+              style={{ borderTop: "1px solid #A5A7AA", padding: "10px" }}
             >
-              <Grid xs={6}>
+              <Grid item xs={6}>
                 <Typography
                   style={{
                     fontWeight: "bold",
@@ -1796,7 +1787,7 @@ class Checkoutcard extends React.Component {
                   TOTAL&nbsp;COST
                 </Typography>
               </Grid>
-              <Grid xs={6}>
+              <Grid item xs={6}>
                 <Typography
                   style={{
                     fontWeight: "bold",
@@ -1882,7 +1873,7 @@ class Checkoutcard extends React.Component {
       <div style={{ marginTop: "15px" }}>
         <Grid container spacing={12}>
           <Grid item xs={12}>
-            <Grid container>
+            <Grid container style={{ borderBottom: "1px solid #C1C1C1" }}>
               <Grid xs={6}>
                 <Typography className={`subhesder ${classes.normalfonts2}`}>
                   SUBTOTAL
@@ -1904,7 +1895,7 @@ class Checkoutcard extends React.Component {
                 )}
 
                 <Typography className={`subhesder ${classes.normalfonts2}`}>
-                  SHIPPING CHARGES(Standred)
+                  SHIPPING CHARGES(Standrad)
                 </Typography>
               </Grid>
               <Grid xs={6}>
@@ -1967,13 +1958,13 @@ class Checkoutcard extends React.Component {
                   </span>
                 </Typography>
               </Grid>
+              <Grid item xs={12}>
+                <br />
+              </Grid>
             </Grid>
             <br />
 
-            <Grid
-              container
-              style={{ borderTop: "1px solid #C1C1C1", padding: "10px" }}
-            >
+            <Grid container>
               <Grid xs={6}>
                 <Typography
                   style={{
@@ -2118,7 +2109,7 @@ class Checkoutcard extends React.Component {
                 window.location.href = "/";
               }}
             >
-              Go back to Homepage
+              &nbsp;&nbsp;Go back to Homepage&nbsp;&nbsp;
             </Button>
             <br />
             <br />

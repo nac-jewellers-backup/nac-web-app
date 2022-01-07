@@ -1,6 +1,7 @@
 const styles = (theme) => ({
   padding: {
-    padding: "40px !important",
+    padding: "20px !important",
+    height: "100vh",
   },
   padding1: {
     padding: "40px !important",
@@ -28,6 +29,15 @@ const styles = (theme) => ({
     },
     [theme.breakpoints.up("md")]: {
       width: "60%",
+    },
+  },
+  cardimgcheck: {
+    [theme.breakpoints.down("xs")]: {
+      width: "100%",
+    },
+    [theme.breakpoints.up("md")]: {
+      width: "80%",
+      height: "80%",
     },
   },
   cardtitle: {

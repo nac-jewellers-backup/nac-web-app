@@ -15,6 +15,7 @@ import { useCheckForCod } from "hooks/CheckForCodHook";
 import { CheckForCod } from "queries/productdetail";
 import React from "react";
 import ReactPixel from "react-facebook-pixel";
+import { AiFillCaretLeft } from "react-icons/ai";
 import { withRouter } from "react-router-dom";
 import "../../components/Checkout/Cart.css";
 import CartCard from "../../components/Checkout/CartCard";
@@ -390,7 +391,10 @@ class Component extends React.Component {
                                   lg={12}
                                   className={classes.cart}
                                 >
-                                  <ProductList checkout={true} />
+                                  <ProductList
+                                    checkout={true}
+                                    onClickgift={() => this.pincodeapi()}
+                                  />
                                   <br />
                                 </Grid>
 
@@ -400,24 +404,15 @@ class Component extends React.Component {
                                       marginBottom: "5px",
                                     }}
                                   >
-                                    {ProductIsActive ? (
-                                      <Button
-                                        onClick={() => this.pincodeapi()}
-                                        className="summaryOrder-pay-btn"
-                                        color="secondary"
-                                        style={{ width: "100%" }}
-                                        fullWidth={true}
-                                      >
-                                        Continue to Delivery Information
-                                      </Button>
-                                    ) : (
-                                      <Button
-                                        className="summaryOrder-pay-btn"
-                                        onClick={enquireLink}
-                                      >
-                                        Enquire Now
-                                      </Button>
-                                    )}
+                                    <Button
+                                      onClick={() => this.pincodeapi()}
+                                      className="summaryOrder-pay-btn"
+                                      color="secondary"
+                                      style={{ width: "100%" }}
+                                      fullWidth={true}
+                                    >
+                                      Continue to Delivery Information
+                                    </Button>
                                   </div>
                                 </Grid>
                               </Grid>
@@ -582,25 +577,7 @@ class Component extends React.Component {
                               CodData={this.props.CodData}
                             />
                           </Grid>
-                          <Grid item xs={12}>
-                            <br />
-                            <Typography
-                              style={{
-                                color: "gray",
-                                paddingBottom: "10px",
-                                paddingTop: "10px",
-                                fontSize: "14px",
-                              }}
-                            >
-                              <b> Gifting Messages&nbsp;&#38;&nbsp;Pakaging</b>
-                            </Typography>
-                            <ProductList
-                              pay={true}
-                              order={true}
-                              checkout={true}
-                            />
-                            <br />
-                          </Grid>
+
                           <Grid item xs={12}>
                             <Typography
                               style={{
@@ -618,9 +595,41 @@ class Component extends React.Component {
                               order={true}
                             />
                           </Grid>
+                          <Grid item xs={12}>
+                            <br />
+                            <Typography
+                              style={{
+                                color: "gray",
+                                paddingBottom: "10px",
+                                paddingTop: "10px",
+                                fontSize: "14px",
+                              }}
+                            >
+                              <b> Gifting Messages & Packaging</b>
+                            </Typography>
+                            <ProductList
+                              pay={true}
+                              order={true}
+                              checkout={true}
+                              giftedit={true}
+                            />
+                            <br />
+                          </Grid>
                         </Grid>
                       </ExpansionPanelDetails>
                     </ExpansionPanel>
+                    <br />
+                    <Button
+                      style={{ fontSize: "14px" }}
+                      startIcon={<AiFillCaretLeft />}
+                      className="backhomepagebtn"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        window.location.href = "/";
+                      }}
+                    >
+                      Go back to Homepage
+                    </Button>
                   </div>
                 </Grid>
                 <Grid

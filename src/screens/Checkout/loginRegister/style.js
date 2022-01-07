@@ -1,5 +1,5 @@
 export const styles = (theme) => ({
-  ordersummery: {
+  orderSummary: {
     [theme.breakpoints.down("xs")]: {
       paddingRight: "10px",
       paddingLeft: "10px",
@@ -22,7 +22,7 @@ export const styles = (theme) => ({
       padding: "10px",
     },
     [theme.breakpoints.up("md")]: {
-      padding: "40px",
+      padding: "60px",
     },
   },
   summaryOrder: {

@@ -143,7 +143,7 @@ export default function WishlistButton(props) {
           style={{
             fontSize: "14px",
             color: "gray",
-            border: "2px solid #C1C1C1",
+            border: "1.3px solid #6D6E71",
             backgroundColor: "white",
             borderRadius: "0px",
             boxShadow: "none",
@@ -151,13 +151,15 @@ export default function WishlistButton(props) {
             paddingLeft: "6px",
             width: "95%",
             whiteSpace: "nowrap",
+            fontWeight: "bold",
             marginTop:
-              window.location.pathname == "/account-shoppingcart" ? " " : "10px",
+              window.location.pathname == "/account-shoppingcart"
+                ? " "
+                : "10px",
           }}
         >
           Move to Wishlist
         </Button>
-
       </Hidden>
       <Hidden mdUp>
         <Button
@@ -175,12 +177,13 @@ export default function WishlistButton(props) {
             width: "95%",
             whiteSpace: "nowrap",
             marginTop:
-              window.location.pathname == "/account-shoppingcart" ? " " : "10px",
+              window.location.pathname == "/account-shoppingcart"
+                ? " "
+                : "10px",
           }}
         >
           Move to Wishlist
         </Button>
-
       </Hidden>
     </>
   );

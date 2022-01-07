@@ -211,7 +211,7 @@ class Header extends Component {
             <AppBar
               className="header-appbarsilver1 "
               id="topNav"
-              style={{ transition: "height 0.2s" }}
+              style={{ transition: "height 0.2s", paddingBottom: "8px" }}
             >
               <Container maxWidth="lg" id="searchcontainer">
                 <Grid

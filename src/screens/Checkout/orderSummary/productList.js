@@ -124,7 +124,7 @@ const ProductlistComponent = (props) => {
           <div>
             <Grid container spacing={12}>
               <Grid item xs={12}>
-                {props.order ? (
+                {/* {props.order ? (
                   " "
                 ) : (
                   <h4
@@ -136,8 +136,8 @@ const ProductlistComponent = (props) => {
                   >
                     Gift Wrap
                   </h4>
-                )}
-
+                )} */}
+                <br />
                 <div style={{ display: show ? "block" : "none" }}>
                   <form
                     action="javascript:void(0)"
@@ -183,7 +183,13 @@ const ProductlistComponent = (props) => {
                       ""
                     ) : (
                       <>
-                        <span style={{ float: "right", color: "gray" }}>
+                        <span
+                          style={{
+                            float: "right",
+                            color: "gray",
+                            fontSize: "12px",
+                          }}
+                        >
                           Max : 255
                         </span>
 
@@ -234,16 +240,18 @@ const ProductlistComponent = (props) => {
                           >
                             Saved
                           </Button>
-                          <Button
-                            style={{
-                              color: "gray",
-                              float: "right",
-                              textTransform: "capitalize",
-                            }}
-                            onClick={display}
-                          >
-                            Edit
-                          </Button>
+                          {props.giftedit && (
+                            <Button
+                              style={{
+                                color: "gray",
+                                float: "right",
+                                textTransform: "capitalize",
+                              }}
+                              onClick={display}
+                            >
+                              Edit
+                            </Button>
+                          )}
                         </>
                       ) : (
                         <Button className="apply-b" type="submit">
@@ -325,13 +333,6 @@ const ProductlistComponent = (props) => {
                     <div className="login-butn">
                       <Button className="apply-b" type="submit">
                         Save
-                      </Button>
-                      <Button
-                        className="apply-b"
-                        type="submit"
-                        onClick={display}
-                      >
-                        Back To Payment
                       </Button>
                     </div>
                   </form>

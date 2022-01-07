@@ -79,8 +79,6 @@ class PaymentResponseSuccess extends React.Component {
   }
 
   render() {
-   
-    
     // alert(JSON.stringify(this.props.data))
     let gut_lg = localStorage.getItem("gut_lg")
       ? JSON.parse(localStorage.getItem("gut_lg"))
@@ -92,7 +90,7 @@ class PaymentResponseSuccess extends React.Component {
     return (
       <>
         <Header wishlist={this.props.wishlistdata} paymentSucces={true} />
-        <Grid container direction="row" >
+        <Grid container direction="row">
           <Grid item xs={12}>
             <Box
               display="flex"
@@ -111,11 +109,10 @@ class PaymentResponseSuccess extends React.Component {
                 <span className="titlecart">A BIG THANK YOU!</span>
 
                 <Typography
-                  
                   style={{
                     color: "gray",
                     textAlign: "center",
-                    fontSize:"19px"
+                    fontSize: "16px",
                   }}
                 >
                   <Hidden smDown>
@@ -150,9 +147,8 @@ class PaymentResponseSuccess extends React.Component {
         </Grid>
 
         <Grid container>
-
           <Grid item xs={12}>
-          <Hidden smDown>
+            <Hidden smDown>
               <br />
               <br />
             </Hidden>

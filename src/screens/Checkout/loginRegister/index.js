@@ -151,7 +151,7 @@ class LoginRegisterIndex extends React.Component {
                     });
                   }}
                 >
-                  Continue As a Guest
+                  Continue as a Guest
                 </Button>
               </div>
             </div>
