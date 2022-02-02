@@ -83,7 +83,6 @@ class Header extends Component {
         return true;
       }
     }
-    console.log(this.props);
   }
 
   handleDrawerOpen = () => {

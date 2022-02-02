@@ -33,9 +33,6 @@ const LoginComponent = (props) => {
   } = React.useContext(FilterOptionsContext);
   const { classes } = props;
   const { values, handlers, data } = useLogin(() => props.changePanel(3));
-  // const vl = data && data.message
-  // var prof = data.allUserAddresses ? data.allUserAddresses.nodes[0] : ""
-  // var prof = data.userprofile ? data.userprofile.email : ""
 
   React.useEffect(() => {
     window.scrollTo(0, 0);
@@ -48,6 +45,7 @@ const LoginComponent = (props) => {
           <Grid item xs={12}>
             <div>
               <img
+                alt=""
                 width="100%"
                 height="380px"
                 style={{
@@ -70,6 +68,7 @@ const LoginComponent = (props) => {
           <Grid item xs={12} lg={6}>
             <div>
               <img
+                alt=""
                 width="100%"
                 height="600px"
                 style={{

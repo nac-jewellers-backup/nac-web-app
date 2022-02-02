@@ -695,12 +695,8 @@ class Component extends React.Component {
     }
   };
   filterValue = (filtercheck) => {
-    // if (filtercheck === this.state.filtercheck) {
-    //   this.setState({ filtercheck: '' })
-    // } else {
+ 
     this.setState({ filtercheck });
-    console.log("filtercheck", filtercheck);
-    // }
   };
   handleChangeDrawer = () => {
     this.setState({ check: !this.state.check });

@@ -364,7 +364,6 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
 
   try {
     mapperdata = data?.data?.allTransSkuLists?.nodes;
-    //console.log(mapperdata);
 
     if (mapperdata[0]?.skuId === undefined) {
       history.push("/");

@@ -123,17 +123,8 @@ function StoreDetails(props) {
           rating: fetchValue.result.rating,
           formatted_address: fetchValue.result.formatted_address,
         });
-        console.log(obj_values);
 
-        // alert(JSON.stringify(fetchValue.result.opening_hours.weekday_text))
-        // alert(JSON.stringify(days))
-        // Maps_Data(fetchValue)
-        // localStorage.setItem('accessToken',fetchValue.accessToken);
-        // localStorage.setItem('user_id', fetchValue.user_profile.id)
-        // localStorage.setItem('panel',2);
-        // localStorage.setItem('isedit',1);
-        // localStorage.setItem('true',false)
-        // props.history.push('/')
+ 
       })
       .catch(console.error);
   }, []);

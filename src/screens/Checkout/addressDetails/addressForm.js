@@ -1,6 +1,5 @@
 import { Button, Grid } from "@material-ui/core";
 import React from "react";
-// import Checkboxes from '../../../components/InputComponents/CheckBox/CheckBox';
 import SimpleSelect from "../../../components/InputComponents/Select/Select";
 import { Input } from "../../../components/InputComponents/TextField/Input";
 import "./address.css";
@@ -242,18 +241,6 @@ const AddressComponent = (props) => {
                         disabled={"disabled"}
                         value={values.addressOne.country_code}
                       />
-                      {/* <Input
-                                                className='text-f'
-                                                type="text"
-                                                name="country_code"
-                                                value={values.addressOne.country_code}
-                                                onChange={(event) => handle.handleChange(event, "country_code")}
-                                                onKeyPress={(e) => handle.handleKeyPress(e, "country_code")}
-                                                placeholder="+ 91"
-                                                maxLength={2}
-                                                minLength={2}
-                                                required
-                                            /> */}
                     </Grid>
                     <Grid item xs={9} lg={9}>
                       <Input
@@ -281,7 +268,6 @@ const AddressComponent = (props) => {
                   </Grid>
                 </Grid>
                 <p class="form-group tp">
-                  {/* {localStorage.getItem("valuessetdata") || localStorage.getItem("vals") ? "" : <>{cl}</>} */}
                   {window.location.pathname.split("-")[0] === "/account" ||
                   values.edit_addresId === true ? (
                     ""
@@ -296,7 +282,6 @@ const AddressComponent = (props) => {
                       </span>
                     </>
                   )}
-                  {/* {JSON.stringify(values.errortext && values.errortext.pinerr)} */}
                 </p>{" "}
                 {window.location.pathname.split("-")[0] === "/account" ||
                 values.edit_addresId === true ? (
@@ -473,19 +458,6 @@ const AddressComponent = (props) => {
                               selectData={["+91"]}
                               disabled={"disabled"}
                             />
-                            {/* <Input
-                                                    className='text-f'
-                                                    type="text"
-                                                    name="bill_country_code"
-                                                    value={values.addressTwo.bill_country_code}
-                                                    onChange={(event) => handle.handleChange(event, "bill_country_code")}
-                                                    onKeyPress={(e) => handle.handleKeyPress(e, "bill_country_code")}
-                                                    placeholder="+ 91"
-                                                    isNumber
-                                                    maxLength={2}
-                                                    minLength={2}
-                                                    required
-                                                 /> */}
                           </Grid>
                           <Grid item xs={9} lg={9}>
                             <Input

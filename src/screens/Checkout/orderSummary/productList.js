@@ -66,8 +66,7 @@ const ProductlistComponent = (props) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data.data.allGiftwraps.nodes[0].id);
-        setId(data.data.allGiftwraps.nodes[0].id);
+        setId(data?.data?.allGiftwraps?.nodes[0]?.id);
       })
       .catch((err) => {
         console.log(err);

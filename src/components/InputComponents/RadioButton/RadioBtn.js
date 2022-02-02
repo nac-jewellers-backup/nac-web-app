@@ -133,7 +133,6 @@ export default function RadioBtn(props) {
             >
               {props.radioValues.map((data) => (
                 <>
-                  {console.log(data)}
                   <FormControlLabel
                     className={classes.hoverClass}
                     value={data}

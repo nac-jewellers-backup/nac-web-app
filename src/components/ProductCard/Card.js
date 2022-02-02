@@ -22,7 +22,6 @@ export const ImgMediaCard = (props) => {
   const { ProductDetailCtx, setFilters } =
     React.useContext(ProductDetailContext);
   const loc = window.location.search;
-  //console.log(this.props.data)
   return (
     <Component
       filters={ProductDetailCtx.filters}
@@ -391,9 +390,7 @@ const renderImages = (props, cardstate) => {
   if (props.static) {
     return props.image;
   } else {
-    // console.log(props.data);
-    // console.log(cardstate);
-    //debugger;
+   
     const filterType = cardstate?.hovered ? "hoverImage" : "placeImage";
 
     return props?.data &&
@@ -408,9 +405,7 @@ const similarProductrenderImages = (props, cardstate) => {
   if (props.static) {
     return props.image;
   } else {
-    // console.log(props.data);
-    // console.log(cardstate);
-    //debugger;
+  
     const filterType = cardstate?.hovered ? "hoverImage" : "placeImage";
 
     return props?.data &&

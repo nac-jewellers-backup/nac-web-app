@@ -52,7 +52,6 @@ const useGift = () => {
 
     if (messageGift && messageGift.length > 0) {
       setDatas(messageGift);
-      console.log(datas);
       setValues({
         ...values,
         gift_to: messageGift[0].giftTo,

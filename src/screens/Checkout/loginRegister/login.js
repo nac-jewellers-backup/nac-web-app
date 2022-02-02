@@ -4,16 +4,22 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
-import React from "react";
+import React, { useState, useEffect } from "react";
+import Snackbar from "@material-ui/core/Snackbar";
 import { AiOutlineMobile } from "react-icons/ai";
 import { withRouter } from "react-router-dom";
+import { API_URL } from "../../../config";
 import { Input } from "../../../components/InputComponents/TextField/Input";
 import "./loginRegisters.css";
 import styles from "./style";
 import useLogin from "./useLogin";
+import MuiAlert from "@material-ui/lab/Alert";
 const Login = (props) => {
   return <LoginComponent {...props} />;
 };
+function Alert(props) {
+  return <MuiAlert elevation={6} variant="filled" {...props} />;
+}
 const useStyle = makeStyles((theme) => ({
   helperinput: {
     "& .MuiFormHelperText-root": {
@@ -31,18 +37,24 @@ const useStyle = makeStyles((theme) => ({
 }));
 const LoginComponent = (props) => {
   let url = "https://api-staging.stylori.com";
+  const pathnames = window.location.pathname === "/login";
+
   const classes1 = useStyle();
   const { classes } = props;
   const { values, handlers, setValues, data } = useLogin(() =>
     props.changePanel(2)
   );
+  const [openSnack, setOpenSnack] = React.useState(false);
+
   const [open, setopen] = React.useState(false);
   const [emailForm, setEmailForm] = React.useState(true);
   const [numberForm, setNumberForm] = React.useState({
     number: null,
     NumberSubmit: false,
-    Otp: null,
+    otp: null,
   });
+  const [numErr, setNumErr] = useState("");
+  const [otpErr, setOtpErr] = useState("");
 
   const email_regex =
     /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
@@ -79,7 +91,6 @@ const LoginComponent = (props) => {
     props.change();
   };
   const responseFacebook = (response) => {
-    // alert(JSON.stringify(response))
     if (response.accessToken) {
       let body = {
         fbid: response.id,
@@ -294,12 +305,99 @@ const LoginComponent = (props) => {
   };
   const onChangeNumber = (e) => {
     setNumberForm({ ...numberForm, [e.target.name]: e.target.value });
+    setNumErr("");
+    setOtpErr("");
   };
-  console.log(numberForm);
   const MobileNumSubmit = (e, history) => {};
+
+  // Send OTP
   const SendOTP = () => {
-    React.useState({ ...numberForm, NumberSubmit: true });
+    if (numberForm?.number && numberForm?.number?.length === 10) {
+      setNumErr("");
+      let body = {
+        mobile_no: numberForm.number,
+      };
+      const opts = {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      };
+      fetch(`${API_URL}/send_otp`, opts)
+        .then((res) => res.json())
+        .then((fetchValue) => {
+          setOpenSnack(true);
+
+          setNumberForm({ ...numberForm, NumberSubmit: true });
+
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    } else {
+      setNumErr("Please enter valid number");
+    }
   };
+
+  // Validate OTP
+  const ValidateOtp = () => {
+    if (numberForm?.otp && numberForm?.otp?.length === 6) {
+      setOtpErr("");
+      let body = {
+        mobile_no: numberForm.number,
+        otp: numberForm.otp,
+      };
+      const opts = {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      };
+      fetch(`${API_URL}/verify_otp`, opts)
+        .then((res) => res.json())
+        .then((fetchValue) => {
+          fetchValue?.accessToken &&
+            localStorage.setItem("accessToken", fetchValue?.accessToken);
+          fetchValue?.userprofile?.id &&
+            localStorage.setItem("user_id", fetchValue?.userprofile?.id);
+          localStorage.setItem("isedit", 1);
+          handlers.VerifyOTP(fetchValue?.userprofile?.id);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    } else {
+      setOtpErr("Please enter valid OTP");
+    }
+  };
+
+  const ResendOtp = () => {
+    let body = {
+      mobile_no: numberForm.number,
+    };
+    const opts = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+    };
+    fetch(`${API_URL}/send_otp`, opts)
+      .then((res) => res.json())
+      .then((fetchValue) => {
+        setOpenSnack(true);
+
+        setNumberForm({ ...numberForm, NumberSubmit: true });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpenSnack(false);
+  };
+
   return (
     <>
       <div>
@@ -421,57 +519,7 @@ const LoginComponent = (props) => {
             >
               <Grid item xs={12}>
                 <br />
-                {/* <Box display="flex" flexDirection="row" justifyContent="center">
-                <Box padding="5px">
-                  <div style={{ cursor: "pointer" }}>
-                    <FacebookLogin
-                      id="facebook"
-                      appId="183747199380935"
-                      // autoLoad={true}
-                      textButton="Sign in with Facebook"
-                      fields="name,email,id,first_name,last_name"
-                      cssClass="my-facebook-button-class"
-                      disableMobileRedirect={true}
-                      callback={responseFacebook}
-                      icon={
-                        <ImFacebook
-                          style={{
-                            color: "#335B9A",
-                            marginRight: "3px",
-                            paddingRight: "2px",
-                          }}
-                        />
-                      }
-                    />
-                  </div>
-                </Box>
-                <Box padding="5px">
-                  <div style={{ cursor: "pointer" }}>
-                    <label>
-                      <Button
-                        variant="contained"
-                        style={{
-                          padding: "5px 7px",
-                          backgroundColor: "#F3F3F3",
-                          borderRadius: "0px",
-                          boxShadow: "0px 2px 4px 1px #888888",
-                          color: "gray",
-                          whiteSpace: "nowrap",
-                        }}
-                        className={classes.btntext}
-                        startIcon={
-                          <FcGoogle
-                            style={{ marginLeft: "4px" }}
-                            className={classes.btnicon}
-                          />
-                        }
-                      >
-                        Sign in with Google
-                      </Button>
-                    </label>
-                  </div>
-                </Box>
-              </Box> */}
+
                 <Box display="flex" flexDirection="row" justifyContent="center">
                   <Box padding="5px">
                     <div style={{ cursor: "pointer" }}>
@@ -528,19 +576,16 @@ const LoginComponent = (props) => {
                 <h5 className={`title ${classes.normalfonts2}`}>
                   OTP Login For Registered Users
                 </h5>
-
                 {numberForm.NumberSubmit ? (
                   <Input
                     name="otp"
                     type="number"
-                    // InputProps={{ inputProps: { min: 10, max: 10 } }}
-                    value={values.password}
-                    error={values.error && values.error.passerr ? true : false}
-                    helperText={values.errortext && values.errortext.passerr}
+                    value={numberForm.otp ?? ""}
+                    helperText={otpErr}
                     placeholder="Enter OTP"
                     onChange={(e) => onChangeNumber(e)}
-                    min="10"
-                    max="10"
+                    min="4"
+                    max="4"
                   />
                 ) : (
                   <Input
@@ -548,24 +593,40 @@ const LoginComponent = (props) => {
                     name="number"
                     type="number"
                     value={numberForm.number}
-                    error={values.error && values.error.emerr ? true : false}
-                    helperText={values.errortext && values.errortext.emerr}
+                    helperText={numErr}
                     onChange={(e) => onChangeNumber(e)}
                     placeholder="Enter Mobile Number"
+                    min="10"
+                    max="10"
                   />
                 )}
-                {/* <label className="errtext"> {numError ? "Phone number length must be less than 10" : ""}</label> */}
-
-                <label className="errtext">
-                  {" "}
-                  {values.error.passerr && values.errortext.passerr}
-                </label>
+                {numberForm.NumberSubmit ? (
+                  <label className="errtext">{otpErr}</label>
+                ) : (
+                  <label className="errtext">{numErr}</label>
+                )}
               </Grid>
               <br />
               <br />
-              <Button onClick={() => SendOTP()} className="apply-b">
-                SIGN IN
-              </Button>
+              {/* {numberForm.NumberSubmit && counter} */}
+              {numberForm.NumberSubmit ? (
+                <Button onClick={() => ValidateOtp()} className="apply-b">
+                  Validate OTP
+                </Button>
+              ) : (
+                <Button onClick={() => SendOTP()} className="apply-b">
+                  Send OTP
+                </Button>
+              )}
+              <br />
+              <br />
+              {numberForm.NumberSubmit ? (
+                <Button onClick={() => ResendOtp()} className="apply-b">
+                  Resend OTP
+                </Button>
+              ) : (
+                ""
+              )}
 
               <Grid
                 container
@@ -667,7 +728,6 @@ const LoginComponent = (props) => {
                     loginInfo.first_name_invalid
                   }
                 />
-                {/* <label className='errtext'> {values.error.passerr && values.errortext.passerr}</label> */}
               </Grid>
               <Grid item xs={12} sm={12} md={6} lg={6}>
                 <TextField
@@ -689,7 +749,6 @@ const LoginComponent = (props) => {
                     loginInfo.last_name_invalid
                   }
                 />
-                {/* <label className='errtext'> {values.error.passerr && values.errortext.passerr}</label> */}
               </Grid>
               <Grid item xs={12} sm={12} md={12} lg={12}>
                 <TextField
@@ -701,7 +760,6 @@ const LoginComponent = (props) => {
                   fullWidth
                   defaultValue={loginInfo.phone_no}
                   id="phone_no"
-                  // error={productCtx && productCtx.error_message && productCtx.error_message.productname}
                   onChange={(e) => handleUserInfo(e, "phone_no")}
                   name="phone_no"
                   label="Phone Number"
@@ -727,6 +785,19 @@ const LoginComponent = (props) => {
           </DialogActions>
         </Dialog>
       </div>
+      <Snackbar
+        anchorOrigin={{
+          vertical: "top",
+          horizontal: "center",
+        }}
+        open={openSnack}
+        autoHideDuration={3000}
+        onClose={handleClose}
+      >
+        <Alert onClose={handleClose} severity="success">
+          OTP Send Successfully!
+        </Alert>
+      </Snackbar>
     </>
   );
 };

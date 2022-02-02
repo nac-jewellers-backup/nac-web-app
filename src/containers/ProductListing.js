@@ -64,7 +64,6 @@ class Stylori extends React.Component {
         }
         if (data.data.allBanners.nodes.length > 0) {
           this.setState({ starting: true });
-          console.log("initial", this.state.starting);
         }
       });
     Aos.init({ duration: 1500 });

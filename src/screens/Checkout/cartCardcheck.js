@@ -137,7 +137,7 @@ class Component extends React.Component {
   };
 
   changePanel = (panel, adres_detail) => {
-    console.log(panel);
+   
     if (panel == 2) {
       adres["value"] = {};
       localStorage.removeItem("bil_isactive");
@@ -174,7 +174,7 @@ class Component extends React.Component {
     // alert(JSON.stringify(obj_values))
   };
   changePanel1 = (panel, adres_detail) => {
-    console.log(panel);
+   
     this.setState({ show: false });
     if (panel === 3) {
       adres["value"] = {};
@@ -222,7 +222,7 @@ class Component extends React.Component {
     this.changePanel(3);
   };
   handleChangedown = (panel) => (event, isExpanded) => {
-    console.log(panel);
+   
     this.setState({
       expand: isExpanded ? panel : false,
     });

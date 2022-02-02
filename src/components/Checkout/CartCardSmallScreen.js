@@ -11,7 +11,6 @@ function MediaControlCard(props) {
   const { classes } = props;
   const { dataCard1 } = props.data;
   const [quantity, setQuantity] = useState([]);
-  console.log(quantity);
 
   useEffect(() => {
     setQuantity(props.quantity);
@@ -149,7 +148,6 @@ function MediaControlCard(props) {
     setQuantity(stateCopy);
 
     let local_storage = JSON.parse(localStorage.getItem("quantity"));
-    console.log(quantity);
 
     local_storage[skuId] = e.target.value;
     localStorage.setItem("quantity", JSON.stringify(local_storage));

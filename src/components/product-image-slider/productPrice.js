@@ -287,10 +287,7 @@ class ProductPrice extends Component {
       anchorEl: false,
     });
   };
-  // componentDidMount = () => {
-  //   console.log(this.props);
-  //   debugger;
-  // };
+ 
   render() {
     const { anchorEl, viewMore } = this.state;
     // alert(JSON.stringify(this.props.wishlist))

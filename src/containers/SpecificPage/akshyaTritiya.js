@@ -281,7 +281,6 @@ function AkshyaTritiya(props) {
       Email: formData.email,
       Query: formData.query,
     };
-    console.log("fullDataForm", fullDataForm);
   };
 
   useEffect(() => {
