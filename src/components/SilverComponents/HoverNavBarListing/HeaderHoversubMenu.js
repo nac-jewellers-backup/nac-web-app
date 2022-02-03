@@ -4,7 +4,7 @@ import {
   ListItem,
   ListItemText,
   Popper,
-  Typography
+  Typography,
 } from "@material-ui/core";
 import PropTypes from "prop-types";
 import React, { useEffect } from "react";
@@ -52,33 +52,13 @@ function HeaderHoverMenuItem(props) {
       url3: "/buy+platinum-bracelets-jewellery",
     },
     {
-      title: "Yellow Gold",
+      title: "Gold",
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
       url1: "/plain+gold-earrings-jewellery",
       url2: "/plain+gold-rings-jewellery",
       url3: "/plain+gold-bangles-jewellery",
     },
-    {
-      title: "White Gold",
-      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
-      url1: "#",
-      url2: "#",
-      url3: "#",
-    },
-    {
-      title: "Rose Gold",
-      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
-      url1: "#",
-      url2: "#",
-      url3: "#",
-    },
-    {
-      title: "Silver by STYLORI",
-      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Path+423.svg",
-      url1: "#",
-      url2: "#",
-      url3: "#",
-    },
+
   ];
   const data = [
     {
@@ -112,18 +92,6 @@ function HeaderHoverMenuItem(props) {
       url1: "#",
       url2: "/rings-jewellery-rings-mens+collection",
       url3: "/bracelets-jewellery-bracelets-mens+collection",
-    },
-    {
-      title: "Gifts for mom",
-      url1: "/earrings-jewellery-for+female",
-      url2: "/rings-jewellery-for+female",
-      url3: "/bangles-jewellery-for+female",
-    },
-    {
-      title: "Gifts for wife",
-      url1: "/earrings-jewellery-for+female",
-      url2: "/rings-jewellery-for+female",
-      url3: "/bangles-jewellery-for+female",
     },
     {
       title: "Gifts for kids",
@@ -366,18 +334,6 @@ function HeaderHoverMenuItem(props) {
         "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/bvtACp%402x.png",
     },
     {
-      title: "Mens",
-      url: "/jewellery-mens+collection",
-      image:
-        "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/3keZ23%402x.png",
-    },
-    {
-      title: "Mayura",
-      url: "/jewellery-mayura",
-      image:
-        "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/XEwpui%402x.png",
-    },
-    {
       title: "Fabula",
       url: "/jewellery-fabula",
       image:
@@ -390,13 +346,6 @@ function HeaderHoverMenuItem(props) {
         "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/lMysCt%402x.png",
     },
     {
-      title: "Uncut",
-      url: "/jewellery-uncut",
-      image:
-        "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/z5pju4%402x.png",
-    },
-    { title: "Jadau", url: "/jadai-jewellery", image: "" },
-    {
       title: "Nagas",
       url: "/jewellery-nagas",
       image:
@@ -408,6 +357,27 @@ function HeaderHoverMenuItem(props) {
       image:
         "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/UmsWiC%402x.png",
     },
+    {
+      title: "Mens",
+      url: "/jewellery-mens+collection",
+      image:
+        "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/3keZ23%402x.png",
+    },
+    {
+      title: "Mayura",
+      url: "/jewellery-mayura",
+      image:
+        "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/XEwpui%402x.png",
+    },
+
+    {
+      title: "Uncut",
+      url: "/jewellery-uncut",
+      image:
+        "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/z5pju4%402x.png",
+    },
+    { title: "Jadau", url: "/jadai-jewellery", image: "" },
+
     {
       title: "Strings",
       url: "#",
@@ -424,45 +394,65 @@ function HeaderHoverMenuItem(props) {
 
   const otherJewels = [
     {
-      title: "NECKLACES",
+      title: "Shop by style",
       content: [
         {
-          itm: "Short",
-          url: "/short+necklace-necklaces-jewellery",
-        },
-        {
-          itm: "Long",
+          itm: "Long Necklace",
           url: "/long+haram-necklaces-jewellery",
         },
         {
-          itm: "Layered",
+          itm: "Short Necklace",
+          url: "/short+necklace-necklaces-jewellery",
+        },
+        {
+          itm: "Choakar",
           url: "#",
         },
         {
           itm: "Bridal",
           url: "/bridal+necklace-necklaces-jewellery",
         },
+        {
+          itm: "Layered",
+          url: "#",
+        },
+        {
+          itm: "Antique",
+          url: "#",
+        },
+        {
+          itm: "Gutapulusu",
+          url: "#",
+        },
       ],
     },
     {
-      title: "PENDANTS",
+      title: "Shop by metal and stone",
       content: [
         {
-          itm: "Casual",
-          url: "/casual+rings-pendants-jewellery",
+          itm: "Gemstone",
+          url: "#",
         },
         {
-          itm: "Bridal",
-          url: "/bridal+necklace-pendants-jewellery",
+          itm: "Diamond",
+          url: "#",
         },
         {
-          itm: "Religious",
-          url: "/pendants-jewellery-special+occasion,festive",
+          itm: "Solitaire",
+          url: "#",
+        },
+        {
+          itm: "Platinum",
+          url: "#",
+        },
+        {
+          itm: "Gold",
+          url: "#",
         },
       ],
     },
     {
-      title: "SHOP BY PRICE",
+      title: "Shop by price",
       content: [
         {
           itm: "Below ₹10,000",
@@ -483,16 +473,38 @@ function HeaderHoverMenuItem(props) {
       ],
     },
     {
-      title: "SHOP MORE",
+      title: "Gifting",
       content: [
         {
-          itm: "Nose Pins",
-          url: "/nosepin-jewellery",
+          itm: "For men",
+          url: "/jewellery-mens+collection",
         },
+        {
+          itm: "For kids",
+          url: "/jewellery-for+kids",
+        },
+        {
+          itm: "Lightweight by Stylori",
+          url: "#",
+        },
+        {
+          itm: "Silver by Stylori",
+          url: "#",
+        },
+      ],
+    },
+    {
+      title: "Shop more",
+      content: [
         {
           itm: "Chains",
           url: "/chains-jewellery",
         },
+        {
+          itm: "Nose Pins",
+          url: "/nosepin-jewellery",
+        },
+
         {
           itm: "Platinum Brands",
           url: "/buy+platinum-jewellery",
@@ -509,42 +521,9 @@ function HeaderHoverMenuItem(props) {
           itm: "Anklets",
           url: "/anklets-jewellery",
         },
-      ],
-    },
-    {
-      title: "STYLORI",
-      content: [
         {
-          itm: "Gold & Diamond",
-          url: "/diamond-jewellery-stylori",
-        },
-        {
-          itm: "Silver",
+          itm: "Articles",
           url: "#",
-        },
-      ],
-    },
-    {
-      title: "GOLD COINS",
-      content: [
-        { itm: "22ct", url: "#" },
-        { itm: "24ct", url: "#" },
-      ],
-    },
-    {
-      title: <>SHOP&nbsp;ALL&nbsp;JEWELLERY </>,
-      content: [
-        {
-          itm: "For men",
-          url: "/jewellery-mens+collection",
-        },
-        {
-          itm: "For women",
-          url: "/jewellery-for+female",
-        },
-        {
-          itm: "For kids",
-          url: "/jewellery-for+kids",
         },
       ],
     },
@@ -554,7 +533,7 @@ function HeaderHoverMenuItem(props) {
     { title: "Pay now" },
     { title: "Join now" },
     { title: "New Quick Gold" },
-    { title: "Super think diamond" },
+    { title: "Super Think Diamond" },
     { title: "Super Quick silver" },
   ];
 
@@ -566,35 +545,15 @@ function HeaderHoverMenuItem(props) {
 
   const silverItems = [
     {
-      title: <>Kumkum&nbsp;Bharani</>,
+      title: "Silver Plates",
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/silver/yPTMge%402x.png",
     },
     {
-      title: "Plates",
+      title: "Silver Bowls",
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/silver/yPTMge%402x.png",
     },
     {
-      title: "Bowls",
-      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/silver/yPTMge%402x.png",
-    },
-    {
-      title: <>Kuthu&nbsp;Vilaku</>,
-      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/silver/yPTMge%402x.png",
-    },
-    {
-      title: <>Vilaku</>,
-      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/silver/yPTMge%402x.png",
-    },
-    {
-      title: "Jyothi",
-      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/silver/yPTMge%402x.png",
-    },
-    {
-      title: "Idols",
-      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/silver/yPTMge%402x.png",
-    },
-    {
-      title: "Coins",
+      title:'Silver Lamps',
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/silver/yPTMge%402x.png",
     },
     {
@@ -602,7 +561,23 @@ function HeaderHoverMenuItem(props) {
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/silver/yPTMge%402x.png",
     },
     {
-      title: <>Young&nbsp;Ones</>,
+      title: 'Silver Baby Gifts',
+      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/silver/yPTMge%402x.png",
+    },
+    {
+      title: "Silver Dining Set",
+      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/silver/yPTMge%402x.png",
+    },
+    {
+      title: 'Silve Antique Articles',
+      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/silver/yPTMge%402x.png",
+    },
+    {
+      title: "Silver Pooja Articles",
+      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/silver/yPTMge%402x.png",
+    },
+    {
+      title: "Silver Other Articles",
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/silver/yPTMge%402x.png",
     },
   ];
@@ -677,7 +652,7 @@ function HeaderHoverMenuItem(props) {
   const solitaireData4 = [
     { title: "Solitaire Guide" },
     { title: "Design your own" },
-    { title: "Know your size" },
+    { title: "Know my size" },
     { title: "Shop all Designs" },
   ];
 
@@ -692,14 +667,14 @@ function HeaderHoverMenuItem(props) {
     },
     {
       title: "TANGORE",
-      contents: [{ item: "Photos" }, { item: "Others" }],
+      contents: [{ item: "Photos" }, { item: "Others" },{ item: "GIFTS" }],
     },
     {
       title: "LEG CHAIN",
       contents: [
         { item: "Anklets" },
-        { item: "Metti" },
-        { item: "Velli Paavai Set" },
+        { item: "Toe Rings" },
+        { item: "Velli Paavai Set / combo set" },
         { item: "Antique" },
         { item: "Others" },
       ],
@@ -708,7 +683,7 @@ function HeaderHoverMenuItem(props) {
       title: "FURNITURE",
       contents: [
         { item: "Chairs" },
-        { item: "Tables" },
+        { item: "Dining Table" },
         { item: "Centre Tables" },
         { item: "Sofa sets" },
         { item: "Others" },
@@ -716,22 +691,6 @@ function HeaderHoverMenuItem(props) {
     },
   ];
 
-  const silverItems3 = [
-    {
-      title: "COLLECTIONS",
-      contents: [
-        { item: "Dinner" },
-        { item: "Wedding" },
-        { item: "Grahapravesham" },
-        { item: "Reception" },
-        { item: "Panchapatram" },
-        { item: "New Born" },
-        { item: "Pooja" },
-        { item: "Vattil" },
-        { item: "Tea / Coffee" },
-      ],
-    },
-  ];
 
   const solitaireData = [
     {
@@ -1518,28 +1477,7 @@ function HeaderHoverMenuItem(props) {
                 </Grid>
               </Grid>
               <Grid item xs={2} className={classes.gridmultiplesection}>
-                {silverItems3.map((val, i) => (
-                  <Grid container item xs={12}>
-                    <Grid item xs={12}>
-                      <Typography
-                        className={classes.listedItemstitle}
-                        style={{ textAlign: "center", marginBottom: "12px" }}
-                      >
-                        {val.title}
-                      </Typography>
-                    </Grid>
-                    <Grid item xs={12}>
-                      {val.contents.map((itms, i) => (
-                        <Typography
-                          className={classes.listedItemsvalue}
-                          style={{ paddingTop: "12px" }}
-                        >
-                          {itms.item}
-                        </Typography>
-                      ))}
-                    </Grid>
-                  </Grid>
-                ))}
+
               </Grid>
             </Grid>
           </Grid>
@@ -1589,7 +1527,7 @@ function HeaderHoverMenuItem(props) {
             )}
             {props.listitem === "SILVER" && <Silver />}
             {props.listitem === "COLLECTIONS" && <ForCollections />}
-            {props.listitem === "OTHER JEWELLERY" && <OtherJewellery />}
+            {/* {props.listitem === "OTHER JEWELLERY" && <OtherJewellery />} */}
             {props.listitem === "SAVING SCHEME" && <SavingSchemee />}
             {props.listitem === "STYLORI" && <Stylori />}
             {/* )} */}

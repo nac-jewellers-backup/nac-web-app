@@ -68,7 +68,7 @@ export const mainlist = [
     name: "COLLECTIONS",
     url: "/jewellery/kada/csk_kada?sku_id=1000000",
   },
- 
+
   // {
   //   name: "GIFITING",
   //   url: "/jewellery/kada/csk_kada?sku_id=1000000",
@@ -1162,10 +1162,10 @@ export const menuListHeader = [
     title: "Bangles & Bracelets".toUpperCase(),
     url: "bangles-jewellery",
   },
-  {
-    title: "Other jewellery".toUpperCase(),
-    url: "#",
-  },
+  // {
+  //   title: "Other jewellery".toUpperCase(),
+  //   url: "#",
+  // },
   {
     title: "Solitaire".toUpperCase(),
     url: "/solitaire-jewellery",
@@ -1178,7 +1178,7 @@ export const menuListHeader = [
     title: "Collections".toUpperCase(),
     url: "/CollectionFullPage",
   },
-  
+
   {
     title: "Saving scheme".toUpperCase(),
     url: "#",
