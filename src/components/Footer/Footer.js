@@ -307,7 +307,7 @@ export default function Footer(props) {
 
         {
           url: "/stories",
-          Title: "Our Story",
+          Title: "Blog",
         },
         {
           url: "/temple-work",
@@ -343,7 +343,7 @@ export default function Footer(props) {
         },
         {
           url: "/productcare",
-          Title: "Caring For Your Jewellery",
+          Title: "Jewellery Care",
         },
       ],
     },
@@ -363,14 +363,7 @@ export default function Footer(props) {
           url: "/return",
           Title: "30 Day Return",
         },
-        {
-          url: "/blog",
-          Title: "Blog",
-        },
-        {
-          url: "#",
-          Title: "Jewellery guide",
-        },
+    
       ],
     },
     {
@@ -418,7 +411,7 @@ export default function Footer(props) {
     },
     {
       url: "/",
-      Title: "Caring For Your Jewellery",
+      Title: "Jewellery Care",
     },
   ];
   const footerData3 = [
@@ -434,10 +427,7 @@ export default function Footer(props) {
       url: "/return",
       Title: "30 Day Return",
     },
-    {
-      url: "/blog",
-      Title: "Blog",
-    },
+ 
     // {
     //   url:
     //     "https://www.google.co.in/maps/@13.0457285,80.2325498,3a,75y,281.19h,87.03t/data=!3m7!1e1!3m5!1siBMPPhrps9EAAAQ0H3M5OQ!2e0!3e2!7i13312!8i6656!6m1!1e1",
@@ -506,7 +496,7 @@ export default function Footer(props) {
           url: "/temple-work",
         },
         {
-          subTitle: "Caring For Your Jewellery",
+          subTitle: "Jewellery Care",
           url: "/temple-work",
         },
       ],
@@ -523,10 +513,7 @@ export default function Footer(props) {
           subTitle: "30 Day Return",
           url: "/return",
         },
-        {
-          subTitle: "Blog",
-          url: "/blog",
-        },
+       
       ],
     },
     {

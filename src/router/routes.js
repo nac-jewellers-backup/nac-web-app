@@ -33,14 +33,10 @@ export const routes = {
   TempleWorkPage: "/temple-work",
   NewsRoomPage: "/newsroom",
   AboutUsPage: "/aboutus",
-  // Terms: "/termsconditions",
   Return: "/return",
   Delivery: "/delivery",
-  // Privacy: "/privacy",
   ContactPage: "/contactus",
-  // EducationPage: "/education",
   SiteMap: "/sitemap",
-  // Faq: "/faqs",
   StoreLocator: "/store",
   StoreDetail: "/loc/:id",
   CareersPage: "/careers",
@@ -53,7 +49,7 @@ export const routes = {
   CollectionPage: "/collectionPage",
   CollectionFullPage: "/collection",
   AkshyaTritiya: "/akshyaTritiya",
-  BridalCollection: "/bridalCollection"
+  BridalCollection: "/bridalcollection"
 };
 
 export default routes;

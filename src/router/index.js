@@ -23,7 +23,6 @@ import routes from "router/routes";
 import { Stylori } from "screens";
 import ChangePassword from "screens/Checkout/loginRegister/ChangePassword";
 import Register from "screens/Checkout/loginRegister/register";
-// SILVER SCREENS
 import Silver from "screens/SilverStylori";
 import SilverListingPage from "screens/SilverStylori/listingpage";
 import SilverProductDetail from "screens/SilverStylori/productDetail";
@@ -39,9 +38,7 @@ import UserRegister from "../components/LoginAndRegister/Register";
 import StoreLocationDetails from "../components/StoreLocatorDetail/index";
 import CollectionFullPage from "../containers/collection/collectionsFullPage";
 import ExperiencePage from "../containers/experiences/experiences";
-// const Tacos = ({ props }) => {
-//     if (window.location.search !== null) {
-// Static pages
+
 import HomeComp from "../containers/home/home";
 import Solitaires from "../containers/solitaires/solitaires";
 import AkshyaTritiya from "../containers/SpecificPage/akshyaTritiya";
@@ -52,10 +49,10 @@ import Fail from "../screens/Stylori/fail";
 import Success from "../screens/Stylori/success";
 
 
-// SILVER SCREENS ENDS
-
 const browserHistory = createBrowserHistory();
-let user_id = localStorage.getItem("user_id") ? localStorage.getItem("user_id") : {};
+let user_id = localStorage.getItem("user_id")
+  ? localStorage.getItem("user_id")
+  : {};
 
 browserHistory.listen(() => {
   window.scrollTo(0, 0);
@@ -74,47 +71,152 @@ export const RouterApp = (props) => {
     return loc[0];
   };
 
-  const paths = ["/:params1/:params2", "/:params1/:params2/:params3", "/:params1/:params2/:params3/:params4"];
+  const paths = [
+    "/:params1/:params2",
+    "/:params1/:params2/:params3",
+    "/:params1/:params2/:params3/:params4",
+  ];
   var loc_PD = window.location.pathname.split("/").filter((val) => {
     if (val === "silverjewellery") return val;
   });
 
   return (
     <Switch history={browserHistory}>
-      {/* <Redirect key="stylori-redirect" from="/" exact to={"/"} /> */}
-      <Route key="StoreLocationDetails" component={StoreLocationDetails} exact path={routes.StoreDetail} />
-      <Route key="CollectionFullPage" component={CollectionFullPage} exact path={routes.CollectionFullPage} />
-      <Route key="AkshyaTritiya" component={AkshyaTritiya} exact path={routes.AkshyaTritiya} />
-      <Route key="HomePageStylori" component={HomeComp} exact path={routes.HomePageStylori} />
+      <Route
+        key="StoreLocationDetails"
+        component={StoreLocationDetails}
+        exact
+        path={routes.StoreDetail}
+      />
+      <Route
+        key="CollectionFullPage"
+        component={CollectionFullPage}
+        exact
+        path={routes.CollectionFullPage}
+      />
+      <Route
+        key="AkshyaTritiya"
+        component={AkshyaTritiya}
+        exact
+        path={routes.AkshyaTritiya}
+      />
+      <Route
+        key="HomePageStylori"
+        component={HomeComp}
+        exact
+        path={routes.HomePageStylori}
+      />
       <Route key="Silver" component={Silver} exact path={routes.Silver} />
       <Route key="Faqs" component={AboutusPage} exact path={routes.Faqs} />
-      <Route key="ProductCare" component={Faqs} exact path={routes.ProductCare} />
+      <Route
+        key="ProductCare"
+        component={Faqs}
+        exact
+        path={routes.ProductCare}
+      />
       <Route key="Shipping" component={Faqs} exact path={routes.Shipping} />
-      <Route key="PrivacyPolicy" component={AboutusPage} exact path={routes.PrivacyPolicy} />
-      <Route key="TermsConditions" component={AboutusPage} exact path={routes.TermsConditions} />
+      <Route
+        key="PrivacyPolicy"
+        component={AboutusPage}
+        exact
+        path={routes.PrivacyPolicy}
+      />
+      <Route
+        key="TermsConditions"
+        component={AboutusPage}
+        exact
+        path={routes.TermsConditions}
+      />
       <Route key="Checkout" component={Checkout} exact path={routes.Checkout} />
-      <Route key="AboutUs" component={AboutusPage} exact path={routes.AboutUs} />
-      <Route key="Contacs" component={AboutusPage} exact path={routes.ContactUs} />
+      <Route
+        key="AboutUs"
+        component={AboutusPage}
+        exact
+        path={routes.AboutUs}
+      />
+      <Route
+        key="Contacs"
+        component={AboutusPage}
+        exact
+        path={routes.ContactUs}
+      />
       <Route key="Carees" component={Careers} exact path={routes.Careers} />
-      <Route key="forgotpassword" component={ForgotPassword} exact path={routes.ForgotPassword} />
-      <Route key="resetPassword" component={ResetPassword} exact path={`${routes.ResetPassword}/:id`} />
-      <Route key="ChangePassword" component={ChangePassword} exact path={routes.ChangePassword} />
-      <Route key="paymenthidden" component={PaymentHiddenForm} exact path={routes.paymenthidden} />
-      <Route key="paymentsuccess" component={Success} exact path={`${routes.paymentsuccess}/:id`} />
-      <Route key="SiteMap" component={AboutusPage} exact path={routes.SiteMap} />
-      {/* <Route key="Faq" component={AboutusPage} exact path={routes.Faq} /> */}
-      <Route key="AboutUs" component={AboutusPage} exact path={routes.AboutUsPage} />
-      {/* <Route key="Terms" component={AboutusPage} exact path={routes.Terms} /> */}
+      <Route
+        key="forgotpassword"
+        component={ForgotPassword}
+        exact
+        path={routes.ForgotPassword}
+      />
+      <Route
+        key="resetPassword"
+        component={ResetPassword}
+        exact
+        path={`${routes.ResetPassword}/:id`}
+      />
+      <Route
+        key="ChangePassword"
+        component={ChangePassword}
+        exact
+        path={routes.ChangePassword}
+      />
+      <Route
+        key="paymenthidden"
+        component={PaymentHiddenForm}
+        exact
+        path={routes.paymenthidden}
+      />
+      <Route
+        key="paymentsuccess"
+        component={Success}
+        exact
+        path={`${routes.paymentsuccess}/:id`}
+      />
+      <Route
+        key="SiteMap"
+        component={AboutusPage}
+        exact
+        path={routes.SiteMap}
+      />
+      <Route
+        key="AboutUs"
+        component={AboutusPage}
+        exact
+        path={routes.AboutUsPage}
+      />
       <Route key="Return" component={AboutusPage} exact path={routes.Return} />
-      <Route key="Delivery" component={AboutusPage} exact path={routes.Delivery} />
-      <Route key="bridalCollection" component={BridalCollection} exact path={routes.BridalCollection} />
-      {/* <Route key="Privacy" component={AboutusPage} exact path={routes.Privacy} /> */}
-      <Route key="Education" component={AboutusPage} exact path={routes.Education} />
-      <Route key="careersni" component={careersPage} exact path={routes.CareersPage} />
-      {/* <Route key="ContactPage"  exact path={routes.ContactPage} /> */}
-      <Route key="paymentfail" component={Fail} exact path={`${routes.paymentfail}/:id`} />
+      <Route
+        key="Delivery"
+        component={AboutusPage}
+        exact
+        path={routes.Delivery}
+      />
+      <Route
+        key="bridalCollection"
+        component={BridalCollection}
+        exact
+        path={routes.BridalCollection}
+      />
+      <Route
+        key="Education"
+        component={AboutusPage}
+        exact
+        path={routes.Education}
+      />
+      <Route
+        key="careersni"
+        component={careersPage}
+        exact
+        path={routes.CareersPage}
+      />
+      <Route
+        key="paymentfail"
+        component={Fail}
+        exact
+        path={`${routes.paymentfail}/:id`}
+      />
       {props.location.pathname !== "/cart" &&
-        props.location.pathname !== `/account${"-" + window.location.pathname.split("-")[1]}` &&
+        props.location.pathname !==
+          `/account${"-" + window.location.pathname.split("-")[1]}` &&
         props.location.pathname !== "/savingscheme" &&
         props.location.pathname !== "/aboutus" &&
         props.location.pathname !== "/newsroom" &&
@@ -154,17 +256,36 @@ export const RouterApp = (props) => {
         props.location.pathname !== "/solitaires" &&
         Globalctx &&
         Globalctx.pathName === false &&
-        props.location.pathname !== "/homes" && <Route exact={true} component={Stylori} path={"/:listingpage"} />}
-      {Globalctx && Globalctx.pathName && loc_PD.length !== "silverjewellery" && (
-        <Route key="silverListingpage" component={SilverListingPage} path={window.location.pathname} />
-      )}
+        props.location.pathname !== "/homes" && (
+          <Route exact={true} component={Stylori} path={"/:listingpage"} />
+        )}
+      {Globalctx &&
+        Globalctx.pathName &&
+        loc_PD.length !== "silverjewellery" && (
+          <Route
+            key="silverListingpage"
+            component={SilverListingPage}
+            path={window.location.pathname}
+          />
+        )}
       <Route key="sto" component={stories} exact path={routes.Stories} />
 
-      <Route key="Collection" component={Collection} exact path={routes.Collection} />
-      <Route key="Collection" component={CollectionPage} exact path={routes.CollectionPage} />
+      <Route
+        key="Collection"
+        component={Collection}
+        exact
+        path={routes.Collection}
+      />
+      <Route
+        key="Collection"
+        component={CollectionPage}
+        exact
+        path={routes.CollectionPage}
+      />
 
       {props.location.pathname !== "/cart" &&
-        props.location.pathname !== `/account${"-" + window.location.pathname.split("-")[1]}` &&
+        props.location.pathname !==
+          `/account${"-" + window.location.pathname.split("-")[1]}` &&
         props.location.pathname !== "/savingscheme" &&
         props.location.pathname !== "/aboutus" &&
         props.location.pathname !== "/terms" &&
@@ -199,50 +320,112 @@ export const RouterApp = (props) => {
         props.location.pathname !== "/contactus" &&
         props.location.pathname !== "/paymentsuccess/:id" &&
         props.location.pathname !== "/homes" &&
-        props.location.pathname !== "/solitaires" && <Route exact={true} component={Stylori} path={"/:listingpage"} />}
+        props.location.pathname !== "/solitaires" && (
+          <Route exact={true} component={Stylori} path={"/:listingpage"} />
+        )}
 
       {Globalctx && Globalctx.pathName && loc_PD.length > 0 ? (
         <Route exact component={SilverProductDetail} path={paths} />
       ) : (
-          <Route exact component={PricingPage} path={paths} />
-        )}
+        <Route exact component={PricingPage} path={paths} />
+      )}
       <Route key="cart" exact component={Cart} path={routes.Cart} />
       <Route key="Register" component={Register} exact path={routes.Register} />
       {localStorage.getItem("user_id") ? (
         <Redirect key="stylori-redirect" from="/login" exact to={"/"} />
       ) : (
-          <Route key="login" component={UserLogin} exact path={routes.UserLogin} />
-        )}
+        <Route
+          key="login"
+          component={UserLogin}
+          exact
+          path={routes.UserLogin}
+        />
+      )}
 
       {Boolean(localStorage.getItem("user_id")) ? (
         <Route key="Account" component={Account} exact path={routes.Account} />
       ) : (
-          <Redirect key="stylori-redirect" from={routes.Account} exact to={"/login"} />
-        )}
-      <Route key="registers" component={UserRegister} exact path={routes.UserRegister} />
+        <Redirect
+          key="stylori-redirect"
+          from={routes.Account}
+          exact
+          to={"/login"}
+        />
+      )}
+      <Route
+        key="registers"
+        component={UserRegister}
+        exact
+        path={routes.UserRegister}
+      />
       {/* Static Pages */}
 
-      <Route key="StoreLocator" component={Locator} exact path={routes.StoreLocator} />
+      <Route
+        key="StoreLocator"
+        component={Locator}
+        exact
+        path={routes.StoreLocator}
+      />
 
       <Route key="Diamonds" component={Diamonds} exact path={routes.Diamonds} />
-      <Route key="rudramadeviBlog" component={rudramadeviBlog} exact path={routes.rudramadeviBlog} />
+      <Route
+        key="rudramadeviBlog"
+        component={rudramadeviBlog}
+        exact
+        path={routes.rudramadeviBlog}
+      />
       <Route key="blog" component={Blog} exact path={routes.Blog} />
 
       <Route key="HomePage" component={HomeComp} exact path={routes.HomePage} />
-      <Route key="CollectionHomePage" component={CollectionHomePage} exact path={routes.CollectionHomePage} />
-      <Route key="DigitalMarketing" component={DigitalMarketing} exact path={routes.DigitalMarketing} />
-      <Route key="SavingsPage" component={SavingsPage} exact path={routes.SavingsPage} />
-      <Route key="ExperiencePage" component={ExperiencePage} exact path={routes.ExperiencePage} />
-      <Route key="AdvertisingPage" component={AdvertisingPage} exact path={routes.AdvertisingPage} />
-      <Route key="TempleWorkPage" component={TempleWorkPage} exact path={routes.TempleWorkPage} />
-      <Route key="NewsRoomPage" component={NewsRoomPage} exact path={routes.NewsRoomPage} />
-      {/* <Route
-        key="Education"
-        component={AboutusPage}
+      <Route
+        key="CollectionHomePage"
+        component={CollectionHomePage}
         exact
-        path={routes.EducationPage}
-      /> */}
-      <Route key="Solitaires" component={Solitaires} exact path={routes.Solitaires} />
+        path={routes.CollectionHomePage}
+      />
+      <Route
+        key="DigitalMarketing"
+        component={DigitalMarketing}
+        exact
+        path={routes.DigitalMarketing}
+      />
+      <Route
+        key="SavingsPage"
+        component={SavingsPage}
+        exact
+        path={routes.SavingsPage}
+      />
+      <Route
+        key="ExperiencePage"
+        component={ExperiencePage}
+        exact
+        path={routes.ExperiencePage}
+      />
+      <Route
+        key="AdvertisingPage"
+        component={AdvertisingPage}
+        exact
+        path={routes.AdvertisingPage}
+      />
+      <Route
+        key="TempleWorkPage"
+        component={TempleWorkPage}
+        exact
+        path={routes.TempleWorkPage}
+      />
+      <Route
+        key="NewsRoomPage"
+        component={NewsRoomPage}
+        exact
+        path={routes.NewsRoomPage}
+      />
+     
+      <Route
+        key="Solitaires"
+        component={Solitaires}
+        exact
+        path={routes.Solitaires}
+      />
     </Switch>
   );
 };
