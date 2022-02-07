@@ -225,7 +225,7 @@ class CustomerReviews extends React.Component {
               <div style={{ padding: " 20px 0px 0px 0px !important" }}>
                 <div className="reviews-header">
                   <span className={`reviews-customer ${classes.normalfonts}`}>
-                    Customer Reviews
+                   Reviews
                   </span>
                 </div>
                 <div className="reviews">

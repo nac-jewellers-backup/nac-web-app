@@ -63,51 +63,10 @@ const Productprice = (props, anchorEl, handleClick, handleClose) => {
                     <Grid container spacing={12} sm={12} className={classes.pricedetails}>
                         <Hidden mdUp>
                             <div className="resp" >
-                                {/* <div className="respc"> */}
-                                {/* <h1 className={`pdp-title ${classes.title}`}>
-                                        {val.title}
-                                    </h1> */}
-                                {/* <Grid container spacing={12} xs={12}> */}
-                                {/* <Grid container item xs={6} justify={'flex-start'}>
-                                            <Pricing
-                                                offerDiscount={}
-                                            />
-                                        </Grid> */}
-                                {/* <Grid container item xs={6} md={6} justify={'flex-end'}>
-                                            <Grid container item xs={8} xs={8} justify={'flex-end'}>
-                                                {data[0].ProductContactNum[0].isReadyToShip == true ? <div className="one-day-ship-mb"></div> : ""}
-                                            </Grid>
-                                        </Grid>
-                                    </Grid>
-                                </div> */}
+                             
                                 {mobilecarousel(props, val)}
 
-                                {/* <div style={{ background: "rgb(238, 238, 238)", width: "100%" }}>
-                                    <div className="respc">
-                                        <Grid container spacing={12} xs={12}>
-                                            <Grid container item xs={6} justify={'flex-start'}>
-                                                <Pricing
-                                                    price={data[0].price}
-                                                    offerPrice={data[0].offerPrice}
-                                                />
-                                            </Grid> */}
-                                {/* <Grid container item xs={6} justify={'flex-end'}>
-                                                <div>
-                                                    {data[0].ProductContactNum.map(val =>
-                                                        <div style={{ marginTop: "10px" }}>
-                                                            <b className={`ships-by ${classes.normalfonts}`}> */}
-                                {/* <span class="ship-img"></span> */}
-                                {/* <span > {val.shipby}</span>
-                                                            </b>
-                                                        </div>
-                                                    )}
-                                                </div>
-                                            </Grid> */}
-                                {/* </Grid>
-                                    </div>
-                                </div> */}
-                                {/* <hr class="bottom-line product-inform-ation"></hr> */}
-                                {/* <br /><br /> */}
+                         
 
                             </div>
                         </Hidden>
@@ -120,7 +79,6 @@ const Productprice = (props, anchorEl, handleClick, handleClose) => {
                                                 <Grid container item xs={8}>
                                                     <h1 className={`pdp-title ${classes.title}`} style={{ width: "90%" }}>
                                                         {val.title}
-                                                        {/* <i style={{ padding: "2px", fontSize: "12px" }} class="fa fa-info-circle" aria-hidden="true"></i> */}
                                                     </h1>
 
                                                     <div>

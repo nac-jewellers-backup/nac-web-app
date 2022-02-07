@@ -142,32 +142,6 @@ const Productprice = (
                           >
                             {val?.shortDis}
                           </Typography>
-
-                          {/* <span className={`pdp-desc ${classes.dis} `}>
-                            {val?.dis?.length > 30 && viewMore
-                              ? val?.dis
-                              : `${val?.dis?.substring(0, 30)}...`}
-                            <span
-                              className={`pdp-desc ${
-                                viewMore ? "" : classes.disDescriptionPD
-                              }`}
-                            >
-                              <span
-                                style={{
-                                  float: "right",
-                                  cursor: "pointer",
-                                  color: "#2F348B",
-
-                                  marginTop: "5px",
-                                }}
-                                onClick={() => {
-                                  handleReadMore();
-                                }}
-                              >
-                                {viewMore ? "Read Less" : "Read More"}
-                              </span>
-                            </span>
-                          </span> */}
                         </Grid>
 
                         <Grid
@@ -192,11 +166,12 @@ const Productprice = (
                       </Grid>
                     </Hidden>
                     <Hidden smDown>
-                      <h1 className={`pdp-title ${classes.title} `}>
-                        {val?.title}
+                      <h1
+                        className={`pdp-title ${classes.title} `}
+                        style={{ color: "#31458B" }}
+                      >
+                        <b>{val?.title}</b>
                       </h1>
-
-                      {/* <span className={classes.shortdis}>{val.shortDis}</span> */}
                     </Hidden>
                     <Hidden smDown>
                       <Typography
@@ -206,7 +181,7 @@ const Productprice = (
                         {" "}
                         {val?.shortDis}
                       </Typography>
-                      <br />
+                     
                       <br />
                       <Box display="flex" className={`pdp-desc ${classes.dis}`}>
                         <Box>
@@ -287,7 +262,7 @@ class ProductPrice extends Component {
       anchorEl: false,
     });
   };
- 
+
   render() {
     const { anchorEl, viewMore } = this.state;
     // alert(JSON.stringify(this.props.wishlist))

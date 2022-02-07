@@ -32,7 +32,7 @@ const RatingComponent = (props) => {
                                 <label className='errtext'> {values.errortext.rateerr ? values.errortext.rateerr : ""}</label>
                                 <Ratings ratings="starts-review" />
                             </div>
-                            <h6 className={`rating-form-head ${classes.normalfonts}`} style={{ marginBottom: "-3px" }}>Write Your Review</h6>
+                            {/* <h6 className={`rating-form-head ${classes.normalfonts}`} style={{ marginBottom: "-3px" }}>Write Your Review</h6> */}
                             <label className='errtext'> {values.errortext.ratetitle ? values.errortext.ratetitle : ""}</label>
                             <Input
                                 margin="normal"

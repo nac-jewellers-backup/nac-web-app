@@ -1,38 +1,26 @@
-import React, { Component } from 'react';
-import ProductDetail from 'containers/productDetail';
-import { ProductDetailProvider } from 'context'
-import { withRouter } from 'react-router-dom';
-import { CartProvider } from 'context'
+import React, { Component } from "react";
+import ProductDetail from "containers/productDetail";
+import { ProductDetailProvider } from "context";
+import { withRouter } from "react-router-dom";
+import { CartProvider } from "context";
 
 class Stylori extends Component {
   constructor(props) {
-    super(props)
-    // this.state = {
-    //   productId: (props.location.state && props.location.state.data !== undefined) ? props.location.state.data : '',
-    //   // ringSize:
-    // }
+    super(props);
   }
 
   render() {
-    let productId = window.location.search.replace('?', '')
+    let productId = window.location.search.replace("?", "");
+
     return (
       <>
-        {/* {this.props.location.state && this.props.location.state.data !== undefined ? */}
-        <ProductDetailProvider productId={productId}
-        // ringSize={
-        //   this.state.ringSize
-        // }
-        >
+        <ProductDetailProvider productId={productId}>
           <CartProvider>
             <ProductDetail />
           </CartProvider>
         </ProductDetailProvider>
-        {/* :
-          window.location.href = "/stylori"
-        } */}
-
       </>
-    )
+    );
   }
 }
-export default withRouter(Stylori)
+export default withRouter(Stylori);

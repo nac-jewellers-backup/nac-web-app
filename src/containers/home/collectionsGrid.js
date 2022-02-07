@@ -91,7 +91,7 @@ export function AdvancedGridList() {
               />
               <div className="child" style={{ width: "100%" }}>
                 <div className={classes.coverfooter}>
-                  <b>SHOP</b>&nbsp;
+                  <b>SHOP DIAMOND SETS</b>&nbsp;
                 </div>
                 <div>&nbsp; </div>
               </div>
@@ -106,7 +106,7 @@ export function AdvancedGridList() {
               />
               <div className="child" style={{ width: "100%" }}>
                 <div className={classes.coverfooter}>
-                  <b>SHOP</b>&nbsp;
+                  <b> SHOP FABULA</b>&nbsp;
                 </div>
                 <div>&nbsp; </div>
               </div>
@@ -125,7 +125,7 @@ export function AdvancedGridList() {
                   />
                   <div className="child" style={{ width: "100%" }}>
                     <div className={classes.coverfooter}>
-                      <b>SHOP</b>&nbsp;
+                      <b>SHOP REWIND</b>&nbsp;
                     </div>
                     <div>&nbsp; </div>
                   </div>
@@ -140,7 +140,7 @@ export function AdvancedGridList() {
                   />
                   <div className="child" style={{ width: "100%" }}>
                     <div className={classes.coverfooter}>
-                      <b>SHOP</b>&nbsp;
+                      <b>SHOP RUDRAMADEVI</b>&nbsp;
                     </div>
                     <div>&nbsp; </div>
                   </div>
@@ -156,7 +156,7 @@ export function AdvancedGridList() {
                   />
                   <div className="child" style={{ width: "100%" }}>
                     <div className={classes.coverfooter}>
-                      <b>SHOP</b>&nbsp;
+                      <b>SHOP MUHURTHAM</b>&nbsp;
                     </div>
                     <div>&nbsp; </div>
                   </div>
@@ -178,7 +178,7 @@ export function AdvancedGridList() {
                   />
                   <div className="child" style={{ width: "100%" }}>
                     <div className={classes.coverfooter}>
-                      <b>SHOP</b>&nbsp;
+                      <b>SHOP LITTLE ONES</b>&nbsp;
                     </div>
                     <div>&nbsp; </div>
                   </div>
@@ -202,7 +202,7 @@ export function AdvancedGridList() {
                 />
                 <div className="child" style={{ width: "100%" }}>
                   <div className={classes.coverfooter}>
-                    <b>SHOP</b>&nbsp;
+                    <b>SHOP STYLORI</b>&nbsp;
                   </div>
                   <div>&nbsp; </div>
                 </div>
@@ -219,7 +219,7 @@ export function AdvancedGridList() {
                 />
                 <div className="child" style={{ width: "100%" }}>
                   <div className={classes.coverfooter}>
-                    <b>SHOP</b>&nbsp;
+                    <b>SHOP MAYURA</b>&nbsp;
                   </div>
                   <div>&nbsp; </div>
                 </div>

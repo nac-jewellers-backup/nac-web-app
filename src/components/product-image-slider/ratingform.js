@@ -49,12 +49,12 @@ const RatingComponent = (props) => {
                   {values.errortext.rateerr ? values.errortext.rateerr : ""}
                 </label>
               </div>
-              <h6
+              {/* <h6
                 className={`rating-form-head ${classes.normalfonts}`}
                 style={{ marginBottom: "-3px" }}
               >
                 Write your review
-              </h6>
+              </h6> */}
               <Input
                 margin="normal"
                 color="secondary"

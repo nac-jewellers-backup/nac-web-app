@@ -125,7 +125,7 @@ class CustomerReviews extends React.Component {
                     <Container>
                         <div className="pricing-product-media" >
                             <div className="reviews-header">
-                                <span className={`reviews-customer ${classes.normalfonts}`}>Customer Reviews</span>
+                                <span className={`reviews-customer ${classes.normalfonts}`}>Reviews</span>
                             </div>
                             <div className="reviews">
                                 <span className={`data-reviews ${classes.normalfonts}`}>

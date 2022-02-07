@@ -651,7 +651,7 @@ class Component extends React.Component {
                         >
                           Metal Weight
                           <br />
-                          {this.props.data[0].Dimondweight}gm
+                          {this?.props?.data[0]?.Dimondweight ?? ""}gm
                         </p>
                       </Box>
                     )}
@@ -689,7 +689,7 @@ class Component extends React.Component {
                         </p>
                       </Box>
                     )}
-                  {this.props.data[0].dimondweight !== null ? (
+                  {this?.props?.data[0]?.dimondweight !== null ? (
                     <Box padding="10px" textAlign="center">
                       <Avatar alt="NAC" style={{ padding: "10px" }}>
                         <img
@@ -706,7 +706,7 @@ class Component extends React.Component {
                       >
                         Diamond Weight
                         <br />
-                        {this.props.data[0].dimondweight}gm
+                        {this?.props?.data[0]?.dimondweight ?? ""}gm
                       </p>
                     </Box>
                   ) : (
