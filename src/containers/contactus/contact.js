@@ -132,10 +132,10 @@ export default function Contact(props) {
                   <Grid item xs={3} >
                     <Box display="flex" alignItems="center">
                       <Box>
-                        <Typography className={classes.book}>
+                        {/* <Typography className={classes.book}>
                           Lorem
-                        </Typography>
-                        <Button
+                        </Typography> */}
+                        {/* <Button
                           variant="contained"
                           size="large"
                           fullWidth={true}
@@ -143,7 +143,7 @@ export default function Contact(props) {
                           onClick={setAppoinments}
                         >
                           BOOK APPOINTMENT
-                        </Button>
+                        </Button> */}
                       </Box>
                     </Box>
 
@@ -444,10 +444,10 @@ export default function Contact(props) {
             <Grid item xs={12} md={12} >
               <Box display="flex" alignItems="center">
                 <Box>
-                  <Typography className={classes.book}>
+                  {/* <Typography className={classes.book}>
                     Lorem
-                  </Typography>
-                  <Button
+                  </Typography> */}
+                  {/* <Button
                     variant="contained"
                     size="large"
                     fullWidth={true}
@@ -455,7 +455,7 @@ export default function Contact(props) {
                     onClick={setAppoinments}
                   >
                     BOOK APPOINTMENT
-                  </Button>
+                  </Button> */}
                 </Box>
               </Box>
 
