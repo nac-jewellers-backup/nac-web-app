@@ -28,7 +28,7 @@ export const homeNac = {
       dots: true,
       infinite: true,
       autoplay: true,
-      speed: 3000,
+      speed: 4000,
       fade: false,
       arrows: true,
       arrowsImg: false,

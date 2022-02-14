@@ -80,7 +80,10 @@ class HomeStylori extends React.Component {
       <Grid container>
         <div>
           <MetaTags>
-            <title>Online Jewellery Shopping in India | Gold and Diamond Jewellery Online</title>
+            <title>
+              Online Jewellery Shopping in India | Gold and Diamond Jewellery
+              Online
+            </title>
             <meta
               name="description"
               content="Buy Gold and Diamond Jewellery Shopping Online from Stylori.com with variety of products like Pendants, Gold Rings, Bangles, Earrings"
@@ -99,18 +102,33 @@ class HomeStylori extends React.Component {
               property="og:description"
               content="Buy Gold and Diamond Jewellery Shopping Online from Stylori.com with variety of products like Pendants, Gold Rings, Bangles, Earrings"
             />
-            <meta property="og:url" id="fb-product-url" content={window.location.href} />
-            <meta property="og:image" id="fb_imageUrl" content="https://assets.stylori.com/stylori-logo.svg" />
+            <meta
+              property="og:url"
+              id="fb-product-url"
+              content={window.location.href}
+            />
+            <meta
+              property="og:image"
+              id="fb_imageUrl"
+              content="https://assets.stylori.com/stylori-logo.svg"
+            />
 
             <meta name="twitter:card" content="summary" />
             <meta name="twitter:site" content="@StyloriLove" />
-            <meta name="twitter:title" id="twitter-title" content="Online Jewellery Shopping" />
+            <meta
+              name="twitter:title"
+              id="twitter-title"
+              content="Online Jewellery Shopping"
+            />
             <meta
               name="twitter:description"
               content="Buy Gold and Diamond Jewellery Shopping Online from Stylori.com with variety of products like Pendants, Gold Rings, Bangles, Earrings"
             />
-            <meta name="twitter:image" id="twitter_imageUrl" content="https://assets.stylori.com/stylori-logo.svg" />
-            {/* <meta name="google-site-verification" content="6I1mw4ayVxUxw1AZYP_BK73mXUaajhhhYyYl3Qv0E60" /> */}
+            <meta
+              name="twitter:image"
+              id="twitter_imageUrl"
+              content="https://assets.stylori.com/stylori-logo.svg"
+            />
           </MetaTags>
         </div>
         <Header />
@@ -118,25 +136,40 @@ class HomeStylori extends React.Component {
           <Hidden smDown>
             {homePageStylori.carouselTop.setting.arrowsImg && (
               <Grid container>
-                <Grid item onClick={this.previous} className={"imagePrevios"}></Grid>
+                <Grid
+                  item
+                  onClick={this.previous}
+                  className={"imagePrevios"}
+                ></Grid>
                 <Grid item onClick={this.next} className={"imagenext"}></Grid>
               </Grid>
             )}
           </Hidden>
-          <Slideshow sliderRef={this.slider} dataCarousel={homePageStylori.carouselTop.setting}>
+          <Slideshow
+            sliderRef={this.slider}
+            dataCarousel={homePageStylori.carouselTop.setting}
+          >
             {homePageStylori.carouselTop.data.map((val, index) => (
               <>
                 <Hidden smDown>
                   <Grid container key={index}>
                     <a href={val.navigateUrl} style={{ width: "100%" }}>
-                      <img src={val.img} style={{ width: "100%", height: "100%" }} />
+                      <img
+                        src={val.img}
+                        style={{ width: "100%", height: "100%" }}
+                        alt="icon"
+                      />
                     </a>
                   </Grid>
                 </Hidden>
                 <Hidden mdUp>
                   <Grid container key={index}>
                     <a href={val.navigateUrl}>
-                      <img src={val.mobileImg} style={{ width: "100%", height: "100%" }} />
+                      <img
+                        src={val.mobileImg}
+                        style={{ width: "100%", height: "100%" }}
+                        alt="icon"
+                      />
                     </a>
                   </Grid>
                 </Hidden>
@@ -146,7 +179,12 @@ class HomeStylori extends React.Component {
         </Grid>
         <Hidden mdUp>
           <Grid container>
-            <Grid item xs={12} alignItems="center" style={{ paddingTop: "6px" }}>
+            <Grid
+              item
+              xs={12}
+              alignItems="center"
+              style={{ paddingTop: "6px" }}
+            >
               <Typography style={{ width: "100%", textAlign: "center" }}>
                 <Slideshow dataCarousel={dataCarousel}>
                   {productsubHead.map((val, index) => (
@@ -159,16 +197,25 @@ class HomeStylori extends React.Component {
                         key={"From the House of NAC"}
                         className="wrappercustomer"
                       >
-                        <Grid item container style={{ justifyContent: "center", alignItems: "center", display: "flex" }}>
-                          <img style={{ width: "18%" }} src={val.icon} />
+                        <Grid
+                          item
+                          container
+                          style={{
+                            justifyContent: "center",
+                            alignItems: "center",
+                            display: "flex",
+                          }}
+                        >
+                          <img
+                            style={{ width: "18%" }}
+                            src={val.icon}
+                            alt="icon"
+                          />
                         </Grid>
                       </Grid>
                     </>
                   ))}
                 </Slideshow>
-                {/* <Grid style={{ width: "100%" }}>
-                  <div className="loaders"></div>
-                </Grid> */}
               </Typography>
             </Grid>
           </Grid>
@@ -180,7 +227,6 @@ class HomeStylori extends React.Component {
             style={{
               padding: "10px 15px",
               width: "100%",
-              // borderBottom: "1px solid #eeeeee"
             }}
           >
             <StaticView />
@@ -212,7 +258,10 @@ class HomeStylori extends React.Component {
             <em className="rightImage"></em>
           </Grid>
         </Grid>
-        <Stories dataCarousel={homePageStylori.Stories.carousel.setting} carosolData={storyData.storiesData} />
+        <Stories
+          dataCarousel={homePageStylori.Stories.carousel.setting}
+          carosolData={storyData.storiesData}
+        />
         <Grid item xs={12} style={{ marginTop: 20 }}>
           <Footer />
         </Grid>

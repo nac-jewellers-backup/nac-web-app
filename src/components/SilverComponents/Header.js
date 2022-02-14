@@ -17,7 +17,6 @@ import {
   Toolbar,
   Typography,
 } from "@material-ui/core";
-// import HeaderNotification from './Notification/HeaderNotification'
 import { withStyles } from "@material-ui/core/styles";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import MenuIcon from "@material-ui/icons/Menu";
@@ -36,7 +35,6 @@ import { styles } from "./styles";
 let user_id = localStorage.getItem("user_id")
   ? localStorage.getItem("user_id")
   : {};
-// var path = window.location.pathname.split('/').pop();
 
 class Header extends Component {
   constructor(props) {
@@ -180,11 +178,9 @@ class Header extends Component {
     const {
       mainlist,
       Jewellery,
-      subheader,
+
       menuListHeader,
       menuLists,
-
-      wishcount,
     } = this.props.data;
     const { wishlist, cartcount } = this.props;
 
@@ -219,7 +215,7 @@ class Header extends Component {
                     : "auto",
               }}
             >
-              <Container maxWidth="lg" id="searchcontainer">
+              <Container style={{ maxWidth: "80%" }} id="searchcontainer">
                 <Grid
                   container
                   spacing={12}
@@ -303,30 +299,11 @@ class Header extends Component {
                         justify="flex-end"
                         className={classes.goldCurrentRate}
                       >
-                        <Grid item xs={3}>
+                        <Grid item xs={3} sm={3} md={2} lg={2} xl={2}>
                           <FormControl
                             variant="outlined"
                             className={classes.goldRateformControl}
                           >
-                            {/* <InputLabel id="demo-simple-select-outlined-label">
-                                Age
-                              </InputLabel> */}
-                            {/* <Select
-                                labelId="demo-simple-select-outlined-label"
-                                id="demo-simple-select-outlined"
-                                value={22}
-                                //   onChange={handleChange}
-                                // label="Age"
-                              >
-                                <MenuItem value="22">
-                                  <em>None</em>
-                                </MenuItem>
-                                <MenuItem value={22}>
-                                  Gold 22k/1g ₹ 3256
-                                </MenuItem>
-                                <MenuItem value={24}>Twenty</MenuItem>
-                                <MenuItem value={26}>Thirty</MenuItem>
-                              </Select> */}
                             <NativeSelect
                               defaultValue={30}
                               inputProps={{
@@ -515,7 +492,6 @@ class Header extends Component {
                     >
                       {/* <div> */}
                       {menuListHeader.map((listName) => {
-                        let urlsmall = listName.title.toLowerCase();
                         return (
                           <a
                             href={listName.url}
@@ -526,14 +502,9 @@ class Header extends Component {
                                 subTitleData: null,
                                 targetopen: event.currentTarget,
                                 listHoverItem: listName.title,
-                                // .replace(
-                                //   / +/g,
-                                //   "ss"
-                                // ),
                               });
                             }}
                             className={
-                              //  window.location.pathname === listName.url
                               this.Menuopen === true ||
                               this.submenuOpen === true
                                 ? classes.seletectedMenu
@@ -621,6 +592,7 @@ class Header extends Component {
                             width="30px"
                             height="30px"
                             style={{ padding: "5px 15px 0px 15px" }}
+                            alt="logo"
                           ></img>
                         </a>
                       </div>
@@ -687,8 +659,7 @@ class Header extends Component {
                         onClick={() => {
                           window.location.href = "/";
                         }}
-                        style={{ cursor: "pointer" }}
-                        style={{ paddingTop: "47px" }}
+                        style={{ cursor: "pointer", paddingTop: "47px" }}
                       >
                         <img
                           className={`imgsilver`}
@@ -713,9 +684,6 @@ class Header extends Component {
                           className={classes.goldCurrentRate}
                         >
                           <Grid container item xs={12} alignItems="center">
-                            {/* <Grid item xs={6} style={{ textAlign: "right" }}>
-                              Today's Rate : &nbsp;
-                            </Grid> */}
                             <Grid item xs={12}>
                               <FormControl
                                 variant="outlined"
@@ -1000,6 +968,7 @@ class Header extends Component {
                                                   margin: "auto",
                                                 }}
                                                 src={val.img}
+                                                alt="imag"
                                               />
                                             </div>
                                           </Grid>
@@ -1048,26 +1017,16 @@ class Header extends Component {
                                           sm={6}
                                           className={classes.griddivstone}
                                         >
-                                          <div
-                                            // style={{
-                                            //   backgroundImage: `url(${val.icon})`,
-                                            //   width: `${val.width}`,
-                                            //   height: `${val.height}`,
-                                            //   backgroundPosition: `${val.position}`,
-                                            // }}
-                                            className={classes.iconstyle}
-                                          >
+                                          <div className={classes.iconstyle}>
                                             <img
                                               style={{
                                                 width: "11%",
                                                 marginRight: "10px",
                                               }}
                                               src={val.icon}
+                                              alt="icon"
                                             />
-                                            <p
-                                              // style={{ marginTop: "58px" }}
-                                              className={classes.ptext}
-                                            >
+                                            <p className={classes.ptext}>
                                               {val.name}
                                             </p>
                                           </div>
@@ -1350,15 +1309,7 @@ class Header extends Component {
 }
 export default withStyles(styles)((props) => {
   let {
-    CartCtx: {
-      cartFilters,
-      data: cart_count,
-      loading,
-      error,
-      allorderdata,
-      wishlistdata,
-      NewUser,
-    },
+    CartCtx: { data: cart_count },
   } = React.useContext(CartContext);
   const { mapped } = useDummyRequest(headerDataSilver);
   if (Object.keys(mapped).length === 0) return "";

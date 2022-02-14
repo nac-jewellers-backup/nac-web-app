@@ -126,7 +126,7 @@ export const storeLocatorData = {
       button: "View Store Details",
       state: "andhra",
       key: "ChIJlZ2oZrr6NToRG4kJpSN1uf8",
-      location: "https://www.google.com/maps/place/NAC+Jewellers+-+Vijayawada/@16.500601,80.6447683,17z/data=!3m1!4b1!4m5!3m4!1s0x3a35faba66a89d95:0xffb97523a509891b!8m2!3d16.5005936!4d80.6469542"
+      location: "https://www.google.com/maps/place/NAC+Jewellers+-+Vijayawada/@16.500601,80.646957,15z/data=!4m5!3m4!1s0x0:0xffb97523a509891b!8m2!3d16.5006029!4d80.6469577"
     },
   ]
 };

@@ -33,6 +33,7 @@ const CardTheme = createTheme({
 export default function Card(props) {
   const classes = useStyles();
 
+
   return (
     <ThemeProvider theme={CardTheme}>
       <div>
@@ -49,7 +50,7 @@ export default function Card(props) {
                 >
                   <img
                     src={props.data.image}
-                    alt="cover image"
+                    alt="coverimage"
                     style={{ objectFit: "contain" }}
                     height="100%"
                     width="100%"
@@ -59,10 +60,10 @@ export default function Card(props) {
               <Grid item xs={8}>
                 <div className={classes.note}>
                   <Homenote
-                    content=" In 1973, Shri N. Anjaneyalu Chetty started a jewellery shop in
-            Mylapore hoping to find loyal patrons. What began as a small store
-            was soon a flourishing business and NAC became a household name in
-            Mylapore!"
+                    content={
+                      props?.data?.content ??
+                      "N. Narayana Chetty makes a humble beginning at home: he designs and crafts gold jewellery by hand. What starts as a small group of interested customers, gradually grows into a loyal patronage"
+                    }
                   />
                 </div>
               </Grid>
@@ -83,7 +84,7 @@ export default function Card(props) {
                 >
                   <img
                     src={props.data.image}
-                    alt="cover image"
+                    alt="coverimage"
                     style={{ objectFit: "contain" }}
                     height="100%"
                     width="100%"

@@ -110,7 +110,7 @@ export function MediaControlCard(props) {
               <div className={classes.coverborder}>
                 <img
                   src={props.data.image}
-                  alt="cover image"
+                  alt="coverimage"
                   height="337"
                   width="340"
                 />
@@ -119,10 +119,10 @@ export function MediaControlCard(props) {
             <Box>
               <div className={classes.note}>
                 <Homenote
-                  content=" In 1973, Shri N. Anjaneyalu Chetty started a jewellery shop in
-            Mylapore hoping to find loyal patrons. What began as a small store
-            was soon a flourishing business and NAC became a household name in
-            Mylapore!"
+                  content={
+                    props.data.content ??
+                    "s In 1973, Shri N. Anjaneyalu Chetty started a jewellery shop in Mylapore hoping to find loyal patrons. What began as a small store was soon a flourishing business and NAC became a household name in Mylapore!"
+                  }
                 />
               </div>
             </Box>

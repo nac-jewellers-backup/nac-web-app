@@ -159,24 +159,19 @@ const styles = (theme) => ({
   mainImg: {
     position: "block",
     width: "100%",
-    // height:"500px"
   },
   mainImgCarosel: {
     width: "100%",
-    // height: "500px"
   },
   mainImgContainer: {
     position: "relative",
     width: "100%",
-    // height:"500px"
   },
   width: {
     width: "100%",
   },
   collectionSection: {
-    // "& svg":{
     fill: `${theme.palette.secondary.main} !important`,
-    // }
   },
   timelinegrid: {
     margin: "20px 0",
@@ -226,7 +221,9 @@ class HomeComp extends React.Component {
       count: "",
       imageLoading: false,
       timelineImage:
-        "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_page/Group+213%402x.png",
+        "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/HIstory+images/1917.jpg",
+      content:
+        "N. Narayana Chetty makes a humble beginning at home: he designs and crafts gold jewellery by hand. What starts as a small group of interested customers, gradually grows into a loyal patronage",
       bannerHome: [],
       featuredProduct: [],
       wishlistdata: [],
@@ -455,7 +452,7 @@ class HomeComp extends React.Component {
       autoplay: false,
       infinite: false,
       accessibility: true,
-      speed: 2500,
+      speed: 4000,
 
       slidesToShow: 4,
       slidesToScroll: 4,
@@ -468,7 +465,7 @@ class HomeComp extends React.Component {
       autoplay: true,
       infinite: true,
       accessibility: true,
-      speed: 2500,
+      speed: 4000,
       // fade: true,
       slidesToShow: 1,
       slidesToScroll: 1,
@@ -491,41 +488,133 @@ class HomeComp extends React.Component {
 
     const tData = [
       {
-        time: "1917s",
+        time: "1917",
         image:
-          "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_page/Group+213%402x.png",
+          "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/HIstory+images/1917.jpg",
+        content:
+          "N. Narayana Chetty makes a humble beginning at home: he designs and crafts gold jewellery by hand. What starts as a small group of interested customers, gradually grows into a loyal patronage",
       },
       {
-        time: "1927s",
+        time: "1927",
         image:
-          "https://assets.stylori.com/product/SE0015/1000X1000/SE0015-1YW.webp",
+          "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/HIstory+images/1927.jpg",
+        content:
+          "His son, N. Anantham Chetty takes the first step of opening a small shop at Parry's Corner, Chennai",
       },
       {
-        time: "1973s",
+        time: "1973",
         image:
-          "https://assets.stylori.com/product/SE0016/1000X1000/SE0016-1Y.webp",
+          "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/HIstory+images/1973.jpg",
+        content:
+          "Shri. N. Anjaneyulu Chetty of the third generation who has been working with his father for over 2 decades takes the next big step. The brand NAC jewellers is born",
       },
       {
-        time: "1979s",
+        time: "1979",
         image:
-          "https://assets.stylori.com/product/SE1270/575X575/HOVER-SE1270-2Y.webp",
+          "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/HIstory+images/1979.jpg",
+        content:
+          "Shri N. Anantha Padmanabhan, the fourth generation entrepreneur transforms NAC Jewellers from a single store brand to a multi store brand",
       },
       {
-        time: "1990s",
+        time: "1990",
         image:
-          "https://assets.stylori.com/product/SE0420/575X575/HOVER-SE0420-2Y.webp",
+          "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/HIstory+images/1990.jpg",
+        content:
+          "Mylapore's jewel: NAC'S humble store near the Kapaleeswarar temple opens doors",
       },
       {
-        time: "2007s",
+        time: "2007",
         image:
-          "https://assets.stylori.com/product/SE0867/575X575/HOVER-SE0867-2Y.webp",
+          "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/HIstory+images/2007.jpg",
+        content:
+          "As the patronage grows, NAC Jewellers' plush three-floor showroom in Mylapore gradually grows into a preferred jewellery destination",
+      },
+      {
+        time: "2010",
+        image:
+          "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/HIstory+images/2010.jpg",
+        content:
+          "Silvermine is launched. An exclusive retail outlet for silver articles and gifts",
+      },
+      {
+        time: "2012",
+        image:
+          "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/HIstory+images/2012.jpg",
+        content:
+          "N. Anandha Ramanujam, the fifth generation entrepreneur and son of Shri Anantha Padmanabhan joins the business and begins his stint with the launch of NAC Young Ones",
+      },
+      {
+        time: "2013",
+        image:
+          "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/HIstory+images/2013.jpg",
+        content: "NAC Jewellers makes an iconic landmark at TNagar",
+      },
+      {
+        time: "2015",
+        image:
+          "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/HIstory+images/2015_01.jpg",
+        content:
+          "NAC Jewellers launches STYLORI, an exclusively online store for everyday jewellery, crafted for the modern Indian woman",
+      },
+      {
+        time: "2015",
+        image:
+          "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/HIstory+images/2015_02.jpg",
+        content:
+          "NAC Jewellers makes a city-wide impact with the simultaneous launch of three showrooms in Perambur, Velachery and Kanchipuram on 2nd November 2015",
+      },
+      {
+        time: "2015",
+        image:
+          "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/HIstory+images/2015_03.jpg",
+        content:
+          "NAC Jewellers lightens up the Oscars as Hollywood actress Chloe Grace Moretz wears an exquisite piece from the Fabula Collection",
+      },
+      {
+        time: "2016",
+        image:
+          "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/HIstory+images/2016.jpg",
+        content:
+          "Launch of the first store outside Tamil Nadu in Vijayawada, Andhra Pradesh",
+      },
+      {
+        time: "2017",
+        image:
+          "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/HIstory+images/2017.jpg",
+        content:
+          "Knack Studios isKaunched. As South India's leading postproduction studio, Knack Studios has worked with leading filmmakers across industries",
+      },
+      {
+        time: "2017",
+        image:
+          "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/HIstory+images/2017_02.jpg",
+        content:
+          "NAC Jewellers spreads their wings further with the launch of their Anna Nagar showroom",
+      },
+      {
+        time: "2019",
+        image:
+          "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/HIstory+images/2019.jpg",
+        content:
+          "N. Arjun Varadaraj, son of Managing Director Shri Anantha Padmanabhan, comes aboard as Director at NAC Jewellers",
+      },
+      {
+        time: "2020",
+        image:
+          "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/HIstory+images/2020.jpg",
+        content:
+          "NAC Jewellers launches Stylori Silver, a curated range of exclusive silver jewellery, featuring classical and contemporary styles",
       },
     ];
-    const TimelineEntry = ({ entry: { time, image }, useBar }) => (
+    const TimelineEntry = ({ entry: { time, image, content }, useBar }) => (
       <div
         className="timeline-entry"
         onClick={() => {
-          this.setState({ ...this.state, timelineImage: image });
+          this.setState({
+            ...this.state,
+            timelineImage: image,
+            content: content,
+          });
         }}
       >
         <span
@@ -567,7 +656,12 @@ class HomeComp extends React.Component {
               </div>
             </Grid>
             <Grid item xs={9} sm={9} md={10} lg={10} xl={10}>
-              <Card data={{ image: this.state.timelineImage }} />
+              <Card
+                data={{
+                  image: this.state.timelineImage,
+                  content: this.state.content,
+                }}
+              />
             </Grid>
           </Grid>
         </Container>
@@ -575,13 +669,7 @@ class HomeComp extends React.Component {
           <Grid item xs={12}>
             <Hidden mdUp>
               <br />
-              {/* <div style={{width:"100%"}}> */}
-              <Homenote
-                content=" In 1973, Shri N. Anjaneyalu Chetty started a jewellery shop in
-            Mylapore hoping to find loyal patrons. What began as a small store
-            was soon a flourishing business and NAC became a household name in
-            Mylapore!"
-              />
+              <Homenote content={this?.state?.content ?? ""} />
             </Hidden>
           </Grid>
         </Grid>
@@ -597,14 +685,6 @@ class HomeComp extends React.Component {
           />
           {this.state.starting ? (
             <Grid item xs={12} style={{ backgroundColor: "#ebebeb" }}>
-              {/* <Stack spacing={1}>
-              <Skeleton
-                variant="rectangular"
-                width={210}
-                height={118}
-              ></Skeleton>
-            </Stack> */}
-
               {homeNac.carouselTop.setting.arrowsImg && (
                 <Grid container>
                   <Grid
@@ -637,6 +717,7 @@ class HomeComp extends React.Component {
                       >
                         <a href={val.url} style={{ width: "100%" }}>
                           <img
+                            alt="banner"
                             src={val.web}
                             style={{ width: "100%", height: "100%" }}
                           />
@@ -652,6 +733,7 @@ class HomeComp extends React.Component {
                             className={`image-${
                               this.state.imageLoading ? "visible" : "hidden"
                             }`}
+                            alt="banner"
                             onLoad={this.imageLoader}
                           />
                         </a>

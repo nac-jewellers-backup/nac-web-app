@@ -546,39 +546,39 @@ function HeaderHoverMenuItem(props) {
   const silverItems = [
     {
       title: "Silver Plates",
-      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/silver/yPTMge%402x.png",
+      img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Silver+Articles/SILVER+PLATES.jpg",
     },
     {
       title: "Silver Bowls",
-      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/silver/yPTMge%402x.png",
+      img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Silver+Articles/SILVER+BOWLS.jpg",
     },
     {
       title:'Silver Lamps',
-      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/silver/yPTMge%402x.png",
+      img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Silver+Articles/SILVER+LAPMS.jpg",
     },
     {
       title: "Tumblers",
-      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/silver/yPTMge%402x.png",
+      img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Silver+Articles/SILVER+TUMBLERS.jpg",
     },
     {
       title: 'Silver Baby Gifts',
-      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/silver/yPTMge%402x.png",
+      img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Silver+Articles/SILVER+BABY+GIFTS.jpg",
     },
     {
       title: "Silver Dining Set",
-      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/silver/yPTMge%402x.png",
+      img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Silver+Articles/SILVER+DINNER+SETS.jpg",
     },
     {
       title: 'Silve Antique Articles',
-      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/silver/yPTMge%402x.png",
+      img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Silver+Articles/SILVER+ANTIQUE+ARTICLES.jpg",
     },
     {
       title: "Silver Pooja Articles",
-      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/silver/yPTMge%402x.png",
+      img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Silver+Articles/SILVER+POOJA+ARTICLES.jpg",
     },
     {
       title: "Silver Other Articles",
-      img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/silver/yPTMge%402x.png",
+      img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Silver+Articles/SILVER+OTHER+ARTICLES.jpg",
     },
   ];
 
