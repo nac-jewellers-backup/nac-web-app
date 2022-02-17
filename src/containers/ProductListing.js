@@ -72,7 +72,6 @@ class Stylori extends React.Component {
     this.setState({ imageLoading: true });
   };
   render() {
-    // alert(JSON.stringify(this.props.wishlist))
     const { data, dataFilter, loading } = this.props;
     const setting = {
       dots: false,
@@ -310,10 +309,8 @@ const Components = (props) => {
   } = React.useContext(FilterOptionsContext);
   let content,
     mapped = [];
-  // alert(JSON.stringify(cartcount))
   var arrFilters = Array(mappedFilters);
   let mappedFiltersList = filterData(arrFilters);
-  // let mappedFilter = filterData(mappedFilters)
   if (!loading && !error) {
     if (Object.keys(data).length !== 0) {
       mapped = async () => await productList(data, CDN_URL);

@@ -97,13 +97,11 @@ const useRating = (props) => {
                 if (val[1].length > 0) {
                     variab['productSku'] = val[1]
                     makeRequestCod(variab)
-                    // alert(JSON.stringify(variab))
                 }
                 values['user_id'] = user_id
                 var a = window.location.search.split('=')
                 var b = a[1].split('-')[0]
                 values['product_id'] = b
-                // setFilters(values)
                 setValues({
                     ...values,
                     values
@@ -137,7 +135,6 @@ const useRating = (props) => {
         if ((rats > 0 || rats !== "") && values.title.length > 0 && values.message.length > 0) {
             let user_id = localStorage.getItem("user_id") ? localStorage.getItem("user_id") : '';
             if (user_id.length > 0) {
-                // alert(JSON.stringify(data.message))
                 var rats = props.ratingcounts.ratingcounts ? props.ratingcounts.ratingcounts : ""
                 if (window.location.search) {
                     let urlSearchparams = window.location.search;
@@ -152,7 +149,6 @@ const useRating = (props) => {
                         if (val[1].length > 0) {
                             variab['productSku'] = val[1]
                             makeRequestCod(variab)
-                            // alert(JSON.stringify(variab))
                         }
                         if (rats > 0 || rats !== undefined || rats !== "") {
                             values["errortext"]["rateerr"] = ""
@@ -160,7 +156,6 @@ const useRating = (props) => {
                             values["errortext"]["ratemsg"] = ""
                             values["error"]["ratetitle"] = false
                             values["error"]["ratemsg"] = false
-                            // alert(JSON.stringify(rats))
                             values['rate'] = props.ratingcounts.ratingcounts ? JSON.stringify(props.ratingcounts.ratingcounts) : ""
                             setValues({
                                 ...values,
@@ -168,18 +163,15 @@ const useRating = (props) => {
                             })
                             makeFetch(values);
                         }
-                        // setFilters(values)
                         setValues({
                             ...values,
                             values
                         })
                     })
                 }
-                // window.location.href = "/login"
 
             } else {
-                // alert("You will be able to review only after purchasing the product")
-                // props.location.pathname="/login"
+              
                 localStorage.setItem('review_location', `${window.location.href}`)
                 props.history.push({ pathname: "/login" })
             }

@@ -265,7 +265,6 @@ class ProductPrice extends Component {
 
   render() {
     const { anchorEl, viewMore } = this.state;
-    // alert(JSON.stringify(this.props.wishlist))
     return (
       <div>
         <Hidden smDown>

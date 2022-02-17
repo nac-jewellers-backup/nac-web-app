@@ -174,7 +174,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 export default function ChildCollectionItemOne(props) {
-  // alert(JSON.stringify(props.CollectionPageStylori))
   const classes = useStyles();
   const slider = React.createRef();
   const slider1 = React.createRef();
@@ -701,7 +700,6 @@ export default function ChildCollectionItemOne(props) {
                                   }
                                   sliderRef={slider3}
                                 >
-                                  {/* {alert(JSON.stringify(data.secondaryCarouselDetails))} */}
                                   {data &&
                                     data.secondaryCarouselDetails &&
                                     data.secondaryCarouselDetails &&

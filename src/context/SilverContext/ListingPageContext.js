@@ -163,15 +163,12 @@ const Provider = (props) => {
             setSilverFilters({ ...silverFilters, a });
           });
           updateFilters(silverFilters);
-          // alert(JSON.stringify(filters))
+         
         })
         .catch(function (error) {
-          //  setSeoComponentMount(data)
         });
 
-      //  alert(JSON.stringify(test))
 
-      // }
     };
     fetch_data();
   }, []);
@@ -179,7 +176,6 @@ const Provider = (props) => {
   var queries = [];
   const qtfArr = [];
   const pathQueries = () => {
-    // var queries = []
     if (window.location.search) {
       Object.keys(silverFilters).map((fk) => {
         const filter = silverFilters[fk];
@@ -190,15 +186,10 @@ const Provider = (props) => {
             const qtf = {};
             qtf[`${fk}`] = `${fv[0]}`;
             queries.push(qt);
-            // qtfArr.push(qtf);
           }
         }
       });
-      // const query = encodeURI(queries.join("&"));
-      // props.history.push({
-      //     pathname: ntxdata.seo_url,
-      //     search: query,
-      // })
+     
     }
   };
 
@@ -217,10 +208,7 @@ const Provider = (props) => {
       const filterdata = window.location.pathname;
       const splitslash = filterdata && filterdata.replace("/", "");
       const splitNtxData = filterdata && splitslash.split("-");
-      // const a = filterdata && splitNtxData.map(val => {
-      //     const valPlusSplit = val.replace(/[+]/g, " ")
-      //     return valPlusSplit
-      // })
+      
 
       return (paramsAo = splitNtxData);
     }
@@ -228,18 +216,13 @@ const Provider = (props) => {
     return paramsAo;
   };
 
-  // {transSkuListsByProductId: {some: {discountPrice: {greaterThan: 1.5}}}}
-  // const { loading, error, data, makeRequest } = useGraphql(PRODUCTLIST, () => { }, {})
   const {
     loading,
     error,
     data,
     makeFetch: fetchproducts,
   } = useNetworkRequest("/fetchproducts", {}, false, {});
-  // fetchproducts
 
-  // {filter:{transSkuListsByProductId:{every:{markupPrice:{  "greaterThanOrEqualTo":   20000,
-  // "lessThanOrEqualTo":70000}}}}}
   const {
     loading: seoloading,
     error: seoError,
@@ -264,32 +247,7 @@ const Provider = (props) => {
 
     makeRequestSeo(conditionfiltersSeo);
   };
-  // useEffect(()=>{
-  //     setloadingfilters(true)
-  // },[data])
-  // const updateProductList = async() => {
 
-  //     // console.info('objecobjecobject',mappedFilters.seo_url !== "jewellery")
-  //     if (window.location.search) {
-  //         var newObj = {}
-  //         var len;
-  //         var k = qtfArr.map(val => Object.values(val));
-  //         var keyy = qtfArr.map(val => Object.keys(val))
-  //         len = keyy.length
-  //         while (len--) {
-  //             var key = keyy[len]
-  //             var toLowerCase = key[0].toLowerCase()
-  //             newObj[toLowerCase] = k[len][0]
-  //         }
-  //         newObj['sortBy'] = sort.values
-  //         // newObj['price'] = {'min_price':pricemin,'max_price':pricemax}
-
-  //       await fetchproducts(newObj)
-  //       //variables
-
-  //     }
-
-  // }
 
   useEffect(() => {
     setMappedFilters(ntxdata);
@@ -344,9 +302,7 @@ const Provider = (props) => {
       newObj["sortBy"] = sort.values;
       newObj["offset"] = offset;
 
-      // alert(JSON.stringify('filters',filters))
-      // alert(JSON.stringify(newObj))
-      // newObj['price'] = {'min_price':pricemin,'max_price':pricemax}
+     
       if (
         Object.keys(newObj).filter((val) => {
           if (val === "category") return val;
@@ -357,7 +313,6 @@ const Provider = (props) => {
   };
 
   useEffect(() => {
-    //    alert("filters")
     if (
       silverFilters &&
       Object.entries(silverFilters).length !== 0 &&
@@ -380,44 +335,32 @@ const Provider = (props) => {
     }
   }, [silverFilters]);
   useEffect(() => {
-    // alert("pricemin")
     if (pricemin) {
       updatefiltersSort();
     }
   }, [pricemin]);
   useEffect(() => {
-    // alert("pricemax")
     if (pricemax) {
       updatefiltersSort();
     }
   }, [pricemax]);
   useEffect(() => {
-    // alert("sort")
     if (sort) {
       updatefiltersSort();
     }
   }, [sort]);
 
   useEffect(() => {
-    // alert("offset")
     if (offset && offset !== 0) {
       updatefiltersSort();
     }
   }, [offset]);
-  // useEffect(() => {
 
-  //     //    alert("gdys")
-  //     if (filters && (Object.entries(filters).length !== 0 && filters.constructor === Object)) {
-  //         updatefiltersSort()
-  //     }
-
-  // }, [offset])
   var newObj = {};
   const updateFilters = async (silverFilters) => {
     setOffset(0);
     setSilverFilters(silverFilters);
 
-    // setloadingfilters(true)
     var len;
     let bodyvar;
     bodyvar = paramObjects();
@@ -431,7 +374,6 @@ const Provider = (props) => {
             const qt = `${fk}=${fv[0]}`;
             const qtf = {};
             qtf[`${fk}`] = `${fv[0]}`;
-            // queries.push(qt);
             qtfArr.push(qtf);
           }
         }
@@ -449,16 +391,12 @@ const Provider = (props) => {
       newObj[toLowerCase] = k[len][0];
     }
     await makeFetch(newObj);
-    //    props.history.push({
-    //     pathname: `/stylori${mappedFilters.seo_url   ?`/${mappedFilters.seo_url}` : '' }`,
-
-    // })
+ 
     try {
       if (ntxdata.seo_url === "jewellery") {
         setMappedFilters(ntxdata);
       }
     } catch (error) {}
-    // }
   };
 
   useEffect(() => {
@@ -466,7 +404,6 @@ const Provider = (props) => {
       Object.entries(ntxdata).length !== 0 &&
       ntxdata.constructor === Object
     ) {
-      // if(ntxdata.seo_url !=="jewellery" ){
       if (window.location.pathname !== "jewellery") {
         props.history.push({
           pathname: `${
@@ -479,7 +416,6 @@ const Provider = (props) => {
 
       seoUrlFetch();
 
-      // }
     }
   }, [mappedFilters, offset]);
 

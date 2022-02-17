@@ -188,7 +188,6 @@ export default function LargeTile(props) {
             </>
           ) : (
             <>
-              {/* {alert(state.showLess)} */}
               {/* ----------------------------Show Less False -------------------------------- */}
               {window.location.pathname === "/collectionpage" ? (
                 ""

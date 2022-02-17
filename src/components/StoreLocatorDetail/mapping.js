@@ -47,33 +47,3 @@ export default GoogleApiWrapper({
     apiKey: ("AIzaSyBHtJJ5uHfhX92hxFzHsciwPCayzYB9yCk")
 })(Mappping)
 
-// import React from "react";
-// import {
-//     GoogleMap, withGoogleMap,
-//     withScriptjs
-// } from "react-google-maps";
-
-// export const Map = (props) => {
-//     console.log(props)
-//     return (
-//         <GoogleMap
-//             defaultZoom={12}
-//             defaultCenter={{ lat: 13.1118032, lng: 80.2462474 }}
-//         >
-//         </GoogleMap>
-//     );
-// }
-
-// const MapComponent = withScriptjs(withGoogleMap(Map));
-
-// export default (props) => (
-//     <MapComponent
-//         {...props}
-//         googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
-//         loadingElement={<div style={{ height: `100%` }} />}
-//         containerElement={<div style={{
-//             height: `400px`
-//         }} />}
-//         mapElement={< div style={{ height: `100%` }} />}
-//     />
-// );

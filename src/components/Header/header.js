@@ -96,7 +96,6 @@ class Header extends Component {
     });
   };
   render() {
-    // alert(JSON.stringify())
     const {
       mainlist,
       Jewellery,

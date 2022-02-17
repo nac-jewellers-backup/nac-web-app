@@ -52,7 +52,10 @@ const LoginComponent = (props) => {
     number: null,
     NumberSubmit: false,
     otp: null,
+    otpEmail: null,
   });
+  const [otpEmailErr, setOtpEmailErr] = useState("");
+
   const [numErr, setNumErr] = useState("");
   const [otpErr, setOtpErr] = useState("");
 
@@ -307,15 +310,28 @@ const LoginComponent = (props) => {
     setNumberForm({ ...numberForm, [e.target.name]: e.target.value });
     setNumErr("");
     setOtpErr("");
+    setOtpEmailErr("");
   };
   const MobileNumSubmit = (e, history) => {};
-
+  const validateEmail = (email) => {
+    return String(email)
+      .toLowerCase()
+      .match(
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      );
+  };
   // Send OTP
   const SendOTP = () => {
-    if (numberForm?.number && numberForm?.number?.length === 10) {
+    if (
+      numberForm?.number &&
+      numberForm?.number?.length === 10 &&
+      validateEmail(numberForm.otpEmail)
+    ) {
       setNumErr("");
+      setOtpEmailErr("");
       let body = {
         mobile_no: numberForm.number,
+        email: numberForm.otpEmail,
       };
       const opts = {
         method: "POST",
@@ -328,13 +344,16 @@ const LoginComponent = (props) => {
           setOpenSnack(true);
 
           setNumberForm({ ...numberForm, NumberSubmit: true });
-
         })
         .catch((err) => {
           console.log(err);
         });
     } else {
-      setNumErr("Please enter valid number");
+      if (numberForm?.number?.length !== 10) {
+        setNumErr("Please enter valid number");
+      } else if (!validateEmail(numberForm.otpEmail)) {
+        setOtpEmailErr("Please enter valid email id");
+      }
     }
   };
 
@@ -358,7 +377,10 @@ const LoginComponent = (props) => {
             localStorage.setItem("accessToken", fetchValue?.accessToken);
           fetchValue?.userprofile?.id &&
             localStorage.setItem("user_id", fetchValue?.userprofile?.id);
+          fetchValue?.userprofile?.email &&
+          localStorage.setItem("email", fetchValue?.userprofile?.email);
           localStorage.setItem("isedit", 1);
+
           handlers.VerifyOTP(fetchValue?.userprofile?.id);
         })
         .catch((err) => {
@@ -604,6 +626,25 @@ const LoginComponent = (props) => {
                   <label className="errtext">{otpErr}</label>
                 ) : (
                   <label className="errtext">{numErr}</label>
+                )}
+
+                {numberForm.NumberSubmit ? (
+                  ""
+                ) : (
+                  <Input
+                    className={classes1.input}
+                    name="otpEmail"
+                    type="email"
+                    value={numberForm.otpEmail}
+                    helperText={otpEmailErr}
+                    onChange={(e) => onChangeNumber(e)}
+                    placeholder="Enter Email address"
+                  />
+                )}
+                {numberForm.NumberSubmit ? (
+                  " "
+                ) : (
+                  <label className="errtext">{otpEmailErr}</label>
                 )}
               </Grid>
               <br />

@@ -30,12 +30,9 @@ export default function AboutusPage(props) {
     index: "",
   });
 
-  // const  componentDidMount = () => {
-  //     window.scrollTo(0, 0);
-  // }
+ 
   const classes = styles();
   const values = () => {
-    // alert(window.location.pathname)
     if (window.location.pathname === "/aboutus") {
       return AboutUs;
     } else if (window.location.pathname === "/termsconditions") {
@@ -70,56 +67,13 @@ export default function AboutusPage(props) {
     <Grid container xs={12}>
       <Header />
       <Grid item xs={12}>
-        {/* <Hidden smDown>
-          <Slideshow
-            dataCarousel={
-              values() && values().carouselTop && values().carouselTop.setting
-            }
-          >
-            {values() &&
-              values().carouselTop &&
-              values().carouselTop.data &&
-              values().carouselTop.data.map((val, index) => (
-                <Grid container key={index}>
-                  <img
-                    src={val.img}
-                    style={{ width: "100%", height: "100%" }}
-                  />
-                </Grid>
-              ))}
-          </Slideshow>
-        </Hidden>
-        <Hidden mdUp>
-          <Slideshow
-            dataCarousel={
-              values() && values().carouselTop && values().carouselTop.setting
-            }
-          >
-            {values() &&
-              values().carouselTop &&
-              values().carouselTop.data &&
-              values().carouselTop.data.map((val, index) => (
-                <Grid container key={index}>
-                  <img
-                    src={val.mobileImg}
-                    style={{ width: "100%", height: "100%" }}
-                  />
-                </Grid>
-              ))}
-          </Slideshow>
-        </Hidden> */}
+   
       </Grid>
       <Hidden smDown>
         <Grid item className={classes.paddingsss}>
           <Grid container className={classes.mainWidths}>
             <Grid container className={classes.subWidth}>
-              {/* <Hidden smDown>
-              <Grid item className={classes.subWidths} lg={3} sm={3} md={3}>
-                <Grid item className={classes.sideContent}>
-                  <SideData value={values()} data={sidemenu} />
-                </Grid>
-              </Grid>
-            </Hidden> */}
+             
               <Grid
                 item
                 className={classes.mainContent}
@@ -141,13 +95,7 @@ export default function AboutusPage(props) {
                   )}
                 </>
               </Grid>
-              {/* <Hidden smDown>
-              <Grid item className={classes.rightContent} lg={3} sm={3} md={3}>
-                <Grid item className={classes.sideContent}>
-                  <SocialFields />
-                </Grid>
-              </Grid>
-            </Hidden> */}
+             
             </Grid>
           </Grid>
         </Grid>

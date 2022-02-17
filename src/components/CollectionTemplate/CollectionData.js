@@ -55,20 +55,14 @@ const ImageUrl = (image) => {
   // })
 }
 const Product_price = (price) => {
-  // price && price.map(val => {
-  //   if (val !== undefined && val !== null) {
+  
   return  new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', minimumFractionDigits: 0 }).format(Math.round(price.markupPrice))
-  // Math.round(price.markupPrice)
-  //   }
-  // })
+ 
 }
 const Product_url = (url) => {
-  // url && url.map(val => {
-  //   if (val !== undefined && val !== null) {
-  // alert(url.skuUrl)
+  
   return url && url && url.skuUrl
-  //   }
-  // })
+  
 }
 
 export default function (data) {
@@ -198,45 +192,18 @@ export default function (data) {
           })
         })
         data.allProductLists__primary = CarouselData_primary;
-        // alert(JSON.stringify(CarouselData_primary))
       }
       return second_data;
     })
-    // return data.allProductLists
     return data;
   })
 
-  // const allCarouselData_primary = (_carousel) => {
-  //   // if (num % 2 === 0) {
-  //   var CarouselData_primary = []
-  //   _carousel.map((val, index_) => {
-  //     // if(index_===num){
-  //     CarouselData_primary.push({
-  //       imageTitle: val.productName,
-  //       img: ImageUrl(val.productImagesByProductId),
-  //       navigateUrl: Product_url(val.trans_sku_lists[0]),
-  //       price: Product_price(val.trans_sku_lists[0]),
-  //       buttonName: "Shop Now"
-  //     })
-  //   })
-  //   return CarouselData_primary
-  // }
-
-  // mapperdata = mapperdata && mapperdata.map((data, index_) => {
-  //   primaryImage.map((contain_img, index) => {
-  //     if ((2 * index_) + 1 == index) {
-  //       data.secondaryImage = contain_img
-  //     }
-  //     return primaryImage;
-  //   })
-  //   return data;
-  // })
+  
   mapperdata = mapperdata && mapperdata.map((data, index_) => {
   var CarouselData_secondary_ = []
   mapperdata && mapperdata.map((second_data, index__) => {
       if ((index_ * 2) + 1 === index__) {
 
-        // alert(JSON.stringify((index_ * 2) + 1 === index__))
         second_data.allProductLists.map(val => {
           CarouselData_secondary_.push({
             imageTitle: val.productName,
@@ -252,47 +219,27 @@ export default function (data) {
       }
       return second_data;
     })
-    // return data.allProductLists
     return data;
   })
-  // const allCarouselData_secondary = (_carousel_) => {
-  //   var CarouselData_secondary_ = []
-  //   _carousel_.map((val, index) => {
-  //     CarouselData_secondary_.push({
-  //       imageTitle: val.productName,
-  //       img: ImageUrl(val.productImagesByProductId),
-  //       navigateUrl: Product_url(val.trans_sku_lists[0]),
-  //       price: Product_price(val.trans_sku_lists[0]),
-  //       buttonName: "Shop Now"
-  //     })
-  //   })
-  //   return CarouselData_secondary_
-  // }
+
 
   mapperdata && mapperdata.map((_collo_) => {
-    // if (index % 2 === 0) {
     CollectionPage.push({
       containerImage: _collo_.containerImageData,
       primaryImage: _collo_.primaryImage,
       primaryNavigateUrl: _collo_.primaryNavigateUrl,
       primaryContantName: _collo_.Product_name,
       primaryButtonName: "Explore",
-      // primaryCarouselDetails: allCarouselData_primary(_collo_.allProductLists__primary),
       primaryCarouselDetails:
         _collo_.allProductLists__primary,
-      //   })
-      // } if (index % 2 !== 0) {
-      //   CollectionPage.push({
+    
       secondaryImage: _collo_.secondaryImage,
       secondaryNavigateUrl: _collo_.primaryNavigateUrl_sec,
       secondaryContantName: _collo_.Product_name1,
       secondaryButtonName: "Explore",
-      // secondaryCarouselDetails: allCarouselData_secondary(_collo_.allProductLists__secondary),
       secondaryCarouselDetails: _collo_.allProductLists__secondary,
     })
-    // }
   })
-  // alert(JSON.stringify(CollectionPage))
   CollectionPageStylori.Testimony.carousel.data = CollectionPage;
   return { CollectionPageStylori, primaryNavigateUrl };
 }

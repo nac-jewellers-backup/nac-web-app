@@ -139,14 +139,12 @@ const Provider = (props) => {
     makeRequest: wishlistmakeRequest,
   } = useGraphql(ALLUSERWISHLISTS, () => {}, {}, false);
   const { loading, error, data, makeRequest } = useGraphql(CART, () => {}, {});
-  // const prices = cartFilters.price ? cartFilters.price : ''
   const discounted_price = cartFilters.discounted_price
     ? cartFilters.discounted_price
     : "";
   const reload = cartFilters.reload ? cartFilters.reload : "";
   const jewellery = cartFilters.jewellery ? cartFilters.jewellery : "";
-  // const { setwishlist_count } = React.useContext(FilterOptionsContext);
-  // alert(JSON.stringify(wishlist_count,wishlistdata))
+ 
   var con_gust = localStorage.getItem("gut_lg")
     ? JSON.parse(localStorage.getItem("gut_lg"))
     : "";
@@ -170,16 +168,7 @@ const Provider = (props) => {
     }
   }, []);
 
-  // React.useEffect(() => {
-  //     var a = window.location.pathname
-  //     var b = a.split("/")
-  //     if (b[1] === "paymentsuccess") {
-  //         localStorage.removeItem("panel")
-  //         localStorage.removeItem("cartDetails")
-  //         localStorage.removeItem("ship_isactive")
-  //         localStorage.removeItem("bil_isactive")
-  //     }
-  // }, [])
+
   React.useEffect(() => {
     var obj = {};
     var products = [];
@@ -213,7 +202,6 @@ const Provider = (props) => {
     }
   }, [loading, error, data]);
   useEffect(() => {
-    // alert("cart")
     if (jewellery && jewellery === "jewellery") {
       localStorage.removeItem("panel");
       localStorage.removeItem("cartDetails");
@@ -247,20 +235,11 @@ const Provider = (props) => {
       : "";
     if (orderall && orderall.length > 0) {
       objallorder["allorderdata"] = allorder.data.allOrders;
-      // localStorage.setItem("allorder", allorder.data.allOrders)
       setallorderdata(objallorder);
     }
   }, [allorder, allorderdata]);
 
-  // useEffect(() => {
-
-  //     const allordersucces = allordersuccesful ? allordersuccesful && allordersuccesful.data && allordersuccesful.data.allOrders && allordersuccesful.data.allOrders.nodes : ""
-  //  alert(JSON.stringify(allordersucces))
-  //  if (allordersucces !== undefined && allordersucces !== null && allordersucces.length > 0) {
-  //             objallorder["allorderdata"] = allordersucces&&allordersucces.data&&allordersucces.data.allOrders.nodes
-  //         setallorderdata(objallorder)
-  //     }
-  // }, [ allordersuccesful])
+  
 
   useEffect(() => {
     var obj_aishlist_count = {};
@@ -279,18 +258,12 @@ const Provider = (props) => {
         setLoadingWishlist(false);
       }, 2000);
 
-      // localStorage.setItem("allorder", allorder.data.allOrders)
-      // obj_aishlist_count["wishlist_count"] = wishlistdatas && wishlistdatas.length
-      // localStorage.setItem("a__w_l", wishlistdatas && wishlistdatas.length)
-
+   
       setwishlistdata(objwishlist);
 
-      // setwishlist_count(obj_aishlist_count)
-      // alert(JSON.stringify(obj_aishlist_count))
+   
     }
-    // else {
-    //     localStorage.setItem("a__w_l", 0)
-    // }
+  
   }, [wishlistDATA, wishlistdata]);
   useEffect(() => {
     orderobj["userProfileId"] = userIds;
@@ -312,20 +285,9 @@ const Provider = (props) => {
     _obj["orderId"] = { id: props.match.params.id };
     if (props.match.params.id) await allordermakeRequestSuccessful(_obj);
   };
-  // useEffect(() => {
-  //     // orderobj["userProfileId"] = userIds
-  //     // {
-  //     //     "orderId":{"id":"69ec1b00-36d0-11ea-b9b0-a977a389bd8d"}
-  //     //   }
-
-  //     // var props.computedMatch.params.id
-  //     ordersuccessful()
-
-  // }, [wishlistdata])
+ 
   const handleAddToCart = () => {
     if (guestlogId.length > 0) {
-      //
-      // alert(JSON.stringify(guestlogId))
       localStorage.setItem("user_id", cartFilters.user_id);
 
       if (JSON.stringify(cartdetails).length > 0) {
@@ -334,7 +296,6 @@ const Provider = (props) => {
           : "";
         const user_id = cartFilters.user_id;
         var addcart = { products, user_id };
-        // alert("hgdhfdhg")
         if (
           JSON.parse(localStorage.getItem("cartDetails")).products.filter(
             (val) => {
@@ -356,8 +317,7 @@ const Provider = (props) => {
           Object.values(orderobj).length > 0
         )
           allordermakeRequest(orderobj);
-        // allordermakeRequest(orderobj); // CHANGED
-        // wishlistmakeRequest(orderobj1)
+     
       }
     } else {
       var local_storage = JSON.parse(localStorage.getItem("cartDetails"));
@@ -400,13 +360,7 @@ const Provider = (props) => {
         user_id: userId,
         products: products_sku_list(),
       };
-      // if (userIds.length > 0 && gut_lg !== true) {
-      //     var products = productszz;
-      //     const user_id = cartFilters.user_id
-      //     var addcart = ({ products, user_id })
-      //     addtocart(addcart)
-      // }
-      // alert("1")
+  
       if (skuId) localStorage.setItem("cartDetails", JSON.stringify(skuObj));
 
       // window.location.reload()
@@ -479,11 +433,9 @@ const Provider = (props) => {
         UserId: { userprofileId: localStorage.getItem("user_id") },
       };
 
-      //  alert(JSON.stringify(this.state.checked))
       fetch(`${API_URL}/graphql`, {
         method: "post",
-        // body: {query:seoUrlResult,variables:splitHiphen()}
-        // body: JSON.stringify({query:seoUrlResult}),
+       
 
         headers: {
           "Content-Type": "application/json",
@@ -622,9 +574,7 @@ const Provider = (props) => {
             val.data.allShoppingCarts.nodes.length > 0 &&
             val.data.allShoppingCarts.nodes[0].status !== "pending"
           ) {
-            // alert(val.data.allShoppingCarts.nodes[0].status)
-            // var _get_cart_id = JSON.parse(localStorage.getItem('cart_id')).cart_id
-            // var _cart_id = { cart_id: _get_cart_id }
+           
             var _user_id = { user_id: localStorage.getItem("user_id") };
             var session_storage = JSON.parse(
               sessionStorage.getItem("updatedProduct")
@@ -633,8 +583,7 @@ const Provider = (props) => {
             var _obj = { ..._user_id, ..._products };
             fetch(`${API_URL}/addtocart`, {
               method: "post",
-              // body: {query:seoUrlResult,variables:splitHiphen()}
-              // body: JSON.stringify({query:seoUrlResult}),
+      
 
               headers: {
                 "Content-Type": "application/json",
@@ -668,8 +617,7 @@ const Provider = (props) => {
                 }
               });
           } else {
-            // alert(JSON.stringify(val.data.allShoppingCarts.nodes.length>0))
-            // if(val.data.allShoppingCarts.nodes.length>0){
+            
             if (
               val &&
               val.data &&
@@ -775,32 +723,23 @@ const Provider = (props) => {
           }
         });
     } else {
-      // alert("Came as guest user")
 
       variables = { productList: skus };
 
       makeRequest(variables);
     }
   };
-  // useEffect(() => {
-  //     // pathQueries();
-  //     setCartFilters(skus)
 
-  //     updateProductList();
-  // }, [])
 
   const handleAddToCartDidMount = () => {
     if (localStorage.getItem("cart_id") === null) {
-      //
-      // alert(JSON.stringify(guestlogId))
-      // localStorage.setItem("user_id", cartFilters.user_id)
+     
       if (JSON.stringify(cartdetails).length > 0) {
         var products = localStorage.getItem("cartDetails")
           ? JSON.parse(localStorage.getItem("cartDetails")).products
           : "";
         const user_id = cartFilters.user_id;
         var addcart = { products, user_id };
-        // alert("hgdhfdhg")
         if (
           JSON.parse(localStorage.getItem("cartDetails")).products.filter(
             (val) => {
@@ -889,28 +828,22 @@ const Provider = (props) => {
         addtocart(_obj);
       }
 
-      // }
-      // alert("2")
+    
 
       localStorage.setItem("cartDetails", JSON.stringify(skuObj));
 
-      // window.location.reload()
     }
   };
   useEffect(() => {
     setCartFilters(skus);
-    // _qty()
     updateProductList();
     ordersuccessful();
     if (window.location.pathname === "/cart") {
       if (Boolean(localStorage.getItem("user_id"))) {
-        // if(localStorage.getItem("cart_id") === null){
         if (Boolean(localStorage.getItem("cartDetails"))) {
-          // alert("ya came inn.")
           handleAddToCartDidMount();
         }
 
-        // }
       }
     }
   }, []);

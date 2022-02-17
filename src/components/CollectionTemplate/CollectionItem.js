@@ -83,7 +83,6 @@ export default function CollectionItem(props) {
         })
         .catch((error) => {
           reject(false);
-          // alert("error")
         });
     });
   };
@@ -104,7 +103,6 @@ export default function CollectionItem(props) {
         .then(json)
         .then(async (data) => {
           var Collectionz = {};
-          // alert(JSON.stringify(conditionfiltersSeo))
           var paramsfilter =
             Object.entries(data).length !== 0 &&
             data.constructor === Object &&
@@ -119,7 +117,6 @@ export default function CollectionItem(props) {
         })
         .catch(function (error) {
           reject(false);
-          // alert("error")
         });
     });
   };

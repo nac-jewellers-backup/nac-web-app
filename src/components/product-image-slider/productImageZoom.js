@@ -198,7 +198,6 @@ class ProductImageZoom extends React.Component {
       // verticalSwiping: true,
       arrows: false,
     };
-    // alert(JSON.stringify(data.image_resolution))
     const props = {
       width: data[0]?.image_resolution ?? "",
       height: data[0]?.image_resolution ?? "",
@@ -208,13 +207,10 @@ class ProductImageZoom extends React.Component {
     };
 
     var a = showimage && showimage;
-    // alert(JSON.stringify(this.props.data[0]))
     var b = a?.length > 0 && a?.split("/");
     // var c = a.replace(b[5], data[0].image_resolution_two + 'X' + data[0].image_resolution_two)
     var c = a?.length > 0 && a?.replace(b[5], "1000X1000");
-    // alert(JSON.stringify(CDN_URL))consle
-    // console.log(this.props.data[0].productId, "ssss");
-    // //debugger;
+  
 
     return (
       <div>

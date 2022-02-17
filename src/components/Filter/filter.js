@@ -280,11 +280,9 @@ class Component extends React.Component {
         var conditionfiltersSeo = {
           seofilter: { seoUrl: { in: splitHiphen() } },
         };
-        //  alert(JSON.stringify(this.state.checked))
         fetch(this.props.uri, {
           method: "post",
-          // body: {query:seoUrlResult,variables:splitHiphen()}
-          // body: JSON.stringify({query:seoUrlResult}),
+          
 
           headers: {
             "Content-Type": "application/json",
@@ -313,12 +311,9 @@ class Component extends React.Component {
                   }
                 }
                 a[attrName] = { [attrVal]: true };
-                // checked[attrName] = a
-                // alert(JSON.stringify(attrName))
+             
                 return a;
-                // return val
               });
-            // this.setState(checked)
 
             Object.entries(paramsfilter[0]).map((val) => {
               var keys = val[0];
@@ -430,7 +425,6 @@ class Component extends React.Component {
                 checked[val[0]] = { [mm]: false };
                 this.setState(checked);
               }
-              // alert(JSON.stringify(checked))
               return false;
             }
           });
@@ -562,7 +556,6 @@ class Component extends React.Component {
     });
   };
   handleDelete = (value) => {
-    // alert(JSON.stringify(value));
     this.handlebye();
     let { chipData, checked } = this.state;
 
@@ -763,10 +756,7 @@ class Component extends React.Component {
           : price_max.indexOf(" ") > -1
           ? Number(price_max.substr(2))
           : Number(price_max.substr(1));
-      // alert("came in ")
-      //
-      // alert(pricemin)
-      // alert(pricemax)
+     
       if (pricemin > pricemax) {
         this.setState({ errorPriceMessage: true });
       } else if (pricemin === 0 && pricemax === 0) {

@@ -322,7 +322,6 @@ class Component extends React.Component {
   componentDidMount() {
     let sku_id = this.props?.data[0]?.skuId;
 
-    //alert(JSON.stringify(this.props?.data[0]?.price));
 
     let params = {
       sku_id: sku_id,
@@ -333,7 +332,6 @@ class Component extends React.Component {
       .then((res) => {
         this.setState({ productShipBy: res?.data?.shipping_date });
 
-        //alert(JSON.stringify(res?.data?.shipping_date));
       })
       .catch((error) => {
         console.error(error);
@@ -579,14 +577,11 @@ class Component extends React.Component {
       ) {
         this.props.makeRequestCod(variab);
 
-        // this.setState({pincodeValues:this.props.CodData})
-        // console.info('objectdataobject', data, data[0].price> state.pincodeValues.data.allPincodeMasters.nodes[0].maxCartvalue, props.CodData)
       } else {
         return {};
       }
     } else {
       this.setState({ isRequired: true });
-      // alert('Please enter the pincode')
     }
   };
   render() {

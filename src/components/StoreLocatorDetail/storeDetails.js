@@ -6,8 +6,6 @@ import styles from "./style";
 
 var obj_values = {};
 function StoreDetails(props) {
-  // alert(props.match.params.id)
-  // alert(obj_values&&obj_values.data&&obj_values.data.result&&obj_values.data.result.name&&obj_values.data.result.name.split("-"))
   const classes = styles();
   var name =
     obj_values &&
@@ -31,7 +29,6 @@ function StoreDetails(props) {
     obj_values.data.result.geometry.location &&
     obj_values.data.result.geometry.location.lng;
 
-  //   alert(JSON.stringify(obj_values&&obj_values.data&&obj_values.data.result&&obj_values.data.result.geometry.location.lng))
   const [state, setState] = useState({
     formatted_phone_number: "",
     formatted_address: "",
@@ -103,13 +100,9 @@ function StoreDetails(props) {
     }
   };
 
-  // alert(JSON.stringify(Maps_data))
 
   useEffect(() => {
-    // const opts = {
-    //             method: "GET",
-    //             headers: { "Access-Control-Allow-Origin": "http://localhost:3000","Access-Control-Allow-Credentials": true},
-    //           };
+   
     fetch(
       `"https://cors-anywhere.herokuapp.com/"+https://maps.googleapis.com/maps/api/place/details/json?place_id=${ids}&key=AIzaSyBHtJJ5uHfhX92hxFzHsciwPCayzYB9yCk`
     )

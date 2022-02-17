@@ -55,7 +55,6 @@ class ProductImageZoom extends React.Component {
       verticalSwiping: true,
       arrows: false,
     }
-    // alert(JSON.stringify(data.image_resolution))
     const props = { "width": data[0].image_resolution, "height": data[0].image_resolution, "zoomWidth": data[0].image_resolution, "img": `${showimage}`, "zoomStyle": "z-index:2" }
 
     return (

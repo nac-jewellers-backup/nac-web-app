@@ -49,27 +49,20 @@ class PaymentResponseSuccess extends React.Component {
       method: "post",
       headers: {
         "Content-Type": "application/json",
-        // 'Content-Type': 'application/x-www-form-urlencoded',
       },
       body: JSON.stringify(obj),
     })
       .then((res) => {
-        // alert(
-        //    'Order Placed Successfully'
-        // )
+       
         return res.json();
       })
       .then((resdata) => {
         if (resdata.message !== undefined && resdata.message !== null) {
-          // alert(
-          //    resdata && resdata.message
-          // )
-          // alert('success',"We sent activation mail. Please check your mail.")
+         
         }
         alert("Your mail has been Resending on successfully");
       })
       .catch((err) => {
-        // console.log(err)
       });
   };
 
@@ -79,7 +72,6 @@ class PaymentResponseSuccess extends React.Component {
   }
 
   render() {
-    // alert(JSON.stringify(this.props.data))
     let gut_lg = localStorage.getItem("gut_lg")
       ? JSON.parse(localStorage.getItem("gut_lg"))
       : {};

@@ -263,16 +263,9 @@ class Allorders extends React.Component {
         url_split[url_split && url_split.length - 1] = browser_type_append;
         url_split.splice(2, 0, _resolutions);
         var url_construct = url_split.join().replace(/\,/g, "/");
-        // var img_url = `${baseUi}${url_construct}`
         ppp = `${CDN_URL}${url_construct}`;
-        // alert(this.state.check_img)
       }
-      // }
-
-      // return inside[0]
-
-      // var outside = ppp.filter(val => (val !== undefined && val !== null))
-      // alert(ppp)
+     
       return ppp;
     } else {
       if (
@@ -281,7 +274,6 @@ class Allorders extends React.Component {
         this.props.allorderdata.allorderdata &&
         this.props.allorderdata.allorderdata.nodes.length > 0
       ) {
-        // allorderdata && allorderdata.allorderdata && allorderdata.allorderdata.nodes && allorderdata.allorderdata.nodes.length > 0
         var vera = this.props.allorderdata.allorderdata.nodes.map((val) => {
           if (val !== undefined && val !== null) {
             var inside =
@@ -330,20 +322,15 @@ class Allorders extends React.Component {
                         var url_construct = url_split
                           .join()
                           .replace(/\,/g, "/");
-                        // var img_url = `${baseUi}${url_construct}`
                         ppp = `${CDN_URL}${url_construct}`;
-                        // alert(this.state.check_img)
                       }
-                      // }
                     }
                   }
                 }
               );
-            // return inside[0]
           }
         });
-        // var outside = ppp.filter(val => (val !== undefined && val !== null))
-        // alert(ppp)
+        
         return ppp;
       }
     }

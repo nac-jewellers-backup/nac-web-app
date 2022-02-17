@@ -60,7 +60,6 @@ export const FilterOptionsContext = React.createContext(initialCtx);
 export const FilterOptionsConsumer = FilterOptionsContext.Consumer;
 
 const Provider = (props) => {
-  // alert("filters")
   const [filters, setFilters] = React.useState({
     Offers: {},
     Availability: {},
@@ -127,9 +126,7 @@ const Provider = (props) => {
   useEffect(() => {
     const fetch_data = async () => {
       var len;
-      //    if(window.location.pathname === "/jewellery"){
-
-      // props.location.push(window.location.pathname)
+    
       matchPath(window.location.pathname, {
         path: ":listingpage",
         search: window.location.search,
@@ -144,7 +141,6 @@ const Provider = (props) => {
       const conditionfiltersSeo = {
         seofilter: { seoUrl: { in: splitHiphen() } },
       };
-      // makeRequestSeo(conditionfiltersSeo)
       function status(response) {
         if (response.status >= 200 && response.status < 300) {
           return Promise.resolve(response);
@@ -159,9 +155,7 @@ const Provider = (props) => {
 
       await fetch(uri, {
         method: "post",
-        // body: {query:seoUrlResult,variables:splitHiphen()}
-        // body: JSON.stringify({query:seoUrlResult}),
-
+       
         headers: {
           "Content-Type": "application/json",
         },
@@ -176,11 +170,8 @@ const Provider = (props) => {
           // ------------ REDIRECTION ----------
 
           if (data.data.allSeoUrlPriorities.nodes.length === 0) {
-            // alert
-            // samir changed
-            // window.location.pathname = "/";
+           
           }
-          //   window.location.pathname="/gemstone-pendants-jewellery-for+women-from+gemstone+collection"
           var a = {};
 
           var paramsfilter =
@@ -193,7 +184,6 @@ const Provider = (props) => {
                 
               filters[attrName] = { [attrVal]: true };
 
-              // setFilters(filters)
               var obj = {};
 
               obj[val.attributeValue] = true;
@@ -253,15 +243,11 @@ const Provider = (props) => {
             setFilters({ ...filters, a });
           });
           updateFilters(filters);
-          // alert(JSON.stringify(filters))
         })
         .catch(function (error) {
-          //  setSeoComponentMount(data)
         });
 
-      //  alert(JSON.stringify(test))
 
-      // }
     };
     fetch_data();
   }, []);
@@ -269,7 +255,6 @@ const Provider = (props) => {
   var queries = [];
   const qtfArr = [];
   const pathQueries = () => {
-    // var queries = []
     if (window.location.search) {
       Object.keys(filters).map((fk) => {
         const filter = filters[fk];
@@ -280,39 +265,13 @@ const Provider = (props) => {
             const qtf = {};
             qtf[`${fk}`] = `${fv[0]}`;
             queries.push(qt);
-            // qtfArr.push(qtf);
           }
         }
       });
-      // const query = encodeURI(queries.join("&"));
-      // props.history.push({
-      //     pathname: ntxdata.seo_url,
-      //     search: query,
-      // })
+   
     }
   };
-  // const clearSortIfFiltersIsEmpty = () => {
-  //   var showSortFilter = true
-  //
-  //   if (window.location.search) {
-  //     Object.keys(filters).map((fk) => {
-  //       const filter = filters[fk];
-  //       const fv = Object.keys(filter);
-  //       if(fk !== "Category" && fk !== "category" && fk !== "filters"){
-  //         if (fv.length > 0) {
-  //           showSortFilter = true
-  //           }
-  //           else{
-  //             showSortFilter = false
-  //           }
-  //       }
 
-  //     });
-  //     let loc = window.location.pathname.split('?')[0]
-  //     // if (!showSortFilter) window.location.pathname = loc
-  //   }
-
-  // };
 
   const paramObjects = (filtersparms) => {
     // Destructuring the query parameters from the URL
@@ -330,10 +289,7 @@ const Provider = (props) => {
       const filterdata = window.location.pathname;
       const splitslash = filterdata && filterdata.replace("/", "");
       const splitNtxData = filterdata && splitslash.split("-");
-      // const a = filterdata && splitNtxData.map(val => {
-      //     const valPlusSplit = val.replace(/[+]/g, " ")
-      //     return valPlusSplit
-      // })
+   
 
       return (paramsAo = splitNtxData);
     }
@@ -341,13 +297,9 @@ const Provider = (props) => {
     return paramsAo;
   };
 
-  // {transSkuListsByProductId: {some: {discountPrice: {greaterThan: 1.5}}}}
-  // const { loading, error, data, makeRequest } = useGraphql(PRODUCTLIST, () => { }, {})
+ 
   const { loading, error, data, makeFetch: fetchproducts } = useNetworkRequest("/fetchproducts", {}, false, {});
-  // fetchproducts
 
-  // {filter:{transSkuListsByProductId:{every:{markupPrice:{  "greaterThanOrEqualTo":   20000,
-  // "lessThanOrEqualTo":70000}}}}}
   const {
     loading: seoloading,
     error: seoError,
@@ -371,32 +323,7 @@ const Provider = (props) => {
 
     makeRequestSeo(conditionfiltersSeo);
   };
-  // useEffect(()=>{
-  //     setloadingfilters(true)
-  // },[data])
-  // const updateProductList = async() => {
-
-  //     // console.info('objecobjecobject',mappedFilters.seo_url !== "jewellery")
-  //     if (window.location.search) {
-  //         var newObj = {}
-  //         var len;
-  //         var k = qtfArr.map(val => Object.values(val));
-  //         var keyy = qtfArr.map(val => Object.keys(val))
-  //         len = keyy.length
-  //         while (len--) {
-  //             var key = keyy[len]
-  //             var toLowerCase = key[0].toLowerCase()
-  //             newObj[toLowerCase] = k[len][0]
-  //         }
-  //         newObj['sortBy'] = sort.values
-  //         // newObj['price'] = {'min_price':pricemin,'max_price':pricemax}
-
-  //       await fetchproducts(newObj)
-  //       //variables
-
-  //     }
-
-  // }
+ 
 
   useEffect(() => {
       
@@ -485,9 +412,7 @@ const Provider = (props) => {
       newObj["offset"] = offset;
       newObj["isJewellery"] = true;
 
-      // alert(JSON.stringify('filters',filters))
-      // alert(JSON.stringify(newObj))
-      // if()
+   
 
       if (filters?.category?.constructor === Object && Object.keys(filters?.category)?.length === 0) {
         if (filters.Category && Object.keys(filters.Category).length > 0 && filters.Category.constructor === Object) {
@@ -519,15 +444,12 @@ const Provider = (props) => {
           newObj["isJewellery"] = true;
         }
 
-      // data.data.allTransSkuLists.nodes.map(val=>{return val.productListByProductId.productMaterialsByProductSku.nodes}).flat().findIndex(val=> Boolean(val.materialName === "Silver")) > -1
       await fetchproducts(newObj);
     }
   };
 
   useEffect(() => {
-    // alert(JSON.stringify(filters.Offers))
-    // clearSortIfFiltersIsEmpty()
-    // if(!sortFilterCombo) setSort("")
+
 
     if (filters && Object.entries(filters).length !== 0 && filters.constructor === Object) {
       if (
@@ -559,49 +481,34 @@ const Provider = (props) => {
     }
   }, [pricemax]);
   useEffect(() => {
-    // alert("sort")
     if (sort) {
       updatefiltersSort();
     }
   }, [sort]);
 
   useEffect(() => {
-    // alert("offset")
     if (offset && offset !== 0) {
       updatefiltersSort();
     }
   }, [offset]);
-  // useEffect(() => {
 
-  //     //    alert("gdys")
-  //     if (filters && (Object.entries(filters).length !== 0 && filters.constructor === Object)) {
-  //         updatefiltersSort()
-  //     }
-
-  // }, [offset])
   var newObj = {};
-  //create your forceUpdate hook
   function useForceUpdate() {
     const [value, setValue] = React.useState(0); // integer state
     return () => setValue((value) => ++value); // update the state to force render
   }
   const forceUpdate = useForceUpdate();
   const updateFilters = async (filters) => {
-    // alert('update filters')
-    // clearSortIfFiltersIsEmpty()
-    // if(!sortFilterCombo) setSort("")
+  
     setFilters(filters);
     forceUpdate();
-    // setSort("");
     setOffset(0);
 
     setloadingfilters(true);
 
-    // setloadingfilters(true)
     var len;
     let bodyvar;
     bodyvar = paramObjects();
-    // else {
     try {
       Object.keys(filters).map((fk) => {
         const filter = filters[fk];

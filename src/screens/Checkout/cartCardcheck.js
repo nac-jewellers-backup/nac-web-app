@@ -77,9 +77,7 @@ class Component extends React.Component {
   }
 
   handleChange = (panel) => (event) => {
-    // alert(JSON.stringify(panel))
 
-    // alert("va",JSON.stringify(panel))
     if (panel === 2) {
       adres["value"] = {};
       localStorage.removeItem("bil_isactive");
@@ -171,7 +169,6 @@ class Component extends React.Component {
       }
       localStorage.setItem("panel", 1);
     }
-    // alert(JSON.stringify(obj_values))
   };
   changePanel1 = (panel, adres_detail) => {
    
@@ -209,7 +206,6 @@ class Component extends React.Component {
       }
       localStorage.setItem("panel", 1);
     }
-    // alert(JSON.stringify(obj_values))
   };
   pincodeapi = () => {
     var obj_user = {};

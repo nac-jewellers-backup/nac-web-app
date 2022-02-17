@@ -218,14 +218,11 @@ const Components = (props) => {
         .then(status)
         .then(json)
         .then((val) => {
-          // alert(JSON.stringify(val))
           if (val.data.allCartAddresses.nodes.length > 0) {
             var pincode = val.data.allCartAddresses.nodes[0].pincode;
-            // makeRequestCod({pincode:pincode})
             fetch(`${API_URL}/graphql`, {
               method: "post",
-              // body: {query:seoUrlResult,variables:splitHiphen()}
-              // body: JSON.stringify({query:seoUrlResult}),
+             
 
               headers: {
                 "Content-Type": "application/json",

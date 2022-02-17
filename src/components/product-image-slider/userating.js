@@ -75,10 +75,9 @@ const useRating = (props) => {
             })
             if (data.message !== "Already added review for this product") {
                 alert(data && data.message)
-                // alert("Your review has been sent to our team. Will post it soon. Thanks!")
+                
                 clear()
-                // props && props.clear_rating_onchange && props.clear_rating_onchange(true)
-                // return false
+               
             } else {
                 alert(data && data.message)
             }
@@ -104,33 +103,21 @@ const useRating = (props) => {
 
     useEffect(() => {
         var userId = { "userId": localStorage.getItem("user_id") }
-        // alert(JSON.stringify(userId))
         makeRequest(userId)
         let user_id = localStorage.getItem("user_id") ? localStorage.getItem("user_id") : '';
-        // if (window.location.search) {
-        //     let urlSearchparams = window.location.search;
-        //     let urlSearchparamsDecode = decodeURI(urlSearchparams)
-        //     let urlSearchparamsReplace = urlSearchparamsDecode.replace('?', '')
-        //     let urlSearchparamsSplitAmpersand = urlSearchparamsReplace.split('&')
-        //     let urlSplitparamsEqual = () => urlSearchparamsSplitAmpersand.map(val => { return val.split('=') })
-        //     let mapUrlParamsSplitEqual = urlSplitparamsEqual();
-        //     let user_id = localStorage.getItem("user_id") ? localStorage.getItem("user_id") : '';
-        //     mapUrlParamsSplitEqual.map(val => {
+
         values['product_sku'] = props.data && props.data[0] && props.data[0].skuId
         if (props.data && props.data[0] && props.data[0].skuId.length > 0) {
             variab['productSku'] = props.data && props.data[0] && props.data[0].skuId
             makeRequestCod(variab)
-            // alert(JSON.stringify(variab))
         }
         values['user_id'] = user_id
         values['product_id'] = props.data && props.data[0] && props.data[0].productId
-        // setFilters(values)
         setValues({
             ...values,
             values
         })
-        // })
-        // }
+      
     }, [])
     var check = props.ratingcounts.ratingcounts
     useEffect(() => {
@@ -173,7 +160,6 @@ const useRating = (props) => {
         if ((rats > 0) && values.title.length > 0 && values.message.length > 0) {
             let user_id = localStorage.getItem("user_id") ? localStorage.getItem("user_id") : '';
             if (user_id.length > 0) {
-                // alert(JSON.stringify(data.message))
                 var rats = props.ratingcounts.ratingcounts ? props.ratingcounts.ratingcounts : ""
                 if (window.location.search) {
                     values['product_sku'] = props.data && props.data[0] && props.data[0].skuId
@@ -183,7 +169,6 @@ const useRating = (props) => {
                     if (props.data && props.data[0] && props.data[0].skuId.length > 0) {
                         variab['productSku'] = props.data && props.data[0] && props.data[0].skuId
                         makeRequestCod(variab)
-                        // alert(JSON.stringify(variab))
                     }
                     if (rats > 0 || rats !== undefined || rats !== "") {
                         values["errortext"]["rateerr"] = ""
@@ -192,7 +177,6 @@ const useRating = (props) => {
                         values["error"]["ratetitle"] = false
                         values["error"]["ratemsg"] = false
                         values["error"]["rateerr"] = false
-                        // alert(JSON.stringify(rats))
                         values['rate'] = props.ratingcounts.ratingcounts ? JSON.stringify(props.ratingcounts.ratingcounts) : ""
                         setValues({
                             ...values,
@@ -200,18 +184,15 @@ const useRating = (props) => {
                         })
                         makeFetch(values);
                     }
-                    // setFilters(values)
                     setValues({
                         ...values,
                         values
                     })
 
                 }
-                // window.location.href = "/login"
 
             } else {
-                // alert("You will be able to review only after purchasing the product")
-                // props.location.pathname="/login"
+               
                 localStorage.setItem('review_location', `${window.location.href}`)
                 props.history.push({ pathname: "/login" })
             }

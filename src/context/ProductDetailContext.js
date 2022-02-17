@@ -51,7 +51,6 @@ export const TabsProvider = (props) => {
   const [registerurl, setregisterurl] = React.useState("");
   const [ratingcounts, setratingcounts] = React.useState([]);
   const [price, setPrice] = React.useState(0);
-  // alert(JSON.stringify(ratingcounts))
   let queries = [];
   const pathQueries = () => {
     setFilters(filters);
@@ -73,17 +72,14 @@ export const TabsProvider = (props) => {
     data: likedata,
     makeRequest: likemakeRequest,
   } = useGraphql(YouMayAlsoLike, () => { }, {}, false);
-  // youRecentlyViewed
-  // "filtersku": {"skuId": {"in": ["SB0013-18110000","SB0013-18210000"]}}
+ 
   const {
     loading: viewedloading,
     error: viewederror,
     data: vieweddata,
     makeRequest: viewmakeRequest,
   } = useGraphql(youRecentlyViewed, () => { }, {}, false);
-  // useEffect(()=>{
-  //     likemakeRequest(vardata)
-  // },[])
+
   var con_gust = localStorage.getItem("gut_lg")
     ? JSON.parse(localStorage.getItem("gut_lg"))
     : "";
@@ -138,9 +134,7 @@ export const TabsProvider = (props) => {
       }
     }
 
-    // var metalColors =filters.defaultVariants.metalColor.length>0 ? {productColor:filters.defaultVariants.metalColor  }: null;
-    // variables = { conditionfilter: { 'skuId': filters["skuId"] }, conditionImage:{...metalColors} }
-
+ 
     if (window.location.search.length > 0) {
       setregisterurl({
         registerurl: window.location.pathname + window.location.search,
@@ -163,7 +157,6 @@ export const TabsProvider = (props) => {
       var _sessionStorage = sessionStorage.getItem("skuId");
       var arr = [];
       if (_sessionStorage && _sessionStorage.length > 0) {
-        // arr.push(_sessionStorage.split(','))
         arr = _sessionStorage.split(",");
         arr.push(filters.skuId);
         var uniqueArray = [...new Set(arr)];
@@ -181,7 +174,6 @@ export const TabsProvider = (props) => {
         imagePosition: 1,
         isdefault: true,
       };
-      // let locviewdata = data.data.allTransSkuLists.nodes[0].skuId
       if (_sessionStorage && _sessionStorage.indexOf(",") > -1) {
         variablesviewed["filtersku"] = {
           skuId: {

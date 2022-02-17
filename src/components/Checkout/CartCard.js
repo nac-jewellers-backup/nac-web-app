@@ -888,8 +888,7 @@ class Checkoutcard extends React.Component {
                                         productId={dataval.productId}
                                       />
 
-                                      {/* 
-                               {console.log(dataval.isActive)} */}
+                                      
                                       {!dataval.isActive ? (
                                         <span
                                           style={{
@@ -1142,8 +1141,7 @@ class Checkoutcard extends React.Component {
                                     productId={dataval.productId}
                                   />
 
-                                  {/* 
-                                 {console.log(dataval.isActive)} */}
+                                
                                   {!dataval.isActive ? (
                                     <span
                                       style={{

@@ -2019,7 +2019,6 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
             ? viewedddatas?.data?.allProductMaterials &&
               viewedddatas?.data?.allProductMaterials?.nodes?.length > 0
               ? viewedddatas?.data?.allProductMaterials?.nodes?.map((val) => {
-                  //debugger;
                   return {
                     img:
                       val &&

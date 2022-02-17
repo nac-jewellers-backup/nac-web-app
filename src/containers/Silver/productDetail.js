@@ -44,7 +44,6 @@ class ProductDetail extends Component {
       { title: path[2], url: this.renderUrl() },
       { title: path[4] },
     ];
-    // alert(JSON.stringify(this.props.wishlistdata))
     return (
       <div>
         <div>

@@ -34,25 +34,19 @@ class Component extends React.Component {
         this.setState({ starsSelected })
         this.props.setratingcounts({ ratingcounts: starsSelected })
         if (this.props && this.props.setratingcountsclear && this.props.setratingcountsclear.length > 0) {
-            // alert(JSON.stringify(this.props.setratingcFountsclear))
             this.setState({ starsSelected: "" })
         }
-        // localStorage.setItem("count", starsSelected)
     }
 
 
     componentWillReceiveProps(nextProps) {
         
         const { starsSelected } = this.props
-        // alert(JSON.stringify("======="))
         if (nextProps.clear_rating && nextProps.clear_rating.length > 0) {
-            // if (nextProps.starsSelected !== starsSelected) {
             this.setState({ starsSelected: "" })
-            // }
         }
     }
     render() {
-        // alert(JSON.stringify(this.props.setratingcountsclear))
         const { totalStars } = this.props;
         const { starsSelected } = this.state;
 
@@ -65,19 +59,12 @@ class Component extends React.Component {
                         onClick={() => this.change(this.props.disable === "disable" ? "" : i + 1)}
                     />
                 )}
-                {/* <p>{starsSelected} of {totalStars} stars</p> */}
             </div>
 </>
         )
     }
 }
 
-//  Ratings.propTypes = {
-//    totalStars: React.PropTypes.number
-//  }
 
-// Ratings.defaultProps = {
-//   totalStars: 5
-// }
 
 export default Ratings;

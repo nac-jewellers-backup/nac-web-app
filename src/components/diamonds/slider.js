@@ -29,18 +29,13 @@ export default function Sliders(props) {
       };
       const marks = {
         0: " 0",
-        // 5: "0-5",
-        // 20: "6-20",
-        // 30: "21-30",
+        
         1000: "1000"
       };
-      // alert(JSON.stringify(state.e[0]))
       return (
         
         <Grid xs={12}>
-                    {/* <div className={classes.slider_wrapper}> */}
-                        {/* <div className={classes.classesslider_range}></div> */}
-                        {/* <div style={{ paddingRight: '15px' }}> */}
+                 
                         <Range
                         {...settings}
                marks={marks}
@@ -52,9 +47,7 @@ export default function Sliders(props) {
                handleStyle={[{ backgroundColor: '#64b3e8', height: 20, width: 20 }, { backgroundColor: '#64b3e8', height: 20, width: 20 }]}
                railStyle={{ backgroundColor: "#D3D3D3", height: 10 }}
                />
-               {/* <p style={{fontSize: "16px", color: "#000", fontWeight: "600"}}>{props.range.toString().replace("," , " - ")}</p> */}
-                        {/* </div> */}
-                    {/* </div> */}
+              
                 
         </Grid>
     )

@@ -333,7 +333,6 @@ class Component extends React.Component {
       }
     } else {
       this.setState({ isRequired: true });
-      // alert('Please enter the pincode')
     }
   };
   render() {

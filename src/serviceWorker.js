@@ -16,7 +16,6 @@ const cacheCheck = async () => {
   var request = new XMLHttpRequest();
 
 
-  // alert('i came in', myJson)
 
   var local_storage = localStorage.getItem('version')
   if (local_storage && local_storage.length > 0) {
@@ -24,7 +23,6 @@ const cacheCheck = async () => {
       request.open('GET', '/meta.json', true);
       request.send(null);
       request.onreadystatechange = async function () {
-        // if (request.readyState === 1 || (request.status === 200 ||request.status === 304)) {
 
         var type = await request.getResponseHeader('Content-Type');
 

@@ -44,7 +44,6 @@ const Filters = (props) => {
   const [productDisplay, setProductDisplay] = React.useState(true);
   const [CardRadio, setCardRadio] = React.useState(false);
   const selectType = (came, a, b, d) => {
-    // alert(came, a, b, d)
     if (Object.entries(came).length !== 0 && came.constructor !== Object) {
       var hoverFilter = state.listHoverItem.replace(/\s/g, "");
       var filters_uncheck = () => {
@@ -59,7 +58,6 @@ const Filters = (props) => {
       setState({ ...state, filters: filterState });
       ListingPageCtx.setSilverFilters(state.filters);
     } else {
-      // alert(a,b,d)
     }
   };
   const handleChangesort = (event) => {
@@ -71,17 +69,13 @@ const Filters = (props) => {
   };
 
   const handleDrawerOpenMobile = () => {
-    // var _openFilters = {openFilters:!openFilters}
-
+    
     setOpenFilters(!openFilters);
     setProductDisplay(!productDisplay);
     setCardRadio(!CardRadio);
-    // setState({...state, productDisplay: false });
-    // setState({...state,CardRadio: false });
+  
   };
-  // React.useEffect(()=>{
-  //   alert(JSON.stringify(openFilters))
-  // },[openFilters])
+  
   const handleDrawerCloseMobile = () => {
     setOpenFilters(!openFilters);
     setProductDisplay(!productDisplay);

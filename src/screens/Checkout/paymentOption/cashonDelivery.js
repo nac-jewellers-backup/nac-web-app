@@ -8,8 +8,6 @@ import "./payment.css";
 
 var obj = {};
 var obj_user = {};
-// let user_id = localStorage.getItem("user_id") ? localStorage.getItem("user_id") : ""
-// const order_idx = localStorage.getItem('order_id') ? JSON.parse(localStorage.getItem('order_id')) : "yourorder"
 
 class CashonDelivey extends React.Component {
   constructor(props) {
@@ -30,24 +28,10 @@ class CashonDelivey extends React.Component {
   };
 
   makeFetch = async (props) => {
-    // await fetch(`${API_URL}/createorder`, {
-    //     method: 'post',
-    //     headers: {
-    //         'Content-Type': 'application/json'
-    //         // 'Content-Type': 'application/x-www-form-urlencoded',
-    //     },
-    //     body: JSON.stringify(obj)
-    // }).then(async res => {
-    //     // alert(JSON.stringify(obj))
-    //     return await  res.json();
-    //     alert('Order Placed Successfully')
 
-    // })
     fetch(`${API_URL}/createorder`, {
       method: "post",
-      // body: {query:seoUrlResult,variables:splitHiphen()}
-      // body: JSON.stringify({query:seoUrlResult}),
-
+    
       headers: {
         "Content-Type": "application/json",
       },
@@ -56,7 +40,6 @@ class CashonDelivey extends React.Component {
       .then(this.status)
       .then(this.json)
       .then((resdata) => {
-        // localStorage.removeItem("order_id")
         if (resdata !== null && resdata !== undefined) {
           localStorage.setItem("order_id", JSON.stringify(resdata.order.id));
         }
@@ -67,25 +50,17 @@ class CashonDelivey extends React.Component {
         localStorage.removeItem("bil_isactive");
         localStorage.removeItem("set_check");
         localStorage.removeItem("cart_id");
-        // if (localStorage.getItem('gut_lg')) localStorage.removeItem("user_id")
         sessionStorage.removeItem("updatedProduct");
-        alert(resdata.message);
+      
         window.location.pathname = `/paymentsuccess/${resdata.order.id}`;
       })
       .catch((err) => {});
-    // localStorage.removeItem("cart_id")
-
-    // }
-
-    // obj_user["user_id"] = user_id
-    // obj_user["jewellery"] = "jewellery"
-    // this.props.setCartFilters(obj_user)
-    // window.location.pathname = "/jewellery"
+  
   };
   componentDidMount() {}
   componentDidUpdate(prevProps, prevState) {
     if (this.state.res_data !== prevState.res_data) {
-      // in 1.6.2 there will not execute
+     
       alert(this.state.res_data);
     }
   }
