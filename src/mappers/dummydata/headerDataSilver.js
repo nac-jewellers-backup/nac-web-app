@@ -1,45 +1,10 @@
-// mobile views menu
-// export const mainlist = [
-//   {
-//     name: "Jewellery",
-//     url: "/jewellery",
-//   },
-//   // {
-//   //     name: "Silver",
-//   //     url: "/stylorisilver",
-//   // },
-//   {
-//     name: "Gold Coins",
-//     url: "/goldcoins",
-//   },
-//   {
-//     name: "Collections",
-//     url: "/collections",
-//   },
-//   {
-//     name: "Ready to ship",
-//     url: "/jewellery-shipping+in+1+day",
-//   },
-//   {
-//     name: "CSK MERCHANDISE",
-//     url: "/jewellery/kada/csk_kada?sku_id=1000000",
-//   },
-//   // {
-//   //     name: "STORIES",
-//   //     url: "/stories",
-//   // },
-// ];
-
 // mobile view new datalist
 export const mainlist = [
   {
     name: "Earrings",
     url: "/jewellery",
   },
-  // {
-  //     name: "Silver",
-  //     url: "/stylorisilver",
-  // },
+
   {
     name: "NECKLACE",
     url: "/goldcoins",
@@ -512,20 +477,20 @@ export const Jewellery = {
         },
         {
           icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
-          name: "Yellow Gold",
+          name: " Gold",
         },
-        {
-          icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
-          name: "White Gold",
-        },
-        {
-          icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
-          name: "Rose Gold",
-        },
-        {
-          icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Path+423.svg",
-          name: "Silver by STYLORI",
-        },
+        // {
+        //   icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
+        //   name: "White Gold",
+        // },
+        // {
+        //   icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
+        //   name: "Rose Gold",
+        // },
+        // {
+        //   icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Path+423.svg",
+        //   name: "Silver by STYLORI",
+        // },
       ],
     },
     price: {
@@ -546,7 +511,105 @@ export const Jewellery = {
       ],
     },
   },
+  NECKLACE: {
+    styles: {
+      name: "SHOPS BY STYLE",
+      img: [
+        {
+          img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Necklace/9-ei9520-Long+Necklace.webp",
+          content: "Long Necklace",
+          url: "/studs-earrings-jewellery",
+        },
+        {
+          img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Necklace/2-eh8221-Short+Necklace.webp",
+          content: "Short Necklace",
+          url: "/drops-earrings-jewellery",
+        },
+        {
+          img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Necklace/ax1069-Choker.webp",
+          content: "Choakar",
+          url: "/jhumkas+online-earrings-jewellery",
+        },
+        {
+          img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Necklace/2-318402-Bridal.webp",
+          content: "Bridal",
+          url: "/ear+cuffs-earrings-jewellery",
+        },
+        {
+          img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Necklace/2-bx8785-Layerred+Necklace.webp",
+          content: "Layered",
+          url: "/huggies-earrings-jewellery",
+        },
 
+        {
+          img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Necklace/28323711-Antique.webp",
+          content: "Antique",
+          url: "/ear+jacket-earrings-jewellery",
+        },
+        {
+          img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Necklace/28812219-Guttapusalu.webp",
+          content: "Gutapulusu",
+          url: "/ear+jacket-earrings-jewellery",
+        },
+      
+      ],
+    },
+    stone: {
+      name2: "SHOP BY STONE AND METAL",
+      stone_metal: [
+        {
+          icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Group+319.svg",
+          name: "Gemstone",
+        },
+        {
+          icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Group+321.svg",
+          name: "Diamond",
+        },
+        {
+          icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Group+325.svg",
+          name: "Solitaire",
+        },
+
+        {
+          icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Ellipse+3.svg",
+          name: "Platinum",
+        },
+        {
+          icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
+          name: " Gold",
+        },
+        // {
+        //   icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
+        //   name: "White Gold",
+        // },
+        // {
+        //   icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
+        //   name: "Rose Gold",
+        // },
+        // {
+        //   icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Path+423.svg",
+        //   name: "Silver by STYLORI",
+        // },
+      ],
+    },
+    price: {
+      name3: "SHOP BY PRICE",
+      price: [
+        {
+          price: "Below -$1000",
+        },
+        {
+          price: "$10000 -$250000",
+        },
+        {
+          price: "$250000 - &50000",
+        },
+        {
+          price: "Above -$1000",
+        },
+      ],
+    },
+  },
   SILVER: {
     styles: {
       name: "SILVER ARTICLES",
@@ -666,7 +729,7 @@ export const Jewellery = {
           url: "/drops-earrings-jewellery",
         },
         {
-          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/bangles%26bracelets/GTmGEC%402x.png",
+          img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Light+weight+Bangle-.webp",
           content: "LightWeight bangles",
           url: "/ear+cuffs-earrings-jewellery",
         },
@@ -714,20 +777,20 @@ export const Jewellery = {
         },
         {
           icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
-          name: "Yellow Gold",
+          name: " Gold",
         },
-        {
-          icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
-          name: "White Gold",
-        },
-        {
-          icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
-          name: "Rose Gold",
-        },
-        {
-          icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Path+423.svg",
-          name: "Silver by STYLORI",
-        },
+        // {
+        //   icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
+        //   name: "White Gold",
+        // },
+        // {
+        //   icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
+        //   name: "Rose Gold",
+        // },
+        // {
+        //   icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Path+423.svg",
+        //   name: "Silver by STYLORI",
+        // },
       ],
     },
     price: {
@@ -763,17 +826,17 @@ export const Jewellery = {
       name: "SHOPS BY STYLE",
       img: [
         {
-          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/rings/hBk9ve%402x.png",
+          img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Ring+Casual-.webp",
           content: "Casual",
           url: "/studs-earrings-jewellery",
         },
         {
-          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/rings/DzDcBv%402x.png",
+          img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Ring+Cocktail.webp",
           content: "Cocktail",
           url: "/drops-earrings-jewellery",
         },
         {
-          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/rings/Ul3xhG%402x.png",
+          img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Ring+Fashion.webp",
           content: "Fashion",
           url: "/ear+cuffs-earrings-jewellery",
         },
@@ -821,20 +884,20 @@ export const Jewellery = {
         },
         {
           icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
-          name: "Yellow Gold",
+          name: " Gold",
         },
-        {
-          icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
-          name: "White Gold",
-        },
-        {
-          icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
-          name: "Rose Gold",
-        },
-        {
-          icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Path+423.svg",
-          name: "Silver by STYLORI",
-        },
+        // {
+        //   icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
+        //   name: "White Gold",
+        // },
+        // {
+        //   icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
+        //   name: "Rose Gold",
+        // },
+        // {
+        //   icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Path+423.svg",
+        //   name: "Silver by STYLORI",
+        // },
       ],
     },
     price: {
@@ -1011,20 +1074,20 @@ export const Jewellery = {
         },
         {
           icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
-          name: "Yellow Gold",
+          name: " Gold",
         },
-        {
-          icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
-          name: "White Gold",
-        },
-        {
-          icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
-          name: "Rose Gold",
-        },
-        {
-          icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Path+423.svg",
-          name: "Silver by STYLORI",
-        },
+        // {
+        //   icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
+        //   name: "White Gold",
+        // },
+        // {
+        //   icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
+        //   name: "Rose Gold",
+        // },
+        // {
+        //   icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Path+423.svg",
+        //   name: "Silver by STYLORI",
+        // },
       ],
     },
     price: {
@@ -1052,16 +1115,6 @@ export const Jewellery = {
         "SHOP ALL DESIGN",
       ],
     },
-    // extrafeature: [
-    //   {
-    //     name: "LEG CHAIN",
-    //     feature: ["anglets", "Metti", "others"],
-    //   },
-    //   {
-    //     name: "Furniture",
-    //     feature: ["Chairs", "Tables", "center Tables"],
-    //   },
-    // ],
   },
 
   "SAVING SCHEME": {

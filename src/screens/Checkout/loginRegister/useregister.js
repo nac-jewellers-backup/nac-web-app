@@ -88,33 +88,26 @@ const useRegister = (changePanel, props) => {
     }
   }, []);
   React.useEffect(() => {
-    if (
-      Profile_Data &&
-      Profile_Data.data &&
-      Profile_Data.data.userProfileById &&
-      Profile_Data.data.userProfileById.firstName &&
-      Profile_Data.data.userProfileById.firstName.length > 0
-    ) {
-      valuesadrees["firstname"] =
-        Profile_Data.data.userProfileById.firstName &&
-        Profile_Data.data.userProfileById.firstName;
-      valuesadrees["lastname"] =
-        Profile_Data.data.userProfileById.lastName &&
-        Profile_Data.data.userProfileById.lastName;
-      valuesadrees["contactno"] =
-        Profile_Data.data.userProfileById.mobile &&
-        Profile_Data.data.userProfileById.mobile;
-      valuesadrees["pincode"] =
-        Profile_Data.data.userProfileById.pincode &&
-        Profile_Data.data.userProfileById.pincode;
-      valuesadrees["salutation"] =
-        Profile_Data.data.userProfileById.salutation &&
-        Profile_Data.data.userProfileById.salutation;
-      setvaluesadrees({
-        ...valuesadrees,
-        valuesadrees,
-      });
-    }
+    Profile_Data?.data?.userProfileById?.firstName &&
+      (valuesadrees["firstname"] =
+        Profile_Data?.data?.userProfileById?.firstName ?? "");
+
+    Profile_Data?.data?.userProfileById?.lastName &&
+      (valuesadrees["lastname"] =
+        Profile_Data?.data?.userProfileById?.lastName ?? "");
+    Profile_Data?.data?.userProfileById?.mobile &&
+      (valuesadrees["contactno"] =
+        Profile_Data?.data?.userProfileById?.mobile ?? "");
+    Profile_Data?.data?.userProfileById?.pincode &&
+      (valuesadrees["pincode"] =
+        Profile_Data?.data?.userProfileById?.pincode ?? "");
+    Profile_Data?.data?.userProfileById?.salutation &&
+      (valuesadrees["salutation"] =
+        Profile_Data?.data?.userProfileById?.salutation ?? "");
+    setvaluesadrees({
+      ...valuesadrees,
+      valuesadrees,
+    });
   }, [Profile_Data]);
   const clear = () => {
     setValues({
@@ -174,7 +167,7 @@ const useRegister = (changePanel, props) => {
         localStorage.setItem("email", data.user.email);
         localStorage.setItem("user_id", data.user_profile_id);
         localStorage.setItem("accessToken", data.accessToken);
-       
+
         setValues({ user_id: data.user_profile_id });
         setCartFilters({ user_id });
         makeRequestCod(obj);
@@ -194,7 +187,6 @@ const useRegister = (changePanel, props) => {
         }
       }
     }
-
   }, [data]);
 
   const errmsg = data.message ? data.message : "";
@@ -331,7 +323,6 @@ const useRegister = (changePanel, props) => {
       makeFetch(values);
       return false;
     } else {
-     
       makeFetcheditAddress(valuesadrees);
     }
   };

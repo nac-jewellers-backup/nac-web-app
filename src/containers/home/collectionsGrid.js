@@ -14,7 +14,6 @@ const useStyles = makeStyles((theme) => ({
   gridList: {
     width: 500,
     height: 450,
-    // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
     transform: "translateZ(0)",
   },
   titleBar: {
@@ -241,7 +240,7 @@ export function AdvancedGridList() {
               className={classes.gridimg}
             />
             <div className="overlayGrid">
-              <b className={classes.titlefooter}>SHOP</b>&nbsp;
+              <b className={classes.titlefooter}>SHOP REWIND </b>&nbsp;
               <span className={classes.titlefooter}></span>
             </div>
           </div>
@@ -255,7 +254,7 @@ export function AdvancedGridList() {
               className={classes.gridimg}
             />
             <div className="overlayGrid">
-              <b className={classes.titlefooter}>SHOP</b>&nbsp;{" "}
+              <b className={classes.titlefooter}> SHOP DIAMOND SETS</b>&nbsp;{" "}
               <span className={classes.titlefooter}></span>
             </div>
           </div>
@@ -268,7 +267,7 @@ export function AdvancedGridList() {
               className={classes.gridimg}
             />
             <div className="overlayGrid">
-              <b className={classes.titlefooter}>SHOP</b>&nbsp;
+              <b className={classes.titlefooter}>SHOP RUDRAMADEVI</b>&nbsp;
               <span className={classes.titlefooter}></span>
             </div>
           </div>
@@ -281,7 +280,7 @@ export function AdvancedGridList() {
               className={classes.gridimg}
             />
             <div className="overlayGrid">
-              <b className={classes.titlefooter}>SHOP</b>&nbsp;
+              <b className={classes.titlefooter}>SHOP MAYURA</b>&nbsp;
               <span className={classes.titlefooter}></span>
             </div>
           </div>
@@ -294,7 +293,7 @@ export function AdvancedGridList() {
               className={classes.gridimg}
             />
             <div className="overlayGrid">
-              <b className={classes.titlefooter}>SHOP</b>&nbsp;
+              <b className={classes.titlefooter}> SHOP MUHURTHAM</b>&nbsp;
               <span className={classes.titlefooter}></span>
             </div>
           </div>
@@ -307,7 +306,7 @@ export function AdvancedGridList() {
               height="100%"
             />
             <div className="overlayGrid">
-              <b className={classes.titlefooter}>SHOP</b>&nbsp;
+              <b className={classes.titlefooter}> SHOP LITTLE ONES</b>&nbsp;
               <span className={classes.titlefooter}></span>
             </div>
           </div>

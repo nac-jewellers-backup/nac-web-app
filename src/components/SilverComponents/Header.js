@@ -894,7 +894,7 @@ class Header extends Component {
                             )}
                           </div>
                         </ListItem>
-                        <div style={{ padding: "10px" }}>
+                        <div style={{ padding: "4px" }}>
                           {
                             selected === row.name && (
                               // Object.keys(Jewellery[selected]).map((row2) => (
