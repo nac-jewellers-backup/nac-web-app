@@ -1,4 +1,4 @@
-export const API_URL = "https://api.nacjewellers.net";
+export const API_URL = "https://api-staging.nacjewellers.net";
 // export const API_URL = "https://api-staging.stylori.com";
 export const HOME_PAGE_URL = "";
 export const CDN_URL = "https://assets.stylori.com/";
