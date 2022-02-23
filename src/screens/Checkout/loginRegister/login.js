@@ -107,6 +107,7 @@ const LoginComponent = (props) => {
           lastName: response.last_name,
         },
       };      
+      debugger
       const opts = {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -569,7 +570,8 @@ const LoginComponent = (props) => {
                       <label>
                         <FacebookLogin
                           appId={FACEBOOK_APP_ID}
-                          autoLoad
+                          autoLoad={false}
+                          fields="name,email,first_name,last_name"
                           callback={responseFacebook}
                           render={(renderProps) => (
                             <Button
