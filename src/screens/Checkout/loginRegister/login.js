@@ -1,10 +1,10 @@
+import React, { useState } from "react";
+import { makeStyles, withStyles } from "@material-ui/core/styles";
 import { Box, Button, Grid, Hidden, TextField } from "@material-ui/core";
 import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogTitle from "@material-ui/core/DialogTitle";
-import { makeStyles, withStyles } from "@material-ui/core/styles";
-import React, { useState, useEffect } from "react";
 import Snackbar from "@material-ui/core/Snackbar";
 import { AiOutlineMobile } from "react-icons/ai";
 import { withRouter } from "react-router-dom";
@@ -14,6 +14,10 @@ import "./loginRegisters.css";
 import styles from "./style";
 import useLogin from "./useLogin";
 import MuiAlert from "@material-ui/lab/Alert";
+import { GoogleLogin } from "react-google-login";
+import FacebookLogin from "react-facebook-login/dist/facebook-login-render-props";
+import FacebookIcon from "assets/icons8-facebook.svg";
+import GoogleIcon from "assets/icons8-gmail.svg";
 const Login = (props) => {
   return <LoginComponent {...props} />;
 };
@@ -94,16 +98,17 @@ const LoginComponent = (props) => {
     props.change();
   };
   const responseFacebook = (response) => {
-    if (response.accessToken) {
+    if (response) {
       let body = {
-        fbid: response.id,
+        type: "facebook",
+        mediaBody: response,
       };
       const opts = {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
       };
-      fetch(`${url}/fbsignin`, opts)
+      fetch(`${url}/api/auth/mediasignin`, opts)
         .then((res) => res.json())
         .then((fetchValue) => {
           if (fetchValue.accessToken) {
@@ -128,52 +133,10 @@ const LoginComponent = (props) => {
               });
               setopen(true);
             } else {
-              let body = {
-                email: response.email,
-                firstname: response.first_name,
-                lastname: response.last_name,
-                fbid: response.id,
-              };
-              const opts = {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(body),
-              };
-              fetch(`${url}/fbsignup`, opts)
-                .then((res) => res.json())
-                .then((fetchValue1) => {
-                  if (fetchValue1.accessToken) {
-                    localStorage.setItem(
-                      "accessToken",
-                      fetchValue1.accessToken
-                    );
-                    localStorage.setItem(
-                      "user_id",
-                      fetchValue1.user_profile.id
-                    );
-                    localStorage.setItem(
-                      "email",
-                      fetchValue1.user_profile.email
-                    );
-
-                    localStorage.setItem("panel", 2);
-                    localStorage.setItem("isedit", 1);
-                    localStorage.setItem("true", false);
-                    let navlogin = localStorage.getItem("navfblogin");
-                    if (navlogin === "true") {
-                      props.history.push("/");
-                    } else {
-                      props.history.push("/Checkout");
-                    }
-                  }
-                })
-                .catch(console.error);
             }
           }
         })
         .catch(console.error);
-
-      // props.history.push('/')
     }
   };
   function handleUserInfo(e, type) {
@@ -378,7 +341,7 @@ const LoginComponent = (props) => {
           fetchValue?.userprofile?.id &&
             localStorage.setItem("user_id", fetchValue?.userprofile?.id);
           fetchValue?.userprofile?.email &&
-          localStorage.setItem("email", fetchValue?.userprofile?.email);
+            localStorage.setItem("email", fetchValue?.userprofile?.email);
           localStorage.setItem("isedit", 1);
 
           handlers.VerifyOTP(fetchValue?.userprofile?.id);
@@ -418,6 +381,51 @@ const LoginComponent = (props) => {
     }
 
     setOpenSnack(false);
+  };
+
+  const responseGoogle = (response) => {
+    if (response) {
+      let body = {
+        type: "google",
+        mediaBody: response,
+      };
+      const opts = {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      };
+      fetch(`${url}/api/auth/mediasignin`, opts)
+        .then((res) => res.json())
+        .then((fetchValue) => {
+          if (fetchValue.accessToken) {
+            localStorage.setItem("accessToken", fetchValue.accessToken);
+            localStorage.setItem("user_id", fetchValue.user.id);
+            localStorage.setItem("email", fetchValue.user.email);
+            localStorage.setItem("true", false);
+            localStorage.setItem("panel", 2);
+            let navlogin = localStorage.getItem("navfblogin");
+            if (navlogin === "true") {
+              props.history.push("/");
+            } else {
+              props.history.push("/Checkout");
+            }
+          } else {
+            if (typeof response.email === "undefined") {
+              setLoginInfo({
+                ...loginInfo,
+                first_name: response.first_name,
+                last_name: response.last_name,
+                userId: response.id,
+              });
+              setopen(true);
+            } else {
+            }
+          }
+        })
+        .catch(console.error);
+
+      // props.history.push('/')
+    }
   };
 
   return (
@@ -539,10 +547,108 @@ const LoginComponent = (props) => {
               className={classes.other}
               style={{ padding: "10px" }}
             >
-              <Grid item xs={12}>
+              <Grid
+                item
+                xs={12}
+                style={{ display: "flex", justifyContent: "center" }}
+              >
                 <br />
 
-                <Box display="flex" flexDirection="row" justifyContent="center">
+                <div display="flex">
+                  <Box padding="5px">
+                    <div style={{ cursor: "pointer" }}>
+                      <label>
+                        <FacebookLogin
+                          appId="1088597931155576"
+                          autoLoad
+                          callback={responseFacebook}
+                          render={(renderProps) => (
+                            <Button
+                              variant="contained"
+                              style={{
+                                padding: "5px 7px",
+                                textTransform: "Capitailze",
+                                backgroundColor: "#F3F3F3",
+                                borderRadius: "0px",
+                                boxShadow: "0px 2px 4px 1px #888888",
+                                color: "gray",
+                                whiteSpace: "nowrap",
+                              }}
+                              onClick={renderProps.onClick}
+                              className={classes.btntext}
+                              startIcon={
+                                <img
+                                  style={{
+                                    marginLeft: "4px",
+                                    height: "24px",
+                                  }}
+                                  className={classes.btnicon}
+                                  src={FacebookIcon}
+                                  alt="facebookicon"
+                                />
+                              }
+                            >
+                              Sign in with Facebook
+                            </Button>
+                          )}
+                        />
+                      </label>
+                    </div>
+                  </Box>
+                </div>
+                <div>
+                  <Box padding="5px">
+                    <div style={{ cursor: "pointer" }}>
+                      <label>
+                        <GoogleLogin
+                          clientId="658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com"
+                          render={(renderProps) => (
+                            <Button
+                              variant="contained"
+                              style={{
+                                padding: "5px 7px",
+                                textTransform: "Capitailze",
+                                backgroundColor: "#F3F3F3",
+                                borderRadius: "0px",
+                                boxShadow: "0px 2px 4px 1px #888888",
+                                color: "gray",
+                                whiteSpace: "nowrap",
+                              }}
+                              onClick={renderProps.onClick}
+                              disabled={renderProps.disabled}
+                              className={classes.btntext}
+                              startIcon={
+                                <img
+                                  style={{
+                                    marginLeft: "4px",
+                                    height: "24px",
+                                  }}
+                                  className={classes.btnicon}
+                                  src={GoogleIcon}
+                                  alt="facebookicon"
+                                />
+                              }
+                            >
+                              Sign in with Google
+                            </Button>
+                          )}
+                          buttonText="Login"
+                          onSuccess={responseGoogle}
+                          onFailure={responseGoogle}
+                          cookiePolicy={"single_host_origin"}
+                        />
+                      </label>
+                    </div>
+                  </Box>
+                </div>
+              </Grid>
+              <Grid
+                item
+                xs={12}
+                style={{ display: "flex", justifyContent: "center" }}
+              >
+                <br />
+                <div display="flex">
                   <Box padding="5px">
                     <div style={{ cursor: "pointer" }}>
                       <label>
@@ -571,7 +677,7 @@ const LoginComponent = (props) => {
                       </label>
                     </div>
                   </Box>
-                </Box>
+                </div>
               </Grid>
             </Grid>
           </form>
