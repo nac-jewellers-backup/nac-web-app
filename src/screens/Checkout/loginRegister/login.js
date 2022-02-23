@@ -40,7 +40,7 @@ const useStyle = makeStyles((theme) => ({
   },
 }));
 const LoginComponent = (props) => {
-  let url = "https://api-staging.stylori.com";
+  let url = API_URL;
   const pathnames = window.location.pathname === "/login";
 
   const classes1 = useStyle();
@@ -101,8 +101,12 @@ const LoginComponent = (props) => {
     if (response) {
       let body = {
         type: "facebook",
-        mediaBody: response,
-      };
+        mediaBody: {
+          ...response,
+          firstName: response.first_name,
+          lastName: response.last_name,
+        },
+      };      
       const opts = {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -387,7 +391,12 @@ const LoginComponent = (props) => {
     if (response) {
       let body = {
         type: "google",
-        mediaBody: response,
+        mediaBody: {
+          id: response?.googleId,
+          ...response?.profileObj,
+          firstName: response?.profileObj?.givenName,
+          lastName: response?.profileObj?.familyName,
+        },
       };
       const opts = {
         method: "POST",
@@ -399,8 +408,8 @@ const LoginComponent = (props) => {
         .then((fetchValue) => {
           if (fetchValue.accessToken) {
             localStorage.setItem("accessToken", fetchValue.accessToken);
-            localStorage.setItem("user_id", fetchValue.user.id);
-            localStorage.setItem("email", fetchValue.user.email);
+            localStorage.setItem("user_id", fetchValue.userprofile.id);
+            localStorage.setItem("email", fetchValue.userprofile.email);
             localStorage.setItem("true", false);
             localStorage.setItem("panel", 2);
             let navlogin = localStorage.getItem("navfblogin");
