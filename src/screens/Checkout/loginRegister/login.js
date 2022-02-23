@@ -8,7 +8,7 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 import Snackbar from "@material-ui/core/Snackbar";
 import { AiOutlineMobile } from "react-icons/ai";
 import { withRouter } from "react-router-dom";
-import { API_URL } from "../../../config";
+import { API_URL, FACEBOOK_APP_ID, GOOGLE_CLIENT_ID } from "../../../config";
 import { Input } from "../../../components/InputComponents/TextField/Input";
 import "./loginRegisters.css";
 import styles from "./style";
@@ -559,7 +559,7 @@ const LoginComponent = (props) => {
                     <div style={{ cursor: "pointer" }}>
                       <label>
                         <FacebookLogin
-                          appId="1088597931155576"
+                          appId={FACEBOOK_APP_ID}
                           autoLoad
                           callback={responseFacebook}
                           render={(renderProps) => (
@@ -601,7 +601,7 @@ const LoginComponent = (props) => {
                     <div style={{ cursor: "pointer" }}>
                       <label>
                         <GoogleLogin
-                          clientId="658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com"
+                          clientId={GOOGLE_CLIENT_ID}
                           render={(renderProps) => (
                             <Button
                               variant="contained"
