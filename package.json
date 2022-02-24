@@ -103,7 +103,17 @@
     "webpack": "4.29.6",
     "webpack-dev-server": "3.2.1",
     "webpack-manifest-plugin": "2.0.4",
-    "workbox-webpack-plugin": "4.2.0"
+    "workbox-webpack-plugin": "4.2.0",
+    "@craco/craco": "5.2.4",
+    "@storybook/addon-actions": "^5.3.21",
+    "@storybook/react": "5.1.10",
+    "hint": "^5.2.0",
+    "nodemon": "^1.19.1",
+    "pm2": "3.5.1",
+    "serve": "11.0.2",
+    "storybook-addon-material-ui": "^0.9.0-alpha.24",
+    "storybook-react-router": "^1.0.5",
+    "sw-precache-webpack-plugin": "^0.11.5"
   },
   "scripts": {
     "generate-build-version": "node generate-build-version",
@@ -133,18 +143,7 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {
-    "@craco/craco": "5.2.4",
-    "@storybook/addon-actions": "^5.3.21",
-    "@storybook/react": "5.1.10",
-    "hint": "^5.2.0",
-    "nodemon": "^1.19.1",
-    "pm2": "3.5.1",
-    "serve": "11.0.2",
-    "storybook-addon-material-ui": "^0.9.0-alpha.24",
-    "storybook-react-router": "^1.0.5",
-    "sw-precache-webpack-plugin": "^0.11.5"
-  },
+  "devDependencies": {},
   "cracoConfig": "craco-config.js",
   "jest": {
     "collectCoverageFrom": [
