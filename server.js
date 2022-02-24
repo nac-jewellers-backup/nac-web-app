@@ -1,5 +1,6 @@
 const express = require("express");
 const path = require("path");
+const morgan = require("morgan");
 // const favicon = require("serve-favicon");
 const fs = require("fs");
 
@@ -13,6 +14,7 @@ dotenv.config();
 
 const app = express();
 
+app.use(morgan())
 // app.use(favicon(path.join(__dirname, "./build", "favicon.gif")));
 app.use(express.static("./build"));
 
