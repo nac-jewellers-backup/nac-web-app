@@ -502,3 +502,16 @@
     height: 175px !important;
   }
 }
+
+.timelinescroll::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.timelinescroll::-webkit-scrollbar-track {
+  background-color: #fff;
+  border-radius: 10px;
+}
+.timelinescroll::-webkit-scrollbar-thumb {
+  background-color: #e4eaee;
+  border-radius: 10px;
+}
