@@ -206,6 +206,16 @@ const styles = (theme) => ({
       paddingTop: "0px",
     },
   },
+  timelineItemGrid: {
+    overflowX: "hidden",
+    overflowY: "auto",
+    [theme.breakpoints.up("md")]: {
+      height: "350px",
+    },
+    [theme.breakpoints.down("md")]: {
+      height: "200px",
+    },
+  },
 });
 
 class HomeComp extends React.Component {
@@ -642,7 +652,16 @@ class HomeComp extends React.Component {
       <>
         <Container>
           <Grid container className={classes.timelinegrid}>
-            <Grid item xs={3} sm={3} md={2} lg={2} xl={2}>
+            <Grid
+              item
+              xs={3}
+              sm={3}
+              md={2}
+              lg={2}
+              xl={2}
+           
+              className={`${classes.timelineItemGrid} timelinescroll`}
+            >
               <div className="timeline">
                 <div className="timeline-body">
                   {timelineData.map((el, i) => (
