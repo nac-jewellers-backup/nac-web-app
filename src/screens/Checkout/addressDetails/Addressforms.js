@@ -683,6 +683,7 @@ const Addressforms = (changePanel) => {
     }
   };
   const redirectForm1 = (event) => {
+   
     values["addressOne"] = "";
     values["addressTwo"] = "";
     value11 = {

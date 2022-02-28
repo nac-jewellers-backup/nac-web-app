@@ -36,7 +36,6 @@ class Addressdetails extends React.Component {
       }
     };
 
-
     const cl = (
       <input
         onChange={(e) => {
@@ -45,12 +44,9 @@ class Addressdetails extends React.Component {
             ...values,
             checkValue1: !values.checkValue1,
           });
-    
         }}
         type="checkbox"
-        checked={
-          values.checkValue1
-        }
+        checked={values.checkValue1}
       />
     );
 
@@ -94,7 +90,8 @@ class Addressdetails extends React.Component {
         );
       }
     };
-  
+   
+
     return (
       <div className="pt-sm">
         <Grid container spacing={12}>
@@ -258,7 +255,6 @@ class Addressdetails extends React.Component {
                     false
                   ) : (
                     <>
-                    
                       <Grid
                         item
                         xs={12}
@@ -328,7 +324,7 @@ class Addressdetails extends React.Component {
                             positiveBtn="Confirm delete"
                             title="Confirmation"
                           />
-                          
+
                           <p className={`detils-p ${classes.normalfonts}`}>
                             {val_addrs1.addressline1}
                             <br />
