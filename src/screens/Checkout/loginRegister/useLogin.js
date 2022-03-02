@@ -105,10 +105,10 @@ const useLogin = (changePanel, props) => {
     }
   }, [data]);
   React.useEffect(() => {
+  
     var a = addresData ? addresData : "";
     if (JSON.stringify(a).length > 10) {
       setCartFilters(obj1);
-      // localStorage.setItem("vals", JSON.stringify(addresData))
       localStorage.setItem("true", false);
       localStorage.setItem("check_dlt", false);
       val["addressvalues"] = addresData;
@@ -172,6 +172,8 @@ const useLogin = (changePanel, props) => {
   const errmsg = data.message ? data.message : "";
   const auth = data.userprofile ? data.userprofile.id : "";
   const handelSubmit = (e, history) => {
+   
+    console.log(values);
     if (values.email === "" && values["error"] && values["errortext"]) {
       values["error"]["emerr"] = true;
       values["errortext"]["emerr"] = "Email is required";
@@ -221,11 +223,42 @@ const useLogin = (changePanel, props) => {
   };
 
   const VerifyOTP = (data) => {
-    obj["userprofileId"] = data;
+ 
+
+    localStorage.setItem("email", data.userprofile.email);
+    var bb = data.userprofile.id ? data.userprofile.id : "";
+    obj["userprofileId"] = bb;
+    obj1["user_id"] = bb;
+    obj1["reload"] = "loading";
     makeRequestCod(obj);
+    localStorage.setItem("user_id", bb);
+    sessionStorage.setItem("user_id", bb);
+    localStorage.setItem("accessToken", data.accessToken);
+
+    // val["addrs"] = true;
+    // makeRequestCod(obj);
+  };
+  const FacebookLogin = (data) => {
+  
+    localStorage.setItem("email", data.userprofile.email);
+    var bb = data.userprofile.id ? data.userprofile.id : "";
+    obj["userprofileId"] = bb;
+    obj1["user_id"] = bb;
+    obj1["reload"] = "loading";
+    makeRequestCod(obj);
+    localStorage.setItem("user_id", bb);
+    sessionStorage.setItem("user_id", bb);
+    localStorage.setItem("accessToken", data.accessToken);
   };
 
-  const handlers = { handleChange, handleInvalid, handelSubmit, clear , VerifyOTP};
+  const handlers = {
+    handleChange,
+    handleInvalid,
+    handelSubmit,
+    clear,
+    VerifyOTP,
+    FacebookLogin,
+  };
 
   return { values, handlers, setValues, data };
 };

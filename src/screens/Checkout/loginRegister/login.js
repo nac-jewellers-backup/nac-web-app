@@ -106,8 +106,8 @@ const LoginComponent = (props) => {
           firstName: response.first_name,
           lastName: response.last_name,
         },
-      };      
-      debugger
+      };
+
       const opts = {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -122,6 +122,8 @@ const LoginComponent = (props) => {
             localStorage.setItem("email", fetchValue.user.email);
             localStorage.setItem("true", false);
             localStorage.setItem("panel", 2);
+            handlers.FacebookLogin(fetchValue);
+
             let navlogin = localStorage.getItem("navfblogin");
             if (navlogin === "true") {
               props.history.push("/");
@@ -341,15 +343,15 @@ const LoginComponent = (props) => {
       fetch(`${API_URL}/verify_otp`, opts)
         .then((res) => res.json())
         .then((fetchValue) => {
-          fetchValue?.accessToken &&
-            localStorage.setItem("accessToken", fetchValue?.accessToken);
-          fetchValue?.userprofile?.id &&
-            localStorage.setItem("user_id", fetchValue?.userprofile?.id);
-          fetchValue?.userprofile?.email &&
-            localStorage.setItem("email", fetchValue?.userprofile?.email);
-          localStorage.setItem("isedit", 1);
+          // fetchValue?.accessToken &&
+          //   localStorage.setItem("accessToken", fetchValue?.accessToken);
+          // fetchValue?.userprofile?.id &&
+          //   localStorage.setItem("user_id", fetchValue?.userprofile?.id);
+          // fetchValue?.userprofile?.email &&
+          //   localStorage.setItem("email", fetchValue?.userprofile?.email);
+          // localStorage.setItem("isedit", 1);
 
-          handlers.VerifyOTP(fetchValue?.userprofile?.id);
+          handlers.VerifyOTP(fetchValue);
         })
         .catch((err) => {
           console.log(err);
@@ -408,28 +410,29 @@ const LoginComponent = (props) => {
         .then((res) => res.json())
         .then((fetchValue) => {
           if (fetchValue.accessToken) {
-            localStorage.setItem("accessToken", fetchValue.accessToken);
-            localStorage.setItem("user_id", fetchValue.userprofile.id);
-            localStorage.setItem("email", fetchValue.userprofile.email);
-            localStorage.setItem("true", false);
-            localStorage.setItem("panel", 2);
-            let navlogin = localStorage.getItem("navfblogin");
-            if (navlogin === "true") {
-              props.history.push("/");
-            } else {
-              props.history.push("/Checkout");
-            }
-          } else {
-            if (typeof response.email === "undefined") {
-              setLoginInfo({
-                ...loginInfo,
-                first_name: response.first_name,
-                last_name: response.last_name,
-                userId: response.id,
-              });
-              setopen(true);
-            } else {
-            }
+            // localStorage.setItem("accessToken", fetchValue.accessToken);
+            // localStorage.setItem("user_id", fetchValue.userprofile.id);
+            // localStorage.setItem("email", fetchValue.userprofile.email);
+            // localStorage.setItem("true", false);
+            // localStorage.setItem("panel", 2);
+            // let navlogin = localStorage.getItem("navfblogin");
+            handlers.VerifyOTP(fetchValue);
+            //   if (navlogin === "true") {
+            //     props.history.push("/");
+            //   } else {
+            //     props.history.push("/Checkout");
+            //   }
+            // } else {
+            //   if (typeof response.email === "undefined") {
+            //     setLoginInfo({
+            //       ...loginInfo,
+            //       first_name: response.first_name,
+            //       last_name: response.last_name,
+            //       userId: response.id,
+            //     });
+            //     setopen(true);
+            //   } else {
+            //   }
           }
         })
         .catch(console.error);

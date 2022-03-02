@@ -34,10 +34,12 @@ const AddressComponent = (props) => {
     />
   );
   const redirectAdd = (num) => {
+   
     handle.redirectForm1();
     setState(num);
   };
   const redirectAdd2 = (num) => {
+ 
     handle.redirectForm1();
     setState(num);
   };
