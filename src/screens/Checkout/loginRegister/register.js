@@ -318,7 +318,7 @@ const RegisterComponent = (props) => {
                         value={valuesadrees.pincode}
                         // onKeyPress={(e) => handle.handleKeyPress(e, "pincode")}
                         helperText="Pin code is required"
-                        maxLength={6}
+                        // maxLength={6}
                         required
                       />
                     </Grid>

@@ -301,7 +301,7 @@ const Addressforms = (changePanel) => {
       (values &&
         values.addressOne &&
         values.addressOne.pincode &&
-        values.addressOne.pincode.length < 6) ||
+        values.addressOne.pincode.length < 4) ||
       (values["addressOne"] &&
         values["addressOne"]["errortext"] &&
         values["addressOne"]["errortext"]["pinerr"])
@@ -314,7 +314,7 @@ const Addressforms = (changePanel) => {
       (values &&
         values.addressTwo &&
         values.addressTwo.pincode &&
-        values.addressTwo.pincode.length < 5) ||
+        values.addressTwo.pincode.length < 4) ||
       (values["addressTwo"] &&
         values["addressTwo"]["errortext"] &&
         values["addressTwo"]["errortext"]["pinerr1"])
@@ -683,7 +683,6 @@ const Addressforms = (changePanel) => {
     }
   };
   const redirectForm1 = (event) => {
-   
     values["addressOne"] = "";
     values["addressTwo"] = "";
     value11 = {
