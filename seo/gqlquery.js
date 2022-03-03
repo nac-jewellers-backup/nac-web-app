@@ -7,7 +7,11 @@ var PRODUCTDETAILS = gql`
     $productnamefilter: TransSkuListFilter
     $number: Int
   ) {
-    allTransSkuLists(condition: $conditionfilter, filter: $productnamefilter, first: $number) {
+    allTransSkuLists(
+      condition: $conditionfilter
+      filter: $productnamefilter
+      first: $number
+    ) {
       nodes {
         markupPrice
         transSkuDescriptionsBySkuId {
@@ -17,7 +21,11 @@ var PRODUCTDETAILS = gql`
         }
         productListByProductId {
           productName
-          productImagesByProductId(condition: $conditionImage, orderBy: IMAGE_POSITION_ASC, first: 1) {
+          productImagesByProductId(
+            condition: $conditionImage
+            orderBy: IMAGE_POSITION_ASC
+            first: 1
+          ) {
             nodes {
               imageUrl
             }

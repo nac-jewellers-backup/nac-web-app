@@ -2,7 +2,6 @@ const { request } = require("graphql-request");
 const { seoUrlResult, PRODUCTDETAILS } = require("./gqlquery");
 const { API_URL } = require("./config");
 const { default: axios } = require("axios");
-const { Redirect } = require("react-router-dom");
 const networkcall = (path, skuID) => {
   if (skuID !== undefined) {
     var variables = { conditionfilter: { skuId: skuID } };
@@ -21,18 +20,6 @@ const networkcall = (path, skuID) => {
           description = description.replace(/^(.{200}[^\s]*).*/, "$1");
           description = description.concat("...");
         }
-        // var SlasValue = 0;
-        // var imgData = "";
-        // var i;
-        // for (i = 0; i < imgConstructURL.length; i++) {
-        //   if (imgConstructURL.charAt(i) == "/") {
-        //     SlasValue = SlasValue + 1;
-        //     if (SlasValue == 2) {
-        //       imgData = imgData.concat("/1000X1000");
-        //     }
-        //   }
-        //   imgData = imgData + imgConstructURL.charAt(i);
-        // }
 
         return {
           title: `${ResultData[0].productListByProductId.productName}  
@@ -40,7 +27,6 @@ const networkcall = (path, skuID) => {
           description: description,
           imgURL: imgConstructURL,
         };
-        // return { title: replaceValue, description: data.seo_text };
       }
     );
   } else if (path.indexOf("jewellery")) {
