@@ -276,7 +276,7 @@ const Addressforms = (changePanel) => {
       const val = values.addressOne.pincode || values.addressTwo.pincode;
       var variab = {};
       variab["pincode"] = value;
-      if (value.length > 5) {
+      if (value.length > 4) {
         if (
           Object.entries(variab).length !== 0 &&
           variab.constructor === Object

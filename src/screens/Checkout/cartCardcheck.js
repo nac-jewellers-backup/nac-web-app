@@ -58,9 +58,7 @@ class Component extends React.Component {
     expanded:
       "panel" +
       (localStorage.getItem("panel") ? localStorage.getItem("panel") : 1),
-    // expanded: 'panel2',
-    // expandedlimit: localStorage.getItem("panel") ? localStorage.getItem("panel") : 1,
-    // expandedlimit: 1,
+
     mailId: null,
     adres_details: null,
     expand: false,
@@ -77,7 +75,6 @@ class Component extends React.Component {
   }
 
   handleChange = (panel) => (event) => {
-
     if (panel === 2) {
       adres["value"] = {};
       localStorage.removeItem("bil_isactive");
@@ -93,7 +90,6 @@ class Component extends React.Component {
       obj_values["adres_details"] = {};
     }
     const { expanded } = this.state;
-    // if (value && value.pincode && value.pincode.length > 2) {
     if (
       (localStorage.getItem("bil_isactive") ||
         localStorage.getItem("ship_isactive")) &&
@@ -105,8 +101,6 @@ class Component extends React.Component {
       this.setState({
         expanded: "panel" + 3,
       });
-      // }
-      // window.location.reload()
     } else {
       if (expanded > "panel" + panel) {
         this.setState({
@@ -120,7 +114,6 @@ class Component extends React.Component {
         localStorage.removeItem("bil_isactive");
         localStorage.removeItem("ship_isactive");
         localStorage.removeItem("select_addres");
-        // return false
       }
     }
     if (Object.keys(adres.value).length <= 0) {
@@ -135,7 +128,6 @@ class Component extends React.Component {
   };
 
   changePanel = (panel, adres_detail) => {
-   
     if (panel == 2) {
       adres["value"] = {};
       localStorage.removeItem("bil_isactive");
@@ -150,15 +142,12 @@ class Component extends React.Component {
       localStorage.removeItem("select_addres");
       obj_values["adres_details"] = {};
     }
-    // if(!panel===null){
     localStorage.setItem("panel", panel);
     obj_values["adres_details"] = adres_detail;
     this.setState({
       expanded: "panel" + panel,
       expandedlimit: panel,
-      // mailId: mailId ? mailId : this.state.mailId
     });
-    // }
 
     if (Object.keys(adres.value).length <= 0 && obj_values.length <= 0) {
       if (panel === 1) {
@@ -171,7 +160,6 @@ class Component extends React.Component {
     }
   };
   changePanel1 = (panel, adres_detail) => {
-   
     this.setState({ show: false });
     if (panel === 3) {
       adres["value"] = {};
@@ -218,7 +206,6 @@ class Component extends React.Component {
     this.changePanel(3);
   };
   handleChangedown = (panel) => (event, isExpanded) => {
-   
     this.setState({
       expand: isExpanded ? panel : false,
     });
