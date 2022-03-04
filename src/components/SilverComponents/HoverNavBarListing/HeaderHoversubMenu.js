@@ -297,7 +297,7 @@ function HeaderHoverMenuItem(props) {
     {
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/bangles%26bracelets/6afKPj%402x.png",
       content: <>Tennies&nbsp;bracelets</>,
-      url: "#",
+      url: "/oval-bracelets-jewellery",
     },
     {
       img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Ring+Casual-.webp",
@@ -307,7 +307,7 @@ function HeaderHoverMenuItem(props) {
     {
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/bangles%26bracelets/yGnqN0%402x.png",
       content: <>Platinum&nbsp;Bracelets</>,
-      url: "buy+platinum-bracelets-jewellery",
+      url: "/buy+platinum-bracelets-jewellery",
     },
     {
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/bangles%26bracelets/iYTHDb%402x.png",
@@ -328,7 +328,7 @@ function HeaderHoverMenuItem(props) {
   const collectionsData = [
     {
       title: "Traditional Setting",
-      url: "#",
+      url: "/jewellery-close+setting",
       image:
         "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/SqY6sJ%402x.png",
     },
@@ -385,7 +385,7 @@ function HeaderHoverMenuItem(props) {
 
     {
       title: "Strings",
-      url: "#",
+      url: "/jewellery-coral",
       image:
         "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/xMJ8PJ%402x.png",
     },
@@ -398,45 +398,38 @@ function HeaderHoverMenuItem(props) {
   ];
   const NecklaceData = [
     {
-      img:
-        "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Necklace/9-ei9520-Long+Necklace.webp",
+      img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Necklace/9-ei9520-Long+Necklace.webp",
       content: "Long Necklace",
       url: "/studs-earrings-jewellery",
     },
     {
-      img:
-        "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Necklace/2-eh8221-Short+Necklace.webp",
+      img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Necklace/2-eh8221-Short+Necklace.webp",
       content: "Short Necklace",
       url: "/drops-earrings-jewellery",
     },
     {
-      img:
-        "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Necklace/ax1069-Choker.webp",
+      img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Necklace/ax1069-Choker.webp",
       content: "Choakar",
       url: "/jhumkas+online-earrings-jewellery",
     },
     {
-      img:
-        "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Necklace/2-318402-Bridal.webp",
+      img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Necklace/2-318402-Bridal.webp",
       content: "Bridal",
       url: "/ear+cuffs-earrings-jewellery",
     },
     {
-      img:
-        "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Necklace/2-bx8785-Layerred+Necklace.webp",
+      img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Necklace/2-bx8785-Layerred+Necklace.webp",
       content: "Layered",
       url: "/huggies-earrings-jewellery",
     },
 
     {
-      img:
-        "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Necklace/28323711-Antique.webp",
+      img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Necklace/28323711-Antique.webp",
       content: "Antique",
       url: "/ear+jacket-earrings-jewellery",
     },
     {
-      img:
-        "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Necklace/28812219-Guttapusalu.webp",
+      img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Necklace/28812219-Guttapusalu.webp",
       content: "Gutapulusu",
       url: "/ear+jacket-earrings-jewellery",
     },
@@ -580,17 +573,20 @@ function HeaderHoverMenuItem(props) {
   ];
 
   const savingScheme = [
-    { title: "Pay now" },
-    { title: "Join now" },
-    { title: "New Quick Gold" },
-    { title: "Super Think Diamond" },
-    { title: "Super Quick silver" },
+    { title: "Pay now", url: "#" },
+    { title: "Join now", url: "#" },
+    { title: "New Quick Gold", url: "#" },
+    { title: "Super Think Diamond", url: "#" },
+    { title: "Super Quick silver", url: "#" },
   ];
 
   const styloridata = [
-    { title: "Stylori Gold" },
-    { title: "Stylori Silver" },
-    { title: "Csk Merchandise" },
+    { title: "Stylori Gold", url: "https://www.stylori.com/" },
+    { title: "Stylori Silver", url: "https://www.stylori.com/styloriSilver" },
+    {
+      title: "Csk Merchandise",
+      url: "https://www.stylori.com/silver-jewellery-csk+collection",
+    },
   ];
 
   const silverItems = [
@@ -841,7 +837,6 @@ function HeaderHoverMenuItem(props) {
                     >
                       <Grid item style={{ margin: "auto" }}>
                         <Typography
-                          // style={{ margin: "auto", color: "#33346d" }}
                           className={classes.imgtitle}
                           style={{ paddingBottom: "5px" }}
                         >
@@ -862,6 +857,7 @@ function HeaderHoverMenuItem(props) {
                             src={val.image}
                             width="40%"
                             height="45%"
+                            alt="menu imgs"
                           />
                         )}
                       </Grid>
@@ -877,6 +873,7 @@ function HeaderHoverMenuItem(props) {
                 src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Main+menu+category+images/NAC+Jewellers+collections.jpg"
                 width="100%"
                 height="75%"
+                alt="menu img"
               />
             </div>
           </Grid>
@@ -958,6 +955,7 @@ function HeaderHoverMenuItem(props) {
                 src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Main+menu+category+images/NAC+Jewellers+Other+Collections.jpg"
                 width="100%"
                 height="75%"
+                alt="imgs"
               />
             </div>
           </Grid>
@@ -993,6 +991,9 @@ function HeaderHoverMenuItem(props) {
                 justifyContent: "flex-start",
                 paddingRight: "30px",
               }}
+              onClick={() => {
+                window.location.href = val.url;
+              }}
             >
               <Typography className={classes.phovertitile}>
                 {val.title.toUpperCase()}
@@ -1026,6 +1027,9 @@ function HeaderHoverMenuItem(props) {
               item
               xs={2}
               style={{ display: "flex", justifyContent: "flex-start" }}
+              onClick={() => {
+                window.location.href = val.url;
+              }}
             >
               <Typography className={classes.phovertitile}>
                 {val.title.toUpperCase()}
@@ -1132,8 +1136,7 @@ function HeaderHoverMenuItem(props) {
                             return (window.location.href = val.url2);
                           } else if (props.listitem === "BANGLES & BRACELETS") {
                             return (window.location.href = val.url3);
-                          }
-                          else if (props.listitem === "NECKLACE") {
+                          } else if (props.listitem === "NECKLACE") {
                             return (window.location.href = val.url3);
                           }
                         }}

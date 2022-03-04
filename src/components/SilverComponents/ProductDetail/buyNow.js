@@ -31,14 +31,6 @@ const inputsearch = (props, state, handleChanges, handleCodChange) => {
       {data[0].ProductContactNum.map((val) => (
         <Grid container spacing={12} className={classes.shadow}>
           <Grid item xs={8} lg={4} sm={8}>
-            {/* <input
-                            placeholder='&#xf041; &nbsp; Enter Pin Code'
-                            className='buynow-search'
-                            type="text"
-                            value={state.values}
-                            onChange={(event) => { handleChanges(event) }}
-                            onKeyPress={(e) => { if (!(e.which >= 48 && e.which <= 57)) e.preventDefault(); }}
-                        /> */}
             <input
               onkeyup="this.value=this.value.replace(/[^0-9]/g,'');"
               placeholder="Enter Pincode"
@@ -199,7 +191,7 @@ const PriceBuynow = (props) => {
     error,
     data: CodData,
     makeRequestCod,
-  } = useCheckForCod(CheckForCod, () => { }, {});
+  } = useCheckForCod(CheckForCod, () => {}, {});
   const { ProductDetailCtx, setFilters } =
     React.useContext(ProductDetailContext);
   const { setCartFilters } = React.useContext(CartContext);

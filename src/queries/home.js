@@ -246,3 +246,18 @@ export const AllHOMEQUERY = `query MyQuery {
 
 
 `;
+
+export const GOLDPRICE = `
+query {
+  allDailyMetalPrices(condition: { isActive: true }, orderBy: ID_ASC) {
+    nodes {
+      id
+      metalName
+      displayName
+      displayPrice
+      isActive
+      createdAt
+      updatedAt
+    }
+  }
+}`;

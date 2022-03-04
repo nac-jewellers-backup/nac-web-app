@@ -51,6 +51,7 @@ export const styles = (theme) => ({
     backgroundColor: theme.palette.gold.main,
     boxShadow: "6px 7px 6px #bebfbf",
     color: "white",
+    padding: "3px 3px 6px 3px",
     "& .MuiNativeSelect-select:not([multiple])": {
       "& option": {
         color: "white",

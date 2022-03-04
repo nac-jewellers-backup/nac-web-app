@@ -9,7 +9,6 @@ import CashonDelivey from "./cashonDelivery";
 import Netbanking from "./netBanking";
 import "./payment.css";
 
-var va = {};
 class PaymentIndex extends React.Component {
   constructor() {
     super();
@@ -164,8 +163,6 @@ const Components = (props) => {
     CartCtx: { cartFilters, data, loading, error },
   } = React.useContext(CartContext);
 
-  // const { loading:codLoading, error:codError, data: CodData, makeRequestCod } = useCheckForCod(CheckForCod, () => { }, {});
-
   var cartId = cartFilters._cart_id
     ? cartFilters._cart_id
     : JSON.parse(localStorage.getItem("cart_id"))
@@ -182,7 +179,6 @@ const Components = (props) => {
   const json = (response) => {
     return response.json();
   };
-  // var codData = {}
   let content, mapped;
   if (!loading && !error) {
     if (Object.keys(data).length !== 0) {
@@ -204,8 +200,6 @@ const Components = (props) => {
     } else {
       fetch(`${API_URL}/graphql`, {
         method: "post",
-        // body: {query:seoUrlResult,variables:splitHiphen()}
-        // body: JSON.stringify({query:seoUrlResult}),
 
         headers: {
           "Content-Type": "application/json",
@@ -222,7 +216,6 @@ const Components = (props) => {
             var pincode = val.data.allCartAddresses.nodes[0].pincode;
             fetch(`${API_URL}/graphql`, {
               method: "post",
-             
 
               headers: {
                 "Content-Type": "application/json",
@@ -236,7 +229,6 @@ const Components = (props) => {
               .then(json)
               .then((val) => {
                 if (mapped && mapped.length > 0 && val) {
-                  // const min_cart_value = val.data ? val.data.allPincodeMasters.nodes[0].minCartvalue : null
                   const min_cart_value = 5000;
                   const max_cart_value = val.data
                     ? val.data.allPincodeMasters.nodes[0].maxCartvalue
@@ -275,21 +267,14 @@ const Components = (props) => {
                         dataCard1 >= min_cart_value &&
                         dataCard1 <= max_cart_value
                       ) {
-                        // var cart_prices = cart_price;
                         setCodAvailability(true);
                         return false;
                       } else {
                         setCodAvailability(false);
-                        //    this.setState({isActive:"Netbanking", disabledCOD:true})
-                        //  cart_prices = 0;
-                        //    var _number = 1
                       }
                     }
-                    // myFunc()
                   }
                 }
-
-                // if(Object.entries(codData).length === 0) setCodData(val)
               });
           }
         });

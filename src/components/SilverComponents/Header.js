@@ -31,6 +31,8 @@ import { headerDataSilver } from "../../mappers";
 import "./header.css";
 import HeaderHoversubMenu from "./HoverNavBarListing/HeaderHoversubMenu";
 import { styles } from "./styles";
+import { GOLDPRICE } from "../../queries/home";
+import { API_URL } from "../../config";
 
 let user_id = localStorage.getItem("user_id")
   ? localStorage.getItem("user_id")
@@ -60,12 +62,14 @@ class Header extends Component {
       anchorEl: false,
       opened: false,
       scroll: false,
+      goldPrice: null,
     };
     this.topZero = React.createRef();
   }
 
   componentDidMount() {
     var _pathname = window.location.pathname.split("/");
+    this.getGoldPrice();
     if (
       window.location.pathname === "/cart" ||
       window.location.pathname === "/checkout" ||
@@ -83,6 +87,23 @@ class Header extends Component {
     }
   }
 
+  getGoldPrice = () => {
+    fetch(`${API_URL}/graphql`, {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        query: GOLDPRICE,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        this.setState({
+          goldPrice: data?.data?.allDailyMetalPrices?.nodes ?? null,
+        });
+      });
+  };
   handleDrawerOpen = () => {
     this.setState({ open: true });
   };
@@ -191,7 +212,6 @@ class Header extends Component {
     const opened = this.state;
     var a = window.location.pathname;
     var b = a.split("/");
-
     return (
       <div
         style={{ top: "0", zIndex: "1000", width: "100%" }}
@@ -305,7 +325,7 @@ class Header extends Component {
                             className={classes.goldRateformControl}
                           >
                             <NativeSelect
-                              defaultValue={30}
+                              defaultValue={null}
                               inputProps={{
                                 name: "name",
                                 id: "uncontrolled-native",
@@ -314,9 +334,11 @@ class Header extends Component {
                                 },
                               }}
                             >
-                              <option value={10}>Ten</option>
-                              <option value={20}>Twenty</option>
-                              <option value={30}>Gold 22k/1g ₹ 3256</option>
+                              {this?.state?.goldPrice?.map((val) => (
+                                <option
+                                  value={val.displayPrice}
+                                >{`${val.displayName} - ₹${val.displayPrice}`}</option>
+                              ))}
                             </NativeSelect>
                           </FormControl>
                         </Grid>
@@ -390,7 +412,6 @@ class Header extends Component {
 
                           <div className="tooltip">
                             <Badge
-                              // style={{ marginTop: "9px" }}
                               badgeContent={
                                 this.props.wishlist &&
                                 this.props.wishlist.wishlistdata &&
@@ -423,7 +444,6 @@ class Header extends Component {
 
                           <div className="tooltip">
                             <Badge
-                              // style={{ marginTop: "9px" }}
                               badgeContent={
                                 this.props.cart_count &&
                                 this.props.cart_count.data &&
@@ -490,7 +510,6 @@ class Header extends Component {
                       xl={11}
                       className={`header-navbar-list1 ${classes.headerNavbarList}`}
                     >
-                      {/* <div> */}
                       {menuListHeader.map((listName) => {
                         return (
                           <a
@@ -515,33 +534,6 @@ class Header extends Component {
                           </a>
                         );
                       })}
-                      {/* </div> */}
-
-                      {/* {this.state.Menuopen &&
-        menuLists[this.state.listHoverItem] ? (
-          <HeaderHoverMenuItem
-            tabdata={this.props.data}
-            listHoverItem={
-              menuLists[this.state.listHoverItem]
-            }
-            onMouseOver={(event) => {
-              this.setState({
-                Menuopen: true,
-                targetopenSubmenu: event.currentTarget,
-              });
-            }}
-            opened={this.state.Menuopen}
-            targetopened={this.state.targetopen}
-            submenuDetails={this.submenuDetails}
-            onMouseLeave={() => {
-              this.setState({ targetopen: null });
-            }}
-          />
-        ) : (
-          ""
-        )} */}
-
-                      {/* <div style={{ flexGrow: 1 }}></div> */}
                     </Grid>
                     <Grid
                       xs={1}
@@ -550,22 +542,7 @@ class Header extends Component {
                       className={classes.menustylori}
                     >
                       <div style={{ flexGrow: 1 }}></div>
-                      <div
-                        className={classes.styloriEditing}
-                        // onMouseLeave={(event) => {
-                        //   this.setState({
-                        //     Menuopen: false,
-                        //     submenuOpen: false,
-                        //     subTitleData: null,
-                        //     targetopen: false,
-                        //     listHoverItem: "",
-                        //     // .replace(
-                        //     //   / +/g,
-                        //     //   "ss"
-                        //     // ),
-                        //   });
-                        // }}
-                      >
+                      <div className={classes.styloriEditing}>
                         <a
                           href="https://www.stylori.com/"
                           style={{
@@ -580,10 +557,6 @@ class Header extends Component {
                               subTitleData: null,
                               targetopen: event.currentTarget,
                               listHoverItem: "STYLORI",
-                              // .replace(
-                              //   / +/g,
-                              //   "ss"
-                              // ),
                             });
                           }}
                         >
@@ -599,16 +572,12 @@ class Header extends Component {
                     </Grid>
                   </Grid>
                 )}
-                {/* <Grid container id="headerContainerTop"></Grid> */}
                 {["JEWELLERY", "PURCHASEPLANS"].indexOf(
                   this.state.listHoverItem
                 ) === -1 && this.state.Menuopen ? (
                   <HeaderHoversubMenu
                     opened={this.state.Menuopen}
                     scroll={this.state.scroll}
-                    // onMouseOver={(event) => {
-                    //   this.setState({ submenuOpen: true });
-                    // }}
                     listHoverItem={menuLists[this.state.listHoverItem]}
                     listitem={this.state.listHoverItem}
                     data={this.state.subTitleData}
@@ -690,7 +659,7 @@ class Header extends Component {
                                 className={classes.goldRateformControl}
                               >
                                 <NativeSelect
-                                  defaultValue={30}
+                                  defaultValue={null}
                                   inputProps={{
                                     name: "name",
                                     id: "uncontrolled-native",
@@ -699,9 +668,11 @@ class Header extends Component {
                                     },
                                   }}
                                 >
-                                  <option value={10}>Ten</option>
-                                  <option value={20}>Twenty</option>
-                                  <option value={30}>Gold 22k/1g ₹ 3256</option>
+                                  {this?.state?.goldPrice?.map((val) => (
+                                    <option
+                                      value={val.displayPrice}
+                                    >{`${val.displayName} - ₹${val.displayPrice}`}</option>
+                                  ))}
                                 </NativeSelect>
                               </FormControl>
                             </Grid>
@@ -895,318 +866,259 @@ class Header extends Component {
                           </div>
                         </ListItem>
                         <div style={{ padding: "4px" }}>
-                          {
-                            selected === row.name && (
-                              // Object.keys(Jewellery[selected]).map((row2) => (
-                              <>
-                                {Jewellery[selected]?.styles && (
-                                  <>
-                                    {/* {Jewellery[selected]?.styles === "COLLECTIONS" && (<div></div>)} */}
-                                    <ListItem
-                                      button
-                                      // key={Jewellery[selected][row2].name}
-                                      className={`${classes.subtitleContainer} `}
-                                      disableGutters
-                                      style={{ padding: "5px 25px" }}
-                                    >
-                                      <ListItemText
-                                      // onClick={() => {
-                                      //   window.location.href =
-                                      //     Jewellery[selected][row2].url;
-                                      // }}
+                          {selected === row.name && (
+                            <>
+                              {Jewellery[selected]?.styles && (
+                                <>
+                                  <ListItem
+                                    button
+                                    className={`${classes.subtitleContainer} `}
+                                    disableGutters
+                                    style={{ padding: "5px 25px" }}
+                                  >
+                                    <ListItemText>
+                                      <Typography
+                                        className={`${classes.subtitles} ${classes.subtitleContainersubmenu1}`}
+                                        variant=""
+                                        style={{ fontWeight: "bold" }}
                                       >
-                                        <Typography
-                                          className={`${classes.subtitles} ${classes.subtitleContainersubmenu1}`}
-                                          variant=""
-                                          style={{ fontWeight: "bold" }}
+                                        {Jewellery[
+                                          selected
+                                        ]?.styles.name?.toUpperCase()}
+                                      </Typography>
+                                      {selected === "COLLECTIONS" ? null : (
+                                        <div
+                                          style={{
+                                            borderBottom: "1.5px solid#2F348B",
+                                          }}
+                                        ></div>
+                                      )}
+                                    </ListItemText>
+                                  </ListItem>
+
+                                  <Grid container className={classes.imgdiv}>
+                                    {Jewellery[selected]?.styles.img?.map(
+                                      (val) => (
+                                        <Grid
+                                          item
+                                          xs={6}
+                                          sm={6}
+                                          className={classes.griddiv}
                                         >
-                                          {Jewellery[
-                                            selected
-                                          ]?.styles.name?.toUpperCase()}
-                                        </Typography>
-                                        {selected === "COLLECTIONS" ? null : (
+                                          <div className={classes.imgsubdiv}>
+                                            <p className={classes.headtext}>
+                                              {val.content}
+                                            </p>
+                                            <img
+                                              style={{
+                                                width: "35%",
+                                                margin: "auto",
+                                              }}
+                                              src={val.img}
+                                              alt="imag"
+                                            />
+                                          </div>
+                                        </Grid>
+                                      )
+                                    )}
+                                  </Grid>
+                                </>
+                              )}
+                              {/* for metal and stone */}
+                              {Jewellery[selected]?.stone && (
+                                <>
+                                  <ListItem
+                                    button
+                                    className={`${classes.subtitleContainer} `}
+                                    disableGutters
+                                    style={{ padding: "5px 25px" }}
+                                  >
+                                    <ListItemText>
+                                      <Typography
+                                        className={`${classes.subtitles} ${classes.subtitleContainersubmenu1}`}
+                                        variant=""
+                                        style={{ fontWeight: "bold" }}
+                                      >
+                                        {Jewellery[
+                                          selected
+                                        ]?.stone.name2?.toUpperCase()}
+                                      </Typography>
+                                      <div
+                                        style={{
+                                          borderBottom: "1.5px solid#2F348B",
+                                        }}
+                                      ></div>
+                                    </ListItemText>
+                                  </ListItem>
+
+                                  <Grid container className={classes.metaldiv}>
+                                    {Jewellery[
+                                      selected
+                                    ]?.stone.stone_metal?.map((val) => (
+                                      <Grid
+                                        item
+                                        xs={6}
+                                        sm={6}
+                                        className={classes.griddivstone}
+                                      >
+                                        <div className={classes.iconstyle}>
+                                          <img
+                                            style={{
+                                              width: "11%",
+                                              marginRight: "10px",
+                                            }}
+                                            src={val.icon}
+                                            alt="icon"
+                                          />
+                                          <p className={classes.ptext}>
+                                            {val.name}
+                                          </p>
+                                        </div>
+                                      </Grid>
+                                    ))}
+                                  </Grid>
+                                </>
+                              )}
+
+                              {Jewellery[selected]?.feature && (
+                                <>
+                                  {Jewellery[
+                                    selected
+                                  ]?.feature?.extrafeature?.map((val) => (
+                                    <>
+                                      <ListItem
+                                        button
+                                        className={`${classes.subtitleContainer} `}
+                                        disableGutters
+                                        style={{
+                                          padding: "10px 25px 3px 25px",
+                                        }}
+                                      >
+                                        <ListItemText>
+                                          <div
+                                            style={{
+                                              display: "flex",
+                                              justifyContent: "space-between",
+                                            }}
+                                            onClick={() =>
+                                              this.selectItem1(val.name)
+                                            }
+                                          >
+                                            <Typography
+                                              className={`${classes.subtitles} ${classes.subtitleContainersubmenu1}`}
+                                              variant=""
+                                            >
+                                              {val.name.toUpperCase()}
+                                            </Typography>
+                                            {selected1 === val.name ? (
+                                              <i class="fa fa-chevron-up drawer-arrow-submenu2"></i>
+                                            ) : (
+                                              <i class="fa fa-chevron-down drawer-arrow-submenu2"></i>
+                                            )}
+                                          </div>
                                           <div
                                             style={{
                                               borderBottom:
                                                 "1.5px solid#2F348B",
                                             }}
                                           ></div>
+                                        </ListItemText>
+                                      </ListItem>
+                                      <Grid
+                                        style={{ padding: "6px 25px 0 25px" }}
+                                      >
+                                        {selected1 === val.name && (
+                                          <>
+                                            {val?.feature?.map((v) => (
+                                              <div>
+                                                <p
+                                                  className={classes.ptext}
+                                                  style={{
+                                                    fontSize: "14px",
+                                                    color: "#6E6F72",
+                                                    marginTop: "2px",
+                                                  }}
+                                                >
+                                                  {v}
+                                                </p>
+                                              </div>
+                                            ))}
+                                          </>
                                         )}
-                                      </ListItemText>
-                                      {/* <div
-                                  onClick={() =>
-                                    this.selectItem1(
-                                      Jewellery[selected][row2].name
-                                    )
-                                  }
-                                >
-                                  {selected1 ===
-                                  Jewellery[selected][row2].name ? (
-                                    <i class="fa fa-caret-up drawer-arrow-submenu1"></i>
-                                  ) : (
-                                    <i class="fa fa-caret-down drawer-arrow-submenu1"></i>
-                                  )}
-                                </div> */}
-                                    </ListItem>
+                                      </Grid>
+                                    </>
+                                  ))}
+                                </>
+                              )}
 
-                                    <Grid container className={classes.imgdiv}>
-                                      {Jewellery[selected]?.styles.img?.map(
-                                        (val) => (
-                                          <Grid
-                                            item
-                                            xs={6}
-                                            sm={6}
-                                            className={classes.griddiv}
+                              {/* FOR OPTIONS */}
+                              {Jewellery[selected]?.option && (
+                                <>
+                                  <Grid style={{ padding: "0px 25px" }}>
+                                    {Jewellery[selected]?.option.option?.map(
+                                      (v) => (
+                                        <div>
+                                          <p
+                                            className={classes.optiontext}
+                                            style={{ paddingTop: "3px" }}
                                           >
-                                            <div className={classes.imgsubdiv}>
-                                              <p className={classes.headtext}>
-                                                {val.content}
-                                              </p>
-                                              <img
-                                                style={{
-                                                  width: "35%",
-                                                  margin: "auto",
-                                                }}
-                                                src={val.img}
-                                                alt="imag"
-                                              />
-                                            </div>
-                                          </Grid>
-                                        )
-                                      )}
-                                    </Grid>
-                                  </>
-                                )}
-                                {/* for metal and stone */}
-                                {Jewellery[selected]?.stone && (
-                                  <>
-                                    <ListItem
-                                      button
-                                      className={`${classes.subtitleContainer} `}
-                                      disableGutters
-                                      style={{ padding: "5px 25px" }}
-                                    >
-                                      <ListItemText>
-                                        <Typography
-                                          className={`${classes.subtitles} ${classes.subtitleContainersubmenu1}`}
-                                          variant=""
-                                          style={{ fontWeight: "bold" }}
-                                        >
-                                          {Jewellery[
-                                            selected
-                                          ]?.stone.name2?.toUpperCase()}
-                                        </Typography>
-                                        <div
-                                          style={{
-                                            borderBottom: "1.5px solid#2F348B",
-                                          }}
-                                        ></div>
-                                      </ListItemText>
-                                    </ListItem>
+                                            {v}
+                                          </p>
+                                        </div>
+                                      )
+                                    )}
+                                  </Grid>
+                                </>
+                              )}
 
-                                    <Grid
-                                      container
-                                      className={classes.metaldiv}
-                                    >
-                                      {Jewellery[
-                                        selected
-                                      ]?.stone.stone_metal?.map((val) => (
+                              {/* for price */}
+                              {Jewellery[selected]?.price && (
+                                <>
+                                  <ListItem
+                                    button
+                                    className={`${classes.subtitleContainer} `}
+                                    disableGutters
+                                    style={{ padding: "5px 25px" }}
+                                  >
+                                    <ListItemText>
+                                      <Typography
+                                        className={`${classes.subtitles} ${classes.subtitleContainersubmenu1}`}
+                                        variant=""
+                                        style={{ fontWeight: "bold" }}
+                                      >
+                                        {Jewellery[
+                                          selected
+                                        ]?.price.name3?.toUpperCase()}
+                                      </Typography>
+                                      <div
+                                        style={{
+                                          borderBottom: "1.5px solid#2F348B",
+                                        }}
+                                      ></div>
+                                    </ListItemText>
+                                  </ListItem>
+                                  <Grid container className={classes.metaldiv}>
+                                    {Jewellery[selected]?.price.price?.map(
+                                      (val) => (
                                         <Grid
                                           item
                                           xs={6}
                                           sm={6}
-                                          className={classes.griddivstone}
+                                          className={classes.pricediv}
                                         >
-                                          <div className={classes.iconstyle}>
-                                            <img
-                                              style={{
-                                                width: "11%",
-                                                marginRight: "10px",
-                                              }}
-                                              src={val.icon}
-                                              alt="icon"
-                                            />
-                                            <p className={classes.ptext}>
-                                              {val.name}
-                                            </p>
-                                          </div>
+                                          <Chip
+                                            variant="outlined"
+                                            className={classes.Chip}
+                                            label={val.price}
+                                          />
                                         </Grid>
-                                      ))}
-                                    </Grid>
-                                  </>
-                                )}
-
-                                {/* for features */}
-                                {Jewellery[selected]?.feature && (
-                                  <>
-                                    {Jewellery[
-                                      selected
-                                    ]?.feature?.extrafeature?.map((val) => (
-                                      <>
-                                        <ListItem
-                                          button
-                                          className={`${classes.subtitleContainer} `}
-                                          disableGutters
-                                          style={{
-                                            padding: "10px 25px 3px 25px",
-                                          }}
-                                        >
-                                          <ListItemText>
-                                            <div
-                                              style={{
-                                                display: "flex",
-                                                justifyContent: "space-between",
-                                              }}
-                                              onClick={() =>
-                                                this.selectItem1(val.name)
-                                              }
-                                            >
-                                              <Typography
-                                                className={`${classes.subtitles} ${classes.subtitleContainersubmenu1}`}
-                                                variant=""
-                                              >
-                                                {val.name.toUpperCase()}
-                                              </Typography>
-                                              {selected1 === val.name ? (
-                                                <i class="fa fa-chevron-up drawer-arrow-submenu2"></i>
-                                              ) : (
-                                                <i class="fa fa-chevron-down drawer-arrow-submenu2"></i>
-                                              )}
-                                            </div>
-                                            <div
-                                              style={{
-                                                borderBottom:
-                                                  "1.5px solid#2F348B",
-                                              }}
-                                            ></div>
-                                          </ListItemText>
-                                        </ListItem>
-                                        <Grid
-                                          style={{ padding: "6px 25px 0 25px" }}
-                                        >
-                                          {selected1 === val.name && (
-                                            <>
-                                              {val?.feature?.map((v) => (
-                                                <div>
-                                                  <p
-                                                    className={classes.ptext}
-                                                    style={{
-                                                      fontSize: "14px",
-                                                      color: "#6E6F72",
-                                                      marginTop: "2px",
-                                                    }}
-                                                  >
-                                                    {v}
-                                                  </p>
-                                                </div>
-                                              ))}
-                                            </>
-                                          )}
-                                        </Grid>
-                                      </>
-                                    ))}
-                                  </>
-                                )}
-
-                                {/* FOR OPTIONS */}
-                                {Jewellery[selected]?.option && (
-                                  <>
-                                    <Grid style={{ padding: "0px 25px" }}>
-                                      {Jewellery[selected]?.option.option?.map(
-                                        (v) => (
-                                          <div>
-                                            <p
-                                              className={classes.optiontext}
-                                              style={{ paddingTop: "3px" }}
-                                            >
-                                              {v}
-                                            </p>
-                                          </div>
-                                        )
-                                      )}
-                                    </Grid>
-                                  </>
-                                )}
-
-                                {/* for price */}
-                                {Jewellery[selected]?.price && (
-                                  <>
-                                    <ListItem
-                                      button
-                                      className={`${classes.subtitleContainer} `}
-                                      disableGutters
-                                      style={{ padding: "5px 25px" }}
-                                    >
-                                      <ListItemText>
-                                        <Typography
-                                          className={`${classes.subtitles} ${classes.subtitleContainersubmenu1}`}
-                                          variant=""
-                                          style={{ fontWeight: "bold" }}
-                                        >
-                                          {Jewellery[
-                                            selected
-                                          ]?.price.name3?.toUpperCase()}
-                                        </Typography>
-                                        <div
-                                          style={{
-                                            borderBottom: "1.5px solid#2F348B",
-                                          }}
-                                        ></div>
-                                      </ListItemText>
-                                    </ListItem>
-                                    <Grid
-                                      container
-                                      className={classes.metaldiv}
-                                    >
-                                      {Jewellery[selected]?.price.price?.map(
-                                        (val) => (
-                                          <Grid
-                                            item
-                                            xs={6}
-                                            sm={6}
-                                            className={classes.pricediv}
-                                          >
-                                            <Chip
-                                              variant="outlined"
-                                              className={classes.Chip}
-                                              label={val.price}
-                                            />
-                                          </Grid>
-                                        )
-                                      )}
-                                    </Grid>
-                                  </>
-                                )}
-
-                                {/* {selected1 === Jewellery[selected][row2].name && (
-                                <>
-                                  {subheader[selected1] &&
-                                    subheader[selected1].name &&
-                                    subheader[selected1].name.map((row) => (
-                                      <>
-                                        <ListItem
-                                          onClick={() => {
-                                            window.location.href = row.url;
-                                          }}
-                                          className={classes.subtitle2Container}
-                                        >
-                                          <ListItemText>
-                                            <Typography
-                                              className="list-items1"
-                                              variant=""
-                                            >
-                                              {row.name.toUpperCase()}
-                                            </Typography>
-                                          </ListItemText>
-                                        </ListItem>
-                                      </>
-                                    ))}
+                                      )
+                                    )}
+                                  </Grid>
                                 </>
-                              )} */}
-                              </>
-                            )
-                            // ))
-                          }
+                              )}
+                            </>
+                          )}
                         </div>
                       </>
                     );
