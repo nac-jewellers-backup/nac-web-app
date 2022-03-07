@@ -77,8 +77,6 @@ export const TopFilters = (props) => {
             </div>
           </Grid>
 
-          {/* ooooooooooooooooo */}
-
           <Grid container>
             <Grid
               item
@@ -332,7 +330,6 @@ export const TopFilters = (props) => {
               <>
                 {props?.chips.length > 0 ? (
                   <Chip
-                    style
                     size="small"
                     label={"Clear All Fillters"}
                     style={{
