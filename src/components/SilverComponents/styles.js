@@ -1,4 +1,3 @@
-// import '../../fonts/font.css'
 import { makeStyles } from "@material-ui/core/styles";
 
 export const styles = (theme) => ({
@@ -6,7 +5,6 @@ export const styles = (theme) => ({
     color: theme.palette.secondary.dark,
     fontFamily: "fontawesome",
     textAlign: "right",
-    // fontSize: '20px !important',
     marginTop: "18px !important",
     display: "flex",
     alignContent: "center",
@@ -26,32 +24,25 @@ export const styles = (theme) => ({
     color: "black",
     justifyContent: "flex-end",
     "& .MuiInput-underline": {
-      // "& ::hover":{
-      // "&::not(.Mui-disabled)":{
       "&::before": {
         borderBottom: "none !important",
       },
       "&::after": {
         borderBottom: "none !important",
       },
-      // }
-      // }
     },
     "& .MuiSelect-selectMenu": {
       fontSize: 13,
       color: "white",
       padding: "3px 0px",
     },
-    // .MuiInput-underline:hover:not(.Mui-disabled):before
   },
   goldRateformControl: {
     width: "100%",
     margin: theme.spacing(1),
-    minWidth: 120,
     backgroundColor: theme.palette.gold.main,
     boxShadow: "6px 7px 6px #bebfbf",
     color: "white",
-    // padding: "3px 3px 6px 3px",
     "& .MuiNativeSelect-select:not([multiple])": {
       "& option": {
         color: "white",
@@ -104,18 +95,15 @@ export const styles = (theme) => ({
     height: "40px",
   },
   menustylori: {
-    // backgroundColor: theme.palette.stylori.pinkMain,
     display: "flex-end",
     justifyContent: "center",
     alignItems: "center",
     fontSize: "1.3rem",
     textAlign: "center",
-    // marginLeft: "3%",
     height: "40px",
   },
   searchcontainerplain: {
     padding: "4px",
-    // backgroundColor: theme.palette.secondary.dark,
     display: "flex",
     justifyContent: "center",
     alignContent: "center",
@@ -141,7 +129,6 @@ export const styles = (theme) => ({
     letterSpacing: "4px",
     cursor: "pointer",
     alignItems: "center",
-    // display: "flex",
     fontSize: "20px",
     [theme.breakpoints.only("xs")]: {
       marginLeft: "6px",
@@ -182,7 +169,6 @@ export const styles = (theme) => ({
     fontWeight: 500,
     color: "white",
     fontSize: "12px",
-    // borderBottom: "1px solid #fff",
     "&:hover": {
       color: "#b78231",
     },
@@ -195,12 +181,10 @@ export const styles = (theme) => ({
   },
   seletectedMenu: {
     color: theme.palette.secondary.dark,
-    // paddingBottom: "2px",
     cursor: "pointer",
     fontFamily: "notoSerif-regular",
     fontWeight: 600,
     borderBottom: "1px solid #fff",
-    // borderBottom: "1px solid " + theme.palette.secondary.dark,
     "&:hover": {
       borderBottom: "1px solid " + theme.palette.secondary.dark,
     },
@@ -210,7 +194,6 @@ export const styles = (theme) => ({
     fill: theme.palette.secondary.dark + "!important",
   },
   menuheader: {
-    // width: "230px !important",
     backgroundColor: theme.palette.secondary.main,
     display: "flex",
     position: "sticky",
@@ -227,7 +210,6 @@ export const styles = (theme) => ({
   drawerPaper: {
     width: "100%",
     maxHeight: "100% !important",
-    // height: "max-content",
     backgroundColor: "#fff",
   },
   sideNavListing: {
@@ -245,9 +227,6 @@ export const styles = (theme) => ({
   },
   iconbuttons: {
     color: "white",
-    // position: "fixed",
-    // left: "228px",
-    // top: "-9px",
   },
   subtitles: {
     color: theme.palette.background.darkFade,
@@ -282,7 +261,6 @@ export const styles = (theme) => ({
   },
   griddivstone: {
     textAlign: "center",
-    // marginBottom: "30px",
   },
   iconstyle: {
     display: "flex",
@@ -322,13 +300,10 @@ export const styles = (theme) => ({
 
 export const useStyles = makeStyles((theme) => ({
   imgcont: {
-    // marginBottom: "15px",
     "&:hover": {
       "& $imgtitle": {
         borderBottom: "1px solid #B2832C",
       },
-      // boxShadow:
-      //   " 0px 2px 4px 4px rgba(0, 0, 0, 0.1), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12) !important",
     },
   },
   paperdiv: {
@@ -343,9 +318,7 @@ export const useStyles = makeStyles((theme) => ({
     top: "4px !important",
     backgroundColor: "white",
     fontSize: "12px",
-    //border: `1px solid ${theme.palette.background.fade}`,
-    //boxShadow: "6px 7px 6px #bebfbf !important",
-    //color: theme.palette.background.fade,
+
     "& span": {
       fontFamily: "notoSerif-regular",
       letterSpacing: "1px",
@@ -356,9 +329,6 @@ export const useStyles = makeStyles((theme) => ({
     "& svg": {
       fill: `${theme.palette.secondary.main} !important`,
     },
-    // "& li:hover": {
-    //   backgroundColor: theme.palette.secondary.dark,
-    // },
   },
   paperdivsub: {
     position: "absolute",
@@ -368,7 +338,6 @@ export const useStyles = makeStyles((theme) => ({
     width: "100%",
   },
   mouseOverPopoversub: {
-    // zIndex: 1000000,
     position: "fixed !important",
     width: "-webkit-fill-available",
     top: "0px !important",
@@ -391,7 +360,6 @@ export const useStyles = makeStyles((theme) => ({
     },
   },
   mouseOverPopoversubscroll: {
-    // zIndex: -100,
     zIndex: 1000,
     position: "fixed !important",
     width: "-webkit-fill-available",
@@ -426,12 +394,7 @@ export const useStyles = makeStyles((theme) => ({
       backgroundColor: "#33346d",
     },
   },
-  // listedItemsvalue: {
-  //   padding: "2px 16px 2px 16px",
-  //   fontSize: "0.7rem !important",
-  //   letterSpacing: 1,
-  //   cursor: "pointer",
-  // },
+
   listedItemstitle: {
     padding: "2px 0px 8px 0px",
     fontSize: "13px !important",
@@ -564,12 +527,6 @@ export const useStyles = makeStyles((theme) => ({
     },
   },
   sortSilver: {
-    // "&.MuiRadio-root":{
-    //   padding:"0px 5px"
-    // },
-    // "&.MuiIconButton-colorSecondary":{
-    //   padding:"4px !important"
-    // },
     "& svg": {
       fontSize: "1rem",
     },
@@ -605,7 +562,6 @@ export const useStyles = makeStyles((theme) => ({
   },
   mouseOverPopoverfilters: {
     maxHeight: "calc(100% - 250px)",
-    // height: "calc(100% - 200px)",
     maxWidth: "220px",
     overflowY: "auto",
     "& .MuiRadio-root": {
@@ -628,10 +584,6 @@ export const useStyles = makeStyles((theme) => ({
       display: "-webkit-box",
       "-webkit-line-clamp": 1,
       "-webkit-box-orient": "vertical",
-
-      // display: "-webkit-box",
-      // // "-webkit-line-clamp": "1",
-      // "-webkit-box-orient": "vertical",
     },
     "& nav": {
       padding: "0px !important",

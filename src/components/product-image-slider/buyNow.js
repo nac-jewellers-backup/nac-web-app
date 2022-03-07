@@ -322,7 +322,6 @@ class Component extends React.Component {
   componentDidMount() {
     let sku_id = this.props?.data[0]?.skuId;
 
-
     let params = {
       sku_id: sku_id,
       current_datetime: new Date(),
@@ -331,7 +330,6 @@ class Component extends React.Component {
       .post(`${API_URL}/getshippingdate`, params)
       .then((res) => {
         this.setState({ productShipBy: res?.data?.shipping_date });
-
       })
       .catch((error) => {
         console.error(error);
@@ -576,7 +574,6 @@ class Component extends React.Component {
         variab.constructor === Object
       ) {
         this.props.makeRequestCod(variab);
-
       } else {
         return {};
       }
@@ -701,7 +698,7 @@ class Component extends React.Component {
                       >
                         Diamond Weight
                         <br />
-                        {this?.props?.data[0]?.dimondweight ?? ""}gm
+                        {this?.props?.data[0]?.dimondweight ?? ""}&nbsp;Carat
                       </p>
                     </Box>
                   ) : (

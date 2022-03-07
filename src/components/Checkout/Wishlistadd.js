@@ -33,13 +33,11 @@ export default function WishlistButton(props) {
           console.log(err);
         });
     }
-    //--------------------------------------------------------------------------->
     if (option) {
       var local_storage = JSON.parse(localStorage.getItem("cartDetails"));
 
       var _localStorageQuantity = JSON.parse(localStorage.getItem("quantity"));
 
-      // var currentValue = e.target.id
       var currentValue =
         e.target.id && e.target.id.length > 0
           ? e.target.id

@@ -1,10 +1,8 @@
 import { Button, Container, Grid, Hidden, Typography } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
-// import Checkoutbreadcrum from '../../components/Checkout/checkoutbreadcrum';
-// import BreadCrumb from '../../components/BreadCrumb/index'
+
 import CartCard from "components/Checkout/CartCard";
 import Footer from "components/Footer/Footer";
-// import CustomSeparator from '../../components/BreadCrumb/index'
 import Header from "components/SilverComponents/Header";
 import { CartContext } from "context";
 import cart from "mappers/cart";
@@ -14,39 +12,7 @@ import "screens/screens.css";
 import "screens/Stylori/index.css";
 import styles from "../components/Checkout/style";
 import "./index.css";
-// import NeedHelp from "components/needHelp";
-// data.map(data=>{
-// return(
-//     <Grid item xs={12}>
-//     <CartCard data={data}/>
-//     </Grid>
-//         )
-//     })
-const breadcrumsdata = [
-  { title: "Shopping Bag" },
-  { title: "Login/ Register" },
-  { title: "Address Detail" },
-  { title: "Payment Options" },
-  { title: "Order Confirmation" },
-];
-const cartsubdata = [
-  {
-    name: "100% Certified Jewellery",
-    icon: "https://styloriimages.s3.ap-south-1.amazonaws.com/images/static/icon-star.png",
-  },
-  {
-    name: "Secure Payments",
-    icon: "https://styloriimages.s3.ap-south-1.amazonaws.com/images/static/icon-lock.png",
-  },
-  {
-    name: "Free Insured Shipping",
-    icon: "https://styloriimages.s3.ap-south-1.amazonaws.com/images/static/icon-van.png",
-  },
-  {
-    name: "25-Day Returns",
-    icon: "https://styloriimages.s3.ap-south-1.amazonaws.com/images/static/icon-return.png",
-  },
-];
+
 class Cart extends React.Component {
   componentDidMount() {
     ReactPixel.init("1464338023867789", {}, { debug: true, autoConfig: false });
@@ -62,27 +28,6 @@ class Cart extends React.Component {
       <Grid container>
         <Hidden smDown>
           <Header wishlist={this.props.wishlistdata} />
-
-          {/* {path === "checkout" ? (
-            ""
-          ) : (
-            <CustomSeparator
-              arrowicon="cart-head-arrows"
-              className={`breadcrums-header ${classes.normalcolorback} ${classes.marginTopBreadCrums} `}
-              classsubhed={`breadcrums-sub ${classes.normalcolorback}`}
-              list={`MuiBreadcrumbs-li ${classes.fontwhite}`}
-              data={
-                this.props.data.length > 0
-                  ? this.props.data[0].breadcrumsdata
-                  : breadcrumsdata
-              }
-              subdata={
-                this.props.data.length > 0
-                  ? this.props.data[0].cartsubdata
-                  : cartsubdata
-              }
-            />
-          )} */}
 
           <div className="cart-ovralldiv-media " style={{ marginTop: "-3%" }}>
             <Grid Container spacing={12}>
@@ -127,9 +72,7 @@ class Cart extends React.Component {
             ""
           ) : (
             <Grid container spacing={12}>
-              {/* <Grid item xs={12} style={{ position: "sticky", top: "0", zIndex: "1000", width: "100%" }}> */}
               <Header wishlist={this.props.wishlistdata} />
-              {/* </Grid> */}
             </Grid>
           )}
           <Container>
@@ -177,12 +120,10 @@ class Cart extends React.Component {
             </Grid>
           </Grid>
         </Hidden>
-        {/* <NeedHelp /> */}
       </Grid>
     );
   }
 }
-// export default Checkout;
 
 const Components = (props) => {
   let {
@@ -227,9 +168,7 @@ const Components = (props) => {
         wishlistdata={wishlistdata}
       />
     );
-  // if (mapped !== undefined && mapped !== null) {
-  //     localStorage.setItem("a__c_t", mapped && mapped.length)
-  // }
+
   return content;
 };
 

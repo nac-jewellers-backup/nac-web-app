@@ -319,7 +319,7 @@ class Header extends Component {
                         justify="flex-end"
                         className={classes.goldCurrentRate}
                       >
-                        <Grid item xs={3} sm={3} md={2} lg={2} xl={2}>
+                        <Grid item>
                           <FormControl
                             variant="outlined"
                             className={classes.goldRateformControl}
@@ -337,6 +337,10 @@ class Header extends Component {
                               {this?.state?.goldPrice?.map((val) => (
                                 <option
                                   value={val.displayPrice}
+                                  style={{
+                                    backgroundColor: "#b78231 !important",
+                                    padding: "12px 0px !important",
+                                  }}
                                 >{`${val.displayName} - ₹${val.displayPrice}`}</option>
                               ))}
                             </NativeSelect>
@@ -652,8 +656,13 @@ class Header extends Component {
                           xs={12}
                           className={classes.goldCurrentRate}
                         >
-                          <Grid container item xs={12} alignItems="center">
-                            <Grid item xs={12}>
+                          <Grid
+                            container
+                            item
+                            xs={12}
+                            justifyContent="flex-end"
+                          >
+                            <Grid item xs={12} sm={6} md={3} lg={3}>
                               <FormControl
                                 variant="outlined"
                                 className={classes.goldRateformControl}

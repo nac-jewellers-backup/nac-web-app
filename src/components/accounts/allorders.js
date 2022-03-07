@@ -265,7 +265,7 @@ class Allorders extends React.Component {
         var url_construct = url_split.join().replace(/\,/g, "/");
         ppp = `${CDN_URL}${url_construct}`;
       }
-     
+
       return ppp;
     } else {
       if (
@@ -330,7 +330,7 @@ class Allorders extends React.Component {
               );
           }
         });
-        
+
         return ppp;
       }
     }
@@ -929,7 +929,6 @@ class Allorders extends React.Component {
                                       lg={6}
                                       style={{ color: "gray" }}
                                     >
-                                      {/* ORDER Summary */}
                                       <b
                                         style={{
                                           display: "block",
@@ -982,6 +981,7 @@ class Allorders extends React.Component {
                                                                 <img
                                                                   height="100%"
                                                                   width="100%"
+                                                                  alt="images"
                                                                   src={
                                                                     cart
                                                                       .transSkuListByProductSku
@@ -999,64 +999,6 @@ class Allorders extends React.Component {
                                                                   }
                                                                 />
                                                               </div>
-                                                              {/* {cart &&
-                                                            cart.transSkuListByProductSku &&
-                                                            cart.transSkuListByProductSku.productListByProductId.productImagesByProductId.nodes.map(
-                                                              (imgs) =>
-                                                                this.ImageUrl(
-                                                                  imgs,
-                                                                  cart &&
-                                                                    cart.transSkuListByProductSku &&
-                                                                    cart
-                                                                      .transSkuListByProductSku
-                                                                      .generatedSku,
-                                                                  cart
-                                                                    .transSkuListByProductSku
-                                                                    .metalColor,
-                                                                  paymentsuccess
-                                                                ) ? (
-                                                                  <div
-                                                                    className="viewport-img "
-                                                                    style={{
-                                                                      border:
-                                                                        "1px solid gray",
-                                                                    }}
-                                                                  >
-                                                                    <img
-                                                                      height="100%"
-                                                                      width="100%"
-                                                                      src={this.ImageUrl(
-                                                                        imgs,
-                                                                        cart &&
-                                                                          cart.transSkuListByProductSku &&
-                                                                          cart
-                                                                            .transSkuListByProductSku
-                                                                            .generatedSku,
-                                                                        cart
-                                                                          .transSkuListByProductSku
-                                                                          .metalColor,
-                                                                        paymentsuccess
-                                                                      )}
-                                                                      alt=""
-                                                                    />
-                                                                  </div>
-                                                                ) : (
-                                                                  <div
-                                                                    className="viewport-img"
-                                                                    style={{
-                                                                      border:
-                                                                        "1px solid gray",
-                                                                    }}
-                                                                  >
-                                                                    <img
-                                                                      height="100%"
-                                                                      width="100%"
-                                                                      src="https://styloriimages.s3.ap-south-1.amazonaws.com/Banners/Stylori+Silver/StyloriSilver+nemonic.png"
-                                                                      alt=""
-                                                                    />
-                                                                  </div>
-                                                                )
-                                                            )} */}
                                                             </Grid>
                                                             <Grid
                                                               item

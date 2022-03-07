@@ -583,7 +583,7 @@ export default function Pricing(props) {
                 <Hidden smDown>
                   <span
                     style={{
-                      fontSize: "181px",
+                      fontSize: "18px",
                       paddingBottom: "6px",
                       color: "gray",
                     }}
@@ -599,7 +599,7 @@ export default function Pricing(props) {
                     &nbsp;&nbsp;
                     <del
                       style={{
-                        fontSize: "181px",
+                        fontSize: "18px",
                         fontWeight: "lighter",
                         paddingBottom: "6px",
                         color: "gray",

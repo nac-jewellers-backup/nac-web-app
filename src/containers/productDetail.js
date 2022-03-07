@@ -455,7 +455,8 @@ class ProductDetail extends Component {
                             Diamond Weight
                           </Typography>
                           <Typography className={classes.productmaterial}>
-                            {this?.props?.data[0]?.dimondweight ?? ""}gm
+                            {this?.props?.data[0]?.dimondweight ?? ""}
+                            &nbsp;Carat
                           </Typography>
                         </Box>
                       </Box>

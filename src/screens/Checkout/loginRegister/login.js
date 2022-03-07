@@ -343,14 +343,6 @@ const LoginComponent = (props) => {
       fetch(`${API_URL}/verify_otp`, opts)
         .then((res) => res.json())
         .then((fetchValue) => {
-          // fetchValue?.accessToken &&
-          //   localStorage.setItem("accessToken", fetchValue?.accessToken);
-          // fetchValue?.userprofile?.id &&
-          //   localStorage.setItem("user_id", fetchValue?.userprofile?.id);
-          // fetchValue?.userprofile?.email &&
-          //   localStorage.setItem("email", fetchValue?.userprofile?.email);
-          // localStorage.setItem("isedit", 1);
-
           handlers.VerifyOTP(fetchValue);
         })
         .catch((err) => {
@@ -410,34 +402,10 @@ const LoginComponent = (props) => {
         .then((res) => res.json())
         .then((fetchValue) => {
           if (fetchValue.accessToken) {
-            // localStorage.setItem("accessToken", fetchValue.accessToken);
-            // localStorage.setItem("user_id", fetchValue.userprofile.id);
-            // localStorage.setItem("email", fetchValue.userprofile.email);
-            // localStorage.setItem("true", false);
-            // localStorage.setItem("panel", 2);
-            // let navlogin = localStorage.getItem("navfblogin");
             handlers.VerifyOTP(fetchValue);
-            //   if (navlogin === "true") {
-            //     props.history.push("/");
-            //   } else {
-            //     props.history.push("/Checkout");
-            //   }
-            // } else {
-            //   if (typeof response.email === "undefined") {
-            //     setLoginInfo({
-            //       ...loginInfo,
-            //       first_name: response.first_name,
-            //       last_name: response.last_name,
-            //       userId: response.id,
-            //     });
-            //     setopen(true);
-            //   } else {
-            //   }
           }
         })
         .catch(console.error);
-
-      // props.history.push('/')
     }
   };
 
@@ -463,9 +431,7 @@ const LoginComponent = (props) => {
                   </h5>
                 )}
               </Hidden>
-              <h5 className={`title ${classes.normalfonts2}`}>
-                Email Login For Registered Users
-              </h5>
+              <h5 className={`title ${classes.normalfonts2}`}>Email Login</h5>
 
               <Input
                 className={classes1.input}
@@ -694,6 +660,8 @@ const LoginComponent = (props) => {
                 </div>
               </Grid>
             </Grid>
+
+            <Grid></Grid>
           </form>
         ) : (
           <Grid>
@@ -715,9 +683,7 @@ const LoginComponent = (props) => {
                     </h5>
                   )}
                 </Hidden>
-                <h5 className={`title ${classes.normalfonts2}`}>
-                  OTP Login For Registered Users
-                </h5>
+                <h5 className={`title ${classes.normalfonts2}`}>OTP Login</h5>
                 {numberForm.NumberSubmit ? (
                   <Input
                     name="otp"
@@ -795,9 +761,101 @@ const LoginComponent = (props) => {
                 className={classes.other}
                 style={{ padding: "10px" }}
               >
+                <Grid
+                  item
+                  xs={12}
+                  style={{ display: "flex", justifyContent: "center" }}
+                >
+                  <div display="flex">
+                    <Box padding="5px">
+                      <div style={{ cursor: "pointer" }}>
+                        <label>
+                          <FacebookLogin
+                            appId={FACEBOOK_APP_ID}
+                            autoLoad={false}
+                            fields="name,email,first_name,last_name"
+                            callback={responseFacebook}
+                            render={(renderProps) => (
+                              <Button
+                                variant="contained"
+                                style={{
+                                  padding: "5px 7px",
+                                  textTransform: "Capitailze",
+                                  backgroundColor: "#F3F3F3",
+                                  borderRadius: "0px",
+                                  boxShadow: "0px 2px 4px 1px #888888",
+                                  color: "gray",
+                                  whiteSpace: "nowrap",
+                                }}
+                                onClick={renderProps.onClick}
+                                className={classes.btntext}
+                                startIcon={
+                                  <img
+                                    style={{
+                                      marginLeft: "4px",
+                                      height: "24px",
+                                    }}
+                                    className={classes.btnicon}
+                                    src={FacebookIcon}
+                                    alt="facebookicon"
+                                  />
+                                }
+                              >
+                                Sign in with Facebook
+                              </Button>
+                            )}
+                          />
+                        </label>
+                      </div>
+                    </Box>
+                  </div>
+                  <div>
+                    <Box padding="5px">
+                      <div style={{ cursor: "pointer" }}>
+                        <label>
+                          <GoogleLogin
+                            clientId={GOOGLE_CLIENT_ID}
+                            render={(renderProps) => (
+                              <Button
+                                variant="contained"
+                                style={{
+                                  padding: "5px 7px",
+                                  textTransform: "Capitailze",
+                                  backgroundColor: "#F3F3F3",
+                                  borderRadius: "0px",
+                                  boxShadow: "0px 2px 4px 1px #888888",
+                                  color: "gray",
+                                  whiteSpace: "nowrap",
+                                }}
+                                onClick={renderProps.onClick}
+                                disabled={renderProps.disabled}
+                                className={classes.btntext}
+                                startIcon={
+                                  <img
+                                    style={{
+                                      marginLeft: "4px",
+                                      height: "24px",
+                                    }}
+                                    className={classes.btnicon}
+                                    src={GoogleIcon}
+                                    alt="facebookicon"
+                                  />
+                                }
+                              >
+                                Sign in with Google
+                              </Button>
+                            )}
+                            buttonText="Login"
+                            onSuccess={responseGoogle}
+                            onFailure={responseGoogle}
+                            cookiePolicy={"single_host_origin"}
+                          />
+                        </label>
+                      </div>
+                    </Box>
+                  </div>
+                </Grid>
                 <Grid item xs={12}>
-                  <br />
-
                   <Box
                     display="flex"
                     flexDirection="row"
@@ -838,7 +896,28 @@ const LoginComponent = (props) => {
           </Grid>
         )}
       </div>
-
+      <div>
+        <Grid xs={12}>
+          <br />
+          <span
+            style={{
+              display: "block",
+              color: "gray",
+              textAlign: "center",
+              borderTop: "1px solid rgb(193, 193, 193)",
+              fontSize: "14px",
+              paddingTop: "14px",
+            }}
+          >
+            Guest Checkout Not ready to become a member just yet?
+          </span>{" "}
+          <br />
+          <br />
+          <Button className="apply-b" onClick={() => ShowOtpForm()}>
+            {emailForm ? "Continue as Guest" : "Continue with Email"}
+          </Button>
+        </Grid>
+      </div>
       <div>
         <Dialog
           open={open}

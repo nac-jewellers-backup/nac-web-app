@@ -127,7 +127,7 @@ class LoginRegisterIndex extends React.Component {
                   }}
                 />
               </div>
-              <div
+              {/* <div
                 style={{
                   display: this.state.Continue === true ? "block" : "none",
                   color: "gray",
@@ -153,7 +153,7 @@ class LoginRegisterIndex extends React.Component {
                 >
                   Continue as a Guest
                 </Button>
-              </div>
+              </div> */}
             </div>
             <div hidden={this.state.Continue}>
               <Continues
@@ -161,12 +161,6 @@ class LoginRegisterIndex extends React.Component {
                 local_mail_id={local_mail_id}
                 change={() => {
                   window.location.reload();
-                  // this.setState({
-                  //   Continue: this.state.Continue === true ? false : true,
-                  // });
-                  // this.setState({
-                  //   Register: this.state.Register === true ? false : true,
-                  // });
                 }}
               />
             </div>

@@ -1,4 +1,3 @@
-// import '../../fonts/font.css'
 import { makeStyles } from "@material-ui/core/styles";
 
 export const styles = makeStyles((theme) => ({
@@ -14,7 +13,6 @@ export const styles = makeStyles((theme) => ({
     color: theme.palette.secondary.dark,
     fontFamily: "fontawesome",
     textAlign: "right",
-    // fontSize: '20px !important',
     marginTop: "18px !important",
     display: "flex",
     alignContent: "center",
@@ -31,7 +29,6 @@ export const styles = makeStyles((theme) => ({
   },
   searchcontainerplain: {
     padding: "4px",
-    // backgroundColor: theme.palette.secondary.dark,
     display: "flex",
     justifyContent: "center",
     alignContent: "center",
@@ -57,7 +54,6 @@ export const styles = makeStyles((theme) => ({
     letterSpacing: "4px",
     cursor: "pointer",
     alignItems: "center",
-    // display: "flex",
     fontSize: "20px",
     [theme.breakpoints.only("xs")]: {
       marginLeft: "6px",
@@ -90,7 +86,6 @@ export const styles = makeStyles((theme) => ({
   },
   headerNavbarList: {
     color: theme.palette.secondary.dark,
-    // textAlign: 'right'
   },
   headerNavbarList1: {
     whiteSpace: "nowrap",
@@ -100,10 +95,8 @@ export const styles = makeStyles((theme) => ({
     textTransform: "uppercase",
     fontSize: "12px !important",
     textDecoration: "none !important",
-    // margin-left: 5%;
   },
   chips: {
-    //background: "#8080802e !important",
     color: "#666",
     padding: "5px",
     display: "inline-flex",
@@ -119,7 +112,6 @@ export const styles = makeStyles((theme) => ({
     fontWeight: 600,
     padding: "5px 4px 5px 15px",
     display: "flex",
-    //  margin : "auto",
     marginLeft: "10px",
     alignItems: "center",
     color: "gray",
@@ -130,14 +122,8 @@ export const styles = makeStyles((theme) => ({
       marginLeft: "0px",
     },
     minWidth: "150px ",
-    // #80808061
 
-    // borderBottom: "1px solid #fff",
-    "&:hover": {
-      //background: theme.palette.secondary.dark,
-      // paddingBottom: "2px",
-      //   borderBottom: "1px solid " + theme.palette.secondary.dark,
-    },
+    "&:hover": {},
 
     "&.mouseOverPopover": {
       top: 0,
@@ -174,15 +160,10 @@ export const styles = makeStyles((theme) => ({
   menuListCursorSort: {
     cursor: "pointer",
     fontFamily: "Roboto",
-    //padding: "5px 4px 5px 15px",
-    // marginRight: 15,
+
     color: theme.palette.secondary.main,
-    // boxShadow: `6px 7px 6px #bebfbf !important`,
     background: "white",
-    //border: `1px solid ${theme.palette.secondary.main}`,
     "&:hover": {
-      //border: `1px solid ${theme.palette.secondary.dark}`,
-      //boxShadow: `6px 7px 6px #bebfbf !important`,
       color: theme.palette.secondary.dark,
     },
     "& svg": {
@@ -199,7 +180,6 @@ export const styles = makeStyles((theme) => ({
     fontWeight: 600,
     padding: "5px 4px 5px 15px",
     display: "flex",
-    // margin: "auto",
     [theme.breakpoints.only("md")]: {
       minWidth: "100px",
       marginBottom: "10px",
@@ -208,13 +188,9 @@ export const styles = makeStyles((theme) => ({
     marginLeft: "10px",
     alignItems: "center",
     color: "gray",
-    //boxShadow: `6px 7px 6px #bebfbf !important`,
-    //border: `1px solid ${theme.palette.secondary.main}`,
+
     background: "white",
     "&:hover": {
-      // border: `1px solid ${theme.palette.secondary.dark}`,
-      //boxShadow: `6px 7px 6px  ${theme.palette.secondary.light}`,
-      //color: theme.palette.secondary.main,
       "& svg": {
         fill: "gray !important",
       },
@@ -228,18 +204,13 @@ export const styles = makeStyles((theme) => ({
   },
   seletectedMenu: {
     color: theme.palette.secondary.dark,
-    // paddingBottom: "2px",
     cursor: "pointer",
     fontFamily: "Roboto",
     fontWeight: 600,
     borderBottom: "1px solid #fff",
-    // borderBottom: "1px solid " + theme.palette.secondary.dark,
-    // '&:hover': {
-    //   borderBottom: "1px solid " + theme.palette.secondary.dark,
-    // }
   },
   filtersHeaderTop: {
-    position: "sticky",
+    position: "inherit",
     top: "39px",
     zIndex: 11,
     background: "white",
