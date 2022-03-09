@@ -139,22 +139,6 @@ class PaymentResponseSuccess extends React.Component {
   }
 }
 const Components = (props) => {
-  // const [ShippingCharge, setShippingCharge] = React.useState(0);
-  // useEffect(() => {
-  //   fetch(`${API_URL}/getshippingcharge`, {
-  //     headers: {
-  //       "Content-Type": "application/json;charset=utf-8",
-  //     },
-  //     body: localStorage.getItem("cart_id"),
-  //     method: "POST",
-  //   })
-  //     .then(async (response) => response.json())
-  //     .then((val) => {
-  //       if (val) setShippingCharge(val.shipping_charge);
-  //     })
-  //     .catch((err) => {});
-  // }, []);
-
   let {
     CartCtx: { data, loading, error, allordersuccesful, wishlistdata },
   } = React.useContext(CartContext);

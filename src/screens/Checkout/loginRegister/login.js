@@ -274,6 +274,7 @@ const LoginComponent = (props) => {
   }
 
   const ShowOtpForm = () => {
+    window.scrollTo(0, 0);
     setEmailForm(!emailForm);
   };
   const onChangeNumber = (e) => {
@@ -292,6 +293,7 @@ const LoginComponent = (props) => {
   };
   // Send OTP
   const SendOTP = () => {
+    window.scrollTo(0, 0);
     if (
       numberForm?.number &&
       numberForm?.number?.length === 10 &&
