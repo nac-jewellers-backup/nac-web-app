@@ -112,7 +112,11 @@ const generateShipsBy = (readytoship, vendorDeliveryTime) => {
       return "Ships by" + " " + moment().add(1, "days").format("Do MMMM YYYY");
     }
   } else {
-    return "Ships by" + " " + moment().add(numberOfDays, "days").format("Do MMMM YYYY");
+    return (
+      "Ships by" +
+      " " +
+      moment().add(numberOfDays, "days").format("Do MMMM YYYY")
+    );
   }
 };
 export default function (data) {
@@ -130,16 +134,20 @@ export default function (data) {
         generatedSku: k.generatedSku,
         skuUrl: k.skuUrl,
         materialName:
-          k?.productListByProductId?.productMaterialsByProductSku?.nodes === undefined
+          k?.productListByProductId?.productMaterialsByProductSku?.nodes ===
+          undefined
             ? ""
-            : k?.productListByProductId?.productMaterialsByProductSku?.nodes.map((val) => {
-                return val?.materialName;
-              }),
+            : k?.productListByProductId?.productMaterialsByProductSku?.nodes.map(
+                (val) => {
+                  return val?.materialName;
+                }
+              ),
         // materialName: k.productMaterialsByProductSku.nodes[0].materialName,
         productType: k.productListByProductId.productType,
         prdheader: k.productListByProductId.productName,
         // allorderdata: allorderdata,
-        productId: k.productListByProductId && k.productListByProductId.productId,
+        productId:
+          k.productListByProductId && k.productListByProductId.productId,
         shipby: generateShipsBy(k.isReadyToShip, k.vendorDeliveryTime),
         isReadyToShip: k.isReadyToShip,
         isActive: k.productListByProductId.isactive,
@@ -165,7 +173,10 @@ export default function (data) {
                 details: k.purity + " " + k.metalColor,
               },
               {
-                name: k.productListByProductId.productType == "Kada" ? "Metal Weight (Gm)" : "Gold Weight (Gm)",
+                name:
+                  k.productListByProductId.productType == "Kada"
+                    ? "Metal Weight (Gm)"
+                    : "Gold Weight (Gm)",
                 details: k.skuWeight,
               },
               {
@@ -173,29 +184,50 @@ export default function (data) {
                 details: k.skuSize,
               },
               {
-                name: k.diamondType && k.diamondType.length > 0 ? "Diamond Quality" : "",
+                name:
+                  k.diamondType && k.diamondType.length > 0
+                    ? "Diamond Quality"
+                    : "",
                 details: k.diamondType,
               },
 
               {
-                name: k.productListByProductId.productDiamondsByProductSku.nodes.length > 0 ? "Diamond Weight (Ct)" : null,
+                name:
+                  k.productListByProductId.productDiamondsByProductSku.nodes
+                    .length > 0
+                    ? "Diamond Weight (Ct)"
+                    : null,
                 details:
-                  k.productListByProductId.productDiamondsByProductSku.nodes.length > 0
-                    ? k.productListByProductId.productDiamondsByProductSku.nodes[0].stoneWeight
+                  k.productListByProductId.productDiamondsByProductSku.nodes
+                    .length > 0
+                    ? k.productListByProductId.productDiamondsByProductSku
+                        .nodes[0].stoneWeight
                     : null,
               },
               {
-                name: k.productListByProductId.productGemstonesByProductSku.nodes.length > 0 ? "Gemstone Type" : null,
+                name:
+                  k.productListByProductId.productGemstonesByProductSku.nodes
+                    .length > 0
+                    ? "Gemstone Type"
+                    : null,
                 details:
-                  k.productListByProductId.productGemstonesByProductSku.nodes.length > 0
-                    ? k.productListByProductId.productGemstonesByProductSku.nodes[0].gemstoneType
+                  k.productListByProductId.productGemstonesByProductSku.nodes
+                    .length > 0
+                    ? k.productListByProductId.productGemstonesByProductSku
+                        .nodes[0].gemstoneType
                     : null,
               },
               {
-                name: k.productListByProductId.productGemstonesByProductSku.nodes.length > 0 ? "Gemstone Weight" : null,
+                name:
+                  k.productListByProductId.productGemstonesByProductSku.nodes
+                    .length > 0
+                    ? "Gemstone Weight"
+                    : null,
                 details:
-                  k.productListByProductId.productGemstonesByProductSku.nodes.length > 0
-                    ? k.productListByProductId.productGemstonesByProductSku.nodes[0].stoneWeight
+                  k.productListByProductId.productGemstonesByProductSku.nodes
+                    .length > 0
+                    ? k.productListByProductId.productGemstonesByProductSku
+                        .nodes[0].stoneWeight
                     : null,
               },
             ],
@@ -214,8 +246,10 @@ export default function (data) {
             save: " ",
             discount: k && k.discount ? k.discount : null,
             image: {
-              placeImage: "https://assets-cdn.stylori.com/313x313/images/product/SE0176/SE0176-1R.jpg",
-              hoverImage: "https://assets-cdn.stylori.com/313x313/images/product/SE0176/HOVER-SE0176-2R.jpg",
+              placeImage:
+                "https://assets-cdn.stylori.com/313x313/images/product/SE0176/SE0176-1R.jpg",
+              hoverImage:
+                "https://assets-cdn.stylori.com/313x313/images/product/SE0176/HOVER-SE0176-2R.jpg",
             },
             minOrderQty: k.minOrderQty ?? 1,
             maxOrderQty: k.maxOrderQty ?? 1,
@@ -255,27 +289,5 @@ export default function (data) {
 
     return _d;
   });
-  // console.info('_format', _format);
   return _format;
 }
-
-/*
-{
-  "productList": ["SB0010-18220000","SB0011-18520000"]
-}
-
-query MyQuery($productList: [String!]) {
-  allProductLists(filter: {transSkuListsByProductId: {some: {generatedSku: {in: $productList}}}}) {
-    nodes {
-      productName
-      productId
-      transSkuListsByProductId {
-        nodes {
-          generatedSku
-        }
-      }
-    }
-  }
-}
-
-*/

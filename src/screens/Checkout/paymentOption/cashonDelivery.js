@@ -1,13 +1,11 @@
 import { Button, Grid } from "@material-ui/core";
-// import SimpleSelect from '../../../components/InputComponents/Select/Select';
 import { CartContext } from "context";
 import cart from "mappers/cart";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { API_URL } from "../../../config";
 import "./payment.css";
 
 var obj = {};
-var obj_user = {};
 
 class CashonDelivey extends React.Component {
   constructor(props) {
@@ -28,10 +26,9 @@ class CashonDelivey extends React.Component {
   };
 
   makeFetch = async (props) => {
-
     fetch(`${API_URL}/createorder`, {
       method: "post",
-    
+
       headers: {
         "Content-Type": "application/json",
       },
@@ -51,16 +48,14 @@ class CashonDelivey extends React.Component {
         localStorage.removeItem("set_check");
         localStorage.removeItem("cart_id");
         sessionStorage.removeItem("updatedProduct");
-      
+
         window.location.pathname = `/paymentsuccess/${resdata.order.id}`;
       })
       .catch((err) => {});
-  
   };
   componentDidMount() {}
   componentDidUpdate(prevProps, prevState) {
     if (this.state.res_data !== prevState.res_data) {
-     
       alert(this.state.res_data);
     }
   }
@@ -81,7 +76,6 @@ class CashonDelivey extends React.Component {
     var discounted_price = this.props.cartFilters.discounted_price
       ? this.props.cartFilters.discounted_price
       : "";
-    // var { data:coddata, error, loading, makeFetch} = useNetworkRequest('/api/auth/signin', {}, false);
     var dataCard1 = null;
     if (data.length > 0 && data !== undefined && data !== null) {
       dataCard1 =
@@ -130,7 +124,11 @@ class CashonDelivey extends React.Component {
                 style: "currency",
                 currency: "INR",
                 minimumFractionDigits: 0,
-              }).format(Math.round(dataCard1 - discounted_price))}
+              }).format(
+                Math.round(
+                  dataCard1 - discounted_price + this.props.ShippingCharge
+                )
+              )}
             </Button>
           </Grid>
         </Grid>
@@ -142,6 +140,22 @@ const Components = (props) => {
   let {
     CartCtx: { setCartFilters, cartFilters, data, loading, error },
   } = React.useContext(CartContext);
+  const [ShippingCharge, setShippingCharge] = React.useState(0);
+
+  useEffect(() => {
+    fetch(`${API_URL}/getshippingcharge`, {
+      headers: {
+        "Content-Type": "application/json;charset=utf-8",
+      },
+      body: localStorage.getItem("cart_id"),
+      method: "POST",
+    })
+      .then(async (response) => response.json())
+      .then((val) => {
+        if (val) setShippingCharge(val.shipping_charge);
+      })
+      .catch((err) => {});
+  }, []);
   let content, mapped;
   if (!loading && !error) {
     if (Object.keys(data).length !== 0) {
@@ -159,6 +173,7 @@ const Components = (props) => {
       <CashonDelivey
         {...props}
         data={mapped}
+        ShippingCharge={ShippingCharge}
         cartFilters={cartFilters}
         setCartFilters={setCartFilters}
       />

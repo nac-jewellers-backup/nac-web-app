@@ -1,24 +1,19 @@
-import { API_URL } from "config";
-import { useGraphql } from "hooks/GraphqlHook";
-import { useNetworkRequest } from "hooks/NetworkHooks";
-import {
-  ALLORDERS,
-  ALLUSERWISHLISTS,
-  CART,
-  FetchCartId,
-  FetchSku,
-  ORDERSUCCESSFUL,
-} from "queries/cart";
 import React, { useEffect } from "react";
+import { useGraphql } from "hooks/GraphqlHook";
+import { CART, FetchSku, FetchCartId } from "queries/cart";
+import { ORDERSUCCESSFUL } from "queries/cart";
+import { ALLORDERS } from "queries/cart";
+import { ALLUSERWISHLISTS } from "queries/cart";
 import { withRouter } from "react-router-dom";
-// import { productsPendants } from 'mappers/dummydata';
-// import { object } from 'prop-types';
+import { useNetworkRequest } from "hooks/NetworkHooks";
+
+import { API_URL } from "config";
+import axios from "axios";
+
 var orderobj = {};
 var orderobj1 = {};
 var objallorder = {};
 var objwishlist = {};
-// let setFilter;
-
 const initialCtx = {
   CartCtx: {
     cartFilters: {
@@ -51,7 +46,6 @@ const initialCtx = {
   setNewUser: () => {},
   setLoading: () => {},
   setLoadingWishlist: () => {},
-  // setCartId:() =>{}
 };
 export const CartContext = React.createContext(initialCtx);
 export const CartConsumer = CartContext.Consumer;
@@ -63,7 +57,6 @@ const Provider = (props) => {
   const [noproducts, setNoproducts] = React.useState(false);
   const [NewUser, setNewUser] = React.useState({});
   const [loadingWishlist, setLoadingWishlist] = React.useState(false);
-  // const [_cart_id, setCartId] = React.useState([])
 
   useEffect(() => {
     let user_ids = localStorage.getItem("user_id") ?? "";
@@ -79,12 +72,13 @@ const Provider = (props) => {
         method: "post",
         headers: {
           "Content-Type": "application/json",
-          "x-access-token": accessTokens,
-          // 'Content-Type': 'application/x-www-form-urlencoded',
         },
 
         body: JSON.stringify(user_ids_Obj),
-      }).then((res) => res.json());
+      })
+        .then((res) => res.json())
+        .then((data) => {})
+        .catch((err) => console.log(err));
     };
     user_ids.length > 0 && updateCart(user_ids_Obj);
   }, []);
@@ -94,13 +88,12 @@ const Provider = (props) => {
     : [];
   const user_id = cartFilters.user_id ? cartFilters.user_id : "";
   const price = cartFilters.price ? cartFilters.price : "";
-
   const {
     loading: crtloading,
     error: crterror,
     data: crtdata,
     makeFetch: addtocart,
-  } = useNetworkRequest("/addtocart", { user_id, products }, false);  
+  } = useNetworkRequest("/addtocart", { user_id, products }, false);
   const userIds = localStorage.getItem("user_id")
     ? localStorage.getItem("user_id")
     : "";
@@ -118,7 +111,6 @@ const Provider = (props) => {
           }
         )[0].sku_id
       : {};
-  // JSON.parse(localStorage.getItem("cartDetails")).products[0].sku_id : []
   const guestlogId = cartFilters.user_id ? cartFilters.user_id : "";
   const {
     loading: allorderloading,
@@ -144,7 +136,6 @@ const Provider = (props) => {
     : "";
   const reload = cartFilters.reload ? cartFilters.reload : "";
   const jewellery = cartFilters.jewellery ? cartFilters.jewellery : "";
- 
   var con_gust = localStorage.getItem("gut_lg")
     ? JSON.parse(localStorage.getItem("gut_lg"))
     : "";
@@ -168,7 +159,6 @@ const Provider = (props) => {
     }
   }, []);
 
-
   React.useEffect(() => {
     var obj = {};
     var products = [];
@@ -187,7 +177,6 @@ const Provider = (props) => {
           obj["price"] = val.markupPrice;
           products.push(obj);
         });
-        // { "cart_id": '', "user_id": userId, "products": products_sku_list() }
         _cartDetails["cart_id"] = "";
         _cartDetails["userId"] = "";
         _cartDetails["products"] = products;
@@ -195,7 +184,6 @@ const Provider = (props) => {
           localStorage.removeItem("bil_isactive");
           localStorage.removeItem("ship_isactive");
           localStorage.removeItem("select_addres");
-          // window.location.reload()
           localStorage.setItem("cartDetails", JSON.stringify(_cartDetails));
         }
       }
@@ -209,6 +197,7 @@ const Provider = (props) => {
       localStorage.removeItem("bil_isactive");
       window.location.pathname = `/paymentsuccess/${order_idx}`;
     }
+
     if (
       crtdata &&
       Object.keys(crtdata).length > 0 &&
@@ -217,14 +206,11 @@ const Provider = (props) => {
       localStorage.setItem("cart_id", JSON.stringify(crtdata));
       updateProductList();
       cartFilters["_cart_id"] = crtdata;
-      // _cart_id:crtdata
       setCartFilters({ cartFilters });
     }
     if (reload && reload.length > 0) {
       window.location.reload();
     }
-
-    // localStorage.setItem('cart_id', JSON.stringify(crtdata))
   }, [crtdata]);
   useEffect(() => {
     const orderall = allorder
@@ -238,8 +224,6 @@ const Provider = (props) => {
       setallorderdata(objallorder);
     }
   }, [allorder, allorderdata]);
-
-  
 
   useEffect(() => {
     var obj_aishlist_count = {};
@@ -258,12 +242,8 @@ const Provider = (props) => {
         setLoadingWishlist(false);
       }, 2000);
 
-   
       setwishlistdata(objwishlist);
-
-   
     }
-  
   }, [wishlistDATA, wishlistdata]);
   useEffect(() => {
     orderobj["userProfileId"] = userIds;
@@ -285,7 +265,7 @@ const Provider = (props) => {
     _obj["orderId"] = { id: props.match.params.id };
     if (props.match.params.id) await allordermakeRequestSuccessful(_obj);
   };
- 
+
   const handleAddToCart = () => {
     if (guestlogId.length > 0) {
       localStorage.setItem("user_id", cartFilters.user_id);
@@ -303,7 +283,11 @@ const Provider = (props) => {
             }
           ).length > 0
         ) {
-          addtocart(addcart);
+          user_id &&
+            products &&
+            products.length &&
+            products[0] != null &&
+            addtocart(addcart);
         }
         orderobj["userProfileId"] = user_id;
         sessionStorage.setItem("user_id", user_id);
@@ -317,7 +301,6 @@ const Provider = (props) => {
           Object.values(orderobj).length > 0
         )
           allordermakeRequest(orderobj);
-     
       }
     } else {
       var local_storage = JSON.parse(localStorage.getItem("cartDetails"));
@@ -360,26 +343,16 @@ const Provider = (props) => {
         user_id: userId,
         products: products_sku_list(),
       };
-  
-      if (skuId) localStorage.setItem("cartDetails", JSON.stringify(skuObj));
 
-      // window.location.reload()
+      if (skuId) localStorage.setItem("cartDetails", JSON.stringify(skuObj));
     }
   };
   useEffect(() => {
-    // if (userIds.length > 0) {
-    //     if (cartdetails !== null && cartdetails !== undefined && JSON.stringify(cartdetails).length > 0) {
-    // const user_id = userIds
-    // makeFetch({--login---})
-    //     }
-    // }
     handleAddToCart();
   }, [user_id, price, cartFilters]);
 
   var skus;
-  // const pathQueries = () => {
-  //     skus = localStorage.getItem("cartDetails") ? JSON.parse(localStorage.getItem("cartDetails")).products[0].sku_id : ''
-  // }
+
   skus =
     localStorage.getItem("cartDetails") &&
     JSON.parse(localStorage.getItem("cartDetails")).products.length > 0
@@ -389,7 +362,6 @@ const Provider = (props) => {
           })
           .map((val) => val.sku_id)
       : "";
-  // JSON.parse(localStorage.getItem("cartDetails")).products.map(val => val.sku_id) : ''
   const _qty = () => {
     var obj = {};
     if (
@@ -407,7 +379,7 @@ const Provider = (props) => {
     localStorage.setItem("quantity", JSON.stringify(obj));
   };
 
-  const updateProductList = () => {
+  const updateProductList = async () => {
     let variables;
     if (localStorage.getItem("user_id")) {
       const status = (response) => {
@@ -433,21 +405,22 @@ const Provider = (props) => {
         UserId: { userprofileId: localStorage.getItem("user_id") },
       };
 
-      fetch(`${API_URL}/graphql`, {
-        method: "post",
-       
+      await axios
+        .post(
+          `${API_URL}/graphql`,
+          JSON.stringify({
+            query: FetchCartId,
+            variables: { ..._conditionfetchCartId },
+          }),
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        )
 
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          query: FetchCartId,
-          variables: { ..._conditionfetchCartId },
-        }),
-      })
-        .then(status)
-        .then(json)
         .then(async (val) => {
+          val = val.data;
           let cartItems = Boolean(
             val.data.allShoppingCarts.nodes?.length >
               0?.[0]?.shoppingCartItemsByShoppingCartId?.nodes
@@ -465,6 +438,7 @@ const Provider = (props) => {
             localStorageCartDetails && localStorageCartDetails.products
               ? localStorageCartDetails.products
               : [];
+
           if (localStorageCartDetails) {
             cartItems.map((valresult) => {
               localStorageCartDetails = JSON.parse(
@@ -528,11 +502,6 @@ const Provider = (props) => {
                       JSON.stringify({ ..._newProductQty })
                     );
                   }
-
-                  // else if(valProducts.sku_id !== valresult.productSku){
-                  //     localStorageCartDetails.products[i].qty = valresult.qty
-                  //   localStorageQty[valresult.productSku]   = valresult.qty
-                  // }
                 });
               } else {
                 let _newProductQty = {};
@@ -574,50 +543,60 @@ const Provider = (props) => {
             val.data.allShoppingCarts.nodes.length > 0 &&
             val.data.allShoppingCarts.nodes[0].status !== "pending"
           ) {
-           
             var _user_id = { user_id: localStorage.getItem("user_id") };
             var session_storage = JSON.parse(
               sessionStorage.getItem("updatedProduct")
             );
             var _products = { products: [session_storage] };
             var _obj = { ..._user_id, ..._products };
-            fetch(`${API_URL}/addtocart`, {
-              method: "post",
-      
+            _user_id &&
+              _products.products &&
+              _products.products.length &&
+              _products.products[0] !== null &&
+              fetch(`${API_URL}/addtocart`, {
+                method: "post",
 
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({
-                ..._obj,
-              }),
-            })
-              .then(status)
-              .then(json)
-              .then(async function (data) {
-                if (
-                  data &&
-                  data.data &&
-                  data.data.allShoppingCartItems &&
-                  data.data.allShoppingCartItems.nodes &&
-                  data.data.allShoppingCartItems.nodes.length > 0
-                ) {
-                  var _data = data.data.allShoppingCartItems.nodes
-                    .filter((val) => {
-                      if (val.transSkuListByProductSku) return val;
-                    })
-                    .map((val) => {
-                      return val.transSkuListByProductSku.generatedSku;
-                    });
-                  variables = { productList: _data };
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                  ..._obj,
+                }),
+              })
+                .then(status)
+                .then(json)
+                .then(async function (data) {
+                  if (
+                    data &&
+                    data.data &&
+                    data.data.allShoppingCartItems &&
+                    data.data.allShoppingCartItems.nodes &&
+                    data.data.allShoppingCartItems.nodes.length > 0
+                  ) {
+                    var _data = data.data.allShoppingCartItems.nodes
+                      .filter((val) => {
+                        if (val.transSkuListByProductSku) return val;
+                      })
+                      .map((val) => {
+                        return val.transSkuListByProductSku.generatedSku;
+                      });
+                    variables = { productList: _data };
 
-                  makeRequest(variables);
-                } else {
-                  return [];
-                }
-              });
+                    makeRequest(variables);
+                  } else {
+                    return [];
+                  }
+                });
+
+            if (_products.products[0] == null) {
+              let _data = [];
+              val.data.allShoppingCarts.nodes[0].shoppingCartItemsByShoppingCartId.nodes.map(
+                (l) => _data.push(l.productSku)
+              );
+              variables = { productList: _data };
+              _data && makeRequest(variables);
+            }
           } else {
-            
             if (
               val &&
               val.data &&
@@ -638,10 +617,9 @@ const Provider = (props) => {
                   shoppingCartId: val.data.allShoppingCarts.nodes[0].id,
                 },
               };
+
               fetch(`${API_URL}/graphql`, {
                 method: "post",
-                // body: {query:seoUrlResult,variables:splitHiphen()}
-                // body: JSON.stringify({query:seoUrlResult}),
 
                 headers: {
                   "Content-Type": "application/json",
@@ -662,10 +640,10 @@ const Provider = (props) => {
                       return val.transSkuListByProductSku.generatedSku;
                     });
                   variables = { productList: _data };
+
                   makeRequest(variables);
                 });
             } else {
-              // JSON.parse(sessionStorage.getItem("updatedProduct"))
               if (sessionStorage.getItem("updatedProduct")) {
                 _user_id = { user_id: localStorage.getItem("user_id") };
 
@@ -675,65 +653,61 @@ const Provider = (props) => {
                   ],
                 };
                 _obj = { ..._user_id, ..._products };
-                fetch(`${API_URL}/addtocart`, {
-                  method: "post",
-                  // body: {query:seoUrlResult,variables:splitHiphen()}
-                  // body: JSON.stringify({query:seoUrlResult}),
+                _user_id &&
+                  _products.products &&
+                  _products.products.length &&
+                  _products.products[0] !== null &&
+                  fetch(`${API_URL}/addtocart`, {
+                    method: "post",
 
-                  headers: {
-                    "Content-Type": "application/json",
-                  },
-                  body: JSON.stringify({
-                    ..._obj,
-                  }),
-                })
-                  .then(status)
-                  .then(json)
-                  .then(async function (data) {
-                    if (
-                      data &&
-                      data.data &&
-                      data.data.allShoppingCartItems &&
-                      data.data.allShoppingCartItems.nodes &&
-                      data.data.allShoppingCartItems.nodes.length > 0
-                    ) {
-                      var _data = data.data.allShoppingCartItems.nodes
-                        .filter((val) => {
-                          if (val.transSkuListByProductSku) return val;
-                        })
-                        .map((val) => {
-                          return val.transSkuListByProductSku.generatedSku;
-                        });
-                      variables = { productList: _data };
+                    headers: {
+                      "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                      ..._obj,
+                    }),
+                  })
+                    .then(status)
+                    .then(json)
+                    .then(async function (data) {
+                      if (
+                        data &&
+                        data.data &&
+                        data.data.allShoppingCartItems &&
+                        data.data.allShoppingCartItems.nodes &&
+                        data.data.allShoppingCartItems.nodes.length > 0
+                      ) {
+                        var _data = data.data.allShoppingCartItems.nodes
+                          .filter((val) => {
+                            if (val.transSkuListByProductSku) return val;
+                          })
+                          .map((val) => {
+                            return val.transSkuListByProductSku.generatedSku;
+                          });
+                        variables = { productList: _data };
 
-                      makeRequest(variables);
-                    } else {
-                      return val;
-                    }
-                  });
+                        makeRequest(variables);
+                      } else {
+                        return val;
+                      }
+                    });
               } else {
                 setNewUser(val);
                 return NewUser;
               }
-
-              // cartFilters, setCartFilters
             }
-
-            // }
           }
-        });
+        })
+        .catch((err) => console.log(err));
     } else {
-
       variables = { productList: skus };
 
       makeRequest(variables);
     }
   };
 
-
   const handleAddToCartDidMount = () => {
     if (localStorage.getItem("cart_id") === null) {
-     
       if (JSON.stringify(cartdetails).length > 0) {
         var products = localStorage.getItem("cartDetails")
           ? JSON.parse(localStorage.getItem("cartDetails")).products
@@ -747,7 +721,11 @@ const Provider = (props) => {
             }
           ).length > 0
         ) {
-          addtocart(addcart);
+          user_id &&
+            products &&
+            products.length &&
+            products[0] != null &&
+            addtocart(addcart);
         }
         orderobj["userProfileId"] = user_id;
         sessionStorage.setItem("user_id", user_id);
@@ -761,8 +739,6 @@ const Provider = (props) => {
           Object.values(orderobj).length > 0
         )
           allordermakeRequest(orderobj);
-        // allordermakeRequest(orderobj); // CHANGED
-        // wishlistmakeRequest(orderobj1)
       }
     } else {
       var local_storage = JSON.parse(localStorage.getItem("cartDetails"));
@@ -809,10 +785,7 @@ const Provider = (props) => {
         user_id: userId,
         products: _products_array,
       };
-      // if (userIds.length > 0 && gut_lg !== true) {
-      //     var products = productszz;
-      //     const user_id = cartFilters.user_id
-      //     var addcart = ({ products, user_id })
+
       var session_storage = JSON.parse(
         sessionStorage.getItem("updatedProduct")
       );
@@ -825,17 +798,19 @@ const Provider = (props) => {
           }
         ).length > 0
       ) {
-        addtocart(_obj);
+        _user_id &&
+          _products.products &&
+          _products.products.length &&
+          _products.products[0] != null &&
+          addtocart(_obj);
       }
 
-    
-
       localStorage.setItem("cartDetails", JSON.stringify(skuObj));
-
     }
   };
   useEffect(() => {
     setCartFilters(skus);
+
     updateProductList();
     ordersuccessful();
     if (window.location.pathname === "/cart") {
@@ -843,7 +818,6 @@ const Provider = (props) => {
         if (Boolean(localStorage.getItem("cartDetails"))) {
           handleAddToCartDidMount();
         }
-
       }
     }
   }, []);

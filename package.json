@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@babel/core": "7.4.3",
+    "@babel/node": "^7.16.8",
     "@material-ui/core": "^4.11.3",
     "@material-ui/icons": "^4.11.2",
     "@material-ui/lab": "^4.0.0-alpha.57",
@@ -115,7 +115,7 @@
     "start:production": "env-cmd -f .env.production npm run start",
     "build": "npm run generate-build-version &&  node scripts/build",
     "build:dev": "env-cmd -f .env.development npm run build",
-    "build:staging": "env-cmd -f .env.staging npm run build",    
+    "build:staging": "env-cmd -f .env.staging npm run build",
     "build:production": "env-cmd -f .env.production npm run build",
     "build:app": "env-cmd -f .env npm run build",
     "test": "node scripts/test",
@@ -143,11 +143,13 @@
     ]
   },
   "devDependencies": {
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.5",
     "@craco/craco": "5.2.4",
     "@storybook/addon-actions": "^5.3.21",
     "@storybook/react": "5.1.10",
     "hint": "^5.2.0",
-    "nodemon": "^1.19.1",
+    "nodemon": "^1.19.4",
     "pm2": "3.5.1",
     "serve": "11.0.2",
     "storybook-addon-material-ui": "^0.9.0-alpha.24",

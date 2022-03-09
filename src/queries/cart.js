@@ -206,6 +206,8 @@ export const ORDERSUCCESSFUL = `query MyQuery($orderId:  OrderCondition) {
       shoppingCartByCartId {
         discountedPrice
         discount
+         grossAmount
+         shippingCharge
         shoppingCartItemsByShoppingCartId {
           
           nodes {
@@ -355,4 +357,4 @@ query($cartId:UUID){
     }
   }
 }
-`
+`;

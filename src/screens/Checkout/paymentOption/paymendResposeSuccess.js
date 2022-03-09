@@ -4,41 +4,15 @@ import Footer from "components/Footer/Footer";
 import Header from "components/SilverComponents/Header";
 import { CartContext } from "context";
 import cart from "mappers/cart";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { withRouter } from "react-router-dom";
 import "../../../components/Checkout/Cart.css";
 import { API_URL } from "../../../config";
 import "../chckout.css";
 import "./payment.css";
-// import NeedHelp from "components/needHelp";
 const order_id = localStorage.getItem("order_id")
   ? JSON.parse(localStorage.getItem("order_id"))
   : "";
-const breadcrumsdata = [
-  { title: "Shopping Bag" },
-  { title: "Login/ Register" },
-  { title: "Address Detail" },
-  { title: "Payment Options" },
-  { title: "Order Confirmation" },
-];
-const cartsubdata = [
-  {
-    name: "100% Certified Jewellery",
-    icon: "https://assets.stylori.com/images/static/icon-star.png",
-  },
-  {
-    name: "Secure Payments",
-    icon: "https://assets.stylori.com/images/static/icon-lock.png",
-  },
-  {
-    name: "Free Insured Shipping",
-    icon: "https://assets.stylori.com/images/static/icon-van.png",
-  },
-  {
-    name: "25-Day Returns",
-    icon: "https://assets.stylori.com/images/static/icon-return.png",
-  },
-];
 
 var obj = {};
 obj["order_id"] = order_id;
@@ -53,17 +27,14 @@ class PaymentResponseSuccess extends React.Component {
       body: JSON.stringify(obj),
     })
       .then((res) => {
-       
         return res.json();
       })
       .then((resdata) => {
         if (resdata.message !== undefined && resdata.message !== null) {
-         
         }
         alert("Your mail has been Resending on successfully");
       })
-      .catch((err) => {
-      });
+      .catch((err) => {});
   };
 
   componentDidMount() {
@@ -149,6 +120,7 @@ class PaymentResponseSuccess extends React.Component {
                   <br />
                 </Hidden>
                 <Allorders
+                  ShippingCharge={this.props.ShippingCharge}
                   allorderdata={this.props.allorderdata}
                   history={this.props.history}
                 />
@@ -157,7 +129,7 @@ class PaymentResponseSuccess extends React.Component {
                   <br />
                 </Hidden>
               </Grid>
-              {/* <NeedHelp /> */}
+
               <Footer />
             </Grid>
           </Grid>
@@ -167,17 +139,26 @@ class PaymentResponseSuccess extends React.Component {
   }
 }
 const Components = (props) => {
+  // const [ShippingCharge, setShippingCharge] = React.useState(0);
+  // useEffect(() => {
+  //   fetch(`${API_URL}/getshippingcharge`, {
+  //     headers: {
+  //       "Content-Type": "application/json;charset=utf-8",
+  //     },
+  //     body: localStorage.getItem("cart_id"),
+  //     method: "POST",
+  //   })
+  //     .then(async (response) => response.json())
+  //     .then((val) => {
+  //       if (val) setShippingCharge(val.shipping_charge);
+  //     })
+  //     .catch((err) => {});
+  // }, []);
+
   let {
-    CartCtx: {
-      cartFilters,
-      data,
-      loading,
-      error,
-      allorderdata,
-      allordersuccesful,
-      wishlistdata,
-    },
+    CartCtx: { data, loading, error, allordersuccesful, wishlistdata },
   } = React.useContext(CartContext);
+
   let content, mapped;
   if (!loading && !error) {
     if (Object.keys(data).length !== 0) {
@@ -194,6 +175,7 @@ const Components = (props) => {
     content = (
       <PaymentResponseSuccess
         {...props}
+        // ShippingCharge={ShippingCharge}
         data={mapped}
         allorderdata={allordersuccesful}
         wishlistdata={wishlistdata}

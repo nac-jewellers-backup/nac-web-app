@@ -112,7 +112,6 @@ class Checkoutcard extends React.Component {
 
     var _localStorageQuantity = JSON.parse(localStorage.getItem("quantity"));
 
-    // var currentValue = e.target.id
     var currentValue =
       e.target.id && e.target.id.length > 0 ? e.target.id : e.currentTarget.id;
 
@@ -185,7 +184,6 @@ class Checkoutcard extends React.Component {
         window.location.reload();
       } else {
         localStorage.removeItem("cartDetails", _products);
-        // localStorage.removeItem('quantity')
         alert("You removed this product successfully");
         window.location.reload();
       }
@@ -1642,7 +1640,43 @@ class Checkoutcard extends React.Component {
       .reduce(myFunc);
     let path = window.location.pathname.split("/").pop();
     const { classes } = this.props;
-
+    const totalCostCal = (
+      discountAmount,
+      dataCard,
+      discountPrice,
+      shippingCharge
+    ) => {
+      if (discountAmount) {
+        if (shippingCharge) {
+          return new Intl.NumberFormat("en-IN", {
+            style: "currency",
+            currency: "INR",
+            minimumFractionDigits: 0,
+          }).format(Math.round(discountAmount + shippingCharge));
+        } else {
+          return new Intl.NumberFormat("en-IN", {
+            style: "currency",
+            currency: "INR",
+            minimumFractionDigits: 0,
+          }).format(Math.round(discountAmount));
+        }
+      }
+      if (dataCard - discountPrice) {
+        if (shippingCharge) {
+          return new Intl.NumberFormat("en-IN", {
+            style: "currency",
+            currency: "INR",
+            minimumFractionDigits: 0,
+          }).format(Math.round(dataCard - discountPrice + shippingCharge));
+        } else {
+          return new Intl.NumberFormat("en-IN", {
+            style: "currency",
+            currency: "INR",
+            minimumFractionDigits: 0,
+          }).format(Math.round(dataCard - discountPrice));
+        }
+      }
+    };
     return (
       <div style={{ marginTop: "15px" }}>
         <Grid container>
@@ -1797,7 +1831,13 @@ class Checkoutcard extends React.Component {
                   }}
                   className={classes.totalcost}
                 >
-                  {props?.cartFilters?.discounted_amount
+                  {totalCostCal(
+                    props?.cartFilters?.discounted_amount,
+                    dataCard1,
+                    discounted_price,
+                    props?.shipping_charge
+                  )}
+                  {/* {props?.cartFilters?.discounted_amount
                     ? props?.cartFilters?.discounted_amount === 0
                       ? `₹0`
                       : new Intl.NumberFormat("en-IN", {
@@ -1813,7 +1853,7 @@ class Checkoutcard extends React.Component {
                         style: "currency",
                         currency: "INR",
                         minimumFractionDigits: 0,
-                      }).format(Math.round(dataCard1 - discounted_price))}
+                      }).format(Math.round(dataCard1 - discounted_price))} */}
                 </Typography>
               </Grid>
             </Grid>
@@ -1868,6 +1908,44 @@ class Checkoutcard extends React.Component {
       .reduce(myFunc);
     let path = window.location.pathname.split("/").pop();
     const { classes } = this.props;
+    const totalCostCal = (
+      discountAmount,
+      dataCard,
+      discountPrice,
+      shippingCharge
+    ) => {
+      if (discountAmount) {
+        if (shippingCharge) {
+          return new Intl.NumberFormat("en-IN", {
+            style: "currency",
+            currency: "INR",
+            minimumFractionDigits: 0,
+          }).format(Math.round(discountAmount + shippingCharge));
+        } else {
+          return new Intl.NumberFormat("en-IN", {
+            style: "currency",
+            currency: "INR",
+            minimumFractionDigits: 0,
+          }).format(Math.round(discountAmount));
+        }
+      }
+      if (dataCard - discountPrice) {
+        if (shippingCharge) {
+          return new Intl.NumberFormat("en-IN", {
+            style: "currency",
+            currency: "INR",
+            minimumFractionDigits: 0,
+          }).format(Math.round(dataCard - discountPrice + shippingCharge));
+        } else {
+          return new Intl.NumberFormat("en-IN", {
+            style: "currency",
+            currency: "INR",
+            minimumFractionDigits: 0,
+          }).format(Math.round(dataCard - discountPrice));
+        }
+      }
+    };
+
     return (
       <div style={{ marginTop: "15px" }}>
         <Grid container spacing={12}>
@@ -2007,7 +2085,13 @@ class Checkoutcard extends React.Component {
                   }}
                   className={classes.totalcost}
                 >
-                  {props?.cartFilters?.discounted_amount
+                  {totalCostCal(
+                    props?.cartFilters?.discounted_amount,
+                    dataCard1,
+                    discounted_price,
+                    props?.shipping_charge
+                  )}
+                  {/* {props?.cartFilters?.discounted_amount
                     ? props?.cartFilters?.discounted_amount === 0
                       ? `₹${props?.cartFilters?.discounted_amount}`
                       : new Intl.NumberFormat("en-IN", {
@@ -2023,7 +2107,7 @@ class Checkoutcard extends React.Component {
                         style: "currency",
                         currency: "INR",
                         minimumFractionDigits: 0,
-                      }).format(Math.round(dataCard1 - discounted_price))}
+                      }).format(Math.round(dataCard1 - discounted_price))} */}
                 </Typography>
               </Grid>
             </Grid>
@@ -2140,18 +2224,19 @@ class Checkoutcard extends React.Component {
 const Components = (props) => {
   const [ShippingCharge, setShippingCharge] = React.useState(0);
   React.useEffect(() => {
-    fetch(`${API_URL}/getshippingcharge`, {
-      headers: {
-        "Content-Type": "application/json;charset=utf-8",
-      },
-      body: localStorage.getItem("cart_id"),
-      method: "POST",
-    })
-      .then(async (response) => response.json())
-      .then((val) => {
-        if (val) setShippingCharge(val.shipping_charge);
+    localStorage.getItem("cart_id") &&
+      fetch(`${API_URL}/getshippingcharge`, {
+        headers: {
+          "Content-Type": "application/json;charset=utf-8",
+        },
+        body: localStorage.getItem("cart_id"),
+        method: "POST",
       })
-      .catch((err) => {});
+        .then(async (response) => response.json())
+        .then((val) => {
+          if (val) setShippingCharge(val.shipping_charge);
+        })
+        .catch((err) => {});
   }, []);
 
   let {

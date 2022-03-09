@@ -38,15 +38,12 @@ export default function PaymentHiddenForm(props) {
     : "";
   let cart_id =
     cartFilters &&
-      cartFilters._cart_id &&
-      Object.keys(cartFilters._cart_id).length > 0
+    cartFilters._cart_id &&
+    Object.keys(cartFilters._cart_id).length > 0
       ? cartFilters._cart_id.cart_id
       : "";
   var cart_ids = cart_id.length > 0 ? cart_id : cart_id_lo;
-  // var hash = null
-  // var day = null
-  // var currentutc = null
-  // let cart_id = localStorage.getItem("cart_id") ? JSON.parse(localStorage.getItem("cart_id")).cart_id : "";
+
   let user_id = localStorage.getItem("user_id")
     ? localStorage.getItem("user_id")
     : "";
@@ -63,7 +60,6 @@ export default function PaymentHiddenForm(props) {
       body: JSON.stringify({
         orderid: orderId,
         amount: props.data,
-        //props.data
         customvar: "",
         subtype: "",
       }),
@@ -72,8 +68,7 @@ export default function PaymentHiddenForm(props) {
       .then((data) => {
         sethash({
           ...hash,
-          // hashvalue: data.hash,
-          // timedate: data.day
+
           ...data,
           buyerEmail: data.buyerEmail,
           buyerPhone: data.buyerPhone,
@@ -92,10 +87,6 @@ export default function PaymentHiddenForm(props) {
           checksum: data.checksum,
           amount: data.amount,
         });
-
-        //  hash=data.hash
-        //  day = data.day
-        //  currentutc = data.currentutc
       })
 
       .catch((error) => {
@@ -119,16 +110,13 @@ export default function PaymentHiddenForm(props) {
       method: "post",
       headers: {
         "Content-Type": "application/json",
-        // 'Content-Type': 'application/x-www-form-urlencoded',
       },
-      // then(async(response) =>await response.json()).
       body: JSON.stringify(obj),
     })
       .then(status)
       .then(json)
       .then((data) => {
         localStorage.removeItem("order_id");
-        // if (localStorage.getItem('gut_lg')) localStorage.removeItem("user_id")
         sessionStorage.removeItem("updatedProduct");
         if (data !== null && data !== undefined) {
           localStorage.setItem("order_id", JSON.stringify(data.order.id));
@@ -140,10 +128,6 @@ export default function PaymentHiddenForm(props) {
       .catch((error) => {
         console.error("Error:", error);
       });
-
-    // document.getElementsByName("form_payment").submit();
-
-    // document.getElementById("sendtoairpay").submit();
   };
 
   useEffect(() => {
@@ -151,7 +135,6 @@ export default function PaymentHiddenForm(props) {
   }, [hash]);
 
   return (
-
     <div container>
       <form
         method="POST"
@@ -322,16 +305,6 @@ export default function PaymentHiddenForm(props) {
         </div>
       </form>
       <Grid item container>
-        {/* <input
-          style={{ cursor: "pointer"
-         }}
-          type="button"
-          onClick={generateOrderdId}
-          className="credit-button"
-          name="submitBtn"
-          value={`Pay ${props.data1}`
-          }
-        /> */}
         <Button
           color="primary"
           variant="contained"
