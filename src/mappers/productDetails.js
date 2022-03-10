@@ -2,7 +2,7 @@ import { CDN_URL } from "config";
 import moment from "moment";
 import { useHistory } from "react-router-dom";
 import { resolutions } from "utils";
-
+import CurrencyConversion from "utils/CurrencyConversion";
 var colSize = null;
 var colSize_like_view = null;
 var img_res_X_2 = null;
@@ -44,7 +44,6 @@ const screen_width_type_like_view = () => {
 
 var img_res;
 var screen_width_type = (screen_res, largeImageZoom) => {
-  // const {window_width, browser_type} = await lambda_func_front_end()
   var window_width = JSON.parse(localStorage.getItem("browserDetails"));
 
   var _calc = () => {
@@ -56,12 +55,10 @@ var screen_width_type = (screen_res, largeImageZoom) => {
     return subtracting_spacesaroundcard;
   };
   var calc = _calc();
-  // var img_res;
   var sizes = [
     275, 300, 350, 375, 400, 500, 600, 675, 700, 775, 800, 900, 975, 1000, 1100,
     2400,
   ];
-  // [50, 60, 70, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 425, 450, 475, 500, 525, 550, 575, 600, 625, 650, 675, 700, 725, 750, 775, 800, 825, 850, 875, 900, 925, 950, 975, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000, 2100, 2200, 2300, 2400]
   if (largeImageZoom) {
     img_res = 1000;
   } else {
@@ -95,9 +92,6 @@ var screen_width_type = (screen_res, largeImageZoom) => {
 screen_width_type_like_view();
 screenWidth();
 
-// const baseUi = "https://assets-cdn.stylori.com/";
-// const injectUrl = (url, baseUi) => url ? resolutions.map(k => ({ ...k, img: `${baseUi}${url.imageUrl===undefined  ? url : url.imageUrl}` })) : [];
-//
 const injectUrl_url_construct = (url, baseUi, screen_res, largeImageZoom) => {
   var browser_type = JSON.parse(localStorage.getItem("browserDetails"));
   if (
@@ -139,8 +133,6 @@ const injectUrl_url_construct = (url, baseUi, screen_res, largeImageZoom) => {
 
   return `${img_url}?_=${new Date().getTime()}`;
 };
-
-// video validation
 
 const handleVideoCheck = (url) => {
   var extensionVideoLists = [
@@ -192,47 +184,6 @@ const generateImgurls = (PD, val, screen_res, tabsChange) => {
       if (imgurl && Object.entries(imgurl).length > 0) {
         arrOfurls.push(imgurl.imageUrl);
         arrOfurls_2X.push(imgurl.imageUrl);
-        // if (!handleVideoCheck(imgurl.imageUrl)) {
-        //   if (imgurl && imgurl.imageUrl && imgurl.imageUrl.indexOf(".") > -1 && imgurl.imageUrl.indexOf("-")[0] > -1) {
-        //     if (imgurl.imageUrl.split(".")[0].split("-")[1].length > 2) {
-        //       imgurlsplit = imgurl.imageUrl.split(".")[0].split("-")[1].substr(1);
-        //     } else {
-        //       imgurlsplit = imgurl.imageUrl.split(".")[0].charAt(imgurl.imageUrl.split(".")[0].length - 1);
-        //     }
-        //   }
-
-        //   // var imgurlsplit
-        //   if (PD.metalColor.split(" ").length > 1) {
-        //     var colorOne = PD.metalColor.split(" ")[0].charAt(0);
-        //     var colorTwo = PD.metalColor.split(" ")[1].charAt(0);
-        //     metalcolor = colorOne.concat(colorTwo);
-        //     metalcolor2 = colorTwo.concat(colorOne);
-        //   } else {
-        //     if (PD && PD.metalColor) metalcolor = PD.metalColor.charAt(0);
-        //     else metalcolor = "";
-        //   }
-
-        //   // if (imgurlsplit === metalcolor) {
-
-        //   // arrOfurls.push(injectUrl_url_construct(imgurl, CDN_URL, screen_res))
-
-        //   // }
-        //   if (!tabsChange) {
-        //     if (imgurl.productColor === PD.metalColor || imgurl.productColor === PD.metalColor) {
-        //       arrOfurls.push(injectUrl_url_construct(imgurl, CDN_URL, screen_res));
-        //       arrOfurls_2X.push(injectUrl_url_construct(imgurl, CDN_URL, screen_res, largeImageZoom));
-        //     }
-        //   } else {
-        //     arrOfurls.push(injectUrl_url_construct(imgurl, CDN_URL, screen_res));
-        //     arrOfurls_2X.push(injectUrl_url_construct(imgurl, CDN_URL, screen_res, largeImageZoom));
-        //   }
-
-        //   return { arrOfurls, arrOfurls_2X };
-        // } else {
-        //   arrOfurls.push(`${CDN_URL}${imgurl.imageUrl}`);
-        //   arrOfurls_2X.push(`${CDN_URL}${imgurl.imageUrl}`);
-        //   return { arrOfurls, arrOfurls_2X };
-        // }
       } else {
         return null;
       }
@@ -263,11 +214,12 @@ const calculatetotalms = (arr, name, price) => {
   });
 
   a = filtering.reduce((a, b) => a + b, 0);
-  return new Intl.NumberFormat("en-IN", {
-    style: "currency",
-    currency: "INR",
-    minimumFractionDigits: 0,
-  }).format(Math.round(a));
+  return CurrencyConversion(Math.round(a));
+  //  new Intl.NumberFormat("en-IN", {
+  //   style: "currency",
+  //   currency: "INR",
+  //   minimumFractionDigits: 0,
+  // }).format(Math.round(a));
 };
 const generatedDiamondType = (PD, valProductDiamond, type) => {
   var arrOfdiamondType = [];
@@ -296,7 +248,6 @@ const gemstoneType = (PD, valGemstoneType, type) => {
   });
   return arrOfGemstoneType;
 };
-// if (val.gemstoneType === PD.gemstoneType) { arrOfGemstoneType.push(val[type]) } return arrOfGemstoneType })
 const generatedimondClarity = (val) => {
   var a = [...new Set(val.map((P) => P.diamondType))];
 
@@ -348,9 +299,6 @@ const handle_mapper = (val) => {
   _obj["header"] = "Certificate";
   _obj["name"] = "Certificate";
   if (val) {
-    // var _split = val.split(',')
-    // _split.map((val, i) => { _obj[`img${i}`] = val })
-    // return [_obj]
     _obj["image"] = val;
     return _obj;
   } else {
@@ -375,7 +323,6 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
 
   const _format = mapperdata.map((PD) => {
     let _d;
-   
 
     try {
       _d = {
@@ -696,32 +643,37 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
               {
                 name: "GST",
                 details: [
-                  new Intl.NumberFormat("en-IN", {
-                    style: "currency",
-                    currency: "INR",
-                    minimumFractionDigits: 0,
-                  }).format(Math.round(PD?.discountPriceTax)),
-                  new Intl.NumberFormat("en-IN", {
-                    style: "currency",
-                    currency: "INR",
-                    minimumFractionDigits: 0,
-                  }).format(Math.round(PD?.markupPriceTax)),
+                  CurrencyConversion(Math.round(PD?.discountPriceTax)),
+                  // new Intl.NumberFormat("en-IN", {
+                  //   style: "currency",
+                  //   currency: "INR",
+                  //   minimumFractionDigits: 0,
+                  // }).format(Math.round(PD?.discountPriceTax)),
+                  CurrencyConversion(Math.round(PD?.markupPriceTax)),
+                  // new Intl.NumberFormat("en-IN", {
+                  //   style: "currency",
+                  //   currency: "INR",
+                  //   minimumFractionDigits: 0,
+                  // }).format(Math.round(PD?.markupPriceTax)),
                 ],
               },
 
               {
                 name: "Total",
                 details: [
-                  new Intl.NumberFormat("en-IN", {
-                    style: "currency",
-                    currency: "INR",
-                    minimumFractionDigits: 0,
-                  }).format(Math.round(PD?.discountPrice)),
-                  new Intl.NumberFormat("en-IN", {
-                    style: "currency",
-                    currency: "INR",
-                    minimumFractionDigits: 0,
-                  }).format(Math.round(PD?.markupPrice)),
+                  CurrencyConversion(Math.round(PD?.discountPrice)),
+                  // new Intl.NumberFormat("en-IN", {
+                  //   style: "currency",
+                  //   currency: "INR",
+                  //   minimumFractionDigits: 0,
+                  // }).format(Math.round(PD?.discountPrice)),
+                  // new Intl.NumberFormat("en-IN", {
+                  //   style: "currency",
+                  //   currency: "INR",
+                  //   minimumFractionDigits: 0,
+                  // }).format(Math.round(PD?.markupPrice)),
+
+                  CurrencyConversion(PD?.markupPrice),
                 ],
               },
             ],
@@ -2084,11 +2036,8 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                     description:
                       val?.transSkuDescriptionsBySkuId?.nodes[0]
                         ?.skuDescription ?? " ",
-                    price:
-                      val?.sellingPrice ??
-                      " ",
-                    skuUrl:
-                      val?.skuUrl ?? " ",
+                    price: val?.sellingPrice ?? " ",
+                    skuUrl: val?.skuUrl ?? " ",
                   };
                 })
               : []
@@ -2108,11 +2057,12 @@ const calculatetotal = (arr, name) => {
   var a = 0;
   arr.map((val) => {
     if (val.materialName === name || name === undefined) {
-      a = new Intl.NumberFormat("en-IN", {
-        style: "currency",
-        currency: "INR",
-        minimumFractionDigits: 0,
-      }).format(Math.round(a + val.discountPrice));
+      a = CurrencyConversion(Math.round(a + val.discountPrice));
+      // new Intl.NumberFormat("en-IN", {
+      //   style: "currency",
+      //   currency: "INR",
+      //   minimumFractionDigits: 0,
+      // }).format(Math.round(a + val.discountPrice));
     }
   });
   return a;
@@ -2121,11 +2071,12 @@ const calculatetotals = (arr, name) => {
   var a = 0;
   arr.map((val) => {
     if (val.materialName === name || name === undefined) {
-      a = new Intl.NumberFormat("en-IN", {
-        style: "currency",
-        currency: "INR",
-        minimumFractionDigits: 0,
-      }).format(Math.round(parseInt(a + val.markup)));
+      a = CurrencyConversion(Math.round(parseInt(a + val.markup)));
+      // new Intl.NumberFormat("en-IN", {
+      //   style: "currency",
+      //   currency: "INR",
+      //   minimumFractionDigits: 0,
+      // }).format(Math.round(parseInt(a + val.markup)));
     }
   });
   return a;
@@ -2149,11 +2100,12 @@ const calculatetotalsmaking = (arr, arr1, name, name1) => {
     }
   });
 
-  return new Intl.NumberFormat("en-IN", {
-    style: "currency",
-    currency: "INR",
-    minimumFractionDigits: 0,
-  }).format(Math.round(a1 + b1));
+  return CurrencyConversion(Math.round(a1 + b1));
+  //  new Intl.NumberFormat("en-IN", {
+  //   style: "currency",
+  //   currency: "INR",
+  //   minimumFractionDigits: 0,
+  // }).format(Math.round(a1 + b1));
 };
 const calculatetotalm = (arr, name) => {
   var a = 0;
@@ -2187,11 +2139,12 @@ const calculatetotalmaking = (arr, arr1, name, name1) => {
     }
   });
 
-  return new Intl.NumberFormat("en-IN", {
-    style: "currency",
-    currency: "INR",
-    minimumFractionDigits: 0,
-  }).format(Math.round(a1 + b1));
+  return CurrencyConversion(Math.round(a1 + b1));
+  // new Intl.NumberFormat("en-IN", {
+  //   style: "currency",
+  //   currency: "INR",
+  //   minimumFractionDigits: 0,
+  // }).format(Math.round(a1 + b1));
 };
 const calculatetotalss = (arr, name) => {
   var a = 0;

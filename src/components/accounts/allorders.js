@@ -18,7 +18,7 @@ import { withRouter } from "react-router-dom";
 import "../Checkout/Cart.css";
 import Pricing from "../Pricing/index";
 import "./accounts.css";
-
+import CurrencyConversion from "utils/CurrencyConversion";
 const width = window.innerWidth;
 function myFunc(total, num) {
   return Math.round(total + num);
@@ -122,11 +122,14 @@ class Allorders extends React.Component {
                   textAlign: "right",
                 }}
               >
-                {new Intl.NumberFormat("en-IN", {
-                  style: "currency",
-                  currency: "INR",
-                  minimumFractionDigits: 0,
-                }).format(Math.round(b))}
+                {
+                  CurrencyConversion(Math.round(b))
+                  // new Intl.NumberFormat("en-IN", {
+                  //   style: "currency",
+                  //   currency: "INR",
+                  //   minimumFractionDigits: 0,
+                  // }).format(Math.round(b))
+                }
               </Typography>
 
               <Typography
@@ -136,11 +139,14 @@ class Allorders extends React.Component {
                   marginTop: "7px",
                 }}
               >
-                {new Intl.NumberFormat("en-IN", {
-                  style: "currency",
-                  currency: "INR",
-                  minimumFractionDigits: 0,
-                }).format(Math.round(b - a))}
+                {
+                  CurrencyConversion(Math.round(b - a))
+                  // new Intl.NumberFormat("en-IN", {
+                  //   style: "currency",
+                  //   currency: "INR",
+                  //   minimumFractionDigits: 0,
+                  // }).format(Math.round(b - a))
+                }
               </Typography>
               <Typography
                 className="data1"
@@ -148,16 +154,24 @@ class Allorders extends React.Component {
                   textAlign: "right",
                 }}
               >
-                {new Intl.NumberFormat("en-IN", {
-                  style: "currency",
-                  currency: "INR",
-                  minimumFractionDigits: 0,
-                }).format(
-                  Math.round(
-                    this?.props?.allorderdata?.data?.allOrders?.nodes[0]
-                      ?.shoppingCartByCartId?.shippingCharge ?? 0
+                {
+                  CurrencyConversion(
+                    Math.round(
+                      this?.props?.allorderdata?.data?.allOrders?.nodes[0]
+                        ?.shoppingCartByCartId?.shippingCharge ?? 0
+                    )
                   )
-                )}
+                  // new Intl.NumberFormat("en-IN", {
+                  //   style: "currency",
+                  //   currency: "INR",
+                  //   minimumFractionDigits: 0,
+                  // }).format(
+                  //   Math.round(
+                  //     this?.props?.allorderdata?.data?.allOrders?.nodes[0]
+                  //       ?.shoppingCartByCartId?.shippingCharge ?? 0
+                  //   )
+                  // )
+                }
               </Typography>
             </div>
             <br />
@@ -193,11 +207,13 @@ class Allorders extends React.Component {
         .reduce(myFunc);
     }
 
-    return new Intl.NumberFormat("en-IN", {
-      style: "currency",
-      currency: "INR",
-      minimumFractionDigits: 0,
-    }).format(Math.round(a));
+    return CurrencyConversion(Math.round(a));
+
+    // new Intl.NumberFormat("en-IN", {
+    //   style: "currency",
+    //   currency: "INR",
+    //   minimumFractionDigits: 0,
+    // }).format(Math.round(a));
   };
   generateShipsBy = (readytoship, vendorDeliveryTime) => {
     var isReadytoShip = readytoship;
@@ -509,15 +525,22 @@ class Allorders extends React.Component {
                             <span
                               style={{ color: "#ed1165", fontSize: "16px" }}
                             >
-                              {new Intl.NumberFormat("en-IN", {
-                                style: "currency",
-                                currency: "INR",
-                                minimumFractionDigits: 0,
-                              }).format(
-                                Math.round(
-                                  val.shoppingCartByCartId.discountedPrice
+                              {
+                                CurrencyConversion(
+                                  Math.round(
+                                    val.shoppingCartByCartId.discountedPrice
+                                  )
                                 )
-                              )}
+                                // new Intl.NumberFormat("en-IN", {
+                                //   style: "currency",
+                                //   currency: "INR",
+                                //   minimumFractionDigits: 0,
+                                // }).format(
+                                //   Math.round(
+                                //     val.shoppingCartByCartId.discountedPrice
+                                //   )
+                                // )
+                              }
                             </span>
                           </div>
                           {val.shoppingCartByCartId.shoppingCartItemsByShoppingCartId.nodes.map(
@@ -843,15 +866,22 @@ class Allorders extends React.Component {
                               <span
                                 style={{ color: "#ed1165", fontSize: "16px" }}
                               >
-                                {new Intl.NumberFormat("en-IN", {
-                                  style: "currency",
-                                  currency: "INR",
-                                  minimumFractionDigits: 0,
-                                }).format(
-                                  Math.round(
-                                    val.shoppingCartByCartId.discountedPrice
+                                {
+                                  CurrencyConversion(
+                                    Math.round(
+                                      val.shoppingCartByCartId.discountedPrice
+                                    )
                                   )
-                                )}
+                                  // Intl.NumberFormat("en-IN", {
+                                  //   style: "currency",
+                                  //   currency: "INR",
+                                  //   minimumFractionDigits: 0,
+                                  // }).format(
+                                  //   Math.round(
+                                  //     val.shoppingCartByCartId.discountedPrice
+                                  //   )
+                                  // )
+                                }
                               </span>
                             </div>
                           </div>
@@ -1204,16 +1234,24 @@ class Allorders extends React.Component {
                                             }}
                                           >
                                             <b>
-                                              {new Intl.NumberFormat("en-IN", {
-                                                style: "currency",
-                                                currency: "INR",
-                                                minimumFractionDigits: 0,
-                                              }).format(
-                                                Math.round(
-                                                  val.shoppingCartByCartId
-                                                    .grossAmount
+                                              {
+                                                CurrencyConversion(
+                                                  Math.round(
+                                                    val.shoppingCartByCartId
+                                                      .grossAmount
+                                                  )
                                                 )
-                                              )}
+                                                // new Intl.NumberFormat("en-IN", {
+                                                //   style: "currency",
+                                                //   currency: "INR",
+                                                //   minimumFractionDigits: 0,
+                                                // }).format(
+                                                //   Math.round(
+                                                //     val.shoppingCartByCartId
+                                                //       .grossAmount
+                                                //   )
+                                                // )
+                                              }
                                             </b>
                                           </Typography>
                                         </Grid>
@@ -1762,16 +1800,24 @@ class Allorders extends React.Component {
                                             }}
                                           >
                                             <b>
-                                              {new Intl.NumberFormat("en-IN", {
-                                                style: "currency",
-                                                currency: "INR",
-                                                minimumFractionDigits: 0,
-                                              }).format(
-                                                Math.round(
-                                                  val.shoppingCartByCartId
-                                                    .grossAmount
+                                              {
+                                                CurrencyConversion(
+                                                  Math.round(
+                                                    val.shoppingCartByCartId
+                                                      .grossAmount
+                                                  )
                                                 )
-                                              )}
+                                                // new Intl.NumberFormat("en-IN", {
+                                                //   style: "currency",
+                                                //   currency: "INR",
+                                                //   minimumFractionDigits: 0,
+                                                // }).format(
+                                                //   Math.round(
+                                                //     val.shoppingCartByCartId
+                                                //       .grossAmount
+                                                //   )
+                                                // )
+                                              }
                                             </b>
                                           </Typography>
                                         </Grid>

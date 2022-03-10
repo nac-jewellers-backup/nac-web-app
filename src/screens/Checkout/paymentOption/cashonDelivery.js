@@ -1,10 +1,10 @@
 import { Button, Grid } from "@material-ui/core";
 import { CartContext } from "context";
 import cart from "mappers/cart";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { API_URL } from "../../../config";
 import "./payment.css";
-
+import CurrencyConversion from "utils/CurrencyConversion";
 var obj = {};
 
 class CashonDelivey extends React.Component {
@@ -120,15 +120,22 @@ class CashonDelivey extends React.Component {
               onClick={() => this.makeFetch(this.props)}
             >
               PAY&nbsp;
-              {Intl.NumberFormat("en-IN", {
-                style: "currency",
-                currency: "INR",
-                minimumFractionDigits: 0,
-              }).format(
-                Math.round(
-                  dataCard1 - discounted_price + this.props.ShippingCharge
+              {
+                CurrencyConversion(
+                  Math.round(
+                    dataCard1 - discounted_price + this.props.ShippingCharge
+                  )
                 )
-              )}
+                // Intl.NumberFormat("en-IN", {
+                //   style: "currency",
+                //   currency: "INR",
+                //   minimumFractionDigits: 0,
+                // }).format(
+                //   Math.round(
+                //     dataCard1 - discounted_price + this.props.ShippingCharge
+                //   )
+                // )
+              }
             </Button>
           </Grid>
         </Grid>

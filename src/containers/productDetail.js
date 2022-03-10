@@ -35,11 +35,8 @@ import NeedHelp from "../components/needHelp";
 import { API_URL } from "../config";
 const styles = (theme) => ({
   collectionSection: {
-    // "& svg":{
     fill: `${theme.palette.secondary.main} !important`,
     textShadow: "2px 2px 8px #FF0000",
-
-    // }
   },
 
   spanIcon: {
@@ -54,11 +51,6 @@ const styles = (theme) => ({
     fontSize: "7px",
     marginLeft: "2px",
   },
-  // similarProducts:{
-  //   "& .svg":{
-  //     left:'0 !important'
-  //   }
-  // }
 
   productInformationGrid: {
     [theme.breakpoints.only("md")]: {
@@ -140,7 +132,7 @@ class ProductDetail extends Component {
       }
     };
     const ArrowLeft = (props) => {
-      const { className, style, onClick } = props;
+      const { className, onClick } = props;
       return (
         <ArrowLeftIcon
           className={`${className} ${classes.collectionSection}`}
@@ -172,8 +164,7 @@ class ProductDetail extends Component {
       autoplay: false,
       infinite: false,
       accessibility: true,
-      // speed: 2500,
-      // fade: true,
+
       slidesToShow: 4,
       slidesToScroll: 4,
       prevArrow: <ArrowLeft />,
@@ -186,7 +177,6 @@ class ProductDetail extends Component {
       infinite: true,
       accessibility: true,
       speed: 3000,
-      // fade: true,
       slidesToShow: 1,
       slidesToScroll: 1,
       prevArrow: <ArrowLeft />,
@@ -518,7 +508,6 @@ class ProductDetail extends Component {
                       SIMILAR PRODUCTS
                     </div>
                     <Slideshow
-                      // sliderRef={this.slider}
                       class="subslider-carousel"
                       dataCarousel={dataCarouselcollections}
                     >
@@ -539,9 +528,11 @@ class ProductDetail extends Component {
             }
           </Grid>
           <div
-            style={{ background: "whitesmoke" }}
             className="pricing-product-media"
-            style={{ maxWidth: "1600px", margin: "auto" }}
+            style={{
+              maxWidth: "1600px",
+              margin: "auto",
+            }}
           >
             <Grid container spacing={12}>
               <Grid item xs={12} style={{ paddingLeft: "2%" }}>
@@ -605,7 +596,6 @@ class ProductDetail extends Component {
                       SHOP OTHER CATEGORIES
                     </div>
                     <Slideshow
-                      // sliderRef={this.slider}
                       class="subslider-carousel"
                       dataCarousel={dataCarouselcollections}
                     >
@@ -653,7 +643,6 @@ class ProductDetail extends Component {
               </div>
               <div style={{ width: "100%" }}>
                 <Slideshow
-                  // sliderRef={this.slider}
                   class="subslider-carousel"
                   dataCarousel={dataCarouselcollectionsSm}
                 >
@@ -682,27 +671,6 @@ class ProductDetail extends Component {
             />
           </Grid>
           <Grid item xs={12}>
-            {/* {this.props.data[0].certificate && (
-              <div
-                style={{
-                  margin: "auto",
-                  paddingLeft: "5%",
-                  paddingRight: "5%",
-                  marginTop: "25px",
-                }}
-              >
-                <p
-                  style={{
-                    color: "gray",
-                    padding: "8px",
-                    fontSize: "12px",
-                    borderBottom: "1px solid gray",
-                  }}
-                >
-                  CERTIFICATES
-                </p>
-              </div>
-            )} */}
             <PriceCertification data={this.props?.data} />
           </Grid>
           <Grid item xs={12}>
@@ -742,7 +710,6 @@ class ProductDetail extends Component {
               </div>
               <div style={{ paddingTop: 8, width: "100%" }}>
                 <Slideshow
-                  // sliderRef={this.slider}
                   class="subslider-carousel"
                   dataCarousel={dataCarouselcollectionsSm}
                 >

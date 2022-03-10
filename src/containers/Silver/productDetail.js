@@ -135,7 +135,6 @@ class ProductDetail extends Component {
           <br />
 
           <div
-            style={{ background: "whitesmoke" }}
             className="pricing-product-media"
             style={{ maxWidth: "1600px", margin: "auto" }}
           >

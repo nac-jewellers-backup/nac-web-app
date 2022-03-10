@@ -1,11 +1,11 @@
 import { Grid } from "@material-ui/core";
 import { CartContext } from "context";
 import cart from "mappers/cart";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "./payment.css";
 import PaymentHiddenForm from "./paymentHiddenForm";
 import { API_URL } from "../../../config";
-
+import CurrencyConversion from "utils/CurrencyConversion";
 class Netbanking extends React.Component {
   render() {
     let cart_id = localStorage.getItem("cart_id")
@@ -46,15 +46,22 @@ class Netbanking extends React.Component {
                 data={Math.round(
                   dataCard1 - discounted_price + this.props.ShippingCharge
                 )}
-                data1={Intl.NumberFormat("en-IN", {
-                  style: "currency",
-                  currency: "INR",
-                  minimumFractionDigits: 0,
-                }).format(
-                  Math.round(
-                    dataCard1 - discounted_price + this.props.ShippingCharge
+                data1={
+                  CurrencyConversion(
+                    Math.round(
+                      dataCard1 - discounted_price + this.props.ShippingCharge
+                    )
                   )
-                )}
+                  //   Intl.NumberFormat("en-IN", {
+                  //   style: "currency",
+                  //   currency: "INR",
+                  //   minimumFractionDigits: 0,
+                  // }).format(
+                  //   Math.round(
+                  //     dataCard1 - discounted_price + this.props.ShippingCharge
+                  //   )
+                  // )
+                }
               />
             </Grid>
           </div>

@@ -11,7 +11,7 @@ import { ProductDetailContext } from "context";
 import React from "react";
 import {
   LazyLoadImage,
-  trackWindowScroll
+  trackWindowScroll,
 } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { Link } from "react-router-dom";
@@ -20,7 +20,6 @@ import "./productCard.css";
 export const ImgMediaCard = (props) => {
   const { ProductDetailCtx, setFilters } =
     React.useContext(ProductDetailContext);
-  const loc = window.location.search;
   return (
     <Component
       filters={ProductDetailCtx.filters}
@@ -73,31 +72,8 @@ const Gallery = (
     />
   </div>
 );
-// onLoad={(e)=>e.target.src=e.target.style.background='url(https://alpha-assets.stylori.com/images/static/loadingimg.gif') center center / 25% 25% no-repeat rgb(255, 255, 255);'}
 export default trackWindowScroll(Gallery);
-// <img
-// srcset={renderImages(props, cardstate)}
-// sizes="(max-width: 320px) 320w,
-//             (max-width: 480px) 375w,
-//             (max-width: 600px) 600w,
-//             (max-width: 992px) 768w,
-//             (max-width: 1440px) 1440w,
-//             (max-width: 2560px) 2560w,
-//             2560w
 
-// "
-//      alt=""
-//           title={props.data.title}
-//           onMouseOver={() => {
-//             setCardState({ ...cardstate, hovered: !cardstate.hovered });
-//           }}
-//           onMouseOut={() => {
-//             setCardState({ ...cardstate, hovered: !cardstate.hovered });
-//           }}
-//           style={{width:'100%',height:'100%'}}
-//           className={`${props.data.image.placeImage.length === 0 || props.data.image.hoverImage.length === 0 ? 'shine' : '' }`}
-
-//           />
 const handleProductDetatiContext = (props) => {
   props.filters["defaultVariants"]["diamondType"] = props.data.diamondType;
   props.filters["defaultVariants"]["metalColor"] = props.data.metalColor;
@@ -133,19 +109,15 @@ const useStyles = makeStyles((theme) => ({
     color: "#828282",
   },
   priceClass: {
-    // boxShadow: "0px 0px 5px #F699A3 inset",
     padding: "10px",
-    //height: "50px",
     display: "flex",
     boxShadow: " 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)",
     borderRadius: "0 !important",
-    // borderTopLeftRadius: "20% !important",
-    // borderTopRightRadius: "20% !important",
+
     opacity: "1.2",
     "&:hover": {
       boxShadow: "40 0 11px rgba(33,33,33,.2)",
       cursor: "pointer",
-      // opacity: "2"
     },
     [theme.breakpoints.down("sm")]: {
       height: "60px",
@@ -155,8 +127,6 @@ const useStyles = makeStyles((theme) => ({
     "& div": {
       padding: "0 !important",
     },
-
-    // border: "1px solid #F699A3"
   },
   priceClassMain: {
     margin: "auto !important",
@@ -178,7 +148,6 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "0.8rem",
     lineHeight: 0,
     color: "#828282",
-    // fontWeight: "bold",
     width: "fit-content",
     flex: 0.7,
     textAlign: "center",
@@ -201,9 +170,7 @@ const useStyles = makeStyles((theme) => ({
       marginBottom: 0,
     },
   },
-  cardContent: {
-    // margin: "auto"
-  },
+  cardContent: {},
   textPriceCardGrid: {
     display: "flex",
     width: "225px",
@@ -231,7 +198,6 @@ const useStyles = makeStyles((theme) => ({
     flex: 0.7,
     textAlign: "center",
     [theme.breakpoints.down("sm")]: {
-      // flex: 0.3,
       borderRadius: "3px",
       fontWeight: "normal",
       fontSize: "0.7rem",
@@ -265,17 +231,10 @@ const useStyles = makeStyles((theme) => ({
   },
   cardActionsImage: {
     margin: 0,
-    [theme.breakpoints.down("md")]: {
-      // height: '200px !important'
-    },
+    [theme.breakpoints.down("md")]: {},
   },
 }));
 const renderImages = (props, cardstate) => {
-  const filterType = cardstate.hovered ? "hoverImage" : "placeImage";
-
-  // console.info('props.data.image[filterType]',props.data.image[filterType]);
-  // return props.data.image['hoverImage'].length === 0 ?"https://alpha-assets.stylori.com/1000x1000/images/static/Image_Not_Available.jpg" : props.data.image[filterType].map(imgs => `${imgs.img} ${imgs.size}`).toString()
-
   return props.data.image.hoverImage.length === 0
     ? "https://alpha-assets.stylori.com/1000x1000/images/static/Image_Not_Available.jpg"
     : props.data.image.filterType.img;
@@ -288,7 +247,6 @@ function Component(props) {
     loaded: false,
     dataLoaded: true,
   });
-  const _height = props.data.imageResolution.img_res;
   const callmouseover = () => {
     setCardState({ ...cardstate, hovered: !cardstate.hovered });
   };
@@ -302,64 +260,13 @@ function Component(props) {
         className={`${classes.card} ${"imageHeight"}`}
         style={{ marginLeft: "0px !important" }}
       >
-        {/* <CardActions className={classes.cardAtionspadding}>
-          <Grid container xs={12}>
-            <Grid container item xs={6} justify="flex-start">
-            
-
-            </Grid>
-
-            <Grid container item xs={6} justify="flex-end">
-              <i
-                style={{ fontSize: "18px" }}
-                className={`fa ${classes.iconColor}`}
-              >
-                &#xf08a;
-              </i>
-            </Grid>
-          </Grid>
-
-
-        </CardActions> */}
-        {/* /:productCategory/:productType/:material/:productName */}
         <Link
           to={{ pathname: props.data.skuID }}
           style={{ textDecoration: "none" }}
           target="_blank"
           onClick={handleProductDetatiContext(props)}
         >
-          <CardActions
-            style={
-              {
-                //  maxHeight: `${_height ? `${_height}px` : '300px'}`, minHeight: '250px'
-              }
-            }
-            className="imageHeight"
-          >
-            {/* <img 
-srcset={renderImages(props, cardstate)}
-sizes="(max-width: 320px) 320w,
-            (max-width: 480px) 375w,
-            (max-width: 600px) 600w,
-            (max-width: 992px) 768w,
-            (max-width: 1440px) 1440w,
-            (max-width: 2560px) 2560w,
-            2560w
-           
-"
-     alt=""
-          title={props.data.title}
-          onMouseOver={() => {
-            setCardState({ ...cardstate, hovered: !cardstate.hovered });
-          }}
-          onMouseOut={() => {
-            setCardState({ ...cardstate, hovered: !cardstate.hovered });
-          }}
-          style={{width:'100%',height:'100%'}}
-          className={`${props.data.image.placeImage.length === 0 || props.data.image.hoverImage.length === 0 ? 'shine' : '' }`}
-          
-          /> */}
-
+          <CardActions style={{}} className="imageHeight">
             {Gallery(props, callmouseover, callmouseout, cardstate)}
           </CardActions>
           <Card className={classes.priceClass}>
@@ -387,13 +294,6 @@ sizes="(max-width: 320px) 320w,
                     component="h6"
                     className={classes.offerMainPrice}
                   >
-                    {/* <i
-                    
-                    className="fa"
-                  >
-                    &#xf156;
-                  </i> */}
-                    {/* {Math.round(props.data.offerPrice)} */}
                     {new Intl.NumberFormat("en-IN", {
                       style: "currency",
                       currency: "INR",
@@ -425,7 +325,7 @@ sizes="(max-width: 320px) 320w,
                       className={classes.offerPrice}
                     >
                       {Math.round(props.data.offerPrice) ===
-                        Math.round(props.data.price) ? (
+                      Math.round(props.data.price) ? (
                         new Intl.NumberFormat("en-IN", {
                           style: "currency",
                           currency: "INR",
@@ -443,7 +343,7 @@ sizes="(max-width: 320px) 320w,
                     </Typography>
                   </Grid>
                   {Math.round(props.data.offerPrice) ===
-                    Math.round(props.data.price) ? (
+                  Math.round(props.data.price) ? (
                     ""
                   ) : (
                     <Grid
@@ -452,26 +352,17 @@ sizes="(max-width: 320px) 320w,
                       xs={12}
                       className={`${classes.offerPricesMain}`}
                     >
-                      {/* <Typography
-                    gutterBottom
-                    variant="body1"
-                    component="span"
-                    className={classes.youSave}
-                  >
-                    you save &nbsp;
-                  </Typography> */}
                       <Typography
                         gutterBottom
                         variant="body1"
                         component="span"
                         className={`${classes.youSave} ${classes.youSavePrice}`}
                       >
-                        {/* 20% Off */}
                         {Math.round(
                           ((Math.round(props.data.price) -
                             Math.round(props.data.offerPrice)) /
                             Math.round(props.data.price)) *
-                          100
+                            100
                         ) + "% off"}
                       </Typography>
                     </Grid>

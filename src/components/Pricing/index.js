@@ -1,21 +1,13 @@
 import { Grid, Hidden, Typography } from "@material-ui/core";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "../product-image-slider/product-images.css";
 import "./pricing.css";
 import styles from "./style";
-
+import CurrencyConversion from "utils/CurrencyConversion";
 export default function Pricing(props) {
-  const [allquantity, setAllQuantity] = useState([]);
-
-  useEffect(() => {
-    setAllQuantity(props.quantity);
-  }, [props.quantity]);
   const classes = styles();
   let path = window.location.pathname.split("/").pop();
-  const { globalContext, quantity } = props;
-  const product_quantity = quantity ? quantity : 1;
 
-  const isSilver = globalContext && globalContext.pathName ? true : false;
   return (
     <div>
       {props.title ? (
@@ -54,11 +46,12 @@ export default function Pricing(props) {
                         ""
                       ) : (
                         <del>
-                          {new Intl.NumberFormat("en-IN", {
+                          {CurrencyConversion(props.offerPrice)}
+                          {/* {new Intl.NumberFormat("en-IN", {
                             style: "currency",
                             currency: "INR",
                             minimumFractionDigits: 0,
-                          }).format(Math.round(props.offerPrice))}
+                          }).format(Math.round(props.offerPrice))} */}
                         </del>
                       )}
                     </Typography>
@@ -87,11 +80,12 @@ export default function Pricing(props) {
                           classes.offerPricePadding
                         } `}
                       >
-                        {new Intl.NumberFormat("en-IN", {
+                        {CurrencyConversion(props.price)}
+                        {/* {new Intl.NumberFormat("en-IN", {
                           style: "currency",
                           currency: "INR",
                           minimumFractionDigits: 0,
-                        }).format(Math.round(props.price))}{" "}
+                        }).format(Math.round(props.price))}{" "} */}
                       </Typography>
                       <sup>
                         <span className={classes.spanIcon}>i</span>
@@ -111,11 +105,12 @@ export default function Pricing(props) {
                           classes.offerPricePadding
                         } `}
                       >
-                        {new Intl.NumberFormat("en-IN", {
+                        {CurrencyConversion(props.price)}
+                        {/* {new Intl.NumberFormat("en-IN", {
                           style: "currency",
                           currency: "INR",
                           minimumFractionDigits: 0,
-                        }).format(Math.round(props.price))}
+                        }).format(Math.round(props.price))} */}
                       </Typography>
                     </Hidden>
 
@@ -218,7 +213,8 @@ export default function Pricing(props) {
                               paddingBottom: "10px",
                             }}
                           >
-                            ₹&nbsp;{Math.round(props.offerPrice)}
+                            {CurrencyConversion(props.offerPrice)}
+                            {/* ₹&nbsp;{Math.round(props.offerPrice)} */}
                           </del>
                         </>
                       )}
@@ -259,11 +255,12 @@ export default function Pricing(props) {
                         {props.offerPrice === props.price ? (
                           <span style={{ color: "gray", fontSize: "14px" }}>
                             {" "}
-                            {new Intl.NumberFormat("en-IN", {
+                            {CurrencyConversion(props.offerPrice)}
+                            {/* {new Intl.NumberFormat("en-IN", {
                               style: "currency",
                               currency: "INR",
                               minimumFractionDigits: 0,
-                            }).format(Math.round(props.offerPrice))}
+                            }).format(Math.round(props.offerPrice))} */}
                           </span>
                         ) : (
                           <>
@@ -276,11 +273,12 @@ export default function Pricing(props) {
                                     color: "gray",
                                   }}
                                 >
-                                  {new Intl.NumberFormat("en-IN", {
+                                  {CurrencyConversion(props.price)}
+                                  {/* {new Intl.NumberFormat("en-IN", {
                                     style: "currency",
                                     currency: "INR",
                                     minimumFractionDigits: 0,
-                                  }).format(Math.round(props.price))}
+                                  }).format(Math.round(props.price))} */}
                                 </span>
                                 <br />
                                 <span>
@@ -292,11 +290,12 @@ export default function Pricing(props) {
                                       paddingBottom: "6px",
                                     }}
                                   >
-                                    {new Intl.NumberFormat("en-IN", {
+                                    {CurrencyConversion(props.offerPrice)}
+                                    {/* {new Intl.NumberFormat("en-IN", {
                                       style: "currency",
                                       currency: "INR",
                                       minimumFractionDigits: 0,
-                                    }).format(Math.round(props.offerPrice))}
+                                    }).format(Math.round(props.offerPrice))} */}
                                   </del>
                                 </span>
                               </>
@@ -310,11 +309,12 @@ export default function Pricing(props) {
                                   }}
                                   className={classes.price}
                                 >
-                                  {new Intl.NumberFormat("en-IN", {
+                                  {CurrencyConversion(props.price)}
+                                  {/* {new Intl.NumberFormat("en-IN", {
                                     style: "currency",
                                     currency: "INR",
                                     minimumFractionDigits: 0,
-                                  }).format(Math.round(props.price))}
+                                  }).format(Math.round(props.price))} */}
                                 </span>
                                 <span className={classes.price}>
                                   &nbsp;&nbsp;
@@ -326,11 +326,12 @@ export default function Pricing(props) {
                                       color: "gray",
                                     }}
                                   >
-                                    {new Intl.NumberFormat("en-IN", {
+                                    {CurrencyConversion(props.offerPrice)}
+                                    {/* {new Intl.NumberFormat("en-IN", {
                                       style: "currency",
                                       currency: "INR",
                                       minimumFractionDigits: 0,
-                                    }).format(Math.round(props.offerPrice))}
+                                    }).format(Math.round(props.offerPrice))} */}
                                   </del>
                                 </span>
                                 {props.offerDiscount ? (
@@ -386,11 +387,12 @@ export default function Pricing(props) {
                         {props.offerPrice === props.price ? (
                           <span style={{ color: "gray" }}>
                             {" "}
-                            {new Intl.NumberFormat("en-IN", {
+                            {CurrencyConversion(props.offerPrice)}
+                            {/* {new Intl.NumberFormat("en-IN", {
                               style: "currency",
                               currency: "INR",
                               minimumFractionDigits: 0,
-                            }).format(Math.round(props.offerPrice))}
+                            }).format(Math.round(props.offerPrice))} */}
                           </span>
                         ) : (
                           <>
@@ -403,11 +405,12 @@ export default function Pricing(props) {
                                     color: "gray",
                                   }}
                                 >
-                                  {new Intl.NumberFormat("en-IN", {
+                                  {CurrencyConversion(props.price)}
+                                  {/* {new Intl.NumberFormat("en-IN", {
                                     style: "currency",
                                     currency: "INR",
                                     minimumFractionDigits: 0,
-                                  }).format(Math.round(props.price))}
+                                  }).format(Math.round(props.price))} */}
                                 </span>
                                 <br />
                                 <span>
@@ -419,11 +422,12 @@ export default function Pricing(props) {
                                       paddingBottom: "6px",
                                     }}
                                   >
-                                    {new Intl.NumberFormat("en-IN", {
+                                    {CurrencyConversion(props.offerPrice)}
+                                    {/* {new Intl.NumberFormat("en-IN", {
                                       style: "currency",
                                       currency: "INR",
                                       minimumFractionDigits: 0,
-                                    }).format(Math.round(props.offerPrice))}
+                                    }).format(Math.round(props.offerPrice))} */}
                                   </del>
                                 </span>
                               </>
@@ -437,11 +441,12 @@ export default function Pricing(props) {
                                   }}
                                   className={classes.price}
                                 >
-                                  {new Intl.NumberFormat("en-IN", {
+                                  {CurrencyConversion(props.price)}
+                                  {/* {new Intl.NumberFormat("en-IN", {
                                     style: "currency",
                                     currency: "INR",
                                     minimumFractionDigits: 0,
-                                  }).format(Math.round(props.price))}
+                                  }).format(Math.round(props.price))} */}
                                 </span>
                                 <span className={classes.price}>
                                   &nbsp;&nbsp;
@@ -453,11 +458,12 @@ export default function Pricing(props) {
                                       color: "gray",
                                     }}
                                   >
-                                    {new Intl.NumberFormat("en-IN", {
+                                    {CurrencyConversion(props.offerPrice)}
+                                    {/* {new Intl.NumberFormat("en-IN", {
                                       style: "currency",
                                       currency: "INR",
                                       minimumFractionDigits: 0,
-                                    }).format(Math.round(props.offerPrice))}
+                                    }).format(Math.round(props.offerPrice))} */}
                                   </del>
                                 </span>
                                 {props.offerDiscount ? (
@@ -507,7 +513,6 @@ export default function Pricing(props) {
 
             <Grid
               item
-              xs={6}
               xs={
                 window.location.pathname !== "/cart" &&
                 window.location.pathname.split("-")[0] !== "/account" &&
@@ -528,12 +533,12 @@ export default function Pricing(props) {
                       classes.offerPricePadding
                     } `}
                   >
-                    {/* ₹&nbsp;{props.offerPrice} */}
-                    {new Intl.NumberFormat("en-IN ", {
+                    {CurrencyConversion(props.Price)}
+                    {/* {new Intl.NumberFormat("en-IN ", {
                       style: "currency",
                       currency: "INR",
                       minimumFractionDigits: 0,
-                    }).format(Math.round(props.Price))}
+                    }).format(Math.round(props.Price))} */}
                   </Typography>
                 </Typography>
               ) : (
@@ -555,11 +560,12 @@ export default function Pricing(props) {
                       color: "gray",
                     }}
                   >
-                    {new Intl.NumberFormat("en-IN", {
+                    {CurrencyConversion(props.successofferPrice)}
+                    {/* {new Intl.NumberFormat("en-IN", {
                       style: "currency",
                       currency: "INR",
                       minimumFractionDigits: 0,
-                    }).format(Math.round(props.successofferPrice))}
+                    }).format(Math.round(props.successofferPrice))} */}
                   </span>
                 </Hidden>
                 <Hidden mdUp>
@@ -570,11 +576,12 @@ export default function Pricing(props) {
                       color: "gray",
                     }}
                   >
-                    {new Intl.NumberFormat("en-IN", {
+                    {CurrencyConversion(props.successofferPrice)}
+                    {/* {new Intl.NumberFormat("en-IN", {
                       style: "currency",
                       currency: "INR",
                       minimumFractionDigits: 0,
-                    }).format(Math.round(props.successofferPrice))}
+                    }).format(Math.round(props.successofferPrice))} */}
                   </span>
                 </Hidden>
               </>
@@ -589,11 +596,12 @@ export default function Pricing(props) {
                     }}
                     className={classes.price}
                   >
-                    {new Intl.NumberFormat("en-IN", {
+                    {CurrencyConversion(props.successofferPrice)}
+                    {/* {new Intl.NumberFormat("en-IN", {
                       style: "currency",
                       currency: "INR",
                       minimumFractionDigits: 0,
-                    }).format(Math.round(props.successofferPrice))}
+                    }).format(Math.round(props.successofferPrice))} */}
                   </span>
                   <span className={classes.price}>
                     &nbsp;&nbsp;
@@ -605,11 +613,12 @@ export default function Pricing(props) {
                         color: "gray",
                       }}
                     >
-                      {new Intl.NumberFormat("en-IN", {
+                      {CurrencyConversion(props.successprice)}
+                      {/* {new Intl.NumberFormat("en-IN", {
                         style: "currency",
                         currency: "INR",
                         minimumFractionDigits: 0,
-                      }).format(Math.round(props.successprice))}
+                      }).format(Math.round(props.successprice))} */}
                     </del>
                   </span>
                 </Hidden>
@@ -622,11 +631,12 @@ export default function Pricing(props) {
                     }}
                     className={classes.price}
                   >
-                    {new Intl.NumberFormat("en-IN", {
+                    {CurrencyConversion(props.successofferPrice)}
+                    {/* {new Intl.NumberFormat("en-IN", {
                       style: "currency",
                       currency: "INR",
                       minimumFractionDigits: 0,
-                    }).format(Math.round(props.successofferPrice))}
+                    }).format(Math.round(props.successofferPrice))} */}
                   </span>
                   <span className={classes.price}>
                     &nbsp;&nbsp;
@@ -638,11 +648,12 @@ export default function Pricing(props) {
                         color: "gray",
                       }}
                     >
-                      {new Intl.NumberFormat("en-IN", {
+                      {CurrencyConversion(props.successprice)}
+                      {/* {new Intl.NumberFormat("en-IN", {
                         style: "currency",
                         currency: "INR",
                         minimumFractionDigits: 0,
-                      }).format(Math.round(props.successprice))}
+                      }).format(Math.round(props.successprice))} */}
                     </del>
                   </span>
                 </Hidden>

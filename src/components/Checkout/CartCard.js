@@ -28,6 +28,7 @@ import Pricing from "../Pricing/index";
 import "./Cart.css";
 import styles from "./style";
 import WishlistButton from "./Wishlistadd";
+import CurrencyConversion from "utils/CurrencyConversion";
 class Checkoutcard extends React.Component {
   constructor(props) {
     super(props);
@@ -219,32 +220,7 @@ class Checkoutcard extends React.Component {
     localStorage.setItem("quantity", JSON.stringify(local_storage));
   };
   row = (props) => {
-    const dataCarousel = {
-      slidesToShow: 1,
-      arrows: false,
-    };
-    const handleChange = (panel) => (event, isExpanded) => {
-      this.setState({
-        expanded: isExpanded ? panel : false,
-      });
-    };
-
-    const { classes, data } = this.props;
-    const { productsDetails, fadeImages, dataCard1 } = this.props.data;
-    const filter_image = (imges__val, name, details) => {
-      var image_urls;
-      const width = window.innerWidth;
-      if (imges__val.imageUrl && imges__val.imageUrl.length > 0) {
-        return imges__val.imageUrl;
-      }
-    };
-    const checkMaterial = (material) => {
-      let _data = material.map((val) => val.toLowerCase());
-      if (_data.indexOf("silver") > -1) return false;
-      else return true;
-    };
-
-    const { expand } = this.state;
+    const { classes } = this.props;
 
     return (
       <div style={{ marginTop: "10px" }}>
@@ -1223,32 +1199,8 @@ class Checkoutcard extends React.Component {
     );
   };
   rowsm = (props) => {
-    const dataCarousel = {
-      slidesToShow: 1,
-      arrows: false,
-    };
-    const handleChange = (panel) => (event, isExpanded) => {
-      this.setState({
-        expanded: isExpanded ? panel : false,
-      });
-    };
+    const { classes } = this.props;
 
-    const { classes, data } = this.props;
-    const { productsDetails, fadeImages, dataCard1 } = this.props.data;
-    const filter_image = (imges__val, name, details) => {
-      var image_urls;
-      const width = window.innerWidth;
-      if (imges__val.imageUrl && imges__val.imageUrl.length > 0) {
-        return imges__val.imageUrl;
-      }
-    };
-    const checkMaterial = (material) => {
-      let _data = material.map((val) => val.toLowerCase());
-      if (_data.indexOf("silver") > -1) return false;
-      else return true;
-    };
-
-    const { expand } = this.state;
     return (
       <div style={{ marginTop: "10px" }}>
         <>
@@ -1507,7 +1459,6 @@ class Checkoutcard extends React.Component {
     const { classes } = this.props;
     return (
       <Accordion
-        //defaultExpanded
         elevation={3}
         style={{
           border: "0px",
@@ -1648,32 +1599,37 @@ class Checkoutcard extends React.Component {
     ) => {
       if (discountAmount) {
         if (shippingCharge) {
-          return new Intl.NumberFormat("en-IN", {
-            style: "currency",
-            currency: "INR",
-            minimumFractionDigits: 0,
-          }).format(Math.round(discountAmount + shippingCharge));
+          return CurrencyConversion(discountAmount + shippingCharge);
+          // new Intl.NumberFormat("en-IN", {
+          //   style: "currency",
+          //   currency: "INR",
+          //   minimumFractionDigits: 0,
+          // }).format(Math.round(discountAmount + shippingCharge));
         } else {
-          return new Intl.NumberFormat("en-IN", {
-            style: "currency",
-            currency: "INR",
-            minimumFractionDigits: 0,
-          }).format(Math.round(discountAmount));
+          return CurrencyConversion(discountAmount);
+          // new Intl.NumberFormat("en-IN", {
+          //   style: "currency",
+          //   currency: "INR",
+          //   minimumFractionDigits: 0,
+          // }).format(Math.round(discountAmount));
         }
       }
       if (dataCard - discountPrice) {
         if (shippingCharge) {
-          return new Intl.NumberFormat("en-IN", {
-            style: "currency",
-            currency: "INR",
-            minimumFractionDigits: 0,
-          }).format(Math.round(dataCard - discountPrice + shippingCharge));
+          return CurrencyConversion(dataCard - discountPrice + shippingCharge);
+          //  new Intl.NumberFormat("en-IN", {
+          //   style: "currency",
+          //   currency: "INR",
+          //   minimumFractionDigits: 0,
+          // }).format(Math.round(dataCard - discountPrice + shippingCharge));
         } else {
-          return new Intl.NumberFormat("en-IN", {
-            style: "currency",
-            currency: "INR",
-            minimumFractionDigits: 0,
-          }).format(Math.round(dataCard - discountPrice));
+          return CurrencyConversion(dataCard - discountPrice);
+
+          // new Intl.NumberFormat("en-IN", {
+          //   style: "currency",
+          //   currency: "INR",
+          //   minimumFractionDigits: 0,
+          // }).format(Math.round(dataCard - discountPrice));
         }
       }
     };
@@ -1733,43 +1689,57 @@ class Checkoutcard extends React.Component {
               <Grid xs={6}>
                 <Typography className={`subhesder ${classes.normalfonts1}`}>
                   <span style={{ float: "right" }}>
-                    {props.cartFilters.gross_amount
-                      ? props.cartFilters.gross_amount === 0
-                        ? `₹${props.cartFilters.gross_amount}`
-                        : new Intl.NumberFormat("en-IN", {
-                            style: "currency",
-                            currency: "INR",
-                            minimumFractionDigits: 0,
-                          }).format(Math.round(props.cartFilters.gross_amount))
-                      : dataCard1 === 0
-                      ? `₹${dataCard1}`
-                      : new Intl.NumberFormat("en-IN", {
-                          style: "currency",
-                          currency: "INR",
-                          minimumFractionDigits: 0,
-                        }).format(Math.round(dataCard1))}
+                    {
+                      props.cartFilters.gross_amount
+                        ? props.cartFilters.gross_amount === 0
+                          ? CurrencyConversion(props.cartFilters.gross_amount)
+                          : // `₹${props.cartFilters.gross_amount}`
+                            CurrencyConversion(props.cartFilters.gross_amount)
+                        : // new Intl.NumberFormat("en-IN", {
+                        //     style: "currency",
+                        //     currency: "INR",
+                        //     minimumFractionDigits: 0,
+                        //   }).format(
+                        //     Math.round(props.cartFilters.gross_amount)
+                        //   )
+                        dataCard1 === 0
+                        ? CurrencyConversion(dataCard1)
+                        : // `₹${dataCard1}`
+                          CurrencyConversion(dataCard1)
+                      // new Intl.NumberFormat("en-IN", {
+                      //     style: "currency",
+                      //     currency: "INR",
+                      //     minimumFractionDigits: 0,
+                      //   }).format(Math.round(dataCard1))
+                    }
                   </span>
                 </Typography>
                 {yousave !== 0 || props.cartFilters.tax_price ? (
                   <Typography className={`subhesder ${classes.normalfonts1}`}>
                     <span style={{ float: "right" }}>
-                      {props.cartFilters.tax_price
-                        ? yousave + props.cartFilters.tax_price === 0
-                          ? "₹0"
-                          : new Intl.NumberFormat("en-IN", {
-                              style: "currency",
-                              currency: "INR",
-                              minimumFractionDigits: 0,
-                            }).format(
-                              Math.round(yousave + props.cartFilters.tax_price)
-                            )
-                        : yousave === 0
-                        ? "₹0"
-                        : new Intl.NumberFormat("en-IN", {
-                            style: "currency",
-                            currency: "INR",
-                            minimumFractionDigits: 0,
-                          }).format(Math.round(yousave))}{" "}
+                      {
+                        props.cartFilters.tax_price
+                          ? yousave + props.cartFilters.tax_price === 0
+                            ? CurrencyConversion(0)
+                            : CurrencyConversion(
+                                yousave + props.cartFilters.tax_price
+                              )
+                          : // new Intl.NumberFormat("en-IN", {
+                          //     style: "currency",
+                          //     currency: "INR",
+                          //     minimumFractionDigits: 0,
+                          //   }).format(
+                          //     Math.round(yousave + props.cartFilters.tax_price)
+                          //   )
+                          yousave === 0
+                          ? CurrencyConversion(0)
+                          : CurrencyConversion(yousave)
+                        // new Intl.NumberFormat("en-IN", {
+                        //     style: "currency",
+                        //     currency: "INR",
+                        //     minimumFractionDigits: 0,
+                        //   }).format(Math.round(yousave))
+                      }{" "}
                     </span>
                   </Typography>
                 ) : null}
@@ -1780,27 +1750,32 @@ class Checkoutcard extends React.Component {
                       {props?.cartFilters?.tax_price
                         ? props?.cartFilters?.tax_price &&
                           props?.cartFilters?.tax_price === 0
-                          ? `₹${props?.cartFilters?.tax_price}`
-                          : new Intl.NumberFormat("en-IN", {
-                              style: "currency",
-                              currency: "INR",
-                              minimumFractionDigits: 0,
-                            }).format(Math.round(props?.cartFilters?.tax_price))
-                        : "₹0"}
+                          ? CurrencyConversion(props?.cartFilters?.tax_price)
+                          : // `₹${props?.cartFilters?.tax_price}`
+                            CurrencyConversion(props?.cartFilters?.tax_price)
+                        : // new Intl.NumberFormat("en-IN", {
+                          //     style: "currency",
+                          //     currency: "INR",
+                          //     minimumFractionDigits: 0,
+                          //   }).format(Math.round(props?.cartFilters?.tax_price))
+                          CurrencyConversion(0)}
                     </span>
                   </Typography>
                 ) : null}
                 <Typography className={`subhesder ${classes.normalfonts1}`}>
                   <span style={{ float: "right" }}>
-                    {props?.shipping_charge === 0
-                      ? `₹${props?.shipping_charge}`
-                      : typeof props?.shipping_charge == "undefined"
-                      ? "₹0"
-                      : new Intl.NumberFormat("en-IN", {
-                          style: "currency",
-                          currency: "INR",
-                          minimumFractionDigits: 0,
-                        }).format(Math.round(props?.shipping_charge))}
+                    {
+                      props?.shipping_charge === 0
+                        ? CurrencyConversion(props?.shipping_charge)
+                        : typeof props?.shipping_charge == "undefined"
+                        ? CurrencyConversion(0)
+                        : CurrencyConversion(props?.shipping_charg)
+                      // new Intl.NumberFormat("en-IN", {
+                      //     style: "currency",
+                      //     currency: "INR",
+                      //     minimumFractionDigits: 0,
+                      //   }).format(Math.round(props?.shipping_charge))
+                    }
                   </span>
                 </Typography>
               </Grid>
@@ -1916,32 +1891,38 @@ class Checkoutcard extends React.Component {
     ) => {
       if (discountAmount) {
         if (shippingCharge) {
-          return new Intl.NumberFormat("en-IN", {
-            style: "currency",
-            currency: "INR",
-            minimumFractionDigits: 0,
-          }).format(Math.round(discountAmount + shippingCharge));
+          return CurrencyConversion(discountAmount + shippingCharge);
+
+          // new Intl.NumberFormat("en-IN", {
+          //   style: "currency",
+          //   currency: "INR",
+          //   minimumFractionDigits: 0,
+          // }).format(Math.round(discountAmount + shippingCharge));
         } else {
-          return new Intl.NumberFormat("en-IN", {
-            style: "currency",
-            currency: "INR",
-            minimumFractionDigits: 0,
-          }).format(Math.round(discountAmount));
+          return CurrencyConversion(discountAmount);
+          // new Intl.NumberFormat("en-IN", {
+          //   style: "currency",
+          //   currency: "INR",
+          //   minimumFractionDigits: 0,
+          // }).format(Math.round(discountAmount));
         }
       }
       if (dataCard - discountPrice) {
         if (shippingCharge) {
-          return new Intl.NumberFormat("en-IN", {
-            style: "currency",
-            currency: "INR",
-            minimumFractionDigits: 0,
-          }).format(Math.round(dataCard - discountPrice + shippingCharge));
+          return CurrencyConversion(dataCard - discountPrice + shippingCharge);
+
+          // new Intl.NumberFormat("en-IN", {
+          //   style: "currency",
+          //   currency: "INR",
+          //   minimumFractionDigits: 0,
+          // }).format(Math.round(dataCard - discountPrice + shippingCharge));
         } else {
-          return new Intl.NumberFormat("en-IN", {
-            style: "currency",
-            currency: "INR",
-            minimumFractionDigits: 0,
-          }).format(Math.round(dataCard - discountPrice));
+          return CurrencyConversion(dataCard - discountPrice);
+          //  new Intl.NumberFormat("en-IN", {
+          //   style: "currency",
+          //   currency: "INR",
+          //   minimumFractionDigits: 0,
+          // }).format(Math.round(dataCard - discountPrice));
         }
       }
     };
@@ -1981,23 +1962,29 @@ class Checkoutcard extends React.Component {
               <Grid xs={6}>
                 <Typography className={`subhesder ${classes.normalfonts2}`}>
                   <span style={{ float: "right" }}>
-                    {props?.cartFilters?.gross_amount
-                      ? props?.cartFilters?.gross_amount === 0
-                        ? `₹${props?.cartFilters?.gross_amount}`
-                        : new Intl.NumberFormat("en-IN", {
-                            style: "currency",
-                            currency: "INR",
-                            minimumFractionDigits: 0,
-                          }).format(
-                            Math.round(props?.cartFilters?.gross_amount)
-                          )
-                      : dataCard1 === 0
-                      ? `₹${dataCard1}`
-                      : new Intl.NumberFormat("en-IN", {
-                          style: "currency",
-                          currency: "INR",
-                          minimumFractionDigits: 0,
-                        }).format(Math.round(dataCard1))}
+                    {
+                      props?.cartFilters?.gross_amount
+                        ? props?.cartFilters?.gross_amount === 0
+                          ? CurrencyConversion(props?.cartFilters?.gross_amount)
+                          : // `₹${props?.cartFilters?.gross_amount}`
+                            CurrencyConversion(props?.cartFilters?.gross_amount)
+                        : // new Intl.NumberFormat("en-IN", {
+                        //     style: "currency",
+                        //     currency: "INR",
+                        //     minimumFractionDigits: 0,
+                        //   }).format(
+                        //     Math.round(props?.cartFilters?.gross_amount)
+                        // )
+                        dataCard1 === 0
+                        ? CurrencyConversion(dataCard1)
+                        : // `₹${dataCard1}`
+                          CurrencyConversion(dataCard1)
+                      // new Intl.NumberFormat("en-IN", {
+                      //     style: "currency",
+                      //     currency: "INR",
+                      //     minimumFractionDigits: 0,
+                      //   }).format(Math.round(dataCard1))
+                    }
                   </span>
                 </Typography>
                 <br />
@@ -2005,25 +1992,31 @@ class Checkoutcard extends React.Component {
                 {yousave !== 0 || props?.cartFilters?.tax_price ? (
                   <Typography className={`subhesder ${classes.normalfonts2}`}>
                     <span style={{ float: "right" }}>
-                      {props?.cartFilters?.tax_price
-                        ? yousave + props?.cartFilters?.tax_price === 0
-                          ? `₹0`
-                          : new Intl.NumberFormat("en-IN", {
-                              style: "currency",
-                              currency: "INR",
-                              minimumFractionDigits: 0,
-                            }).format(
-                              Math.round(
+                      {
+                        props?.cartFilters?.tax_price
+                          ? yousave + props?.cartFilters?.tax_price === 0
+                            ? CurrencyConversion(0)
+                            : CurrencyConversion(
                                 yousave + props?.cartFilters?.tax_price
                               )
-                            )
-                        : yousave === 0
-                        ? `₹0`
-                        : new Intl.NumberFormat("en-IN", {
-                            style: "currency",
-                            currency: "INR",
-                            minimumFractionDigits: 0,
-                          }).format(Math.round(yousave))}
+                          : // new Intl.NumberFormat("en-IN", {
+                          //     style: "currency",
+                          //     currency: "INR",
+                          //     minimumFractionDigits: 0,
+                          //   }).format(
+                          //     Math.round(
+                          //       yousave + props?.cartFilters?.tax_price
+                          //     )
+                          //   )
+                          yousave === 0
+                          ? CurrencyConversion(0)
+                          : CurrencyConversion(yousave)
+                        // new Intl.NumberFormat("en-IN", {
+                        //     style: "currency",
+                        //     currency: "INR",
+                        //     minimumFractionDigits: 0,
+                        //   }).format(Math.round(yousave))}
+                      }
                     </span>
                   </Typography>
                 ) : null}
@@ -2034,13 +2027,15 @@ class Checkoutcard extends React.Component {
                       {props?.cartFilters?.tax_price
                         ? props?.cartFilters?.tax_price &&
                           props?.cartFilters?.tax_price === 0
-                          ? `₹${props?.cartFilters?.tax_price}`
-                          : new Intl.NumberFormat("en-IN", {
-                              style: "currency",
-                              currency: "INR",
-                              minimumFractionDigits: 0,
-                            }).format(Math.round(props?.cartFilters?.tax_price))
-                        : "₹0"}
+                          ? CurrencyConversion(props?.cartFilters?.tax_price)
+                          : // `₹${props?.cartFilters?.tax_price}`
+                            CurrencyConversion(props?.cartFilters?.tax_price)
+                        : // new Intl.NumberFormat("en-IN", {
+                          //     style: "currency",
+                          //     currency: "INR",
+                          //     minimumFractionDigits: 0,
+                          //   }).format(Math.round(props?.cartFilters?.tax_price))
+                          CurrencyConversion(0)}
                     </span>
                   </Typography>
                 ) : null}
@@ -2048,13 +2043,15 @@ class Checkoutcard extends React.Component {
                   <span style={{ float: "right" }}>
                     {props?.shipping_charge
                       ? props?.shipping_charge === 0
-                        ? `₹${props?.shipping_charge}`
-                        : new Intl.NumberFormat("en-IN", {
-                            style: "currency",
-                            currency: "INR",
-                            minimumFractionDigits: 0,
-                          }).format(Math.round(props?.shipping_charge))
-                      : "₹0"}
+                        ? CurrencyConversion(props?.shipping_charge)
+                        : // `₹${props?.shipping_charge}`
+                          CurrencyConversion(props?.shipping_charge)
+                      : // new Intl.NumberFormat("en-IN", {
+                        //     style: "currency",
+                        //     currency: "INR",
+                        //     minimumFractionDigits: 0,
+                        //   }).format(Math.round(props?.shipping_charge))
+                        CurrencyConversion(0)}
                   </span>
                 </Typography>
               </Grid>
@@ -2153,32 +2150,27 @@ class Checkoutcard extends React.Component {
       return cart_price;
     }
 
-    const { classes } = this.props;
-
     return (
       <>
-        {new Intl.NumberFormat("en-IN", {
-          style: "currency",
-          currency: "INR",
-          minimumFractionDigits: 0,
-        }).format(
-          props.cartFilters.discounted_amount
-            ? Math.round(props.cartFilters.discounted_amount)
-            : Math.round(dataCard1 - discounted_price)
-        )}
+        {
+          CurrencyConversion(
+            props.cartFilters.discounted_amount
+              ? Math.round(props.cartFilters.discounted_amount)
+              : Math.round(dataCard1 - discounted_price)
+          )
+
+          // new Intl.NumberFormat("en-IN", {
+          //   style: "currency",
+          //   currency: "INR",
+          //   minimumFractionDigits: 0,
+          // }).format(
+
+          // )}
+        }
       </>
     );
   };
   render() {
-    const dataCarousel = {
-      slidesToShow: 1,
-      arrows: false,
-    };
-    var data = this.props.data;
-
-    const { classes } = this.props;
-    let path = window.location.pathname.split("/").pop();
-
     return (
       <Grid>
         <Hidden smDown>

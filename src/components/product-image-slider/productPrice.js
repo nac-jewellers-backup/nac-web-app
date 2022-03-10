@@ -76,12 +76,10 @@ const mobilecarousel = (props, val, wishlist) => {
 const Productprice = (
   props,
   anchorEl,
-  handleClick,
-  handleClose,
+
   handleReadMore,
   viewMore
 ) => {
-  // const [prodDesc, setProdDesc] = useState(false);
   const { data } = props;
   const { classes } = props;
   const open = anchorEl;
@@ -181,7 +179,7 @@ const Productprice = (
                         {" "}
                         {val?.shortDis}
                       </Typography>
-                     
+
                       <br />
                       <Box display="flex" className={`pdp-desc ${classes.dis}`}>
                         <Box>

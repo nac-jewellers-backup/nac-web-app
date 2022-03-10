@@ -1,7 +1,7 @@
 import { Button, Grid, MenuItem, Select, Typography } from "@material-ui/core";
 import CardContent from "@material-ui/core/CardContent";
 import { withStyles } from "@material-ui/core/styles";
-import { API_URL, CDN_URL } from "config";
+import { API_URL } from "config";
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import Pricing from "../Pricing/index";
@@ -9,7 +9,6 @@ import styles from "./style";
 import WishlistButton from "./Wishlistadd";
 function MediaControlCard(props) {
   const { classes } = props;
-  const { dataCard1 } = props.data;
   const [quantity, setQuantity] = useState([]);
 
   useEffect(() => {
@@ -20,7 +19,6 @@ function MediaControlCard(props) {
     var local_storage = JSON.parse(localStorage.getItem("cartDetails"));
     var currentValue =
       e.target.id && e.target.id.length > 0 ? e.target.id : e.currentTarget.id;
-    // console.clear()
     var a = local_storage.products.filter((val) => {
       if (currentValue !== val.sku_id) {
         return val;
@@ -44,8 +42,7 @@ function MediaControlCard(props) {
       };
       fetch(`${API_URL}/removecartitem`, {
         method: "post",
-        // body: {query:seoUrlResult,variables:splitHiphen()}
-        // body: JSON.stringify({query:seoUrlResult}),
+
         headers: {
           "Content-Type": "application/json",
         },
@@ -88,59 +85,6 @@ function MediaControlCard(props) {
       }
     }
   };
-  const filter_image = (imges__val, name, details) => {
-    var image_urls;
-    const width = window.innerWidth;
-    if (imges__val.imageUrl && imges__val.imageUrl.length > 0) {
-      // this.props.data.map(dataval => {
-      //     if (dataval !== undefined && dataval !== null) {
-      //         dataval.productsDetails.map(val => {
-      // if (val !== undefined && val !== null) {
-      // val.namedetail !== undefined && val.namedetail.map(val___ => {
-      if (name && name === "Metal") {
-        var valu = details.split(" ");
-        var valu1 = valu[1];
-        var valu2 = valu1[0];
-        //  imges__val && imges__val.map(img => {
-        var cnt = imges__val && imges__val.imageUrl.split("/");
-        var cnt_b = cnt[2].split("-");
-        var cnt_c = cnt_b[1];
-        if ((cnt_c && cnt_c[1]) === valu2) {
-          var browser_type = JSON.parse(localStorage.getItem("browserDetails"));
-          var resolution = 500;
-          var _resolutions =
-            width < 960
-              ? `${resolution * 2}X${resolution * 2}`
-              : `${resolution}X${resolution}`;
-          var url_split = imges__val && imges__val.imageUrl.split("/");
-          var extension_split = url_split && url_split[url_split.length - 1];
-          var browser_type_append =
-            extension_split &&
-            extension_split
-              .split(".")[0]
-              .concat(`${browser_type && browser_type.browser_type}`);
-          url_split[url_split && url_split.length - 1] = browser_type_append;
-          url_split.splice(2, 0, _resolutions);
-          var url_construct = url_split.join().replace(/\,/g, "/");
-          image_urls = `${CDN_URL}${url_construct}`;
-          return [image_urls];
-        }
-      }
-    }
-  };
-  const [expanded, setExpanded] = useState(true);
-
-  //
-
-  const checkMaterial = (material) => {
-    let _data = material.map((val) => val.toLowerCase());
-    if (_data.indexOf("silver") > -1) return false;
-    else return true;
-  };
-  const dataCarousel = {
-    slidesToShow: 1,
-    arrows: false,
-  };
 
   const onChangeQuantity = (e, skuId, index) => {
     let stateCopy = Object.assign({}, quantity);
@@ -155,7 +99,6 @@ function MediaControlCard(props) {
   };
   return (
     <div style={{ paddingTop: "10px" }}>
-      {/* {props.checkoutbutton} */}
       {props.data.map((dataval, index) =>
         dataval.productsDetails.map((val) => {
           return (
@@ -298,7 +241,6 @@ function MediaControlCard(props) {
                           offerDiscount={
                             val.discount ? `${val.discount}% - OFF` : null
                           }
-                          // quantity={JSON.parse(localStorage.getItem("quantity"))[dataval.generatedSku]}
                           quantity={quantity}
                         ></Pricing>
                       ))}

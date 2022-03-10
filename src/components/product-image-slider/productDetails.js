@@ -39,9 +39,9 @@ class ProductDetails extends React.Component {
                   valueofproductdetail.namedetail[5].name === "Total" &&
                   Number(
                     valueofproductdetail.namedetail[5].details[1]
-                      .replace(/,/g, "")
-                      .replace(/₹/g, "")
-                  ) > 13000) ? (
+                      .match(/\d+/g)
+                      .join("")
+                  ) > 5) ? (
                   <div className="overall-boxz">
                     <div className="overall-bo">
                       <span
@@ -149,7 +149,6 @@ class ProductDetails extends React.Component {
                                                       variant=""
                                                       className={`product-subhead-list ${classes.fontgray}`}
                                                     >
-                                                      {/* {data[0].productsDetails[3].namedetail[1].length > 0} */}
                                                       {
                                                         <span
                                                           style={{
@@ -309,7 +308,6 @@ class ProductDetails extends React.Component {
                                                       variant=""
                                                       className={`product-subhead-list ${classes.fontgray}`}
                                                     >
-                                                      {/* {data[0].productsDetails[3].namedetail[1].length > 0} */}
                                                       {
                                                         <span
                                                           style={{
@@ -386,7 +384,6 @@ class ProductDetails extends React.Component {
                         >
                           {val.header}
                         </Typography>
-                        {/* <hr class="bottom-line border-line-"></hr> */}
                       </div>
                     </ExpansionPanelSummary>
                     <div style={{ backgroundColor: "#fafafa" }}>
@@ -549,7 +546,6 @@ class ProductDetails extends React.Component {
                         >
                           {val.header}
                         </Typography>
-                        {/* <hr class="bottom-line border-line-"></hr> */}
                       </div>
                     </ExpansionPanelSummary>
                     <div style={{ backgroundColor: "#fafafa" }}>

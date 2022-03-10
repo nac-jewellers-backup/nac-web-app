@@ -354,7 +354,6 @@ const LoginComponent = (props) => {
       setOtpErr("Please enter valid OTP");
     }
   };
-
   const ResendOtp = () => {
     let body = {
       mobile_no: numberForm.number,
@@ -368,7 +367,6 @@ const LoginComponent = (props) => {
       .then((res) => res.json())
       .then((fetchValue) => {
         setOpenSnack(true);
-
         setNumberForm({ ...numberForm, NumberSubmit: true });
       })
       .catch((err) => {

@@ -1,27 +1,25 @@
+import React from "react";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
-//import Skeleton from "@material-ui/lab/Skeleton";
 import Grid from "@material-ui/core/Grid";
 import Hidden from "@material-ui/core/Hidden";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Wishlist from "components/wishlist/wishlist";
-import { CDN_URL } from "config";
 import { ProductDetailContext } from "context";
-import React from "react";
 import {
   LazyLoadImage,
   trackWindowScroll,
 } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { Link } from "react-router-dom";
+import CurrencyConversion from "utils/CurrencyConversion";
 import "./productCard.css";
 
 export const ImgMediaCard = (props) => {
   const { ProductDetailCtx, setFilters } =
     React.useContext(ProductDetailContext);
-  const loc = window.location.search;
   return (
     <Component
       filters={ProductDetailCtx.filters}
@@ -32,9 +30,6 @@ export const ImgMediaCard = (props) => {
   );
 };
 
-const imageOnError = (event, res) => {
-  event.target.src = `${CDN_URL}product/${res.img_res}X${res.img_res}/productnotfound.webp`;
-};
 const Gallery = (
   props,
   callmouseover,
@@ -74,7 +69,6 @@ const Gallery = (
               alt={"props.data.title"}
               effect="blur"
               src={similarProductrenderImages(props, cardstate)}
-              //onError={(e) => imageOnError(e, props.data.imageResolution)}
               title={
                 props.data.title.charAt(0).toUpperCase() +
                 props.data.title.slice(1)
@@ -99,9 +93,6 @@ const Gallery = (
               }
               scrollPosition={scrollPosition}
             ></LazyLoadImage>
-            {/* {props.hoverText && (
-              <div className="overlayImage">{props.data.description}</div>
-            )} */}
           </>
         ) : props.shopothercategories ? (
           <>
@@ -114,7 +105,6 @@ const Gallery = (
               alt={props?.data?.product_list?.product_name}
               effect="blur"
               src={props?.data?.product_list?.product_images[0]?.image_url}
-              //onError={(e) => imageOnError(e, props.data.imageResolution)}
               title={
                 props?.data?.product_list?.product_name
                   .charAt(0)
@@ -152,7 +142,6 @@ const Gallery = (
             alt={"props.data.title"}
             effect="blur"
             src={renderImages(props, cardstate)}
-            //onError={(e) => imageOnError(e, props.data.imageResolution)}
             title={
               props.data.title.charAt(0).toUpperCase() +
               props.data.title.slice(1)
@@ -221,7 +210,6 @@ const useStyles = makeStyles((theme) => ({
   },
   priceClass: {
     padding: "10px",
-    //height: "50px",
     backgroundColor: "#c8ced480",
     display: "flex",
     boxShadow: " 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)",
@@ -270,9 +258,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "0.74rem",
     lineHeight: 0,
     color: "#828282",
-    // fontWeight: "bold",
     width: "fit-content",
-    // flex: 0.7,
     textAlign: "center",
     padding: 5,
     "&:span": {
@@ -295,7 +281,6 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   cardContent: {
-    // margin: "auto"
     width: "100%",
   },
   textPriceCardGrid: {
@@ -322,7 +307,6 @@ const useStyles = makeStyles((theme) => ({
     flex: 0.7,
     textAlign: "center",
     [theme.breakpoints.down("sm")]: {
-      // flex: 0.3,
       borderRadius: "3px",
       fontWeight: "normal",
       fontSize: "0.7rem",
@@ -337,7 +321,6 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "bold",
     textAlign: "center",
     whiteSpace: "nowrap",
-    // flex: 0.6,
     color: "gray",
     overflow: "hidden",
     textOverflow: "ellipsis",
@@ -351,7 +334,6 @@ const useStyles = makeStyles((theme) => ({
   titles: {
     fontSize: "14px",
     whiteSpace: "nowrap",
-    // flex: 0.6,
     color: "gray",
     fontWeight: "560px",
     fontFamily: "notoSerif-regular",
@@ -371,9 +353,7 @@ const useStyles = makeStyles((theme) => ({
   },
   cardActionsImage: {
     margin: 0,
-    [theme.breakpoints.down("md")]: {
-      // height: '200px !important'
-    },
+    [theme.breakpoints.down("md")]: {},
   },
   strikeText: {
     fontSize: "18px",
@@ -390,7 +370,6 @@ const renderImages = (props, cardstate) => {
   if (props.static) {
     return props.image;
   } else {
-   
     const filterType = cardstate?.hovered ? "hoverImage" : "placeImage";
 
     return props?.data &&
@@ -405,9 +384,6 @@ const similarProductrenderImages = (props, cardstate) => {
   if (props.static) {
     return props.image;
   } else {
-  
-    const filterType = cardstate?.hovered ? "hoverImage" : "placeImage";
-
     return props?.data &&
       props?.data?.image &&
       props?.data?.image["hoverImage"] &&
@@ -501,11 +477,12 @@ function Component(props) {
                               fontFamily: "notoSerif-regular",
                             }}
                           >
-                            {new Intl.NumberFormat("en-IN", {
+                            {CurrencyConversion(props.data.price)}
+                            {/* {new Intl.NumberFormat("en-IN", {
                               style: "currency",
                               currency: "INR",
                               minimumFractionDigits: 0,
-                            }).format(Math.round(props.data.price))}
+                            }).format(Math.round(props.data.price))} */}
                           </Typography>
                         ) : (
                           <Typography
@@ -520,11 +497,12 @@ function Component(props) {
                               color: "rgb(109,110,112)",
                             }}
                           >
-                            {new Intl.NumberFormat("en-IN", {
+                            {CurrencyConversion(props.data.price)}
+                            {/* {new Intl.NumberFormat("en-IN", {
                               style: "currency",
                               currency: "INR",
                               minimumFractionDigits: 0,
-                            }).format(Math.round(props.data.price))}
+                            }).format(Math.round(props.data.price))} */}
                             <span
                               style={{ display: "flex", alignSelf: "center" }}
                             >
@@ -542,15 +520,21 @@ function Component(props) {
                                   }}
                                 >
                                   <span>
-                                    {props.data.offerPrice == 0
-                                      ? " "
-                                      : new Intl.NumberFormat("en-IN", {
-                                          style: "currency",
-                                          currency: "INR",
-                                          minimumFractionDigits: 0,
-                                        }).format(
-                                          Math.round(props.data.offerPrice)
-                                        )}
+                                    {
+                                      props.data.offerPrice == 0
+                                        ? " "
+                                        : CurrencyConversion(
+                                            props.data.offerPrice
+                                          )
+
+                                      // new Intl.NumberFormat("en-IN", {
+                                      //     style: "currency",
+                                      //     currency: "INR",
+                                      //     minimumFractionDigits: 0,
+                                      //   }).format(
+                                      //     Math.round(props.data.offerPrice)
+                                      // )
+                                    }
                                   </span>
                                 </span>
                               </Typography>
@@ -601,11 +585,12 @@ function Component(props) {
                               color: "rgb(109,110,112)",
                             }}
                           >
-                            {new Intl.NumberFormat("en-IN", {
+                            {CurrencyConversion(props.data.price)}
+                            {/* {new Intl.NumberFormat("en-IN", {
                               style: "currency",
                               currency: "INR",
                               minimumFractionDigits: 0,
-                            }).format(Math.round(props.data.price))}
+                            }).format(Math.round(props.data.price))} */}
                           </Typography>
                         ) : (
                           <Grid container>
@@ -619,11 +604,12 @@ function Component(props) {
                                   color: "rgb(109,110,112)",
                                 }}
                               >
-                                {new Intl.NumberFormat("en-IN", {
+                                {CurrencyConversion(props.data.price)}
+                                {/* {new Intl.NumberFormat("en-IN", {
                                   style: "currency",
                                   currency: "INR",
                                   minimumFractionDigits: 0,
-                                }).format(Math.round(props.data.price))}
+                                }).format(Math.round(props.data.price))} */}
                               </Typography>
                               <span
                                 style={{
@@ -633,36 +619,21 @@ function Component(props) {
                                   paddingLeft: "5px",
                                 }}
                               >
-                                {props.data.offerPrice == 0
-                                  ? " "
-                                  : new Intl.NumberFormat("en-IN", {
-                                      style: "currency",
-                                      currency: "INR",
-                                      minimumFractionDigits: 0,
-                                    }).format(
-                                      Math.round(props.data.offerPrice)
-                                    )}
+                                {
+                                  props.data.offerPrice == 0
+                                    ? " "
+                                    : CurrencyConversion(props.data.offerPrice)
+
+                                  // new Intl.NumberFormat("en-IN", {
+                                  //     style: "currency",
+                                  //     currency: "INR",
+                                  //     minimumFractionDigits: 0,
+                                  //   }).format(
+                                  //     Math.round(props.data.offerPrice)
+                                  //   )
+                                }
                               </span>
                             </Grid>
-                            {/* 
-                            <Grid item xs={12}>
-                              <span
-                                style={{
-                                  fontWeight: "bold",
-                                  color: "#B78231",
-                                  fontSize: "12px",
-                                  paddingLeft: "5px",
-                                }}
-                              >
-                                {props.similarProducts
-                                  ? " "
-                                  : props.data.save == 0
-                                  ? " "
-                                  : ` ${Math.abs(
-                                      Math.round(props.data.save)
-                                    )}% OFF`}
-                              </span>
-                            </Grid> */}
                           </Grid>
                         )}{" "}
                       </div>
