@@ -12,7 +12,7 @@ import {
   ListItem,
   ListItemText,
   Toolbar,
-  Typography
+  Typography,
 } from "@material-ui/core";
 import Popover from "@material-ui/core/Popover";
 import { withStyles } from "@material-ui/core/styles";
@@ -76,7 +76,6 @@ class Header extends Component {
   headerTransitions = () => {
     document.getElementById("topNav").style.paddingTop = "0";
     document.getElementById("topNav").style.transition = "0.5s";
-    // var heightHeader = document.getElementById('headerDiv').clientHeight;
     if (document.getElementById("SliderFilter")) {
       document.getElementById("SliderFilter").style.top = "120px";
       document.getElementById("SliderFilter").style.transition = "0.5s";
@@ -96,24 +95,8 @@ class Header extends Component {
     });
   };
   render() {
-    const {
-      mainlist,
-      Jewellery,
-      subheader,
-      menuListHeader,
-      menuLists,
-      earings,
-      rings,
-      pendants,
-      nosepins,
-      banglesbracelets,
-      valayal,
-      kammal,
-      koluse,
-      Price,
-      Collection,
-      Material,
-    } = this.props.data;
+    const { mainlist, Jewellery, subheader, menuListHeader, menuLists } =
+      this.props.data;
     let { selected, selected1 } = this.state;
     const { classes } = this.props;
     let path = window.location.pathname.split("/").pop();
@@ -133,10 +116,13 @@ class Header extends Component {
               <Grid container spacing={12}>
                 <Grid item xs={3}>
                   <div className={`head-icons ${classes.colorMain}`}>
-                    {/* <span><img className="icons-header-sizes" src={delivery} /></span> */}
                     <i class="track-icon icon-truck"></i>
                     <span>
-                      <img className="icons-header-sizes" src={telephone} />
+                      <img
+                        className="icons-header-sizes"
+                        src={telephone}
+                        alt="telephone"
+                      />
                     </span>
                   </div>
                 </Grid>
@@ -160,28 +146,27 @@ class Header extends Component {
                       className={`search ${classes.colorMain}`}
                       placeholder="&#xf002; Search here"
                     />
-                    {/* <NavLink to="/login"> */}
-                    {/* <Button
-                     
-                      variant="contained"
-                      onClick={() => { this.handleClickp() }}
-                    >
-                     <img className="icons-header-sizes" src={usershape} />
-        </Button> */}
 
                     {localStorage.getItem("true") ? (
                       <span
                         aria-owns={openPopover ? "simple-popper" : ""}
                         onClick={this.handleClickPopover}
                       >
-                        <img className="icons-header-sizes" src={usershape} />
+                        <img
+                          className="icons-header-sizes"
+                          src={usershape}
+                          alt="telephone"
+                        />
                       </span>
                     ) : (
-                      // <img className="icons-header-sizes" src={usershape}/>
                       <span
                         onClick={() => (window.location.pathname = "/login")}
                       >
-                        <img className="icons-header-sizes" src={usershape} />
+                        <img
+                          className="icons-header-sizes"
+                          src={usershape}
+                          alt="telephone"
+                        />
                       </span>
                     )}
                     {/* </NavLink> */}
@@ -227,25 +212,25 @@ class Header extends Component {
                             window.location.pathname = "/login";
                           }}
                         >
-                          <img className="icons-header-sizes" src={logout} />
+                          <img
+                            className="icons-header-sizes"
+                            src={logout}
+                            alt="images"
+                          />
                           &nbsp;Logout
                         </a>
                         &nbsp;/&nbsp;
                         <NavLink to="/account">My Account</NavLink>
                       </div>
                     </Popover>
-                    {/* <i class="fa fa-user"></i> */}
 
                     <Badge
-                      color="secondary"
                       badgeContent={
                         localStorage.getItem("a__w_l")
                           ? localStorage.getItem("a__w_l")
                           : "0"
                       }
                       color="secondary"
-                    // wishlist_count
-                    // badgeContent={this.props.wishlist_count && this.props.wishlist_count.length > 0 ? this.props.wishlist_count : "0"}
                     >
                       <i
                         class="fa fa-heart icons-header-sizes"
@@ -268,7 +253,11 @@ class Header extends Component {
                     >
                       <NavLink to="/cart">
                         {" "}
-                        <img className="icons-header-sizes" src={shopping} />
+                        <img
+                          className="icons-header-sizes"
+                          src={shopping}
+                          alt="images"
+                        />
                       </NavLink>{" "}
                     </Badge>
                   </div>
@@ -288,25 +277,6 @@ class Header extends Component {
                   >
                     <Container maxWidthLg>
                       <nav>
-                        {/* <a href="" className={`${classes.colorLight}`} alt=""><i class="fa fa-plus-circle"></i>&nbsp;Whats New</a>
-  
-                      <a href=""
-                        onMouseEnter={() => { this.setState({ Menuopen: true, Checked: true, listHoverItem: 'Jewellery' }) }}
-                        className={` ${classes.colorLight}`} active><i class="fa fa-plus-circle" ></i>&nbsp;Jewellery</a>
-  
-  
-                      <a href="" className={` ${classes.colorLight}`} onMouseOver={() => { this.setState({ Menuopen: true, Checked: true, listHoverItem: 'Solitaires' }) }}><i class="fa fa-plus-circle"></i>&nbsp;Solitaires</a>
-                      <a href="" className={` ${classes.colorLight}`}
-                        onMouseOver={() => { this.setState({ Menuopen: true, Checked: true, listHoverItem: 'GoldCoins' }) }}
-                      ><i class="fa fa-plus-circle"></i>&nbsp;Gold Coins</a>
-                      <a href="" className={` ${classes.colorLight}`}
-                        onMouseOver={() => { this.setState({ Menuopen: true, Checked: true, listHoverItem: 'Gifts' }) }}
-                      ><i class="fa fa-plus-circle"></i>&nbsp;Gifts</a>
-                      <a href="" className={` ${classes.colorLight}`}
-                        onMouseOver={() => { this.setState({ Menuopen: true, Checked: true, listHoverItem: 'Collection' }) }}
-                      ><i class="fa fa-plus-circle"></i>&nbsp;Collections</a>
-                      <a href="" className={` ${classes.colorLight}`}><i class="fa fa-plus-circle"></i>&nbsp;One Day Sipping</a>
-                      <a href="" className={` ${classes.colorLight}`}><i class="fa fa-plus-circle"></i>&nbsp;Stories</a> */}
                         {menuListHeader.map((listName) => {
                           return (
                             <a
@@ -332,7 +302,7 @@ class Header extends Component {
                     </Container>
 
                     {this.state.Menuopen &&
-                      menuLists[this.state.listHoverItem] ? (
+                    menuLists[this.state.listHoverItem] ? (
                       <HeaderHoverMenuItem
                         Checked={this.state.Checked}
                         tabdata={this.props.data}

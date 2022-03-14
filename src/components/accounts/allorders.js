@@ -357,7 +357,6 @@ class Allorders extends React.Component {
 
     return (
       <>
-        {/* allorderdata.nodes */}
         {this.props.location.pathname.split("-")[0] === "/account" ? (
           <div className="pt-sm checkout-ovralldiv-media">
             {allorderdata &&
@@ -706,10 +705,8 @@ class Allorders extends React.Component {
                                               ? "Size"
                                               : null}
                                           </Typography>
-                                          {/* Ring Size */}
                                         </Grid>
-                                        {/*  */}
-                                        {/*  */}
+
                                         <Grid item lg={6} sm={6}>
                                           <Typography className="subhesder">
                                             {cart &&
@@ -886,9 +883,6 @@ class Allorders extends React.Component {
                             </div>
                           </div>
                         </div>
-                        {/* {val.paymentStatus} */}
-                        {/* {JSON.stringify(this.props.allorderdata)} */}
-                        {/* changePanel */}
                       </ExpansionPanelDetails>
                     </ExpansionPanel>
                   );
@@ -1264,7 +1258,6 @@ class Allorders extends React.Component {
                                       style={{ color: "gray" }}
                                       className="fullgray"
                                     >
-                                      {/* SHIP To */}
                                       <b
                                         style={{
                                           display: "block",
@@ -1487,7 +1480,6 @@ class Allorders extends React.Component {
                                         </div>
                                       </div>
                                       <br />
-                                      {/* Buttons */}
                                       <Button
                                         className="continue-to"
                                         onClick={(e) => {
@@ -1830,7 +1822,6 @@ class Allorders extends React.Component {
                                       style={{ color: "gray" }}
                                       className="fullgray"
                                     >
-                                      {/* SHIP To */}
                                       <b style={{ display: "block" }}>
                                         Ship To
                                       </b>
@@ -1932,7 +1923,6 @@ class Allorders extends React.Component {
                                       </div>
                                       <br />
                                       <br />
-                                      {/* Bill To */}
                                       <b style={{ display: "block" }}>
                                         Bill To
                                       </b>
@@ -2033,7 +2023,6 @@ class Allorders extends React.Component {
                                         </div>
                                       </div>
                                       <br />
-                                      {/* Buttons */}
                                       <Button
                                         className="continue-to"
                                         onClick={(e) => {

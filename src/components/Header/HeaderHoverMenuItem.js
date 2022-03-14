@@ -4,7 +4,7 @@ import {
   ListItem,
   ListItemText,
   Popper,
-  Typography
+  Typography,
 } from "@material-ui/core";
 import PropTypes from "prop-types";
 import React, { useEffect } from "react";
@@ -12,25 +12,21 @@ import "./header.css";
 import { useStyles } from "./style";
 
 function HeaderHoverMenuItem(props) {
-  const [activetab, setActivetab] = React.useState("earings");
   const [opens, setOpens] = React.useState(props.opened);
   const [target, setTarget] = React.useState(props.targetopened);
-  const { onMouseLeave, onMouseOver, onClick } = props;
+  const { onMouseLeave, onMouseOver } = props;
   const classes = useStyles();
   const mapper = props.filters
     ? props.listHoverItem
     : props.listHoverItem["menuOne"];
-  // const mapper_menu2 = props.filters ? props.listHoverItem : props.listHoverItem['menuOne']
   const classHover = props.filters
     ? classes.mouseOverPopoverfilters
     : classes.mouseOverPopoverHeader;
-  // onMouseOver={onMouseOver} onMouseLeave={onMouseLeave}
-  // listHoverItem
+
   useEffect(() => {
     setOpens(props.opened);
     setTarget(props.targetopened);
   });
-  // top: '18px !important',
   return (
     <Grid container className={classes.root}>
       <Grid container item xs={12} className={classes.paperdiv}>
@@ -74,7 +70,6 @@ function HeaderHoverMenuItem(props) {
                   >
                     <ListItemText variant>
                       <Typography className={classes.listedItemsvalue}>
-                        {/* {menuList.title.toUpperCase()} */}
                         {menuList.title
                           ? menuList.title.toUpperCase()
                           : menuList}
@@ -116,7 +111,6 @@ function HeaderHoverMenuItem(props) {
                     >
                       <ListItemText variant>
                         <Typography className={classes.listedItemsvalue}>
-                          {/* {menuList.title.toUpperCase()} */}
                           {menuList.title
                             ? menuList.title.toUpperCase()
                             : menuList}

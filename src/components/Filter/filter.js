@@ -34,6 +34,7 @@ import "./filter.css";
 import FilterHeader from "./FilterHeader";
 import styles from "./styles";
 import { TopFilters } from "./topFilters";
+import CurrencyConversion from "utils/CurrencyConversion";
 const CheckboxWithTick = withStyles({
   root: {
     cursor: "default",
@@ -166,16 +167,18 @@ class Component extends React.Component {
     ) {
       var price_min = Number(this.props.data[0].subFilter["Price Range"].min);
       var price_max = Number(this.props.data[0].subFilter["Price Range"].max);
-      var _price_min = new Intl.NumberFormat("en-IN", {
-        style: "currency",
-        currency: "INR",
-        minimumFractionDigits: 0,
-      }).format(Math.round(price_min));
-      var _price_max = new Intl.NumberFormat("en-IN", {
-        style: "currency",
-        currency: "INR",
-        minimumFractionDigits: 0,
-      }).format(Math.round(price_max));
+      var _price_min = CurrencyConversion(Math.round(price_min));
+      // new Intl.NumberFormat("en-IN", {
+      //   style: "currency",
+      //   currency: "INR",
+      //   minimumFractionDigits: 0,
+      // }).format(Math.round(price_min));
+      var _price_max = CurrencyConversion(Math.round(price_max));
+      // new Intl.NumberFormat("en-IN", {
+      //   style: "currency",
+      //   currency: "INR",
+      //   minimumFractionDigits: 0,
+      // }).format(Math.round(price_max));
 
       // checked['pricemax'] = _price_max
       // checked['pricemin'] = _price_min
@@ -217,16 +220,18 @@ class Component extends React.Component {
         // if(numOne !== price_one && numTwo !== price_two){
         const price_min = Number(price_one);
         const price_max = Number(price_two);
-        const _price_min = new Intl.NumberFormat("en-IN", {
-          style: "currency",
-          currency: "INR",
-          minimumFractionDigits: 0,
-        }).format(Math.round(price_min));
-        const _price_max = new Intl.NumberFormat("en-IN", {
-          style: "currency",
-          currency: "INR",
-          minimumFractionDigits: 0,
-        }).format(Math.round(price_max));
+        const _price_min = CurrencyConversion(Math.round(price_min));
+        // new Intl.NumberFormat("en-IN", {
+        //   style: "currency",
+        //   currency: "INR",
+        //   minimumFractionDigits: 0,
+        // }).format(Math.round(price_min));
+        const _price_max = CurrencyConversion(Math.round(price_max));
+        // new Intl.NumberFormat("en-IN", {
+        //   style: "currency",
+        //   currency: "INR",
+        //   minimumFractionDigits: 0,
+        // }).format(Math.round(price_max));
         this.setState({ numOne: _price_min, numTwo: _price_max });
         // }
         // }
@@ -282,7 +287,6 @@ class Component extends React.Component {
         };
         fetch(this.props.uri, {
           method: "post",
-          
 
           headers: {
             "Content-Type": "application/json",
@@ -311,7 +315,7 @@ class Component extends React.Component {
                   }
                 }
                 a[attrName] = { [attrVal]: true };
-             
+
                 return a;
               });
 
@@ -385,16 +389,18 @@ class Component extends React.Component {
       var numberTwo = this.props.data[0].subFilter["Price Range"][0]
         ? this.props.data[0].subFilter["Price Range"][0].max
         : 0;
-      var numOne = new Intl.NumberFormat("en-IN", {
-        style: "currency",
-        currency: "INR",
-        minimumFractionDigits: 0,
-      }).format(Math.round(numberOne));
-      var numTwo = new Intl.NumberFormat("en-IN", {
-        style: "currency",
-        currency: "INR",
-        minimumFractionDigits: 0,
-      }).format(Math.round(numberTwo));
+      var numOne = CurrencyConversion(Math.round(numberOne));
+      // new Intl.NumberFormat("en-IN", {
+      //   style: "currency",
+      //   currency: "INR",
+      //   minimumFractionDigits: 0,
+      // }).format(Math.round(numberOne));
+      var numTwo = CurrencyConversion(Math.round(numberTwo));
+      // new Intl.NumberFormat("en-IN", {
+      //   style: "currency",
+      //   currency: "INR",
+      //   minimumFractionDigits: 0,
+      // }).format(Math.round(numberTwo));
       this.state.Price_button_click === false &&
         this.setState({ numOne: numOne, numTwo: numTwo });
       // if( this.props.data[0].subFilter['Price Range'].length > 0 && this.props.data[0].subFilter['Price Range'][0] !== undefined){
@@ -688,7 +694,6 @@ class Component extends React.Component {
     }
   };
   filterValue = (filtercheck) => {
- 
     this.setState({ filtercheck });
   };
   handleChangeDrawer = () => {
@@ -729,16 +734,18 @@ class Component extends React.Component {
           document.getElementById("num2").value.replace(/,/g, "")
         );
       }
-      var price_min = new Intl.NumberFormat("en-IN", {
-        style: "currency",
-        currency: "INR",
-        minimumFractionDigits: 0,
-      }).format(Math.round(_price_min));
-      var price_max = new Intl.NumberFormat("en-IN", {
-        style: "currency",
-        currency: "INR",
-        minimumFractionDigits: 0,
-      }).format(Math.round(_price_max));
+      var price_min = CurrencyConversion(Math.round(_price_min));
+      // new Intl.NumberFormat("en-IN", {
+      //   style: "currency",
+      //   currency: "INR",
+      //   minimumFractionDigits: 0,
+      // }).format(Math.round(_price_min));
+      var price_max = CurrencyConversion(Math.round(_price_max));
+      // new Intl.NumberFormat("en-IN", {
+      //   style: "currency",
+      //   currency: "INR",
+      //   minimumFractionDigits: 0,
+      // }).format(Math.round(_price_max));
 
       var pricemin =
         price_min.indexOf(",") > -1
@@ -756,7 +763,7 @@ class Component extends React.Component {
           : price_max.indexOf(" ") > -1
           ? Number(price_max.substr(2))
           : Number(price_max.substr(1));
-     
+
       if (pricemin > pricemax) {
         this.setState({ errorPriceMessage: true });
       } else if (pricemin === 0 && pricemax === 0) {

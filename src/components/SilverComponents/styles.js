@@ -1,6 +1,21 @@
 import { makeStyles } from "@material-ui/core/styles";
 
 export const styles = (theme) => ({
+  currencyStyle: {
+    fontSize: "10px",
+    padding: "0px !important",
+    '&&[class*="MuiOutlinedInput-root"] $input': {
+      padding: 0,
+    },
+    MuiAutocomplete: {
+      padding: "0px !important",
+    },
+  },
+  smallFont: {
+    fontSize: "14px",
+    color: "#fff",
+    borderColor: "#fff",
+  },
   headIcons: {
     color: theme.palette.secondary.dark,
     fontFamily: "fontawesome",
@@ -22,6 +37,7 @@ export const styles = (theme) => ({
   goldCurrentRate: {
     display: "flex",
     color: "black",
+    alignItems: "center",
     justifyContent: "flex-end",
     "& .MuiInput-underline": {
       "&::before": {
@@ -52,7 +68,7 @@ export const styles = (theme) => ({
     "& .MuiInputBase-input": {
       color: "white",
       fontSize: 14,
-      padding: "6px 7px 7px",
+      padding: "11px",
     },
     "& .MuiNativeSelect-icon": {
       color: "white",

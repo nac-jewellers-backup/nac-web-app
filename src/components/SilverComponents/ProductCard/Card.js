@@ -16,7 +16,7 @@ import {
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { Link } from "react-router-dom";
 import "./productCard.css";
-
+import CurrencyConversion from "utils/CurrencyConversion";
 export const ImgMediaCard = (props) => {
   const { ProductDetailCtx, setFilters } =
     React.useContext(ProductDetailContext);
@@ -294,11 +294,14 @@ function Component(props) {
                     component="h6"
                     className={classes.offerMainPrice}
                   >
-                    {new Intl.NumberFormat("en-IN", {
-                      style: "currency",
-                      currency: "INR",
-                      minimumFractionDigits: 0,
-                    }).format(Math.round(props.data.price))}
+                    {
+                      CurrencyConversion(Math.round(props.data.price))
+                      // new Intl.NumberFormat("en-IN", {
+                      //   style: "currency",
+                      //   currency: "INR",
+                      //   minimumFractionDigits: 0,
+                      // }).format(Math.round(props.data.price))
+                    }
                   </Typography>
                 </Grid>
                 {/*  */}
@@ -326,18 +329,24 @@ function Component(props) {
                     >
                       {Math.round(props.data.offerPrice) ===
                       Math.round(props.data.price) ? (
-                        new Intl.NumberFormat("en-IN", {
-                          style: "currency",
-                          currency: "INR",
-                          minimumFractionDigits: 0,
-                        }).format(Math.round(props.data.price))
+                        CurrencyConversion(Math.round(props.data.price))
                       ) : (
+                        // new Intl.NumberFormat("en-IN", {
+                        //   style: "currency",
+                        //   currency: "INR",
+                        //   minimumFractionDigits: 0,
+                        // }).format(Math.round(props.data.price))
                         <del>
-                          {new Intl.NumberFormat("en-IN", {
-                            style: "currency",
-                            currency: "INR",
-                            minimumFractionDigits: 0,
-                          }).format(Math.round(props.data.offerPrice))}
+                          {
+                            CurrencyConversion(
+                              Math.round(props.data.offerPrice)
+                            )
+                            // new Intl.NumberFormat("en-IN", {
+                            //   style: "currency",
+                            //   currency: "INR",
+                            //   minimumFractionDigits: 0,
+                            // }).format(Math.round(props.data.offerPrice))
+                          }
                         </del>
                       )}
                     </Typography>

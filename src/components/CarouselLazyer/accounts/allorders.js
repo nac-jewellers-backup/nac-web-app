@@ -10,8 +10,8 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import moment from "moment";
 import React from "react";
 import "../Checkout/Cart.css";
-// import "../../components/Checkout/Cart.css";
 import "./accounts.css";
+import CurrencyConversion from "utils/CurrencyConversion";
 function myFunc(total, num) {
   return Math.round(total + num);
 }
@@ -28,13 +28,6 @@ class Allorders extends React.Component {
     });
   };
 
-  // changePanel = (panel, mailId) => {
-  //     this.setState({
-  //         expanded: panel,
-  //     })
-  // }
-  // const dataCard1 = this.props.data.map(val => { return val.dataCard1[0].offerPrice }).reduce(myFunc);
-
   calculatetotal = (arr) => {
     var a;
     var dis_price;
@@ -46,11 +39,12 @@ class Allorders extends React.Component {
         return dis_price;
       })
       .reduce(myFunc);
-    return new Intl.NumberFormat("en-IN", {
-      style: "currency",
-      currency: "INR",
-      minimumFractionDigits: 0,
-    }).format(Math.round(a));
+    return CurrencyConversion(Math.round(a));
+    // new Intl.NumberFormat("en-IN", {
+    //   style: "currency",
+    //   currency: "INR",
+    //   minimumFractionDigits: 0,
+    // }).format(Math.round(a));
   };
   generateShipsBy = (readytoship, vendorDeliveryTime) => {
     var isReadytoShip = readytoship;
@@ -74,13 +68,11 @@ class Allorders extends React.Component {
 
     return (
       <>
-        {/* allorderdata.nodes */}
         <div className="pt-sm checkout-ovralldiv-media">
           {allorderdata &&
           allorderdata.allorderdata &&
           allorderdata.allorderdata.nodes.length > 0 ? (
             <div style={{ marginTop: "20px", boxShadow: "none" }}>
-              {/* {localStorage.setItem("a__r_c", allorderdata && allorderdata.allorderdata && allorderdata.allorderdata.nodes.length)} */}
               {allorderdata &&
                 allorderdata.allorderdata &&
                 allorderdata.allorderdata.nodes.map((val, index) => (
@@ -89,7 +81,6 @@ class Allorders extends React.Component {
                     expanded={expanded === index}
                     onChange={this.handleChange(index)}
                     style={{
-                      boxShadow: "none",
                       boxShadow: "rgb(242, 242, 242) 4px 10px 20px 5px",
                     }}
                     key={index}
@@ -108,7 +99,6 @@ class Allorders extends React.Component {
                     </ExpansionPanelSummary>
                     <ExpansionPanelDetails>
                       <div className="address_details">
-                        {/* {val.shoppingCartByCartId.cartAddressesByCartId.nodes.map(addreses => ( */}
                         <div style={{ width: "100%", marginBottom: "10px" }}>
                           <Grid
                             container
@@ -223,7 +213,6 @@ class Allorders extends React.Component {
                               ) : (
                                 ""
                               )}
-                              {/* <div></div> */}
                             </Grid>
                           </Grid>
                         </div>
@@ -244,6 +233,7 @@ class Allorders extends React.Component {
                                     (imgs) => (
                                       <div className="wishlist_img">
                                         <img
+                                          alt="images"
                                           className="viewport-img"
                                           src={`https://assets.stylori.net/base_images/${imgs.imageUrl}`}
                                         />
@@ -373,31 +363,47 @@ class Allorders extends React.Component {
                                         fontSize: "18px",
                                       }}
                                     >
-                                      {Intl.NumberFormat("en-IN", {
-                                        style: "currency",
-                                        currency: "INR",
-                                        minimumFractionDigits: 0,
-                                      }).format(
-                                        Math.round(
-                                          cart.transSkuListByProductSku
-                                            .markupPrice
+                                      {
+                                        CurrencyConversion(
+                                          Math.round(
+                                            cart.transSkuListByProductSku
+                                              .markupPrice
+                                          )
                                         )
-                                      )}
+                                        // Intl.NumberFormat("en-IN", {
+                                        //   style: "currency",
+                                        //   currency: "INR",
+                                        //   minimumFractionDigits: 0,
+                                        // }).format(
+                                        //   Math.round(
+                                        //     cart.transSkuListByProductSku
+                                        //       .markupPrice
+                                        //   )
+                                        // )
+                                      }
                                     </del>
                                   ) : (
                                     ""
                                   )}
                                   <br />
-                                  {Intl.NumberFormat("en-IN", {
-                                    style: "currency",
-                                    currency: "INR",
-                                    minimumFractionDigits: 0,
-                                  }).format(
-                                    Math.round(
-                                      cart.transSkuListByProductSku
-                                        .discountPrice
+                                  {
+                                    CurrencyConversion(
+                                      Math.round(
+                                        cart.transSkuListByProductSku
+                                          .discountPrice
+                                      )
                                     )
-                                  )}
+                                    // Intl.NumberFormat("en-IN", {
+                                    //   style: "currency",
+                                    //   currency: "INR",
+                                    //   minimumFractionDigits: 0,
+                                    // }).format(
+                                    //   Math.round(
+                                    //     cart.transSkuListByProductSku
+                                    //       .discountPrice
+                                    //   )
+                                    // )
+                                  }
                                 </Grid>
                               </Grid>
                             </>
@@ -421,9 +427,6 @@ class Allorders extends React.Component {
                           </div>
                         </div>
                       </div>
-                      {/* {val.paymentStatus} */}
-                      {/* {JSON.stringify(this.props.allorderdata)} */}
-                      {/* changePanel */}
                     </ExpansionPanelDetails>
                   </ExpansionPanel>
                 ))}

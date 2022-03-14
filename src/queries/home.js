@@ -247,7 +247,7 @@ export const AllHOMEQUERY = `query MyQuery {
 
 `;
 
-export const GOLDPRICE = `
+export const GOLD_PRICE_AND_CURRENCY_CONVO = `
 query {
   allDailyMetalPrices(condition: { isActive: true }, orderBy: ID_ASC) {
     nodes {
@@ -258,6 +258,22 @@ query {
       isActive
       createdAt
       updatedAt
+    }
+  }
+  allMasterCountries {
+    nodes {
+      currency
+      currencyAlias
+      currencySymbol
+      fxConversionRate
+      id
+      isActive
+      iso
+      iso3
+      name
+      nicename
+      numcode
+      phonecode
     }
   }
 }`;

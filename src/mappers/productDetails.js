@@ -1293,32 +1293,38 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
               {
                 name: "GST",
                 details: [
-                  new Intl.NumberFormat("en-IN", {
-                    style: "currency",
-                    currency: "INR",
-                    minimumFractionDigits: 0,
-                  }).format(Math.round(PD?.discountPriceTax)),
-                  new Intl.NumberFormat("en-IN", {
-                    style: "currency",
-                    currency: "INR",
-                    minimumFractionDigits: 0,
-                  }).format(Math.round(PD?.markupPriceTax)),
+                  CurrencyConversion(PD?.discountPriceTax),
+                  // new Intl.NumberFormat("en-IN", {
+                  //   style: "currency",
+                  //   currency: "INR",
+                  //   minimumFractionDigits: 0,
+                  // }).format(Math.round(PD?.discountPriceTax))
+                  CurrencyConversion(PD?.markupPriceTax),
+                  // new Intl.NumberFormat("en-IN", {
+                  //   style: "currency",
+                  //   currency: "INR",
+                  //   minimumFractionDigits: 0,
+                  // }).format(Math.round(PD?.markupPriceTax)),
                 ],
               },
 
               {
                 name: "Total",
                 details: [
-                  new Intl.NumberFormat("en-IN", {
-                    style: "currency",
-                    currency: "INR",
-                    minimumFractionDigits: 0,
-                  }).format(Math.round(PD?.discountPrice)),
-                  new Intl.NumberFormat("en-IN", {
-                    style: "currency",
-                    currency: "INR",
-                    minimumFractionDigits: 0,
-                  }).format(Math.round(PD?.markupPrice)),
+                  CurrencyConversion(PD?.discountPrice),
+                  // new Intl.NumberFormat("en-IN", {
+                  //   style: "currency",
+                  //   currency: "INR",
+                  //   minimumFractionDigits: 0,
+                  // }).format(Math.round(PD?.discountPrice)),
+
+                  CurrencyConversion(PD?.markupPrice),
+
+                  // new Intl.NumberFormat("en-IN", {
+                  //   style: "currency",
+                  //   currency: "INR",
+                  //   minimumFractionDigits: 0,
+                  // }).format(Math.round(PD?.markupPrice)),
                 ],
               },
             ],

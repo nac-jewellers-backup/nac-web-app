@@ -28,15 +28,41 @@ import Seach from "../../assets/search";
 import StyloriSLogo from "../../assets/silverOpenLink.png";
 import { useDummyRequest } from "../../hooks";
 import { headerDataSilver } from "../../mappers";
+import { createTheme, ThemeProvider } from "@material-ui/core/styles";
+
 import "./header.css";
 import HeaderHoversubMenu from "./HoverNavBarListing/HeaderHoversubMenu";
 import { styles } from "./styles";
-import { GOLDPRICE } from "../../queries/home";
+import { GOLD_PRICE_AND_CURRENCY_CONVO } from "../../queries/home";
 import { API_URL } from "../../config";
-
+import TextField from "@material-ui/core/TextField";
+import Autocomplete from "@material-ui/lab/Autocomplete";
 let user_id = localStorage.getItem("user_id")
   ? localStorage.getItem("user_id")
   : {};
+let selected_price = localStorage.getItem("selected_price")
+  ? JSON.parse(localStorage.getItem("selected_price"))
+  : null;
+
+const theme = createTheme({
+  overrides: {
+    MuiInputLabel: {
+      outlined: {
+        // transform: "translate(14px, 12.5px) scale(1)",
+        border: "none",
+        borderColor: "#fff",
+      },
+    },
+    MuiOutlinedInput: {
+      root: {
+        "&&& $input": {
+          padding: "0px",
+          color: "#fff !important",
+        },
+      },
+    },
+  },
+});
 
 class Header extends Component {
   constructor(props) {
@@ -63,8 +89,11 @@ class Header extends Component {
       opened: false,
       scroll: false,
       goldPrice: null,
+      currencyConvo: null,
+      selected_currency: null,
     };
     this.topZero = React.createRef();
+    this.handleCurrencyConvo = this.handleCurrencyConvo.bind(this);
   }
 
   componentDidMount() {
@@ -94,13 +123,17 @@ class Header extends Component {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        query: GOLDPRICE,
+        query: GOLD_PRICE_AND_CURRENCY_CONVO,
       }),
     })
       .then((res) => res.json())
       .then((data) => {
         this.setState({
           goldPrice: data?.data?.allDailyMetalPrices?.nodes ?? null,
+          currencyConvo: data?.data?.allMasterCountries?.nodes ?? null,
+          selected_currency: selected_price
+            ? selected_price
+            : data?.data?.allMasterCountries?.nodes[0] ?? null,
         });
       });
   };
@@ -192,6 +225,11 @@ class Header extends Component {
   handleExpandClickClose = () => {
     this.setState({ open: false });
   };
+  handleCurrencyConvo = (e, value) => {
+    localStorage.setItem("selected_price", JSON.stringify(value));
+    this.setState({ selected_currency: value });
+    window.location.reload();
+  };
 
   render() {
     const styloriLogo =
@@ -209,9 +247,10 @@ class Header extends Component {
     const { classes } = this.props;
     const { anchorEl } = this.state;
     const openPopover = anchorEl;
-    const opened = this.state;
+
     var a = window.location.pathname;
     var b = a.split("/");
+
     return (
       <div
         style={{ top: "0", zIndex: "1000", width: "100%" }}
@@ -319,6 +358,52 @@ class Header extends Component {
                         justify="flex-end"
                         className={classes.goldCurrentRate}
                       >
+                        <Grid item xs={12} sm={6} md={2} lg={2}>
+                          <Autocomplete
+                            id="country-select-demo"
+                            size="small"
+                            style={{
+                              color: "#000 !important",
+                              backgroundColor: "#b78231",
+                              border: "0px",
+                              borderColor: "#fff",
+
+                              boxShadow: "6px 7px 6px #bebfbf",
+                            }}
+                            classes={{ input: classes.smallFont }}
+                            options={this.state.currencyConvo}
+                            getOptionLabel={(option) => option.nicename}
+                            value={this.state?.selected_currency ?? null}
+                            onChange={this.handleCurrencyConvo}
+                            defaultValue={selected_price ?? null}
+                            renderInput={(params) => (
+                              <ThemeProvider theme={theme}>
+                                <TextField
+                                  {...params}
+                                  // className={classes.inputProps}
+                                  label={""}
+                                  variant="outlined"
+                                />
+                              </ThemeProvider>
+                            )}
+                          />
+                          {/* <Autocomplete
+                            className={classes.currencyStyle}
+                            size="small"
+                            options={this.state.currencyConvo}
+                            getOptionLabel={(option) => option.currencySymbol}
+                            defaultValue={selected_price ?? null}
+                            onChange={this.handleCurrencyConvo}
+                            value={this.state?.selected_currency ?? null}
+                            renderInput={(params) => (
+                              <TextField
+                                {...params}
+                                label=""
+                                variant="outlined"
+                              />
+                            )}
+                          /> */}
+                        </Grid>
                         <Grid item>
                           <FormControl
                             variant="outlined"
@@ -648,7 +733,7 @@ class Header extends Component {
                         />
                       </div>
                     </Grid>
-                    <Grid item xs={6}>
+                    <Grid item xs={12}>
                       <Grid container item xs={12}>
                         <Grid
                           container
@@ -661,8 +746,38 @@ class Header extends Component {
                             item
                             xs={12}
                             justifyContent="flex-end"
+                            alignItems="center"
                           >
-                            <Grid item xs={12} sm={6} md={3} lg={3}>
+                            <Grid item xs={6} sm={6} md={3} lg={3}>
+                              <Autocomplete
+                                id="country-select-demo"
+                                size="small"
+                                style={{
+                                  color: "#000 !important",
+                                  backgroundColor: "#b78231",
+                                  border: "0px",
+                                  borderColor: "#fff",
+                                  boxShadow: "6px 7px 6px #bebfbf",
+                                }}
+                                classes={{ input: classes.smallFont }}
+                                options={this.state.currencyConvo}
+                                getOptionLabel={(option) => option.nicename}
+                                value={this.state?.selected_currency ?? null}
+                                onChange={this.handleCurrencyConvo}
+                                defaultValue={selected_price ?? null}
+                                renderInput={(params) => (
+                                  <ThemeProvider theme={theme}>
+                                    <TextField
+                                      {...params}
+                                      // className={classes.inputProps}
+                                      label={""}
+                                      variant="outlined"
+                                    />
+                                  </ThemeProvider>
+                                )}
+                              />
+                            </Grid>
+                            <Grid item xs={6} sm={6} md={3} lg={3}>
                               <FormControl
                                 variant="outlined"
                                 className={classes.goldRateformControl}

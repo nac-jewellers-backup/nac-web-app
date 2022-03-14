@@ -41,7 +41,7 @@ class ProductDetails extends React.Component {
                     valueofproductdetail.namedetail[5].details[1]
                       .match(/\d+/g)
                       .join("")
-                  ) > 5) ? (
+                  ) > 1) ? (
                   <div className="overall-boxz">
                     <div className="overall-bo">
                       <span
@@ -201,9 +201,9 @@ class ProductDetails extends React.Component {
                   valueofproductdetail.namedetail[5].name === "Total" &&
                   Number(
                     valueofproductdetail.namedetail[5].details[1]
-                      .replace(/,/g, "")
-                      .replace(/₹/g, "")
-                  ) > 13000) ? (
+                      .match(/\d+/g)
+                      .join("")
+                  ) > 1) ? (
                   <div className="overall-boxz">
                     <div className="overall-bo">
                       <span
@@ -345,7 +345,6 @@ class ProductDetails extends React.Component {
     const { expanded } = this.state;
     const { data } = this.props;
     const { classes } = this.props;
-
     return (
       <div>
         <Container>
@@ -356,11 +355,8 @@ class ProductDetails extends React.Component {
               <>
                 {val.header !== "Price Breakup" ||
                 (val.header === "Price Breakup" &&
-                  Number(
-                    val.namedetail[5].details[1]
-                      .replace(/,/g, "")
-                      .replace(/₹/g, "")
-                  ) > 13000) ? (
+                  Number(val.namedetail[5].details[1].match(/\d+/g).join("")) >
+                    1) ? (
                   <ExpansionPanel
                     className={classes.expansionHere}
                     style={{
@@ -507,7 +503,6 @@ class ProductDetails extends React.Component {
     const { expanded } = this.state;
     const { data } = this.props;
     const { classes } = this.props;
-
     return (
       <div>
         <Container>
@@ -518,11 +513,8 @@ class ProductDetails extends React.Component {
               <>
                 {val.header !== "Price Breakup" ||
                 (val.header === "Price Breakup" &&
-                  Number(
-                    val.namedetail[5].details[1]
-                      .replace(/,/g, "")
-                      .replace(/₹/g, "")
-                  ) > 13000) ? (
+                  Number(val.namedetail[5].details[1].match(/\d+/g).join("")) >
+                    1) ? (
                   <ExpansionPanel
                     className={classes.expansionHere}
                     style={{

@@ -4,7 +4,7 @@ import {
   ListItem,
   ListItemText,
   Popper,
-  Typography
+  Typography,
 } from "@material-ui/core";
 import PropTypes from "prop-types";
 import React, { useEffect } from "react";
@@ -69,6 +69,7 @@ function HeaderHoverMenuItem(props) {
                       >
                         {val.img && (
                           <img
+                            alt="images"
                             style={{ width: "65%", margin: "auto" }}
                             src={val.img}
                           />

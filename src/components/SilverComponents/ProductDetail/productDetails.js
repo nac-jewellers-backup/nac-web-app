@@ -1,4 +1,12 @@
-import { Grid, ListItemText, Container, ExpansionPanel, ExpansionPanelSummary, Hidden, Typography } from "@material-ui/core";
+import {
+  Grid,
+  ListItemText,
+  Container,
+  ExpansionPanel,
+  ExpansionPanelSummary,
+  Hidden,
+  Typography,
+} from "@material-ui/core";
 import PropTypes from "prop-types";
 import React from "react";
 import "./product-images.css";
@@ -14,8 +22,6 @@ class ProductDetails extends React.Component {
 
   productsDetails = (data) => {
     const { classes } = this.props;
-
-    
 
     return (
       <div>
@@ -33,7 +39,10 @@ class ProductDetails extends React.Component {
                   }}
                 >
                   <div className="overall-bo">
-                    <span key={valueofproductdetail.name} className={`product-details ${classes.normalfonts}`}>
+                    <span
+                      key={valueofproductdetail.name}
+                      className={`product-details ${classes.normalfonts}`}
+                    >
                       {" "}
                       {valueofproductdetail.header}
                     </span>
@@ -45,24 +54,43 @@ class ProductDetails extends React.Component {
                             <>
                               {res.name && (
                                 <span>
-                                  {res.details !== null && res.details.length === 0 ? (
+                                  {res.details !== null &&
+                                  res.details.length === 0 ? (
                                     false
                                   ) : (
                                     <Grid container item xs={12}>
                                       <Grid xs={4} lg={4}>
-                                        <ListItemText variant="" className={`product-subhead ${classes.normalfonts}`}>
-                                          <span style={{ fontSize: "12px" }}> {res.name}</span>
+                                        <ListItemText
+                                          variant=""
+                                          className={`product-subhead ${classes.normalfonts}`}
+                                        >
+                                          <span style={{ fontSize: "12px" }}>
+                                            {" "}
+                                            {res.name}
+                                          </span>
                                         </ListItemText>
                                       </Grid>
                                       <Grid container item xs={8}>
                                         {isArray(res.details) ? (
-                                          <ListItemText variant="" className={`product-subhead-list ${classes.fontgray}`}>
+                                          <ListItemText
+                                            variant=""
+                                            className={`product-subhead-list ${classes.fontgray}`}
+                                          >
                                             {res.details.map((Item, Index) => {
                                               return (
-                                                <span style={{ fontSize: "12px", textAlign: "left" }}>
+                                                <span
+                                                  style={{
+                                                    fontSize: "12px",
+                                                    textAlign: "left",
+                                                  }}
+                                                >
                                                   {" "}
-                                                  {valueofproductdetail.header === "Price Breakup" && res.name !== "GST" ? (
-                                                    Index === 0 && res.details[Index] !== res.details[Index + 1] ? (
+                                                  {valueofproductdetail.header ===
+                                                    "Price Breakup" &&
+                                                  res.name !== "GST" ? (
+                                                    Index === 0 &&
+                                                    res.details[Index] !==
+                                                      res.details[Index + 1] ? (
                                                       <del>{Item}</del>
                                                     ) : Index === 0 ? (
                                                       ""
@@ -77,9 +105,22 @@ class ProductDetails extends React.Component {
                                             })}
                                           </ListItemText>
                                         ) : (
-                                          <ListItemText variant="" className={`product-subhead-list ${classes.fontgray}`}>
+                                          <ListItemText
+                                            variant=""
+                                            className={`product-subhead-list ${classes.fontgray}`}
+                                          >
                                             {/* {data[0].productsDetails[3].namedetail[1].length > 0} */}
-                                            {<span style={{ fontSize: "12px", marginLeft: "10px" }}> {res.details}</span>}
+                                            {
+                                              <span
+                                                style={{
+                                                  fontSize: "12px",
+                                                  marginLeft: "10px",
+                                                }}
+                                              >
+                                                {" "}
+                                                {res.details}
+                                              </span>
+                                            }
                                           </ListItemText>
                                         )}
                                       </Grid>
@@ -109,12 +150,21 @@ class ProductDetails extends React.Component {
                 }}
               >
                 <div className="overall-bo">
-                  <span key={val.name} className={`product-details ${classes.normalfonts}`}>
+                  <span
+                    key={val.name}
+                    className={`product-details ${classes.normalfonts}`}
+                  >
                     {val.header}
                   </span>
                   {/* <hr class="bottom-line"></hr> */}
-                  <Grid item xs={12} className={`product-subhead ${classes.normalfonts}`}>
-                    <span style={{ fontSize: "12px" }}>{val.name.join(" ")}</span>
+                  <Grid
+                    item
+                    xs={12}
+                    className={`product-subhead ${classes.normalfonts}`}
+                  >
+                    <span style={{ fontSize: "12px" }}>
+                      {val.name.join(" ")}
+                    </span>
                   </Grid>
                 </div>
               </div>
@@ -155,7 +205,11 @@ class ProductDetails extends React.Component {
                     id="panel1a-header"
                   >
                     <div style={{ width: "100%" }}>
-                      <Typography className={`subtabs-smrt ${classes.normalfonts}`}>{val.header}</Typography>
+                      <Typography
+                        className={`subtabs-smrt ${classes.normalfonts}`}
+                      >
+                        {val.header}
+                      </Typography>
                       {/* <hr class="bottom-line border-line-"></hr> */}
                     </div>
                   </ExpansionPanelSummary>
@@ -170,21 +224,44 @@ class ProductDetails extends React.Component {
                               <>
                                 {" "}
                                 {res.name && (
-                                  <Grid container item xs={12} style={{ padding: "0px 10px 0px 10px " }}>
+                                  <Grid
+                                    container
+                                    item
+                                    xs={12}
+                                    style={{ padding: "0px 10px 0px 10px " }}
+                                  >
                                     <Grid xs={4} lg={4}>
-                                      <ListItemText variant="" className={`product-subhead ${classes.normalfonts}`}>
-                                        <span style={{ fontSize: "12px" }}> {res.name}</span>
+                                      <ListItemText
+                                        variant=""
+                                        className={`product-subhead ${classes.normalfonts}`}
+                                      >
+                                        <span style={{ fontSize: "12px" }}>
+                                          {" "}
+                                          {res.name}
+                                        </span>
                                       </ListItemText>
                                     </Grid>
                                     <Grid container item xs={8}>
                                       {isArray(res.details) ? (
-                                        <ListItemText variant="" className={`product-subhead-list ${classes.fontgray}`}>
+                                        <ListItemText
+                                          variant=""
+                                          className={`product-subhead-list ${classes.fontgray}`}
+                                        >
                                           {res.details.map((Item, Index) => {
                                             return (
-                                              <span style={{ fontSize: "12px", textAlign: "left" }}>
+                                              <span
+                                                style={{
+                                                  fontSize: "12px",
+                                                  textAlign: "left",
+                                                }}
+                                              >
                                                 {" "}
-                                                {val.header === "Price Breakup" && res.name !== "GST" ? (
-                                                  Index === 0 && res.details[Index] !== res.details[Index + 1] ? (
+                                                {val.header ===
+                                                  "Price Breakup" &&
+                                                res.name !== "GST" ? (
+                                                  Index === 0 &&
+                                                  res.details[Index] !==
+                                                    res.details[Index + 1] ? (
                                                     <del>{Item}</del>
                                                   ) : Index === 0 ? (
                                                     ""
@@ -199,8 +276,19 @@ class ProductDetails extends React.Component {
                                           })}
                                         </ListItemText>
                                       ) : (
-                                        <ListItemText variant="" className={`product-subhead-list ${classes.fontgray}`}>
-                                          <span style={{ fontSize: "12px", marginLeft: "10px" }}> {res.details}</span>
+                                        <ListItemText
+                                          variant=""
+                                          className={`product-subhead-list ${classes.fontgray}`}
+                                        >
+                                          <span
+                                            style={{
+                                              fontSize: "12px",
+                                              marginLeft: "10px",
+                                            }}
+                                          >
+                                            {" "}
+                                            {res.details}
+                                          </span>
                                         </ListItemText>
                                       )}
                                     </Grid>
@@ -229,17 +317,33 @@ class ProductDetails extends React.Component {
                 expanded={expanded === "panel"}
                 onChange={this.handle("panel")}
               >
-                <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header">
+                <ExpansionPanelSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel1a-content"
+                  id="panel1a-header"
+                >
                   <div style={{ width: "100%" }}>
-                    <Typography className={`product-details-smrt ${classes.normalfonts}`}>{val.header}</Typography>
+                    <Typography
+                      className={`product-details-smrt ${classes.normalfonts}`}
+                    >
+                      {val.header}
+                    </Typography>
                     {/* <hr class="bottom-line border-line-"></hr> */}
                   </div>
                 </ExpansionPanelSummary>
 
-                <div style={{ padding: "10px", backgroundColor: "antiquewhite" }}>
+                <div
+                  style={{ padding: "10px", backgroundColor: "antiquewhite" }}
+                >
                   <Grid container spacing={12}>
-                    <Grid item xs={12} className={`product-subhead ${classes.normalfonts}`}>
-                      <span style={{ fontSize: "12px" }}>{val.name.join(" ")}</span>
+                    <Grid
+                      item
+                      xs={12}
+                      className={`product-subhead ${classes.normalfonts}`}
+                    >
+                      <span style={{ fontSize: "12px" }}>
+                        {val.name.join(" ")}
+                      </span>
                     </Grid>
                   </Grid>
                 </div>

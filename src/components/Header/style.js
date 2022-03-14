@@ -1,80 +1,3 @@
-// import { makeStyles } from "@material-ui/core/styles";
-// const styles = makeStyles(theme => ({
-//     mainInterface:{
-//         height:"90px",
-//         transition: "all 0.6s ease 0s",
-//     // margin-top: 0px;
-//     width: "100%",
-//     // display: flex;
-//     // z-index: 1100;
-//     // box-sizing: border-box;
-//     // flex-shrink: 0;
-//     // flex-direction: column;
-//     position: "fixed",
-//     top: "0px",
-//     zIndex: "1100",
-//     backgroundColor: "white",
-//     },
-//     innerHeader:{
-//         width: "100%",
-//     display: "flex",
-//     zIndex: "1100",
-//     boxSizing: "border-box",
-//     flexShrink: "0",
-//     flexDirection: "column",
-//     top: "0",
-//     left: "auto",
-//     right: "0",
-//     position: "sticky",
-//     textAlign:"center",
-
-//     },
-//     conWidth:{
-//         width:"100%",
-//         textAlign:"center",
-//         borderLeft:"auto",
-//         borderRight:"auto",
-//         paddingLeft:"16px",
-//         paddingRight:"16px",
-//         [theme.breakpoints.only('md')]:{
-//             maxWidth:"960px",
-//             paddingLeft:"32px",
-//             paddingRight:"32px",
-//         },
-//         [theme.breakpoints.only('sm')]:{
-//             maxWidth:"960px",
-//             paddingLeft:"24px",
-//             paddingRight:"24px",
-//         },
-//         [theme.breakpoints.only('lg')]:{
-//             maxWidth:"1280px",
-
-//         },
-
-//     },
-//     container:{
-//         width:"100%",
-//         display:"flex",
-//         flexWrap:"wrap",
-//     },
-//     innerContainer:{
-//         width:"100%",
-//         display:"flex",
-//         flexWrap:"wrap",
-//         height:"70px",
-//     },
-//     imgCon:{
-//         cursor:"pointer",
-//     },
-
-//     mainImg:{
-//         width:"80%",
-//         transition:"height 0.2s ease 0s"
-//     }
-// }))
-// export default styles;
-
-// import '../../fonts/font.css'
 import { makeStyles } from "@material-ui/core/styles";
 
 export const styles = (theme) => ({
@@ -82,7 +5,6 @@ export const styles = (theme) => ({
     color: "#110e82",
     fontFamily: "fontawesome",
     textAlign: "right",
-    // fontSize: '20px !important',
     marginTop: "18px !important",
     display: "flex",
     alignContent: "center",
@@ -98,7 +20,6 @@ export const styles = (theme) => ({
   },
   searchcontainerplain: {
     padding: "4px",
-    // backgroundColor: "#110e82",
     display: "flex",
     justifyContent: "center",
     alignContent: "center",
@@ -124,7 +45,6 @@ export const styles = (theme) => ({
     letterSpacing: "4px",
     cursor: "pointer",
     alignItems: "center",
-    // display: "flex",
     fontSize: "20px",
     [theme.breakpoints.only("xs")]: {
       marginLeft: "6px",
@@ -225,7 +145,6 @@ export const useStyles = makeStyles((theme) => ({
   },
   mouseOverPopover: {
     zIndex: 1000,
-    // top: '17px !important',
     backgroundColor: theme.palette.background.fade,
     color: "white",
     "& span": {
