@@ -91,6 +91,7 @@ class Header extends Component {
       goldPrice: null,
       currencyConvo: null,
       selected_currency: null,
+      livePrice: null,
     };
     this.topZero = React.createRef();
     this.handleCurrencyConvo = this.handleCurrencyConvo.bind(this);
@@ -134,6 +135,7 @@ class Header extends Component {
           selected_currency: selected_price
             ? selected_price
             : data?.data?.allMasterCountries?.nodes[0] ?? null,
+          livePrice: `${data?.data?.allDailyMetalPrices?.nodes[0]?.displayName} - ₹${data?.data?.allDailyMetalPrices?.nodes[0]?.displayPrice}`,
         });
       });
   };
@@ -230,6 +232,11 @@ class Header extends Component {
     this.setState({ selected_currency: value });
     window.location.reload();
   };
+  handleLivePrice = (e, value) => {
+    this.setState({
+      livePrice: `${value.displayName} - ₹${value.displayPrice}`,
+    });
+  };
 
   render() {
     const styloriLogo =
@@ -250,7 +257,6 @@ class Header extends Component {
 
     var a = window.location.pathname;
     var b = a.split("/");
-
     return (
       <div
         style={{ top: "0", zIndex: "1000", width: "100%" }}
@@ -358,7 +364,14 @@ class Header extends Component {
                         justify="flex-end"
                         className={classes.goldCurrentRate}
                       >
-                        <Grid item xs={12} sm={6} md={2} lg={2}>
+                        <Grid
+                          item
+                          xs={12}
+                          sm={6}
+                          md={2}
+                          lg={2}
+                          style={{ marginRight: "8px" }}
+                        >
                           <Autocomplete
                             id="country-select-demo"
                             size="small"
@@ -404,8 +417,39 @@ class Header extends Component {
                             )}
                           /> */}
                         </Grid>
-                        <Grid item>
-                          <FormControl
+                        <Grid item xs={12} sm={6} md={2} lg={2}>
+                          <Autocomplete
+                            id="country-select-demo"
+                            size="small"
+                            style={{
+                              color: "#000 !important",
+                              backgroundColor: "#b78231",
+                              border: "0px",
+                              borderColor: "#fff",
+
+                              boxShadow: "6px 7px 6px #bebfbf",
+                            }}
+                            classes={{ input: classes.smallFont }}
+                            options={this?.state?.goldPrice}
+                            getOptionLabel={(option) =>
+                              `${option.displayName} - ₹${option.displayPrice}`
+                            }
+                            // value={this.state?.livePrice ?? null}
+                            // onChange={this.handleLivePrice}
+                            defaultValue={this.state?.livePrice ?? null}
+                            renderInput={(params) => (
+                              <ThemeProvider theme={theme}>
+                                <TextField
+                                  {...params}
+                                  // className={classes.inputProps}
+                                  // label={"Today's Gold Rate"}
+                                  placeholder="Today's Gold Rate"
+                                  variant="outlined"
+                                />
+                              </ThemeProvider>
+                            )}
+                          />
+                          {/* <FormControl
                             variant="outlined"
                             className={classes.goldRateformControl}
                           >
@@ -429,7 +473,7 @@ class Header extends Component {
                                 >{`${val.displayName} - ₹${val.displayPrice}`}</option>
                               ))}
                             </NativeSelect>
-                          </FormControl>
+                          </FormControl> */}
                         </Grid>
                       </Grid>
                       <Grid item xs={12}>
@@ -748,7 +792,14 @@ class Header extends Component {
                             justifyContent="flex-end"
                             alignItems="center"
                           >
-                            <Grid item xs={6} sm={6} md={3} lg={3}>
+                            <Grid
+                              item
+                              xs={6}
+                              sm={6}
+                              md={3}
+                              lg={3}
+                              style={{ paddingRight: "4px" }}
+                            >
                               <Autocomplete
                                 id="country-select-demo"
                                 size="small"
@@ -778,7 +829,38 @@ class Header extends Component {
                               />
                             </Grid>
                             <Grid item xs={6} sm={6} md={3} lg={3}>
-                              <FormControl
+                              <Autocomplete
+                                id="country-select-demo"
+                                size="small"
+                                style={{
+                                  color: "#000 !important",
+                                  backgroundColor: "#b78231",
+                                  border: "0px",
+                                  borderColor: "#fff",
+
+                                  boxShadow: "6px 7px 6px #bebfbf",
+                                }}
+                                classes={{ input: classes.smallFont }}
+                                options={this?.state?.goldPrice}
+                                getOptionLabel={(option) =>
+                                  `${option.displayName} - ₹${option.displayPrice}`
+                                }
+                                // value={this.state?.livePrice ?? null}
+                                // onChange={this.handleLivePrice}
+                                defaultValue={this.state?.livePrice ?? null}
+                                renderInput={(params) => (
+                                  <ThemeProvider theme={theme}>
+                                    <TextField
+                                      {...params}
+                                      // className={classes.inputProps}
+                                      // label={"Today's Gold Rate"}
+                                      placeholder="Today's Gold Rate"
+                                      variant="outlined"
+                                    />
+                                  </ThemeProvider>
+                                )}
+                              />
+                              {/* <FormControl
                                 variant="outlined"
                                 className={classes.goldRateformControl}
                               >
@@ -798,7 +880,7 @@ class Header extends Component {
                                     >{`${val.displayName} - ₹${val.displayPrice}`}</option>
                                   ))}
                                 </NativeSelect>
-                              </FormControl>
+                              </FormControl> */}
                             </Grid>
                           </Grid>
                         </Grid>
