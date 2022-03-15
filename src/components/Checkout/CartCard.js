@@ -1633,6 +1633,7 @@ class Checkoutcard extends React.Component {
         }
       }
     };
+
     return (
       <div style={{ marginTop: "15px" }}>
         <Grid container>
@@ -1744,32 +1745,31 @@ class Checkoutcard extends React.Component {
                   </Typography>
                 ) : null}
 
-                {props.cartFilters.tax_price ? (
-                  <Typography className={`subhesder ${classes.normalfonts1}`}>
-                    <span style={{ float: "right" }}>
-                      {props?.cartFilters?.tax_price
-                        ? props?.cartFilters?.tax_price &&
-                          props?.cartFilters?.tax_price === 0
-                          ? CurrencyConversion(props?.cartFilters?.tax_price)
-                          : // `₹${props?.cartFilters?.tax_price}`
-                            CurrencyConversion(props?.cartFilters?.tax_price)
-                        : // new Intl.NumberFormat("en-IN", {
-                          //     style: "currency",
-                          //     currency: "INR",
-                          //     minimumFractionDigits: 0,
-                          //   }).format(Math.round(props?.cartFilters?.tax_price))
-                          CurrencyConversion(0)}
-                    </span>
-                  </Typography>
-                ) : null}
+                <Typography className={`subhesder ${classes.normalfonts1}`}>
+                  <span style={{ float: "right" }}>
+                    {props?.cartFilters?.tax_price
+                      ? props?.cartFilters?.tax_price &&
+                        props?.cartFilters?.tax_price === 0
+                        ? CurrencyConversion(props?.cartFilters?.tax_price ?? 0)
+                        : // `₹${props?.cartFilters?.tax_price}`
+                          CurrencyConversion(props?.cartFilters?.tax_price ?? 0)
+                      : // new Intl.NumberFormat("en-IN", {
+                        //     style: "currency",
+                        //     currency: "INR",
+                        //     minimumFractionDigits: 0,
+                        //   }).format(Math.round(props?.cartFilters?.tax_price))
+                        CurrencyConversion(0)}
+                  </span>
+                </Typography>
+
                 <Typography className={`subhesder ${classes.normalfonts1}`}>
                   <span style={{ float: "right" }}>
                     {
                       props?.shipping_charge === 0
-                        ? CurrencyConversion(props?.shipping_charge)
+                        ? CurrencyConversion(props?.shipping_charge ?? 0)
                         : typeof props?.shipping_charge == "undefined"
                         ? CurrencyConversion(0)
-                        : CurrencyConversion(props?.shipping_charg)
+                        : CurrencyConversion(props?.shipping_charg ?? 0)
                       // new Intl.NumberFormat("en-IN", {
                       //     style: "currency",
                       //     currency: "INR",
@@ -1938,11 +1938,11 @@ class Checkoutcard extends React.Component {
                 </Typography>
                 <br />
                 <br />
-                {yousave !== 0 || props.cartFilters.tax_price ? (
+                {/* {yousave !== 0 || props.cartFilters.tax_price ? (
                   <Typography className={`subhesder ${classes.normalfonts2}`}>
                     CART DISCOUNT
                   </Typography>
-                ) : null}
+                ) : null} */}
 
                 {props?.cartFilters?.tax_price ? (
                   <Typography className={`subhesder ${classes.normalfonts2}`}>
@@ -1989,7 +1989,7 @@ class Checkoutcard extends React.Component {
                 </Typography>
                 <br />
                 <br />
-                {yousave !== 0 || props?.cartFilters?.tax_price ? (
+                {/* {yousave !== 0 || props?.cartFilters?.tax_price ? (
                   <Typography className={`subhesder ${classes.normalfonts2}`}>
                     <span style={{ float: "right" }}>
                       {
@@ -2019,7 +2019,7 @@ class Checkoutcard extends React.Component {
                       }
                     </span>
                   </Typography>
-                ) : null}
+                ) : null} */}
 
                 {props?.cartFilters?.tax_price ? (
                   <Typography className={`subhesder ${classes.normalfonts2}`}>
