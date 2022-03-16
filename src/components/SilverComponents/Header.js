@@ -404,7 +404,7 @@ class Header extends Component {
                             className={classes.currencyStyle}
                             size="small"
                             options={this.state.currencyConvo}
-                            getOptionLabel={(option) => option.currencySymbol}
+                            getOptionLabel={(option) => option.nicename}
                             defaultValue={selected_price ?? null}
                             onChange={this.handleCurrencyConvo}
                             value={this.state?.selected_currency ?? null}

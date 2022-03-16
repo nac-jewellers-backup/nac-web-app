@@ -106,10 +106,10 @@ class Allorders extends React.Component {
               <Typography className="data1">SUBTOTAL</Typography>
 
               <Typography className="data1" style={{ marginTop: "6px" }}>
-                DISCOUNT&nbsp;CART
+                DISCOUNT
               </Typography>
               <Typography className="data1">
-                SHIPPING&nbsp;CHARGES(Standard)
+                SHIPPING&nbsp;CHARGES (Standard)
               </Typography>
             </div>
             <br />
