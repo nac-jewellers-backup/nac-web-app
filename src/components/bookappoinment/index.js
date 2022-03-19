@@ -11,125 +11,61 @@ import {
   Typography,
 } from "@material-ui/core";
 import styles from "containers/contactus/stylecontact";
-import { NetworkContext } from "context/NetworkContext";
-import { useGraphql } from "hooks/GraphqlHook";
 import React from "react";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { Input } from "../../components/InputComponents/TextField/Input";
 import { API_URL } from "../../config";
-import { Location } from "../../queries/appoinment";
+import DateFnsUtils from "@date-io/date-fns";
+import { MuiPickersUtilsProvider, DatePicker } from "@material-ui/pickers";
+import {
+  GET_ALL_APPOINTMENT,
+  GET_APPOINTMENT_TIME,
+} from "../../queries/appoinment";
+import moment from "moment";
 const InitialState = {
-  month: "",
-  day: "",
-  year: "",
+  date: null,
   name: "",
   mail: "",
   mobile: "",
   location: "",
+  timing: "",
   error: {
-    month: "",
-    day: " ",
-    year: " ",
+    date: "",
     name: " ",
     mail: " ",
     mobile: " ",
     location: " ",
+    timing: "",
   },
 };
 export default function Contact(props) {
   const classes = styles();
-  const months = [
-    {
-      label: "January",
-      value: "01",
-    },
-    {
-      label: "February",
-      value: "02",
-    },
-    {
-      label: "March",
-      value: "03",
-    },
-    {
-      label: "April",
-      value: "04",
-    },
-    {
-      label: "May",
-      value: "05",
-    },
-    {
-      label: "June",
-      value: "06",
-    },
-    {
-      label: "July",
-      value: "07",
-    },
-    {
-      label: "August",
-      value: "08",
-    },
-    {
-      label: "September",
-      value: "09",
-    },
-    {
-      label: "October",
-      value: "10",
-    },
-    {
-      label: "November",
-      value: "11",
-    },
-    {
-      label: "December",
-      value: "12",
-    },
-  ];
-  const {
-    NetworkCtx: { graphqlUrl: uri },
-  } = React.useContext(NetworkContext);
 
-  const d = new Date();
-  let year = d.getFullYear();
-  let todaymonth = d.getMonth();
-  let todayday = d.getDay();
-
-  const utcformat = `${d.getHours()}:${d.getMinutes()}:${d.getSeconds()}`;
-  const date = [];
-  const daysInMonth = new Date(year, todaymonth, 0).getDate();
-
-  const [dayd, setDayd] = React.useState([]);
   const [storelocation, setstoreLocation] = React.useState([]);
   const [dataappoinment, setDataappoinment] = React.useState({
     ...InitialState,
   });
+  const [selectedDate, setSelectedDate] = React.useState(null);
+  const [appointmentDate, setAppointmentDate] = React.useState([]);
+  const [appointmentTime, setAppointmentTime] = React.useState([]);
   const updateState = (key, value) => {
     let error = dataappoinment.error;
     error[key] = "";
+
     setDataappoinment({ ...dataappoinment, [key]: value, error });
+    if (key === "date") {
+      setSelectedDate(moment(value).format("YYYY-MM-DD"));
+    }
   };
   const isIamValideToLogin = () => {
     let isValid = true;
     let error = dataappoinment.error;
-    //month
-    if (dataappoinment.month.length === 0) {
+    //date
+    if (dataappoinment.date.length === 0) {
       isValid = false;
-      error.month = "Month is required";
+      error.date = "date is required";
     }
 
-    //Checking day
-    if (dataappoinment.day.length === 0) {
-      isValid = false;
-      error.day = "Day is required";
-    }
-    //Checking year
-    if (dataappoinment.year.length === 0) {
-      isValid = false;
-      error.year = "Year is required";
-    }
     //Checking name
     if (dataappoinment.name.length === 0) {
       isValid = false;
@@ -150,50 +86,66 @@ export default function Contact(props) {
       isValid = false;
       error.mobile = "Mobile is required";
     }
+    //Checking mobile
+    if (dataappoinment.timing.length === 0) {
+      isValid = false;
+      error.timing = "Timing is required";
+    }
     setDataappoinment({ ...dataappoinment, error });
     return isValid;
   };
-  const { data } = useGraphql(Location, () => {}, {});
 
   React.useEffect(() => {
-    {
-      for (let i = 0; i < daysInMonth; i++) {
-        if (i < 10) {
-          date.push("0" + (i + 1));
-        } else {
-          date.push(i + 1);
-        }
-      }
-
-      setDayd(date);
-    }
     fetch(`${API_URL}/graphql`, {
       method: "post",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        query: Location,
+        query: GET_ALL_APPOINTMENT,
       }),
     })
       .then((res) => res.json())
       .then((data) => {
-        setstoreLocation(data.data.allStoreLocations.nodes);
+        setAppointmentDate(data?.data?.allAppointmentDates?.nodes ?? []);
+        setstoreLocation(data?.data?.query?.allStoreLocations?.nodes ?? []);
       });
   }, []);
+  React.useEffect(() => {
+    if (appointmentDate) {
+      fetch(`${API_URL}/get_appointment_time_slots`, {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          id: moment(appointmentDate).format("YYYY-MM-DD"),
+        }),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          setAppointmentTime(
+            data?.data?.allAppointmentDates?.nodes[0]
+              ?.appointmentDateTimeSlotsByAppointmentDateId?.nodes ?? []
+          );
+        });
+    }
+  }, [appointmentDate]);
   const onSendLoginBtnClicked = () => {
     if (isIamValideToLogin()) {
-      const slot =
-        `${dataappoinment.year}` +
-        "-" +
-        `${dataappoinment.month}` +
-        "-" +
-        `${dataappoinment.day} ` +
-        `${utcformat}`;
+      // const slot =
+      //   `${dataappoinment.year}` +
+      //   "-" +
+      //   `${dataappoinment.date}` +
+      //   "-" +
+      //   `${dataappoinment.day} ` +
+      //   `${utcformat}`;
     } else {
       return false;
     }
   };
+
+  console.log(dataappoinment, "...................");
 
   return (
     <>
@@ -224,6 +176,7 @@ export default function Contact(props) {
                     src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/bridalcollection/bannercard.png"
                     height="100%"
                     width="100%"
+                    alt="img"
                   />
                 </Grid>
                 <Grid item xs={12} md={7}>
@@ -231,41 +184,62 @@ export default function Contact(props) {
                     Brides & their families
                   </Typography>
                   <Grid container spacing={2}>
-                    <Grid item xs={4}>
-                      <FormControl fullWidth>
+                    <Grid item xs={12}>
+                      {/* <FormControl fullWidth>
                         <InputLabel
                           color="secondary"
                           id="demo-simple-select-label"
                         >
-                          Month
-                        </InputLabel>
-                        <Select
+                          Select A Date
+                        </InputLabel> */}
+                      {/* <Select
                           labelId="demo-simple-select-label"
                           id="demo-simple-select"
-                          value={dataappoinment.month}
+                          value={dataappoinment.date}
                           color="secondary"
-                          label="Month"
-                          onChange={(e) => updateState("month", e.target.value)}
-                          label="Month"
-                          isError={dataappoinment.error.month.length > 0}
-                          errorMessage={dataappoinment.error.month}
+                          label="Select A Date"
+                          onChange={(e) => updateState("date", e.target.value)}
+                          isError={dataappoinment.error.date.length > 0}
+                          errorMessage={dataappoinment.error.date}
                           isRequired
                           //onChange={handleChange}
                         >
-                          {months.map((val) => {
+                          {appointmentDate.map((val) => {
                             return (
-                              <MenuItem value={val.value}>{val.label}</MenuItem>
+                              <MenuItem value={val.startDateTime}>
+                                {`${moment(val.startDateTime).format(
+                                  "MMMM DD YYYY"
+                                )}`}
+                              </MenuItem>
                             );
                           })}
-                        </Select>
-                      </FormControl>
-                      {dataappoinment.error.month.length > 0 && (
+                        </Select> */}
+                      <MuiPickersUtilsProvider utils={DateFnsUtils}>
+                        <DatePicker
+                          className={classes.inputField}
+                          name="startTime"
+                          placeholder="Select Start Time"
+                          // inputVariant="outlined"
+                          value={dataappoinment.date}
+                          fullWidth
+                          onChange={(value) => updateState("date", value)}
+                          minDate={new Date()}
+                        />
+                        {/* <TimePicker
+                          autoOk
+                          label="12 hours"
+                          value={new Date()}
+                          // onChange={handleDateChange}
+                        /> */}
+                      </MuiPickersUtilsProvider>
+                      {/* </FormControl> */}
+                      {/* {dataappoinment.error.date.length > 0 && (
                         <Typography variant={"caption"} color={"error"}>
-                          {dataappoinment.error.month}
+                          {dataappoinment.error.date}
                         </Typography>
-                      )}
+                      )} */}
                     </Grid>
-                    <Grid item xs={4}>
+                    {/* <Grid item xs={4}>
                       <FormControl fullWidth>
                         <InputLabel
                           color="secondary"
@@ -279,7 +253,6 @@ export default function Contact(props) {
                           color="secondary"
                           label="Day"
                           value={dataappoinment.day}
-                          color="secondary"
                           onChange={(e) => updateState("day", e.target.value)}
                           isError={dataappoinment.error.day.length > 0}
                           errorMessage={dataappoinment.error.day}
@@ -290,7 +263,6 @@ export default function Contact(props) {
                             return <MenuItem value={val}> {val}</MenuItem>;
                           })}
                         </Select>
-                        {/* val < 10 ? "0" + val : */}
                       </FormControl>
                       {dataappoinment.error.day.length > 0 && (
                         <Typography variant={"caption"} color={"error"}>
@@ -327,7 +299,7 @@ export default function Contact(props) {
                           {dataappoinment.error.year}
                         </Typography>
                       )}
-                    </Grid>
+                    </Grid> */}
                     <Grid item xs={12}>
                       <Input
                         type="text"
@@ -384,7 +356,7 @@ export default function Contact(props) {
                         </Typography>
                       )}
                     </Grid>
-                    <Grid item xs={4}>
+                    <Grid item xs={6}>
                       <FormControl fullWidth>
                         <InputLabel
                           color="secondary"
@@ -419,8 +391,8 @@ export default function Contact(props) {
                         </Typography>
                       )}
                     </Grid>
-                    <Grid item xs={0} md={4}></Grid>
-                    <Grid item xs={4}>
+                    {/* <Grid item xs={0} md={4}></Grid> */}
+                    <Grid item xs={6}>
                       <FormControl fullWidth>
                         <InputLabel
                           color="secondary"
@@ -433,11 +405,27 @@ export default function Contact(props) {
                           id="demo-simple-select"
                           color="secondary"
                           label="Timing"
-                          isError={dataappoinment.error.location.length > 0}
-                          errorMessage={dataappoinment.error.location}
+                          value={dataappoinment.timing}
+                          isError={dataappoinment.error.timing.length > 0}
+                          errorMessage={dataappoinment.error.timing}
                           isRequired
+                          onChange={(e) =>
+                            updateState("timing", e.target.value)
+                          }
                           //onChange={handleChange}
-                        ></Select>
+                        >
+                          {appointmentTime.map((val) => {
+                            return (
+                              <MenuItem value={val.startDateTime}>
+                                {`${moment(val.startDateTime).format(
+                                  "hh:mm a"
+                                )} - ${moment(val.endDateTime).format(
+                                  "hh:mm a"
+                                )}`}
+                              </MenuItem>
+                            );
+                          })}
+                        </Select>
                       </FormControl>
                     </Grid>
                   </Grid>

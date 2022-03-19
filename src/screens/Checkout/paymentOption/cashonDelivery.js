@@ -104,7 +104,7 @@ class CashonDelivey extends React.Component {
       }
     }
 
-    obj["payment_mode"] = "COD";
+    obj["payment_mode"] = this?.props?.type ?? "COD";
     obj["user_id"] = user_id;
     obj["cart_id"] = cart_ids;
 
@@ -123,7 +123,9 @@ class CashonDelivey extends React.Component {
               {
                 CurrencyConversion(
                   Math.round(
-                    dataCard1 - discounted_price + this.props.ShippingCharge
+                    this.props.ShippingCharge === "Free"
+                      ? dataCard1 - discounted_price + 0
+                      : dataCard1 - discounted_price + this.props.ShippingCharge
                   )
                 )
                 // Intl.NumberFormat("en-IN", {

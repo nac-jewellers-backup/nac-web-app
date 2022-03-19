@@ -110,8 +110,8 @@ class PaymentIndex extends React.Component {
             {this.state.payment == 1 && <Netbanking />}
             {this.state.payment == 2 && <Netbanking />}
             {this.state.payment == 3 && <Netbanking />}
-            {this.state.payment == 4 && <CashonDelivey />}
-            {this.state.payment == 5 && <CashonDelivey />}
+            {this.state.payment == 4 && <CashonDelivey type="COD" />}
+            {this.state.payment == 5 && <CashonDelivey type="Offline" />}
           </div>
         </Hidden>
 
@@ -149,8 +149,8 @@ class PaymentIndex extends React.Component {
             {this.state.payment == 1 && <Netbanking />}
             {this.state.payment == 2 && <Netbanking />}
             {this.state.payment == 3 && <Netbanking />}
-            {this.state.payment == 4 && <CashonDelivey />}
-            {this.state.payment == 5 && <CashonDelivey />}
+            {this.state.payment == 4 && <CashonDelivey type="COD" />}
+            {this.state.payment == 5 && <CashonDelivey type="Offline" />}
           </div>
         </Hidden>
       </div>
