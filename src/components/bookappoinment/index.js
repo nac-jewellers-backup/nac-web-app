@@ -16,26 +16,36 @@ import { AiFillCloseCircle } from "react-icons/ai";
 import { Input } from "../../components/InputComponents/TextField/Input";
 import { API_URL } from "../../config";
 import DateFnsUtils from "@date-io/date-fns";
+import MuiAlert from "@material-ui/lab/Alert";
+
 import { MuiPickersUtilsProvider, DatePicker } from "@material-ui/pickers";
 import {
   GET_ALL_APPOINTMENT,
-  GET_APPOINTMENT_TIME,
+  CREATE_OPPOINTMENT,
 } from "../../queries/appoinment";
 import moment from "moment";
+import Snackbar from "@material-ui/core/Snackbar";
+function Alert(props) {
+  return <MuiAlert elevation={6} variant="filled" {...props} />;
+}
 const InitialState = {
   date: null,
   name: "",
   mail: "",
+  countryCode: "",
   mobile: "",
   location: "",
   timing: "",
+  otp: "",
   error: {
     date: "",
     name: " ",
     mail: " ",
+    countryCode: "",
     mobile: " ",
     location: " ",
     timing: "",
+    otp: "",
   },
 };
 export default function Contact(props) {
@@ -46,8 +56,13 @@ export default function Contact(props) {
     ...InitialState,
   });
   const [selectedDate, setSelectedDate] = React.useState(null);
-  const [appointmentDate, setAppointmentDate] = React.useState([]);
+  const [appointmentDate, setAppointmentDate] = React.useState(null);
   const [appointmentTime, setAppointmentTime] = React.useState([]);
+  const [appointmentId, setAppointmentId] = React.useState(null);
+  const [showOtp, setShowOtp] = React.useState(false);
+  const [openSnack, setOpenSnack] = React.useState(false);
+  const [snackData, setSnackData] = React.useState(null);
+  const [booked, setBooked] = React.useState(false);
   const updateState = (key, value) => {
     let error = dataappoinment.error;
     error[key] = "";
@@ -81,6 +96,11 @@ export default function Contact(props) {
       isValid = false;
       error.location = "Location is required";
     }
+    // Checking country code
+    if (dataappoinment.countryCode.length === 0) {
+      isValid = false;
+      error.mobile = "CountryCode is required";
+    }
     //Checking mobile
     if (dataappoinment.mobile.length === 0) {
       isValid = false;
@@ -107,45 +127,132 @@ export default function Contact(props) {
     })
       .then((res) => res.json())
       .then((data) => {
-        setAppointmentDate(data?.data?.allAppointmentDates?.nodes ?? []);
         setstoreLocation(data?.data?.query?.allStoreLocations?.nodes ?? []);
       });
   }, []);
+
+  const getAppointmentDate = async () => {
+    await fetch(`${API_URL}/get_appointment_time_slots`, {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        appointment_date: moment(appointmentDate).format("YYYY-MM-DD"),
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.statusCode === 200) {
+          setAppointmentTime(data?.appointment_slots ?? []);
+          return;
+        }
+        let error = dataappoinment.error;
+        error.date = "Please select different date or Contact us";
+        setDataappoinment({ ...dataappoinment, error });
+      });
+  };
   React.useEffect(() => {
     if (appointmentDate) {
-      fetch(`${API_URL}/get_appointment_time_slots`, {
+      getAppointmentDate();
+    }
+  }, [appointmentDate]);
+  const onSendLoginBtnClicked = () => {
+    if (isIamValideToLogin()) {
+      fetch(`${API_URL}/graphql`, {
         method: "post",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          id: moment(appointmentDate).format("YYYY-MM-DD"),
+          query: CREATE_OPPOINTMENT,
+          variables: {
+            customerName: dataappoinment.name,
+            email: dataappoinment.email,
+            mobile: dataappoinment.mobile,
+            mobileCountryCode: dataappoinment.countryCode,
+            slotId: dataappoinment.timing,
+          },
         }),
       })
         .then((res) => res.json())
         .then((data) => {
-          setAppointmentTime(
-            data?.data?.allAppointmentDates?.nodes[0]
-              ?.appointmentDateTimeSlotsByAppointmentDateId?.nodes ?? []
-          );
+          setAppointmentId(data?.data?.createAppointment?.appointment?.id);
+          sendOtp(data?.data?.createAppointment?.appointment?.id);
         });
-    }
-  }, [appointmentDate]);
-  const onSendLoginBtnClicked = () => {
-    if (isIamValideToLogin()) {
-      // const slot =
-      //   `${dataappoinment.year}` +
-      //   "-" +
-      //   `${dataappoinment.date}` +
-      //   "-" +
-      //   `${dataappoinment.day} ` +
-      //   `${utcformat}`;
     } else {
       return false;
     }
   };
 
-  console.log(dataappoinment, "...................");
+  const sendOtp = async (id) => {
+    await fetch(`${API_URL}/send_appointment_otp`, {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        appointment_id: id,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setSnackData("OTP send successfully!");
+        setOpenSnack(true);
+        setShowOtp(true);
+      });
+  };
+  const updateDate = (key, value) => {
+    setAppointmentDate(value);
+    let error = dataappoinment.error;
+    error[key] = "";
+    setDataappoinment({ ...dataappoinment, [key]: value, error });
+  };
+
+  const updateOTP = (key, value) => {
+    let error = dataappoinment.error;
+    error[key] = "";
+    setDataappoinment({ ...dataappoinment, [key]: value, error });
+  };
+  const verifyOTP = async () => {
+    if (dataappoinment.otp.length == 6) {
+      await fetch(`${API_URL}/verify_appointment_otp`, {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          appointment_id: appointmentId,
+          mobile_no: dataappoinment.mobile,
+          otp: dataappoinment.otp,
+        }),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.statusCode) {
+            setSnackData("Appointment Booked successfully!");
+            setOpenSnack(true);
+            setBooked(true);
+            return;
+          }
+          let otperror = dataappoinment.error;
+          otperror.otp = "Please enter valid otp";
+          setDataappoinment({ ...dataappoinment, otperror });
+          return;
+        });
+    }
+    let otperror = dataappoinment.error;
+    otperror.otp = "Please enter valid otp";
+    setDataappoinment({ ...dataappoinment, otperror });
+    return;
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setOpenSnack(false);
+  };
 
   return (
     <>
@@ -183,263 +290,228 @@ export default function Contact(props) {
                   <Typography style={{ color: "gray", fontFamily: "24px" }}>
                     Brides & their families
                   </Typography>
-                  <Grid container spacing={2}>
-                    <Grid item xs={12}>
-                      {/* <FormControl fullWidth>
-                        <InputLabel
-                          color="secondary"
-                          id="demo-simple-select-label"
-                        >
-                          Select A Date
-                        </InputLabel> */}
-                      {/* <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          value={dataappoinment.date}
-                          color="secondary"
-                          label="Select A Date"
-                          onChange={(e) => updateState("date", e.target.value)}
-                          isError={dataappoinment.error.date.length > 0}
-                          errorMessage={dataappoinment.error.date}
-                          isRequired
-                          //onChange={handleChange}
-                        >
-                          {appointmentDate.map((val) => {
-                            return (
-                              <MenuItem value={val.startDateTime}>
-                                {`${moment(val.startDateTime).format(
-                                  "MMMM DD YYYY"
-                                )}`}
-                              </MenuItem>
-                            );
-                          })}
-                        </Select> */}
-                      <MuiPickersUtilsProvider utils={DateFnsUtils}>
-                        <DatePicker
-                          className={classes.inputField}
-                          name="startTime"
-                          placeholder="Select Start Time"
-                          // inputVariant="outlined"
-                          value={dataappoinment.date}
-                          fullWidth
-                          onChange={(value) => updateState("date", value)}
-                          minDate={new Date()}
-                        />
-                        {/* <TimePicker
-                          autoOk
-                          label="12 hours"
-                          value={new Date()}
-                          // onChange={handleDateChange}
-                        /> */}
-                      </MuiPickersUtilsProvider>
-                      {/* </FormControl> */}
-                      {/* {dataappoinment.error.date.length > 0 && (
-                        <Typography variant={"caption"} color={"error"}>
-                          {dataappoinment.error.date}
-                        </Typography>
-                      )} */}
-                    </Grid>
-                    {/* <Grid item xs={4}>
-                      <FormControl fullWidth>
-                        <InputLabel
-                          color="secondary"
-                          id="demo-simple-select-label"
-                        >
-                          Day
-                        </InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          color="secondary"
-                          label="Day"
-                          value={dataappoinment.day}
-                          onChange={(e) => updateState("day", e.target.value)}
-                          isError={dataappoinment.error.day.length > 0}
-                          errorMessage={dataappoinment.error.day}
-                          isRequired
-                          //onChange={handleChange}
-                        >
-                          {dayd.map((val) => {
-                            return <MenuItem value={val}> {val}</MenuItem>;
-                          })}
-                        </Select>
-                      </FormControl>
-                      {dataappoinment.error.day.length > 0 && (
-                        <Typography variant={"caption"} color={"error"}>
-                          {dataappoinment.error.day}
-                        </Typography>
-                      )}
-                    </Grid>
-                    <Grid item xs={4}>
-                      {" "}
-                      <FormControl fullWidth>
-                        <InputLabel
-                          color="secondary"
-                          id="demo-simple-select-label"
-                        >
-                          Year
-                        </InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          label="Day"
-                          value={dataappoinment.year}
-                          color="secondary"
-                          onChange={(e) => updateState("year", e.target.value)}
-                          isError={dataappoinment.error.year.length > 0}
-                          errorMessage={dataappoinment.error.year}
-                          isRequired
-                          //onChange={handleChange}
-                        >
-                          <MenuItem value={year}>{year}</MenuItem>
-                        </Select>
-                      </FormControl>
-                      {dataappoinment.error.year.length > 0 && (
-                        <Typography variant={"caption"} color={"error"}>
-                          {dataappoinment.error.year}
-                        </Typography>
-                      )}
-                    </Grid> */}
-                    <Grid item xs={12}>
-                      <Input
-                        type="text"
-                        name="Fullname"
-                        //value={valuesadrees.firstname}
-                        placeholder="Fullname"
-                        value={dataappoinment.name}
-                        color="secondary"
-                        onChange={(e) => updateState("name", e.target.value)}
-                        isError={dataappoinment.error.name.length > 0}
-                        errorMessage={dataappoinment.error.name}
-                        isRequired
-                      />
 
-                      {dataappoinment.error.name.length > 0 && (
-                        <Typography variant={"caption"} color={"error"}>
-                          {dataappoinment.error.name}
-                        </Typography>
-                      )}
-                    </Grid>
-                    <Grid item xs={12}>
-                      <Input
-                        type="text"
-                        name="Email"
-                        //value={valuesadrees.firstname}
-                        placeholder="Email"
-                        value={dataappoinment.mail}
-                        color="secondary"
-                        onChange={(e) => updateState("mail", e.target.value)}
-                        isRequired
-                      />
-                      {dataappoinment.error.mail.length > 0 && (
-                        <Typography variant={"caption"} color={"error"}>
-                          {dataappoinment.error.mail}
-                        </Typography>
-                      )}
-                    </Grid>
-                    <Grid item xs={12}>
-                      <Input
-                        type="number"
-                        name="Mobile"
-                        //value={valuesadrees.firstname}
-                        placeholder="Mobile"
-                        value={dataappoinment.mobile}
-                        color="secondary"
-                        onChange={(e) => updateState("mobile", e.target.value)}
-                        isError={dataappoinment.error.mobile.length > 0}
-                        errorMessage={dataappoinment.error.mobile}
-                        isRequired
-                      />
-                      {dataappoinment.error.mobile.length > 0 && (
-                        <Typography variant={"caption"} color={"error"}>
-                          {dataappoinment.error.mobile}
-                        </Typography>
-                      )}
-                    </Grid>
-                    <Grid item xs={6}>
-                      <FormControl fullWidth>
-                        <InputLabel
-                          color="secondary"
-                          id="demo-simple-select-label"
-                        >
-                          Location
-                        </InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          value={dataappoinment.location}
-                          color="secondary"
-                          label="Location"
-                          onChange={(e) =>
-                            updateState("location", e.target.value)
-                          }
-                          isError={dataappoinment.error.location.length > 0}
-                          errorMessage={dataappoinment.error.location}
-                          isRequired
-                          //onChange={handleChange}
-                        >
-                          {storelocation.map((val) => {
-                            return (
-                              <MenuItem value={val.id}>{val.name}</MenuItem>
-                            );
-                          })}
-                        </Select>
-                      </FormControl>
-                      {dataappoinment.error.location.length > 0 && (
-                        <Typography variant={"caption"} color={"error"}>
-                          {dataappoinment.error.location}
-                        </Typography>
-                      )}
-                    </Grid>
-                    {/* <Grid item xs={0} md={4}></Grid> */}
-                    <Grid item xs={6}>
-                      <FormControl fullWidth>
-                        <InputLabel
-                          color="secondary"
-                          id="demo-simple-select-label"
-                        >
-                          Timing
-                        </InputLabel>
-                        <Select
-                          labelId="demo-simple-select-label"
-                          id="demo-simple-select"
-                          color="secondary"
-                          label="Timing"
-                          value={dataappoinment.timing}
-                          isError={dataappoinment.error.timing.length > 0}
-                          errorMessage={dataappoinment.error.timing}
-                          isRequired
-                          onChange={(e) =>
-                            updateState("timing", e.target.value)
-                          }
-                          //onChange={handleChange}
-                        >
-                          {appointmentTime.map((val) => {
-                            return (
-                              <MenuItem value={val.startDateTime}>
-                                {`${moment(val.startDateTime).format(
-                                  "hh:mm a"
-                                )} - ${moment(val.endDateTime).format(
-                                  "hh:mm a"
-                                )}`}
-                              </MenuItem>
-                            );
-                          })}
-                        </Select>
-                      </FormControl>
-                    </Grid>
+                  <Grid container spacing={2}>
+                    {booked ? (
+                      <Grid item xs={12}>
+                        <h1>Appointment Book Successfully!</h1>
+                      </Grid>
+                    ) : showOtp ? (
+                      <>
+                        <Grid item xs={12}>
+                          <Input
+                            type="text"
+                            name="otp"
+                            placeholder="OTP"
+                            value={dataappoinment.otp}
+                            color="secondary"
+                            onChange={(e) => updateOTP("otp", e.target.value)}
+                            isRequired
+                          />
+                          {dataappoinment.error.otp.length > 0 && (
+                            <Typography variant={"caption"} color={"error"}>
+                              {dataappoinment.error.otp}
+                            </Typography>
+                          )}
+                        </Grid>
+                      </>
+                    ) : (
+                      <>
+                        <Grid item xs={12}>
+                          <MuiPickersUtilsProvider utils={DateFnsUtils}>
+                            <DatePicker
+                              className={classes.inputField}
+                              name="startTime"
+                              placeholder="Select Start Time"
+                              value={appointmentDate}
+                              fullWidth
+                              onChange={(value) => updateDate("date", value)}
+                              minDate={new Date()}
+                            />
+                          </MuiPickersUtilsProvider>
+
+                          {dataappoinment.error.date.length > 0 && (
+                            <Typography variant={"caption"} color={"error"}>
+                              {dataappoinment.error.date}
+                            </Typography>
+                          )}
+                        </Grid>
+
+                        <Grid item xs={12}>
+                          <Input
+                            type="text"
+                            name="Fullname"
+                            placeholder="Fullname"
+                            value={dataappoinment.name}
+                            color="secondary"
+                            onChange={(e) =>
+                              updateState("name", e.target.value)
+                            }
+                            isError={dataappoinment.error.name.length > 0}
+                            errorMessage={dataappoinment.error.name}
+                            isRequired
+                          />
+
+                          {dataappoinment.error.name.length > 0 && (
+                            <Typography variant={"caption"} color={"error"}>
+                              {dataappoinment.error.name}
+                            </Typography>
+                          )}
+                        </Grid>
+                        <Grid item xs={12}>
+                          <Input
+                            type="text"
+                            name="Email"
+                            placeholder="Email"
+                            value={dataappoinment.mail}
+                            color="secondary"
+                            onChange={(e) =>
+                              updateState("mail", e.target.value)
+                            }
+                            isRequired
+                          />
+                          {dataappoinment.error.mail.length > 0 && (
+                            <Typography variant={"caption"} color={"error"}>
+                              {dataappoinment.error.mail}
+                            </Typography>
+                          )}
+                        </Grid>
+                        <Grid item xs={12}>
+                          <Input
+                            type="text"
+                            name="countryCode"
+                            placeholder="Country Code"
+                            value={dataappoinment.countryCode}
+                            color="secondary"
+                            onChange={(e) =>
+                              updateState("countryCode", e.target.value)
+                            }
+                            isError={
+                              dataappoinment.error.countryCode.length > 0
+                            }
+                            errorMessage={dataappoinment.error.countryCode}
+                            isRequired
+                          />
+                          {dataappoinment.error.countryCode.length > 0 && (
+                            <Typography variant={"caption"} color={"error"}>
+                              {dataappoinment.error.countryCode}
+                            </Typography>
+                          )}
+                          <Input
+                            type="number"
+                            name="Mobile"
+                            placeholder="Mobile"
+                            value={dataappoinment.mobile}
+                            color="secondary"
+                            onChange={(e) =>
+                              updateState("mobile", e.target.value)
+                            }
+                            isError={dataappoinment.error.mobile.length > 0}
+                            errorMessage={dataappoinment.error.mobile}
+                            isRequired
+                          />
+                          {dataappoinment.error.mobile.length > 0 && (
+                            <Typography variant={"caption"} color={"error"}>
+                              {dataappoinment.error.mobile}
+                            </Typography>
+                          )}
+                        </Grid>
+                        <Grid item xs={6}>
+                          <FormControl fullWidth>
+                            <InputLabel
+                              color="secondary"
+                              id="demo-simple-select-label"
+                            >
+                              Location
+                            </InputLabel>
+                            <Select
+                              labelId="demo-simple-select-label"
+                              id="demo-simple-select"
+                              value={dataappoinment.location}
+                              color="secondary"
+                              label="Location"
+                              onChange={(e) =>
+                                updateState("location", e.target.value)
+                              }
+                              isError={dataappoinment.error.location.length > 0}
+                              errorMessage={dataappoinment.error.location}
+                              isRequired
+                            >
+                              {storelocation.map((val) => {
+                                return (
+                                  <MenuItem value={val.id}>{val.name}</MenuItem>
+                                );
+                              })}
+                            </Select>
+                          </FormControl>
+                          {dataappoinment.error.location.length > 0 && (
+                            <Typography variant={"caption"} color={"error"}>
+                              {dataappoinment.error.location}
+                            </Typography>
+                          )}
+                        </Grid>
+                        <Grid item xs={6}>
+                          <FormControl fullWidth>
+                            <InputLabel
+                              color="secondary"
+                              id="demo-simple-select-label"
+                            >
+                              Timing
+                            </InputLabel>
+                            <Select
+                              labelId="demo-simple-select-label"
+                              id="demo-simple-select"
+                              color="secondary"
+                              label="Timing"
+                              value={dataappoinment.timing}
+                              isError={dataappoinment.error.timing.length > 0}
+                              errorMessage={dataappoinment.error.timing}
+                              isRequired
+                              onChange={(e) =>
+                                updateState("timing", e.target.value)
+                              }
+                            >
+                              {appointmentTime.map((val) => {
+                                return (
+                                  <MenuItem value={val.id}>
+                                    {`${val.start_time} - ${val.end_time}`}
+                                  </MenuItem>
+                                );
+                              })}
+                            </Select>
+                          </FormControl>
+                        </Grid>
+                      </>
+                    )}
                   </Grid>
                 </Grid>
                 <Grid item xs={12}>
                   <center>
-                    <Button
-                      variant="contained"
-                      size="large"
-                      className={classes.btn}
-                      onClick={onSendLoginBtnClicked}
-                    >
-                      Confirm & Book in Store
-                    </Button>
+                    {booked ? (
+                      ""
+                    ) : showOtp ? (
+                      <>
+                        <Button
+                          variant="contained"
+                          size="large"
+                          className={classes.btn}
+                          onClick={verifyOTP}
+                        >
+                          Verify OTP
+                        </Button>
+                      </>
+                    ) : (
+                      <>
+                        <Button
+                          variant="contained"
+                          size="large"
+                          className={classes.btn}
+                          onClick={onSendLoginBtnClicked}
+                        >
+                          Confirm & Book in Store
+                        </Button>
+                      </>
+                    )}
                   </center>
                   <br />
                   <hr />
@@ -455,6 +527,19 @@ export default function Contact(props) {
             </Grid>
           </Grid>
         </form>
+        <Snackbar
+          anchorOrigin={{
+            vertical: "top",
+            horizontal: "center",
+          }}
+          open={openSnack}
+          autoHideDuration={3000}
+          onClose={handleClose}
+        >
+          <Alert onClose={handleClose} severity="success">
+            {snackData}
+          </Alert>
+        </Snackbar>
       </Container>
     </>
   );

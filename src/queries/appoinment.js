@@ -48,3 +48,37 @@ query MyQuery($id: UUID) {
 }
 
 `;
+
+export const CREATE_OPPOINTMENT = `
+mutation MyMutation(
+  $customerName: String
+  $email: String
+  $mobile: String
+  $mobileCountryCode: String
+  $slotId: UUID
+) {
+  createAppointment(
+    input: {
+      appointment: {
+        customerName: $customerName
+        email: $email
+        isActive: true
+        mobile: $mobile
+        mobileCountryCode: $mobileCountryCode
+        slotId: $slotId
+      }
+    }
+  ) {
+    appointment {
+      customerName
+      email
+      id
+      isActive
+      mobile
+      mobileCountryCode
+      slotId
+    }
+  }
+}
+
+`;
