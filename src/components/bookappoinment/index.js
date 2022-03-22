@@ -146,7 +146,7 @@ export default function Contact(props) {
         }
         let error = dataappoinment.error;
         error.date =
-          "Please select different date or All the slots are booked or Contact us";
+          "No slots available today. Please select a different day or contact NAC Team";
         setDataappoinment({ ...dataappoinment, error });
       });
   };
@@ -166,7 +166,7 @@ export default function Contact(props) {
           query: CREATE_OPPOINTMENT,
           variables: {
             customerName: dataappoinment.name,
-            email: dataappoinment.email,
+            email: dataappoinment.mail,
             mobile: dataappoinment.mobile,
             mobileCountryCode: dataappoinment.countryCode,
             slotId: dataappoinment.timing,
