@@ -56,6 +56,7 @@ mutation MyMutation(
   $mobile: String
   $mobileCountryCode: String
   $slotId: UUID
+  $locationId: Int
 ) {
   createAppointment(
     input: {
@@ -66,6 +67,7 @@ mutation MyMutation(
         mobile: $mobile
         mobileCountryCode: $mobileCountryCode
         slotId: $slotId
+        locationId: $locationId
       }
     }
   ) {
@@ -80,5 +82,6 @@ mutation MyMutation(
     }
   }
 }
+
 
 `;

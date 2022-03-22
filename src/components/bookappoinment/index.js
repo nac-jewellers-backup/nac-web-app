@@ -66,7 +66,6 @@ export default function Contact(props) {
   const updateState = (key, value) => {
     let error = dataappoinment.error;
     error[key] = "";
-
     setDataappoinment({ ...dataappoinment, [key]: value, error });
     if (key === "date") {
       setSelectedDate(moment(value).format("YYYY-MM-DD"));
@@ -80,7 +79,6 @@ export default function Contact(props) {
       isValid = false;
       error.date = "date is required";
     }
-
     //Checking name
     if (dataappoinment.name.length === 0) {
       isValid = false;
@@ -114,7 +112,6 @@ export default function Contact(props) {
     setDataappoinment({ ...dataappoinment, error });
     return isValid;
   };
-
   React.useEffect(() => {
     fetch(`${API_URL}/graphql`, {
       method: "post",
@@ -148,7 +145,8 @@ export default function Contact(props) {
           return;
         }
         let error = dataappoinment.error;
-        error.date = "Please select different date or Contact us";
+        error.date =
+          "Please select different date or All the slots are booked or Contact us";
         setDataappoinment({ ...dataappoinment, error });
       });
   };
@@ -172,6 +170,7 @@ export default function Contact(props) {
             mobile: dataappoinment.mobile,
             mobileCountryCode: dataappoinment.countryCode,
             slotId: dataappoinment.timing,
+            locationId: dataappoinment.location,
           },
         }),
       })

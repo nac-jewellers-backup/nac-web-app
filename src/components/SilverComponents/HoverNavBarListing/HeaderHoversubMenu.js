@@ -11,8 +11,6 @@ import React, { useEffect } from "react";
 import { useStyles } from "../styles";
 import "./../header.css";
 
-// import Checkbox from "components/InputComponents/CheckBox";
-
 function HeaderHoverMenuItem(props) {
   const [opens, setOpens] = React.useState(props.opened);
   const [target, setTarget] = React.useState(props.subMenuTarget);
@@ -21,7 +19,7 @@ function HeaderHoverMenuItem(props) {
   useEffect(() => {
     setOpens(props.opened);
     setTarget(props.targetopened);
-  });
+  }, []);
   const stones = [
     {
       title: "Genstone",
@@ -706,9 +704,9 @@ function HeaderHoverMenuItem(props) {
     {
       title: <>CORPORATE&nbsp;GIFTING</>,
       contents: [
-        { item: "Below ₹3,000" },
-        { item: "₹3,001 - ₹5,001" },
-        { item: "Above ₹5,001" },
+        { item: "Below ₹3,000", url: "#" },
+        { item: "₹3,001 - ₹5,001", url: "#" },
+        { item: "Above ₹5,001", url: "#" },
       ],
     },
     {
@@ -1096,8 +1094,10 @@ function HeaderHoverMenuItem(props) {
                             style={{
                               width: "50%",
                               margin: "auto",
+                              objectFit: "contain",
                             }}
                             src={val.img}
+                            alt="images"
                           />
                         )}
                       </Grid>
@@ -1148,7 +1148,12 @@ function HeaderHoverMenuItem(props) {
                         }}
                       >
                         <div style={{ display: "flex" }}>
-                          <img src={val.img} width="17px" height="25px" />
+                          <img
+                            src={val.img}
+                            width="17px"
+                            height="25px"
+                            alt="images"
+                          />
                           <Typography className={classes.listedItemsvalue}>
                             {val.title}
                           </Typography>
@@ -1243,7 +1248,7 @@ function HeaderHoverMenuItem(props) {
           <Grid item xs={3}>
             <div style={{ paddingTop: "25px" }}>
               {valueForImage().map((val, i) => (
-                <img src={val.img} width="100%" height="75%" />
+                <img src={val.img} width="100%" height="75%" alt="images" />
               ))}
             </div>
           </Grid>
@@ -1307,6 +1312,7 @@ function HeaderHoverMenuItem(props) {
                                   marginBottom: "15px",
                                 }}
                                 src={val.image}
+                                alt="images"
                               />
                             )}
                           </Grid>
@@ -1353,7 +1359,12 @@ function HeaderHoverMenuItem(props) {
                             <div
                               style={{ display: "flex", paddingBottom: "13px" }}
                             >
-                              <img src={x.img} width="17px" height="25px" />
+                              <img
+                                src={x.img}
+                                width="17px"
+                                height="25px"
+                                alt="images"
+                              />
                               <Typography
                                 style={{ margin: "0px" }}
                                 className={classes.listedItemsvalue}
@@ -1423,6 +1434,7 @@ function HeaderHoverMenuItem(props) {
                 src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Main+menu+category+images/NAC+Jewellers+Solitaire.jpg"
                 width="100%"
                 height="75%"
+                alt="images"
               />
             </div>
           </Grid>
@@ -1486,6 +1498,7 @@ function HeaderHoverMenuItem(props) {
                                   marginBottom: "15px",
                                 }}
                                 src={val.img}
+                                alt="images"
                               />
                             )}
                           </Grid>
@@ -1544,6 +1557,7 @@ function HeaderHoverMenuItem(props) {
                 src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Main+menu+category+images/NAC+Jewellers+Silver+Articles.jpg"
                 width="100%"
                 height="75%"
+                alt="images"
               />
             </div>
           </Grid>
