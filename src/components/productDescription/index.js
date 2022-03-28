@@ -189,7 +189,7 @@ class ProductDescription extends Component {
                             id="readMore"
                           >
                             {/* <span ><i className="fa faMore">&#xf0da;</i></span> */}
-                            READ MORE
+                            {datadescription.length > 320 ? "READ MORE" : ""}
                           </p>
                         </>
                       ) : (
@@ -210,7 +210,7 @@ class ProductDescription extends Component {
                             id="readLess"
                           >
                             {/* <span ><i className="fa faMore">&#xf0d8;</i></span>  */}
-                            READ LESS
+                            {datadescription.length > 320 ? "READ LESS" : ""}
                           </p>
                           <br />
                         </>

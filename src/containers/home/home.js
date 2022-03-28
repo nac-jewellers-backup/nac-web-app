@@ -659,7 +659,6 @@ class HomeComp extends React.Component {
               md={2}
               lg={2}
               xl={2}
-           
               className={`${classes.timelineItemGrid} timelinescroll`}
             >
               <div className="timeline">
@@ -782,7 +781,7 @@ class HomeComp extends React.Component {
             </Grid>
           </Grid>
           {/* <faqsHelp/> */}
-          {/* <Container maxWidth="xl">
+          <Container maxWidth="xl">
             <Hidden mdUp>
               <Grid container>
                 <Grid
@@ -834,7 +833,7 @@ class HomeComp extends React.Component {
                 </Grid>
               </Grid>
             </Hidden>
-          </Container> */}
+          </Container>
 
           <Container>
             <Grid

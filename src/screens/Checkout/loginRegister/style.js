@@ -57,12 +57,6 @@ export const styles = (theme) => ({
     },
   },
 
-  //   input: {
-  //     borderBottom: "2px solid gray",
-  //     borderRadius: "4px",
-  //     paddingLeft: 8,
-  //     borderRadius: "0px",
-  //   },
   btn: {
     display: "inline-block",
   },

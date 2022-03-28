@@ -502,7 +502,7 @@ class ProductDetail extends Component {
                         color: "gray",
                         marginLeft: 30,
                         paddingBottom: 10,
-                        fontSize: "16px",
+                        fontSize: "20px",
                       }}
                     >
                       SIMILAR PRODUCTS

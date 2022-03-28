@@ -117,7 +117,7 @@ export default function Contact(props) {
                       </Box>
                       <Box>
                         <Typography variant="body1" className={classes.name}>
-                          &nbsp;&nbsp;&nbsp;+ 91 000 000000
+                          &nbsp;&nbsp;&nbsp;+ 91 9597457555
                         </Typography>
                       </Box>
                     </Box>
@@ -125,7 +125,7 @@ export default function Contact(props) {
                   <Grid item xs={3}>
                     <Box display="flex" alignItems="center">
                       <Box>
-                        <Typography className={classes.book}>Lorem</Typography>
+                        {/* <Typography className={classes.book}>Lorem</Typography> */}
                         <Button
                           variant="contained"
                           size="large"
@@ -398,7 +398,7 @@ export default function Contact(props) {
             <Grid item xs={12} md={12}>
               <Box display="flex" alignItems="center">
                 <Box>
-                  <Typography className={classes.book}>Lorem</Typography>
+                  {/* <Typography className={classes.book}>Lorem</Typography> */}
                   <Button
                     variant="contained"
                     size="large"

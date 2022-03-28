@@ -1,6 +1,7 @@
 import { makeStyles } from "@material-ui/core/styles";
 
 export const styles = (theme) => ({
+  customTextField: { fontSize: "10px !important" },
   currencyStyle: {
     fontSize: "10px",
     padding: "0px !important",

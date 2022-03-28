@@ -5,7 +5,6 @@ import {
   ClickAwayListener,
   Container,
   Drawer,
-  FormControl,
   Grid,
   Hidden,
   IconButton,
@@ -13,7 +12,6 @@ import {
   ListItem,
   ListItemText,
   Modal,
-  NativeSelect,
   Toolbar,
   Typography,
 } from "@material-ui/core";
@@ -29,7 +27,6 @@ import StyloriSLogo from "../../assets/silverOpenLink.png";
 import { useDummyRequest } from "../../hooks";
 import { headerDataSilver } from "../../mappers";
 import { createTheme, ThemeProvider } from "@material-ui/core/styles";
-
 import "./header.css";
 import HeaderHoversubMenu from "./HoverNavBarListing/HeaderHoversubMenu";
 import { styles } from "./styles";
@@ -48,9 +45,12 @@ const theme = createTheme({
   overrides: {
     MuiInputLabel: {
       outlined: {
-        // transform: "translate(14px, 12.5px) scale(1)",
         border: "none",
         borderColor: "#fff",
+        fontSize: "14px !important",
+      },
+      option: {
+        fontSize: "14px !important",
       },
     },
     MuiOutlinedInput: {
@@ -58,11 +58,89 @@ const theme = createTheme({
         "&&& $input": {
           padding: "0px",
           color: "#fff !important",
+          fontSize: "14px!important",
         },
+        option: {
+          fontSize: "14px !important",
+        },
+      },
+    },
+    MuiAutocomplete: {
+      inputRoot: {
+        '&&[class*="MuiOutlinedInput-root"] $input': {
+          padding: "0px !important",
+          fontSize: "14px !important",
+        },
+      },
+      option: {
+        fontSize: "14px !important",
+      },
+    },
+    option: {
+      fontSize: "14px !important",
+    },
+  },
+});
+
+const themess = createTheme({
+  overrides: {
+    MuiInputLabel: {
+      outlined: {
+        border: "none",
+        borderColor: "#fff",
+        fontSize: "16px !important",
+      },
+      option: {
+        fontSize: "16px !important",
+        padding: "4px  !important",
+      },
+    },
+    MuiOutlinedInput: {
+      root: {
+        "&&& $input": {
+          padding: "0px",
+          color: "#000 !important",
+          fontSize: "16px !important",
+        },
+        option: {
+          fontSize: "16px !important",
+          padding: "4px  !important",
+        },
+      },
+    },
+    MuiAutocomplete: {
+      inputRoot: {
+        '&&[class*="MuiOutlinedInput-root"] $input': {
+          padding: "0px  !important",
+          fontSize: "16px !important",
+        },
+      },
+      option: {
+        fontSize: "16px !important",
+        padding: "4px  !important",
+      },
+    },
+    option: {
+      fontSize: "16px !important",
+      [theme.breakpoints.up("md")]: {
+        padding: "2px !important",
+      },
+      [theme.breakpoints.down("sm")]: {
+        padding: "0px !important",
       },
     },
   },
 });
+
+function countryToFlag(isoCode) {
+  return typeof String.fromCodePoint !== "undefined"
+    ? isoCode
+        .toUpperCase()
+        .replace(/./g, (char) =>
+          String.fromCodePoint(char.charCodeAt(0) + 127397)
+        )
+    : isoCode;
+}
 
 class Header extends Component {
   constructor(props) {
@@ -280,7 +358,7 @@ class Header extends Component {
                     : "auto",
               }}
             >
-              <Container style={{ maxWidth: "80%" }} id="searchcontainer">
+              <Container style={{ maxWidth: "90%" }} id="searchcontainer">
                 <Grid
                   container
                   spacing={12}
@@ -364,116 +442,35 @@ class Header extends Component {
                         justify="flex-end"
                         className={classes.goldCurrentRate}
                       >
-                        <Grid
-                          item
-                          xs={12}
-                          sm={6}
-                          md={2}
-                          lg={2}
-                          style={{ marginRight: "8px" }}
-                        >
-                          <Autocomplete
-                            id="country-select-demo"
-                            size="small"
-                            style={{
-                              color: "#000 !important",
-                              backgroundColor: "#b78231",
-                              border: "0px",
-                              borderColor: "#fff",
-
-                              boxShadow: "6px 7px 6px #bebfbf",
-                            }}
-                            classes={{ input: classes.smallFont }}
-                            options={this.state.currencyConvo}
-                            getOptionLabel={(option) => option.nicename}
-                            value={this.state?.selected_currency ?? null}
-                            onChange={this.handleCurrencyConvo}
-                            defaultValue={selected_price ?? null}
-                            renderInput={(params) => (
-                              <ThemeProvider theme={theme}>
-                                <TextField
-                                  {...params}
-                                  // className={classes.inputProps}
-                                  label={""}
-                                  variant="outlined"
-                                />
-                              </ThemeProvider>
-                            )}
-                          />
-                          {/* <Autocomplete
-                            className={classes.currencyStyle}
-                            size="small"
-                            options={this.state.currencyConvo}
-                            getOptionLabel={(option) => option.nicename}
-                            defaultValue={selected_price ?? null}
-                            onChange={this.handleCurrencyConvo}
-                            value={this.state?.selected_currency ?? null}
-                            renderInput={(params) => (
-                              <TextField
-                                {...params}
-                                label=""
-                                variant="outlined"
-                              />
-                            )}
-                          /> */}
-                        </Grid>
                         <Grid item xs={12} sm={6} md={2} lg={2}>
-                          <Autocomplete
-                            id="country-select-demo"
-                            size="small"
-                            style={{
-                              color: "#000 !important",
-                              backgroundColor: "#b78231",
-                              border: "0px",
-                              borderColor: "#fff",
+                          {" "}
+                          <ThemeProvider theme={theme}>
+                            <Autocomplete
+                              id="country-select-demo"
+                              size="small"
+                              style={{
+                                color: "#000 !important",
+                                backgroundColor: "#b78231",
+                                border: "0px",
+                                borderColor: "#fff",
 
-                              boxShadow: "6px 7px 6px #bebfbf",
-                            }}
-                            classes={{ input: classes.smallFont }}
-                            options={this?.state?.goldPrice}
-                            getOptionLabel={(option) =>
-                              `${option.displayName} - ₹${option.displayPrice}`
-                            }
-                            // value={this.state?.livePrice ?? null}
-                            // onChange={this.handleLivePrice}
-                            defaultValue={this.state?.livePrice ?? null}
-                            renderInput={(params) => (
-                              <ThemeProvider theme={theme}>
+                                boxShadow: "6px 7px 6px #bebfbf",
+                              }}
+                              classes={{ input: classes.smallFont }}
+                              options={this?.state?.goldPrice}
+                              getOptionLabel={(option) =>
+                                `${option.displayName} - ₹${option.displayPrice}`
+                              }
+                              defaultValue={this.state?.livePrice ?? null}
+                              renderInput={(params) => (
                                 <TextField
                                   {...params}
-                                  // className={classes.inputProps}
-                                  // label={"Today's Gold Rate"}
                                   placeholder="Today's Gold Rate"
                                   variant="outlined"
                                 />
-                              </ThemeProvider>
-                            )}
-                          />
-                          {/* <FormControl
-                            variant="outlined"
-                            className={classes.goldRateformControl}
-                          >
-                            <NativeSelect
-                              defaultValue={null}
-                              inputProps={{
-                                name: "name",
-                                id: "uncontrolled-native",
-                                className: {
-                                  root: classes.selects,
-                                },
-                              }}
-                            >
-                              {this?.state?.goldPrice?.map((val) => (
-                                <option
-                                  value={val.displayPrice}
-                                  style={{
-                                    backgroundColor: "#b78231 !important",
-                                    padding: "12px 0px !important",
-                                  }}
-                                >{`${val.displayName} - ₹${val.displayPrice}`}</option>
-                              ))}
-                            </NativeSelect>
-                          </FormControl> */}
+                              )}
+                            />
+                          </ThemeProvider>
                         </Grid>
                       </Grid>
                       <Grid item xs={12}>
@@ -792,95 +789,81 @@ class Header extends Component {
                             justifyContent="flex-end"
                             alignItems="center"
                           >
-                            <Grid
+                            {/* <Grid
                               item
-                              xs={6}
-                              sm={6}
-                              md={3}
-                              lg={3}
-                              style={{ paddingRight: "4px" }}
+                              xs={3}
+                              sm={3}
+                              md={2}
+                              lg={2}
+                              style={{
+                                position: "fixed",
+                                bottom: "1%",
+                                left: "1%",
+                              }}
                             >
                               <Autocomplete
                                 id="country-select-demo"
                                 size="small"
                                 style={{
                                   color: "#000 !important",
-                                  backgroundColor: "#b78231",
+                                  backgroundColor: "#fff",
                                   border: "0px",
                                   borderColor: "#fff",
                                   boxShadow: "6px 7px 6px #bebfbf",
                                 }}
-                                classes={{ input: classes.smallFont }}
                                 options={this.state.currencyConvo}
-                                getOptionLabel={(option) => option.nicename}
                                 value={this.state?.selected_currency ?? null}
                                 onChange={this.handleCurrencyConvo}
                                 defaultValue={selected_price ?? null}
+                                getOptionLabel={(option) =>
+                                  `${countryToFlag(option.iso)}  ${
+                                    option.currencyAlias
+                                  }`
+                                }
+                                renderOption={(option) => (
+                                  <React.Fragment>
+                                    {`${countryToFlag(option.iso)}  ${
+                                      option.currencyAlias
+                                    }`}
+                                  </React.Fragment>
+                                )}
                                 renderInput={(params) => (
-                                  <ThemeProvider theme={theme}>
-                                    <TextField
-                                      {...params}
-                                      // className={classes.inputProps}
-                                      label={""}
-                                      variant="outlined"
-                                    />
-                                  </ThemeProvider>
+                                  <TextField
+                                    {...params}
+                                    label={""}
+                                    variant="outlined"
+                                    style={{ color: "#000 !important" }}
+                                  />
                                 )}
                               />
-                            </Grid>
+                            </Grid> */}
                             <Grid item xs={6} sm={6} md={3} lg={3}>
-                              <Autocomplete
-                                id="country-select-demo"
-                                size="small"
-                                style={{
-                                  color: "#000 !important",
-                                  backgroundColor: "#b78231",
-                                  border: "0px",
-                                  borderColor: "#fff",
-
-                                  boxShadow: "6px 7px 6px #bebfbf",
-                                }}
-                                classes={{ input: classes.smallFont }}
-                                options={this?.state?.goldPrice}
-                                getOptionLabel={(option) =>
-                                  `${option.displayName} - ₹${option.displayPrice}`
-                                }
-                                // value={this.state?.livePrice ?? null}
-                                // onChange={this.handleLivePrice}
-                                defaultValue={this.state?.livePrice ?? null}
-                                renderInput={(params) => (
-                                  <ThemeProvider theme={theme}>
+                              <ThemeProvider theme={theme}>
+                                <Autocomplete
+                                  id="country-select-demo"
+                                  size="small"
+                                  style={{
+                                    color: "#000 !important",
+                                    backgroundColor: "#b78231",
+                                    border: "0px",
+                                    borderColor: "#fff",
+                                    boxShadow: "6px 7px 6px #bebfbf",
+                                  }}
+                                  classes={{ input: classes.smallFont }}
+                                  options={this?.state?.goldPrice}
+                                  getOptionLabel={(option) =>
+                                    `${option.displayName} - ₹${option.displayPrice}`
+                                  }
+                                  defaultValue={this.state?.livePrice ?? null}
+                                  renderInput={(params) => (
                                     <TextField
                                       {...params}
-                                      // className={classes.inputProps}
-                                      // label={"Today's Gold Rate"}
                                       placeholder="Today's Gold Rate"
                                       variant="outlined"
                                     />
-                                  </ThemeProvider>
-                                )}
-                              />
-                              {/* <FormControl
-                                variant="outlined"
-                                className={classes.goldRateformControl}
-                              >
-                                <NativeSelect
-                                  defaultValue={null}
-                                  inputProps={{
-                                    name: "name",
-                                    id: "uncontrolled-native",
-                                    className: {
-                                      root: classes.selects,
-                                    },
-                                  }}
-                                >
-                                  {this?.state?.goldPrice?.map((val) => (
-                                    <option
-                                      value={val.displayPrice}
-                                    >{`${val.displayName} - ₹${val.displayPrice}`}</option>
-                                  ))}
-                                </NativeSelect>
-                              </FormControl> */}
+                                  )}
+                                />
+                              </ThemeProvider>
                             </Grid>
                           </Grid>
                         </Grid>
@@ -1421,6 +1404,89 @@ class Header extends Component {
             </ClickAwayListener>
           </Drawer>
         </Hidden>
+        <Grid
+          sm={3}
+          md={4}
+          lg={4}
+          style={{
+            position: "fixed",
+            bottom: "1%",
+            left: "1%",
+          }}
+        >
+          <Hidden smDown>
+            <ThemeProvider theme={themess}>
+              <Autocomplete
+                disableClearable
+                size="small"
+                style={{
+                  color: "#000 !important",
+                  backgroundColor: "#fff",
+                  border: "0px",
+                  borderColor: "#fff",
+                  // width: "45%",
+                  padding: "0px 0px 0px 0px !important",
+                }}
+                options={this.state.currencyConvo}
+                value={this.state?.selected_currency ?? null}
+                onChange={this.handleCurrencyConvo}
+                defaultValue={selected_price ?? null}
+                getOptionLabel={(option) =>
+                  `${countryToFlag(option.iso)} ${option.currencyAlias}`
+                }
+                renderOption={(option) => (
+                  <React.Fragment>
+                    {`${countryToFlag(option.iso)} ${option.currencyAlias}`}
+                  </React.Fragment>
+                )}
+                renderInput={(params) => (
+                  <TextField
+                    classes={{ root: classes.customTextField }}
+                    {...params}
+                    label={""}
+                    variant="outlined"
+                  />
+                )}
+              />
+            </ThemeProvider>
+          </Hidden>
+          <Hidden mdUp>
+            <ThemeProvider theme={themess}>
+              <Autocomplete
+                disableClearable
+                size="small"
+                style={{
+                  color: "#000 !important",
+                  backgroundColor: "#fff",
+                  border: "0px",
+                  borderColor: "#fff",
+                  // width: "30%",
+                  padding: "0px 0px 0px 0px !important",
+                }}
+                options={this.state.currencyConvo}
+                value={this.state?.selected_currency ?? null}
+                onChange={this.handleCurrencyConvo}
+                defaultValue={selected_price ?? null}
+                getOptionLabel={(option) =>
+                  `${countryToFlag(option.iso)} ${option.currencyAlias}`
+                }
+                renderOption={(option) => (
+                  <React.Fragment>
+                    {`${countryToFlag(option.iso)} ${option.currencyAlias}`}
+                  </React.Fragment>
+                )}
+                renderInput={(params) => (
+                  <TextField
+                    classes={{ root: classes.customTextField }}
+                    {...params}
+                    label={""}
+                    variant="outlined"
+                  />
+                )}
+              />
+            </ThemeProvider>
+          </Hidden>
+        </Grid>
       </div>
     );
   }

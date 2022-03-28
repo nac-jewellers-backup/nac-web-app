@@ -539,6 +539,31 @@ export const Jewellery = {
           content: "Gutapulusu",
           url: "/ear+jacket-earrings-jewellery",
         },
+        {
+          img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Necklace/28812219-Guttapusalu.webp",
+          content: "Pendant",
+          url: "/ear+jacket-earrings-jewellery",
+        },
+        {
+          img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Necklace/28812219-Guttapusalu.webp",
+          content: "Oddiyanam",
+          url: "/ear+jacket-earrings-jewellery",
+        },
+        {
+          img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Necklace/28812219-Guttapusalu.webp",
+          content: "Armlet",
+          url: "/ear+jacket-earrings-jewellery",
+        },
+        {
+          img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Necklace/28812219-Guttapusalu.webp",
+          content: "Anklet",
+          url: "/ear+jacket-earrings-jewellery",
+        },
+        {
+          img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Necklace/28812219-Guttapusalu.webp",
+          content: "Chain",
+          url: "/ear+jacket-earrings-jewellery",
+        },
       ],
     },
     stone: {

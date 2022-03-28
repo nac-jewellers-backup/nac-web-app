@@ -356,7 +356,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("md")]: {},
   },
   strikeText: {
-    fontSize: "18px",
+    fontSize: "16px",
     color: "#5d5d5d",
     [theme.breakpoints.down("sm")]: {
       fontSize: "10px !important",

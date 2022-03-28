@@ -34,7 +34,7 @@ function CollectionFullPage() {
               display: "flex",
               justifyContent: "center",
               paddingBottom: "10px",
-              alignItems: "center"
+              alignItems: "center",
             }}
           >
             <ArrowLeft />
@@ -65,6 +65,7 @@ function CollectionFullPage() {
           <Grid item xs={7}>
             <div style={{ width: "100%", height: "75%" }}>
               <img
+                alt="images"
                 src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Collection+Page/Fabula_collection_page.jpg"
                 width="100%"
                 style={{ maxHeight: "460px" }}
@@ -80,7 +81,11 @@ function CollectionFullPage() {
               <Button variant="contained" className="buttonEdit">
                 shop fabula
               </Button>
-              <Button variant="contained" className="buttonEdit" style={{ marginTop: "10px" }}>
+              <Button
+                variant="contained"
+                className="buttonEdit"
+                style={{ marginTop: "10px" }}
+              >
                 BOOK APPOINTMENT
               </Button>
             </div>
@@ -109,6 +114,7 @@ function CollectionFullPage() {
           <Grid item xs={7}>
             <div style={{ width: "100%", height: "75%" }}>
               <img
+                alt="images"
                 src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Collection+Page/Youngones_collection_page.jpg"
                 width="100%"
                 style={{ maxHeight: "460px" }}
@@ -128,6 +134,7 @@ function CollectionFullPage() {
           <Grid item xs={7}>
             <div style={{ width: "100%", height: "75%" }}>
               <img
+                alt="images"
                 src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Collection+Page/Bridal_collection_page_.jpg"
                 width="100%"
                 style={{ maxHeight: "460px" }}
@@ -169,6 +176,7 @@ function CollectionFullPage() {
           <Grid item xs={7}>
             <div style={{ width: "100%", height: "75%" }}>
               <img
+                alt="iamges"
                 src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Collection+Page/Rewind_collection_page.jpg"
                 width="100%"
                 style={{ maxHeight: "460px" }}
@@ -188,6 +196,7 @@ function CollectionFullPage() {
           <Grid item xs={7}>
             <div style={{ width: "100%", height: "75%" }}>
               <img
+                alt="images"
                 src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Collection+Page/Nagas_collection_page.jpg"
                 width="100%"
                 style={{ maxHeight: "460px" }}
@@ -229,6 +238,7 @@ function CollectionFullPage() {
           <Grid item xs={7}>
             <div style={{ width: "100%", height: "75%" }}>
               <img
+                alt="images"
                 src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Collection+Page/Stylori_collection_page.jpg"
                 width="100%"
                 style={{ maxHeight: "460px" }}
@@ -248,6 +258,7 @@ function CollectionFullPage() {
           <Grid item xs={7}>
             <div style={{ width: "100%", height: "75%" }}>
               <img
+                alt="images"
                 src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Collection+Page/Diamond_collection_page.jpg"
                 width="100%"
                 style={{ maxHeight: "460px" }}

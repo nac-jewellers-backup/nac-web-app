@@ -75,14 +75,12 @@ const mobilecarousel = (props, val, wishlist) => {
 
 const Productprice = (
   props,
-  anchorEl,
 
-  handleReadMore,
-  viewMore
+  handleShow,
+  showData
 ) => {
   const { data } = props;
   const { classes } = props;
-  const open = anchorEl;
   var wishlist = props.wishlist;
 
   return (
@@ -183,9 +181,9 @@ const Productprice = (
                       <br />
                       <Box display="flex" className={`pdp-desc ${classes.dis}`}>
                         <Box>
-                          {val?.dis?.length > 70 && viewMore
+                          {val?.dis?.length > 140 && showData
                             ? val?.dis
-                            : `${val?.dis.substring(0, 70)}..`}
+                            : `${val?.dis.substring(0, 140)}..`}
                           <span
                             style={{
                               cursor: "pointer",
@@ -194,10 +192,14 @@ const Productprice = (
                               whiteSpace: "nowrap",
                             }}
                             onClick={() => {
-                              handleReadMore();
+                              handleShow();
                             }}
                           >
-                            {viewMore ? "Read Less" : "Read More"}
+                            {val?.dis.length > 140
+                              ? showData
+                                ? "Read Less"
+                                : "Read More"
+                              : ""}
                           </span>
 
                           {/* {val.dis} */}
@@ -239,40 +241,24 @@ class ProductPrice extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      share: false,
-      heart: false,
-      anchorEl: false,
-      viewMore: false,
+      showData: false,
     };
   }
-  handleClick = (event) => {
-    this.setState({
-      anchorEl: event.currentTarget,
-    });
-  };
-  handleReadMore = () => {
-    this.setState({
-      viewMore: !this.state.viewMore,
-    });
-  };
-  handleClose = () => {
-    this.setState({
-      anchorEl: false,
-    });
-  };
 
+  handleShow = () => {
+    this.setState({
+      showData: !this.state.showData,
+    });
+  };
   render() {
-    const { anchorEl, viewMore } = this.state;
     return (
       <div>
         <Hidden smDown>
           {Productprice(
             this.props,
-            anchorEl,
-            this.handleClick,
-            this.handleClose,
-            this.handleReadMore,
-            viewMore
+
+            this.handleShow,
+            this.state.showData
           )}
         </Hidden>
 
@@ -280,11 +266,9 @@ class ProductPrice extends Component {
           <Container style={{ paddingBottom: "6px" }}>
             {Productprice(
               this.props,
-              anchorEl,
-              this.handleClick,
-              this.handleClose,
-              this.handleReadMore,
-              viewMore
+
+              this.handleShow,
+              this.state.showData
             )}
           </Container>
         </Hidden>
