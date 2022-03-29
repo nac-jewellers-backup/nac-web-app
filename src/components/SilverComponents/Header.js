@@ -1404,17 +1404,18 @@ class Header extends Component {
             </ClickAwayListener>
           </Drawer>
         </Hidden>
-        <Grid
-          sm={3}
-          md={4}
-          lg={4}
-          style={{
-            position: "fixed",
-            bottom: "1%",
-            left: "1%",
-          }}
-        >
-          <Hidden smDown>
+
+        <Hidden smDown>
+          <Grid
+            sm={3}
+            md={4}
+            lg={4}
+            style={{
+              position: "fixed",
+              bottom: "1%",
+              left: "1%",
+            }}
+          >
             <ThemeProvider theme={themess}>
               <Autocomplete
                 disableClearable
@@ -1449,8 +1450,19 @@ class Header extends Component {
                 )}
               />
             </ThemeProvider>
-          </Hidden>
-          <Hidden mdUp>
+          </Grid>
+        </Hidden>
+        <Hidden mdUp>
+          <Grid
+            sm={3}
+            md={4}
+            lg={4}
+            style={{
+              position: "fixed",
+              bottom: "8%",
+              left: "3%",
+            }}
+          >
             <ThemeProvider theme={themess}>
               <Autocomplete
                 disableClearable
@@ -1485,8 +1497,8 @@ class Header extends Component {
                 )}
               />
             </ThemeProvider>
-          </Hidden>
-        </Grid>
+          </Grid>
+        </Hidden>
       </div>
     );
   }
