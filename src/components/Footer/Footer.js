@@ -363,7 +363,6 @@ export default function Footer(props) {
           url: "/return",
           Title: "30 Day Return",
         },
-    
       ],
     },
     {
@@ -427,7 +426,7 @@ export default function Footer(props) {
       url: "/return",
       Title: "30 Day Return",
     },
- 
+
     // {
     //   url:
     //     "https://www.google.co.in/maps/@13.0457285,80.2325498,3a,75y,281.19h,87.03t/data=!3m7!1e1!3m5!1siBMPPhrps9EAAAQ0H3M5OQ!2e0!3e2!7i13312!8i6656!6m1!1e1",
@@ -513,7 +512,6 @@ export default function Footer(props) {
           subTitle: "30 Day Return",
           url: "/return",
         },
-       
       ],
     },
     {

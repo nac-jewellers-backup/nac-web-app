@@ -4,7 +4,7 @@ import { useCheckForCod } from "hooks/CheckForCodHook";
 import { CheckForCod } from "queries/productdetail";
 import { ADDRESSDETAILS } from "queries/productdetail";
 import { CartContext } from "../../../context/CartContext";
-
+import { API_URL } from "../../../config";
 var obj = {};
 var delet = {};
 var addObjall = {};
@@ -188,7 +188,8 @@ const Addressforms = (changePanel) => {
   useEffect(
     (event) => {
       const a = CodData.data ? CodData.data.allPincodeMasters : "";
-      if (a) {
+
+      if (a?.nodes && a?.nodes?.length) {
         var res =
           CodData &&
           CodData.data &&
@@ -265,6 +266,20 @@ const Addressforms = (changePanel) => {
           }
         }
         setValues({ ...values, values });
+      } else if (a?.nodes === undefined || a?.nodes?.length == 0) {
+        if (values.addressOne.pincode || values.addressTwo.pincode) {
+          let pins = values.addressOne.pincode || values.addressTwo.pincode;
+          fetch(`${API_URL}/get_pincode_details?pincode=${pins}`, {
+            method: "GET",
+            headers: { "Content-Type": "application/json" },
+          })
+            .then((response) => response.json())
+            .then((response) => {
+              if (response.status == "OK") {
+                makeRequestCod({ pincode: pins });
+              }
+            });
+        }
       }
     },
     [CodData]
