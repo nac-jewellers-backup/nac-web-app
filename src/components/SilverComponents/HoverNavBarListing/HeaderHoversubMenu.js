@@ -616,38 +616,47 @@ function HeaderHoverMenuItem(props) {
     {
       title: "Silver Plates",
       img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Silver+Articles/SILVER+PLATES.jpg",
+      url: "/silver+plates-articles",
     },
     {
       title: "Silver Bowls",
       img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Silver+Articles/SILVER+BOWLS.jpg",
+      url: "/silver+bowl-articles",
     },
     {
       title: "Silver Lamps",
       img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Silver+Articles/SILVER+LAPMS.jpg",
+      url: "/silver+lamp-articles",
     },
     {
       title: "Tumblers",
       img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Silver+Articles/SILVER+TUMBLERS.jpg",
+      url: "/silver+tumbler-articles",
     },
     {
       title: "Silver Baby Gifts",
       img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Silver+Articles/SILVER+BABY+GIFTS.jpg",
+      url: "/silver+baby+gifts-articles",
     },
     {
       title: "Silver Dining Set",
       img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Silver+Articles/SILVER+DINNER+SETS.jpg",
+      url: "/silver+dinner+set-articles",
     },
     {
       title: "Silve Antique Articles",
       img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Silver+Articles/SILVER+ANTIQUE+ARTICLES.jpg",
+      url: "/silver+antique+articles-articles",
     },
     {
       title: "Silver Pooja Articles",
       img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Silver+Articles/SILVER+POOJA+ARTICLES.jpg",
+      url: "/silver+pooja+articles-articles",
     },
     {
       title: "Silver Other Articles",
       img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Silver+Articles/SILVER+OTHER+ARTICLES.jpg",
+      url: "/silver+other+articles-articles",
     },
   ];
 

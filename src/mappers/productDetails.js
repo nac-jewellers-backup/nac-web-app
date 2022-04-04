@@ -627,7 +627,7 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                 ],
               },
               {
-                name: "Gold Price",
+                name: "Metal Price",
                 details: [
                   calculatetotal(
                     PD?.pricingSkuMetalsByProductSku?.nodes,
@@ -1277,7 +1277,7 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                 ],
               },
               {
-                name: "Gold Price",
+                name: "Metal Price",
                 details: [
                   calculatetotal(
                     PD?.pricingSkuMetalsByProductSku?.nodes,
