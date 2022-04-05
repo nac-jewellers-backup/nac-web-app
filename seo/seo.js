@@ -1,6 +1,6 @@
 var seo = (title, description, imgURL) => {
   if (!title) {
-    return (title = "NAC Jewellers - Online Jewellery Shopping Store South India | Buy Gold, Diamond, Platinum and Antique Jewellery with latest Designs 2021");
+    return (title = "");
   }
   if (!description) {
     return (description = " ");
