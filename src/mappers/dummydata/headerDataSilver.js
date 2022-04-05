@@ -17,10 +17,10 @@ export const mainlist = [
     name: "BANGLES & BRACELETS",
     url: "/jewellery-shipping+in+1+day",
   },
-  {
-    name: "OTHER JEWELLERY",
-    url: "/jewellery/kada/csk_kada?sku_id=1000000",
-  },
+  // {
+  //   name: "OTHER JEWELLERY",
+  //   url: "/jewellery/kada/csk_kada?sku_id=1000000",
+  // },
   {
     name: "SOLITAIRE",
     url: "/jewellery/kada/csk_kada?sku_id=1000000",
@@ -40,7 +40,7 @@ export const mainlist = [
   // },
   {
     name: "SAVING SCHEME",
-    url: "https://www.stylori.com/",
+    url: "https://nacsavings.in/",
   },
   {
     name: "STYLORI",
@@ -415,22 +415,22 @@ export const Jewellery = {
         {
           img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Group+330%402x.png",
           content: "Studs",
-          url: "/studs-earrings-jewellery",
+          url: "/studs+and+tops-jewellery",
         },
         {
           img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/PRPpoy%402x.png",
           content: "Drops",
-          url: "/danglers+&+drops-earrings-jewellery",
+          url: "/drops+and+danglers-earrings-jewellery",
         },
         {
           img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/qyLKdg%402x.png",
           content: "Jhumkas",
-          url: "/jhumkas-earrings-jewellery",
+          url: "/jhumkas-jewellery",
         },
         {
           img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/NDUTnF%402x.png",
           content: "Earcuffs",
-          url: "/ear+cuffs-earrings-jewellery",
+          url: "/ear+cuffs-jewellery",
         },
         {
           img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/1SevWE%402x.png",
@@ -446,12 +446,12 @@ export const Jewellery = {
         {
           img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/ZZJVeH%402x.png",
           content: "Pearl earring",
-          url: "/ear+jacket-earrings-jewellery",
+          url: "/#",
         },
         {
           img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/INe8h1%402x.png",
           content: "LightWeight by Stylori",
-          url: "/ear+jacket-earrings-jewellery",
+          url: "/earrings-jewellery-earrings-stylori",
         },
       ],
     },
@@ -521,7 +521,7 @@ export const Jewellery = {
         {
           img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Necklace/2-318402-Bridal.webp",
           content: "Bridal",
-          url: "/bridal+necklace-necklaces-jewellery",
+          url: "/ear+cuffs-earrings-jewellery",
         },
         {
           img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Necklace/2-bx8785-Layerred+Necklace.webp",
@@ -532,38 +532,38 @@ export const Jewellery = {
         {
           img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Necklace/28323711-Antique.webp",
           content: "Antique",
-          url: "/necklaces-jewellery-rewind",
+          url: "/ear+jacket-earrings-jewellery",
         },
         {
           img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Necklace/28812219-Guttapusalu.webp",
           content: "Gutapulusu",
           url: "/ear+jacket-earrings-jewellery",
         },
-        {
-          img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Necklace/28812219-Guttapusalu.webp",
-          content: "Pendant",
-          url: "/ear+jacket-earrings-jewellery",
-        },
-        {
-          img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Necklace/28812219-Guttapusalu.webp",
-          content: "Oddiyanam",
-          url: "/ear+jacket-earrings-jewellery",
-        },
-        {
-          img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Necklace/28812219-Guttapusalu.webp",
-          content: "Armlet",
-          url: "/ear+jacket-earrings-jewellery",
-        },
-        {
-          img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Necklace/28812219-Guttapusalu.webp",
-          content: "Anklet",
-          url: "/ear+jacket-earrings-jewellery",
-        },
-        {
-          img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Necklace/28812219-Guttapusalu.webp",
-          content: "Chain",
-          url: "/ear+jacket-earrings-jewellery",
-        },
+        // {
+        //   img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Necklace/28812219-Guttapusalu.webp",
+        //   content: "Pendant",
+        //   url: "/ear+jacket-earrings-jewellery",
+        // },
+        // {
+        //   img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Necklace/28812219-Guttapusalu.webp",
+        //   content: "Oddiyanam",
+        //   url: "/ear+jacket-earrings-jewellery",
+        // },
+        // {
+        //   img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Necklace/28812219-Guttapusalu.webp",
+        //   content: "Armlet",
+        //   url: "/ear+jacket-earrings-jewellery",
+        // },
+        // {
+        //   img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Necklace/28812219-Guttapusalu.webp",
+        //   content: "Anklet",
+        //   url: "/ear+jacket-earrings-jewellery",
+        // },
+        // {
+        //   img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Necklace/28812219-Guttapusalu.webp",
+        //   content: "Chain",
+        //   url: "/ear+jacket-earrings-jewellery",
+        // },
       ],
     },
     stone: {
@@ -716,37 +716,37 @@ export const Jewellery = {
         {
           img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/bangles%26bracelets/5Zna1n%402x.png",
           content: "Oval bracelts",
-          url: "/oval+bracelets-jewellery",
+          url: "/oval-bracelets-jewellery",
         },
         {
           img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/bangles%26bracelets/6afKPj%402x.png",
           content: "Tennies bracelets",
-          url: "/drops-earrings-jewellery",
+          url: "/oval-bracelets-jewellery",
         },
         {
-          img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Light+weight+Bangle-.webp",
+          img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Ring+Casual-.webp",
           content: "LightWeight bangles",
-          url: "/flexible-jewellery",
+          url: "/bracelets-jewellery-bracelets-stylori",
         },
         {
           img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/bangles%26bracelets/yGnqN0%402x.png",
           content: "Platinum Bracelets",
-          url: "/huggies-earrings-jewellery",
+          url: "/buy+platinum-bracelets-jewellery",
         },
         {
           img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/bangles%26bracelets/iYTHDb%402x.png",
           content: "Mens bracelets",
-          url: "/jhumkas+online-earrings-jewellery",
+          url: "/bracelets-jewellery-bracelets-mens+collection",
         },
         {
           img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/bangles%26bracelets/MN2iaL%402x.png",
           content: "Kids bangles",
-          url: "/ear+jacket-earrings-jewellery",
+          url: "/bangles-jewellery-for+kids",
         },
         {
           img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/bangles%26bracelets/2wA3vs%402x.png",
           content: "Lightweight by stylori",
-          url: "/ear+jacket-earrings-jewellery",
+          url: "/bracelets-jewellery-bracelets-stylori",
         },
       ],
     },
@@ -823,7 +823,7 @@ export const Jewellery = {
         {
           img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Ring+Casual-.webp",
           content: "Casual",
-          url: "/casual+rings-rings-jewellery",
+          url: "/casual+rings-jewellery",
         },
         {
           img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Ring+Cocktail.webp",
@@ -833,27 +833,27 @@ export const Jewellery = {
         {
           img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Ring+Fashion.webp",
           content: "Fashion",
-          url: "/ear+cuffs-earrings-jewellery",
+          url: "/fusion-jewellery",
         },
         {
           img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/rings/xJu4r9%402x.png",
           content: "Bridal",
-          url: "/rings-jewellery-bridal",
+          url: "/bridal+set-rings-jewellery",
         },
         {
           img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/rings/C1IQGq%402x.png",
           content: "Platinum rings",
-          url: "/rings-buy+platinum-jewellery",
+          url: "/buy+platinum-rings-jewellery",
         },
         {
           img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/rings/YE4CnD%402x.png",
           content: "Men's Rings",
-          url: "/rings-jewellery-for+male",
+          url: "/rings-jewellery-rings-mens+collection",
         },
         {
           img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/rings/JfQ2Pg%402x.png",
-          content: "Light weightby STYLORI",
-          url: "/ear+jacket-earrings-jewellery",
+          content: "Light & weightby & STYLORI",
+          url: "/rings-jewellery-rings-stylori",
         },
       ],
     },
@@ -906,59 +906,61 @@ export const Jewellery = {
       name: "",
       img: [
         {
-          url: "/jewellery-close+setting",
           content: "Traditional Setting",
+          url: "/jewellery-close+setting",
           img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/SqY6sJ%402x.png",
         },
         {
-          url: "/jewellery-young+ones",
           content: "Young Ones",
+          url: "/jewellery-young+ones",
           img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/bvtACp%402x.png",
         },
         {
-          url: "/jewellery-for+male",
-          content: "Mens",
-          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/3keZ23%402x.png",
-        },
-        {
-          url: "/jewellery-mayura",
-          content: "Mayura",
-          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/XEwpui%402x.png",
-        },
-        {
-          url: "/jewellery-fabula",
           content: "Fabula",
+          url: "/jewellery-fabula",
           img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/26P38o%402x.png",
         },
         {
-          url: "/jewellery-bridal",
           content: "Muhurtham",
+          url: "/jewellery-muhurtham",
           img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/lMysCt%402x.png",
         },
         {
-          url: "/jewellery-uncut",
-          content: "Uncut",
-          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/z5pju4%402x.png",
-        },
-        { url: "/ear+jacket-earrings-jewellery", content: "Jadau", image: "" },
-        {
-          url: "/jewellery-nagas",
           content: "Nagas",
+          url: "/jewellery-nagas",
           img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/2FXfOD%402x.png",
         },
         {
-          url: "/jewellery-rewind",
           content: "Rewind",
+          url: "/jewellery-rewind",
           img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/UmsWiC%402x.png",
         },
         {
-          url: "/jewellery-coral",
+          content: "Mens",
+          url: "/jewellery-mens+collection",
+          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/3keZ23%402x.png",
+        },
+        {
+          content: "Mayura",
+          url: "/jewellery-mayura",
+          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/XEwpui%402x.png",
+        },
+
+        {
+          content: "Uncut",
+          url: "/jewellery-uncut",
+          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/z5pju4%402x.png",
+        },
+        { content: "Jadau", url: "/jadai-jewellery", image: "" },
+
+        {
           content: "Strings",
+          url: "/jewellery-coral",
           img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/xMJ8PJ%402x.png",
         },
         {
-          url: "/jewellery-forevermark",
           content: "Forevermark",
+          url: "/jewellery-forevermark",
           img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/z6JNI6%402x.png",
         },
       ],
@@ -996,176 +998,185 @@ export const Jewellery = {
   STYLORI: {
     option: {
       hr: "",
-      option: ["STYLORI GOLDs", "STYLORI SILVER", "CSK MERCHANDISE"],
-    },
-  },
-  SOLITAIRE: {
-    styles: {
-      name: "SHOPS BY STYLE",
-      img: [
-        {
-          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/solitaire/Ul3xhG%402x.png",
-          content: "Rings",
-          url: "/studs-earrings-jewellery",
-        },
-        {
-          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/solitaire/Ul3xhG%402x.png",
-          content: "Earrings",
-          url: "/drops-earrings-jewellery",
-        },
-        {
-          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/solitaire/OxwFfP%402x.png",
-          content: "Necklace",
-          url: "/ear+cuffs-earrings-jewellery",
-        },
-        {
-          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/solitaire/MN2iaL%402x.png",
-          content: "Bangles & bracelets",
-          url: "/huggies-earrings-jewellery",
-        },
-        {
-          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/solitaire/1SevWE%402x.png",
-          content: "pendants",
-          url: "/jhumkas+online-earrings-jewellery",
-        },
-        {
-          img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/solitaire/YE4CnD%402x.png",
-          content: "Men's Ring",
-          url: "/ear+jacket-earrings-jewellery",
-        },
-      ],
-    },
-    stone: {
-      name2: "LOOSE DIAMONDS",
-      stone_metal: [
-        {
-          icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Group+319.svg",
-          name: "Gemstone",
-        },
-        {
-          icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Group+321.svg",
-          name: "Diamond",
-        },
-        {
-          icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Group+325.svg",
-          name: "Solitaire",
-        },
-
-        {
-          icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Ellipse+3.svg",
-          name: "Platinum",
-        },
-        {
-          icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
-          name: " Gold",
-        },
-        // {
-        //   icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
-        //   name: "White Gold",
-        // },
-        // {
-        //   icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
-        //   name: "Rose Gold",
-        // },
-        // {
-        //   icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Path+423.svg",
-        //   name: "Silver by STYLORI",
-        // },
-      ],
-    },
-    price: {
-      name3: "SHOP BY PRICE",
-      price: [
-        {
-          price: "Below -$1000",
-        },
-        {
-          price: "$10000 -$250000",
-        },
-        {
-          price: "$250000 - &50000",
-        },
-        {
-          price: "Above -$1000",
-        },
-      ],
-    },
-    option: {
       option: [
-        "SOLITAIRE GUIDE",
-        "DESIGN YOUR OWN",
-        "KNOW YOUR SIZE",
-        "SHOP ALL DESIGN",
+        {
+          content: "STYLORI DIAMOND",
+          url: "https://www.stylori.com/",
+        },
+        {
+          content: "STYLORI SILVER",
+          url: "https://www.stylori.com/styloriSilver",
+        },
       ],
     },
   },
+  // SOLITAIRE: {
+  //   styles: {
+  //     name: "SHOPS BY STYLE",
+  //     img: [
+  //       {
+  //         img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/solitaire/Ul3xhG%402x.png",
+  //         content: "Rings",
+  //         url: "/studs-earrings-jewellery",
+  //       },
+  //       {
+  //         img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/solitaire/Ul3xhG%402x.png",
+  //         content: "Earrings",
+  //         url: "/drops-earrings-jewellery",
+  //       },
+  //       {
+  //         img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/solitaire/OxwFfP%402x.png",
+  //         content: "Necklace",
+  //         url: "/ear+cuffs-earrings-jewellery",
+  //       },
+  //       {
+  //         img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/solitaire/MN2iaL%402x.png",
+  //         content: "Bangles & bracelets",
+  //         url: "/huggies-earrings-jewellery",
+  //       },
+  //       {
+  //         img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/solitaire/1SevWE%402x.png",
+  //         content: "pendants",
+  //         url: "/jhumkas+online-earrings-jewellery",
+  //       },
+  //       {
+  //         img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/solitaire/YE4CnD%402x.png",
+  //         content: "Men's Ring",
+  //         url: "/ear+jacket-earrings-jewellery",
+  //       },
+  //     ],
+  //   },
+  //   stone: {
+  //     name2: "LOOSE DIAMONDS",
+  //     stone_metal: [
+  //       {
+  //         icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Group+319.svg",
+  //         name: "Gemstone",
+  //       },
+  //       {
+  //         icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Group+321.svg",
+  //         name: "Diamond",
+  //       },
+  //       {
+  //         icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Group+325.svg",
+  //         name: "Solitaire",
+  //       },
 
-  "SAVING SCHEME": {
-    option: {
-      hr: "",
-      option: [
-        "PAY NOW",
-        "JOIN NOW",
-        "NEW QUICK GOLD",
-        "SUPER QUICK DIAMOND",
-        "SUPER QUICK SILVER",
-      ],
-    },
-  },
-  "OTHER JEWELLERY": {
-    price: {
-      name3: "SHOP BY PRICE",
-      price: [
-        {
-          price: "Below -$1000",
-        },
-        {
-          price: "$10000 -$250000",
-        },
-        {
-          price: "$250000 - &50000",
-        },
-        {
-          price: "Above -$1000",
-        },
-      ],
-    },
-    feature: {
-      extrafeature: [
-        {
-          name: "NECKLACE",
-          feature: ["Short", "Long", "Layered", "Bridal"],
-        },
-        {
-          name: "PENDANTS",
-          feature: ["Casual", "Bridal", "Religious"],
-        },
-        {
-          name: "SHOP MORE",
-          feature: [
-            "Nose Pin",
-            "Chain",
-            "Platinum Brands",
-            "Bridal Accessories",
-            "Odiyanam",
-            "Anklets",
-          ],
-        },
-        {
-          name: "STYLORI",
-          feature: ["Gold & Diamonds", "Silver"],
-        },
-        {
-          name: "GOLD COINS",
-          feature: ["22ct", "24ct"],
-        },
-        {
-          name: "SHOP ALL JEWELLERY",
-          feature: ["For Men", "For Women", "For Kids"],
-        },
-      ],
-    },
-  },
+  //       {
+  //         icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Ellipse+3.svg",
+  //         name: "Platinum",
+  //       },
+  //       {
+  //         icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
+  //         name: " Gold",
+  //       },
+  //       // {
+  //       //   icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
+  //       //   name: "White Gold",
+  //       // },
+  //       // {
+  //       //   icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
+  //       //   name: "Rose Gold",
+  //       // },
+  //       // {
+  //       //   icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Path+423.svg",
+  //       //   name: "Silver by STYLORI",
+  //       // },
+  //     ],
+  //   },
+  //   price: {
+  //     name3: "SHOP BY PRICE",
+  //     price: [
+  //       {
+  //         price: "Below -$1000",
+  //       },
+  //       {
+  //         price: "$10000 -$250000",
+  //       },
+  //       {
+  //         price: "$250000 - &50000",
+  //       },
+  //       {
+  //         price: "Above -$1000",
+  //       },
+  //     ],
+  //   },
+  //   option: {
+  //     option: [
+  //       "SOLITAIRE GUIDE",
+  //       "DESIGN YOUR OWN",
+  //       "KNOW YOUR SIZE",
+  //       "SHOP ALL DESIGN",
+  //     ],
+  //   },
+  // },
+
+  // "SAVING SCHEME": {
+  //   option: {
+  //     hr: "",
+  //     option: [
+  //       "PAY NOW",
+  //       "JOIN NOW",
+  //       "NEW QUICK GOLD",
+  //       "SUPER QUICK DIAMOND",
+  //       "SUPER QUICK SILVER",
+  //     ],
+  //   },
+  // },
+  // "OTHER JEWELLERY": {
+  //   price: {
+  //     name3: "SHOP BY PRICE",
+  //     price: [
+  //       {
+  //         price: "Below -$1000",
+  //       },
+  //       {
+  //         price: "$10000 -$250000",
+  //       },
+  //       {
+  //         price: "$250000 - &50000",
+  //       },
+  //       {
+  //         price: "Above -$1000",
+  //       },
+  //     ],
+  //   },
+  //   feature: {
+  //     extrafeature: [
+  //       {
+  //         name: "NECKLACE",
+  //         feature: ["Short", "Long", "Layered", "Bridal"],
+  //       },
+  //       {
+  //         name: "PENDANTS",
+  //         feature: ["Casual", "Bridal", "Religious"],
+  //       },
+  //       {
+  //         name: "SHOP MORE",
+  //         feature: [
+  //           "Nose Pin",
+  //           "Chain",
+  //           "Platinum Brands",
+  //           "Bridal Accessories",
+  //           "Odiyanam",
+  //           "Anklets",
+  //         ],
+  //       },
+  //       {
+  //         name: "STYLORI",
+  //         feature: ["Gold & Diamonds", "Silver"],
+  //       },
+  //       {
+  //         name: "GOLD COINS",
+  //         feature: ["22ct", "24ct"],
+  //       },
+  //       {
+  //         name: "SHOP ALL JEWELLERY",
+  //         feature: ["For Men", "For Women", "For Kids"],
+  //       },
+  //     ],
+  //   },
+  // },
   // "My Account": {
   //     Login: {
   //         name: 'Login',

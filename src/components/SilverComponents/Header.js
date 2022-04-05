@@ -1093,6 +1093,10 @@ class Header extends Component {
                                           xs={6}
                                           sm={6}
                                           className={classes.griddiv}
+                                          onClick={() => {
+                                            window.location.href = val.url;
+                                          }}
+                                          key={val.content}
                                         >
                                           <div className={classes.imgsubdiv}>
                                             <p className={classes.headtext}>
@@ -1250,8 +1254,11 @@ class Header extends Component {
                                           <p
                                             className={classes.optiontext}
                                             style={{ paddingTop: "3px" }}
+                                            onClick={() => {
+                                              window.location.href = v.url;
+                                            }}
                                           >
-                                            {v}
+                                            {v.content}
                                           </p>
                                         </div>
                                       )

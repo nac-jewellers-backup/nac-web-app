@@ -398,12 +398,12 @@ function HeaderHoverMenuItem(props) {
     {
       img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Necklace/9-ei9520-Long+Necklace.webp",
       content: "Long Necklace",
-      url: "/studs-earrings-jewellery",
+      url: "/long+necklace-necklaces-jewellery",
     },
     {
       img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Necklace/2-eh8221-Short+Necklace.webp",
       content: "Short Necklace",
-      url: "/drops-earrings-jewellery",
+      url: "/short+necklace-necklaces-jewellery",
     },
     {
       img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Necklace/ax1069-Choker.webp",
