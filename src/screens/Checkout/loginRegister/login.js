@@ -909,7 +909,9 @@ const LoginComponent = (props) => {
               paddingTop: "14px",
             }}
           >
-            Guest Checkout Not ready to become a member just yet?
+            {emailForm
+              ? "Guest Checkout Not ready to become a member just yet?"
+              : "Already Signed up?"}
           </span>{" "}
           <br />
           <br />
