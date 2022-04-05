@@ -435,7 +435,7 @@ class Header extends Component {
                       justify="flex-end"
                       alignItems="center"
                     >
-                      <Grid
+                      {/* <Grid
                         container
                         item
                         xs={12}
@@ -472,7 +472,7 @@ class Header extends Component {
                             />
                           </ThemeProvider>
                         </Grid>
-                      </Grid>
+                      </Grid> */}
                       <Grid item xs={12}>
                         <div className={`head-icons1 ${classes.headIcons}`}>
                           <i class={`fa fa-phone  ${classes.iconFafa}`}></i>
@@ -837,7 +837,7 @@ class Header extends Component {
                                 )}
                               />
                             </Grid> */}
-                            <Grid item xs={6} sm={6} md={3} lg={3}>
+                            {/* <Grid item xs={6} sm={6} md={3} lg={3}>
                               <ThemeProvider theme={theme}>
                                 <Autocomplete
                                   id="country-select-demo"
@@ -864,7 +864,7 @@ class Header extends Component {
                                   )}
                                 />
                               </ThemeProvider>
-                            </Grid>
+                            </Grid> */}
                           </Grid>
                         </Grid>
                         <Grid item xs={12}>
@@ -1405,7 +1405,7 @@ class Header extends Component {
           </Drawer>
         </Hidden>
 
-        <Hidden smDown>
+        {/* <Hidden smDown>
           <Grid
             sm={3}
             md={4}
@@ -1498,7 +1498,7 @@ class Header extends Component {
               />
             </ThemeProvider>
           </Grid>
-        </Hidden>
+        </Hidden> */}
       </div>
     );
   }
