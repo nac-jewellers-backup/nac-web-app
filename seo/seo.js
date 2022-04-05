@@ -1,6 +1,7 @@
 var seo = (title, description, imgURL) => {
   if (!title) {
-    return (title = "");
+    return (title =
+      "NAC Jewellers - Online Jewellery Shopping Store South India | Buy Gold, Diamond, Platinum and Antique Jewellery with latest Designs 2022");
   }
   if (!description) {
     return (description = " ");
@@ -14,7 +15,7 @@ var seo = (title, description, imgURL) => {
     <title id="title">${title} </title>
   <meta name='facebook-domain-verification' content='' />  
   <meta name='description'   content='${description}'  />
-  <meta name='keywords'  content='NAC Jewellers - Online Jewellery Shopping Store South India | Buy Gold, Diamond, Platinum and Antique Jewellery with latest Designs 2021' />
+  <meta name='keywords'  content='NAC Jewellers - Online Jewellery Shopping Store South India | Buy Gold, Diamond, Platinum and Antique Jewellery with latest Designs 2022' />
  
   <meta property='og:title'  content='${title}' />
   <meta property='og:description'  content='${description}'/>
