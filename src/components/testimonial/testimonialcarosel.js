@@ -407,7 +407,7 @@ export default function ImageGridList(props) {
                             variant="body2"
                             className={classes.customerName}
                           >
-                            {val.title ?? "Testing Title"}
+                            {val.title ?? ""}
                           </Typography>
                         </Grid>
                       </Grid>

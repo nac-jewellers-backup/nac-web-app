@@ -355,7 +355,7 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
         save: " ",
         offerDiscount:
           PD && PD.discount ? `${Math.abs(PD?.discount)}% OFF` : null,
-        shortDis: "Testing Short Description",
+        shortDis: "",
         dis:
           PD &&
           PD !== undefined &&
