@@ -745,7 +745,7 @@ class Header extends Component {
                       xl={1}
                       justify="center"
                       alignItems="center"
-                      style={{ paddingTop: "45px" }}
+                      // style={{ paddingTop: "45px" }}
                     >
                       <IconButton onClick={this.handleDrawerOpen}>
                         <MenuIcon className={classes.mobileNavIcon} />
@@ -758,7 +758,7 @@ class Header extends Component {
                         onClick={() => {
                           window.location.href = "/";
                         }}
-                        style={{ cursor: "pointer", paddingTop: "47px" }}
+                        style={{ cursor: "pointer" }}
                       >
                         <img
                           className={`imgsilver`}

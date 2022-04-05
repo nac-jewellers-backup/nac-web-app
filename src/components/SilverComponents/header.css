@@ -658,7 +658,7 @@ i {
 
 @media only screen and (max-width: 958px) and (min-width: 599px) {
   .headerTop {
-    height: 64px;
+    height: 58px;
   }
 }
 
@@ -696,6 +696,6 @@ i {
 
 @media only screen and (max-width: 600px) {
   .headerTop {
-    height: 92px;
+    height: 58px;
   }
 }
