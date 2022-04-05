@@ -2,20 +2,20 @@
 export const mainlist = [
   {
     name: "Earrings",
-    url: "/jewellery",
+    url: "/earrings-jewellery",
   },
 
   {
     name: "NECKLACE",
-    url: "/goldcoins",
+    url: "/necklaces-jewellery",
   },
   {
     name: "RINGS",
-    url: "/collections",
+    url: "/rings-jewellery",
   },
   {
     name: "BANGLES & BRACELETS",
-    url: "/jewellery-shipping+in+1+day",
+    url: "/wrist+wear-jewellery",
   },
   // {
   //   name: "OTHER JEWELLERY",
@@ -23,11 +23,11 @@ export const mainlist = [
   // },
   {
     name: "SOLITAIRE",
-    url: "/jewellery/kada/csk_kada?sku_id=1000000",
+    url: "/jewellery/",
   },
   {
     name: "SILVER",
-    url: "/jewellery/kada/csk_kada?sku_id=1000000",
+    url: "/silver+articles",
   },
   {
     name: "COLLECTIONS",
@@ -1207,7 +1207,7 @@ export const menuListHeader = [
   },
   {
     title: "Bangles & Bracelets".toUpperCase(),
-    url: "bangles-jewellery",
+    url: "/wrist+wear-jewellery",
   },
   // {
   //   title: "Other jewellery".toUpperCase(),
@@ -1219,11 +1219,11 @@ export const menuListHeader = [
   },
   {
     title: "Silver".toUpperCase(),
-    url: "#",
+    url: "/silver+articles",
   },
   {
     title: "Collections".toUpperCase(),
-    url: "/CollectionFullPage",
+    url: "/jewellery",
   },
 
   {

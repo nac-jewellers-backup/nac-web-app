@@ -14,21 +14,22 @@ class Netbanking extends React.Component {
     let user_id = localStorage.getItem("user_id")
       ? localStorage.getItem("user_id")
       : "";
-    const data = this.props.data ? this.props.data : "";
-    var discounted_price = this.props.cartFilters.discounted_price
-      ? this.props.cartFilters.discounted_price
+    let data = this.props.data ? this.props.data : "";
+    let discounted_price = this?.props?.cartFilters?.discounted_price
+      ? this?.props?.cartFilters?.discounted_price
       : "";
 
-    var dataCard1;
+    let dataCard1;
     if (data.length > 0 && data !== undefined && data !== null) {
       dataCard1 =
-        this.props.data &&
-        this.props.data
+        this?.props?.data &&
+        this?.props?.data
           .map((val) => {
             return (
-              Math.round(val.dataCard1[0].offerPrice) *
-              (JSON.parse(localStorage.getItem("quantity"))[val.generatedSku] ??
-                1)
+              Math.round(val?.dataCard1[0]?.offerPrice) *
+              (JSON.parse(localStorage.getItem("quantity"))[
+                val?.generatedSku
+              ] ?? 1)
             );
           })
           .reduce(myFunc);
@@ -37,6 +38,7 @@ class Netbanking extends React.Component {
         return cart_price;
       }
     }
+
     return (
       <Grid containe>
         <Grid item lg={12} xs={12}>
@@ -46,22 +48,11 @@ class Netbanking extends React.Component {
                 data={Math.round(
                   dataCard1 - discounted_price + this.props.ShippingCharge
                 )}
-                data1={
-                  CurrencyConversion(
-                    Math.round(
-                      dataCard1 - discounted_price + this.props.ShippingCharge
-                    )
-                  )
-                  //   Intl.NumberFormat("en-IN", {
-                  //   style: "currency",
-                  //   currency: "INR",
-                  //   minimumFractionDigits: 0,
-                  // }).format(
-                  //   Math.round(
-                  //     dataCard1 - discounted_price + this.props.ShippingCharge
-                  //   )
-                  // )
-                }
+                data1={CurrencyConversion(
+                  this.props.ShippingCharge === "Free"
+                    ? dataCard1 - discounted_price + 0
+                    : dataCard1 - discounted_price + this.props.ShippingCharge
+                )}
               />
             </Grid>
           </div>
@@ -87,7 +78,9 @@ const Components = (props) => {
       .then((val) => {
         if (val) setShippingCharge(val.shipping_charge);
       })
-      .catch((err) => {});
+      .catch((err) => {
+        console.log(error);
+      });
   }, []);
   let content, mapped;
   if (!loading && !error) {
@@ -105,7 +98,7 @@ const Components = (props) => {
     content = (
       <Netbanking
         {...props}
-        ShippingCharge={ShippingCharge}
+        ShippingCharge={ShippingCharge ?? 0}
         data={mapped}
         cartFilters={cartFilters}
         setCartFilters={setCartFilters}

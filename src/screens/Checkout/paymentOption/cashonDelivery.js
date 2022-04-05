@@ -120,24 +120,13 @@ class CashonDelivey extends React.Component {
               onClick={() => this.makeFetch(this.props)}
             >
               PAY&nbsp;
-              {
-                CurrencyConversion(
-                  Math.round(
-                    this.props.ShippingCharge === "Free"
-                      ? dataCard1 - discounted_price + 0
-                      : dataCard1 - discounted_price + this.props.ShippingCharge
-                  )
+              {CurrencyConversion(
+                Math.round(
+                  this.props.ShippingCharge === "Free"
+                    ? dataCard1 - discounted_price + 0
+                    : dataCard1 - discounted_price + this.props.ShippingCharge
                 )
-                // Intl.NumberFormat("en-IN", {
-                //   style: "currency",
-                //   currency: "INR",
-                //   minimumFractionDigits: 0,
-                // }).format(
-                //   Math.round(
-                //     dataCard1 - discounted_price + this.props.ShippingCharge
-                //   )
-                // )
-              }
+              )}
             </Button>
           </Grid>
         </Grid>
@@ -163,7 +152,9 @@ const Components = (props) => {
       .then((val) => {
         if (val) setShippingCharge(val.shipping_charge);
       })
-      .catch((err) => {});
+      .catch((err) => {
+        console.log(err);
+      });
   }, []);
   let content, mapped;
   if (!loading && !error) {
@@ -182,7 +173,7 @@ const Components = (props) => {
       <CashonDelivey
         {...props}
         data={mapped}
-        ShippingCharge={ShippingCharge}
+        ShippingCharge={ShippingCharge ?? 0}
         cartFilters={cartFilters}
         setCartFilters={setCartFilters}
       />
