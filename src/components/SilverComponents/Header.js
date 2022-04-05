@@ -776,7 +776,7 @@ class Header extends Component {
                     </Grid>
                     <Grid item xs={12}>
                       <Grid container item xs={12}>
-                        {/* <Grid
+                        <Grid
                           container
                           item
                           xs={12}
@@ -789,7 +789,7 @@ class Header extends Component {
                             justifyContent="flex-end"
                             alignItems="center"
                           >
-                            <Grid
+                            {/* <Grid
                               item
                               xs={3}
                               sm={3}
@@ -836,8 +836,8 @@ class Header extends Component {
                                   />
                                 )}
                               />
-                            </Grid>
-                            <Grid item xs={6} sm={6} md={3} lg={3}>
+                            </Grid> */}
+                            {/* <Grid item xs={6} sm={6} md={3} lg={3}>
                               <ThemeProvider theme={theme}>
                                 <Autocomplete
                                   id="country-select-demo"
@@ -864,9 +864,9 @@ class Header extends Component {
                                   )}
                                 />
                               </ThemeProvider>
-                            </Grid>
+                            </Grid> */}
                           </Grid>
-                        </Grid> */}
+                        </Grid>
                         <Grid item xs={12}>
                           <div
                             onClick={this.handleSearch}
@@ -1093,6 +1093,10 @@ class Header extends Component {
                                           xs={6}
                                           sm={6}
                                           className={classes.griddiv}
+                                          onClick={() => {
+                                            window.location.href = val.url;
+                                          }}
+                                          key={val.content}
                                         >
                                           <div className={classes.imgsubdiv}>
                                             <p className={classes.headtext}>
@@ -1250,8 +1254,11 @@ class Header extends Component {
                                           <p
                                             className={classes.optiontext}
                                             style={{ paddingTop: "3px" }}
+                                            onClick={() => {
+                                              window.location.href = v.url;
+                                            }}
                                           >
-                                            {v}
+                                            {v.content}
                                           </p>
                                         </div>
                                       )
