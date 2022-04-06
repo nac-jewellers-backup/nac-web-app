@@ -19,7 +19,7 @@ export const storeLocatorData = {
     },
     data: [
       {
-        img: "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori+CSK-banner-1920-X-656-px.jpg",
+        img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/store-locator/NAC_Store_locator_banner.jpg",
       },
     ],
   },
