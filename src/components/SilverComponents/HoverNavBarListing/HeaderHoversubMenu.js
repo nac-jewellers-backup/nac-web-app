@@ -22,7 +22,7 @@ function HeaderHoverMenuItem(props) {
   }, []);
   const stones = [
     {
-      title: "Genstone",
+      title: "Gemstone",
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Group+319.svg",
       url1: "/#",
       url2: "#",
@@ -407,7 +407,7 @@ function HeaderHoverMenuItem(props) {
     },
     {
       img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Necklace/ax1069-Choker.webp",
-      content: "Choakar",
+      content: "Chocker",
       url: "/jhumkas+online-earrings-jewellery",
     },
     {
@@ -471,7 +471,7 @@ function HeaderHoverMenuItem(props) {
           url: "/short+necklace-necklaces-jewellery",
         },
         {
-          itm: "Choakar",
+          itm: "Chocker",
           url: "#",
         },
         {
