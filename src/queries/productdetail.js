@@ -1,11 +1,6 @@
 import { filterGenerator } from "utils";
 // SR3261
-export const PRODUCTDETAILS = `query MyQuery(
-  $conditionfilter: TransSkuListCondition
-  $conditionImage: ProductImageCondition
-  $productnamefilter: TransSkuListFilter
-  $number: Int
-) {
+export const PRODUCTDETAILS = `query MyQuery($conditionfilter: TransSkuListCondition, $conditionImage: ProductImageCondition, $productnamefilter: TransSkuListFilter, $number: Int) {
   allTransSkuLists(
     condition: $conditionfilter
     filter: $productnamefilter
@@ -28,8 +23,6 @@ export const PRODUCTDETAILS = `query MyQuery(
       markupPriceTax
       skuUrl
       showPriceBreakup
-      
-      
       transSkuDescriptionsBySkuId {
         nodes {
           skuDescription
@@ -116,9 +109,21 @@ export const PRODUCTDETAILS = `query MyQuery(
           marginPercentage
         }
       }
+      totalNoStonesByProductSku {
+        nodes {
+          discountPrice
+          marginPercentage
+          markupPrice
+          productSku
+          sellingPrice
+          type
+          productId
+        }
+      }
     }
   }
 }
+
 
 `;
 export const CheckForCod = `query CheckForCod($pincode:String) {

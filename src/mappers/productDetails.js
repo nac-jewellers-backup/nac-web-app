@@ -214,6 +214,7 @@ const calculatetotalms = (arr, name, price) => {
   });
 
   a = filtering.reduce((a, b) => a + b, 0);
+
   return CurrencyConversion(Math.round(a));
   //  new Intl.NumberFormat("en-IN", {
   //   style: "currency",
@@ -243,9 +244,11 @@ const gemstoneType = (PD, valGemstoneType, type) => {
       if (val.gemstoneType === valPD.gemstoneType) {
         arrOfGemstoneType.push(val[type]);
       }
+
       return arrOfGemstoneType;
     });
   });
+
   return arrOfGemstoneType;
 };
 const generatedimondClarity = (val) => {
@@ -551,66 +554,42 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
           {
             header: "Price Breakup",
             namedetail: [
-              {
-                name: "Diamond",
-                details:
-                  PD &&
-                  PD?.productListByProductId &&
-                  PD?.productListByProductId?.productDiamondsByProductSku &&
-                  PD?.productListByProductId?.productDiamondsByProductSku
-                    ?.nodes &&
-                  PD?.productListByProductId?.productDiamondsByProductSku?.nodes
-                    .length > 0
-                    ? [
-                        PD?.pricingSkuMaterialsByProductSku.nodes &&
-                        PD?.pricingSkuMaterialsByProductSku?.nodes?.length > 0
-                          ? calculatetotalms(
-                              PD?.pricingSkuMaterialsByProductSku?.nodes,
-                              "diamond",
-                              "discountPrice"
-                            )
-                          : 0,
-                        PD?.pricingSkuMaterialsByProductSku?.nodes &&
-                        PD?.pricingSkuMaterialsByProductSku?.nodes?.length > 0
-                          ? calculatetotalms(
-                              PD?.pricingSkuMaterialsByProductSku?.nodes,
-                              "diamond",
-                              "markup"
-                            )
-                          : 0,
-                      ]
-                    : [],
-              },
-              {
-                name: "Gemstone",
-                details:
-                  PD &&
-                  PD?.productListByProductId &&
-                  PD?.productListByProductId?.productGemstonesByProductSku &&
-                  PD?.productListByProductId?.productGemstonesByProductSku
-                    ?.nodes &&
-                  PD?.productListByProductId?.productGemstonesByProductSku
-                    ?.nodes?.length > 0
-                    ? [
-                        PD?.pricingSkuMaterialsByProductSku?.nodes &&
-                        PD?.pricingSkuMaterialsByProductSku?.nodes?.length > 0
-                          ? calculatetotalms(
-                              PD?.pricingSkuMaterialsByProductSku?.nodes,
-                              "gemstone",
-                              "discountPrice"
-                            )
-                          : 0,
-                        PD?.pricingSkuMaterialsByProductSku?.nodes &&
-                        PD?.pricingSkuMaterialsByProductSku?.nodes?.length > 0
-                          ? calculatetotalms(
-                              PD?.pricingSkuMaterialsByProductSku?.nodes,
-                              "gemstone",
-                              "markup"
-                            )
-                          : 0,
-                      ]
-                    : [],
-              },
+              PD &&
+                PD.totalNoStonesByProductSku &&
+                PD.totalNoStonesByProductSku.nodes &&
+                PD.totalNoStonesByProductSku.nodes[0] &&
+                PD.totalNoStonesByProductSku.nodes[0].markupPrice &&
+                PD.totalNoStonesByProductSku.nodes[0].discountPrice && {
+                  name: "Diamond",
+                  details: [
+                    CurrencyConversion(
+                      PD?.totalNoStonesByProductSku?.nodes[0]?.discountPrice ??
+                        0
+                    ),
+                    CurrencyConversion(
+                      PD?.totalNoStonesByProductSku?.nodes[0]?.markupPrice ?? 0
+                    ),
+                  ],
+                },
+
+              PD &&
+                PD.totalNoStonesByProductSku &&
+                PD.totalNoStonesByProductSku.nodes &&
+                PD.totalNoStonesByProductSku.nodes[1] &&
+                PD.totalNoStonesByProductSku.nodes[1].markupPrice &&
+                PD.totalNoStonesByProductSku.nodes[1].discountPrice && {
+                  name: "Gemstone",
+                  details: [
+                    CurrencyConversion(
+                      PD?.totalNoStonesByProductSku?.nodes[1]?.discountPrice ??
+                        0
+                    ),
+                    CurrencyConversion(
+                      PD?.totalNoStonesByProductSku?.nodes[1]?.markupPrice ?? 0
+                    ),
+                  ],
+                },
+
               {
                 name: "Making Charges",
                 details: [
@@ -863,6 +842,36 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                             PD?.productListByProductId
                               ?.productDiamondsByProductSku?.nodes[0]
                               ?.description,
+                        }
+                      : "",
+                    PD?.productListByProductId?.productDiamondsByProductSku
+                      ?.nodes[0]?.stoneCount
+                      ? {
+                          name: "Stone Count",
+                          details:
+                            PD?.productListByProductId
+                              ?.productDiamondsByProductSku?.nodes[0]
+                              ?.stoneCount,
+                        }
+                      : "",
+                    PD?.productListByProductId?.productDiamondsByProductSku
+                      ?.nodes[0]?.stoneAmount
+                      ? {
+                          name: "Stone Amount",
+                          details:
+                            PD?.productListByProductId
+                              ?.productDiamondsByProductSku?.nodes[0]
+                              ?.stoneAmount,
+                        }
+                      : "",
+                    PD?.productListByProductId?.productDiamondsByProductSku
+                      ?.nodes[0]?.stoneWeight
+                      ? {
+                          name: "Stone Weight",
+                          details:
+                            PD?.productListByProductId
+                              ?.productDiamondsByProductSku?.nodes[0]
+                              ?.stoneWeight,
                         }
                       : "",
                   ]
@@ -1201,66 +1210,41 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
           {
             header: "Price Breakup",
             namedetail: [
-              {
-                name: "Diamond",
-                details:
-                  PD &&
-                  PD?.productListByProductId &&
-                  PD?.productListByProductId?.productDiamondsByProductSku &&
-                  PD?.productListByProductId?.productDiamondsByProductSku
-                    ?.nodes &&
-                  PD?.productListByProductId?.productDiamondsByProductSku?.nodes
-                    ?.length > 0
-                    ? [
-                        PD?.pricingSkuMaterialsByProductSku?.nodes &&
-                        PD?.pricingSkuMaterialsByProductSku?.nodes?.length > 0
-                          ? calculatetotalms(
-                              PD?.pricingSkuMaterialsByProductSku?.nodes,
-                              "diamond",
-                              "discountPrice"
-                            )
-                          : 0,
-                        PD?.pricingSkuMaterialsByProductSku?.nodes &&
-                        PD?.pricingSkuMaterialsByProductSku?.nodes?.length > 0
-                          ? calculatetotalms(
-                              PD?.pricingSkuMaterialsByProductSku?.nodes,
-                              "diamond",
-                              "markup"
-                            )
-                          : 0,
-                      ]
-                    : [],
-              },
-              {
-                name: "Gemstone",
-                details:
-                  PD &&
-                  PD?.productListByProductId &&
-                  PD?.productListByProductId?.productGemstonesByProductSku &&
-                  PD?.productListByProductId?.productGemstonesByProductSku
-                    ?.nodes &&
-                  PD?.productListByProductId?.productGemstonesByProductSku
-                    ?.nodes?.length > 0
-                    ? [
-                        PD?.pricingSkuMaterialsByProductSku?.nodes &&
-                        PD?.pricingSkuMaterialsByProductSku?.nodes?.length > 0
-                          ? calculatetotalms(
-                              PD?.pricingSkuMaterialsByProductSku?.nodes,
-                              "gemstone",
-                              "discountPrice"
-                            )
-                          : 0,
-                        PD?.pricingSkuMaterialsByProductSku?.nodes &&
-                        PD?.pricingSkuMaterialsByProductSku?.nodes?.length > 0
-                          ? calculatetotalms(
-                              PD?.pricingSkuMaterialsByProductSku?.nodes,
-                              "gemstone",
-                              "markup"
-                            )
-                          : 0,
-                      ]
-                    : [],
-              },
+              PD &&
+                PD.totalNoStonesByProductSku &&
+                PD.totalNoStonesByProductSku.nodes &&
+                PD.totalNoStonesByProductSku.nodes[0] &&
+                PD.totalNoStonesByProductSku.nodes[0].markupPrice &&
+                PD.totalNoStonesByProductSku.nodes[0].discountPrice && {
+                  name: "Diamond",
+                  details: [
+                    CurrencyConversion(
+                      PD?.totalNoStonesByProductSku?.nodes[0]?.discountPrice ??
+                        0
+                    ),
+                    CurrencyConversion(
+                      PD?.totalNoStonesByProductSku?.nodes[0]?.markupPrice ?? 0
+                    ),
+                  ],
+                },
+
+              PD &&
+                PD.totalNoStonesByProductSku &&
+                PD.totalNoStonesByProductSku.nodes &&
+                PD.totalNoStonesByProductSku.nodes[1] &&
+                PD.totalNoStonesByProductSku.nodes[1].markupPrice &&
+                PD.totalNoStonesByProductSku.nodes[1].discountPrice && {
+                  name: "Gemstone",
+                  details: [
+                    CurrencyConversion(
+                      PD?.totalNoStonesByProductSku?.nodes[1]?.discountPrice ??
+                        0
+                    ),
+                    CurrencyConversion(
+                      PD?.totalNoStonesByProductSku?.nodes[1]?.markupPrice ?? 0
+                    ),
+                  ],
+                },
               {
                 name: "Making Charges",
                 details: [
@@ -1510,6 +1494,36 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                             PD?.productListByProductId
                               ?.productDiamondsByProductSku?.nodes[0]
                               ?.description,
+                        }
+                      : "",
+                    PD?.productListByProductId?.productDiamondsByProductSku
+                      ?.nodes[0]?.stoneCount
+                      ? {
+                          name: "Stone Count",
+                          details:
+                            PD?.productListByProductId
+                              ?.productDiamondsByProductSku?.nodes[0]
+                              ?.stoneCount,
+                        }
+                      : "",
+                    PD?.productListByProductId?.productDiamondsByProductSku
+                      ?.nodes[0]?.stoneAmount
+                      ? {
+                          name: "Stone Amount",
+                          details:
+                            PD?.productListByProductId
+                              ?.productDiamondsByProductSku?.nodes[0]
+                              ?.stoneAmount,
+                        }
+                      : "",
+                    PD?.productListByProductId?.productDiamondsByProductSku
+                      ?.nodes[0]?.stoneWeight
+                      ? {
+                          name: "Stone Weight",
+                          details:
+                            PD?.productListByProductId
+                              ?.productDiamondsByProductSku?.nodes[0]
+                              ?.stoneWeight,
                         }
                       : "",
                   ]
