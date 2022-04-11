@@ -261,7 +261,10 @@ class HomeComp extends React.Component {
       .then((res) => res.json())
       .then((data) => {
         //set banner
-        let bannerDataFull = data.data.allBanners.nodes;
+        let bannerDataFull =
+          data?.data?.allBanners?.nodes?.sort(
+            (a, b) => parseFloat(a.position) - parseFloat(b.position)
+          ) ?? [];
 
         this.setState({ bannerHome: bannerDataFull });
         if (data.data.allBanners.nodes.length > 0) {
