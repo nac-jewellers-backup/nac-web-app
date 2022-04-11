@@ -111,7 +111,7 @@ query MyQuery {
 `;
 export const LISTINGBANNER = `
 query MyQuery {
-  allBanners(condition: {urlParam: "listingPage"}) {
+  allBanners  {
     nodes {
       mobile
       url
