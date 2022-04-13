@@ -277,3 +277,34 @@ query {
     }
   }
 }`;
+
+export const SEND_QUERIES = `
+mutation MyMutation(
+  $createdAt: Datetime!
+  $email: String
+  $phone: String
+  $name: String
+  $message: String
+  $updatedAt: Datetime!
+) {
+  createAskus(
+    input: {
+      askus: {
+        updatedAt: $updatedAt
+        createdAt: $createdAt
+        email: $email
+        isActive: true
+        message: $message
+        name: $name
+        phone: $phone
+      }
+    }
+  ) {
+    askus {
+      email
+      id
+      name
+    }
+  }
+}
+`;

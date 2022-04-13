@@ -11,6 +11,8 @@ import {
   Button,
   TextField,
 } from "@material-ui/core";
+import Snackbar from "@material-ui/core/Snackbar";
+import MuiAlert from "@material-ui/lab/Alert";
 import { makeStyles } from "@material-ui/core/styles";
 import { SolitairesData } from "../../mappers/dummydata/solitairesData";
 import { header, dummyData } from "./dummyDataSpecific";
@@ -19,8 +21,10 @@ import ArrowRightIcon from "@material-ui/icons/ArrowRight";
 import ArrowLeftIcon from "@material-ui/icons/ArrowLeft";
 import Footer from "../../components/Footer/Footer";
 import { API_URL } from "../../config";
-import { ALLBANNERSCOMPLETE } from "../../queries/home";
-
+import { ALLBANNERSCOMPLETE, SEND_QUERIES } from "../../queries/home";
+function Alert(props) {
+  return <MuiAlert elevation={6} variant="filled" {...props} />;
+}
 const useStyles = makeStyles((theme) => ({
   preButton: {
     width: "35px!important",
@@ -187,18 +191,26 @@ const useStyles = makeStyles((theme) => ({
       padding: "55px 0px 35px 0px",
     },
   },
+  titleHeader: {
+    fontSize: "22px !important",
+
+    fontWeight: "bold",
+    [theme.breakpoints.down("md")]: {
+      fontSize: "18px !important",
+    },
+
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "16px !important",
+    },
+  },
   titleContents: {
     fontSize: "18px !important",
-    padding: "0px 190px",
+
     [theme.breakpoints.down("md")]: {
       fontSize: "16px !important",
-      padding: "0px 100px",
     },
-    [theme.breakpoints.down("sm")]: {
-      padding: "0px 50px",
-    },
+
     [theme.breakpoints.down("xs")]: {
-      padding: "0px 45px",
       fontSize: "14px !important",
     },
   },
@@ -252,13 +264,18 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function AkshyaTritiya(props) {
-  const classes = useStyles();
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
+  const InitialState = {
+    name: "",
+    phone: "",
     email: "",
     query: "",
-  });
+  };
+  const classes = useStyles();
+  const [openSnack, setOpenSnack] = React.useState(false);
+  const [openSnackError, setOpenSnackError] = React.useState(false);
+  const [formData, setFormData] = useState(InitialState);
+
+  const [errorData, setErrorData] = useState(InitialState);
   const [banners, setBanners] = useState([]);
 
   const next = () => {
@@ -273,13 +290,69 @@ function AkshyaTritiya(props) {
     setFormData({ ...formData, [event.target.name]: event.target.value });
   };
 
-  const onsubmitvalue = async () => {
-    let fullDataForm = {
-      FirstName: formData.firstName,
-      LastName: formData.lastName,
-      Email: formData.email,
-      Query: formData.query,
-    };
+  const handleValidateData = () => {
+    if (formData.name.length === 0) {
+      setErrorData({ ...errorData, name: "Please enter name" });
+      return false;
+    }
+    if (formData.phone.length === 0) {
+      setErrorData({ ...errorData, phone: "Please enter phone number" });
+
+      return false;
+    }
+    if (formData.email.length === 0) {
+      setErrorData({ ...errorData, email: "Please enter email name" });
+
+      return false;
+    }
+    if (formData.query.length === 0) {
+      setErrorData({ ...errorData, query: "Please enter query name" });
+
+      return false;
+    }
+    setErrorData({
+      name: "",
+      phone: "",
+      email: "",
+      query: "",
+    });
+    return true;
+  };
+
+  const onsubmitvalue = () => {
+    if (handleValidateData()) {
+      fetch(`${API_URL}/graphql`, {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          query: SEND_QUERIES,
+          variables: {
+            updatedAt: new Date(),
+            createdAt: new Date(),
+            email: formData.email,
+            message: formData.query,
+            name: formData.name,
+            phone: formData.phone,
+          },
+        }),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data?.data?.createAskus?.askus?.id) {
+            setOpenSnack(true);
+            setFormData({
+              name: "",
+              phone: "",
+              email: "",
+              query: "",
+            });
+            return;
+          }
+          setOpenSnackError(true);
+        });
+    }
   };
 
   useEffect(() => {
@@ -357,8 +430,15 @@ function AkshyaTritiya(props) {
     nextArrow: <ArrowRight />,
   };
 
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setOpenSnackError(false);
+    setOpenSnack(false);
+  };
   return (
-    <Grid container style={{ overflow: "auto" }}>
+    <Grid container>
       <Grid xs={12}>
         <Header />
       </Grid>
@@ -434,11 +514,79 @@ function AkshyaTritiya(props) {
               src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/collection+page/urn_aaid_sc_US_4f2880c9-1910-41e4-b332-90c4513a4ca7+(2).png"
             />
           </div>
-          {header.map((val) => (
-            <Typography className={classes.titleContents}>
-              {val.title}
+
+          <Typography className={classes.titleHeader}>
+            Valam Perugum Valayal Thiruvizha with NAC Jewellers
+          </Typography>
+
+          <Typography className={classes.titleContents}>
+            Tamil Nadu - 14th April - 3rd May
+          </Typography>
+          <Typography className={classes.titleContents}>
+            Vijayawada - 22nd - 3rd May
+          </Typography>
+
+          <br />
+          <Typography className={classes.titleContents}>
+            We bring you a grand bangle mela this season with bangles starting
+            from 3 grams onwards. Choose from a wide variety of bangles and
+            avail exciting offers.
+          </Typography>
+          <br />
+
+          <Grid sm={12} md={8} style={{ margin: "auto" }}>
+            <Typography
+              className={classes.titleContents}
+              style={{ textAlign: "start", fontWeight: "bold" }}
+            >
+              This Akshaya Tritiya,
             </Typography>
-          ))}
+            <ul style={{ textAlign: "start" }}>
+              <li className={classes.titleContents}>
+                ₹100 OFF per gram on Gold
+              </li>
+              <li className={classes.titleContents}>
+                Exchange old Gold and get ₹50/- extra per gram
+              </li>
+              <li className={classes.titleContents}>
+                ₹2,000 OFF per kg on Silver articles
+              </li>
+              <li className={classes.titleContents}>
+                Enroll in any Savings Scheme between 14th April - 15th May and
+                get a FREE GOLD COIN
+              </li>
+              <li className={classes.titleContents}>
+                Offer valid from 14th April - 3rd May
+              </li>
+              <li className={classes.titleContents}>
+                Click here to watch our AD Video{" "}
+                <a href="https://www.youtube.com/user/nacjewellers/videos">
+                  Tamil
+                </a>
+                |{" "}
+                <a href="https://www.youtube.com/user/nacjewellers/videos">
+                  {" "}
+                  Telugu
+                </a>
+              </li>
+            </ul>
+
+            <Typography
+              className={classes.titleContents}
+              style={{ textAlign: "start" }}
+            >
+              Available at all our showrooms{" "}
+              <a href="https://www.nacjewellers.com/store">Click here</a>
+            </Typography>
+            <Typography
+              className={classes.titleContents}
+              style={{ textAlign: "start" }}
+            >
+              For more info please contact{" "}
+              <a href="tel:+91 44 4399 6666">+91 44 4399 6666 </a>I
+              <a href="mailto:care@nacjewellers.com">care@nacjewellers.com</a>
+            </Typography>
+          </Grid>
         </div>
       </Grid>
       <Hidden smDown>
@@ -484,23 +632,26 @@ function AkshyaTritiya(props) {
                   classes={{ notchedOutline: classes.textFieldEdit }}
                   InputProps={{ disableUnderline: true }}
                   onChange={onChangeData}
-                  name="firstName"
+                  name="name"
                 />
+                <label style={{ color: "red" }}>{errorData.name}</label>
               </FormControl>
             </div>
             <div className={classes.inputFieldsEdit}>
               <Typography className={classes.inputFieldsHeader}>
-                Last Name:
+                Phone Number:
               </Typography>
               <FormControl style={{ backgroundColor: "#fff" }} fullWidth>
                 <TextField
+                  type="number"
                   style={{ borderRadius: "0px" }}
                   labelWidth={0}
                   classes={{ notchedOutline: classes.textFieldEdit }}
                   InputProps={{ disableUnderline: true }}
                   onChange={onChangeData}
-                  name="lastName"
+                  name="phone"
                 />
+                <label style={{ color: "red" }}>{errorData.phone}</label>
               </FormControl>
             </div>
             <div className={classes.inputFieldsEdit}>
@@ -516,6 +667,7 @@ function AkshyaTritiya(props) {
                   onChange={onChangeData}
                   name="email"
                 />
+                <label style={{ color: "red" }}>{errorData.email}</label>
               </FormControl>
             </div>
             <div className={classes.inputFieldsEdit}>
@@ -532,6 +684,7 @@ function AkshyaTritiya(props) {
                   multiline
                   rows={8}
                 />
+                <label style={{ color: "red" }}>{errorData.query}</label>
               </FormControl>
             </div>
             <div style={{ textAlign: "end", paddingTop: "10px" }}>
@@ -555,6 +708,32 @@ function AkshyaTritiya(props) {
           <div className={classes.imgBtn}>FOR MORE VISIT OUR STORE</div>
         </Grid>
       </Grid>
+      <Snackbar
+        anchorOrigin={{
+          vertical: "top",
+          horizontal: "center",
+        }}
+        open={openSnack}
+        autoHideDuration={3000}
+        onClose={handleClose}
+      >
+        <Alert onClose={handleClose} severity="success">
+          Your queries send successfully!
+        </Alert>
+      </Snackbar>
+      <Snackbar
+        anchorOrigin={{
+          vertical: "top",
+          horizontal: "center",
+        }}
+        open={openSnackError}
+        autoHideDuration={3000}
+        onClose={handleClose}
+      >
+        <Alert onClose={handleClose} severity="error">
+          Something went wrong, Please try again!
+        </Alert>
+      </Snackbar>
       <Footer />
     </Grid>
   );

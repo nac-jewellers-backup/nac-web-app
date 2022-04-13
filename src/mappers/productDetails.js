@@ -1049,10 +1049,11 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                       ?.nodes[0]?.subItemName
                       ? {
                           name: "Gemstone Name",
-                          details:
+                          details: gemstoneType(
                             PD?.productListByProductId
-                              ?.productGemstonesByProductSku?.nodes[0]
-                              ?.subItemName,
+                              ?.productGemstonesByProductSku?.nodes,
+                            "subItemName"
+                          ),
                         }
                       : "",
 
@@ -1060,10 +1061,11 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                       ?.nodes[0]?.description
                       ? {
                           name: "Description",
-                          details:
+                          details: gemstoneType(
                             PD?.productListByProductId
-                              ?.productGemstonesByProductSku?.nodes[0]
-                              ?.description,
+                              ?.productGemstonesByProductSku?.nodes,
+                            "description"
+                          ),
                         }
                       : "",
                   ]
@@ -1682,10 +1684,11 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                       ?.nodes[0]?.subItemName
                       ? {
                           name: "Gemstone Name",
-                          details:
+                          details: gemstoneType(
                             PD?.productListByProductId
-                              ?.productGemstonesByProductSku?.nodes[0]
-                              ?.subItemName,
+                              ?.productGemstonesByProductSku?.nodes,
+                            "subItemName"
+                          ),
                         }
                       : "",
 
@@ -1693,10 +1696,11 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                       ?.nodes[0]?.description
                       ? {
                           name: "Description",
-                          details:
+                          details: gemstoneType(
                             PD?.productListByProductId
-                              ?.productGemstonesByProductSku?.nodes[0]
-                              ?.description,
+                              ?.productGemstonesByProductSku?.nodes,
+                            "description"
+                          ),
                         }
                       : "",
                   ]

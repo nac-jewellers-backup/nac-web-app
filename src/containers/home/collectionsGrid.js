@@ -1,4 +1,4 @@
-import { Grid, Hidden } from "@material-ui/core";
+import { Grid, Hidden, Link } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import React from "react";
 import "./index.css";
@@ -44,34 +44,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const tileData = [
-  {
-    img: "https://assets.stylori.com/images/Static+Pages/Home+Page/blush+3.png",
-    title: "Image",
-    author: "author",
-    cols: 1,
-    rows: 2,
-  },
-  {
-    img: "https://assets.stylori.com/images/Static+Pages/Home+Page/blush+3.png",
-    title: "Image",
-    author: "author",
-    cols: 1,
-  },
-  {
-    img: "https://assets.stylori.com/images/Static+Pages/Home+Page/blush+3.png",
-    title: "Image",
-    author: "author",
-    cols: 1,
-    rows: 1,
-  },
-  {
-    img: "https://assets.stylori.com/images/Static+Pages/Home+Page/blush+3.png",
-    title: "Image",
-    author: "author",
-    cols: 1,
-  },
-];
 export function AdvancedGridList() {
   const classes = useStyles();
 
@@ -81,106 +53,118 @@ export function AdvancedGridList() {
         <Grid container spacing={1} style={{ padding: "40px" }}>
           <Grid item xs={4}>
             <div className="parent">
-              <img
-                src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Collection+tile/Fabula_tile_385+X+300_px.jpg"
-                alt="NAC"
-                width="100%"
-                height="340"
-                className={classes.gridimg}
-              />
-              <div className="child" style={{ width: "100%" }}>
-                <div className={classes.coverfooter}>
-                  <b>SHOP DIAMOND SETS</b>&nbsp;
+              <Link href="/jewellery-fabula">
+                <img
+                  src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Final-collection+tile/Fabula-Jewellery.jpg"
+                  alt="NAC"
+                  width="100%"
+                  height="340"
+                  className={classes.gridimg}
+                />
+                <div className="child" style={{ width: "100%" }}>
+                  <div className={classes.coverfooter}>
+                    <b>SHOP FABULA</b>&nbsp;
+                  </div>
+                  <div>&nbsp; </div>
                 </div>
-                <div>&nbsp; </div>
-              </div>
+              </Link>
             </div>
             <div className="parent">
-              <img
-                src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Collection+tile/Diamond_tile_385+X+600_px.jpg"
-                alt="NAC"
-                width="100%"
-                height="680"
-                className={classes.gridimg}
-              />
-              <div className="child" style={{ width: "100%" }}>
-                <div className={classes.coverfooter}>
-                  <b> SHOP FABULA</b>&nbsp;
+              <Link href="/jewellery-fabula">
+                <img
+                  src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Final-collection+tile/Bridal-Diamond-Jewellery.jpg"
+                  alt="NAC"
+                  width="100%"
+                  height="680"
+                  className={classes.gridimg}
+                />
+                <div className="child" style={{ width: "100%" }}>
+                  <div className={classes.coverfooter}>
+                    <b> SHOP BRIDAL DIAMOND</b>&nbsp;
+                  </div>
+                  <div>&nbsp; </div>
                 </div>
-                <div>&nbsp; </div>
-              </div>
+              </Link>
             </div>
           </Grid>
           <Grid item xs={8}>
             <Grid container spacing={1}>
               <Grid item xs={6}>
                 <div className="parent">
-                  <img
-                    src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Collection+tile/Rewind_tile_385+X+300_px.jpg"
-                    alt="NAC"
-                    width="100%"
-                    height="340"
-                    className={classes.gridimg}
-                  />
-                  <div className="child" style={{ width: "100%" }}>
-                    <div className={classes.coverfooter}>
-                      <b>SHOP REWIND</b>&nbsp;
+                  <Link href="https://www.stylori.com/">
+                    <img
+                      src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Final-collection+tile/Nagas-Gold-Jewellery.jpg"
+                      alt="NAC"
+                      width="100%"
+                      height="340"
+                      className={classes.gridimg}
+                    />
+                    <div className="child" style={{ width: "100%" }}>
+                      <div className={classes.coverfooter}>
+                        <b>SHOP NAGAS</b>&nbsp;
+                      </div>
+                      <div>&nbsp; </div>
                     </div>
-                    <div>&nbsp; </div>
-                  </div>
+                  </Link>
                 </div>
                 <div className="parent">
-                  <img
-                    src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Collection+tile/Nagas_tile_385+X+300_px.jpg"
-                    alt="NAC"
-                    width="100%"
-                    height="340"
-                    className={classes.gridimg}
-                  />
-                  <div className="child" style={{ width: "100%" }}>
-                    <div className={classes.coverfooter}>
-                      <b>SHOP RUDRAMADEVI</b>&nbsp;
+                  <Link href="/jewellery-platinum">
+                    <img
+                      src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Final-collection+tile/Platinum-Jewellery.jpg"
+                      alt="NAC"
+                      width="100%"
+                      height="340"
+                      className={classes.gridimg}
+                    />
+                    <div className="child" style={{ width: "100%" }}>
+                      <div className={classes.coverfooter}>
+                        <b>SHOP PLATINUM</b>&nbsp;
+                      </div>
+                      <div>&nbsp; </div>
                     </div>
-                    <div>&nbsp; </div>
-                  </div>
+                  </Link>
                 </div>
               </Grid>
               <Grid item xs={6}>
                 <div className="parent">
-                  <img
-                    src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Collection+tile/Muhurtham_tile_385+X+600_px.jpg"
-                    alt="NAC"
-                    width="100%"
-                    height="684"
-                  />
-                  <div className="child" style={{ width: "100%" }}>
-                    <div className={classes.coverfooter}>
-                      <b>SHOP MUHURTHAM</b>&nbsp;
+                  <Link href="/jewellery-nagas">
+                    <img
+                      src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Collection+tile/Muhurtham_tile_385+X+600_px.jpg"
+                      alt="NAC"
+                      width="100%"
+                      height="684"
+                    />
+                    <div className="child" style={{ width: "100%" }}>
+                      <div className={classes.coverfooter}>
+                        <b>SHOP BRIDAL GOLD</b>&nbsp;
+                      </div>
+                      <div>&nbsp; </div>
                     </div>
-                    <div>&nbsp; </div>
-                  </div>
+                  </Link>
                 </div>
               </Grid>
             </Grid>
             <Grid container>
               <Grid item xs={12}>
                 <div className="parent">
-                  <img
-                    src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Collection+tile/Stylori_tile_770+X+300_px.jpg"
-                    alt="NAC"
-                    width="100%"
-                    height="336"
-                    style={{
-                      objectFit: "cover",
-                      objectPosition: "40% 5%",
-                    }}
-                  />
-                  <div className="child" style={{ width: "100%" }}>
-                    <div className={classes.coverfooter}>
-                      <b>SHOP LITTLE ONES</b>&nbsp;
+                  <Link href="/jewellery-young+ones">
+                    <img
+                      src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Final-collection+tile/Young-Ones-Jewellers.jpg"
+                      alt="NAC"
+                      width="100%"
+                      height="336"
+                      style={{
+                        objectFit: "cover",
+                        objectPosition: "40% 5%",
+                      }}
+                    />
+                    <div className="child" style={{ width: "100%" }}>
+                      <div className={classes.coverfooter}>
+                        <b>SHOP LITTLE ONES</b>&nbsp;
+                      </div>
+                      <div>&nbsp; </div>
                     </div>
-                    <div>&nbsp; </div>
-                  </div>
+                  </Link>
                 </div>
               </Grid>
             </Grid>
@@ -192,36 +176,40 @@ export function AdvancedGridList() {
           >
             <Grid item xs={8}>
               <div className="parent">
-                <img
-                  src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Collection+tile/StyloriSilver_tile_770+X+300_px.jpg"
-                  alt="NAC"
-                  width="100%"
-                  height="340"
-                  className={classes.gridimg}
-                />
-                <div className="child" style={{ width: "100%" }}>
-                  <div className={classes.coverfooter}>
-                    <b>SHOP STYLORI</b>&nbsp;
+                <Link href="/jewellery-rewind">
+                  <img
+                    src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Final-collection+tile/Rewind-Gold-Jewellery.jpg"
+                    alt="NAC"
+                    width="100%"
+                    height="340"
+                    className={classes.gridimg}
+                  />
+                  <div className="child" style={{ width: "100%" }}>
+                    <div className={classes.coverfooter}>
+                      <b>SHOP REWIND</b>&nbsp;
+                    </div>
+                    <div>&nbsp; </div>
                   </div>
-                  <div>&nbsp; </div>
-                </div>
+                </Link>
               </div>
             </Grid>
             <Grid item xs={4}>
               <div className="parent">
-                <img
-                  src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Collection+tile/Youngones_tile_385+X+300_px.jpg"
-                  alt="NAC"
-                  width="100%"
-                  height="340"
-                  className={classes.gridimg}
-                />
-                <div className="child" style={{ width: "100%" }}>
-                  <div className={classes.coverfooter}>
-                    <b>SHOP MAYURA</b>&nbsp;
+                <Link href="/jewellery-mayura">
+                  <img
+                    src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Final-collection+tile/Mayura-Diamond-Jewellery.jpg"
+                    alt="NAC"
+                    width="100%"
+                    height="340"
+                    className={classes.gridimg}
+                  />
+                  <div className="child" style={{ width: "100%" }}>
+                    <div className={classes.coverfooter}>
+                      <b>SHOP MAYURA</b>&nbsp;
+                    </div>
+                    <div>&nbsp; </div>
                   </div>
-                  <div>&nbsp; </div>
-                </div>
+                </Link>
               </div>
             </Grid>
           </Grid>
@@ -231,84 +219,95 @@ export function AdvancedGridList() {
       <Hidden mdUp>
         <div class="grid-container-sm">
           <div class="grid-item-sm item1-sm">
-            {" "}
-            <img
-              src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Collection+tile/Rewind_tile_385+X+300_px.jpg"
-              alt="NAC"
-              width="100%"
-              height="100%"
-              className={classes.gridimg}
-            />
-            <div className="overlayGrid">
-              <b className={classes.titlefooter}>SHOP REWIND </b>&nbsp;
-              <span className={classes.titlefooter}></span>
-            </div>
+            <Link href="https://www.stylori.com/">
+              {" "}
+              <img
+                src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Final-collection+tile/Nagas-Gold-Jewellery.jpg"
+                alt="NAC"
+                width="100%"
+                height="100%"
+                className={classes.gridimg}
+              />
+              <div className="overlayGrid">
+                <b className={classes.titlefooter}>SHOP NAGAS </b>&nbsp;
+                <span className={classes.titlefooter}></span>
+              </div>
+            </Link>
           </div>
           <div class="grid-item-sm item111-sm">
-            {" "}
-            <img
-              src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Collection+tile/Fabula_tile_385+X+300_px.jpg"
-              alt="NAC"
-              width="100%"
-              height="100%"
-              className={classes.gridimg}
-            />
-            <div className="overlayGrid">
-              <b className={classes.titlefooter}> SHOP DIAMOND SETS</b>&nbsp;{" "}
-              <span className={classes.titlefooter}></span>
-            </div>
+            <Link href="/jewellery-fabula">
+              <img
+                src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Final-collection+tile/Fabula-Jewellery.jpg"
+                alt="NAC"
+                width="100%"
+                height="100%"
+                className={classes.gridimg}
+              />
+              <div className="overlayGrid">
+                <b className={classes.titlefooter}> SHOP FABULA</b>&nbsp;{" "}
+                <span className={classes.titlefooter}></span>
+              </div>
+            </Link>
           </div>
           <div class="grid-item-sm item112-sm">
-            <img
-              src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Collection+tile/Nagas_tile_385+X+300_px.jpg"
-              alt="NAC"
-              width="100%"
-              height="100%"
-              className={classes.gridimg}
-            />
-            <div className="overlayGrid">
-              <b className={classes.titlefooter}>SHOP RUDRAMADEVI</b>&nbsp;
-              <span className={classes.titlefooter}></span>
-            </div>
+            <Link href="/jewellery-platinum">
+              <img
+                src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Final-collection+tile/Platinum-Jewellery.jpg"
+                alt="NAC"
+                width="100%"
+                height="100%"
+                className={classes.gridimg}
+              />
+              <div className="overlayGrid">
+                <b className={classes.titlefooter}>SHOP PLATINUM</b>&nbsp;
+                <span className={classes.titlefooter}></span>
+              </div>
+            </Link>
           </div>
           <div class="grid-item-sm item113-sm">
-            <img
-              src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Collection+tile/Youngones_tile_385+X+300_px.jpg"
-              alt="NAC"
-              width="100%"
-              height="100%"
-              className={classes.gridimg}
-            />
-            <div className="overlayGrid">
-              <b className={classes.titlefooter}>SHOP MAYURA</b>&nbsp;
-              <span className={classes.titlefooter}></span>
-            </div>
+            <Link href="/jewellery-mayura">
+              <img
+                src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Final-collection+tile/Mayura-Diamond-Jewellery.jpg"
+                alt="NAC"
+                width="100%"
+                height="100%"
+                className={classes.gridimg}
+              />
+              <div className="overlayGrid">
+                <b className={classes.titlefooter}>SHOP MAYURA</b>&nbsp;
+                <span className={classes.titlefooter}></span>
+              </div>
+            </Link>
           </div>
           <div class="grid-item-sm item11-sm">
-            <img
-              src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Collection+tile/Muhurtham_tile_385+X+600_px.jpg"
-              alt="NAC"
-              width="100%"
-              height="100%"
-              className={classes.gridimg}
-            />
-            <div className="overlayGrid">
-              <b className={classes.titlefooter}> SHOP MUHURTHAM</b>&nbsp;
-              <span className={classes.titlefooter}></span>
-            </div>
+            <Link href="/jewellery-nagas">
+              <img
+                src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Collection+tile/Muhurtham_tile_385+X+600_px.jpg"
+                alt="NAC"
+                width="100%"
+                height="100%"
+                className={classes.gridimg}
+              />
+              <div className="overlayGrid">
+                <b className={classes.titlefooter}> SHOP BRIDAL GOLD</b>&nbsp;
+                <span className={classes.titlefooter}></span>
+              </div>
+            </Link>
           </div>
           <div class="grid-item-sm item0-sm">
-            <img
-              src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Collection+tile/Stylori_tile_770+X+300_px.jpg"
-              alt="NAC"
-              className={classes.gridimg}
-              width="100%"
-              height="100%"
-            />
-            <div className="overlayGrid">
-              <b className={classes.titlefooter}> SHOP LITTLE ONES</b>&nbsp;
-              <span className={classes.titlefooter}></span>
-            </div>
+            <Link href="/jewellery-young+ones">
+              <img
+                src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Final-collection+tile/Young-Ones-Jewellers.jpg"
+                alt="NAC"
+                className={classes.gridimg}
+                width="100%"
+                height="100%"
+              />
+              <div className="overlayGrid">
+                <b className={classes.titlefooter}> SHOP LITTLE ONES</b>&nbsp;
+                <span className={classes.titlefooter}></span>
+              </div>
+            </Link>
           </div>
         </div>
       </Hidden>

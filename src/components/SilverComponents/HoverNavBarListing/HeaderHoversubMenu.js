@@ -149,13 +149,13 @@ function HeaderHoverMenuItem(props) {
   });
   const imageForEarRings = [
     {
-      img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Main+menu+category+images/NAC+Jewellers+Earring.jpg",
+      img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Final-Menu/Earring.jpg",
     },
   ];
 
   const imageForBangles = [
     {
-      img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Main+menu+category+images/NAC+Jewellers+Bangle.jpg",
+      img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Final-Menu/Bangle.jpg",
     },
   ];
   const imageForNecklesh = [
@@ -165,13 +165,13 @@ function HeaderHoverMenuItem(props) {
   ];
   const imageForRings = [
     {
-      img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Main+menu+category+images/NAC+Jewellers+Rings.jpg",
+      img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Final-Menu/Ring.jpg",
     },
   ];
 
   const imageForNecklace = [
     {
-      img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Necklace/9-ef0057-Nagas.webp",
+      img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Final-Menu/Necklace.jpg",
     },
   ];
   const _imagewithtextOne = [
@@ -407,7 +407,7 @@ function HeaderHoverMenuItem(props) {
     },
     {
       img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Necklace/ax1069-Choker.webp",
-      content: "Chocker",
+      content: "Choker",
       url: "/jhumkas+online-earrings-jewellery",
     },
     {
@@ -471,7 +471,7 @@ function HeaderHoverMenuItem(props) {
           url: "/short+necklace-necklaces-jewellery",
         },
         {
-          itm: "Chocker",
+          itm: "Choker",
           url: "#",
         },
         {
@@ -902,7 +902,7 @@ function HeaderHoverMenuItem(props) {
           <Grid item xs={3}>
             <div style={{ paddingTop: "25px" }}>
               <img
-                src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Main+menu+category+images/NAC+Jewellers+collections.jpg"
+                src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Final-Menu/Collection.jpg"
                 width="100%"
                 height="75%"
                 alt="menu img"
@@ -1465,7 +1465,7 @@ function HeaderHoverMenuItem(props) {
           <Grid item xs={3} className={classes.gridmultiplesection}>
             <div style={{ paddingTop: "25px" }}>
               <img
-                src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Main+menu+category+images/NAC+Jewellers+Solitaire.jpg"
+                src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Final-Menu/Solitaire.jpg"
                 width="100%"
                 height="75%"
                 alt="images"
@@ -1588,7 +1588,7 @@ function HeaderHoverMenuItem(props) {
           <Grid item xs={3}>
             <div style={{ paddingTop: "25px" }}>
               <img
-                src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Main+menu+category+images/NAC+Jewellers+Silver+Articles.jpg"
+                src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Final-Menu/Silver-Articles.jpg"
                 width="100%"
                 height="75%"
                 alt="images"

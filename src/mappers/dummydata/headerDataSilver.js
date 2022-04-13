@@ -515,7 +515,7 @@ export const Jewellery = {
         },
         {
           img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Necklace/ax1069-Choker.webp",
-          content: "Chocker",
+          content: "Choker",
           url: "/jhumkas+online-earrings-jewellery",
         },
         {
