@@ -706,7 +706,9 @@ function AkshyaTritiya(props) {
               style={{ width: "100%" }}
               className={classes.storeImage}
             />
-            <div className={classes.imgBtn}>FOR MORE VISIT OUR STORE</div>
+            <div className={classes.imgBtn} style={{ textDecoration: "none" }}>
+              FOR MORE VISIT OUR STORE
+            </div>
           </Link>
         </Grid>
       </Grid>

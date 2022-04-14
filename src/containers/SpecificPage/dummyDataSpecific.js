@@ -11,7 +11,7 @@ export const dummyData = [
     price: 31157.05,
     offerPrice: 23367.79,
     title: "Elegant Drops Diamond Earrings",
-    save: "5999.9",
+    save: "60",
     image: {
       placeImage: {
         img: "https://assets.stylori.com/product/SE0016/1000X1000/SE0016-1Y.webp",
@@ -40,7 +40,7 @@ export const dummyData = [
     price: 77940.39,
     offerPrice: 58455.29,
     title: "Jazzy Gypsy Diamond Hoop Earrings",
-    save: "5999.9",
+    save: "60",
     image: {
       placeImage: {
         img: "https://assets.stylori.com/product/SE0015/1000X1000/SE0015-1YW.webp",
@@ -69,7 +69,7 @@ export const dummyData = [
     price: 86653.95,
     offerPrice: 64990.46,
     title: "Gorgeous Solitaire Diamond Marquise Earrings",
-    save: "5999.9",
+    save: "60",
     image: {
       placeImage: {
         img: "https://assets.stylori.com/product/SE0024/1000X1000/SE0024-1Y.webp",
@@ -93,99 +93,13 @@ export const dummyData = [
     skuID: "21569",
     discount: 25,
   },
-  {
-    totalCount: 2788,
-    price: 86653.95,
-    offerPrice: 64990.46,
-    title: "Gorgeous Solitaire Diamond Marquise Earrings",
-    save: "5999.9",
-    image: {
-      placeImage: {
-        img: "https://assets.stylori.com/product/SE0024/1000X1000/SE0024-1Y.webp",
-      },
-      hoverImage: {
-        img: "https://assets.stylori.com/product/SE0024/1000X1000/HOVER-SE0024-2Y.webp",
-      },
-    },
-    productId: "SE0024",
-    diamondType: "SIIJ",
-    purity: "18K",
-    skuSize: null,
-    productType: "Earrings",
-    skuId: "SE0024-18110000",
-    oneDayShipping: false,
-    imageResolution: {
-      img_res: 250,
-      url_1000x1000: "product/SE0024/1000X1000/HOVER-SE0024-2Y.webp",
-    },
-    skuUrl: "jewellery/bouquetoflove/Navis-Earring?skuid=21569",
-    skuID: "21569",
-    discount: 25,
-  },
-  {
-    totalCount: 2788,
-    price: 86653.95,
-    offerPrice: 64990.46,
-    title: "Gorgeous Solitaire Diamond Marquise Earrings",
-    save: "5999.9",
-    image: {
-      placeImage: {
-        img: "https://assets.stylori.com/product/SE0024/1000X1000/SE0024-1Y.webp",
-      },
-      hoverImage: {
-        img: "https://assets.stylori.com/product/SE0024/1000X1000/HOVER-SE0024-2Y.webp",
-      },
-    },
-    productId: "SE0024",
-    diamondType: "SIIJ",
-    purity: "18K",
-    skuSize: null,
-    productType: "Earrings",
-    skuId: "SE0024-18110000",
-    oneDayShipping: false,
-    imageResolution: {
-      img_res: 250,
-      url_1000x1000: "product/SE0024/1000X1000/HOVER-SE0024-2Y.webp",
-    },
-    skuUrl: "jewellery/bouquetoflove/Navis-Earring?skuid=21569",
-    skuID: "21569",
-    discount: 25,
-  },
-  {
-    totalCount: 2788,
-    price: 86653.95,
-    offerPrice: 64990.46,
-    title: "Gorgeous Solitaire Diamond Marquise Earrings",
-    save: "5999.9",
-    image: {
-      placeImage: {
-        img: "https://assets.stylori.com/product/SE0024/1000X1000/SE0024-1Y.webp",
-      },
-      hoverImage: {
-        img: "https://assets.stylori.com/product/SE0024/1000X1000/HOVER-SE0024-2Y.webp",
-      },
-    },
-    productId: "SE0024",
-    diamondType: "SIIJ",
-    purity: "18K",
-    skuSize: null,
-    productType: "Earrings",
-    skuId: "SE0024-18110000",
-    oneDayShipping: false,
-    imageResolution: {
-      img_res: 250,
-      url_1000x1000: "product/SE0024/1000X1000/HOVER-SE0024-2Y.webp",
-    },
-    skuUrl: "jewellery/bouquetoflove/Navis-Earring?skuid=21569",
-    skuID: "21569",
-    discount: 25,
-  },
+
   {
     totalCount: 2788,
     price: 40798.7,
     offerPrice: 30599.03,
     title: "Striking Diamond Shape Earrings",
-    save: "5999.9",
+    save: "60",
     image: {
       placeImage: {
         img: "https://assets.stylori.com/product/SE0031/1000X1000/SE0031-1Y.webp",
