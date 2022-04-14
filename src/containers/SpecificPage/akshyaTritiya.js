@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Header from "../../components/SilverComponents/Header";
 import Slideshow from "../../components/Carousel/carosul";
-import clsx from "clsx";
+
 import {
   Grid,
   Hidden,
@@ -10,17 +10,22 @@ import {
   FormControl,
   Button,
   TextField,
+  Link,
 } from "@material-ui/core";
+import Snackbar from "@material-ui/core/Snackbar";
+import MuiAlert from "@material-ui/lab/Alert";
 import { makeStyles } from "@material-ui/core/styles";
 import { SolitairesData } from "../../mappers/dummydata/solitairesData";
-import { header, dummyData } from "./dummyDataSpecific";
+import { dummyData } from "./dummyDataSpecific";
 import { ImgMediaCard } from "../../components/ProductCard/Card";
 import ArrowRightIcon from "@material-ui/icons/ArrowRight";
 import ArrowLeftIcon from "@material-ui/icons/ArrowLeft";
 import Footer from "../../components/Footer/Footer";
 import { API_URL } from "../../config";
-import { ALLBANNERSCOMPLETE } from "../../queries/home";
-
+import { ALLBANNERSCOMPLETE, SEND_QUERIES } from "../../queries/home";
+function Alert(props) {
+  return <MuiAlert elevation={6} variant="filled" {...props} />;
+}
 const useStyles = makeStyles((theme) => ({
   preButton: {
     width: "35px!important",
@@ -98,26 +103,26 @@ const useStyles = makeStyles((theme) => ({
     outline: "none !important",
     position: "relative",
   },
-  imgBtn:{
-    width:"100%",
-    fontStyle:"italic",
-    backgroundColor:"#2E348A",
-    color:"#fff",
-    borderRadius:"0px",
-    top:"-4px",
-    padding:"10px 0px",
-    textAlign:"center",
+  imgBtn: {
+    width: "100%",
+    fontStyle: "italic",
+    backgroundColor: "#2E348A",
+    color: "#fff",
+    borderRadius: "0px",
+    top: "-4px",
+    padding: "10px 0px",
+    textAlign: "center",
   },
-  storeImage:{
-    maxHeight:"700px",
+  storeImage: {
+    maxHeight: "700px",
     [theme.breakpoints.down("md")]: {
-      minHeight:"580px"
+      minHeight: "580px",
     },
-    [theme.breakpoints.down("sm")]:{
-      minHeight:"555px"
+    [theme.breakpoints.down("sm")]: {
+      minHeight: "555px",
     },
-    [theme.breakpoints.down("xs")]:{
-      minHeight:"400px"
+    [theme.breakpoints.down("xs")]: {
+      minHeight: "400px",
     },
   },
   mainCarosel: {
@@ -153,7 +158,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("md")]: {
       padding: "35px 45px",
     },
-    [theme.breakpoints.down("sm")]:{
+    [theme.breakpoints.down("sm")]: {
       padding: "35px 25px",
     },
   },
@@ -173,7 +178,7 @@ const useStyles = makeStyles((theme) => ({
     "&:hover": {
       backgroundColor: "#9b6706",
     },
-    [theme.breakpoints.down("xs")]:{
+    [theme.breakpoints.down("xs")]: {
       fontSize: "small",
       padding: "3px 50px",
     },
@@ -183,83 +188,95 @@ const useStyles = makeStyles((theme) => ({
     margin: "auto",
     padding: "55px 0px 65px 0px",
     boxShawdow: "6px 7px 6px #000 !important",
-    [theme.breakpoints.down("xs")]:{
-    padding: "55px 0px 35px 0px",
-    },
-  },
-  titleContents:{
-    fontSize:"18px !important",
-    padding:"0px 190px",
-    [theme.breakpoints.down("md")]: {
-      fontSize:"16px !important",
-      padding:"0px 100px",
-    },
-    [theme.breakpoints.down("sm")]:{
-      padding:"0px 50px",
-    },
-    [theme.breakpoints.down("xs")]:{
-      padding:"0px 45px",
-      fontSize:"14px !important",
-    },
-  },
-  roots:{
-    padding:"50px 60px",
     [theme.breakpoints.down("xs")]: {
-     padding:"25px 0px",  
+      padding: "55px 0px 35px 0px",
     },
   },
-  headings:{
-    fontSize:"50px !important",
-    color:"#B2832C",
-    fontStyle:"italic",
-    padding:"10px 13px 0px 13px",
+  titleHeader: {
+    fontSize: "22px !important",
+
+    fontWeight: "bold",
     [theme.breakpoints.down("md")]: {
-      fontSize:"45px !important",
+      fontSize: "18px !important",
     },
+
     [theme.breakpoints.down("xs")]: {
-      fontSize:"30px !important",
-      padding:"10px 4px 0px 4px",
+      fontSize: "16px !important",
     },
   },
-  logoEdits:{
-    position:"relative",
-    height:"70px",
-    top:"12px",
+  titleContents: {
+    fontSize: "18px !important",
+
     [theme.breakpoints.down("md")]: {
-      height:"55px",
-      top:"17px",
+      fontSize: "16px !important",
+    },
+
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "14px !important",
+    },
+  },
+  roots: {
+    padding: "50px 60px",
+    [theme.breakpoints.down("xs")]: {
+      padding: "25px 0px",
+    },
+  },
+  headings: {
+    fontSize: "50px !important",
+    color: "#B2832C",
+    fontStyle: "italic",
+    padding: "10px 13px 0px 13px",
+    [theme.breakpoints.down("md")]: {
+      fontSize: "45px !important",
     },
     [theme.breakpoints.down("xs")]: {
-      height:"40px",
-      top:"12px",
+      fontSize: "30px !important",
+      padding: "10px 4px 0px 4px",
     },
   },
-  cardEdit:{
-    width:"89%",
-    margin:"auto",
+  logoEdits: {
+    position: "relative",
+    height: "70px",
+    top: "12px",
     [theme.breakpoints.down("md")]: {
-      width:"90%"
+      height: "55px",
+      top: "17px",
+    },
+    [theme.breakpoints.down("xs")]: {
+      height: "40px",
+      top: "12px",
     },
   },
-  headerAlign:{
+  cardEdit: {
+    width: "89%",
+    margin: "auto",
+    [theme.breakpoints.down("md")]: {
+      width: "90%",
+    },
+  },
+  headerAlign: {
     display: "flex",
     justifyContent: "center",
     paddingBottom: "40px",
     [theme.breakpoints.down("xs")]: {
-     paddingBottom:"10px",
+      paddingBottom: "10px",
     },
-  }
-
+  },
 }));
 
 function AkshyaTritiya(props) {
-  const classes = useStyles();
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
+  const InitialState = {
+    name: "",
+    phone: "",
     email: "",
     query: "",
-  });
+  };
+  const classes = useStyles();
+  const [openSnack, setOpenSnack] = React.useState(false);
+  const [openSnackError, setOpenSnackError] = React.useState(false);
+  const [formData, setFormData] = useState(InitialState);
+
+  const [errorData, setErrorData] = useState(InitialState);
   const [banners, setBanners] = useState([]);
 
   const next = () => {
@@ -274,13 +291,69 @@ function AkshyaTritiya(props) {
     setFormData({ ...formData, [event.target.name]: event.target.value });
   };
 
-  const onsubmitvalue = async () => {
-    let fullDataForm = {
-      FirstName: formData.firstName,
-      LastName: formData.lastName,
-      Email: formData.email,
-      Query: formData.query,
-    };
+  const handleValidateData = () => {
+    if (formData.name.length === 0) {
+      setErrorData({ ...errorData, name: "Please enter name" });
+      return false;
+    }
+    if (formData.phone.length === 0) {
+      setErrorData({ ...errorData, phone: "Please enter phone number" });
+
+      return false;
+    }
+    if (formData.email.length === 0) {
+      setErrorData({ ...errorData, email: "Please enter email name" });
+
+      return false;
+    }
+    if (formData.query.length === 0) {
+      setErrorData({ ...errorData, query: "Please enter query name" });
+
+      return false;
+    }
+    setErrorData({
+      name: "",
+      phone: "",
+      email: "",
+      query: "",
+    });
+    return true;
+  };
+
+  const onsubmitvalue = () => {
+    if (handleValidateData()) {
+      fetch(`${API_URL}/graphql`, {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          query: SEND_QUERIES,
+          variables: {
+            updatedAt: new Date(),
+            createdAt: new Date(),
+            email: formData.email,
+            message: formData.query,
+            name: formData.name,
+            phone: formData.phone,
+          },
+        }),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data?.data?.createAskus?.askus?.id) {
+            setOpenSnack(true);
+            setFormData({
+              name: "",
+              phone: "",
+              email: "",
+              query: "",
+            });
+            return;
+          }
+          setOpenSnackError(true);
+        });
+    }
   };
 
   useEffect(() => {
@@ -311,18 +384,8 @@ function AkshyaTritiya(props) {
       });
   }, []);
 
-  const dataCarousel = {
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    infinite: true,
-    fade: false,
-    dots: false,
-    autoplaySpeed: 5000,
-    arrows: false,
-  };
   const ArrowLeft = (props) => {
-    const { className, style, onClick } = props;
+    const { className, onClick } = props;
     return (
       <ArrowLeftIcon
         className={`${className} ${classes.collectionSection}`}
@@ -332,7 +395,7 @@ function AkshyaTritiya(props) {
     );
   };
   const ArrowRight = (props) => {
-    const { className, style, onClick } = props;
+    const { className, onClick } = props;
     return (
       <ArrowRightIcon
         className={`${className} ${classes.collectionSection}`}
@@ -368,8 +431,15 @@ function AkshyaTritiya(props) {
     nextArrow: <ArrowRight />,
   };
 
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setOpenSnackError(false);
+    setOpenSnack(false);
+  };
   return (
-    <Grid container style={{overflow:"auto"}}>
+    <Grid container>
       <Grid xs={12}>
         <Header />
       </Grid>
@@ -404,10 +474,8 @@ function AkshyaTritiya(props) {
               <Hidden smDown>
                 <Grid container key={index} className={classes.headContent}>
                   <a href={val.urlParam} style={{ width: "100%" }}>
-                    {/* <Typography className={classes.imageContent}>
-                      {val.imageContent}
-                    </Typography> */}
                     <img
+                      alt="images"
                       src={val.web}
                       style={{ width: "100%", height: "100%" }}
                     />
@@ -417,10 +485,8 @@ function AkshyaTritiya(props) {
               <Hidden mdUp>
                 <Grid container key={index} className={classes.headContent}>
                   <a href={val.urlParam}>
-                    {/* <Typography className={classes.imageContent}>
-                      {val.imageContent}
-                    </Typography> */}
                     <img
+                      alt="images"
                       src={val.mobile}
                       style={{ width: "100%", height: "100%" }}
                     />
@@ -432,58 +498,128 @@ function AkshyaTritiya(props) {
         </Slideshow>
       </Grid>
 
-        <Grid xs={12} className={classes.roots}>
-          <div style={{ textAlign: "center" }}>
-            <div className={classes.headerAlign}>
-              <img
-                className={classes.logoEdits}
-                src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/collection+page/urn_aaid_sc_US_4f2880c9-1910-41e4-b332-90c4513a4ca7+(1).png"
-              />
-              <Typography className={classes.headings}>AKSHAYA TRITIYA</Typography>
-              <img
-                className={classes.logoEdits}
-                src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/collection+page/urn_aaid_sc_US_4f2880c9-1910-41e4-b332-90c4513a4ca7+(2).png"
-              />
-            </div>
-            {header.map((val) => (
-              <Typography className={classes.titleContents}>{val.title}</Typography>
-            ))}
+      <Grid xs={12} className={classes.roots}>
+        <div style={{ textAlign: "center" }}>
+          <div className={classes.headerAlign}>
+            <img
+              alt="images"
+              className={classes.logoEdits}
+              src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/collection+page/urn_aaid_sc_US_4f2880c9-1910-41e4-b332-90c4513a4ca7+(1).png"
+            />
+            <Typography className={classes.headings}>
+              AKSHAYA TRITIYA
+            </Typography>
+            <img
+              alt="images"
+              className={classes.logoEdits}
+              src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/collection+page/urn_aaid_sc_US_4f2880c9-1910-41e4-b332-90c4513a4ca7+(2).png"
+            />
           </div>
-        </Grid>
-        <Hidden smDown>
-          <Container className={classes.cardEdit} style={{ paddingTop: 8 }}>
-            <Slideshow
-              // sliderRef={this.slider}
-              class="subslider-carousel"
-              dataCarousel={dataCarouselcollections}
-            >
-              {dummyData.map((val) => {
-                return (
-                  <ImgMediaCard data={val} cardSize="auto" hoverText={true} />
-                );
-              })}
-            </Slideshow>
-          </Container>
-        </Hidden>
-        <Hidden mdUp>
-          <Container>
-            <Slideshow
-              // sliderRef={this.slider}
-              class="subslider-carousel"
-              dataCarousel={dataCarouselcollectionsSm}
-            >
-              {dummyData.map((val) => {
-                return (
-                  <ImgMediaCard data={val} cardSize="auto" hoverText={true} />
-                );
-              })}
-            </Slideshow>
-          </Container>
-        </Hidden>
 
-      
-        <Grid container className={classes.totalFormArea}>
-          <Grid item sm={7} xs={12} style={{backgroundColor:"#F4F4F4"}}>
+          <Typography className={classes.titleHeader}>
+            Valam Perugum Valayal Thiruvizha with NAC Jewellers
+          </Typography>
+
+          <Typography className={classes.titleContents}>
+            Tamil Nadu - 14th April - 3rd May
+          </Typography>
+          <Typography className={classes.titleContents}>
+            Vijayawada - 22nd - 3rd May
+          </Typography>
+
+          <br />
+          <Typography className={classes.titleContents}>
+            We bring you a grand bangle mela this season with bangles starting
+            from 3 grams onwards. Choose from a wide variety of bangles and
+            avail exciting offers.
+          </Typography>
+          <br />
+
+          <Grid sm={12} md={8} style={{ margin: "auto" }}>
+            <Typography
+              className={classes.titleContents}
+              style={{ textAlign: "start", fontWeight: "bold" }}
+            >
+              This Akshaya Tritiya,
+            </Typography>
+            <ul style={{ textAlign: "start" }}>
+              <li className={classes.titleContents}>
+                ₹100 OFF per gram on Gold
+              </li>
+              <li className={classes.titleContents}>
+                Exchange old Gold and get ₹50/- extra per gram
+              </li>
+              <li className={classes.titleContents}>
+                ₹2,000 OFF per kg on Silver articles
+              </li>
+              <li className={classes.titleContents}>
+                Enroll in any Savings Scheme between 14th April - 15th May and
+                get a FREE GOLD COIN
+              </li>
+              <li className={classes.titleContents}>
+                Offer valid from 14th April - 3rd May
+              </li>
+              <li className={classes.titleContents}>
+                Click here to watch our AD Video&nbsp;
+                <a href="https://www.youtube.com/user/nacjewellers/videos">
+                  Tamil
+                </a>
+                &nbsp;|&nbsp;
+                <a href="https://www.youtube.com/user/nacjewellers/videos">
+                  Telugu
+                </a>
+              </li>
+            </ul>
+
+            <Typography
+              className={classes.titleContents}
+              style={{ textAlign: "start" }}
+            >
+              Available at all our showrooms &nbsp;
+              <a href="https://www.nacjewellers.com/store">Click here</a>
+            </Typography>
+            <Typography
+              className={classes.titleContents}
+              style={{ textAlign: "start" }}
+            >
+              For more info please contact&nbsp;
+              <a href="tel:+91 44 4399 6666">+91 44 4399 6666 </a>&nbsp;I&nbsp;
+              <a href="mailto:care@nacjewellers.com">care@nacjewellers.com</a>
+            </Typography>
+          </Grid>
+        </div>
+      </Grid>
+      <Hidden smDown>
+        <Container className={classes.cardEdit} style={{ paddingTop: 8 }}>
+          <Slideshow
+            class="subslider-carousel"
+            dataCarousel={dataCarouselcollections}
+          >
+            {dummyData.map((val) => {
+              return (
+                <ImgMediaCard data={val} cardSize="auto" hoverText={true} />
+              );
+            })}
+          </Slideshow>
+        </Container>
+      </Hidden>
+      <Hidden mdUp>
+        <Container>
+          <Slideshow
+            class="subslider-carousel"
+            dataCarousel={dataCarouselcollectionsSm}
+          >
+            {dummyData.map((val) => {
+              return (
+                <ImgMediaCard data={val} cardSize="auto" hoverText={true} />
+              );
+            })}
+          </Slideshow>
+        </Container>
+      </Hidden>
+
+      <Grid container className={classes.totalFormArea}>
+        <Grid item sm={7} xs={12} style={{ backgroundColor: "#F4F4F4" }}>
           <div className={classes.formArea}>
             <div className={classes.inputFieldsEdit}>
               <Typography className={classes.inputFieldsHeader}>
@@ -496,26 +632,29 @@ function AkshyaTritiya(props) {
                   classes={{ notchedOutline: classes.textFieldEdit }}
                   InputProps={{ disableUnderline: true }}
                   onChange={onChangeData}
-                  name="firstName"
+                  name="name"
                 />
+                <label style={{ color: "red" }}>{errorData.name}</label>
               </FormControl>
-             </div>
-              <div className={classes.inputFieldsEdit}>
+            </div>
+            <div className={classes.inputFieldsEdit}>
               <Typography className={classes.inputFieldsHeader}>
-                Last Name:
+                Phone Number:
               </Typography>
               <FormControl style={{ backgroundColor: "#fff" }} fullWidth>
                 <TextField
+                  type="number"
                   style={{ borderRadius: "0px" }}
                   labelWidth={0}
                   classes={{ notchedOutline: classes.textFieldEdit }}
                   InputProps={{ disableUnderline: true }}
                   onChange={onChangeData}
-                  name="lastName"
+                  name="phone"
                 />
+                <label style={{ color: "red" }}>{errorData.phone}</label>
               </FormControl>
-              </div>
-             <div className={classes.inputFieldsEdit}>
+            </div>
+            <div className={classes.inputFieldsEdit}>
               <Typography className={classes.inputFieldsHeader}>
                 Email id:
               </Typography>
@@ -528,9 +667,10 @@ function AkshyaTritiya(props) {
                   onChange={onChangeData}
                   name="email"
                 />
+                <label style={{ color: "red" }}>{errorData.email}</label>
               </FormControl>
-             </div>
-              <div className={classes.inputFieldsEdit}>
+            </div>
+            <div className={classes.inputFieldsEdit}>
               <Typography className={classes.inputFieldsHeader}>
                 Your Query
               </Typography>
@@ -544,9 +684,10 @@ function AkshyaTritiya(props) {
                   multiline
                   rows={8}
                 />
+                <label style={{ color: "red" }}>{errorData.query}</label>
               </FormControl>
-              </div>
-              <div style={{ textAlign: "end", paddingTop: "10px" }}>
+            </div>
+            <div style={{ textAlign: "end", paddingTop: "10px" }}>
               <Button
                 variant="contained"
                 onClick={onsubmitvalue}
@@ -555,18 +696,49 @@ function AkshyaTritiya(props) {
                 Sumbit
               </Button>
             </div>
-            </div>
-          </Grid>
-          <Grid item sm={5} xs={12} style={{backgroundColor:"#2E348A"}}>
-              <img
-                src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/akshaya+page/Group+63%402x.png"
-                style={{ width: "100%"}}
-                className={classes.storeImage}
-              />
-              <div className={classes.imgBtn}>FOR MORE VISIT OUR STORE</div>
-          </Grid>
+          </div>
         </Grid>
-        <Footer />
+        <Grid item sm={5} xs={12} style={{ backgroundColor: "#2E348A" }}>
+          <Link href="/store">
+            <img
+              alt="images"
+              src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/akshaya+page/Group+63%402x.png"
+              style={{ width: "100%" }}
+              className={classes.storeImage}
+            />
+            <div className={classes.imgBtn} style={{ textDecoration: "none" }}>
+              FOR MORE VISIT OUR STORE
+            </div>
+          </Link>
+        </Grid>
+      </Grid>
+      <Snackbar
+        anchorOrigin={{
+          vertical: "top",
+          horizontal: "center",
+        }}
+        open={openSnack}
+        autoHideDuration={3000}
+        onClose={handleClose}
+      >
+        <Alert onClose={handleClose} severity="success">
+          Your queries send successfully!
+        </Alert>
+      </Snackbar>
+      <Snackbar
+        anchorOrigin={{
+          vertical: "top",
+          horizontal: "center",
+        }}
+        open={openSnackError}
+        autoHideDuration={3000}
+        onClose={handleClose}
+      >
+        <Alert onClose={handleClose} severity="error">
+          Something went wrong, Please try again!
+        </Alert>
+      </Snackbar>
+      <Footer />
     </Grid>
   );
 }

@@ -237,16 +237,16 @@ const generatedDiamondType = (PD, valProductDiamond, type) => {
 
   return arrOfdiamondType;
 };
-const gemstoneType = (PD, valGemstoneType, type) => {
-  var arrOfGemstoneType = [];
-  valGemstoneType.map((val) => {
-    PD.map((valPD) => {
-      if (val.gemstoneType === valPD.gemstoneType) {
-        arrOfGemstoneType.push(val[type]);
-      }
+const gemstoneType = (valGemstoneType, type) => {
+  let arrOfGemstoneType = [];
 
-      return arrOfGemstoneType;
-    });
+  if (type == "stoneCount") {
+    return [valGemstoneType.length];
+  }
+  valGemstoneType.map((val) => {
+    if (val[type]) {
+      val[type] && arrOfGemstoneType.push(val[type]);
+    }
   });
 
   return arrOfGemstoneType;
@@ -563,11 +563,18 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                   name: "Diamond",
                   details: [
                     CurrencyConversion(
-                      PD?.totalNoStonesByProductSku?.nodes[0]?.discountPrice ??
-                        0
+                      PD?.totalNoStonesByProductSku?.nodes[
+                        PD?.totalNoStonesByProductSku?.nodes.findIndex(
+                          (x) => x.type === "diamond_total"
+                        ) ?? 0
+                      ]?.discountPrice ?? 0
                     ),
                     CurrencyConversion(
-                      PD?.totalNoStonesByProductSku?.nodes[0]?.markupPrice ?? 0
+                      PD?.totalNoStonesByProductSku?.nodes[
+                        PD?.totalNoStonesByProductSku?.nodes.findIndex(
+                          (x) => x.type === "diamond_total"
+                        ) ?? 0
+                      ]?.markupPrice ?? 0
                     ),
                   ],
                 },
@@ -581,11 +588,18 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                   name: "Gemstone",
                   details: [
                     CurrencyConversion(
-                      PD?.totalNoStonesByProductSku?.nodes[1]?.discountPrice ??
-                        0
+                      PD?.totalNoStonesByProductSku?.nodes[
+                        PD?.totalNoStonesByProductSku?.nodes.findIndex(
+                          (x) => x.type === "gemstone_total"
+                        ) ?? 0
+                      ]?.discountPrice ?? 0
                     ),
                     CurrencyConversion(
-                      PD?.totalNoStonesByProductSku?.nodes[1]?.markupPrice ?? 0
+                      PD?.totalNoStonesByProductSku?.nodes[
+                        PD?.totalNoStonesByProductSku?.nodes.findIndex(
+                          (x) => x.type === "gemstone_total"
+                        ) ?? 0
+                      ]?.markupPrice ?? 0
                     ),
                   ],
                 },
@@ -854,16 +868,7 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                               ?.stoneCount,
                         }
                       : "",
-                    PD?.productListByProductId?.productDiamondsByProductSku
-                      ?.nodes[0]?.stoneAmount
-                      ? {
-                          name: "Stone Amount",
-                          details:
-                            PD?.productListByProductId
-                              ?.productDiamondsByProductSku?.nodes[0]
-                              ?.stoneAmount,
-                        }
-                      : "",
+
                     PD?.productListByProductId?.productDiamondsByProductSku
                       ?.nodes[0]?.stoneWeight
                       ? {
@@ -895,8 +900,6 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                       : gemstoneType(
                           PD?.productListByProductId
                             ?.productGemstonesByProductSku?.nodes,
-                          PD?.productListByProductId
-                            ?.productGemstonesByProductSku?.nodes,
                           "stoneCount"
                         )[0] !== null
                       ? {
@@ -911,15 +914,11 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                               : gemstoneType(
                                   PD?.productListByProductId
                                     ?.productGemstonesByProductSku?.nodes,
-                                  PD?.productListByProductId
-                                    ?.productGemstonesByProductSku?.nodes,
                                   "stoneCount"
                                 ),
                         }
                       : "",
                     gemstoneType(
-                      PD?.productListByProductId?.productGemstonesByProductSku
-                        ?.nodes,
                       PD?.productListByProductId?.productGemstonesByProductSku
                         ?.nodes,
                       "gemstoneType"
@@ -936,8 +935,6 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                               : gemstoneType(
                                   PD?.productListByProductId
                                     ?.productGemstonesByProductSku?.nodes,
-                                  PD?.productListByProductId
-                                    ?.productGemstonesByProductSku?.nodes,
                                   "gemstoneType"
                                 ),
                         }
@@ -948,8 +945,6 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                       ?.nodes?.length === 0
                       ? null
                       : gemstoneType(
-                          PD?.productListByProductId
-                            ?.productGemstonesByProductSku?.nodes,
                           PD?.productListByProductId
                             ?.productGemstonesByProductSku?.nodes,
                           "gemstoneShape"
@@ -966,8 +961,6 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                               : gemstoneType(
                                   PD?.productListByProductId
                                     ?.productGemstonesByProductSku?.nodes,
-                                  PD?.productListByProductId
-                                    ?.productGemstonesByProductSku?.nodes,
                                   "gemstoneShape"
                                 ),
                         }
@@ -979,8 +972,6 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                       ?.nodes?.length === 0
                       ? null
                       : gemstoneType(
-                          PD?.productListByProductId
-                            ?.productGemstonesByProductSku?.nodes,
                           PD?.productListByProductId
                             ?.productGemstonesByProductSku?.nodes,
                           "gemstoneSize"
@@ -997,8 +988,6 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                               : gemstoneType(
                                   PD?.productListByProductId
                                     ?.productGemstonesByProductSku?.nodes,
-                                  PD?.productListByProductId
-                                    ?.productGemstonesByProductSku?.nodes,
                                   "gemstoneSize"
                                 ),
                         }
@@ -1010,8 +999,6 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                       ?.nodes?.length === 0
                       ? null
                       : gemstoneType(
-                          PD?.productListByProductId
-                            ?.productGemstonesByProductSku?.nodes,
                           PD?.productListByProductId
                             ?.productGemstonesByProductSku?.nodes,
                           "stoneWeight"
@@ -1028,8 +1015,6 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                               : gemstoneType(
                                   PD?.productListByProductId
                                     ?.productGemstonesByProductSku?.nodes,
-                                  PD?.productListByProductId
-                                    ?.productGemstonesByProductSku?.nodes,
                                   "stoneWeight"
                                 ),
                         }
@@ -1040,8 +1025,6 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                       ?.nodes?.length === 0
                       ? null
                       : gemstoneType(
-                          PD?.productListByProductId
-                            ?.productGemstonesByProductSku?.nodes,
                           PD?.productListByProductId
                             ?.productGemstonesByProductSku?.nodes,
                           "gemstoneSetting"
@@ -1058,8 +1041,6 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                               : gemstoneType(
                                   PD?.productListByProductId
                                     ?.productGemstonesByProductSku?.nodes,
-                                  PD?.productListByProductId
-                                    ?.productGemstonesByProductSku?.nodes,
                                   "gemstoneSetting"
                                 ),
                         }
@@ -1068,10 +1049,11 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                       ?.nodes[0]?.subItemName
                       ? {
                           name: "Gemstone Name",
-                          details:
+                          details: gemstoneType(
                             PD?.productListByProductId
-                              ?.productGemstonesByProductSku?.nodes[0]
-                              ?.subItemName,
+                              ?.productGemstonesByProductSku?.nodes,
+                            "subItemName"
+                          ),
                         }
                       : "",
 
@@ -1079,10 +1061,11 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                       ?.nodes[0]?.description
                       ? {
                           name: "Description",
-                          details:
+                          details: gemstoneType(
                             PD?.productListByProductId
-                              ?.productGemstonesByProductSku?.nodes[0]
-                              ?.description,
+                              ?.productGemstonesByProductSku?.nodes,
+                            "description"
+                          ),
                         }
                       : "",
                   ]
@@ -1219,11 +1202,18 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                   name: "Diamond",
                   details: [
                     CurrencyConversion(
-                      PD?.totalNoStonesByProductSku?.nodes[0]?.discountPrice ??
-                        0
+                      PD?.totalNoStonesByProductSku?.nodes[
+                        PD?.totalNoStonesByProductSku?.nodes.findIndex(
+                          (x) => x.type === "diamond_total"
+                        ) ?? 0
+                      ]?.discountPrice ?? 0
                     ),
                     CurrencyConversion(
-                      PD?.totalNoStonesByProductSku?.nodes[0]?.markupPrice ?? 0
+                      PD?.totalNoStonesByProductSku?.nodes[
+                        PD?.totalNoStonesByProductSku?.nodes.findIndex(
+                          (x) => x.type === "diamond_total"
+                        ) ?? 0
+                      ]?.markupPrice ?? 0
                     ),
                   ],
                 },
@@ -1237,11 +1227,18 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                   name: "Gemstone",
                   details: [
                     CurrencyConversion(
-                      PD?.totalNoStonesByProductSku?.nodes[1]?.discountPrice ??
-                        0
+                      PD?.totalNoStonesByProductSku?.nodes[
+                        PD?.totalNoStonesByProductSku?.nodes.findIndex(
+                          (x) => x.type === "gemstone_total"
+                        ) ?? 0
+                      ]?.discountPrice ?? 0
                     ),
                     CurrencyConversion(
-                      PD?.totalNoStonesByProductSku?.nodes[1]?.markupPrice ?? 0
+                      PD?.totalNoStonesByProductSku?.nodes[
+                        PD?.totalNoStonesByProductSku?.nodes.findIndex(
+                          (x) => x.type === "gemstone_total"
+                        ) ?? 0
+                      ]?.markupPrice ?? 0
                     ),
                   ],
                 },
@@ -1506,16 +1503,7 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                               ?.stoneCount,
                         }
                       : "",
-                    PD?.productListByProductId?.productDiamondsByProductSku
-                      ?.nodes[0]?.stoneAmount
-                      ? {
-                          name: "Stone Amount",
-                          details:
-                            PD?.productListByProductId
-                              ?.productDiamondsByProductSku?.nodes[0]
-                              ?.stoneAmount,
-                        }
-                      : "",
+
                     PD?.productListByProductId?.productDiamondsByProductSku
                       ?.nodes[0]?.stoneWeight
                       ? {
@@ -1547,8 +1535,6 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                       : gemstoneType(
                           PD?.productListByProductId
                             ?.productGemstonesByProductSku?.nodes,
-                          PD?.productListByProductId
-                            ?.productGemstonesByProductSku?.nodes,
                           "stoneCount"
                         )[0] !== null
                       ? {
@@ -1563,15 +1549,11 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                               : gemstoneType(
                                   PD?.productListByProductId
                                     ?.productGemstonesByProductSku?.nodes,
-                                  PD?.productListByProductId
-                                    ?.productGemstonesByProductSku?.nodes,
                                   "stoneCount"
                                 ),
                         }
                       : "",
                     gemstoneType(
-                      PD?.productListByProductId?.productGemstonesByProductSku
-                        ?.nodes,
                       PD?.productListByProductId?.productGemstonesByProductSku
                         ?.nodes,
                       "gemstoneType"
@@ -1588,8 +1570,6 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                               : gemstoneType(
                                   PD?.productListByProductId
                                     ?.productGemstonesByProductSku?.nodes,
-                                  PD?.productListByProductId
-                                    ?.productGemstonesByProductSku?.nodes,
                                   "gemstoneType"
                                 ),
                         }
@@ -1600,8 +1580,6 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                       ?.nodes?.length === 0
                       ? null
                       : gemstoneType(
-                          PD?.productListByProductId
-                            ?.productGemstonesByProductSku?.nodes,
                           PD?.productListByProductId
                             ?.productGemstonesByProductSku?.nodes,
                           "gemstoneShape"
@@ -1618,8 +1596,6 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                               : gemstoneType(
                                   PD?.productListByProductId
                                     ?.productGemstonesByProductSku?.nodes,
-                                  PD?.productListByProductId
-                                    ?.productGemstonesByProductSku?.nodes,
                                   "gemstoneShape"
                                 ),
                         }
@@ -1631,8 +1607,6 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                       ?.nodes?.length === 0
                       ? null
                       : gemstoneType(
-                          PD?.productListByProductId
-                            ?.productGemstonesByProductSku?.nodes,
                           PD?.productListByProductId
                             ?.productGemstonesByProductSku?.nodes,
                           "gemstoneSize"
@@ -1649,8 +1623,6 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                               : gemstoneType(
                                   PD?.productListByProductId
                                     ?.productGemstonesByProductSku?.nodes,
-                                  PD?.productListByProductId
-                                    ?.productGemstonesByProductSku?.nodes,
                                   "gemstoneSize"
                                 ),
                         }
@@ -1662,8 +1634,6 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                       ?.nodes?.length === 0
                       ? null
                       : gemstoneType(
-                          PD?.productListByProductId
-                            ?.productGemstonesByProductSku?.nodes,
                           PD?.productListByProductId
                             ?.productGemstonesByProductSku?.nodes,
                           "stoneWeight"
@@ -1680,8 +1650,6 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                               : gemstoneType(
                                   PD?.productListByProductId
                                     ?.productGemstonesByProductSku?.nodes,
-                                  PD?.productListByProductId
-                                    ?.productGemstonesByProductSku?.nodes,
                                   "stoneWeight"
                                 ),
                         }
@@ -1692,8 +1660,6 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                       ?.nodes?.length === 0
                       ? null
                       : gemstoneType(
-                          PD?.productListByProductId
-                            ?.productGemstonesByProductSku?.nodes,
                           PD?.productListByProductId
                             ?.productGemstonesByProductSku?.nodes,
                           "gemstoneSetting"
@@ -1710,8 +1676,6 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                               : gemstoneType(
                                   PD?.productListByProductId
                                     ?.productGemstonesByProductSku?.nodes,
-                                  PD?.productListByProductId
-                                    ?.productGemstonesByProductSku?.nodes,
                                   "gemstoneSetting"
                                 ),
                         }
@@ -1720,10 +1684,11 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                       ?.nodes[0]?.subItemName
                       ? {
                           name: "Gemstone Name",
-                          details:
+                          details: gemstoneType(
                             PD?.productListByProductId
-                              ?.productGemstonesByProductSku?.nodes[0]
-                              ?.subItemName,
+                              ?.productGemstonesByProductSku?.nodes,
+                            "subItemName"
+                          ),
                         }
                       : "",
 
@@ -1731,10 +1696,11 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                       ?.nodes[0]?.description
                       ? {
                           name: "Description",
-                          details:
+                          details: gemstoneType(
                             PD?.productListByProductId
-                              ?.productGemstonesByProductSku?.nodes[0]
-                              ?.description,
+                              ?.productGemstonesByProductSku?.nodes,
+                            "description"
+                          ),
                         }
                       : "",
                   ]
