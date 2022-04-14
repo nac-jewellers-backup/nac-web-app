@@ -10,12 +10,13 @@ import {
   FormControl,
   Button,
   TextField,
+  Link,
 } from "@material-ui/core";
 import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert from "@material-ui/lab/Alert";
 import { makeStyles } from "@material-ui/core/styles";
 import { SolitairesData } from "../../mappers/dummydata/solitairesData";
-import { header, dummyData } from "./dummyDataSpecific";
+import { dummyData } from "./dummyDataSpecific";
 import { ImgMediaCard } from "../../components/ProductCard/Card";
 import ArrowRightIcon from "@material-ui/icons/ArrowRight";
 import ArrowLeftIcon from "@material-ui/icons/ArrowLeft";
@@ -559,13 +560,12 @@ function AkshyaTritiya(props) {
                 Offer valid from 14th April - 3rd May
               </li>
               <li className={classes.titleContents}>
-                Click here to watch our AD Video{" "}
+                Click here to watch our AD Video
                 <a href="https://www.youtube.com/user/nacjewellers/videos">
                   Tamil
                 </a>
-                |{" "}
+                &nbsp;|&nbsp;
                 <a href="https://www.youtube.com/user/nacjewellers/videos">
-                  {" "}
                   Telugu
                 </a>
               </li>
@@ -575,15 +575,15 @@ function AkshyaTritiya(props) {
               className={classes.titleContents}
               style={{ textAlign: "start" }}
             >
-              Available at all our showrooms{" "}
+              Available at all our showrooms
               <a href="https://www.nacjewellers.com/store">Click here</a>
             </Typography>
             <Typography
               className={classes.titleContents}
               style={{ textAlign: "start" }}
             >
-              For more info please contact{" "}
-              <a href="tel:+91 44 4399 6666">+91 44 4399 6666 </a>I
+              For more info please contact
+              <a href="tel:+91 44 4399 6666">+91 44 4399 6666 </a>&nbsp;I&nbsp;
               <a href="mailto:care@nacjewellers.com">care@nacjewellers.com</a>
             </Typography>
           </Grid>
@@ -699,13 +699,15 @@ function AkshyaTritiya(props) {
           </div>
         </Grid>
         <Grid item sm={5} xs={12} style={{ backgroundColor: "#2E348A" }}>
-          <img
-            alt="images"
-            src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/akshaya+page/Group+63%402x.png"
-            style={{ width: "100%" }}
-            className={classes.storeImage}
-          />
-          <div className={classes.imgBtn}>FOR MORE VISIT OUR STORE</div>
+          <Link href="/store">
+            <img
+              alt="images"
+              src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/akshaya+page/Group+63%402x.png"
+              style={{ width: "100%" }}
+              className={classes.storeImage}
+            />
+            <div className={classes.imgBtn}>FOR MORE VISIT OUR STORE</div>
+          </Link>
         </Grid>
       </Grid>
       <Snackbar
