@@ -560,7 +560,7 @@ function AkshyaTritiya(props) {
                 Offer valid from 14th April - 3rd May
               </li>
               <li className={classes.titleContents}>
-                Click here to watch our AD Video
+                Click here to watch our AD Video&nbsp;
                 <a href="https://www.youtube.com/user/nacjewellers/videos">
                   Tamil
                 </a>
@@ -575,14 +575,14 @@ function AkshyaTritiya(props) {
               className={classes.titleContents}
               style={{ textAlign: "start" }}
             >
-              Available at all our showrooms
+              Available at all our showrooms &nbsp;
               <a href="https://www.nacjewellers.com/store">Click here</a>
             </Typography>
             <Typography
               className={classes.titleContents}
               style={{ textAlign: "start" }}
             >
-              For more info please contact
+              For more info please contact&nbsp;
               <a href="tel:+91 44 4399 6666">+91 44 4399 6666 </a>&nbsp;I&nbsp;
               <a href="mailto:care@nacjewellers.com">care@nacjewellers.com</a>
             </Typography>
