@@ -210,12 +210,12 @@ function HeaderHoverMenuItem(props) {
     {
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Group+330%402x.png",
       content: "Studs",
-      url: "/studs+and+tops-jewellery",
+      url: "/studs-earrings-jewellery",
     },
     {
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/PRPpoy%402x.png",
       content: "Drops",
-      url: "/drops+and+danglers-earrings-jewellery",
+      url: "/danglers+&+drops-earrings-jewellery",
     },
     {
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/qyLKdg%402x.png",
@@ -246,7 +246,7 @@ function HeaderHoverMenuItem(props) {
     {
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/INe8h1%402x.png",
       content: <>LightWeight&nbsp;by&nbsp;Stylori</>,
-      url: "/earrings-jewellery-earrings-stylori",
+      url: "/earrings-jewellery?sort=Price%20Low%20to%20High&startprice=0&endprice=0",
     },
   ];
   const ringsJewel = [
