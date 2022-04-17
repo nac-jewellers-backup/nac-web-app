@@ -1153,6 +1153,9 @@ class Header extends Component {
                                         xs={6}
                                         sm={6}
                                         className={classes.griddivstone}
+                                        onClick={() => {
+                                          window.location.href = val.url;
+                                        }}
                                       >
                                         <div className={classes.iconstyle}>
                                           <img

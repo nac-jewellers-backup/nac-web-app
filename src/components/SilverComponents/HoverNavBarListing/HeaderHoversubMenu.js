@@ -52,9 +52,9 @@ function HeaderHoverMenuItem(props) {
     {
       title: "Gold",
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
-      url1: "/plain+gold-earrings-jewellery",
-      url2: "/plain+gold-rings-jewellery",
-      url3: "/plain+gold-bangles-jewellery",
+      url1: "/gold-earrings-jewellery",
+      url2: "/gold-rings-jewellery",
+      url3: "/gold-necklaces-jewellery",
     },
   ];
   const data = [
@@ -268,7 +268,7 @@ function HeaderHoverMenuItem(props) {
     {
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/rings/xJu4r9%402x.png",
       content: "Bridal",
-      url: "/bridal+set-rings-jewellery",
+      url: "/rings-jewellery-bridal",
     },
     {
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/rings/C1IQGq%402x.png",
@@ -278,19 +278,19 @@ function HeaderHoverMenuItem(props) {
     {
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/rings/YE4CnD%402x.png",
       content: "Men's Rings",
-      url: "/rings-jewellery-rings-mens+collection",
+      url: "/rings-jewellery-for+male",
     },
     {
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/rings/JfQ2Pg%402x.png",
       content: <>Light&nbsp;weightby&nbsp;STYLORI</>,
-      url: "/rings-jewellery-rings-stylori",
+      url: "/rings-jewellery?sort=Price%20Low%20to%20High&startprice=0&endprice=0",
     },
   ];
   const banglesbracelets = [
     {
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/bangles%26bracelets/5Zna1n%402x.png",
       content: "Oval bracelts",
-      url: "/oval-bracelets-jewellery",
+      url: "/oval+bracelets-jewellery",
     },
     {
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/bangles%26bracelets/6afKPj%402x.png",
@@ -413,7 +413,7 @@ function HeaderHoverMenuItem(props) {
     {
       img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Necklace/2-318402-Bridal.webp",
       content: "Bridal",
-      url: "/ear+cuffs-earrings-jewellery",
+      url: "/bridal+necklace-necklaces-jewellery",
     },
     {
       img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Necklace/2-bx8785-Layerred+Necklace.webp",
@@ -431,31 +431,6 @@ function HeaderHoverMenuItem(props) {
       content: "Gutapulusu",
       url: "/ear+jacket-earrings-jewellery",
     },
-    // {
-    //   img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Necklace/28812219-Guttapusalu.webp",
-    //   content: "Pendant",
-    //   url: "/ear+jacket-earrings-jewellery",
-    // },
-    // {
-    //   img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Necklace/28812219-Guttapusalu.webp",
-    //   content: "Oddiyanam",
-    //   url: "/ear+jacket-earrings-jewellery",
-    // },
-    // {
-    //   img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Necklace/28812219-Guttapusalu.webp",
-    //   content: "Armlet",
-    //   url: "/ear+jacket-earrings-jewellery",
-    // },
-    // {
-    //   img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Necklace/28812219-Guttapusalu.webp",
-    //   content: "Anklet",
-    //   url: "/ear+jacket-earrings-jewellery",
-    // },
-    // {
-    //   img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Necklace/28812219-Guttapusalu.webp",
-    //   content: "Chain",
-    //   url: "/ear+jacket-earrings-jewellery",
-    // },
   ];
 
   const otherJewels = [
@@ -464,7 +439,7 @@ function HeaderHoverMenuItem(props) {
       content: [
         {
           itm: "Long Necklace",
-          url: "/long+haram-necklaces-jewellery",
+          url: "/long+necklace-necklaces-jewellery",
         },
         {
           itm: "Short Necklace",
@@ -596,11 +571,11 @@ function HeaderHoverMenuItem(props) {
   ];
 
   const savingScheme = [
-    { title: "Pay now", url: "#" },
-    { title: "Join now", url: "#" },
-    { title: "New Quick Gold", url: "#" },
-    { title: "Super Think Diamond", url: "#" },
-    { title: "Super Quick silver", url: "#" },
+    { title: "Pay now", url: "https://nacsavings.in/" },
+    { title: "Join now", url: "https://nacsavings.in/" },
+    { title: "New Quick Gold", url: "https://nacsavings.in/" },
+    { title: "Super Think Diamond", url: "https://nacsavings.in/" },
+    { title: "Super Quick silver", url: "https://nacsavings.in/" },
   ];
 
   const styloridata = [
