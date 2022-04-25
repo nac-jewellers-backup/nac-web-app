@@ -52,9 +52,10 @@ function HeaderHoverMenuItem(props) {
     {
       title: "Gold",
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
-      url1: "/plain+gold-earrings-jewellery",
-      url2: "/plain+gold-rings-jewellery",
-      url3: "/plain+gold-bangles-jewellery",
+      url1: "/gold-earrings-jewellery",
+      url2: "/gold-rings-jewellery",
+      url3: "/wristwear-plain+gold-jewellery",
+      url4:"/necklaces-plain+gold-jewellery"
     },
   ];
   const data = [
@@ -263,7 +264,7 @@ function HeaderHoverMenuItem(props) {
     {
       img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Ring+Fashion.webp",
       content: "Fashion",
-      url: "/fusion-jewellery",
+      url: "/rings-jewellery-special+occasion",
     },
     {
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/rings/xJu4r9%402x.png",
@@ -424,7 +425,7 @@ function HeaderHoverMenuItem(props) {
     {
       img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Necklace/28323711-Antique.webp",
       content: "Antique",
-      url: "/ear+jacket-earrings-jewellery",
+      url: "/necklaces-jewellery-rewind",
     },
     {
       img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Necklace/28812219-Guttapusalu.webp",
@@ -1171,7 +1172,7 @@ function HeaderHoverMenuItem(props) {
                           } else if (props.listitem === "BANGLES & BRACELETS") {
                             return (window.location.href = val.url3);
                           } else if (props.listitem === "NECKLACE") {
-                            return (window.location.href = val.url3);
+                            return (window.location.href = val.url4);
                           }
                         }}
                         justify="center"
