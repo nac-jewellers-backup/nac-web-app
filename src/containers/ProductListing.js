@@ -49,7 +49,10 @@ class Stylori extends React.Component {
     })
       .then((res) => res.json())
       .then((data) => {
-        let bannerFullData = data.data.allBanners.nodes;
+        let bannerFullData =
+          data?.data?.allBanners?.nodes?.sort(
+            (a, b) => parseFloat(a.position) - parseFloat(b.position)
+          ) ?? [];
         const specificPageData = bannerFullData.filter(
           (item) => item.urlParam === window.location.pathname
         );

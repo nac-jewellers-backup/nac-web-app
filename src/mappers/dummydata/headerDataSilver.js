@@ -15,7 +15,7 @@ export const mainlist = [
   },
   {
     name: "BANGLES & BRACELETS",
-    url: "/wrist+wear-jewellery",
+    url: "/wristwear-jewellery",
   },
   // {
   //   name: "OTHER JEWELLERY",
@@ -59,7 +59,7 @@ export const subheader = {
     name: [
       {
         name: "Studs",
-        url: "/studs+and+tops-jewellery",
+        url: "/studs-earrings-jewellery",
       },
       {
         name: "Drop",
@@ -415,12 +415,12 @@ export const Jewellery = {
         {
           img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Group+330%402x.png",
           content: "Studs",
-          url: "/studs+and+tops-jewellery",
+          url: "/studs-earrings-jewellery",
         },
         {
           img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/PRPpoy%402x.png",
           content: "Drops",
-          url: "/drops+and+danglers-earrings-jewellery",
+          url: "/danglers+&+drops-earrings-jewellery",
         },
         {
           img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/qyLKdg%402x.png",
@@ -451,7 +451,7 @@ export const Jewellery = {
         {
           img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/INe8h1%402x.png",
           content: "LightWeight by Stylori",
-          url: "/earrings-jewellery-earrings-stylori",
+          url: "/earrings-jewellery?sort=Price%20Low%20to%20High&startprice=0&endprice=0",
         },
       ],
     },
@@ -461,23 +461,28 @@ export const Jewellery = {
         {
           icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Group+319.svg",
           name: "Gemstone",
+          url: "",
         },
         {
           icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Group+321.svg",
           name: "Diamond",
+          url: "",
         },
         {
           icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Group+325.svg",
           name: "Solitaire",
+          url: "",
         },
 
         {
           icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Ellipse+3.svg",
           name: "Platinum",
+          url: "",
         },
         {
           icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
           name: " Gold",
+          url: "/gold-earrings-jewellery",
         },
       ],
     },
@@ -521,7 +526,7 @@ export const Jewellery = {
         {
           img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Necklace/2-318402-Bridal.webp",
           content: "Bridal",
-          url: "/ear+cuffs-earrings-jewellery",
+          url: "/bridal+necklace-necklaces-jewellery",
         },
         {
           img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Necklace/2-bx8785-Layerred+Necklace.webp",
@@ -532,7 +537,7 @@ export const Jewellery = {
         {
           img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Necklace/28323711-Antique.webp",
           content: "Antique",
-          url: "/ear+jacket-earrings-jewellery",
+          url: "/necklaces-jewellery-rewind",
         },
         {
           img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Necklace/28812219-Guttapusalu.webp",
@@ -572,23 +577,28 @@ export const Jewellery = {
         {
           icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Group+319.svg",
           name: "Gemstone",
+          url: "",
         },
         {
           icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Group+321.svg",
           name: "Diamond",
+          url: "",
         },
         {
           icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Group+325.svg",
           name: "Solitaire",
+          url: "",
         },
 
         {
           icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Ellipse+3.svg",
           name: "Platinum",
+          url: "",
         },
         {
           icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
           name: " Gold",
+          url: "/gold-necklaces-jewellery",
         },
       ],
     },
@@ -716,7 +726,7 @@ export const Jewellery = {
         {
           img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/bangles%26bracelets/5Zna1n%402x.png",
           content: "Oval bracelts",
-          url: "/oval-bracelets-jewellery",
+          url: "/oval+bracelets-jewellery",
         },
         {
           img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/bangles%26bracelets/6afKPj%402x.png",
@@ -838,7 +848,7 @@ export const Jewellery = {
         {
           img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/rings/xJu4r9%402x.png",
           content: "Bridal",
-          url: "/bridal+set-rings-jewellery",
+          url: "/rings-jewellery-bridal",
         },
         {
           img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/rings/C1IQGq%402x.png",
@@ -848,12 +858,12 @@ export const Jewellery = {
         {
           img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/rings/YE4CnD%402x.png",
           content: "Men's Rings",
-          url: "/rings-jewellery-rings-mens+collection",
+          url: "/rings-jewellery-for+male",
         },
         {
           img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/rings/JfQ2Pg%402x.png",
           content: "Light & weightby & STYLORI",
-          url: "/rings-jewellery-rings-stylori",
+          url: "/rings-jewellery?sort=Price%20Low%20to%20High&startprice=0&endprice=0",
         },
       ],
     },
@@ -863,23 +873,28 @@ export const Jewellery = {
         {
           icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Group+319.svg",
           name: "Gemstone",
+          url: "",
         },
         {
           icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Group+321.svg",
+          url: "/gold-rings-jewellery",
           name: "Diamond",
         },
         {
           icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Group+325.svg",
+          url: "/gold-rings-jewellery",
           name: "Solitaire",
         },
 
         {
           icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Ellipse+3.svg",
+          url: "/gold-rings-jewellery",
           name: "Platinum",
         },
         {
           icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
           name: " Gold",
+          url: "/gold-rings-jewellery",
         },
       ],
     },
@@ -1207,7 +1222,7 @@ export const menuListHeader = [
   },
   {
     title: "Bangles & Bracelets".toUpperCase(),
-    url: "/wrist+wear-jewellery",
+    url: "/wristwear-jewellery",
   },
   // {
   //   title: "Other jewellery".toUpperCase(),
@@ -1378,7 +1393,7 @@ export const menuLists = {
       {
         value: "banglesbracelets",
         title: "Bangles & Bracelets",
-        url: "/bangles-jewellery",
+        url: "/wristwear-jewellery",
         imgContainer: {
           imageContainer: [
             {
