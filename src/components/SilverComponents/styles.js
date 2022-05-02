@@ -127,11 +127,13 @@ export const styles = (theme) => ({
   },
   searchcontainTop: {
     padding: "2px",
-    backgroundColor: theme.palette.secondary.dark,
+    // backgroundColor: theme.palette.secondary.dark,
     display: "flex",
     justifyContent: "center",
     alignContent: "center",
     marginTop: "3px",
+    width: "100%",
+    height: "18px",
   },
   [theme.breakpoints.only("xs")]: {
     padding: "3px !important",

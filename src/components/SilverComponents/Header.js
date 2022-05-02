@@ -891,7 +891,11 @@ class Header extends Component {
                                   onClick={this.handleClose}
                                   className={classes.searchcontainTop}
                                 >
-                                  <Seach className={"searchsvgmobile"} />
+                                  {/* <Seach className={"searchsvgmobile"} /> */}
+                                  <img
+                                    src="https://styloribaseimages.s3.ap-south-1.amazonaws.com/banner_images/search_icon.png"
+                                    alt="searchicon"
+                                  />
                                 </div>
                                 {localStorage.getItem("true") ? (
                                   <span
@@ -927,60 +931,97 @@ class Header extends Component {
                                     ></i>
                                   </span>
                                 )}
-                                <Badge
-                                  badgeContent={
-                                    this.props.wishlist &&
-                                    this.props.wishlist.wishlistdata &&
-                                    this.props.wishlist.wishlistdata.nodes &&
-                                    this.props.wishlist.wishlistdata.nodes
-                                      .length > 0
-                                      ? this.props.wishlist &&
-                                        this.props.wishlist.wishlistdata &&
-                                        this.props.wishlist.wishlistdata
-                                          .nodes &&
-                                        this.props.wishlist.wishlistdata.nodes
-                                          .length
-                                      : "0"
-                                  }
-                                  color="secondary"
-                                >
-                                  <i
-                                    class={`fa fa-heart ${classes.iconFafaheart}`}
-                                    onClick={() => {
-                                      if (user_id.length > 0) {
-                                        window.location.href = `/account${"-wishlist"}`;
-                                      } else {
-                                        window.location.href = "/login";
-                                      }
-                                    }}
-                                  ></i>
-                                </Badge>
-                                <Badge
-                                  style={{ fontSize: "9px" }}
-                                  badgeContent={
-                                    this.props.cart_count &&
-                                    this.props.cart_count.data &&
-                                    this.props.cart_count.data
-                                      .allTransSkuLists &&
-                                    this.props.cart_count.data.allTransSkuLists
-                                      .nodes.length > 0
-                                      ? this.props.cart_count &&
-                                        this.props.cart_count.data &&
-                                        this.props.cart_count.data
-                                          .allTransSkuLists &&
-                                        this.props.cart_count.data
-                                          .allTransSkuLists.nodes.length
-                                      : "0"
-                                  }
-                                  color="secondary"
-                                >
-                                  <a href="/cart">
+                                {this.props.wishlist &&
+                                this.props.wishlist.wishlistdata &&
+                                this.props.wishlist.wishlistdata.nodes &&
+                                this.props.wishlist.wishlistdata.nodes.length >
+                                  0 ? (
+                                  <Badge
+                                    badgeContent={
+                                      this.props.wishlist &&
+                                      this.props.wishlist.wishlistdata &&
+                                      this.props.wishlist.wishlistdata.nodes &&
+                                      this.props.wishlist.wishlistdata.nodes
+                                        .length > 0
+                                        ? this.props.wishlist &&
+                                          this.props.wishlist.wishlistdata &&
+                                          this.props.wishlist.wishlistdata
+                                            .nodes &&
+                                          this.props.wishlist.wishlistdata.nodes
+                                            .length
+                                        : ""
+                                    }
+                                    color="secondary"
+                                  >
                                     <i
-                                      style={{ fontSize: "15px !important" }}
-                                      class={`fa fa-shopping-bag  ${classes.iconFafa}`}
+                                      class={`fa fa-heart ${classes.iconFafaheart}`}
+                                      onClick={() => {
+                                        if (user_id.length > 0) {
+                                          window.location.href = `/account${"-wishlist"}`;
+                                        } else {
+                                          window.location.href = "/login";
+                                        }
+                                      }}
                                     ></i>
-                                  </a>
-                                </Badge>
+                                  </Badge>
+                                ) : (
+                                  <Badge color="secondary">
+                                    <i
+                                      class={`fa fa-heart ${classes.iconFafaheart}`}
+                                      onClick={() => {
+                                        if (user_id.length > 0) {
+                                          window.location.href = `/account${"-wishlist"}`;
+                                        } else {
+                                          window.location.href = "/login";
+                                        }
+                                      }}
+                                    ></i>
+                                  </Badge>
+                                )}
+                                {this.props.cart_count &&
+                                this.props.cart_count.data &&
+                                this.props.cart_count.data.allTransSkuLists &&
+                                this.props.cart_count.data.allTransSkuLists
+                                  .nodes.length > 0 ? (
+                                  <Badge
+                                    style={{ fontSize: "9px" }}
+                                    badgeContent={
+                                      this.props.cart_count &&
+                                      this.props.cart_count.data &&
+                                      this.props.cart_count.data
+                                        .allTransSkuLists &&
+                                      this.props.cart_count.data
+                                        .allTransSkuLists.nodes.length > 0
+                                        ? this.props.cart_count &&
+                                          this.props.cart_count.data &&
+                                          this.props.cart_count.data
+                                            .allTransSkuLists &&
+                                          this.props.cart_count.data
+                                            .allTransSkuLists.nodes.length
+                                        : ""
+                                    }
+                                    color="secondary"
+                                  >
+                                    <a href="/cart">
+                                      <i
+                                        style={{ fontSize: "15px !important" }}
+                                        class={`fa fa-shopping-bag  ${classes.iconFafa}`}
+                                      ></i>
+                                    </a>
+                                  </Badge>
+                                ) : (
+                                  <Badge
+                                    style={{ fontSize: "9px" }}
+                                    color="secondary"
+                                  >
+                                    <a href="/cart">
+                                      <i
+                                        style={{ fontSize: "15px !important" }}
+                                        class={`fa fa-shopping-bag  ${classes.iconFafa}`}
+                                      ></i>
+                                    </a>
+                                  </Badge>
+                                )}
                               </div>
                             </Grid>
                           </div>
