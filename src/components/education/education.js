@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './style'
-import { Grid, Typography, List, ListItem, Collapse } from '@material-ui/core'
+import { Grid, Typography} from '@material-ui/core'
 
 export default function EducationPage(props) {
     const value = props.value

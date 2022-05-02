@@ -1,6 +1,5 @@
 import React from "react";
 import { Grid } from "@material-ui/core";
-import style from "./style";
 import AccordianElement from "./accordianElements";
 
 export default function Accordian(props) {

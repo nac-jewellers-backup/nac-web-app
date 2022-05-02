@@ -4,7 +4,6 @@ import {
     Grid,
     Button,
     Container,
-    Hidden
 } from '@material-ui/core';
 import Ratings from "../../rating/rating";
 import { Input } from '../../InputComponents/TextField/Input'

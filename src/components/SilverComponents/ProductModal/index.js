@@ -4,9 +4,7 @@ import { useDummyRequest } from "../../../hooks";
 import { HomedataSilver } from "../../../mappers";
 import { solitareImageHoverData } from "../../../mappers";
 import { useStyles } from "./styles.js";
-import { Grid, Container, Hidden, Button } from "@material-ui/core";
-import { ThemeProvider } from "@material-ui/styles";
-import { trackWindowScroll } from "react-lazy-load-image-component";
+import { Grid, Hidden, Button } from "@material-ui/core";
 
 const ProductModal = (props) => {
   const dataCarousel = {

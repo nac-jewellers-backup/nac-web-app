@@ -8,7 +8,6 @@ import TableCell from "@material-ui/core/TableCell";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import { withStyles, makeStyles } from "@material-ui/core/styles";
-import Paper from "@material-ui/core/Paper";
 import Pagination from "@material-ui/lab/Pagination";
 const useStyles = makeStyles((theme) => ({
   table: {

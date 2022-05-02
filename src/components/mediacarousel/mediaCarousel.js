@@ -1,11 +1,9 @@
 import React, { useState } from "react";
-import { Typography, Grid, Hidden, Button, Link } from "@material-ui/core";
+import { Typography, Grid } from "@material-ui/core";
 import styles from "./mediaCarouselStyle";
 import Slideshow from "../Carousel/carosul";
-import dialog from "../dialog/dialog";
 import DialogBox from "../dialog/dialog";
-import { isCompositeType } from "graphql";
-import index from "postcss-normalize";
+
 export default function MediaCarousel(props) {
   
   const classes = styles();

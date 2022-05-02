@@ -32,8 +32,7 @@ import HeaderHoversubMenu from "./HoverNavBarListing/HeaderHoversubMenu";
 import { styles } from "./styles";
 import { GOLD_PRICE_AND_CURRENCY_CONVO } from "../../queries/home";
 import { API_URL } from "../../config";
-import TextField from "@material-ui/core/TextField";
-import Autocomplete from "@material-ui/lab/Autocomplete";
+
 let user_id = localStorage.getItem("user_id")
   ? localStorage.getItem("user_id")
   : {};

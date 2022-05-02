@@ -1,8 +1,8 @@
 import React from "react";
-import { Typography, Grid, Hidden } from "@material-ui/core";
+import { Typography, Grid } from "@material-ui/core";
 import styles from "./largeTileStyle";
 import Slideshow from "components/Carousel/carosul";
-import { NavLink, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./style.css";
 export default function LargeTile(props) {
   const classes = styles();

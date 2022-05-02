@@ -11,15 +11,10 @@ import {
 import Slideshow from '../../Carousel/carosul'
 import React from "react";
 import './product-images.css'
-import PropTypes from 'prop-types';
-import { useDummyRequest } from 'hooks';
 import { withStyles } from '@material-ui/core/styles';
-import { productpricingPages } from 'mappers';
 import styles from './style'
 import { ProductDetailContext } from 'context/ProductDetailContext';
 import productDetails from 'mappers/productDetails';
-import subcarousel from 'components/Home/subcarousel';
-import Sublistcarousel from './subListcarousel';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 

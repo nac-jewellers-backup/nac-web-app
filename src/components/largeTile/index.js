@@ -1,5 +1,5 @@
 import React from 'react'
-import { Typography, Grid, Hidden } from '@material-ui/core'
+import {Grid } from '@material-ui/core'
 import LargeTile from 'components/largeTile/largeTile';
 import {YoungOnes} from 'mappers/dummydata/collectionNac';
 import styles from './largeTileStyle';
