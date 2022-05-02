@@ -142,6 +142,7 @@ export default function ProductCareAccordian(props) {
                         style={{ width: "100%" }}
                         class="imgPadding"
                         src={value.img}
+                        loading="lazy" alt='...'
                       />
                     </Grid>
                   </Grid>
@@ -191,6 +192,7 @@ export default function ProductCareAccordian(props) {
                               display: "flex",
                             }}
                             src={value.rightImg}
+                            loading="lazy" alt='...'
                           />
                         </Typography>
                       )}

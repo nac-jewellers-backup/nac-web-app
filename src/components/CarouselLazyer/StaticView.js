@@ -118,6 +118,7 @@ export default function StaticView() {
           >
             <img
               style={{ width: "40%", height: "100%" }}
+              loading="lazy" alt='...'
               src={
                 "https://assets.stylori.com/images/Static+Pages/Other+Pages/fromthehouseofnac-pink.svg"
               }
@@ -136,6 +137,7 @@ export default function StaticView() {
           >
             <img
               style={{ width: "40%", height: "100%" }}
+              loading="lazy" alt='...'
               src={
                 "https://assets.stylori.com/images/Static%20Pages/Other%20Pages/certifiedjewellery-pink.svg"
               }
@@ -154,6 +156,7 @@ export default function StaticView() {
           >
             <img
               style={{ width: "40%", height: "100%" }}
+              loading="lazy" alt='...'
               src={
                 "https://assets.stylori.com/images/Static+Pages/Other+Pages/securepayments-pink.svg"
               }
@@ -172,6 +175,7 @@ export default function StaticView() {
           >
             <img
               style={{ width: "40%", height: "100%" }}
+              loading="lazy" alt='...'
               src={
                 "https://assets.stylori.com/images/Static+Pages/Other+Pages/diversestyles-pink.svg"
               }
@@ -190,6 +194,7 @@ export default function StaticView() {
           >
             <img
               style={{ width: "40%", height: "100%" }}
+              loading="lazy" alt='...'
               src={
                 "https://assets.stylori.com/images/Static+Pages/Other+Pages/easyreturns-pink.svg"
               }

@@ -86,6 +86,7 @@ export default function Cards(props) {
                 <img
                   src={props.data.title.imgIcon}
                   alt="contact image"
+                  loading="lazy" 
                   className={classes.contactImage}
                 />
               </Link>
@@ -154,6 +155,7 @@ export default function Cards(props) {
                         <img
                           src={val.img}
                           alt="Image"
+                          loading="lazy"
                           className={classes.imgClass}
                         />
                       </a>
@@ -167,6 +169,7 @@ export default function Cards(props) {
                       <img
                         src={val.img}
                         alt="Image"
+                        loading="lazy"
                         className={classes.imgClass}
                       />
                     </>
@@ -186,7 +189,7 @@ export default function Cards(props) {
                             <img
                               src={val.img}
                               alt="Image"
-
+                              loading="lazy"
                               className={classes.imgClass}
                             />
                           </a>
@@ -228,6 +231,7 @@ export default function Cards(props) {
                             <img
                               src={val.img}
                               alt="Image"
+                              loading="lazy"
                               className={classes.imgClass}
                             />
                           </a>

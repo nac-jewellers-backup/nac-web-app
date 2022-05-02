@@ -286,6 +286,7 @@ export default function Contact(props) {
                       className={classes.img}
                       src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/akshaya+page/Group+63%402x.png"
                       alt="img"
+                      loading="lazy"
                     />
                   </Grid>
                 </Grid>

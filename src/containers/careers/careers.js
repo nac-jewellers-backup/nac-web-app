@@ -43,7 +43,7 @@ export default function careersPage (props) {
             IndexCareerPage.carouselDataCareer &&
             IndexCareerPage.carouselDataCareer.map((val, index) => (
               <Grid container key={index} className={classes.headContent}>
-                <img src={val.img} className={classes.mainCarosel} />
+                <img src={val.img} className={classes.mainCarosel} loading="lazy" alt='...'/>
               </Grid>
             ))}
         </Slideshow>

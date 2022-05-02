@@ -565,6 +565,7 @@ const LoginComponent = (props) => {
                                   className={classes.btnicon}
                                   src={FacebookIcon}
                                   alt="facebookicon"
+                                  loading="lazy"
                                 />
                               }
                             >
@@ -606,6 +607,7 @@ const LoginComponent = (props) => {
                                   className={classes.btnicon}
                                   src={GoogleIcon}
                                   alt="facebookicon"
+                                  loading="lazy"
                                 />
                               }
                             >
@@ -798,6 +800,7 @@ const LoginComponent = (props) => {
                                     className={classes.btnicon}
                                     src={FacebookIcon}
                                     alt="facebookicon"
+                                    loading="lazy"
                                   />
                                 }
                               >
@@ -839,6 +842,7 @@ const LoginComponent = (props) => {
                                     className={classes.btnicon}
                                     src={GoogleIcon}
                                     alt="facebookicon"
+                                    loading="lazy"
                                   />
                                 }
                               >

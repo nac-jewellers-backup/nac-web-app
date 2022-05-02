@@ -83,7 +83,7 @@ class Component extends React.Component {
                     <Grid item xs={5} sm={3} lg={3}>
                       <div className="wishlist_img">
                         <img
-                          alt=""
+                     loading="lazy" alt='...'
                           style={{
                             objectFit: "cover",
                             height: "100%",

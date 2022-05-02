@@ -84,7 +84,7 @@ export default function HomeCard(props) {
             {props && props.Testimonial && props.Testimonial.map((val, index) => (
                 <Grid className={classes.rootContainer} item xs={12} sm={4} lg={4}>
                     <Grid className={classes.root}>
-                    <img className={classes.img} src={val.img} />
+                    <img className={classes.img} src={val.img} loading="lazy" alt='...' />
                     <Typography className={classes.heading} variant="h5">
                         {val.heading}
                     </Typography>
@@ -96,7 +96,7 @@ export default function HomeCard(props) {
                         <a className={classes.anchor} href="">
                             <Grid className={classes.algins}>
                                 <Typography className={classes.anchor}> View collection</Typography>
-                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAOCAMAAAAliK2kAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABtQTFRFqKio8fHxREREGRkZYWFh4uLijIyMNjY2////EoUdpQAAAAl0Uk5T//////////8AU094EgAAADpJREFUeNpUzdsKADAIAlBt1///4jkLxoLwYA9h1+BhooCGOqW8V1lLBlcYjOCFU8gUulMY/H8dAQYArKoCrGXO+aEAAAAASUVORK5CYII=" />
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAOCAMAAAAliK2kAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABtQTFRFqKio8fHxREREGRkZYWFh4uLijIyMNjY2////EoUdpQAAAAl0Uk5T//////////8AU094EgAAADpJREFUeNpUzdsKADAIAlBt1///4jkLxoLwYA9h1+BhooCGOqW8V1lLBlcYjOCFU8gUulMY/H8dAQYArKoCrGXO+aEAAAAASUVORK5CYII=" loading="lazy" alt='...'/>
 
                             </Grid>
                             <Grid>

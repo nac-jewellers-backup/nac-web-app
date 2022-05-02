@@ -65,7 +65,7 @@ export default function Templework(props) {
         >
           {IndexTemplePage.carouselTops.data.map((val, index) => (
             <Grid container key={index} className={classes.headContent}>
-              <img src={val.img} className={classes.mainCarosel} />
+              <img src={val.img} className={classes.mainCarosel} loading="lazy" alt='...'/>
             </Grid>
           ))}
         </Slideshow>
@@ -77,7 +77,7 @@ export default function Templework(props) {
         >
           {IndexTemplePage.carouselTops.data.map((val, index) => (
             <Grid container key={index} className={classes.headContent}>
-              <img src={val.mobileImg} className={classes.mainCarosel} />
+              <img src={val.mobileImg} className={classes.mainCarosel} loading="lazy" alt='...'/>
             </Grid>
           ))}
         </Slideshow>

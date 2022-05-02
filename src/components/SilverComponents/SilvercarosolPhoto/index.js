@@ -26,6 +26,7 @@ const SilverCarousel = (props) => {
                             <img
                                 src={val}
                                 style={{ width: "100%", height: "100%" }}
+                                loading="lazy" alt='...'
                             />
                         </Grid>
                     ))}

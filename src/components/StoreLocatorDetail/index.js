@@ -16,7 +16,7 @@ export default function StoreLocationDetails(props) {
         <Slideshow dataCarousel={storeLocationInfo.carouselTop.setting}>
           {storeLocationInfo.carouselTop.data.map((val, index) => (
             <Grid container key={index}>
-              <img src={val.img} style={{ width: "100%", height: "100%" }} />
+              <img src={val.img} style={{ width: "100%", height: "100%" }} loading="lazy" alt='...'/>
             </Grid>
           ))}
         </Slideshow>

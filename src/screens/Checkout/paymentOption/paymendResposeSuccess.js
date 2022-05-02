@@ -68,6 +68,7 @@ class PaymentResponseSuccess extends React.Component {
                       className="img"
                       src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/Group+160.svg"
                       alt="title images"
+                      loading="lazy"
                     />
                   </Box>
                   <Box>
@@ -80,6 +81,7 @@ class PaymentResponseSuccess extends React.Component {
                       className="img"
                       src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/Group+159.svg"
                       alt="title images"
+                      loading="lazy" 
                     />
                   </Box>
                 </Box>

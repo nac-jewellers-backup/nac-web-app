@@ -265,6 +265,7 @@ class Checkoutcard extends React.Component {
                                         width: "100%",
                                       }}
                                       alt="img"
+                                      loading="lazy"
                                       src={dataval?.fadeImages[0]?.imageUrl}
                                     ></img>
                                   </div>
@@ -282,6 +283,7 @@ class Checkoutcard extends React.Component {
                                       objectFit: "contain",
                                     }}
                                     alt="img"
+                                    loading="lazy"
                                     height="100%"
                                     width="100%"
                                     src={dataval?.fadeImages[0]?.imageUrl}
@@ -444,6 +446,7 @@ class Checkoutcard extends React.Component {
                                             objectFit: "contain",
                                           }}
                                           alt="img"
+                                          loading="lazy"
                                           src={dataval?.fadeImages[0]?.imageUrl}
                                         ></img>
                                       </NavLink>
@@ -455,6 +458,7 @@ class Checkoutcard extends React.Component {
                                           objectFit: "contain",
                                         }}
                                         alt="img"
+                                        loading="lazy"
                                         src={dataval?.fadeImages[0]?.imageUrl}
                                         className={classes.cardimg}
                                       ></img>
@@ -663,6 +667,7 @@ class Checkoutcard extends React.Component {
                                       >
                                         <img
                                           alt="images"
+                                          loading="lazy" 
                                           style={{ width: "70%" }}
                                           src={dataval?.fadeImages[0]?.imageUrl}
                                         ></img>
@@ -678,6 +683,7 @@ class Checkoutcard extends React.Component {
                                     >
                                       <img
                                         alt="images"
+                                        loading="lazy"
                                         style={{ width: "50%" }}
                                         src={dataval?.fadeImages[0]?.imageUrl}
                                       ></img>
@@ -914,6 +920,7 @@ class Checkoutcard extends React.Component {
                                       >
                                         <img
                                           alt="images"
+                                          loading="lazy"
                                           style={{ width: "70%" }}
                                           src={dataval?.fadeImages[0]?.imageUrl}
                                         ></img>
@@ -929,6 +936,7 @@ class Checkoutcard extends React.Component {
                                     >
                                       <img
                                         alt="images"
+                                        loading="lazy"
                                         style={{ width: "50%" }}
                                         src={dataval?.fadeImages[0]?.imageUrl}
                                       ></img>
@@ -1267,6 +1275,7 @@ class Checkoutcard extends React.Component {
                               <img
                                 width="100%"
                                 alt="images"
+                                loading="lazy"
                                 style={{
                                   border: "1px solid #D2D3D4",
                                   objectFit: "cover",
@@ -1278,6 +1287,7 @@ class Checkoutcard extends React.Component {
                             <img
                               width="100%"
                               alt="img"
+                              loading="lazy"
                               style={{
                                 border: "1px solid #D2D3D4",
                                 objectFit: "cover",

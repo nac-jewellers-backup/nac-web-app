@@ -234,6 +234,7 @@ class Allorders extends React.Component {
                                       <div className="wishlist_img">
                                         <img
                                           alt="images"
+                                          loading="lazy"
                                           className="viewport-img"
                                           src={`https://assets.stylori.net/base_images/${imgs.imageUrl}`}
                                         />
@@ -333,7 +334,7 @@ class Allorders extends React.Component {
                                     </Typography>
                                     <Typography className="subhesder">
                                       <img
-                                        alt=""
+                                        loading="lazy" alt='...'
                                         src="https://assets.stylori.com/images/static/icon-ship.png"
                                       />{" "}
                                       <a>

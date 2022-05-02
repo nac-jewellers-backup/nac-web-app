@@ -282,7 +282,7 @@ export default function Contact(props) {
                     src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/bridalcollection/bannercard.png"
                     height="100%"
                     width="100%"
-                    alt="img"
+                    loading="lazy" alt='...'
                   />
                 </Grid>
                 <Grid item xs={12} md={7}>

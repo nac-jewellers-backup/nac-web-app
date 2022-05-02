@@ -116,6 +116,7 @@ function MediaControlCard(props) {
                       <img
                         width="100%"
                         alt="images"
+                        loading="lazy" 
                         style={{
                           border: "1px solid #D2D3D4",
                           objectFit: "cover",
@@ -127,6 +128,7 @@ function MediaControlCard(props) {
                     <img
                       width="100%"
                       alt="img"
+                      loading="lazy"
                       style={{
                         border: "1px solid #D2D3D4",
                         objectFit: "cover",

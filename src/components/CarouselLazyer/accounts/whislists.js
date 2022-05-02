@@ -40,6 +40,7 @@ class Component extends React.Component {
                       <div className="wishlist_img" style={{ float: "left" }}>
                         <img
                           alt="images"
+                          loading="lazy"
                           className="viewport-img"
                           src={`https://assets.stylori.net/base_images/${first_map.productListByProductId.productImagesByProductId.nodes[0].imageUrl}`}
                         />

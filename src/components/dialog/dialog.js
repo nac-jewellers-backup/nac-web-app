@@ -21,7 +21,7 @@ export default function DialogBox(props) {
           maxWidth="md" onClose={handleClose} aria-labelledby="customized-dialog-title" open={props.dialog}>
           <Grid container className={classes.grid_1} xs={12} sm={12} md={12} xl={12}>
             <Grid item xs={12} sm={6} md={6} xl={6}>
-              <img width="100%" height="100%" src={props.img} />
+              <img width="100%" height="100%" src={props.img} loading="lazy" alt='...' />
             </Grid>
             <Grid item xs={12} sm={6} md={6} xl={6} className={classes.grid_2}>
               <Grid item xs={12} sm={12} md={6} xl={6} className={classes.grid_3} >
@@ -84,7 +84,7 @@ export default function DialogBox(props) {
                       className={classes.grid_9}
                     >
                       Send Authentication&nbsp;{""}
-                      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAOCAMAAAAliK2kAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABtQTFRFqKio8fHxREREGRkZYWFh4uLijIyMNjY2////EoUdpQAAAAl0Uk5T//////////8AU094EgAAADpJREFUeNpUzdsKADAIAlBt1///4jkLxoLwYA9h1+BhooCGOqW8V1lLBlcYjOCFU8gUulMY/H8dAQYArKoCrGXO+aEAAAAASUVORK5CYII=" />
+                      <img  loading="lazy" alt='...' src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAOCAMAAAAliK2kAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABtQTFRFqKio8fHxREREGRkZYWFh4uLijIyMNjY2////EoUdpQAAAAl0Uk5T//////////8AU094EgAAADpJREFUeNpUzdsKADAIAlBt1///4jkLxoLwYA9h1+BhooCGOqW8V1lLBlcYjOCFU8gUulMY/H8dAQYArKoCrGXO+aEAAAAASUVORK5CYII=" />
                     </a>
                   </Typography>{" "}
                 </Grid>

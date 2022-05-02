@@ -43,7 +43,7 @@ export default function Blog(props) {
         >
           {Rudramadevi.carouselTop.data.map((val, index) => (
             <Grid container key={index}>
-              <img src={val.img} className={classes.mainCarosel} alt="images" />
+              <img src={val.img} className={classes.mainCarosel} alt="images" loading="lazy"/>
             </Grid>
           ))}
         </Slideshow>

@@ -346,6 +346,7 @@ class ProductDetail extends Component {
                                 alt="matel weight"
                                 height="100%"
                                 width="100%"
+                                loading="lazy" alt='...'
                               />
                             </Avatar>
                           </Box>
@@ -393,6 +394,7 @@ class ProductDetail extends Component {
                                 alt=" Metal Purity"
                                 height="100%"
                                 width="100%"
+                                loading="lazy" alt='...'
                               />
                             </Avatar>
                           </Box>
@@ -430,6 +432,7 @@ class ProductDetail extends Component {
                               alt="Diamond Weight"
                               height="100%"
                               width="100%"
+                              loading="lazy" alt='...'
                             />
                           </Avatar>
                         </Box>
@@ -471,6 +474,7 @@ class ProductDetail extends Component {
                         <img
                           src={this?.props?.data[0]?.certificate}
                           alt="images"
+                          loading="lazy"
                         />
                       </div>
                     )}

@@ -77,6 +77,7 @@ export default function Savings(props) {
                     <img
                       src={val.img}
                       style={{ width: "100%", height: "100%" }}
+                      loading="lazy" alt='...'
                     />
                   </a>
                 </Grid>
@@ -87,6 +88,7 @@ export default function Savings(props) {
                     <img
                       src={val.mobileImg}
                       style={{ width: "100%", height: "100%" }}
+                      loading="lazy"
                     />
                   </a>
                 </Grid>

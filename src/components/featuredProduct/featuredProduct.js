@@ -50,7 +50,7 @@ export default function FeaturedProduct(props) {
                     height: "auto",
                   }}
                 >
-                  <img className={classes.imgcoin} src={val.img} />
+                  <img className={classes.imgcoin} src={val.img} loading="lazy" alt='...' />
                 </Grid>
                 <Typography className={classes.subTitle}>
                   {val.imageTitle}
@@ -72,6 +72,7 @@ export default function FeaturedProduct(props) {
                       style={{ fontSize: "13px" }}
                     >
                       <img
+                        loading="lazy" alt='...'
                         style={{ width: "25px", paddingRight: "10px" }}
                         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAAAcCAYAAACQ0cTtAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAPtJREFUeNrslsENwyAMRRPUezMCI2SEjpIROkJGyQgZod2AbpBMUDoBtSV6qQyyTUA9FOkfgMDD5gPpQwhdq2K6hqUp7CT8fgBdQCPIgW4gXyMyBGygOdbnWB/ZM6BBGLIgD5q+2qfYbjnz9Ew3YhQWNBF9S0zl9ag04j6tib6Fm8pcZLjas8J0r2gkEQw7egUsOc5k0rYrj9Mjjhft2aaEealBxgJY8uyZzE1RAhskMCu5hog0WinMKWFOA9NG1knPmfaMfUBParzhrqqW9dG290LgTtm/1ktN2t8krip3QCotNzJfCKPtT7yoazimzNqX+v/f+DuwtwADANT/7nBFmURtAAAAAElFTkSuQmCC"
                       />

@@ -70,6 +70,7 @@ function HeaderHoverMenuItem(props) {
                         {val.img && (
                           <img
                             alt="images"
+                            loading="lazy"
                             style={{ width: "65%", margin: "auto" }}
                             src={val.img}
                           />

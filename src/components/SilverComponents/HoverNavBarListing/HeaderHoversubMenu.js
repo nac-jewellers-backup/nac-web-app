@@ -865,6 +865,7 @@ function HeaderHoverMenuItem(props) {
                             width="40%"
                             height="45%"
                             alt="menu imgs"
+                            loading="lazy"
                           />
                         )}
                       </Grid>
@@ -881,6 +882,7 @@ function HeaderHoverMenuItem(props) {
                 width="100%"
                 height="75%"
                 alt="menu img"
+                loading="lazy" 
               />
             </div>
           </Grid>
@@ -963,6 +965,7 @@ function HeaderHoverMenuItem(props) {
                 width="100%"
                 height="75%"
                 alt="imgs"
+                loading="lazy" 
               />
             </div>
           </Grid>
@@ -1107,6 +1110,7 @@ function HeaderHoverMenuItem(props) {
                             }}
                             src={val.img}
                             alt="images"
+                            loading="lazy"
                           />
                         )}
                       </Grid>
@@ -1162,6 +1166,7 @@ function HeaderHoverMenuItem(props) {
                             width="17px"
                             height="25px"
                             alt="images"
+                            loading="lazy" 
                           />
                           <Typography className={classes.listedItemsvalue}>
                             {val.title}
@@ -1257,7 +1262,7 @@ function HeaderHoverMenuItem(props) {
           <Grid item xs={3}>
             <div style={{ paddingTop: "25px" }}>
               {valueForImage().map((val, i) => (
-                <img src={val.img} width="100%" height="75%" alt="images" />
+                <img src={val.img} width="100%" height="75%" alt="images" loading="lazy"  />
               ))}
             </div>
           </Grid>
@@ -1322,6 +1327,7 @@ function HeaderHoverMenuItem(props) {
                                 }}
                                 src={val.image}
                                 alt="images"
+                                loading="lazy" 
                               />
                             )}
                           </Grid>
@@ -1373,6 +1379,7 @@ function HeaderHoverMenuItem(props) {
                                 width="17px"
                                 height="25px"
                                 alt="images"
+                                loading="lazy"
                               />
                               <Typography
                                 style={{ margin: "0px" }}
@@ -1444,6 +1451,7 @@ function HeaderHoverMenuItem(props) {
                 width="100%"
                 height="75%"
                 alt="images"
+                loading="lazy" 
               />
             </div>
           </Grid>
@@ -1508,6 +1516,7 @@ function HeaderHoverMenuItem(props) {
                                 }}
                                 src={val.img}
                                 alt="images"
+                                loading="lazy"
                               />
                             )}
                           </Grid>
@@ -1567,6 +1576,7 @@ function HeaderHoverMenuItem(props) {
                 width="100%"
                 height="75%"
                 alt="images"
+                loading="lazy"
               />
             </div>
           </Grid>

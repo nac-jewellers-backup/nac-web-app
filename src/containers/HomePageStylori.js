@@ -158,6 +158,7 @@ class HomeStylori extends React.Component {
                         src={val.img}
                         style={{ width: "100%", height: "100%" }}
                         alt="icon"
+                        loading="lazy"
                       />
                     </a>
                   </Grid>
@@ -169,6 +170,7 @@ class HomeStylori extends React.Component {
                         src={val.mobileImg}
                         style={{ width: "100%", height: "100%" }}
                         alt="icon"
+                        loading="lazy" 
                       />
                     </a>
                   </Grid>
@@ -210,6 +212,7 @@ class HomeStylori extends React.Component {
                             style={{ width: "18%" }}
                             src={val.icon}
                             alt="icon"
+                            loading="lazy" alt='...'
                           />
                         </Grid>
                       </Grid>

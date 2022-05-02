@@ -476,6 +476,7 @@ function AkshyaTritiya(props) {
                   <a href={val.urlParam} style={{ width: "100%" }}>
                     <img
                       alt="images"
+                      loading="lazy"
                       src={val.web}
                       style={{ width: "100%", height: "100%" }}
                     />
@@ -487,6 +488,7 @@ function AkshyaTritiya(props) {
                   <a href={val.urlParam}>
                     <img
                       alt="images"
+                      loading="lazy"
                       src={val.mobile}
                       style={{ width: "100%", height: "100%" }}
                     />
@@ -503,6 +505,7 @@ function AkshyaTritiya(props) {
           <div className={classes.headerAlign}>
             <img
               alt="images"
+              loading="lazy" 
               className={classes.logoEdits}
               src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/collection+page/urn_aaid_sc_US_4f2880c9-1910-41e4-b332-90c4513a4ca7+(1).png"
             />
@@ -511,6 +514,7 @@ function AkshyaTritiya(props) {
             </Typography>
             <img
               alt="images"
+              loading="lazy"
               className={classes.logoEdits}
               src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/collection+page/urn_aaid_sc_US_4f2880c9-1910-41e4-b332-90c4513a4ca7+(2).png"
             />
@@ -698,6 +702,7 @@ function AkshyaTritiya(props) {
           <Link href="/store">
             <img
               alt="images"
+              loading="lazy"
               src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/akshaya+page/Group+63%402x.png"
               style={{ width: "100%" }}
               className={classes.storeImage}

@@ -112,6 +112,7 @@ class Component extends React.Component {
                     <img
                       src="https://alpha-assets.stylori.com/images/static/loadingimg.gif"
                       alt="loading..."
+                      loading="lazy" 
                     />
                   </div>
                 </div>

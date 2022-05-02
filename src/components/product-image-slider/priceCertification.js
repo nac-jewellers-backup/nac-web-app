@@ -45,7 +45,7 @@ class PriceCertification extends React.Component {
     
                                 </ExpansionPanelSummary>
                                 <Grid container spacing={12} >
-                            <img src={certificates[0].img0} alt="" width="100%"/>
+                            <img src={certificates[0].img0}  width="100%" loading="lazy" alt='...'/>
                             </Grid>
                                 {/* <Grid spacing={12}>
                                     <Grid item xs={12} className='certification-img'>
@@ -79,7 +79,7 @@ certificates ?
                             <span className={`product-details ${classes.normalfonts}`}>{'Certificates'}</span>
                             <hr class="bottom-line"></hr>
                             <Grid container spacing={12} >
-                            <img src={certificates[0].img0} alt="" width="100%"/>
+                            <img src={certificates[0].img0} alt="" width="100%" loading="lazy"/>
                             </Grid>
                             {/* <Grid spacing={12}>
                                 <Grid item xs={12} className='certification-img'>

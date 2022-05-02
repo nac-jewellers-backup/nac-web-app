@@ -55,6 +55,7 @@ export default function LargeTile(props) {
                       onClick={handleReadMore}
                       style={{ width: "100%" }}
                       src={props.img}
+                      loading="lazy" alt='...'
                       className="iframeClass"
                     />
                     <></>
@@ -66,6 +67,7 @@ export default function LargeTile(props) {
                       onClick={handleReadMore}
                       style={{ width: "100%", height: "100%" }}
                       src={props.img}
+                      loading="lazy" alt='...'
                     />
                     <>
                       {" "}
@@ -73,6 +75,7 @@ export default function LargeTile(props) {
                         onClick={handleReadMore}
                         className={classes.youtubeImg}
                         src={props.youtubeImg}
+                        loading="lazy" alt='...'
                       />{" "}
                     </>{" "}
                   </>
@@ -142,6 +145,7 @@ export default function LargeTile(props) {
                         style={{ width: "100%" }}
                         src={props.img}
                         className="iframeClass"
+                        loading="lazy" alt='...'
                       />
                       <></>
                     </>
@@ -152,6 +156,7 @@ export default function LargeTile(props) {
                         onClick={handleReadMore}
                         style={{ width: "100%", height: "100%" }}
                         src={props.img}
+                        loading="lazy" alt='...'
                       />
                     </>
                   )}
@@ -219,6 +224,7 @@ export default function LargeTile(props) {
                               onClick={handleReadMore}
                               style={{ width: "100%", height: "100%" }}
                               src={val.img}
+                              loading="lazy" alt='...'
                             />
                           </Grid>
                         ))}
@@ -294,6 +300,7 @@ export default function LargeTile(props) {
                         style={{ width: "100%" }}
                         src={props.img}
                         className="iframeClass"
+                        loading="lazy" alt='...'
                       />
                       <>
                         {" "}
@@ -301,6 +308,7 @@ export default function LargeTile(props) {
                           onClick={handleReadMore}
                           className={classes.youtubeImg}
                           src={props.youtubeImg}
+                          loading="lazy" alt='...'
                         />{" "}
                       </>
                     </>
@@ -311,6 +319,7 @@ export default function LargeTile(props) {
                         onClick={handleReadMore}
                         style={{ width: "100%", height: "100%" }}
                         src={props.img}
+                        loading="lazy" alt='...'
                       />
                       <>
                         {" "}
@@ -318,6 +327,7 @@ export default function LargeTile(props) {
                           onClick={handleReadMore}
                           className={classes.youtubeImg}
                           src={props.youtubeImg}
+                          loading="lazy" alt='...'
                         />{" "}
                       </>{" "}
                     </>
@@ -326,6 +336,7 @@ export default function LargeTile(props) {
                     onClick={handleReadMore}
                     style={{ width: "100%", height: "100%" }}
                     src={props.img}
+                    loading="lazy" alt='...'
                   />
                   <>
                     {" "}

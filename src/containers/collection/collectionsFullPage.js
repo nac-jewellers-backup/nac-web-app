@@ -66,6 +66,7 @@ function CollectionFullPage() {
             <div style={{ width: "100%", height: "75%" }}>
               <img
                 alt="images"
+                loading="lazy"
                 src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Collection+Page/Fabula_collection_page.jpg"
                 width="100%"
                 style={{ maxHeight: "460px" }}
@@ -115,6 +116,7 @@ function CollectionFullPage() {
             <div style={{ width: "100%", height: "75%" }}>
               <img
                 alt="images"
+                loading="lazy"
                 src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Collection+Page/Youngones_collection_page.jpg"
                 width="100%"
                 style={{ maxHeight: "460px" }}
@@ -135,6 +137,7 @@ function CollectionFullPage() {
             <div style={{ width: "100%", height: "75%" }}>
               <img
                 alt="images"
+                loading="lazy"
                 src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Collection+Page/Bridal_collection_page_.jpg"
                 width="100%"
                 style={{ maxHeight: "460px" }}
@@ -177,6 +180,7 @@ function CollectionFullPage() {
             <div style={{ width: "100%", height: "75%" }}>
               <img
                 alt="iamges"
+                loading="lazy"
                 src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Collection+Page/Rewind_collection_page.jpg"
                 width="100%"
                 style={{ maxHeight: "460px" }}
@@ -197,6 +201,7 @@ function CollectionFullPage() {
             <div style={{ width: "100%", height: "75%" }}>
               <img
                 alt="images"
+                loading="lazy"
                 src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Collection+Page/Nagas_collection_page.jpg"
                 width="100%"
                 style={{ maxHeight: "460px" }}
@@ -239,6 +244,7 @@ function CollectionFullPage() {
             <div style={{ width: "100%", height: "75%" }}>
               <img
                 alt="images"
+                loading="lazy"
                 src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Collection+Page/Stylori_collection_page.jpg"
                 width="100%"
                 style={{ maxHeight: "460px" }}
@@ -259,6 +265,7 @@ function CollectionFullPage() {
             <div style={{ width: "100%", height: "75%" }}>
               <img
                 alt="images"
+                loading="lazy"
                 src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Collection+Page/Diamond_collection_page.jpg"
                 width="100%"
                 style={{ maxHeight: "460px" }}

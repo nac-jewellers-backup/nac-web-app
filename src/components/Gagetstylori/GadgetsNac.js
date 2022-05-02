@@ -89,6 +89,7 @@ export default function PaperSheet(props) {
               <img
                 src={val.img}
                 alt="img"
+                loading="lazy"
                 height="100px"
                 width="100px"
                 style={{ objectFit: "contain" }}
@@ -110,6 +111,7 @@ export default function PaperSheet(props) {
                 <img
                   src={val.img}
                   alt="img"
+                  loading="lazy"
                   width="100px"
                   style={{
                     objectFit: "contain",

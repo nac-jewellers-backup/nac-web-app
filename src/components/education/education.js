@@ -12,7 +12,7 @@ export default function EducationPage(props) {
                     <Grid container className={classes.container}>
                         <Grid item className={classes.displays} lg={4} md={4} sm={12} xs={12}>
                             <Grid item className={classes.firstGrid}>
-                                <img className={classes.innerimg} src={val.img} />
+                                <img className={classes.innerimg} src={val.img} loading="lazy" alt='...' />
                             </Grid>
                         </Grid>
                         <Grid item lg={8} md={8} sm={12} xs={12}>

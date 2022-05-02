@@ -717,6 +717,7 @@ export default function Footer(props) {
                             "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_footer/Path+52.svg"
                           }
                           alt="img"
+                          loading="lazy"
                           style={{
                             width: "40px",
                             height: "auto",
@@ -747,6 +748,7 @@ export default function Footer(props) {
                             "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_footer/Path+53.svg"
                           }
                           alt="img"
+                          loading="lazy"
                           style={{
                             width: "40px",
                             height: "auto",
@@ -778,6 +780,7 @@ export default function Footer(props) {
                             "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_footer/Path+54.svg"
                           }
                           alt="img"
+                          loading="lazy"
                           style={{
                             width: "40px",
                             height: "auto",
@@ -810,6 +813,7 @@ export default function Footer(props) {
                             "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_footer/Path+57.svg"
                           }
                           alt="img"
+                          loading="lazy"
                           style={{
                             width: "40px",
                             height: "auto",
@@ -839,6 +843,7 @@ export default function Footer(props) {
                             " https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_footer/nQjOPg.tif.svg"
                           }
                           alt="img"
+                          loading="lazy"
                           style={{
                             width: "40px",
                             height: "auto",
@@ -932,6 +937,7 @@ export default function Footer(props) {
                     "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_footer/k77ABP.tif%402x.png"
                   }
                   alt="img"
+                  loading="lazy"
                   style={{ width: "100%", height: "auto" }}
                 />
               </Grid>

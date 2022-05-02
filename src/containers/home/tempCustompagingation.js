@@ -401,7 +401,7 @@ class HomeComp extends React.Component {
         
         return (
           <a>
-            <img src={val.image.placeImage.img} alt="NAC"/>
+            <img src={val.image.placeImage.img} alt="NAC" loading="lazy" />
             </a>
         );
       })
@@ -450,6 +450,7 @@ class HomeComp extends React.Component {
                     <a href={val.navigateUrl} style={{ width: "100%" }}>
                       <img
                         src={val.img}
+                        loading="lazy" alt='...'
                         style={{ width: "100%", height: "100%" }}
                       />
                     </a>
@@ -460,6 +461,7 @@ class HomeComp extends React.Component {
                     <a href={val.navigateUrl}>
                       <img
                         src={val.mobileImg}
+                        loading="lazy" alt='...'
                         style={{ width: "100%", height: "100%" }}
                       />
                     </a>
@@ -502,7 +504,7 @@ class HomeComp extends React.Component {
            { dummyData.map(val=>{
               return(
               
-         <img src = {val.image.placeImage.img} alt="haii" />
+         <img src = {val.image.placeImage.img} alt="haii" loading="lazy" />
                 
               )
             })}
@@ -530,7 +532,7 @@ class HomeComp extends React.Component {
             >
               {StaticImage.data.map((val, index) => (
                 <Grid container key={index}>
-                  <img src={val.img} className={classes.mainImgCarosel} />
+                  <img src={val.img} className={classes.mainImgCarosel}  loading="lazy" alt='...'/>
                 </Grid>
               ))}
             </Slideshow>

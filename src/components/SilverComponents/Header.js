@@ -423,7 +423,7 @@ class Header extends Component {
                           src={styloriLogo}
                           onLoad={() => this.setState({ load: true })}
                           onLoadedData={() => this.setState({ load: false })}
-                          alt=""
+                          loading="lazy" alt='...'
                         />
                       </div>
                     </Grid>
@@ -696,6 +696,7 @@ class Header extends Component {
                             height="30px"
                             style={{ padding: "5px 15px 0px 15px" }}
                             alt="logo"
+                            loading="lazy"
                           ></img>
                         </a>
                       </div>
@@ -770,7 +771,7 @@ class Header extends Component {
                           }}
                           onLoad={() => this.setState({ load: true })}
                           onLoadedData={() => this.setState({ load: false })}
-                          alt=""
+                          loading="lazy" alt='...'
                         />
                       </div>
                     </Grid>
@@ -1109,6 +1110,7 @@ class Header extends Component {
                                               }}
                                               src={val.img}
                                               alt="imag"
+                                              loading="lazy" 
                                             />
                                           </div>
                                         </Grid>
@@ -1165,6 +1167,7 @@ class Header extends Component {
                                             }}
                                             src={val.icon}
                                             alt="icon"
+                                            loading="lazy"
                                           />
                                           <p className={classes.ptext}>
                                             {val.name}

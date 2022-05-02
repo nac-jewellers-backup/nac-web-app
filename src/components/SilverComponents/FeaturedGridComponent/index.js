@@ -12,7 +12,7 @@ export const FeaturedGridComponent = (props) => {
             <Grid item xs={12} style={{ boxShadow: '10px 10px 5px #ccc' }}>
                 <Slideshow dataCarousel={props.data[0].settings} >
                     {props.data[0].images.map((val, Index) =>
-                        <img src={val} className={`${classes.img}`} />
+                        <img src={val} className={`${classes.img}`} loading="lazy" alt='...'/>
                     )}
                 </Slideshow>
 

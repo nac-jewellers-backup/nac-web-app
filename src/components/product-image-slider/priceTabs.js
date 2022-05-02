@@ -250,10 +250,10 @@ class Component extends React.Component {
                                         <>
                                             <Grid container style={{ width: "100%" }} className={classes.pagination} style={{ overflow: "hidden" }}>
                                                 {arr.length > 8 && <Hidden smDown> <Grid item style={{ width: "5%", alignItems: "center", justifyContent: "center", display: "flex" }}>
-                                                    <img onClick={() => previous()} className={"icon-leftcaro"} />
+                                                    <img onClick={() => previous()} className={"icon-leftcaro"} loading="lazy" alt='...'/>
                                                 </Grid></Hidden>}
                                                 {arr.length > 5 && <Hidden mdUp> <Grid item style={{ width: "5%", alignItems: "center", justifyContent: "center", display: "flex" }}>
-                                                    <img onClick={() => previous()} className={"icon-leftcaro"} />
+                                                    <img onClick={() => previous()} className={"icon-leftcaro"} loading="lazy" alt='...'/>
                                                 </Grid></Hidden>}
                                                 <Grid item class="widthFix" style={{ textAlign: "center" }}>
                                                     <Hidden smDown>
