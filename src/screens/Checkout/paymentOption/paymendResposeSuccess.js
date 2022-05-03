@@ -4,7 +4,7 @@ import Footer from "components/Footer/Footer";
 import Header from "components/SilverComponents/Header";
 import { CartContext } from "context";
 import cart from "mappers/cart";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { withRouter } from "react-router-dom";
 import "../../../components/Checkout/Cart.css";
 import { API_URL } from "../../../config";

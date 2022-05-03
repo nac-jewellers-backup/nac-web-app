@@ -2,7 +2,6 @@ import React from "react";
 import { Grid, Typography, Container } from "@material-ui/core";
 import Slideshow from "components/Carousel/carosul";
 import { homeNac, HomeCardData, StaticImage } from "mappers/dummydata/homeNac";
-import { withRouter } from "react-router-dom";
 import Hidden from "@material-ui/core/Hidden";
 import { withStyles } from "@material-ui/core/styles";
 import Story from "../../components/story";

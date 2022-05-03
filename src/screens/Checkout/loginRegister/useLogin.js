@@ -1,8 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useNetworkRequest } from "hooks/index";
 import { useCheckForCod } from "hooks/CheckForCodHook";
 import { ADDRESSDETAILS } from "queries/productdetail";
-import { useGraphql } from "hooks/GraphqlHook";
 import { CartContext } from "context";
 import Addressforms from "screens/Checkout/addressDetails/addressForm";
 

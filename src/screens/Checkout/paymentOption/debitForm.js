@@ -1,10 +1,7 @@
 import React from "react";
-import { Grid, Button, Hidden, Container, ExpansionPanelSummary, ExpansionPanel, Typography, TextField } from "@material-ui/core";
+import { Grid, Button, Container } from "@material-ui/core";
 import "./payment.css";
 import { Input } from "../../../components/InputComponents/TextField/Input";
-import Buynowbutton from "../../../components/Buynow/buynowbutton";
-import { CartContext } from "context";
-import cart from "mappers/cart";
 class Debitform extends React.Component {
   constructor(props) {
     super(props);

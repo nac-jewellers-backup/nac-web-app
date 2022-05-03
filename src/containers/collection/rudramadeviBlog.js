@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "components/SilverComponents/Header";
-import { Typography, Grid, Hidden } from "@material-ui/core";
+import { Typography, Grid } from "@material-ui/core";
 import styles from "./collectionPageStyle";
 import Slideshow from "components/Carousel/carosul";
 import { Rudramadevi } from "mappers/dummydata/collectionNac";

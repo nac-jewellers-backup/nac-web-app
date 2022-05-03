@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useGraphql } from "hooks/GraphqlHook";
-import { PRODUCTDETAILS, conditions, YouMayAlsoLike, youRecentlyViewed } from "queries/productdetail";
+import { PRODUCTDETAILS, YouMayAlsoLike, youRecentlyViewed } from "queries/productdetail";
 import { withRouter } from "react-router-dom";
 // import useRegister from '../components/LoginAndRegister/useregister';
 // const { setValues } = useRegister();

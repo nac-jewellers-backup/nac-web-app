@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography, Grid, Hidden } from "@material-ui/core";
+import { Grid, Hidden } from "@material-ui/core";
 import styles from "./collectionPageStyle";
 import Slideshow from "components/Carousel/carosul";
 import { CollectionPageNac, YoungOnes } from "mappers/dummydata/collectionNac";

@@ -3,7 +3,6 @@ import { Grid, Hidden } from "@material-ui/core";
 import Slideshow from "components/Carousel/carosul";
 import { SavingPageNac } from "mappers/dummydata/savingNac";
 import MediaCarousel from "../../components/mediacarousel/mediaCarousel";
-import Header from "components/SilverComponents/Header";
 import styles from "./savingsstyle";
 import { IndexSavingPage } from "mappers/dummydata/savingNac";
 import Footer from "../../components/Footer/Footer";
