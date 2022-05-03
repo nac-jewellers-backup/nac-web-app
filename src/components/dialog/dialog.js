@@ -7,7 +7,6 @@ import { selectPage, selectPages, para } from '../../mappers/dummydata/savingNac
 export default function DialogBox(props) {
  
   const classes = styles();
-  const [open, setOpen] = React.useState(false);
   const handleClose = () => {
     props.openDialog_CLOSE({
       dialog: false
