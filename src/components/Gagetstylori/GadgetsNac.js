@@ -40,10 +40,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Logo = () => {};
 export default function PaperSheet(props) {
-  const isSilver = props.isSilver ? true : false;
-  const color = "#33346d";
   const classes = useStyles();
   const ArrowLeft = (props) => {
     const { className, style, onClick } = props;
@@ -176,19 +173,7 @@ export function PaperSheetProduct(props) {
       />
     );
   };
-  const dataCarouselcollections = {
-    arrows: true,
-    dots: false,
-    autoplay: true,
-    infinite: true,
-    accessibility: true,
-    speed: 2500,
-    // fade: true,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    prevArrow: <ArrowLeft />,
-    nextArrow: <ArrowRight />,
-  };
+ 
 
   // "#D91965"
   return (

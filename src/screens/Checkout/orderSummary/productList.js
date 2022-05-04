@@ -33,7 +33,7 @@ const Productlist = (props) => {
 };
 
 const ProductlistComponent = (props) => {
-  const { handlers, values, val, data, setval, CodData, emailerr } = useGift();
+  const { handlers, values, val, data, setval, emailerr } = useGift();
   const { classes } = props;
   let value = localStorage.getItem("select_addres")
     ? JSON.parse(localStorage.getItem("select_addres"))
@@ -51,8 +51,7 @@ const ProductlistComponent = (props) => {
       email: "",
     },
   };
-  const [validemail, setValidemai] = React.useState({ ...initialstate });
-
+ 
   useEffect(() => {
     fetch(`${API_URL}/graphql`, {
       method: "post",
@@ -96,9 +95,9 @@ const ProductlistComponent = (props) => {
   //     localStorage.getItem("cart_id") &&
   //     JSON.parse(localStorage.getItem("cart_id"))?.cart_id,
   // };
-  let email = localStorage.getItem("email")
-    ? localStorage.getItem("email")
-    : "";
+  // let email = localStorage.getItem("email")
+  //   ? localStorage.getItem("email")
+  //   : "";
   const gotogift = () => {
     handlers.handleSubmit();
   };
@@ -367,13 +366,11 @@ const ProductlistComponent = (props) => {
                   class="extra-box"
                   className={classes.cart}
                   square
-                  className={classes.cart}
                   expanded={expanded1 === 1}
                   onChange={handleChange1(1)}
                 >
                   <ExpansionPanelSummary
-                    aria-controls="panel1d-content"
-                    id="panel1d-header"
+                   
                     expandIcon={
                       <span className="side-arrow-symbol ">
                         <i class="fa fa-sort-up sml"></i>
@@ -433,8 +430,7 @@ const ProductlistComponent = (props) => {
                   onChange={handleChange2(1)}
                 >
                   <ExpansionPanelSummary
-                    aria-controls="panel1d-content"
-                    id="panel1d-header"
+            
                     expandIcon={
                       <span className="side-arrow-symbol">
                         <i class="fa fa-sort-up sml"></i>
@@ -538,8 +534,7 @@ const ProductlistComponent = (props) => {
                   onChange={handleChange3(1)}
                 >
                   <ExpansionPanelSummary
-                    aria-controls="panel1d-content"
-                    id="panel1d-header"
+            
                     expandIcon={
                       <span className="side-arrow-symbol">
                         <i class="fa fa-sort-up sml"></i>

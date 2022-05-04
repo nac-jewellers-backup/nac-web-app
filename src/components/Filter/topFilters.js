@@ -35,17 +35,8 @@ export const TopFilters = (props) => {
     sortOpen: null,
   });
   const { mapped } = useDummyRequest(filterParams);
-  const { setSort, setOffset, FilterOptionsCtx } =
+  const { setSort, FilterOptionsCtx } =
     React.useContext(FilterOptionsContext);
-
-  const submenuDetails = (data, target) => {
-    setState({
-      ...state,
-      subMenuTarget: target,
-      subTitleData: data,
-      submenuOpen: true,
-    });
-  };
   const { sortOptions } = mapped;
 
   const classes = styles();
@@ -53,9 +44,7 @@ export const TopFilters = (props) => {
   const handleMoreFilters = () => {
     setState({ ...state, morefiltersOpen: !state.morefiltersOpen });
   };
-  const handleExpandClick = () => {
-    setState({ ...state, expanded: !state.expanded });
-  };
+
   const handleChange = (event) => {
     if (FilterOptionsCtx.offset > 0) FilterOptionsCtx.setOffset(0);
     setSort({ values: event.target.value });

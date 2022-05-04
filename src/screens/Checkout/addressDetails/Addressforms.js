@@ -30,17 +30,13 @@ const Addressforms = (changePanel) => {
   let check_dlt = localStorage.getItem("check_dlt")
     ? localStorage.getItem("check_dlt")
     : "";
-  const [address, setAddress] = React.useState({});
+
   const [pincods, setpincod] = React.useState({ pincod: "" });
   const {
-    loading: userloading,
-    error: usererror,
     data: userdata,
     makeFetch: makeFetch,
   } = useNetworkRequest("/adduseraddress", {}, false);
   const {
-    loading: addresloading,
-    error: addreserror,
     data: addresData,
     makeRequestCod: addresmakeRequestCod,
   } = useCheckForCod(ADDRESSDETAILS, () => {}, {});
@@ -98,22 +94,13 @@ const Addressforms = (changePanel) => {
   var addObjgust = {};
   addObjall["isguestlogin"] = cont ? false : true;
   const {
-    data,
-    error,
-    loading,
     makeFetch: makeFetchall,
-    mapped,
-    status,
   } = useNetworkRequest("/addaddress", {}, false);
   const {
-    error: remee,
-    loading: remlod,
     data: removedata,
     makeFetch: deleteaddress,
   } = useNetworkRequest("/removeaddress", {}, false);
   const {
-    loading: codloading,
-    error: coderror,
     data: CodData,
     makeRequestCod,
   } = useCheckForCod(CheckForCod, () => {}, {});
@@ -122,9 +109,6 @@ const Addressforms = (changePanel) => {
     values && values.addressvalues && values.addressvalues.length > 0;
   const update_clear = values && values.update_clear;
 
-  let {
-    CartCtx: { setCartFilters },
-  } = React.useContext(CartContext);
   useEffect(() => {
     if (con_gust !== true) {
       var adrs = addresData
@@ -503,9 +487,6 @@ const Addressforms = (changePanel) => {
     var obj_user = {};
     let user_id = localStorage.getItem("user_id")
       ? localStorage.getItem("user_id")
-      : "";
-    let set_check = localStorage.getItem("set_check")
-      ? localStorage.getItem("set_check")
       : "";
     obj_user["user_id"] = user_id;
     if (ship === "yes") {

@@ -30,28 +30,13 @@ class Buynowfixed extends React.Component {
   };
   render() {
     const { data, isSilver, classes } = this.props;
-    const _isSilver = this.isSilver ? true : false;
+  
     const canceldeletechecklist = () => {
       this.setState({
         modelOpen: false,
       });
     };
-    const enquireLink = () => {
-      if (!productIsActive) {
-        if (this.props?.productURL) {
-          window.open(
-            `https://wa.me/919952625252?text=Hi - ${
-              window.location.hostname + "/" + this.props.productURL ?? ""
-            }`
-          );
-        } else {
-          window.open(
-            `https://wa.me/919952625252?text=Hi - ${window.location.href}`
-          );
-        }
-      }
-    };
-
+ 
     const handleLocalStorage = () => {
       if (this.valus(this.props.data[0].skuId) === 1) {
         this.props.deleteComment();

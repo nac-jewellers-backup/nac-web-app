@@ -80,7 +80,7 @@ class Slideshow extends React.Component {
   };
 
   imagehoverchildrens = (hoverlist) => {
-    let { hover, hovereffect, TopPic, imagecra, collectionhome } = this.props;
+    let { hover, hovereffect, TopPic,collectionhome } = this.props;
     if (TopPic) {
       return hoverlist.map((val) => (
         <div

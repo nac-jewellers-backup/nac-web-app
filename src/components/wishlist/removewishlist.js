@@ -1,12 +1,11 @@
 import React from "react";
 import useWishlists from "./usewishlist";
-var orderobj = {};
+
 const RemoveWishlist = (props) => {
   return <RemoveWishlistComponent {...props} />;
 };
 
 const RemoveWishlistComponent = (props) => {
-  const { classes } = props;
   const { values, setValues, handlers } = useWishlists(props);
 
   return (

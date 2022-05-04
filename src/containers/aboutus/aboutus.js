@@ -26,10 +26,6 @@ import React from "react";
 import styles from "./style";
 
 export default function AboutusPage(props) {
-  const [state, setState] = React.useState({
-    index: "",
-  });
-
  
   const classes = styles();
   const values = () => {

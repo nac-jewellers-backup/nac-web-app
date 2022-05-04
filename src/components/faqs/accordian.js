@@ -33,11 +33,8 @@ const useStyles = makeStyles(theme => ({
 
 export default function Accordian(props) {
     const classes = useStyles();
-    const [open, setOpen] = React.useState(false);
 
-    const handleClick = () => {
-        setOpen(!open);
-    };
+
     return (
         <>{props.faqs.faqs.map((val, i) => <Grid key={i} container>
             <Grid>

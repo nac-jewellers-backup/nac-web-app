@@ -26,7 +26,7 @@ import Seach from "../../assets/search";
 import StyloriSLogo from "../../assets/silverOpenLink.png";
 import { useDummyRequest } from "../../hooks";
 import { headerDataSilver } from "../../mappers";
-import { createTheme, ThemeProvider } from "@material-ui/core/styles";
+import { createTheme } from "@material-ui/core/styles";
 import "./header.css";
 import HeaderHoversubMenu from "./HoverNavBarListing/HeaderHoversubMenu";
 import { styles } from "./styles";
@@ -81,65 +81,65 @@ const theme = createTheme({
   },
 });
 
-const themess = createTheme({
-  overrides: {
-    MuiInputLabel: {
-      outlined: {
-        border: "none",
-        borderColor: "#fff",
-        fontSize: "16px !important",
-      },
-      option: {
-        fontSize: "16px !important",
-        padding: "4px  !important",
-      },
-    },
-    MuiOutlinedInput: {
-      root: {
-        "&&& $input": {
-          padding: "0px",
-          color: "#000 !important",
-          fontSize: "16px !important",
-        },
-        option: {
-          fontSize: "16px !important",
-          padding: "4px  !important",
-        },
-      },
-    },
-    MuiAutocomplete: {
-      inputRoot: {
-        '&&[class*="MuiOutlinedInput-root"] $input': {
-          padding: "0px  !important",
-          fontSize: "16px !important",
-        },
-      },
-      option: {
-        fontSize: "16px !important",
-        padding: "4px  !important",
-      },
-    },
-    option: {
-      fontSize: "16px !important",
-      [theme.breakpoints.up("md")]: {
-        padding: "2px !important",
-      },
-      [theme.breakpoints.down("sm")]: {
-        padding: "0px !important",
-      },
-    },
-  },
-});
+// const themess = createTheme({
+//   overrides: {
+//     MuiInputLabel: {
+//       outlined: {
+//         border: "none",
+//         borderColor: "#fff",
+//         fontSize: "16px !important",
+//       },
+//       option: {
+//         fontSize: "16px !important",
+//         padding: "4px  !important",
+//       },
+//     },
+//     MuiOutlinedInput: {
+//       root: {
+//         "&&& $input": {
+//           padding: "0px",
+//           color: "#000 !important",
+//           fontSize: "16px !important",
+//         },
+//         option: {
+//           fontSize: "16px !important",
+//           padding: "4px  !important",
+//         },
+//       },
+//     },
+//     MuiAutocomplete: {
+//       inputRoot: {
+//         '&&[class*="MuiOutlinedInput-root"] $input': {
+//           padding: "0px  !important",
+//           fontSize: "16px !important",
+//         },
+//       },
+//       option: {
+//         fontSize: "16px !important",
+//         padding: "4px  !important",
+//       },
+//     },
+//     option: {
+//       fontSize: "16px !important",
+//       [theme.breakpoints.up("md")]: {
+//         padding: "2px !important",
+//       },
+//       [theme.breakpoints.down("sm")]: {
+//         padding: "0px !important",
+//       },
+//     },
+//   },
+// });
 
-function countryToFlag(isoCode) {
-  return typeof String.fromCodePoint !== "undefined"
-    ? isoCode
-        .toUpperCase()
-        .replace(/./g, (char) =>
-          String.fromCodePoint(char.charCodeAt(0) + 127397)
-        )
-    : isoCode;
-}
+// function countryToFlag(isoCode) {
+//   return typeof String.fromCodePoint !== "undefined"
+//     ? isoCode
+//         .toUpperCase()
+//         .replace(/./g, (char) =>
+//           String.fromCodePoint(char.charCodeAt(0) + 127397)
+//         )
+//     : isoCode;
+// }
 
 class Header extends Component {
   constructor(props) {

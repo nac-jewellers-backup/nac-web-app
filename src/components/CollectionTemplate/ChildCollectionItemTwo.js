@@ -333,7 +333,7 @@ export default function ChildCollectionItemTwo(props) {
                                     </Grid>
                                     <Grid
                                       item
-                                      item
+                                    
                                       xs={10}
                                       sm={10}
                                       md={10}
@@ -521,7 +521,7 @@ export default function ChildCollectionItemTwo(props) {
                                     </Grid>
                                     <Grid
                                       item
-                                      item
+                          
                                       xs={10}
                                       sm={10}
                                       md={10}
@@ -714,7 +714,7 @@ export default function ChildCollectionItemTwo(props) {
                                     </Grid>
                                     <Grid
                                       item
-                                      item
+                                    
                                       xs={10}
                                       sm={10}
                                       md={10}
@@ -950,7 +950,7 @@ export default function ChildCollectionItemTwo(props) {
                                   </Grid>
                                   <Grid
                                     item
-                                    item
+                               
                                     xs={10}
                                     sm={10}
                                     md={10}
@@ -1147,7 +1147,7 @@ export default function ChildCollectionItemTwo(props) {
                                   </Grid>
                                   <Grid
                                     item
-                                    item
+                                
                                     xs={10}
                                     sm={10}
                                     md={10}

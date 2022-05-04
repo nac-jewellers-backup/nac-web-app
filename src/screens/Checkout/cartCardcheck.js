@@ -32,10 +32,7 @@ var adres = {};
 var variab = {};
 const CartCardCheck = (props) => {
   const {
-    loading,
-    error,
     data: CodData,
-
     makeRequestCod,
   } = useCheckForCod(CheckForCod, () => {}, {});
   let {
@@ -211,9 +208,8 @@ class Component extends React.Component {
     });
   };
   render() {
-    const { expanded, mailId, expandedlimit } = this.state;
+    const { expanded } = this.state;
     const { classes, data } = this.props;
-    const { breadcrumsdata, cartsubdata } = this.props.data;
     let email = localStorage.getItem("email")
       ? localStorage.getItem("email")
       : "";
@@ -254,6 +250,7 @@ class Component extends React.Component {
         if (val.isActive == false) {
           ProductIsActiveUrl = val.skuUrl;
         }
+        return 0;
       });
       window.open(
         `https://wa.me/919952625252?text=Hi - ${
@@ -267,6 +264,7 @@ class Component extends React.Component {
       if (val.isActive == false) {
         ProductIsActive = false;
       }
+      return 0;
     });
     return (
       <Grid>
@@ -933,7 +931,6 @@ const Components = (props) => {
   } = React.useContext(CartContext);
   const {
     ProductDetailCtx: { filters },
-    setFilters,
   } = React.useContext(ProductDetailContext);
   let content, mapped;
   if (!loading && !error) {

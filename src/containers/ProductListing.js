@@ -308,7 +308,6 @@ const Components = (props) => {
       mappedFilters,
       cartcount,
       loadingfilters,
-      wishlist_count,
     },
     setloadingfilters,
   } = React.useContext(FilterOptionsContext);

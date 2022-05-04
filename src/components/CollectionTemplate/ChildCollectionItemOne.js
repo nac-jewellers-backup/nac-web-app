@@ -503,7 +503,6 @@ export default function ChildCollectionItemOne(props) {
                                 </Grid>
                                 <Grid
                                   item
-                                  item
                                   xs={10}
                                   sm={10}
                                   md={10}
@@ -684,7 +683,7 @@ export default function ChildCollectionItemOne(props) {
                               </Grid>
                               <Grid
                                 item
-                                item
+                  
                                 xs={10}
                                 sm={10}
                                 md={10}
@@ -908,7 +907,7 @@ export default function ChildCollectionItemOne(props) {
                               </Grid>
                               <Grid
                                 item
-                                item
+                    
                                 xs={10}
                                 sm={10}
                                 md={10}
@@ -1091,7 +1090,7 @@ export default function ChildCollectionItemOne(props) {
                               </Grid>
                               <Grid
                                 item
-                                item
+                          
                                 xs={10}
                                 sm={10}
                                 md={10}

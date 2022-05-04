@@ -22,7 +22,7 @@ const LoginComponent = (props) => {
         modelOpen: false
 
     });
-    const { loading, error, data, makeFetch } = useNetworkRequest('/resetpassword', {}, false, {})
+    const { data, makeFetch } = useNetworkRequest('/resetpassword', {}, false, {})
     const canceldeletechecklist = () => {
         setValues({
             ...values, modelOpen: false,

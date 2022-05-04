@@ -43,9 +43,9 @@ class PaymentResponseSuccess extends React.Component {
   }
 
   render() {
-    let gut_lg = localStorage.getItem("gut_lg")
-      ? JSON.parse(localStorage.getItem("gut_lg"))
-      : {};
+    // let gut_lg = localStorage.getItem("gut_lg")
+    //   ? JSON.parse(localStorage.getItem("gut_lg"))
+    //   : {};
     let email = localStorage.getItem("email")
       ? localStorage.getItem("email")
       : "";

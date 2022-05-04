@@ -23,7 +23,6 @@ const useStyles = makeStyles((theme) => ({
 export default function CollectionItem(props) {
   // var arr_data;
   var data_ = [];
-  var data_con = {};
   let img_url = [
     "/gemstone-jewellery?sort=latest",
     "/jewellery-from+the+renaissance+collection",
@@ -36,13 +35,13 @@ export default function CollectionItem(props) {
   } = React.useContext(NetworkContext);
   const classes = useStyles();
   // const { loading, error, data: CollectionData, makeFetch: fetchproducts } = useNetworkRequest('/fetchproducts', {}, false, {})
-  const slider = React.createRef();
+
   const [values, setValues] = React.useState({
     onViewMoreCollection: false,
     arr_data: [],
     primaryNavigateUrl: null,
   });
-  const [loading, setLoading] = React.useState(false);
+
   const viewMoreCollections = () => {
     setValues({ onViewMoreCollection: true });
   };

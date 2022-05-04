@@ -41,11 +41,9 @@ const useStyle = makeStyles((theme) => ({
 }));
 const LoginComponent = (props) => {
   let url = API_URL;
-  const pathnames = window.location.pathname === "/login";
-
   const classes1 = useStyle();
   const { classes } = props;
-  const { values, handlers, setValues, data } = useLogin(() =>
+  const { values, handlers, setValues} = useLogin(() =>
     props.changePanel(2)
   );
   const [openSnack, setOpenSnack] = React.useState(false);
@@ -82,21 +80,6 @@ const LoginComponent = (props) => {
     last_name_invalid: "Enter the last name",
   });
 
-  const clear = () => {
-    setValues({
-      password: "",
-      email: "",
-      errortext: {
-        emerr: "",
-        passerr: "",
-      },
-      error: {
-        passerr: false,
-        emerr: false,
-      },
-    });
-    props.change();
-  };
   const responseFacebook = (response) => {
     if (response) {
       let body = {

@@ -326,6 +326,7 @@ export const useStyles = makeStyles((theme) => ({
   paperdiv: {
     position: "absolute",
     width: "fit-content",
+    padding: "10px 0px 10px 0px",
   },
   root: {
     width: "100%",
@@ -485,9 +486,6 @@ export const useStyles = makeStyles((theme) => ({
       marginLeft: "0px !important",
       marginRight: "0px !important",
     },
-  },
-  paperdiv: {
-    padding: "10px 0px 10px 0px",
   },
   subtopic2: {
     padding: "10px 0px 10px 0px",
