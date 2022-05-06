@@ -110,9 +110,9 @@ const injectUrl = (url, baseUi) => {
     img:
       url?.imageUrl?.length > 0
         ? url?.imageUrl
-        : "https://styloriimages.s3.ap-south-1.amazonaws.com/Banners/Stylori+Silver/StyloriSilver+nemonic.png",
+        : "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/NAC+logo+mnemonic.png",
   };
- 
+
   return img_url;
 };
 // const valuesinjectUrl = (imageUrl, cdnUrl) => injectUrl(imageUrl, cdnUrl);in
@@ -140,13 +140,13 @@ export default function (data, cdnUrl) {
             placeImages(k.productImagesByProductId),
             cdnUrl
           ) ?? {
-            img: "https://styloriimages.s3.ap-south-1.amazonaws.com/Banners/Stylori+Silver/StyloriSilver+nemonic.png",
+            img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/NAC+logo+mnemonic.png",
           },
           hoverImage: injectUrl(
             hoverImage(k.productImagesByProductId),
             cdnUrl
           ) ?? {
-            img: "https://styloriimages.s3.ap-south-1.amazonaws.com/Banners/Stylori+Silver/StyloriSilver+nemonic.png",
+            img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/NAC+logo+mnemonic.png",
           },
         },
         productId: k.productId ?? " ",
