@@ -50,9 +50,6 @@ import Success from "../screens/Stylori/success";
 
 
 const browserHistory = createBrowserHistory();
-let user_id = localStorage.getItem("user_id")
-  ? localStorage.getItem("user_id")
-  : {};
 
 browserHistory.listen(() => {
   window.scrollTo(0, 0);

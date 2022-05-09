@@ -51,6 +51,7 @@ export default function Card(props) {
                   <img
                     src={props.data.image}
                     alt="coverimage"
+                    loading="lazy" 
                     style={{ objectFit: "contain" }}
                     height="100%"
                     width="100%"
@@ -85,6 +86,7 @@ export default function Card(props) {
                   <img
                     src={props.data.image}
                     alt="coverimage"
+                    loading="lazy"
                     style={{ objectFit: "contain" }}
                     height="100%"
                     width="100%"

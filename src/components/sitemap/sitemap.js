@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './style'
-import { Grid, Hidden, Typography } from "@material-ui/core";
+import { Grid, Typography } from "@material-ui/core";
 
 
 

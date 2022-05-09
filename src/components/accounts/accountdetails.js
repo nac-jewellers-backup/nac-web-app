@@ -60,9 +60,9 @@ class Accountdetails extends Component {
     });
   };
   render() {
-    let c_k_l = localStorage.getItem("c_k_l")
-      ? localStorage.getItem("c_k_l")
-      : {};
+    // let c_k_l = localStorage.getItem("c_k_l")
+    //   ? localStorage.getItem("c_k_l")
+    //   : {};
     // const { wishlistdata } = this.props.wishlistdata;
     const currencies = [
       {

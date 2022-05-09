@@ -111,6 +111,7 @@ export function MediaControlCard(props) {
                 <img
                   src={props.data.image}
                   alt="coverimage"
+                  loading="lazy"
                   height="337"
                   width="340"
                 />
@@ -143,6 +144,7 @@ export function MediaControlCard(props) {
             <img
               src={props.data.image}
               alt="cover image"
+              loading="lazy"
               height="100%"
               width="100%"
             />

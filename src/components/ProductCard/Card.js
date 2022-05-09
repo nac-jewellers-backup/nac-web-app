@@ -268,8 +268,7 @@ const useStyles = makeStyles((theme) => ({
       textAlign: "left",
       padding: "0 !important",
       paddingTop: "4px !important",
-      paddingBottom: "4px !important",
-      padding: 5,
+      paddingBottom: "4px !important"
     },
   },
   youSave: {

@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { useNetworkRequest } from "hooks/index";
 import { useCheckForCod } from "hooks/CheckForCodHook";
 import { ADDRESSDETAILS } from "queries/productdetail";
-import { resetWarningCache } from "prop-types";
 import { CartContext } from "context";
 import { USERPROFILE } from "queries/cart";
 
@@ -36,13 +35,6 @@ const useRegister = (changePanel, props) => {
       lastname: false,
     },
   });
-
-  const name =
-    Profile_DATAS &&
-    Profile_DATAS.User_Profile &&
-    Profile_DATAS.User_Profile.firstName.length > 0
-      ? Profile_DATAS.User_Profile.firstName
-      : "";
   const [valuesadrees, setvaluesadrees] = React.useState({
     user_id: user_ids,
     firstname: "",
@@ -55,10 +47,6 @@ const useRegister = (changePanel, props) => {
   });
 
   const pathnames = window.location.pathname.split("-")[0] === "/account";
-  const [invalids, setInvalids] = React.useState({
-    username: false,
-    confirmpassword: false,
-  });
   const { data: reg_update_data, makeFetch: makeFetcheditAddress } =
     useNetworkRequest("/api/updateuserprofile", {}, false);
   const { data, error, loading, makeFetch } = useNetworkRequest(
@@ -68,16 +56,11 @@ const useRegister = (changePanel, props) => {
   );
   const { setCartFilters } = React.useContext(CartContext);
   const {
-    loading: codloading,
-    error: coderror,
-    data: CodData,
     makeRequestCod,
   } = useCheckForCod(ADDRESSDETAILS, () => {}, {});
   const pathnamelog = window.location.pathname === "/registers";
 
   const {
-    loading: Profile_loading,
-    error: Profile_error,
     data: Profile_Data,
     makeRequestCod: propfile_fetch,
   } = useCheckForCod(USERPROFILE, () => {}, {});
@@ -189,7 +172,6 @@ const useRegister = (changePanel, props) => {
     }
   }, [data]);
 
-  const errmsg = data.message ? data.message : "";
   const handleChange = (type, value) => {
     if (
       values.email !== "" &&
@@ -232,7 +214,7 @@ const useRegister = (changePanel, props) => {
       [type]: value,
     });
   };
-  const user = data.user_profile_id ? data.user_profile_id : "";
+
 
   const handleSubmit = (e) => {
     if (!pathnames) {

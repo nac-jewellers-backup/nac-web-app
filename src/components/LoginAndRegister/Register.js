@@ -132,6 +132,7 @@ const RegisterComponent = (props) => {
                 objectFit: "cover",
                 objectPosition: "40% 5%",
               }}
+              loading="lazy" alt='...'
               src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/login+register/Group+72.png"
             />
           </div>

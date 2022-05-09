@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "components/SilverComponents/Header";
-import { Grid, Container } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 import { withRouter } from "react-router-dom";
 import ProductModal from "components/SilverComponents/ProductModal";
 import MultipleSections from "components/SilverComponents/MultipleSections";

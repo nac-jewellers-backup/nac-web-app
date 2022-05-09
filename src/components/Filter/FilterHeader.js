@@ -30,7 +30,7 @@ const styles = (theme) => ({
 const FilterHeader = (props) => {
   const { setSort, setOffset, FilterOptionsCtx } =
     React.useContext(FilterOptionsContext);
-  const loc = window.location.search;
+
   return (
     <Component
       setSort={setSort}
@@ -83,7 +83,7 @@ class Component extends React.Component {
     window.scrollTo(0, 0);
   };
   render() {
-    const { classes, chips, checked } = this.props;
+    const { classes, chips} = this.props;
     const { sortOptions } = this.props.data;
     return (
       <Paper

@@ -55,8 +55,7 @@ class Addressdetails extends React.Component {
     var con_gust = localStorage.getItem("gut_lg")
       ? JSON.parse(localStorage.getItem("gut_lg"))
       : "";
-    const aa = localStorage.getItem("m") ? localStorage.getItem("m") : "";
-    const aa1 = localStorage.getItem("m1") ? localStorage.getItem("m1") : "";
+    
     const delete_all_addresses = (val_addrs1, index) => {
       if (document.location.pathname === "/checkout") {
         if (
@@ -372,11 +371,8 @@ class Addressdetails extends React.Component {
                                 ) : (
                                   <>
                                     <Button
-                                      style={{ float: "right" }}
+                                      style={{ float: "right", marginBottom: "18px", }}
                                       className="apply-b"
-                                      style={{
-                                        marginBottom: "18px",
-                                      }}
                                       onClick={() => {
                                         this.props.selectaddreses(
                                           val_addrs1,

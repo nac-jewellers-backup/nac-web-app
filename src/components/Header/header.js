@@ -122,6 +122,7 @@ class Header extends Component {
                         className="icons-header-sizes"
                         src={telephone}
                         alt="telephone"
+                        loading="lazy"
                       />
                     </span>
                   </div>
@@ -133,7 +134,7 @@ class Header extends Component {
                       src="https://assets.stylori.com/images/static/stylori-logo.svg"
                       onLoad={() => this.setState({ load: true })}
                       onLoadedData={() => this.setState({ load: false })}
-                      alt=""
+                      loading="lazy" alt='...'
                     />
                   </div>
                 </Grid>
@@ -156,6 +157,7 @@ class Header extends Component {
                           className="icons-header-sizes"
                           src={usershape}
                           alt="telephone"
+                          loading="lazy"
                         />
                       </span>
                     ) : (
@@ -166,6 +168,7 @@ class Header extends Component {
                           className="icons-header-sizes"
                           src={usershape}
                           alt="telephone"
+                          loading="lazy"
                         />
                       </span>
                     )}
@@ -216,6 +219,7 @@ class Header extends Component {
                             className="icons-header-sizes"
                             src={logout}
                             alt="images"
+                            loading="lazy"
                           />
                           &nbsp;Logout
                         </a>
@@ -257,6 +261,7 @@ class Header extends Component {
                           className="icons-header-sizes"
                           src={shopping}
                           alt="images"
+                          loading="lazy"
                         />
                       </NavLink>{" "}
                     </Badge>
@@ -338,7 +343,8 @@ class Header extends Component {
                     <img
                       className="mobile-img"
                       src="https://assets.stylori.com/images/static/stylori-logo.svg"
-                      alt=""
+                      loading="lazy" 
+                      alt='...'
                     />
                   </div>
                 </Grid>
@@ -406,6 +412,7 @@ class Header extends Component {
                       className="submenu-icons"
                       src={row.icon}
                       alt={row.icon}
+                      loading="lazy" alt='...'
                     ></img>
                     <ListItemText
                       onClick={() =>
@@ -439,7 +446,7 @@ class Header extends Component {
                           <img
                             className="submenu-icons"
                             src={row2.icon}
-                            alt=""
+                            loading="lazy" alt='...'
                           ></img>
                           <ListItemText
                             onClick={() =>

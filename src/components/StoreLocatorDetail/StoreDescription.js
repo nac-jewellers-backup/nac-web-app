@@ -66,7 +66,7 @@ const StoreDescription = ({currentStore , timings, reviews, rating ,onToggle360V
         <div className={"col-lg-9 col-md-9 col-sm-12 col-xs-12"+' '+styles.right_border} style={{ borderRight: "1px solid #d8d8d8" }}>
           <div className={"col-lg-12 col-md-12 col-sm-12 col-xs-12"} style={{paddingBottom:"25px"}}>
             <div className={"col-lg-5 col-md-5 col-sm-12 col-xs-12"+' '+styles.img_small}>
-              <img src={sampleStore} className={styles.store_img}/>
+              <img src={sampleStore} className={styles.store_img} loading="lazy" alt='...'/>
             </div>
             <div className={"col-lg-6 col-md-6 col-sm-9 col-xs-9"} style={{paddingRight:"0px"}}>
               <div className="indiv_collection_heading">
@@ -91,7 +91,7 @@ const StoreDescription = ({currentStore , timings, reviews, rating ,onToggle360V
             </div>
             <div className={"col-lg-1 col-md-1 col-sm-3 col-xs-3"} style={{paddingTop:"15px"}}>
              <div className={"col-lg-12 col-md-12 col-sm-12 col-xs-12"}>
-                <img src={image360} onClick={onToggle360View.bind(this)} className={styles.icon_img}  />
+                <img src={image360} loading="lazy" alt='...' onClick={onToggle360View.bind(this)} className={styles.icon_img}  />
              </div>
              <div className={"col-lg-12 col-md-12 col-sm-12 col-xs-12"}>
               <a href={store.directions}  target="_blank"> <img src={direction} className={styles.icon_img} /> </a>
@@ -136,16 +136,16 @@ const StoreDescription = ({currentStore , timings, reviews, rating ,onToggle360V
             <div className={styles.img_wrapper}>
               <div className={styles.inline_block + " " + styles.indiv_img}>
                 <a href="https://www.facebook.com/NACjewellery">
-                  <img src={fbImg} />
+                  <img src={fbImg} loading="lazy" alt='...'/>
                 </a>
               </div>
               <div className={styles.inline_block + " " + styles.indiv_img}>
                 <a href="https://www.facebook.com/NACjewellery">
-                  <img src={twitImg} />
+                  <img src={twitImg} loading="lazy" alt='...'/>
                 </a>
               </div>
               <div className={styles.inline_block + " " + styles.indiv_img}>
-                <img src={instaImg} />
+                <img src={instaImg} loading="lazy" alt='...' />
               </div>
             </div>
           </div>

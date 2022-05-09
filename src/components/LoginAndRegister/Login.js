@@ -45,7 +45,7 @@ const LoginComponent = (props) => {
           <Grid item xs={12}>
             <div>
               <img
-                alt=""
+               loading="lazy" alt='...'
                 width="100%"
                 height="380px"
                 style={{
@@ -68,7 +68,7 @@ const LoginComponent = (props) => {
           <Grid item xs={12} lg={6}>
             <div>
               <img
-                alt=""
+              loading="lazy" alt='...'
                 width="100%"
                 height="600px"
                 style={{

@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Typography } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 import style from "./style";
 // import { NavHashLink  as NavLink } from "react-router-hash-link";
 import { NavLink } from "react-router-dom";

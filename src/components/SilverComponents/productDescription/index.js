@@ -31,34 +31,17 @@ class ProductDescription extends Component {
   render() {
     const { classes } = this.props;
     // let path = window.location.pathname.split('/').pop();
-    var loc = this.props.location.pathname;
+   
 
-    var path = loc.split("/");
-    var data_json = [
-      { title: "home", url: "/" },
-      { title: "jewellery", url: "/jewellery" },
-    ];
     // const descriptionData = this.props.data;
     const settings =
       this.props.data && this.props.data[0] && this.props.data[0].dataCarousel;
     const fadeImages =
       this.props.data && this.props.data[0] && this.props.data[0].carouselImage;
-    const title = this.props.title;
+ 
     const datadescription =
       this.props.data && this.props.data[0] && this.props.data[0].seoText;
-    const renderTitle = () => {
-      var pathname_split_hyphen = path[1].split("-");
-      var a = window.location.pathname.split("/");
-      // var b = a[1].split(/\-/g).map(val=>{return val.split(/\+/g)})
-      var b = a[1].split(/\-/g).map((val) => {
-        return val.replace(/\+/g, " ");
-      });
-      var c = b.map((val) => {
-        return b + " ";
-      });
-      var d;
-      return (d = c[0].replace(/\,/g, " "));
-    };
+
     return (
       <>
         <Grid

@@ -3,12 +3,8 @@ import {
     Grid,
     Hidden,
     ExpansionPanel,
-    ExpansionPanelSummary,
-    ExpansionPanelDetails,
-    Tabs,
-    Tab,
     Typography,
-    Container, Modal, Button
+    Container, Modal
 } from '@material-ui/core';
 import React from 'react';
 import './product-images.css'
@@ -209,7 +205,7 @@ class Component extends React.Component {
                                         <>
                                             <Grid container style={{ width: "100%" }} className={classes.pagination} style={{ overflow: "hidden" }}>
                                                 <Grid item style={{ width: "8%", alignItems: "center", justifyContent: "center", display: "flex" }}>
-                                                    <img onClick={() => previous()} className={"icon-leftcaro"} />
+                                                    <img loading="lazy" alt='...' onClick={() => previous()} className={"icon-leftcaro"} />
 
                                                 </Grid>
                                                 <Grid item style={{ width: "84%" }}>
@@ -230,7 +226,7 @@ class Component extends React.Component {
                                                     </Slideshow>
                                                 </Grid>
                                                 <Grid item style={{ width: "8%", alignItems: "center", justifyContent: "center", display: "flex" }}>
-                                                    <img onClick={() => next()} className={"icon-rightcaro"} />
+                                                    <img onClick={() => next()} loading="lazy" alt='...' className={"icon-rightcaro"} />
 
                                                 </Grid>
                                                 <Modal
@@ -241,7 +237,7 @@ class Component extends React.Component {
                                                     style={{ overflowY: 'scroll' }}
                                                 >
                                                     <div className={`${classes.modals} "modalin-ring"`}>
-                                                        <img height='auto' width='100%' src='https://assets.stylori.com/images/static/Ring-size.jpg' />
+                                                        <img height='auto' width='100%' loading="lazy" alt='...' src='https://assets.stylori.com/images/static/Ring-size.jpg' />
                                                     </div>
                                                 </Modal>
                                                 {/* <div style={{ marginTop: "10px", textAlign: "center" }}>

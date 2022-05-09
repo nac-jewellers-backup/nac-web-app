@@ -83,7 +83,8 @@ class Component extends React.Component {
                     <Grid item xs={5} sm={3} lg={3}>
                       <div className="wishlist_img">
                         <img
-                          alt=""
+                          loading="lazy"
+                          alt="..."
                           style={{
                             objectFit: "cover",
                             height: "100%",
@@ -94,7 +95,7 @@ class Component extends React.Component {
                               .productImagesByProductId.nodes[0].imageUrl
                               ? first_map.productListByProductId
                                   .productImagesByProductId.nodes[0].imageUrl
-                              : "https://styloriimages.s3.ap-south-1.amazonaws.com/Banners/Stylori+Silver/StyloriSilver+nemonic.png"
+                              : "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/NAC+logo+mnemonic.png"
                           }
                         />
                       </div>

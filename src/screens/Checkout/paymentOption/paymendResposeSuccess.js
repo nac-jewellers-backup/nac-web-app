@@ -4,7 +4,7 @@ import Footer from "components/Footer/Footer";
 import Header from "components/SilverComponents/Header";
 import { CartContext } from "context";
 import cart from "mappers/cart";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { withRouter } from "react-router-dom";
 import "../../../components/Checkout/Cart.css";
 import { API_URL } from "../../../config";
@@ -43,9 +43,9 @@ class PaymentResponseSuccess extends React.Component {
   }
 
   render() {
-    let gut_lg = localStorage.getItem("gut_lg")
-      ? JSON.parse(localStorage.getItem("gut_lg"))
-      : {};
+    // let gut_lg = localStorage.getItem("gut_lg")
+    //   ? JSON.parse(localStorage.getItem("gut_lg"))
+    //   : {};
     let email = localStorage.getItem("email")
       ? localStorage.getItem("email")
       : "";
@@ -68,6 +68,7 @@ class PaymentResponseSuccess extends React.Component {
                       className="img"
                       src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/Group+160.svg"
                       alt="title images"
+                      loading="lazy"
                     />
                   </Box>
                   <Box>
@@ -80,6 +81,7 @@ class PaymentResponseSuccess extends React.Component {
                       className="img"
                       src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/Group+159.svg"
                       alt="title images"
+                      loading="lazy" 
                     />
                   </Box>
                 </Box>

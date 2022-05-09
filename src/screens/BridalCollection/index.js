@@ -271,7 +271,7 @@ import {
           <Slideshow dataCarousel={storeLocatorData.carouselTop.setting}>
             {storeLocatorData.carouselTop.data.map((val, index) => (
               <Grid container key={index}>
-                <img alt="img" src={val.img} style={{ width: "100%", height: "100%" }} />
+                <img alt="img" loading="lazy" src={val.img} style={{ width: "100%", height: "100%" }} />
               </Grid>
             ))}
           </Slideshow>
@@ -349,6 +349,7 @@ import {
                     <img
                       src={val.img}
                       alt={val.title}
+                      loading="lazy"
                       className={classes.aboutcolimg}
                     />
                     <Typography className={classes.title}>{val.title}</Typography>
@@ -371,6 +372,7 @@ import {
               <img
                 src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/bridalcollection/bannercard.png"
                 alt="about"
+                loading="lazy"
                 style={{ object: "cover", height: "60vh", width: "100%" }}
               />
             </Grid>
@@ -415,6 +417,7 @@ import {
                   <img
                     src={val.img}
                     alt={val.title}
+                    loading="lazy"
                     className={classes.aboutcolimg}
                   />
                   <Typography className={classes.name}>{val.name}</Typography>

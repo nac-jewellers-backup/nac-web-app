@@ -28,6 +28,7 @@ export default function PaperSheet() {
       <Grid item className={classes.mainsource}>
         <img
           style={{ width: "50%" }}
+          loading="lazy" alt='...'
           src={
             "https://assets.stylori.com/images/Static+Pages/Other+Pages/fromthehouseofnac-pink.svg"
           }
@@ -36,6 +37,7 @@ export default function PaperSheet() {
       <Grid item className={classes.mainsource}>
         <img
           style={{ width: "50%" }}
+          loading="lazy" alt='...'
           src={
             "https://assets.stylori.com/images/Static%20Pages/Other%20Pages/certifiedjewellery-pink.svg"
           }
@@ -44,6 +46,7 @@ export default function PaperSheet() {
       <Grid item className={classes.mainsource}>
         <img
           style={{ width: "50%" }}
+          loading="lazy" alt='...'
           src={
             "https://assets.stylori.com/images/Static+Pages/Other+Pages/securepayments-pink.svg"
           }
@@ -52,6 +55,7 @@ export default function PaperSheet() {
       <Grid item className={classes.mainsource}>
         <img
           style={{ width: "50%" }}
+          loading="lazy" alt='...'
           src={
             "https://assets.stylori.com/images/Static+Pages/Other+Pages/diversestyles-pink.svg"
           }
@@ -60,6 +64,7 @@ export default function PaperSheet() {
       <Grid item className={classes.mainsource}>
         <img
           style={{ width: "50%" }}
+          loading="lazy" alt='...'
           src={
             "https://assets.stylori.com/images/Static+Pages/Other+Pages/easyreturns-pink.svg"
           }

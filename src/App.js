@@ -3,14 +3,14 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { NetworkProvider, GlobalProvider } from "context";
 import "./index.css";
 import Loading from "screens/Loading";
-import { createMuiTheme, responsiveFontSizes } from "@material-ui/core/styles";
+import { createTheme, responsiveFontSizes } from "@material-ui/core/styles";
 import { lambda_func_front_end } from "./utils";
 import Theme from "./Theme.js";
 import { withRouter } from "react-router-dom";
 
 import { jewelleryTheme } from "./jewellery_theme";
-let jewellery_theme = createMuiTheme(jewelleryTheme);
-let silver_jewellery_theme = createMuiTheme(
+let jewellery_theme = createTheme(jewelleryTheme);
+let silver_jewellery_theme = createTheme(
   require("./silver_jewellery_theme.json")
 );
 let jewelleryThemes = responsiveFontSizes(jewellery_theme);

@@ -73,10 +73,10 @@ export const lambda_func_front_end = async () => {
     document.documentElement.clientWidth,
     window.innerWidth || 0
   );
-  var h = Math.max(
-    document.documentElement.clientHeight,
-    window.innerHeight || 0
-  );
+  // var h = Math.max(
+  //   document.documentElement.clientHeight,
+  //   window.innerHeight || 0
+  // );
 
   let a = await supportsWebp();
   if (a) {

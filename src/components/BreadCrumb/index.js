@@ -1,6 +1,5 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import { Paper, Breadcrumbs, Link, Container, Grid, Typography } from '@material-ui/core/';
+import { Paper, Breadcrumbs, Container, Grid} from '@material-ui/core/';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import "./breadcrumb.css"
 
@@ -11,7 +10,7 @@ export default function CustomSeparator(props) {
   let path = window.location.pathname;
   let seperators = path === '/cart' || path === "/checkout" || b[1] === "paymentsuccess" ?
     <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAQAAAC0NkA6AAAAAmJLR0QA/4ePzL8AAABTSURBVFjD7dfBDYAgFARRqkBCi1ouEa1mbMJPIMw08JK9bUpm9lOclGjiAnowQ6YBL1VGRkZGZjKm0IGbvDbCQQOewLkkJCQkNicGXYchJ8hs8z7oGPzdOrNn/QAAAABJRU5ErkJggg=="
-      className={props.arrowicon} />
+      className={props.arrowicon} loading="lazy" alt='...'/>
     : <NavigateNextIcon />;
   const tabs = localStorage.getItem("panel")
 
@@ -178,7 +177,7 @@ export default function CustomSeparator(props) {
                               <img src={subdata.icon} style={{
                                 width: "25px", height: "25px", marginLeft: "14px",
                                 marginTop: "7px"
-                              }} />
+                              }} loading="lazy" alt='...'/>
                             </Grid>
 
                             <Grid item xs={2} style={{display : "flex", alignItems : "center"}}>

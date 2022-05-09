@@ -1,5 +1,5 @@
 import React from 'react'
-import { Typography, Grid, Hidden } from '@material-ui/core'
+import { Typography, Grid } from '@material-ui/core'
 import styles from './featuredProductStyle';
 import FeaturedProduct from './featuredProduct';
 import { YoungOnes } from 'mappers/dummydata/collectionNac';
@@ -21,7 +21,7 @@ export default function FeaturedProducts(props) {
                     <a className={classes.anchor} href="">
                         <Grid className={classes.algins}>
     <Typography className={classes.anchor}>{YoungOnes.carouselData.link}</Typography>
-                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAOCAMAAAAliK2kAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABtQTFRFqKio8fHxREREGRkZYWFh4uLijIyMNjY2////EoUdpQAAAAl0Uk5T//////////8AU094EgAAADpJREFUeNpUzdsKADAIAlBt1///4jkLxoLwYA9h1+BhooCGOqW8V1lLBlcYjOCFU8gUulMY/H8dAQYArKoCrGXO+aEAAAAASUVORK5CYII=" />
+                            <img loading="lazy" alt='...' src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAOCAMAAAAliK2kAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABtQTFRFqKio8fHxREREGRkZYWFh4uLijIyMNjY2////EoUdpQAAAAl0Uk5T//////////8AU094EgAAADpJREFUeNpUzdsKADAIAlBt1///4jkLxoLwYA9h1+BhooCGOqW8V1lLBlcYjOCFU8gUulMY/H8dAQYArKoCrGXO+aEAAAAASUVORK5CYII=" />
 
                         </Grid>
                         <Grid>

@@ -2,7 +2,6 @@ import React from "react";
 import { Grid, Typography, Container } from "@material-ui/core";
 import Slideshow from "components/Carousel/carosul";
 import { homeNac, HomeCardData, StaticImage } from "mappers/dummydata/homeNac";
-import { withRouter } from "react-router-dom";
 import Hidden from "@material-ui/core/Hidden";
 import { withStyles } from "@material-ui/core/styles";
 import Story from "../../components/story";
@@ -401,7 +400,7 @@ class HomeComp extends React.Component {
         
         return (
           <a>
-            <img src={val.image.placeImage.img} alt="NAC"/>
+            <img src={val.image.placeImage.img} alt="NAC" loading="lazy" />
             </a>
         );
       })
@@ -450,6 +449,7 @@ class HomeComp extends React.Component {
                     <a href={val.navigateUrl} style={{ width: "100%" }}>
                       <img
                         src={val.img}
+                        loading="lazy" alt='...'
                         style={{ width: "100%", height: "100%" }}
                       />
                     </a>
@@ -460,6 +460,7 @@ class HomeComp extends React.Component {
                     <a href={val.navigateUrl}>
                       <img
                         src={val.mobileImg}
+                        loading="lazy" alt='...'
                         style={{ width: "100%", height: "100%" }}
                       />
                     </a>
@@ -502,7 +503,7 @@ class HomeComp extends React.Component {
            { dummyData.map(val=>{
               return(
               
-         <img src = {val.image.placeImage.img} alt="haii" />
+         <img src = {val.image.placeImage.img} alt="haii" loading="lazy" />
                 
               )
             })}
@@ -530,7 +531,7 @@ class HomeComp extends React.Component {
             >
               {StaticImage.data.map((val, index) => (
                 <Grid container key={index}>
-                  <img src={val.img} className={classes.mainImgCarosel} />
+                  <img src={val.img} className={classes.mainImgCarosel}  loading="lazy" alt='...'/>
                 </Grid>
               ))}
             </Slideshow>

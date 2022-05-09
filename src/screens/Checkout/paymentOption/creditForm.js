@@ -1,10 +1,7 @@
 import React from "react";
-import { Grid, Button, Hidden, Container, ExpansionPanelSummary, ExpansionPanel, Typography, TextField } from "@material-ui/core";
+import { Grid, Button, Container} from "@material-ui/core";
 import "./payment.css";
 import { Input } from "../../../components/InputComponents/TextField/Input";
-import Buynowbutton from "../../../components/Buynow/buynowbutton";
-import { CartContext } from "context";
-import cart from "mappers/cart";
 class Creditform extends React.Component {
   constructor(props) {
     super(props);
@@ -79,7 +76,7 @@ class Creditform extends React.Component {
                     <Grid spacing={12} container>
                       <Grid item lg={6} xs={4}>
                         <div className="credit-img">
-                          <img className="imd-credit" src="https://assets.stylori.com/images/static/icons/cvv.png" />
+                          <img className="imd-credit" loading="lazy" alt='...' src="https://assets.stylori.com/images/static/icons/cvv.png" />
                         </div>
                       </Grid>
                       <Grid item lg={6} xs={8}>

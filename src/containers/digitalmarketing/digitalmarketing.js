@@ -18,7 +18,7 @@ export default function DigitalMarketing(props) {
         <Slideshow dataCarousel={DigitalMarketingPage.carouselTop.setting}>
           {DigitalMarketingPage.carouselTop.data.map((val, index) => (
             <Grid container key={index}>
-              <img src={val.img} style={{ width: "100%", height: "100%" }} />
+              <img src={val.img} style={{ width: "100%", height: "100%" }} loading="lazy" alt='...'/>
             </Grid>
           ))}
         </Slideshow>

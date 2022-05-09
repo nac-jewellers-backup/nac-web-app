@@ -22,6 +22,7 @@ export default function Locator(props) {
                 src={val.img}
                 style={{ width: "100%", height: "100%" }}
                 alt="images"
+                loading="lazy" 
               />
             </Grid>
           ))}

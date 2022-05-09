@@ -1,7 +1,5 @@
 import React from "react";
 import { NetworkContext } from "../context/NetworkContext";
-import { FieldsOnCorrectType } from "graphql/validation/rules/FieldsOnCorrectType";
-import { circIn } from "@popmotion/easing";
 let accessTokens;
 
 export const useDummyRequest = (mapper) => {

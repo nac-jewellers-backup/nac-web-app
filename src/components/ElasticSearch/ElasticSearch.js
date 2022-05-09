@@ -5,7 +5,6 @@ import {
     InputBase,
     Typography,
     InputAdornment,
-    ListItem
 } from '@material-ui/core';
 import {
     Link

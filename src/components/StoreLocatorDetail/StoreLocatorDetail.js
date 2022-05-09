@@ -1,17 +1,7 @@
-import React, {Component, PropTypes , lazy , Suspense } from 'react';
-import Helmet from 'react-helmet';
-import {connect} from 'react-redux';
+import React, {Component, PropTypes} from 'react';
 import axios from 'axios';
-import {push} from 'redux-router';
-
 import {replaceAllCharacter} from '../../utils/string';
-
-import connectData from 'helpers/connectData';
-import {makeRequest, createFetchOption} from '../../utils/fetch';
-
-import {checkStateValidity} from '../../utils/data';
 import MapComponent	from './MapComponent.js';
-import ListComponent from '../CollectionsListing/ListComponent.js';
 import DescriptionComponent from './StoreDescription.js';
 import {  pageComponentSelect } from './fetchQueries';
 import {  CHILD_COMPONENT_READY } from '../PageContainer/actions';

@@ -71,7 +71,7 @@ class Slideshow extends React.Component {
                   this.props.imgClass ? this.props.imgClass : ""
                 }`}
                 src={imgs}
-                alt=""
+                loading="lazy" alt='...'
               />
             )}
           </div>
@@ -80,7 +80,7 @@ class Slideshow extends React.Component {
   };
 
   imagehoverchildrens = (hoverlist) => {
-    let { hover, hovereffect, TopPic, imagecra, collectionhome } = this.props;
+    let { hover, hovereffect, TopPic,collectionhome } = this.props;
     if (TopPic) {
       return hoverlist.map((val) => (
         <div
@@ -90,7 +90,7 @@ class Slideshow extends React.Component {
             src={val.img}
             className="subslider-carousel-img img-responsive"
             style={{ width: "100%", height: "100%" }}
-            alt=""
+            loading="lazy" alt='...'
           />
           <div className="overlay1">
             <div>
@@ -113,7 +113,7 @@ class Slideshow extends React.Component {
               src={val.img}
               className="subslider-carousel-img img-responsive"
               style={{ width: "100%", height: "auto" }}
-              alt=""
+              loading="lazy" alt='...'
             />
             <div className="overlay1">
               <div style={{ paddingTop: "40%" }}>
@@ -146,7 +146,7 @@ class Slideshow extends React.Component {
                 <img
                   src={val.img}
                   className="subslider-carousel-img img-responsive"
-                  alt=""
+                  loading="lazy" alt='...'
                 />
                 <div
                   className="overlay1"
@@ -195,7 +195,7 @@ class Slideshow extends React.Component {
             height: "auto",
             display: "block !important  ",
           }}
-          alt=""
+          loading="lazy" alt='...'
         />
         {/* <div class="overlay1">
           <div style={{paddingTop:'40%'}}>

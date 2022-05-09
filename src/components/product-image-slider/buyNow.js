@@ -631,7 +631,7 @@ class Component extends React.Component {
                           <img
                             src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/Group+1015.svg"
                             alt="matel weight"
-                            height="70px"
+                            height="70px" loading="lazy" 
                           />
                         </Avatar>
 
@@ -665,6 +665,7 @@ class Component extends React.Component {
                             src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/Group+1019.svg"
                             alt=" Metal Purity"
                             height="70px"
+                            loading="lazy"
                           />
                         </Avatar>
 
@@ -688,6 +689,7 @@ class Component extends React.Component {
                           src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/Group+1022.svg"
                           alt="Diamond Weight"
                           height="70px"
+                          loading="lazy"
                         />
                       </Avatar>
                       <p

@@ -3,7 +3,6 @@ import { Grid, Hidden } from "@material-ui/core";
 import Slideshow from "components/Carousel/carosul";
 import { SavingPageNac } from "mappers/dummydata/savingNac";
 import MediaCarousel from "../../components/mediacarousel/mediaCarousel";
-import Header from "components/SilverComponents/Header";
 import styles from "./savingsstyle";
 import { IndexSavingPage } from "mappers/dummydata/savingNac";
 import Footer from "../../components/Footer/Footer";
@@ -58,6 +57,7 @@ export default function Savings(props) {
                   <a href={val.navigateUrl} style={{ width: "100%" }}>
                     <img
                       src={val.img}
+                      loading="lazy" alt='...'
                       style={{ width: "100%", height: "100%" }}
                     />
                   </a>
@@ -68,6 +68,7 @@ export default function Savings(props) {
                   <a href={val.navigateUrl}>
                     <img
                       src={val.mobileImg}
+                      loading="lazy" 
                       style={{ width: "100%", height: "100%" }}
                     />
                   </a>

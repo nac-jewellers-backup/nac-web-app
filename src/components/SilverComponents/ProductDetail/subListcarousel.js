@@ -136,6 +136,7 @@ class Sublistcarousel extends React.Component {
                       <img
                         onClick={() => this.previous()}
                         className={"icon-leftcaro"}
+                        loading="lazy" alt='...'
                       />
                     </Grid>
                     <Grid item style={{ width: "88%" }}>
@@ -166,6 +167,7 @@ class Sublistcarousel extends React.Component {
                       <img
                         onClick={() => this.next()}
                         className={"icon-rightcaro"}
+                        loading="lazy" alt='...'
                       />
                     </Grid>
                   </Grid>

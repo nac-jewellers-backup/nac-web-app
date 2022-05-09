@@ -193,6 +193,7 @@ class Stylori extends React.Component {
                           <img
                             src={val.web}
                             alt="banner"
+                            loading="lazy"
                             style={{ width: "100%", height: "100%" }}
                           />
                         </a>
@@ -204,6 +205,7 @@ class Stylori extends React.Component {
                           <img
                             src={val.mobile}
                             alt="banner"
+                            loading="lazy"
                             style={{ width: "100%", height: "100%" }}
                             className={`image-${
                               this.state.imageLoading ? "visible" : "hidden"
@@ -306,7 +308,6 @@ const Components = (props) => {
       mappedFilters,
       cartcount,
       loadingfilters,
-      wishlist_count,
     },
     setloadingfilters,
   } = React.useContext(FilterOptionsContext);

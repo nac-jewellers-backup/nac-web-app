@@ -4,40 +4,36 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/index.html"
   },
   {
-    "revision": "50f380a122f6217b10c7",
+    "revision": "fbf8212a6490050b042f",
     "url": "/static/css/2.css"
   },
   {
-    "revision": "dee398f3dce87efdeb5b",
+    "revision": "a3aed41247b9e35a7709",
     "url": "/static/css/4.css"
   },
   {
-    "revision": "01f77a674986a1ee6913",
+    "revision": "4181b2f3b91d65d541be",
     "url": "/static/css/main.css"
   },
   {
-    "revision": "50f380a122f6217b10c7",
+    "revision": "fbf8212a6490050b042f",
     "url": "/static/js/2.js"
   },
   {
-    "revision": "76252939935b03a36c81",
+    "revision": "da282b36e370dcf0a6a2",
     "url": "/static/js/3.js"
   },
   {
-    "revision": "dee398f3dce87efdeb5b",
+    "revision": "a3aed41247b9e35a7709",
     "url": "/static/js/4.js"
   },
   {
-    "revision": "01f77a674986a1ee6913",
+    "revision": "4181b2f3b91d65d541be",
     "url": "/static/js/main.js"
   },
   {
     "revision": "265884b522a19a75c49d",
     "url": "/static/js/runtime~main.js"
-  },
-  {
-    "revision": "92e2d23a1a2929823738532362c05eea",
-    "url": "/static/media/FlowerDimon.jpg"
   },
   {
     "revision": "d1c72e0e788cf2bbc1de53da57599bec",
@@ -46,10 +42,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "2b3d63f761a61e5c65a4773359c4eb40",
     "url": "/static/media/close.svg"
-  },
-  {
-    "revision": "1d4ab251e668bd11b62b30615bd88e78",
-    "url": "/static/media/closeheart.jpg"
   },
   {
     "revision": "6b446a380e308ad3d84cf955d088f3be",
@@ -78,10 +70,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "6e25bad6f003be8fe1ddf1c68d2b4dd9",
     "url": "/static/media/logout.svg"
-  },
-  {
-    "revision": "965dabcd31d04c27b319f732b7aae019",
-    "url": "/static/media/nosepin.gif"
   },
   {
     "revision": "57b56bb10faf3b9dbb17bc91e6be7baf",

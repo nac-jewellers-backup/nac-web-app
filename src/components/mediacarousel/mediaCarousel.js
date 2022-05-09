@@ -1,11 +1,9 @@
 import React, { useState } from "react";
-import { Typography, Grid, Hidden, Button, Link } from "@material-ui/core";
+import { Typography, Grid } from "@material-ui/core";
 import styles from "./mediaCarouselStyle";
 import Slideshow from "../Carousel/carosul";
-import dialog from "../dialog/dialog";
 import DialogBox from "../dialog/dialog";
-import { isCompositeType } from "graphql";
-import index from "postcss-normalize";
+
 export default function MediaCarousel(props) {
   
   const classes = styles();
@@ -88,7 +86,7 @@ export default function MediaCarousel(props) {
                     {window.location.pathname === "/collectionhome" ? (
                       ""
                     ) : (
-                      <img src={val.img} className={classes.imgClass} />
+                      <img src={val.img} className={classes.imgClass} loading="lazy" alt='...'/>
                     )}
                     {window.location.pathname === "/collectionhome" ? (
                       <Slideshow
@@ -290,6 +288,7 @@ export default function MediaCarousel(props) {
             <div className={classes.imgGridMoreCollection}>
               <img
                 className={classes.MoreCollectionImg}
+                loading="lazy" alt='...'
                 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAOCAMAAAAliK2kAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABtQTFRFqKio8fHxREREGRkZYWFh4uLijIyMNjY2////EoUdpQAAAAl0Uk5T//////////8AU094EgAAADpJREFUeNpUzdsKADAIAlBt1///4jkLxoLwYA9h1+BhooCGOqW8V1lLBlcYjOCFU8gUulMY/H8dAQYArKoCrGXO+aEAAAAASUVORK5CYII="
               ></img>
             </div>{" "}

@@ -57,6 +57,7 @@ export function AdvancedGridList() {
                 <img
                   src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Final-collection+tile/Fabula-Jewellery.jpg"
                   alt="NAC"
+                  loading="lazy"
                   width="100%"
                   height="340"
                   className={classes.gridimg}
@@ -74,6 +75,7 @@ export function AdvancedGridList() {
                 <img
                   src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Final-collection+tile/Bridal-Diamond-Jewellery.jpg"
                   alt="NAC"
+                  loading="lazy"
                   width="100%"
                   height="680"
                   className={classes.gridimg}
@@ -95,6 +97,7 @@ export function AdvancedGridList() {
                     <img
                       src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Final-collection+tile/Nagas-Gold-Jewellery.jpg"
                       alt="NAC"
+                      loading="lazy"
                       width="100%"
                       height="340"
                       className={classes.gridimg}
@@ -112,6 +115,7 @@ export function AdvancedGridList() {
                     <img
                       src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Final-collection+tile/Platinum-Jewellery.jpg"
                       alt="NAC"
+                      loading="lazy"
                       width="100%"
                       height="340"
                       className={classes.gridimg}
@@ -131,6 +135,7 @@ export function AdvancedGridList() {
                     <img
                       src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Collection+tile/Muhurtham_tile_385+X+600_px.jpg"
                       alt="NAC"
+                      loading="lazy"
                       width="100%"
                       height="684"
                     />
@@ -151,6 +156,7 @@ export function AdvancedGridList() {
                     <img
                       src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Final-collection+tile/Young-Ones-Jewellers.jpg"
                       alt="NAC"
+                      loading="lazy" 
                       width="100%"
                       height="336"
                       style={{
@@ -180,6 +186,7 @@ export function AdvancedGridList() {
                   <img
                     src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Final-collection+tile/Rewind-Gold-Jewellery.jpg"
                     alt="NAC"
+                    loading="lazy"
                     width="100%"
                     height="340"
                     className={classes.gridimg}
@@ -199,6 +206,7 @@ export function AdvancedGridList() {
                   <img
                     src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Final-collection+tile/Mayura-Diamond-Jewellery.jpg"
                     alt="NAC"
+                    loading="lazy" 
                     width="100%"
                     height="340"
                     className={classes.gridimg}
@@ -224,6 +232,7 @@ export function AdvancedGridList() {
               <img
                 src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Final-collection+tile/Nagas-Gold-Jewellery.jpg"
                 alt="NAC"
+                loading="lazy"
                 width="100%"
                 height="100%"
                 className={classes.gridimg}
@@ -239,6 +248,7 @@ export function AdvancedGridList() {
               <img
                 src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Final-collection+tile/Fabula-Jewellery.jpg"
                 alt="NAC"
+                loading="lazy" 
                 width="100%"
                 height="100%"
                 className={classes.gridimg}
@@ -254,6 +264,7 @@ export function AdvancedGridList() {
               <img
                 src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Final-collection+tile/Platinum-Jewellery.jpg"
                 alt="NAC"
+                loading="lazy" 
                 width="100%"
                 height="100%"
                 className={classes.gridimg}
@@ -269,6 +280,7 @@ export function AdvancedGridList() {
               <img
                 src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Final-collection+tile/Mayura-Diamond-Jewellery.jpg"
                 alt="NAC"
+                loading="lazy"
                 width="100%"
                 height="100%"
                 className={classes.gridimg}
@@ -284,6 +296,7 @@ export function AdvancedGridList() {
               <img
                 src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Collection+tile/Muhurtham_tile_385+X+600_px.jpg"
                 alt="NAC"
+                loading="lazy" 
                 width="100%"
                 height="100%"
                 className={classes.gridimg}
@@ -299,6 +312,7 @@ export function AdvancedGridList() {
               <img
                 src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Final-collection+tile/Young-Ones-Jewellers.jpg"
                 alt="NAC"
+                loading="lazy" 
                 className={classes.gridimg}
                 width="100%"
                 height="100%"

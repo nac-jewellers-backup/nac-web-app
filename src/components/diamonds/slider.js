@@ -1,11 +1,9 @@
 import React, { useState } from 'react'
-import styles from './style'
-import { Grid, Typography } from "@material-ui/core";
-import Slider, { Range } from 'rc-slider';
+import { Grid } from "@material-ui/core";
+import { Range } from 'rc-slider';
 import "rc-slider/assets/index.css";
 export default function Sliders(props) {
-    const classes = styles();
-  const value=[]
+  
     const [state,setState]=useState({
       value:["100","500"]
     })

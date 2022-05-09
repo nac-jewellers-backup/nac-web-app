@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "components/SilverComponents/Header";
-import { Typography, Grid, Hidden } from "@material-ui/core";
+import { Typography, Grid } from "@material-ui/core";
 import styles from "./collectionPageStyle";
 import Slideshow from "components/Carousel/carosul";
 import { Rudramadevi } from "mappers/dummydata/collectionNac";
@@ -42,7 +42,7 @@ export default function rudramadeviBlog(props) {
         >
           {Rudramadevi.carouselTop.data.map((val, index) => (
             <Grid container key={index}>
-              <img src={val.img} className={classes.mainCarosel} />
+              <img src={val.img} className={classes.mainCarosel} loading="lazy" alt='...'/>
             </Grid>
           ))}
         </Slideshow>

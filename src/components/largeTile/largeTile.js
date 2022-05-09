@@ -1,8 +1,8 @@
 import React from "react";
-import { Typography, Grid, Hidden } from "@material-ui/core";
+import { Typography, Grid } from "@material-ui/core";
 import styles from "./largeTileStyle";
 import Slideshow from "components/Carousel/carosul";
-import { NavLink, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./style.css";
 export default function LargeTile(props) {
   const classes = styles();
@@ -55,6 +55,7 @@ export default function LargeTile(props) {
                       onClick={handleReadMore}
                       style={{ width: "100%" }}
                       src={props.img}
+                      loading="lazy" alt='...'
                       className="iframeClass"
                     />
                     <></>
@@ -66,6 +67,7 @@ export default function LargeTile(props) {
                       onClick={handleReadMore}
                       style={{ width: "100%", height: "100%" }}
                       src={props.img}
+                      loading="lazy" alt='...'
                     />
                     <>
                       {" "}
@@ -73,6 +75,7 @@ export default function LargeTile(props) {
                         onClick={handleReadMore}
                         className={classes.youtubeImg}
                         src={props.youtubeImg}
+                        loading="lazy" alt='...'
                       />{" "}
                     </>{" "}
                   </>
@@ -142,6 +145,7 @@ export default function LargeTile(props) {
                         style={{ width: "100%" }}
                         src={props.img}
                         className="iframeClass"
+                        loading="lazy" alt='...'
                       />
                       <></>
                     </>
@@ -152,6 +156,7 @@ export default function LargeTile(props) {
                         onClick={handleReadMore}
                         style={{ width: "100%", height: "100%" }}
                         src={props.img}
+                        loading="lazy" alt='...'
                       />
                     </>
                   )}
@@ -219,6 +224,7 @@ export default function LargeTile(props) {
                               onClick={handleReadMore}
                               style={{ width: "100%", height: "100%" }}
                               src={val.img}
+                              loading="lazy" alt='...'
                             />
                           </Grid>
                         ))}
@@ -294,6 +300,7 @@ export default function LargeTile(props) {
                         style={{ width: "100%" }}
                         src={props.img}
                         className="iframeClass"
+                        loading="lazy" alt='...'
                       />
                       <>
                         {" "}
@@ -301,6 +308,7 @@ export default function LargeTile(props) {
                           onClick={handleReadMore}
                           className={classes.youtubeImg}
                           src={props.youtubeImg}
+                          loading="lazy" alt='...'
                         />{" "}
                       </>
                     </>
@@ -311,6 +319,7 @@ export default function LargeTile(props) {
                         onClick={handleReadMore}
                         style={{ width: "100%", height: "100%" }}
                         src={props.img}
+                        loading="lazy" alt='...'
                       />
                       <>
                         {" "}
@@ -318,6 +327,7 @@ export default function LargeTile(props) {
                           onClick={handleReadMore}
                           className={classes.youtubeImg}
                           src={props.youtubeImg}
+                          loading="lazy" alt='...'
                         />{" "}
                       </>{" "}
                     </>
@@ -326,6 +336,7 @@ export default function LargeTile(props) {
                     onClick={handleReadMore}
                     style={{ width: "100%", height: "100%" }}
                     src={props.img}
+                    loading="lazy" alt='...'
                   />
                   <>
                     {" "}
@@ -333,6 +344,7 @@ export default function LargeTile(props) {
                       onClick={handleReadMore}
                       className={classes.youtubeImg}
                       src={props.youtubeImg}
+                      loading="lazy" alt='...'
                     />{" "}
                   </>
                 </Slideshow>
@@ -375,6 +387,7 @@ export default function LargeTile(props) {
                     <iframe
                       width="100%"
                       className="iframeClass"
+                      title="..."
                       src={props.url}
                       frameborder="0"
                       allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
@@ -469,6 +482,7 @@ export default function LargeTile(props) {
                         height="201"
                         src={props.url}
                         frameborder="0"
+                        title="..."
                         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                       ></iframe>
                     </Grid>
@@ -480,6 +494,7 @@ export default function LargeTile(props) {
                         height="214"
                         src={props.url}
                         frameborder="0"
+                        title="..."
                         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                       ></iframe>
                     </Grid>
@@ -491,6 +506,7 @@ export default function LargeTile(props) {
                         height="273"
                         src={props.url}
                         frameborder="0"
+                        title="..."
                         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                       ></iframe>
                     </Grid>
@@ -502,6 +518,7 @@ export default function LargeTile(props) {
                         height="372"
                         src={props.url}
                         frameborder="0"
+                        title="..."
                         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                       ></iframe>
                     </Grid>
@@ -513,6 +530,7 @@ export default function LargeTile(props) {
                         height="400"
                         src={props.url}
                         frameborder="0"
+                        title="..."
                         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                       ></iframe>
                     </Grid>

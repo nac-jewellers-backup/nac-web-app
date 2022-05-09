@@ -589,7 +589,8 @@ class Allorders extends React.Component {
                                                       .metalColor,
                                                     paymentsuccess
                                                   )}
-                                                  alt=""
+                                                  loading="lazy"
+                                                  alt="..."
                                                 />
                                               </div>
                                             ) : null
@@ -777,7 +778,8 @@ class Allorders extends React.Component {
                                           </Typography>
                                           <Typography className="subhesder">
                                             <img
-                                              alt=""
+                                              loading="lazy"
+                                              alt="..."
                                               src="https://assets.stylori.com/images/static/icon-ship.png"
                                             />{" "}
                                             <a>
@@ -972,7 +974,8 @@ class Allorders extends React.Component {
                                                                 <img
                                                                   height="100%"
                                                                   width="100%"
-                                                                  alt="images"
+                                                                  loading="lazy"
+                                                                  alt="..."
                                                                   src={
                                                                     cart
                                                                       .transSkuListByProductSku
@@ -986,7 +989,7 @@ class Allorders extends React.Component {
                                                                           .productImagesByProductId
                                                                           .nodes[0]
                                                                           .imageUrl
-                                                                      : "https://styloriimages.s3.ap-south-1.amazonaws.com/Banners/Stylori+Silver/StyloriSilver+nemonic.png"
+                                                                      : "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/NAC+logo+mnemonic.png"
                                                                   }
                                                                 />
                                                               </div>
@@ -1579,7 +1582,8 @@ class Allorders extends React.Component {
                                                                 }}
                                                               >
                                                                 <img
-                                                                  alt="images"
+                                                                  loading="lazy"
+                                                                  alt="..."
                                                                   height="100%"
                                                                   width="100%"
                                                                   src={
@@ -1595,7 +1599,7 @@ class Allorders extends React.Component {
                                                                           .productImagesByProductId
                                                                           .nodes[0]
                                                                           .imageUrl
-                                                                      : "https://styloriimages.s3.ap-south-1.amazonaws.com/Banners/Stylori+Silver/StyloriSilver+nemonic.png"
+                                                                      : "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/NAC+logo+mnemonic.png"
                                                                   }
                                                                 />
                                                               </div>

@@ -5,13 +5,10 @@ import Slideshow from "components/Carousel/carosul";
 import {IndexCareerPage} from 'mappers/dummydata/savingNac';
  import currentstyles from 'containers/careers/careerstyle';
 import styles from 'containers/savings/savingsstyle';
-import SideData from 'components/aboutus/sideData';
 import SocialFields from 'components/socialfield/index';
 import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
 import Footer from "components/Footer/Footer";
 
 export default function careersPage (props) {
@@ -43,7 +40,7 @@ export default function careersPage (props) {
             IndexCareerPage.carouselDataCareer &&
             IndexCareerPage.carouselDataCareer.map((val, index) => (
               <Grid container key={index} className={classes.headContent}>
-                <img src={val.img} className={classes.mainCarosel} />
+                <img src={val.img} className={classes.mainCarosel} loading="lazy" alt='...'/>
               </Grid>
             ))}
         </Slideshow>

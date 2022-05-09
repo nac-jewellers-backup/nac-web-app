@@ -1,6 +1,5 @@
 import React from "react";
-import styles from "./style";
-import { Grid, Typography, Checkbox } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
@@ -8,7 +7,6 @@ import TableCell from "@material-ui/core/TableCell";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import { withStyles, makeStyles } from "@material-ui/core/styles";
-import Paper from "@material-ui/core/Paper";
 import Pagination from "@material-ui/lab/Pagination";
 const useStyles = makeStyles((theme) => ({
   table: {

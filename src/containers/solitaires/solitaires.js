@@ -67,6 +67,7 @@ export default function Solitaires(props) {
                     </Typography> */}
                     <img
                       src={val.img}
+                      loading="lazy"
                       style={{ width: "100%", height: "100%" }}
                     />
                   </a>
@@ -80,6 +81,7 @@ export default function Solitaires(props) {
                     </Typography> */}
                     <img
                       src={val.mobileImg}
+                      loading="lazy" 
                       style={{ width: "100%", height: "100%" }}
                     />
                   </a>

@@ -46,7 +46,7 @@ function ImageGridList(props) {
                   className={"shine menuListHoverDiv  "}
                   cols={tile.cols || 1}
                   style={{ width: "120px", height: "120px" }}
-                  alt=""
+                  loading="lazy" alt='...'
                 />
                 <Grid container justify="center">
                   <Grid item className={classes.imgTextColor}>
@@ -69,6 +69,7 @@ function ImageGridList(props) {
                 src={tile.img}
                 cols={2}
                 alt="img"
+                loading="lazy"
                 style={{ width: "100%", height: "100%" }}
               />
             </Grid>

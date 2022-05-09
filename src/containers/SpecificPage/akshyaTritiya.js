@@ -16,12 +16,13 @@ import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert from "@material-ui/lab/Alert";
 import { makeStyles } from "@material-ui/core/styles";
 import { SolitairesData } from "../../mappers/dummydata/solitairesData";
-import { dummyData } from "./dummyDataSpecific";
+
 import { ImgMediaCard } from "../../components/ProductCard/Card";
 import ArrowRightIcon from "@material-ui/icons/ArrowRight";
 import ArrowLeftIcon from "@material-ui/icons/ArrowLeft";
 import Footer from "../../components/Footer/Footer";
 import { API_URL } from "../../config";
+import { AllHOMEQUERY } from "../../queries/home";
 import { ALLBANNERSCOMPLETE, SEND_QUERIES } from "../../queries/home";
 function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -275,7 +276,7 @@ function AkshyaTritiya(props) {
   const [openSnack, setOpenSnack] = React.useState(false);
   const [openSnackError, setOpenSnackError] = React.useState(false);
   const [formData, setFormData] = useState(InitialState);
-
+  const [listProduct, setListProduct] = useState([]);
   const [errorData, setErrorData] = useState(InitialState);
   const [banners, setBanners] = useState([]);
 
@@ -384,6 +385,66 @@ function AkshyaTritiya(props) {
       });
   }, []);
 
+  useEffect(() => {
+    fetch(`${API_URL}/graphql`, {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        query: AllHOMEQUERY,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        //feature product
+        let featureproductdata = data?.data?.allFeaturedProducts?.nodes;
+
+        let featureproductDetails = featureproductdata.map((val) => ({
+          price:
+            val?.productListByProductId?.transSkuListsByProductId?.nodes[0]
+              ?.markupPrice ?? " ",
+
+          offerPrice:
+            val?.productListByProductId?.transSkuListsByProductId?.nodes[0]
+              ?.discountPrice ?? " ",
+          title: val?.productListByProductId?.productName ?? " ",
+          save:
+            val?.productListByProductId?.transSkuListsByProductId?.nodes[0]
+              ?.discount ?? " ",
+          image: {
+            placeImage: {
+              img:
+                val?.productListByProductId?.productImagesByProductId?.nodes[0]
+                  ?.imageUrl ?? " ",
+            },
+            hoverImage: {
+              img:
+                val?.productListByProductId?.productImagesByProductId?.nodes[0]
+                  ?.imageUrl ?? " ",
+            },
+          },
+          productId: val?.productId ?? " ",
+          diamondType: "",
+          purity: "",
+          productType: "",
+          skuId:
+            val?.productListByProductId?.transSkuListsByProductId?.nodes[0]
+              ?.skuId ?? " ",
+          skuID:
+            val?.productListByProductId?.transSkuListsByProductId?.nodes[0]
+              ?.skuId ?? " ",
+          skuUrl:
+            val?.productListByProductId?.transSkuListsByProductId?.nodes[0]
+              ?.skuUrl ?? " ",
+          description:
+            val?.productListByProductId?.transSkuListsByProductId?.nodes[0]
+              ?.transSkuDescriptionsBySkuId?.nodes[0]?.skuDescription ?? " ",
+        }));
+
+        setListProduct(featureproductDetails ?? []);
+      });
+  }, []);
   const ArrowLeft = (props) => {
     const { className, onClick } = props;
     return (
@@ -476,6 +537,7 @@ function AkshyaTritiya(props) {
                   <a href={val.urlParam} style={{ width: "100%" }}>
                     <img
                       alt="images"
+                      loading="lazy"
                       src={val.web}
                       style={{ width: "100%", height: "100%" }}
                     />
@@ -487,6 +549,7 @@ function AkshyaTritiya(props) {
                   <a href={val.urlParam}>
                     <img
                       alt="images"
+                      loading="lazy"
                       src={val.mobile}
                       style={{ width: "100%", height: "100%" }}
                     />
@@ -503,6 +566,7 @@ function AkshyaTritiya(props) {
           <div className={classes.headerAlign}>
             <img
               alt="images"
+              loading="lazy"
               className={classes.logoEdits}
               src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/collection+page/urn_aaid_sc_US_4f2880c9-1910-41e4-b332-90c4513a4ca7+(1).png"
             />
@@ -511,6 +575,7 @@ function AkshyaTritiya(props) {
             </Typography>
             <img
               alt="images"
+              loading="lazy"
               className={classes.logoEdits}
               src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/collection+page/urn_aaid_sc_US_4f2880c9-1910-41e4-b332-90c4513a4ca7+(2).png"
             />
@@ -591,11 +656,12 @@ function AkshyaTritiya(props) {
             class="subslider-carousel"
             dataCarousel={dataCarouselcollections}
           >
-            {dummyData.map((val) => {
-              return (
-                <ImgMediaCard data={val} cardSize="auto" hoverText={true} />
-              );
-            })}
+            {listProduct &&
+              listProduct?.map((val) => {
+                return (
+                  <ImgMediaCard data={val} cardSize="auto" hoverText={true} />
+                );
+              })}
           </Slideshow>
         </Container>
       </Hidden>
@@ -605,11 +671,12 @@ function AkshyaTritiya(props) {
             class="subslider-carousel"
             dataCarousel={dataCarouselcollectionsSm}
           >
-            {dummyData.map((val) => {
-              return (
-                <ImgMediaCard data={val} cardSize="auto" hoverText={true} />
-              );
-            })}
+            {listProduct &&
+              listProduct?.map((val) => {
+                return (
+                  <ImgMediaCard data={val} cardSize="auto" hoverText={true} />
+                );
+              })}
           </Slideshow>
         </Container>
       </Hidden>
@@ -698,6 +765,7 @@ function AkshyaTritiya(props) {
           <Link href="/store">
             <img
               alt="images"
+              loading="lazy"
               src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/akshaya+page/Group+63%402x.png"
               style={{ width: "100%" }}
               className={classes.storeImage}

@@ -41,13 +41,11 @@ class Component extends React.Component {
 
     componentWillReceiveProps(nextProps) {
         
-        const { starsSelected } = this.props
         if (nextProps.clear_rating && nextProps.clear_rating.length > 0) {
             this.setState({ starsSelected: "" })
         }
     }
     render() {
-        const { totalStars } = this.props;
         const { starsSelected } = this.state;
 
         return (

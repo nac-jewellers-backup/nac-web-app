@@ -53,6 +53,7 @@ export default function Diamonds(props) {
                   <a href={val.navigateUrl} style={{ width: "100%" }}>
                     <img
                       src={val.img}
+                      loading="lazy" alt='...'
                       style={{ width: "100%", height: "100%" }}
                     />
                   </a>
@@ -63,6 +64,7 @@ export default function Diamonds(props) {
                   <a href={val.navigateUrl}>
                     <img
                       src={val.mobileImg}
+                      loading="lazy" alt='...'
                       style={{ width: "100%", height: "100%" }}
                     />
                   </a>

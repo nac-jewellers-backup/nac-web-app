@@ -255,6 +255,7 @@ export default function ChildCollectionItemTwo(props) {
                                       <a href={val.navigateUrl}>
                                         <img
                                           src={val.img}
+                                          loading="lazy" alt='...'
                                           style={{
                                             width: "100%",
                                             height: "auto",
@@ -287,6 +288,7 @@ export default function ChildCollectionItemTwo(props) {
                                     <a href={data.primaryNavigateUrl}>
                                       <img
                                         style={{ cursor: "pointer" }}
+                                        loading="lazy" alt='...'
                                         src={data.primaryImage}
                                         className={classes.imageResolution}
                                       ></img>
@@ -331,7 +333,7 @@ export default function ChildCollectionItemTwo(props) {
                                     </Grid>
                                     <Grid
                                       item
-                                      item
+                                    
                                       xs={10}
                                       sm={10}
                                       md={10}
@@ -385,6 +387,7 @@ export default function ChildCollectionItemTwo(props) {
                                                           classes.imgcoin
                                                         }
                                                         src={val.img}
+                                                        loading="lazy" alt='...'
                                                       />
                                                     </a>
                                                   </Grid>
@@ -472,6 +475,8 @@ export default function ChildCollectionItemTwo(props) {
                                     <a href={data.primaryNavigateUrl}>
                                       <img
                                         style={{ cursor: "pointer" }}
+                                        loading="lazy" 
+                                        alt='...'
                                         src={data.primaryImage}
                                         className={classes.imageResolution}
                                       ></img>
@@ -516,7 +521,7 @@ export default function ChildCollectionItemTwo(props) {
                                     </Grid>
                                     <Grid
                                       item
-                                      item
+                          
                                       xs={10}
                                       sm={10}
                                       md={10}
@@ -576,6 +581,7 @@ export default function ChildCollectionItemTwo(props) {
                                                             classes.imgcoin
                                                           }
                                                           src={val.img}
+                                                          loading="lazy" alt='...'
                                                         />
                                                       </a>
                                                     </Grid>
@@ -664,6 +670,7 @@ export default function ChildCollectionItemTwo(props) {
                                       style={{ cursor: "pointer" }}
                                       src={data.secondaryImage}
                                       className={classes.imageResolution}
+                                      loading="lazy" alt='...'
                                     ></img>
                                   </a>
                                 </Grid>
@@ -707,7 +714,7 @@ export default function ChildCollectionItemTwo(props) {
                                     </Grid>
                                     <Grid
                                       item
-                                      item
+                                    
                                       xs={10}
                                       sm={10}
                                       md={10}
@@ -774,6 +781,7 @@ export default function ChildCollectionItemTwo(props) {
                                                           classes.imgcoin
                                                         }
                                                         src={val.img}
+                                                        loading="lazy" alt='...'
                                                       />
                                                     </Grid>
 
@@ -876,6 +884,7 @@ export default function ChildCollectionItemTwo(props) {
                                             height: "auto",
                                             cursor: "pointer",
                                           }}
+                                          loading="lazy" alt='...'
                                         />
                                       </a>
                                     </Grid>
@@ -900,6 +909,7 @@ export default function ChildCollectionItemTwo(props) {
                                       style={{ cursor: "pointer" }}
                                       src={data.primaryImage}
                                       className={classes.imageResolution}
+                                      loading="lazy" alt='...'
                                     ></img>
                                   </a>
                                 </Grid>
@@ -940,7 +950,7 @@ export default function ChildCollectionItemTwo(props) {
                                   </Grid>
                                   <Grid
                                     item
-                                    item
+                               
                                     xs={10}
                                     sm={10}
                                     md={10}
@@ -1008,6 +1018,7 @@ export default function ChildCollectionItemTwo(props) {
                                                           classes.imgcoin
                                                         }
                                                         src={val.img}
+                                                        loading="lazy" alt='...'
                                                       />
                                                     </a>
                                                   </Grid>
@@ -1095,6 +1106,7 @@ export default function ChildCollectionItemTwo(props) {
                                       style={{ cursor: "pointer" }}
                                       src={data.secondaryImage}
                                       className={classes.imageResolution}
+                                      loading="lazy" alt='...'
                                     ></img>
                                   </a>
                                 </Grid>
@@ -1135,7 +1147,7 @@ export default function ChildCollectionItemTwo(props) {
                                   </Grid>
                                   <Grid
                                     item
-                                    item
+                                
                                     xs={10}
                                     sm={10}
                                     md={10}
@@ -1200,6 +1212,7 @@ export default function ChildCollectionItemTwo(props) {
                                                           classes.imgcoin
                                                         }
                                                         src={val.img}
+                                                        loading="lazy" alt='...'
                                                       />
                                                     </a>
                                                   </Grid>

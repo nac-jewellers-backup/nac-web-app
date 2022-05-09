@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styles from "./style";
 import { Grid, Typography } from "@material-ui/core";
-import Slider, { Range } from "rc-slider";
 import "rc-slider/assets/index.css";
 import Sliders from "./slider";
 export default function DiamondSelect(props) {

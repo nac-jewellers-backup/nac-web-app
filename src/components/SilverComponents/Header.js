@@ -26,14 +26,13 @@ import Seach from "../../assets/search";
 import StyloriSLogo from "../../assets/silverOpenLink.png";
 import { useDummyRequest } from "../../hooks";
 import { headerDataSilver } from "../../mappers";
-import { createTheme, ThemeProvider } from "@material-ui/core/styles";
+import { createTheme } from "@material-ui/core/styles";
 import "./header.css";
 import HeaderHoversubMenu from "./HoverNavBarListing/HeaderHoversubMenu";
 import { styles } from "./styles";
 import { GOLD_PRICE_AND_CURRENCY_CONVO } from "../../queries/home";
 import { API_URL } from "../../config";
-import TextField from "@material-ui/core/TextField";
-import Autocomplete from "@material-ui/lab/Autocomplete";
+
 let user_id = localStorage.getItem("user_id")
   ? localStorage.getItem("user_id")
   : {};
@@ -82,65 +81,65 @@ const theme = createTheme({
   },
 });
 
-const themess = createTheme({
-  overrides: {
-    MuiInputLabel: {
-      outlined: {
-        border: "none",
-        borderColor: "#fff",
-        fontSize: "16px !important",
-      },
-      option: {
-        fontSize: "16px !important",
-        padding: "4px  !important",
-      },
-    },
-    MuiOutlinedInput: {
-      root: {
-        "&&& $input": {
-          padding: "0px",
-          color: "#000 !important",
-          fontSize: "16px !important",
-        },
-        option: {
-          fontSize: "16px !important",
-          padding: "4px  !important",
-        },
-      },
-    },
-    MuiAutocomplete: {
-      inputRoot: {
-        '&&[class*="MuiOutlinedInput-root"] $input': {
-          padding: "0px  !important",
-          fontSize: "16px !important",
-        },
-      },
-      option: {
-        fontSize: "16px !important",
-        padding: "4px  !important",
-      },
-    },
-    option: {
-      fontSize: "16px !important",
-      [theme.breakpoints.up("md")]: {
-        padding: "2px !important",
-      },
-      [theme.breakpoints.down("sm")]: {
-        padding: "0px !important",
-      },
-    },
-  },
-});
+// const themess = createTheme({
+//   overrides: {
+//     MuiInputLabel: {
+//       outlined: {
+//         border: "none",
+//         borderColor: "#fff",
+//         fontSize: "16px !important",
+//       },
+//       option: {
+//         fontSize: "16px !important",
+//         padding: "4px  !important",
+//       },
+//     },
+//     MuiOutlinedInput: {
+//       root: {
+//         "&&& $input": {
+//           padding: "0px",
+//           color: "#000 !important",
+//           fontSize: "16px !important",
+//         },
+//         option: {
+//           fontSize: "16px !important",
+//           padding: "4px  !important",
+//         },
+//       },
+//     },
+//     MuiAutocomplete: {
+//       inputRoot: {
+//         '&&[class*="MuiOutlinedInput-root"] $input': {
+//           padding: "0px  !important",
+//           fontSize: "16px !important",
+//         },
+//       },
+//       option: {
+//         fontSize: "16px !important",
+//         padding: "4px  !important",
+//       },
+//     },
+//     option: {
+//       fontSize: "16px !important",
+//       [theme.breakpoints.up("md")]: {
+//         padding: "2px !important",
+//       },
+//       [theme.breakpoints.down("sm")]: {
+//         padding: "0px !important",
+//       },
+//     },
+//   },
+// });
 
-function countryToFlag(isoCode) {
-  return typeof String.fromCodePoint !== "undefined"
-    ? isoCode
-        .toUpperCase()
-        .replace(/./g, (char) =>
-          String.fromCodePoint(char.charCodeAt(0) + 127397)
-        )
-    : isoCode;
-}
+// function countryToFlag(isoCode) {
+//   return typeof String.fromCodePoint !== "undefined"
+//     ? isoCode
+//         .toUpperCase()
+//         .replace(/./g, (char) =>
+//           String.fromCodePoint(char.charCodeAt(0) + 127397)
+//         )
+//     : isoCode;
+// }
 
 class Header extends Component {
   constructor(props) {
@@ -423,7 +422,7 @@ class Header extends Component {
                           src={styloriLogo}
                           onLoad={() => this.setState({ load: true })}
                           onLoadedData={() => this.setState({ load: false })}
-                          alt=""
+                          loading="lazy" alt='...'
                         />
                       </div>
                     </Grid>
@@ -696,6 +695,7 @@ class Header extends Component {
                             height="30px"
                             style={{ padding: "5px 15px 0px 15px" }}
                             alt="logo"
+                            loading="lazy"
                           ></img>
                         </a>
                       </div>
@@ -770,7 +770,7 @@ class Header extends Component {
                           }}
                           onLoad={() => this.setState({ load: true })}
                           onLoadedData={() => this.setState({ load: false })}
-                          alt=""
+                          loading="lazy" alt='...'
                         />
                       </div>
                     </Grid>
@@ -1150,6 +1150,7 @@ class Header extends Component {
                                               }}
                                               src={val.img}
                                               alt="imag"
+                                              loading="lazy" 
                                             />
                                           </div>
                                         </Grid>
@@ -1206,6 +1207,7 @@ class Header extends Component {
                                             }}
                                             src={val.icon}
                                             alt="icon"
+                                            loading="lazy"
                                           />
                                           <p className={classes.ptext}>
                                             {val.name}

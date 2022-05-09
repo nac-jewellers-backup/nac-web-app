@@ -63,8 +63,6 @@ const Provider = (props) => {
   const [{ filterLogic }, setFilterLogic] = React.useState({
     filterLogic: () => [],
   });
-  const [LoadingSeoQuery, setLoadingSeoQurey] = React.useState(true);
-  const [ErrorSeoQuery, setErrorSeoQuery] = React.useState(false);
   const [DataSeoQuery, setDataSeoQuery] = React.useState([]);
   const [paramsAo, setParamsAo] = React.useState([]);
   const [pricemin, setPriceMin] = React.useState(0);
@@ -79,8 +77,8 @@ const Provider = (props) => {
   const {
     NetworkCtx: { graphqlUrl: uri },
   } = React.useContext(NetworkContext);
-  const { Globalctx, setGlobalCtx } = React.useContext(GlobalContext);
-  const client = createApolloFetch({ uri });
+
+
 
   const {
     loading: ntx,
@@ -91,7 +89,7 @@ const Provider = (props) => {
 
   useEffect(() => {
     const fetch_data = async () => {
-      var len;
+
       //    if(window.location.pathname === "/jewellery"){
 
       // props.location.push(window.location.pathname)
@@ -175,23 +173,7 @@ const Provider = (props) => {
 
   var queries = [];
   const qtfArr = [];
-  const pathQueries = () => {
-    if (window.location.search) {
-      Object.keys(silverFilters).map((fk) => {
-        const filter = silverFilters[fk];
-        const fv = Object.keys(filter);
-        if (fv.length > 0) {
-          if (filter[fv[0]]) {
-            const qt = `${fk}=${fv[0]}`;
-            const qtf = {};
-            qtf[`${fk}`] = `${fv[0]}`;
-            queries.push(qt);
-          }
-        }
-      });
-     
-    }
-  };
+
 
   const paramObjects = (filtersparms) => {
     // Destructuring the query parameters from the URL
@@ -378,7 +360,7 @@ const Provider = (props) => {
           }
         }
       });
-      const query = encodeURI(queries.join("&"));
+
 
       // bodyvar = paramObjects();
     } catch (error) {}

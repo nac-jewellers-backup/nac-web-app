@@ -63,6 +63,7 @@ export default function Homenote(props) {
               src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/Group+215.svg"
               alt="t
           opimage"
+          loading="lazy"
               className={classes.img}
             />
           </Box>
@@ -83,6 +84,7 @@ export default function Homenote(props) {
               src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/Group+53.svg"
               alt="t
                opimage"
+               loading="lazy" 
               className={classes.img}
             />
           </Box>

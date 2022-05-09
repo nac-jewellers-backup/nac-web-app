@@ -258,6 +258,7 @@ export default function AccordianElement(props) {
                                   objectFit: "cover",
                                 }}
                                 src={val.img}
+                                loading="lazy" alt='...'
                               />
                             </Grid>
                             <Typography

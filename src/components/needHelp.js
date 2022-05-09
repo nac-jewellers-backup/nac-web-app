@@ -209,6 +209,7 @@ export default function NeedHelp(props) {
                   src="https://styloriimages.s3.ap-south-1.amazonaws.com/Banners/Stylori+Silver/Whatsapp-silver+jewellery.png"
                   style={{ width: "63px", height: "auto" }}
                   alt="img"
+                  loading="lazy"
                 ></img>
               </a>
             </Grid>

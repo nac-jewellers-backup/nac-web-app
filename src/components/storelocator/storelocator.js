@@ -21,6 +21,7 @@ export default function Storelocator(props) {
                   style={{ width: "100%", height: "100%", objectFit: "cover" }}
                   src={value.img}
                   alt="icon"
+                  loading="lazy"
                 />
               </Grid>
               <Grid item sm={12} md={1} lg={1} xs={12}></Grid>
@@ -82,7 +83,7 @@ export default function Storelocator(props) {
                 <img
                   style={{ width: "100%", height: "100%", objectFit: "cover" }}
                   src={value.img}
-                  alt="icon"
+                  alt="icon" loading="lazy"
                 />
               </Grid>
               <Grid item xs={1}></Grid>
