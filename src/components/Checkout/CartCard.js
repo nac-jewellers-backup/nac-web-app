@@ -90,6 +90,7 @@ class Checkoutcard extends React.Component {
         Qty: local_storage[data.generatedSku] ?? 1,
         QtyArr: QtyArr,
       });
+      return 0;
     });
 
     this.setState({
@@ -120,6 +121,7 @@ class Checkoutcard extends React.Component {
       if (currentValue !== val.sku_id) {
         return val;
       }
+      return 0;
     });
 
     function status(response) {
@@ -173,6 +175,7 @@ class Checkoutcard extends React.Component {
         localStorage.getItem("cartDetails")
       ).products.filter((val) => {
         if (val.sku_id !== currentValue) return val;
+        return 0;
       });
       var cartId = JSON.parse(localStorage.getItem("cartDetails")).cart_id;
       var userId = JSON.parse(localStorage.getItem("cartDetails")).user_id;
@@ -192,7 +195,7 @@ class Checkoutcard extends React.Component {
   };
   handlereloadcart = (val) => {
     const data = this.props.data;
-    if (val.skuId == undefined) {
+    if (val.skuId === undefined) {
     }
     var redirect_url;
     redirect_url = data.map(
@@ -340,7 +343,7 @@ class Checkoutcard extends React.Component {
                             </Grid>
                           </Grid>
                           <Grid item xs={4} sm={2} lg={1}>
-                            {window.location.pathname == "/checkout" ? (
+                            {window.location.pathname === "/checkout" ? (
                               <div>
                                 <br />
 
@@ -518,7 +521,7 @@ class Checkoutcard extends React.Component {
                                   </Grid>
                                 </Grid>
                                 <Grid item xs={3} sm={3} lg={3}>
-                                  {window.location.pathname == "/checkout" ? (
+                                  {window.location.pathname === "/checkout" ? (
                                     <div>
                                       <br />
 
@@ -632,7 +635,7 @@ class Checkoutcard extends React.Component {
                         }}
                         className={classes.cart}
                       >
-                        {window.location.pathname == "/account-shoppingcart" ? (
+                        {window.location.pathname === "/account-shoppingcart" ? (
                           <Grid
                             container
                             spacing={12}
@@ -1167,9 +1170,9 @@ class Checkoutcard extends React.Component {
                     xs={12}
                     style={{
                       width:
-                        window.location.pathname == "/cart" ? "50%" : "100%",
+                        window.location.pathname === "/cart" ? "50%" : "100%",
                       position:
-                        window.location.pathname == "/cart"
+                        window.location.pathname === "/cart"
                           ? "fixed"
                           : "relative",
                       backgroundColor: "#F3F3F3",
@@ -1178,7 +1181,7 @@ class Checkoutcard extends React.Component {
                   >
                     <div
                       className={
-                        window.location.pathname == "/account-shoppingcart"
+                        window.location.pathname === "/account-shoppingcart"
                           ? " "
                           : classes.padding
                       }
@@ -1528,7 +1531,7 @@ class Checkoutcard extends React.Component {
     let productIsActive = this.props.data[0].isActive ?? "";
     let productURL;
     this.props.data.map((val) => {
-      if (val.isActive == false) {
+      if (val.isActive === false) {
         productIsActive = val.isActive;
         productURL = val.skuUrl;
       }
@@ -1536,7 +1539,7 @@ class Checkoutcard extends React.Component {
     let path = window.location.pathname.split("/").pop();
     return (
       <div>
-        {path == "checkout" ? (
+        {path === "checkout" ? (
           ""
         ) : (
           <div className="ckeckout-top">
@@ -1845,7 +1848,7 @@ class Checkoutcard extends React.Component {
           </Grid>
         </Grid>
         <Grid container style={{ backgroundColor: "transparent" }}>
-          {path == "checkout" ? (
+          {path === "checkout" ? (
             ""
           ) : (
             <>
@@ -2121,7 +2124,7 @@ class Checkoutcard extends React.Component {
           </Grid>
         </Grid>
         <Grid container>
-          {path == "checkout" ? (
+          {path === "checkout" ? (
             ""
           ) : (
             <>
@@ -2191,7 +2194,7 @@ class Checkoutcard extends React.Component {
             <>{this.row(this.props)}</>
           )}
         </Hidden>
-        {window.location.pathname == "/checkout" ? (
+        {window.location.pathname === "/checkout" ? (
           <Hidden mdUp>
             {window.location.pathname === "/cart" ||
             window.location.pathname === "/checkout" ? (

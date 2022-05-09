@@ -79,7 +79,6 @@ const useStyles = makeStyles((theme) => ({
     position: "relative",
     float: "left",
     padding: "3px 10px",
-    marginLeft: "-1px",
     lineHeight: 1.42857143,
     color: "#2F348B",
     textDecoration: "none",

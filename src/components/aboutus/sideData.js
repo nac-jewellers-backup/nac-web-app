@@ -18,8 +18,7 @@ export default function SideData(props) {
   // const handleOpen = () => {
   //     window.location.href = "#test"
   // }
-  const value = props.value;
-  ;
+ 
   const classes = style();
   const [open, setOpen] = React.useState(null);
   const handleClick = (value) => {

@@ -80,7 +80,6 @@ const PersistentDrawerLeft = (props) => {
     setdelete_fil,
   } = React.useContext(FilterOptionsContext);
 
-  const loc = window.location.search;
   const { NetworkCtx } = React.useContext(NetworkContext);
   const { Globalctx } = React.useContext(GlobalContext);
 
@@ -215,6 +214,7 @@ class Component extends React.Component {
               numTwo = Number(equalSplit[1]);
             }
           }
+          return 0;
         });
 
         // if(numOne !== price_one && numTwo !== price_two){
@@ -259,7 +259,7 @@ class Component extends React.Component {
     // This is used for checking the check boxes if we copy and pasted the url to new tab or new window
     // *****Ends*****
     var paramsfilter;
-    var abcd;
+
     const filters_checked = () => {
       const { checked } = this.state;
       if (window.location.pathname.split("/")[1] !== "jewellery") {
@@ -355,6 +355,7 @@ class Component extends React.Component {
                 }
                 chipData.push({ label: a[0], title: keys });
               }
+              return 0;
             });
 
             this.setState(chipData, selected, checked);
@@ -410,8 +411,6 @@ class Component extends React.Component {
   delete_val_chips = (value) =>
     Object.entries(this.state.checked).map((val) => {
       const { checked } = this.state;
-
-      var obj = {};
       var mm;
       var bz;
       var valx;
@@ -433,6 +432,7 @@ class Component extends React.Component {
               }
               return false;
             }
+            return 0;
           });
       }
       return bz;
@@ -452,6 +452,7 @@ class Component extends React.Component {
             }
           }
         }
+        return 0;
       });
       let loc = window.location.pathname.split("?")[0];
       if (!showSortFilter) {
@@ -474,8 +475,7 @@ class Component extends React.Component {
     let mystate = this.state;
     let { chipData } = this.state;
     let checked = { ...this.state.checked };
-    var queries = [{}];
-    let pathnameSplit = window.location.pathname.split("/");
+   
 
     // if (Object.entries(this.state.category).length === 0 && this.state.category.constructor === Object) {
     //   const splitHiphen = () => {
@@ -515,7 +515,6 @@ class Component extends React.Component {
         () => this.props.setFilters(checked)
       );
     } else {
-      let arr1 = [];
       let paramsMapUrlSetState = () =>
         TargetName.map((val) => {
           var nameFilter = val[0];
@@ -529,6 +528,7 @@ class Component extends React.Component {
             },
             () => this.props.setFilters(checked)
           );
+          return 0;
         });
       paramsMapUrlSetState();
     }
@@ -538,11 +538,13 @@ class Component extends React.Component {
       if (val.title === title) {
         checkTitle = false;
       }
+      return 0;
     });
     chipData.map((val) => {
       if (val.label === value) {
         checkTitle = false;
       }
+      return 0;
     });
     if (BoolName === true) {
       // chipData.push({ key: chipData[chipData.length - 1].key, label: value });
@@ -622,6 +624,7 @@ class Component extends React.Component {
           this.props.setFilters(checked);
         }
       }
+      return 0;
     });
   };
   handlebye = () => {};
@@ -642,6 +645,7 @@ class Component extends React.Component {
           }
         }
       }
+      return 0;
     });
     return valus;
   };
@@ -650,7 +654,6 @@ class Component extends React.Component {
     document.documentElement.scrollTop = 180;
   };
   handleDrawerOpenMobile = () => {
-    const { productDisplay } = this.state;
     this.setState({ openMobile: false, productDisplay: false });
     this.setState({ CardRadio: false });
   };
@@ -659,12 +662,12 @@ class Component extends React.Component {
     this.setState({ productDisplay: true });
   };
   handleClearAllData = () => {
-    const { productDisplay } = this.state;
+  
     this.setState({ filtercheck: "", productDisplay: true });
     return (window.location.href = "/jewellery");
   };
   handleDrawerClose = () => {
-    const { productDisplay } = this.state;
+    
     this.setState({ productDisplay: true });
     return (window.location.href = "/jewellery");
   };
@@ -676,6 +679,7 @@ class Component extends React.Component {
       if (val !== undefined && val !== null) {
         return val;
       }
+      return 0;
     });
     if (map.indexOf(name) > -1) {
       arr1 = selected.filter((val) => {
@@ -684,6 +688,7 @@ class Component extends React.Component {
             return val;
           }
         }
+        return 0;
       });
       selected = arr1;
       this.setState({ selected });
@@ -718,19 +723,23 @@ class Component extends React.Component {
       this.setState({ Price_button_click: true });
       if (isNaN(Number(document.getElementById("num1").value.charAt(0)))) {
         _price_min = Number(
+          // eslint-disable-next-line
           document.getElementById("num1").value.substr(1).replace(/,/g, "")
         );
       } else {
         _price_min = Number(
+          // eslint-disable-next-line
           document.getElementById("num1").value.replace(/,/g, "")
         );
       }
       if (isNaN(Number(document.getElementById("num2").value.charAt(0)))) {
         _price_max = Number(
+          // eslint-disable-next-line
           document.getElementById("num2").value.substr(1).replace(/,/g, "")
         );
       } else {
         _price_max = Number(
+          // eslint-disable-next-line
           document.getElementById("num2").value.replace(/,/g, "")
         );
       }
@@ -758,6 +767,7 @@ class Component extends React.Component {
       var pricemax =
         price_max.indexOf(",") > -1
           ? price_max.indexOf(" ") > -1
+             // eslint-disable-next-line
             ? Number(price_max.substr(2).replace(/\,/g, ""))
             : Number(price_max.substr(1).replace(/\,/g, ""))
           : price_max.indexOf(" ") > -1
@@ -793,7 +803,7 @@ class Component extends React.Component {
     const found = window.location.pathname
       .split(/-/g)
       .find((element) => element === "/goldcoins" || element === "goldcoins");
-    const { classes, data, loading } = this.props;
+    const { classes} = this.props;
     const { filter, subFilter, sortOptions } = this.props.data[0];
 
     let { selected, check } = this.state;

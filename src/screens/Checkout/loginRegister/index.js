@@ -108,7 +108,7 @@ class LoginRegisterIndex extends React.Component {
               </div>
               <div
                 style={{
-                  display: this.state.Register == true ? "block" : "none",
+                  display: this.state.Register === true ? "block" : "none",
                 }}
               >
                 <Register

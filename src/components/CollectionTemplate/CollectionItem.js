@@ -102,16 +102,16 @@ export default function CollectionItem(props) {
         .then(json)
         .then(async (data) => {
           var Collectionz = {};
-          var paramsfilter =
-            Object.entries(data).length !== 0 &&
-            data.constructor === Object &&
-            data.data.allSeoUrlPriorities &&
-            data.data.allSeoUrlPriorities.nodes.map((val) => {
-              let attrName = val.attributeName.toLowerCase();
-              let attrVal = val.attributeValue;
-              Collectionz[attrName] = attrVal;
-              Collectionz["offset"] = 0;
-            });
+          // var paramsfilter =
+          //   Object.entries(data).length !== 0 &&
+          //   data.constructor === Object &&
+          //   data.data.allSeoUrlPriorities &&
+          //   data.data.allSeoUrlPriorities.nodes.map((val) => {
+          //     let attrName = val.attributeName.toLowerCase();
+          //     let attrVal = val.attributeValue;
+          //     Collectionz[attrName] = attrVal;
+          //     Collectionz["offset"] = 0;
+          //   });
           resolve(await promiseDta(Collectionz, img_url));
         })
         .catch(function (error) {
@@ -158,6 +158,7 @@ export default function CollectionItem(props) {
   };
   React.useEffect(() => {
     getAlldata(img_url);
+      // eslint-disable-next-line
   }, []);
 
   let onViewMoreCollect = values && values.onViewMoreCollection;
@@ -165,6 +166,7 @@ export default function CollectionItem(props) {
     if (values.onViewMoreCollection === true) {
       getAlldata(img_url);
     }
+      // eslint-disable-next-line
   }, [onViewMoreCollect]);
   return (
     <>

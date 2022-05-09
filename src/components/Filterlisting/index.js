@@ -63,8 +63,7 @@ class ProductDescription extends Component {
       { title: "jewellery", url: "/jewellery" },
     ];
     // const descriptionData = this.props.data;
-    const settings =
-      this.props.data && this.props.data[0] && this.props.data[0].dataCarousel;
+    
     // const fadeImages = this.props.data && this.props.data[0] && this.props.data[0].carouselImage;
     const fadeImages =
       this.props.datalisting &&
@@ -89,20 +88,21 @@ class ProductDescription extends Component {
           ];
 
     fadeImages.sort((a, b) => 0.5 - Math.random());
-    const title = this.props.title;
-    const datadescription =
-      this.props.data && this.props.data[0] && this.props.data[0].seoText;
+   
+   
     const renderTitle = () => {
-      var pathname_split_hyphen = path[1].split("-");
+     
       var a = window.location.pathname.split("/");
       // var b = a[1].split(/\-/g).map(val=>{return val.split(/\+/g)})
       var b = a[1].split(/\-/g).map((val) => {
+         // eslint-disable-next-line
         return val.replace(/\+/g, " ");
       });
       var c = b.map((val) => {
         return b + " ";
       });
       var d;
+       // eslint-disable-next-line
       return (d = c[0].replace(/\,/g, " "));
     };
     return (

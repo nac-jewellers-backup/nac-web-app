@@ -23,6 +23,7 @@ function MediaControlCard(props) {
       if (currentValue !== val.sku_id) {
         return val;
       }
+      return 0;
     });
     function status(response) {
       if (response.status >= 200 && response.status < 300) {
@@ -70,6 +71,7 @@ function MediaControlCard(props) {
         localStorage.getItem("cartDetails")
       ).products.filter((val) => {
         if (val.sku_id !== currentValue) return val;
+        return 0;
       });
       var cartId = JSON.parse(localStorage.getItem("cartDetails")).cart_id;
       var userId = JSON.parse(localStorage.getItem("cartDetails")).user_id;

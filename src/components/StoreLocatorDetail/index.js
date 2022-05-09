@@ -8,7 +8,7 @@ import StoreDetails from "./storeDetails";
 import styles from "./style";
 
 export default function StoreLocationDetails(props) {
-  const classes = styles();
+ 
   return (
     <Grid container>
       <Header />

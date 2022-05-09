@@ -126,6 +126,9 @@ export default function MediaCarousel(props) {
                   <a
                     onClick={toggleIsTruncated}
                     className={classes.ToggleButton}
+                    href="/#"
+                    target="_blank"
+                    rel="noopener noreferrer" 
                   >
                     {" "}
                     {isMoreContent ? "Read More" : "Read Less"}
@@ -221,9 +224,12 @@ export default function MediaCarousel(props) {
                               <a
                                 className={classes.contentHeadingLinks}
                                 onClick={() => openDialog()}
+                                href="/#"
+                                target="_blank"
+                                rel="noopener noreferrer" 
                               >
                                 {val.joinNow}&nbsp;{" "}
-                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAOCAMAAAAliK2kAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABtQTFRFqKio8fHxREREGRkZYWFh4uLijIyMNjY2////EoUdpQAAAAl0Uk5T//////////8AU094EgAAADpJREFUeNpUzdsKADAIAlBt1///4jkLxoLwYA9h1+BhooCGOqW8V1lLBlcYjOCFU8gUulMY/H8dAQYArKoCrGXO+aEAAAAASUVORK5CYII=" />
+                                <img alt="..." loading="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAOCAMAAAAliK2kAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABtQTFRFqKio8fHxREREGRkZYWFh4uLijIyMNjY2////EoUdpQAAAAl0Uk5T//////////8AU094EgAAADpJREFUeNpUzdsKADAIAlBt1///4jkLxoLwYA9h1+BhooCGOqW8V1lLBlcYjOCFU8gUulMY/H8dAQYArKoCrGXO+aEAAAAASUVORK5CYII=" />
                               </a>
                             </Typography>
                           </Grid>
@@ -233,9 +239,11 @@ export default function MediaCarousel(props) {
                               <a
                                 className={classes.contentHeadingLinks}
                                 href={val.link}
+                                target="_blank"
+                                rel="noopener noreferrer" 
                               >
                                 {val.joinNow}&nbsp;{" "}
-                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAOCAMAAAAliK2kAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABtQTFRFqKio8fHxREREGRkZYWFh4uLijIyMNjY2////EoUdpQAAAAl0Uk5T//////////8AU094EgAAADpJREFUeNpUzdsKADAIAlBt1///4jkLxoLwYA9h1+BhooCGOqW8V1lLBlcYjOCFU8gUulMY/H8dAQYArKoCrGXO+aEAAAAASUVORK5CYII=" />
+                                <img alt="..." loading="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAOCAMAAAAliK2kAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABtQTFRFqKio8fHxREREGRkZYWFh4uLijIyMNjY2////EoUdpQAAAAl0Uk5T//////////8AU094EgAAADpJREFUeNpUzdsKADAIAlBt1///4jkLxoLwYA9h1+BhooCGOqW8V1lLBlcYjOCFU8gUulMY/H8dAQYArKoCrGXO+aEAAAAASUVORK5CYII=" />
                               </a>
                             </Typography>
                           </Grid>
@@ -246,6 +254,8 @@ export default function MediaCarousel(props) {
                             <Typography>
                               <a
                                 href={val.link}
+                                target="_blank"
+                                rel="noopener noreferrer" 
                                 className={classes.contentHeadingLinks}
                               >
                                 {val.payNow}&nbsp;{" "}
@@ -283,7 +293,9 @@ export default function MediaCarousel(props) {
         ))}
       {ButtonCondition ? (
         <Grid className={classes.GridButtonMoreCollection}>
-          <a onClick={toggleIsCompound} className={classes.buttonLink}>
+          <a  href="/#"
+ target="_blank"
+ rel="noopener noreferrer"  onClick={toggleIsCompound} className={classes.buttonLink}>
             <div>View More Collections&nbsp;&nbsp;</div>
             <div className={classes.imgGridMoreCollection}>
               <img

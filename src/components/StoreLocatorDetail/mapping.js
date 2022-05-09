@@ -4,14 +4,12 @@ import React from 'react';
 
 
 
-const style = {
-    width: '100%',
-    height: '400px'
-}
+// const style = {
+//     width: '100%',
+//     height: '400px'
+// }
 class Mappping extends React.Component {
-    constructor(props) {
-        super(props);
-    }
+ 
     render() {
 
 

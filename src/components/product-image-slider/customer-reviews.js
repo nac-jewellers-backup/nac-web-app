@@ -213,9 +213,9 @@ class CustomerReviews extends React.Component {
       nextArrow: <ArrowRight />,
     };
 
-    const { expanded } = this.state;
-    const { classes, data } = this.props;
-    const { starsSelected } = this.state;
+
+    const { classes} = this.props;
+
     return (
       <div style={{ width: "100%" }}>
         {this.rat_map_title() ? (

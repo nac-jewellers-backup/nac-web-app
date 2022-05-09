@@ -18,7 +18,9 @@ export default function FeaturedProducts(props) {
                 {YoungOnes.carouselData.title}
                     </Typography>
                 <Grid item xs={12} className={classes.anchorMain}>
-                    <a className={classes.anchor} href="">
+                    <a  href="/#"
+ target="_blank"
+ rel="noopener noreferrer"  className={classes.anchor}>
                         <Grid className={classes.algins}>
     <Typography className={classes.anchor}>{YoungOnes.carouselData.link}</Typography>
                             <img loading="lazy" alt='...' src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAOCAMAAAAliK2kAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABtQTFRFqKio8fHxREREGRkZYWFh4uLijIyMNjY2////EoUdpQAAAAl0Uk5T//////////8AU094EgAAADpJREFUeNpUzdsKADAIAlBt1///4jkLxoLwYA9h1+BhooCGOqW8V1lLBlcYjOCFU8gUulMY/H8dAQYArKoCrGXO+aEAAAAASUVORK5CYII=" />
