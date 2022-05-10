@@ -23,6 +23,7 @@ export default function SocialLinkFrame() {
             width="100%"
             height="430px"
             frameBorder={0}
+            title="title"
           ></iframe>
         </Grid>
       </Grid>

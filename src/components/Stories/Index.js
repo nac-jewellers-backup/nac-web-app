@@ -28,8 +28,8 @@ const useStyles = makeStyles((theme) => ({
   },
   containerRoot: {
     width: "100%",
-    backgroundImage:
-      "url(https://alpha-assets.stylori.com/images/static/home/box_bg.png)",
+    // backgroundImage:
+    //   "url(https://alpha-assets.stylori.com/images/static/home/box_bg.png)",
     boxShadow: "0 0 5px #888 !important",
   },
   imgleft: {
@@ -203,7 +203,12 @@ export default function ImageGridList(props) {
         <Grid item className={classes.containerRoot}>
           <Grid container className={classes.container}>
             <Grid item style={{ width: "3%" }} className={classes.imgleftGrid}>
-              <img onClick={() => previous()} className={classes.imgleft} loading="lazy" alt='...'/>
+              <img
+                onClick={() => previous()}
+                className={classes.imgleft}
+                loading="lazy"
+                alt="..."
+              />
             </Grid>
             <Grid item style={{ width: "94%", padding: "0px 15px" }}>
               <Slideshow dataCarousel={props.dataCarousel} sliderRef={slider}>
@@ -215,7 +220,7 @@ export default function ImageGridList(props) {
                       </Typography>
                     </Grid>
                     <Grid container>
-                      <Grid item  xs={12} alignItems="center">
+                      <Grid item xs={12} alignItems="center">
                         <Grid container>
                           <Grid item className={classes.testimonialRight}>
                             <Grid item>
@@ -223,7 +228,8 @@ export default function ImageGridList(props) {
                               <img
                                 className={classes.imgcoin}
                                 src={val.image}
-                                loading="lazy" alt='...'
+                                loading="lazy"
+                                alt="..."
                               />
                               {/* </a> */}
                             </Grid>
@@ -248,7 +254,12 @@ export default function ImageGridList(props) {
               </Slideshow>
             </Grid>
             <Grid item style={{ width: "3%" }} className={classes.imgRightGrid}>
-              <img onClick={() => next()} className={classes.imgRight} loading="lazy" alt='...'/>
+              <img
+                onClick={() => next()}
+                className={classes.imgRight}
+                loading="lazy"
+                alt="..."
+              />
             </Grid>
           </Grid>
         </Grid>
@@ -257,20 +268,16 @@ export default function ImageGridList(props) {
         <Grid item className={classes.containerRoot}>
           <Grid container className={classes.container}>
             <Grid item className={classes.smleftGrid}>
-              <img onClick={() => previous()} className={classes.leftIc} loading="lazy" alt='...' />
+              <img
+                onClick={() => previous()}
+                className={classes.leftIc}
+                loading="lazy"
+                alt="..."
+              />
             </Grid>
             <Grid item style={{ marginBottom: "15px", width: "89%" }}>
               <Grid container justify="center">
-                <Grid
-                  item
-                  
-                  xs={12}
-                  md={3}
-                  lg={3}
-                  sm={6}
-                  
-                  alignItems="center"
-                >
+                <Grid item xs={12} md={3} lg={3} sm={6} alignItems="center">
                   <Slideshow
                     dataCarousel={props.dataCarousel}
                     sliderRef={slider}
@@ -290,7 +297,8 @@ export default function ImageGridList(props) {
                               <img
                                 className={classes.imgcoinsm}
                                 src={val.image}
-                                loading="lazy" alt='...'
+                                loading="lazy"
+                                alt="..."
                               />
                               {/* </a> */}
                             </Grid>
@@ -319,7 +327,12 @@ export default function ImageGridList(props) {
               </Grid>
             </Grid>
             <Grid item className={classes.smleftGrid}>
-              <img onClick={() => next()} className={classes.rightIc} loading="lazy" alt='...'/>
+              <img
+                onClick={() => next()}
+                className={classes.rightIc}
+                loading="lazy"
+                alt="..."
+              />
             </Grid>
           </Grid>
         </Grid>
