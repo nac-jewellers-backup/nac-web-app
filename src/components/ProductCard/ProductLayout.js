@@ -110,9 +110,9 @@ class Component extends React.Component {
                 <div className="overall-loaders">
                   <div id="loadings">
                     <img
-                      src="https://alpha-assets.stylori.com/images/static/loadingimg.gif"
+                      src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/NAC+nemonic+loader+gif+low+res.gif"
                       alt="loading..."
-                      loading="lazy" 
+                      loading="lazy"
                     />
                   </div>
                 </div>
