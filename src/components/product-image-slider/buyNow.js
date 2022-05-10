@@ -246,8 +246,7 @@ const Buydetails = (
 
 const PriceBuynow = (props) => {
   const {
-    loading,
-    error,
+  
     data: CodData,
     makeRequestCod,
   } = useCheckForCod(CheckForCod, () => {}, {});
@@ -434,7 +433,7 @@ class Component extends React.Component {
         localStorageQuantity &&
         !localStorageQuantity[this.props.data[0].skuId]
       ) {
-        let _obj = {};
+       
         localStorageQuantity[this.props.data[0].skuId] = _qty;
         localStorage.setItem("quantity", JSON.stringify(localStorageQuantity));
         this.props.filters.quantity[this.props.data[0].skuId] = _qty;
@@ -582,8 +581,7 @@ class Component extends React.Component {
     }
   };
   render() {
-    let { showimage } = this.state;
-    const { classes, data } = this.props;
+
     const isactive = this.props?.data[0]?.isactive ?? "";
     return (
       <div>

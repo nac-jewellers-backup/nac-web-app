@@ -40,46 +40,46 @@ let selected_price = localStorage.getItem("selected_price")
   ? JSON.parse(localStorage.getItem("selected_price"))
   : null;
 
-const theme = createTheme({
-  overrides: {
-    MuiInputLabel: {
-      outlined: {
-        border: "none",
-        borderColor: "#fff",
-        fontSize: "14px !important",
-      },
-      option: {
-        fontSize: "14px !important",
-      },
-    },
-    MuiOutlinedInput: {
-      root: {
-        "&&& $input": {
-          padding: "0px",
-          color: "#fff !important",
-          fontSize: "14px!important",
-        },
-        option: {
-          fontSize: "14px !important",
-        },
-      },
-    },
-    MuiAutocomplete: {
-      inputRoot: {
-        '&&[class*="MuiOutlinedInput-root"] $input': {
-          padding: "0px !important",
-          fontSize: "14px !important",
-        },
-      },
-      option: {
-        fontSize: "14px !important",
-      },
-    },
-    option: {
-      fontSize: "14px !important",
-    },
-  },
-});
+// const theme = createTheme({
+//   overrides: {
+//     MuiInputLabel: {
+//       outlined: {
+//         border: "none",
+//         borderColor: "#fff",
+//         fontSize: "14px !important",
+//       },
+//       option: {
+//         fontSize: "14px !important",
+//       },
+//     },
+//     MuiOutlinedInput: {
+//       root: {
+//         "&&& $input": {
+//           padding: "0px",
+//           color: "#fff !important",
+//           fontSize: "14px!important",
+//         },
+//         option: {
+//           fontSize: "14px !important",
+//         },
+//       },
+//     },
+//     MuiAutocomplete: {
+//       inputRoot: {
+//         '&&[class*="MuiOutlinedInput-root"] $input': {
+//           padding: "0px !important",
+//           fontSize: "14px !important",
+//         },
+//       },
+//       option: {
+//         fontSize: "14px !important",
+//       },
+//     },
+//     option: {
+//       fontSize: "14px !important",
+//     },
+//   },
+// });
 
 // const themess = createTheme({
 //   overrides: {
@@ -382,17 +382,17 @@ class Header extends Component {
                       xs={3}
                       style={{
                         marginTop:
-                          window.location.pathname == "/cart" ||
-                          window.location.pathname == "/checkout" ||
-                          window.location.pathname == "/paymentsuccess"
+                          window.location.pathname === "/cart" ||
+                          window.location.pathname === "/checkout" ||
+                          window.location.pathname === "/paymentsuccess"
                             ? "20px"
                             : "",
                       }}
                       className="logoImgHeader1"
                       alignItems="center"
                     >
-                      {window.location.pathname == "/cart" ||
-                      window.location.pathname == "/checkout" ? (
+                      {window.location.pathname === "/cart" ||
+                      window.location.pathname === "/checkout" ? (
                         <IconButton
                           size="small"
                           onClick={() => {

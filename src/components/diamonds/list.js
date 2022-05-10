@@ -169,7 +169,9 @@ export default function DiamondList(props) {
                   className={classes.tableCellColorText}
                 >
                   <a
-                    href="#"
+                    href="/#"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className={classes.tableCellColorText}
                     style={{ textDecoration: "none" }}
                   >

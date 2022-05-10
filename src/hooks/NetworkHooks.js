@@ -86,6 +86,7 @@ export const useNetworkRequest = (
     
 
     if (initRequest) makeFetch();
+      // eslint-disable-next-line
   }, []);
   return { loading, error, status, data, mapped, makeFetch };
 };

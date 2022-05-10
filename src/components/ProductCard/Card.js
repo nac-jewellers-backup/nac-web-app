@@ -520,7 +520,7 @@ function Component(props) {
                                 >
                                   <span>
                                     {
-                                      props.data.offerPrice == 0
+                                      props.data.offerPrice === 0
                                         ? " "
                                         : CurrencyConversion(
                                             props.data.offerPrice
@@ -546,7 +546,7 @@ function Component(props) {
                       ) : (
                         <Grid items>
                           <Typography className={classes.discountPercentage}>
-                            {props.data.save == 0
+                            {props.data.save === 0
                               ? " "
                               : ` ${Math.abs(
                                   Math.round(props.data.save)
@@ -619,7 +619,7 @@ function Component(props) {
                                 }}
                               >
                                 {
-                                  props.data.offerPrice == 0
+                                  props.data.offerPrice === 0
                                     ? " "
                                     : CurrencyConversion(props.data.offerPrice)
 

@@ -79,13 +79,10 @@ export default function PineDialog(props) {
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
-  function handleClose() {
-    
-  }
 
-  function handleSuccess() {
-    props.handleSuccess();
-  }
+  // function handleSuccess() {
+  //   props.handleSuccess();
+  // }
 
   return (
     <Dialog

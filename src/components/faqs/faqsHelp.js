@@ -4,9 +4,7 @@ import React from "react";
 import "./faqs.css";
 
 class faqsHelp extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+
   render() {
     return (
       <Grid>
@@ -67,7 +65,9 @@ class faqsHelp extends React.Component {
         >
           <span item xs={3} class="chat"></span>
           <a
-            href="#"
+           href="/#"
+           target="_blank"
+            rel="noopener noreferrer" 
             style={{
               color: "#2F348B",
               fontSize: "13px",

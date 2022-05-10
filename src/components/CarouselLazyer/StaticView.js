@@ -85,7 +85,6 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     margin: "3px 0px auto",
     float: "left",
-    width: "100%",
     color: "#2F348B",
     fontSize: "11px",
   },
@@ -103,7 +102,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function StaticView() {
   const classes = useStyles();
-  const theme = useTheme();
   const path = window.location.pathname === "/home";
   return (
     <Grid container className={classes.containItems}>

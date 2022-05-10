@@ -214,6 +214,9 @@ class Header extends Component {
                             window.location.reload();
                             window.location.pathname = "/login";
                           }}
+                          href="/#"
+                          target="_blank"
+                          rel="noopener noreferrer" 
                         >
                           <img
                             className="icons-header-sizes"
@@ -268,7 +271,7 @@ class Header extends Component {
                   </div>
                 </Grid>
               </Grid>
-              {path == "cart" || path == "checkout" ? (
+              {path === "cart" || path === "checkout" ? (
                 ""
               ) : (
                 <Grid container spacing={12}>
@@ -412,7 +415,7 @@ class Header extends Component {
                       className="submenu-icons"
                       src={row.icon}
                       alt={row.icon}
-                      loading="lazy" alt='...'
+                      loading="lazy"
                     ></img>
                     <ListItemText
                       onClick={() =>

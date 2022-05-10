@@ -10,10 +10,7 @@ import styles from "./cardStyle";
 
 export default function Cards(props) {
   const classes = styles();
-  const [state, setstate] = React.useState({
-    loading: false,
-    count: "",
-  });
+
   const [open, setOpen] = React.useState(false);
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down(""));
@@ -25,12 +22,12 @@ export default function Cards(props) {
   const handleClose = () => {
     setOpen(false);
   };
-  const next = () => {
-    slider.current.slickNext();
-  };
-  const previous = () => {
-    slider.current.slickPrev();
-  };
+  // const next = () => {
+  //   slider.current.slickNext();
+  // };
+  // const previous = () => {
+  //   slider.current.slickPrev();
+  // };
   const slider = React.createRef();
 
   return (
@@ -85,7 +82,7 @@ export default function Cards(props) {
                 {" "}
                 <img
                   src={props.data.title.imgIcon}
-                  alt="contact image"
+                  alt="...."
                   loading="lazy" 
                   className={classes.contactImage}
                 />
@@ -154,7 +151,7 @@ export default function Cards(props) {
                         {" "}
                         <img
                           src={val.img}
-                          alt="Image"
+                          alt="..."
                           loading="lazy"
                           className={classes.imgClass}
                         />
@@ -168,7 +165,7 @@ export default function Cards(props) {
                       {" "}
                       <img
                         src={val.img}
-                        alt="Image"
+                        alt="..."
                         loading="lazy"
                         className={classes.imgClass}
                       />
@@ -188,7 +185,7 @@ export default function Cards(props) {
                             {" "}
                             <img
                               src={val.img}
-                              alt="Image"
+                              alt="...."
                               loading="lazy"
                               className={classes.imgClass}
                             />
@@ -216,6 +213,7 @@ export default function Cards(props) {
                                     heigth="auto"
                                     src={val.videoLink}
                                     frameborder="0"
+                                    title="...."
                                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                                   ></iframe>
                                 </Grid>
@@ -230,7 +228,7 @@ export default function Cards(props) {
                             {" "}
                             <img
                               src={val.img}
-                              alt="Image"
+                              alt="...."
                               loading="lazy"
                               className={classes.imgClass}
                             />

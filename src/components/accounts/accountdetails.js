@@ -104,7 +104,7 @@ class Accountdetails extends Component {
                   <List className="pay-index-subhed" style={{ width: "100%" }}>
                     <p
                       className={
-                        this.state.isActive == "profile" ? "backgrund" : ""
+                        this.state.isActive === "profile" ? "backgrund" : ""
                       }
                       onClick={() => this.Activeaccounts("profile")}
                     >
@@ -113,7 +113,7 @@ class Accountdetails extends Component {
                     </p>
                     <p
                       className={
-                        this.state.isActive == "addresses" ? "backgrund" : ""
+                        this.state.isActive === "addresses" ? "backgrund" : ""
                       }
                       onClick={() => this.Activeaccounts("addresses")}
                     >
@@ -121,7 +121,7 @@ class Accountdetails extends Component {
                     </p>
                     <p
                       className={
-                        this.state.isActive == "shoppingcart" ? "backgrund" : ""
+                        this.state.isActive === "shoppingcart" ? "backgrund" : ""
                       }
                       onClick={() => this.Activeaccounts("shoppingcart")}
                     >
@@ -130,7 +130,7 @@ class Accountdetails extends Component {
                     </p>
                     <p
                       className={
-                        this.state.isActive == "wishlist" ? "backgrund" : ""
+                        this.state.isActive === "wishlist" ? "backgrund" : ""
                       }
                       onClick={() => this.Activeaccounts("wishlist")}
                     >
@@ -146,7 +146,7 @@ class Accountdetails extends Component {
                     </p>
                     <p
                       className={
-                        this.state.isActive == "allorders" ? "backgrund" : ""
+                        this.state.isActive === "allorders" ? "backgrund" : ""
                       }
                       onClick={() => this.Activeaccounts("allorders")}
                     >
@@ -176,7 +176,7 @@ class Accountdetails extends Component {
                 </Grid>
                 <Grid item xs={12} sm={12} md={9} lg={9} xl={9}>
                   <div className="pay-index-subhed_da">
-                    {this.state.isActive == "profile" && (
+                    {this.state.isActive === "profile" && (
                       <>
                         <div style={{ PaddingLeft: "30px" }}></div>
                         {/* {c_k_l !== true ? */}
@@ -189,8 +189,8 @@ class Accountdetails extends Component {
                         {/* } */}
                       </>
                     )}
-                    {this.state.isActive == "addresses" && <Addressform />}
-                    {this.state.isActive == "shoppingcart" && (
+                    {this.state.isActive === "addresses" && <Addressform />}
+                    {this.state.isActive ==="shoppingcart" && (
                       <>
                         {this.props.data.length > 0 ? (
                           <CartCard data={this.props.data} />
@@ -203,7 +203,7 @@ class Accountdetails extends Component {
                         )}
                       </>
                     )}
-                    {this.state.isActive == "wishlist" && (
+                    {this.state.isActive === "wishlist" && (
                       <Grid>
                         <Wishlists
                           wishlistdata={this.props.wishlistdata}
@@ -212,7 +212,7 @@ class Accountdetails extends Component {
                         {/* {JSON.stringify(this.props.wishlistdata)} */}
                       </Grid>
                     )}
-                    {this.state.isActive == "allorders" && (
+                    {this.state.isActive === "allorders" && (
                       <>
                         <Allorders
                           allorderdata={this.props.allorderdata}
@@ -271,7 +271,7 @@ class Accountdetails extends Component {
 
             <Grid item xs={12} className="topPadding">
               <div className="pay-index-subhed_da">
-                {this.state.isActive == "profile" && (
+                {this.state.isActive === "profile" && (
                   <>
                     {/* {c_k_l !== true ? */}
                     <Register />
@@ -280,8 +280,8 @@ class Accountdetails extends Component {
                     {/* } */}
                   </>
                 )}
-                {this.state.isActive == "addresses" && <Addressform />}
-                {this.state.isActive == "shoppingcart" && (
+                {this.state.isActive === "addresses" && <Addressform />}
+                {this.state.isActive === "shoppingcart" && (
                   <>
                     {this.props.data.length > 0 ? (
                       <CartCard data={this.props.data} />
@@ -292,7 +292,7 @@ class Accountdetails extends Component {
                     )}
                   </>
                 )}
-                {this.state.isActive == "wishlist" && (
+                {this.state.isActive === "wishlist" && (
                   <Grid style={{ margin: "20px 0px 0px 0px" }}>
                     <Wishlists
                       wishlistdata={this.props.wishlistdata}
@@ -301,7 +301,7 @@ class Accountdetails extends Component {
                     {/* {JSON.stringify(this.props.wishlistdata)} */}
                   </Grid>
                 )}
-                {this.state.isActive == "allorders" && (
+                {this.state.isActive === "allorders" && (
                   <>
                     <Allorders
                       allorderdata={this.props.allorderdata}

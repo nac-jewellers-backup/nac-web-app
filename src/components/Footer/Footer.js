@@ -142,6 +142,15 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   input: {
+    color: " rgba(58, 69, 120, 1)",
+    border: "0px",
+    height: "34px",
+    padding: "0px 3px",
+    fontSize: "12px",
+    borderRadius: "0",
+    textAlign: "center",
+    width: "300px",
+    margin: "10px 0px",
     "&::placeholder": {
       /* Chrome, Firefox, Opera, Safari 10.1+ */ paddingLeft: 5,
       fontSize: 13,
@@ -266,17 +275,6 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "center",
   },
-  input: {
-    color: " rgba(58, 69, 120, 1)",
-    border: "0px",
-    height: "34px",
-    padding: "0px 3px",
-    fontSize: "12px",
-    borderRadius: "0",
-    textAlign: "center",
-    width: "300px",
-    margin: "10px 0px",
-  },
   socialdiv: {
     display: "flex",
     justifyContent: "space-between",
@@ -290,7 +288,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Footer(props) {
-  const silver = props.silver;
+  
   const [state, setState] = React.useState("");
   const [open, setOpen] = React.useState(false);
   const [message, setMessage] = React.useState("");
@@ -391,70 +389,6 @@ export default function Footer(props) {
       ],
     },
   ];
-  const footerData2 = [
-    {
-      url: "#",
-      Title: "Know Your Jewellery",
-    },
-    {
-      url: "/collections",
-      Title: "Collections",
-    },
-    {
-      url: "/",
-      Title: "Diamond Guide",
-    },
-    {
-      url: "/",
-      Title: "Birthstones Guide",
-    },
-    {
-      url: "/",
-      Title: "Jewellery Care",
-    },
-  ];
-  const footerData3 = [
-    {
-      url: "C",
-      Title: "Customer Service",
-    },
-    {
-      url: "",
-      Title: "Track Your Order",
-    },
-    {
-      url: "/return",
-      Title: "30 Day Return",
-    },
-
-    // {
-    //   url:
-    //     "https://www.google.co.in/maps/@13.0457285,80.2325498,3a,75y,281.19h,87.03t/data=!3m7!1e1!3m5!1siBMPPhrps9EAAAQ0H3M5OQ!2e0!3e2!7i13312!8i6656!6m1!1e1",
-    //   Title: "360 ° Store View",
-    // },
-  ];
-  const footerData4 = [
-    {
-      url: "/contactus",
-      Title: "Contact Us",
-    },
-    {
-      url: "",
-      Title: "+91 44 4399 6666 - Customer Care",
-    },
-    {
-      url: "",
-      Title: "care@nacjewellers.com - Email",
-    },
-    {
-      url: "",
-      Title: "+91 95974 57555 - WhatsApp",
-    },
-    {
-      url: "/careersPage",
-      Title: "Careers",
-    },
-  ];
   const MobilefooterData1 = [
     {
       url: "/aboutus",
@@ -537,114 +471,71 @@ export default function Footer(props) {
       ],
     },
   ];
-  const MobilefooterData2 = [
-    {
-      url: "/store",
-      Title: "Store Locator",
-    },
-    {
-      url: "/education",
-      Title: "Education",
-    },
-    {
-      url: "/sitemap",
-      Title: "Sitemap",
-    },
-    {
-      url: "/contactus",
-      Title: "Contact",
-    },
-    {
-      url: "",
-      Title: "Track Order",
-    },
-  ];
-  const MobilefooterData3 = [
-    {
-      url: "/temple-work",
-      Title: "Temple Work",
-    },
-    {
-      url: "/termsconditions",
-      Title: "Terms & Conditions",
-    },
-    {
-      url: "https://www.google.co.in/maps/@13.0457285,80.2325498,3a,75y,281.19h,87.03t/data=!3m7!1e1!3m5!1siBMPPhrps9EAAAQ0H3M5OQ!2e0!3e2!7i13312!8i6656!6m1!1e1",
-      Title: "360 ° Store View",
-    },
-    {
-      url: "/faqs",
-      Title: "FAQ",
-    },
-    {
-      url: "/delivery",
-      Title: "Delivery Info",
-    },
-  ];
-  const status = (response) => {
-    if (
-      (response.status >= 200 && response.status < 300) ||
-      response.status === 409
-    ) {
-      if (response.status === 409) setStateClassname("snackBarError");
-      else setStateClassname("snackBar");
-      return Promise.resolve(response);
-    } else {
-      return Promise.reject(new Error(response.statusText));
-    }
-  };
+  
+  // const status = (response) => {
+  //   if (
+  //     (response.status >= 200 && response.status < 300) ||
+  //     response.status === 409
+  //   ) {
+  //     if (response.status === 409) setStateClassname("snackBarError");
+  //     else setStateClassname("snackBar");
+  //     return Promise.resolve(response);
+  //   } else {
+  //     return Promise.reject(new Error(response.statusText));
+  //   }
+  // };
 
-  const json = (response) => {
-    return response.json();
-  };
+  // const json = (response) => {
+  //   return response.json();
+  // };
   const handleClose = () => {
     setOpen(false);
   };
-  const handleChage = (e) => {
-    setState(e.target.value);
-    var element = document.getElementById("_button");
-    var element_input = document.getElementById("_input");
-    element_input.classList.remove("error");
-    element.classList.remove("error");
-  };
-  const handleEmail = (e) => {
-    var element = document.getElementById("_button");
-    var element_input = document.getElementById("_input");
-    element_input.classList.remove("error");
-    element.classList.remove("error");
-    var emailvld =
-      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    if (!document.getElementById("_input").value.length > 0) {
-      element_input.classList.add("error");
-      element.classList.add("error");
-      return;
-    } else if (
-      !Boolean(document.getElementById("_input").value.match(emailvld))
-    ) {
-      element_input.classList.add("error");
-      element.classList.add("error");
-      return;
-    } else if (
-      document.getElementById("_input").value.length > 0 &&
-      document.getElementById("_input").value.match(emailvld)
-    ) {
-      fetch(`${API_URL}/addemailsubscription`, {
-        method: "post",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: state,
-        }),
-      })
-        .then(status)
-        .then(json)
-        .then(async (val) => {
-          setMessage(val.message);
-          setOpen(true);
-        });
-    }
-  };
+  // const handleChage = (e) => {
+  //   setState(e.target.value);
+  //   var element = document.getElementById("_button");
+  //   var element_input = document.getElementById("_input");
+  //   element_input.classList.remove("error");
+  //   element.classList.remove("error");
+  // };
+  // const handleEmail = (e) => {
+  //   var element = document.getElementById("_button");
+  //   var element_input = document.getElementById("_input");
+  //   element_input.classList.remove("error");
+  //   element.classList.remove("error");
+  //   var emailvld =
+  //     /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  //   if (!document.getElementById("_input").value.length > 0) {
+  //     element_input.classList.add("error");
+  //     element.classList.add("error");
+  //     return;
+  //   } else if (
+  //     !Boolean(document.getElementById("_input").value.match(emailvld))
+  //   ) {
+  //     element_input.classList.add("error");
+  //     element.classList.add("error");
+  //     return;
+  //   } else if (
+  //     document.getElementById("_input").value.length > 0 &&
+  //     document.getElementById("_input").value.match(emailvld)
+  //   ) {
+  //     fetch(`${API_URL}/addemailsubscription`, {
+  //       method: "post",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify({
+  //         email: state,
+  //       }),
+  //     })
+  //       .then(status)
+  //       .then(json)
+  //       .then(async (val) => {
+  //         setMessage(val.message);
+  //         setOpen(true);
+  //       });
+  //   }
+  // };
   return (
     <Grid
       container
@@ -710,6 +601,7 @@ export default function Footer(props) {
                     <div className={classes.social}>
                       <a
                         target="_blank"
+                        el="noopener noreferrer" 
                         href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`}
                       >
                         <img
@@ -731,6 +623,7 @@ export default function Footer(props) {
                       <a
                         style={{ textDecoration: "none" }}
                         target="_blank"
+                        el="noopener noreferrer" 
                         href={`http://www.twitter.com/share?url=${window.location.href}`}
                       >
                         {/* <i
@@ -761,6 +654,7 @@ export default function Footer(props) {
                     <div className={classes.social}>
                       <a
                         target="_blank"
+                        el="noopener noreferrer" 
                         href="https://instagram.com/stylorilove"
                       >
                         <i
@@ -793,6 +687,7 @@ export default function Footer(props) {
                     <div className={classes.social}>
                       <a
                         target="_blank"
+                        el="noopener noreferrer" 
                         href="https://www.youtube.com/c/stylori"
                       >
                         <i
@@ -826,6 +721,7 @@ export default function Footer(props) {
                     <div className={classes.social}>
                       <a
                         target="_blank"
+                        el="noopener noreferrer" 
                         href="https://in.pinterest.com/stylori2015/"
                       >
                         {/* <i
@@ -1059,6 +955,7 @@ export default function Footer(props) {
                 class="valuesallow"
                 style={{ textDecoration: "none" }}
                 target="_blank"
+                el="noopener noreferrer" 
                 href={`http://www.twitter.com/share?url=${window.location.href}`}
               >
                 <i
@@ -1075,6 +972,7 @@ export default function Footer(props) {
               <a
                 class="valuesallow"
                 target="_blank"
+                el="noopener noreferrer" 
                 href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`}
               >
                 <i
@@ -1091,6 +989,7 @@ export default function Footer(props) {
               <a
                 class="valuesallow"
                 target="_blank"
+                el="noopener noreferrer" 
                 href="https://in.pinterest.com/stylori2015/"
               >
                 <i
@@ -1107,6 +1006,7 @@ export default function Footer(props) {
               <a
                 class="valuesallow"
                 target="_blank"
+                el="noopener noreferrer" 
                 href="https://instagram.com/stylorilove"
               >
                 <i
@@ -1123,6 +1023,7 @@ export default function Footer(props) {
               <a
                 class="valuesallow"
                 target="_blank"
+                el="noopener noreferrer" 
                 href="https://www.youtube.com/c/stylori"
               >
                 <i

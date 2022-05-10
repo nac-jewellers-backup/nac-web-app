@@ -16,12 +16,12 @@ const UserRegister = (props) => {
 
 const RegisterComponent = (props) => {
   const { classes } = props;
-  const { values, handlers } = useRegister();
+  // const { values, handlers } = useRegister();
   return (
     <Grid container>
       <Header />
       <Grid spacing={12} container lg={12} style={{ padding: "3%" }}>
-        <Grid item xs={6} lg={6} xs={12}>
+        <Grid item xs={6} lg={6}>
           <Container>
             {/* <div className='pt-sm' style={{ width: "90%", float: "right" }}>
                         <form action="javascript:void(0)" onSubmit={(e) => {
@@ -123,7 +123,7 @@ const RegisterComponent = (props) => {
             </div>
           </Container>{" "}
         </Grid>
-        <Grid item xs={6} lg={6} xs={12}>
+        <Grid item xs={6} lg={6}>
           <div>
             <img
               width="100%"

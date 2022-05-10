@@ -33,6 +33,7 @@ class Slideshow extends React.Component {
     ];
 
     if (url.length > 0) {
+       // eslint-disable-next-line
       var array_split = url.split(/\.(?=[^\.]+$)/);
       const found = extensionVideoLists.find(
         (element) => element.toLowerCase() === array_split[1]

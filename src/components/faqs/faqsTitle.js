@@ -4,9 +4,6 @@ import { NavLink } from "react-router-dom";
 import "./faqs.css";
 
 class FaqsTitle extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     return (

@@ -4,7 +4,7 @@ import { Grid, Typography } from "@material-ui/core";
 import "rc-slider/assets/index.css";
 import Sliders from "./slider";
 export default function DiamondSelect(props) {
-  const [state, setState] = useState({});
+
   const classes = styles();
 
   return (

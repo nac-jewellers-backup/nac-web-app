@@ -17,22 +17,18 @@ const UserLogin = (props) => {
 const LoginComponent = (props) => {
   localStorage.setItem("navfblogin", true);
   let {
-    CartCtx: { allorderdata, wishlistdata, setratingcountsclear },
+    CartCtx: {  wishlistdata },
   } = React.useContext(CartContext);
   let {
     FilterOptionsCtx: {
-      loading,
-      error,
-      dataArr,
-      mappedFilters,
+
       cartcount,
-      loadingfilters,
-      wishlist_count,
+     
     },
     setloadingfilters,
   } = React.useContext(FilterOptionsContext);
   const { classes } = props;
-  const { values, handlers, data } = useLogin(() => props.changePanel(3));
+  // const { values, handlers, data } = useLogin(() => props.changePanel(3));
 
   React.useEffect(() => {
     window.scrollTo(0, 0);

@@ -3,9 +3,7 @@ import Typography from "@material-ui/core/Typography";
 import React from "react";
 import "./faqs.css";
 class FaqsCustomer extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+
 
   render() {
     return (

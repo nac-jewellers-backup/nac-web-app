@@ -54,7 +54,7 @@ class ProductDetails extends React.Component {
                       </span>
                       <hr class="bottom-line"></hr>
                       <>
-                        {valueofproductdetail.namedetail == undefined
+                        {valueofproductdetail.namedetail === undefined
                           ? " "
                           : valueofproductdetail.namedetail.map(
                               (res, Index) => {
@@ -63,7 +63,7 @@ class ProductDetails extends React.Component {
                                     {res.details !== null &&
                                     res.details !== undefined &&
                                     res.details.length === 0 &&
-                                    res.details == 0 ? (
+                                    res.details === 0 ? (
                                       false
                                     ) : (
                                       <span>
@@ -216,7 +216,7 @@ class ProductDetails extends React.Component {
                       </span>
                       <hr class="bottom-line"></hr>
                       <>
-                        {valueofproductdetail.namedetail == undefined
+                        {valueofproductdetail.namedetail === undefined
                           ? " "
                           : valueofproductdetail.namedetail.map(
                               (res, Index) => {
@@ -225,7 +225,7 @@ class ProductDetails extends React.Component {
                                     {res.details !== null &&
                                     res.details !== undefined &&
                                     res.details.length === 0 &&
-                                    res.details == 0 ? (
+                                    res.details === 0 ? (
                                       false
                                     ) : (
                                       <span>
@@ -283,7 +283,7 @@ class ProductDetails extends React.Component {
                                                                   res.details[
                                                                     Index + 1
                                                                   ] ? (
-                                                                  Item == 0 ? (
+                                                                  Item === 0 ? (
                                                                     " "
                                                                   ) : (
                                                                     <>
@@ -603,7 +603,7 @@ class ProductDetails extends React.Component {
                                                           res.details[
                                                             Index + 1
                                                           ] ? (
-                                                          Item == 0 ? (
+                                                          Item === 0 ? (
                                                             " "
                                                           ) : (
                                                             <>

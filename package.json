@@ -125,7 +125,7 @@
     "build:app": "env-cmd -f .env npm run build",
     "test": "node scripts/test",
     "serve": "node server.js",
-    "lint": "eslint src/*.js",
+    "lint": "eslint src/**/*/*.js",
     "hint": "hint http://localhost:8080",
     "generate-report": "lighthouse --chrome-flags=\"--headless --no-sandbox\" http://localhost:8080 --output html --output-path ./report.html",
     "pm2-serve": "pm2 delete nac-ecom || pm2 serve --spa build --name nac-ecom",

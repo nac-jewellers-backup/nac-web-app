@@ -215,7 +215,7 @@ export default function ImageGridList(props) {
                       </Typography>
                     </Grid>
                     <Grid container>
-                      <Grid item item xs={12} alignItems="center">
+                      <Grid item  xs={12} alignItems="center">
                         <Grid container>
                           <Grid item className={classes.testimonialRight}>
                             <Grid item>
@@ -263,12 +263,12 @@ export default function ImageGridList(props) {
               <Grid container justify="center">
                 <Grid
                   item
-                  item
+                  
                   xs={12}
                   md={3}
                   lg={3}
                   sm={6}
-                  xs={12}
+                  
                   alignItems="center"
                 >
                   <Slideshow

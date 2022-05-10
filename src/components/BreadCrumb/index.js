@@ -101,22 +101,22 @@ export default function CustomSeparator(props) {
           )
         }
       }
-      if (tabs == "1") {
+      if (tabs === "1") {
         return (
           data && data.title === "Login/ Register"
         )
       }
-      if (tabs == "2") {
+      if (tabs === "2") {
         return (
           data && data.title === "Address Detail"
         )
       }
-      if (tabs == "3") {
+      if (tabs === "3") {
         return (
           data && data.title === "Order Confirmation"
         )
       }
-      if (tabs == "4") {
+      if (tabs === "4") {
         return (
           data && data.title === "Payment Options"
         )
@@ -136,7 +136,9 @@ export default function CustomSeparator(props) {
                 {window.location.pathname === "/cart" || b[1] === "paymentsuccess" || window.location.pathname === "/checkout" ? <ol class="breadCrumbs">
                   {props.data.map(data => (
                     //  <Link color="inherit" to={{pathname:data.url}} style={{ fontSize: "14px" }} className={props.list}>
-                    <li onClick={() => activetabsclik(data)}>
+                    <li href="/#"
+                    target="_blank"
+                    el="noopener noreferrer"  onClick={() => activetabsclik(data)}>
                       <a className={activetabs(data) ? ` isactives ${props.list}` : props.list}>
                         {data.title}</a>
                     </li>
