@@ -7,7 +7,7 @@ import { CartContext, FilterOptionsContext } from "context";
 import React from "react";
 import { withRouter } from "react-router";
 import Login from "screens/Checkout/loginRegister/login";
-import useLogin from "../../screens/Checkout/loginRegister/useLogin";
+
 import styles from "./style";
 
 const UserLogin = (props) => {
@@ -17,14 +17,10 @@ const UserLogin = (props) => {
 const LoginComponent = (props) => {
   localStorage.setItem("navfblogin", true);
   let {
-    CartCtx: {  wishlistdata },
+    CartCtx: { wishlistdata },
   } = React.useContext(CartContext);
   let {
-    FilterOptionsCtx: {
-
-      cartcount,
-     
-    },
+    FilterOptionsCtx: { cartcount },
     setloadingfilters,
   } = React.useContext(FilterOptionsContext);
   const { classes } = props;
@@ -41,7 +37,8 @@ const LoginComponent = (props) => {
           <Grid item xs={12}>
             <div>
               <img
-               loading="lazy" alt='...'
+                loading="lazy"
+                alt="..."
                 width="100%"
                 height="380px"
                 style={{
@@ -64,7 +61,8 @@ const LoginComponent = (props) => {
           <Grid item xs={12} lg={6}>
             <div>
               <img
-              loading="lazy" alt='...'
+                loading="lazy"
+                alt="..."
                 width="100%"
                 height="600px"
                 style={{

@@ -5,7 +5,7 @@ import AccordionSummary from "@material-ui/core/AccordionSummary";
 import { makeStyles } from "@material-ui/core/styles";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 import { SnackBar } from "components/snackbarAlert/SnackBar";
-import { API_URL } from "config";
+
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Footer.css";
@@ -288,7 +288,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Footer(props) {
-  
   const [state, setState] = React.useState("");
   const [open, setOpen] = React.useState(false);
   const [message, setMessage] = React.useState("");
@@ -471,7 +470,7 @@ export default function Footer(props) {
       ],
     },
   ];
-  
+
   // const status = (response) => {
   //   if (
   //     (response.status >= 200 && response.status < 300) ||
@@ -601,7 +600,7 @@ export default function Footer(props) {
                     <div className={classes.social}>
                       <a
                         target="_blank"
-                        el="noopener noreferrer" 
+                        el="noopener noreferrer"
                         href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`}
                       >
                         <img
@@ -623,7 +622,7 @@ export default function Footer(props) {
                       <a
                         style={{ textDecoration: "none" }}
                         target="_blank"
-                        el="noopener noreferrer" 
+                        el="noopener noreferrer"
                         href={`http://www.twitter.com/share?url=${window.location.href}`}
                       >
                         {/* <i
@@ -654,7 +653,7 @@ export default function Footer(props) {
                     <div className={classes.social}>
                       <a
                         target="_blank"
-                        el="noopener noreferrer" 
+                        el="noopener noreferrer"
                         href="https://instagram.com/stylorilove"
                       >
                         <i
@@ -687,7 +686,7 @@ export default function Footer(props) {
                     <div className={classes.social}>
                       <a
                         target="_blank"
-                        el="noopener noreferrer" 
+                        el="noopener noreferrer"
                         href="https://www.youtube.com/c/stylori"
                       >
                         <i
@@ -721,7 +720,7 @@ export default function Footer(props) {
                     <div className={classes.social}>
                       <a
                         target="_blank"
-                        el="noopener noreferrer" 
+                        el="noopener noreferrer"
                         href="https://in.pinterest.com/stylori2015/"
                       >
                         {/* <i
@@ -955,7 +954,7 @@ export default function Footer(props) {
                 class="valuesallow"
                 style={{ textDecoration: "none" }}
                 target="_blank"
-                el="noopener noreferrer" 
+                el="noopener noreferrer"
                 href={`http://www.twitter.com/share?url=${window.location.href}`}
               >
                 <i
@@ -972,7 +971,7 @@ export default function Footer(props) {
               <a
                 class="valuesallow"
                 target="_blank"
-                el="noopener noreferrer" 
+                el="noopener noreferrer"
                 href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`}
               >
                 <i
@@ -989,7 +988,7 @@ export default function Footer(props) {
               <a
                 class="valuesallow"
                 target="_blank"
-                el="noopener noreferrer" 
+                el="noopener noreferrer"
                 href="https://in.pinterest.com/stylori2015/"
               >
                 <i
@@ -1006,7 +1005,7 @@ export default function Footer(props) {
               <a
                 class="valuesallow"
                 target="_blank"
-                el="noopener noreferrer" 
+                el="noopener noreferrer"
                 href="https://instagram.com/stylorilove"
               >
                 <i
@@ -1023,7 +1022,7 @@ export default function Footer(props) {
               <a
                 class="valuesallow"
                 target="_blank"
-                el="noopener noreferrer" 
+                el="noopener noreferrer"
                 href="https://www.youtube.com/c/stylori"
               >
                 <i

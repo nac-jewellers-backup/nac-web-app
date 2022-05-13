@@ -26,7 +26,6 @@ import Seach from "../../assets/search";
 import StyloriSLogo from "../../assets/silverOpenLink.png";
 import { useDummyRequest } from "../../hooks";
 import { headerDataSilver } from "../../mappers";
-import { createTheme } from "@material-ui/core/styles";
 import "./header.css";
 import HeaderHoversubMenu from "./HoverNavBarListing/HeaderHoversubMenu";
 import { styles } from "./styles";
@@ -422,7 +421,8 @@ class Header extends Component {
                           src={styloriLogo}
                           onLoad={() => this.setState({ load: true })}
                           onLoadedData={() => this.setState({ load: false })}
-                          loading="lazy" alt='...'
+                          loading="lazy"
+                          alt="..."
                         />
                       </div>
                     </Grid>
@@ -770,7 +770,8 @@ class Header extends Component {
                           }}
                           onLoad={() => this.setState({ load: true })}
                           onLoadedData={() => this.setState({ load: false })}
-                          loading="lazy" alt='...'
+                          loading="lazy"
+                          alt="..."
                         />
                       </div>
                     </Grid>
@@ -1109,7 +1110,7 @@ class Header extends Component {
                                               }}
                                               src={val.img}
                                               alt="imag"
-                                              loading="lazy" 
+                                              loading="lazy"
                                             />
                                           </div>
                                         </Grid>

@@ -6,7 +6,7 @@ import Header from "components/SilverComponents/Header";
 import React from "react";
 import Register from "screens/Checkout/loginRegister/register";
 // import useRegister from './useregister';
-import useRegister from "../../screens/Checkout/loginRegister/useregister";
+
 // import SimpleSelect from '../../components/InputComponents/Select/Select'
 import styles from "./style";
 
@@ -132,7 +132,8 @@ const RegisterComponent = (props) => {
                 objectFit: "cover",
                 objectPosition: "40% 5%",
               }}
-              loading="lazy" alt='...'
+              loading="lazy"
+              alt="..."
               src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/login+register/Group+72.png"
             />
           </div>

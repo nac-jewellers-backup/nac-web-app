@@ -1,9 +1,9 @@
 import { Box, FormGroup, Grid } from "@material-ui/core";
 import Backdrop from "@material-ui/core/Backdrop";
-import Checkbox from "@material-ui/core/Checkbox";
+
 import Fade from "@material-ui/core/Fade";
 import Modal from "@material-ui/core/Modal";
-import { makeStyles, withStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import CheckIcon from "@material-ui/icons/Check";
 import CancelIcon from "@material-ui/icons/Close";
 import React from "react";
@@ -90,7 +90,6 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
-
 
 export default function MoreFilters(props) {
   const classes = useStyles();

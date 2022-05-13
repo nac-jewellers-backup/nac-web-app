@@ -4,7 +4,7 @@ import {
     Hidden,
     ExpansionPanel,
   
-    Typography,
+   
     Container, Modal,
 } from '@material-ui/core';
 import React from 'react';
