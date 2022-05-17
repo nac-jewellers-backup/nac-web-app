@@ -829,7 +829,7 @@ export default function Footer(props) {
               <Grid item lg={3} className={"imageClass"}>
                 <img
                   src={
-                    "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_footer/k77ABP.tif%402x.png"
+                    "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/banners/web/k77ABP.tif%402x.webp"
                   }
                   alt="img"
                   loading="lazy"
