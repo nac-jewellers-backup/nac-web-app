@@ -1,43 +1,39 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "8631c84f158baab04263324e7b6e066a",
+    "revision": "fdd8e1c0cee4bb6e05d124099b814e3d",
     "url": "/index.html"
   },
   {
-    "revision": "983bc35715cb067a2cbf",
+    "revision": "1792dbad1a7bc51f605d",
     "url": "/static/css/2.css"
   },
   {
-    "revision": "f534cc6b0cddc25e684f",
+    "revision": "3226c38c2c46d0ff097f",
     "url": "/static/css/4.css"
   },
   {
-    "revision": "9cc3605de90f242808b5",
+    "revision": "85c511b51c3653f0fc93",
     "url": "/static/css/main.css"
   },
   {
-    "revision": "983bc35715cb067a2cbf",
+    "revision": "1792dbad1a7bc51f605d",
     "url": "/static/js/2.js"
   },
   {
-    "revision": "07d2b44e4923ed6ac9fc",
+    "revision": "4b3f547d6b25eb3a2801",
     "url": "/static/js/3.js"
   },
   {
-    "revision": "f534cc6b0cddc25e684f",
+    "revision": "3226c38c2c46d0ff097f",
     "url": "/static/js/4.js"
   },
   {
-    "revision": "9cc3605de90f242808b5",
+    "revision": "85c511b51c3653f0fc93",
     "url": "/static/js/main.js"
   },
   {
     "revision": "265884b522a19a75c49d",
     "url": "/static/js/runtime~main.js"
-  },
-  {
-    "revision": "d1c72e0e788cf2bbc1de53da57599bec",
-    "url": "/static/media/NotoSerif-Regular.ttf"
   },
   {
     "revision": "2b3d63f761a61e5c65a4773359c4eb40",
