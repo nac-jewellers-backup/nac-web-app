@@ -671,406 +671,406 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
               },
             ],
           },
-          {
-            header: "Diamond Details",
-            namedetail:
-              PD &&
-              PD?.productListByProductId &&
-              PD?.productListByProductId?.productDiamondsByProductSku &&
-              PD?.productListByProductId?.productDiamondsByProductSku?.nodes &&
-              PD?.productListByProductId?.productDiamondsByProductSku?.nodes
-                .length > 0
-                ? [
-                    PD?.productListByProductId?.productDiamondsByProductSku
-                      ?.nodes.length > 0 &&
-                    generatedDiamondType(
-                      PD,
-                      PD?.productListByProductId?.productDiamondsByProductSku
-                        ?.nodes,
-                      "stoneWeight"
-                    )[0] !== null
-                      ? {
-                          name: "Total Weight (in Carat)",
-                          details:
-                            PD?.productListByProductId
-                              ?.productDiamondsByProductSku?.nodes &&
-                            PD?.productListByProductId
-                              ?.productDiamondsByProductSku?.nodes?.length >
-                              0 &&
-                            generatedDiamondType(
-                              PD,
-                              PD?.productListByProductId
-                                ?.productDiamondsByProductSku?.nodes,
-                              "stoneWeight"
-                            ),
-                        }
-                      : "",
-                    PD?.productListByProductId?.productDiamondsByProductSku
-                      ?.nodes &&
-                    PD?.productListByProductId?.productDiamondsByProductSku
-                      ?.nodes?.length > 0 &&
-                    generatedDiamondType(
-                      PD,
-                      PD?.productListByProductId?.productDiamondsByProductSku
-                        ?.nodes,
-                      "stoneCount"
-                    )[0] !== null
-                      ? {
-                          name: "Total No of Diamonds",
-                          details:
-                            PD?.productListByProductId
-                              ?.productDiamondsByProductSku?.nodes &&
-                            PD?.productListByProductId
-                              ?.productDiamondsByProductSku?.nodes?.length >
-                              0 &&
-                            generatedDiamondType(
-                              PD,
-                              PD?.productListByProductId
-                                ?.productDiamondsByProductSku?.nodes,
-                              "stoneCount"
-                            ),
-                        }
-                      : "",
-                    PD?.productListByProductId?.productDiamondsByProductSku
-                      ?.nodes &&
-                    PD?.productListByProductId?.productDiamondsByProductSku
-                      ?.nodes?.length > 0 &&
-                    generatedDiamondType(
-                      PD,
-                      PD?.productListByProductId?.productDiamondsByProductSku
-                        ?.nodes,
-                      "diamondClarity"
-                    )[0] !== null
-                      ? {
-                          name: "Clarity",
-                          details:
-                            PD?.productListByProductId
-                              ?.productDiamondsByProductSku?.nodes &&
-                            PD?.productListByProductId
-                              ?.productDiamondsByProductSku?.nodes?.length >
-                              0 &&
-                            generatedDiamondType(
-                              PD,
-                              PD?.productListByProductId
-                                ?.productDiamondsByProductSku?.nodes,
-                              "diamondClarity"
-                            ),
-                        }
-                      : "",
+          // {
+          //   header: "Diamond Details",
+          //   namedetail:
+          //     PD &&
+          //     PD?.productListByProductId &&
+          //     PD?.productListByProductId?.productDiamondsByProductSku &&
+          //     PD?.productListByProductId?.productDiamondsByProductSku?.nodes &&
+          //     PD?.productListByProductId?.productDiamondsByProductSku?.nodes
+          //       .length > 0
+          //       ? [
+          //           PD?.productListByProductId?.productDiamondsByProductSku
+          //             ?.nodes.length > 0 &&
+          //           generatedDiamondType(
+          //             PD,
+          //             PD?.productListByProductId?.productDiamondsByProductSku
+          //               ?.nodes,
+          //             "stoneWeight"
+          //           )[0] !== null
+          //             ? {
+          //                 name: "Total Weight (in Carat)",
+          //                 details:
+          //                   PD?.productListByProductId
+          //                     ?.productDiamondsByProductSku?.nodes &&
+          //                   PD?.productListByProductId
+          //                     ?.productDiamondsByProductSku?.nodes?.length >
+          //                     0 &&
+          //                   generatedDiamondType(
+          //                     PD,
+          //                     PD?.productListByProductId
+          //                       ?.productDiamondsByProductSku?.nodes,
+          //                     "stoneWeight"
+          //                   ),
+          //               }
+          //             : "",
+          //           PD?.productListByProductId?.productDiamondsByProductSku
+          //             ?.nodes &&
+          //           PD?.productListByProductId?.productDiamondsByProductSku
+          //             ?.nodes?.length > 0 &&
+          //           generatedDiamondType(
+          //             PD,
+          //             PD?.productListByProductId?.productDiamondsByProductSku
+          //               ?.nodes,
+          //             "stoneCount"
+          //           )[0] !== null
+          //             ? {
+          //                 name: "Total No of Diamonds",
+          //                 details:
+          //                   PD?.productListByProductId
+          //                     ?.productDiamondsByProductSku?.nodes &&
+          //                   PD?.productListByProductId
+          //                     ?.productDiamondsByProductSku?.nodes?.length >
+          //                     0 &&
+          //                   generatedDiamondType(
+          //                     PD,
+          //                     PD?.productListByProductId
+          //                       ?.productDiamondsByProductSku?.nodes,
+          //                     "stoneCount"
+          //                   ),
+          //               }
+          //             : "",
+          //           PD?.productListByProductId?.productDiamondsByProductSku
+          //             ?.nodes &&
+          //           PD?.productListByProductId?.productDiamondsByProductSku
+          //             ?.nodes?.length > 0 &&
+          //           generatedDiamondType(
+          //             PD,
+          //             PD?.productListByProductId?.productDiamondsByProductSku
+          //               ?.nodes,
+          //             "diamondClarity"
+          //           )[0] !== null
+          //             ? {
+          //                 name: "Clarity",
+          //                 details:
+          //                   PD?.productListByProductId
+          //                     ?.productDiamondsByProductSku?.nodes &&
+          //                   PD?.productListByProductId
+          //                     ?.productDiamondsByProductSku?.nodes?.length >
+          //                     0 &&
+          //                   generatedDiamondType(
+          //                     PD,
+          //                     PD?.productListByProductId
+          //                       ?.productDiamondsByProductSku?.nodes,
+          //                     "diamondClarity"
+          //                   ),
+          //               }
+          //             : "",
 
-                    PD?.productListByProductId?.productDiamondsByProductSku
-                      ?.nodes &&
-                    PD?.productListByProductId?.productDiamondsByProductSku
-                      ?.nodes?.length > 0 &&
-                    generatedDiamondType(
-                      PD,
-                      PD?.productListByProductId?.productDiamondsByProductSku
-                        ?.nodes,
-                      "diamondColour"
-                    )[0] !== null
-                      ? {
-                          name: "Color",
-                          details:
-                            PD?.productListByProductId
-                              ?.productDiamondsByProductSku?.nodes &&
-                            PD?.productListByProductId
-                              ?.productDiamondsByProductSku?.nodes?.length >
-                              0 &&
-                            generatedDiamondType(
-                              PD,
-                              PD?.productListByProductId
-                                ?.productDiamondsByProductSku?.nodes,
-                              "diamondColour"
-                            ),
-                        }
-                      : "",
+          //           PD?.productListByProductId?.productDiamondsByProductSku
+          //             ?.nodes &&
+          //           PD?.productListByProductId?.productDiamondsByProductSku
+          //             ?.nodes?.length > 0 &&
+          //           generatedDiamondType(
+          //             PD,
+          //             PD?.productListByProductId?.productDiamondsByProductSku
+          //               ?.nodes,
+          //             "diamondColour"
+          //           )[0] !== null
+          //             ? {
+          //                 name: "Color",
+          //                 details:
+          //                   PD?.productListByProductId
+          //                     ?.productDiamondsByProductSku?.nodes &&
+          //                   PD?.productListByProductId
+          //                     ?.productDiamondsByProductSku?.nodes?.length >
+          //                     0 &&
+          //                   generatedDiamondType(
+          //                     PD,
+          //                     PD?.productListByProductId
+          //                       ?.productDiamondsByProductSku?.nodes,
+          //                     "diamondColour"
+          //                   ),
+          //               }
+          //             : "",
 
-                    PD?.productListByProductId?.productDiamondsByProductSku
-                      ?.nodes &&
-                    PD?.productListByProductId?.productDiamondsByProductSku
-                      ?.nodes &&
-                    PD?.productListByProductId?.productDiamondsByProductSku
-                      ?.nodes?.length > 0 &&
-                    generatedDiamondType(
-                      PD,
-                      PD?.productListByProductId?.productDiamondsByProductSku
-                        ?.nodes,
-                      "diamondSettings"
-                    )[0] !== null
-                      ? {
-                          name: "Setting Type",
-                          details:
-                            PD?.productListByProductId
-                              ?.productDiamondsByProductSku?.nodes &&
-                            PD?.productListByProductId
-                              ?.productDiamondsByProductSku?.nodes?.length >
-                              0 &&
-                            generatedDiamondType(
-                              PD,
-                              PD?.productListByProductId
-                                ?.productDiamondsByProductSku?.nodes,
-                              "diamondSettings"
-                            ),
-                        }
-                      : "",
-                    PD?.productListByProductId?.productDiamondsByProductSku
-                      ?.nodes &&
-                    PD?.productListByProductId?.productDiamondsByProductSku
-                      ?.nodes?.length > 0 &&
-                    generatedDiamondType(
-                      PD,
-                      PD?.productListByProductId?.productDiamondsByProductSku
-                        ?.nodes,
-                      "diamondShape"
-                    )[0] !== null
-                      ? {
-                          name: "Shape",
-                          details:
-                            PD?.productListByProductId
-                              ?.productDiamondsByProductSku?.nodes &&
-                            PD?.productListByProductId
-                              ?.productDiamondsByProductSku?.nodes?.length >
-                              0 &&
-                            generatedDiamondType(
-                              PD,
-                              PD?.productListByProductId
-                                ?.productDiamondsByProductSku?.nodes,
-                              "diamondShape"
-                            ),
-                        }
-                      : "",
-                    PD?.productListByProductId?.productDiamondsByProductSku
-                      ?.nodes[0]?.subItemName
-                      ? {
-                          name: "Diamond Name",
-                          details:
-                            PD?.productListByProductId
-                              ?.productDiamondsByProductSku?.nodes[0]?.itemName,
-                        }
-                      : "",
-                    PD?.productListByProductId?.productDiamondsByProductSku
-                      ?.nodes[0]?.description
-                      ? {
-                          name: "Description",
-                          details:
-                            PD?.productListByProductId
-                              ?.productDiamondsByProductSku?.nodes[0]
-                              ?.description,
-                        }
-                      : "",
-                    PD?.productListByProductId?.productDiamondsByProductSku
-                      ?.nodes[0]?.stoneCount
-                      ? {
-                          name: "Stone Count",
-                          details:
-                            PD?.productListByProductId
-                              ?.productDiamondsByProductSku?.nodes[0]
-                              ?.stoneCount,
-                        }
-                      : "",
+          //           PD?.productListByProductId?.productDiamondsByProductSku
+          //             ?.nodes &&
+          //           PD?.productListByProductId?.productDiamondsByProductSku
+          //             ?.nodes &&
+          //           PD?.productListByProductId?.productDiamondsByProductSku
+          //             ?.nodes?.length > 0 &&
+          //           generatedDiamondType(
+          //             PD,
+          //             PD?.productListByProductId?.productDiamondsByProductSku
+          //               ?.nodes,
+          //             "diamondSettings"
+          //           )[0] !== null
+          //             ? {
+          //                 name: "Setting Type",
+          //                 details:
+          //                   PD?.productListByProductId
+          //                     ?.productDiamondsByProductSku?.nodes &&
+          //                   PD?.productListByProductId
+          //                     ?.productDiamondsByProductSku?.nodes?.length >
+          //                     0 &&
+          //                   generatedDiamondType(
+          //                     PD,
+          //                     PD?.productListByProductId
+          //                       ?.productDiamondsByProductSku?.nodes,
+          //                     "diamondSettings"
+          //                   ),
+          //               }
+          //             : "",
+          //           PD?.productListByProductId?.productDiamondsByProductSku
+          //             ?.nodes &&
+          //           PD?.productListByProductId?.productDiamondsByProductSku
+          //             ?.nodes?.length > 0 &&
+          //           generatedDiamondType(
+          //             PD,
+          //             PD?.productListByProductId?.productDiamondsByProductSku
+          //               ?.nodes,
+          //             "diamondShape"
+          //           )[0] !== null
+          //             ? {
+          //                 name: "Shape",
+          //                 details:
+          //                   PD?.productListByProductId
+          //                     ?.productDiamondsByProductSku?.nodes &&
+          //                   PD?.productListByProductId
+          //                     ?.productDiamondsByProductSku?.nodes?.length >
+          //                     0 &&
+          //                   generatedDiamondType(
+          //                     PD,
+          //                     PD?.productListByProductId
+          //                       ?.productDiamondsByProductSku?.nodes,
+          //                     "diamondShape"
+          //                   ),
+          //               }
+          //             : "",
+          //           PD?.productListByProductId?.productDiamondsByProductSku
+          //             ?.nodes[0]?.subItemName
+          //             ? {
+          //                 name: "Diamond Name",
+          //                 details:
+          //                   PD?.productListByProductId
+          //                     ?.productDiamondsByProductSku?.nodes[0]?.itemName,
+          //               }
+          //             : "",
+          //           PD?.productListByProductId?.productDiamondsByProductSku
+          //             ?.nodes[0]?.description
+          //             ? {
+          //                 name: "Description",
+          //                 details:
+          //                   PD?.productListByProductId
+          //                     ?.productDiamondsByProductSku?.nodes[0]
+          //                     ?.description,
+          //               }
+          //             : "",
+          //           PD?.productListByProductId?.productDiamondsByProductSku
+          //             ?.nodes[0]?.stoneCount
+          //             ? {
+          //                 name: "Stone Count",
+          //                 details:
+          //                   PD?.productListByProductId
+          //                     ?.productDiamondsByProductSku?.nodes[0]
+          //                     ?.stoneCount,
+          //               }
+          //             : "",
 
-                    PD?.productListByProductId?.productDiamondsByProductSku
-                      ?.nodes[0]?.stoneWeight
-                      ? {
-                          name: "Stone Weight",
-                          details:
-                            PD?.productListByProductId
-                              ?.productDiamondsByProductSku?.nodes[0]
-                              ?.stoneWeight,
-                        }
-                      : "",
-                  ]
-                : [],
-          },
-          {
-            header: "Gemstone Details",
-            namedetail:
-              PD &&
-              PD?.productListByProductId &&
-              PD?.productListByProductId?.productGemstonesByProductSku &&
-              PD?.productListByProductId?.productGemstonesByProductSku?.nodes &&
-              PD?.productListByProductId?.productGemstonesByProductSku?.nodes
-                ?.length > 0
-                ? [
-                    PD?.productListByProductId?.productGemstonesByProductSku
-                      ?.nodes &&
-                    PD?.productListByProductId?.productGemstonesByProductSku
-                      ?.nodes?.length === 0
-                      ? null
-                      : gemstoneType(
-                          PD?.productListByProductId
-                            ?.productGemstonesByProductSku?.nodes,
-                          "stoneCount"
-                        )[0] !== null
-                      ? {
-                          name: "Total No of Stones",
-                          details:
-                            PD?.productListByProductId
-                              ?.productGemstonesByProductSku?.nodes &&
-                            PD?.productListByProductId
-                              ?.productGemstonesByProductSku?.nodes?.length ===
-                              0
-                              ? null
-                              : gemstoneType(
-                                  PD?.productListByProductId
-                                    ?.productGemstonesByProductSku?.nodes,
-                                  "stoneCount"
-                                ),
-                        }
-                      : "",
-                    gemstoneType(
-                      PD?.productListByProductId?.productGemstonesByProductSku
-                        ?.nodes,
-                      "gemstoneType"
-                    )[0] !== null
-                      ? {
-                          name: "Stone Type",
-                          details:
-                            PD?.productListByProductId
-                              ?.productGemstonesByProductSku?.nodes &&
-                            PD?.productListByProductId
-                              ?.productGemstonesByProductSku?.nodes?.length ===
-                              0
-                              ? null
-                              : gemstoneType(
-                                  PD?.productListByProductId
-                                    ?.productGemstonesByProductSku?.nodes,
-                                  "gemstoneType"
-                                ),
-                        }
-                      : "",
-                    PD?.productListByProductId?.productGemstonesByProductSku
-                      ?.nodes &&
-                    PD?.productListByProductId?.productGemstonesByProductSku
-                      ?.nodes?.length === 0
-                      ? null
-                      : gemstoneType(
-                          PD?.productListByProductId
-                            ?.productGemstonesByProductSku?.nodes,
-                          "gemstoneShape"
-                        )[0] !== null
-                      ? {
-                          name: "Shape",
-                          details:
-                            PD?.productListByProductId
-                              ?.productGemstonesByProductSku?.nodes &&
-                            PD?.productListByProductId
-                              ?.productGemstonesByProductSku?.nodes?.length ===
-                              0
-                              ? null
-                              : gemstoneType(
-                                  PD?.productListByProductId
-                                    ?.productGemstonesByProductSku?.nodes,
-                                  "gemstoneShape"
-                                ),
-                        }
-                      : "",
+          //           PD?.productListByProductId?.productDiamondsByProductSku
+          //             ?.nodes[0]?.stoneWeight
+          //             ? {
+          //                 name: "Stone Weight",
+          //                 details:
+          //                   PD?.productListByProductId
+          //                     ?.productDiamondsByProductSku?.nodes[0]
+          //                     ?.stoneWeight,
+          //               }
+          //             : "",
+          //         ]
+          //       : [],
+          // },
+          // {
+          //   header: "Gemstone Details",
+          //   namedetail:
+          //     PD &&
+          //     PD?.productListByProductId &&
+          //     PD?.productListByProductId?.productGemstonesByProductSku &&
+          //     PD?.productListByProductId?.productGemstonesByProductSku?.nodes &&
+          //     PD?.productListByProductId?.productGemstonesByProductSku?.nodes
+          //       ?.length > 0
+          //       ? [
+          //           PD?.productListByProductId?.productGemstonesByProductSku
+          //             ?.nodes &&
+          //           PD?.productListByProductId?.productGemstonesByProductSku
+          //             ?.nodes?.length === 0
+          //             ? null
+          //             : gemstoneType(
+          //                 PD?.productListByProductId
+          //                   ?.productGemstonesByProductSku?.nodes,
+          //                 "stoneCount"
+          //               )[0] !== null
+          //             ? {
+          //                 name: "Total No of Stones",
+          //                 details:
+          //                   PD?.productListByProductId
+          //                     ?.productGemstonesByProductSku?.nodes &&
+          //                   PD?.productListByProductId
+          //                     ?.productGemstonesByProductSku?.nodes?.length ===
+          //                     0
+          //                     ? null
+          //                     : gemstoneType(
+          //                         PD?.productListByProductId
+          //                           ?.productGemstonesByProductSku?.nodes,
+          //                         "stoneCount"
+          //                       ),
+          //               }
+          //             : "",
+          //           gemstoneType(
+          //             PD?.productListByProductId?.productGemstonesByProductSku
+          //               ?.nodes,
+          //             "gemstoneType"
+          //           )[0] !== null
+          //             ? {
+          //                 name: "Stone Type",
+          //                 details:
+          //                   PD?.productListByProductId
+          //                     ?.productGemstonesByProductSku?.nodes &&
+          //                   PD?.productListByProductId
+          //                     ?.productGemstonesByProductSku?.nodes?.length ===
+          //                     0
+          //                     ? null
+          //                     : gemstoneType(
+          //                         PD?.productListByProductId
+          //                           ?.productGemstonesByProductSku?.nodes,
+          //                         "gemstoneType"
+          //                       ),
+          //               }
+          //             : "",
+          //           PD?.productListByProductId?.productGemstonesByProductSku
+          //             ?.nodes &&
+          //           PD?.productListByProductId?.productGemstonesByProductSku
+          //             ?.nodes?.length === 0
+          //             ? null
+          //             : gemstoneType(
+          //                 PD?.productListByProductId
+          //                   ?.productGemstonesByProductSku?.nodes,
+          //                 "gemstoneShape"
+          //               )[0] !== null
+          //             ? {
+          //                 name: "Shape",
+          //                 details:
+          //                   PD?.productListByProductId
+          //                     ?.productGemstonesByProductSku?.nodes &&
+          //                   PD?.productListByProductId
+          //                     ?.productGemstonesByProductSku?.nodes?.length ===
+          //                     0
+          //                     ? null
+          //                     : gemstoneType(
+          //                         PD?.productListByProductId
+          //                           ?.productGemstonesByProductSku?.nodes,
+          //                         "gemstoneShape"
+          //                       ),
+          //               }
+          //             : "",
 
-                    PD?.productListByProductId?.productGemstonesByProductSku
-                      ?.nodes &&
-                    PD?.productListByProductId?.productGemstonesByProductSku
-                      ?.nodes?.length === 0
-                      ? null
-                      : gemstoneType(
-                          PD?.productListByProductId
-                            ?.productGemstonesByProductSku?.nodes,
-                          "gemstoneSize"
-                        )[0] !== null
-                      ? {
-                          name: "Size (in mm)",
-                          details:
-                            PD?.productListByProductId
-                              ?.productGemstonesByProductSku?.nodes &&
-                            PD?.productListByProductId
-                              ?.productGemstonesByProductSku?.nodes?.length ===
-                              0
-                              ? null
-                              : gemstoneType(
-                                  PD?.productListByProductId
-                                    ?.productGemstonesByProductSku?.nodes,
-                                  "gemstoneSize"
-                                ),
-                        }
-                      : "",
+          //           PD?.productListByProductId?.productGemstonesByProductSku
+          //             ?.nodes &&
+          //           PD?.productListByProductId?.productGemstonesByProductSku
+          //             ?.nodes?.length === 0
+          //             ? null
+          //             : gemstoneType(
+          //                 PD?.productListByProductId
+          //                   ?.productGemstonesByProductSku?.nodes,
+          //                 "gemstoneSize"
+          //               )[0] !== null
+          //             ? {
+          //                 name: "Size (in mm)",
+          //                 details:
+          //                   PD?.productListByProductId
+          //                     ?.productGemstonesByProductSku?.nodes &&
+          //                   PD?.productListByProductId
+          //                     ?.productGemstonesByProductSku?.nodes?.length ===
+          //                     0
+          //                     ? null
+          //                     : gemstoneType(
+          //                         PD?.productListByProductId
+          //                           ?.productGemstonesByProductSku?.nodes,
+          //                         "gemstoneSize"
+          //                       ),
+          //               }
+          //             : "",
 
-                    PD?.productListByProductId?.productGemstonesByProductSku
-                      ?.nodes &&
-                    PD?.productListByProductId?.productGemstonesByProductSku
-                      ?.nodes?.length === 0
-                      ? null
-                      : gemstoneType(
-                          PD?.productListByProductId
-                            ?.productGemstonesByProductSku?.nodes,
-                          "stoneWeight"
-                        )[0] !== null
-                      ? {
-                          name: "Weight (Carat)",
-                          details:
-                            PD?.productListByProductId
-                              ?.productGemstonesByProductSku?.nodes &&
-                            PD?.productListByProductId
-                              ?.productGemstonesByProductSku?.nodes?.length ===
-                              0
-                              ? null
-                              : gemstoneType(
-                                  PD?.productListByProductId
-                                    ?.productGemstonesByProductSku?.nodes,
-                                  "stoneWeight"
-                                ),
-                        }
-                      : "",
-                    PD?.productListByProductId?.productGemstonesByProductSku
-                      ?.nodes &&
-                    PD?.productListByProductId?.productGemstonesByProductSku
-                      ?.nodes?.length === 0
-                      ? null
-                      : gemstoneType(
-                          PD?.productListByProductId
-                            ?.productGemstonesByProductSku?.nodes,
-                          "gemstoneSetting"
-                        )[0] !== null
-                      ? {
-                          name: "Setting",
-                          details:
-                            PD?.productListByProductId
-                              ?.productGemstonesByProductSku?.nodes &&
-                            PD?.productListByProductId
-                              ?.productGemstonesByProductSku?.nodes?.length ===
-                              0
-                              ? null
-                              : gemstoneType(
-                                  PD?.productListByProductId
-                                    ?.productGemstonesByProductSku?.nodes,
-                                  "gemstoneSetting"
-                                ),
-                        }
-                      : "",
-                    PD?.productListByProductId?.productGemstonesByProductSku
-                      ?.nodes[0]?.subItemName
-                      ? {
-                          name: "Gemstone Name",
-                          details: gemstoneType(
-                            PD?.productListByProductId
-                              ?.productGemstonesByProductSku?.nodes,
-                            "subItemName"
-                          ),
-                        }
-                      : "",
+          //           PD?.productListByProductId?.productGemstonesByProductSku
+          //             ?.nodes &&
+          //           PD?.productListByProductId?.productGemstonesByProductSku
+          //             ?.nodes?.length === 0
+          //             ? null
+          //             : gemstoneType(
+          //                 PD?.productListByProductId
+          //                   ?.productGemstonesByProductSku?.nodes,
+          //                 "stoneWeight"
+          //               )[0] !== null
+          //             ? {
+          //                 name: "Weight (Carat)",
+          //                 details:
+          //                   PD?.productListByProductId
+          //                     ?.productGemstonesByProductSku?.nodes &&
+          //                   PD?.productListByProductId
+          //                     ?.productGemstonesByProductSku?.nodes?.length ===
+          //                     0
+          //                     ? null
+          //                     : gemstoneType(
+          //                         PD?.productListByProductId
+          //                           ?.productGemstonesByProductSku?.nodes,
+          //                         "stoneWeight"
+          //                       ),
+          //               }
+          //             : "",
+          //           PD?.productListByProductId?.productGemstonesByProductSku
+          //             ?.nodes &&
+          //           PD?.productListByProductId?.productGemstonesByProductSku
+          //             ?.nodes?.length === 0
+          //             ? null
+          //             : gemstoneType(
+          //                 PD?.productListByProductId
+          //                   ?.productGemstonesByProductSku?.nodes,
+          //                 "gemstoneSetting"
+          //               )[0] !== null
+          //             ? {
+          //                 name: "Setting",
+          //                 details:
+          //                   PD?.productListByProductId
+          //                     ?.productGemstonesByProductSku?.nodes &&
+          //                   PD?.productListByProductId
+          //                     ?.productGemstonesByProductSku?.nodes?.length ===
+          //                     0
+          //                     ? null
+          //                     : gemstoneType(
+          //                         PD?.productListByProductId
+          //                           ?.productGemstonesByProductSku?.nodes,
+          //                         "gemstoneSetting"
+          //                       ),
+          //               }
+          //             : "",
+          //           PD?.productListByProductId?.productGemstonesByProductSku
+          //             ?.nodes[0]?.subItemName
+          //             ? {
+          //                 name: "Gemstone Name",
+          //                 details: gemstoneType(
+          //                   PD?.productListByProductId
+          //                     ?.productGemstonesByProductSku?.nodes,
+          //                   "subItemName"
+          //                 ),
+          //               }
+          //             : "",
 
-                    PD?.productListByProductId?.productGemstonesByProductSku
-                      ?.nodes[0]?.description
-                      ? {
-                          name: "Description",
-                          details: gemstoneType(
-                            PD?.productListByProductId
-                              ?.productGemstonesByProductSku?.nodes,
-                            "description"
-                          ),
-                        }
-                      : "",
-                  ]
-                : [],
-          },
+          //           PD?.productListByProductId?.productGemstonesByProductSku
+          //             ?.nodes[0]?.description
+          //             ? {
+          //                 name: "Description",
+          //                 details: gemstoneType(
+          //                   PD?.productListByProductId
+          //                     ?.productGemstonesByProductSku?.nodes,
+          //                   "description"
+          //                 ),
+          //               }
+          //             : "",
+          //         ]
+          //       : [],
+          // },
         ],
         productsDetailsonly: [
           {
@@ -1310,402 +1310,402 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
               },
             ],
           },
-          {
-            header: "Diamond Details",
-            namedetail:
-              PD &&
-              PD?.productListByProductId &&
-              PD?.productListByProductId?.productDiamondsByProductSku &&
-              PD?.productListByProductId?.productDiamondsByProductSku?.nodes &&
-              PD?.productListByProductId?.productDiamondsByProductSku?.nodes
-                ?.length > 0
-                ? [
-                    PD?.productListByProductId?.productDiamondsByProductSku
-                      ?.nodes?.length > 0 &&
-                    generatedDiamondType(
-                      PD,
-                      PD?.productListByProductId?.productDiamondsByProductSku
-                        ?.nodes,
-                      "stoneWeight"
-                    )[0] !== null
-                      ? {
-                          name: "Total Weight (in Carat)",
-                          details:
-                            PD?.productListByProductId
-                              ?.productDiamondsByProductSku?.nodes &&
-                            PD?.productListByProductId
-                              ?.productDiamondsByProductSku?.nodes?.length >
-                              0 &&
-                            generatedDiamondType(
-                              PD,
-                              PD?.productListByProductId
-                                ?.productDiamondsByProductSku?.nodes,
-                              "stoneWeight"
-                            ),
-                        }
-                      : "",
-                    PD?.productListByProductId?.productDiamondsByProductSku
-                      ?.nodes &&
-                    PD?.productListByProductId?.productDiamondsByProductSku
-                      ?.nodes?.length > 0 &&
-                    generatedDiamondType(
-                      PD,
-                      PD?.productListByProductId?.productDiamondsByProductSku
-                        ?.nodes,
-                      "stoneCount"
-                    )[0] !== null
-                      ? {
-                          name: "Total No of Diamonds",
-                          details:
-                            PD?.productListByProductId
-                              ?.productDiamondsByProductSku?.nodes &&
-                            PD?.productListByProductId
-                              ?.productDiamondsByProductSku?.nodes?.length >
-                              0 &&
-                            generatedDiamondType(
-                              PD,
-                              PD?.productListByProductId
-                                ?.productDiamondsByProductSku?.nodes,
-                              "stoneCount"
-                            ),
-                        }
-                      : "",
-                    PD?.productListByProductId?.productDiamondsByProductSku
-                      ?.nodes &&
-                    PD?.productListByProductId?.productDiamondsByProductSku
-                      ?.nodes?.length > 0 &&
-                    generatedDiamondType(
-                      PD,
-                      PD?.productListByProductId?.productDiamondsByProductSku
-                        ?.nodes,
-                      "diamondClarity"
-                    )[0] !== null
-                      ? {
-                          name: "Clarity",
-                          details:
-                            PD.productListByProductId
-                              .productDiamondsByProductSku.nodes &&
-                            PD.productListByProductId
-                              .productDiamondsByProductSku.nodes.length > 0 &&
-                            generatedDiamondType(
-                              PD,
-                              PD.productListByProductId
-                                .productDiamondsByProductSku.nodes,
-                              "diamondClarity"
-                            ),
-                        }
-                      : "",
+          // {
+          //   header: "Diamond Details",
+          //   namedetail:
+          //     PD &&
+          //     PD?.productListByProductId &&
+          //     PD?.productListByProductId?.productDiamondsByProductSku &&
+          //     PD?.productListByProductId?.productDiamondsByProductSku?.nodes &&
+          //     PD?.productListByProductId?.productDiamondsByProductSku?.nodes
+          //       ?.length > 0
+          //       ? [
+          //           PD?.productListByProductId?.productDiamondsByProductSku
+          //             ?.nodes?.length > 0 &&
+          //           generatedDiamondType(
+          //             PD,
+          //             PD?.productListByProductId?.productDiamondsByProductSku
+          //               ?.nodes,
+          //             "stoneWeight"
+          //           )[0] !== null
+          //             ? {
+          //                 name: "Total Weight (in Carat)",
+          //                 details:
+          //                   PD?.productListByProductId
+          //                     ?.productDiamondsByProductSku?.nodes &&
+          //                   PD?.productListByProductId
+          //                     ?.productDiamondsByProductSku?.nodes?.length >
+          //                     0 &&
+          //                   generatedDiamondType(
+          //                     PD,
+          //                     PD?.productListByProductId
+          //                       ?.productDiamondsByProductSku?.nodes,
+          //                     "stoneWeight"
+          //                   ),
+          //               }
+          //             : "",
+          //           PD?.productListByProductId?.productDiamondsByProductSku
+          //             ?.nodes &&
+          //           PD?.productListByProductId?.productDiamondsByProductSku
+          //             ?.nodes?.length > 0 &&
+          //           generatedDiamondType(
+          //             PD,
+          //             PD?.productListByProductId?.productDiamondsByProductSku
+          //               ?.nodes,
+          //             "stoneCount"
+          //           )[0] !== null
+          //             ? {
+          //                 name: "Total No of Diamonds",
+          //                 details:
+          //                   PD?.productListByProductId
+          //                     ?.productDiamondsByProductSku?.nodes &&
+          //                   PD?.productListByProductId
+          //                     ?.productDiamondsByProductSku?.nodes?.length >
+          //                     0 &&
+          //                   generatedDiamondType(
+          //                     PD,
+          //                     PD?.productListByProductId
+          //                       ?.productDiamondsByProductSku?.nodes,
+          //                     "stoneCount"
+          //                   ),
+          //               }
+          //             : "",
+          //           PD?.productListByProductId?.productDiamondsByProductSku
+          //             ?.nodes &&
+          //           PD?.productListByProductId?.productDiamondsByProductSku
+          //             ?.nodes?.length > 0 &&
+          //           generatedDiamondType(
+          //             PD,
+          //             PD?.productListByProductId?.productDiamondsByProductSku
+          //               ?.nodes,
+          //             "diamondClarity"
+          //           )[0] !== null
+          //             ? {
+          //                 name: "Clarity",
+          //                 details:
+          //                   PD.productListByProductId
+          //                     .productDiamondsByProductSku.nodes &&
+          //                   PD.productListByProductId
+          //                     .productDiamondsByProductSku.nodes.length > 0 &&
+          //                   generatedDiamondType(
+          //                     PD,
+          //                     PD.productListByProductId
+          //                       .productDiamondsByProductSku.nodes,
+          //                     "diamondClarity"
+          //                   ),
+          //               }
+          //             : "",
 
-                    PD.productListByProductId.productDiamondsByProductSku
-                      .nodes &&
-                    PD.productListByProductId.productDiamondsByProductSku.nodes
-                      .length > 0 &&
-                    generatedDiamondType(
-                      PD,
-                      PD.productListByProductId.productDiamondsByProductSku
-                        .nodes,
-                      "diamondColour"
-                    )[0] !== null
-                      ? {
-                          name: "Color",
-                          details:
-                            PD.productListByProductId
-                              .productDiamondsByProductSku.nodes &&
-                            PD.productListByProductId
-                              .productDiamondsByProductSku.nodes.length > 0 &&
-                            generatedDiamondType(
-                              PD,
-                              PD.productListByProductId
-                                .productDiamondsByProductSku.nodes,
-                              "diamondColour"
-                            ),
-                        }
-                      : "",
+          //           PD.productListByProductId.productDiamondsByProductSku
+          //             .nodes &&
+          //           PD.productListByProductId.productDiamondsByProductSku.nodes
+          //             .length > 0 &&
+          //           generatedDiamondType(
+          //             PD,
+          //             PD.productListByProductId.productDiamondsByProductSku
+          //               .nodes,
+          //             "diamondColour"
+          //           )[0] !== null
+          //             ? {
+          //                 name: "Color",
+          //                 details:
+          //                   PD.productListByProductId
+          //                     .productDiamondsByProductSku.nodes &&
+          //                   PD.productListByProductId
+          //                     .productDiamondsByProductSku.nodes.length > 0 &&
+          //                   generatedDiamondType(
+          //                     PD,
+          //                     PD.productListByProductId
+          //                       .productDiamondsByProductSku.nodes,
+          //                     "diamondColour"
+          //                   ),
+          //               }
+          //             : "",
 
-                    PD.productListByProductId.productDiamondsByProductSku
-                      .nodes &&
-                    PD.productListByProductId.productDiamondsByProductSku
-                      .nodes &&
-                    PD.productListByProductId.productDiamondsByProductSku.nodes
-                      .length > 0 &&
-                    generatedDiamondType(
-                      PD,
-                      PD.productListByProductId.productDiamondsByProductSku
-                        .nodes,
-                      "diamondSettings"
-                    )[0] !== null
-                      ? {
-                          name: "Setting Type",
-                          details:
-                            PD.productListByProductId
-                              .productDiamondsByProductSku.nodes &&
-                            PD.productListByProductId
-                              .productDiamondsByProductSku.nodes.length > 0 &&
-                            generatedDiamondType(
-                              PD,
-                              PD.productListByProductId
-                                .productDiamondsByProductSku.nodes,
-                              "diamondSettings"
-                            ),
-                        }
-                      : "",
-                    PD.productListByProductId.productDiamondsByProductSku
-                      .nodes &&
-                    PD.productListByProductId.productDiamondsByProductSku.nodes
-                      .length > 0 &&
-                    generatedDiamondType(
-                      PD,
-                      PD.productListByProductId.productDiamondsByProductSku
-                        .nodes,
-                      "diamondShape"
-                    )[0] !== null
-                      ? {
-                          name: "Shape",
-                          details:
-                            PD.productListByProductId
-                              .productDiamondsByProductSku.nodes &&
-                            PD.productListByProductId
-                              .productDiamondsByProductSku.nodes.length > 0 &&
-                            generatedDiamondType(
-                              PD,
-                              PD.productListByProductId
-                                .productDiamondsByProductSku.nodes,
-                              "diamondShape"
-                            ),
-                        }
-                      : "",
-                    PD?.productListByProductId?.productDiamondsByProductSku
-                      ?.nodes[0]?.subItemName
-                      ? {
-                          name: "Diamond Name",
-                          details:
-                            PD?.productListByProductId
-                              ?.productDiamondsByProductSku?.nodes[0]?.itemName,
-                        }
-                      : "",
-                    PD?.productListByProductId?.productDiamondsByProductSku
-                      ?.nodes[0]?.description
-                      ? {
-                          name: "Description",
-                          details:
-                            PD?.productListByProductId
-                              ?.productDiamondsByProductSku?.nodes[0]
-                              ?.description,
-                        }
-                      : "",
-                    PD?.productListByProductId?.productDiamondsByProductSku
-                      ?.nodes[0]?.stoneCount
-                      ? {
-                          name: "Stone Count",
-                          details:
-                            PD?.productListByProductId
-                              ?.productDiamondsByProductSku?.nodes[0]
-                              ?.stoneCount,
-                        }
-                      : "",
+          //           PD.productListByProductId.productDiamondsByProductSku
+          //             .nodes &&
+          //           PD.productListByProductId.productDiamondsByProductSku
+          //             .nodes &&
+          //           PD.productListByProductId.productDiamondsByProductSku.nodes
+          //             .length > 0 &&
+          //           generatedDiamondType(
+          //             PD,
+          //             PD.productListByProductId.productDiamondsByProductSku
+          //               .nodes,
+          //             "diamondSettings"
+          //           )[0] !== null
+          //             ? {
+          //                 name: "Setting Type",
+          //                 details:
+          //                   PD.productListByProductId
+          //                     .productDiamondsByProductSku.nodes &&
+          //                   PD.productListByProductId
+          //                     .productDiamondsByProductSku.nodes.length > 0 &&
+          //                   generatedDiamondType(
+          //                     PD,
+          //                     PD.productListByProductId
+          //                       .productDiamondsByProductSku.nodes,
+          //                     "diamondSettings"
+          //                   ),
+          //               }
+          //             : "",
+          //           PD.productListByProductId.productDiamondsByProductSku
+          //             .nodes &&
+          //           PD.productListByProductId.productDiamondsByProductSku.nodes
+          //             .length > 0 &&
+          //           generatedDiamondType(
+          //             PD,
+          //             PD.productListByProductId.productDiamondsByProductSku
+          //               .nodes,
+          //             "diamondShape"
+          //           )[0] !== null
+          //             ? {
+          //                 name: "Shape",
+          //                 details:
+          //                   PD.productListByProductId
+          //                     .productDiamondsByProductSku.nodes &&
+          //                   PD.productListByProductId
+          //                     .productDiamondsByProductSku.nodes.length > 0 &&
+          //                   generatedDiamondType(
+          //                     PD,
+          //                     PD.productListByProductId
+          //                       .productDiamondsByProductSku.nodes,
+          //                     "diamondShape"
+          //                   ),
+          //               }
+          //             : "",
+          //           PD?.productListByProductId?.productDiamondsByProductSku
+          //             ?.nodes[0]?.subItemName
+          //             ? {
+          //                 name: "Diamond Name",
+          //                 details:
+          //                   PD?.productListByProductId
+          //                     ?.productDiamondsByProductSku?.nodes[0]?.itemName,
+          //               }
+          //             : "",
+          //           PD?.productListByProductId?.productDiamondsByProductSku
+          //             ?.nodes[0]?.description
+          //             ? {
+          //                 name: "Description",
+          //                 details:
+          //                   PD?.productListByProductId
+          //                     ?.productDiamondsByProductSku?.nodes[0]
+          //                     ?.description,
+          //               }
+          //             : "",
+          //           PD?.productListByProductId?.productDiamondsByProductSku
+          //             ?.nodes[0]?.stoneCount
+          //             ? {
+          //                 name: "Stone Count",
+          //                 details:
+          //                   PD?.productListByProductId
+          //                     ?.productDiamondsByProductSku?.nodes[0]
+          //                     ?.stoneCount,
+          //               }
+          //             : "",
 
-                    PD?.productListByProductId?.productDiamondsByProductSku
-                      ?.nodes[0]?.stoneWeight
-                      ? {
-                          name: "Stone Weight",
-                          details:
-                            PD?.productListByProductId
-                              ?.productDiamondsByProductSku?.nodes[0]
-                              ?.stoneWeight,
-                        }
-                      : "",
-                  ]
-                : [],
-          },
-          {
-            header: "Gemstone Details",
-            namedetail:
-              PD &&
-              PD?.productListByProductId &&
-              PD?.productListByProductId?.productGemstonesByProductSku &&
-              PD?.productListByProductId?.productGemstonesByProductSku?.nodes &&
-              PD?.productListByProductId?.productGemstonesByProductSku?.nodes
-                ?.length > 0
-                ? [
-                    PD?.productListByProductId?.productGemstonesByProductSku
-                      ?.nodes &&
-                    PD?.productListByProductId?.productGemstonesByProductSku
-                      ?.nodes?.length === 0
-                      ? null
-                      : gemstoneType(
-                          PD?.productListByProductId
-                            ?.productGemstonesByProductSku?.nodes,
-                          "stoneCount"
-                        )[0] !== null
-                      ? {
-                          name: "Total No of Stones",
-                          details:
-                            PD?.productListByProductId
-                              ?.productGemstonesByProductSku?.nodes &&
-                            PD?.productListByProductId
-                              ?.productGemstonesByProductSku?.nodes?.length ===
-                              0
-                              ? null
-                              : gemstoneType(
-                                  PD?.productListByProductId
-                                    ?.productGemstonesByProductSku?.nodes,
-                                  "stoneCount"
-                                ),
-                        }
-                      : "",
-                    gemstoneType(
-                      PD?.productListByProductId?.productGemstonesByProductSku
-                        ?.nodes,
-                      "gemstoneType"
-                    )[0] !== null
-                      ? {
-                          name: "Stone Type",
-                          details:
-                            PD?.productListByProductId
-                              ?.productGemstonesByProductSku?.nodes &&
-                            PD?.productListByProductId
-                              ?.productGemstonesByProductSku?.nodes?.length ===
-                              0
-                              ? null
-                              : gemstoneType(
-                                  PD?.productListByProductId
-                                    ?.productGemstonesByProductSku?.nodes,
-                                  "gemstoneType"
-                                ),
-                        }
-                      : "",
-                    PD?.productListByProductId?.productGemstonesByProductSku
-                      ?.nodes &&
-                    PD?.productListByProductId?.productGemstonesByProductSku
-                      ?.nodes?.length === 0
-                      ? null
-                      : gemstoneType(
-                          PD?.productListByProductId
-                            ?.productGemstonesByProductSku?.nodes,
-                          "gemstoneShape"
-                        )[0] !== null
-                      ? {
-                          name: "Shape",
-                          details:
-                            PD?.productListByProductId
-                              ?.productGemstonesByProductSku?.nodes &&
-                            PD?.productListByProductId
-                              ?.productGemstonesByProductSku?.nodes?.length ===
-                              0
-                              ? null
-                              : gemstoneType(
-                                  PD?.productListByProductId
-                                    ?.productGemstonesByProductSku?.nodes,
-                                  "gemstoneShape"
-                                ),
-                        }
-                      : "",
+          //           PD?.productListByProductId?.productDiamondsByProductSku
+          //             ?.nodes[0]?.stoneWeight
+          //             ? {
+          //                 name: "Stone Weight",
+          //                 details:
+          //                   PD?.productListByProductId
+          //                     ?.productDiamondsByProductSku?.nodes[0]
+          //                     ?.stoneWeight,
+          //               }
+          //             : "",
+          //         ]
+          //       : [],
+          // },
+          // {
+          //   header: "Gemstone Details",
+          //   namedetail:
+          //     PD &&
+          //     PD?.productListByProductId &&
+          //     PD?.productListByProductId?.productGemstonesByProductSku &&
+          //     PD?.productListByProductId?.productGemstonesByProductSku?.nodes &&
+          //     PD?.productListByProductId?.productGemstonesByProductSku?.nodes
+          //       ?.length > 0
+          //       ? [
+          //           PD?.productListByProductId?.productGemstonesByProductSku
+          //             ?.nodes &&
+          //           PD?.productListByProductId?.productGemstonesByProductSku
+          //             ?.nodes?.length === 0
+          //             ? null
+          //             : gemstoneType(
+          //                 PD?.productListByProductId
+          //                   ?.productGemstonesByProductSku?.nodes,
+          //                 "stoneCount"
+          //               )[0] !== null
+          //             ? {
+          //                 name: "Total No of Stones",
+          //                 details:
+          //                   PD?.productListByProductId
+          //                     ?.productGemstonesByProductSku?.nodes &&
+          //                   PD?.productListByProductId
+          //                     ?.productGemstonesByProductSku?.nodes?.length ===
+          //                     0
+          //                     ? null
+          //                     : gemstoneType(
+          //                         PD?.productListByProductId
+          //                           ?.productGemstonesByProductSku?.nodes,
+          //                         "stoneCount"
+          //                       ),
+          //               }
+          //             : "",
+          //           gemstoneType(
+          //             PD?.productListByProductId?.productGemstonesByProductSku
+          //               ?.nodes,
+          //             "gemstoneType"
+          //           )[0] !== null
+          //             ? {
+          //                 name: "Stone Type",
+          //                 details:
+          //                   PD?.productListByProductId
+          //                     ?.productGemstonesByProductSku?.nodes &&
+          //                   PD?.productListByProductId
+          //                     ?.productGemstonesByProductSku?.nodes?.length ===
+          //                     0
+          //                     ? null
+          //                     : gemstoneType(
+          //                         PD?.productListByProductId
+          //                           ?.productGemstonesByProductSku?.nodes,
+          //                         "gemstoneType"
+          //                       ),
+          //               }
+          //             : "",
+          //           PD?.productListByProductId?.productGemstonesByProductSku
+          //             ?.nodes &&
+          //           PD?.productListByProductId?.productGemstonesByProductSku
+          //             ?.nodes?.length === 0
+          //             ? null
+          //             : gemstoneType(
+          //                 PD?.productListByProductId
+          //                   ?.productGemstonesByProductSku?.nodes,
+          //                 "gemstoneShape"
+          //               )[0] !== null
+          //             ? {
+          //                 name: "Shape",
+          //                 details:
+          //                   PD?.productListByProductId
+          //                     ?.productGemstonesByProductSku?.nodes &&
+          //                   PD?.productListByProductId
+          //                     ?.productGemstonesByProductSku?.nodes?.length ===
+          //                     0
+          //                     ? null
+          //                     : gemstoneType(
+          //                         PD?.productListByProductId
+          //                           ?.productGemstonesByProductSku?.nodes,
+          //                         "gemstoneShape"
+          //                       ),
+          //               }
+          //             : "",
 
-                    PD?.productListByProductId?.productGemstonesByProductSku
-                      ?.nodes &&
-                    PD?.productListByProductId?.productGemstonesByProductSku
-                      ?.nodes?.length === 0
-                      ? null
-                      : gemstoneType(
-                          PD?.productListByProductId
-                            ?.productGemstonesByProductSku?.nodes,
-                          "gemstoneSize"
-                        )[0] !== null
-                      ? {
-                          name: "Size (in mm)",
-                          details:
-                            PD?.productListByProductId
-                              ?.productGemstonesByProductSku?.nodes &&
-                            PD?.productListByProductId
-                              ?.productGemstonesByProductSku?.nodes?.length ===
-                              0
-                              ? null
-                              : gemstoneType(
-                                  PD?.productListByProductId
-                                    ?.productGemstonesByProductSku?.nodes,
-                                  "gemstoneSize"
-                                ),
-                        }
-                      : "",
+          //           PD?.productListByProductId?.productGemstonesByProductSku
+          //             ?.nodes &&
+          //           PD?.productListByProductId?.productGemstonesByProductSku
+          //             ?.nodes?.length === 0
+          //             ? null
+          //             : gemstoneType(
+          //                 PD?.productListByProductId
+          //                   ?.productGemstonesByProductSku?.nodes,
+          //                 "gemstoneSize"
+          //               )[0] !== null
+          //             ? {
+          //                 name: "Size (in mm)",
+          //                 details:
+          //                   PD?.productListByProductId
+          //                     ?.productGemstonesByProductSku?.nodes &&
+          //                   PD?.productListByProductId
+          //                     ?.productGemstonesByProductSku?.nodes?.length ===
+          //                     0
+          //                     ? null
+          //                     : gemstoneType(
+          //                         PD?.productListByProductId
+          //                           ?.productGemstonesByProductSku?.nodes,
+          //                         "gemstoneSize"
+          //                       ),
+          //               }
+          //             : "",
 
-                    PD?.productListByProductId?.productGemstonesByProductSku
-                      ?.nodes &&
-                    PD?.productListByProductId?.productGemstonesByProductSku
-                      ?.nodes?.length === 0
-                      ? null
-                      : gemstoneType(
-                          PD?.productListByProductId
-                            ?.productGemstonesByProductSku?.nodes,
-                          "stoneWeight"
-                        )[0] !== null
-                      ? {
-                          name: "Weight (Carat)",
-                          details:
-                            PD?.productListByProductId
-                              ?.productGemstonesByProductSku?.nodes &&
-                            PD?.productListByProductId
-                              ?.productGemstonesByProductSku?.nodes?.length ===
-                              0
-                              ? null
-                              : gemstoneType(
-                                  PD?.productListByProductId
-                                    ?.productGemstonesByProductSku?.nodes,
-                                  "stoneWeight"
-                                ),
-                        }
-                      : "",
-                    PD?.productListByProductId?.productGemstonesByProductSku
-                      ?.nodes &&
-                    PD?.productListByProductId?.productGemstonesByProductSku
-                      ?.nodes?.length === 0
-                      ? null
-                      : gemstoneType(
-                          PD?.productListByProductId
-                            ?.productGemstonesByProductSku?.nodes,
-                          "gemstoneSetting"
-                        )[0] !== null
-                      ? {
-                          name: "Setting",
-                          details:
-                            PD?.productListByProductId
-                              ?.productGemstonesByProductSku?.nodes &&
-                            PD?.productListByProductId
-                              ?.productGemstonesByProductSku?.nodes?.length ===
-                              0
-                              ? null
-                              : gemstoneType(
-                                  PD?.productListByProductId
-                                    ?.productGemstonesByProductSku?.nodes,
-                                  "gemstoneSetting"
-                                ),
-                        }
-                      : "",
-                    PD?.productListByProductId?.productGemstonesByProductSku
-                      ?.nodes[0]?.subItemName
-                      ? {
-                          name: "Gemstone Name",
-                          details: gemstoneType(
-                            PD?.productListByProductId
-                              ?.productGemstonesByProductSku?.nodes,
-                            "subItemName"
-                          ),
-                        }
-                      : "",
+          //           PD?.productListByProductId?.productGemstonesByProductSku
+          //             ?.nodes &&
+          //           PD?.productListByProductId?.productGemstonesByProductSku
+          //             ?.nodes?.length === 0
+          //             ? null
+          //             : gemstoneType(
+          //                 PD?.productListByProductId
+          //                   ?.productGemstonesByProductSku?.nodes,
+          //                 "stoneWeight"
+          //               )[0] !== null
+          //             ? {
+          //                 name: "Weight (Carat)",
+          //                 details:
+          //                   PD?.productListByProductId
+          //                     ?.productGemstonesByProductSku?.nodes &&
+          //                   PD?.productListByProductId
+          //                     ?.productGemstonesByProductSku?.nodes?.length ===
+          //                     0
+          //                     ? null
+          //                     : gemstoneType(
+          //                         PD?.productListByProductId
+          //                           ?.productGemstonesByProductSku?.nodes,
+          //                         "stoneWeight"
+          //                       ),
+          //               }
+          //             : "",
+          //           PD?.productListByProductId?.productGemstonesByProductSku
+          //             ?.nodes &&
+          //           PD?.productListByProductId?.productGemstonesByProductSku
+          //             ?.nodes?.length === 0
+          //             ? null
+          //             : gemstoneType(
+          //                 PD?.productListByProductId
+          //                   ?.productGemstonesByProductSku?.nodes,
+          //                 "gemstoneSetting"
+          //               )[0] !== null
+          //             ? {
+          //                 name: "Setting",
+          //                 details:
+          //                   PD?.productListByProductId
+          //                     ?.productGemstonesByProductSku?.nodes &&
+          //                   PD?.productListByProductId
+          //                     ?.productGemstonesByProductSku?.nodes?.length ===
+          //                     0
+          //                     ? null
+          //                     : gemstoneType(
+          //                         PD?.productListByProductId
+          //                           ?.productGemstonesByProductSku?.nodes,
+          //                         "gemstoneSetting"
+          //                       ),
+          //               }
+          //             : "",
+          //           PD?.productListByProductId?.productGemstonesByProductSku
+          //             ?.nodes[0]?.subItemName
+          //             ? {
+          //                 name: "Gemstone Name",
+          //                 details: gemstoneType(
+          //                   PD?.productListByProductId
+          //                     ?.productGemstonesByProductSku?.nodes,
+          //                   "subItemName"
+          //                 ),
+          //               }
+          //             : "",
 
-                    PD?.productListByProductId?.productGemstonesByProductSku
-                      ?.nodes[0]?.description
-                      ? {
-                          name: "Description",
-                          details: gemstoneType(
-                            PD?.productListByProductId
-                              ?.productGemstonesByProductSku?.nodes,
-                            "description"
-                          ),
-                        }
-                      : "",
-                  ]
-                : [],
-          },
+          //           PD?.productListByProductId?.productGemstonesByProductSku
+          //             ?.nodes[0]?.description
+          //             ? {
+          //                 name: "Description",
+          //                 details: gemstoneType(
+          //                   PD?.productListByProductId
+          //                     ?.productGemstonesByProductSku?.nodes,
+          //                   "description"
+          //                 ),
+          //               }
+          //             : "",
+          //         ]
+          //       : [],
+          // },
         ],
         productsDetailsonlysm: [
           {
