@@ -1,6 +1,6 @@
 export const LogRegData = [
     {
-        title: "New to Stylori?",
+        title: "New to NAC?",
         dis: 'Register now',
         button:"Register",
         buttonval:"Register",

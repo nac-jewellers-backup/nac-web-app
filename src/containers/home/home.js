@@ -595,7 +595,7 @@ class HomeComp extends React.Component {
         image:
           "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/banners/web/2017.webp",
         content:
-          "Knack Studios isKaunched. As South India's leading postproduction studio, Knack Studios has worked with leading filmmakers across industries",
+          "Knack Studios is Launched. As South India's leading postproduction studio, Knack Studios has worked with leading filmmakers across industries",
       },
       {
         time: "2017",
