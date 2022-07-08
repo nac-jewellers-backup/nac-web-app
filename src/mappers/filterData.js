@@ -58,7 +58,7 @@ export default function (data) {
 
         subFilter: getSubFilters(data),
         sortOptions: [
-          "New to Stylori",
+          "New to NAC",
           "Featured",
           "Price Low to High",
           "Price High to Low",
