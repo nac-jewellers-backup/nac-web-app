@@ -78,8 +78,6 @@ const Provider = (props) => {
     NetworkCtx: { graphqlUrl: uri },
   } = React.useContext(NetworkContext);
 
-
-
   const {
     loading: ntx,
     error: ntxerr,
@@ -89,7 +87,6 @@ const Provider = (props) => {
 
   useEffect(() => {
     const fetch_data = async () => {
-
       //    if(window.location.pathname === "/jewellery"){
 
       // props.location.push(window.location.pathname)
@@ -161,19 +158,14 @@ const Provider = (props) => {
             setSilverFilters({ ...silverFilters, a });
           });
           updateFilters(silverFilters);
-         
         })
-        .catch(function (error) {
-        });
-
-
+        .catch(function (error) {});
     };
     fetch_data();
   }, []);
 
   var queries = [];
   const qtfArr = [];
-
 
   const paramObjects = (filtersparms) => {
     // Destructuring the query parameters from the URL
@@ -190,7 +182,6 @@ const Provider = (props) => {
       const filterdata = window.location.pathname;
       const splitslash = filterdata && filterdata.replace("/", "");
       const splitNtxData = filterdata && splitslash.split("-");
-      
 
       return (paramsAo = splitNtxData);
     }
@@ -229,7 +220,6 @@ const Provider = (props) => {
 
     makeRequestSeo(conditionfiltersSeo);
   };
-
 
   useEffect(() => {
     setMappedFilters(ntxdata);
@@ -284,13 +274,13 @@ const Provider = (props) => {
       newObj["sortBy"] = sort.values;
       newObj["offset"] = offset;
 
-     
       if (
         Object.keys(newObj).filter((val) => {
           if (val === "category") return val;
         }).length !== 0
       )
-        await fetchproducts(newObj);
+      
+      await fetchproducts(newObj);
     }
   };
 
@@ -361,7 +351,6 @@ const Provider = (props) => {
         }
       });
 
-
       // bodyvar = paramObjects();
     } catch (error) {}
     var k = qtfArr.map((val) => Object.values(val));
@@ -373,7 +362,7 @@ const Provider = (props) => {
       newObj[toLowerCase] = k[len][0];
     }
     await makeFetch(newObj);
- 
+
     try {
       if (ntxdata.seo_url === "jewellery") {
         setMappedFilters(ntxdata);
@@ -397,7 +386,6 @@ const Provider = (props) => {
       paramObjects(mappedFilters.seo_url);
 
       seoUrlFetch();
-
     }
   }, [mappedFilters, offset]);
 

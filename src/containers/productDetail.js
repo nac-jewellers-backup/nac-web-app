@@ -346,7 +346,7 @@ class ProductDetail extends Component {
                                 alt="matel weight"
                                 height="100%"
                                 width="100%"
-                                loading="lazy" alt='...'
+                                loading="lazy"
                               />
                             </Avatar>
                           </Box>
@@ -394,7 +394,7 @@ class ProductDetail extends Component {
                                 alt=" Metal Purity"
                                 height="100%"
                                 width="100%"
-                                loading="lazy" alt='...'
+                                loading="lazy" 
                               />
                             </Avatar>
                           </Box>
@@ -432,7 +432,7 @@ class ProductDetail extends Component {
                               alt="Diamond Weight"
                               height="100%"
                               width="100%"
-                              loading="lazy" alt='...'
+                              loading="lazy" 
                             />
                           </Avatar>
                         </Box>

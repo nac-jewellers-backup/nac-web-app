@@ -95,6 +95,7 @@ class Stylori extends React.Component {
       swipe: false,
     };
 
+  
     return (
       <>
         {/* <LiveChat license={5807571} /> */}

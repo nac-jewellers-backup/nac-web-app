@@ -152,10 +152,8 @@ export default function (data, cdnUrl) {
         productId: k.productId ?? " ",
 
         diamondType: k.trans_sku_lists[0].diamondType ?? " ",
-        // metalColor: k.trans_sku_lists[0].metalColor ?? " ",
         purity: k.trans_sku_lists[0].purity ?? " ",
         skuSize: k.trans_sku_lists[0].skuSize ?? " ",
-        // material:k.productMaterialsByProductSku[0] === undefined ? '' : k.productMaterialsByProductSku[0].materialName,
         productType: k.productType ?? " ",
         skuId: k.trans_sku_lists[0].generatedSku ?? " ",
         oneDayShipping: k.trans_sku_lists[0].isReadyToShip ?? " ",
@@ -168,9 +166,9 @@ export default function (data, cdnUrl) {
         discount: k.trans_sku_lists[0].discount ?? " ",
       };
     } catch (error) {}
+
     return _d;
   });
-  // console.info('_format', _format);
+ 
   return _format;
 }
-// injectUrl("/images/product/SE0775/SE0775-1Y.jpg", cdnUrl)
