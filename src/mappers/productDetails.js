@@ -1838,7 +1838,7 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                         ?.productListByProductId?.transSkuListsByProductId
                         ?.nodes[0]?.skuId,
                     productId:
-                      val?.transSkuListsByProductId?.nodes[0].productId,
+                      val?.transSkuListsByProductId?.nodes[0]?.productId,
                     offerDiscount: val?.transSkuListsByProductId?.nodes[0]
                       ?.discount
                       ? `${val?.transSkuListsByProductId?.nodes[0]?.discount}% OFF`

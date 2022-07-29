@@ -54,22 +54,22 @@ class ProductDetails extends React.Component {
                       </span>
                       <hr class="bottom-line"></hr>
                       <>
-                        {valueofproductdetail.namedetail === undefined
+                        {valueofproductdetail?.namedetail === undefined
                           ? " "
-                          : valueofproductdetail.namedetail.map(
+                          : valueofproductdetail?.namedetail?.map(
                               (res, Index) => {
                                 return (
                                   <>
-                                    {res.details !== null &&
-                                    res.details !== undefined &&
-                                    res.details.length === 0 &&
-                                    res.details === 0 ? (
+                                    {res?.details !== null &&
+                                    res?.details !== undefined &&
+                                    res?.details.length === 0 &&
+                                    res?.details === 0 ? (
                                       false
                                     ) : (
                                       <span>
                                         {
                                           <>
-                                            {res.name && (
+                                            {res?.name && (
                                               <Grid container item xs={12}>
                                                 <Grid xs={4} lg={4}>
                                                   <ListItemText
@@ -384,20 +384,20 @@ class ProductDetails extends React.Component {
                     </ExpansionPanelSummary>
                     <div style={{ backgroundColor: "#fafafa" }}>
                       {val.namedetail !== undefined &&
-                        val.namedetail.map((res) =>
-                          res.details !== null &&
-                          res.details !== undefined &&
-                          res.details.length === 0 ? (
+                        val?.namedetail?.map((res) =>
+                          res?.details !== null &&
+                          res?.details !== undefined &&
+                          res?.details.length === 0 ? (
                             false
                           ) : (
                             <span>
                               {
                                 <>
                                   {" "}
-                                  {res.name &&
-                                    res.details !== null &&
-                                    res.details !== 0 &&
-                                    res.details !== undefined && (
+                                  {res?.name &&
+                                    res?.details !== null &&
+                                    res?.details !== 0 &&
+                                    res?.details !== undefined && (
                                       <Grid
                                         container
                                         item
@@ -552,10 +552,10 @@ class ProductDetails extends React.Component {
                               {
                                 <>
                                   {" "}
-                                  {res.name &&
-                                    res.details !== null &&
-                                    res.details !== 0 &&
-                                    res.details !== undefined && (
+                                  {res?.name &&
+                                    res?.details !== null &&
+                                    res?.details !== 0 &&
+                                    res?.details !== undefined && (
                                       <Grid
                                         container
                                         spacing={2}
