@@ -49,7 +49,8 @@ export const routes = {
   CollectionPage: "/collectionPage",
   CollectionFullPage: "/collection",
   AkshyaTritiya: "/akshyaTritiya",
-  BridalCollection: "/bridalcollection"
+  BridalCollection: "/bridalcollection",
+  NecklaceMela : "/necklaceMela"
 };
 
 export default routes;
