@@ -530,34 +530,36 @@ const NecklaceMela = (props) => {
           sliderRef={slider}
           dataCarousel={SolitairesData.carouselTop.setting}
         >
-          {banners.map((val, index) => (
-            <>
-              <Hidden smDown>
-                <Grid container key={index} className={classes.headContent}>
-                  <a href={val.urlParam} style={{ width: "100%" }}>
-                    <img
-                      alt="images"
-                      loading="lazy"
-                      src={val.web}
-                      style={{ width: "100%", height: "100%" }}
-                    />
-                  </a>
-                </Grid>
-              </Hidden>
-              <Hidden mdUp>
-                <Grid container key={index} className={classes.headContent}>
-                  <a href={val.urlParam}>
-                    <img
-                      alt="images"
-                      loading="lazy"
-                      src={val.mobile}
-                      style={{ width: "100%", height: "100%" }}
-                    />
-                  </a>
-                </Grid>
-              </Hidden>
-            </>
-          ))}
+          <>
+            <Hidden smDown>
+              <Grid container className={classes.headContent}>
+                <a href={"#"} style={{ width: "100%" }}>
+                  <img
+                    alt="images"
+                    loading="lazy"
+                    src={
+                      "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/banners/web/Desktop-size.webp"
+                    }
+                    style={{ width: "100%", height: "100%", marginTop: "20px" }}
+                  />
+                </a>
+              </Grid>
+            </Hidden>
+            <Hidden mdUp>
+              <Grid container className={classes.headContent}>
+                <a href={"#"}>
+                  <img
+                    alt="images"
+                    loading="lazy"
+                    src={
+                      "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/banners/web/Mobile-size.webp"
+                    }
+                    style={{ width: "100%", height: "100%" }}
+                  />
+                </a>
+              </Grid>
+            </Hidden>
+          </>
         </Slideshow>
       </Grid>
 
@@ -635,10 +637,10 @@ const NecklaceMela = (props) => {
                 Click here to watch our AD Video&nbsp;
                 <a href="https://www.youtube.com/watch?v=5OyyXB8xxRU">Tamil</a>
                 &nbsp;|&nbsp;
-                <a href="https://www.youtube.com/watch?v=dRV0XNVAisE">Telugu</a>
+                <a href="https://www.youtube.com/watch?v=f4OE5GqCf8U">Telugu</a>
               </li>
               <li className={classes.titleContents}>
-                Click here to enrol in our chit Scheme
+                Click here to enrol in our chit Scheme&nbsp; 
                 <a href="www.nacsavings.com">www.nacsavings.com</a>
               </li>
             </ul>
