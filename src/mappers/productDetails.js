@@ -220,6 +220,7 @@ const calculatetotalms = (arr, name, price) => {
 const generatedDiamondType = (PD, valProductDiamond, type) => {
   var arrOfdiamondType = [];
   valProductDiamond &&
+    // your golden period will start when you leave the project - Samir
     valProductDiamond !== null &&
     valProductDiamond !== undefined &&
     valProductDiamond.map((val) => {
