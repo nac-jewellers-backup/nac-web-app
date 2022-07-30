@@ -6,7 +6,7 @@ import Header from "components/SilverComponents/Header";
 import React from "react";
 import Register from "screens/Checkout/loginRegister/register";
 // import useRegister from './useregister';
-import useRegister from "../../screens/Checkout/loginRegister/useregister";
+
 // import SimpleSelect from '../../components/InputComponents/Select/Select'
 import styles from "./style";
 
@@ -16,12 +16,12 @@ const UserRegister = (props) => {
 
 const RegisterComponent = (props) => {
   const { classes } = props;
-  const { values, handlers } = useRegister();
+  // const { values, handlers } = useRegister();
   return (
     <Grid container>
       <Header />
       <Grid spacing={12} container lg={12} style={{ padding: "3%" }}>
-        <Grid item xs={6} lg={6} xs={12}>
+        <Grid item xs={6} lg={6}>
           <Container>
             {/* <div className='pt-sm' style={{ width: "90%", float: "right" }}>
                         <form action="javascript:void(0)" onSubmit={(e) => {
@@ -123,7 +123,7 @@ const RegisterComponent = (props) => {
             </div>
           </Container>{" "}
         </Grid>
-        <Grid item xs={6} lg={6} xs={12}>
+        <Grid item xs={6} lg={6}>
           <div>
             <img
               width="100%"
@@ -132,7 +132,8 @@ const RegisterComponent = (props) => {
                 objectFit: "cover",
                 objectPosition: "40% 5%",
               }}
-              loading="lazy" alt='...'
+              loading="lazy"
+              alt="..."
               src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/login+register/Group+72.png"
             />
           </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Hidden } from "@material-ui/core";
+
 import ArrowRightIcon from "@material-ui/icons/ArrowRight";
 import ArrowLeftIcon from "@material-ui/icons/ArrowLeft";
 const ArrowLeft = (props) => {

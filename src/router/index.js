@@ -38,7 +38,7 @@ import UserRegister from "../components/LoginAndRegister/Register";
 import StoreLocationDetails from "../components/StoreLocatorDetail/index";
 import CollectionFullPage from "../containers/collection/collectionsFullPage";
 import ExperiencePage from "../containers/experiences/experiences";
-
+import NecklaceMela from "containers/SpecificPage/necklaceMela";
 import HomeComp from "../containers/home/home";
 import Solitaires from "../containers/solitaires/solitaires";
 import AkshyaTritiya from "../containers/SpecificPage/akshyaTritiya";
@@ -47,7 +47,6 @@ import PaymentHiddenForm from "../screens/Checkout/paymentOption/paymentHiddenFo
 import Careers from "../screens/Stylori/careers";
 import Fail from "../screens/Stylori/fail";
 import Success from "../screens/Stylori/success";
-
 
 const browserHistory = createBrowserHistory();
 
@@ -251,6 +250,7 @@ export const RouterApp = (props) => {
         props.location.pathname !== "/paymentsuccess/:id" &&
         props.location.pathname !== "/contactus" &&
         props.location.pathname !== "/solitaires" &&
+        props.location.pathname !== "/necklaceMela" &&
         Globalctx &&
         Globalctx.pathName === false &&
         props.location.pathname !== "/homes" && (
@@ -317,7 +317,8 @@ export const RouterApp = (props) => {
         props.location.pathname !== "/contactus" &&
         props.location.pathname !== "/paymentsuccess/:id" &&
         props.location.pathname !== "/homes" &&
-        props.location.pathname !== "/solitaires" && (
+        props.location.pathname !== "/solitaires" &&
+        props.location.pathname !== "/necklaceMela" && (
           <Route exact={true} component={Stylori} path={"/:listingpage"} />
         )}
 
@@ -416,12 +417,18 @@ export const RouterApp = (props) => {
         exact
         path={routes.NewsRoomPage}
       />
-     
+
       <Route
         key="Solitaires"
         component={Solitaires}
         exact
         path={routes.Solitaires}
+      />
+      <Route
+        key="necklacemela"
+        component={NecklaceMela}
+        exact
+        path={routes.NecklaceMela}
       />
     </Switch>
   );

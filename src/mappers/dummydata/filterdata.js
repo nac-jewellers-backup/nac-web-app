@@ -47,7 +47,7 @@ export const subFilter = {
 };
 
 export const sortOptions = [
-    "New to Stylori",
+    "New to NAC",
     "Featured",
     "Price Low to High",
     "Price High to Low",

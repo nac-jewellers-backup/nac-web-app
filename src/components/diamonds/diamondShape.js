@@ -18,7 +18,9 @@ export default function DiamondShpae(props) {
                 <Grid item xs={12} className={classes.containers2Item}>
                     {value.ImageData.map((val, i) =>
                         <Grid item xs={12} className={classes[val.image]}>
-                            <a href="" className={classes.name}>{val.name}</a>
+                            <a href="/#"
+ target="_blank"
+ rel="noopener noreferrer" className={classes.name}>{val.name}</a>
                         </Grid>
 
                     )}

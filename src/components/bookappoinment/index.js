@@ -154,6 +154,7 @@ export default function Contact(props) {
     if (appointmentDate) {
       getAppointmentDate();
     }
+    // eslint-disable-next-line
   }, [appointmentDate]);
   const onSendLoginBtnClicked = () => {
     if (isIamValideToLogin()) {
@@ -214,7 +215,7 @@ export default function Contact(props) {
     setDataappoinment({ ...dataappoinment, [key]: value, error });
   };
   const verifyOTP = async () => {
-    if (dataappoinment.otp.length == 6) {
+    if (dataappoinment.otp.length === 6) {
       await fetch(`${API_URL}/verify_appointment_otp`, {
         method: "post",
         headers: {

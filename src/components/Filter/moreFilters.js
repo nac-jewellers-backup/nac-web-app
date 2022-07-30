@@ -1,9 +1,9 @@
 import { Box, FormGroup, Grid } from "@material-ui/core";
 import Backdrop from "@material-ui/core/Backdrop";
-import Checkbox from "@material-ui/core/Checkbox";
+
 import Fade from "@material-ui/core/Fade";
 import Modal from "@material-ui/core/Modal";
-import { makeStyles, withStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import CheckIcon from "@material-ui/icons/Check";
 import CancelIcon from "@material-ui/icons/Close";
 import React from "react";
@@ -90,37 +90,6 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
-const CheckboxWithTick = withStyles({
-  root: {
-    cursor: "default",
-    backgroundColor: "white",
-    "&:hover": {
-      backgroundColor: "white",
-    },
-    color: "white",
-    "&$checked": {
-      color: "white",
-
-      "& .MuiIconButton-label": {
-        position: "relative",
-        zIndex: 0,
-      },
-      "& .MuiIconButton-label:after": {
-        content: '""',
-        left: 4,
-        top: 4,
-        height: 15,
-        width: 15,
-        position: "absolute",
-        backgroundColor: "#33346D",
-        zIndex: -1,
-      },
-    },
-  },
-  checked: {
-    border: "1px solid white",
-  },
-})(Checkbox);
 
 export default function MoreFilters(props) {
   const classes = useStyles();
@@ -318,6 +287,7 @@ export default function MoreFilters(props) {
                             } else {
                               return null;
                             }
+                            return 0;
                           })}
                         </FormGroup>
                       </Grid>

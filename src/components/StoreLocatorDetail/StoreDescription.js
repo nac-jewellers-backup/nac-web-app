@@ -1,7 +1,7 @@
 import React from "react";
 import  StarRatings from  'react-star-ratings';
 import _ from  'lodash';
-var _loadash = require('lodash/array');
+
 const StoreDescription = ({currentStore , timings, reviews, rating ,onToggle360View ,showMoreReviews , isMore}) => {
   const store = currentStore  ? currentStore[0] : []; 
   const styles = require("../StoreLocator/StoreLocator.scss");
@@ -12,7 +12,7 @@ const StoreDescription = ({currentStore , timings, reviews, rating ,onToggle360V
   const image360 = require("./360degree.png");
   const direction = require("./direction.png");
   const arrowImg = require('../TestimonialComponent/small_arrow.png');
-  const streetViewURL = store.streetViewURL;
+
   const writeReview = ` https://search.google.com/local/writereview?placeid=${store.placeID}`;
   reviews = _.orderBy(reviews ,['rating'], ['desc']);
   const sampleStore = "https://storage.googleapis.com/media.nacjewellers.com/resources/collection_files/young%20ones/Hero-Banner.jpg";
@@ -20,17 +20,17 @@ const StoreDescription = ({currentStore , timings, reviews, rating ,onToggle360V
   const getDay = new Date().getDay();
   for(var i = 0 ; i < timings.length ; i++ ){  
     timingsContent.push(
-        <div key={i} className={styles.timings} style={{ fontWeight: getDay == i ? 'bold': 'normal'}}>
+        <div key={i} className={styles.timings} style={{ fontWeight: getDay === i ? 'bold': 'normal'}}>
           <p>{timings[i].day}</p>
           <span>{timings[i].startTime} - {timings[i].endTime} </span>
         </div>
     );
   }
   for(var i = 0 ;i < reviews.length ; i++ ){
-    if(i == 0){
+    if(i === 0){
       firstReview.push(
         <div key={i}>
-        <p onClick={showMoreReviews.bind(this)} className={styles.see_more_mob} style={{float:"right"}}> See {reviews.length} More Reviews &nbsp;  <img className={ isMore ? styles.arrow_up : styles.arrow_img} src={arrowImg} />  </p>
+        <p onClick={showMoreReviews.bind(this)} className={styles.see_more_mob} style={{float:"right"}}> See {reviews.length} More Reviews &nbsp;  <img className={ isMore ? styles.arrow_up : styles.arrow_img} src={arrowImg} alt="..." loading="lazy"/>  </p>
         <span className={styles.author_name}>{reviews[i].author_name}</span> &nbsp;&nbsp; <span>{reviews[i].relative_time_description}</span>&nbsp;&nbsp;
         <div className={styles.star} style={{display:"inline-block"}}>
         <StarRatings
@@ -43,7 +43,7 @@ const StoreDescription = ({currentStore , timings, reviews, rating ,onToggle360V
         {isMore && <hr />}
       </div>  
       );
-    }else if(i != 0){
+    }else if(i !== 0){
     reviewContentHtml.push(
       <div key={i}>
         <span className={styles.author_name}>{reviews[i].author_name}</span> &nbsp;&nbsp; <span>{reviews[i].relative_time_description}</span>&nbsp;&nbsp;
@@ -94,7 +94,7 @@ const StoreDescription = ({currentStore , timings, reviews, rating ,onToggle360V
                 <img src={image360} loading="lazy" alt='...' onClick={onToggle360View.bind(this)} className={styles.icon_img}  />
              </div>
              <div className={"col-lg-12 col-md-12 col-sm-12 col-xs-12"}>
-              <a href={store.directions}  target="_blank"> <img src={direction} className={styles.icon_img} /> </a>
+              <a href={store.directions}  target="_blank"  rel="noopener noreferrer" > <img src={direction} className={styles.icon_img} loading="lazy" alt='...'/> </a>
              </div>
             </div>
           </div>
@@ -108,7 +108,7 @@ const StoreDescription = ({currentStore , timings, reviews, rating ,onToggle360V
             ):(
               <div  className={styles.indiv_description} style={{paddingBottom:"45px"}}>
               <h3 style={{textAlign:'center' , color:"#d8d8d8"}}>
-              <a href={writeReview}> <img style={{width:"55px"}} src={addicon} /></a>&nbsp;&nbsp;
+              <a href={writeReview}> <img style={{width:"55px"}} src={addicon} loading="lazy" alt='...' /></a>&nbsp;&nbsp;
                <i>Be</i> the first person to review NAC {store.name} </h3>
             </div>
             )}

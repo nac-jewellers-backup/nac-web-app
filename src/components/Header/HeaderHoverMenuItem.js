@@ -26,7 +26,8 @@ function HeaderHoverMenuItem(props) {
   useEffect(() => {
     setOpens(props.opened);
     setTarget(props.targetopened);
-  });
+  },[]);
+
   return (
     <Grid container className={classes.root}>
       <Grid container item xs={12} className={classes.paperdiv}>

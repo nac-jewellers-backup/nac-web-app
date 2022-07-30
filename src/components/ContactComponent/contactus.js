@@ -90,8 +90,6 @@ export default function CustomizedInputs() {
   });
   const classes = useStyles();
   const {
-    loading: ntx,
-    error: ntxerr,
     data: ntxdata,
     makeFetch,
   } = useNetworkRequest("/addquestion", {}, false, {});
@@ -140,6 +138,7 @@ export default function CustomizedInputs() {
         alert(error);
       }
     }
+     // eslint-disable-next-line
   }, [ntxdata]);
 
   return (

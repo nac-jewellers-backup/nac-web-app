@@ -19,7 +19,7 @@ function HeaderHoverMenuItem(props) {
   useEffect(() => {
     setOpens(props.opened);
     setTarget(props.targetopened);
-  });
+  },[]);
   return (
     <Grid container className={classes.rootsub}>
       <Grid container item xs={12} className={classes.paperdivsub}>

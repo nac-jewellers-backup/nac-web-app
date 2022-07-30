@@ -1,5 +1,5 @@
 import { Grid } from "@material-ui/core";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import React from "react";
 const useStyles = makeStyles((theme) => ({
   containItems: {
@@ -85,7 +85,6 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     margin: "3px 0px auto",
     float: "left",
-    width: "100%",
     color: "#2F348B",
     fontSize: "11px",
   },
@@ -103,7 +102,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function StaticView() {
   const classes = useStyles();
-  const theme = useTheme();
   const path = window.location.pathname === "/home";
   return (
     <Grid container className={classes.containItems}>
@@ -118,7 +116,8 @@ export default function StaticView() {
           >
             <img
               style={{ width: "40%", height: "100%" }}
-              loading="lazy" alt='...'
+              loading="lazy"
+              alt="..."
               src={
                 "https://assets.stylori.com/images/Static+Pages/Other+Pages/fromthehouseofnac-pink.svg"
               }
@@ -137,7 +136,8 @@ export default function StaticView() {
           >
             <img
               style={{ width: "40%", height: "100%" }}
-              loading="lazy" alt='...'
+              loading="lazy"
+              alt="..."
               src={
                 "https://assets.stylori.com/images/Static%20Pages/Other%20Pages/certifiedjewellery-pink.svg"
               }
@@ -156,7 +156,8 @@ export default function StaticView() {
           >
             <img
               style={{ width: "40%", height: "100%" }}
-              loading="lazy" alt='...'
+              loading="lazy"
+              alt="..."
               src={
                 "https://assets.stylori.com/images/Static+Pages/Other+Pages/securepayments-pink.svg"
               }
@@ -175,7 +176,8 @@ export default function StaticView() {
           >
             <img
               style={{ width: "40%", height: "100%" }}
-              loading="lazy" alt='...'
+              loading="lazy"
+              alt="..."
               src={
                 "https://assets.stylori.com/images/Static+Pages/Other+Pages/diversestyles-pink.svg"
               }
@@ -194,7 +196,8 @@ export default function StaticView() {
           >
             <img
               style={{ width: "40%", height: "100%" }}
-              loading="lazy" alt='...'
+              loading="lazy"
+              alt="..."
               src={
                 "https://assets.stylori.com/images/Static+Pages/Other+Pages/easyreturns-pink.svg"
               }

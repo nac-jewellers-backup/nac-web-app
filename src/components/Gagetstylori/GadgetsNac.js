@@ -153,26 +153,27 @@ export function PaperSheetProduct(props) {
   const isSilver = props.isSilver ? true : false;
   const color = "#33346d";
   const classes = useStyles();
-  const ArrowLeft = (props) => {
-    const { className, style, onClick } = props;
-    return (
-      <ArrowLeftIcon
-        className={`${className} ${classes.collectionSection}`}
-        onClick={onClick}
-        style={{ ...style }}
-      />
-    );
-  };
-  const ArrowRight = (props) => {
-    const { className, style, onClick } = props;
-    return (
-      <ArrowRightIcon
-        className={`${className} ${classes.collectionSection}`}
-        onClick={onClick}
-        style={{ ...style }}
-      />
-    );
-  };
+
+  // const ArrowLeft = (props) => {
+  //   const { className, style, onClick } = props;
+  //   return (
+  //     <ArrowLeftIcon
+  //       className={`${className} ${classes.collectionSection}`}
+  //       onClick={onClick}
+  //       style={{ ...style }}
+  //     />
+  //   );
+  // };
+  // const ArrowRight = (props) => {
+  //   const { className, style, onClick } = props;
+  //   return (
+  //     <ArrowRightIcon
+  //       className={`${className} ${classes.collectionSection}`}
+  //       onClick={onClick}
+  //       style={{ ...style }}
+  //     />
+  //   );
+  // };
  
 
   // "#D91965"

@@ -17,8 +17,8 @@ const useStyles = makeStyles((theme) => ({
   },
   containerRoot: {
     width: "100%",
-    backgroundImage:
-      "url(https://alpha-assets.stylori.com/images/static/home/box_bg.png)",
+    // backgroundImage:
+    //   "url(https://alpha-assets.stylori.com/images/static/home/box_bg.png)",
     boxShadow: "0 0 5px #888 !important",
     padding: "15px 0px 7px 0px",
     marginBottom: "25px",
@@ -128,6 +128,7 @@ export default function StaticView(props) {
                 src="https://assets-cdn.stylori.com/assets/7b4c4135f67d8ee467c80ebc286cd3c3bad477ad.html"
                 width="100%"
                 frameBorder={0}
+                title="title"
               ></iframe>
             </Grid>
           </Grid>

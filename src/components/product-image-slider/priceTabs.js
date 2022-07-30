@@ -1,14 +1,11 @@
 import {
-    AppBar,
+  
     Grid,
     Hidden,
     ExpansionPanel,
-    ExpansionPanelSummary,
-    ExpansionPanelDetails,
-    Tabs,
-    Tab,
-    Typography,
-    Container, Modal, Button
+  
+   
+    Container, Modal,
 } from '@material-ui/core';
 import React from 'react';
 import './product-images.css'
@@ -22,13 +19,13 @@ import { GlobalContext } from 'context'
 
 
 
-function TabContainer({ children, dir }) {
-    return (
-        <Typography component="div" dir={dir} style={{ padding: 8 * 3 }}>
-            {children}
-        </Typography>
-    );
-}
+// function TabContainer({ children, dir }) {
+//     return (
+//         <Typography component="div" dir={dir} style={{ padding: 8 * 3 }}>
+//             {children}
+//         </Typography>
+//     );
+// }
 
 const PriceTabs = (props) => {
     const { ProductDetailCtx: { filters }, setFilters } = React.useContext(ProductDetailContext);
@@ -37,9 +34,7 @@ const PriceTabs = (props) => {
 }
 
 class Component extends React.Component {
-    constructor(props) {
-        super(props);
-    }
+   
     state = {
         value: 1,
         values: "",
@@ -68,8 +63,8 @@ class Component extends React.Component {
         if (key === 'purity') {
 
             var kv = event.target.id
-            var objVal = kv.split(" ")
-            var _multipleColor = objVal.filter(val => { if (val === "And") return val }) // example : 18k Yellow And White
+           
+         // example : 18k Yellow And White
             var arrPurity
             var arrColor
             // if (_multipleColor.length > 0) {
@@ -122,51 +117,51 @@ class Component extends React.Component {
 
     imageRender = (val) => {
 
-        if (val == '18K Yellow') {
+        if (val === '18K Yellow') {
             return (
                 "#EAC97D"
             );
-        } if (val == '22K Yellow') {
+        } if (val === '22K Yellow') {
             return (
                 '#EAC97D'
             );
         }
-        if (val == '14K Yellow') {
+        if (val === '14K Yellow') {
             return (
                 " #EAC97D"
             );
-        } if (val == '24K Yellow') {
+        } if (val === '24K Yellow') {
             return (
                 '#EAC97D'
             );
         }
-        if (val == "14K White") {
+        if (val === "14K White") {
             return (
                 "#CDD0DD"
             );
         }
-        if (val == '18K White') {
+        if (val === '18K White') {
             return (
                 "#CDD0DD"
             );
         }
-        if (val == '14K Rose_White') {
+        if (val === '14K Rose_White') {
             return (
                 "#E2A497"
             );
         }
-        if (val == '18K Rose_White') {
+        if (val === '18K Rose_White') {
             return (
                 "#E2A497"
             );
         }
-        if (val == "14K Rose") {
+        if (val === "14K Rose") {
             return (
                 "#E2A497"
             );
         }
 
-        if (val == '18K Rose') {
+        if (val === '18K Rose') {
             return (
                 "#E2A497"
             );
@@ -177,9 +172,9 @@ class Component extends React.Component {
     TabsComponent = () => {
         const { classes } = this.props;
         const data = this.props.data;
-        const { value } = this.state;
+     
         const kadasize = this.props && this.props.data && this.props.data.length > 0 && this.props.data[0] && this.props.data[0].productsDetails && this.props.data[0].productsDetails.length > 0 && this.props.data[0].productsDetails[0] && this.props.data[0].productsDetails[0].namedetail && this.props.data[0].productsDetails[0].namedetail.length > 0 && this.props.data[0].productsDetails[0].namedetail[3] && this.props.data[0].productsDetails[0].namedetail[3].details && this.props.data[0].productsDetails[0].namedetail[3].details
-        const limit = 8;
+       
         const settings = {
             className: 'center',
             infinite: false,
@@ -248,7 +243,7 @@ class Component extends React.Component {
                                 <Grid item lg={9} xs={12} >
                                     {arr.length > 0 ?
                                         <>
-                                            <Grid container style={{ width: "100%" }} className={classes.pagination} style={{ overflow: "hidden" }}>
+                                            <Grid container  className={classes.pagination} style={{ overflow: "hidden",width: "100%" }}>
                                                 {arr.length > 8 && <Hidden smDown> <Grid item style={{ width: "5%", alignItems: "center", justifyContent: "center", display: "flex" }}>
                                                     <img onClick={() => previous()} className={"icon-leftcaro"} loading="lazy" alt='...'/>
                                                 </Grid></Hidden>}
@@ -317,7 +312,7 @@ class Component extends React.Component {
                                                     <>
                                                         {
                                                             handle_extension(data[0].size_guide) === "image" &&
-                                                            <div className={`${classes.modals}  "modalin-ring"`}><img height='auto' width='100%' src={data[0].size_guide} /></div>
+                                                            <div className={`${classes.modals}  "modalin-ring"`}><img height='auto' width='100%' src={data[0].size_guide} alt=".." loading='lazy'/></div>
                                                              
                                                         }
                                                         {
@@ -329,8 +324,9 @@ class Component extends React.Component {
   download the PDF file.</a></p>
 </object> */}
                                                              <iframe
-                                                           className="document_iframe" 
-                                                             src={data[0].size_guide} width="100%" height="100%" />
+                                                              className="document_iframe" 
+                                                               title='...'
+                                                              src={data[0].size_guide} width="100%" height="100%" />
                                                         
                                                              </div>
                                                         }
@@ -363,7 +359,7 @@ class Component extends React.Component {
                                                 var kv = val
                                                 var objVal = kv.split(" ")
 
-                                                var _multipleColor = objVal.filter(val => { if (val === "And") return val }) // example : 18k Yellow And White
+                                              
                                                 var arrPurity
                                                 var arrColor
                                                 // if (_multipleColor.length > 0) {
@@ -396,6 +392,7 @@ class Component extends React.Component {
                                                         <div id={val} style={{ fontSize: "10px" }} className={this.state.purity === val ? `rings_tabsvls_active ${classes.tabs_values_font}` : `rings_tabsvls ${classes.tabs_values_font}`}>{arrColor}</div>
                                                     </Grid>
                                                 )
+                                                return 0;
                                             }
                                             )}
                                         </Grid>

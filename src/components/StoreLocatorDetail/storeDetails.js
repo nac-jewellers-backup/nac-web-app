@@ -13,21 +13,7 @@ function StoreDetails(props) {
     obj_values.data.result &&
     obj_values.data.result.name &&
     obj_values.data.result.name.split("-");
-  var titleName = name && name[1];
-  var lat =
-    obj_values &&
-    obj_values.data &&
-    obj_values.data.result &&
-    obj_values.data.result.geometry &&
-    obj_values.data.result.geometry.location &&
-    obj_values.data.result.geometry.location.lat;
-  var lng =
-    obj_values &&
-    obj_values.data &&
-    obj_values.data.result &&
-    obj_values.data.result.geometry &&
-    obj_values.data.result.geometry.location &&
-    obj_values.data.result.geometry.location.lng;
+  
 
   const [state, setState] = useState({
     formatted_phone_number: "",
@@ -120,21 +106,10 @@ function StoreDetails(props) {
  
       })
       .catch(console.error);
+      // eslint-disable-next-line
   }, []);
 
-  const days =
-    obj_values &&
-    obj_values.data &&
-    obj_values.data.result &&
-    obj_values.data.result.opening_hours &&
-    obj_values.data.result.opening_hours.weekday_text &&
-    obj_values.data.result.opening_hours.weekday_text;
-  const len =
-    obj_values &&
-    obj_values.data &&
-    obj_values.data.result &&
-    obj_values.data.result.reviews &&
-    obj_values.data.result.reviews.length;
+ 
   return (
     <Grid
       container
@@ -197,6 +172,7 @@ function StoreDetails(props) {
                       scrolling="no"
                       marginheight="0"
                       marginwidth="0"
+                      title="..."
                     ></iframe>
                     <a href="https://soap2day-to.com"></a>
                   </div>
@@ -217,6 +193,7 @@ function StoreDetails(props) {
                       scrolling="no"
                       marginheight="0"
                       marginwidth="0"
+                      title="..."
                     ></iframe>
                     <a href="https://soap2day-to.com"></a>
                   </div>
@@ -237,6 +214,7 @@ function StoreDetails(props) {
                       scrolling="no"
                       marginheight="0"
                       marginwidth="0"
+                      title="..."
                     ></iframe>
                     <a href="https://soap2day-to.com"></a>
                   </div>
@@ -256,6 +234,7 @@ function StoreDetails(props) {
                     scrolling="no"
                     marginheight="0"
                     marginwidth="0"
+                    title="..."
                   ></iframe>
                   <a href="https://soap2day-to.com"></a>
                 </div>
@@ -275,6 +254,7 @@ function StoreDetails(props) {
                     scrolling="no"
                     marginheight="0"
                     marginwidth="0"
+                    title="..."
                   ></iframe>
                   <a href="https://soap2day-to.com"></a>
                 </div>
@@ -293,6 +273,7 @@ function StoreDetails(props) {
                     scrolling="no"
                     marginheight="0"
                     marginwidth="0"
+                    title="..."
                   ></iframe>
                   <a href="https://soap2day-to.com"></a>
                 </div>
@@ -311,6 +292,7 @@ function StoreDetails(props) {
                     scrolling="no"
                     marginheight="0"
                     marginwidth="0"
+                    title="..."
                   ></iframe>
                   <a href="https://soap2day-to.com"></a>
                 </div>
@@ -329,6 +311,7 @@ function StoreDetails(props) {
                     scrolling="no"
                     marginheight="0"
                     marginwidth="0"
+                    title="..."
                   ></iframe>
                   <a href="https://soap2day-to.com"></a>
                 </div>

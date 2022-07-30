@@ -31,7 +31,7 @@ class Allorders extends React.Component {
   componentDidMount() {
     ReactPixel.init("1464338023867789", {}, { debug: true, autoConfig: false });
     ReactPixel.fbq("track", "PageView");
-    ReactPixel.track("Purchase", {
+    window.location.href.includes("paymentsuccess") && ReactPixel.track("Purchase", {
       value:
         this.props?.allorderdata?.data?.allOrders?.nodes[0]
           ?.shoppingCartByCartId?.discountedPrice,
@@ -55,12 +55,14 @@ class Allorders extends React.Component {
       arr.shoppingCartByCartId.shoppingCartItemsByShoppingCartId.nodes.filter(
         (val) => {
           if (val.transSkuListByProductSku) return val;
+          return 0;
         }
       );
     if (_val.length > 0) {
       a = _val
         .filter((val) => {
           if (val.transSkuListByProductSku) return val;
+          return 0;
         })
         .map((cart) => {
           if (
@@ -77,6 +79,7 @@ class Allorders extends React.Component {
       b = _val
         .filter((val) => {
           if (val.transSkuListByProductSku) return val;
+          return 0;
         })
         .map((cart) => {
           if (
@@ -188,12 +191,14 @@ class Allorders extends React.Component {
       arr.shoppingCartByCartId.shoppingCartItemsByShoppingCartId.nodes.filter(
         (val) => {
           if (val.transSkuListByProductSku) return val;
+          return 0;
         }
       );
     if (_val.length > 0) {
       a = _val
         .filter((val) => {
           if (val.transSkuListByProductSku) return val;
+          return 0;
         })
         .map((cart) => {
           if (
@@ -260,6 +265,7 @@ class Allorders extends React.Component {
             .concat(`${browser_type && browser_type.browser_type}`);
         url_split[url_split && url_split.length - 1] = browser_type_append;
         url_split.splice(2, 0, _resolutions);
+         // eslint-disable-next-line
         var url_construct = url_split.join().replace(/\,/g, "/");
         ppp = `${CDN_URL}${url_construct}`;
       }
@@ -272,61 +278,61 @@ class Allorders extends React.Component {
         this.props.allorderdata.allorderdata &&
         this.props.allorderdata.allorderdata.nodes.length > 0
       ) {
-        var vera = this.props.allorderdata.allorderdata.nodes.map((val) => {
-          if (val !== undefined && val !== null) {
-            var inside =
-              val.shoppingCartByCartId.shoppingCartItemsByShoppingCartId.nodes.map(
-                (cart) => {
-                  if (cart !== undefined && cart !== null) {
-                    if (cart !== undefined && cart !== null) {
-                      var metalColor_ = metal;
-                      var cnt =
-                        imgs[0].transSkuListByProductSku.productListByProductId.productImagesByProductId.nodes[0].imageUrl.split(
-                          "/"
-                        );
-                      var cnt_b = cnt[2].split("-");
-                      var cnt_c = cnt_b[1];
+        // var vera = this.props.allorderdata.allorderdata.nodes.map((val) => {
+        //   if (val !== undefined && val !== null) {
+        //     var inside =
+        //       val.shoppingCartByCartId.shoppingCartItemsByShoppingCartId.nodes.map(
+        //         (cart) => {
+        //           if (cart !== undefined && cart !== null) {
+        //             if (cart !== undefined && cart !== null) {
+        //               var metalColor_ = metal;
+        //               var cnt =
+        //                 imgs[0].transSkuListByProductSku.productListByProductId.productImagesByProductId.nodes[0].imageUrl.split(
+        //                   "/"
+        //                 );
+        //               var cnt_b = cnt[2].split("-");
+        //               var cnt_c = cnt_b[1];
 
-                      var browser_type = JSON.parse(
-                        localStorage.getItem("browserDetails")
-                      );
+        //               var browser_type = JSON.parse(
+        //                 localStorage.getItem("browserDetails")
+        //               );
 
-                      if ((metalColor_ && metalColor_[0]) === cnt_c[1]) {
-                        check_img = true;
+        //               if ((metalColor_ && metalColor_[0]) === cnt_c[1]) {
+        //                 check_img = true;
 
-                        var resolution = 500;
-                        var _resolutions =
-                          width < 960
-                            ? `${resolution * 2}X${resolution * 2}`
-                            : `${resolution}X${resolution}`;
-                        var url_split =
-                          imgs &&
-                          imgs[0].transSkuListByProductSku.productListByProductId.productImagesByProductId.nodes[0].imageUrl.split(
-                            "/"
-                          );
-                        var extension_split =
-                          url_split && url_split[url_split.length - 1];
-                        var browser_type_append =
-                          extension_split &&
-                          extension_split
-                            .split(".")[0]
-                            .concat(
-                              `${browser_type && browser_type.browser_type}`
-                            );
-                        url_split[url_split && url_split.length - 1] =
-                          browser_type_append;
-                        url_split.splice(2, 0, _resolutions);
-                        var url_construct = url_split
-                          .join()
-                          .replace(/\,/g, "/");
-                        ppp = `${CDN_URL}${url_construct}`;
-                      }
-                    }
-                  }
-                }
-              );
-          }
-        });
+        //                 var resolution = 500;
+        //                 var _resolutions =
+        //                   width < 960
+        //                     ? `${resolution * 2}X${resolution * 2}`
+        //                     : `${resolution}X${resolution}`;
+        //                 var url_split =
+        //                   imgs &&
+        //                   imgs[0].transSkuListByProductSku.productListByProductId.productImagesByProductId.nodes[0].imageUrl.split(
+        //                     "/"
+        //                   );
+        //                 var extension_split =
+        //                   url_split && url_split[url_split.length - 1];
+        //                 var browser_type_append =
+        //                   extension_split &&
+        //                   extension_split
+        //                     .split(".")[0]
+        //                     .concat(
+        //                       `${browser_type && browser_type.browser_type}`
+        //                     );
+        //                 url_split[url_split && url_split.length - 1] =
+        //                   browser_type_append;
+        //                 url_split.splice(2, 0, _resolutions);
+        //                 var url_construct = url_split
+        //                   .join()
+        //                   .replace(/\,/g, "/");
+        //                 ppp = `${CDN_URL}${url_construct}`;
+        //               }
+        //             }
+        //           }
+        //         }
+        //       );
+        //   }
+        // });
 
         return ppp;
       }
@@ -337,12 +343,12 @@ class Allorders extends React.Component {
     let gut_lg = localStorage.getItem("gut_lg")
       ? JSON.parse(localStorage.getItem("gut_lg"))
       : {};
-    const { expanded, mailId, expandedlimit } = this.state;
+    const { expanded} = this.state;
     const { allorderdata } = this.props;
 
-    const expanded_ = expanded.map((val) => {
-      return val;
-    });
+    // const expanded_ = expanded.map((val) => {
+    //   return val;
+    // });
     const allDatas = () => {
       if (
         allorderdata &&
@@ -369,11 +375,11 @@ class Allorders extends React.Component {
                     <ExpansionPanel
                       square
                       style={{
-                        boxShadow: "none",
+                        marginBottom: "10px",
                         boxShadow: "rgb(242, 242, 242) 4px 10px 20px 5px",
                       }}
                       key={index}
-                      style={{ marginBottom: "10px" }}
+                      
                     >
                       <ExpansionPanelSummary
                         expandIcon={<ExpandMoreIcon className="arrow-chek" />}
@@ -646,7 +652,7 @@ class Allorders extends React.Component {
                                               .skuWeight !== null
                                               ? cart.transSkuListByProductSku
                                                   .productListByProductId
-                                                  .productType == "Kada"
+                                                  .productType === "Kada"
                                                 ? "Weight (Gm)"
                                                 : "Gold Weight (Gm)"
                                               : null}
@@ -782,7 +788,9 @@ class Allorders extends React.Component {
                                               alt="..."
                                               src="https://assets.stylori.com/images/static/icon-ship.png"
                                             />{" "}
-                                            <a>
+                                            <a href="/#"
+                                         target="_blank"
+                                         rel="noopener noreferrer" >
                                               {this.generateShipsBy(
                                                 cart.transSkuListByProductSku
                                                   .readytoship,
@@ -1100,7 +1108,9 @@ class Allorders extends React.Component {
                                                     </div>
                                                   </>
                                                 );
+                                                return 0;
                                             }
+                                          
                                           )}
                                       </div>
                                       <Hidden smDown>
@@ -1698,7 +1708,9 @@ class Allorders extends React.Component {
                                                     </div>
                                                   </>
                                                 );
+                                                return 0;
                                             }
+                                           
                                           )}
                                       </div>
                                       <Hidden smDown>

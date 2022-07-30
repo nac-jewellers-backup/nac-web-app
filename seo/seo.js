@@ -19,7 +19,7 @@ var seo = (title, description, imgURL) => {
  
   <meta property='og:title'  content='${title}' />
   <meta property='og:description'  content='${description}'/>
-  <meta property='og:url'  content="https://www.nacjewellers.com/" />
+  <meta property='og:url'  content="https://staging.nacjewellers.net/" />
   <meta property='og:image'  content='${imgURL}' />
   <meta property="og:type" content="website">
  
@@ -28,6 +28,6 @@ var seo = (title, description, imgURL) => {
   <meta property='twitter:title'  content='${title}' />
   <meta property='twitter:description' content='${description}' />
   <meta property='twitter:image' content='${imgURL}' /> 
-  <meta property="twitter:url" content="https://www.nacjewellers.com/">`;
+  <meta property="twitter:url" content="https://staging.nacjewellers.net/">`;
 };
 module.exports = { seo };

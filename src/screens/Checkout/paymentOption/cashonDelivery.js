@@ -94,11 +94,12 @@ class CashonDelivey extends React.Component {
           this && this.props.cartFilters.discounted_price
             ? JSON.stringify(this.props.cartFilters.discounted_price)
             : "";
+            var cart_price;
         if (discounted_price.length > 0) {
           var a = Math.round(total + num);
-          var cart_price = a - discounted_price;
+           cart_price = a - discounted_price;
         } else {
-          var cart_price = Math.round(total + num);
+          cart_price = Math.round(total + num);
         }
         return cart_price;
       }

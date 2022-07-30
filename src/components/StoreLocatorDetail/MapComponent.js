@@ -4,8 +4,8 @@ import { withScriptjs, withGoogleMap, GoogleMap ,Marker} from "react-google-maps
 const MapComponent = ({currentMapLocation, currentStreetViewURL,isStreetView}) => {
   const isUrl = currentStreetViewURL.length > 0 ? true : false;
   const iframeHTML = '<iframe sandbox="allow-scripts allow-forms" src="' + currentStreetViewURL + '" width="100%" height="540" frameborder="0" style="border:0" allowfullscreen></iframe>';
-  const styles = require('../StoreLocator/StoreLocator.scss');
-  const pinImage = 'http://maps.google.com/mapfiles/ms/icons/red-dot.png';
+  // const styles = require('../StoreLocator/StoreLocator.scss');
+  // const pinImage = 'http://maps.google.com/mapfiles/ms/icons/red-dot.png';
   const MapWithAMarker = withScriptjs(withGoogleMap(props =>
     <GoogleMap
       defaultZoom={18}
@@ -22,7 +22,7 @@ const MapComponent = ({currentMapLocation, currentStreetViewURL,isStreetView}) =
   loadingElement={<div style={{ height: `100%` }} />}
   containerElement={<div style={{ height: `400px` }} />}
   mapElement={<div style={{ height: `100%` }} />}
-/>
+   />
 
   return(
       <div>

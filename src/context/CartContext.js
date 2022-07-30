@@ -422,7 +422,7 @@ const Provider = (props) => {
         .then(async (val) => {
           val = val.data;
           let cartItems = Boolean(
-            val.data.allShoppingCarts.nodes?.length >
+            val?.data?.allShoppingCarts?.nodes?.length >
               0?.[0]?.shoppingCartItemsByShoppingCartId?.nodes
           )
             ? val.data.allShoppingCarts.nodes[0]

@@ -7,26 +7,18 @@ import SiteMap from "components/sitemap/sitemap";
 import ContactUs from "containers/contactus/contact";
 import {
   AboutUs,
-
-
-
-
-
-
-  Contacts, Delivery,
-
-  Faqs, Privacy, Return,
-
-
-
-  Terms
+  Contacts,
+  Delivery,
+  Faqs,
+  Privacy,
+  Return,
+  Terms,
 } from "mappers/dummydata/aboutUs";
 import { Educations, Maps } from "mappers/dummydata/education";
 import React from "react";
 import styles from "./style";
 
 export default function AboutusPage(props) {
- 
   const classes = styles();
   const values = () => {
     if (window.location.pathname === "/aboutus") {
@@ -47,11 +39,9 @@ export default function AboutusPage(props) {
       return Faqs;
     } else if (window.location.pathname === "/contactus") {
       return Contacts;
-    }
-    else return null;
+    } else return null;
   };
   React.useEffect(() => {
-
     let hashedLocation = window.location.hash.replace("#", "");
     if (hashedLocation) {
       let elmnt = document.getElementById(hashedLocation);
@@ -62,14 +52,11 @@ export default function AboutusPage(props) {
   return (
     <Grid container xs={12}>
       <Header />
-      <Grid item xs={12}>
-   
-      </Grid>
+      <Grid item xs={12}></Grid>
       <Hidden smDown>
         <Grid item className={classes.paddingsss}>
           <Grid container className={classes.mainWidths}>
             <Grid container className={classes.subWidth}>
-             
               <Grid
                 item
                 className={classes.mainContent}
@@ -91,19 +78,14 @@ export default function AboutusPage(props) {
                   )}
                 </>
               </Grid>
-             
             </Grid>
           </Grid>
         </Grid>
       </Hidden>
 
       <Hidden mdUp>
-
         <Grid container style={{ padding: "12px", overflow: "hidden" }}>
-          <Grid
-            item
-            xs={12}
-          >
+          <Grid item xs={12}>
             <>
               <br />
               {window.location.pathname === "/contactus" && <ContactUs />}
@@ -111,9 +93,7 @@ export default function AboutusPage(props) {
               <br />
             </>
           </Grid>
-
         </Grid>
-
       </Hidden>
       <Footer />
     </Grid>

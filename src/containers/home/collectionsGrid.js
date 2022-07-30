@@ -55,7 +55,7 @@ export function AdvancedGridList() {
             <div className="parent">
               <Link href="/jewellery-fabula">
                 <img
-                  src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Final-collection+tile/Fabula-Jewellery.jpg"
+                  src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/banners/web/Fabula-Jewellery--1-.webp"
                   alt="NAC"
                   loading="lazy"
                   width="100%"
@@ -73,7 +73,7 @@ export function AdvancedGridList() {
             <div className="parent">
               <Link href="/jewellery-fabula">
                 <img
-                  src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Final-collection+tile/Bridal-Diamond-Jewellery.jpg"
+                  src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/banners/web/Bridal-Diamond-Jewellery.webp"
                   alt="NAC"
                   loading="lazy"
                   width="100%"
@@ -95,7 +95,7 @@ export function AdvancedGridList() {
                 <div className="parent">
                   <Link href="https://www.stylori.com/">
                     <img
-                      src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Final-collection+tile/Nagas-Gold-Jewellery.jpg"
+                      src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/banners/web/Nagas-Gold-Jewellery.webp"
                       alt="NAC"
                       loading="lazy"
                       width="100%"
@@ -113,7 +113,7 @@ export function AdvancedGridList() {
                 <div className="parent">
                   <Link href="/jewellery-platinum">
                     <img
-                      src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Final-collection+tile/Platinum-Jewellery.jpg"
+                      src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/banners/web/Platinum-Jewellery.webp"
                       alt="NAC"
                       loading="lazy"
                       width="100%"
@@ -133,7 +133,7 @@ export function AdvancedGridList() {
                 <div className="parent">
                   <Link href="/jewellery-nagas">
                     <img
-                      src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Collection+tile/Muhurtham_tile_385+X+600_px.jpg"
+                      src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/banners/web/Muhurtham_tile_385-X-600_px.webp"
                       alt="NAC"
                       loading="lazy"
                       width="100%"
@@ -154,7 +154,7 @@ export function AdvancedGridList() {
                 <div className="parent">
                   <Link href="/jewellery-young+ones">
                     <img
-                      src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Final-collection+tile/Young-Ones-Jewellers.jpg"
+                      src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/banners/web/Young-Ones-Jewellers.webp"
                       alt="NAC"
                       loading="lazy" 
                       width="100%"
@@ -184,7 +184,7 @@ export function AdvancedGridList() {
               <div className="parent">
                 <Link href="/jewellery-rewind">
                   <img
-                    src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Final-collection+tile/Rewind-Gold-Jewellery.jpg"
+                    src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/banners/web/Rewind-Gold-Jewellery.webp"
                     alt="NAC"
                     loading="lazy"
                     width="100%"
@@ -204,7 +204,7 @@ export function AdvancedGridList() {
               <div className="parent">
                 <Link href="/jewellery-mayura">
                   <img
-                    src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Final-collection+tile/Mayura-Diamond-Jewellery.jpg"
+                    src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/banners/web/Mayura-Diamond-Jewellery.webp"
                     alt="NAC"
                     loading="lazy" 
                     width="100%"
@@ -230,7 +230,7 @@ export function AdvancedGridList() {
             <Link href="https://www.stylori.com/">
               {" "}
               <img
-                src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Final-collection+tile/Nagas-Gold-Jewellery.jpg"
+                src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/banners/web/Nagas-Gold-Jewellery.webp"
                 alt="NAC"
                 loading="lazy"
                 width="100%"
@@ -246,7 +246,7 @@ export function AdvancedGridList() {
           <div class="grid-item-sm item111-sm">
             <Link href="/jewellery-fabula">
               <img
-                src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Final-collection+tile/Fabula-Jewellery.jpg"
+                src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/banners/web/Fabula-Jewellery--1-.webp"
                 alt="NAC"
                 loading="lazy" 
                 width="100%"
@@ -262,7 +262,7 @@ export function AdvancedGridList() {
           <div class="grid-item-sm item112-sm">
             <Link href="/jewellery-platinum">
               <img
-                src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Final-collection+tile/Platinum-Jewellery.jpg"
+                src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/banners/web/Platinum-Jewellery.webp"
                 alt="NAC"
                 loading="lazy" 
                 width="100%"
@@ -278,7 +278,7 @@ export function AdvancedGridList() {
           <div class="grid-item-sm item113-sm">
             <Link href="/jewellery-mayura">
               <img
-                src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Final-collection+tile/Mayura-Diamond-Jewellery.jpg"
+                src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/banners/web/Mayura-Diamond-Jewellery.webp"
                 alt="NAC"
                 loading="lazy"
                 width="100%"
@@ -294,7 +294,7 @@ export function AdvancedGridList() {
           <div class="grid-item-sm item11-sm">
             <Link href="/jewellery-nagas">
               <img
-                src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Collection+tile/Muhurtham_tile_385+X+600_px.jpg"
+                src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/banners/web/Muhurtham_tile_385-X-600_px.webp"
                 alt="NAC"
                 loading="lazy" 
                 width="100%"
@@ -310,7 +310,7 @@ export function AdvancedGridList() {
           <div class="grid-item-sm item0-sm">
             <Link href="/jewellery-young+ones">
               <img
-                src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/Final-collection+tile/Young-Ones-Jewellers.jpg"
+                src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/banners/web/Young-Ones-Jewellers.webp"
                 alt="NAC"
                 loading="lazy" 
                 className={classes.gridimg}

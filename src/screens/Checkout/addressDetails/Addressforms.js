@@ -3,7 +3,6 @@ import { useNetworkRequest } from "hooks/index";
 import { useCheckForCod } from "hooks/CheckForCodHook";
 import { CheckForCod } from "queries/productdetail";
 import { ADDRESSDETAILS } from "queries/productdetail";
-import { CartContext } from "../../../context/CartContext";
 import { API_URL } from "../../../config";
 var obj = {};
 var delet = {};
@@ -32,14 +31,13 @@ const Addressforms = (changePanel) => {
     : "";
 
   const [pincods, setpincod] = React.useState({ pincod: "" });
-  const {
-    data: userdata,
-    makeFetch: makeFetch,
-  } = useNetworkRequest("/adduseraddress", {}, false);
-  const {
-    data: addresData,
-    makeRequestCod: addresmakeRequestCod,
-  } = useCheckForCod(ADDRESSDETAILS, () => {}, {});
+  const { data: userdata, makeFetch: makeFetch } = useNetworkRequest(
+    "/adduseraddress",
+    {},
+    false
+  );
+  const { data: addresData, makeRequestCod: addresmakeRequestCod } =
+    useCheckForCod(ADDRESSDETAILS, () => {}, {});
   const [open, setOpen] = React.useState(false);
   const [values, setValues] = React.useState({
     addressOne: {
@@ -93,17 +91,21 @@ const Addressforms = (changePanel) => {
 
   var addObjgust = {};
   addObjall["isguestlogin"] = cont ? false : true;
-  const {
-    makeFetch: makeFetchall,
-  } = useNetworkRequest("/addaddress", {}, false);
-  const {
-    data: removedata,
-    makeFetch: deleteaddress,
-  } = useNetworkRequest("/removeaddress", {}, false);
-  const {
-    data: CodData,
-    makeRequestCod,
-  } = useCheckForCod(CheckForCod, () => {}, {});
+  const { makeFetch: makeFetchall } = useNetworkRequest(
+    "/addaddress",
+    {},
+    false
+  );
+  const { data: removedata, makeFetch: deleteaddress } = useNetworkRequest(
+    "/removeaddress",
+    {},
+    false
+  );
+  const { data: CodData, makeRequestCod } = useCheckForCod(
+    CheckForCod,
+    () => {},
+    {}
+  );
   const pathnames = window.location.pathname.split("-")[0] === "/account";
   const addressva =
     values && values.addressvalues && values.addressvalues.length > 0;

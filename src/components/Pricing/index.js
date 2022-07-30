@@ -14,8 +14,8 @@ export default function Pricing(props) {
         <Typography
           style={props.from && { margin: "auto", textTransform: "capitalize" }}
           className={`pricing  ${
-            (props.title != null) & (props.title !== "") ? "" : "shine"
-          } ${path == "stylori" && "pricingTitle"}`}
+            (props.title !== null) & (props.title !== "") ? "" : "shine"
+          } ${path === "stylori" && "pricingTitle"}`}
         >
           {props.title}
         </Typography>
@@ -550,7 +550,7 @@ export default function Pricing(props) {
 
         {props.success ? (
           <>
-            {props.successofferPrice == props.successprice ? (
+            {props.successofferPrice === props.successprice ? (
               <>
                 <Hidden smDown>
                   <span

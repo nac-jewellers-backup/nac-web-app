@@ -87,8 +87,8 @@ const useStyles = makeStyles((theme) => ({
   },
   containerRoot: {
     width: "100%",
-    backgroundImage:
-      "url(https://alpha-assets.stylori.com/images/static/home/box_bg.png)",
+    // backgroundImage:
+    //   "url(https://alpha-assets.stylori.com/images/static/home/box_bg.png)",
     // boxShadow: "0 0 5px #888 !important",
     border: "1px solid #8080804d",
   },

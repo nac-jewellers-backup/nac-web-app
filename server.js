@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 5000;
 const dotenv = require("dotenv");
 const { seo } = require("./seo/seo");
 const { networkcall } = require("./seo/networkcall");
-const { Redirect } = require("react-router-dom");
+
 dotenv.config();
 
 const app = express();

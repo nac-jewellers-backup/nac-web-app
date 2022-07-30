@@ -402,11 +402,6 @@ export const useStyles = makeStyles((theme) => ({
       backgroundColor: "#33346d",
     },
   },
-  listedItems: {
-    padding: "0px",
-    fontSize: "12rem !important",
-    cursor: "pointer",
-  },
   listedItemsub: {
     padding: "0px",
     fontSize: "12rem !important",

@@ -9,6 +9,7 @@ export const filterGenerator = (
 ) => {
   var _obj = Object.keys(filter).filter((val) => {
     if (val === "transSkuListsByProductId") return true;
+    return 0;
   });
   if (table.length > 0) {
     if (_obj[0] === table) {

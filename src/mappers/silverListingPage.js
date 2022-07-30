@@ -77,7 +77,7 @@ export default function (data) {
                 //      }
                 //   ],
                 sortOptions : [
-                    "New To Stylori",
+                    "New To NAC",
                     "Featured",
                     "Price Low to High",
                     "Price High to Low",

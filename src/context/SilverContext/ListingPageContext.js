@@ -1,6 +1,5 @@
-import { createApolloFetch } from "apollo-fetch";
 import { CDN_URL } from "config";
-import { GlobalContext } from "context/GlobalContext";
+
 import { NetworkContext } from "context/NetworkContext";
 import { useGraphql } from "hooks/GraphqlHook";
 import { useNetworkRequest } from "hooks/NetworkHooks";
