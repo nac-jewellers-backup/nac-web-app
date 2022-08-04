@@ -117,7 +117,7 @@ export const IndexSavingPage = {
       redeemable: "Gold Only",
       joinNow: "Join now",
       payNow: "Pay now",
-      link: "https://nacsavings.in/",
+      link: "https://nacsavings.com/",
     },
     {
       img: "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/savings_scheme_2.jpg",
@@ -131,7 +131,7 @@ export const IndexSavingPage = {
       redeemable: "Gold Only",
       joinNow: "Join now",
       payNow: "Pay now",
-      link: "https://nacsavings.in/",
+      link: "https://nacsavings.com/",
     },
     {
       img: "https://storage.googleapis.com/media.nacjewellers.com/resources/user_media/savings_scheme_image_4.jpg",
@@ -145,7 +145,7 @@ export const IndexSavingPage = {
       redeemable: "Silver Articles",
       joinNow: "Join now",
       payNow: "Pay now",
-      link: "https://nacsavings.in/",
+      link: "https://nacsavings.com/",
     },
   ],
 };
