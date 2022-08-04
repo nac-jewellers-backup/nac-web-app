@@ -571,11 +571,11 @@ function HeaderHoverMenuItem(props) {
   ];
 
   const savingScheme = [
-    { title: "Pay now", url: "https://nacsavings.in/" },
-    { title: "Join now", url: "https://nacsavings.in/" },
-    { title: "New Quick Gold", url: "https://nacsavings.in/" },
-    { title: "Super Think Diamond", url: "https://nacsavings.in/" },
-    { title: "Super Quick silver", url: "https://nacsavings.in/" },
+    { title: "Pay now", url: "https://nacsavings.com/" },
+    { title: "Join now", url: "https://nacsavings.com/" },
+    { title: "New Quick Gold", url: "https://nacsavings.com/" },
+    { title: "Super Think Diamond", url: "https://nacsavings.com/" },
+    { title: "Super Quick silver", url: "https://nacsavings.com/" },
   ];
 
   const styloridata = [

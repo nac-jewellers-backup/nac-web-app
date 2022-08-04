@@ -40,7 +40,7 @@ export const mainlist = [
   // },
   {
     name: "SAVING SCHEME",
-    url: "https://nacsavings.in/",
+    url: "https://nacsavings.com/",
   },
   {
     name: "STYLORI",
@@ -1243,7 +1243,7 @@ export const menuListHeader = [
 
   {
     title: "Saving scheme".toUpperCase(),
-    url: "https://nacsavings.in/",
+    url: "https://nacsavings.com/",
   },
 ];
 
