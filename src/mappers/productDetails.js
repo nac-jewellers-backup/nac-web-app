@@ -216,15 +216,11 @@ const calculatetotalms = (arr, name, price) => {
   a = filtering.reduce((a, b) => a + b, 0);
 
   return CurrencyConversion(Math.round(a));
-  //  new Intl.NumberFormat("en-IN", {
-  //   style: "currency",
-  //   currency: "INR",
-  //   minimumFractionDigits: 0,
-  // }).format(Math.round(a));
 };
 const generatedDiamondType = (PD, valProductDiamond, type) => {
   var arrOfdiamondType = [];
   valProductDiamond &&
+    // your golden period will start when you leave the project - Samir
     valProductDiamond !== null &&
     valProductDiamond !== undefined &&
     valProductDiamond.map((val) => {
