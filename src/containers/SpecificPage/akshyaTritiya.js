@@ -626,7 +626,7 @@ function AkshyaTritiya(props) {
               </li>
               <li className={classes.titleContents}>
                 Click here to watch our AD Video&nbsp;
-                <a href="https://www.youtube.com/watch?v=5OyyXB8xxRU">Tamil</a>
+                <a href="https://www.youtube.com/watch?v=eghxSxYjS6U">Tamil</a>
                 &nbsp;|&nbsp;
                 <a href="https://www.youtube.com/watch?v=dRV0XNVAisE">Telugu</a>
               </li>
