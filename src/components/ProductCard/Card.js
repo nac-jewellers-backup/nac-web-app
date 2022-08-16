@@ -365,7 +365,9 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "13px",
   },
 }));
+
 const renderImages = (props, cardstate) => {
+  console.log(props,"???")
   if (props.static) {
     return props.image;
   } else {
@@ -379,6 +381,7 @@ const renderImages = (props, cardstate) => {
       : props?.data?.image?.[filterType]?.img;
   }
 };
+
 const similarProductrenderImages = (props, cardstate) => {
   if (props.static) {
     return props.image;
@@ -391,6 +394,7 @@ const similarProductrenderImages = (props, cardstate) => {
       : props?.data?.img;
   }
 };
+
 function Component(props) {
   const classes = useStyles();
   const [cardstate, setCardState] = React.useState({

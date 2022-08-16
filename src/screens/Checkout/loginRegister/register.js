@@ -5,6 +5,8 @@ import SimpleSelect from "../../../components/InputComponents/Select/Select";
 import { Input } from "../../../components/InputComponents/TextField/Input";
 import "./loginRegisters.css";
 import useRegister from "./useregister";
+import { MYCOUNTRIES } from "queries/cart";
+import { API_URL } from "config";
 
 const Register = (props) => {
   return <RegisterComponent {...props} />;
@@ -25,6 +27,40 @@ const RegisterComponent = (props) => {
   let user_ids = localStorage.getItem("user_id")
     ? localStorage.getItem("user_id")
     : "";
+    const [countryCode, setCountryCode] = React.useState();
+    const json = (response) => {
+      return response.json();
+    };
+    const getCountries=()=>{
+      fetch(`${API_URL}/graphql`, {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          query:MYCOUNTRIES,
+        }),
+      })
+        .then(json)
+        .then((data) => {
+           let main = data.data;
+           let countries=[]
+           main.allMasterCountries.nodes.map(_ =>{
+             let obj={}
+             obj.label = _.nicename
+             obj.value = _.iso
+             countries.push(obj)
+           })
+           setCountryCode(countries)
+        })
+        .catch(err=>{
+          console.log(err,'err')
+        })
+    }
+
+    React.useEffect(()=>{
+       getCountries();
+    },[])
 
   return (
     <div className="pt-sm">
@@ -69,7 +105,11 @@ const RegisterComponent = (props) => {
                           ? salutation
                           : valuesadrees.salutation
                       }
-                      selectData={["Mr", "Mrs", "Ms"]}
+                      selectData={[
+                        {label:"Mr",value:"Mr"},
+                        {label:"Mrs",value:"Mrs"},
+                        {label:"Ms",value:"Ms"}
+                      ]}
                     />
                   </Grid>
                 )}
@@ -237,7 +277,11 @@ const RegisterComponent = (props) => {
                     <SimpleSelect
                       val={"1"}
                       name={["Select"]}
-                      selectData={["Mr", "Mrs", "Ms"]}
+                      selectData={[
+                        {label:"Mr",value:"Mr"},
+                        {label:"Mrs",value:"Mrs"},
+                        {label:"Ms",value:"Ms"}
+                      ]}
                     />
                   </Grid>
                 )}
@@ -299,8 +343,7 @@ const RegisterComponent = (props) => {
                     <Grid item xs={6} lg={6}>
                       <SimpleSelect
                         name={"India"}
-                        selectData={["India"]}
-                        disabled={"disabled"}
+                        selectData={countryCode ?? []}
                       />
                     </Grid>
                     <Grid item xs={6} lg={6}>
@@ -327,7 +370,9 @@ const RegisterComponent = (props) => {
                     <Grid item xs={3} lg={3}>
                       <SimpleSelect
                         name={["+91"]}
-                        selectData={["+91"]}
+                        selectData={[
+                          {label:"+91",value:"+91"},
+                        ]}
                         disabled={"disabled"}
                       />
                     </Grid>

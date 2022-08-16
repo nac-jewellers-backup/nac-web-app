@@ -49,7 +49,7 @@ const Addressforms = (changePanel) => {
       pincode: "",
       city: "",
       state: "",
-      country: "India",
+      country: "",
       country_code: "+91",
       contactno: "",
       addresstype: 1,

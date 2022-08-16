@@ -339,6 +339,7 @@ const Provider = (props) => {
   }, [data, error, loading]);
 
   useEffect(() => {}, [data, error, loading]);
+  
   const updatefiltersSort = async () => {
     if (filters && filters.constructor === Object && Object.entries(filters).length !== 0 && filters.constructor === Object) {
       var newObj = {};

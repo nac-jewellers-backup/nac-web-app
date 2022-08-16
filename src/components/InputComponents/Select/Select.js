@@ -22,16 +22,11 @@ export default function SimpleSelect(props) {
     age: null,
     helperText: false,
   });
-  React.useEffect(() => {
-    // console.info('EVENT', values.age, Boolean((values.age != null && values.age !== "")));
-  }, [values.age]);
+ 
   function handleChange(event) {
     if (props.val === "1") {
       localStorage.setItem("m", event.target.value);
     }
-    // if (props.val == "2") {
-    //     localStorage.setItem('m1', event.target.value)
-    // }
     setValues({
       [event.target.name]: event.target.value,
       helperText: !Boolean(
@@ -59,7 +54,7 @@ export default function SimpleSelect(props) {
             ? props.name
             : "Select"
         }
-        onChange={(e) => handleChange(e)}
+        onChange={(e) => props.onChange ? props.onChange : handleChange(e)}
         value={values[props.name]}
         disabled={props.disabled ? props.disabled : ""}
         name={props.name ? props.name : "select"}
@@ -69,7 +64,7 @@ export default function SimpleSelect(props) {
         color="secondary"
       >
         {props.selectData.map((data) => (
-          <MenuItem value={data}>{data}</MenuItem>
+          <MenuItem value={data.value}>{data.label}</MenuItem>
         ))}
       </Select>
       {values.helperText && (
