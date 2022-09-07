@@ -40,7 +40,7 @@ export const Input = (props) => {
     rowsMax,
     multiline,
     onInvalid,
-
+    isSide,
     ...rest
   } = props;
 
@@ -81,7 +81,7 @@ export const Input = (props) => {
             inputProps={{ pattern, maxLength, minLength }}
             multiline={props.multiline}
             onInvalid={handleInvalid}
-            style={{ width: "100%", marginTop: "20px", borderRadius: "0px" }}
+            style={{ width: "100%", marginTop: isSide ? "0px" : "20px", borderRadius: "0px" }}
             error={invalid}
             helperText={invalid && <b>{helperText}</b>}
             onKeyPress={handleKeyPress}
@@ -104,7 +104,7 @@ export const Input = (props) => {
             maxLength,
             minLength,
           }}
-          style={{ width: "100%", marginTop: "26px" }}
+          style={{ width: "100%", marginTop: isSide ? "0px" : "26px",backgroundColor : isSide ? "#fff" : "" }}
           onInvalid={handleInvalid}
           error={invalid}
           multiline={multiline}

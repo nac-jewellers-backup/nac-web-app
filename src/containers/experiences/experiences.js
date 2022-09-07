@@ -1,5 +1,5 @@
-import React from "react";
-import { Grid, Hidden } from "@material-ui/core";
+import React, { useState } from "react";
+import { Grid, Hidden,Card,CardMedia,CardContent,CardActionArea,CardActions, Typography, Box } from "@material-ui/core";
 import Slideshow from "../../components/Carousel/carosul";
 import {
   ExperiencePageNac,
@@ -8,106 +8,107 @@ import {
 // import MediaCarousel from "../../components/mediacarousel/index";
 import MediaCarousel from "../../components/mediacarousel/mediaCarousel";
 // import Header from "../../components/header/header";
-import styles from "../savings/savingsstyle";
+import expstyles from "./experienceStyle";
 import Header from "components/SilverComponents/Header";
 import Footer from "../../components/Footer/Footer";
+import ExperienceCard from "./experienceCard";
+import Lotus from 'assets/NAC---Desktop-UI---NAC-Experiences-(LL,-EP,-BS,-Alive)_Sample-8.jpg';
+import Alive from 'assets/NAC---Desktop-UI---NAC-Experiences-(LL,-EP,-BS,-Alive)_Sample-9.jpg';
+import Ear from 'assets/NAC---Desktop-UI---NAC-Experiences-(LL,-EP,-BS,-Alive)_Sample-10.jpg';
+import Birth from 'assets/NAC---Desktop-UI---NAC-Experiences-(LL,-EP,-BS,-Alive)_Sample-11.jpg';
+import Experiences from 'assets/ExperienceBanner.jpg'
+
+
+const datalist=[
+  {
+    name:"The Lotus Lounge",
+    type:"lotus",
+    imageUrl:Lotus,
+    description:"Welcome to luxurious shopping experience Customized for your taste",
+    subdescription:"Book an appointment to Visit The Lotus Lounge"
+  },
+  {
+    name:"NAC Alive",
+    type:"alive",
+    imageUrl:Alive,
+    description:"We are here to bring yout online Shopping ALIVE with our video shopping experience",
+    subdescription:"Book an appointment to view and select your favourite designs on NAC Alive"
+  },
+  {
+    name:"Ear Piercing",
+    type:"piercing",
+    imageUrl:Ear,
+    description:"Ear piercing is an important tradition in our culture,be it ourselves or out little ones",
+    subdescription:"Book an appointment for an Ear Piercing now."
+  }, {
+    name:"Birth Stones",
+    type:"stones",
+    imageUrl:Birth,
+    description:"Birthstones are known to have positive impact on the wearer,With the right advice from our consultants,you can reap their various benifits",
+    subdescription:"Book an appointment with our Birthstone Consultant now."
+  }
+]
+
+const subDatalist=[
+  
+]
+
 export default function Experience(props) {
-  const classes = styles();
-  const next = () => {
-    slider.current.slickNext();
-  };
-  const previous = () => {
-    slider.current.slickPrev();
-  };
+  const classes = expstyles();
+  const [nextState,setNextstate] = useState('');
+  const [active,setActive] = useState(false)
+
+
   const slider = React.createRef();
 
-  const values = () => {
-    if (props.match.path === "/experiences") {
-      return IndexExperiencePage;
-    }
+  const values = (val) => {
+    setNextstate(val)
+    setTimeout(()=>{
+       setActive(true)
+    },500)
   };
+
+  const onBack =()=>{
+    setActive(false)
+  }
   return (
-    <Grid container>
-      <Header />
-
-      <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-        <Hidden smDown>
-          {ExperiencePageNac.carouselTop.setting.arrowsImg && (
-            <Grid container>
-              <Grid
-                item
-                onClick={previous}
-                className={classes.preButton}
-              ></Grid>
-              <Grid item onClick={next} className={classes.nextButton}></Grid>
-            </Grid>
-          )}
-        </Hidden>
-        <Slideshow
-          sliderRef={slider}
-          dataCarousel={ExperiencePageNac.carouselTop.setting}
-        >
-          {ExperiencePageNac.carouselTop.data.map((val, index) => (
-            <>
-              <Hidden smDown>
-                <Grid container key={index} className={classes.headContent}>
-                  <a href={val.navigateUrl} style={{ width: "100%" }}>
-                    <img
-                      src={val.img}
-                      loading="lazy" alt='...'
-                      style={{ width: "100%", height: "100%" }}
-                    />
-                  </a>
-                </Grid>
-              </Hidden>
-              <Hidden mdUp>
-                <Grid container key={index} className={classes.headContent}>
-                  <a href={val.navigateUrl}>
-                    <img
-                      src={val.mobileImg}
-                      loading="lazy" alt='...'
-                      style={{ width: "100%", height: "100%" }}
-                    />
-                  </a>
-                </Grid>
-              </Hidden>
-            </>
-          ))}
-        </Slideshow>
-
-        {/* {ExperiencePageNac.carouselTop.setting.arrowsImg && (
-          <Grid container>
-            <Grid item onClick={previous} className={classes.preButton}></Grid>
-            <Grid item onClick={next} className={classes.nextButton}></Grid>
-          </Grid>
-        )}
-      
-        <Slideshow
-          dataCarousel={ExperiencePageNac.carouselTop.setting}
-          sliderRef={slider}
-        >
-          {ExperiencePageNac.carouselTop.data.map((val, index) => (
-            <Grid container key={index} className={classes.headContent}>
-              <img src={val.img} className={classes.mainCarosel} />
-            </Grid>
-          ))}
-        </Slideshow> */}
+    <div>
+        <Grid container>
+        <Header />
+        {!active ? 
+        <div style={{width:'100%'}}> <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+         <img src={Experiences} style={{width:"100%"}}/>
       </Grid>
-      <Grid xs={12} sm={12} md={12} lg={12} xl={12} container>
-        <Grid
-          xs={10}
-          sm={10}
-          md={10}
-          lg={10}
-          xl={10}
-          container
-          className={classes.gridTen}
-        >
-          <Grid item style={{ height: "40px", width: "100%" }}></Grid>
-          <MediaCarousel value={values()} />
+      <Box className={classes.mainCard}>
+      <Grid xs={12} sm={12} md={12} lg={7} xl={7} item container spacing={2}>
+            {datalist?.map((val)=>{
+              return(
+                <Grid item lg={6} xl={6} xs={12} sm={12} style={{flexDirection:"row"}}>
+                <Card className={classes.Card}  onClick={() => values(val.type)}>
+                <CardActionArea>
+                    <CardMedia
+                        style={{ height: "200px" }}
+                        image={val.imageUrl}
+                        title="Contemplative Reptile"
+                    />
+                    <CardContent className={classes.content}>
+                       <Typography className={classes.title}>{val.name}</Typography>
+                       <Typography className={classes.desc}>{val.description}</Typography> 
+                    </CardContent>
+                </CardActionArea>
+                </Card>
+                </Grid>
+              )
+            })}   
+      </Grid>
+        </Box> </div>
+        : <ExperienceCard type={nextState} back={onBack}/>}
+
+        <Footer />
         </Grid>
-      </Grid>
-      <Footer />
-    </Grid>
+     
+   
+    </div>
+   
   );
 }
