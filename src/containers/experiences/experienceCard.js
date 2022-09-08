@@ -134,16 +134,18 @@ export default function ExperienceCard(props) {
                             props?.type === 'piercing' ? EarTitle : props?.type === 'stones' ? BirthTitle : ""} style={{width:'100%'}}/>
                         </Grid>
                         <Grid item xs={10.5}>
-                           <Typography style={{textAlign:"center",fontSize:"17px"}}>
-                            {props?.type === 'lotus' ? des.lotus : props?.type === 'alive' ? des.alive : 
+                          {props?.type === 'alive' ? <Typography style={{textAlign:"center",fontSize:"17px"}}>We're here to bring your online shopping <b>ALIVE</b> with our Video Shopping experience.</Typography> :  <Typography style={{textAlign:"center",fontSize:"17px"}}>
+                            {props?.type === 'lotus' ? des.lotus :  
                             props?.type === 'piercing' ? des.ear : props?.type === 'stones' ? des.birth : ""}
-                           </Typography>
+                           </Typography>}
+                          
                         </Grid>
                         <Grid item xs={10}>
-                        <Typography style={{textAlign:"center",fontSize:"15px"}}>
-                            {props?.type === 'lotus' ? subdes.lotus : props?.type === 'alive' ? subdes.alive : 
+                          {props?.type === 'lotus' ? <Typography style={{display: 'flex',flexDirection: 'column',alignItems: 'center'}}>Book an appointment to Visit <span style={{textTransform:'bold',fontSize:"20px",fontWeight:700}}>The Lotus Lounge</span></Typography> : <Typography style={{textAlign:"center",fontSize:"15px"}}>
+                            {props?.type === 'alive' ? subdes.alive : 
                             props?.type === 'piercing' ? subdes.ear : props?.type === 'stones' ? subdes.birth : ""}
-                           </Typography>
+                           </Typography>}
+                        
                         </Grid>
                         <Grid item xs={10} style={{width:"100%"}}>
                            <h5 className={`title ${classes.normalfonts2}`}>Name :</h5>

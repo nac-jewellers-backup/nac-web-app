@@ -44,7 +44,7 @@ const expstyles = makeStyles(theme => ({
     color:"#7f8082 !important"
   },
   cardCont:{
-    position:"relative",display:"flex",justifyContent:'center',paddingTop:'30px'
+    position:"relative",display:"flex",justifyContent:'center'
   },
   cardSpace:{
     position: 'absolute',
