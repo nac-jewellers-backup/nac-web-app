@@ -141,7 +141,7 @@ export default function ExperienceCard(props) {
                           
                         </Grid>
                         <Grid item xs={10}>
-                          {props?.type === 'lotus' ? <Typography style={{display: 'flex',flexDirection: 'column',alignItems: 'center'}}>Book an appointment to Visit <span style={{textTransform:'bold',fontSize:"20px",fontWeight:700}}>The Lotus Lounge</span></Typography> : <Typography style={{textAlign:"center",fontSize:"15px"}}>
+                          {props?.type === 'lotus' ? <Typography style={{display: 'flex',flexDirection: 'column',alignItems: 'center'}}>Book an appointment to Visit <span style={{textTransform:'bold',fontSize:"20px",fontWeight:700 }}>The Lotus Lounge</span></Typography> : <Typography style={{textAlign:"center",fontSize:"15px"}}>
                             {props?.type === 'alive' ? subdes.alive : 
                             props?.type === 'piercing' ? subdes.ear : props?.type === 'stones' ? subdes.birth : ""}
                            </Typography>}
