@@ -123,7 +123,7 @@ export default function ExperienceCard(props) {
   return (
       <Grid container className={classes.cardCont}>
       <img src={props?.type === 'lotus' ? Lotus : props?.type === 'alive' ? Alive : 
-         props?.type === 'piercing' ? Ear : props?.type === 'stones' ? Birth : ""} style={{height:"150vh",}}/>
+         props?.type === 'piercing' ? Ear : props?.type === 'stones' ? Birth : ""} style={{height:"1000px",width:"100%",}}/>
 
         {!isOtp ? <>
           {/* <Box className={classes.back}>
