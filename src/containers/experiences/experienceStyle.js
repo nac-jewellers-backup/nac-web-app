@@ -28,7 +28,7 @@ const expstyles = makeStyles(theme => ({
   },
   viewContent:{
      height:'fit-content',
-     padding:'35px'
+     padding:'35px !important'
   },
   otpContent:{
     height:'300px',
