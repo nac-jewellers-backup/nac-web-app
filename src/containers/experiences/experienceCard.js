@@ -110,6 +110,10 @@ export default function ExperienceCard(props) {
     }
   },[status])
 
+  React.useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
 
   const handleChange=(key,value)=>{
     setValues({...values,[key]:value})
@@ -119,30 +123,30 @@ export default function ExperienceCard(props) {
   return (
       <Grid container className={classes.cardCont}>
       <img src={props?.type === 'lotus' ? Lotus : props?.type === 'alive' ? Alive : 
-         props?.type === 'piercing' ? Ear : props?.type === 'stones' ? Birth : ""} style={{height:"130vh",}}/>
+         props?.type === 'piercing' ? Ear : props?.type === 'stones' ? Birth : ""} style={{height:"150vh",}}/>
 
         {!isOtp ? <>
           {/* <Box className={classes.back}>
                 <Button variant='contained' onClick={props.back} style={{background:"#B3821F",color:"#fff"}}>Back</Button>
           </Box> */}
-          <Grid item lg={5} xl={5} xs={12} sm={12} className={classes.cardSpace}>        
+          <Grid item lg={6} xl={6} xs={12} sm={12} className={classes.cardSpace}>        
               <Card className={classes.Cardview}>          
                     <CardContent className={classes.viewContent}>
-                      <Grid container justifyContent="center" style={{flexDirection:"column",width:"100%",alignItems:"center"}} spacing={1}>
-                        <Grid item xs={6}>
+                      <Grid container justifyContent="center" style={{flexDirection:"column",width:"100%",alignItems:"center"}} spacing={2}>
+                        <Grid item xs={5}>
                            <img src={props?.type === 'lotus' ? LotusTitle : props?.type === 'alive' ? AliveTitle : 
                             props?.type === 'piercing' ? EarTitle : props?.type === 'stones' ? BirthTitle : ""} style={{width:'100%'}}/>
                         </Grid>
-                        <Grid item xs={10.5}>
+                        <Grid item xs={10} style={{marginTop:"15px"}}>
                           {props?.type === 'alive' ? <Typography style={{textAlign:"center",fontSize:"17px"}}>We're here to bring your online shopping <b>ALIVE</b> with our Video Shopping experience.</Typography> :  <Typography style={{textAlign:"center",fontSize:"17px"}}>
                             {props?.type === 'lotus' ? des.lotus :  
                             props?.type === 'piercing' ? des.ear : props?.type === 'stones' ? des.birth : ""}
                            </Typography>}
                           
                         </Grid>
-                        <Grid item xs={10}>
+                        <Grid item xs={10} style={{marginTop:"15px"}}>
                           {props?.type === 'lotus' ? <Typography style={{display: 'flex',flexDirection: 'column',alignItems: 'center'}}>Book an appointment to Visit <span style={{textTransform:'bold',fontSize:"20px",fontWeight:700 }}>The Lotus Lounge</span></Typography> : <Typography style={{textAlign:"center",fontSize:"15px"}}>
-                            {props?.type === 'alive' ? subdes.alive : 
+                            {props?.type === 'alive' ? <Typography>Book an appointment to view and select your favourite designs on <b>NAC Alive</b></Typography> : 
                             props?.type === 'piercing' ? subdes.ear : props?.type === 'stones' ? subdes.birth : ""}
                            </Typography>}
                         

@@ -85,8 +85,8 @@ export default function Experience(props) {
               return(
                 <Grid item lg={6} xl={6} xs={12} sm={12} style={{flexDirection:"row"}}>
                 <Card className={classes.Card}  onClick={() => values(val.type)}>
-                <CardActionArea>
-                    <CardMedia
+
+                   <CardMedia
                         style={{ height: "200px" }}
                         image={val.imageUrl}
                         title="Contemplative Reptile"
@@ -95,7 +95,6 @@ export default function Experience(props) {
                        <Typography className={classes.title}>{val.name}</Typography>
                        <Typography className={classes.desc}>{val.description}</Typography> 
                     </CardContent>
-                </CardActionArea>
                 </Card>
                 </Grid>
               )

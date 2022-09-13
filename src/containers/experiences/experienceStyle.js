@@ -3,6 +3,7 @@ const expstyles = makeStyles(theme => ({
   Card:{
     boxShadow: '2px 2px 2px #a5a4a5 !important',
     borderRadius: '0 !important',
+    cursor:"pointer"
   },
   Cardview:{
     boxShadow: '2px 2px 2px #a5a4a5 !important',
@@ -27,7 +28,7 @@ const expstyles = makeStyles(theme => ({
   },
   viewContent:{
      height:'fit-content',
-     padding:'30px'
+     padding:'35px'
   },
   otpContent:{
     height:'300px',

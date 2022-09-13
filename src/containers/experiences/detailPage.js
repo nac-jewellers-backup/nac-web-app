@@ -184,7 +184,7 @@ export default function Detailpage(props) {
                                 return (
                                   <MenuItem value={val?.label}>{val?.name}</MenuItem>
                                 );
-                              }) : <MenuItem style={{color:"#7f8082",fontSize:"14px"}}>{'No Time Slotes Available'}</MenuItem>}
+                              }) : <MenuItem style={{color:"#7f8082",fontSize:"14px"}}>{'No Slot available'}</MenuItem>}
                             </Select>
                              <label className="errtext">
                                    {" "}
@@ -235,11 +235,11 @@ export default function Detailpage(props) {
                               fullWidth
                               className={classes.select}
                             >
-                              {select?.timeSlotes.map((val) => {
+                               {select?.timeSlotes?.length > 0  ? select?.timeSlotes.map((val) => {
                                 return (
                                   <MenuItem value={val?.label}>{val?.name}</MenuItem>
                                 );
-                              })}
+                              }) : <MenuItem style={{color:"#7f8082",fontSize:"14px"}}>{'No Slot available'}</MenuItem>}
                             </Select>
                              <label className="errtext">
                                    {" "}

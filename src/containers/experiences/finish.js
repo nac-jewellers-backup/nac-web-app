@@ -14,10 +14,10 @@ export default function FinishCard(props) {
 
 
   const des={
-    lotus:"Thank you for expressing interest to visit the Lotus Lounge. A member of our team will shortly get in touch with you to schedule an appointment",
+    lotus:"Thank you for expressing interest to visit the Lotus Lounge. A member of our team will shortly get in touch with you to schedule an appointment.",
     birth:"Thank you for expressing interest in our Birthstone Consultation. A member of our team will get in touch with you shortly to schedule an appointment.",
-    alive:"Thank you for expressing interest in NAC Alive. A member of our team will get in touch with you shortly to schedule an appointment",
-    ear:"Thank you for expressing interest in our ear piercing service. A member of our team will get in touch with you shortly to schedule an appointment"
+    alive:"Thank you for expressing interest in NAC Alive. A member of our team will get in touch with you shortly to schedule an appointment.",
+    ear:"Thank you for expressing interest in our ear piercing service. A member of our team will get in touch with you shortly to schedule an appointment."
   }
     
     return (

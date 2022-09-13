@@ -1782,7 +1782,7 @@ class Checkoutcard extends React.Component {
                         ? CurrencyConversion(props?.shipping_charge ?? 0)
                         : typeof props?.shipping_charge == "undefined"
                         ? CurrencyConversion(0)
-                        : CurrencyConversion(props?.shipping_charg ?? 0)
+                        : CurrencyConversion(props?.shipping_charge ?? 0)
                       // new Intl.NumberFormat("en-IN", {
                       //     style: "currency",
                       //     currency: "INR",
