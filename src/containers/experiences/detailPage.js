@@ -9,6 +9,7 @@ import { GET_DETAILS } from "queries/experience";
 import { useNetworkRequest } from "hooks/index";
 import { UPDATE_DETAILS } from "queries/experience";
 import FinishCard from "./finish";
+import moment from "moment";
 
 const storelocation=[
     {label:"Gold",name:"Gold"},
@@ -35,6 +36,16 @@ export default function Detailpage(props) {
       {},
       false
     );
+
+    const getTime=(time)=>{
+      let x = time;
+      const [ hour,minute,second] = x.split(":");
+      let d = new Date();
+      d.setHours(hour);
+      d.setMinutes(minute);
+      d.setSeconds(second)
+      return moment(d).format('hh:mm a');
+    }
 
 
     const ITEM_HEIGHT = 48;
@@ -86,7 +97,7 @@ export default function Detailpage(props) {
         const Dates =[];
         data.appointment_slots.map((val)=>{
           let obj= {}
-          obj.name = `${val.start_time} - ${val.end_time}`;
+          obj.name = `${getTime(val.start_time)} - ${getTime(val.end_time)}`;
           obj.label = val.id
           Dates.push(obj)
         })
@@ -267,12 +278,13 @@ export default function Detailpage(props) {
                               multiple
                               renderValue={(selected) => selected.join(', ')}
                               MenuProps={MenuProps}
+                              style={{textTransform:"capitalize"}}
                             >
                               {select.metaltype.map((val,index) => {
                                 return (
                                   <MenuItem key={index} value={val?.name}>
                                   <Checkbox checked={props?.values?.metalType?.some(x => x === val.name)}/>
-                                 <ListItemText primary={val?.name} />
+                                 <ListItemText primary={val?.name} style={{textTransform:"capitalize"}}/>
                                 </MenuItem>
                                 );
                               })}
@@ -302,14 +314,14 @@ export default function Detailpage(props) {
                                      fullWidth
                                      className={classes.select}
                                      multiple
-                                  
+                                     style={{textTransform:"capitalize"}}
                                      renderValue={(selected) => selected.join(', ')}
                                      MenuProps={MenuProps}
                                     >
                              {select.productcategory.map((val,index) => (
                                  <MenuItem key={index} value={val?.name}>
                                  <Checkbox checked={props?.values?.productCategory?.some(x => x === val.name)}/>
-                                 <ListItemText primary={val?.name} />
+                                 <ListItemText primary={val?.name} style={{textTransform:"capitalize"}}/>
                                 </MenuItem>
                                 ))}
                             </Select>
@@ -331,6 +343,7 @@ export default function Detailpage(props) {
                             <Input
                                 name="specialrequest"
                                 isSide
+                                multiline
                                 value={props?.values?.specialRequests}
                                 onChange={(e) => props.handleChange("specialRequests", e.target.value)}
                                />

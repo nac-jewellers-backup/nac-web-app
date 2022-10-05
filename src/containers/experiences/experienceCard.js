@@ -111,12 +111,18 @@ export default function ExperienceCard(props) {
   },[status])
 
   React.useEffect(() => {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 80)
   }, [])
 
 
   const handleChange=(key,value)=>{
-    setValues({...values,[key]:value})
+    if(key === 'productCategory'){
+     if (value.length > 3) {return false}
+     else setValues({...values,[key]:value})
+    }
+    else{
+      setValues({...values,[key]:value})
+    }
   }
 
 
