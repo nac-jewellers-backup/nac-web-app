@@ -276,6 +276,14 @@ const useStyles = makeStyles((theme) => ({
       paddingBottom: "10px",
     },
   },
+
+  diwali2022: {
+    "& .headerTop": {
+      [theme.breakpoints.down("xs")]: {
+        height: "0 !important",
+      },
+    },
+  },
 }));
 
 const Diwali2022 = (props) => {
@@ -514,7 +522,7 @@ const Diwali2022 = (props) => {
   };
   return (
     <Grid container>
-      <Grid xs={12}>
+      <Grid className={classes.diwali2022} xs={12}>
         <Header />
       </Grid>
 

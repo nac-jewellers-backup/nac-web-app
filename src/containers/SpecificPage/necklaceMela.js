@@ -263,6 +263,14 @@ const useStyles = makeStyles((theme) => ({
       paddingBottom: "10px",
     },
   },
+
+  necklaceMela: {
+    "& .headerTop": {
+      [theme.breakpoints.down("xs")]: {
+        height: "0 !important",
+      },
+    },
+  },
 }));
 
 const NecklaceMela = (props) => {
@@ -501,7 +509,7 @@ const NecklaceMela = (props) => {
   };
   return (
     <Grid container>
-      <Grid xs={12}>
+      <Grid className={classes.necklaceMela} xs={12}>
         <Header />
       </Grid>
 
@@ -640,7 +648,7 @@ const NecklaceMela = (props) => {
                 <a href="https://www.youtube.com/watch?v=f4OE5GqCf8U">Telugu</a>
               </li>
               <li className={classes.titleContents}>
-                Click here to enrol in our chit Scheme&nbsp; 
+                Click here to enrol in our chit Scheme&nbsp;
                 <a href="www.nacsavings.com">www.nacsavings.com</a>
               </li>
             </ul>
