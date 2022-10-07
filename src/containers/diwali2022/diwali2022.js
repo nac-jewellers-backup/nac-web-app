@@ -548,6 +548,7 @@ const Diwali2022 = (props) => {
               <Grid container className={classes.headContent}>
                 <a href={"#"} style={{ width: "100%" }}>
                   <img
+                    preventAdblock={true}
                     alt="images"
                     loading="lazy"
                     src={
@@ -562,6 +563,7 @@ const Diwali2022 = (props) => {
               <Grid container className={classes.headContent}>
                 <a href={"#"}>
                   <img
+                    preventAdblock={true}
                     alt="images"
                     loading="lazy"
                     src={
@@ -634,13 +636,25 @@ const Diwali2022 = (props) => {
               </li>
               <li className={classes.titleContents}>
                 Click here to watch our AD&nbsp;
-                <a href="https://www.youtube.com/watch?v=UyF3diItfzs" target="_blank">Tamil</a>
+                <a
+                  href="https://www.youtube.com/watch?v=UyF3diItfzs"
+                  target="_blank"
+                >
+                  Tamil
+                </a>
                 &nbsp;|&nbsp;
-                <a href="https://www.youtube.com/watch?v=zbfWrAq-YSA" target="_blank">Telugu</a>
+                <a
+                  href="https://www.youtube.com/watch?v=zbfWrAq-YSA"
+                  target="_blank"
+                >
+                  Telugu
+                </a>
               </li>
               <li className={classes.titleContents}>
                 Click here to enroll in our Savings Scheme -&nbsp;
-                <a href="www.nacsavings.com" target="_blank">www.nacsavings.com</a>
+                <a href="www.nacsavings.com" target="_blank">
+                  www.nacsavings.com
+                </a>
               </li>
             </ul>
 
@@ -649,7 +663,9 @@ const Diwali2022 = (props) => {
               style={{ textAlign: "start" }}
             >
               Valid in all our &nbsp;
-              <a href="https://www.nacjewellers.com/store" target="_blank">Stores</a>
+              <a href="https://www.nacjewellers.com/store" target="_blank">
+                Stores
+              </a>
             </Typography>
             <Typography
               className={classes.titleContents}
