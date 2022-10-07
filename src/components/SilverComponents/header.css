@@ -652,13 +652,13 @@ i {
   font-weight: 300;
 }
 
-/* .headerTop {
-  height: 58px;
-} */
+.headerTop {
+  height: 0 !important;
+}
 
 @media only screen and (max-width: 958px) and (min-width: 599px) {
   .headerTop {
-    height: 58px;
+    height: 0 !important;
   }
 }
 
@@ -695,7 +695,7 @@ i {
 }
 
 @media only screen and (max-width: 600px) {
-  /* .headerTop {
-    height: 58px;
-  } */
+  .headerTop {
+    height: 0px !important;
+  }
 }
