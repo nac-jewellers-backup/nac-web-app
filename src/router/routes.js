@@ -51,7 +51,8 @@ export const routes = {
   CollectionFullPage: "/collection",
   AkshyaTritiya: "/akshyaTritiya",
   BridalCollection: "/bridalcollection",
-  NecklaceMela : "/necklaceMela"
+  NecklaceMela: "/necklaceMela",
+  Diwali2022: "/diwali2022",
 };
 
 export default routes;

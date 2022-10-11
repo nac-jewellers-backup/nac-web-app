@@ -47,6 +47,7 @@ import PaymentHiddenForm from "../screens/Checkout/paymentOption/paymentHiddenFo
 import Careers from "../screens/Stylori/careers";
 import Fail from "../screens/Stylori/fail";
 import Success from "../screens/Stylori/success";
+import Diwali2022 from "containers/diwali2022/diwali2022";
 import ExperienceCard from "containers/experiences/experienceCard";
 
 const browserHistory = createBrowserHistory();
@@ -259,6 +260,7 @@ export const RouterApp = (props) => {
         props.location.pathname !== "/contactus" &&
         props.location.pathname !== "/solitaires" &&
         props.location.pathname !== "/necklaceMela" &&
+        props.location.pathname !== "/diwali2022" &&
         Globalctx &&
         Globalctx.pathName === false &&
         props.location.pathname !== "/homes" && (
@@ -327,7 +329,8 @@ export const RouterApp = (props) => {
         props.location.pathname !== "/paymentsuccess/:id" &&
         props.location.pathname !== "/homes" &&
         props.location.pathname !== "/solitaires" &&
-        props.location.pathname !== "/necklaceMela" && (
+        props.location.pathname !== "/necklaceMela" && 
+        props.location.pathname !== "/diwali2022" &&(
           <Route exact={true} component={Stylori} path={"/:listingpage"} />
         )}
 
@@ -438,6 +441,12 @@ export const RouterApp = (props) => {
         component={NecklaceMela}
         exact
         path={routes.NecklaceMela}
+      />
+      <Route
+        key="diwali2022"
+        component={Diwali2022}
+        exact
+        path={routes.Diwali2022}
       />
     </Switch>
   );
