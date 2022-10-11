@@ -22,6 +22,7 @@ export const routes = {
   ChangePassword: "/changepassword",
   paymentsuccess: "/paymentsuccess",
   paymentfail: "/paymentfail",
+  experiencesCard: "/experiencecard",
   paymenthidden: "/paymenthidden",
   Education: "/education",
   ContactUs: "/contactus",

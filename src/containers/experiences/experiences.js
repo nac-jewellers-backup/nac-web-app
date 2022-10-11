@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import { Grid, Hidden,Card,CardMedia,CardContent,CardActionArea,CardActions, Typography, Box } from "@material-ui/core";
 import Slideshow from "../../components/Carousel/carosul";
 import {
@@ -16,7 +17,8 @@ import Lotus from 'assets/NAC---Desktop-UI---NAC-Experiences-(LL,-EP,-BS,-Alive)
 import Alive from 'assets/NAC---Desktop-UI---NAC-Experiences-(LL,-EP,-BS,-Alive)_Sample-9.jpg';
 import Ear from 'assets/NAC---Desktop-UI---NAC-Experiences-(LL,-EP,-BS,-Alive)_Sample-10.jpg';
 import Birth from 'assets/NAC---Desktop-UI---NAC-Experiences-(LL,-EP,-BS,-Alive)_Sample-11.jpg';
-import Experiences from 'assets/ExperienceBanner.jpg'
+import Experiences from 'assets/ExperienceBanner.jpg';
+import ExperiencesMobile from 'assets/Experiences banner.jpg'
 
 
 const datalist=[
@@ -56,28 +58,22 @@ const subDatalist=[
 export default function Experience(props) {
   const classes = expstyles();
   const [nextState,setNextstate] = useState('');
-  const [active,setActive] = useState(false)
+  const [active,setActive] = useState(false);
+  const history = useHistory();
 
-
-  const slider = React.createRef();
 
   const values = (val) => {
-    setNextstate(val)
-    setTimeout(()=>{
-       setActive(true)
-    },500)
+    window.open(`/experiencecard/:${val}`)
   };
 
-  const onBack =()=>{
-    setActive(false)
-  }
+  
   return (
     <div>
         <Grid container>
         <Header />
-        {!active ? 
         <div style={{width:'100%'}}> <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-         <img src={Experiences} style={{width:"100%"}}/>
+          <Hidden smDown><img src={Experiences} style={{width:"100%"}}/></Hidden>
+          <Hidden mdUp><img src={ExperiencesMobile} style={{width:"100%"}}/></Hidden>
       </Grid>
       <Box className={classes.mainCard}>
       <Grid xs={12} sm={12} md={12} lg={7} xl={7} item container spacing={2}>
@@ -101,8 +97,6 @@ export default function Experience(props) {
             })}   
       </Grid>
         </Box> </div>
-        : <ExperienceCard type={nextState} back={onBack}/>}
-
         <Footer />
         </Grid>
      

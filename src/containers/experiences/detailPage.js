@@ -109,6 +109,7 @@ export default function Detailpage(props) {
       },[data])
 
       const handleDetails=()=>{
+
         fetch(`${API_URL}/graphql`, {
           method: "post",
           headers: {
@@ -119,14 +120,14 @@ export default function Detailpage(props) {
             variables: {
               "appointment_id": props?.appointmentId,
               "patch": {
-                "slotId": values?.timeslot,
+                "slotId": values?.timeslot ?? '',
                 "isItRequired": values?.isItRequired === 'yes' ? true : false,
                 "areMoreMembersJoining": values?.are_more_members_joining === 'yes' ? true : false,
-                "metalType": values?.metalType,
-                "productCategory": values?.productCategory,
-                "specialRequests": values?.specialRequests,
+                "metalType": values?.metalType ?? '',
+                "productCategory": values?.productCategory ?? '',
+                "specialRequests": values?.specialRequests ?? '',
               }
-            },
+            } 
           }),
         })
           .then((res) => res.json())
@@ -176,8 +177,8 @@ export default function Detailpage(props) {
                          </Grid>
                             
                         </Grid>
-
-                         {/* TimeSlot */}
+                         
+                         {props.type !== 'stones' && 
                          <Grid item container xs={12} style={{width:"100%",flexDirection:"row",alignItems:"center"}}>
                             <Grid item xs={6}>
                               <h5 className={`title ${classes.normalfonts2}`}>Timeslot :</h5>
@@ -203,7 +204,8 @@ export default function Detailpage(props) {
                             </label>
                          </Grid>
                             
-                         </Grid>
+                         </Grid>}
+                         
                         </> : <>
                         {/* Date */}
                         <Grid item container xs={12} style={{width:"100%",flexDirection:"row",alignItems:"center"}}>
@@ -401,7 +403,7 @@ export default function Detailpage(props) {
 
                         
                         <Grid item xs={12} style={{width:"100%",paddingTop:"15px"}}>
-                           <Button variant='contained' onClick={handleDetails} style={{background:"#2F348B",color:"#fff",width:"inherit"}}>Submit</Button>
+                           <Button variant='contained' onClick={props?.type === 'stones' ? setFinish(true) : handleDetails} style={{background:"#2F348B",color:"#fff",width:"inherit"}}>Submit</Button>
                         </Grid>
                       </Grid>
                     </CardContent>

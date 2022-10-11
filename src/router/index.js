@@ -47,6 +47,7 @@ import PaymentHiddenForm from "../screens/Checkout/paymentOption/paymentHiddenFo
 import Careers from "../screens/Stylori/careers";
 import Fail from "../screens/Stylori/fail";
 import Success from "../screens/Stylori/success";
+import ExperienceCard from "containers/experiences/experienceCard";
 
 const browserHistory = createBrowserHistory();
 
@@ -210,6 +211,12 @@ export const RouterApp = (props) => {
         exact
         path={`${routes.paymentfail}/:id`}
       />
+      <Route
+        key="experiencecard"
+        component={ExperienceCard}
+        exact
+        path={`${routes.experiencesCard}/:type`}
+      />
       {props.location.pathname !== "/cart" &&
         props.location.pathname !==
           `/account${"-" + window.location.pathname.split("-")[1]}` &&
@@ -247,6 +254,7 @@ export const RouterApp = (props) => {
         props.location.pathname !== "/education" &&
         props.location.pathname !== "/stories" &&
         props.location.pathname !== "/paymentfail" &&
+        props.location.pathname !== "/experiencecard" &&
         props.location.pathname !== "/paymentsuccess/:id" &&
         props.location.pathname !== "/contactus" &&
         props.location.pathname !== "/solitaires" &&
@@ -314,6 +322,7 @@ export const RouterApp = (props) => {
         props.location.pathname !== "/resetpassword/:id" &&
         props.location.pathname !== "/changepassword" &&
         props.location.pathname !== "/paymentfail" &&
+        props.location.pathname !== "/experiencecard" &&
         props.location.pathname !== "/contactus" &&
         props.location.pathname !== "/paymentsuccess/:id" &&
         props.location.pathname !== "/homes" &&

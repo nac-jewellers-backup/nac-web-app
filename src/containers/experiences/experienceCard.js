@@ -4,6 +4,7 @@ import { Grid, Hidden,Card,CardMedia,CardContent,CardActionArea,CardActions,Butt
 import MediaCarousel from "../../components/mediacarousel/mediaCarousel";
 // import Header from "../../components/header/header";
 import expstyles from "./experienceStyle";
+import { useParams } from "react-router-dom";
 import Header from "components/SilverComponents/Header";
 import Footer from "../../components/Footer/Footer";
 import Lotus from '../../assets/NAC---Desktop-UI---NAC-Experiences-(LL,-EP,-BS,-Alive)_Sample-8.jpg';
@@ -11,6 +12,10 @@ import Alive from '../../assets/NAC---Desktop-UI---NAC-Experiences-(LL,-EP,-BS,-
 import Ear from '../../assets/NAC---Desktop-UI---NAC-Experiences-(LL,-EP,-BS,-Alive)_Sample-10.jpg';
 import Birth from '../../assets/NAC---Desktop-UI---NAC-Experiences-(LL,-EP,-BS,-Alive)_Sample-11.jpg';
 import LotusTitle from '../../assets/NAC---Desktop-UI---NAC-Experiences (LL, EP, BS, Alive)_Sample-19.png';
+import LotusMobile from '../../assets/Lotus_Mobile.jpg';
+import AliveMobile from '../../assets/Alive_Mobile.jpg';
+import EarMobile from '../../assets/Ear_mobile.jpg';
+import StoneMobile from '../../assets/Birth stone_mobile.jpg'
 import AliveTitle from '../../assets/NAC---Desktop-UI---NAC-Experiences (LL, EP, BS, Alive)_Sample-20.png';
 import EarTitle from '../../assets/NAC---Desktop-UI---NAC-Experiences (LL, EP, BS, Alive)_Sample-21.png';
 import BirthTitle from '../../assets/NAC---Desktop-UI---NAC-Experiences (LL, EP, BS, Alive)_Sample-22.png';
@@ -61,7 +66,10 @@ export default function ExperienceCard(props) {
     }
   });
   const [isOtp,setOtp] = React.useState(false);
-  const [id,setId] = React.useState()
+
+  const {type} = useParams();
+  
+  let types = type.slice(1)
 
 
   const { data, error, loading,status, makeFetch } = useNetworkRequest(
@@ -125,11 +133,20 @@ export default function ExperienceCard(props) {
     }
   }
 
+  const onBack =()=>{
+    setOtp(false)
+  }
+
 
   return (
-      <Grid container className={classes.cardCont}>
-      <img src={props?.type === 'lotus' ? Lotus : props?.type === 'alive' ? Alive : 
-         props?.type === 'piercing' ? Ear : props?.type === 'stones' ? Birth : ""} style={{height:"1000px",width:"100%",}}/>
+    <div>
+      <Header/>
+         <Grid container className={classes.cardCont}>
+        
+      <Hidden smDown><img src={types === 'lotus' ? Lotus : types === 'alive' ? Alive : 
+         types === 'piercing' ? Ear : types === 'stones' ? Birth : ""} style={{height:"1000px",width:"100%",}}/></Hidden>
+      <Hidden mdUp><img src={types === 'lotus' ? LotusMobile : types === 'alive' ? AliveMobile : 
+         types === 'piercing' ? EarMobile : types === 'stones' ? StoneMobile : ""} style={{height:"1000px",width:"100%",}}/></Hidden>   
 
         {!isOtp ? <>
           {/* <Box className={classes.back}>
@@ -140,20 +157,20 @@ export default function ExperienceCard(props) {
                     <CardContent className={classes.viewContent}>
                       <Grid container justifyContent="center" style={{flexDirection:"column",width:"100%",alignItems:"center"}} spacing={2}>
                         <Grid item xs={5}>
-                           <img src={props?.type === 'lotus' ? LotusTitle : props?.type === 'alive' ? AliveTitle : 
-                            props?.type === 'piercing' ? EarTitle : props?.type === 'stones' ? BirthTitle : ""} style={{width:'100%'}}/>
+                           <img src={types === 'lotus' ? LotusTitle : types === 'alive' ? AliveTitle : 
+                            types === 'piercing' ? EarTitle : types === 'stones' ? BirthTitle : ""} style={{width:'100%'}}/>
                         </Grid>
                         <Grid item xs={10} style={{marginTop:"15px"}}>
-                          {props?.type === 'alive' ? <Typography style={{textAlign:"center",fontSize:"17px"}}>We're here to bring your online shopping <b>ALIVE</b> with our Video Shopping experience.</Typography> :  <Typography style={{textAlign:"center",fontSize:"17px"}}>
-                            {props?.type === 'lotus' ? des.lotus :  
-                            props?.type === 'piercing' ? des.ear : props?.type === 'stones' ? des.birth : ""}
+                          {types === 'alive' ? <Typography style={{textAlign:"center",fontSize:"17px"}}>We're here to bring your online shopping <b>ALIVE</b> with our Video Shopping experience.</Typography> :  <Typography style={{textAlign:"center",fontSize:"17px"}}>
+                            {types === 'lotus' ? des.lotus :  
+                            types === 'piercing' ? des.ear : types === 'stones' ? des.birth : ""}
                            </Typography>}
                           
                         </Grid>
                         <Grid item xs={10} style={{marginTop:"15px"}}>
-                          {props?.type === 'lotus' ? <Typography style={{display: 'flex',flexDirection: 'column',alignItems: 'center'}}>Book an appointment to Visit <span style={{textTransform:'bold',fontSize:"20px",fontWeight:700 }}>The Lotus Lounge</span></Typography> : <Typography style={{textAlign:"center",fontSize:"15px"}}>
-                            {props?.type === 'alive' ? <Typography>Book an appointment to view and select your favourite designs on <b>NAC Alive</b></Typography> : 
-                            props?.type === 'piercing' ? subdes.ear : props?.type === 'stones' ? subdes.birth : ""}
+                          {types === 'lotus' ? <Typography style={{display: 'flex',flexDirection: 'column',alignItems: 'center'}}>Book an appointment to Visit <span style={{textTransform:'bold',fontSize:"20px",fontWeight:700 }}>The Lotus Lounge</span></Typography> : <Typography style={{textAlign:"center",fontSize:"15px"}}>
+                            {types === 'alive' ? <Typography>Book an appointment to view and select your favourite designs on <b>NAC Alive</b></Typography> : 
+                            types === 'piercing' ? subdes.ear : types === 'stones' ? subdes.birth : ""}
                            </Typography>}
                         
                         </Grid>
@@ -209,8 +226,12 @@ export default function ExperienceCard(props) {
                
               </Card>
           </Grid> 
-        </>:<OtpCard handleChange={handleChange} values={values} back={props.back} type={props.type} main={data}/>}
-                
-      </Grid>
+        </>:<OtpCard handleChange={handleChange} values={values} back={onBack} type={types} main={data}/>}
+        
+       
+         </Grid>
+      <Footer/>
+    </div>
+     
   );
 }
