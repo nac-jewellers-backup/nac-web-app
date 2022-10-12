@@ -5,6 +5,13 @@ const expstyles = makeStyles(theme => ({
     borderRadius: '0 !important',
     cursor:"pointer"
   },
+  headerNew:{
+      "& .headerTop": {
+        [theme.breakpoints.down("xs")]: {
+          height: "0 !important",
+        },
+      },
+  },
   Cardview:{
     boxShadow: '2px 2px 2px #a5a4a5 !important',
     borderRadius: '0 !important',

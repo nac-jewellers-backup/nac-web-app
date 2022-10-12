@@ -140,7 +140,9 @@ export default function ExperienceCard(props) {
 
   return (
     <div>
-      <Header/>
+     <Grid className={classes.headerNew} xs={12}>
+        <Header />
+      </Grid>
          <Grid container className={classes.cardCont}>
         
       <Hidden smDown><img src={types === 'lotus' ? Lotus : types === 'alive' ? Alive : 

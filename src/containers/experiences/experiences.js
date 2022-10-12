@@ -69,7 +69,9 @@ export default function Experience(props) {
   
   return (
     <div>
-      <Header />
+       <Grid className={classes.headerNew} xs={12}>
+        <Header />
+      </Grid>
         <Grid container>
         
         <div style={{width:'100%'}}> <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
