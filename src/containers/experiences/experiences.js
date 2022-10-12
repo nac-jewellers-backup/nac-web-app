@@ -69,8 +69,9 @@ export default function Experience(props) {
   
   return (
     <div>
+      <Header />
         <Grid container>
-        <Header />
+        
         <div style={{width:'100%'}}> <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
           <Hidden smDown><img src={Experiences} style={{width:"100%"}}/></Hidden>
           <Hidden mdUp><img src={ExperiencesMobile} style={{width:"100%"}}/></Hidden>
@@ -97,9 +98,9 @@ export default function Experience(props) {
             })}   
       </Grid>
         </Box> </div>
-        <Footer />
+       
         </Grid>
-     
+      <Footer />
    
     </div>
    
