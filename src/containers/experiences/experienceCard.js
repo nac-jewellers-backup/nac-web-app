@@ -148,7 +148,7 @@ export default function ExperienceCard(props) {
       <Hidden smDown><img src={types === 'lotus' ? Lotus : types === 'alive' ? Alive : 
          types === 'piercing' ? Ear : types === 'stones' ? Birth : ""} style={{height:"1000px",width:"100%",}}/></Hidden>
       <Hidden mdUp><img src={types === 'lotus' ? LotusMobile : types === 'alive' ? AliveMobile : 
-         types === 'piercing' ? EarMobile : types === 'stones' ? StoneMobile : ""} style={{height:"1000px",width:"100%",}}/></Hidden>   
+         types === 'piercing' ? EarMobile : types === 'stones' ? StoneMobile : ""} style={{height: types === 'lotus' ? "950px" : types === 'piercing' ? "920px" : "800px",width:"100%"}}/></Hidden>   
 
         {!isOtp ? <>
           {/* <Box className={classes.back}>

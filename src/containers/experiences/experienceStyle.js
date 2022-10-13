@@ -1,4 +1,14 @@
 import { makeStyles } from "@material-ui/core/styles";
+import Lotus from '../../assets/NAC---Desktop-UI---NAC-Experiences-(LL,-EP,-BS,-Alive)_Sample-8.jpg';
+import Alive from '../../assets/NAC---Desktop-UI---NAC-Experiences-(LL,-EP,-BS,-Alive)_Sample-9.jpg';
+import Ear from '../../assets/NAC---Desktop-UI---NAC-Experiences-(LL,-EP,-BS,-Alive)_Sample-10.jpg';
+import Birth from '../../assets/NAC---Desktop-UI---NAC-Experiences-(LL,-EP,-BS,-Alive)_Sample-11.jpg';
+import LotusTitle from '../../assets/NAC---Desktop-UI---NAC-Experiences (LL, EP, BS, Alive)_Sample-19.png';
+import LotusMobile from '../../assets/Lotus_Mobile.jpg';
+import AliveMobile from '../../assets/Alive_Mobile.jpg';
+import EarMobile from '../../assets/Ear_mobile.jpg';
+import StoneMobile from '../../assets/Birth stone_mobile.jpg'
+
 const expstyles = makeStyles(theme => ({
   Card:{
     boxShadow: '2px 2px 2px #a5a4a5 !important',
@@ -16,7 +26,11 @@ const expstyles = makeStyles(theme => ({
     boxShadow: '2px 2px 2px #a5a4a5 !important',
     borderRadius: '0 !important',
     backgroundColor:"#f4f4f4",
-    margin:"10px"
+    margin:"10px",
+
+    [theme.breakpoints.down('sm')]:{
+      marginBottom:"-45px"
+    }
   },
   mainCard:{
     display:"flex",justifyContent:"center",padding:"20px"
