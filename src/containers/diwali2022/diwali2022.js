@@ -23,7 +23,7 @@ import ArrowLeftIcon from "@material-ui/icons/ArrowLeft";
 import Footer from "../../components/Footer/Footer";
 import { API_URL } from "../../config";
 import { AllHOMEQUERY } from "../../queries/home";
-import { ALLBANNERSCOMPLETE, SEND_QUERIES } from "../../queries/home";
+import { ALLBANNERSCOMPLETE, SEND_QUERIES,SEND_ENQUIREY } from "../../queries/home";
 function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
@@ -150,8 +150,22 @@ const useStyles = makeStyles((theme) => ({
   inputFieldsEdit: {
     marginBottom: "15px",
   },
+  number:{
+    '& input[type=number]': {
+      '-moz-appearance': 'textfield'
+  },
+  '& input[type=number]::-webkit-outer-spin-button': {
+      '-webkit-appearance': 'none',
+      margin: 0
+  },
+  '& input[type=number]::-webkit-inner-spin-button': {
+      '-webkit-appearance': 'none',
+      margin: 0
+  }
+  },
   textFieldEdit: {
     borderWidth: "0px",
+    
   },
   formArea: {
     padding: "50px 75px",
@@ -342,6 +356,8 @@ const Diwali2022 = (props) => {
     return true;
   };
 
+
+  console.log(window.location.pathname.slice(1),"???????")
   const onsubmitvalue = () => {
     if (handleValidateData()) {
       fetch(`${API_URL}/graphql`, {
@@ -350,20 +366,23 @@ const Diwali2022 = (props) => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          query: SEND_QUERIES,
+          query: SEND_ENQUIREY,
           variables: {
             updatedAt: new Date(),
             createdAt: new Date(),
             email: formData.email,
-            message: formData.query,
-            name: formData.name,
-            phone: formData.phone,
+            appointmentTypeId: 5,
+            comments: formData.query,
+            specialRequests: window.location.pathname.slice(1),
+            customerName: formData.name,
+            isActive: true,
+            mobile: formData.phone,
           },
         }),
       })
         .then((res) => res.json())
         .then((data) => {
-          if (data?.data?.createAskus?.askus?.id) {
+          if (data?.createAppointment?.appointment?.id) {
             setOpenSnack(true);
             setFormData({
               name: "",
@@ -743,6 +762,7 @@ const Diwali2022 = (props) => {
               <FormControl style={{ backgroundColor: "#fff" }} fullWidth>
                 <TextField
                   type="number"
+                  className={classes.number}
                   style={{ borderRadius: "0px" }}
                   labelWidth={0}
                   classes={{ notchedOutline: classes.textFieldEdit }}

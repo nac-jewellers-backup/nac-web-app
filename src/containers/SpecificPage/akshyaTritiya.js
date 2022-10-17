@@ -23,7 +23,7 @@ import ArrowLeftIcon from "@material-ui/icons/ArrowLeft";
 import Footer from "../../components/Footer/Footer";
 import { API_URL } from "../../config";
 import { AllHOMEQUERY } from "../../queries/home";
-import { ALLBANNERSCOMPLETE, SEND_QUERIES } from "../../queries/home";
+import { ALLBANNERSCOMPLETE, SEND_QUERIES,SEND_ENQUIREY } from "../../queries/home";
 function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
@@ -329,20 +329,23 @@ function AkshyaTritiya(props) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          query: SEND_QUERIES,
+          query: SEND_ENQUIREY,
           variables: {
             updatedAt: new Date(),
             createdAt: new Date(),
             email: formData.email,
-            message: formData.query,
-            name: formData.name,
-            phone: formData.phone,
+            appointmentTypeId: 5,
+            comments: formData.query,
+            specialRequests: window.location.pathname.slice(1),
+            customerName: formData.name,
+            isActive: true,
+            mobile: formData.phone,
           },
         }),
       })
         .then((res) => res.json())
         .then((data) => {
-          if (data?.data?.createAskus?.askus?.id) {
+          if (data) {
             setOpenSnack(true);
             setFormData({
               name: "",
