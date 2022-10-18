@@ -16,7 +16,7 @@ import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert from "@material-ui/lab/Alert";
 import { makeStyles } from "@material-ui/core/styles";
 import { SolitairesData } from "../../mappers/dummydata/solitairesData";
-
+import axios from "axios";
 import { ImgMediaCard } from "../../components/ProductCard/Card";
 import ArrowRightIcon from "@material-ui/icons/ArrowRight";
 import ArrowLeftIcon from "@material-ui/icons/ArrowLeft";
@@ -321,6 +321,27 @@ function AkshyaTritiya(props) {
     return true;
   };
 
+  const emailTrigger =async(id)=>{
+    console.log(id,"????")
+    const params={
+      "type": "send_enquiry",
+      "appointment_id": id
+    }
+    await axios.post(`${API_URL}/trigger_mail`, params).then((res) => {
+      if (res.data) {
+        setOpenSnack(true);
+        setFormData({
+          name: "",
+          phone: "",
+          email: "",
+          query: "",
+        });
+        return;
+      }
+      setOpenSnackError(true);
+    })
+  }
+
   const onsubmitvalue = () => {
     if (handleValidateData()) {
       fetch(`${API_URL}/graphql`, {
@@ -345,17 +366,9 @@ function AkshyaTritiya(props) {
       })
         .then((res) => res.json())
         .then((data) => {
-          if (data) {
-            setOpenSnack(true);
-            setFormData({
-              name: "",
-              phone: "",
-              email: "",
-              query: "",
-            });
-            return;
+          if (data?.data?.createAppointment?.appointment?.id) {
+            emailTrigger(data?.data?.createAppointment?.appointment?.id)
           }
-          setOpenSnackError(true);
         });
     }
   };
@@ -695,6 +708,7 @@ function AkshyaTritiya(props) {
                 <TextField
                   style={{ borderRadius: "0px" }}
                   labelWidth={0}
+                  value={formData.name}
                   classes={{ notchedOutline: classes.textFieldEdit }}
                   InputProps={{ disableUnderline: true }}
                   onChange={onChangeData}
@@ -712,6 +726,7 @@ function AkshyaTritiya(props) {
                   type="number"
                   style={{ borderRadius: "0px" }}
                   labelWidth={0}
+                  value={formData.phone}
                   classes={{ notchedOutline: classes.textFieldEdit }}
                   InputProps={{ disableUnderline: true }}
                   onChange={onChangeData}
@@ -728,6 +743,7 @@ function AkshyaTritiya(props) {
                 <TextField
                   style={{ borderRadius: "0px" }}
                   labelWidth={0}
+                  value={formData.email}
                   classes={{ notchedOutline: classes.textFieldEdit }}
                   InputProps={{ disableUnderline: true }}
                   onChange={onChangeData}
@@ -745,6 +761,7 @@ function AkshyaTritiya(props) {
                   style={{ borderRadius: "0px" }}
                   classes={{ notchedOutline: classes.textFieldEdit }}
                   InputProps={{ disableUnderline: true }}
+                  value={formData.query}
                   onChange={onChangeData}
                   name="query"
                   multiline

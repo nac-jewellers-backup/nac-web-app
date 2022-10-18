@@ -16,7 +16,7 @@ import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert from "@material-ui/lab/Alert";
 import { makeStyles } from "@material-ui/core/styles";
 import { SolitairesData } from "../../mappers/dummydata/solitairesData";
-
+import axios from "axios";
 import { ImgMediaCard } from "../../components/ProductCard/Card";
 import ArrowRightIcon from "@material-ui/icons/ArrowRight";
 import ArrowLeftIcon from "@material-ui/icons/ArrowLeft";
@@ -329,6 +329,27 @@ const NecklaceMela = (props) => {
     return true;
   };
 
+  const emailTrigger =async(id)=>{
+    console.log(id,"????")
+    const params={
+      "type": "send_enquiry",
+      "appointment_id": id
+    }
+    await axios.post(`${API_URL}/trigger_mail`, params).then((res) => {
+      if (res.data) {
+        setOpenSnack(true);
+        setFormData({
+          name: "",
+          phone: "",
+          email: "",
+          query: "",
+        });
+        return;
+      }
+      setOpenSnackError(true);
+    })
+  }
+
   const onsubmitvalue = () => {
     if (handleValidateData()) {
       fetch(`${API_URL}/graphql`, {
@@ -353,17 +374,9 @@ const NecklaceMela = (props) => {
       })
         .then((res) => res.json())
         .then((data) => {
-          if (data?.createAppointment?.appointment?.id) {
-            setOpenSnack(true);
-            setFormData({
-              name: "",
-              phone: "",
-              email: "",
-              query: "",
-            });
-            return;
-          }
-          setOpenSnackError(true);
+          if (data?.data?.createAppointment?.appointment?.id) {
+            emailTrigger(data?.data?.createAppointment?.appointment?.id)
+        }
         });
     }
   };
@@ -716,6 +729,7 @@ const NecklaceMela = (props) => {
                 <TextField
                   style={{ borderRadius: "0px" }}
                   labelWidth={0}
+                  value={formData.name}
                   classes={{ notchedOutline: classes.textFieldEdit }}
                   InputProps={{ disableUnderline: true }}
                   onChange={onChangeData}
@@ -733,6 +747,7 @@ const NecklaceMela = (props) => {
                   type="number"
                   style={{ borderRadius: "0px" }}
                   labelWidth={0}
+                  value={formData.phone}
                   classes={{ notchedOutline: classes.textFieldEdit }}
                   InputProps={{ disableUnderline: true }}
                   onChange={onChangeData}
@@ -749,6 +764,7 @@ const NecklaceMela = (props) => {
                 <TextField
                   style={{ borderRadius: "0px" }}
                   labelWidth={0}
+                  value={formData.email}
                   classes={{ notchedOutline: classes.textFieldEdit }}
                   InputProps={{ disableUnderline: true }}
                   onChange={onChangeData}
@@ -766,6 +782,7 @@ const NecklaceMela = (props) => {
                   style={{ borderRadius: "0px" }}
                   classes={{ notchedOutline: classes.textFieldEdit }}
                   InputProps={{ disableUnderline: true }}
+                  value={formData.query}
                   onChange={onChangeData}
                   name="query"
                   multiline
