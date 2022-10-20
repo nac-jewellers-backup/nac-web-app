@@ -49,6 +49,7 @@ import Fail from "../screens/Stylori/fail";
 import Success from "../screens/Stylori/success";
 import Diwali2022 from "containers/diwali2022/diwali2022";
 import ExperienceCard from "containers/experiences/experienceCard";
+import { AboutUsPageNew } from "screens";
 
 const browserHistory = createBrowserHistory();
 
@@ -261,6 +262,7 @@ export const RouterApp = (props) => {
         props.location.pathname !== "/solitaires" &&
         props.location.pathname !== "/necklaceMela" &&
         props.location.pathname !== "/diwali2022" &&
+        props.location.pathname !== "/aboutUsPageNew" &&
         Globalctx &&
         Globalctx.pathName === false &&
         props.location.pathname !== "/homes" && (
@@ -330,7 +332,8 @@ export const RouterApp = (props) => {
         props.location.pathname !== "/homes" &&
         props.location.pathname !== "/solitaires" &&
         props.location.pathname !== "/necklaceMela" && 
-        props.location.pathname !== "/diwali2022" &&(
+        props.location.pathname !== "/diwali2022" &&
+        props.location.pathname !== "/aboutUsPageNew" &&(
           <Route exact={true} component={Stylori} path={"/:listingpage"} />
         )}
 
@@ -447,6 +450,12 @@ export const RouterApp = (props) => {
         component={Diwali2022}
         exact
         path={routes.Diwali2022}
+      />
+      <Route
+        key="aboutUsNew"
+        component={AboutUsPageNew}
+        exact
+        path={routes.AboutUsNew}
       />
     </Switch>
   );
