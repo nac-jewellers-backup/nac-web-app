@@ -53,6 +53,7 @@ export const routes = {
   BridalCollection: "/bridalcollection",
   NecklaceMela: "/necklaceMela",
   Diwali2022: "/diwali2022",
+  AboutUsNew: "/aboutUsPageNew"
 };
 
 export default routes;
