@@ -23,7 +23,12 @@ import ArrowLeftIcon from "@material-ui/icons/ArrowLeft";
 import Footer from "../../components/Footer/Footer";
 import { API_URL } from "../../config";
 import { AllHOMEQUERY } from "../../queries/home";
-import { ALLBANNERSCOMPLETE, SEND_QUERIES,SEND_ENQUIREY } from "../../queries/home";
+import {
+  ALLBANNERSCOMPLETE,
+  SEND_QUERIES,
+  SEND_ENQUIREY,
+} from "../../queries/home";
+import CommonContent from "components/commonContent/commonContent";
 function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
@@ -150,22 +155,21 @@ const useStyles = makeStyles((theme) => ({
   inputFieldsEdit: {
     marginBottom: "15px",
   },
-  number:{
-    '& input[type=number]': {
-      '-moz-appearance': 'textfield'
-  },
-  '& input[type=number]::-webkit-outer-spin-button': {
-      '-webkit-appearance': 'none',
-      margin: 0
-  },
-  '& input[type=number]::-webkit-inner-spin-button': {
-      '-webkit-appearance': 'none',
-      margin: 0
-  }
+  number: {
+    "& input[type=number]": {
+      "-moz-appearance": "textfield",
+    },
+    "& input[type=number]::-webkit-outer-spin-button": {
+      "-webkit-appearance": "none",
+      margin: 0,
+    },
+    "& input[type=number]::-webkit-inner-spin-button": {
+      "-webkit-appearance": "none",
+      margin: 0,
+    },
   },
   textFieldEdit: {
     borderWidth: "0px",
-    
   },
   formArea: {
     padding: "50px 75px",
@@ -355,13 +359,13 @@ const Diwali2022 = (props) => {
     });
     return true;
   };
- 
-  const emailTrigger =async(id)=>{
-    console.log(id,"????")
-    const params={
-      "type": "send_enquiry",
-      "appointment_id": id
-    }
+
+  const emailTrigger = async (id) => {
+    console.log(id, "????");
+    const params = {
+      type: "send_enquiry",
+      appointment_id: id,
+    };
     await axios.post(`${API_URL}/trigger_mail`, params).then((res) => {
       if (res.data) {
         setOpenSnack(true);
@@ -374,8 +378,8 @@ const Diwali2022 = (props) => {
         return;
       }
       setOpenSnackError(true);
-    })
-  }
+    });
+  };
 
   const onsubmitvalue = () => {
     if (handleValidateData()) {
@@ -402,7 +406,7 @@ const Diwali2022 = (props) => {
         .then((res) => res.json())
         .then((data) => {
           if (data?.data?.createAppointment?.appointment?.id) {
-              emailTrigger(data?.data?.createAppointment?.appointment?.id)
+            emailTrigger(data?.data?.createAppointment?.appointment?.id);
           }
         });
     }
