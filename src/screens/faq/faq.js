@@ -3,12 +3,13 @@ import { CommonTitle } from "components";
 import CommonContent from "components/commonContent/commonContent";
 import Footer from "components/Footer/Footer";
 import Header from "components/SilverComponents/Header";
-import { termsData } from "mappers/dummydata";
+import { faqData } from "mappers/dummydata";
 import React from "react";
-import TermsAndConditionsStyles from "./style";
+import FaqStyles from "./style";
 
-const TermsAndConditions = () => {
-  const classes = TermsAndConditionsStyles();
+const FaqDetails = () => {
+  console.log("faqData", faqData);
+  const classes = FaqStyles();
   return (
     <Grid container>
       <Grid item xs={12}>
@@ -16,10 +17,10 @@ const TermsAndConditions = () => {
           <Header />
         </div>
         <div className={classes.commonTitle}>
-          <CommonTitle title="Terms & Conditions" />
+          <CommonTitle title="FAQS" />
         </div>
         <div>
-          <CommonContent data={termsData} subTitle="Terms & Conditions" />
+          <CommonContent data={faqData} />
         </div>
         <div>
           <Footer />
@@ -29,4 +30,4 @@ const TermsAndConditions = () => {
   );
 };
 
-export default TermsAndConditions;
+export default FaqDetails;

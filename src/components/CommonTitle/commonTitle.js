@@ -17,7 +17,7 @@ const CommonTitle = (props) => {
           className={classes.mainTitle}
         >
           <Box>
-            <ArrowRight />
+            <ArrowRight className={classes.rightArrow} />
           </Box>
           <Box>
             <Typography
@@ -28,7 +28,7 @@ const CommonTitle = (props) => {
             </Typography>
           </Box>
           <Box>
-            <ArrowLeft />
+            <ArrowLeft className={classes.leftArrow} />
           </Box>
         </Box>
       </Grid>

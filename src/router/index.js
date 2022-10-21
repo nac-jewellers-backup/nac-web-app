@@ -51,6 +51,8 @@ import Diwali2022 from "containers/diwali2022/diwali2022";
 import ExperienceCard from "containers/experiences/experienceCard";
 import { AboutUsPageNew } from "screens";
 import TermsAndConditions from "screens/termsAndConditions/termsAndConditions";
+import PrivacyPolicy from "screens/privacyPolicy/privacyPolicy";
+import { FaqDetails } from "screens/faq";
 
 const browserHistory = createBrowserHistory();
 
@@ -265,6 +267,8 @@ export const RouterApp = (props) => {
         props.location.pathname !== "/diwali2022" &&
         props.location.pathname !== "/aboutUsPageNew" &&
         props.location.pathname !== "/termsAndConditions" &&
+        props.location.pathname !== "/privacy_Details" &&
+        props.location.pathname !== "/faqDetails" &&
         Globalctx &&
         Globalctx.pathName === false &&
         props.location.pathname !== "/homes" && (
@@ -336,7 +340,9 @@ export const RouterApp = (props) => {
         props.location.pathname !== "/necklaceMela" &&
         props.location.pathname !== "/diwali2022" &&
         props.location.pathname !== "/aboutUsPageNew" &&
-        props.location.pathname !== "/termsAndConditions" && (
+        props.location.pathname !== "/termsAndConditions" &&
+        props.location.pathname !== "/privacy_Details" &&
+        props.location.pathname !== "/faqDetails" && (
           <Route exact={true} component={Stylori} path={"/:listingpage"} />
         )}
 
@@ -465,6 +471,18 @@ export const RouterApp = (props) => {
         component={TermsAndConditions}
         exact
         path={routes.TermsAndConditions}
+      />
+      <Route
+        key="privacyPolicy"
+        component={PrivacyPolicy}
+        exact
+        path={routes.PrivacyDetails}
+      />
+      <Route
+        key="faqDetails"
+        component={FaqDetails}
+        exact
+        path={routes.FaqDetails}
       />
     </Switch>
   );

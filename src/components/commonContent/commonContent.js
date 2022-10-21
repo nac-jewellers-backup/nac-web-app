@@ -7,6 +7,7 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import CommonContentStyles from "./style";
 
 const CommonContent = (props) => {
+  console.log("datasss", props);
   const classes = CommonContentStyles();
   return (
     <div>
@@ -27,7 +28,7 @@ const CommonContent = (props) => {
                     {e?.para?.map((val) => {
                       return (
                         <div>
-                          <Typography>{val}</Typography>
+                          <Typography className={classes.accordinText}>{val}</Typography>
                         </div>
                       );
                     })}

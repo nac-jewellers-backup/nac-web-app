@@ -3,12 +3,13 @@ import { CommonTitle } from "components";
 import CommonContent from "components/commonContent/commonContent";
 import Footer from "components/Footer/Footer";
 import Header from "components/SilverComponents/Header";
-import { termsData } from "mappers/dummydata";
+import { privacyData } from "mappers/dummydata/privacyPolicyData";
 import React from "react";
-import TermsAndConditionsStyles from "./style";
+import PrivacyPolicyStyles from "./style";
 
-const TermsAndConditions = () => {
-  const classes = TermsAndConditionsStyles();
+const PrivacyPolicy = () => {
+  console.log("privacyPolicy", privacyData);
+  const classes = PrivacyPolicyStyles();
   return (
     <Grid container>
       <Grid item xs={12}>
@@ -16,10 +17,10 @@ const TermsAndConditions = () => {
           <Header />
         </div>
         <div className={classes.commonTitle}>
-          <CommonTitle title="Terms & Conditions" />
+          <CommonTitle title="Privacy Policy" />
         </div>
         <div>
-          <CommonContent data={termsData} subTitle="Terms & Conditions" />
+          <CommonContent data={privacyData} />
         </div>
         <div>
           <Footer />
@@ -29,4 +30,4 @@ const TermsAndConditions = () => {
   );
 };
 
-export default TermsAndConditions;
+export default PrivacyPolicy;

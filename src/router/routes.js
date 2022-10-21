@@ -55,6 +55,8 @@ export const routes = {
   Diwali2022: "/diwali2022",
   AboutUsNew: "/aboutUsPageNew",
   TermsAndConditions: "/termsAndConditions",
+  PrivacyDetails: "/privacy_Details",
+  FaqDetails: "/faqDetails"
 };
 
 export default routes;
