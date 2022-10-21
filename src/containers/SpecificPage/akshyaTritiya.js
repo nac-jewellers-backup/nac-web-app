@@ -24,6 +24,8 @@ import Footer from "../../components/Footer/Footer";
 import { API_URL } from "../../config";
 import { AllHOMEQUERY } from "../../queries/home";
 import { ALLBANNERSCOMPLETE, SEND_QUERIES,SEND_ENQUIREY } from "../../queries/home";
+import { TitleAndData } from "components";
+import { QueryForm } from "components";
 function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
@@ -392,7 +394,7 @@ function AkshyaTritiya(props) {
         const listedPageData = bannerFullData.filter(
           (item) => item.urlParam === "listing"
         );
-
+          console.log("listedPageData",listedPageData);
         if (specificPageData.length > 0) {
           setBanners(specificPageData);
         } else {
@@ -400,7 +402,7 @@ function AkshyaTritiya(props) {
         }
       });
   }, []);
-
+  console.log("baners",banners);
   useEffect(() => {
     fetch(`${API_URL}/graphql`, {
       method: "post",
@@ -577,7 +579,7 @@ function AkshyaTritiya(props) {
         </Slideshow>
       </Grid>
 
-      <Grid xs={12} className={classes.roots}>
+      {/* <Grid xs={12} className={classes.roots}>
         <div style={{ textAlign: "center" }}>
           <div className={classes.headerAlign}>
             <img
@@ -596,76 +598,9 @@ function AkshyaTritiya(props) {
               src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/collection+page/urn_aaid_sc_US_4f2880c9-1910-41e4-b332-90c4513a4ca7+(2).png"
             />
           </div>
-
-          <Typography className={classes.titleHeader}>
-            Valam Perugum Valayal Thiruvizha with NAC Jewellers
-          </Typography>
-
-          <Typography className={classes.titleContents}>
-            Tamil Nadu - 14th April - 3rd May
-          </Typography>
-          <Typography className={classes.titleContents}>
-            Vijayawada - 22nd - 3rd May
-          </Typography>
-
-          <br />
-          <Typography className={classes.titleContents}>
-            We bring you a grand bangle mela this season with bangles starting
-            from 3 grams onwards. Choose from a wide variety of bangles and
-            avail exciting offers.
-          </Typography>
-          <br />
-
-          <Grid sm={12} md={8} style={{ margin: "auto" }}>
-            <Typography
-              className={classes.titleContents}
-              style={{ textAlign: "start", fontWeight: "bold" }}
-            >
-              This Akshaya Tritiya,
-            </Typography>
-            <ul style={{ textAlign: "start" }}>
-              <li className={classes.titleContents}>
-                ₹100 OFF per gram on Gold
-              </li>
-              <li className={classes.titleContents}>
-                Exchange old Gold and get ₹50/- extra per gram
-              </li>
-              <li className={classes.titleContents}>
-                ₹2,000 OFF per kg on Silver articles
-              </li>
-              <li className={classes.titleContents}>
-                Enroll in any Savings Scheme between 14th April - 15th May and
-                get a FREE GOLD COIN
-              </li>
-              <li className={classes.titleContents}>
-                Offer valid from 14th April - 3rd May
-              </li>
-              <li className={classes.titleContents}>
-                Click here to watch our AD Video&nbsp;
-                <a href="https://www.youtube.com/watch?v=eghxSxYjS6U">Tamil</a>
-                &nbsp;|&nbsp;
-                <a href="https://www.youtube.com/watch?v=dRV0XNVAisE">Telugu</a>
-              </li>
-            </ul>
-
-            <Typography
-              className={classes.titleContents}
-              style={{ textAlign: "start" }}
-            >
-              Available at all our showrooms &nbsp;
-              <a href="https://www.nacjewellers.com/store">Click here</a>
-            </Typography>
-            <Typography
-              className={classes.titleContents}
-              style={{ textAlign: "start" }}
-            >
-              For more info please contact&nbsp;
-              <a href="tel:+91 44 4399 6666">+91 44 4399 6666 </a>&nbsp;I&nbsp;
-              <a href="mailto:care@nacjewellers.com">care@nacjewellers.com</a>
-            </Typography>
-          </Grid>
         </div>
-      </Grid>
+      </Grid> */}
+      <TitleAndData title={"AKSHAYA TRITIYA"} />
       <Hidden smDown>
         <Container className={classes.cardEdit} style={{ paddingTop: 8 }}>
           <Slideshow
@@ -696,8 +631,8 @@ function AkshyaTritiya(props) {
           </Slideshow>
         </Container>
       </Hidden>
-
-      <Grid container className={classes.totalFormArea}>
+      <QueryForm />
+      {/* <Grid container className={classes.totalFormArea}>
         <Grid item sm={7} xs={12} style={{ backgroundColor: "#F4F4F4" }}>
           <div className={classes.formArea}>
             <div className={classes.inputFieldsEdit}>
@@ -795,7 +730,7 @@ function AkshyaTritiya(props) {
             </div>
           </Link>
         </Grid>
-      </Grid>
+      </Grid> */}
       <Snackbar
         anchorOrigin={{
           vertical: "top",
