@@ -1,10 +1,12 @@
 import { Grid } from "@material-ui/core";
 import React from "react";
 
-const HeaderTitle = () => {
+const ImageRow = () => {
   return (
     <Grid>
       <div></div>
     </Grid>
   );
 };
+
+export default ImageRow;

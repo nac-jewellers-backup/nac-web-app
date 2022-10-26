@@ -42,10 +42,14 @@ const CommonContent = (props) => {
                       return (
                         <div>
                           <div>
-                            <Typography className={classes.question}>{element?.question}</Typography>
+                            <Typography className={classes.question}>
+                              {element?.question}
+                            </Typography>
                           </div>
                           <div>
-                            <Typography className={classes.answer}>{element?.answer}</Typography>
+                            <Typography className={classes.answer}>
+                              {element?.answer}
+                            </Typography>
                           </div>
                         </div>
                       );
