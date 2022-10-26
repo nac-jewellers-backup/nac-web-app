@@ -16,7 +16,6 @@ const AboutUsPageNew = (props) => {
 
       {/* Content */}
       <AboutUsContent data={aboutUsNew} />
-
       <ImageRow />
     </div>
   );
