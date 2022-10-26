@@ -2,7 +2,7 @@ export const storeLocatorData = {
   carouselTop: {
     setting: {
       dots: false,
-      infinite: false,
+      infinite: false, 
       autoplay: false,
       speed: 1000,
       fade: false,

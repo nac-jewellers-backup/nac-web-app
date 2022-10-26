@@ -26,6 +26,7 @@ import { AllHOMEQUERY } from "../../queries/home";
 import { ALLBANNERSCOMPLETE, SEND_QUERIES,SEND_ENQUIREY } from "../../queries/home";
 import { TitleAndData } from "components";
 import { QueryForm } from "components";
+import { sampleDate } from "./dummyDataSpecific";
 function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
@@ -279,6 +280,7 @@ function AkshyaTritiya(props) {
   const [openSnackError, setOpenSnackError] = React.useState(false);
   const [formData, setFormData] = useState(InitialState);
   const [listProduct, setListProduct] = useState([]);
+  console.log("listProduct",listProduct);
   const [errorData, setErrorData] = useState(InitialState);
   const [banners, setBanners] = useState([]);
 
@@ -600,7 +602,7 @@ function AkshyaTritiya(props) {
           </div>
         </div>
       </Grid> */}
-      <TitleAndData title={"AKSHAYA TRITIYA"} />
+      <TitleAndData title={sampleDate?.title} description={sampleDate?.description} />
       <Hidden smDown>
         <Container className={classes.cardEdit} style={{ paddingTop: 8 }}>
           <Slideshow
@@ -631,106 +633,7 @@ function AkshyaTritiya(props) {
           </Slideshow>
         </Container>
       </Hidden>
-      <QueryForm />
-      {/* <Grid container className={classes.totalFormArea}>
-        <Grid item sm={7} xs={12} style={{ backgroundColor: "#F4F4F4" }}>
-          <div className={classes.formArea}>
-            <div className={classes.inputFieldsEdit}>
-              <Typography className={classes.inputFieldsHeader}>
-                First Name:
-              </Typography>
-              <FormControl style={{ backgroundColor: "#fff" }} fullWidth>
-                <TextField
-                  style={{ borderRadius: "0px" }}
-                  labelWidth={0}
-                  value={formData.name}
-                  classes={{ notchedOutline: classes.textFieldEdit }}
-                  InputProps={{ disableUnderline: true }}
-                  onChange={onChangeData}
-                  name="name"
-                />
-                <label style={{ color: "red" }}>{errorData.name}</label>
-              </FormControl>
-            </div>
-            <div className={classes.inputFieldsEdit}>
-              <Typography className={classes.inputFieldsHeader}>
-                Phone Number:
-              </Typography>
-              <FormControl style={{ backgroundColor: "#fff" }} fullWidth>
-                <TextField
-                  type="number"
-                  style={{ borderRadius: "0px" }}
-                  labelWidth={0}
-                  value={formData.phone}
-                  classes={{ notchedOutline: classes.textFieldEdit }}
-                  InputProps={{ disableUnderline: true }}
-                  onChange={onChangeData}
-                  name="phone"
-                />
-                <label style={{ color: "red" }}>{errorData.phone}</label>
-              </FormControl>
-            </div>
-            <div className={classes.inputFieldsEdit}>
-              <Typography className={classes.inputFieldsHeader}>
-                Email id:
-              </Typography>
-              <FormControl style={{ backgroundColor: "#fff" }} fullWidth>
-                <TextField
-                  style={{ borderRadius: "0px" }}
-                  labelWidth={0}
-                  value={formData.email}
-                  classes={{ notchedOutline: classes.textFieldEdit }}
-                  InputProps={{ disableUnderline: true }}
-                  onChange={onChangeData}
-                  name="email"
-                />
-                <label style={{ color: "red" }}>{errorData.email}</label>
-              </FormControl>
-            </div>
-            <div className={classes.inputFieldsEdit}>
-              <Typography className={classes.inputFieldsHeader}>
-                Your Query
-              </Typography>
-              <FormControl style={{ backgroundColor: "#fff" }} fullWidth>
-                <TextField
-                  style={{ borderRadius: "0px" }}
-                  classes={{ notchedOutline: classes.textFieldEdit }}
-                  InputProps={{ disableUnderline: true }}
-                  value={formData.query}
-                  onChange={onChangeData}
-                  name="query"
-                  multiline
-                  rows={8}
-                />
-                <label style={{ color: "red" }}>{errorData.query}</label>
-              </FormControl>
-            </div>
-            <div style={{ textAlign: "end", paddingTop: "10px" }}>
-              <Button
-                variant="contained"
-                onClick={onsubmitvalue}
-                className={classes.buttonAlign}
-              >
-                Sumbit
-              </Button>
-            </div>
-          </div>
-        </Grid>
-        <Grid item sm={5} xs={12} style={{ backgroundColor: "#2E348A" }}>
-          <Link href="/store">
-            <img
-              alt="images"
-              loading="lazy"
-              src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/akshaya+page/Group+63%402x.png"
-              style={{ width: "100%" }}
-              className={classes.storeImage}
-            />
-            <div className={classes.imgBtn} style={{ textDecoration: "none" }}>
-              FOR MORE VISIT OUR STORE
-            </div>
-          </Link>
-        </Grid>
-      </Grid> */}
+      <QueryForm image={null} />
       <Snackbar
         anchorOrigin={{
           vertical: "top",

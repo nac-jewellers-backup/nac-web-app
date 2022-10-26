@@ -215,7 +215,7 @@ const QueryForm = (props) => {
           <img
             alt="images"
             loading="lazy"
-            src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/akshaya+page/Group+63%402x.png"
+            src={props?.image ?? "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/akshaya+page/Group+63%402x.png"}
             style={{ width: "100%" }}
             className={classes.storeImage}
           />
