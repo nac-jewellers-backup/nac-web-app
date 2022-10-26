@@ -9,6 +9,14 @@ import TermsAndConditionsStyles from "./style";
 
 const TermsAndConditions = () => {
   const classes = TermsAndConditionsStyles();
+  React.useEffect(() => {
+    let hashedLocation = window.location.hash.replace("#", "");
+    if (hashedLocation) {
+      let elmnt = document.getElementById(hashedLocation);
+      elmnt.scrollIntoView();
+    }
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <Grid container>
       <Grid item xs={12}>
