@@ -27,6 +27,7 @@ import { ALLBANNERSCOMPLETE, SEND_QUERIES,SEND_ENQUIREY } from "../../queries/ho
 import { TitleAndData } from "components";
 import { QueryForm } from "components";
 import { sampleDate } from "./dummyDataSpecific";
+import { Banner } from "components";
 function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
@@ -546,7 +547,7 @@ function AkshyaTritiya(props) {
             </Grid>
           )}
         </Hidden>
-        <Slideshow
+        <Banner
           sliderRef={slider}
           dataCarousel={SolitairesData.carouselTop.setting}
         >
@@ -578,7 +579,7 @@ function AkshyaTritiya(props) {
               </Hidden>
             </>
           ))}
-        </Slideshow>
+        </Banner>
       </Grid>
 
       {/* <Grid xs={12} className={classes.roots}>
@@ -605,7 +606,7 @@ function AkshyaTritiya(props) {
       <TitleAndData title={sampleDate?.title} description={sampleDate?.description} />
       <Hidden smDown>
         <Container className={classes.cardEdit} style={{ paddingTop: 8 }}>
-          <Slideshow
+          <Banner
             class="subslider-carousel"
             dataCarousel={dataCarouselcollections}
           >
@@ -615,12 +616,12 @@ function AkshyaTritiya(props) {
                   <ImgMediaCard data={val} cardSize="auto" hoverText={true} />
                 );
               })}
-          </Slideshow>
+          </Banner>
         </Container>
       </Hidden>
       <Hidden mdUp>
         <Container>
-          <Slideshow
+          <Banner
             class="subslider-carousel"
             dataCarousel={dataCarouselcollectionsSm}
           >
@@ -630,10 +631,12 @@ function AkshyaTritiya(props) {
                   <ImgMediaCard data={val} cardSize="auto" hoverText={true} />
                 );
               })}
-          </Slideshow>
+          </Banner>
         </Container>
       </Hidden>
+      
       <QueryForm image={null} />
+
       <Snackbar
         anchorOrigin={{
           vertical: "top",
