@@ -13,7 +13,7 @@ const CommonContent = (props) => {
       {props?.data.map((e) => {
         return (
           <>
-            <Accordion className={classes.contentText}>
+            <Accordion className={classes.contentText} defaultExpanded>
               <AccordionSummary
                 expandIcon={<ExpandMoreIcon />}
                 aria-controls="panel1a-content"

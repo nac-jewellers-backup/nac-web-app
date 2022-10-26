@@ -109,7 +109,7 @@ export const RouterApp = (props) => {
         path={routes.HomePageStylori}
       />
       <Route key="Silver" component={Silver} exact path={routes.Silver} />
-      <Route key="Faqs" component={AboutusPage} exact path={routes.Faqs} />
+      <Route key="Faqs" component={FaqDetails} exact path={routes.Faqs} />
       <Route
         key="ProductCare"
         component={Faqs}
@@ -119,13 +119,13 @@ export const RouterApp = (props) => {
       <Route key="Shipping" component={Faqs} exact path={routes.Shipping} />
       <Route
         key="PrivacyPolicy"
-        component={AboutusPage}
+        component={PrivacyPolicy}
         exact
         path={routes.PrivacyPolicy}
       />
       <Route
         key="TermsConditions"
-        component={AboutusPage}
+        component={TermsAndConditions}
         exact
         path={routes.TermsConditions}
       />
