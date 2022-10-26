@@ -16,7 +16,7 @@ const CommonContentStyles = makeStyles((theme) => ({
     boxShadow: "none !important",
     "& p": {
       fontSize: "20px",
-      color: "grey",
+      color: "#717171",
       [theme.breakpoints.down("md")]: {
         fontSize: "17px",
       },
@@ -26,7 +26,7 @@ const CommonContentStyles = makeStyles((theme) => ({
     },
     "& div": {
       fontSize: "20px",
-      color: "grey",
+      color: "#717171",
       [theme.breakpoints.down("md")]: {
         fontSize: "17px",
       },
@@ -45,6 +45,19 @@ const CommonContentStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down("xs")]: {
       padding: "0 10px !important",
+    },
+  },
+
+  question: {
+    fontSize: "20px",
+    fontWeight: 600,
+    color: "#717171",
+    margin: "30px 0",
+    [theme.breakpoints.down("md")]: {
+      fontSize: "17px",
+    },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "14px",
     },
   },
 }));

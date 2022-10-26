@@ -20,7 +20,7 @@ const FaqDetails = () => {
           <CommonTitle title="FAQS" />
         </div>
         <div>
-          <CommonContent data={faqData} />
+          <CommonContent faq data={faqData} />
         </div>
         <div>
           <Footer />

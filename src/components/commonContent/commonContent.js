@@ -7,7 +7,6 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import CommonContentStyles from "./style";
 
 const CommonContent = (props) => {
-  console.log("datasss", props);
   const classes = CommonContentStyles();
   return (
     <div>
@@ -28,13 +27,31 @@ const CommonContent = (props) => {
                     {e?.para?.map((val) => {
                       return (
                         <div>
-                          <Typography className={classes.accordinText}>{val}</Typography>
+                          <Typography className={classes.accordinText}>
+                            {val}
+                          </Typography>
                         </div>
                       );
                     })}
                   </div>
                 )}
                 {e?.element}
+                {props?.faq && (
+                  <div>
+                    {e?.paragraph?.map((element) => {
+                      return (
+                        <div>
+                          <div>
+                            <Typography className={classes.question}>{element?.question}</Typography>
+                          </div>
+                          <div>
+                            <Typography className={classes.answer}>{element?.answer}</Typography>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                )}
               </AccordionDetails>
             </Accordion>
           </>
