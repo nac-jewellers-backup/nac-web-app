@@ -27,7 +27,7 @@ import { ALLBANNERSCOMPLETE, SEND_QUERIES,SEND_ENQUIREY } from "../../queries/ho
 import { TitleAndData } from "components";
 import { QueryForm } from "components";
 import { sampleDate } from "./dummyDataSpecific";
-import { Banner } from "components";
+import { BannerComponent,SlideImgMediaCard } from "components";
 function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
@@ -270,19 +270,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function AkshyaTritiya(props) {
-  const InitialState = {
-    name: "",
-    phone: "",
-    email: "",
-    query: "",
-  };
-  const classes = useStyles();
-  const [openSnack, setOpenSnack] = React.useState(false);
-  const [openSnackError, setOpenSnackError] = React.useState(false);
-  const [formData, setFormData] = useState(InitialState);
   const [listProduct, setListProduct] = useState([]);
-  console.log("listProduct",listProduct);
-  const [errorData, setErrorData] = useState(InitialState);
   const [banners, setBanners] = useState([]);
 
   const next = () => {
@@ -293,90 +281,6 @@ function AkshyaTritiya(props) {
   };
   const slider = React.createRef();
 
-  const onChangeData = (event) => {
-    setFormData({ ...formData, [event.target.name]: event.target.value });
-  };
-
-  const handleValidateData = () => {
-    if (formData.name.length === 0) {
-      setErrorData({ ...errorData, name: "Please enter name" });
-      return false;
-    }
-    if (formData.phone.length === 0) {
-      setErrorData({ ...errorData, phone: "Please enter phone number" });
-
-      return false;
-    }
-    if (formData.email.length === 0) {
-      setErrorData({ ...errorData, email: "Please enter email name" });
-
-      return false;
-    }
-    if (formData.query.length === 0) {
-      setErrorData({ ...errorData, query: "Please enter query name" });
-
-      return false;
-    }
-    setErrorData({
-      name: "",
-      phone: "",
-      email: "",
-      query: "",
-    });
-    return true;
-  };
-
-  const emailTrigger =async(id)=>{
-    console.log(id,"????")
-    const params={
-      "type": "send_enquiry",
-      "appointment_id": id
-    }
-    await axios.post(`${API_URL}/trigger_mail`, params).then((res) => {
-      if (res.data) {
-        setOpenSnack(true);
-        setFormData({
-          name: "",
-          phone: "",
-          email: "",
-          query: "",
-        });
-        return;
-      }
-      setOpenSnackError(true);
-    })
-  }
-
-  const onsubmitvalue = () => {
-    if (handleValidateData()) {
-      fetch(`${API_URL}/graphql`, {
-        method: "post",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          query: SEND_ENQUIREY,
-          variables: {
-            updatedAt: new Date(),
-            createdAt: new Date(),
-            email: formData.email,
-            appointmentTypeId: 5,
-            comments: formData.query,
-            specialRequests: window.location.pathname.slice(1),
-            customerName: formData.name,
-            isActive: true,
-            mobile: formData.phone,
-          },
-        }),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          if (data?.data?.createAppointment?.appointment?.id) {
-            emailTrigger(data?.data?.createAppointment?.appointment?.id)
-          }
-        });
-    }
-  };
 
   useEffect(() => {
     fetch(`${API_URL}/graphql`, {
@@ -466,75 +370,13 @@ function AkshyaTritiya(props) {
         setListProduct(featureproductDetails ?? []);
       });
   }, []);
-  const ArrowLeft = (props) => {
-    const { className, onClick } = props;
-    return (
-      <ArrowLeftIcon
-        className={`${className} ${classes.collectionSection}`}
-        onClick={onClick}
-        style={{ left: "-60px" }}
-      />
-    );
-  };
-  const ArrowRight = (props) => {
-    const { className, onClick } = props;
-    return (
-      <ArrowRightIcon
-        className={`${className} ${classes.collectionSection}`}
-        onClick={onClick}
-        style={{ right: "-60px" }}
-      />
-    );
-  };
-  const dataCarouselcollections = {
-    arrows: true,
-    dots: false,
-    autoplay: false,
-    infinite: false,
-    accessibility: true,
-    // speed: 2500,
-    // fade: true,
-    slidesToShow: 4,
-    slidesToScroll: 4,
-    prevArrow: <ArrowLeft />,
-    nextArrow: <ArrowRight />,
-  };
-  const dataCarouselcollectionsSm = {
-    arrows: true,
-    dots: false,
-    autoplay: true,
-    infinite: true,
-    accessibility: true,
-    speed: 2500,
-    // fade: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    prevArrow: <ArrowLeft />,
-    nextArrow: <ArrowRight />,
-  };
-
-  const handleClose = (event, reason) => {
-    if (reason === "clickaway") {
-      return;
-    }
-    setOpenSnackError(false);
-    setOpenSnack(false);
-  };
+  
   return (
     <Grid container>
       <Grid xs={12}>
         <Header />
       </Grid>
 
-      <Grid
-        item
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={12}
-        className={classes.bannerImg}
-      >
         {/* <Hidden smDown>
           {SolitairesData.carouselTop.setting.arrowsImg && (
             <Grid container>
@@ -547,122 +389,14 @@ function AkshyaTritiya(props) {
             </Grid>
           )}
         </Hidden> */}
-        <Banner
-          dataCarousel={"multiple"}
-        >
-          {banners.map((val, index) => (
-            <>
-              <Hidden smDown>
-                <Grid container key={index} className={classes.headContent}>
-                  <a href={val.urlParam} style={{ width: "100%" }}>
-                    <img
-                      alt="images"
-                      loading="lazy"
-                      src={val.web}
-                      style={{ width: "100%", height: "100%" }}
-                    />
-                  </a>
-                </Grid>
-              </Hidden>
-              <Hidden mdUp>
-                <Grid container key={index} className={classes.headContent}>
-                  <a href={val.urlParam}>
-                    <img
-                      alt="images"
-                      loading="lazy"
-                      src={val.mobile}
-                      style={{ width: "100%", height: "100%" }}
-                    />
-                  </a>
-                </Grid>
-              </Hidden>
-            </>
-          ))}
-        </Banner>
-      </Grid>
+        <BannerComponent banners={banners} dataCarousel="multiple" />
 
-      {/* <Grid xs={12} className={classes.roots}>
-        <div style={{ textAlign: "center" }}>
-          <div className={classes.headerAlign}>
-            <img
-              alt="images"
-              loading="lazy"
-              className={classes.logoEdits}
-              src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/collection+page/urn_aaid_sc_US_4f2880c9-1910-41e4-b332-90c4513a4ca7+(1).png"
-            />
-            <Typography className={classes.headings}>
-              AKSHAYA TRITIYA
-            </Typography>
-            <img
-              alt="images"
-              loading="lazy"
-              className={classes.logoEdits}
-              src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/collection+page/urn_aaid_sc_US_4f2880c9-1910-41e4-b332-90c4513a4ca7+(2).png"
-            />
-          </div>
-        </div>
-      </Grid> */}
       <TitleAndData title={sampleDate?.title} description={sampleDate?.description} />
 
-      <Hidden smDown>
-        <Container className={classes.cardEdit} style={{ paddingTop: 8 }}>
-          <Slideshow
-            class="subslider-carousel"
-            dataCarousel={dataCarouselcollections}
-          >
-            {listProduct &&
-              listProduct?.map((val) => {
-                return (
-                  <ImgMediaCard data={val} cardSize="auto" hoverText={true} />
-                );
-              })}
-          </Slideshow>
-        </Container>
-      </Hidden>
-      <Hidden mdUp>
-        <Container>
-          <Slideshow
-            class="subslider-carousel"
-            dataCarousel={dataCarouselcollectionsSm}
-          >
-            {listProduct &&
-              listProduct?.map((val) => {
-                return (
-                  <ImgMediaCard data={val} cardSize="auto" hoverText={true} />
-                );
-              })}
-          </Slideshow>
-        </Container>
-      </Hidden>
+      <SlideImgMediaCard listProduct={listProduct} />
       
       <QueryForm image={null} />
 
-      <Snackbar
-        anchorOrigin={{
-          vertical: "top",
-          horizontal: "center",
-        }}
-        open={openSnack}
-        autoHideDuration={3000}
-        onClose={handleClose}
-      >
-        <Alert onClose={handleClose} severity="success">
-          Your queries send successfully!
-        </Alert>
-      </Snackbar>
-      <Snackbar
-        anchorOrigin={{
-          vertical: "top",
-          horizontal: "center",
-        }}
-        open={openSnackError}
-        autoHideDuration={3000}
-        onClose={handleClose}
-      >
-        <Alert onClose={handleClose} severity="error">
-          Something went wrong, Please try again!
-        </Alert>
-      </Snackbar>
       <Footer />
     </Grid>
   );
