@@ -548,8 +548,7 @@ function AkshyaTritiya(props) {
           )}
         </Hidden> */}
         <Banner
-          // sliderRef={slider}
-          dataCarousel={SolitairesData.carouselTop.setting}
+          dataCarousel={"multiple"}
         >
           {banners.map((val, index) => (
             <>
@@ -607,7 +606,7 @@ function AkshyaTritiya(props) {
 
       <Hidden smDown>
         <Container className={classes.cardEdit} style={{ paddingTop: 8 }}>
-          <Banner
+          <Slideshow
             class="subslider-carousel"
             dataCarousel={dataCarouselcollections}
           >
@@ -617,12 +616,12 @@ function AkshyaTritiya(props) {
                   <ImgMediaCard data={val} cardSize="auto" hoverText={true} />
                 );
               })}
-          </Banner>
+          </Slideshow>
         </Container>
       </Hidden>
       <Hidden mdUp>
         <Container>
-          <Banner
+          <Slideshow
             class="subslider-carousel"
             dataCarousel={dataCarouselcollectionsSm}
           >
@@ -632,7 +631,7 @@ function AkshyaTritiya(props) {
                   <ImgMediaCard data={val} cardSize="auto" hoverText={true} />
                 );
               })}
-          </Banner>
+          </Slideshow>
         </Container>
       </Hidden>
       

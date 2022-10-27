@@ -209,44 +209,56 @@ class Banner extends React.Component {
   };
   //className={this.props.styles?this.props.styles:''}
   render() {
-    // document.getElementsByClassName('fade').slick({
-    //   dots: true,
-    //   infinite: true,
-    //   speed: 500,
-    //   fade: true,
-    //   cssEase: 'linear'
-    // });
-    // const fadeImages = [
-    //   'https://assets-cdn.stylori.com/120x120/images/product/SR0986/SR0986-1Y.jpg',
-    //   'https://assets-cdn.stylori.com/120x120/images/product/SE0464/SE0464-1Y.jpg',
-    //   'https://assets-cdn.stylori.com/120x120/images/product/SR0986/SR0986-1Y.jpg'
-    // ];
+    const multipleData = {
+      dots: true,
+        infinite: true,
+        autoplay: true,
+        speed: 2000,
+        fade: false,
+        arrows: false,
+        arrowsImg: true,
+        dotsClass: "slickdevStatic",
+        accessibility: true,
+        autoplaySpeed: 4000,
+        centerMode: false,
+        focusOnSelect: false,
+        pauseOnHover: false,
+        pauseOnDotsHover: false,
+        pauseOnFocus: true,
+        swipe: false,
+    }
 
+    const singleData = {
+          dots: false,
+          infinite: false, 
+          autoplay: false,
+          speed: 1000,
+          fade: false,
+          arrows: false,
+          arrowsImg: false,
+          dotsClass: "slickdev",
+          accessibility: false,
+          centerMode: false,
+          focusOnSelect: false,
+          pauseOnHover: false,
+          pauseOnDotsHover: false,
+          pauseOnFocus: false,
+          swipe: false,
+  }
     // const { dataCarousel: { settings }, sliderRef } = this.props;
     const { sliderRef } = this.props;
     var settings = this.props.dataCarousel;
-
+    console.log("this.banner",this.props);
     return (
       <div style={{ width: "100%" }}>
-        <Slider ref={sliderRef} {...settings}>
+        {this.props?.dataCarousel === "multiple" ? 
+        <Slider ref={sliderRef} {...multipleData}>
           {this.props.children ? this.props.children : this.renderFadeImages()}
-          {this.props.hover
-            ? this.imagehoverchildrens(this.props.hoverlist)
-            : ""}
-
-          {this.props.hover
-            ? this.imagehoverchildrens(this.props.hoverlist)
-            : ""}
-          {this.props.hovereffect
-            ? this.imagehoverchildrens(this.props.hoverlist)
-            : ""}
-          {this.props.WithoutHoverhover
-            ? this.imagewithouthoverchildrens(this.props.hoverlist)
-            : ""}
-          {this.props.TopPic
-            ? this.imagehoverchildrens(this.props.hoverlist)
-            : ""}
-        </Slider>
+        </Slider> 
+          : 
+        <Slider ref={sliderRef} {...singleData}>
+          {this.props.children ? this.props.children : this.renderFadeImages()}
+        </Slider>}
       </div>
     );
   }
