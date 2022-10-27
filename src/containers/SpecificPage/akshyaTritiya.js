@@ -535,7 +535,7 @@ function AkshyaTritiya(props) {
         xl={12}
         className={classes.bannerImg}
       >
-        <Hidden smDown>
+        {/* <Hidden smDown>
           {SolitairesData.carouselTop.setting.arrowsImg && (
             <Grid container>
               <Grid
@@ -546,9 +546,9 @@ function AkshyaTritiya(props) {
               <Grid item onClick={next} className={classes.nextButton}></Grid>
             </Grid>
           )}
-        </Hidden>
+        </Hidden> */}
         <Banner
-          sliderRef={slider}
+          // sliderRef={slider}
           dataCarousel={SolitairesData.carouselTop.setting}
         >
           {banners.map((val, index) => (
@@ -604,6 +604,7 @@ function AkshyaTritiya(props) {
         </div>
       </Grid> */}
       <TitleAndData title={sampleDate?.title} description={sampleDate?.description} />
+
       <Hidden smDown>
         <Container className={classes.cardEdit} style={{ paddingTop: 8 }}>
           <Banner
