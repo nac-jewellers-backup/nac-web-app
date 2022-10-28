@@ -23,254 +23,22 @@ import ArrowLeftIcon from "@material-ui/icons/ArrowLeft";
 import Footer from "../../components/Footer/Footer";
 import { API_URL } from "../../config";
 import { AllHOMEQUERY } from "../../queries/home";
-import { ALLBANNERSCOMPLETE, SEND_QUERIES,SEND_ENQUIREY } from "../../queries/home";
+import {
+  ALLBANNERSCOMPLETE,
+  SEND_QUERIES,
+  SEND_ENQUIREY,
+} from "../../queries/home";
 import { TitleAndData } from "components";
 import { QueryForm } from "components";
 import { sampleDate } from "./dummyDataSpecific";
-import { BannerComponent,SlideImgMediaCard } from "components";
+import { BannerComponent, SlideImgMediaCard } from "components";
 function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
-const useStyles = makeStyles((theme) => ({
-  preButton: {
-    width: "35px!important",
-    height: "42px!important",
-    backgroundRepeat: "no-repeat !important",
-    opacity: "1!important",
-    backgroundImage:
-      "url(https://alpha-assets.stylori.com/images/static/slider_icon.png)!important",
-    backgroundPosition: "-27px -229px!important",
-
-    borderLeft: 0,
-    background: "none",
-    left: 0,
-    marginTop: "-30px",
-    fontSize: "20px",
-    // color: "#fff",
-    textAlign: "center",
-    position: "absolute",
-    zIndex: 9,
-    [theme.breakpoints.only("xs")]: {
-      top: "229px !important",
-      height: "30px",
-      width: "28px",
-    },
-    [theme.breakpoints.only("sm")]: {
-      top: "262px !important",
-      height: "30px",
-      width: "28px",
-    },
-    [theme.breakpoints.only("md")]: {
-      top: "321px !important",
-    },
-    [theme.breakpoints.up("lg")]: {
-      top: "426px !important",
-    },
-    [theme.breakpoints.only("xl")]: {
-      top: "682px !important",
-    },
-  },
-  nextButton: {
-    backgroundImage:
-      "url(https://alpha-assets.stylori.com/images/static/slider_icon.png)!important",
-    width: "35px!important",
-    height: "42px!important",
-    backgroundRepeat: "no-repeat!important",
-    opacity: "1!important",
-    backgroundPosition: "-160px -229px!important",
-    borderRight: 0,
-    position: "absolute",
-    zIndex: 9,
-    float: "right",
-    right: 0,
-    top: "55%!important",
-    [theme.breakpoints.only("xs")]: {
-      top: "199px !important",
-      height: "30px",
-      width: "28px",
-    },
-    [theme.breakpoints.only("sm")]: {
-      top: "231px !important",
-      height: "30px",
-      width: "28px",
-    },
-    [theme.breakpoints.only("md")]: {
-      top: "291px !important",
-    },
-    [theme.breakpoints.up("lg")]: {
-      top: "397px !important",
-    },
-    [theme.breakpoints.only("xl")]: {
-      top: "653px !important",
-    },
-  },
-  headContent: {
-    outline: "none !important",
-    position: "relative",
-  },
-  imgBtn: {
-    width: "100%",
-    fontStyle: "italic",
-    backgroundColor: "#2E348A",
-    color: "#fff",
-    borderRadius: "0px",
-    top: "-4px",
-    padding: "10px 0px",
-    textAlign: "center",
-  },
-  storeImage: {
-    maxHeight: "700px",
-    [theme.breakpoints.down("md")]: {
-      minHeight: "580px",
-    },
-    [theme.breakpoints.down("sm")]: {
-      minHeight: "555px",
-    },
-    [theme.breakpoints.down("xs")]: {
-      minHeight: "400px",
-    },
-  },
-  mainCarosel: {
-    width: "100%",
-    [theme.breakpoints.up("md")]: {
-      height: "500px ",
-    },
-    [theme.breakpoints.down("sm")]: {
-      height: "280px ",
-    },
-    objectFit: "cover !important",
-    headContent: {
-      width: "100%",
-      height: "100%",
-    },
-  },
-  collectionSection: {
-    fill: "#2E348A",
-    fontSize: "45px",
-  },
-  margin: {
-    margin: theme.spacing(1),
-  },
-  inputFieldsEdit: {
-    marginBottom: "15px",
-  },
-  textFieldEdit: {
-    borderWidth: "0px",
-  },
-  formArea: {
-    padding: "50px 75px",
-    backgroundColor: "#F4F4F4",
-    [theme.breakpoints.down("md")]: {
-      padding: "35px 45px",
-    },
-    [theme.breakpoints.down("sm")]: {
-      padding: "35px 25px",
-    },
-  },
-  inputFieldsHeader: {
-    paddingBottom: "5px",
-    color: "#6E6F72",
-  },
-  underLineEdit: {
-    borderBottom: "none",
-  },
-  buttonAlign: {
-    backgroundColor: "#B2832C",
-    borderRadius: "0px",
-    color: "#fff",
-    padding: "5px 110px",
-    fontSize: "large",
-    "&:hover": {
-      backgroundColor: "#9b6706",
-    },
-    [theme.breakpoints.down("xs")]: {
-      fontSize: "small",
-      padding: "3px 50px",
-    },
-  },
-  totalFormArea: {
-    width: "83%",
-    margin: "auto",
-    padding: "55px 0px 65px 0px",
-    boxShawdow: "6px 7px 6px #000 !important",
-    [theme.breakpoints.down("xs")]: {
-      padding: "55px 0px 35px 0px",
-    },
-  },
-  titleHeader: {
-    fontSize: "22px !important",
-
-    fontWeight: "bold",
-    [theme.breakpoints.down("md")]: {
-      fontSize: "18px !important",
-    },
-
-    [theme.breakpoints.down("xs")]: {
-      fontSize: "16px !important",
-    },
-  },
-  titleContents: {
-    fontSize: "18px !important",
-
-    [theme.breakpoints.down("md")]: {
-      fontSize: "16px !important",
-    },
-
-    [theme.breakpoints.down("xs")]: {
-      fontSize: "14px !important",
-    },
-  },
-  roots: {
-    padding: "50px 60px",
-    [theme.breakpoints.down("xs")]: {
-      padding: "25px 0px",
-    },
-  },
-  headings: {
-    fontSize: "50px !important",
-    color: "#B2832C",
-    fontStyle: "italic",
-    padding: "10px 13px 0px 13px",
-    [theme.breakpoints.down("md")]: {
-      fontSize: "45px !important",
-    },
-    [theme.breakpoints.down("xs")]: {
-      fontSize: "30px !important",
-      padding: "10px 4px 0px 4px",
-    },
-  },
-  logoEdits: {
-    position: "relative",
-    height: "70px",
-    top: "12px",
-    [theme.breakpoints.down("md")]: {
-      height: "55px",
-      top: "17px",
-    },
-    [theme.breakpoints.down("xs")]: {
-      height: "40px",
-      top: "12px",
-    },
-  },
-  cardEdit: {
-    width: "89%",
-    margin: "auto",
-    [theme.breakpoints.down("md")]: {
-      width: "90%",
-    },
-  },
-  headerAlign: {
-    display: "flex",
-    justifyContent: "center",
-    paddingBottom: "40px",
-    [theme.breakpoints.down("xs")]: {
-      paddingBottom: "10px",
-    },
-  },
-}));
 
 function AkshyaTritiya(props) {
   const [listProduct, setListProduct] = useState([]);
+  console.log("listProducr", listProduct);
   const [banners, setBanners] = useState([]);
 
   const next = () => {
@@ -280,7 +48,6 @@ function AkshyaTritiya(props) {
     slider.current.slickPrev();
   };
   const slider = React.createRef();
-
 
   useEffect(() => {
     fetch(`${API_URL}/graphql`, {
@@ -301,7 +68,7 @@ function AkshyaTritiya(props) {
         const listedPageData = bannerFullData.filter(
           (item) => item.urlParam === "listing"
         );
-          console.log("listedPageData",listedPageData);
+        console.log("listedPageData", listedPageData);
         if (specificPageData.length > 0) {
           setBanners(specificPageData);
         } else {
@@ -309,7 +76,7 @@ function AkshyaTritiya(props) {
         }
       });
   }, []);
-  console.log("baners",banners);
+  console.log("baners", banners);
   useEffect(() => {
     fetch(`${API_URL}/graphql`, {
       method: "post",
@@ -370,33 +137,249 @@ function AkshyaTritiya(props) {
         setListProduct(featureproductDetails ?? []);
       });
   }, []);
-  
+
+  const handleCall = () => {
+    const payload = "akshyaTritiya";
+    axios
+      .post("http://localhost:8000/akshyaTritiya", payload)
+      .then((res) => {
+        console.log("response", res);
+      })
+      .catch((error) => {
+        console.error(error);
+        alert("error");
+      });
+  };
+
+  const bannerList = [
+    {
+        "id": 23,
+        "mobile": "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori+CSK-banner-mobile-805X430-px.jpg",
+        "position": 1,
+        "url": "/jewellery/kada/csk_kada?skuId=1000001",
+        "web": "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori+CSK-banner-1920-X-656-px.jpg",
+        "urlParam": "listing"
+    },
+    {
+        "id": 24,
+        "mobile": "https://assets.stylori.com/images/Static+Pages/Home+Page/gemstone-mob",
+        "position": 3,
+        "url": "/gemstone-jewellery?sort=latest",
+        "web": "https://assets.stylori.com/images/Static+Pages/Home+Page/banner1.jpg",
+        "urlParam": "listing"
+    },
+    {
+        "id": 25,
+        "mobile": "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori-Valentine-banner-mob.jpg",
+        "position": 2,
+        "url": "/hearts-jewellery?sort=bestseller",
+        "web": "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori-Valentine-banner-web.jpg",
+        "urlParam": "listing"
+    },
+    {
+        "id": 26,
+        "mobile": "https://assets.stylori.com/images/Static+Pages/Home+Page/rings-collection-mob.jpg",
+        "position": 4,
+        "url": "/rings-jewellery",
+        "web": "https://assets.stylori.com/images/Static+Pages/Home+Page/banner3.jpg",
+        "urlParam": "listing"
+    },
+    {
+        "id": 27,
+        "mobile": "https://assets.stylori.com/images/Static+Pages/Home+Page/Floral-collection-Mob.jpg",
+        "position": 5,
+        "url": "/floral-jewellery?sort=latest",
+        "web": "https://assets.stylori.com/images/Static+Pages/Home+Page/banner4.jpg",
+        "urlParam": "listing"
+    },
+    {
+        "id": 28,
+        "mobile": "https://assets.stylori.com/images/Static+Pages/Home+Page/halo-collection-mob.jpg",
+        "position": 6,
+        "url": "/jewellery-from+halo+collection",
+        "web": "https://assets.stylori.com/images/Static+Pages/Home+Page/banner5.jpg",
+        "urlParam": "listing"
+    },
+    {
+        "id": 29,
+        "mobile": "https://assets.stylori.com/images/Static+Pages/Home+Page/harvest-campaign-mob.png",
+        "position": 7,
+        "url": "/jewellery?sort=bestseller",
+        "web": "https://assets.stylori.com/images/Static+Pages/Home+Page/harvest-campaign-web.png",
+        "urlParam": "listing"
+    }
+]
+
+const listingProducts = [
+  {
+      "price": 41303,
+      "offerPrice": 44231.29,
+      "title": "charming golden boho bracelet",
+      "save": 0,
+      "image": {
+          "placeImage": {
+              "img": "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/dist/jewellery/gold/breezee/bracelets/8-bi9222-2.png"
+          },
+          "hoverImage": {
+              "img": "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/dist/jewellery/gold/breezee/bracelets/8-bi9222-2.png"
+          }
+      },
+      "productId": "1111",
+      "diamondType": "",
+      "purity": "",
+      "productType": "",
+      "skuId": "8BI9222",
+      "skuID": "8BI9222",
+      "skuUrl": "jewellery/bracelets/gold/charming-golden-boho-bracelet?skuid=8BI9222",
+      "description": "charming and dainty, this lovely gold bracelet was designed to delight a woman. strung with round beads, pyramids and intricate rectangle beads, this bracelet exudes a boho charm that makes it irresistible to a discerning woman!"
+  },
+  {
+      "price": 29438,
+      "offerPrice": 34319.59,
+      "title": "chic diamond paisley earrings",
+      "save": 0,
+      "image": {
+          "placeImage": {
+              "img": "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/dist/jewellery/diamond/affordable-diamonds/earring/bq2457-2.png"
+          },
+          "hoverImage": {
+              "img": "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/dist/jewellery/diamond/affordable-diamonds/earring/bq2457-2.png"
+          }
+      },
+      "productId": "1123",
+      "diamondType": "",
+      "purity": "",
+      "productType": "",
+      "skuId": "134BQ2457",
+      "skuID": "134BQ2457",
+      "skuUrl": "jewellery/earrings/diamond/chic-diamond-paisley-earrings?skuid=134BQ2457",
+      "description": "this spectacular pair of diamond earrings is a perfect accessory to be worn for ethnic celebrations and chic parties. the stud earrings are forged in gold and fashioned in a paisley design studded with minuscule round diamonds with shimmering brilliance."
+  },
+  {
+      "price": 194124,
+      "offerPrice": 214125.69,
+      "title": "beautiful enamel heart bangles",
+      "save": 0,
+      "image": {
+          "placeImage": {
+              "img": "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/dist/jewellery/gold/5k-to-35k/bangle/3-bs1747-2.png"
+          },
+          "hoverImage": {
+              "img": "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/dist/jewellery/gold/5k-to-35k/bangle/3-bs1747-2.png"
+          }
+      },
+      "productId": "1222",
+      "diamondType": "",
+      "purity": "",
+      "productType": "",
+      "skuId": "3BS1747",
+      "skuID": "3BS1747",
+      "skuUrl": "jewellery/bangles/gold/beautiful-enamel-heart-bangles?skuid=3BS1747",
+      "description": "elegance and beauty form a striking combination in this gorgeous gold bangle. the bangle features a dual broad shank pattern with beautiful designs etched inside. the enameled cupid in maroon and green highlights the beauty of this bangle and makes for a precious anniversary gift to your better half."
+  },
+  {
+      "price": 82264,
+      "offerPrice": 90740.9,
+      "title": "classic gold elegant chain",
+      "save": 0,
+      "image": {
+          "placeImage": {
+              "img": "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/dist/jewellery/gold/5k-to-35k/gold-chain/1-bu2436-2.png"
+          },
+          "hoverImage": {
+              "img": "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/dist/jewellery/gold/5k-to-35k/gold-chain/1-bu2436-2.png"
+          }
+      },
+      "productId": "1323",
+      "diamondType": "",
+      "purity": "",
+      "productType": "",
+      "skuId": "1BU2436",
+      "skuID": "1BU2436",
+      "skuUrl": "jewellery/chains/gold/classic-gold-elegant-chain?skuid=1BU2436",
+      "description": "simple yet classic, this elegant gold chain is solidly fashioned and makes a great ornament to be worn every day. a glamorous pendant can be added to this simple chain to further alleviate its beauty. the s-shaped hook makes it easy to wear and makes an excellent daily wear accessory."
+  },
+  {
+      "price": 314163,
+      "offerPrice": 336826.27,
+      "title": "stunning multi-layer diamond necklace",
+      "save": 0,
+      "image": {
+          "placeImage": {
+              "img": "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/dist/jewellery/diamond/necklace/128-dr4417-2.png"
+          },
+          "hoverImage": {
+              "img": "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/dist/jewellery/diamond/necklace/128-dr4417-2.png"
+          }
+      },
+      "productId": "3293",
+      "diamondType": "",
+      "purity": "",
+      "productType": "",
+      "skuId": "128DR4417",
+      "skuID": "128DR4417",
+      "skuUrl": "jewellery/necklaces/diamond/stunning-multi-layer-diamond-necklace?skuid=128DR4417",
+      "description": "designed for the modern-day bride, this sparkling diamond necklace is as stunning as it is beautiful. multi-layered with floral accents the necklace is studded entirely with round-cut, brilliant diamonds, with a delicate diamond-studded teardrop pendant at the bottom. "
+  }
+]
+
+  const [state, setState] = useState([
+    {
+      component: "BannerComponent",
+      props: {
+        banners : bannerList
+      }
+    },
+    {
+      component: "TitleAndData",
+      props:{
+        title: sampleDate?.title,
+        description: sampleDate?.description
+      },
+    },
+    {
+      component: "SlideImgMediaCard",
+      props: {
+        listingProducts: listingProducts
+      },
+    },
+    {
+      component: "QueryForm",
+      props: {
+        image:"https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/akshaya+page/Group+63%402x.png"
+      },
+    },
+  ]);
+
+  const handleComponents = (val) => {
+    switch (val.component) {
+      case "BannerComponent":{
+        console.log("valueRender",val?.props)
+        return <BannerComponent banners={val?.props?.banners} dataCarousel={val?.props?.banners.length > 1 ? "multiple" : "single"} />;
+      }
+      case "TitleAndData": {
+        return <TitleAndData title={val?.props?.title} description={val?.props?.description} />
+      }
+      case "SlideImgMediaCard":{
+        return <SlideImgMediaCard listProduct={val?.props?.listingProducts} />
+      }
+      case "QueryForm":{
+        return <QueryForm image={val?.props?.image} />
+      }
+      default: {
+        return (<h1>The name of the component does not exsist</h1>);
+      }
+    }
+  };
+
   return (
     <Grid container>
       <Grid xs={12}>
         <Header />
       </Grid>
-
-        {/* <Hidden smDown>
-          {SolitairesData.carouselTop.setting.arrowsImg && (
-            <Grid container>
-              <Grid
-                item
-                onClick={previous}
-                className={classes.preButton}
-              ></Grid>
-              <Grid item onClick={next} className={classes.nextButton}></Grid>
-            </Grid>
-          )}
-        </Hidden> */}
-        <BannerComponent banners={banners} dataCarousel="multiple" />
-
-      <TitleAndData title={sampleDate?.title} description={sampleDate?.description} />
-
-      <SlideImgMediaCard listProduct={listProduct} />
-      
-      <QueryForm image={null} />
-
+      {state.map((val) => {
+        return handleComponents(val);
+      })}
       <Footer />
     </Grid>
   );
