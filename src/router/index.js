@@ -49,7 +49,7 @@ import Fail from "../screens/Stylori/fail";
 import Success from "../screens/Stylori/success";
 import Diwali2022 from "containers/diwali2022/diwali2022";
 import ExperienceCard from "containers/experiences/experienceCard";
-import { AboutUsPageNew } from "screens";
+import AboutUsPageNew from "screens/AboutUsPage/aboutUsPage";
 import TermsAndConditions from "screens/termsAndConditions/termsAndConditions";
 import PrivacyPolicy from "screens/privacyPolicy/privacyPolicy";
 import { FaqDetails } from "screens/faq";
@@ -132,9 +132,9 @@ export const RouterApp = (props) => {
       <Route key="Checkout" component={Checkout} exact path={routes.Checkout} />
       <Route
         key="AboutUs"
-        component={AboutusPage}
+        component={AboutUsPageNew}
         exact
-        path={routes.AboutUs}
+        path={routes.AboutUsNew}
       />
       <Route
         key="Contacs"
@@ -224,7 +224,7 @@ export const RouterApp = (props) => {
       />
       {props.location.pathname !== "/cart" &&
         props.location.pathname !==
-          `/account${"-" + window.location.pathname.split("-")[1]}` &&
+        `/account${"-" + window.location.pathname.split("-")[1]}` &&
         props.location.pathname !== "/savingscheme" &&
         props.location.pathname !== "/aboutus" &&
         props.location.pathname !== "/newsroom" &&
@@ -300,7 +300,7 @@ export const RouterApp = (props) => {
 
       {props.location.pathname !== "/cart" &&
         props.location.pathname !==
-          `/account${"-" + window.location.pathname.split("-")[1]}` &&
+        `/account${"-" + window.location.pathname.split("-")[1]}` &&
         props.location.pathname !== "/savingscheme" &&
         props.location.pathname !== "/aboutus" &&
         props.location.pathname !== "/terms" &&

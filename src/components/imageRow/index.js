@@ -1,1 +1,1 @@
-export { default as ImageCardRow } from "./imageCardRow";
+export { default as ImageRow } from "./imageRow";

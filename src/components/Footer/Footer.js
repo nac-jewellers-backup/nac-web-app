@@ -298,7 +298,7 @@ export default function Footer(props) {
     {
       row: [
         {
-          url: "/aboutus",
+          url: "/aboutUsPageNew",
           heading: "About Us",
         },
 
@@ -565,7 +565,7 @@ export default function Footer(props) {
                                 window.location.href = v.url;
                               }}
 
-                              // href="#"
+                            // href="#"
                             >
                               <b style={{ fontSize: "16px" }}>{v.heading}</b>
                             </Link>
@@ -576,7 +576,7 @@ export default function Footer(props) {
                                 window.location.href = v.url;
                               }}
 
-                              // href="#"
+                            // href="#"
                             >
                               <span style={{ fontSize: "14px" }}>
                                 {" "}
