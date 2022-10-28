@@ -32,6 +32,7 @@ const CardTheme = createTheme({
 
 export default function Card(props) {
   const classes = useStyles();
+  console.log("card", props)
 
 
   return (
@@ -49,9 +50,9 @@ export default function Card(props) {
                   bgcolor="white"
                 >
                   <img
-                    src={props.data.image}
+                    src={props?.data?.image ?? props.data.image}
                     alt="coverimage"
-                    loading="lazy" 
+                    loading="lazy"
                     style={{ objectFit: "contain" }}
                     height="100%"
                     width="100%"
@@ -63,7 +64,7 @@ export default function Card(props) {
                   <Homenote
                     content={
                       props?.data?.content ??
-                      "N. Narayana Chetty makes a humble beginning at home: he designs and crafts gold jewellery by hand. What starts as a small group of interested customers, gradually grows into a loyal patronage"
+                      props?.data?.content
                     }
                   />
                 </div>

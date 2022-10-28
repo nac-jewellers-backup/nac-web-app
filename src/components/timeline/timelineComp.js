@@ -1,7 +1,9 @@
-import { Card, Container, Grid, Hidden, makeStyles } from "@material-ui/core";
-import Homenote from "containers/home/Homenote";
+import { Container, Grid, Hidden, makeStyles } from "@material-ui/core";
+import Card from "./CardGrid";
+import Homenote from "components/timeline/Homenote";
 import React from "react";
 import TimelineEntry from "./timeLineEntry";
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -27,10 +29,14 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function TimelineComp(props) {
-  const { setstate, state, timelineData } = props;
+  const { timelineData, initialtimelineImage, initialcontent } = props;
   console.log("Parentprops", props)
   const classes = useStyles();
-
+  const initialData = {
+    timelineImage: initialtimelineImage,
+    content: initialcontent
+  }
+  const [state, setstate] = React.useState(initialData)
   return (
     <>
       <Container>
@@ -42,30 +48,26 @@ export default function TimelineComp(props) {
             md={2}
             lg={2}
             xl={2}
-            className={`${classes.timelineItemGrid} timelinescroll`}
-          >
+            className={`${classes.timelineItemGrid} timelinescroll`}>
             <div className="timeline">
               <div className="timeline-body">
-                {timelineData?.map((el, i) => {
-                  debugger
-                  return (
-                    < TimelineEntry
-                      state={state}
-                      setstate={setstate}
-                      entry={el}
-                      key={i}
-                      useBar={i === timelineData?.length - 1 ? false : true}
-                    />
-                  )
-                })}
+                {timelineData?.map((el, i) => (
+                  <TimelineEntry
+                    state={state}
+                    setstate={setstate}
+                    entry={el}
+                    key={i}
+                    useBar={i === timelineData?.length - 1 ? false : true}
+                  />
+                ))}
               </div>
             </div>
           </Grid>
           <Grid item xs={9} sm={9} md={10} lg={10} xl={10}>
             <Card
               data={{
-                image: state.timelineImage,
-                content: state.content,
+                image: state?.timelineImage,
+                content: state?.content,
               }}
             />
           </Grid>

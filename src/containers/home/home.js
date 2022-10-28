@@ -19,9 +19,9 @@ import Testimonial from "../../components/testimonial/testimonial";
 import { API_URL } from "../../config";
 import { CARTALL, WISHLIST } from "../../queries/collection";
 import { AllHOMEQUERY } from "../../queries/home";
-import Card from "./CardGrid";
+import Card from "../../components/timeline/CardGrid";
 import { AdvancedGridList } from "./collectionsGrid";
-import Homenote from "./Homenote";
+import Homenote from "../../components/timeline/Homenote";
 import "./index.css";
 import InstagramFeed from "./InstagramFeed";
 import { Title } from "./titles";
@@ -936,8 +936,8 @@ class HomeComp extends React.Component {
                 <br />
                 <Title title="ABOUT US" />
                 <TimelineComp
-                  state={this.state}
-                  setstate={this.setState}
+                  initialtimelineImage={this.state.timelineImage}
+                  initialcontent={this.state.content}
                   timelineData={tData}
                 />
               </Grid>
