@@ -49,6 +49,10 @@ import Fail from "../screens/Stylori/fail";
 import Success from "../screens/Stylori/success";
 import Diwali2022 from "containers/diwali2022/diwali2022";
 import ExperienceCard from "containers/experiences/experienceCard";
+import { AboutUsPageNew } from "screens";
+import TermsAndConditions from "screens/termsAndConditions/termsAndConditions";
+import PrivacyPolicy from "screens/privacyPolicy/privacyPolicy";
+import { FaqDetails } from "screens/faq";
 
 const browserHistory = createBrowserHistory();
 
@@ -105,7 +109,7 @@ export const RouterApp = (props) => {
         path={routes.HomePageStylori}
       />
       <Route key="Silver" component={Silver} exact path={routes.Silver} />
-      <Route key="Faqs" component={AboutusPage} exact path={routes.Faqs} />
+      <Route key="Faqs" component={FaqDetails} exact path={routes.Faqs} />
       <Route
         key="ProductCare"
         component={Faqs}
@@ -115,13 +119,13 @@ export const RouterApp = (props) => {
       <Route key="Shipping" component={Faqs} exact path={routes.Shipping} />
       <Route
         key="PrivacyPolicy"
-        component={AboutusPage}
+        component={PrivacyPolicy}
         exact
         path={routes.PrivacyPolicy}
       />
       <Route
         key="TermsConditions"
-        component={AboutusPage}
+        component={TermsAndConditions}
         exact
         path={routes.TermsConditions}
       />
@@ -261,6 +265,10 @@ export const RouterApp = (props) => {
         props.location.pathname !== "/solitaires" &&
         props.location.pathname !== "/necklaceMela" &&
         props.location.pathname !== "/diwali2022" &&
+        props.location.pathname !== "/aboutUsPageNew" &&
+        props.location.pathname !== "/termsAndConditions" &&
+        props.location.pathname !== "/privacy_Details" &&
+        props.location.pathname !== "/faqDetails" &&
         Globalctx &&
         Globalctx.pathName === false &&
         props.location.pathname !== "/homes" && (
@@ -329,8 +337,12 @@ export const RouterApp = (props) => {
         props.location.pathname !== "/paymentsuccess/:id" &&
         props.location.pathname !== "/homes" &&
         props.location.pathname !== "/solitaires" &&
-        props.location.pathname !== "/necklaceMela" && 
-        props.location.pathname !== "/diwali2022" &&(
+        props.location.pathname !== "/necklaceMela" &&
+        props.location.pathname !== "/diwali2022" &&
+        props.location.pathname !== "/aboutUsPageNew" &&
+        props.location.pathname !== "/termsAndConditions" &&
+        props.location.pathname !== "/privacy_Details" &&
+        props.location.pathname !== "/faqDetails" && (
           <Route exact={true} component={Stylori} path={"/:listingpage"} />
         )}
 
@@ -447,6 +459,30 @@ export const RouterApp = (props) => {
         component={Diwali2022}
         exact
         path={routes.Diwali2022}
+      />
+      <Route
+        key="aboutUsNew"
+        component={AboutUsPageNew}
+        exact
+        path={routes.AboutUsNew}
+      />
+      <Route
+        key="termsAndConditions"
+        component={TermsAndConditions}
+        exact
+        path={routes.TermsAndConditions}
+      />
+      <Route
+        key="privacyPolicy"
+        component={PrivacyPolicy}
+        exact
+        path={routes.PrivacyDetails}
+      />
+      <Route
+        key="faqDetails"
+        component={FaqDetails}
+        exact
+        path={routes.FaqDetails}
       />
     </Switch>
   );
