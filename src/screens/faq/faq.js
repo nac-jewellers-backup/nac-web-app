@@ -8,8 +8,14 @@ import React from "react";
 import FaqStyles from "./style";
 
 const FaqDetails = () => {
-  console.log("faqData", faqData);
-  const classes = FaqStyles();
+  React.useEffect(() => {
+    let hashedLocation = window.location.hash.replace("#", "");
+    if (hashedLocation) {
+      let elmnt = document.getElementById(hashedLocation);
+      elmnt.scrollIntoView();
+    }
+    window.scrollTo(0, 0);
+  }, []);  const classes = FaqStyles();
   return (
     <Grid container>
       <Grid item xs={12}>
