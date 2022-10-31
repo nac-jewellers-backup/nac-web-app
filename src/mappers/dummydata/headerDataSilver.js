@@ -601,7 +601,7 @@ export const Jewellery = {
         },
         {
           icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
-          name: " Gold",
+          name: "Gold",
           url: "/gold-necklaces-jewellery",
         },
       ],
@@ -786,7 +786,7 @@ export const Jewellery = {
         },
         {
           icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
-          name: " Gold",
+          name: "Gold",
         },
         // {
         //   icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
@@ -897,7 +897,7 @@ export const Jewellery = {
         },
         {
           icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
-          name: " Gold",
+          name: "Gold",
           url: "/gold-rings-jewellery",
         },
       ],

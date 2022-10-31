@@ -50,7 +50,7 @@ function HeaderHoverMenuItem(props) {
       url3: "/buy+platinum-bracelets-jewellery",
     },
     {
-      title: "Gold",
+      title: <span>Gold &nbsp;&nbsp;</span>,
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
       url1: "/gold-earrings-jewellery",
       url2: "/gold-rings-jewellery",
@@ -1473,7 +1473,7 @@ function HeaderHoverMenuItem(props) {
         <Grid container item xs={12}>
           <Grid item xs={9}>
             <Grid item xs={12} style={{ display: "flex" }}>
-              <Grid item xs={5} className={classes.gridmultiplesection}>
+              <Grid item xs={6} className={classes.gridmultiplesection}>
                 <Grid item xs={12} style={{ textAlign: "center" }}>
                   <Typography className={classes.listedItemstitle}>
                     SILVER ARTICLES
@@ -1566,7 +1566,7 @@ function HeaderHoverMenuItem(props) {
                   ))}
                 </Grid>
               </Grid>
-              <Grid item xs={2} className={classes.gridmultiplesection}></Grid>
+              <Grid item xs={1} className={classes.gridmultiplesection}></Grid>
             </Grid>
           </Grid>
           <Grid item xs={3}>
