@@ -3,14 +3,29 @@ import React from "react";
 
 const ProfileUseStyles = makeStyles((theme) => ({
   profileRoot: {
-    padding: "70px 100px "
+    padding: "70px 100px ",
+    [theme.breakpoints.down("md")]: {
+      padding: "30px 50px !important",
+      display: "block"
+    },
+    [theme.breakpoints.down("xs")]: {
+      padding: "20px 10px !important",
+      display: "block"
+
+    },
   },
   profile: {
     width: "100%",
     height: "300px"
   },
   profileChild: {
-    textAlign: "center"
+    textAlign: "center",
+    [theme.breakpoints.down("md")]: {
+      padding: "40px 0px !important",
+    },
+    [theme.breakpoints.down("xs")]: {
+      padding: "20px 0px !important",
+    },
   },
   border: {
     border: "4px solid #b1812c",
@@ -22,12 +37,20 @@ const ProfileUseStyles = makeStyles((theme) => ({
     color: theme.palette.gold.main,
     fontStyle: "italic",
     fontSize: "19px",
-    fontWeight: "700"
+    fontWeight: "700",
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "17px",
+      fontWeight: "600",
+    },
   },
   role: {
     color: "#6e6f71",
     fontSize: "19px",
     fontWeight: "700",
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "17px",
+      fontWeight: "600",
+    },
   }
 }))
 

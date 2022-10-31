@@ -5,7 +5,15 @@ import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 
 const CardUseStyles = makeStyles((theme) => ({
   profileRoot: {
-    padding: "60px 100px "
+    padding: "60px 100px ",
+    [theme.breakpoints.down("md")]: {
+      padding: "30px 50px !important",
+      display: "block"
+    },
+    [theme.breakpoints.down("xs")]: {
+      padding: "20px 10px !important",
+      display: "block"
+    },
   },
   profile: {
     width: "100%",
@@ -15,7 +23,13 @@ const CardUseStyles = makeStyles((theme) => ({
     textAlign: "center",
     margin: "10px",
     backgroundColor: "#f4f4f4",
-    boxShadow: "5px 6px 5px #a5a4a5"
+    boxShadow: "5px 6px 5px #a5a4a5",
+    [theme.breakpoints.down("md")]: {
+      padding: "40px 0px !important",
+    },
+    [theme.breakpoints.down("xs")]: {
+      padding: "20px 0px !important",
+    },
   },
   border: {
     height: "100%",
@@ -25,7 +39,11 @@ const CardUseStyles = makeStyles((theme) => ({
     fontStyle: "italic",
     fontSize: "20px",
     fontWeight: "800",
-    marginBottom: "10px"
+    marginBottom: "10px",
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "18px",
+      fontWeight: "700",
+    },
 
   },
   readmore: {
@@ -36,6 +54,9 @@ const CardUseStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "16px",
+    },
   }
 }))
 
