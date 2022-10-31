@@ -51,6 +51,7 @@ import Diwali2022 from "containers/diwali2022/diwali2022";
 import ExperienceCard from "containers/experiences/experienceCard";
 import { AboutUsPageNew } from "screens";
 import TermsAndConditions from "screens/termsAndConditions/termsAndConditions";
+import CdnPages from "screens/CdnPages";
 
 const browserHistory = createBrowserHistory();
 
@@ -96,7 +97,7 @@ export const RouterApp = (props) => {
       />
       <Route
         key="AkshyaTritiya"
-        component={AkshyaTritiya}
+        component={CdnPages}
         exact
         path={routes.AkshyaTritiya}
       />
@@ -223,6 +224,7 @@ export const RouterApp = (props) => {
       {props.location.pathname !== "/cart" &&
         props.location.pathname !==
           `/account${"-" + window.location.pathname.split("-")[1]}` &&
+        props.location.pathname !== `/static${"-" + window.location.pathname.split("-")[1]}` &&
         props.location.pathname !== "/savingscheme" &&
         props.location.pathname !== "/aboutus" &&
         props.location.pathname !== "/newsroom" &&
@@ -297,6 +299,7 @@ export const RouterApp = (props) => {
       {props.location.pathname !== "/cart" &&
         props.location.pathname !==
           `/account${"-" + window.location.pathname.split("-")[1]}` &&
+        props.location.pathname !== `/static${"-" + window.location.pathname.split("-")[1]}` &&
         props.location.pathname !== "/savingscheme" &&
         props.location.pathname !== "/aboutus" &&
         props.location.pathname !== "/terms" &&
@@ -465,6 +468,12 @@ export const RouterApp = (props) => {
         component={TermsAndConditions}
         exact
         path={routes.TermsAndConditions}
+      />
+      <Route
+        key="static"
+        component={CdnPages}
+        exact
+        path={routes.Static}
       />
     </Switch>
   );
