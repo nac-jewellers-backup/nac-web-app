@@ -56,7 +56,8 @@ export const routes = {
   AboutUsNew: "/aboutUs",
   TermsAndConditions: "/termsAndConditions",
   PrivacyDetails: "/privacy_Details",
-  FaqDetails: "/faqDetails"
+  FaqDetails: "/faqDetails",
+  BlogPage: "/blogNew",
 };
 
 export default routes;
