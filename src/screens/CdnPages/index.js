@@ -8,6 +8,7 @@ import { TitleAndData } from "components";
 import { QueryForm } from "components";
 import { BannerComponent, SlideImgMediaCard } from "components";
 import { CDNPAGES } from "queries/cdnPages";
+import Storelocator from "components/storelocator/storelocator";
 
 
 function CdnPages(props) {
@@ -43,7 +44,7 @@ function CdnPages(props) {
           <BannerComponent
             banners={val?.props?.banners}
             dataCarousel={
-              val?.props?.banners.length > 1 ? "multiple" : "single"
+              val?.props?.banners.length > 1 ? "multiple" : "single" 
             }
           />
         );
@@ -61,6 +62,9 @@ function CdnPages(props) {
       }
       case "QueryForm": {
         return <QueryForm image={val?.props?.image} />;
+      }
+      case "Storelocator":{
+        return <Storelocator value={val?.props?.storeData} />
       }
       default: {
         return <h1>The name of the component does not exsist</h1>;

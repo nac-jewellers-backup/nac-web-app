@@ -764,7 +764,7 @@ export default function Footer(props) {
                   boxShadow: "4px 4px 4px #A5A4A5",
                 }}
                 onClick={() => {
-                  window.location.href = "/store";
+                  window.location.href = "/static-store";
                 }}
               >
                 &nbsp;Store Locator&nbsp;
@@ -925,7 +925,8 @@ export default function Footer(props) {
                 borderRadius: "0px",
               }}
               onClick={() => {
-                window.location.href = "/store";
+                debugger;
+                window.location.href = "/static-store";
               }}
             >
               Store Locator

@@ -51,7 +51,6 @@ const styles = makeStyles(theme => ({
     shadow: {
         boxShadow: "4px 4px 4px #a5a4a5 !important",
         color: "gray !important",
-
         backgroundColor: "#F4F4F4"
     },
 
@@ -61,8 +60,28 @@ const styles = makeStyles(theme => ({
         paddingBottom: "10px",
         paddingTop: "10px",
         lineHeight: "1.6"
-    }
-
+    },
+    mainWidths: {
+        // width:"1170px",
+        paddingRight: "15px",
+        paddingLeft: "15px",
+        marginLeft: "auto",
+        marginRight: "auto",
+    
+        padding: "0px 15px",
+        [theme.breakpoints.up("lg")]: {
+          width: "90%",
+        },
+        [theme.breakpoints.only("md")]: {
+          width: "970px",
+        },
+        [theme.breakpoints.only("sm")]: {
+          width: "550px",
+        },
+        [theme.breakpoints.only("xs")]: {
+            width: "350px",
+          },
+      },
 
 }))
 export default styles;

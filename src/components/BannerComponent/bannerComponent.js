@@ -13,19 +13,20 @@ const useStyles = makeStyles((theme) => ({
 const BannerComponent = (props)=> {
     const classes = useStyles();
     const {banners = [],dataCarousel="single"} = props;
+    console.log("propsOfBanner",dataCarousel);
     return (
         <Banner
           dataCarousel={dataCarousel}
         >
-          {banners.map((val, index) => (
+          {banners.map((val, index) => ( 
             <>
               <Hidden smDown>
                 <Grid container key={index} className={classes.headContent}>
-                  <a href={val.urlParam} style={{ width: "100%" }}>
+                  <a href={val?.urlParam} style={{ width: "100%" }}>
                     <img
                       alt="images"
                       loading="lazy"
-                      src={val.web}
+                      src={val?.web ?? val?.img}
                       style={{ width: "100%", height: "100%" }}
                     />
                   </a>
