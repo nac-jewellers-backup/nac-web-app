@@ -1,7 +1,7 @@
 import { Box, Hidden } from "@material-ui/core";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import React from "react";
-import Homenote from "./Homenote";
+import Homenote from "../../components/timeline/Homenote";
 
 const useStyles = makeStyles((theme) => ({
   root: {

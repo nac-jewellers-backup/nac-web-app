@@ -1,7 +1,7 @@
 import { makeStyles } from "@material-ui/core/styles";
 const NewAboutUsStyles = makeStyles((theme) => ({
   contentText: {
-    padding: "0 130px !important",
+    padding: "0 100px !important",
     [theme.breakpoints.down("md")]: {
       padding: "0 50px !important",
     },
