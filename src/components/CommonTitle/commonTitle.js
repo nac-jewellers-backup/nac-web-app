@@ -22,7 +22,7 @@ const CommonTitle = (props) => {
           <Box>
             <Typography
               className={classes.title}
-              style={{ fontStyle: "italic", fontSize: props?.fontSize }}
+              style={{ fontStyle: "italic" }}
             >
               {props.title.toUpperCase()}
             </Typography>

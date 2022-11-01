@@ -15,6 +15,7 @@ const CommonContent = (props) => {
           <>
             <Accordion className={classes.contentText} defaultExpanded>
               <AccordionSummary
+                className={classes.accordionSummary}
                 expandIcon={<ExpandMoreIcon />}
                 aria-controls="panel1a-content"
                 id="panel1a-header"
