@@ -298,7 +298,7 @@ export default function Footer(props) {
     {
       row: [
         {
-          url: "/aboutUsPageNew",
+          url: "/aboutUs",
           heading: "About Us",
         },
 
