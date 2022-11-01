@@ -391,15 +391,17 @@ const Diwali2022 = (props) => {
         body: JSON.stringify({
           query: SEND_ENQUIREY,
           variables: {
-            updatedAt: new Date(),
-            createdAt: new Date(),
-            email: formData.email,
-            appointmentTypeId: 5,
-            comments: formData.query,
-            specialRequests: window.location.pathname.slice(1),
-            customerName: formData.name,
-            isActive: true,
-            mobile: formData.phone,
+            "appointment":{
+              updatedAt: new Date(),
+              createdAt: new Date(),
+              email: formData.email,
+              appointmentTypeId: 5,
+              comments: formData.query,
+              specialRequests: window.location.pathname.slice(1),
+              customerName: formData.name,
+              isActive: true,
+              mobile: formData.phone,
+            }     
           },
         }),
       })
