@@ -1,7 +1,7 @@
 import { Box, Grid, Typography } from "@material-ui/core";
+import LeftArrow from "assets/leftArrow";
+import RightArrow from "assets/rightArrow";
 import React from "react";
-import ArrowLeft from "../../assets/arrowleft";
-import ArrowRight from "../../assets/arrowright";
 import useStyles from "./styles";
 
 const CommonTitle = (props) => {
@@ -17,7 +17,7 @@ const CommonTitle = (props) => {
           className={classes.mainTitle}
         >
           <Box>
-            <ArrowRight className={classes.rightArrow} />
+            <LeftArrow className={classes.leftArrow} />
           </Box>
           <Box>
             <Typography
@@ -28,7 +28,7 @@ const CommonTitle = (props) => {
             </Typography>
           </Box>
           <Box>
-            <ArrowLeft className={classes.leftArrow} />
+            <RightArrow className={classes.rightArrow} />
           </Box>
         </Box>
       </Grid>

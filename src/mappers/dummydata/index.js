@@ -9,3 +9,4 @@ export * from "./termsAndConditionsData";
 export * from "./privacyPolicyData";
 export * from "./faqData";
 export * from "./aboutUsNew";
+export * from "./productCare";

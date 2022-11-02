@@ -34,11 +34,24 @@ const CommonContentStyles = makeStyles((theme) => ({
     "& p": {
       color: "#717171",
       fontSize: "20px",
+      "& span": {
+        marginTop: "25px",
+        marginBottom: "25px",
+      },
       [theme.breakpoints.down("md")]: {
         fontSize: "17px !important",
       },
       [theme.breakpoints.down("xs")]: {
         fontSize: "14px !important",
+      },
+      "& div": {
+        fontSize: "20px",
+        [theme.breakpoints.down("md")]: {
+          fontSize: "17px !important",
+        },
+        [theme.breakpoints.down("xs")]: {
+          fontSize: "14px !important",
+        },
       },
     },
     "& div": {
