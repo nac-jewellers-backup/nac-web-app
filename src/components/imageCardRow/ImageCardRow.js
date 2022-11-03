@@ -6,13 +6,17 @@ import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 const CardUseStyles = makeStyles((theme) => ({
   profileRoot: {
     padding: "60px 100px ",
+    marginBottom: "30px",
     [theme.breakpoints.down("md")]: {
       padding: "30px 50px !important",
-      display: "block"
+      display: "block",
+      marginBottom: "10px",
+
     },
     [theme.breakpoints.down("xs")]: {
       padding: "20px 10px !important",
-      display: "block"
+      display: "block",
+
     },
   },
   profile: {
@@ -37,9 +41,10 @@ const CardUseStyles = makeStyles((theme) => ({
   descr: {
     color: theme.palette.gold.main,
     fontStyle: "italic",
-    fontSize: "20px",
+    fontSize: "21px",
     fontWeight: "800",
-    marginBottom: "10px",
+    marginBottom: "8px",
+    paddingTop: "30px",
     [theme.breakpoints.down("xs")]: {
       fontSize: "18px",
       fontWeight: "700",
@@ -54,6 +59,8 @@ const CardUseStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+    paddingBottom: "30px",
+
     [theme.breakpoints.down("xs")]: {
       fontSize: "16px",
     },
@@ -75,7 +82,7 @@ const ImageCardRow = (props) => {
                   <img src={e?.image} alt='profile' className={classes.profile} ></img>
                 </Box>
               </Box>
-              <Box p={2}>
+              <Box  >
                 <Typography className={classes.descr}>{e?.descr}</Typography>
                 <Link className={classes.readmore}><Typography>{e?.readmore}</Typography> <ArrowForwardIcon style={{ paddingLeft: 10 }} /></Link>
               </Box>

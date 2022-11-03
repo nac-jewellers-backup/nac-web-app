@@ -3,21 +3,16 @@ export const aboutUsNew = [
   {
     para: [
       <div>
-        <div>
-          Ours is a journey that began almost hundred years ago in{" "}
-          <span>1917,</span> when <span>Shri Nathella Narayana Chetty</span>{" "}
-          started a small jewellery business at home where he fashioned
-          hand-made jewels for a few loyal patrons. His son,{" "}
-          <span>Shri Nathella Anantham Chetty</span> opened a small store in
-          Parry's Corner in old Madras, which soon became a flourishing
-          business. His son, <span>Shri N. Anjaneyulu Chetty, </span>
-          founded <span>NAC Jewellers</span> and nourished its brand along with
-          his son <span>Shri Anantha Padmanabhan</span> who transformed the
-          small store into a chain of jewellery houses. Today,{" "}
-          <span>Anand Ramanujam,</span> the fifth generation of scion of this
-          illustrious family, continues the legacy of his forefathers.
+        <div style={{ textAlign: "justify" }}>
+          Ours is a journey that began almost hundred years ago in 1917, when Shri Nathella Narayana Chetty started a small
+          jewellery business at home where he fashioned hand-made jewels for a few loyal patrons.His son, Shri Nathella
+          Anantham Chetty opened a small store in Parry's Corner in old Madras, which soon became a flourishing business. His son,
+          Shri N. Anjaneyulu Chetty, founded NAC Jewellers and nourished its brand along with his son Shri Anantha
+          Padmanabhan who transformed the small store into a chain of jewellery houses. Today,
+          <div style={{ textAlign: "center" }}>Anand Ramanujam, the fifth
+            generation of scion of this illustrious family, continues the legacy of his forefathers.</div>
         </div>
-        <div>
+        <div style={{ margin: "40px 0", textAlign: "center" }}>
           We are known for our unique and rare designs, as we are ever mindful
           about the latest trends in jewellery and the expectations of the
           customer. We also export jewellery abroad, we cater to the growing

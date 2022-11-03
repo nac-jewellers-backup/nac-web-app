@@ -1,5 +1,7 @@
+import { Box, Button, TextField, Typography } from "@material-ui/core";
 import { CommonTitle } from "components";
 import AboutUsContent from "components/aboutUsContent/aboutUsContent";
+import Footer from "components/Footer/Footer";
 import ImageCardRow from "components/imageCardRow/ImageCardRow";
 import ImageRow from "components/imageRow/imageRow";
 import Header from "components/SilverComponents/Header";
@@ -25,13 +27,15 @@ const AboutUsPageNew = (props) => {
       {/* Content */}
       <AboutUsContent data={aboutUsNew} />
       <ImageRow data={aboutUsNew} />
-      <TimelineComp
-        initialtimelineImage={state.timelineImage}
-        initialcontent={state.content}
-        timelineData={aboutusTData}
-      />
-
+      <Box >
+        <TimelineComp
+          initialtimelineImage={state.timelineImage}
+          initialcontent={state.content}
+          timelineData={aboutusTData}
+        />
+      </Box>
       <ImageCardRow data={aboutusImgCard} />
+      <Footer />
 
     </div>
   );
