@@ -3,7 +3,7 @@ const useStyles = makeStyles((theme) => ({
   mainTitle: {
     marginTop: "100px",
     marginBottom: "60px",
-    padding: "0 130px",
+    padding: "0 120px",
     [theme.breakpoints.down("md")]: {
       marginTop: "40px",
       marginBottom: "30px",
@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     color: theme.palette.gold.main,
-    fontFamily: "notoSerif-bold !important",
+    fontFamily: "notoSerif-regular !important",
     fontStyle: "italic",
     textAlign: "center",
     fontSize: "50px",

@@ -27,15 +27,17 @@ const CommonContentStyles = makeStyles((theme) => ({
   },
 
   contentText: {
-    padding: "0 130px !important",
+    padding: "0 120px !important",
     boxShadow: "none !important",
     margin: "0px 0px !important",
     "& p": {
       color: "#717171",
-      fontSize: "20px",
+      fontSize: "17px",
+      lineHeight:2,
       "& span": {
         marginTop: "25px",
         marginBottom: "25px",
+        fontSize: "17px",
       },
       [theme.breakpoints.down("md")]: {
         fontSize: "17px !important",
@@ -44,7 +46,7 @@ const CommonContentStyles = makeStyles((theme) => ({
         fontSize: "14px !important",
       },
       "& div": {
-        fontSize: "20px",
+        fontSize: "17px",
         [theme.breakpoints.down("md")]: {
           fontSize: "17px !important",
         },
@@ -64,7 +66,7 @@ const CommonContentStyles = makeStyles((theme) => ({
       },
     },
     "& span": {
-      fontSize: "20px !important",
+      fontSize: "17px !important",
       color: "#717171",
       lineHeight: "33px",
       [theme.breakpoints.down("md")]: {
