@@ -1,7 +1,7 @@
 import { Box, Button, Grid, IconButton, Typography } from "@material-ui/core";
+import { CommonTitle } from "components/CommonTitle";
 import React from "react";
 import { FiCornerUpRight } from "react-icons/fi";
-import { Title } from "../../screens/BridalCollection/title";
 import style from "./style";
 export default function Storelocator(props) {
   const value = props.value;
@@ -10,13 +10,15 @@ export default function Storelocator(props) {
   return (
     <div className={classes.mainWidths}>
       {value.map((val,i) => (
-      <Grid container spacing={3} justifyContent="center">
+        <>
         <Grid item xs={12}>
-          <Title title={val.city} />
+          <CommonTitle title={val.city} styleProps />
         </Grid>
+      <Grid container spacing={3} justifyContent="center">
+        
         {val.stores.map((store, key) => (
           <Grid item xs={12} md={12} lg={6}>
-            <Grid container className={classes.shadow}>
+            <Grid container className={classes.shadow} >
               <Grid item sm={12} md={4} lg={4} xs={12}>
                 <img
                   style={{ width: "100%", height: "100%", objectFit: "cover" }}
@@ -64,7 +66,7 @@ export default function Storelocator(props) {
                       </a>
                     </Box>
                     <Box>
-                      <span>&nbsp;&nbsp;Get directions</span>
+                      <span className={classes.directions}>&nbsp;&nbsp;Get directions</span>
                     </Box>
                   </Box>
                   <br />
@@ -74,7 +76,7 @@ export default function Storelocator(props) {
           </Grid>
         ))}
       </Grid>
-          
+      </>
           ))}
     </div>
   );

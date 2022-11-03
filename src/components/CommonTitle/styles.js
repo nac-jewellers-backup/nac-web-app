@@ -57,5 +57,42 @@ const useStyles = makeStyles((theme) => ({
       marginLeft: "5px",
     },
   },
+  customStyleHeader: {
+    marginTop: "40px",
+    marginBottom: "40px",
+    padding: "0 120px",
+    display:"flex",
+    alignItems:"center",
+    [theme.breakpoints.down("md")]: {
+      marginTop: "30px",
+      marginBottom: "30px",
+      padding: "0 70px",
+    },
+    [theme.breakpoints.down("xs")]: {
+      marginTop: "30px",
+      marginBottom: "0px",
+      padding: "0 0px",
+    },
+  },
+  customTitle: {
+    color: theme.palette.gold.main,
+    fontFamily: "notoSerif-regular !important",
+    fontStyle: "italic",
+    textAlign: "center",
+    fontSize: "40px",
+    marginBottom: 8,
+    fontWeight: "540",
+    whiteSpace: "noWrap",
+    padding: 2,
+    marginTop: 8,
+    [theme.breakpoints.down("md")]: {
+      fontSize: "35px",
+      marginBottom: 8,
+    },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "20px",
+      marginBottom: 5,
+    },
+  },
 }));
 export default useStyles;
