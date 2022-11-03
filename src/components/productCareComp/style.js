@@ -47,6 +47,7 @@ const ProductCareStyles = makeStyles((theme) => ({
       "& li": {
         "&::marker": {
           color: "#B78231",
+          fontSize: "21px",
         },
         "& p": {
           fontSize: "18px",
