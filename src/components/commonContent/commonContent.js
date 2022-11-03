@@ -19,6 +19,9 @@ const CommonContent = (props) => {
                 className={classes.accordionSummary}
                 expandIcon={<ExpandMore />}
                 aria-controls="panel1a-content"
+                IconButtonProps={{
+                  disableRipple: true
+                }}
                 id="panel1a-header"
               >
                 <Typography className={classes.heading}>{e?.title}</Typography>
