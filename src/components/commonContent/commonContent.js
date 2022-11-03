@@ -5,6 +5,7 @@ import AccordionDetails from "@material-ui/core/AccordionDetails";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import CommonContentStyles from "./style";
+import ExpandMore from "assets/expanMore";
 
 const CommonContent = (props) => {
   const classes = CommonContentStyles();
@@ -15,7 +16,8 @@ const CommonContent = (props) => {
           <>
             <Accordion className={classes.contentText} defaultExpanded>
               <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
+                className={classes.accordionSummary}
+                expandIcon={<ExpandMore />}
                 aria-controls="panel1a-content"
                 id="panel1a-header"
               >

@@ -1,7 +1,7 @@
 import { makeStyles } from "@material-ui/core/styles";
-const PrivacyPolicyStyles = makeStyles((theme) => ({
+const ProductCareStyles = makeStyles((theme) => ({
   footer: {
     marginTop: "80px",
   },
 }));
-export default PrivacyPolicyStyles;
+export default ProductCareStyles;

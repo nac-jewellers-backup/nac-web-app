@@ -29,7 +29,7 @@ const TermsAndConditions = () => {
         <div>
           <CommonContent data={termsData} subTitle="Terms & Conditions" />
         </div>
-        <div>
+        <div className={classes.footer}>
           <Footer />
         </div>
       </Grid>

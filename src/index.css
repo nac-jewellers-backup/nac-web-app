@@ -4,14 +4,20 @@
 } */
 /* @value assetURL: 'https://assets.stylori.com/'; */
 
-/* @font-face {
-    font-family: notoSerif-regular;
-    src: local('notoSerif-regular'), url(https://styloriimages-staging.s3.ap-south-1.amazonaws.com/nac_fonts/NotoSerif-Regular.ttf) format('truetype');
-   
-    font-weight: 400;
-    font-style: normal;
-    font-display: fallback;
-} */
+  @font-face {
+      font-family: notoSerif-regular;
+      src: local('notoSerif-regular'), url(https://styloriimages-staging.s3.ap-south-1.amazonaws.com/nac_fonts/NotoSerif-Regular.ttf) format('truetype');
+    
+      font-weight: 400;
+      font-style: normal;
+      font-display: fallback;
+  }
+
+  @font-face {
+    font-family: notoSerif-bold;
+    src:local('notoSerif-bold'), url(https://styloriimages-staging.s3.ap-south-1.amazonaws.com/nac_fonts/NotoSerif-Bold.ttf) format('truetype');
+    font-weight: 500;
+  }
 
 body {
   margin: 0;

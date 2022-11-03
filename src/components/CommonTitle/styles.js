@@ -3,7 +3,7 @@ const useStyles = makeStyles((theme) => ({
   mainTitle: {
     marginTop: "100px",
     marginBottom: "60px",
-    padding: "0 130px",
+    padding: "0 120px",
     [theme.breakpoints.down("md")]: {
       marginTop: "40px",
       marginBottom: "30px",
@@ -11,12 +11,14 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down("xs")]: {
       marginTop: "40px",
-      marginBottom: "30px",
+      marginBottom: "0px",
       padding: "0 0px",
     },
   },
   title: {
     color: theme.palette.gold.main,
+    fontFamily: "notoSerif-regular !important",
+    fontStyle: "italic",
     textAlign: "center",
     fontSize: "50px",
     marginBottom: 15,
@@ -37,6 +39,22 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("xs")]: {
       height: 22,
       width: 22,
+    },
+  },
+  leftArrow: {
+    width: "133px",
+    marginRight: "15px",
+    [theme.breakpoints.down("xs")]: {
+      width: "70px",
+      marginRight: "5px",
+    },
+  },
+  rightArrow: {
+    width: "133px",
+    marginLeft: "15px",
+    [theme.breakpoints.down("xs")]: {
+      width: "70px",
+      marginLeft: "5px",
     },
   },
 }));

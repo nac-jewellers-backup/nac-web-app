@@ -53,6 +53,7 @@ import AboutUsPageNew from "screens/AboutUsPage/aboutUsPage";
 import TermsAndConditions from "screens/termsAndConditions/termsAndConditions";
 import PrivacyPolicy from "screens/privacyPolicy/privacyPolicy";
 import { FaqDetails } from "screens/faq";
+import { ProductCare } from "screens";
 
 const browserHistory = createBrowserHistory();
 
@@ -224,7 +225,7 @@ export const RouterApp = (props) => {
       />
       {props.location.pathname !== "/cart" &&
         props.location.pathname !==
-        `/account${"-" + window.location.pathname.split("-")[1]}` &&
+          `/account${"-" + window.location.pathname.split("-")[1]}` &&
         props.location.pathname !== "/savingscheme" &&
         props.location.pathname !== "/aboutus" &&
         props.location.pathname !== "/newsroom" &&
@@ -269,6 +270,7 @@ export const RouterApp = (props) => {
         props.location.pathname !== "/termsAndConditions" &&
         props.location.pathname !== "/privacy_Details" &&
         props.location.pathname !== "/faqDetails" &&
+        props.location.pathname !== "/productCareNew" &&
         Globalctx &&
         Globalctx.pathName === false &&
         props.location.pathname !== "/homes" && (
@@ -300,7 +302,7 @@ export const RouterApp = (props) => {
 
       {props.location.pathname !== "/cart" &&
         props.location.pathname !==
-        `/account${"-" + window.location.pathname.split("-")[1]}` &&
+          `/account${"-" + window.location.pathname.split("-")[1]}` &&
         props.location.pathname !== "/savingscheme" &&
         props.location.pathname !== "/aboutus" &&
         props.location.pathname !== "/terms" &&
@@ -342,7 +344,8 @@ export const RouterApp = (props) => {
         props.location.pathname !== "/aboutUsPageNew" &&
         props.location.pathname !== "/termsAndConditions" &&
         props.location.pathname !== "/privacy_Details" &&
-        props.location.pathname !== "/faqDetails" && (
+        props.location.pathname !== "/faqDetails" &&
+        props.location.pathname !== "/productCareNew" && (
           <Route exact={true} component={Stylori} path={"/:listingpage"} />
         )}
 
@@ -483,6 +486,12 @@ export const RouterApp = (props) => {
         component={FaqDetails}
         exact
         path={routes.FaqDetails}
+      />
+      <Route
+        key="productCareNew"
+        component={ProductCare}
+        exact
+        path={routes.ProductCareNew}
       />
     </Switch>
   );
