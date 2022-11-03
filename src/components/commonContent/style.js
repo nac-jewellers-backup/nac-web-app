@@ -17,12 +17,11 @@ const CommonContentStyles = makeStyles((theme) => ({
       margin: "0 0 0 0 !important",
     },
     "& svg": {
-      fontSize: "50px !important",
       [theme.breakpoints.down("md")]: {
-        fontSize: "34px !important",
+        transform: "scale(1.0)",
       },
       [theme.breakpoints.down("xs")]: {
-        fontSize: "24px !important",
+        transform: "scale(0.7)",
       },
     },
   },
