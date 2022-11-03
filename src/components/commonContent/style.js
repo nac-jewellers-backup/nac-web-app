@@ -15,7 +15,6 @@ const CommonContentStyles = makeStyles((theme) => ({
   accordionSummary: {
     "& .MuiAccordionSummary-content": {
       margin: "0 0 0 0 !important",
-      height: "64px !important",
     },
     "& svg": {
       [theme.breakpoints.down("md")]: {
