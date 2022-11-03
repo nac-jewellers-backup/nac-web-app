@@ -6,3 +6,7 @@ export * from "./cartdata";
 export * from "./productpricingPage";
 export * from "./checkoutloginReg";
 export * from "./termsAndConditionsData";
+export * from "./privacyPolicyData";
+export * from "./faqData";
+export * from "./aboutUsNew";
+export * from "./productCare";

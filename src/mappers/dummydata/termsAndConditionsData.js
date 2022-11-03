@@ -16,7 +16,7 @@ export const termsData = [
   {
     title: "Information on our Site",
     para: [
-      "At NAC Jewellers , we make every attempt to ensure that our online catalog is as accurate and complete as possible. In order to give you the opportunity to view our products in great detail, some products may appear larger or smaller than their actual size in our photographs; and since every computer monitor is set differently, color and size may vary slightly.<br>Our objective is to provide you with as much information and detail about your prospective purchase as possible so that you can see the beauty and shape of a particular item. In compliance with industry standards and BIS (Bureau of Indian Standards) regulations, NAC Jewellers states that product total weight in all purchases may vary 0.05 grams from stated weight.",
+      "At NAC Jewellers , we make every attempt to ensure that our online catalog is as accurate and complete as possible. In order to give you the opportunity to view our products in great detail, some products may appear larger or smaller than their actual size in our photographs; and since every computer monitor is set differently, color and size may vary slightly. Our objective is to provide you with as much information and detail about your prospective purchase as possible so that you can see the beauty and shape of a particular item. In compliance with industry standards and BIS (Bureau of Indian Standards) regulations, NAC Jewellers states that product total weight in all purchases may vary 0.05 grams from stated weight.",
       "On the Site, we may provide the measurement of our products based on ourmanufacturing specifications. Slight tolerances may be accounted for based on finishing during the manufacturing.For diamond jewellery set with multiple shape and size, we provide the minimum total carat weight for the piece. Color and clarity grades are expressed as either a minimum or an average depending on the number of diamonds. If stated as a minimum, all diamonds within the piece are at or above the stated quality. If expressed as an average, collectively the quality is equal to or exceeds the grade stated.",
     ],
   },
@@ -41,11 +41,11 @@ export const termsData = [
   {
     title: "Cancel an Order",
     element: (
-      <div>
+      <span>
         To cancel an order, please send an email to <a href="care@nacjewellers.com">care@nacjewellers.com</a> within the
         same days from order confirmation. Please include the order ID in the
         subject line. EX: Order Cancellation.
-      </div>
+      </span>
     ),
   },
 ];

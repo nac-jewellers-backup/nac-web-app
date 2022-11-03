@@ -12,15 +12,16 @@ import GadgetsNac from "components/Gagetstylori/GadgetsNac";
 import NeedHelp from "components/needHelp";
 import { ImgMediaCard } from "components/ProductCard/Card";
 import Header from "components/SilverComponents/Header";
+import TimelineComp from "components/timeline/timelineComp";
 import { homeNac } from "mappers/dummydata/homeNac";
 import React from "react";
 import Testimonial from "../../components/testimonial/testimonial";
 import { API_URL } from "../../config";
 import { CARTALL, WISHLIST } from "../../queries/collection";
 import { AllHOMEQUERY } from "../../queries/home";
-import Card from "./CardGrid";
+import Card from "../../components/timeline/CardGrid";
 import { AdvancedGridList } from "./collectionsGrid";
-import Homenote from "./Homenote";
+import Homenote from "../../components/timeline/Homenote";
 import "./index.css";
 import InstagramFeed from "./InstagramFeed";
 import { Title } from "./titles";
@@ -619,83 +620,81 @@ class HomeComp extends React.Component {
           "NAC Jewellers launches Stylori Silver, a curated range of exclusive silver jewellery, featuring classical and contemporary styles",
       },
     ];
-    const TimelineEntry = ({ entry: { time, image, content }, useBar }) => (
-      <div
-        className="timeline-entry"
-        onClick={() => {
-          this.setState({
-            ...this.state,
-            timelineImage: image,
-            content: content,
-          });
-        }}
-      >
-        <span
-          style={{ fontFamily: "notoSerif-regular" }}
-          className={`time-range ${
-            this.state.timelineImage === image ? "active" : ""
-          } ${useBar ? "" : classes.minHeighttimerange}`}
-        >
-          {time}
-        </span>
-        <div
-          className={`${"timeline-icon-container"} ${
-            this.state.timelineImage === image ? "active" : ""
-          }`}
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-            <path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z" />
-          </svg>
+    // const TimelineEntry = ({ entry: { time, image, content }, useBar }) => (
+    //   <div
+    //     className="timeline-entry"
+    //     onClick={() => {
+    //       this.setState({
+    //         ...this.state,
+    //         timelineImage: image,
+    //         content: content,
+    //       });
+    //     }}
+    //   >
+    //     <span
+    //       style={{ fontFamily: "notoSerif-regular" }}
+    //       className={`time-range ${this.state.timelineImage === image ? "active" : ""
+    //         } ${useBar ? "" : classes.minHeighttimerange}`}
+    //     >
+    //       {time}
+    //     </span>
+    //     <div
+    //       className={`${"timeline-icon-container"} ${this.state.timelineImage === image ? "active" : ""
+    //         }`}
+    //     >
+    //       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+    //         <path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z" />
+    //       </svg>
 
-          {useBar && <div className="bar" />}
-        </div>
-      </div>
-    );
-    const Timeline = ({ day, date, timelineData }) => (
-      <>
-        <Container>
-          <Grid container className={classes.timelinegrid}>
-            <Grid
-              item
-              xs={3}
-              sm={3}
-              md={2}
-              lg={2}
-              xl={2}
-              className={`${classes.timelineItemGrid} timelinescroll`}
-            >
-              <div className="timeline">
-                <div className="timeline-body">
-                  {timelineData.map((el, i) => (
-                    <TimelineEntry
-                      entry={el}
-                      key={i}
-                      useBar={i === timelineData.length - 1 ? false : true}
-                    />
-                  ))}
-                </div>
-              </div>
-            </Grid>
-            <Grid item xs={9} sm={9} md={10} lg={10} xl={10}>
-              <Card
-                data={{
-                  image: this.state.timelineImage,
-                  content: this.state.content,
-                }}
-              />
-            </Grid>
-          </Grid>
-        </Container>
-        <Grid container>
-          <Grid item xs={12}>
-            <Hidden mdUp>
-              <br />
-              <Homenote content={this?.state?.content ?? ""} />
-            </Hidden>
-          </Grid>
-        </Grid>
-      </>
-    );
+    //       {useBar && <div className="bar" />}
+    //     </div>
+    //   </div>
+    // );
+    // const Timeline = ({ day, date, timelineData }) => (
+    //   <>
+    //     <Container>
+    //       <Grid container className={classes.timelinegrid}>
+    //         <Grid
+    //           item
+    //           xs={3}
+    //           sm={3}
+    //           md={2}
+    //           lg={2}
+    //           xl={2}
+    //           className={`${classes.timelineItemGrid} timelinescroll`}
+    //         >
+    //           <div className="timeline">
+    //             <div className="timeline-body">
+    //               {timelineData.map((el, i) => (
+    //                 <TimelineEntry
+    //                   entry={el}
+    //                   key={i}
+    //                   useBar={i === timelineData.length - 1 ? false : true}
+    //                 />
+    //               ))}
+    //             </div>
+    //           </div>
+    //         </Grid>
+    //         <Grid item xs={9} sm={9} md={10} lg={10} xl={10}>
+    //           <Card
+    //             data={{
+    //               image: this.state.timelineImage,
+    //               content: this.state.content,
+    //             }}
+    //           />
+    //         </Grid>
+    //       </Grid>
+    //     </Container>
+    //     <Grid container>
+    //       <Grid item xs={12}>
+    //         <Hidden mdUp>
+    //           <br />
+    //           <Homenote content={this?.state?.content ?? ""} />
+    //         </Hidden>
+    //       </Grid>
+    //     </Grid>
+    //   </>
+    // );
 
     return (
       <div className={classes.root}>
@@ -752,9 +751,8 @@ class HomeComp extends React.Component {
                           <img
                             src={val.mobile}
                             style={{ width: "100%", height: "100%" }}
-                            className={`image-${
-                              this.state.imageLoading ? "visible" : "hidden"
-                            }`}
+                            className={`image-${this.state.imageLoading ? "visible" : "hidden"
+                              }`}
                             alt="banner"
                             onLoad={this.imageLoader}
                             loading="lazy"
@@ -774,6 +772,7 @@ class HomeComp extends React.Component {
               animation="wave"
             />
           )}
+
           <Grid
             container
             item
@@ -910,6 +909,7 @@ class HomeComp extends React.Component {
               </Grid>
             </Grid>
 
+
             <Grid container>
               <Grid item xs={12}>
                 <Hidden mdUp>
@@ -921,11 +921,7 @@ class HomeComp extends React.Component {
                   >
                     <br />
                     <Title title="ABOUT US" />
-                    <Timeline
-                      day="monday"
-                      date="06/05/2019"
-                      timelineData={tData}
-                    />
+
                   </Grid>
                 </Hidden>
               </Grid>
@@ -939,7 +935,11 @@ class HomeComp extends React.Component {
               >
                 <br />
                 <Title title="ABOUT US" />
-                <Timeline day="monday" date="06/05/2019" timelineData={tData} />
+                <TimelineComp
+                  initialtimelineImage={this.state.timelineImage}
+                  initialcontent={this.state.content}
+                  timelineData={tData}
+                />
               </Grid>
             </Hidden>
             <div data-aos="fade-left">
@@ -1064,7 +1064,7 @@ class HomeComp extends React.Component {
 
           <Footer />
         </Grid>
-      </div>
+      </div >
     );
   }
 }
