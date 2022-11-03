@@ -2,7 +2,7 @@ import { makeStyles } from "@material-ui/core/styles";
 const CommonContentStyles = makeStyles((theme) => ({
   heading: {
     color: theme.palette.gold.main + "!important",
-    fontSize: "21px !important",
+    fontSize: "23px !important",
     fontWeight: 600,
     [theme.breakpoints.down("md")]: {
       fontSize: "18px",
@@ -29,7 +29,7 @@ const CommonContentStyles = makeStyles((theme) => ({
   },
 
   contentText: {
-    padding: "0 120px !important",
+    padding: "0 110px !important",
     boxShadow: "none !important",
     margin: "0px 0px !important",
     "& p": {
@@ -58,7 +58,7 @@ const CommonContentStyles = makeStyles((theme) => ({
       },
     },
     "& div": {
-      fontSize: "20px !important",
+      fontSize: "17px !important",
       color: "#717171",
       [theme.breakpoints.down("md")]: {
         fontSize: "17px",
@@ -95,7 +95,7 @@ const CommonContentStyles = makeStyles((theme) => ({
   },
 
   question: {
-    fontSize: "20px !important",
+    fontSize: "17px !important",
     fontWeight: 600,
     color: "#717171",
     margin: "27px 0",

@@ -26,7 +26,7 @@ const CommonContent = (props) => {
               >
                 <Typography className={classes.heading}>{e?.title}</Typography>
               </AccordionSummary>
-              <AccordionDetails>
+              <AccordionDetails style={{padding:"16px"}}>
                 {e?.para?.length && (
                   <div>
                     {e?.para?.map((val) => {
@@ -43,11 +43,11 @@ const CommonContent = (props) => {
                 {e?.element}
                 {props?.faq && (
                   <div>
-                    {e?.paragraph?.map((element) => {
+                    {e?.paragraph?.map((element,i) => {
                       return (
                         <div>
                           <div>
-                            <Typography className={classes.question}>
+                            <Typography className={classes.question} style={{margin: i === 0 ?"5px 0px 27px": "27px 0px 27px"}}>
                               {element?.question}
                             </Typography>
                           </div>
