@@ -1,0 +1,6 @@
+projectKey=NAC-jewellers-UI
+serverUrl=https://scanner.automatly.io
+serverVersion=9.5.0.56709
+dashboardUrl=https://scanner.automatly.io/dashboard?id=NAC-jewellers-UI
+ceTaskId=AYQ8tfXNMHQvds_Gzen7
+ceTaskUrl=https://scanner.automatly.io/api/ce/task?id=AYQ8tfXNMHQvds_Gzen7
