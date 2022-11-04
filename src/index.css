@@ -19,6 +19,12 @@
     font-weight: 500;
   }
 
+  @font-face {
+    font-family: notoSerif-italic;
+    src:local('notoSerif-italic'), url(https://styloriimages-staging.s3.ap-south-1.amazonaws.com/nac_fonts/NotoSerif-Italic.ttf) format('truetype');
+    font-weight: 500;
+  }
+
 body {
   margin: 0;
   font-family: notoSerif-regular !important;

@@ -28,9 +28,11 @@ const useStyles = makeStyles((theme) => ({
     marginTop: 8,
     [theme.breakpoints.down("md")]: {
       fontSize: "35px",
+      marginBottom: 8,
     },
     [theme.breakpoints.down("xs")]: {
       fontSize: "20px",
+      marginBottom: 5,
     },
   },
   img: {
