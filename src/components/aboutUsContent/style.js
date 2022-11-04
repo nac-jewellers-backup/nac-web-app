@@ -6,7 +6,7 @@ const NewAboutUsStyles = makeStyles((theme) => ({
       padding: "0 50px !important",
     },
     [theme.breakpoints.down("xs")]: {
-      padding: "0 10px !important",
+      padding: "0 20px !important",
     },
   },
   abouttext: {
