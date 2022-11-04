@@ -30,11 +30,11 @@ export const aboutUsNew = [
           <span>Anantham Chetty</span> opened a small store in Parry's Corner in old Madras, which soon became a flourishing business. His son,
           <span>Shri N. Anjaneyulu Chetty,</span> founded <span>NAC Jewellers</span> and nourished its brand along with his son <span>Shri Anantha</span>
           <span>Padmanabhan</span> who transformed the small store into a chain of jewellery houses. Today,<span> Anand Ramanujam,</span>
-          <Box sx={{ textAlign: { xs: 'justify', lg: 'center' } }}>the fifth generation of scion of this illustrious family, continues the legacy of his forefathers.</Box>
+          the fifth generation of scion of this illustrious family, continues the legacy of his forefathers.
         </Box>
         <Box
           sx={{ margin: { xs: '20px 0', lg: '40px 0' } }}
-          style={{ textAlign: "center" }}>
+          style={{ textAlign: "justify" }}>
           We are known for our unique and rare designs, as we are ever mindful
           about the latest trends in jewellery and the expectations of the
           customer. We also export jewellery abroad, we cater to the growing

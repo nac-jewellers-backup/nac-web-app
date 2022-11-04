@@ -40,7 +40,7 @@ const ProfileUseStyles = makeStyles((theme) => ({
     fontWeight: "700",
     marginTop: "30px",
     [theme.breakpoints.down("xs")]: {
-      fontSize: "17px",
+      fontSize: "15px",
       fontWeight: "600",
       marginTop: "10px",
 
@@ -52,7 +52,7 @@ const ProfileUseStyles = makeStyles((theme) => ({
     fontWeight: "700",
     marginTop: "8px",
     [theme.breakpoints.down("xs")]: {
-      fontSize: "17px",
+      fontSize: "15px",
       fontWeight: "600",
       marginTop: "4px",
 

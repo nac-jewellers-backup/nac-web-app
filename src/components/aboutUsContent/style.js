@@ -10,17 +10,17 @@ const NewAboutUsStyles = makeStyles((theme) => ({
     },
   },
   abouttext: {
-    fontSize: "20px",
+    fontSize: "17px",
     color: "#717171",
-    lineHeight: "1.7",
+    lineHeight: "2.0",
     [theme.breakpoints.down("md")]: {
       fontSize: "17px",
-      lineHeight: "1.5",
+      lineHeight: "2.0",
 
     },
     [theme.breakpoints.down("xs")]: {
       fontSize: "14px",
-      lineHeight: "unset",
+      lineHeight: "2.0",
 
     },
     "& span": {
