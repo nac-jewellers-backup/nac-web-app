@@ -17,9 +17,9 @@ const ProductCareStyles = makeStyles((theme) => ({
   },
 
   cardBox: {
-    marginBottom: "35px",
+    marginBottom: "55px",
     boxShadow: "11px 10px 14px -10px rgba(0,0,0,0.76)",
-    padding: "20px 25px",
+    padding: "25px 30px",
     backgroundColor: "#f0f0f0",
     borderRadius: "0px !important",
   },
@@ -34,7 +34,7 @@ const ProductCareStyles = makeStyles((theme) => ({
   heading: {
     marginBottom: "25px",
     "& p": {
-      fontSize: "25px",
+      fontSize: "28px",
       color: "#2a2f70",
       fontFamily: "notoSerif-bold !important",
       fontStyle: "italic",
@@ -43,20 +43,38 @@ const ProductCareStyles = makeStyles((theme) => ({
 
   content: {
     "& ul": {
+      listStyle: "none",
       paddingLeft: "22px",
       "& li": {
-        "&::marker": {
-          color: "#B78231",
-          fontSize: "21px",
-        },
+        position: "relative",
         "& p": {
           fontSize: "18px",
-          color: "#86878a",
+          color: "#62656d",
           fontFamily: "notoSerif-regular !important",
           fontWeight: 540,
         },
       },
+      "& li::before": {
+        position: "absolute",
+        fontSize: "21px",
+        content: `" "`,
+        height: ".4em",
+        width: ".4em",
+        background: "#B78231",
+        display: "block",
+        transform: "rotate(45deg)",
+        top: "10px",
+        left: "-18px",
+      },
     },
+  },
+
+  odd: {
+    order: 2,
+  },
+
+  even: {
+    order: "unset",
   },
 }));
 export default ProductCareStyles;
