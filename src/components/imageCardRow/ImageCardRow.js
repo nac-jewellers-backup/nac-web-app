@@ -91,7 +91,7 @@ const ImageCardRow = (props) => {
               </Box>
               <Box  >
                 <Typography className={classes.descr}>{e?.descr}</Typography>
-                <Link className={classes.readmore}><Typography className={classes.readMoreText}>{e?.readmore}</Typography> <ArrowForwardIcon style={{ paddingLeft: 10 }} /></Link>
+                <Link className={classes.readmore} to={e?.url}><Typography className={classes.readMoreText}>{e?.readmore}</Typography> <ArrowForwardIcon style={{ paddingLeft: 10 }} /></Link>
               </Box>
             </Box>
           </Grid >

@@ -189,15 +189,18 @@ export const aboutusImgCard = [
     image: card1,
     descr: "Diamonds are forever",
     readmore: "Read more",
+    url:"/diamond-jewellery"
   },
   {
     image: card2,
     descr: "Young One to Cherish",
     readmore: "Read more",
+    url:"/young+ones"
   },
   {
     image: card3,
     descr: "Antique Lounge",
     readmore: "Read more",
+    url:"/antique"
   },
 ]
