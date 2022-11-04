@@ -22,6 +22,13 @@ const ProductCareStyles = makeStyles((theme) => ({
     padding: "25px 30px",
     backgroundColor: "#f0f0f0",
     borderRadius: "0px !important",
+    [theme.breakpoints.down("md")]: {
+      marginBottom: "40px",
+    },
+    [theme.breakpoints.down("xs")]: {
+      padding: "15px 18px",
+      marginBottom: "35px",
+    },
   },
 
   image: {
@@ -36,8 +43,14 @@ const ProductCareStyles = makeStyles((theme) => ({
     "& p": {
       fontSize: "28px",
       color: "#2a2f70",
-      fontFamily: "notoSerif-bold !important",
-      fontStyle: "italic",
+      fontFamily: "notoSerif-italic !important",
+      fontWeight: 600,
+      [theme.breakpoints.down("md")]: {
+        fontSize: "24px",
+      },
+      [theme.breakpoints.down("xs")]: {
+        fontSize: "18px",
+      },
     },
   },
 
@@ -48,10 +61,16 @@ const ProductCareStyles = makeStyles((theme) => ({
       "& li": {
         position: "relative",
         "& p": {
-          fontSize: "18px",
+          fontSize: "17px",
           color: "#62656d",
           fontFamily: "notoSerif-regular !important",
           fontWeight: 540,
+          [theme.breakpoints.down("md")]: {
+            fontSize: "15px",
+          },
+          [theme.breakpoints.down("xs")]: {
+            fontSize: "12px",
+          },
         },
       },
       "& li::before": {
@@ -65,6 +84,15 @@ const ProductCareStyles = makeStyles((theme) => ({
         transform: "rotate(45deg)",
         top: "10px",
         left: "-18px",
+        [theme.breakpoints.down("md")]: {
+          top: "7px",
+          fontSize: "18px",
+        },
+
+        [theme.breakpoints.down("xs")]: {
+          top: "7px",
+          fontSize: "15px",
+        },
       },
     },
   },
@@ -75,6 +103,12 @@ const ProductCareStyles = makeStyles((theme) => ({
 
   even: {
     order: "unset",
+    [theme.breakpoints.down("md")]: {
+      paddingBottom: "0px !important",
+    },
+    [theme.breakpoints.down("xs")]: {
+      paddingBottom: "0px !important",
+    },
   },
 }));
 export default ProductCareStyles;
