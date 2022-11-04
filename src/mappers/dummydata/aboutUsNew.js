@@ -1,40 +1,62 @@
 import React from "react";
+import profile1 from "./../../assets/NAC---Desktop-UI---About Us, FAQ, Privacy, T&C-5.jpg";
+import profile2 from "./../../assets/NAC---Desktop-UI---About Us, FAQ, Privacy, T&C-6.jpg";
+import profile3 from "./../../assets/NAC---Desktop-UI---About Us, FAQ, Privacy, T&C-7.jpg";
+import card1 from "./../../assets/NAC---Desktop-UI---About Us, FAQ, Privacy, T&C-8.jpg";
+import card2 from "./../../assets/NAC---Desktop-UI---About Us, FAQ, Privacy, T&C-9.jpg";
+import card3 from "./../../assets/NAC---Desktop-UI---About Us, FAQ, Privacy, T&C-10.jpg";
+import { Box, makeStyles, Typography } from "@material-ui/core";
+
+
+const ProfileUseStyles = makeStyles((theme) => ({
+  para: {
+    textAlign: "justify"
+  }
+}))
+
+// const classes = ProfileUseStyles()
+
+
+
 export const aboutUsNew = [
   {
     para: [
-      <div>
-        <div style={{ textAlign: "justify" }}>
-          Ours is a journey that began almost hundred years ago in 1917, when Shri Nathella Narayana Chetty started a small
-          jewellery business at home where he fashioned hand-made jewels for a few loyal patrons.His son, Shri Nathella
-          Anantham Chetty opened a small store in Parry's Corner in old Madras, which soon became a flourishing business. His son,
-          Shri N. Anjaneyulu Chetty, founded NAC Jewellers and nourished its brand along with his son Shri Anantha
-          Padmanabhan who transformed the small store into a chain of jewellery houses. Today,
-          <div style={{ textAlign: "center" }}>Anand Ramanujam, the fifth
-            generation of scion of this illustrious family, continues the legacy of his forefathers.</div>
-        </div>
-        <div style={{ margin: "40px 0", textAlign: "center" }}>
+
+      <Box>
+        <Box sx={{ textAlign: { xs: 'justify', lg: 'justify' } }}>
+          Ours is a journey that began almost hundred years ago in <span>1917</span>, when <span>
+            Shri Nathella Narayana Chetty</span> started a small
+          jewellery business at home where he fashioned hand-made jewels for a few loyal patrons.His son, <span>Shri Nathella</span>
+          <span>Anantham Chetty</span> opened a small store in Parry's Corner in old Madras, which soon became a flourishing business. His son,
+          <span>Shri N. Anjaneyulu Chetty,</span> founded <span>NAC Jewellers</span> and nourished its brand along with his son <span>Shri Anantha</span>
+          <span>Padmanabhan</span> who transformed the small store into a chain of jewellery houses. Today,<span> Anand Ramanujam,</span>
+          <Box sx={{ textAlign: { xs: 'justify', lg: 'center' } }}>the fifth generation of scion of this illustrious family, continues the legacy of his forefathers.</Box>
+        </Box>
+        <Box
+          sx={{ margin: { xs: '20px 0', lg: '40px 0' } }}
+          style={{ textAlign: "center" }}>
           We are known for our unique and rare designs, as we are ever mindful
           about the latest trends in jewellery and the expectations of the
           customer. We also export jewellery abroad, we cater to the growing
           market of Indian ethnic jewellery.
-        </div>
-      </div>,
+        </Box>
+      </Box>,
     ],
   },
   {
     imageCard: [
       {
-        img: "http://images.newindianexpress.com/uploads/user/ckeditor_images/article/2017/4/5/Of.jpg",
+        img: profile1,
         name: "Anantha Padmanabhan",
         role: "Chairman & Managing Director",
       },
       {
-        img: "https://media.fashionnetwork.com/cdn-cgi/image/fit=contain,width=1000,height=1000/m/b2b7/ba04/68ac/1ec7/6390/a36d/511a/77a4/8e8d/78e8/78e8.jpg",
+        img: profile2,
         name: "Anantha Ramanujam",
         role: "Executive Director",
       },
       {
-        img: "https://media-exp1.licdn.com/dms/image/C5603AQEsVAv6scbJjw/profile-displayphoto-shrink_800_800/0/1517557880966?e=2147483647&v=beta&t=vNH8W6DFIAR8BajoqfKMueZ0apFGgnNO4tn1tfZEV5s",
+        img: profile3,
         name: "Arjun Varadaraj",
         role: "Executive Director",
       },
@@ -164,20 +186,17 @@ export const aboutusTData = [
 
 export const aboutusImgCard = [
   {
-    image:
-      "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/banners/web/Platinum-Jewellery.webp",
+    image: card1,
     descr: "Diamonds are forever",
     readmore: "Read more",
   },
   {
-    image:
-      "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/banners/web/Young-Ones-Jewellers.webp",
+    image: card2,
     descr: "Young One to Cherish",
     readmore: "Read more",
   },
   {
-    image:
-      "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/banners/web/Rewind-Gold-Jewellery.webp",
+    image: card3,
     descr: "Antique Lounge",
     readmore: "Read more",
   },

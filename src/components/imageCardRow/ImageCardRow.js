@@ -44,10 +44,12 @@ const CardUseStyles = makeStyles((theme) => ({
     fontSize: "21px",
     fontWeight: "800",
     marginBottom: "8px",
-    paddingTop: "30px",
+    paddingTop: "35px",
     [theme.breakpoints.down("xs")]: {
       fontSize: "18px",
       fontWeight: "700",
+      paddingTop: "15px",
+
     },
 
   },
@@ -59,10 +61,12 @@ const CardUseStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    paddingBottom: "30px",
+    paddingBottom: "40px",
 
     [theme.breakpoints.down("xs")]: {
       fontSize: "16px",
+      paddingBottom: "20px",
+
     },
   }
 }))
