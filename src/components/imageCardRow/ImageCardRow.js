@@ -21,7 +21,6 @@ const CardUseStyles = makeStyles((theme) => ({
   },
   profile: {
     width: "100%",
-    height: "300px"
   },
   profileChild: {
     textAlign: "center",
@@ -40,11 +39,13 @@ const CardUseStyles = makeStyles((theme) => ({
   },
   descr: {
     color: theme.palette.gold.main,
-    fontStyle: "italic",
-    fontSize: "21px",
-    fontWeight: "800",
+    // fontStyle: "italic",
+    fontFamily:"notoSerif-italic !important",
+    fontSize: "20px",
+    fontWeight: "600",
     marginBottom: "8px",
-    paddingTop: "35px",
+    paddingTop: "28px",
+    letterSpacing:"1px",
     [theme.breakpoints.down("xs")]: {
       fontSize: "18px",
       fontWeight: "700",
@@ -53,9 +54,11 @@ const CardUseStyles = makeStyles((theme) => ({
     },
 
   },
+  readMoreText:{
+    fontFamily:"notoSerif-italic !important",
+  },
   readmore: {
     color: "#6e6f71",
-    fontSize: "17px",
     textDecoration: "none",
     fontStyle: "italic",
     display: "flex",
@@ -64,7 +67,7 @@ const CardUseStyles = makeStyles((theme) => ({
     paddingBottom: "40px",
 
     [theme.breakpoints.down("xs")]: {
-      fontSize: "16px",
+      fontSize: "14px",
       paddingBottom: "20px",
 
     },
@@ -88,7 +91,7 @@ const ImageCardRow = (props) => {
               </Box>
               <Box  >
                 <Typography className={classes.descr}>{e?.descr}</Typography>
-                <Link className={classes.readmore}><Typography>{e?.readmore}</Typography> <ArrowForwardIcon style={{ paddingLeft: 10 }} /></Link>
+                <Link className={classes.readmore}><Typography className={classes.readMoreText}>{e?.readmore}</Typography> <ArrowForwardIcon style={{ paddingLeft: 10 }} /></Link>
               </Box>
             </Box>
           </Grid >
