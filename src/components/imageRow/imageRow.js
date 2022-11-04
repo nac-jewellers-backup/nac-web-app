@@ -38,18 +38,24 @@ const ProfileUseStyles = makeStyles((theme) => ({
     fontStyle: "italic",
     fontSize: "19px",
     fontWeight: "700",
+    marginTop: "30px",
     [theme.breakpoints.down("xs")]: {
       fontSize: "17px",
       fontWeight: "600",
+      marginTop: "10px",
+
     },
   },
   role: {
     color: "#6e6f71",
     fontSize: "19px",
     fontWeight: "700",
+    marginTop: "8px",
     [theme.breakpoints.down("xs")]: {
       fontSize: "17px",
       fontWeight: "600",
+      marginTop: "4px",
+
     },
   }
 }))
