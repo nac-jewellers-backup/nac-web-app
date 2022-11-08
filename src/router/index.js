@@ -49,10 +49,11 @@ import Fail from "../screens/Stylori/fail";
 import Success from "../screens/Stylori/success";
 import Diwali2022 from "containers/diwali2022/diwali2022";
 import ExperienceCard from "containers/experiences/experienceCard";
-import { AboutUsPageNew } from "screens";
+import AboutUsPageNew from "screens/AboutUsPage/aboutUsPage";
 import TermsAndConditions from "screens/termsAndConditions/termsAndConditions";
 import PrivacyPolicy from "screens/privacyPolicy/privacyPolicy";
 import { FaqDetails } from "screens/faq";
+import { ProductCare } from "screens";
 
 const browserHistory = createBrowserHistory();
 
@@ -132,9 +133,9 @@ export const RouterApp = (props) => {
       <Route key="Checkout" component={Checkout} exact path={routes.Checkout} />
       <Route
         key="AboutUs"
-        component={AboutusPage}
+        component={AboutUsPageNew}
         exact
-        path={routes.AboutUs}
+        path={routes.AboutUsNew}
       />
       <Route
         key="Contacs"
@@ -269,6 +270,7 @@ export const RouterApp = (props) => {
         props.location.pathname !== "/termsAndConditions" &&
         props.location.pathname !== "/privacy_Details" &&
         props.location.pathname !== "/faqDetails" &&
+        props.location.pathname !== "/productCareNew" &&
         Globalctx &&
         Globalctx.pathName === false &&
         props.location.pathname !== "/homes" && (
@@ -342,7 +344,8 @@ export const RouterApp = (props) => {
         props.location.pathname !== "/aboutUsPageNew" &&
         props.location.pathname !== "/termsAndConditions" &&
         props.location.pathname !== "/privacy_Details" &&
-        props.location.pathname !== "/faqDetails" && (
+        props.location.pathname !== "/faqDetails" &&
+        props.location.pathname !== "/productCareNew" && (
           <Route exact={true} component={Stylori} path={"/:listingpage"} />
         )}
 
@@ -483,6 +486,12 @@ export const RouterApp = (props) => {
         component={FaqDetails}
         exact
         path={routes.FaqDetails}
+      />
+      <Route
+        key="productCareNew"
+        component={ProductCare}
+        exact
+        path={routes.ProductCareNew}
       />
     </Switch>
   );

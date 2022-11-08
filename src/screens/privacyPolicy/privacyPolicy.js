@@ -29,7 +29,7 @@ const PrivacyPolicy = () => {
         <div>
           <CommonContent data={privacyData} />
         </div>
-        <div>
+        <div className={classes.footer}>
           <Footer />
         </div>
       </Grid>
