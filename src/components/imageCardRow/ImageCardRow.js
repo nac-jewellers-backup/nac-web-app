@@ -6,18 +6,21 @@ import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 const CardUseStyles = makeStyles((theme) => ({
   profileRoot: {
     padding: "60px 100px ",
+    marginBottom: "30px",
     [theme.breakpoints.down("md")]: {
       padding: "30px 50px !important",
-      display: "block"
+      display: "block",
+      marginBottom: "10px",
+
     },
     [theme.breakpoints.down("xs")]: {
       padding: "20px 10px !important",
-      display: "block"
+      display: "block",
+
     },
   },
   profile: {
     width: "100%",
-    height: "300px"
   },
   profileChild: {
     textAlign: "center",
@@ -36,26 +39,37 @@ const CardUseStyles = makeStyles((theme) => ({
   },
   descr: {
     color: theme.palette.gold.main,
-    fontStyle: "italic",
+    // fontStyle: "italic",
+    fontFamily:"notoSerif-italic !important",
     fontSize: "20px",
-    fontWeight: "800",
-    marginBottom: "10px",
+    fontWeight: "600",
+    marginBottom: "8px",
+    paddingTop: "28px",
+    letterSpacing:"1px",
     [theme.breakpoints.down("xs")]: {
       fontSize: "18px",
       fontWeight: "700",
+      paddingTop: "15px",
+
     },
 
   },
+  readMoreText:{
+    fontFamily:"notoSerif-italic !important",
+  },
   readmore: {
     color: "#6e6f71",
-    fontSize: "17px",
     textDecoration: "none",
     fontStyle: "italic",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+    paddingBottom: "40px",
+
     [theme.breakpoints.down("xs")]: {
-      fontSize: "16px",
+      fontSize: "14px",
+      paddingBottom: "20px",
+
     },
   }
 }))
@@ -75,9 +89,9 @@ const ImageCardRow = (props) => {
                   <img src={e?.image} alt='profile' className={classes.profile} ></img>
                 </Box>
               </Box>
-              <Box p={2}>
+              <Box  >
                 <Typography className={classes.descr}>{e?.descr}</Typography>
-                <Link className={classes.readmore}><Typography>{e?.readmore}</Typography> <ArrowForwardIcon style={{ paddingLeft: 10 }} /></Link>
+                <Link className={classes.readmore} to={e?.url}><Typography className={classes.readMoreText}>{e?.readmore}</Typography> <ArrowForwardIcon style={{ paddingLeft: 10 }} /></Link>
               </Box>
             </Box>
           </Grid >

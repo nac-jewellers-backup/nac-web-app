@@ -14,13 +14,12 @@ export default function TimelineEntry(props) {
     console.log("childprops", props)
 
     const classes = useStyles()
-    
+
     return (
         <div
             className="timeline-entry"
             onClick={() => {
                 debugger
-                
                 setstate({
                     ...state,
                     timelineImage: image,

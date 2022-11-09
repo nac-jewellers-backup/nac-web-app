@@ -55,6 +55,7 @@ import PrivacyPolicy from "screens/privacyPolicy/privacyPolicy";
 import { FaqDetails } from "screens/faq";
 import { BlogPage } from "screens";
 import { ReadMore } from "screens/readMorePage";
+import { ProductCare } from "screens";
 
 const browserHistory = createBrowserHistory();
 
@@ -226,7 +227,7 @@ export const RouterApp = (props) => {
       />
       {props.location.pathname !== "/cart" &&
         props.location.pathname !==
-        `/account${"-" + window.location.pathname.split("-")[1]}` &&
+          `/account${"-" + window.location.pathname.split("-")[1]}` &&
         props.location.pathname !== "/savingscheme" &&
         props.location.pathname !== "/aboutus" &&
         props.location.pathname !== "/newsroom" &&
@@ -273,6 +274,7 @@ export const RouterApp = (props) => {
         props.location.pathname !== "/faqDetails" &&
         props.location.pathname !== "/blogNew" &&
         props.location.pathname !== "/readMore" &&
+        props.location.pathname !== "/productCareNew" &&
         Globalctx &&
         Globalctx.pathName === false &&
         props.location.pathname !== "/homes" && (
@@ -304,7 +306,7 @@ export const RouterApp = (props) => {
 
       {props.location.pathname !== "/cart" &&
         props.location.pathname !==
-        `/account${"-" + window.location.pathname.split("-")[1]}` &&
+          `/account${"-" + window.location.pathname.split("-")[1]}` &&
         props.location.pathname !== "/savingscheme" &&
         props.location.pathname !== "/aboutus" &&
         props.location.pathname !== "/terms" &&
@@ -348,7 +350,8 @@ export const RouterApp = (props) => {
         props.location.pathname !== "/privacy_Details" &&
         props.location.pathname !== "/faqDetails" &&
         props.location.pathname !== "/blogNew" &&
-        props.location.pathname !== "/readMore" && (
+        props.location.pathname !== "/readMore" &&
+        props.location.pathname !== "/productCareNew" && (
           <Route exact={true} component={Stylori} path={"/:listingpage"} />
         )}
 
@@ -501,6 +504,12 @@ export const RouterApp = (props) => {
         component={ReadMore}
         exact
         path={routes.ReadMore}
+        />
+        <Route
+        key="productCareNew"
+        component={ProductCare}
+        exact
+        path={routes.ProductCareNew}
       />
     </Switch>
   );

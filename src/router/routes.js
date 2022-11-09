@@ -59,6 +59,7 @@ export const routes = {
   FaqDetails: "/faqDetails",
   BlogPage: "/blogNew",
   ReadMore: "/readMore",
+  ProductCareNew: "/productCareNew",
 };
 
 export default routes;

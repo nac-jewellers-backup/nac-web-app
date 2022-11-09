@@ -1,13 +1,13 @@
 import { Box, Grid, Typography } from "@material-ui/core";
+import LeftArrow from "assets/leftArrow";
+import RightArrow from "assets/rightArrow";
 import React from "react";
-import ArrowLeft from "../../assets/arrowleft";
-import ArrowRight from "../../assets/arrowright";
 import useStyles from "./styles";
 
 const CommonTitle = (props) => {
   const classes = useStyles();
   return (
-    <Grid container direction="row">
+    <Grid container direction="row" style={{overflow:"hidden"}}>
       <Grid item xs={12}>
         <Box
           display="flex"
@@ -17,18 +17,18 @@ const CommonTitle = (props) => {
           className={classes.mainTitle}
         >
           <Box>
-            <ArrowRight className={classes.rightArrow} />
+            <LeftArrow className={classes.leftArrow} />
           </Box>
           <Box>
             <Typography
               className={classes.title}
-              style={{ fontStyle: "italic", fontSize: props?.fontSize }}
+              style={{ fontStyle: "italic" }}
             >
               {props.title.toUpperCase()}
             </Typography>
           </Box>
           <Box>
-            <ArrowLeft className={classes.leftArrow} />
+            <RightArrow className={classes.rightArrow} />
           </Box>
         </Box>
       </Grid>

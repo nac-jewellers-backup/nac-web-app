@@ -6,17 +6,22 @@ const NewAboutUsStyles = makeStyles((theme) => ({
       padding: "0 50px !important",
     },
     [theme.breakpoints.down("xs")]: {
-      padding: "0 10px !important",
+      padding: "0 20px !important",
     },
   },
   abouttext: {
-    fontSize: "20px",
+    fontSize: "17px",
     color: "#717171",
+    lineHeight: "2.0",
     [theme.breakpoints.down("md")]: {
       fontSize: "17px",
+      lineHeight: "2.0",
+
     },
     [theme.breakpoints.down("xs")]: {
       fontSize: "14px",
+      lineHeight: "2.0",
+
     },
     "& span": {
       color: "#717171",
