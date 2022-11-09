@@ -15,11 +15,11 @@ const BlogImageCardStyles = makeStyles((theme) => ({
   mainTitle: {
     marginTop: "100px",
     marginBottom: "60px",
-    padding: "0 40px",
+    padding: "0 130px",
     [theme.breakpoints.down("md")]: {
       marginTop: "40px",
       marginBottom: "30px",
-      padding: "0 70px",
+      padding: "0 50px",
     },
     [theme.breakpoints.down("xs")]: {
       marginTop: "40px",

@@ -54,6 +54,7 @@ import TermsAndConditions from "screens/termsAndConditions/termsAndConditions";
 import PrivacyPolicy from "screens/privacyPolicy/privacyPolicy";
 import { FaqDetails } from "screens/faq";
 import { BlogPage } from "screens";
+import { ReadMore } from "screens/readMorePage";
 
 const browserHistory = createBrowserHistory();
 
@@ -271,6 +272,7 @@ export const RouterApp = (props) => {
         props.location.pathname !== "/privacy_Details" &&
         props.location.pathname !== "/faqDetails" &&
         props.location.pathname !== "/blogNew" &&
+        props.location.pathname !== "/readMore" &&
         Globalctx &&
         Globalctx.pathName === false &&
         props.location.pathname !== "/homes" && (
@@ -345,7 +347,8 @@ export const RouterApp = (props) => {
         props.location.pathname !== "/termsAndConditions" &&
         props.location.pathname !== "/privacy_Details" &&
         props.location.pathname !== "/faqDetails" &&
-        props.location.pathname !== "/blogNew" && (
+        props.location.pathname !== "/blogNew" &&
+        props.location.pathname !== "/readMore" && (
           <Route exact={true} component={Stylori} path={"/:listingpage"} />
         )}
 
@@ -492,6 +495,12 @@ export const RouterApp = (props) => {
         component={BlogPage}
         exact
         path={routes.BlogPage}
+      />
+      <Route
+        key="readMore"
+        component={ReadMore}
+        exact
+        path={routes.ReadMore}
       />
     </Switch>
   );

@@ -3,7 +3,6 @@ import React from "react";
 import BlogImageCardStyles from "./style";
 
 const BlogImageCard = (props) => {
-  console.log("props", props);
   const classes = BlogImageCardStyles();
   return (
     <div className={classes.mainTitle}>

@@ -5,5 +5,6 @@ export * from "./AboutUsPage";
 export * from "./termsAndConditions";
 export * from "./privacyPolicy";
 export * from "./blogPage";
+export * from "./readMorePage";
 
 export { Stylori };
