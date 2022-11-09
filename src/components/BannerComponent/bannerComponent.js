@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
 const BannerComponent = (props)=> {
     const classes = useStyles();
     const {banners = [],dataCarousel="single"} = props;
-    console.log("propsOfBanner",dataCarousel);
+    banners.sort((a,b) =>(a.position < b.position) ? -1 : (a.position > b.position) ? 1 : 0)
     return (
         <Banner
           dataCarousel={dataCarousel}
@@ -22,7 +22,7 @@ const BannerComponent = (props)=> {
             <>
               <Hidden smDown>
                 <Grid container key={index} className={classes.headContent}>
-                  <a href={val?.urlParam} style={{ width: "100%" }}>
+                  <a href={val?.url} style={{ width: "100%" }}>
                     <img
                       alt="images"
                       loading="lazy"
@@ -34,7 +34,7 @@ const BannerComponent = (props)=> {
               </Hidden>
               <Hidden mdUp>
                 <Grid container key={index} className={classes.headContent}>
-                  <a href={val.urlParam}>
+                  <a href={val.url}>
                     <img
                       alt="images"
                       loading="lazy"
