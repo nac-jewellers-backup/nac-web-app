@@ -7,7 +7,7 @@ import useStyles from "./styles";
 const CommonTitle = (props) => {
   const classes = useStyles();
   return (
-    <Grid container direction="row">
+    <Grid container direction="row" style={{overflow:"hidden"}}>
       <Grid item xs={12}>
         <Box
           display="flex"

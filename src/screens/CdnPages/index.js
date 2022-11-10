@@ -67,7 +67,7 @@ function CdnPages(props) {
         return <Storelocator value={val?.props?.storeData} />
       }
       default: {
-        return <h1>The name of the component does not exsist</h1>;
+        return <h1></h1>;
       }
     }
   };
