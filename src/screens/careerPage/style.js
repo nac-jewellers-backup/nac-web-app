@@ -1,19 +1,5 @@
 import { makeStyles } from "@material-ui/core/styles";
 const CareerPageStyles = makeStyles((theme) => ({
-  title: {
-    "& p": {
-      textAlign: "center",
-      fontStyle: "italic",
-      fontWeight: 600,
-      fontSize: "20px",
-      color: "#B78231",
-      marginTop: "20px",
-      marginBottom: "20px",
-      [theme.breakpoints.down("sm")]: {
-        fontSize: "17px",
-      },
-    },
-  },
 
   viewMore: {
     textAlign: "center",
@@ -26,6 +12,7 @@ const CareerPageStyles = makeStyles((theme) => ({
       textTransform: "capitalize !important",
       borderRadius: "0px !important",
       padding: "5px 10px !important",
+      boxShadow: "3px 3px 9px -1px rgba(0,0,0,0.75) !important",
       [theme.breakpoints.down("sm")]: {
         fontSize: "17px",
       },
@@ -42,7 +29,8 @@ const CareerPageStyles = makeStyles((theme) => ({
     color: "#FFFFFF !important",
     backgroundColor: "#2a2e6e !important",
     textTransform: "capitalize !important",
-    padding: "7px 0px 12px 0px",
+    padding: "5px 0px 10px 0px",
+    boxShadow: "3px 3px 9px -1px rgba(0,0,0,0.75) !important",
   },
 }));
 export default CareerPageStyles;

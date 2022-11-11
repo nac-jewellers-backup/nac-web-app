@@ -7,32 +7,26 @@ import { customBannerData } from "mappers/dummydata";
 import React from "react";
 import CCustomApplicationStyles from "./style";
 
-const CustomApplication = () => {
+const CustomApplication = (props) => {
+  console.log("props", props?.data);
   const classes = CCustomApplicationStyles();
   return (
     <div>
-      {/* HEADER */}
-
-      <div className={classes.mainTag}>
-        <Header />
+      <div className={classes.headingGroup}>
+        <div className={classes.role}>
+          <Typography>{props?.data.job_Role}</Typography>
+        </div>
+        <div className={classes.location}>
+          <Typography>{props?.data?.location}</Typography>
+        </div>
+        <div className={classes.secondLayer}>
+          <Typography>{props?.data?.description}</Typography>
+        </div>
       </div>
-
-      {/* CUSTOM BANNER */}
-
-      <div className={classes.customBanner}>
-        <CustomBanner data={customBannerData} />
-      </div>
-
       {/* CUSTOM FORM */}
 
-      <div className={classes.CustomForm}>
-        <CustomForm />
-      </div>
-
-      {/* FOOTER */}
-
-      <div className={classes.footer}>
-        <Footer />
+      <div className={classes.customForm}>
+        <CustomForm handleClick={props?.handleClick} />
       </div>
     </div>
   );

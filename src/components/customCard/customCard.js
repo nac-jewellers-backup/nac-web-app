@@ -6,6 +6,11 @@ const CustomCard = (props) => {
   const classes = CustomCardStyles();
   return (
     <>
+      {/* TITLE */}
+
+      <div className={classes.title}>
+        <Typography>Current Openings</Typography>
+      </div>
       <Hidden xsDown>
         {props?.data?.map((e) => {
           return (
@@ -20,7 +25,9 @@ const CustomCard = (props) => {
                   </div>
                 </div>
                 <div className={classes.right}>
-                  <Button>{e?.button_Text}</Button>
+                  <Button onClick={() => props?.handleClick(e)}>
+                    {e?.button_Text}
+                  </Button>
                 </div>
               </div>
               <div className={classes.secondLayer}>
@@ -49,7 +56,12 @@ const CustomCard = (props) => {
                 <Typography>{val?.description}</Typography>
               </div>
               <div className={classes.buttonLayer}>
-                <div className={classes.buttonMobile}>Apply Now</div>
+                <div
+                  onClick={() => props?.handleClick(val)}
+                  className={classes.buttonMobile}
+                >
+                  Apply Now
+                </div>
               </div>
             </Card>
           );

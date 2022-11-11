@@ -8,23 +8,6 @@ const CustomForm = (props) => {
     <div>
       <Grid container>
         <Grid item xs={12}>
-          <div className={classes.headingGroup}>
-            <div className={classes.role}>
-              <Typography>Sales Associate</Typography>
-            </div>
-            <div className={classes.location}>
-              <Typography>T.Nagar | Full Time</Typography>
-            </div>
-            <div className={classes.secondLayer}>
-              <Typography>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                diam nonummy nibh euismod tincidunt ut laoreet dolore magna
-                aliquam erat volutpat. Ut wisi enim ad minim veniam, quis
-                nostrudsed diam nonummy nibh euismod tincidunt ut laoreet dolore
-                magna aliquam
-              </Typography>
-            </div>
-          </div>
 
           {/* FORM */}
 
@@ -60,13 +43,6 @@ const CustomForm = (props) => {
                     />
                   </div>
                   <div className={classes.textFieldFile}>
-                    {/* <TextField
-                      id="outlined-basic"
-                      variant="outlined"
-                      fullWidth
-                      placeholder="Upload Your Resume"
-                      type="file"
-                    /> */}
                     <Typography>Upload Your Resume</Typography>
                     <label>
                       <input
@@ -77,7 +53,7 @@ const CustomForm = (props) => {
                       <div>Choose file</div>
                     </label>
                   </div>
-                  <div className={classes.submit}>Submit</div>
+                  <div className={classes.submit} onClick={props?.handleClick}>Submit</div>
                 </Grid>
               </Grid>
             </div>

@@ -1,5 +1,20 @@
 import { makeStyles } from "@material-ui/core/styles";
 const CustomCardStyles = makeStyles((theme) => ({
+  title: {
+    "& p": {
+      textAlign: "center",
+      fontFamily: "notoSerif-italic !important",
+      fontWeight: 600,
+      fontSize: "20px",
+      color: "#B78231",
+      marginTop: "20px",
+      marginBottom: "20px",
+      [theme.breakpoints.down("sm")]: {
+        fontSize: "17px",
+      },
+    },
+  },
+  
   cardSection: {
     padding: "20px 35px",
     margin: "7px 65px 30px 65px",
@@ -45,6 +60,9 @@ const CustomCardStyles = makeStyles((theme) => ({
       backgroundColor: "#2a2e6e !important",
       textTransform: "capitalize !important",
       borderRadius: "0px !important",
+      "& span": {
+        fontSize: "15px",
+      },
     },
   },
 
@@ -92,7 +110,7 @@ const CustomCardStyles = makeStyles((theme) => ({
     textAlign: "center",
     padding: "20px",
     "& p": {
-      fontSize: "14px",
+      fontSize: "13px",
       color: "#606060",
     },
   },
@@ -105,7 +123,7 @@ const CustomCardStyles = makeStyles((theme) => ({
     color: "#FFFFFF !important",
     backgroundColor: "#2a2e6e !important",
     textTransform: "capitalize !important",
-    padding: "10px 0px 15px 0px",
+    padding: "5px 0px 10px 0px",
   },
 }));
 

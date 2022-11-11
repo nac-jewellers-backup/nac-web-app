@@ -7,14 +7,27 @@ import Footer from "components/Footer/Footer";
 import CustomCard from "components/customCard/customCard";
 import { customCardData } from "mappers/dummydata";
 import { Button, Hidden, Typography } from "@material-ui/core";
+import { CustomApplication } from "screens/customApplication";
 
 const CareerPage = () => {
   const classes = CareerPageStyles();
 
   const [count, setCount] = useState(3);
 
+  const [content, setContent] = useState("");
+
+  const [enable, setEnable] = useState(false);
+
   const handleRequest = () => {
     setCount(count + 3);
+  };
+
+  const buttonClick = (value) => {
+    setContent(value);
+    setEnable(!enable);
+  };
+  const submitClick = () => {
+    setEnable(!enable);
   };
   return (
     <div>
@@ -30,38 +43,39 @@ const CareerPage = () => {
         <CustomBanner data={customBannerData} />
       </div>
 
-      {/* TITLE */}
-
-      <div className={classes.title}>
-        <Typography>Current Openings</Typography>
-      </div>
-
       {/* CUSTOM CARD */}
-
-      <div className={classes.customCard}>
-        <CustomCard
-          data={customCardData.filter((value, index) => index < count)}
-        />
-      </div>
+      {!enable ? (
+        <div className={classes.customCard}>
+          <CustomCard
+            data={customCardData.filter((value, index) => index < count)}
+            handleClick={buttonClick}
+          />
+        </div>
+      ) : (
+        <div>
+          <CustomApplication data={content} handleClick={submitClick} />
+        </div>
+      )}
 
       {/* VIEW MORE */}
-
-      <Hidden xsDown>
-        <div className={classes.viewMore}>
-          <Button onClick={handleRequest}>View More</Button>
-        </div>
-      </Hidden>
+      {!enable && (
+        <Hidden xsDown>
+          <div className={classes.viewMore}>
+            <Button onClick={handleRequest}>View More</Button>
+          </div>
+        </Hidden>
+      )}
 
       {/* VIEW MORE MOBILE */}
-
-      <Hidden smUp>
-        <div className={classes.viewMoreMobile}>
-          <div onClick={handleRequest} className={classes.viewMoreButton}>
-            View More
+      {!enable && (
+        <Hidden smUp>
+          <div className={classes.viewMoreMobile}>
+            <div onClick={handleRequest} className={classes.viewMoreButton}>
+              View More
+            </div>
           </div>
-        </div>
-      </Hidden>
-
+        </Hidden>
+      )}
       {/* FOOTER */}
 
       <div className={classes.footer}>

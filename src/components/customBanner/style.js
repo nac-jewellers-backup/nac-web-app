@@ -11,11 +11,11 @@ const CustomBannerStyles = makeStyles((theme) => ({
     position: "absolute",
     top: "370px",
     position: "absolute",
-    left: "100px",
+    left: "70px",
     width: "420px",
     [theme.breakpoints.down("md")]: {
       top: "260px",
-      left: "60px",
+      left: "45px",
       width: "365px",
     },
     [theme.breakpoints.down("sm")]: {
@@ -78,9 +78,9 @@ const CustomBannerStyles = makeStyles((theme) => ({
 
   mobileContent: {
     "& p": {
-      fontSize: "14px",
+      fontSize: "13px",
       color: "#FFFFFF",
-    }
-  }
+    },
+  },
 }));
 export default CustomBannerStyles;

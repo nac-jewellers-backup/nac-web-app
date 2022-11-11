@@ -52,7 +52,7 @@ const CustomFormStyles = makeStyles((theme) => ({
   title: {
     "& p": {
       textAlign: "center",
-      fontStyle: "italic",
+      fontFamily: "notoSerif-italic !important",
       fontWeight: 600,
       fontSize: "20px",
       color: "#B78231",
@@ -84,6 +84,7 @@ const CustomFormStyles = makeStyles((theme) => ({
     padding: "10px 0",
     cursor: "pointer",
     marginBottom: "120px",
+    boxShadow: "3px 3px 9px -1px rgba(0,0,0,0.75) !important",
     [theme.breakpoints.down("sm")]: {
       marginBottom: "60px",
     },
@@ -108,13 +109,16 @@ const CustomFormStyles = makeStyles((theme) => ({
       alignItems: "center",
       marginRight: "20px",
       [theme.breakpoints.down("xs")]: {
-        marginRight: "0px",
+        marginRight: "10px",
       },
       "& div": {
         backgroundColor: "#575757",
         padding: "3px 7px",
         color: "#FFFFFF",
-        fontSize: "13px",
+        fontSize: "14px",
+        [theme.breakpoints.down("xs")]: {
+          fontSize: "10px",
+        },
       },
     },
   },
