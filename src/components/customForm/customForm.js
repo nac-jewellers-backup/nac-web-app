@@ -1,4 +1,4 @@
-import { Grid, TextField, Typography } from "@material-ui/core";
+import { Button, Grid, TextField, Typography } from "@material-ui/core";
 import React from "react";
 import CustomFormStyles from "./style";
 
@@ -59,14 +59,23 @@ const CustomForm = (props) => {
                       placeholder="Email ID"
                     />
                   </div>
-                  <div className={classes.textField}>
-                    <TextField
+                  <div className={classes.textFieldFile}>
+                    {/* <TextField
                       id="outlined-basic"
                       variant="outlined"
                       fullWidth
                       placeholder="Upload Your Resume"
                       type="file"
-                    />
+                    /> */}
+                    <Typography>Upload Your Resume</Typography>
+                    <label>
+                      <input
+                        placeholer="Upload Your Resume"
+                        type="file"
+                        style={{ display: "none" }}
+                      />
+                      <div>Choose file</div>
+                    </label>
                   </div>
                   <div className={classes.submit}>Submit</div>
                 </Grid>

@@ -88,6 +88,36 @@ const CustomFormStyles = makeStyles((theme) => ({
       marginBottom: "60px",
     },
   },
+
+  textFieldFile: {
+    height: "55px",
+    display: "flex",
+    justifyContent: "space-between",
+    backgroundColor: "#FFFFFF",
+    "& p": {
+      display: "flex",
+      alignItems: "center",
+      color: "#aeb2d6",
+      marginLeft: "20px",
+      [theme.breakpoints.down("xs")]: {
+        marginLeft: "20px",
+      },
+    },
+    "& label": {
+      display: "flex",
+      alignItems: "center",
+      marginRight: "20px",
+      [theme.breakpoints.down("xs")]: {
+        marginRight: "0px",
+      },
+      "& div": {
+        backgroundColor: "#575757",
+        padding: "3px 7px",
+        color: "#FFFFFF",
+        fontSize: "13px",
+      },
+    },
+  },
 }));
 
 export default CustomFormStyles;
