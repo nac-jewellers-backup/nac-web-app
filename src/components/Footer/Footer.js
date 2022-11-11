@@ -353,13 +353,17 @@ export default function Footer(props) {
         },
 
         {
-          url: "",
+          url: "#",
           Title: "Track Your Order",
         },
         {
-          url: "/return",
+          url: "#",
           Title: "30 Day Return",
         },
+        {
+          Title: 'Experiences',
+          url: '/experiences'
+        }
       ],
     },
     {
@@ -439,12 +443,16 @@ export default function Footer(props) {
       content: [
         {
           subTitle: "Track Your Order",
-          url: "/stories",
+          url: "#",
         },
         {
           subTitle: "30 Day Return",
-          url: "/return",
+          url: "#",
         },
+        {
+          subTitle: 'Experiences',
+          url: '/experiences'
+        }
       ],
     },
     {
