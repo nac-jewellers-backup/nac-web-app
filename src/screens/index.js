@@ -5,5 +5,7 @@ export * from "./AboutUsPage";
 export * from "./termsAndConditions";
 export * from "./privacyPolicy";
 export * from "./productCare";
+export * from "./careerPage";
+export * from "./customApplication";
 
 export { Stylori };

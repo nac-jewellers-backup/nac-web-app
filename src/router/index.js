@@ -54,6 +54,8 @@ import TermsAndConditions from "screens/termsAndConditions/termsAndConditions";
 import PrivacyPolicy from "screens/privacyPolicy/privacyPolicy";
 import { FaqDetails } from "screens/faq";
 import { ProductCare } from "screens";
+import { CareerPage } from "screens";
+import { CustomApplication } from "screens";
 
 const browserHistory = createBrowserHistory();
 
@@ -271,6 +273,8 @@ export const RouterApp = (props) => {
         props.location.pathname !== "/privacy_Details" &&
         props.location.pathname !== "/faqDetails" &&
         props.location.pathname !== "/productCareNew" &&
+        props.location.pathname !== "/careerPage" &&
+        props.location.pathname !== "/form" &&
         Globalctx &&
         Globalctx.pathName === false &&
         props.location.pathname !== "/homes" && (
@@ -345,7 +349,9 @@ export const RouterApp = (props) => {
         props.location.pathname !== "/termsAndConditions" &&
         props.location.pathname !== "/privacy_Details" &&
         props.location.pathname !== "/faqDetails" &&
-        props.location.pathname !== "/productCareNew" && (
+        props.location.pathname !== "/productCareNew" &&
+        props.location.pathname !== "/careerPage" &&
+        props.location.pathname !== "/form" && (
           <Route exact={true} component={Stylori} path={"/:listingpage"} />
         )}
 
@@ -492,6 +498,18 @@ export const RouterApp = (props) => {
         component={ProductCare}
         exact
         path={routes.ProductCareNew}
+      />
+      <Route
+        key="careerPage"
+        component={CareerPage}
+        exact
+        path={routes.CareerPage}
+      />
+      <Route
+        key="form"
+        component={CustomApplication}
+        exact
+        path={routes.CustomApplication}
       />
     </Switch>
   );
