@@ -54,6 +54,7 @@ function CdnPages(props) {
           <TitleAndData
             title={val?.props?.title}
             description={val?.props?.description}
+            richEditor={val?.props?.richEditor}
           />
         );
       }
