@@ -42,10 +42,10 @@ export const mainlist = [
     name: "SAVING SCHEME",
     url: "https://nacsavings.com/",
   },
-  {
-    name: "EXPERIENCES",
-    url: "/experiences",
-  },
+  // {
+  //   name: "EXPERIENCES",
+  //   url: "/experiences",
+  // },
   {
     name: "STYLORI",
     url: "https://www.stylori.com/",
@@ -1244,10 +1244,10 @@ export const menuListHeader = [
     title: "Collections".toUpperCase(),
     url: "/jewellery",
   },
-  {
-    title: "Experience".toUpperCase(),
-    url: "/experiences",
-  },
+  // {
+  //   title: "Experience".toUpperCase(),
+  //   url: "/experiences",
+  // },
   {
     title: "Saving scheme".toUpperCase(),
     url: "https://nacsavings.com/",

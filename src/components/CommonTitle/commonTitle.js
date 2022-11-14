@@ -14,14 +14,14 @@ const CommonTitle = (props) => {
           flexDirection="row"
           justifyContent="center"
           alignItems="center"
-          className={classes.mainTitle}
+          className={props?.styleProps ? classes.customStyleHeader : classes.mainTitle}
         >
           <Box>
             <LeftArrow className={classes.leftArrow} />
           </Box>
           <Box>
             <Typography
-              className={classes.title}
+              className={props?.styleProps ? classes.customTitle :classes.title}
               style={{ fontStyle: "italic" }}
             >
               {props.title.toUpperCase()}

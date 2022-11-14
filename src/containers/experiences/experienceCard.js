@@ -107,7 +107,8 @@ export default function ExperienceCard(props) {
    const Payload = {
       name : values.name,
       email: values.email,
-      mobile:values.mobile
+      mobile:values.mobile,
+      appointment_type_id : types== 'alive' ? 1 : types== 'lotus' ? 2 : types== 'piercing' ? 3 : types== 'stones' ? 4 : '',
     }
     makeFetch(Payload)
   }
@@ -121,6 +122,7 @@ export default function ExperienceCard(props) {
   React.useEffect(() => {
     window.scrollTo(0, 80)
   }, [])
+
 
 
   const handleChange=(key,value)=>{
