@@ -8,6 +8,7 @@ import CustomCard from "components/customCard/customCard";
 import { customCardData } from "mappers/dummydata";
 import { Button, Hidden, Typography } from "@material-ui/core";
 import { CustomApplication } from "screens/customApplication";
+import { careerPageJson } from "mappers/dummydata/careerePageJson";
 
 const CareerPage = () => {
   const classes = CareerPageStyles();
@@ -40,7 +41,7 @@ const CareerPage = () => {
       {/* CUSTOM BANNER */}
 
       <div className={classes.customBanner}>
-        <CustomBanner data={customBannerData} />
+        <CustomBanner data={careerPageJson} />
       </div>
 
       {/* CUSTOM CARD */}

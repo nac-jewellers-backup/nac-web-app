@@ -3,11 +3,13 @@ import React from "react";
 import CustomBannerStyles from "./style";
 
 const CustomBanner = (props) => {
+  console.log("props", props);
   const classes = CustomBannerStyles();
   return (
     <>
       <Hidden xsDown>
         {props?.data.map((e) => {
+          console.log("e", e);
           return (
             <Grid container>
               <Grid item xs={12}>
