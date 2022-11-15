@@ -3,18 +3,17 @@ import React from "react";
 import CustomBannerStyles from "./style";
 
 const CustomBanner = (props) => {
-  console.log("props", props);
   const classes = CustomBannerStyles();
   return (
     <>
       <Hidden xsDown>
-        {props?.data.map((e) => {
+        {props?.value.map((e) => {
           console.log("e", e);
           return (
             <Grid container>
               <Grid item xs={12}>
                 <div className={classes.bannerImage}>
-                  <img src={e?.image} alt="banner" />
+                  <img src={e?.web} alt="banner" />
                 </div>
                 <div className={classes.group}>
                   <div className={classes.title}>
@@ -33,12 +32,12 @@ const CustomBanner = (props) => {
       {/* MOBILE SCREEN */}
 
       <Hidden smUp>
-        {props?.data.map((val) => {
+        {props?.value.map((val) => {
           return (
             <Grid container>
               <Grid item xs={12}>
                 <div className={classes.mobileBanner}>
-                  <img src={val?.image_mobile} alt="banner" />
+                  <img src={val?.mobile} alt="banner" />
                 </div>
                 <div className={classes.titleGroup}>
                   <div className={classes.mobileTitle}>

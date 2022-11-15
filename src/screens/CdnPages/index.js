@@ -9,10 +9,40 @@ import { QueryForm } from "components";
 import { BannerComponent, SlideImgMediaCard } from "components";
 import { CDNPAGES } from "queries/cdnPages";
 import Storelocator from "components/storelocator/storelocator";
-
+import CustomBanner from "components/customBanner/customBanner";
+import CustomCard from "components/customCard/customCard";
+import { CustomApplication } from "screens/customApplication";
 
 function CdnPages(props) {
   const slider = React.createRef();
+
+  // view more button click state
+  const [count, setCount] = useState(3);
+
+  // card content send to form apllication state
+  const [content, setContent] = useState("");
+
+  // card and form hide, show state
+  const [enable, setEnable] = useState(false);
+
+  // Career page view more button click function
+
+  const careerViewMoreClick = () => {
+    setCount(count + 3);
+  };
+
+  // Career page card apply now button click function
+
+  const careerCardApplyNow = (value) => {
+    setContent(value);
+    setEnable(!enable);
+  };
+
+  // Career page form submit click function
+
+  const formSubmitClick = () => {
+    setEnable(!enable);
+  };
 
   useEffect(() => {
     const url = window.location.pathname.split("-")[1];
@@ -37,6 +67,7 @@ function CdnPages(props) {
   const [state, setState] = useState([]);
 
   const handleComponents = (val) => {
+    console.log("valueeee", val);
     switch (val.component) {
       case "BannerComponent": {
         console.log("valueRender", val?.props);
@@ -44,7 +75,7 @@ function CdnPages(props) {
           <BannerComponent
             banners={val?.props?.banners}
             dataCarousel={
-              val?.props?.banners.length > 1 ? "multiple" : "single" 
+              val?.props?.banners.length > 1 ? "multiple" : "single"
             }
           />
         );
@@ -64,8 +95,25 @@ function CdnPages(props) {
       case "QueryForm": {
         return <QueryForm image={val?.props?.image} />;
       }
-      case "Storelocator":{
-        return <Storelocator value={val?.props?.storeData} />
+      case "Storelocator": {
+        return <Storelocator value={val?.props?.storeData} />;
+      }
+      case "CustomBanner": {
+        return <CustomBanner value={val?.props?.banners} />;
+      }
+      case "CareerCard": {
+        return !enable ? (
+          <CustomCard
+            value={val?.props?.cardContent.filter(
+              (value, index) => index < count
+            )}
+            handleRequest={careerViewMoreClick}
+            enable={enable}
+            buttonClick={careerCardApplyNow}
+          />
+        ) : (
+          <CustomApplication data={content} handleClick={formSubmitClick} />
+        );
       }
       default: {
         return <h1></h1>;

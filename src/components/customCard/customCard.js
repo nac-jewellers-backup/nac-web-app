@@ -4,6 +4,7 @@ import CustomCardStyles from "./style";
 
 const CustomCard = (props) => {
   const classes = CustomCardStyles();
+
   return (
     <>
       {/* TITLE */}
@@ -12,7 +13,7 @@ const CustomCard = (props) => {
         <Typography>Current Openings</Typography>
       </div>
       <Hidden xsDown>
-        {props?.data?.map((e) => {
+        {props?.value?.map((e) => {
           return (
             <Card className={classes.cardSection}>
               <div className={classes.firstLayer}>
@@ -25,7 +26,7 @@ const CustomCard = (props) => {
                   </div>
                 </div>
                 <div className={classes.right}>
-                  <Button onClick={() => props?.handleClick(e)}>
+                  <Button onClick={() => props?.buttonClick(e)}>
                     {e?.button_Text}
                   </Button>
                 </div>
@@ -41,7 +42,7 @@ const CustomCard = (props) => {
       {/* MOBILE SCREEN */}
 
       <Hidden smUp>
-        {props?.data?.map((val) => {
+        {props?.value?.map((val) => {
           return (
             <Card className={classes.cardMobile}>
               <div className={classes.roleLayer}>
@@ -57,7 +58,7 @@ const CustomCard = (props) => {
               </div>
               <div className={classes.buttonLayer}>
                 <div
-                  onClick={() => props?.handleClick(val)}
+                  onClick={() => props?.buttonClick(val)}
                   className={classes.buttonMobile}
                 >
                   Apply Now
@@ -67,6 +68,27 @@ const CustomCard = (props) => {
           );
         })}
       </Hidden>
+
+      
+      {/* VIEW MORE */}
+      {!props?.enable && (
+        <Hidden xsDown>
+          <div className={classes.viewMore}>
+            <Button onClick={props?.handleRequest}>View More</Button>
+          </div>
+        </Hidden>
+      )}
+
+      {/* VIEW MORE MOBILE */}
+      {!props?.enable && (
+        <Hidden smUp>
+          <div className={classes.viewMoreMobile}>
+            <div onClick={props?.handleRequest} className={classes.viewMoreButton}>
+              View More
+            </div>
+          </div>
+        </Hidden>
+      )}
     </>
   );
 };
