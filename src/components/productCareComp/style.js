@@ -99,6 +99,25 @@ const ProductCareStyles = makeStyles((theme) => ({
 
   odd: {
     order: 2,
+    [theme.breakpoints.down("md")]: {
+      order: 2,
+      paddingBottom: "0px !important",
+    },
+    [theme.breakpoints.up("sm")]: {
+      order: 2,
+      paddingBottom: "0px !important",
+
+    },
+    [theme.breakpoints.down("sm")]: {
+      order: "unset",
+      paddingBottom: "0px !important",
+
+    },
+    [theme.breakpoints.down("xs")]: {
+      order: "unset",
+      paddingBottom: "0px !important",
+
+    },
   },
 
   even: {

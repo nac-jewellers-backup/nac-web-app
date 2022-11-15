@@ -3,7 +3,6 @@ import { Card, Grid, Typography } from "@material-ui/core";
 import ProductCareStyles from "./style";
 
 const ProductCareComp = (props) => {
-  console.log("1234", props);
   const classes = ProductCareStyles();
   return (
     <Grid container className={classes.contentText}>
@@ -16,6 +15,7 @@ const ProductCareComp = (props) => {
                 <Grid
                   item
                   xs={12}
+                  md={6}
                   lg={6}
                   className={index % 2 === 0 ? classes.even : classes.odd}
                 >
@@ -23,7 +23,7 @@ const ProductCareComp = (props) => {
                     <img src={e?.img} alt="dummy.jpg" />
                   </div>
                 </Grid>
-                <Grid item xs={12} lg={6}>
+                <Grid item xs={12} md={6} lg={6}>
                   <div className={classes.main}>
                     <div className={classes.heading}>
                       <Typography>{e?.heading}</Typography>

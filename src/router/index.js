@@ -183,7 +183,7 @@ export const RouterApp = (props) => {
       />
       <Route
         key="AboutUs"
-        component={AboutusPage}
+        component={AboutUsPageNew}
         exact
         path={routes.AboutUsPage}
       />
