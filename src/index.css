@@ -25,6 +25,17 @@
     font-weight: 500;
   }
 
+  @font-face {
+  font-family: "myraid-pro-regular";
+    src: url("./fonts/Myriad/MyriadPro-Regular.ttf");
+    font-weight: 500;
+  }
+
+  @font-face {
+    font-family: "myraid-pro-light";
+    src: url("./fonts/Myriad/MyriadPro-Light.otf") format('truetype');
+  }
+
 body {
   margin: 0;
   font-family: notoSerif-regular !important;
