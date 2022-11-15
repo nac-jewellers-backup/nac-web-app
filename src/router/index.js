@@ -113,7 +113,7 @@ export const RouterApp = (props) => {
       <Route key="Faqs" component={FaqDetails} exact path={routes.Faqs} />
       <Route
         key="ProductCare"
-        component={Faqs}
+        component={ProductCare}
         exact
         path={routes.ProductCare}
       />

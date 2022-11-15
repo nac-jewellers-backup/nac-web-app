@@ -6,7 +6,7 @@ const ProfileUseStyles = makeStyles((theme) => ({
     padding: "70px 100px ",
     [theme.breakpoints.down("md")]: {
       padding: "30px 50px !important",
-      display: "block"
+      display: "flex"
     },
     [theme.breakpoints.down("xs")]: {
       padding: "20px 10px !important",
