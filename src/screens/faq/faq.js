@@ -28,7 +28,7 @@ const FaqDetails = () => {
         <div>
           <CommonContent faq data={faqData} />
         </div>
-        <div>
+        <div className={classes.footer}>
           <Footer />
         </div>
       </Grid>

@@ -4,14 +4,37 @@
 } */
 /* @value assetURL: 'https://assets.stylori.com/'; */
 
-/* @font-face {
-    font-family: notoSerif-regular;
-    src: local('notoSerif-regular'), url(https://styloriimages-staging.s3.ap-south-1.amazonaws.com/nac_fonts/NotoSerif-Regular.ttf) format('truetype');
-   
-    font-weight: 400;
-    font-style: normal;
-    font-display: fallback;
-} */
+  @font-face {
+      font-family: notoSerif-regular;
+      src: local('notoSerif-regular'), url(https://styloriimages-staging.s3.ap-south-1.amazonaws.com/nac_fonts/NotoSerif-Regular.ttf) format('truetype');
+    
+      font-weight: 400;
+      font-style: normal;
+      font-display: fallback;
+  }
+
+  @font-face {
+    font-family: notoSerif-bold;
+    src:local('notoSerif-bold'), url(https://styloriimages-staging.s3.ap-south-1.amazonaws.com/nac_fonts/NotoSerif-Bold.ttf) format('truetype');
+    font-weight: 500;
+  }
+
+  @font-face {
+    font-family: notoSerif-italic;
+    src:local('notoSerif-italic'), url(https://styloriimages-staging.s3.ap-south-1.amazonaws.com/nac_fonts/NotoSerif-Italic.ttf) format('truetype');
+    font-weight: 500;
+  }
+
+  @font-face {
+  font-family: "myraid-pro-regular";
+    src: url("./fonts/Myriad/MyriadPro-Regular.ttf");
+    font-weight: 500;
+  }
+
+  @font-face {
+    font-family: "myraid-pro-light";
+    src: url("./fonts/Myriad/MyriadPro-Light.otf") format('truetype');
+  }
 
 body {
   margin: 0;

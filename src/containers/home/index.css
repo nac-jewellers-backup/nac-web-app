@@ -137,6 +137,7 @@
     line-height: 23px;
     /* width: calc(50% - 20px); */
     text-transform: capitalize;
+    font-size: 11px;
   }
 }
 

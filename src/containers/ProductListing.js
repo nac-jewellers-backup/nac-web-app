@@ -86,7 +86,7 @@ class Stylori extends React.Component {
       arrowsImg: true,
       dotsClass: "slickdev",
       accessibility: true,
-      autoplaySpeed: 4000,
+      autoplaySpeed: 7000,
       centerMode: false,
       focusOnSelect: false,
       pauseOnHover: false,

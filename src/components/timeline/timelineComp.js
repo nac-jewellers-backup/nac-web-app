@@ -9,6 +9,13 @@ import TimelineEntry from "./timeLineEntry";
 const useStyles = makeStyles((theme) => ({
   timelinegrid: {
     margin: "20px 0",
+    padding: "40px 30px ",
+    [theme.breakpoints.down("md")]: {
+      padding: "30px 30px !important",
+    },
+    [theme.breakpoints.down("xs")]: {
+      padding: "20px 10px !important",
+    },
   },
   timelineItemGrid: {
     overflowX: "hidden",

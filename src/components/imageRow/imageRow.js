@@ -6,7 +6,7 @@ const ProfileUseStyles = makeStyles((theme) => ({
     padding: "70px 100px ",
     [theme.breakpoints.down("md")]: {
       padding: "30px 50px !important",
-      display: "block"
+      display: "flex"
     },
     [theme.breakpoints.down("xs")]: {
       padding: "20px 10px !important",
@@ -38,18 +38,24 @@ const ProfileUseStyles = makeStyles((theme) => ({
     fontStyle: "italic",
     fontSize: "19px",
     fontWeight: "700",
+    marginTop: "30px",
     [theme.breakpoints.down("xs")]: {
-      fontSize: "17px",
+      fontSize: "15px",
       fontWeight: "600",
+      marginTop: "10px",
+
     },
   },
   role: {
     color: "#6e6f71",
     fontSize: "19px",
     fontWeight: "700",
+    marginTop: "8px",
     [theme.breakpoints.down("xs")]: {
-      fontSize: "17px",
+      fontSize: "15px",
       fontWeight: "600",
+      marginTop: "4px",
+
     },
   }
 }))

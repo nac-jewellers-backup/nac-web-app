@@ -42,10 +42,10 @@ export const mainlist = [
     name: "SAVING SCHEME",
     url: "https://nacsavings.com/",
   },
-  {
-    name: "EXPERIENCES",
-    url: "/experiences",
-  },
+  // {
+  //   name: "EXPERIENCES",
+  //   url: "/experiences",
+  // },
   {
     name: "STYLORI",
     url: "https://www.stylori.com/",
@@ -601,7 +601,7 @@ export const Jewellery = {
         },
         {
           icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
-          name: " Gold",
+          name: "Gold",
           url: "/gold-necklaces-jewellery",
         },
       ],
@@ -786,7 +786,7 @@ export const Jewellery = {
         },
         {
           icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
-          name: " Gold",
+          name: "Gold",
         },
         // {
         //   icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
@@ -897,7 +897,7 @@ export const Jewellery = {
         },
         {
           icon: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
-          name: " Gold",
+          name: "Gold",
           url: "/gold-rings-jewellery",
         },
       ],
@@ -1244,10 +1244,10 @@ export const menuListHeader = [
     title: "Collections".toUpperCase(),
     url: "/jewellery",
   },
-  {
-    title: "Experience".toUpperCase(),
-    url: "/experiences",
-  },
+  // {
+  //   title: "Experience".toUpperCase(),
+  //   url: "/experiences",
+  // },
   {
     title: "Saving scheme".toUpperCase(),
     url: "https://nacsavings.com/",

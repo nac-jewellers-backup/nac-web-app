@@ -310,21 +310,8 @@ mutation MyMutation(
 `;
 
 export const SEND_ENQUIREY =`
-mutation {
-  createAppointment(
-    input: {
-      appointment: {
-        customerName: ""
-        appointmentTypeId: 5
-        mobile: ""
-        mobileCountryCode: ""
-        email: ""
-        isActive: true
-        specialRequests: "Diwali 2022"
-        comments: ""
-      }
-    }
-  ) {
+mutation($appointment: AppointmentInput!) {
+  createAppointment(input: { appointment: $appointment }) {
     appointment {
       id
     }

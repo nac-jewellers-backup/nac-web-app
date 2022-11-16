@@ -4,31 +4,31 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/index.html"
   },
   {
-    "revision": "01b0654cca52c0faa664",
+    "revision": "eb8f1034bf2818f6d5de",
     "url": "/static/css/2.css"
   },
   {
-    "revision": "a45a33b8e19352dae27e",
+    "revision": "69e75757b7c96396ee31",
     "url": "/static/css/3.css"
   },
   {
-    "revision": "c525b0b392244112718b",
+    "revision": "b03c2e4c15a519e0e221",
     "url": "/static/css/main.css"
   },
   {
-    "revision": "01b0654cca52c0faa664",
+    "revision": "eb8f1034bf2818f6d5de",
     "url": "/static/js/2.js"
   },
   {
-    "revision": "a45a33b8e19352dae27e",
+    "revision": "69e75757b7c96396ee31",
     "url": "/static/js/3.js"
   },
   {
-    "revision": "6244ca605438968fa7d6",
+    "revision": "2067715690748006f93c",
     "url": "/static/js/4.js"
   },
   {
-    "revision": "c525b0b392244112718b",
+    "revision": "b03c2e4c15a519e0e221",
     "url": "/static/js/main.js"
   },
   {
@@ -58,6 +58,38 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "4b43159ab7b19a9eae97ccd819463473",
     "url": "/static/media/Lotus_Mobile.jpg"
+  },
+  {
+    "revision": "4e2217c1a8309b2762499eb007d4109d",
+    "url": "/static/media/MyriadPro-Light.otf"
+  },
+  {
+    "revision": "7ac043ce58c2e61adcf7ebac9625d31b",
+    "url": "/static/media/MyriadPro-Regular.ttf"
+  },
+  {
+    "revision": "42ab08a78e1c852c370225fd65576061",
+    "url": "/static/media/NAC---Desktop-UI---About Us, FAQ, Privacy, T&C-10.jpg"
+  },
+  {
+    "revision": "da674f2a94672bb546311eb6d023c6d4",
+    "url": "/static/media/NAC---Desktop-UI---About Us, FAQ, Privacy, T&C-5.jpg"
+  },
+  {
+    "revision": "19f6e1085e3c7180af2afe16ef37eb50",
+    "url": "/static/media/NAC---Desktop-UI---About Us, FAQ, Privacy, T&C-6.jpg"
+  },
+  {
+    "revision": "ceff4e64a1a70449df146a39417c40fa",
+    "url": "/static/media/NAC---Desktop-UI---About Us, FAQ, Privacy, T&C-7.jpg"
+  },
+  {
+    "revision": "0b6c1cc0cff5bc7918ef10e3701f0e2c",
+    "url": "/static/media/NAC---Desktop-UI---About Us, FAQ, Privacy, T&C-8.jpg"
+  },
+  {
+    "revision": "25dcca4ead002090d96ffb05fb269de2",
+    "url": "/static/media/NAC---Desktop-UI---About Us, FAQ, Privacy, T&C-9.jpg"
   },
   {
     "revision": "57a7037a4c4307321286505a75732883",
@@ -122,6 +154,30 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "51fc5370cb4d7e537c06ea117f090ba2",
     "url": "/static/media/logout.svg"
+  },
+  {
+    "revision": "4d7fcda5f5b21e33916e363c7052c993",
+    "url": "/static/media/pic_1.jpg"
+  },
+  {
+    "revision": "c4f9847964c79dea638827f5172bdf02",
+    "url": "/static/media/pic_2.jpg"
+  },
+  {
+    "revision": "dbf98a5f3894b93e779f16c8b5338432",
+    "url": "/static/media/pic_3.jpg"
+  },
+  {
+    "revision": "929c2669d4593b22f5c228b5dee8d9c0",
+    "url": "/static/media/pic_4.jpg"
+  },
+  {
+    "revision": "7b460f40a1259dcddddac683d97ab3ab",
+    "url": "/static/media/pic_5.jpg"
+  },
+  {
+    "revision": "4910f7a31d113d9eab2f3b27676b294c",
+    "url": "/static/media/pic_6.jpg"
   },
   {
     "revision": "b0c24c44cdbcd2228f0f6fef2740195f",
