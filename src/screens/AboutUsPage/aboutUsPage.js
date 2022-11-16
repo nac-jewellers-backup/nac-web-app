@@ -30,7 +30,6 @@ const AboutUsPageNew = (props) => {
         initialcontent={state.content}
         timelineData={aboutusTData}
       />
-
       <ImageCardRow data={aboutusImgCard} />
 
     </div>
