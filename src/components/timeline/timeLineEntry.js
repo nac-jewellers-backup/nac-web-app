@@ -19,7 +19,6 @@ export default function TimelineEntry(props) {
         <div
             className="timeline-entry"
             onClick={() => {
-                debugger
                 setstate({
                     ...state,
                     timelineImage: image,

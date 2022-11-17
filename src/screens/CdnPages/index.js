@@ -9,6 +9,11 @@ import { QueryForm } from "components";
 import { BannerComponent, SlideImgMediaCard } from "components";
 import { CDNPAGES } from "queries/cdnPages";
 import Storelocator from "components/storelocator/storelocator";
+import AboutCollectionComp from "components/aboutCollection";
+import AboutBookAppointment from "components/aboutAppointment";
+import SpclTitleDescr from "components/spclTitleDescr";
+import { Title } from "../../containers/home/titles";
+
 
 
 function CdnPages(props) {
@@ -33,6 +38,7 @@ function CdnPages(props) {
         setState(dataRecieved);
       });
   }, []);
+  // console.log(url, "url ");
 
   const [state, setState] = useState([]);
 
@@ -44,7 +50,7 @@ function CdnPages(props) {
           <BannerComponent
             banners={val?.props?.banners}
             dataCarousel={
-              val?.props?.banners.length > 1 ? "multiple" : "single" 
+              val?.props?.banners.length > 1 ? "multiple" : "single"
             }
           />
         );
@@ -57,15 +63,54 @@ function CdnPages(props) {
           />
         );
       }
+      case "titleComp": {
+        return (
+          <Title
+            title={val?.props?.title}
+          />
+        );
+      }
       case "SlideImgMediaCard": {
         return <SlideImgMediaCard listProduct={val?.props?.listingProducts} />;
       }
       case "QueryForm": {
         return <QueryForm image={val?.props?.image} />;
       }
-      case "Storelocator":{
+      case "Storelocator": {
         return <Storelocator value={val?.props?.storeData} />
       }
+      case "SpclTitleDescr": {
+        return (
+          <SpclTitleDescr
+            data={val?.props?.storeData}
+          />
+        );
+      }
+      case "TestimonialTwo": {
+        return (
+          <>
+
+            <AboutCollectionComp TestimonialSec={false} CollectionData={val?.props?.storeData} />
+          </>
+
+        )
+      }
+      case "AboutBookAppointment": {
+        return (
+          <>
+            <AboutBookAppointment
+              data={val?.props}
+            />
+          </>
+        )
+      }
+
+      case "Testimonial": {
+        return (
+          <AboutCollectionComp TestimonialSec CollectionData={val?.props?.storeData} />
+        )
+      }
+
       default: {
         return <h1></h1>;
       }
