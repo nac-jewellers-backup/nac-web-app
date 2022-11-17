@@ -31,6 +31,10 @@ const CCustomApplicationStyles = makeStyles((theme) => ({
     },
   },
 
+  mainGroup: {
+    width: "100%",
+  },
+
   headingGroup: {
     textAlign: "center",
     padding: "30px 40px",

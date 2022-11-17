@@ -17,6 +17,7 @@ const CustomCardStyles = makeStyles((theme) => ({
   },
 
   cardSection: {
+    width: "100%",
     padding: "20px 35px",
     margin: "7px 65px 30px 65px",
     borderRadius: "0px !important",

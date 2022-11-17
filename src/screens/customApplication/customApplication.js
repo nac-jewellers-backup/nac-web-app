@@ -8,10 +8,9 @@ import React from "react";
 import CCustomApplicationStyles from "./style";
 
 const CustomApplication = (props) => {
-  console.log("props", props?.data);
   const classes = CCustomApplicationStyles();
   return (
-    <div>
+    <div className={classes.mainGroup}>
       <div className={classes.headingGroup}>
         <div className={classes.role}>
           <Typography>{props?.data.job_Role}</Typography>
