@@ -9,7 +9,7 @@ const CardUseStyles = makeStyles((theme) => ({
     marginBottom: "30px",
     [theme.breakpoints.down("md")]: {
       padding: "30px 50px !important",
-      display: "block",
+      display: "flex",
       marginBottom: "10px",
 
     },
