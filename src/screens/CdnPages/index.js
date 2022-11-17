@@ -12,6 +12,8 @@ import Storelocator from "components/storelocator/storelocator";
 import CustomBanner from "components/customBanner/customBanner";
 import CustomCard from "components/customCard/customCard";
 import { CustomApplication } from "screens/customApplication";
+import { CollectionHeader } from "components/collectionHeader";
+import { CollectionCards } from "components/collectionCards";
 
 function CdnPages(props) {
   const slider = React.createRef();
@@ -113,6 +115,12 @@ function CdnPages(props) {
         ) : (
           <CustomApplication data={content} handleClick={formSubmitClick} />
         );
+      }
+      case "CollectionHeader": {
+        return <CollectionHeader value={val?.props?.header} />;
+      }
+      case "CollectionCards": {
+        return <CollectionCards value={val?.props?.cardContent} />;
       }
       default: {
         return <h1></h1>;
