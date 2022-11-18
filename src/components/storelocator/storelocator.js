@@ -1,8 +1,10 @@
-import { Box, Button, Grid, IconButton, Typography } from "@material-ui/core";
+import { Box, Button, Grid,  Typography } from "@material-ui/core";
 import { CommonTitle } from "components/CommonTitle";
 import React from "react";
-import { FiCornerUpRight } from "react-icons/fi";
 import style from "./style";
+import degree from "../../assets/degree360.png";
+import getDirections from "../../assets/storeDirection.png";
+
 export default function Storelocator(props) {
   const value = props.value;
   const classes = style();
@@ -53,17 +55,18 @@ export default function Storelocator(props) {
                       </Button>
                     </a>
                   </div>
-                  <Box display="flex" alignItems="center" marginTop="14px">
-                    <Box>&nbsp;</Box>
-                    <Box>
+                  <Box display="flex" alignItems="center" marginTop="14px" gridGap={"8px"}>
+                    <div> 
                       <a href={store.location} target="_blank">
-                        <IconButton
-                          size="small"
-                          style={{ backgroundColor: "#2F348B", color: "white" }}
-                        >
-                          <FiCornerUpRight />
-                        </IconButton>
+                        <img src={degree} style={{width:"26px"}} />
                       </a>
+                    </div>
+                    <Box>
+                    <div> 
+                      <a href={store.location} target="_blank">
+                        <img src={getDirections} style={{width:"26px"}} />
+                      </a>
+                    </div>
                     </Box>
                     <Box>
                       <span className={classes.directions}>&nbsp;&nbsp;Get directions</span>

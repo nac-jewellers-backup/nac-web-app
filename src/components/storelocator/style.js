@@ -49,7 +49,6 @@ const styles = makeStyles(theme => ({
         fontSize: "20px",
         color: "gray !important",
         // fontWeight: "bold"
-        fontFamily:"myraid-pro-regular !important"
     },
     shadow: {
         boxShadow: "4px 4px 4px #a5a4a5 !important",
@@ -68,7 +67,6 @@ const styles = makeStyles(theme => ({
         paddingBottom: "10px",
         paddingTop: "10px",
         lineHeight: "1.4",
-        fontFamily:"myraid-pro-light !important",
         minHeight:"60px"
     },
     mainWidths: {
