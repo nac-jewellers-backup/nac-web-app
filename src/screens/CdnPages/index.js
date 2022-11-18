@@ -12,6 +12,7 @@ import Storelocator from "components/storelocator/storelocator";
 import CustomBanner from "components/customBanner/customBanner";
 import CustomCard from "components/customCard/customCard";
 import { CustomApplication } from "screens/customApplication";
+import { CustomNewsRoom } from "components/customNewsRoom";
 
 function CdnPages(props) {
   const slider = React.createRef();
@@ -113,6 +114,9 @@ function CdnPages(props) {
         ) : (
           <CustomApplication data={content} handleClick={formSubmitClick} />
         );
+      }
+      case "CustomNews": {
+        return <CustomNewsRoom value={val?.props?.cardContent} />;
       }
       default: {
         return <h1></h1>;
