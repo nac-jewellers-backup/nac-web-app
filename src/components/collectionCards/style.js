@@ -21,7 +21,7 @@ const CollectionCardsStyles = makeStyles((theme) => ({
     "& img": {
       width: "100%",
     },
-  },
+  }, 
 
   buttonGroup: {
     "& button": {
