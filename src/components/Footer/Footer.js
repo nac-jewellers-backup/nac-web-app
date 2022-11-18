@@ -386,7 +386,7 @@ export default function Footer(props) {
           Title: "+91 95974 57555 - WhatsApp",
         },
         {
-          url: "/careersPage",
+          url: "/static-careersPage",
           Title: "Careers",
         },
       ],

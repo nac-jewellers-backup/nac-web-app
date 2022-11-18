@@ -6,5 +6,7 @@ export * from './CdnPages';
 export * from "./termsAndConditions";
 export * from "./privacyPolicy";
 export * from "./productCare";
+export * from "./careerPage";
+export * from "./customApplication";
 
 export { Stylori };

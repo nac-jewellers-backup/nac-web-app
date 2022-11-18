@@ -59,6 +59,8 @@ export const routes = {
   PrivacyDetails: "/privacy_Details",
   FaqDetails: "/faqDetails",
   ProductCareNew: "/productCareNew",
+  CareerPage: "/careerPage",
+  CustomApplication: "/form",
 };
 
 export default routes;
