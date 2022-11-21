@@ -4,7 +4,6 @@ import CustomNewsRoomStyles from "./style";
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 
 const CustomNewsRoom = (props) => {
-  console.log("logs", props);
   const classes = CustomNewsRoomStyles();
   return (
     <div className={classes.main}>

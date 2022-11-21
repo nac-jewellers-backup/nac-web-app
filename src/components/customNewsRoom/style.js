@@ -33,13 +33,15 @@ const CustomNewsRoomStyles = makeStyles((theme) => ({
     textAlign: "center",
     padding: "30px 20px",
     "& p": {
-      minHeight: "48px",
+      minHeight: "81px",
       fontSize: "18px",
       color: "#514747",
       [theme.breakpoints.down("md")]: {
+        minHeight: "48px",
         fontSize: "16px",
       },
       [theme.breakpoints.down("xs")]: {
+        minHeight: "39px",
         fontSize: "13px",
       },
     },
