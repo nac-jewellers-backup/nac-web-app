@@ -8,7 +8,7 @@ import getDirections from "../../assets/storeDirection.png";
 export default function Storelocator(props) {
   const value = props.value;
   const classes = style();
-  
+
   return (
     <div className={classes.mainWidths}>
       {value.map((val,i) => (

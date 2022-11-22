@@ -933,7 +933,6 @@ export default function Footer(props) {
                 borderRadius: "0px",
               }}
               onClick={() => {
-                debugger;
                 window.location.href = "/static-store";
               }}
             >
