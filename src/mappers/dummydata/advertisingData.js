@@ -1,5 +1,3 @@
-import React from "react";
-
 export const AdvertisingPageData = [
   {
     component: "CustomNews",
@@ -7,64 +5,43 @@ export const AdvertisingPageData = [
       cardContent: [
         {
           img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/collection+page/Group+55%402x.png",
-          description: (
-            <div>
-              NAC Jewellers The Rewind Collection{" "}
-              <span>For Antique Jewellery Line</span>
-            </div>
-          ),
+          description: "NAC Jewellers The Rewind Collection",
+          italic_text: "For Antique Jewellery Line",
           button_text: "View",
           url: "",
         },
         {
           img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/collection+page/Group+68%402x.png",
-          description: (
-            <div>
-              NAC Jewellers The Breezee Collection{" "}
-              <span>For Light Weight Jewellery</span>
-            </div>
-          ),
+          description: "AC Jewellers The Breezee Collection",
+          italic_text: "For Light Weight Jewellery",
           button_text: "View",
           url: "",
         },
         {
           img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/collection+page/Group+64%402x.png",
-          description: (
-            <div>
-              NAC - Muhurtham Jewellery <span>For Bridal Collection</span>
-            </div>
-          ),
+          description: " NAC - Muhurtham Jewellery",
+          italic_text: "For Bridal Collection",
           button_text: "View",
           url: "",
         },
         {
           img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/collection+page/Group+50%402x.png",
-          description: (
-            <div>
-              NAC Jewellers Diamond Ad <span>For The Diamond Collection</span>
-            </div>
-          ),
+          description: "NAC Jewellers Diamond Ad",
+          italic_text: "For The Diamond Collection",
           button_text: "View",
           url: "",
         },
         {
           img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/collection+page/Group+59%402x.png",
-          description: (
-            <div>
-              NAC - Breezee Light Weight Jewellery{" "}
-              <span>For Breezee Collection</span>
-            </div>
-          ),
+          description: "NAC - Breezee Light Weight Jewellery",
+          italic_text: "For Breezee Collection",
           button_text: "View",
           url: "",
         },
         {
           img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/collection+page/Group+73%402x.png",
-          description: (
-            <div>
-              NAC - Muhurtham Collection <span>For Muhurtham Collection</span>
-            </div>
-          ),
+          description: "NAC - Muhurtham Collection",
+          italic_text: "For Muhurtham Collection",
           button_text: "View",
           url: "",
         },
