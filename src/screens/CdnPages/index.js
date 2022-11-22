@@ -17,6 +17,8 @@ import CustomBanner from "components/customBanner/customBanner";
 import CustomCard from "components/customCard/customCard";
 import { CustomApplication } from "screens/customApplication";
 import { CustomAdvertisement } from "components/customAdvertisment";
+import { CustomNewsRoom } from "components/customNewsRoom";
+import { TitleAndDescription } from "components";
 
 function CdnPages(props) {
   const slider = React.createRef();
@@ -123,6 +125,9 @@ function CdnPages(props) {
           <CustomApplication data={content} handleClick={formSubmitClick} />
         );
       }
+      case "CustomNews": {
+        return <CustomNewsRoom value={val?.props?.cardContent} />;
+      }
       case "SpclTitleDescr": {
         return <SpclTitleDescr data={val?.props?.storeData} />;
       }
@@ -155,6 +160,14 @@ function CdnPages(props) {
 
       case "CustomAdvertising": {
         return <CustomAdvertisement value={val?.props?.cardContent} />;
+      }
+      case "TitleAndDescription": {
+        return (
+          <TitleAndDescription
+            title={val?.props?.title}
+            description={val?.props?.description}
+          />
+        );
       }
 
       default: {

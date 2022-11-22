@@ -15,3 +15,4 @@ export {
     Filter,
     Slideshow,
 }
+export * from "./titleAndDescription";
