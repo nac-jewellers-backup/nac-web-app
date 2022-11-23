@@ -17,6 +17,7 @@ import CustomBanner from "components/customBanner/customBanner";
 import CustomCard from "components/customCard/customCard";
 import { CustomApplication } from "screens/customApplication";
 import { CustomNewsRoom } from "components/customNewsRoom";
+import { ContactUsForm } from "components/contactUsForm";
 
 function CdnPages(props) {
   const slider = React.createRef();
@@ -154,6 +155,10 @@ function CdnPages(props) {
             CollectionData={val?.props?.storeData}
           />
         );
+      }
+
+      case "formContent": {
+        return <ContactUsForm value={val?.props} />;
       }
 
       default: {
