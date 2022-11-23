@@ -90,7 +90,7 @@
   },
   "scripts": {
     "generate-build-version": "node generate-build-version",
-    "start": "node scripts/start",
+    "start": "npm run serve",
     "start:dev": "env-cmd -f .env.development npm run start",
     "start:staging": "env-cmd -f .env.staging npm run start",
     "start:production": "env-cmd -f .env.production npm run start",
