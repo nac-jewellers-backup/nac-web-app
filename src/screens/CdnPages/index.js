@@ -160,7 +160,7 @@ function CdnPages(props) {
       }
 
       case "formContent": {
-        return <ContactUsForm value={val?.props} />;
+        return <ContactUsForm value={val?.props?.cardContent} />;
       }
       case "CustomAdvertising": {
         return <CustomAdvertisement value={val?.props?.cardContent} />;

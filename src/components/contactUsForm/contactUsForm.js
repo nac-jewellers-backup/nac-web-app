@@ -46,7 +46,7 @@ const ContactUsForm = (props) => {
             container
             style={{ justifyContent: "center" }}
           >
-            {props?.value?.smallCard.map((val) => {
+            {props?.value.map((val) => {
               return (
                 <Grid item xs={8} sm={8} md={6} lg={6}>
                   <div className={classes.cardSection}>
@@ -90,7 +90,7 @@ const ContactUsForm = (props) => {
 
       <div className={classes.mainForm}>
         <Grid container>
-          {props?.value?.cardContent.map((val) => {
+          {props?.value?.map((val) => {
             return (
               <Grid item xs={12}>
                 <div className={classes.mainRoot}>
