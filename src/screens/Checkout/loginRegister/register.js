@@ -41,7 +41,7 @@ const RegisterComponent = (props) => {
                                         {window.location.pathname === "/registers" ? "Register" : "New user registration"}</>}
                                 </h5>}
                             <Grid container spacing={12}>
-                                {paths && <Grid item lg={2} xs={4}>
+                                {paths && <Grid item lg={2} xs={4} style={{marginTop:10}}>
                                     <SimpleSelect  name={salutation && salutation.length > 0 ? salutation : valuesadrees.salutation}  selectData={[
                         {label:"Mr",value:"Mr"},
                         {label:"Mrs",value:"Mrs"},
@@ -150,7 +150,7 @@ const RegisterComponent = (props) => {
                                 </>
                             }
                             <Grid container spacing={12}>
-                                {!paths && <Grid item lg={4} xs={4}>
+                                {!paths && <Grid item lg={4} xs={4} style={{marginTop:10}}>
                                     <SimpleSelect val={'1'} name={['Select']} selectData={['Mr', 'Mrs', 'Ms']} />
                                 </Grid>}
                                 {!paths && <>
