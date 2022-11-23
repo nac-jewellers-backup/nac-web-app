@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
         textAlign: "center",
         color: "gray",
         [theme.breakpoints.down("xs")]: {
-            fontSize: "16px",
+            fontSize: "13px",
         }
 
     },
@@ -84,8 +84,6 @@ const SpclTitleDescr = (props) => {
                                 &nbsp;&nbsp; &nbsp;&nbsp;EXPLORE&nbsp;&nbsp; &nbsp;&nbsp;
                             </Button>
                         </center>
-                        <br />
-                        <br />
                     </Box>
                 </Box>
                 <br />

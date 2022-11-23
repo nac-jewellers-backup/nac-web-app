@@ -15,17 +15,26 @@ const UseStyles = makeStyles((theme) => ({
         color: "gray",
         fontSize: "23px",
         textAlign: "center",
+        [theme.breakpoints.down("xs")]: {
+            fontSize: "18px !important",
+          },
     },
     sub: {
         color: "gray",
         fontSize: "18px",
         textAlign: "center",
+        [theme.breakpoints.down("xs")]: {
+            fontSize: "15px !important",
+          },
     },
     sub2: {
         textAlign: "center",
         color: "gray",
-        fontSize: "15.92px",
+        fontSize: "16px",
         marginTop: "10px",
+        [theme.breakpoints.down("xs")]: {
+            fontSize: "13px !important",
+          },
     },
     type: {
         display: "flex",
@@ -52,7 +61,7 @@ const UseStyles = makeStyles((theme) => ({
         padding: "9px",
     },
     cardDiv: {
-        margin: "80px 0 "
+        margin: "0px 0px 80px"
     },
 
 }))
@@ -65,7 +74,7 @@ const AboutCollectionComp = (props) => {
             {!Boolean(TestimonialSec) ?
                 // ABOUT THE COLLECTION
                 <Grid container className={classes.cardDiv}>
-                    <Grid item lg={9} md={10} sm={11} xs={11} style={{ margin: "auto" }} >
+                    <Grid item lg={10} md={10} sm={11} xs={11} style={{ margin: "auto" }} >
                         <Grid container>
                             <Title title={"ABOUT THE COLLECTION"} />
                             {CollectionData?.map((val) => {
@@ -95,7 +104,7 @@ const AboutCollectionComp = (props) => {
                 :
                 // TESTIMONIALS
                 <Grid container className={classes.cardDiv}>
-                    <Grid item lg={9} md={10} sm={11} xs={11} style={{ margin: "auto" }} >
+                    <Grid item lg={10} md={10} sm={11} xs={11} style={{ margin: "auto" }} >
                         <Grid container>
                             <Title title="Testimonial" />
 

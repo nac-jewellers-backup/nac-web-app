@@ -8,16 +8,15 @@ export const useStyles = makeStyles((theme) => ({
       },
     },
     headings: {
-      fontSize: "38px",
+      fontSize: "34px",
       color: "#B2832C",
-      fontStyle: "italic",
-      padding: "10px 13px 0px 13px",
+      fontFamily:"notoSerif-italic !important", 
+      padding: "10px",
       [theme.breakpoints.down("md")]: {
-        fontSize: "24px !important",
+        fontSize: "30px !important",
       },
       [theme.breakpoints.down("xs")]: {
-        fontSize: "18px !important",
-        padding: "10px 4px 0px 4px",
+        fontSize: "22px !important",
       },
     },
     subHeader:{
