@@ -16,8 +16,10 @@ import { Title } from "../../containers/home/titles";
 import CustomBanner from "components/customBanner/customBanner";
 import CustomCard from "components/customCard/customCard";
 import { CustomApplication } from "screens/customApplication";
+import { CustomAdvertisement } from "components/customAdvertisment";
 import { CustomNewsRoom } from "components/customNewsRoom";
 import { ContactUsForm } from "components/contactUsForm";
+import { TitleAndDescription } from "components";
 
 function CdnPages(props) {
   const slider = React.createRef();
@@ -159,6 +161,17 @@ function CdnPages(props) {
 
       case "formContent": {
         return <ContactUsForm value={val?.props} />;
+      }
+      case "CustomAdvertising": {
+        return <CustomAdvertisement value={val?.props?.cardContent} />;
+      }
+      case "TitleAndDescription": {
+        return (
+          <TitleAndDescription
+            title={val?.props?.title}
+            description={val?.props?.description}
+          />
+        );
       }
 
       default: {

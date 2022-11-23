@@ -315,7 +315,7 @@ export default function Footer(props) {
           Title: "In The News",
         },
         {
-          url: "/advertising",
+          url: "/static-advertising",
           Title: "Advertisements",
         },
       ],
