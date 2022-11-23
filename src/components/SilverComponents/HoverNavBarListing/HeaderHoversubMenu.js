@@ -1064,13 +1064,13 @@ function HeaderHoverMenuItem(props) {
         }}
       >
         <Grid container item xs={12}>
-          <Grid item xs={3} className={classes.gridmultiplesection}>
+          <Grid item xs={4} className={classes.gridmultiplesection}>
             <Grid item xs={12} style={{ textAlign: "center" }}>
               <Typography className={classes.shoptitle}>
                 SHOP BY STYLE
               </Typography>
             </Grid>
-            <Grid container item xs={12} style={{ padding: "0 25px" }}>
+            <Grid container item xs={12} style={{ padding: "0 30px" }}>
               {valueForData().map((val, index) => {
                 return (
                   <Grid item xs={6}>
@@ -1122,7 +1122,7 @@ function HeaderHoverMenuItem(props) {
           </Grid>
           <Grid
             item
-            xs={6}
+            xs={5}
             className={classes.gridmultiplesection}
             style={{ padding: "0 20px" }}
           >
