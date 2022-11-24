@@ -10,7 +10,7 @@ const CustomCard = (props) => {
       {/* TITLE */}
 
       <div className={classes.title}>
-        <Typography>Current Openings</Typography>
+        <Typography>{(props?.value.length > 0) ? "Current Openings" : "No Current Openings" }</Typography>
       </div>
       <Hidden xsDown>
         {props?.value?.map((e) => {
@@ -71,7 +71,7 @@ const CustomCard = (props) => {
 
       
       {/* VIEW MORE */}
-      {!props?.enable && (
+      {(props?.value.length > 0) && (
         <Hidden xsDown>
           <div className={classes.viewMore}>
             <Button onClick={props?.handleRequest}>View More</Button>
@@ -80,7 +80,7 @@ const CustomCard = (props) => {
       )}
 
       {/* VIEW MORE MOBILE */}
-      {!props?.enable && (
+      {(props?.value.length > 0) && (
         <Hidden smUp>
           <div className={classes.viewMoreMobile}>
             <div onClick={props?.handleRequest} className={classes.viewMoreButton}>
