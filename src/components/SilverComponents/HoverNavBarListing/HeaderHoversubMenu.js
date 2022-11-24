@@ -1473,13 +1473,13 @@ function HeaderHoverMenuItem(props) {
         <Grid container item xs={12}>
           <Grid item xs={9}>
             <Grid item xs={12} style={{ display: "flex" }}>
-              <Grid item xs={6} className={classes.gridmultiplesection}>
+              <Grid item xs={7} className={classes.gridmultiplesection}>
                 <Grid item xs={12} style={{ textAlign: "center" }}>
                   <Typography className={classes.listedItemstitle}>
                     SILVER ARTICLES
                   </Typography>
                 </Grid>
-                <Grid container item xs={12} style={{ padding: "0 25px" }}>
+                <Grid container item xs={12} style={{ padding: "0" }}>
                   {silverItems.map((val, index) => {
                     return (
                       <Grid item xs={4}>
@@ -1526,7 +1526,7 @@ function HeaderHoverMenuItem(props) {
                   })}{" "}
                 </Grid>
               </Grid>
-              <Grid item xs={5} className={classes.gridmultiplesection}>
+              <Grid item xs={4} className={classes.gridmultiplesection}>
                 <Grid container item xs={12}>
                   {silverItems2.map((val, i) => (
                     <Grid item xs={6}>
