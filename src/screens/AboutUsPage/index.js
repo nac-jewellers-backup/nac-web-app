@@ -1,0 +1,1 @@
+export {default as AboutUsPageNew} from "./aboutUsPage";

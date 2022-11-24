@@ -23,17 +23,23 @@ class Accountdetails extends Component {
     };
   }
   handleClick = (e) => {
-    this.setState({ currency: e.target.value, isActive: e.target.value });
+    if(e.target.value === 'logout'){
+      this.setState({
+          modelOpen: true,
+      })
+  }
+  else{
+      this.setState({ currency: e.target.value, isActive: e.target.value });
+  }
   };
 
   Activeaccounts = (name) => {
-    this.setState({ isActive: [name] });
-    window.history.pushState(
-      window.location.href,
-      null,
-      `/account${"-" + name}`
-    );
-  };
+  
+        this.setState({ isActive: [name] })
+        window.location.href = `/account${"-" + name}`
+   
+}
+
   // fun = () => {
   //     const allorder = this.props.allorderdata ? this.props.allorderdata : ""
   //     if (allorder.length > 0) {
@@ -85,6 +91,10 @@ class Accountdetails extends Component {
         label: "All Orders",
         values: "allorders",
       },
+      {
+        label: "Logout",
+        values: "logout",
+      },
     ];
     return (
       <>
@@ -95,137 +105,88 @@ class Accountdetails extends Component {
 
             {/* <Container className="main_container" style={{ width: "60%", margin: "auto" }}> */}
             <div className="panel_body">
-              <Grid
-                container
-                spacing={12}
-                style={{ width: "100%", margin: "auto" }}
-              >
-                <Grid item xs={3}>
-                  <List className="pay-index-subhed" style={{ width: "100%" }}>
-                    <p
-                      className={
-                        this.state.isActive === "profile" ? "backgrund" : ""
-                      }
-                      onClick={() => this.Activeaccounts("profile")}
-                    >
-                      {" "}
-                      Personal Information
-                    </p>
-                    <p
-                      className={
-                        this.state.isActive === "addresses" ? "backgrund" : ""
-                      }
-                      onClick={() => this.Activeaccounts("addresses")}
-                    >
-                      Address Book{" "}
-                    </p>
-                    <p
-                      className={
-                        this.state.isActive === "shoppingcart" ? "backgrund" : ""
-                      }
-                      onClick={() => this.Activeaccounts("shoppingcart")}
-                    >
-                      Shopping Bag (
-                      {this.props.data.length ? this.props.data.length : "0"}){" "}
-                    </p>
-                    <p
-                      className={
-                        this.state.isActive === "wishlist" ? "backgrund" : ""
-                      }
-                      onClick={() => this.Activeaccounts("wishlist")}
-                    >
-                      Wishlist (
-                      {this.props.wishlistdata &&
-                      this.props.wishlistdata.wishlistdata &&
-                      this.props.wishlistdata.wishlistdata.nodes.length
-                        ? this.props.wishlistdata &&
-                          this.props.wishlistdata.wishlistdata &&
-                          this.props.wishlistdata.wishlistdata.nodes.length
-                        : "0"}
-                      )
-                    </p>
-                    <p
-                      className={
-                        this.state.isActive === "allorders" ? "backgrund" : ""
-                      }
-                      onClick={() => this.Activeaccounts("allorders")}
-                    >
-                      All Orders
-                    </p>
+                        <Grid container spacing={12} style={{ width: "100%", margin: "auto" }}  >
+                            <Grid item xs={3}  >
+                                <List className="pay-index-subhed" style={{ width: "100%" }}>
+                                    <p className={this?.state?.isActive === 'profile' ? "backgrund" : ""}
+                                        onClick={() => this.Activeaccounts('profile')}
+                                    > Personal Information</p>
+                                    <p className={this?.state?.isActive === 'addresses' ? "backgrund" : ""}
+                                        onClick={() => this.Activeaccounts('addresses')}
+                                    >Address Book </p>
+                                    <p className={this?.state?.isActive === 'shoppingcart' ? "backgrund" : ""}
+                                        onClick={() => this.Activeaccounts('shoppingcart')}
+                                    >Shopping Bag 
+                                    {/* ({this.props.data.length ? this.props.data.length : "0"})  */}
+                                    </p>
+                                    <p className={this?.state?.isActive === 'wishlist' ? "backgrund" : ""}
+                                        onClick={() => this.Activeaccounts('wishlist')}
+                                    >
+                                        Wishlist ({this.props.wishlistdata &&
+                                            this.props.wishlistdata.wishlistdata &&
+                                            this.props.wishlistdata.wishlistdata.nodes.length ? this.props.wishlistdata &&
+                                            this.props.wishlistdata.wishlistdata &&
+                                            this.props.wishlistdata.wishlistdata.nodes.length : "0"
+                                        })</p>
+                                    <p className={this.state.isActive === 'allorders' ? "backgrund" : ""}
+                                        onClick={() => this.Activeaccounts('allorders')}
+                                    >
+                                        All Orders</p>
 
-                    <p
-                      class="logedout"
-                      // onClick={() => this.Activeaccounts('allorders')}
-                      onClick={() => {
-                        this.openmodel();
-                      }}
-                    >
-                      Logout
-                    </p>
-                    <CommenDialog
-                      isOpen={this.state.modelOpen}
-                      content={`Are you sure you want to leave? `}
-                      handleClose={this.canceldeletechecklist}
-                      handleSuccess={this.deletechecklists}
-                      negativeBtn="No"
-                      positiveBtn="Logout"
-                      title="Logout"
-                      logout={true}
-                    />
-                  </List>
-                </Grid>
-                <Grid item xs={12} sm={12} md={9} lg={9} xl={9}>
-                  <div className="pay-index-subhed_da">
-                    {this.state.isActive === "profile" && (
-                      <>
-                        <div style={{ PaddingLeft: "30px" }}></div>
-                        {/* {c_k_l !== true ? */}
+                                    <p class="logedout"
+                                        // onClick={() => this.Activeaccounts('allorders')}
+                                        onClick={() => {
+                                            this.openmodel()
+                                        }}
+                                    >
+                                        Logout</p>
+                                    <CommenDialog isOpen={this.state.modelOpen} content={`Are you sure you want to leave? `} handleClose={this.canceldeletechecklist} handleSuccess={this.deletechecklists} negativeBtn="No" positiveBtn="Logout" title="Logout" logout={true} />
+                                </List>
+                            </Grid>
+                            <Grid item xs={12} sm={12} md={9} lg={9} xl={9} >
+                                <div className="pay-index-subhed_da">
+                                    {
+                                        this?.state?.isActive === 'profile' &&
+                                        <>
+                                            <div style={{ PaddingLeft: "30px" }}></div>
+                                            {/* {c_k_l !== true ? */}
 
-                        <Container>
-                          <Register />
-                        </Container>
-                        {/* <Addressform/> */}
-                        {/* : <Login /> */}
-                        {/* } */}
-                      </>
-                    )}
-                    {this.state.isActive === "addresses" && <Addressform />}
-                    {this.state.isActive ==="shoppingcart" && (
-                      <>
-                        {this.props.data.length > 0 ? (
-                          <CartCard data={this.props.data} />
-                        ) : (
-                          <div
-                            style={{ textAlign: "center", color: "#2F348B" }}
-                          >
-                            Your shopping bag is empty
-                          </div>
-                        )}
-                      </>
-                    )}
-                    {this.state.isActive === "wishlist" && (
-                      <Grid>
-                        <Wishlists
-                          wishlistdata={this.props.wishlistdata}
-                          data={this.props.data}
-                        />
-                        {/* {JSON.stringify(this.props.wishlistdata)} */}
-                      </Grid>
-                    )}
-                    {this.state.isActive === "allorders" && (
-                      <>
-                        <Allorders
-                          allorderdata={this.props.allorderdata}
-                          data={this.props.data}
-                        />
+                                            <Container>
+                                                <Register />
+                                            </Container>
+                                            {/* <Addressform/> */}
+                                            {/* : <Login /> */}
+                                            {/* } */}
+                                        </>
 
-                        {/* {JSON.stringify(this.props.allorderdata)} */}
-                      </>
-                    )}
-                  </div>
-                </Grid>
-              </Grid>
-            </div>
+                                    }
+                                    {
+                                        this?.state?.isActive === 'addresses' && <Addressform />
+                                    }
+                                    {
+                                        this?.state?.isActive === 'shoppingcart' && <>
+
+                                            {this.props.data.length > 0 ? <CartCard data={this.props.data} isStateFilterContextQty={this.props.isdatafromstate}/> :
+                                                <div style={{ textAlign: "center", color: "#394578" }}>Your shopping bag is empty</div>}</>
+                                    }
+                                    {
+                                        this?.state?.isActive === 'wishlist' && < Grid >
+                                            <Wishlists wishlistdata={this.props.wishlistdata} data={this.props.data} />
+                                            {/* {JSON.stringify(this.props.wishlistdata)} */}
+                                        </Grid>
+                                    }
+                                    {
+                                        this?.state?.isActive === 'allorders' && <>
+                                            <Allorders allorderdata={this.props.allorderdata} data={this.props.data} />
+
+                                            {/* {JSON.stringify(this.props.allorderdata)} */}
+                                        </>
+
+                                    }
+                                </div>
+                            </Grid>
+                        </Grid>
+                    </div>
             {/* </Container> */}
           </Hidden>
 
@@ -311,6 +272,7 @@ class Accountdetails extends Component {
                     {/* {JSON.stringify(this.props.allorderdata)} */}
                   </>
                 )}
+                  <CommenDialog isOpen={this.state.modelOpen} content={`Are you sure you want to leave? `} handleClose={this.canceldeletechecklist} handleSuccess={this.deletechecklists} negativeBtn="No" positiveBtn="Logout" title="Logout" logout={true} />
               </div>
             </Grid>
           </Hidden>

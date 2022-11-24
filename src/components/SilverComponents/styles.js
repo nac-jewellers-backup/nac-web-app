@@ -567,7 +567,7 @@ export const useStyles = makeStyles((theme) => ({
     },
   },
   imgtitle: {
-    padding: "2px 16px 2px 16px",
+    // padding: "2px 16px 2px 16px",
     fontSize: "14.4px !important",
     color: "#6E6F72",
     cursor: "pointer",

@@ -5,6 +5,8 @@ import { Input } from "../../../components/InputComponents/TextField/Input";
 import "./address.css";
 import Addressdetails from "./addressDetails";
 import Addressforms from "./Addressforms";
+import { MYCOUNTRIES } from "queries/cart";
+import { API_URL } from "config";
 
 const Addressform = (props) => {
   return <AddressComponent {...props} />;
@@ -15,6 +17,7 @@ const AddressComponent = (props) => {
     props.changePanel(3, values.selest_my_address)
   );
   const [state, setState] = React.useState(null);
+  const [countryCode, setCountryCode] = React.useState();
   const cl = (
     <input
       onChange={() =>
@@ -39,10 +42,47 @@ const AddressComponent = (props) => {
     setState(num);
   };
 
+
+  const json = (response) => {
+    return response.json();
+  };
+
   var isedit = localStorage.getItem("isedit");
   const aa = localStorage.getItem("m")
     ? localStorage.getItem("m")
     : values.addressOne.salutation;
+
+    const getCountries=()=>{
+      fetch(`${API_URL}/graphql`, {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          query:MYCOUNTRIES,
+        }),
+      })
+        .then(json)
+        .then((data) => {
+           let main = data.data;
+           let countries=[]
+           main.allMasterCountries.nodes.map(_ =>{
+             let obj={}
+             obj.label = _.nicename
+             obj.value = _.iso
+             countries.push(obj)
+           })
+           setCountryCode(countries)
+        })
+        .catch(err=>{
+          console.log(err,'err')
+        })
+    }
+
+    React.useEffect(()=>{
+       getCountries();
+    },[])
+
   return (
     <Grid>
       <div>
@@ -82,7 +122,12 @@ const AddressComponent = (props) => {
                       <SimpleSelect
                         // val={'1'}
                         name={aa ? [aa] : ["Select"]}
-                        selectData={["Mr", "Mrs", "Ms"]}
+                        selectData={[
+                          {label:"Mr",value:"Mr"},
+                          {label:"Mrs",value:"Mrs"},
+                          {label:"Ms",value:"Ms"}
+                        ]}
+                        // selectData={["Mr", "Mrs", "Ms"]}
                       />
                     </Grid>
                     <Grid item lg={5}>
@@ -125,13 +170,16 @@ const AddressComponent = (props) => {
                   <Grid container spacing={12}>
                     <Grid item xs={6} lg={6}>
                       <SimpleSelect
-                        name={
-                          values.addressOne.country
-                            ? values.addressOne.country
-                            : ""
+                        name='country'
+                        selectData={countryCode ?? []}
+                        onChange={(event) =>
+                          handle.handleChange(
+                            "addressOne",
+                            "country",
+                            event.target.value,
+                          )
                         }
-                        selectData={["India"]}
-                        disabled={"disabled"}
+                        value={values.addressOne.country ?? ''}
                       />
                     </Grid>
                     <Grid item xs={6} lg={6}>
@@ -234,9 +282,11 @@ const AddressComponent = (props) => {
                     <Grid item xs={3} lg={3}>
                       <SimpleSelect
                         name={["+91"]}
-                        selectData={["+91"]}
+                        selectData={[
+                          {label:"+91",value:"+91"},
+                        ]}
                         disabled={"disabled"}
-                        value={values.addressOne.country_code}
+                        value={values.addressOne.country_code ?? '+91'}
                       />
                     </Grid>
                     <Grid item xs={9} lg={9}>
@@ -296,7 +346,12 @@ const AddressComponent = (props) => {
                             <SimpleSelect
                               val={"2"}
                               name={["Select"]}
-                              selectData={["Mr", "Mrs", "Ms"]}
+                              selectData={[
+                                {label:"Mr",value:"Mr"},
+                                {label:"Mrs",value:"Mrs"},
+                                {label:"Ms",value:"Ms"}
+                              ]}
+                              // selectData={["Mr", "Mrs", "Ms"]}
                             />
                           </Grid>
                           <Grid item xs={4} lg={5}>
@@ -344,8 +399,7 @@ const AddressComponent = (props) => {
                                   ? values.addressTwo.country
                                   : ""
                               }
-                              selectData={["India"]}
-                              disabled={"disabled"}
+                              selectData={countryCode ?? []}
                             />
                           </Grid>
                           <Grid item xs={6} lg={6}>
@@ -452,7 +506,10 @@ const AddressComponent = (props) => {
                           <Grid item xs={3} lg={3}>
                             <SimpleSelect
                               name={["+91"]}
-                              selectData={["+91"]}
+                              selectData={[
+                                {label:"+91",value:"+91"},
+                              ]}
+                              // selectData={["+91"]}
                               disabled={"disabled"}
                             />
                           </Grid>

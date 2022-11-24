@@ -315,6 +315,26 @@ export const FetchCartId = `query FetchCartId($UserId: ShoppingCartCondition) {
   }
 }
 `;
+
+export const MYCOUNTRIES = `query MyCountries{
+  allMasterCountries(condition: { isActive: true }, orderBy: ID_ASC) {
+    nodes {
+      currency
+      currencyAlias
+      currencySymbol
+      fxConversionRate
+      id
+      isActive
+      iso
+      iso3
+      name
+      nicename
+      numcode
+      phonecode
+    }
+  }
+}
+`;
 export const USERPROFILE = `query MyQuery($id: UUID!) {
   userProfileById(id: $id) {
     firstName

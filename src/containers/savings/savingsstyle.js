@@ -102,6 +102,28 @@ const styles = makeStyles(theme => ({
       width: "100%",
       height: "100%"
     }
+  },
+  Card:{
+    boxShadow: '4px 4px 4px #a5a4a5 !important',
+    borderRadius: '0 !important'
+  },
+  mainCard:{
+    display:"flex",justifyContent:"center",padding:"20px"
+  },
+  title:{
+    fontSize:"16px",fontWeight:700,justifyContent:'center',display:"flex",margin:5
+  },
+  desc:{
+    textAlign:"center",color:"#6b6b6b"
+  },
+  content:{
+    height: "120px",background:"#f0f2f2"
+  },
+  viewContent:{
+     height:'fit-content'
+  },
+  normalfonts2:{
+    textAlign:"initial !important"
   }
 }));
 export default styles;

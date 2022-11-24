@@ -308,3 +308,13 @@ mutation MyMutation(
   }
 }
 `;
+
+export const SEND_ENQUIREY =`
+mutation($appointment: AppointmentInput!) {
+  createAppointment(input: { appointment: $appointment }) {
+    appointment {
+      id
+    }
+  }
+}
+`

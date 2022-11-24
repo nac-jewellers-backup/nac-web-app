@@ -6,13 +6,11 @@ const styles = makeStyles((theme) => ({
 
     fontSize: "34px",
     [theme.breakpoints.down("xs")]: {
-      fontSize: "1.8rem",
+      fontSize: "22px",
     },
-    marginBottom: 15,
     fontWeight: "540",
     whiteSpace: "noWrap",
-    padding: 2,
-    marginTop: 8,
+    fontFamily:"notoSerif-italic !important" 
   },
   img: {
     height: 40,

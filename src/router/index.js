@@ -48,6 +48,15 @@ import Careers from "../screens/Stylori/careers";
 import Fail from "../screens/Stylori/fail";
 import Success from "../screens/Stylori/success";
 import Diwali2022 from "containers/diwali2022/diwali2022";
+import ExperienceCard from "containers/experiences/experienceCard";
+import AboutUsPageNew from "screens/AboutUsPage/aboutUsPage";
+import TermsAndConditions from "screens/termsAndConditions/termsAndConditions";
+import CdnPages from "screens/CdnPages";
+import PrivacyPolicy from "screens/privacyPolicy/privacyPolicy";
+import { FaqDetails } from "screens/faq";
+import { ProductCare } from "screens";
+import { CareerPage } from "screens";
+import { CustomApplication } from "screens";
 
 const browserHistory = createBrowserHistory();
 
@@ -93,7 +102,7 @@ export const RouterApp = (props) => {
       />
       <Route
         key="AkshyaTritiya"
-        component={AkshyaTritiya}
+        component={CdnPages}
         exact
         path={routes.AkshyaTritiya}
       />
@@ -104,32 +113,32 @@ export const RouterApp = (props) => {
         path={routes.HomePageStylori}
       />
       <Route key="Silver" component={Silver} exact path={routes.Silver} />
-      <Route key="Faqs" component={AboutusPage} exact path={routes.Faqs} />
+      <Route key="Faqs" component={FaqDetails} exact path={routes.Faqs} />
       <Route
         key="ProductCare"
-        component={Faqs}
+        component={ProductCare}
         exact
         path={routes.ProductCare}
       />
       <Route key="Shipping" component={Faqs} exact path={routes.Shipping} />
       <Route
         key="PrivacyPolicy"
-        component={AboutusPage}
+        component={PrivacyPolicy}
         exact
         path={routes.PrivacyPolicy}
       />
       <Route
         key="TermsConditions"
-        component={AboutusPage}
+        component={TermsAndConditions}
         exact
         path={routes.TermsConditions}
       />
       <Route key="Checkout" component={Checkout} exact path={routes.Checkout} />
       <Route
         key="AboutUs"
-        component={AboutusPage}
+        component={AboutUsPageNew}
         exact
-        path={routes.AboutUs}
+        path={routes.AboutUsNew}
       />
       <Route
         key="Contacs"
@@ -176,7 +185,7 @@ export const RouterApp = (props) => {
       />
       <Route
         key="AboutUs"
-        component={AboutusPage}
+        component={AboutUsPageNew}
         exact
         path={routes.AboutUsPage}
       />
@@ -211,9 +220,17 @@ export const RouterApp = (props) => {
         exact
         path={`${routes.paymentfail}/:id`}
       />
+      <Route
+        key="experiencecard"
+        component={ExperienceCard}
+        exact
+        path={`${routes.experiencesCard}/:type`}
+      />
       {props.location.pathname !== "/cart" &&
         props.location.pathname !==
           `/account${"-" + window.location.pathname.split("-")[1]}` &&
+        props.location.pathname !==
+          `/static${"-" + window.location.pathname.split("-")[1]}` &&
         props.location.pathname !== "/savingscheme" &&
         props.location.pathname !== "/aboutus" &&
         props.location.pathname !== "/newsroom" &&
@@ -248,11 +265,19 @@ export const RouterApp = (props) => {
         props.location.pathname !== "/education" &&
         props.location.pathname !== "/stories" &&
         props.location.pathname !== "/paymentfail" &&
+        props.location.pathname !== "/experiencecard" &&
         props.location.pathname !== "/paymentsuccess/:id" &&
         props.location.pathname !== "/contactus" &&
         props.location.pathname !== "/solitaires" &&
         props.location.pathname !== "/necklaceMela" &&
         props.location.pathname !== "/diwali2022" &&
+        props.location.pathname !== "/aboutUsPageNew" &&
+        props.location.pathname !== "/termsAndConditions" &&
+        props.location.pathname !== "/privacy_Details" &&
+        props.location.pathname !== "/faqDetails" &&
+        props.location.pathname !== "/productCareNew" &&
+        props.location.pathname !== "/careerPage" &&
+        props.location.pathname !== "/form" &&
         Globalctx &&
         Globalctx.pathName === false &&
         props.location.pathname !== "/homes" && (
@@ -285,6 +310,8 @@ export const RouterApp = (props) => {
       {props.location.pathname !== "/cart" &&
         props.location.pathname !==
           `/account${"-" + window.location.pathname.split("-")[1]}` &&
+        props.location.pathname !==
+          `/static${"-" + window.location.pathname.split("-")[1]}` &&
         props.location.pathname !== "/savingscheme" &&
         props.location.pathname !== "/aboutus" &&
         props.location.pathname !== "/terms" &&
@@ -316,12 +343,20 @@ export const RouterApp = (props) => {
         props.location.pathname !== "/resetpassword/:id" &&
         props.location.pathname !== "/changepassword" &&
         props.location.pathname !== "/paymentfail" &&
+        props.location.pathname !== "/experiencecard" &&
         props.location.pathname !== "/contactus" &&
         props.location.pathname !== "/paymentsuccess/:id" &&
         props.location.pathname !== "/homes" &&
         props.location.pathname !== "/solitaires" &&
-        props.location.pathname !== "/necklaceMela" && 
-        props.location.pathname !== "/diwali2022" &&(
+        props.location.pathname !== "/necklaceMela" &&
+        props.location.pathname !== "/diwali2022" &&
+        props.location.pathname !== "/aboutUsPageNew" &&
+        props.location.pathname !== "/termsAndConditions" &&
+        props.location.pathname !== "/privacy_Details" &&
+        props.location.pathname !== "/faqDetails" &&
+        props.location.pathname !== "/productCareNew" &&
+        props.location.pathname !== "/careerPage" &&
+        props.location.pathname !== "/form" && (
           <Route exact={true} component={Stylori} path={"/:listingpage"} />
         )}
 
@@ -438,6 +473,49 @@ export const RouterApp = (props) => {
         component={Diwali2022}
         exact
         path={routes.Diwali2022}
+      />
+      <Route
+        key="aboutUsNew"
+        component={AboutUsPageNew}
+        exact
+        path={routes.AboutUsNew}
+      />
+      <Route
+        key="termsAndConditions"
+        component={TermsAndConditions}
+        exact
+        path={routes.TermsAndConditions}
+      />
+      <Route
+        key="privacyPolicy"
+        component={PrivacyPolicy}
+        exact
+        path={routes.PrivacyDetails}
+      />
+      <Route
+        key="faqDetails"
+        component={FaqDetails}
+        exact
+        path={routes.FaqDetails}
+      />
+      <Route
+        key="productCareNew"
+        component={ProductCare}
+        exact
+        path={routes.ProductCareNew}
+      />
+      <Route key="static" component={CdnPages} exact path={routes.Static} />
+      <Route
+        key="careerPage"
+        component={CareerPage}
+        exact
+        path={routes.CareerPage}
+      />
+      <Route
+        key="form"
+        component={CustomApplication}
+        exact
+        path={routes.CustomApplication}
       />
     </Switch>
   );

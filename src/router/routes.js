@@ -22,6 +22,7 @@ export const routes = {
   ChangePassword: "/changepassword",
   paymentsuccess: "/paymentsuccess",
   paymentfail: "/paymentfail",
+  experiencesCard: "/experiencecard",
   paymenthidden: "/paymenthidden",
   Education: "/education",
   ContactUs: "/contactus",
@@ -52,6 +53,14 @@ export const routes = {
   BridalCollection: "/bridalcollection",
   NecklaceMela: "/necklaceMela",
   Diwali2022: "/diwali2022",
+  AboutUsNew: "/aboutUs",
+  TermsAndConditions: "/termsAndConditions",
+  Static:`/static${"-" + window.location.pathname.split("-")[1]}`,
+  PrivacyDetails: "/privacy_Details",
+  FaqDetails: "/faqDetails",
+  ProductCareNew: "/productCareNew",
+  CareerPage: "/careerPage",
+  CustomApplication: "/form",
 };
 
 export default routes;

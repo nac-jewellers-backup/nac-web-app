@@ -8,3 +8,24 @@ query MyQuery($cartId: UUID) {
     }
   }
   `;
+
+  export const countries = `
+query MyCountries{
+  allMasterCountries(condition: { isActive: true }, orderBy: ID_ASC) {
+    nodes {
+      currency
+      currencyAlias
+      currencySymbol
+      fxConversionRate
+      id
+      isActive
+      iso
+      iso3
+      name
+      nicename
+      numcode
+      phonecode
+    }
+  }
+  }
+  `;

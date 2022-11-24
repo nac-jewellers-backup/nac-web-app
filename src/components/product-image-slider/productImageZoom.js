@@ -247,9 +247,7 @@ class ProductImageZoom extends React.Component {
                     >
                       <div
                         style={{
-                          position: "absolute",
                           left: "10px",
-                          zIndex: "999",
                         }}
                       >
                         <Wishlist

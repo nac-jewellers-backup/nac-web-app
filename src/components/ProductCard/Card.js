@@ -76,20 +76,20 @@ const Gallery = (
               onMouseOver={
                 !props.hoverText
                   ? () => {
-                      callmouseover();
-                    }
+                    callmouseover();
+                  }
                   : () => {
-                      return null;
-                    }
+                    return null;
+                  }
               }
               onMouseOut={
                 !props.hoverText
                   ? () => {
-                      callmouseout();
-                    }
+                    callmouseout();
+                  }
                   : () => {
-                      return null;
-                    }
+                    return null;
+                  }
               }
               scrollPosition={scrollPosition}
             ></LazyLoadImage>
@@ -114,20 +114,20 @@ const Gallery = (
               onMouseOver={
                 !props.hoverText
                   ? () => {
-                      callmouseover();
-                    }
+                    callmouseover();
+                  }
                   : () => {
-                      return null;
-                    }
+                    return null;
+                  }
               }
               onMouseOut={
                 !props.hoverText
                   ? () => {
-                      callmouseout();
-                    }
+                    callmouseout();
+                  }
                   : () => {
-                      return null;
-                    }
+                    return null;
+                  }
               }
               scrollPosition={scrollPosition}
             ></LazyLoadImage>
@@ -149,20 +149,20 @@ const Gallery = (
             onMouseOver={
               !props.hoverText
                 ? () => {
-                    callmouseover();
-                  }
+                  callmouseover();
+                }
                 : () => {
-                    return null;
-                  }
+                  return null;
+                }
             }
             onMouseOut={
               !props.hoverText
                 ? () => {
-                    callmouseout();
-                  }
+                  callmouseout();
+                }
                 : () => {
-                    return null;
-                  }
+                  return null;
+                }
             }
             scrollPosition={scrollPosition}
           ></LazyLoadImage>
@@ -365,7 +365,9 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "13px",
   },
 }));
+
 const renderImages = (props, cardstate) => {
+  console.log(props, "???")
   if (props.static) {
     return props.image;
   } else {
@@ -379,6 +381,7 @@ const renderImages = (props, cardstate) => {
       : props?.data?.image?.[filterType]?.img;
   }
 };
+
 const similarProductrenderImages = (props, cardstate) => {
   if (props.static) {
     return props.image;
@@ -391,6 +394,7 @@ const similarProductrenderImages = (props, cardstate) => {
       : props?.data?.img;
   }
 };
+
 function Component(props) {
   const classes = useStyles();
   const [cardstate, setCardState] = React.useState({
@@ -413,8 +417,7 @@ function Component(props) {
       <Card className={classes.card} style={{ marginLeft: "0px !important" }}>
         <CardActions
           style={{}}
-          className={`${classes.cardAtionspadding} ${classes.cardActionsImage}`}
-        >
+          className={`${classes.cardAtionspadding} ${classes.cardActionsImage}`}>
           {Gallery(props, callmouseover, callmouseout, cardstate)}
         </CardActions>
         <Card className={classes.priceClass}>
@@ -523,8 +526,8 @@ function Component(props) {
                                       props.data.offerPrice === 0
                                         ? " "
                                         : CurrencyConversion(
-                                            props.data.offerPrice
-                                          )
+                                          props.data.offerPrice
+                                        )
 
                                       // new Intl.NumberFormat("en-IN", {
                                       //     style: "currency",
@@ -549,8 +552,8 @@ function Component(props) {
                             {props.data.save === 0
                               ? " "
                               : ` ${Math.abs(
-                                  Math.round(props.data.save)
-                                )}% OFF`}
+                                Math.round(props.data.save)
+                              )}% OFF`}
                             &nbsp;&nbsp;
                           </Typography>
                         </Grid>

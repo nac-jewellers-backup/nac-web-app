@@ -16,14 +16,19 @@ import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert from "@material-ui/lab/Alert";
 import { makeStyles } from "@material-ui/core/styles";
 import { SolitairesData } from "../../mappers/dummydata/solitairesData";
-
+import axios from "axios";
 import { ImgMediaCard } from "../../components/ProductCard/Card";
 import ArrowRightIcon from "@material-ui/icons/ArrowRight";
 import ArrowLeftIcon from "@material-ui/icons/ArrowLeft";
 import Footer from "../../components/Footer/Footer";
 import { API_URL } from "../../config";
 import { AllHOMEQUERY } from "../../queries/home";
-import { ALLBANNERSCOMPLETE, SEND_QUERIES } from "../../queries/home";
+import {
+  ALLBANNERSCOMPLETE,
+  SEND_QUERIES,
+  SEND_ENQUIREY,
+} from "../../queries/home";
+import CommonContent from "components/commonContent/commonContent";
 function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
@@ -149,6 +154,19 @@ const useStyles = makeStyles((theme) => ({
   },
   inputFieldsEdit: {
     marginBottom: "15px",
+  },
+  number: {
+    "& input[type=number]": {
+      "-moz-appearance": "textfield",
+    },
+    "& input[type=number]::-webkit-outer-spin-button": {
+      "-webkit-appearance": "none",
+      margin: 0,
+    },
+    "& input[type=number]::-webkit-inner-spin-button": {
+      "-webkit-appearance": "none",
+      margin: 0,
+    },
   },
   textFieldEdit: {
     borderWidth: "0px",
@@ -342,6 +360,27 @@ const Diwali2022 = (props) => {
     return true;
   };
 
+  const emailTrigger = async (id) => {
+    console.log(id, "????");
+    const params = {
+      type: "send_enquiry",
+      appointment_id: id,
+    };
+    await axios.post(`${API_URL}/trigger_mail`, params).then((res) => {
+      if (res.data) {
+        setOpenSnack(true);
+        setFormData({
+          name: "",
+          phone: "",
+          email: "",
+          query: "",
+        });
+        return;
+      }
+      setOpenSnackError(true);
+    });
+  };
+
   const onsubmitvalue = () => {
     if (handleValidateData()) {
       fetch(`${API_URL}/graphql`, {
@@ -350,30 +389,27 @@ const Diwali2022 = (props) => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          query: SEND_QUERIES,
+          query: SEND_ENQUIREY,
           variables: {
-            updatedAt: new Date(),
-            createdAt: new Date(),
-            email: formData.email,
-            message: formData.query,
-            name: formData.name,
-            phone: formData.phone,
+            "appointment":{
+              updatedAt: new Date(),
+              createdAt: new Date(),
+              email: formData.email,
+              appointmentTypeId: 5,
+              comments: formData.query,
+              specialRequests: window.location.pathname.slice(1),
+              customerName: formData.name,
+              isActive: true,
+              mobile: formData.phone,
+            }     
           },
         }),
       })
         .then((res) => res.json())
         .then((data) => {
-          if (data?.data?.createAskus?.askus?.id) {
-            setOpenSnack(true);
-            setFormData({
-              name: "",
-              phone: "",
-              email: "",
-              query: "",
-            });
-            return;
+          if (data?.data?.createAppointment?.appointment?.id) {
+            emailTrigger(data?.data?.createAppointment?.appointment?.id);
           }
-          setOpenSnackError(true);
         });
     }
   };
@@ -728,6 +764,7 @@ const Diwali2022 = (props) => {
                 <TextField
                   style={{ borderRadius: "0px" }}
                   labelWidth={0}
+                  value={formData.name}
                   classes={{ notchedOutline: classes.textFieldEdit }}
                   InputProps={{ disableUnderline: true }}
                   onChange={onChangeData}
@@ -743,8 +780,10 @@ const Diwali2022 = (props) => {
               <FormControl style={{ backgroundColor: "#fff" }} fullWidth>
                 <TextField
                   type="number"
+                  className={classes.number}
                   style={{ borderRadius: "0px" }}
                   labelWidth={0}
+                  value={formData.phone}
                   classes={{ notchedOutline: classes.textFieldEdit }}
                   InputProps={{ disableUnderline: true }}
                   onChange={onChangeData}
@@ -761,6 +800,7 @@ const Diwali2022 = (props) => {
                 <TextField
                   style={{ borderRadius: "0px" }}
                   labelWidth={0}
+                  value={formData.email}
                   classes={{ notchedOutline: classes.textFieldEdit }}
                   InputProps={{ disableUnderline: true }}
                   onChange={onChangeData}
@@ -778,6 +818,7 @@ const Diwali2022 = (props) => {
                   style={{ borderRadius: "0px" }}
                   classes={{ notchedOutline: classes.textFieldEdit }}
                   InputProps={{ disableUnderline: true }}
+                  value={formData.query}
                   onChange={onChangeData}
                   name="query"
                   multiline
