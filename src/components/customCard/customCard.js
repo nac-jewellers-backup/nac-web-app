@@ -26,7 +26,7 @@ const CustomCard = (props) => {
                   </div>
                 </div>
                 <div className={classes.right}>
-                  <Button onClick={() => props?.buttonClick(e)}>
+                  <Button disabled={true} onClick={() => props?.buttonClick(e)}>
                     {e?.button_Text}
                   </Button>
                 </div>
@@ -44,7 +44,7 @@ const CustomCard = (props) => {
       <Hidden smUp>
         {props?.value?.map((val) => {
           return (
-            <Card className={classes.cardMobile}>
+            <Card className={classes.cardMobile} style={{width:"100%"}}>
               <div className={classes.roleLayer}>
                 <div className={classes.roleMobile}>
                   <Typography>{val?.job_Role}</Typography>
@@ -57,12 +57,13 @@ const CustomCard = (props) => {
                 <Typography>{val?.description}</Typography>
               </div>
               <div className={classes.buttonLayer}>
-                <div
+                <Button
                   onClick={() => props?.buttonClick(val)}
+                  disabled={true}
                   className={classes.buttonMobile}
                 >
-                  Apply Now
-                </div>
+                  {val?.button_Text}
+                </Button>
               </div>
             </Card>
           );
