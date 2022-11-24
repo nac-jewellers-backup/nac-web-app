@@ -98,9 +98,9 @@
   "scripts": {
     "generate-build-version": "node generate-build-version",
     "start": "npm run serve",
-    "start:dev": "env-cmd -f .env.development npm run start",
-    "start:staging": "env-cmd -f .env.staging npm run start",
-    "start:production": "env-cmd -f .env.production npm run start",
+    "start:dev": "env-cmd -f .env.development node scripts/start",
+    "start:staging": "env-cmd -f .env.staging node scripts/start",
+    "start:production": "env-cmd -f .env.production node scripts/start",
     "build": "npm run generate-build-version &&  node scripts/build",
     "build:dev": "env-cmd -f .env.development npm run build",
     "build:staging": "env-cmd -f .env.staging npm run build",
