@@ -4,31 +4,31 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/index.html"
   },
   {
-    "revision": "a76ec2ddc979cb69c6e9",
+    "revision": "06c5e6cbc63578e60b82",
     "url": "/static/css/2.css"
   },
   {
-    "revision": "165415c48d16a201b06f",
+    "revision": "6b9cccb367cfe26efe54",
     "url": "/static/css/3.css"
   },
   {
-    "revision": "25fbec784125646ce9f4",
+    "revision": "ad78108789593eee2b1e",
     "url": "/static/css/main.css"
   },
   {
-    "revision": "a76ec2ddc979cb69c6e9",
+    "revision": "06c5e6cbc63578e60b82",
     "url": "/static/js/2.js"
   },
   {
-    "revision": "165415c48d16a201b06f",
+    "revision": "6b9cccb367cfe26efe54",
     "url": "/static/js/3.js"
   },
   {
-    "revision": "bda8f9fa64c1d238a2f2",
+    "revision": "2067715690748006f93c",
     "url": "/static/js/4.js"
   },
   {
-    "revision": "25fbec784125646ce9f4",
+    "revision": "ad78108789593eee2b1e",
     "url": "/static/js/main.js"
   },
   {
@@ -132,7 +132,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/career_mobile.jpg"
   },
   {
-    "revision": "2b3d63f761a61e5c65a4773359c4eb40",
+    "revision": "7996bd6992d473ba217275885f52812f",
     "url": "/static/media/close.svg"
   },
   {
@@ -160,7 +160,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/img4ProductModal.jpg"
   },
   {
-    "revision": "6e25bad6f003be8fe1ddf1c68d2b4dd9",
+    "revision": "51fc5370cb4d7e537c06ea117f090ba2",
     "url": "/static/media/logout.svg"
   },
   {
@@ -188,7 +188,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/pic_6.jpg"
   },
   {
-    "revision": "57b56bb10faf3b9dbb17bc91e6be7baf",
+    "revision": "b0c24c44cdbcd2228f0f6fef2740195f",
     "url": "/static/media/shopping.svg"
   },
   {
@@ -216,7 +216,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/styloriGagets.png"
   },
   {
-    "revision": "26f4adaec0fa060fe6ef92c4c4f7c485",
+    "revision": "5a712650392a83e01a75498ebc83837b",
     "url": "/static/media/telephone.svg"
   },
   {
@@ -232,7 +232,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/topPicksTwo.jpg"
   },
   {
-    "revision": "bcc776345852aa9836e64bcc3e000864",
+    "revision": "c7359aa61314bf6d37f83ccc97dd0694",
     "url": "/static/media/user-shape.svg"
   }
 ]);

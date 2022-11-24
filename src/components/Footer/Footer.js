@@ -311,11 +311,11 @@ export default function Footer(props) {
           Title: "Temple Work",
         },
         {
-          url: "/static-newsroom",
+          url: "/newsroom",
           Title: "In The News",
         },
         {
-          url: "/static-advertising",
+          url: "/advertising",
           Title: "Advertisements",
         },
       ],
