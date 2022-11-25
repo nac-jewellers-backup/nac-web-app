@@ -1,4 +1,4 @@
-import { Container, Hidden,Grid } from "@material-ui/core";
+import { Container, Hidden, Grid } from "@material-ui/core";
 import { ImgMediaCard } from "components/ProductCard/Card";
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
@@ -21,6 +21,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const SlideImgMediaCard = (props) => {
+  const { listProduct } = props
+  console.log("props1111111", props)
+
   const classes = useStyles();
   const ArrowLeft = (props) => {
     const { className, onClick } = props;
@@ -69,18 +72,18 @@ const SlideImgMediaCard = (props) => {
     nextArrow: <ArrowRight />,
   };
   return (
-    <Grid style={{width:"100%"}}>
+    <Grid style={{ width: "100%" }}>
       <Hidden smDown>
         <Container className={classes.cardEdit} style={{ paddingTop: 8 }}>
           <Slideshow
             class="subslider-carousel"
             dataCarousel={dataCarouselcollections}
           >
-            {props?.listProduct?.map((val) => {
-                return (
-                  <ImgMediaCard data={val} cardSize="auto" hoverText={true} />
-                );
-              })}
+            {listProduct?.map((val) => {
+              return (
+                <ImgMediaCard data={val} cardSize="auto" hoverText={true} />
+              );
+            })}
           </Slideshow>
         </Container>
       </Hidden>
@@ -91,10 +94,10 @@ const SlideImgMediaCard = (props) => {
             dataCarousel={dataCarouselcollectionsSm}
           >
             {props?.listProduct?.map((val) => {
-                return (
-                  <ImgMediaCard data={val} cardSize="auto" hoverText={true} />
-                );
-              })}
+              return (
+                <ImgMediaCard data={val} cardSize="auto" hoverText={true} />
+              );
+            })}
           </Slideshow>
         </Container>
       </Hidden>

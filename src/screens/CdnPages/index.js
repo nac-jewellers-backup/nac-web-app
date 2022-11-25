@@ -9,11 +9,18 @@ import { QueryForm } from "components";
 import { BannerComponent, SlideImgMediaCard } from "components";
 import { CDNPAGES } from "queries/cdnPages";
 import Storelocator from "components/storelocator/storelocator";
+import AboutCollectionComp from "components/aboutCollection";
+import AboutBookAppointment from "components/aboutAppointment";
+import SpclTitleDescr from "components/spclTitleDescr";
+import { Title } from "../../containers/home/titles";
 import CustomBanner from "components/customBanner/customBanner";
 import CustomCard from "components/customCard/customCard";
 import { CustomApplication } from "screens/customApplication";
 import { CollectionHeader } from "components/collectionHeader";
 import { CollectionCards } from "components/collectionCards";
+import { CustomAdvertisement } from "components/customAdvertisment";
+import { CustomNewsRoom } from "components/customNewsRoom";
+import { TitleAndDescription } from "components";
 
 function CdnPages(props) {
   const slider = React.createRef();
@@ -65,6 +72,7 @@ function CdnPages(props) {
         setState(dataRecieved);
       });
   }, []);
+  // console.log(url, "url ");
 
   const [state, setState] = useState([]);
 
@@ -89,6 +97,9 @@ function CdnPages(props) {
             richEditor={val?.props?.richEditor}
           />
         );
+      }
+      case "titleComp": {
+        return <Title title={val?.props?.title} />;
       }
       case "SlideImgMediaCard": {
         return <SlideImgMediaCard listProduct={val?.props?.listingProducts} />;
@@ -122,6 +133,51 @@ function CdnPages(props) {
       case "CollectionCards": {
         return <CollectionCards value={val?.props?.cardContent} />;
       }
+      case "CustomNews": {
+        return <CustomNewsRoom value={val?.props?.cardContent} />;
+      }
+      case "SpclTitleDescr": {
+        return <SpclTitleDescr data={val?.props?.storeData} />;
+      }
+      case "TestimonialTwo": {
+        return (
+          <>
+            <AboutCollectionComp
+              TestimonialSec={false}
+              CollectionData={val?.props?.storeData}
+            />
+          </>
+        );
+      }
+      case "AboutBookAppointment": {
+        return (
+          <>
+            <AboutBookAppointment data={val?.props} />
+          </>
+        );
+      }
+
+      case "Testimonial": {
+        return (
+          <AboutCollectionComp
+            TestimonialSec
+            CollectionData={val?.props?.storeData}
+          />
+        );
+      }
+
+      case "CustomAdvertising": {
+        return <CustomAdvertisement value={val?.props?.cardContent} />;
+      }
+      case "TitleAndDescription": {
+        return (
+          <TitleAndDescription
+            title={val?.props?.title}
+            description={val?.props?.description}
+          />
+        );
+      }
+
       default: {
         return <h1></h1>;
       }

@@ -33,7 +33,7 @@ class Banner extends React.Component {
     ];
 
     if (url.length > 0) {
-       // eslint-disable-next-line
+      // eslint-disable-next-line
       var array_split = url.split(/\.(?=[^\.]+$)/);
       const found = extensionVideoLists.find(
         (element) => element.toLowerCase() === array_split[1]
@@ -49,39 +49,37 @@ class Banner extends React.Component {
     let { video } = this.props;
     return this.props.fadeImages
       ? this.props.fadeImages.map((imgs) => (
-          <div
-            className={` ${this.props.class ? this.props.class : ""}`}
-            onClick={(e) => (this.props.getmsg ? this.props.getmsg(e) : "")}
-          >
-            {video || this.handleVideoCheck(imgs) ? (
-              <video
-                style={{ verticalAlign: "bottom", zIndex: this.props.zindex }}
-                preload="auto"
-                className={`${imgs ? "shine imgDiv2" : ""} ${
-                  this.props.imgClass ? this.props.imgClass : ""
+        <div
+          className={` ${this.props.class ? this.props.class : ""}`}
+          onClick={(e) => (this.props.getmsg ? this.props.getmsg(e) : "")}
+        >
+          {video || this.handleVideoCheck(imgs) ? (
+            <video
+              style={{ verticalAlign: "bottom", zIndex: this.props.zindex }}
+              preload="auto"
+              className={`${imgs ? "shine imgDiv2" : ""} ${this.props.imgClass ? this.props.imgClass : ""
                 }`}
-                src={imgs}
-                poster="https://assets.stylori.com/product/SP0195/500X500/HOVER-SP0195-2Y.webp"
-                type="video/mp4"
-                controls={this.props.videoControls}
-              ></video>
-            ) : (
-              <img
-                style={{ objectFit: "cover" }}
-                className={`${imgs ? "imgDiv2" : "shine imgDiv2"} ${
-                  this.props.imgClass ? this.props.imgClass : ""
+              src={imgs}
+              poster="https://assets.stylori.com/product/SP0195/500X500/HOVER-SP0195-2Y.webp"
+              type="video/mp4"
+              controls={this.props.videoControls}
+            ></video>
+          ) : (
+            <img
+              style={{ objectFit: "cover" }}
+              className={`${imgs ? "imgDiv2" : "shine imgDiv2"} ${this.props.imgClass ? this.props.imgClass : ""
                 }`}
-                src={imgs}
-                loading="lazy" alt='...'
-              />
-            )}
-          </div>
-        ))
+              src={imgs}
+              loading="lazy" alt='...'
+            />
+          )}
+        </div>
+      ))
       : "";
   };
 
   imagehoverchildrens = (hoverlist) => {
-    let { hover, hovereffect, TopPic,collectionhome } = this.props;
+    let { hover, hovereffect, TopPic, collectionhome } = this.props;
     if (TopPic) {
       return hoverlist.map((val) => (
         <div
@@ -159,9 +157,8 @@ class Banner extends React.Component {
                   }}
                 >
                   <h2
-                    className={`${
-                      collectionhome ? "poscollectionHome" : "next-price"
-                    }`}
+                    className={`${collectionhome ? "poscollectionHome" : "next-price"
+                      }`}
                   >
                     {val.title}
                   </h2>
@@ -211,54 +208,54 @@ class Banner extends React.Component {
   render() {
     const multipleData = {
       dots: true,
-        infinite: true,
-        autoplay: true,
-        speed: 2000,
-        fade: false,
-        arrows: false,
-        arrowsImg: true,
-        dotsClass: "slickdevStatic",
-        accessibility: true,
-        autoplaySpeed: 4000,
-        centerMode: false,
-        focusOnSelect: false,
-        pauseOnHover: false,
-        pauseOnDotsHover: false,
-        pauseOnFocus: true,
-        swipe: false,
+      infinite: true,
+      autoplay: true,
+      speed: 2000,
+      fade: false,
+      arrows: false,
+      arrowsImg: true,
+      dotsClass: "slickdevStatic",
+      accessibility: true,
+      autoplaySpeed: 4000,
+      centerMode: false,
+      focusOnSelect: false,
+      pauseOnHover: false,
+      pauseOnDotsHover: false,
+      pauseOnFocus: true,
+      swipe: false,
     }
 
     const singleData = {
-          dots: false,
-          infinite: false, 
-          autoplay: false,
-          speed: 1000,
-          fade: false,
-          arrows: false,
-          arrowsImg: false,
-          dotsClass: "slickdev",
-          accessibility: false,
-          centerMode: false,
-          focusOnSelect: false,
-          pauseOnHover: false,
-          pauseOnDotsHover: false,
-          pauseOnFocus: false,
-          swipe: false,
-  }
+      dots: false,
+      infinite: false,
+      autoplay: false,
+      speed: 1000,
+      fade: false,
+      arrows: false,
+      arrowsImg: false,
+      dotsClass: "slickdev",
+      accessibility: false,
+      centerMode: false,
+      focusOnSelect: false,
+      pauseOnHover: false,
+      pauseOnDotsHover: false,
+      pauseOnFocus: false,
+      swipe: false,
+    }
     // const { dataCarousel: { settings }, sliderRef } = this.props;
     const { sliderRef } = this.props;
     var settings = this.props.dataCarousel;
-    console.log("this.banner",this.props);
+    console.log("this.banner", this.props);
     return (
       <div style={{ width: "100%" }}>
-        {this.props?.dataCarousel === "multiple" ? 
-        <Slider ref={sliderRef} {...multipleData}>
-          {this.props.children ? this.props.children : this.renderFadeImages()}
-        </Slider> 
-          : 
-        <Slider ref={sliderRef} {...singleData}>
-          {this.props.children ? this.props.children : this.renderFadeImages()}
-        </Slider>}
+        {this.props?.dataCarousel === "multiple" ?
+          <Slider ref={sliderRef} {...multipleData}>
+            {this.props.children ? this.props.children : this.renderFadeImages()}
+          </Slider>
+          :
+          <Slider ref={sliderRef} {...singleData}>
+            {this.props.children ? this.props.children : this.renderFadeImages()}
+          </Slider>}
       </div>
     );
   }

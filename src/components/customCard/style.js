@@ -145,6 +145,7 @@ const CustomCardStyles = makeStyles((theme) => ({
     backgroundColor: "#2a2e6e !important",
     textTransform: "capitalize !important",
     padding: "5px 0px 10px 0px",
+    marginBottom:"10px"
   },
 
   viewMoreMobile: {

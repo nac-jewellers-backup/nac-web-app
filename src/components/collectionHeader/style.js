@@ -35,7 +35,7 @@ const CollectionHeaderStyles = makeStyles((theme) => ({
       marginBottom: 8,
     },
     [theme.breakpoints.down("xs")]: {
-      fontSize: "20px",
+      fontSize: "24px",
       marginBottom: 5,
     },
   },
@@ -113,17 +113,18 @@ const CollectionHeaderStyles = makeStyles((theme) => ({
       padding: "0 15px !important",
     },
     "& p": {
-      fontSize: "18px",
+      fontSize: "17px",
       color: "#807e7e",
-      padding: "0px 250px",
       lineHeight: "1.8",
+      width:"70%",
+      margin:"auto",
       [theme.breakpoints.down("md")]: {
         fontSize: "15px",
-        padding: "0px 20px",
+        width:"85%",
       },
       [theme.breakpoints.down("xs")]: {
         fontSize: "13px",
-        padding: "0px 20px",
+        width:"90%",
       },
     },
   },

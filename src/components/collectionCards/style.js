@@ -36,7 +36,7 @@ const CollectionCardsStyles = makeStyles((theme) => ({
         fontSize: "20px !important",
       },
       [theme.breakpoints.down("xs")]: {
-        fontSize: "15px !important",
+        fontSize: "13px !important",
       },
     },
   },

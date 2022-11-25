@@ -170,9 +170,7 @@ const AddressComponent = (props) => {
                   <Grid container spacing={12}>
                     <Grid item xs={6} lg={6}>
                       <SimpleSelect
-                        name={
-                          'Country code'
-                        }
+                        name='country'
                         selectData={countryCode ?? []}
                         onChange={(event) =>
                           handle.handleChange(
@@ -181,6 +179,7 @@ const AddressComponent = (props) => {
                             event.target.value,
                           )
                         }
+                        value={values.addressOne.country ?? ''}
                       />
                     </Grid>
                     <Grid item xs={6} lg={6}>
@@ -287,7 +286,7 @@ const AddressComponent = (props) => {
                           {label:"+91",value:"+91"},
                         ]}
                         disabled={"disabled"}
-                        value={values.addressOne.country_code}
+                        value={values.addressOne.country_code ?? '+91'}
                       />
                     </Grid>
                     <Grid item xs={9} lg={9}>

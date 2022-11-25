@@ -7,7 +7,7 @@ import styles from "./titlestyle";
 export const Title = (props) => {
   const classes = styles();
   return (
-    <Grid container direction="row">
+    <Grid container direction="row" style={{marginTop:"52px",overflow:"hidden"}}>
       <Grid item xs={12}>
         <Box
           display="flex"

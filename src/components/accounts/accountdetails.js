@@ -23,16 +23,20 @@ class Accountdetails extends Component {
     };
   }
   handleClick = (e) => {
-    this.setState({ currency: e.target.value, isActive: e.target.value });
+    if(e.target.value === 'logout'){
+      this.setState({
+          modelOpen: true,
+      })
+  }
+  else{
+      this.setState({ currency: e.target.value, isActive: e.target.value });
+  }
   };
 
   Activeaccounts = (name) => {
-    if(name === 'shoppingcart'){
-        return window.location.href = '/cart'
-    }else{
+  
         this.setState({ isActive: [name] })
         window.location.href = `/account${"-" + name}`
-    }
    
 }
 
@@ -86,6 +90,10 @@ class Accountdetails extends Component {
       {
         label: "All Orders",
         values: "allorders",
+      },
+      {
+        label: "Logout",
+        values: "logout",
       },
     ];
     return (
@@ -155,12 +163,12 @@ class Accountdetails extends Component {
                                     {
                                         this?.state?.isActive === 'addresses' && <Addressform />
                                     }
-                                    {/* {
+                                    {
                                         this?.state?.isActive === 'shoppingcart' && <>
 
                                             {this.props.data.length > 0 ? <CartCard data={this.props.data} isStateFilterContextQty={this.props.isdatafromstate}/> :
                                                 <div style={{ textAlign: "center", color: "#394578" }}>Your shopping bag is empty</div>}</>
-                                    } */}
+                                    }
                                     {
                                         this?.state?.isActive === 'wishlist' && < Grid >
                                             <Wishlists wishlistdata={this.props.wishlistdata} data={this.props.data} />
@@ -264,6 +272,7 @@ class Accountdetails extends Component {
                     {/* {JSON.stringify(this.props.allorderdata)} */}
                   </>
                 )}
+                  <CommenDialog isOpen={this.state.modelOpen} content={`Are you sure you want to leave? `} handleClose={this.canceldeletechecklist} handleSuccess={this.deletechecklists} negativeBtn="No" positiveBtn="Logout" title="Logout" logout={true} />
               </div>
             </Grid>
           </Hidden>
