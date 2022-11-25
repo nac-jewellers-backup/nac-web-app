@@ -1,10 +1,15 @@
 import { Button, Grid, Typography } from "@material-ui/core";
 import React from "react";
 import CollectionCardsStyles from "./style";
+import { useHistory } from "react-router-dom";
 
 const CollectionCards = (props) => {
   console.log("propppp", props);
+  let history = useHistory();
   const classes = CollectionCardsStyles();
+  const handleRoute = (url) => {
+    history.push(url);
+  }
   return (
     <div className={classes.main}>
       {props?.value?.map((val, index) => {
@@ -32,7 +37,7 @@ const CollectionCards = (props) => {
                       <>
                         {e?.name && (
                           <div className={classes.buttonTop}>
-                            <Button>{e?.name}</Button>
+                            <Button  onClick={() => handleRoute(e?.url)}>{e?.name}</Button>
                           </div>
                         )}
                       </>
