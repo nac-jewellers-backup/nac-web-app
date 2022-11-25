@@ -19,6 +19,8 @@ import { CustomApplication } from "screens/customApplication";
 import { CustomAdvertisement } from "components/customAdvertisment";
 import { CustomNewsRoom } from "components/customNewsRoom";
 import { TitleAndDescription } from "components";
+import ExperienceBanner from "components/experienceBanner/experienceBanner";
+import ExperienceCardComp from "components/experienceCard/experienceCard";
 
 function CdnPages(props) {
   const slider = React.createRef();
@@ -168,6 +170,14 @@ function CdnPages(props) {
             description={val?.props?.description}
           />
         );
+      }
+
+      case "experienceBanner": {
+        return <ExperienceBanner value={val?.props?.banners} />;
+      }
+
+      case "experienceCard": {
+        return <ExperienceCardComp value={val?.props?.cardContent} />;
       }
 
       default: {
