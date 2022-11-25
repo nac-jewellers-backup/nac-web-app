@@ -279,17 +279,17 @@ const AddressComponent = (props) => {
                     </Grid>
                   </Grid>
                   <Grid container spacing={12}>
-                    {/* <Grid item xs={3} lg={3}>
+                    <Grid item xs={3} lg={3}>
                       <SimpleSelect
                         name={["+91"]}
                         selectData={[
                           {label:"+91",value:"+91"},
                         ]}
                         disabled={"disabled"}
-                        value={values.addressOne.country_code}
+                        value={values.addressOne.country_code ?? '+91'}
                       />
-                    </Grid> */}
-                    <Grid item xs={12} lg={12}>
+                    </Grid>
+                    <Grid item xs={9} lg={9}>
                       <Input
                         className="text-f"
                         type="tel"
