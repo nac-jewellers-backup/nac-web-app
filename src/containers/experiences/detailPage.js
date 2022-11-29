@@ -80,7 +80,27 @@ export default function Detailpage(props) {
     },
   };
 
-  React.useEffect(() => {
+  const dateAppointment=(date)=>{
+    var event = new Date(date);
+    let dated = JSON.stringify(event);
+    dated = dated.slice(1, 11);
+    let Payload = {
+      appointment_date: dated,
+      appointment_type_id:
+        props.type == "alive"
+          ? 1
+          : props.type == "lotus"
+          ? 2
+          : props.type == "piercing"
+          ? 3
+          : props.type == "stones"
+          ? 4
+          : "",
+    };
+    makeFetch(Payload);
+   }
+  
+   const getDetails=()=>{
     fetch(`${API_URL}/graphql`, {
       method: "post",
       headers: {
@@ -99,42 +119,16 @@ export default function Detailpage(props) {
           loaction: data?.data?.loactions?.nodes,
         });
       });
-  }, []);
-
-  React.useEffect(() => {
-    var event = new Date(values.date);
-    let dated = JSON.stringify(event);
-    dated = dated.slice(1, 11);
-    let Payload = {
-      appointment_date: dated,
-      appointment_type_id:
-        props.type == "alive"
-          ? 1
-          : props.type == "lotus"
-          ? 2
-          : props.type == "piercing"
-          ? 3
-          : props.type == "stones"
-          ? 4
-          : "",
-    };
-    makeFetch(Payload);
-  }, [values.date]);
-
-  React.useEffect(() => {
-    if (data?.appointment_slots?.length > 0) {
-      const Dates = [];
-      data.appointment_slots.map((val) => {
-        let obj = {};
-        obj.name = `${getTime(val.start_time)} - ${getTime(val.end_time)}`;
-        obj.label = val.id;
-        Dates.push(obj);
-      });
-      setSelect({ ...select, timeSlotes: Dates });
-    } else {
-      setSelect({ ...select, timeSlotes: [] });
-    }
-  }, [data]);
+   }
+  
+    React.useEffect(() => {
+       getDetails();
+       dateAppointment(new Date())
+    }, []);
+  
+    React.useEffect(() => {
+      dateAppointment(values.date)
+    }, [values.date]);
 
   //trigger the email
   const emailTrigger = async (id) => {
