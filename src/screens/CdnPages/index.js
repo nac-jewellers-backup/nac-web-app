@@ -21,6 +21,7 @@ import { CollectionCards } from "components/collectionCards";
 import { CustomAdvertisement } from "components/customAdvertisment";
 import { CustomNewsRoom } from "components/customNewsRoom";
 import { TitleAndDescription } from "components";
+import { ExperienceCardComp } from "components/experienceCardComponent";
 
 function CdnPages(props) {
   const slider = React.createRef();
@@ -77,6 +78,7 @@ function CdnPages(props) {
   const [state, setState] = useState([]);
 
   const handleComponents = (val) => {
+    console.log("valData", val);
     switch (val.component) {
       case "BannerComponent": {
         console.log("valueRender", val?.props);
@@ -169,6 +171,7 @@ function CdnPages(props) {
       case "CustomAdvertising": {
         return <CustomAdvertisement value={val?.props?.cardContent} />;
       }
+
       case "TitleAndDescription": {
         return (
           <TitleAndDescription
@@ -176,6 +179,10 @@ function CdnPages(props) {
             description={val?.props?.description}
           />
         );
+      }
+
+      case "ExperienceCard": {
+        return <ExperienceCardComp value={val?.props} />;
       }
 
       default: {
