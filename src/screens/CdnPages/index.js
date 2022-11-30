@@ -21,10 +21,9 @@ import { CollectionCards } from "components/collectionCards";
 import { CustomAdvertisement } from "components/customAdvertisment";
 import { CustomNewsRoom } from "components/customNewsRoom";
 import { TitleAndDescription } from "components";
+import { StoreLocationDetails } from "components";
 
 function CdnPages(props) {
-  const slider = React.createRef();
-
   // view more button click state
   const [count, setCount] = useState(3);
 
@@ -79,7 +78,6 @@ function CdnPages(props) {
   const handleComponents = (val) => {
     switch (val.component) {
       case "BannerComponent": {
-        console.log("valueRender", val?.props);
         return (
           <BannerComponent
             banners={val?.props?.banners}
@@ -177,7 +175,11 @@ function CdnPages(props) {
           />
         );
       }
-
+      case "StoreDetailsComponent": {
+        return (
+          <StoreLocationDetails data={val?.props} />
+        )
+      }
       default: {
         return <h1></h1>;
       }
