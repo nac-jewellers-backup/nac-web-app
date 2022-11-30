@@ -93,7 +93,14 @@ const ContactUsForm = (props) => {
           {props?.value?.map((val) => {
             return (
               <Grid item xs={12}>
-                <div className={classes.mainRoot}>
+                <div
+                  className={classes.mainRoot}
+                  style={{
+                    backgroundImage: "url(" + val?.background_Image + ")",
+                    backgroundSize: "100%",
+                    backgroundPosition: "0px -50px",
+                  }}
+                >
                   <div className={classes.titleGroup}>
                     <div className={classes.title}>
                       <Typography>{val?.title}</Typography>

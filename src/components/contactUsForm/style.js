@@ -13,7 +13,7 @@ const ContactUsFormStyles = makeStyles((theme) => ({
   },
 
   mainRoot: {
-    backgroundColor: "rgb(234 234 234)",
+    // backgroundColor: "rgb(234 234 234)",
     padding: "130px 60px 30px 60px",
     marginBottom: "100px",
     boxShadow: "0px 0px 6px 1px rgba(0,0,0,0.75)",
