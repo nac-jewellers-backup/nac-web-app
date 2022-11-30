@@ -13,6 +13,8 @@ const CareerPage = () => {
         <Header />
       </div>
 
+      {/* FOOTER */}
+
       <div className={classes.footer}>
         <Footer />
       </div>

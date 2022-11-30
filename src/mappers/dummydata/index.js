@@ -12,3 +12,4 @@ export * from "./aboutUsNew";
 export * from "./productCare";
 export * from "./customBannerData";
 export * from "./customCardData";
+export * from "./collectionPageData";

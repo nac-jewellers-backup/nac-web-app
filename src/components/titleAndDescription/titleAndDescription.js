@@ -10,7 +10,12 @@ const TitleAndDescription = (props) => {
   return (
     <Grid xs={12} className={classes.roots}>
       <div style={{ textAlign: "center" }}>
-        <div className={classes.headerAlign}>
+        <Box
+          display="flex"
+          flexDirection="row"
+          justifyContent="center"
+          alignItems="center"
+        >
           <Box>
             <ArrowRight />
           </Box>
@@ -18,8 +23,13 @@ const TitleAndDescription = (props) => {
           <Box>
             <ArrowLeft />
           </Box>
+        </Box>
+        <div
+          style={{ textAlign: "center", margin: "auto" }}
+          className={classes.subHeader}
+        >
+          {description}
         </div>
-        <div style={{ textAlign: "center",margin:"auto" }} className={classes.subHeader}>{description}</div>
       </div>
     </Grid>
   );

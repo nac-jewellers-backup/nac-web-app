@@ -10,7 +10,7 @@ const CustomCard = (props) => {
       {/* TITLE */}
 
       <div className={classes.title}>
-        <Typography>Current Openings</Typography>
+        <Typography>{(props?.value.length > 0) ? "Current Openings" : "No Current Openings" }</Typography>
       </div>
       <Hidden xsDown>
         {props?.value?.map((e) => {
@@ -26,7 +26,7 @@ const CustomCard = (props) => {
                   </div>
                 </div>
                 <div className={classes.right}>
-                  <Button onClick={() => props?.buttonClick(e)}>
+                  <Button disabled={true} onClick={() => props?.buttonClick(e)}>
                     {e?.button_Text}
                   </Button>
                 </div>
@@ -44,7 +44,7 @@ const CustomCard = (props) => {
       <Hidden smUp>
         {props?.value?.map((val) => {
           return (
-            <Card className={classes.cardMobile}>
+            <Card className={classes.cardMobile} style={{width:"100%"}}>
               <div className={classes.roleLayer}>
                 <div className={classes.roleMobile}>
                   <Typography>{val?.job_Role}</Typography>
@@ -57,12 +57,13 @@ const CustomCard = (props) => {
                 <Typography>{val?.description}</Typography>
               </div>
               <div className={classes.buttonLayer}>
-                <div
+                <Button
                   onClick={() => props?.buttonClick(val)}
+                  disabled={true}
                   className={classes.buttonMobile}
                 >
-                  Apply Now
-                </div>
+                  {val?.button_Text}
+                </Button>
               </div>
             </Card>
           );
@@ -71,7 +72,7 @@ const CustomCard = (props) => {
 
       
       {/* VIEW MORE */}
-      {!props?.enable && (
+      {(props?.value.length > 0) && (
         <Hidden xsDown>
           <div className={classes.viewMore}>
             <Button onClick={props?.handleRequest}>View More</Button>
@@ -80,7 +81,7 @@ const CustomCard = (props) => {
       )}
 
       {/* VIEW MORE MOBILE */}
-      {!props?.enable && (
+      {(props?.value.length > 0) && (
         <Hidden smUp>
           <div className={classes.viewMoreMobile}>
             <div onClick={props?.handleRequest} className={classes.viewMoreButton}>

@@ -468,7 +468,7 @@ class Component extends React.Component {
       })
     );
 
-    window.location.pathname = "/cart";
+    window.location.href = "/cart";
 
     this.setState({
       modelOpen: false,
@@ -538,12 +538,9 @@ class Component extends React.Component {
         price: this.props.data[0].offerPrice,
       })
     );
-    {
-      alert("Added to cart!");
-      setTimeout(() => {
-        window.location.reload();
-      }, 1500);
-    }
+    
+    window.location.href = "/cart";
+
 
     this.setState({
       modelOpen: false,

@@ -15,6 +15,9 @@ const CardUseStyles = makeStyles((theme) => ({
     content2: {
         backgroundColor: "#F9E3C0",
         padding: "30px",
+        [theme.breakpoints.down("xs")]: {
+            padding: "0px 12px",
+          },
     },
     btn: {
         backgroundColor: "#b78231",
@@ -29,6 +32,9 @@ const CardUseStyles = makeStyles((theme) => ({
         color: "gray",
         fontSize: "23px",
         textAlign: "center",
+        [theme.breakpoints.down("xs")]: {
+            fontSize: "18px !important",
+          },
     },
     sub: {
         color: "gray",
@@ -38,7 +44,10 @@ const CardUseStyles = makeStyles((theme) => ({
         textAlign: "center",
         [theme.breakpoints.down("sm")]: {
             width: "auto"
-        }
+        },
+        [theme.breakpoints.down("xs")]: {
+            fontSize: "13px !important",
+          },
     },
 }))
 

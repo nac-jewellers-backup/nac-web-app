@@ -16,6 +16,8 @@ import { Title } from "../../containers/home/titles";
 import CustomBanner from "components/customBanner/customBanner";
 import CustomCard from "components/customCard/customCard";
 import { CustomApplication } from "screens/customApplication";
+import { CollectionHeader } from "components/collectionHeader";
+import { CollectionCards } from "components/collectionCards";
 import { CustomAdvertisement } from "components/customAdvertisment";
 import { CustomNewsRoom } from "components/customNewsRoom";
 import { ContactUsForm } from "components/contactUsForm";
@@ -125,6 +127,12 @@ function CdnPages(props) {
         ) : (
           <CustomApplication data={content} handleClick={formSubmitClick} />
         );
+      }
+      case "CollectionHeader": {
+        return <CollectionHeader value={val?.props?.header} />;
+      }
+      case "CollectionCards": {
+        return <CollectionCards value={val?.props?.cardContent} />;
       }
       case "CustomNews": {
         return <CustomNewsRoom value={val?.props?.cardContent} />;
