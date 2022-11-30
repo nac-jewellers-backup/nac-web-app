@@ -8,6 +8,7 @@ import {
 } from "@material-ui/core";
 import React, { useState } from "react";
 import ExperienceCardStyles from "./style";
+import parse from "html-react-parser";
 
 const ExperienceCardComp = (props) => {
   console.log("propsData", props);
@@ -102,10 +103,12 @@ const ExperienceCardComp = (props) => {
                   </Grid>
                   <Grid item xs={10}>
                     <div className={classes.description}>
-                      <Typography>{props?.value?.description}</Typography>
+                      <Typography>
+                        {parse(props?.value?.description)}
+                      </Typography>
                     </div>
                     <div className={classes.formTitle}>
-                      <Typography>{props?.value?.form_Title}</Typography>
+                      <Typography>{parse(props?.value?.form_Title)}</Typography>
                     </div>
 
                     <div className={classes.nameGroup}>

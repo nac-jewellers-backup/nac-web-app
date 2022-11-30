@@ -3,15 +3,15 @@ export const ExperienceCardData = [
     component: "ExperienceCard",
     props: {
       background_Image:
-        "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/banners/web/NAC---Desktop-UI---NAC-Experiences--LL--EP--BS--Alive-_Sample-10.webp",
+        "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/banners/web/NAC---Desktop-UI---NAC-Experiences--LL--EP--BS--Alive-_Sample-8.webp",
       header_Image:
-        "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/banners/web/NAC---Desktop-UI---NAC-Experiences--LL--EP--BS--Alive-_Sample-21.webp",
+        "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/banners/web/NAC---Desktop-UI---NAC-Experiences--LL--EP--BS--Alive-_Sample-19.webp",
       description:
-        "Ear piercing is an important tradition in our culture, be it for ourselves or our little ones. At NAC Jewellers, we adhere to the highest standards of cleanliness, hygiene and precision to ensure that you have a painless and safe experience.",
-      form_Title: "Book an appointment for an Ear Piercing now",
-      type: "piercing",
+        "Welcome to a luxurious shopping experience customized for your taste. The Lounge Features our finest signature collections in gold and diamonds rendered by the hands of skilled artisans.",
+      form_Title: "Book an appointment to Visit The Lotus Lounge",
+      type: "lotus",
       submit_Content:
-        "Thank you for expressing interest in our ear piercing service. A member of our team will get in touch with you shortly to schedule an appointment",
+        "Thank you for expressing interest to visit Lotus Lounge. A member of our team will get in touch with you shortly to schedule an appointment",
       button_Text: "SUBMIT",
     },
   },

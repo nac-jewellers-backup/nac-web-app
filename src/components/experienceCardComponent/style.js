@@ -49,7 +49,7 @@ const ExperienceCardStyles = makeStyles((theme) => ({
     textAlign: "center",
     marginTop: "50px",
     "& p": {
-      fontSize: "15px",
+      fontSize: "18px",
     },
   },
 
@@ -57,8 +57,9 @@ const ExperienceCardStyles = makeStyles((theme) => ({
     textAlign: "center",
     marginTop: "50px",
     "& p": {
-      fontSize: "18px",
-      fontWeight: 600,
+      fontSize: "17px",
+      marginBottom: "0px",
+      marginTop: "0px",
     },
   },
 
