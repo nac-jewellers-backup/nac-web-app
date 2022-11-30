@@ -8,5 +8,7 @@ export * from "./privacyPolicy";
 export * from "./productCare";
 export * from "./careerPage";
 export * from "./customApplication";
+export * from './birthStones';
+
 
 export { Stylori };
