@@ -57,6 +57,8 @@ import { FaqDetails } from "screens/faq";
 import { ProductCare } from "screens";
 import { CareerPage } from "screens";
 import { CustomApplication } from "screens";
+import { SiteMapNew } from "screens";
+
 
 const browserHistory = createBrowserHistory();
 
@@ -228,9 +230,9 @@ export const RouterApp = (props) => {
       />
       {props.location.pathname !== "/cart" &&
         props.location.pathname !==
-          `/account${"-" + window.location.pathname.split("-")[1]}` &&
+        `/account${"-" + window.location.pathname.split("-")[1]}` &&
         props.location.pathname !==
-          `/static${"-" + window.location.pathname.split("-")[1]}` &&
+        `/static${"-" + window.location.pathname.split("-")[1]}` &&
         props.location.pathname !== "/savingscheme" &&
         props.location.pathname !== "/aboutus" &&
         props.location.pathname !== "/newsroom" &&
@@ -277,6 +279,7 @@ export const RouterApp = (props) => {
         props.location.pathname !== "/faqDetails" &&
         props.location.pathname !== "/productCareNew" &&
         props.location.pathname !== "/careerPage" &&
+        props.location.pathname !== "/siteMapNew" &&
         props.location.pathname !== "/form" &&
         Globalctx &&
         Globalctx.pathName === false &&
@@ -309,9 +312,9 @@ export const RouterApp = (props) => {
 
       {props.location.pathname !== "/cart" &&
         props.location.pathname !==
-          `/account${"-" + window.location.pathname.split("-")[1]}` &&
+        `/account${"-" + window.location.pathname.split("-")[1]}` &&
         props.location.pathname !==
-          `/static${"-" + window.location.pathname.split("-")[1]}` &&
+        `/static${"-" + window.location.pathname.split("-")[1]}` &&
         props.location.pathname !== "/savingscheme" &&
         props.location.pathname !== "/aboutus" &&
         props.location.pathname !== "/terms" &&
@@ -356,6 +359,7 @@ export const RouterApp = (props) => {
         props.location.pathname !== "/faqDetails" &&
         props.location.pathname !== "/productCareNew" &&
         props.location.pathname !== "/careerPage" &&
+        props.location.pathname !== "/siteMapNew" &&
         props.location.pathname !== "/form" && (
           <Route exact={true} component={Stylori} path={"/:listingpage"} />
         )}
@@ -516,6 +520,14 @@ export const RouterApp = (props) => {
         component={CustomApplication}
         exact
         path={routes.CustomApplication}
+      />
+
+
+      <Route
+        key="form"
+        component={SiteMapNew}
+        exact
+        path={routes.SiteMapNew}
       />
     </Switch>
   );

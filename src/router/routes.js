@@ -61,6 +61,9 @@ export const routes = {
   ProductCareNew: "/productCareNew",
   CareerPage: "/careerPage",
   CustomApplication: "/form",
+  SiteMapNew: "/siteMapNew",
+
+
 };
 
 export default routes;
