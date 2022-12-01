@@ -66,15 +66,17 @@ function CdnPages(props) {
       .then((res) => res.json())
       .then((data) => {
         //feature product
-        console.log("cdnData", JSON.parse(data.data.cdnByPage.data));
+        console.log("cdnData",data);
         const dataRecieved = JSON.parse(data.data.cdnByPage.data);
-        setState(dataRecieved);
+        if(data.data.cdnByPage.isActive){
+          setState(dataRecieved);
+        }
       });
   }, []);
   // console.log(url, "url ");
 
   const [state, setState] = useState([]);
-
+  console.log("stateDateCDn",state);
   const handleComponents = (val) => {
     switch (val.component) {
       case "BannerComponent": {

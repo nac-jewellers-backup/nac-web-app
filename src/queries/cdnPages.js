@@ -5,6 +5,7 @@ export const CDNPAGES = (url) => {
           data
           id
           page
+          isActive
         }
       }
     `;
