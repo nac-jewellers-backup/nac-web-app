@@ -9,6 +9,7 @@ import {
 import React, { useState } from "react";
 import ExperienceCardStyles from "./style";
 import parse from "html-react-parser";
+import { useNetworkRequest } from "hooks/index";
 
 const ExperienceCardComp = (props) => {
   console.log("propsData", props);
@@ -36,6 +37,12 @@ const ExperienceCardComp = (props) => {
       setValues({ ...values, [key]: value });
     }
   };
+
+  const { data, error, loading,status, makeFetch } = useNetworkRequest(
+    "/appointment/send_otp",
+    {},
+    false
+  );
 
   const handleSubmit = (type) => {
     var emailvld =
@@ -77,7 +84,7 @@ const ExperienceCardComp = (props) => {
           ? 4
           : "",
     };
-    console.log("Payload", Payload);
+    makeFetch(Payload)
     setEnable(!enable);
   };
 
