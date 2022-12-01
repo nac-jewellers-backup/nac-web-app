@@ -1,4 +1,4 @@
-import { Grid, Typography } from "@material-ui/core";
+import { Button, Grid, Typography } from "@material-ui/core";
 import React from "react";
 import BlogImageCardStyles from "./style";
 
@@ -37,6 +37,9 @@ const BlogImageCard = (props) => {
               </div>
             );
           })}
+          <div className={classes.viewMore}>
+            <Button variant="outlined">View More</Button>
+          </div>
         </Grid>
       </Grid>
     </div>

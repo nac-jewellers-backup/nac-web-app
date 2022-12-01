@@ -71,5 +71,18 @@ const BlogImageCardStyles = makeStyles((theme) => ({
       textAlign: "right",
     },
   },
+
+  viewMore: {
+    textAlign: "center",
+    marginBottom: "20px",
+    "& button": {
+      backgroundColor: "#393a96",
+      color: "#ffffff",
+      "&:hover": {
+        backgroundColor: "#393a96",
+        color: "#ffffff",
+      },
+    },
+  },
 }));
 export default BlogImageCardStyles;

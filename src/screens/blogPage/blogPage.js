@@ -15,10 +15,6 @@ const BlogPage = () => {
 
       <BlogImageCard data={blogPage} />
 
-      <div className={classes.viewMore}>
-        <Button variant="outlined">View More</Button>
-      </div>
-
       {/* Fotter Tag */}
       <Footer />
     </div>
