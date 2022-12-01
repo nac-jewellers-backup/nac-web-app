@@ -1,0 +1,1 @@
+export {default as TitleAndData} from "./titleAndData";

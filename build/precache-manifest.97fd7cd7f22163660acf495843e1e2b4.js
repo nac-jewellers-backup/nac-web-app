@@ -4,31 +4,31 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/index.html"
   },
   {
-    "revision": "328645c5d8b410c36ddb",
+    "revision": "aa6f5b4c662d09ff56a8",
     "url": "/static/css/2.css"
   },
   {
-    "revision": "27054776a02c1246eb2d",
+    "revision": "23794701dddfe5ca0528",
     "url": "/static/css/3.css"
   },
   {
-    "revision": "615c5a0ce81e4f1bb6f3",
+    "revision": "25fbec784125646ce9f4",
     "url": "/static/css/main.css"
   },
   {
-    "revision": "328645c5d8b410c36ddb",
+    "revision": "aa6f5b4c662d09ff56a8",
     "url": "/static/js/2.js"
   },
   {
-    "revision": "27054776a02c1246eb2d",
+    "revision": "23794701dddfe5ca0528",
     "url": "/static/js/3.js"
   },
   {
-    "revision": "3b58439b766dcf10c6b7",
+    "revision": "bda8f9fa64c1d238a2f2",
     "url": "/static/js/4.js"
   },
   {
-    "revision": "615c5a0ce81e4f1bb6f3",
+    "revision": "25fbec784125646ce9f4",
     "url": "/static/js/main.js"
   },
   {
@@ -58,6 +58,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "4b43159ab7b19a9eae97ccd819463473",
     "url": "/static/media/Lotus_Mobile.jpg"
+  },
+  {
+    "revision": "4e2217c1a8309b2762499eb007d4109d",
+    "url": "/static/media/MyriadPro-Light.otf"
+  },
+  {
+    "revision": "7ac043ce58c2e61adcf7ebac9625d31b",
+    "url": "/static/media/MyriadPro-Regular.ttf"
   },
   {
     "revision": "42ab08a78e1c852c370225fd65576061",
@@ -114,6 +122,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "4bf2ff9abdc2e4ad90f1d94197600d6b",
     "url": "/static/media/NAC---Desktop-UI---NAC-Experiences-(LL,-EP,-BS,-Alive)_Sample-9.jpg"
+  },
+  {
+    "revision": "1fd398950fe8652ef746111a8ae12831",
+    "url": "/static/media/career_banner.jpg"
+  },
+  {
+    "revision": "1cd6366ebcaf733d7c40ebbd7309d713",
+    "url": "/static/media/career_mobile.jpg"
   },
   {
     "revision": "2b3d63f761a61e5c65a4773359c4eb40",

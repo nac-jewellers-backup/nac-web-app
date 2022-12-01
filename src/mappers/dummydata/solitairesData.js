@@ -31,54 +31,54 @@ export const SolitairesData = {
         navigateUrl: "#",
         imageContent: "Solitaire jewellery that will take your breath away.",
       },
-      {
-        img:
-          "https://assets.stylori.com/images/Static+Pages/Home+Page/banner1.jpg",
-        mobileImg:
-          "https://assets.stylori.com/images/Static+Pages/Home+Page/gemstone-mob",
-        navigateUrl: "#",
-        imageContent: "Solitaire jewellery that will take your breath away. 1",
-      },
-      {
-        img:
-          "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori-Valentine-banner-web.jpg",
-        mobileImg:
-          "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori-Valentine-banner-mob.jpg",
-        navigateUrl: "#",
-        imageContent: "Solitaire jewellery that will take your breath away. 2",
-      },
-      {
-        img:
-          "https://assets.stylori.com/images/Static+Pages/Home+Page/banner3.jpg",
-        mobileImg:
-          "https://assets.stylori.com/images/Static+Pages/Home+Page/rings-collection-mob.jpg",
-        navigateUrl: "#",
-        imageContent: "Solitaire jewellery that will take your breath away. 3",
-      },
-      {
-        img:
-          "https://assets.stylori.com/images/Static+Pages/Home+Page/banner4.jpg",
-        mobileImg:
-          "https://assets.stylori.com/images/Static+Pages/Home+Page/Floral-collection-Mob.jpg",
-        navigateUrl: "#",
-        imageContent: "Solitaire jewellery that will take your breath away. 4",
-      },
-      {
-        img:
-          " https://assets.stylori.com/images/Static+Pages/Home+Page/banner5.jpg",
-        mobileImg:
-          "https://assets.stylori.com/images/Static+Pages/Home+Page/halo-collection-mob.jpg",
-        navigateUrl: "#",
-        imageContent: "Solitaire jewellery that will take your breath away. 5",
-      },
-      {
-        img:
-          "https://assets.stylori.com/images/Static+Pages/Home+Page/harvest-campaign-web.png",
-        mobileImg:
-          "https://assets.stylori.com/images/Static+Pages/Home+Page/harvest-campaign-mob.png",
-        navigateUrl: "#",
-        imageContent: "Solitaire jewellery that will take your breath away. 6",
-      },
+      // {
+      //   img:
+      //     "https://assets.stylori.com/images/Static+Pages/Home+Page/banner1.jpg",
+      //   mobileImg:
+      //     "https://assets.stylori.com/images/Static+Pages/Home+Page/gemstone-mob",
+      //   navigateUrl: "#",
+      //   imageContent: "Solitaire jewellery that will take your breath away. 1",
+      // },
+      // {
+      //   img:
+      //     "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori-Valentine-banner-web.jpg",
+      //   mobileImg:
+      //     "https://assets.stylori.com/images/Static+Pages/Home+Page/Stylori-Valentine-banner-mob.jpg",
+      //   navigateUrl: "#",
+      //   imageContent: "Solitaire jewellery that will take your breath away. 2",
+      // },
+      // {
+      //   img:
+      //     "https://assets.stylori.com/images/Static+Pages/Home+Page/banner3.jpg",
+      //   mobileImg:
+      //     "https://assets.stylori.com/images/Static+Pages/Home+Page/rings-collection-mob.jpg",
+      //   navigateUrl: "#",
+      //   imageContent: "Solitaire jewellery that will take your breath away. 3",
+      // },
+      // {
+      //   img:
+      //     "https://assets.stylori.com/images/Static+Pages/Home+Page/banner4.jpg",
+      //   mobileImg:
+      //     "https://assets.stylori.com/images/Static+Pages/Home+Page/Floral-collection-Mob.jpg",
+      //   navigateUrl: "#",
+      //   imageContent: "Solitaire jewellery that will take your breath away. 4",
+      // },
+      // {
+      //   img:
+      //     " https://assets.stylori.com/images/Static+Pages/Home+Page/banner5.jpg",
+      //   mobileImg:
+      //     "https://assets.stylori.com/images/Static+Pages/Home+Page/halo-collection-mob.jpg",
+      //   navigateUrl: "#",
+      //   imageContent: "Solitaire jewellery that will take your breath away. 5",
+      // },
+      // {
+      //   img:
+      //     "https://assets.stylori.com/images/Static+Pages/Home+Page/harvest-campaign-web.png",
+      //   mobileImg:
+      //     "https://assets.stylori.com/images/Static+Pages/Home+Page/harvest-campaign-mob.png",
+      //   navigateUrl: "#",
+      //   imageContent: "Solitaire jewellery that will take your breath away. 6",
+      // },
     ],
   },
 

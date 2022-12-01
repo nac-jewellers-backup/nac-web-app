@@ -4,7 +4,7 @@ import Slideshow from "components/Carousel/carosul";
 import Footer from "components/Footer/Footer";
 import Header from "components/SilverComponents/Header";
 import Storelocator from "components/storelocator/storelocator";
-import { storeLocatorData } from "mappers/dummydata/storeLocator";
+import { storeLocatorData,data } from "mappers/dummydata/storeLocator";
 import React from "react";
 import style from "./style";
 
@@ -31,7 +31,7 @@ export default function Locator(props) {
       <Grid container className={classes.mainWidths}>
         <Grid container className={classes.topPadding}>
           <Grid container xs={12} md={12} lg={12}>
-            <Storelocator value={storeLocatorData} />
+            <Storelocator value={data} />
           </Grid>
         </Grid>
       </Grid>
