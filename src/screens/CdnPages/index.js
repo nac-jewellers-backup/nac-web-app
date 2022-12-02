@@ -24,6 +24,7 @@ import { TitleAndDescription } from "components";
 import { StoreLocationDetails } from "components";
 import ExperienceBanner from "components/experienceBanner/experienceBanner";
 import ExperienceCardComp from "components/experienceCard/experienceCard";
+import { ExperienceCards } from "components/experienceCardComponent";
 
 function CdnPages(props) {
   // view more button click state
@@ -78,7 +79,6 @@ function CdnPages(props) {
   // console.log(url, "url ");
 
   const [state, setState] = useState([]);
-  console.log("stateDateCDn",state);
   const handleComponents = (val) => {
     switch (val.component) {
       case "BannerComponent": {
@@ -171,6 +171,7 @@ function CdnPages(props) {
       case "CustomAdvertising": {
         return <CustomAdvertisement value={val?.props?.cardContent} />;
       }
+
       case "TitleAndDescription": {
         return (
           <TitleAndDescription
@@ -191,6 +192,10 @@ function CdnPages(props) {
 
       case "experienceCard": {
         return <ExperienceCardComp value={val?.props?.cardContent} />;
+      }
+
+      case "ExperienceCard": {
+        return <ExperienceCards value={val?.props} />;
       }
 
       default: {
