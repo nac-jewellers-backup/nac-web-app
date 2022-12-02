@@ -21,6 +21,7 @@ import { CollectionCards } from "components/collectionCards";
 import { CustomAdvertisement } from "components/customAdvertisment";
 import { CustomNewsRoom } from "components/customNewsRoom";
 import { TitleAndDescription } from "components";
+import { BlogImageCard } from "components/blogImageCard";
 
 function CdnPages(props) {
   const slider = React.createRef();
@@ -43,6 +44,7 @@ function CdnPages(props) {
   // Career page card apply now button click function
 
   const careerCardApplyNow = (value) => {
+    console.log("090909", value);
     setContent(value);
     setEnable(!enable);
   };
@@ -174,6 +176,17 @@ function CdnPages(props) {
           <TitleAndDescription
             title={val?.props?.title}
             description={val?.props?.description}
+          />
+        );
+      }
+
+      case "blogPageCard": {
+        return (
+          <BlogImageCard
+            value={val?.props?.cardContent.filter(
+              (value, index) => index < count
+            )}
+            handleRequest={careerViewMoreClick}
           />
         );
       }

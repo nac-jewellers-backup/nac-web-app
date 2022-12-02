@@ -1,1 +1,1 @@
-export { default as BlogImageCard } from "../blogImageCard";
+export { default as BlogImageCard } from "./blogImageCard";
