@@ -22,6 +22,8 @@ import { CustomAdvertisement } from "components/customAdvertisment";
 import { CustomNewsRoom } from "components/customNewsRoom";
 import { TitleAndDescription } from "components";
 import { StoreLocationDetails } from "components";
+import ExperienceBanner from "components/experienceBanner/experienceBanner";
+import ExperienceCardComp from "components/experienceCard/experienceCard";
 
 function CdnPages(props) {
   // view more button click state
@@ -182,6 +184,15 @@ function CdnPages(props) {
           <StoreLocationDetails data={val?.props} />
         )
       }
+
+      case "experienceBanner": {
+        return <ExperienceBanner value={val?.props?.banners} />;
+      }
+
+      case "experienceCard": {
+        return <ExperienceCardComp value={val?.props?.cardContent} />;
+      }
+
       default: {
         return <h1></h1>;
       }
