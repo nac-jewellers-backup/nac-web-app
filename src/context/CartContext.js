@@ -590,11 +590,22 @@ const Provider = (props) => {
 
             if (_products.products[0] == null) {
               let _data = [];
-              val.data.allShoppingCarts.nodes[0].shoppingCartItemsByShoppingCartId.nodes.map(
-                (l) => _data.push(l.productSku)
-              );
-              variables = { productList: _data };
-              _data && makeRequest(variables);
+              if(
+                val &&
+                val.data &&
+                val.data.allShoppingCarts &&
+                val.data.allShoppingCarts.nodes &&
+                val.data.allShoppingCarts.nodes.length > 0 &&
+                val.data.allShoppingCarts.nodes[0] &&
+                val.data.allShoppingCarts.nodes[0].shoppingCartItemsByShoppingCartId
+              ){
+                val.data.allShoppingCarts.nodes[0].shoppingCartItemsByShoppingCartId.nodes.map(
+                  (l) => _data.push(l.productSku)
+                );
+                variables = { productList: _data };
+                _data && makeRequest(variables);
+              }
+             
             }
           } else {
             if (
