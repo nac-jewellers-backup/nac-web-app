@@ -1070,7 +1070,7 @@ function HeaderHoverMenuItem(props) {
                 SHOP BY STYLE
               </Typography>
             </Grid>
-            <Grid container item xs={12} style={{ padding: "0 30px" }}>
+            <Grid container item xs={12} style={{ padding: "0 25px" }}>
               {valueForData().map((val, index) => {
                 return (
                   <Grid item xs={6}>
@@ -1083,7 +1083,7 @@ function HeaderHoverMenuItem(props) {
                       justify="center"
                       alignContent="center"
                       alignItems="center"
-                      style={{ cursor: "pointer", paddingBottom: "17px" }}
+                      style={{ cursor: "pointer", paddingBottom: "17px",flexDirection:'column' }}
                     >
                       <Grid item style={{ margin: "auto" }}>
                         <Typography
