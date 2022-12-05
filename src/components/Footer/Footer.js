@@ -362,7 +362,7 @@ export default function Footer(props) {
         },
         {
           Title: 'Experiences',
-          url: '/experiences'
+          url: '/static-experiences'
         }
       ],
     },

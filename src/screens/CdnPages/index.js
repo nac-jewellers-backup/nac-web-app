@@ -22,10 +22,12 @@ import { CustomAdvertisement } from "components/customAdvertisment";
 import { CustomNewsRoom } from "components/customNewsRoom";
 import { ContactUsForm } from "components/contactUsForm";
 import { TitleAndDescription } from "components";
+import { StoreLocationDetails } from "components";
+import ExperienceBanner from "components/experienceBanner/experienceBanner";
+import ExperienceCardComp from "components/experienceCard/experienceCard";
+import { ExperienceCards } from "components/experienceCardComponent";
 
 function CdnPages(props) {
-  const slider = React.createRef();
-
   // view more button click state
   const [count, setCount] = useState(3);
 
@@ -68,19 +70,19 @@ function CdnPages(props) {
       .then((res) => res.json())
       .then((data) => {
         //feature product
-        console.log("cdnData", JSON.parse(data.data.cdnByPage.data));
+        console.log("cdnData",data);
         const dataRecieved = JSON.parse(data.data.cdnByPage.data);
-        setState(dataRecieved);
+        if(data.data.cdnByPage.isActive){
+          setState(dataRecieved);
+        }
       });
   }, []);
   // console.log(url, "url ");
 
   const [state, setState] = useState([]);
-
   const handleComponents = (val) => {
     switch (val.component) {
       case "BannerComponent": {
-        console.log("valueRender", val?.props);
         return (
           <BannerComponent
             banners={val?.props?.banners}
@@ -173,6 +175,7 @@ function CdnPages(props) {
       case "CustomAdvertising": {
         return <CustomAdvertisement value={val?.props?.cardContent} />;
       }
+
       case "TitleAndDescription": {
         return (
           <TitleAndDescription
@@ -180,6 +183,23 @@ function CdnPages(props) {
             description={val?.props?.description}
           />
         );
+      }
+      case "StoreDetailsComponent": {
+        return (
+          <StoreLocationDetails data={val?.props} />
+        )
+      }
+
+      case "experienceBanner": {
+        return <ExperienceBanner value={val?.props?.banners} />;
+      }
+
+      case "experienceCard": {
+        return <ExperienceCardComp value={val?.props?.cardContent} />;
+      }
+
+      case "ExperienceCard": {
+        return <ExperienceCards value={val?.props} />;
       }
 
       default: {

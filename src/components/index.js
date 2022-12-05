@@ -16,3 +16,4 @@ export {
     Slideshow,
 }
 export * from "./titleAndDescription";
+export * from "./storeLocationDetails";
