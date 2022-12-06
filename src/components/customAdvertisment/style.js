@@ -63,6 +63,7 @@ const CustomAdvertisementStyles = makeStyles((theme) => ({
   buttonText: {
     textAlign: "center",
     paddingBottom: "30px",
+    cursor:"pointer",
     "& p": {
       display: "flex",
       justifyContent: "center",

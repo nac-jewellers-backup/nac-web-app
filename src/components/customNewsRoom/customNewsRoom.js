@@ -2,9 +2,14 @@ import { Card, Grid, Typography } from "@material-ui/core";
 import React from "react";
 import CustomNewsRoomStyles from "./style";
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
+import { useHistory } from "react-router-dom";
 
 const CustomNewsRoom = (props) => {
+  let history = useHistory();
   const classes = CustomNewsRoomStyles();
+  const handleRoute = (url) => {
+    history.push(url);
+  }
   return (
     <div className={classes.main}>
       <Grid container spacing={3}>
@@ -19,7 +24,7 @@ const CustomNewsRoom = (props) => {
                   <div className={classes.description}>
                     <Typography>{val?.description}</Typography>
                   </div>
-                  <div className={classes.buttonText}>
+                  <div className={classes.buttonText} onClick={() => handleRoute(val?.url)} >
                     <Typography>
                       {val?.button_text}
                       <ArrowForwardIcon />

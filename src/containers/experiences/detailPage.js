@@ -80,55 +80,71 @@ export default function Detailpage(props) {
     },
   };
 
-  const dateAppointment=(date)=>{
-    var event = new Date(date);
-    let dated = JSON.stringify(event);
-    dated = dated.slice(1, 11);
-    let Payload = {
-      appointment_date: dated,
-      appointment_type_id:
-        props.type == "alive"
-          ? 1
-          : props.type == "lotus"
-          ? 2
-          : props.type == "piercing"
-          ? 3
-          : props.type == "stones"
-          ? 4
-          : "",
-    };
-    makeFetch(Payload);
-   }
-  
-   const getDetails=()=>{
-    fetch(`${API_URL}/graphql`, {
-      method: "post",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        query: GET_DETAILS,
-      }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        setSelect({
-          ...select,
-          productcategory: data?.data?.product_category?.nodes,
-          metaltype: data?.data?.metal_type?.nodes,
-          loaction: data?.data?.loactions?.nodes,
-        });
+
+ const dateAppointment=(date)=>{
+  var event = new Date(date);
+  let dated = JSON.stringify(event);
+  dated = dated.slice(1, 11);
+  let Payload = {
+    appointment_date: dated,
+    appointment_type_id:
+      props.type == "alive"
+        ? 1
+        : props.type == "lotus"
+        ? 2
+        : props.type == "piercing"
+        ? 3
+        : props.type == "stones"
+        ? 4
+        : "",
+  };
+  makeFetch(Payload);
+ }
+
+ const getDetails=()=>{
+  fetch(`${API_URL}/graphql`, {
+    method: "post",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      query: GET_DETAILS,
+    }),
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      setSelect({
+        ...select,
+        productcategory: data?.data?.product_category?.nodes,
+        metaltype: data?.data?.metal_type?.nodes,
+        loaction: data?.data?.loactions?.nodes,
       });
-   }
-  
-    React.useEffect(() => {
-       getDetails();
-       dateAppointment(new Date())
-    }, []);
-  
-    React.useEffect(() => {
-      dateAppointment(values.date)
-    }, [values.date]);
+    });
+ }
+
+  React.useEffect(() => {
+     getDetails();
+     dateAppointment(new Date())
+  }, []);
+
+  React.useEffect(() => {
+    dateAppointment(values.date)
+  }, [values.date]);
+
+  React.useEffect(() => {
+    if (data?.appointment_slots?.length > 0) {
+      const Dates = [];
+      data.appointment_slots.map((val) => {
+        let obj = {};
+        obj.name = `${getTime(val.start_time)} - ${getTime(val.end_time)}`;
+        obj.label = val.id;
+        Dates.push(obj);
+      });
+      setSelect({ ...select, timeSlotes: Dates });
+    } else {
+      setSelect({ ...select, timeSlotes: [] });
+    }
+  }, [data]);
 
   //trigger the email
   const emailTrigger = async (id) => {
