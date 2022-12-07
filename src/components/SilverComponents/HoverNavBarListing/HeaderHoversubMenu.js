@@ -840,7 +840,7 @@ function HeaderHoverMenuItem(props) {
                       justify="center"
                       alignContent="center"
                       alignItems="center"
-                      style={{ cursor: "pointer" }}
+                      style={{ cursor: "pointer" ,flexDirection:'column' }}
                     >
                       <Grid item style={{ margin: "auto" }}>
                         <Typography
@@ -919,7 +919,7 @@ function HeaderHoverMenuItem(props) {
                       justify="center"
                       alignContent="center"
                       alignItems="center"
-                      style={{ cursor: "pointer" }}
+                      style={{ cursor: "pointer",flexDirection:'column'  }}
                     >
                       <Grid
                         xs={12}
@@ -1204,7 +1204,7 @@ function HeaderHoverMenuItem(props) {
                         // justify="center"
                         alignContent="center"
                         alignItems="center"
-                        style={{ cursor: "pointer" }}
+                        style={{ cursor: "pointer",flexDirection:'column'  }}
                       >
                         <Typography
                           style={{ margin: "auto", textAlign: "center" }}
@@ -1244,7 +1244,7 @@ function HeaderHoverMenuItem(props) {
                         // justify="center"
                         alignContent="center"
                         alignItems="center"
-                        style={{ cursor: "pointer" }}
+                        style={{ cursor: "pointer",flexDirection:'column'  }}
                       >
                         <Typography
                           style={{ margin: "auto", textAlign: "center" }}
@@ -1348,7 +1348,7 @@ function HeaderHoverMenuItem(props) {
                         justify="center"
                         alignContent="center"
                         alignItems="center"
-                        style={{ cursor: "pointer" }}
+                        style={{ cursor: "pointer",flexDirection:'column'  }}
                       >
                         <Typography
                           className={classes.listedItemstitle}
@@ -1492,7 +1492,7 @@ function HeaderHoverMenuItem(props) {
                           justify="center"
                           alignContent="center"
                           alignItems="center"
-                          style={{ cursor: "pointer" }}
+                          style={{ cursor: "pointer",flexDirection:'column'  }}
                         >
                           <Grid item style={{ margin: "auto" }}>
                             <Typography className={classes.imgtitle}>
@@ -1536,7 +1536,7 @@ function HeaderHoverMenuItem(props) {
                         justify="center"
                         alignContent="center"
                         alignItems="center"
-                        style={{ cursor: "pointer" }}
+                        style={{ cursor: "pointer",flexDirection:'column'  }}
                       >
                         <Typography
                           className={classes.listedItemstitle}
@@ -1551,7 +1551,7 @@ function HeaderHoverMenuItem(props) {
                         justify="center"
                         alignContent="center"
                         alignItems="center"
-                        style={{ cursor: "pointer" }}
+                        style={{ cursor: "pointer",flexDirection:'column'  }}
                       >
                         {val.contents.map((x, i) => (
                           <Typography
