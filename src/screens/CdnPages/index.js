@@ -35,6 +35,9 @@ function CdnPages(props) {
   // card and form hide, show state
   const [enable, setEnable] = useState(false);
 
+  // Title comp show and hide
+  const [showCard, setShowCard] = useState(false);
+
   // Career page view more button click function
 
   const careerViewMoreClick = () => {
@@ -47,6 +50,10 @@ function CdnPages(props) {
     console.log("090909", value);
     setContent(value);
     setEnable(!enable);
+  };
+
+  const showTitle = () => {
+    setShowCard(!showCard);
   };
 
   // Career page form submit click function
@@ -69,14 +76,15 @@ function CdnPages(props) {
       .then((res) => res.json())
       .then((data) => {
         //feature product
-        console.log("cdnData", JSON.parse(data.data.cdnByPage.data));
-        const dataRecieved = JSON.parse(data.data.cdnByPage.data);
+        console.log("cdnData", JSON.parse(data?.data?.cdnByPage?.data));
+        const dataRecieved = JSON.parse(data?.data?.cdnByPage?.data);
         setState(dataRecieved);
       });
   }, []);
-  // console.log(url, "url ");
 
   const [state, setState] = useState([]);
+
+  console.log(state, "url ");
 
   const handleComponents = (val) => {
     switch (val.component) {
@@ -101,7 +109,7 @@ function CdnPages(props) {
         );
       }
       case "titleComp": {
-        return <Title title={val?.props?.title} />;
+        return !showCard && <Title title={val?.props?.title} />;
       }
       case "SlideImgMediaCard": {
         return <SlideImgMediaCard listProduct={val?.props?.listingProducts} />;
@@ -183,10 +191,12 @@ function CdnPages(props) {
       case "blogPageCard": {
         return (
           <BlogImageCard
-            value={val?.props?.cardContent.filter(
-              (value, index) => index < count
-            )}
-            handleRequest={careerViewMoreClick}
+            // value={val?.props?.cardContent.filter(
+            //   (value, index) => index < count
+            // )}
+            value={val?.props?.cardContent}
+            // handleRequest={careerViewMoreClick}
+            handleShow={showTitle}
           />
         );
       }

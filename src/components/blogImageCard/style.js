@@ -16,6 +16,7 @@ const BlogImageCardStyles = makeStyles((theme) => ({
     marginTop: "100px",
     marginBottom: "60px",
     padding: "0 130px",
+    overflowX: "hidden",
     [theme.breakpoints.down("md")]: {
       marginTop: "40px",
       marginBottom: "30px",
@@ -234,6 +235,7 @@ const BlogImageCardStyles = makeStyles((theme) => ({
 
   leftImage: {
     "& img": {
+      width: "100%",
       height: "500px",
       [theme.breakpoints.down("md")]: {},
       [theme.breakpoints.down("xs")]: {

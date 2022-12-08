@@ -3,27 +3,46 @@ import React, { useState } from "react";
 import BlogImageCardStyles from "./style";
 import ReadMore from "./readMore";
 
-const BlogImageCard = (props) => {
+const BlogImageCard = ({ value = [], handleShow = () => null }) => {
   const classes = BlogImageCardStyles();
-
   const [more, setMore] = useState("");
 
   const [show, setShow] = useState(false);
 
+  // view more button click state
+  const [count, setCount] = useState(3);
+  const [cardData, setCardData] = useState([]);
+
   const readMoreBlog = (value) => {
+    handleShow();
     setMore(value);
     setShow(true);
   };
 
   const backButton = () => {
     setShow(false);
+    handleShow();
   };
+
+  const careerViewMoreClick = () => {
+    // debugger;
+    setCount(count + 3);
+    const cardItems = value.filter((value, index) => index < (count + 3));
+    setCardData(cardItems);
+  };
+
+  React.useEffect(() => {
+    const cardValue = value.filter((value, index) => index < count);
+    setCardData(cardValue);
+  }, []);
+
   return (
     <div className={classes.mainTitle}>
       {!show ? (
         <Grid container>
           <Grid item xs={12}>
-            {props?.value?.map((e) => {
+            {cardData?.map((e) => {
+              // debugger;
               return (
                 <div className={classes.main}>
                   <Grid container spacing={2}>
@@ -55,7 +74,7 @@ const BlogImageCard = (props) => {
               );
             })}
             <div className={classes.viewMore}>
-              <Button onClick={props?.handleRequest} variant="outlined">
+              <Button onClick={careerViewMoreClick} variant="outlined">
                 View More
               </Button>
             </div>
