@@ -1,6 +1,7 @@
 import { Button, Grid, Typography } from "@material-ui/core";
 import { BannerComponent } from "components/BannerComponent";
 import React from "react";
+import parse from "html-react-parser";
 import BlogImageCardStyles from "./style";
 
 const ReadMore = (props) => {
@@ -20,12 +21,12 @@ const ReadMore = (props) => {
           <Typography>{props?.data?.header}</Typography>
         </div>
         <div className={classes.subText}>
-          <Typography>{props?.data?.header_Bottom}</Typography>
+          <Typography>{parse(props?.data?.header_Bottom)}</Typography>
         </div>
       </div>
       <div className={classes.content}>
         <div className={classes.text1}>
-          <Typography>{props?.data?.description_1}</Typography>
+          <Typography>{parse(props?.data?.description_1)}</Typography>
         </div>
       </div>
 
@@ -42,7 +43,7 @@ const ReadMore = (props) => {
       </div>
       <div className={classes.content2}>
         <div className={classes.text1}>
-          <Typography>{props?.data?.description_2}</Typography>
+          <Typography>{parse(props?.data?.description_2)}</Typography>
         </div>
       </div>
       <Grid
@@ -64,7 +65,7 @@ const ReadMore = (props) => {
         </Grid>
         <Grid item xs={12} sm={12} md={6}>
           <div className={classes.rightContent}>
-            <Typography>{props?.data?.description_3}</Typography>
+            <Typography>{parse(props?.data?.description_3)}</Typography>
           </div>
         </Grid>
       </Grid>

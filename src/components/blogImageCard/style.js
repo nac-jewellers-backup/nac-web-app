@@ -2,7 +2,7 @@ import { makeStyles } from "@material-ui/core/styles";
 const BlogImageCardStyles = makeStyles((theme) => ({
   imageCard: {
     width: "100%",
-    height: "400px",
+    height: "100%",
     [theme.breakpoints.down("xs")]: {
       height: "250px",
     },
@@ -27,6 +27,10 @@ const BlogImageCardStyles = makeStyles((theme) => ({
       marginBottom: "30px",
       padding: "0 0px",
     },
+  },
+
+  main: {
+    marginBottom: "30px",
   },
 
   contentText: {
@@ -97,6 +101,7 @@ const BlogImageCardStyles = makeStyles((theme) => ({
   viewMore: {
     textAlign: "center",
     marginBottom: "20px",
+    marginTop: "25px",
     "& button": {
       backgroundColor: "#393a96",
       color: "#ffffff",
@@ -155,9 +160,8 @@ const BlogImageCardStyles = makeStyles((theme) => ({
 
   subText: {
     "& p": {
-      fontSize: "19px",
       "& span": {
-        color: "#333edb",
+        // color: "#333edb",
       },
       [theme.breakpoints.down("md")]: {
         fontSize: "17px",
@@ -204,6 +208,7 @@ const BlogImageCardStyles = makeStyles((theme) => ({
   rightContent: {
     "& p": {
       fontSize: "17px",
+      marginTop: "0px !important",
       [theme.breakpoints.down("md")]: {
         fontSize: "15px",
       },

@@ -2,6 +2,7 @@ import { Button, Grid, Typography } from "@material-ui/core";
 import React, { useState } from "react";
 import BlogImageCardStyles from "./style";
 import ReadMore from "./readMore";
+import moment from "moment";
 
 const BlogImageCard = ({ value = [], handleShow = () => null }) => {
   const classes = BlogImageCardStyles();
@@ -27,7 +28,7 @@ const BlogImageCard = ({ value = [], handleShow = () => null }) => {
   const careerViewMoreClick = () => {
     // debugger;
     setCount(count + 3);
-    const cardItems = value.filter((value, index) => index < (count + 3));
+    const cardItems = value.filter((value, index) => index < count + 3);
     setCardData(cardItems);
   };
 
@@ -42,7 +43,6 @@ const BlogImageCard = ({ value = [], handleShow = () => null }) => {
         <Grid container>
           <Grid item xs={12}>
             {cardData?.map((e) => {
-              // debugger;
               return (
                 <div className={classes.main}>
                   <Grid container spacing={2}>
@@ -57,7 +57,9 @@ const BlogImageCard = ({ value = [], handleShow = () => null }) => {
                           <Typography>{e?.heading}</Typography>
                         </div>
                         <div className={classes.dateText}>
-                          <Typography>{e?.date}</Typography>
+                          <Typography>
+                            {moment(e?.date).format("MMMM DD, YYYY")}
+                          </Typography>
                         </div>
                         <div className={classes.middleText}>
                           <Typography>{e?.content}</Typography>

@@ -191,11 +191,7 @@ function CdnPages(props) {
       case "blogPageCard": {
         return (
           <BlogImageCard
-            // value={val?.props?.cardContent.filter(
-            //   (value, index) => index < count
-            // )}
             value={val?.props?.cardContent}
-            // handleRequest={careerViewMoreClick}
             handleShow={showTitle}
           />
         );
