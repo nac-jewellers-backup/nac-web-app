@@ -9,13 +9,7 @@ import styles from "../../Header/styles";
 import ReactImageZoom from "react-image-zoom";
 
 import Gagetstylori from "./Gagetstylori/Gagetstylori";
-// window.onload = function () {
-//   var flashlight = document.querySelector('#flashlight');
-//   document.getElementById('divs').addEventListener('mouseover', function (event) {
-//     flashlight.style.left = (event.pageX - 40) + 'px';
-//     flashlight.style.top = (event.pageY - 40) + 'px';
-//   });
-// };
+
 
 class ProductImageZoom extends React.Component {
   constructor(props) {
@@ -69,9 +63,7 @@ class ProductImageZoom extends React.Component {
               style={{ textAlign: "center" }}
               className="imgzom-sidecraousel-media"
             >
-              {/* <Button onClick={this.previous}>
-                <i class="fa fa-angle-up" style={{ fontSize: "35px", color: "#F699A3" }}></i>
-              </Button> */}
+             
               <Slideshow
                 sliderRef={this.slider}
                 getmsg={this.getimage}
@@ -80,24 +72,13 @@ class ProductImageZoom extends React.Component {
                 fadeImages={data[0].fadeImages}
                 dataCarousel={dataCarousel}
               />
-              {/* <Button onClick={this.next}>
-                <i class="fa fa-angle-down" style={{ fontSize: "35px", color: "#F699A3" }}
-                // className={`${classes.colorMain}`}
-                ></i>
-              </Button> */}
+            
             </div>
           </Grid>
 
           <Grid item xs={10}>
             <div>
-              {/* <div className='imagecard' id="divs" onMouseOut={event => this.zoomOut(event)} onMouseMove={event => this.zoomIn(event)}>
-                {data[0].ProductContactNum[0].isReadyToShip == true ? <div class="one-day-ship" ></div> : ""} */}
-              {/* <div id='flashlight'></div> */}
-              {/* <img className='img-zooming-' id="imgZoom" width="100%" height="100%" className={`${showimage ? '' : 'shine'}`} src={showimage} alt="" />
-              </div>
-              <div className='overly-img' id="overlay"
-                style={{ backgroundImage: `url(${showimage})` }} onMouseOut={event => this.zoomOut(event)}>
-                </div> */}
+              
               <div
                 class="zoomreact"
                 style={{
@@ -110,15 +91,7 @@ class ProductImageZoom extends React.Component {
               </div>
               <div>
                 <Grid container spacing={12}>
-                  {/* {data[0].productsubHeaderlist.map(val => (
-                    <Grid item xs={2} >
-                      <div key={val.name}>
-                        <img className='features-tags-images' src={val.icon} alt="" />
-                        <span style={{ fontSize: "12px" }} className={`${classes.colorLight}`}>{val.name} </span>
-                      </div>
-                    </Grid>
-                  ))} */}
-                  {/* <StaticView /> */}
+                 
                 </Grid>
               </div>
             </div>

@@ -8,13 +8,7 @@ import Slideshow from "../Carousel/carosul";
 import styles from "../Header/styles";
 import Wishlist from "../wishlist/wishlist";
 import "./product-images.css";
-// window.onload = function () {
-//   var flashlight = document.querySelector('#flashlight');
-//   document.getElementById('divs').addEventListener('mouseover', function (event) {
-//     flashlight.style.left = (event.pageX - 40) + 'px';
-//     flashlight.style.top = (event.pageY - 40) + 'px';
-//   });
-// };
+
 
 class ProductImageZoom extends React.Component {
   constructor(props) {

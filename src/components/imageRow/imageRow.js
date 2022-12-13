@@ -17,12 +17,7 @@ const ProfileUseStyles = makeStyles((theme) => ({
   profile: {
     width: "100%",
     height: "300px",
-    // [theme.breakpoints.up("xl")]: {
-    //   height: "450px",
-    // },
-    // [theme.breakpoints.down("xl")]: {
-    //   height: "450px",
-    // },
+  
     [theme.breakpoints.up("lg")]: {
       height: "450px",
     },

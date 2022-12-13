@@ -118,8 +118,7 @@ const Provider = (props) => {
 
       await fetch(uri, {
         method: "post",
-        // body: {query:seoUrlResult,variables:splitHiphen()}
-        // body: JSON.stringify({query:seoUrlResult}),
+   
 
         headers: {
           "Content-Type": "application/json",

@@ -7,9 +7,7 @@ import { NavLink } from "react-router-dom";
 import Pricing from "../Pricing";
 import "./productCard.css";
 
-// let theme = createMuiTheme(require('./../../theme.json'));
-// theme = responsiveFontSizes(theme);
-//theme={outerTheme}
+
 
 const useStyles = makeStyles((theme) => ({
   card: {
@@ -99,19 +97,7 @@ export default function ProductCards(props) {
             title={props.data.title}
           />
 
-          {/* <CardHeader
-        avatar={
-          <Avatar aria-label="Recipe" className={classes.avatar}>
-            R
-          </Avatar>
-        }
-        action={
-          <IconButton aria-label="Settings">
-            <MoreVertIcon />
-          </IconButton>
-        }
-       
-      /> */}
+          
           <CardContent>
             <Pricing
               title={props.data.title}

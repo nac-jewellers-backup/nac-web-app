@@ -77,8 +77,7 @@ export const ProductCard = (props) => {
           </div>
         </CardContent>
         <CardActions>
-          {/* Add actions if required */}
-          {/* <Button>Help</Button> */}
+          
         </CardActions>
       </Card>
     </>

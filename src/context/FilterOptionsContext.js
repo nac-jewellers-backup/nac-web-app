@@ -588,8 +588,7 @@ const Provider = (props) => {
   };
 
   useEffect(() => {
-    // clearSortIfFiltersIsEmpty()
-    // if(!sortFilterCombo) setSort("")
+
       
     if (Object.entries(ntxdata).length !== 0 && ntxdata.constructor === Object) {
       // if(ntxdata.seo_url !=="jewellery" ){

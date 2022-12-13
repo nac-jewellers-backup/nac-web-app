@@ -13,7 +13,7 @@ const StoreLocationDetails = (props) => {
     url: "",
     key: "",
   });
-  // const key = location?.state?.key;
+
 
   useEffect(() => {
     debugger;

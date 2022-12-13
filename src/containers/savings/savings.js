@@ -78,23 +78,7 @@ export default function Savings(props) {
           ))}
         </Slideshow>
 
-        {/* <Hidden smDown> */}
-        {/* {IndexSavingPage.setting.arrowsImg && (
-          <Grid container>
-            <Grid item onClick={previous} className={classes.preButton}></Grid>
-            <Grid item onClick={next} className={classes.nextButton}></Grid>
-          </Grid>
-        )} */}
-        {/* </Hidden> */}
-        {/* <Slideshow dataCarousel={values().setting} sliderRef={slider}>
-          {values() &&
-            values().carouselData &&
-            values().carouselData.map((val, index) => (
-              <Grid container key={index} className={classes.headContent}>
-                <img src={val.img} className={classes.mainCarosel} />
-              </Grid>
-            ))}
-        </Slideshow> */}
+        
       </Grid>
       <Grid xs={12} sm={12} md={12} lg={12} xl={12} container>
         <Grid

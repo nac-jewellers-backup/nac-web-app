@@ -2,12 +2,6 @@ import { Grid } from '@material-ui/core';
 import { GoogleApiWrapper, Map, Marker } from 'google-maps-react';
 import React from 'react';
 
-
-
-// const style = {
-//     width: '100%',
-//     height: '400px'
-// }
 class Mappping extends React.Component {
  
     render() {
@@ -29,11 +23,7 @@ class Mappping extends React.Component {
                     <Marker onClick={this.onMarkerClick}
                         name={'Current location'} />
 
-                    {/* <InfoWindow onClose={this.onInfoWindowClose}>
-                        <div>
-                            <h1>{this.state.selectedPlace.name}</h1>
-                        </div>
-                    </InfoWindow> */}
+                  
                 </Map>
 
             </Grid >

@@ -90,14 +90,7 @@ const ProductlistComponent = (props) => {
   const display = () => {
     setShow(!show);
   };
-  // var cardId = {
-  //   cardId:
-  //     localStorage.getItem("cart_id") &&
-  //     JSON.parse(localStorage.getItem("cart_id"))?.cart_id,
-  // };
-  // let email = localStorage.getItem("email")
-  //   ? localStorage.getItem("email")
-  //   : "";
+
   const gotogift = () => {
     handlers.handleSubmit();
   };
@@ -135,19 +128,7 @@ const ProductlistComponent = (props) => {
           <div>
             <Grid container spacing={12}>
               <Grid item xs={12}>
-                {/* {props.order ? (
-                  " "
-                ) : (
-                  <h4
-                    style={{
-                      textAlign: "center",
-                      color: "gray",
-                      fontSize: "14px",
-                    }}
-                  >
-                    Gift Wrap
-                  </h4>
-                )} */}
+               
                 <br />
                 <div style={{ display: show ? "block" : "none" }}>
                   <form action="javascript:void(0)" onSubmit={() => gotogift()}>
@@ -276,14 +257,7 @@ const ProductlistComponent = (props) => {
                         </>
                       )}
                     </div>
-                    {/* <FormControlLabel
-                      control={<Checkbox defaultChecked />}
-                      label={
-                        <span style={{ color: "gray", whiteSpace: "nowrap" }}>
-                          Send order updates to the Gift Recipient
-                        </span>
-                      }
-                    /> */}
+                   
                   </form>
                 </div>
 

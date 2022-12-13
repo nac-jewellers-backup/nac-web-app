@@ -37,10 +37,7 @@ class ProductDescription extends Component {
     // let path = window.location.pathname.split('/').pop();
     var loc = this.props.location.pathname;
     
-    // const descriptionData = this.props.data;
-    // const settings =
-    //   this.props.data && this.props.data[0] && this.props.data[0].dataCarousel;
-    // const fadeImages = this.props.data && this.props.data[0] && this.props.data[0].carouselImage;
+   
     const fadeImages =
       this.props.datalisting &&
       this.props.datalisting &&
@@ -137,7 +134,7 @@ class ProductDescription extends Component {
                             className={`know-txt ${classes.colorLight}`}
                             id="readLess"
                           >
-                            {/* <span ><i className="fa faMore">&#xf0d8;</i></span>  */}
+                           
                             READ LESS
                           </p>
                           <br />
@@ -170,7 +167,7 @@ class ProductDescription extends Component {
                             className={`know-txt ${classes.colorLight}`}
                             id="readMore"
                           >
-                            {/* <span ><i className="fa faMore">&#xf0da;</i></span> */}
+                            
                             {datadescription.length > 320 ? "READ MORE" : ""}
                           </p>
                         </>
@@ -191,7 +188,7 @@ class ProductDescription extends Component {
                             className={`know-txt ${classes.colorLight}`}
                             id="readLess"
                           >
-                            {/* <span ><i className="fa faMore">&#xf0d8;</i></span>  */}
+                            
                             {datadescription.length > 320 ? "READ LESS" : ""}
                           </p>
                           <br />

@@ -140,65 +140,9 @@ export default function Contact(props) {
                   </Grid>
                 </Grid>
               </Grid>
-              {/* <Grid item xs={12} sm={12} md={12} xl={12}>
-        <div className={classes.contents}>{contact.content}</div>
-      </Grid> */}
-              {/* <Grid
-        container
-        xs={6}
-        sm={6}
-        md={4}
-        lg={4}
-        xl={4}
-        className={classes.grid4}
-      >
-        {contact.image.map((img, index) => (
-          <Grid
-            item
-            xs={12}
-            sm={12}
-            md={4}
-            lg={4}
-            xl={4}
-            className={classes.images}
-          >
-            <img src={img.link}></img>
-            <Typography className={classes.imageContent}>
-              {img.img_content}
-            </Typography>
-          </Grid>
-        ))}
-      </Grid>
-   */}
+              
 
-              {/* <Grid container xs={12} sm={12} md={12} xl={12} className="">
-        {contactpage.dataall.map((data, index) => (
-          <>
-            <Grid
-              item
-              xs={12}
-              sm={12}
-              md={6}
-              md={12}
-              lg={12}
-              xl={12}
-              className={classes.grid10}
-            >
-              <Select value={"age"} className={classes.grid9} native>
-                {data &&
-                  data.list2 &&
-                  data.list2.map((val, index) => (
-                    <>
-                      className={classes.grid9}
-                      <option value={val}>{val}</option>
-                    </>
-                  ))}
-              </Select>
             
-            </Grid>
-          </>
-        ))}
-      </Grid> */}
               <Grid item xs={12} sm={12} md={12} xl={12}>
                 <br />
               </Grid>
@@ -291,60 +235,7 @@ export default function Contact(props) {
                   </Grid>
                 </Grid>
               </Grid>
-              {/* <Grid
-        container
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={12}
-        className={classes.grid11}
-      >
-        <Grid
-          item
-          xs={12}
-          sm={12}
-          md={12}
-          lg={12}
-          xl={12}
-          className={classes.grid12}
-        >
-          <Typography className={classes.grid16}>
-            {contactfooter.content1}
-          </Typography>
-        </Grid>
-        <Grid
-        container
-          item
-          xs={12}
-          sm={12}
-          md={12}
-          lg={12}
-          xl={12}
-          className={classes.grid13}
-          justify="center"
-        >
-          <Grid item   xs={12}
-          sm={12}
-          md={12}
-          lg={6}
-          xl={6}>
-          <Typography className={classes.grid14}>
-            {" "}
-            {contactfooter.address}
-          </Typography>
-          <Typography className={classes.grid15}>
-            {" "}
-            {contactfooter.phonenum}
-          </Typography>
-          <Typography className={classes.grid15}>
-            {" "}
-            {contactfooter.email}
-          </Typography>
-          </Grid>
-        </Grid>
-      </Grid>
-    */}
+            
             </Grid>
           </form>
         </Container>

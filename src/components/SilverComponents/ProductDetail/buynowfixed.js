@@ -144,9 +144,7 @@ class Buynowfixed extends React.Component {
                   <div onClick={() => this.props.addtoCartToBuyNow()}>
                     <Buynowbutton
                       sku={data[0].skuId}
-                      // class={`product-footer-buynow ${
-                      //   isSilver ? classes.fixedGridsilver : ""
-                      // }`}
+                      
                       class={`product-footer-buynow ${classes.addtoCartToBuyNowStyle}`}
                       addtoCartToBuyNow={true}
                       onClick={
@@ -181,7 +179,7 @@ class Buynowfixed extends React.Component {
                           ? handleLocalStorageAddtoCart.bind(this)
                           : ""
                       }
-                      // productIsActive={productIsActive ?? ""}
+                      
                     />
                   </div>
                 </Grid>{" "}

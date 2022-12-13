@@ -6,9 +6,9 @@ import {
   ExperiencePageNac,
   IndexExperiencePage,
 } from "mappers/dummydata/savingNac";
-// import MediaCarousel from "../../components/mediacarousel/index";
+
 import MediaCarousel from "../../components/mediacarousel/mediaCarousel";
-// import Header from "../../components/header/header";
+
 import expstyles from "./experienceStyle";
 import Header from "components/SilverComponents/Header";
 import Footer from "../../components/Footer/Footer";

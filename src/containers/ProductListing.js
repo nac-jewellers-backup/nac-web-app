@@ -246,7 +246,7 @@ class Stylori extends React.Component {
           <Hidden smDown>
             <Container maxWidth="lg">
               <Grid item xs={12}>
-                {/* <Filterlisting title="Jewellery" data={dataFilter} datalisting={data} wishlist={this.props.wishlistdata} /> */}
+              
                 <ProductDescription
                   title="Jewellery"
                   data={dataFilter}
@@ -264,7 +264,7 @@ class Stylori extends React.Component {
           </Hidden>
           <Hidden mdUp>
             <Grid item xs={12}>
-              {/* <Filterlisting title="Jewellery" data={dataFilter} datalisting={data} wishlist={this.props.wishlistdata} /> */}
+             
               <ProductDescription
                 title="Jewellery"
                 data={dataFilter}
@@ -281,7 +281,7 @@ class Stylori extends React.Component {
           </Hidden>
           <Grid item xs={12}>
             <Hidden smDown>
-              {/* <ChatHelp data={data} wishlist={this.props.wishlistdata} /> */}
+         
 
               <Footer />
             </Hidden>
@@ -293,7 +293,7 @@ class Stylori extends React.Component {
   }
 }
 
-// const history = (props, aa) => props.history.push(`/stylori?${aa}`);
+
 
 const Components = (props) => {
   let {

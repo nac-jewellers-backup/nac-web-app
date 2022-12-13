@@ -122,33 +122,7 @@ class LoginRegisterIndex extends React.Component {
                   }}
                 />
               </div>
-              {/* <div
-                style={{
-                  display: this.state.Continue === true ? "block" : "none",
-                  color: "gray",
-                  textAlign: "center",
-                  borderTop: "1px solid #c1c1c1",
-                  fontSize: "14px",
-                }}
-              >
-                <br />
-                Guest Checkout Not ready to become a member just yet?
-                <br />
-                <br />
-                <Button
-                  className="apply-b"
-                  onClick={() => {
-                    this.setState({
-                      Continue: this.state.Continue ? false : true,
-                    });
-                    this.setState({
-                      Login: this.state.Login ? false : true,
-                    });
-                  }}
-                >
-                  Continue as a Guest
-                </Button>
-              </div> */}
+             
             </div>
             <div hidden={this.state.Continue}>
               <Continues

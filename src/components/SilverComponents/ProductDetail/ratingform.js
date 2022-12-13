@@ -24,14 +24,14 @@ const RatingComponent = (props) => {
             <div className="bg-clr2 priceecontainer" style={{ padding: "20px" }}>
                 <form id="Resetform" action="javascript:void(0)" onSubmit={(e) => handlers.handelSubmit(e, props)}>
                     <Grid container spacing={12} >
-                        {/* <Grid item lg={1}  */}
+
                         <Grid item xs={12} lg={12}>
                             <div className="rating-form ">
                                 <h5 className={`rating-form-head ${classes.normalfonts}`}>Rating</h5>
                                 <label className='errtext'> {values.errortext.rateerr ? values.errortext.rateerr : ""}</label>
                                 <Ratings ratings="starts-review" />
                             </div>
-                            {/* <h6 className={`rating-form-head ${classes.normalfonts}`} style={{ marginBottom: "-3px" }}>Write Your Review</h6> */}
+                           
                             <label className='errtext'> {values.errortext.ratetitle ? values.errortext.ratetitle : ""}</label>
                             <Input
                                 margin="normal"
@@ -63,8 +63,7 @@ const RatingComponent = (props) => {
                                 rowsMax={4}
                                 onChange={e => handlers.handleChange('message', e.target.value)}
                                 error={values.error && values.error.ratemsg ? true : false}
-                            // helperText="please Enter review text"
-                            // required 
+                           
                             />
                             <div className={`tool-tips ${classes.normalfonts}`} >Max 250 Characters</div>
                             {/* <button type="submit" >rr</button> */}

@@ -50,34 +50,7 @@ function AkshyaTritiya(props) {
   };
   const slider = React.createRef();
 
-  // useEffect(() => {
-  //   fetch(`${API_URL}/graphql`, {
-  //     method: "post",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify({
-  //       query: ALLBANNERSCOMPLETE,
-  //     }),
-  //   })
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       let bannerFullData = data.data.allBanners.nodes;
-  //       const specificPageData = bannerFullData.filter(
-  //         (item) => item.urlParam === window.location.pathname
-  //       );
-  //       const listedPageData = bannerFullData.filter(
-  //         (item) => item.urlParam === "listing"
-  //       );
-  //       console.log("listedPageData", listedPageData);
-  //       if (specificPageData.length > 0) {
-  //         setBanners(specificPageData);
-  //       } else {
-  //         setBanners(listedPageData);
-  //       }
-  //     });
-  // }, []);
-  // console.log("baners", banners);
+  
   useEffect(() => {
     fetch(`${API_URL}/graphql`, {
       method: "post",

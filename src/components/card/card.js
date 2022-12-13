@@ -22,12 +22,7 @@ export default function Cards(props) {
   const handleClose = () => {
     setOpen(false);
   };
-  // const next = () => {
-  //   slider.current.slickNext();
-  // };
-  // const previous = () => {
-  //   slider.current.slickPrev();
-  // };
+ 
   const slider = React.createRef();
 
   return (
@@ -121,30 +116,9 @@ export default function Cards(props) {
             >
               <Card className={classes.card}>
                 <Grid>
-                  {/* //   style={{ width: "100% !important" }}
-                  //   dataCarousel={props.data.carouselTop.setting}
-                  //   sliderRef={slider} arrowsImg
-                  // > */}
+                  
 
-                  {/* {props.data.carouselTop.setting.arrowsImg && (
-                    <Grid container>
-                      <Grid
-                        item
-                        onClick={previous}
-                        className={classes.preButton}
-                      ></Grid>
-                      <Grid
-                        item
-                        onClick={next}
-                        className={classes.nextButton}
-                      ></Grid>
-                    </Grid>
-                  )} */}
-
-                  {/* <Slideshow
-                    dataCarousel={props.data.carouselTop.setting}
-                    sliderRef={slider}
-                  > */}
+              
                   {window.location.pathname === "/newsroom" ? (
                     <>
                       <a href={val.link} className={classes.link}>
@@ -263,9 +237,7 @@ export default function Cards(props) {
                       </>
                     )}
 
-                    {/* <Typography className={classes.cardMetal}>
-                      {val.model}
-                    </Typography> */}
+                   
                     <>
                       {window.location.pathname === "/temple-work"
                         ? (

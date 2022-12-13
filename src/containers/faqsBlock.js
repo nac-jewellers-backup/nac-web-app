@@ -1,6 +1,5 @@
 import React from "react";
 import Header from "components/SilverComponents/Header";
-// import Header from "components/SilverComponents/Header";
 import { Grid, Hidden } from "@material-ui/core";
 import Footer from "components/Footer/Footer";
 import { withRouter } from "react-router";

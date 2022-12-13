@@ -48,8 +48,7 @@ export default function (data) {
         shipby: generateShipsBy(k.isReadyToShip, k.vendorDeliveryTime),
         isReadyToShip: k.isReadyToShip,
         isActive: k.productListByProductId.isactive,
-        // sellingPrice: k?.sellingPrice,
-        // markupPrice: k?.markupPrice,
+       
         minOrderQty: k.minOrderQty ?? 1,
         maxOrderQty: k.maxOrderQty ?? 1,
         productsDetails: [
