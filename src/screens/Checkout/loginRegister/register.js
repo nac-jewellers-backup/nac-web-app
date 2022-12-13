@@ -28,6 +28,7 @@ const RegisterComponent = (props) => {
     ? localStorage.getItem("user_id")
     : "";
     const [countryCode, setCountryCode] = React.useState();
+    const [countryNum,setCountryNum] = React.useState();
     const json = (response) => {
       return response.json();
     };
@@ -45,13 +46,19 @@ const RegisterComponent = (props) => {
         .then((data) => {
            let main = data.data;
            let countries=[]
+           let country_code =[]
            main.allMasterCountries.nodes.map(_ =>{
              let obj={}
+             let obj2={}
              obj.label = _.nicename
              obj.value = _.iso
+             obj2.label =  _.phonecode
+             obj2.value = _.phonecode
              countries.push(obj)
+             country_code.push(obj2)
            })
            setCountryCode(countries)
+           setCountryNum(country_code)
         })
         .catch(err=>{
           console.log(err,'err')
@@ -342,8 +349,12 @@ const RegisterComponent = (props) => {
                   <Grid container spacing={12}>
                     <Grid item xs={6} lg={6}>
                       <SimpleSelect
-                        name={"India"}
-                        selectData={countryCode ?? []}
+                         name='country'
+                         selectData={countryCode ?? []}    
+                         onChange={(event) =>
+                           handlers.handlesetvaluesadrees('country', event.target.value)
+                         }
+                         value={valuesadrees.country ?? ''}
                       />
                     </Grid>
                     <Grid item xs={6} lg={6}>
@@ -369,11 +380,12 @@ const RegisterComponent = (props) => {
                   <Grid container spacing={12}>
                     <Grid item xs={3} lg={3}>
                       <SimpleSelect
-                        name={["+91"]}
-                        selectData={[
-                          {label:"+91",value:"+91"},
-                        ]}
-                        disabled={"disabled"}
+                         name={'country_code'}
+                         selectData={countryNum ?? []}
+                         onChange={(event) =>
+                            handlers.handlesetvaluesadrees('country_code', event.target.value)
+                          }
+                         value={valuesadrees.country_code ?? ""}  
                       />
                     </Grid>
                     <Grid item xs={9} lg={9}>

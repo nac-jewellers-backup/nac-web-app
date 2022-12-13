@@ -353,13 +353,17 @@ export default function Footer(props) {
         },
 
         {
-          url: "",
+          url: "#",
           Title: "Track Your Order",
         },
         {
-          url: "/return",
+          url: "#",
           Title: "30 Day Return",
         },
+        {
+          Title: 'Experiences',
+          url: '/experiences'
+        }
       ],
     },
     {
@@ -382,7 +386,7 @@ export default function Footer(props) {
           Title: "+91 95974 57555 - WhatsApp",
         },
         {
-          url: "/careersPage",
+          url: "/static-careersPage",
           Title: "Careers",
         },
       ],
@@ -439,12 +443,16 @@ export default function Footer(props) {
       content: [
         {
           subTitle: "Track Your Order",
-          url: "/stories",
+          url: "#",
         },
         {
           subTitle: "30 Day Return",
-          url: "/return",
+          url: "#",
         },
+        {
+          subTitle: 'Experiences',
+          url: '/experiences'
+        }
       ],
     },
     {
@@ -565,7 +573,7 @@ export default function Footer(props) {
                                 window.location.href = v.url;
                               }}
 
-                              // href="#"
+                            // href="#"
                             >
                               <b style={{ fontSize: "16px" }}>{v.heading}</b>
                             </Link>
@@ -576,7 +584,7 @@ export default function Footer(props) {
                                 window.location.href = v.url;
                               }}
 
-                              // href="#"
+                            // href="#"
                             >
                               <span style={{ fontSize: "14px" }}>
                                 {" "}
@@ -764,7 +772,7 @@ export default function Footer(props) {
                   boxShadow: "4px 4px 4px #A5A4A5",
                 }}
                 onClick={() => {
-                  window.location.href = "/store";
+                  window.location.href = "/static-store";
                 }}
               >
                 &nbsp;Store Locator&nbsp;
@@ -925,7 +933,7 @@ export default function Footer(props) {
                 borderRadius: "0px",
               }}
               onClick={() => {
-                window.location.href = "/store";
+                window.location.href = "/static-store";
               }}
             >
               Store Locator

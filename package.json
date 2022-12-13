@@ -1,5 +1,5 @@
 {
-  "name": "nac-ecom-ui",
+  "name": "nac-ui",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -48,9 +48,11 @@
     "google-maps-react": "^2.0.6",
     "graphql": "^14.7.0",
     "graphql-request": "^3.6.1",
+    "html-react-parser": "^3.0.4",
     "html-webpack-plugin": "4.0.0-beta.5",
     "is-wsl": "^1.1.0",
     "jest": "24.7.1",
+    "jsx-runtime": "^1.2.0",
     "mini-css-extract-plugin": "0.5.0",
     "moment": "^2.29.1",
     "morgan": "^1.10.0",
@@ -76,13 +78,14 @@
     "react-meta-tags": "^0.7.4",
     "react-paginate": "^6.5.0",
     "react-pose": "4.0.8",
-    "react-router-dom": "^5.2.1",
+    "react-router-dom": "^5.2.0",
     "react-slick": "0.24.0",
     "react-star-ratings": "2.3.0",
     "react-swipeable-views": "^0.13.9",
     "resolve": "1.10.0",
     "sass-loader": "7.1.0",
     "slick-carousel": "1.8.1",
+    "sonarqube-scanner": "^2.8.2",
     "style-loader": "0.23.1",
     "terser-webpack-plugin": "1.2.3",
     "ts-pnp": "1.1.2",
@@ -94,10 +97,10 @@
   },
   "scripts": {
     "generate-build-version": "node generate-build-version",
-    "start": "node scripts/start",
-    "start:dev": "env-cmd -f .env.development npm run start",
-    "start:staging": "env-cmd -f .env.staging npm run start",
-    "start:production": "env-cmd -f .env.production npm run start",
+    "start": "npm run serve",
+    "start:dev": "env-cmd -f .env.development node scripts/start",
+    "start:staging": "env-cmd -f .env.staging node scripts/start",
+    "start:production": "env-cmd -f .env.production node scripts/start",
     "build": "npm run generate-build-version &&  node scripts/build",
     "build:dev": "env-cmd -f .env.development npm run build",
     "build:staging": "env-cmd -f .env.staging npm run build",
@@ -110,7 +113,8 @@
     "generate-report": "lighthouse --chrome-flags=\"--headless --no-sandbox\" http://localhost:8080 --output html --output-path ./report.html",
     "pm2-serve": "pm2 delete nac-ecom || pm2 serve --spa build --name nac-ecom",
     "pm2-rm": "pm2 delete nac-ecom",
-    "sb": "start-storybook"
+    "sb": "start-storybook",
+    "smell-code": "node sonarqube-scanner.js"
   },
   "eslintConfig": {
     "extends": "react-app"
