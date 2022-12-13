@@ -2,9 +2,7 @@ import { Button, Hidden } from "@material-ui/core";
 import React from "react";
 import { withRouter } from "react-router";
 import "../product-image-slider/product-images.css";
-// var valus = localStorage.getItem("cartDetails") ? JSON.parse(localStorage.getItem("cartDetails")).products[0].sku_id : ""
-// let path = window.location.pathname.split('/').pop();
-// const path = window.location.pathname !== "cart" || window.location.pathname!== "checkout"
+
 class Buynowbutton extends React.Component {
   constructor(props) {
     super();
@@ -18,17 +16,7 @@ class Buynowbutton extends React.Component {
       ? JSON.parse(localStorage.getItem("cartDetails")).products
       : "";
 
-    // return valus_locl && valus_locl.map(val => {
-    //     const vlx = this.props && this.props.sku
-    //     if (vlx === val.sku_id) {
-    //         vals = 1
-    //         return vals
-    //     } else {
-    //         vals = 0
-    //         return vals
-    //     }
-
-    // })
+    
     if (valus_locl) {
       let productIds = valus_locl.map((val) => {
         return val.sku_id;
@@ -133,7 +121,7 @@ class Buynowbutton extends React.Component {
             </>
           ) : (
             <>
-              {/* {!this.props.withoutBag && !this.props.isSilver && !this.props.smallScreen && <i class="fa fa-shopping-bag buynow-icon"></i>} */}
+             
               {
                 this.props.addtoCartToBuyNow ? (
                   <>
@@ -211,9 +199,7 @@ class Buynowbutton extends React.Component {
                     )}
                   </>
                 )
-                // (
-                //   <span className={this.props.button}>{productIsActive ? "Buy Now" : "Enquire now"}</span>
-                // )
+                
               }
             </>
           )}

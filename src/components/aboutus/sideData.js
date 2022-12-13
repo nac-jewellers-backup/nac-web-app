@@ -1,24 +1,18 @@
 import React from "react";
 import { Grid } from "@material-ui/core";
 import style from "./style";
-// import { NavHashLink  as NavLink } from "react-router-hash-link";
 import { NavLink } from "react-router-dom";
 import ExpandLess from "@material-ui/icons/ExpandLess";
 import ExpandMore from "@material-ui/icons/ExpandMore";
-// import ListSubheader from '@material-ui/core/ListSubheader';
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
-// import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from "@material-ui/core/ListItemText";
 import Collapse from "@material-ui/core/Collapse";
 
 var check = {};
 
 export default function SideData(props) {
-  // const handleOpen = () => {
-  //     window.location.href = "#test"
-  // }
- 
+  
   const classes = style();
   const [open, setOpen] = React.useState(null);
   const handleClick = (value) => {
@@ -44,13 +38,6 @@ export default function SideData(props) {
         }
     }
  }
-//   const _data = {}
-//   _data['title'] = val.title
-//   _data['link'] = val.link
-//   }
-//   const _dataArray= [{title:'About Us',link:'/aboutus'},{title:'Terms & Conditions',link:'/termsconditions'},
-//   {title:'30 Day Return',link:'/return'},{title:'Delivery Info',link:'/delivery'},{title:'Privacy Policy',link:'/privacy'},
-//   {title:'Education',link:'/education'},{title:'Sitemap',link:'/sitemap'},{title:'Contact Us',link:'/contactus'},{title:'FAQs',link:'/faqs'}]
   const Component = (data) => {
     return (
       <NavLink
@@ -103,9 +90,7 @@ export default function SideData(props) {
          
          return(
             <Grid item xs={12}>
-            {/* <Typography className={classes.leftContent} variant="h6">
-                            About Us
-                </Typography> */}
+            
             <List
               component="nav"
               aria-labelledby="nested-list-subheader"

@@ -3,7 +3,6 @@ import { Grid } from "@material-ui/core";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
-// import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import { withStyles, makeStyles } from "@material-ui/core/styles";
@@ -91,14 +90,6 @@ export default function DiamondList(props) {
     createData("Gingerbread", 356, 16.0, 49, 3.9, "NON", "", "View"),
   ];
 
-  // const useStyles = makeStyles({
-  //   table: {
-  //     minWidth: 700,
-  //     [theme.breakpoints.down("sm")]: {
-  //       minWidth: "none !important",
-  //     },
-  //   },
-  // });
 
   return (
     <Grid container xs={12}>

@@ -13,9 +13,7 @@ const RatingForm = (props) => {
 };
 const RatingComponent = (props) => {
   const { classes } = props;
-  // const clear1 = () => {
-  //     props && props.clear_rating_onchange && props.clear_rating_onchange(true)
-  // }
+
   const { values, handlers, setValues } = useRating(props);
   const newLocal = 250;
 
@@ -49,12 +47,7 @@ const RatingComponent = (props) => {
                   {values.errortext.rateerr ? values.errortext.rateerr : ""}
                 </label>
               </div>
-              {/* <h6
-                className={`rating-form-head ${classes.normalfonts}`}
-                style={{ marginBottom: "-3px" }}
-              >
-                Write your review
-              </h6> */}
+             
               <Input
                 margin="normal"
                 color="secondary"
@@ -102,21 +95,7 @@ const RatingComponent = (props) => {
                 />
               </div>
 
-              {/* <Input
-                                margin="normal"
-                                variant="outlined"
-                                type="text"
-                                name="message"
-                                placeholder='Your Reviews'
-                                className="rating-form-text"
-                                maxLength={250}
-                                value={values.message}
-                                multiline={true}
-                                rows={6}
-                                rowsMax={4}
-                                onChange={e => handlers.handleChange('message', e.target.value)}
-                                error={values.error && values.error.ratemsg ? true : false}
-                            /> */}
+             
               <div
                 className={`tool-tips ${classes.normalfonts} ${classes.colorsmallscreen}`}
               >

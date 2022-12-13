@@ -6,14 +6,11 @@ import React from 'react';
 import 'components/product-image-slider/product-images.css'
 import 'screens/screens.css';
 import Header from 'components/SilverComponents/Header'
-// import Header from "components/SilverComponents/Header";
 import Accountdetails from "../components/accounts/accountdetails"
 import { CartContext } from 'context'
 import cart from 'mappers/cart'
 import Footer from "../components/Footer/Footer";
-// const Accounts = (props) => {
-//     return <Componentz {...props} />
-// }
+
 class Accounts extends React.Component {
     render() {
         return (

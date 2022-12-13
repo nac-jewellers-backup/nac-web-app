@@ -2,10 +2,7 @@ import React, { useEffect } from 'react';
 import { useGraphql } from 'hooks/GraphqlHook';
 import { PRODUCTLIST, conditions } from 'queries/productListing';
 import { withRouter } from 'react-router-dom';
-// import { productsPendants } from 'mappers/dummydata';
-// import { object } from 'prop-types';
 
-// let setFilter;
 const initialCtx = {
     FilterOptionsCtx: {
         filters: {

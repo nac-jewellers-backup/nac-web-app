@@ -19,9 +19,7 @@ const useStyles = makeStyles(theme => ({
        
         
     },
-    //  gridlistLi:{
-    //     height:'auto !important'
-    // },
+  
     gridListtitle:{
         padding:'2%'
     }

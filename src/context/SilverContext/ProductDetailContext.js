@@ -2,8 +2,7 @@ import React, { useEffect } from "react";
 import { useGraphql } from "hooks/GraphqlHook";
 import { PRODUCTDETAILS, YouMayAlsoLike, youRecentlyViewed } from "queries/productdetail";
 import { withRouter } from "react-router-dom";
-// import useRegister from '../components/LoginAndRegister/useregister';
-// const { setValues } = useRegister();
+
 const initialCtx = {
   ProductDetailCtx: {
     filters: { productId: "", defaultVariants: { diamondType: "", metalColor: "", purity: "", skuSize: "" }, skuId: "" },
@@ -88,8 +87,7 @@ export const TabsProvider = (props) => {
       }
     }
 
-    // var metalColors =filters.defaultVariants.metalColor.length>0 ? {productColor:filters.defaultVariants.metalColor  }: null;
-    // variables = { conditionfilter: { 'skuId': filters["skuId"] }, conditionImage:{...metalColors} }
+  
 
     if (window.location.search.length > 0) {
       setregisterurl({
@@ -183,17 +181,7 @@ export const TabsProvider = (props) => {
         };
       }
 
-      // let loc = window.location.search.split('=')[1]
-      //     variablesviewed["filterdatatranssku"] = {
-      //     "skuId": {
-      //         "notEqualTo": loc
-      //     }
-      // }
-      // variableslike["filterdatatranssku"] = {
-      //     "skuId": {
-      //         "notEqualTo": data && data.allTransSkuLists && data.allTransSkuLists.nodes ? data.allTransSkuLists.nodes[0].skuId:''
-      //     }
-      // }
+      
       if (
         data &&
         Object.entries(data).length > 0 &&
@@ -279,20 +267,14 @@ export const TabsProvider = (props) => {
     }
   };
   const handleProductDetatiContext = () => {
-    // filters['defaultVariants'] = {
-    //     ...data.allTransSkuLists.nodes[0]
-    // }
+    
     if (window.location.search.length > 0) {
       let loc = window.location.search.split("=");
       let productDetailProps = loc[1].split("-");
       filters["productId"] = productDetailProps[0];
     }
 
-    // filters['defaultVariants']['diamondType'] = data.data.allTransSkuLists.nodes[0].diamondType
-    // filters['defaultVariants']['metalColor'] = data.data.allTransSkuLists.nodes[0].metalColor
-    // filters['defaultVariants']['purity'] = data.data.allTransSkuLists.nodes[0].purity
-    // filters['defaultVariants']['skuSize'] = data.data.allTransSkuLists.nodes[0].skuSize
-    // setFilters(filters)
+   
     var variants = filters["defaultVariants"];
     var metalColors =
       filters &&
@@ -335,7 +317,6 @@ export const TabsProvider = (props) => {
     setFilters(filters);
     pathQueries();
     updateProductList();
-    // window.location.search=`${`skuId=${filters['skuId']}`}`
   }, [filters]);
   useEffect(() => {
     if (window.location.search.length > 0) {
@@ -347,13 +328,7 @@ export const TabsProvider = (props) => {
   }, [data, loading, error]);
   useEffect(() => {}, [likedata, likeerror, likeloading, loading, error, data, price, filters]);
 
-  // useEffect(()=>{
-  //     console.info('priceprice_price',price, data )
-  //     // if(data && data.allTransSkuLists) console.info('priceprice_price123',data )
-  //     if(Object.entries(data).length>0 ) {
-  //         console.info('priceprice_price123',data )
-  //     }
-  // },[data,filters,error,loading])ratingcountsclear, setratingcountsclear
+  
   const ProductDetailCtx = {
     ratingcountsclear,
     ratingcounts,

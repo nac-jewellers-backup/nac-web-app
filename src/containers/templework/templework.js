@@ -1,7 +1,7 @@
 import React from "react";
 import { Grid, Hidden } from "@material-ui/core";
 import Header from "components/SilverComponents/Header";
-// import {IndexTemplePage , IndexAdvertisingPage } from 'mappers/dummydata/savingNac';
+
 import styles from "../savings/savingsstyle";
 import Slideshow from "components/Carousel/carosul";
 import {

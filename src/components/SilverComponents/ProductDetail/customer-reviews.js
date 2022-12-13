@@ -37,13 +37,7 @@ class CustomerReviews extends React.Component {
             expanded: expanded ? panel : false,
         });
     };
-    // rat_map_message = () => this.props.rating && this.props.rating.CodData && this.props.rating.CodData.data && this.props.rating.CodData.data.allCustomerReviews && this.props.rating.CodData.data.allCustomerReviews.nodes.map(val => {
-    //     var value;
-    //     if (val.message !== "" && val.message !== undefined && val.message !== null) {
-    //         value = <> {val.message}</>
-    //     }
-    //     return value
-    // })
+    
     rat_map_title = () => this.props.rating && this.props.rating.CodData && this.props.rating.CodData.data && this.props.rating.CodData.data.allCustomerReviews && this.props.rating.CodData.data.allCustomerReviews.nodes.map(val => {
         var value;
         if (val.title !== "" && val.title !== undefined && val.title !== null ||
@@ -66,11 +60,7 @@ class CustomerReviews extends React.Component {
         }
         return value
     })
-    componentDidUpdate(prevProps) {
-        // const rating = rating.CodData.data ? rating.CodData.data : ""
-        // const rating_if = this.props.rating && this.props.rating.CodData && this.props.rating.CodData.data
-        // if (rating_if !== prevProps.rating.CodData && rating.CodData.data) this.rat_map_message()
-    }
+    
     render() {
         const { expanded } = this.state;
 
@@ -140,8 +130,7 @@ class CustomerReviews extends React.Component {
                             expanded={expanded === 'panel1'}
                             onChange={this.handleChange('panel1')}
                         >
-                            {/* expandIcon={<span className='side-arrow-symbol'>
-                                <i class="fa fa-sort-up" ></i></span>} */}
+                           
                             <ExpansionPanelSummary
                                 expandIcon={<ExpandMoreIcon />}
                                 aria-controls="panel1a-content"

@@ -268,11 +268,11 @@ export const TopFilters = (props) => {
                   <HeaderHoverMenuItem
                     tabdata={props.subFilter}
                     listHoverItem={props.subFilter[state.listHoverItem]}
-                    // onMouseOver={(event) => { setState({ Menuopen: true }) }}
+                  
                     filters={true}
                     opened={state.Menuopen}
                     targetopened={state.targetopen}
-                    // submenuDetails={()=>submenuDetails()}
+             
                     filtercheck={state.listHoverItem}
                     checked={props.checked}
                     onchoosetype={props.onchangefunc}
@@ -407,8 +407,7 @@ export const TopFilters = (props) => {
                   filters={true}
                   opened={state.expanded}
                   targetopened={state.targetopen}
-                  // submenuDetails={()=>submenuDetails()}
-                  // filtercheck={state.listHoverItem}
+               
                   values={FilterOptionsCtx.sort}
                   onchoosetype={handleChange}
                   onMouseLeave={() => {

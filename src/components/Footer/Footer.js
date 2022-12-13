@@ -479,70 +479,12 @@ export default function Footer(props) {
     },
   ];
 
-  // const status = (response) => {
-  //   if (
-  //     (response.status >= 200 && response.status < 300) ||
-  //     response.status === 409
-  //   ) {
-  //     if (response.status === 409) setStateClassname("snackBarError");
-  //     else setStateClassname("snackBar");
-  //     return Promise.resolve(response);
-  //   } else {
-  //     return Promise.reject(new Error(response.statusText));
-  //   }
-  // };
-
-  // const json = (response) => {
-  //   return response.json();
-  // };
+  
+ 
   const handleClose = () => {
     setOpen(false);
   };
-  // const handleChage = (e) => {
-  //   setState(e.target.value);
-  //   var element = document.getElementById("_button");
-  //   var element_input = document.getElementById("_input");
-  //   element_input.classList.remove("error");
-  //   element.classList.remove("error");
-  // };
-  // const handleEmail = (e) => {
-  //   var element = document.getElementById("_button");
-  //   var element_input = document.getElementById("_input");
-  //   element_input.classList.remove("error");
-  //   element.classList.remove("error");
-  //   var emailvld =
-  //     /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  //   if (!document.getElementById("_input").value.length > 0) {
-  //     element_input.classList.add("error");
-  //     element.classList.add("error");
-  //     return;
-  //   } else if (
-  //     !Boolean(document.getElementById("_input").value.match(emailvld))
-  //   ) {
-  //     element_input.classList.add("error");
-  //     element.classList.add("error");
-  //     return;
-  //   } else if (
-  //     document.getElementById("_input").value.length > 0 &&
-  //     document.getElementById("_input").value.match(emailvld)
-  //   ) {
-  //     fetch(`${API_URL}/addemailsubscription`, {
-  //       method: "post",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify({
-  //         email: state,
-  //       }),
-  //     })
-  //       .then(status)
-  //       .then(json)
-  //       .then(async (val) => {
-  //         setMessage(val.message);
-  //         setOpen(true);
-  //       });
-  //   }
-  // };
+ 
   return (
     <Grid
       container
@@ -633,16 +575,7 @@ export default function Footer(props) {
                         el="noopener noreferrer"
                         href={`http://www.twitter.com/share?url=${window.location.href}`}
                       >
-                        {/* <i
-                          style={{
-                            fontSize: "24px",
-                            color: "#434e77",
-                            paddingLeft: "5%",
-                          }}
-                          className="fa"
-                        >
-                          &#xf099;
-                        </i>{" "} */}
+                       
                         <img
                           src={
                             "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_footer/Path+53.svg"
@@ -731,16 +664,7 @@ export default function Footer(props) {
                         el="noopener noreferrer"
                         href="https://in.pinterest.com/stylori2015/"
                       >
-                        {/* <i
-                          style={{
-                            fontSize: "24px",
-                            color: "#434e77",
-                            paddingLeft: "5%",
-                          }}
-                          className="fa "
-                        >
-                          &#xf231;
-                        </i> */}
+                        
                         <img
                           src={
                             " https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_footer/nQjOPg.tif.svg"

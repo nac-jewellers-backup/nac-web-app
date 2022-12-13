@@ -202,40 +202,6 @@ const Buydetails = (
               </div>
             </Grid>
 
-            {/* <Grid item container alignContent="center" alignItems="center" xs={12} lg={8} style={{ padding: "0px 0px 0px 25px" }}>
-                            <Grid>
-                                <Grid item lg={12} xs={12} className={`buy-subheaders nd-hlp ${classes.normalfonts}`}>Need Help ?</Grid>
-                            </Grid>
-                            <Grid container >
-
-                                <Grid item className={`buy-subheaders ${classes.normalfonts}`}>
-                                    <Typography>
-                                        <i class="fa fa-phone overall-icons" aria-hidden="true"></i>&nbsp;
-                                    </Typography>
-                                    <Typography className={classes.TypoListed}>
-                                        {val.telephone}
-                                    </Typography>
-                                </Grid>
-
-                                <Grid item className={`buy-subheaders ${classes.normalfonts}`}>
-                                    <Typography>
-                                        <i class="fa fa-whatsapp overall-icons" aria-hidden="true"></i>&nbsp;
-                                </Typography>
-                                    <Typography className={classes.TypoListed}>
-                                        {val.phonenum}
-                                    </Typography>
-                                </Grid>
-
-                                <Grid item style={{ cursor: "pointer !important" }} className={`buy-subheaders ${classes.normalfonts}`}>
-                                    <Typography>
-                                        <i class="fa fa-comments-o overall-icons" aria-hidden="true"></i>&nbsp;
-                                    </Typography>
-                                    <Typography className={classes.TypoListed}>
-                                        {val.chat}
-                                    </Typography>
-                                </Grid>
-                            </Grid>
-                        </Grid> */}
           </Grid>
           {inputsearch(props, state, handleChanges, handleCodChange)}
         </>

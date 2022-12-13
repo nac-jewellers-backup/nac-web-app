@@ -50,45 +50,7 @@ export function MediaControlCard(props) {
 
   return (
     <>
-      {/* 
-         <Card className={classes.root}>
-         <Hidden smDown>
-
-          <CardMedia
-            className={classes.cover}
-            style={{ fontFamily: "notoSerif-regular" }}
-            image={props.data.image}
-            title="Live from space album cover"
-          />
-
-          <div style={{ width: "50%" }}>
-            <div className={classes.details}>
-              <CardContent className={classes.content}>
-                <Homenote />
-                <Typography
-                  variant="subtitle1"
-                  color="textSecondary"
-                  className={classes.contentText}
-                >
-                  Ours is a journey that began almost hundred years ago in 1917
-                  when Shri Nathella Narayana Chetty started a small jewellery
-                  business at home where he fashioned hand-made jewels for a few
-                  loyal patrons
-                </Typography>
-              </CardContent>
-            </div>
-          </div>
-        </Hidden>
-        
-      <Hidden mdUp>
      
-        <CardMedia
-          className={classes.cover}
-          image={props.data.image}
-          title="Live from space album cover"
-        />
-      </Hidden>
-         </Card>*/}
       <Hidden smDown>
         <div className={classes.root}>
           <Box

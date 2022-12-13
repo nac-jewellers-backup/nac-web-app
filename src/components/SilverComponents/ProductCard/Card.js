@@ -296,11 +296,7 @@ function Component(props) {
                   >
                     {
                       CurrencyConversion(Math.round(props.data.price))
-                      // new Intl.NumberFormat("en-IN", {
-                      //   style: "currency",
-                      //   currency: "INR",
-                      //   minimumFractionDigits: 0,
-                      // }).format(Math.round(props.data.price))
+                    
                     }
                   </Typography>
                 </Grid>
@@ -331,21 +327,13 @@ function Component(props) {
                       Math.round(props.data.price) ? (
                         CurrencyConversion(Math.round(props.data.price))
                       ) : (
-                        // new Intl.NumberFormat("en-IN", {
-                        //   style: "currency",
-                        //   currency: "INR",
-                        //   minimumFractionDigits: 0,
-                        // }).format(Math.round(props.data.price))
+                        
                         <del>
                           {
                             CurrencyConversion(
                               Math.round(props.data.offerPrice)
                             )
-                            // new Intl.NumberFormat("en-IN", {
-                            //   style: "currency",
-                            //   currency: "INR",
-                            //   minimumFractionDigits: 0,
-                            // }).format(Math.round(props.data.offerPrice))
+                          
                           }
                         </del>
                       )}

@@ -121,16 +121,7 @@ class Component extends React.Component {
                                   first_map.transSkuListBySkuId.markupPrice
                               )
                             )
-                            // Intl.NumberFormat("en-IN", {
-                            //   style: "currency",
-                            //   currency: "INR",
-                            //   minimumFractionDigits: 0,
-                            // }).format(
-                            //   Math.round(
-                            //     first_map.transSkuListBySkuId &&
-                            //       first_map.transSkuListBySkuId.markupPrice
-                            //   )
-                            // )
+                            
                           }
                         </div>
                         <div className="add-bag">

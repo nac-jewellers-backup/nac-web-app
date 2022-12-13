@@ -41,7 +41,7 @@ const mobilecarousel = (props, val) => {
                     {/* <Wishlist props={"1"} /> */}
                 </Grid>
             </Grid>
-            {/* <div style={{background:"red"}}>Earrings in 18K Yellow Gold and Peridot for Kids</div> */}
+          
             <Slideshow class='responseve-carousel testingcur' imgClass='responseve-carousel-img'
                 fadeImages={data[0].fadeImages} dataCarousel={dataCarousel} />
         </div>

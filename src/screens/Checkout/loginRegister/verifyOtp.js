@@ -13,17 +13,13 @@ export const useVerifyOtp = (changePanel) => {
     const { setGlobalCtx } = React.useContext(GlobalContext);
     const { setCartFilters } = React.useContext(CartContext);
     const [enterotp, setEnterOtp] = React.useState(false);
-    // const values = { email, otp }
+
     const err = Boolean(mailerr || otperr);
     const loading = Boolean(eload || otpload);
     const data = { edata, otpdata }
     React.useEffect(() => {
         if (!mailerr && Object.keys(edata).length) {
-            // setGlobaCtx({
-            //     ...GLobalCtx,
-            //     mailId: email,
-            //     userId: edata.id
-            // })
+            
             setEnterOtp(true)
         }
     }, [edata, mailerr])

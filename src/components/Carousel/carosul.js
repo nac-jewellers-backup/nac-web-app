@@ -198,31 +198,13 @@ class Slideshow extends React.Component {
           }}
           loading="lazy" alt='...'
         />
-        {/* <div class="overlay1">
-          <div style={{paddingTop:'40%'}}>
-        <h2 className='next-price'>{hoverlist.title}</h2><br />
-        <a class='info' href={hoverlist.price}><span className='sub-list-price'> <i class="fa fa-rupee"></i> &nbsp;{hoverlist.price}</span></a>
-          </div>
-      </div> */}
+      
       </div>
     );
   };
-  //className={this.props.styles?this.props.styles:''}
-  render() {
-    // document.getElementsByClassName('fade').slick({
-    //   dots: true,
-    //   infinite: true,
-    //   speed: 500,
-    //   fade: true,
-    //   cssEase: 'linear'
-    // });
-    // const fadeImages = [
-    //   'https://assets-cdn.stylori.com/120x120/images/product/SR0986/SR0986-1Y.jpg',
-    //   'https://assets-cdn.stylori.com/120x120/images/product/SE0464/SE0464-1Y.jpg',
-    //   'https://assets-cdn.stylori.com/120x120/images/product/SR0986/SR0986-1Y.jpg'
-    // ];
 
-    // const { dataCarousel: { settings }, sliderRef } = this.props;
+  render() {
+  
     const { sliderRef } = this.props;
     var settings = this.props.dataCarousel;
 

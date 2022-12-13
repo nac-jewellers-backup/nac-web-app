@@ -119,6 +119,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
+
 function BridalCollection(props) {
 
   const handleComponents = (val) => {

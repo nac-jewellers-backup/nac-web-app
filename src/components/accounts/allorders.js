@@ -127,11 +127,7 @@ class Allorders extends React.Component {
               >
                 {
                   CurrencyConversion(Math.round(b))
-                  // new Intl.NumberFormat("en-IN", {
-                  //   style: "currency",
-                  //   currency: "INR",
-                  //   minimumFractionDigits: 0,
-                  // }).format(Math.round(b))
+                 
                 }
               </Typography>
 
@@ -144,11 +140,7 @@ class Allorders extends React.Component {
               >
                 {
                   CurrencyConversion(Math.round(b - a))
-                  // new Intl.NumberFormat("en-IN", {
-                  //   style: "currency",
-                  //   currency: "INR",
-                  //   minimumFractionDigits: 0,
-                  // }).format(Math.round(b - a))
+                 
                 }
               </Typography>
               <Typography
@@ -164,16 +156,7 @@ class Allorders extends React.Component {
                         ?.shoppingCartByCartId?.shippingCharge ?? 0
                     )
                   )
-                  // new Intl.NumberFormat("en-IN", {
-                  //   style: "currency",
-                  //   currency: "INR",
-                  //   minimumFractionDigits: 0,
-                  // }).format(
-                  //   Math.round(
-                  //     this?.props?.allorderdata?.data?.allOrders?.nodes[0]
-                  //       ?.shoppingCartByCartId?.shippingCharge ?? 0
-                  //   )
-                  // )
+                
                 }
               </Typography>
             </div>
@@ -214,11 +197,7 @@ class Allorders extends React.Component {
 
     return CurrencyConversion(Math.round(a));
 
-    // new Intl.NumberFormat("en-IN", {
-    //   style: "currency",
-    //   currency: "INR",
-    //   minimumFractionDigits: 0,
-    // }).format(Math.round(a));
+   
   };
   generateShipsBy = (readytoship, vendorDeliveryTime) => {
     var isReadytoShip = readytoship;
@@ -346,9 +325,7 @@ class Allorders extends React.Component {
     const { expanded} = this.state;
     const { allorderdata } = this.props;
 
-    // const expanded_ = expanded.map((val) => {
-    //   return val;
-    // });
+   
     const allDatas = () => {
       if (
         allorderdata &&
@@ -536,15 +513,7 @@ class Allorders extends React.Component {
                                     val.shoppingCartByCartId.discountedPrice
                                   )
                                 )
-                                // new Intl.NumberFormat("en-IN", {
-                                //   style: "currency",
-                                //   currency: "INR",
-                                //   minimumFractionDigits: 0,
-                                // }).format(
-                                //   Math.round(
-                                //     val.shoppingCartByCartId.discountedPrice
-                                //   )
-                                // )
+                               
                               }
                             </span>
                           </div>
@@ -879,15 +848,7 @@ class Allorders extends React.Component {
                                       val.shoppingCartByCartId.discountedPrice
                                     )
                                   )
-                                  // Intl.NumberFormat("en-IN", {
-                                  //   style: "currency",
-                                  //   currency: "INR",
-                                  //   minimumFractionDigits: 0,
-                                  // }).format(
-                                  //   Math.round(
-                                  //     val.shoppingCartByCartId.discountedPrice
-                                  //   )
-                                  // )
+                                
                                 }
                               </span>
                             </div>
@@ -1248,16 +1209,7 @@ class Allorders extends React.Component {
                                                       .grossAmount
                                                   )
                                                 )
-                                                // new Intl.NumberFormat("en-IN", {
-                                                //   style: "currency",
-                                                //   currency: "INR",
-                                                //   minimumFractionDigits: 0,
-                                                // }).format(
-                                                //   Math.round(
-                                                //     val.shoppingCartByCartId
-                                                //       .grossAmount
-                                                //   )
-                                                // )
+                                              
                                               }
                                             </b>
                                           </Typography>
@@ -1815,16 +1767,7 @@ class Allorders extends React.Component {
                                                       .grossAmount
                                                   )
                                                 )
-                                                // new Intl.NumberFormat("en-IN", {
-                                                //   style: "currency",
-                                                //   currency: "INR",
-                                                //   minimumFractionDigits: 0,
-                                                // }).format(
-                                                //   Math.round(
-                                                //     val.shoppingCartByCartId
-                                                //       .grossAmount
-                                                //   )
-                                                // )
+                                              
                                               }
                                             </b>
                                           </Typography>

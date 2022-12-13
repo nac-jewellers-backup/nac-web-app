@@ -27,7 +27,7 @@ import "./chckout.css";
 import LoginRegisterIndex from "./loginRegister";
 import ProductList from "./orderSummary/productList";
 import PaymentIndex from "./paymentOption/paymentindex";
-// import NeedHelp from "components/needHelp";
+
 var adres = {};
 var variab = {};
 const CartCardCheck = (props) => {
@@ -269,23 +269,7 @@ class Component extends React.Component {
     return (
       <Grid>
         <Header wishlist={this.props.wishlistdata} />
-        {/* <CustomSeparator
-          arrowicon="cart-head-arrows"
-          className={`breadcrums-header ${classes.normalcolorback}`}
-          classsubhed={`breadcrums-sub ${classes.normalcolorback}`}
-          list={`MuiBreadcrumbs-li ${classes.fontwhite}`}
-          data={
-            this.props.data.length > 0
-              ? this.props.data[0].breadcrumsdata
-              : breadcrumsdata_static
-          }
-          subdata={
-            this.props.data.length > 0
-              ? this.props.data[0].cartsubdata
-              : cartsubdata_static
-          }
-          changePanel={this.changePanel}
-        /> */}
+    
         <div>
           <div>
             <Grid container style={{ overflow: "hidden", minHeight: "85vh" }}>

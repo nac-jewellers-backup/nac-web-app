@@ -13,10 +13,7 @@ const ContinuesComponent = (props) => {
   const values = { email: email.email, otp: otp.otp };
   const [state, setState] = React.useState(null);
   const edata = status.data.edata.message ? status.data.edata.message : "";
-  // const MailForm = () => (
-  // )
-  // const OtpForm = () => (
-  // )
+
   const clear = () => {
     setMail({
       email: "",
@@ -50,7 +47,6 @@ const ContinuesComponent = (props) => {
             <Grid item lg={1} />
             <Grid
               item
-              xs={12}
               xs={12}
               lg={window.location.pathname === "/checkout" ? 12 : 6}
             >

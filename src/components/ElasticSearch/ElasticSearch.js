@@ -89,9 +89,7 @@ export default function ElasticSearch(props) {
         fetch(`${API_URL}/auto_complete`, {
 
             method: 'post',
-            // body: {query:seoUrlResult,variables:splitHiphen()}
-            // body: JSON.stringify({query:seoUrlResult}),
-
+          
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -136,9 +134,7 @@ Object.entries(data).length>0 && data.seo_results.length > 0?
             data.seo_results.map(val =>
         <Grid item xs={12} style={{margin:"5px"}}>
          
-            {/* <a href={`/${val.seo_url}`} className={classes.productSublist}>
-                {val.seo_name}
-            </a> */}
+          
             <Link to={`/${val.seo_url}`} className={`${classes.productSublist} ${classes.link}`} replace >{val.seo_name}</Link>
 
         
@@ -163,9 +159,7 @@ Object.entries(data).length>0 && data.sku_results.length>0 ?
                 
             data.sku_results.map(val => 
         <Grid item xs={12} style={{margin:"5px"}}>
-            {/* <a href={`/${val.sku_url}`} className={classes.productSublist}>
-                {val.sku_code}
-            </a> */}
+            
             <Link to={`/${val.sku_url}`} className={`${classes.productSublist} ${classes.link}`} replace > {val.sku_code}</Link>
         </Grid>
              )
@@ -187,9 +181,7 @@ Object.entries(data).length>0 && data.sku_results.length>0 ?
             
             data.product_results.map(val =>
         <Grid item xs={12} style={{margin:"5px"}}>
-       {/* <a href={`/${val.sku_url}`} className={classes.productSublist}>
-                {val.product_name}
-            </a> */}
+       
             <Link to={`/${val.sku_url}`} className={`${classes.productSublist} ${classes.link}`} replace >{val.product_name}</Link>
         </Grid>
                 )

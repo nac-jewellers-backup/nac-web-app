@@ -62,9 +62,7 @@ export default function Solitaires(props) {
               <Hidden smDown>
                 <Grid container key={index} className={classes.headContent}>
                   <a href={val.navigateUrl} style={{ width: "100%" }}>
-                    {/* <Typography className={classes.imageContent}>
-                      {val.imageContent}
-                    </Typography> */}
+                    
                     <img
                       src={val.img}
                       loading="lazy"
@@ -76,9 +74,7 @@ export default function Solitaires(props) {
               <Hidden mdUp>
                 <Grid container key={index} className={classes.headContent}>
                   <a href={val.navigateUrl}>
-                    {/* <Typography className={classes.imageContent}>
-                      {val.imageContent}
-                    </Typography> */}
+                   
                     <img
                       src={val.mobileImg}
                       loading="lazy" 

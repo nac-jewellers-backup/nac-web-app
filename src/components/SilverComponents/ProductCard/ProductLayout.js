@@ -63,7 +63,7 @@ class Component extends React.Component {
     this.screenWidth();
     // Additionally I could have just used an arrow function for the binding `this` to the component...
     window.addEventListener("resize", this.screenWidth);
-    // setTimeout(function () { this.setState({ loading: false }); }.bind(this), 2000);
+   
   }
   screenWidth = () => {
     const width = window.innerWidth;
@@ -98,9 +98,7 @@ class Component extends React.Component {
   render() {
     const { classes, data } = this.props;
 
-    // const { disabledstate } = this.state;
-    // const disabledstate = this.props.data.length < 24 ? 'disabled=true' : ''
-    // const { loading, errro, data, mappedData } = useGraphql(productlistquery,productlistmapper);
+  
     return (
       <div className={`productLayoutRoot `} style={this.props.styles}>
         {
