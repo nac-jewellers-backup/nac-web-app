@@ -798,8 +798,7 @@ export default function Footer(props) {
                   style={{
                     display: "flex",
                     color: "#6b6b6b",
-                  }}
-                >
+                  }}>
                   {" "}
                   <Grid item>
                     <Link className={classes.linkTextmlg} to="/sitemap">

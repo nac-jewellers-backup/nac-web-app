@@ -55,12 +55,14 @@ export const routes = {
   Diwali2022: "/diwali2022",
   AboutUsNew: "/aboutUs",
   TermsAndConditions: "/termsAndConditions",
-  Static:`/static${"-" + window.location.pathname.split("-")[1]}`,
+  Static: `/static${"-" + window.location.pathname.split("-")[1]}`,
   PrivacyDetails: "/privacy_Details",
   FaqDetails: "/faqDetails",
   ProductCareNew: "/productCareNew",
   CareerPage: "/careerPage",
   CustomApplication: "/form",
+  TempleWork: "/templeWork",
+
 };
 
 export default routes;

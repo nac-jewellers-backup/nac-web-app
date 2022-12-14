@@ -26,6 +26,11 @@ import { StoreLocationDetails } from "components";
 import ExperienceBanner from "components/experienceBanner/experienceBanner";
 import ExperienceCardComp from "components/experienceCard/experienceCard";
 import { ExperienceCards } from "components/experienceCardComponent";
+import TempleWorkBannerComp from "components/TempleWorkBannerComp";
+import TempleCardComp from "components/templeCardComp";
+import TempleProducts from "components/TempleProducts";
+import TempleFooterComp from "components/templeFootComp";
+import TempleCardDetailComp from "components/templeCardDetailComp";
 
 function CdnPages(props) {
   // view more button click state
@@ -36,6 +41,13 @@ function CdnPages(props) {
 
   // card and form hide, show state
   const [enable, setEnable] = useState(false);
+
+
+  const [templeShowDetail, setTempleShowDetail] = React.useState(false)
+
+  const handleClick = () => {
+    setTempleShowDetail(!templeShowDetail)
+  }
 
   // Career page view more button click function
 
@@ -70,9 +82,9 @@ function CdnPages(props) {
       .then((res) => res.json())
       .then((data) => {
         //feature product
-        console.log("cdnData",data);
+        console.log("cdnData", data);
         const dataRecieved = JSON.parse(data.data.cdnByPage.data);
-        if(data.data.cdnByPage.isActive){
+        if (data.data.cdnByPage.isActive) {
           setState(dataRecieved);
         }
       });
@@ -202,6 +214,46 @@ function CdnPages(props) {
         return <ExperienceCards value={val?.props} />;
       }
 
+      case "TempleWorkBannerComponent": {
+        console.log("valueRender", val?.props);
+        return (
+          <TempleWorkBannerComp
+            banners={val?.props?.banners}
+            dataCarousel={
+              val?.props?.banners.length > 1 ? "multiple" : "single"
+            }
+          />
+        );
+      }
+      case "TempleCardComponent": {
+        return templeShowDetail === false &&
+          <TempleCardComp
+            data={val?.props?.CardData}
+            handleClick={handleClick}
+          />
+      }
+
+      case "TempleProducts": {
+        return templeShowDetail === false &&
+          <TempleProducts
+            data={val?.props?.listingItems}
+          />
+      }
+
+
+      case "FooterComponent": {
+        return templeShowDetail === false &&
+          <TempleFooterComp
+            data={val?.props?.content}
+          />
+      }
+
+      case "TempleCardDetailsComponent": {
+        return templeShowDetail === true &&
+          <TempleCardDetailComp
+            data={val?.props?.detailData}
+          />;
+      }
       default: {
         return <h1></h1>;
       }

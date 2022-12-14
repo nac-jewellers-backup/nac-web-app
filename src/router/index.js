@@ -57,6 +57,7 @@ import { FaqDetails } from "screens/faq";
 import { ProductCare } from "screens";
 import { CareerPage } from "screens";
 import { CustomApplication } from "screens";
+import { TempleWork } from "screens";
 
 const browserHistory = createBrowserHistory();
 
@@ -215,6 +216,11 @@ export const RouterApp = (props) => {
         path={routes.CareersPage}
       />
       <Route
+        key="templeWork"
+        component={TempleWork}
+        exact
+        path={routes.TempleWork} />
+      <Route
         key="paymentfail"
         component={Fail}
         exact
@@ -228,9 +234,9 @@ export const RouterApp = (props) => {
       />
       {props.location.pathname !== "/cart" &&
         props.location.pathname !==
-          `/account${"-" + window.location.pathname.split("-")[1]}` &&
+        `/account${"-" + window.location.pathname.split("-")[1]}` &&
         props.location.pathname !==
-          `/static${"-" + window.location.pathname.split("-")[1]}` &&
+        `/static${"-" + window.location.pathname.split("-")[1]}` &&
         props.location.pathname !== "/savingscheme" &&
         props.location.pathname !== "/aboutus" &&
         props.location.pathname !== "/newsroom" &&
@@ -278,6 +284,8 @@ export const RouterApp = (props) => {
         props.location.pathname !== "/productCareNew" &&
         props.location.pathname !== "/careerPage" &&
         props.location.pathname !== "/form" &&
+        props.location.pathname !== "/templeWork" &&
+
         Globalctx &&
         Globalctx.pathName === false &&
         props.location.pathname !== "/homes" && (
@@ -309,9 +317,9 @@ export const RouterApp = (props) => {
 
       {props.location.pathname !== "/cart" &&
         props.location.pathname !==
-          `/account${"-" + window.location.pathname.split("-")[1]}` &&
+        `/account${"-" + window.location.pathname.split("-")[1]}` &&
         props.location.pathname !==
-          `/static${"-" + window.location.pathname.split("-")[1]}` &&
+        `/static${"-" + window.location.pathname.split("-")[1]}` &&
         props.location.pathname !== "/savingscheme" &&
         props.location.pathname !== "/aboutus" &&
         props.location.pathname !== "/terms" &&
@@ -356,6 +364,7 @@ export const RouterApp = (props) => {
         props.location.pathname !== "/faqDetails" &&
         props.location.pathname !== "/productCareNew" &&
         props.location.pathname !== "/careerPage" &&
+        props.location.pathname !== "/templeWork" &&
         props.location.pathname !== "/form" && (
           <Route exact={true} component={Stylori} path={"/:listingpage"} />
         )}
@@ -517,6 +526,11 @@ export const RouterApp = (props) => {
         exact
         path={routes.CustomApplication}
       />
+      <Route
+        key="templeWork"
+        component={TempleWork}
+        exact
+        path={routes.TempleWork} />
     </Switch>
   );
 };
