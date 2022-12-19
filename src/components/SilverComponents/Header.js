@@ -591,7 +591,7 @@ class Header extends Component {
                               }
                               color="secondary"
                             >
-                              <a href="/cart" className="highlighter">
+                              <a href="/cart" className="highlighter" aria-label="....">
                                 <i
                                   style={{
                                     fontSize: "20px",
@@ -975,7 +975,7 @@ class Header extends Component {
                                   }
                                   color="secondary"
                                 >
-                                  <a href="/cart">
+                                  <a href="/cart" aria-label="....">
                                     <i
                                       style={{ fontSize: "15px !important" }}
                                       class={`fa fa-shopping-bag  ${classes.iconFafa}`}
