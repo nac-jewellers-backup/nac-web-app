@@ -10,7 +10,6 @@ import { aboutusImgCard, aboutUsNew, aboutusTData } from "mappers/dummydata";
 import React from "react";
 
 const AboutUsPageNew = (props) => {
-  console.log(props, "orps")
   const [state, setstate] = React.useState({
     timelineImage:
       "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/banners/web/1917.webp",

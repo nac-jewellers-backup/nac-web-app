@@ -37,7 +37,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function TimelineComp(props) {
   const { timelineData, initialtimelineImage, initialcontent } = props;
-  console.log("Parentprops", props)
   const classes = useStyles();
   const initialData = {
     timelineImage: initialtimelineImage,

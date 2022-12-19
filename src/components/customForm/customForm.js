@@ -53,7 +53,7 @@ const CustomForm = (props) => {
                       <div>Choose file</div>
                     </label>
                   </div>
-                  <div className={classes.submit} onClick={props?.handleClick}>Submit</div>
+                  <div className={classes.submit} onClick={() => console.log()}>Submit</div>
                 </Grid>
               </Grid>
             </div>

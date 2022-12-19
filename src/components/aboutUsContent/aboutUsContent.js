@@ -3,7 +3,6 @@ import React from "react";
 import NewAboutUsStyles from "./style";
 
 const AboutUsContent = (props) => {
-  console.log("propsss", props);
   const classes = NewAboutUsStyles();
   return (
     <div className={classes.contentText}>

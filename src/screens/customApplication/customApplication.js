@@ -6,28 +6,32 @@ import Header from "components/SilverComponents/Header";
 import { customBannerData } from "mappers/dummydata";
 import React from "react";
 import CCustomApplicationStyles from "./style";
+import { useLocation } from "react-router-dom";
+
 
 const CustomApplication = (props) => {
   const classes = CCustomApplicationStyles();
+
+  const { state } = useLocation();
+
   return (
     <div className={classes.mainGroup}>
       <div className={classes.headingGroup}>
         <div className={classes.role}>
-          <Typography>{props?.data.job_Role}</Typography>
+          <Typography>{state?.job_Role}</Typography>
         </div>
         <div className={classes.location}>
-          <Typography>{props?.data?.location}</Typography>
+          <Typography>{state?.location}  {state?.job_type}</Typography>
         </div>
         <div className={classes.secondLayer}>
-          <Typography>{props?.data?.description}</Typography>
+          <Typography>{state?.description}</Typography>
         </div>
       </div>
-      {/* CUSTOM FORM */}
 
       <div className={classes.customForm}>
-        <CustomForm handleClick={props?.handleClick} />
+        <CustomForm />
       </div>
-    </div>
+    </div >
   );
 };
 

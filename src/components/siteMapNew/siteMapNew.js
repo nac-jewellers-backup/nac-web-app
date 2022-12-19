@@ -4,7 +4,6 @@ import Footer from "components/Footer/Footer";
 import { makeStyles } from "@material-ui/core/styles";
 import Header from "components/SilverComponents/Header";
 import React from "react";
-import { SiteMapData } from "./siteMapData";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -86,7 +85,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const SiteMapNew = (props) => {
+  const { value } = props
 
+  console.log((props, "profddf"))
   const classes = useStyles()
 
 
@@ -103,20 +104,22 @@ const SiteMapNew = (props) => {
           <div className={classes.categoryList}>
 
             {
-              SiteMapData?.map(e => {
-                return <Box>
-                  <Typography className={classes.subHeading} ><a>{e?.categoryHeading}</a></Typography>
-                  {
-                    e?.categoryList?.map(val => {
-                      return <Typography><a>{val}</a></Typography>
+              value?.map(e => {
+                debugger
+                return (
+                  <Box>
+                    <Typography className={classes.subHeading} ><a>{e?.categoryHeading}</a></Typography>
+                    {
+                      e?.categoryList?.map(val => {
+                        return <Typography><a href={val.url}>{val.name}</a></Typography>
 
-                    })
-                  }
-
-
-                </Box>
+                      })
+                    }
+                  </Box>
+                )
               })
             }
+
 
           </div>
 

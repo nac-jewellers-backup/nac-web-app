@@ -21,15 +21,13 @@ import { CollectionCards } from "components/collectionCards";
 import { CustomAdvertisement } from "components/customAdvertisment";
 import { CustomNewsRoom } from "components/customNewsRoom";
 import { TitleAndDescription } from "components";
+import { SiteMapNew } from "components/siteMapNew";
 
 function CdnPages(props) {
   const slider = React.createRef();
 
   // view more button click state
   const [count, setCount] = useState(3);
-
-  // card content send to form apllication state
-  const [content, setContent] = useState("");
 
   // card and form hide, show state
   const [enable, setEnable] = useState(false);
@@ -42,16 +40,11 @@ function CdnPages(props) {
 
   // Career page card apply now button click function
 
-  const careerCardApplyNow = (value) => {
-    setContent(value);
-    setEnable(!enable);
-  };
+
 
   // Career page form submit click function
 
-  const formSubmitClick = () => {
-    setEnable(!enable);
-  };
+
 
   useEffect(() => {
     const url = window.location.pathname.split("-")[1];
@@ -72,7 +65,6 @@ function CdnPages(props) {
         setState(dataRecieved);
       });
   }, []);
-  // console.log(url, "url ");
 
   const [state, setState] = useState([]);
 
@@ -114,18 +106,17 @@ function CdnPages(props) {
         return <CustomBanner value={val?.props?.banners} />;
       }
       case "CareerCard": {
-        return !enable ? (
+        return (
           <CustomCard
             value={val?.props?.cardContent.filter(
               (value, index) => index < count
             )}
             handleRequest={careerViewMoreClick}
-            enable={enable}
-            buttonClick={careerCardApplyNow}
           />
-        ) : (
-          <CustomApplication data={content} handleClick={formSubmitClick} />
-        );
+        )
+      }
+      case "ResumeComp": {
+        return <CustomApplication />;
       }
       case "CollectionHeader": {
         return <CollectionHeader value={val?.props?.header} />;
@@ -152,7 +143,7 @@ function CdnPages(props) {
       case "AboutBookAppointment": {
         return (
           <>
-            <AboutBookAppointment data={val?.props} />
+            <AboutBookAppointment data={val} />
           </>
         );
       }
@@ -177,7 +168,11 @@ function CdnPages(props) {
           />
         );
       }
-
+      case "siteMap": {
+        return (
+          <SiteMapNew value={val?.props} />
+        );
+      }
       default: {
         return <h1></h1>;
       }

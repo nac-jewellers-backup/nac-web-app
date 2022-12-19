@@ -1,16 +1,28 @@
 import { Button, Card, Hidden, Typography } from "@material-ui/core";
 import React from "react";
 import CustomCardStyles from "./style";
+import { useHistory } from "react-router-dom";
+
 
 const CustomCard = (props) => {
+
+  let history = useHistory();
+
   const classes = CustomCardStyles();
+
+
+  const careerCardApplyNow = (value) => {
+    history.push({
+      pathname: "/static-careerDetails",
+      state: value
+    });
+  };
 
   return (
     <>
       {/* TITLE */}
-
       <div className={classes.title}>
-        <Typography>{(props?.value.length > 0) ? "Current Openings" : "No Current Openings" }</Typography>
+        <Typography>{(props?.value.length > 0) ? "Current Openings" : "No Current Openings"}</Typography>
       </div>
       <Hidden xsDown>
         {props?.value?.map((e) => {
@@ -26,7 +38,7 @@ const CustomCard = (props) => {
                   </div>
                 </div>
                 <div className={classes.right}>
-                  <Button disabled={true} onClick={() => props?.buttonClick(e)}>
+                  <Button onClick={() => careerCardApplyNow(e)}>
                     {e?.button_Text}
                   </Button>
                 </div>
@@ -44,7 +56,7 @@ const CustomCard = (props) => {
       <Hidden smUp>
         {props?.value?.map((val) => {
           return (
-            <Card className={classes.cardMobile} style={{width:"100%"}}>
+            <Card className={classes.cardMobile} style={{ width: "100%" }}>
               <div className={classes.roleLayer}>
                 <div className={classes.roleMobile}>
                   <Typography>{val?.job_Role}</Typography>
@@ -70,7 +82,7 @@ const CustomCard = (props) => {
         })}
       </Hidden>
 
-      
+
       {/* VIEW MORE */}
       {(props?.value.length > 0) && (
         <Hidden xsDown>

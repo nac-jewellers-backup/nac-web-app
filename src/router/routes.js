@@ -62,6 +62,7 @@ export const routes = {
   CareerPage: "/careerPage",
   CustomApplication: "/form",
   SiteMapNew: "/siteMapNew",
+  customCard:"/customCard"
 
 
 };
