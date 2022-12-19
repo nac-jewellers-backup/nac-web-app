@@ -251,7 +251,7 @@ function CdnPages(props) {
       case "TempleCardDetailsComponent": {
         return templeShowDetail === true &&
           <TempleCardDetailComp
-            data={val?.props?.detailData}
+            data={[val?.props?.detailData]}
           />;
       }
       default: {

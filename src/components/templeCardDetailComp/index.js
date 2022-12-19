@@ -125,6 +125,8 @@ const CardUseStyles = makeStyles((theme) => ({
 const TempleCardDetailComp = (props) => {
     const classes = CardUseStyles()
 
+
+    console.log(props?.data, "templeCardDetails");
     return (
         <>
 
@@ -132,35 +134,55 @@ const TempleCardDetailComp = (props) => {
             }>
                 <Grid container className={classes.aboutChild
                 }>
-                    <Grid item lg={3} md={3} sm={12} xs={12}>
+                    <>
                         {
                             props?.data?.map((val) => {
                                 return (
                                     <>
-                                        {val?.images?.map(e => {
-                                            return (
-                                                <Box>
-                                                    <img src={e
-                                                    }
-                                                        style={
-                                                            {
-                                                                width: "100%",
-                                                                marginBottom: "22px"
-                                                            }
-                                                        }>
-                                                    </img>
-                                                </Box>
-                                            )
-                                        })
-                                        }
+                                        <Grid item lg={3} md={3} sm={12} xs={12}>
+                                            {val?.images?.map(e => {
+                                                debugger
+                                                return (
+                                                    <Box>
+                                                        <img src={e
+                                                        }
+                                                            style={
+                                                                {
+                                                                    width: "100%",
+                                                                    marginBottom: "22px"
+                                                                }
+                                                            }>
+                                                        </img>
+                                                    </Box>
+                                                )
+                                            })
+                                            }
+                                        </Grid>
+                                        <Grid item lg={8} md={8} sm={12} xs={12}>
+                                            {val?.content?.map(e => {
+                                                debugger
+                                                return (
+                                                    <Box className={classes.detailBox}>
+                                                        <Typography className={classes.title}>{e?.title}</Typography>
+                                                        <ul className={classes.subtitleDiv}>
+                                                            <Typography className={classes.subtitle}>{e?.subtitle}</Typography>
+                                                            <li className={classes.weigh}>{e?.weigh}</li>
+                                                        </ul>
+                                                        <Typography className={classes.contentOne}>{e?.ContentOne}</Typography>
+                                                        <Typography className={classes.aboutTxt}> {e?.about}</Typography>
+                                                        <Typography className={classes.contentTwo}>{e?.contentTwo}</Typography>
+                                                    </Box>
+                                                )
+                                            })
+                                            }
+                                        </Grid>
                                     </>
                                 )
 
                             })
                         }
-                    </Grid>
-                    {console.log(props?.data, " props?.data")}
-                    <Grid item lg={8} md={8} sm={12} xs={12}>
+                    </>
+                    {/* <Grid item lg={8} md={8} sm={12} xs={12}>
                         {
                             props?.data?.map(val => {
                                 return (
@@ -179,7 +201,7 @@ const TempleCardDetailComp = (props) => {
                                 )
                             })
                         }
-                    </Grid>
+                    </Grid> */}
                 </Grid>
             </Box>
         </>
