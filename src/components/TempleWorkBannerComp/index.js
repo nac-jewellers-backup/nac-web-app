@@ -83,7 +83,7 @@ const TempleWorkBannerComp = (props) => {
                                     <Grid item lg={4} md={4} sm={12} className={classes.leftDiv}>
                                         <Box><img src={val?.img}></img></Box>
                                     </Grid>
-                                    <Grid item lg={12} md={8} sm={12} className={classes.rightDiv}>
+                                    <Grid item lg={8} md={8} sm={12} className={classes.rightDiv}>
                                         <TempleTitle title={val?.title} />
                                         <Typography className={classes.paraDIv}>{val?.content}</Typography>
                                     </Grid>

@@ -115,7 +115,7 @@ const TempleProducts = (props) => {
         <>
 
             <Box className={classes.about}>
-                <>
+                {/* <>
                     {
                         props?.data?.map((val) => {
                             return (
@@ -374,7 +374,7 @@ const TempleProducts = (props) => {
                         })
                     }
 
-                </>
+                </> */}
             </Box >
         </>
     )
