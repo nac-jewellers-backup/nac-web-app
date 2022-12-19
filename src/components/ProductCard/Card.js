@@ -57,6 +57,7 @@ const Gallery = (
         style={{ textDecoration: "none" }}
         target="_blank"
         onClick={handleProductDetatiContext(props)}
+        aria-label="...."
       >
         {props.similarProducts ? (
           <>
