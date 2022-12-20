@@ -369,7 +369,7 @@ export default function Footer(props) {
     {
       row: [
         {
-          url: "/contactus",
+          url: "/static-contactus",
           heading: "Contact Us",
         },
 
