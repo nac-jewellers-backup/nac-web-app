@@ -26,6 +26,7 @@ import { StoreLocationDetails } from "components";
 import ExperienceBanner from "components/experienceBanner/experienceBanner";
 import ExperienceCardComp from "components/experienceCard/experienceCard";
 import { ExperienceCards } from "components/experienceCardComponent";
+import { BlogImageCard } from "components/blogImageCard";
 
 function CdnPages(props) {
   // view more button click state
@@ -37,6 +38,9 @@ function CdnPages(props) {
   // card and form hide, show state
   const [enable, setEnable] = useState(false);
 
+  // Title comp show and hide
+  const [showCard, setShowCard] = useState(false);
+
   // Career page view more button click function
 
   const careerViewMoreClick = () => {
@@ -46,8 +50,13 @@ function CdnPages(props) {
   // Career page card apply now button click function
 
   const careerCardApplyNow = (value) => {
+    console.log("090909", value);
     setContent(value);
     setEnable(!enable);
+  };
+
+  const showTitle = () => {
+    setShowCard(!showCard);
   };
 
   // Career page form submit click function
@@ -77,7 +86,6 @@ function CdnPages(props) {
         }
       });
   }, []);
-  // console.log(url, "url ");
 
   const [state, setState] = useState([]);
   const handleComponents = (val) => {
@@ -102,7 +110,7 @@ function CdnPages(props) {
         );
       }
       case "titleComp": {
-        return <Title title={val?.props?.title} />;
+        return !showCard && <Title title={val?.props?.title} />;
       }
       case "SlideImgMediaCard": {
         return <SlideImgMediaCard listProduct={val?.props?.listingProducts} />;
@@ -200,6 +208,15 @@ function CdnPages(props) {
 
       case "ExperienceCard": {
         return <ExperienceCards value={val?.props} />;
+      }
+
+      case "blogPageCard": {
+        return (
+          <BlogImageCard
+            value={val?.props?.cardContent}
+            handleShow={showTitle}
+          />
+        );
       }
 
       default: {

@@ -303,7 +303,7 @@ export default function Footer(props) {
         },
 
         {
-          url: "/stories",
+          url: "/static-blogsPage",
           Title: "Blog",
         },
         {

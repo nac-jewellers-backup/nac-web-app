@@ -58,6 +58,8 @@ export const routes = {
   Static:`/static${"-" + window.location.pathname.split("-")[1]}`,
   PrivacyDetails: "/privacy_Details",
   FaqDetails: "/faqDetails",
+  BlogPage: "/blogNew",
+  ReadMore: "/readMore",
   ProductCareNew: "/productCareNew",
   CareerPage: "/careerPage",
   CustomApplication: "/form",

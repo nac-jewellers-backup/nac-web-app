@@ -54,6 +54,8 @@ import TermsAndConditions from "screens/termsAndConditions/termsAndConditions";
 import CdnPages from "screens/CdnPages";
 import PrivacyPolicy from "screens/privacyPolicy/privacyPolicy";
 import { FaqDetails } from "screens/faq";
+import { BlogPage } from "screens";
+import { ReadMore } from "screens/readMorePage";
 import { ProductCare } from "screens";
 import { CareerPage } from "screens";
 import { CustomApplication } from "screens";
@@ -275,6 +277,8 @@ export const RouterApp = (props) => {
         props.location.pathname !== "/termsAndConditions" &&
         props.location.pathname !== "/privacy_Details" &&
         props.location.pathname !== "/faqDetails" &&
+        props.location.pathname !== "/blogNew" &&
+        props.location.pathname !== "/readMore" &&
         props.location.pathname !== "/productCareNew" &&
         props.location.pathname !== "/careerPage" &&
         props.location.pathname !== "/form" &&
@@ -354,6 +358,8 @@ export const RouterApp = (props) => {
         props.location.pathname !== "/termsAndConditions" &&
         props.location.pathname !== "/privacy_Details" &&
         props.location.pathname !== "/faqDetails" &&
+        props.location.pathname !== "/blogNew" &&
+        props.location.pathname !== "/readMore" &&
         props.location.pathname !== "/productCareNew" &&
         props.location.pathname !== "/careerPage" &&
         props.location.pathname !== "/form" && (
@@ -499,6 +505,18 @@ export const RouterApp = (props) => {
         path={routes.FaqDetails}
       />
       <Route
+        key="blogNew"
+        component={BlogPage}
+        exact
+        path={routes.BlogPage}
+      />
+      <Route
+        key="readMore"
+        component={ReadMore}
+        exact
+        path={routes.ReadMore}
+        />
+        <Route
         key="productCareNew"
         component={ProductCare}
         exact
