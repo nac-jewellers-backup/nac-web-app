@@ -802,7 +802,7 @@ export default function Footer(props) {
                 >
                   {" "}
                   <Grid item>
-                    <Link className={classes.linkTextmlg} to="/static-siteMap">
+                    <Link className={classes.linkTextmlg} onClick={() => {window.location.href = "/static-siteMap"}}>
                       SITEMAP &nbsp;{" "}
                     </Link>
                   </Grid>
