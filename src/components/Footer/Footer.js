@@ -802,7 +802,7 @@ export default function Footer(props) {
                 >
                   {" "}
                   <Grid item>
-                    <Link className={classes.linkTextmlg} to="/sitemap">
+                    <Link className={classes.linkTextmlg} to="/static-siteMap">
                       SITEMAP &nbsp;{" "}
                     </Link>
                   </Grid>
@@ -1082,7 +1082,7 @@ export default function Footer(props) {
         >
           {" "}
           <Grid item>
-            <Link className={classes.linkTextm} to="/sitemap">
+            <Link className={classes.linkTextm} to="/static-siteMap">
               SITEMAP &nbsp;{" "}
             </Link>
           </Grid>

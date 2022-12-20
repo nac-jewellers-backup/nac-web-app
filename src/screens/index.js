@@ -10,5 +10,7 @@ export * from "./readMorePage";
 export * from "./productCare";
 export * from "./careerPage";
 export * from "./customApplication";
+export * from "./siteMapNew";
+
 
 export { Stylori };

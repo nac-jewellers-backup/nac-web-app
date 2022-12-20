@@ -27,6 +27,7 @@ import ExperienceBanner from "components/experienceBanner/experienceBanner";
 import ExperienceCardComp from "components/experienceCard/experienceCard";
 import { ExperienceCards } from "components/experienceCardComponent";
 import { BlogImageCard } from "components/blogImageCard";
+import { SiteMapNew } from "screens/siteMapNew";
 
 function CdnPages(props) {
   // view more button click state
@@ -79,7 +80,6 @@ function CdnPages(props) {
       .then((res) => res.json())
       .then((data) => {
         //feature product
-        console.log("cdnData",data);
         const dataRecieved = JSON.parse(data.data.cdnByPage.data);
         if(data.data.cdnByPage.isActive){
           setState(dataRecieved);
@@ -88,6 +88,8 @@ function CdnPages(props) {
   }, []);
 
   const [state, setState] = useState([]);
+  console.log("cdnData",state);
+  
   const handleComponents = (val) => {
     switch (val.component) {
       case "BannerComponent": {
@@ -217,6 +219,12 @@ function CdnPages(props) {
             handleShow={showTitle}
           />
         );
+      }
+
+      case "siteMap":{
+        return (
+          <SiteMapNew value={val?.props}/>
+        )
       }
 
       default: {
