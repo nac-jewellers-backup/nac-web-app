@@ -3,7 +3,7 @@ import { Box, Grid, Typography } from "@material-ui/core";
 import Footer from "components/Footer/Footer";
 import { makeStyles } from "@material-ui/core/styles";
 import Header from "components/SilverComponents/Header";
-import React from "react"; 
+import React from "react";
 import { SiteMapData } from "./siteMapData";
 
 
@@ -33,8 +33,14 @@ const useStyles = makeStyles((theme) => ({
       margin: "auto",
       borderRadius: "12px",
       margin: "0px 0px 40px 0",
-      padding: "0px",
+      paddingBottom: "15px",
       boxShadow: "0 4px 6px 0 rgb(83 83 83 / 20%)",
+      [theme.breakpoints.down("sm")]: {
+        width: "23%",
+      },
+      [theme.breakpoints.down("xs")]: {
+        width: "47%",
+      },
       "& p": {
         listStyle: "none",
         marginBottom: "4px",
@@ -56,7 +62,7 @@ const useStyles = makeStyles((theme) => ({
           },
           [theme.breakpoints.down("xs")]: {
             fontSize: "12px",
-            padding: "0 0px 0 4px",
+            padding: "0 0px 0 9px",
             margin: "0",
           }
         }
@@ -70,55 +76,52 @@ const useStyles = makeStyles((theme) => ({
     background: "#2F348B",
     borderRadius: "12px 12px 0 0",
     marginBottom: "30px !important",
-    "& a": {
-      fontSize: "19px !important",
-      fontWeight: "550",
-      color: "#fff !important",
-      [theme.breakpoints.down("sm")]: {
-        fontSize: "14px !important",
-      },
-      [theme.breakpoints.down("xs")]: {
-        fontSize: "12px !important",
-      }
+    fontSize: "19px !important",
+    fontWeight: "550",
+    color: "#fff !important",
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "14px !important",
     },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "12px !important",
+    }
+
 
   }
 }));
 
 const SiteMapNew = (props) => {
-
   const classes = useStyles()
 
 
   return (
     <Grid container>
-      <Grid xs={12}>
-        <Header />
-      </Grid>
 
       <Box className={classes.siteMapBox}>
         <h2 className={classes.heading}>Site Index</h2>
         <div style={{ display: "flex" }}>
 
-          <div className={classes.categoryList}>
+          <Grid container className={classes.categoryList}>
 
             {
               props?.value?.map(e => {
-                return <Box>
-                  <Typography className={classes.subHeading} ><a>{e?.categoryHeading}</a></Typography>
-                  {
-                    e?.categoryList?.map(val => {
-                      return <Typography><a>{val.name}</a></Typography>
+                return (
+                  <Grid Item lg={2.9} md={2.9} sm={2.9} xs={5.5}>
+                    <Typography className={classes.subHeading} >{e?.categoryHeading}</Typography>
+                    {
+                      e?.categoryList?.map(val => {
+                        return <Typography><a href={val.url} >{val.name}</a></Typography>
 
-                    })
-                  }
+                      })
+                    }
 
 
-                </Box>
+                  </Grid>
+                )
               })
             }
 
-          </div>
+          </Grid>
 
         </div>
       </Box>
