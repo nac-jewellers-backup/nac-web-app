@@ -8,7 +8,6 @@ const CustomBanner = (props) => {
     <>
       <Hidden xsDown>
         {props?.value.map((e) => {
-          console.log("e", e);
           return (
             <Grid container>
               <Grid item xs={12}>

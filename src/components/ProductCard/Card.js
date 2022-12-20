@@ -367,7 +367,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const renderImages = (props, cardstate) => {
-  console.log(props, "???")
   if (props.static) {
     return props.image;
   } else {

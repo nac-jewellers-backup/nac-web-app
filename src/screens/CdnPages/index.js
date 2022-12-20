@@ -27,14 +27,11 @@ import ExperienceBanner from "components/experienceBanner/experienceBanner";
 import ExperienceCardComp from "components/experienceCard/experienceCard";
 import { ExperienceCards } from "components/experienceCardComponent";
 import { BlogImageCard } from "components/blogImageCard";
-import { SiteMapNew } from "screens/siteMapNew";
+import { SiteMapNew } from "components/siteMapNew";
 
 function CdnPages(props) {
   // view more button click state
   const [count, setCount] = useState(3);
-
-  // card content send to form apllication state
-  const [content, setContent] = useState("");
 
   // card and form hide, show state
   const [enable, setEnable] = useState(false);
@@ -50,11 +47,6 @@ function CdnPages(props) {
 
   // Career page card apply now button click function
 
-  const careerCardApplyNow = (value) => {
-    console.log("090909", value);
-    setContent(value);
-    setEnable(!enable);
-  };
 
   const showTitle = () => {
     setShowCard(!showCard);
@@ -62,9 +54,7 @@ function CdnPages(props) {
 
   // Career page form submit click function
 
-  const formSubmitClick = () => {
-    setEnable(!enable);
-  };
+
 
   useEffect(() => {
     const url = window.location.pathname.split("-")[1];
@@ -127,18 +117,17 @@ function CdnPages(props) {
         return <CustomBanner value={val?.props?.banners} />;
       }
       case "CareerCard": {
-        return !enable ? (
+        return (
           <CustomCard
             value={val?.props?.cardContent.filter(
               (value, index) => index < count
             )}
             handleRequest={careerViewMoreClick}
-            enable={enable}
-            buttonClick={careerCardApplyNow}
           />
-        ) : (
-          <CustomApplication data={content} handleClick={formSubmitClick} />
-        );
+        )
+      }
+      case "ResumeComp": {
+        return <CustomApplication />;
       }
       case "CollectionHeader": {
         return <CollectionHeader value={val?.props?.header} />;
