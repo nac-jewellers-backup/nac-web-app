@@ -1,9 +1,16 @@
-import { Button, Grid, TextField, Typography } from "@material-ui/core";
+import { Button, Grid, Snackbar, TextField, Typography } from "@material-ui/core";
+import { API_URL } from "../../config";
 import React, { useContext } from "react";
 import ContactUsFormStyles from "./style";
+import { SEND_ENQUIREY } from "queries/home";
+import axios from "axios";
+import MuiAlert from "@material-ui/lab/Alert";
+
+function Alert(props) {
+  return <MuiAlert elevation={6} variant="filled" {...props} />;
+}
 
 const ContactUsForm = (props) => {
-  console.log("000", props);
   const classes = ContactUsFormStyles();
 
   const initialState = {
@@ -14,8 +21,15 @@ const ContactUsForm = (props) => {
     message: "",
   };
 
+  // states
   const [state, setState] = React.useState(initialState);
+  const [openSnack, setOpenSnack] = React.useState(false);
+  const [openSnackError, setOpenSnackError] = React.useState({
+    type:false,
+    message:""
+  });
 
+  // onChange the text-field 
   const onChangeData = (event) => {
     setState({
       ...state,
@@ -23,6 +37,33 @@ const ContactUsForm = (props) => {
     });
   };
 
+  // Trigger the email
+  const emailTrigger = async (id) => {
+    console.log(id, "????");
+    const params = {
+      type: "send_enquiry",
+      appointment_id: id,
+    };
+    await axios.post(`${API_URL}/trigger_mail`, params).then((res) => {
+      if (res.data) {
+        setOpenSnack(true);
+        setState({
+          firstName: "",
+          lastName: "",
+          number: "",
+          email: "",
+          message: "",
+        });
+        return;
+      }
+      setOpenSnackError({
+        type:true,
+        message:"Something went wrong, Please try again!"
+      });
+    });
+  };
+
+  // On submit the Contact
   const onsubmitvalue = () => {
     if (
       state.firstName &&
@@ -31,12 +72,54 @@ const ContactUsForm = (props) => {
       state.number &&
       state.message
     ) {
-      setState(initialState);
-      console.log("state", state);
-    } else {
-      alert("Please fill all the fields!");
+      fetch(`${API_URL}/graphql`, {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          query: SEND_ENQUIREY,
+          variables: {
+            appointment: {
+              updatedAt: new Date(),
+              createdAt: new Date(),
+              email: state.email,
+              appointmentTypeId: 5,
+              comments: state.message,
+              specialRequests: "contactus",
+              customerName: state.firstName + " " + state.lastName,
+              isActive: true,
+              mobile: state.number,
+            },
+          },
+        }),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data?.data?.createAppointment?.appointment?.id) {
+            emailTrigger(data?.data?.createAppointment?.appointment?.id);
+          }
+        });
+    }else{
+      setOpenSnackError({
+        type:true,
+        message:"Please fill all the fields"
+      })
     }
   };
+
+  // handle snack bar
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setOpenSnackError({
+      type:false,
+      message:""
+    });
+    setOpenSnack(false);
+  };
+
   return (
     <>
       <div className={classes.mainCard}>
@@ -165,6 +248,7 @@ const ContactUsForm = (props) => {
                             autoFocus
                             margin="dense"
                             fullWidth
+                            type={"number"}
                             value={state.number}
                             onChange={onChangeData}
                             name="number"
@@ -225,6 +309,32 @@ const ContactUsForm = (props) => {
             );
           })}
         </Grid>
+        <Snackbar
+        anchorOrigin={{
+          vertical: "top",
+          horizontal: "center",
+        }}
+        open={openSnack}
+        autoHideDuration={3000}
+        onClose={handleClose}
+      >
+        <Alert onClose={handleClose} severity="success">
+          Your queries send successfully!
+        </Alert>
+      </Snackbar>
+      <Snackbar
+        anchorOrigin={{
+          vertical: "top",
+          horizontal: "center",
+        }}
+        open={openSnackError.type}
+        autoHideDuration={3000}
+        onClose={handleClose}
+      >
+        <Alert onClose={handleClose} severity="error">
+          {openSnackError.message}
+        </Alert>
+      </Snackbar>
       </div>
     </>
   );
