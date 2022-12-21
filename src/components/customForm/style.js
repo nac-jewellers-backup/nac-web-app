@@ -41,7 +41,7 @@ const CustomFormStyles = makeStyles((theme) => ({
 
   formGroup: {
     textAlign: "center",
-    backgroundColor: "rgb(224, 225, 225)",
+    backgroundColor: "#f4f4f4",
     paddingTop: "50px",
     boxShadow: "1px 11px 12px -6px rgba(0,0,0,0.75)",
     [theme.breakpoints.down("sm")]: {

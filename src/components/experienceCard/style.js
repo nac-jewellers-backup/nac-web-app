@@ -21,6 +21,7 @@ const ExperienceCardStyles = makeStyles((theme) => ({
     backgroundColor: "#f4f4f4",
     [theme.breakpoints.down("sm")]: {
       height: "160px",
+      paddingBottom:"8px"
     },
   },
 
@@ -35,6 +36,9 @@ const ExperienceCardStyles = makeStyles((theme) => ({
   desc: {
     textAlign: "center",
     color: "#6b6b6b",
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "13px",
+    },
   },
 }));
 export default ExperienceCardStyles;

@@ -52,7 +52,7 @@ const ReadMore = (props) => {
         }
         container
         spacing={4}
-        style={{ marginTop: "30px" }}
+        style={{ marginTop: "30px",alignItems:"center" }}
       >
         <Grid item xs={12} sm={12} md={6}>
           <div className={classes.leftImage}>

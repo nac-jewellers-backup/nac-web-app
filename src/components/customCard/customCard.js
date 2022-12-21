@@ -65,8 +65,7 @@ const CustomCard = (props) => {
               </div>
               <div className={classes.buttonLayer}>
                 <Button
-                  onClick={() => props?.buttonClick(val)}
-                  disabled={true}
+                  onClick={() => careerCardApplyNow(val)}
                   className={classes.buttonMobile}
                 >
                   {val?.button_Text}

@@ -72,7 +72,7 @@ const CustomForm = (props) => {
               <Typography>Submit Your Resume</Typography>
             </div>
             <div className={classes.jobForm}>
-              <Grid container style={{ justifyContent: "center" }}>
+              <Grid container style={{ justifyContent: "center", borderBottom:"1px solid #eee" }}>
                 <Grid item xs={10} sm={6} md={4}>
                   <div className={classes.textField}>
                     <TextField

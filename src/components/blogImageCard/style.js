@@ -35,6 +35,12 @@ const BlogImageCardStyles = makeStyles((theme) => ({
 
   contentText: {
     padding: "40px 20px",
+    [theme.breakpoints.down("md")]: {
+      padding: "10px 15px",
+    },
+    [theme.breakpoints.down("xs")]: {
+      padding: "5px 12px",
+    },
   },
 
   headingText: {
@@ -74,9 +80,11 @@ const BlogImageCardStyles = makeStyles((theme) => ({
       marginBottom: "20px",
       [theme.breakpoints.down("md")]: {
         fontSize: "16px",
+        marginBottom: "16px",
       },
       [theme.breakpoints.down("xs")]: {
-        fontSize: "14px",
+        fontSize: "13px",
+        marginBottom:"12px"
       },
     },
   },
@@ -91,9 +99,11 @@ const BlogImageCardStyles = makeStyles((theme) => ({
       cursor: "pointer",
       [theme.breakpoints.down("md")]: {
         fontSize: "17px",
+        marginBottom: "23px",
       },
       [theme.breakpoints.down("xs")]: {
         fontSize: "15px",
+        marginBottom: "23px",
       },
     },
   },
@@ -177,11 +187,12 @@ const BlogImageCardStyles = makeStyles((theme) => ({
     "& p": {
       fontSize: "17px",
       [theme.breakpoints.down("md")]: {
-        fontSize: "15px",
+        fontSize: "15px",   
       },
       [theme.breakpoints.down("xs")]: {
-        fontSize: "14px",
+        fontSize: "13px",
         padding: "0px 20px",
+        textAlign:"justify"
       },
     },
   },
@@ -199,8 +210,9 @@ const BlogImageCardStyles = makeStyles((theme) => ({
         fontSize: "15px",
       },
       [theme.breakpoints.down("xs")]: {
-        fontSize: "14px",
+        fontSize: "13px",
         padding: "0px 20px",
+        textAlign:"justify"
       },
     },
   },
@@ -213,8 +225,9 @@ const BlogImageCardStyles = makeStyles((theme) => ({
         fontSize: "15px",
       },
       [theme.breakpoints.down("xs")]: {
-        fontSize: "14px",
+        fontSize: "13px",
         padding: "0px 20px",
+        textAlign:"justify"
       },
     },
   },
@@ -232,8 +245,9 @@ const BlogImageCardStyles = makeStyles((theme) => ({
         fontSize: "15px",
       },
       [theme.breakpoints.down("xs")]: {
-        fontSize: "14px",
+        fontSize: "13px",
         padding: "0px 20px",
+        textAlign:"justify"
       },
     },
   },
@@ -241,7 +255,7 @@ const BlogImageCardStyles = makeStyles((theme) => ({
   leftImage: {
     "& img": {
       width: "100%",
-      height: "500px",
+      height: "400px",
       [theme.breakpoints.down("md")]: {},
       [theme.breakpoints.down("xs")]: {
         height: "300px",
