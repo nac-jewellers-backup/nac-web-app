@@ -116,7 +116,6 @@ const SiteMapNew = (props) => {
           </Grid>
         </div>
       </Box>
-      <Footer />
     </Grid>
   );
 };
