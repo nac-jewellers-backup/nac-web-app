@@ -27,11 +27,8 @@ function Alert(props) {
 const CustomForm = (props) => {
   const classes = CustomFormStyles();
   const [state, setState] = useState(initialState);
-  const [openSnack, setOpenSnack] = useState({
-    type: false,
-    message: "",
-    severity: null,
-  });
+  const [openSnackError, setOpenSnackError] = React.useState(false);
+  const [openSnack, setOpenSnack] = React.useState(false);
 
   const handleChange = (name, value) => {
     setState({ ...state, [name]: value });
@@ -47,35 +44,23 @@ const CustomForm = (props) => {
       .post(API_URL + "/apply_career", bodyFormData)
       .then((res) => {
         if (res) {
-          setOpenSnack({
-            type:true,
-            message:"Your Resume has been Updated successfully",
-            severity:"success"
-          })
+          setOpenSnack(true);
         }
       })
       .catch((err) => {
         console.log(err);
-        setOpenSnack({
-          type:true,
-          message:"Something went wrong. Please try again",
-          severity:"error"
-        })
+        setOpenSnackError(false);
       });
   };
 
   const handleClose = (event, reason) => {
-    if (reason === "clickaway") {
+    if (reason === 'clickaway') {
       return;
     }
-    setOpenSnack({
-      type: false,
-      message: "",
-      severity: null,
-    });
+    setOpenSnackError(false);
+    setOpenSnack(false);
   };
 
-  console.log("state", state);
   return (
     <div>
       <Grid container>
@@ -155,12 +140,25 @@ const CustomForm = (props) => {
           vertical: "top",
           horizontal: "center",
         }}
-        open={openSnack.type}
+        open={openSnack}
         autoHideDuration={3000}
         onClose={handleClose}
       >
-        <Alert onClose={handleClose} severity={openSnack.severity}>
-          {openSnack.message}
+        <Alert onClose={handleClose} severity="success">
+          Your resume has been updated successfully!
+        </Alert>
+      </Snackbar>
+      <Snackbar
+        anchorOrigin={{
+          vertical: "top",
+          horizontal: "center",
+        }}
+        open={openSnackError}
+        autoHideDuration={3000}
+        onClose={handleClose}
+      >
+        <Alert onClose={handleClose} severity="error">
+          Something went wrong, Please try again!
         </Alert>
       </Snackbar>
     </div>

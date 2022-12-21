@@ -48,6 +48,7 @@
     "google-maps-react": "^2.0.6",
     "graphql": "^14.7.0",
     "graphql-request": "^3.6.1",
+    "history": "^5.3.0",
     "html-react-parser": "^3.0.4",
     "html-webpack-plugin": "4.0.0-beta.5",
     "is-wsl": "^1.1.0",
