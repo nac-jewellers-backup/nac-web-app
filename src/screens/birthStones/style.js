@@ -54,6 +54,12 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: "center",
         padding: "13px",
         margin: "10px 10px",
+        [theme.breakpoints.down("sm")]: {
+            margin: "10px 10px",
+            padding: "6px",
+            width: "46px",
+            height: "46px",
+        },
         [theme.breakpoints.down("xs")]: {
             margin: "6px 6px",
             padding: "6px",
@@ -75,6 +81,12 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: "center",
         padding: "13px",
         margin: "10px 12px",
+        [theme.breakpoints.down("sm")]: {
+            margin: "10px 11px",
+            padding: "6px",
+            width: "46px",
+            height: "46px",
+        },
         [theme.breakpoints.down("xs")]: {
             margin: "6px 6px",
             padding: "6px",
@@ -91,6 +103,9 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: "center",
         marginBottom: "6px",
         color: "#888",
+        [theme.breakpoints.down("sm")]: {
+            fontSize: "13px",
+        },
         [theme.breakpoints.down("xs")]: {
             fontSize: "11px",
         },
@@ -109,9 +124,9 @@ const useStyles = makeStyles((theme) => ({
         width: "39%",
         height: "335px",
         margin: "auto",
-        [theme.breakpoints.down("xs")]: {
-            width: "40%",
-            height: "260px",
+        [theme.breakpoints.down("sm")]: {
+            width: "43%",
+            height: "310px",
         },
         [theme.breakpoints.down("xs")]: {
             width: "77%",
@@ -162,6 +177,9 @@ const useStyles = makeStyles((theme) => ({
         height: "145px",
         left: "0%",
         top: "6%",
+        [theme.breakpoints.down("sm")]: {
+            height: "129px"
+        },
         [theme.breakpoints.down("xs")]: {
             width: "34%",
             left: "48%",
@@ -207,6 +225,9 @@ const useStyles = makeStyles((theme) => ({
         height: "85px",
         left: "0%",
         bottom: "2%",
+        [theme.breakpoints.down("sm")]: {
+            height: "75px"
+        },
         [theme.breakpoints.down("xs")]: {
             left: "8%",
             width: "24%",
@@ -252,6 +273,9 @@ const useStyles = makeStyles((theme) => ({
         height: "124px",
         left: "21%",
         top: "-10%",
+        [theme.breakpoints.down("sm")]: {
+            height: "94px"
+        },
         [theme.breakpoints.down("xs")]: {
             top: "28%",
             left: "67%",
@@ -300,6 +324,9 @@ const useStyles = makeStyles((theme) => ({
         height: "130px",
         left: "19%",
         bottom: "-7%",
+        [theme.breakpoints.down("sm")]: {
+            height: "110    px"
+        },
         [theme.breakpoints.down("xs")]: {
             left: "0%",
             width: "33%",
@@ -346,6 +373,10 @@ const useStyles = makeStyles((theme) => ({
         height: "124px",
         right: "23%",
         top: "-2%",
+        [theme.breakpoints.down("sm")]: {
+            width: "16%",
+            height: "106px"
+        },
         [theme.breakpoints.down("xs")]: {
             top: "62%",
             right: "4%",
@@ -392,7 +423,7 @@ const useStyles = makeStyles((theme) => ({
         right: "7%",
         bottom: "-18%",
         [theme.breakpoints.down("sm")]: {
-            height: "169px"
+            height: "147px"
         },
         [theme.breakpoints.down("xs")]: {
             left: "2%",
@@ -446,6 +477,10 @@ const useStyles = makeStyles((theme) => ({
         height: "95px",
         right: "2%",
         top: "16%",
+        [theme.breakpoints.down("sm")]: {
+
+            height: "75px"
+        },
         [theme.breakpoints.down("xs")]: {
             top: "97%",
             right: "13%",
@@ -495,6 +530,10 @@ const useStyles = makeStyles((theme) => ({
         height: "88px",
         right: "43%",
         bottom: "-19%",
+        [theme.breakpoints.down("sm")]: {
+            bottom: "-14%",
+            height: "67px"
+        },
         [theme.breakpoints.down("xs")]: {
             right: "77%",
             top: "45%",

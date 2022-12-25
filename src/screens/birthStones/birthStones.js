@@ -36,7 +36,8 @@ const BirthStones = () => {
                                 <Grid item lg={1.25} md={1.25} sm={1.25} xs={1.25}
                                     className={classes.stonesCircle}>
                                     <Box item
-                                        className={i === stoneIndex ? classes.stoneChildClicked : classes.stoneChild}
+                                        className={i === stoneIndex ? classes.stoneChildClicked :
+                                            classes.stoneChild}
                                         onClick={() => handleStoneDetail(e, i)}>
                                         <img src={e?.birthStoneImg}></img>
                                     </Box>
