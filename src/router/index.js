@@ -61,6 +61,7 @@ import { CareerPage } from "screens";
 import { CustomApplication } from "screens";
 import { SiteMapNew } from "screens";
 
+import { BirthStones } from "screens";
 
 const browserHistory = createBrowserHistory();
 
@@ -285,6 +286,7 @@ export const RouterApp = (props) => {
         props.location.pathname !== "/careerPage" &&
         props.location.pathname !== "/siteMapNew" &&
         props.location.pathname !== "/form" &&
+        props.location.pathname !== "/birthStones" &&
         Globalctx &&
         Globalctx.pathName === false &&
         props.location.pathname !== "/homes" && (
@@ -366,6 +368,7 @@ export const RouterApp = (props) => {
         props.location.pathname !== "/productCareNew" &&
         props.location.pathname !== "/careerPage" &&
         props.location.pathname !== "/siteMapNew" &&
+        props.location.pathname !== "/birthStones" &&
         props.location.pathname !== "/form" && (
           <Route exact={true} component={Stylori} path={"/:listingpage"} />
         )}
@@ -546,6 +549,12 @@ export const RouterApp = (props) => {
         component={SiteMapNew}
         exact
         path={routes.SiteMapNew}
+        />
+      <Route
+        key="form"
+        component={BirthStones}
+        exact
+        path={routes.BirthStones}
       />
     </Switch>
   );

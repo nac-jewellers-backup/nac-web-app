@@ -11,6 +11,7 @@ export * from "./productCare";
 export * from "./careerPage";
 export * from "./customApplication";
 export * from "../components/siteMapNew";
+export * from './birthStones';
 
 
 export { Stylori };
