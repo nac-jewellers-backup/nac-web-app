@@ -1303,7 +1303,7 @@ function HeaderHoverMenuItem(props) {
                           justify="center"
                           alignContent="center"
                           alignItems="center"
-                          style={{ cursor: "pointer" }}
+                          style={{ cursor: "pointer",flexDirection:'column' }}
                         >
                           <Grid item style={{ margin: "auto" }}>
                             <Typography className={classes.imgtitle}>

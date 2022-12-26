@@ -311,11 +311,11 @@ export default function Footer(props) {
           Title: "Temple Work",
         },
         {
-          url: "/static-newsroom",
+          url: "/newsroom",
           Title: "In The News",
         },
         {
-          url: "/static-advertising",
+          url: "/advertising",
           Title: "Advertisements",
         },
       ],
@@ -362,7 +362,7 @@ export default function Footer(props) {
         },
         {
           Title: 'Experiences',
-          url: '/static-experiences'
+          url: '/experiences'
         }
       ],
     },
@@ -798,8 +798,7 @@ export default function Footer(props) {
                   style={{
                     display: "flex",
                     color: "#6b6b6b",
-                  }}
-                >
+                  }}>
                   {" "}
                   <Grid item>
                     <Link className={classes.linkTextmlg} onClick={() => {window.location.href = "/static-siteMap"}}>

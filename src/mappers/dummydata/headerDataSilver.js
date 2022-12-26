@@ -1242,7 +1242,7 @@ export const menuListHeader = [
   },
   {
     title: "Collections".toUpperCase(),
-    url: "/static-collections",
+    url: "/jewellery",
   },
   // {
   //   title: "Experience".toUpperCase(),

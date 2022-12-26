@@ -91,9 +91,9 @@ function AkshyaTritiya(props) {
       .then((res) => res.json())
       .then((data) => {
         //feature product
-      console.log("cdnData",JSON.parse(data.data.cdnByPage.data))
-      const dataRecieved = JSON.parse(data.data.cdnByPage.data)
-      setState(dataRecieved)
+        console.log("cdnData", JSON.parse(data.data.cdnByPage.data))
+        const dataRecieved = JSON.parse(data.data.cdnByPage.data)
+        setState(dataRecieved)
       });
   }, []);
 
@@ -114,17 +114,18 @@ function AkshyaTritiya(props) {
 
   const handleComponents = (val) => {
     switch (val.component) {
-      case "BannerComponent":{
-        console.log("valueRender",val?.props)
-        return <BannerComponent banners={val?.props?.banners} dataCarousel={val?.props?.banners.length > 1 ? "multiple" : "single"} />;
+      case "BannerComponent": {
+        console.log("valueRender", val?.props)
+        return <BannerComponent
+          banners={val?.props?.banners} dataCarousel={val?.props?.banners.length > 1 ? "multiple" : "single"} />;
       }
       case "TitleAndData": {
         return <TitleAndData title={val?.props?.title} description={val?.props?.description} />
       }
-      case "SlideImgMediaCard":{
+      case "SlideImgMediaCard": {
         return <SlideImgMediaCard listProduct={val?.props?.listingProducts} />
       }
-      case "QueryForm":{
+      case "QueryForm": {
         return <QueryForm image={val?.props?.image} />
       }
       default: {

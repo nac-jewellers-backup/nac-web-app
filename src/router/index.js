@@ -62,6 +62,7 @@ import { CustomApplication } from "screens";
 import { SiteMapNew } from "screens";
 
 import { BirthStones } from "screens";
+import { TempleWork } from "screens";
 
 const browserHistory = createBrowserHistory();
 
@@ -220,6 +221,11 @@ export const RouterApp = (props) => {
         path={routes.CareersPage}
       />
       <Route
+        key="templeWork"
+        component={TempleWork}
+        exact
+        path={routes.TempleWork} />
+      <Route
         key="paymentfail"
         component={Fail}
         exact
@@ -287,6 +293,8 @@ export const RouterApp = (props) => {
         props.location.pathname !== "/siteMapNew" &&
         props.location.pathname !== "/form" &&
         props.location.pathname !== "/birthStones" &&
+        props.location.pathname !== "/templeWork" &&
+
         Globalctx &&
         Globalctx.pathName === false &&
         props.location.pathname !== "/homes" && (
@@ -369,6 +377,7 @@ export const RouterApp = (props) => {
         props.location.pathname !== "/careerPage" &&
         props.location.pathname !== "/siteMapNew" &&
         props.location.pathname !== "/birthStones" &&
+        props.location.pathname !== "/templeWork" &&
         props.location.pathname !== "/form" && (
           <Route exact={true} component={Stylori} path={"/:listingpage"} />
         )}
@@ -556,6 +565,11 @@ export const RouterApp = (props) => {
         exact
         path={routes.BirthStones}
       />
+      <Route
+        key="templeWork"
+        component={TempleWork}
+        exact
+        path={routes.TempleWork} />
     </Switch>
   );
 };

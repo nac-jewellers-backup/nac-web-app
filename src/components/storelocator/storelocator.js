@@ -8,10 +8,10 @@ import getDirections from "../../assets/storeDirection.png";
 export default function Storelocator(props) {
   const value = props.value;
   const classes = style();
-  const handleRoute = (key) => {
-    localStorage.setItem("storeKey", key);
-    window.location.pathname = "/static-loc" ;
-  };
+  // const handleRoute = (key) => {
+  //   localStorage.setItem("storeKey", key);
+  //   window.location.pathname = "/static-loc" ;
+  // };
 
   return (
     <div className={classes.mainWidths}>
@@ -46,13 +46,29 @@ export default function Storelocator(props) {
                         dangerouslySetInnerHTML={{ __html: store.para }}
                         className={classes.para}
                       ></Typography>
-                      <div>
+                      {/* <div>
                         <Button
                           onClick={() => handleRoute(store.key)}
                           className={classes.ViewButton}
                         >
                           &nbsp;&nbsp;{store.button}&nbsp;&nbsp;
                         </Button>
+                      </div> */}
+                      <div>
+                        <a
+                          style={{ textDecoration: "none" }}
+                        // href=""
+                        // target="_blank"
+                        >
+                          <Button
+                            onClick={() => {
+                              window.location.pathname = "/loc/" + store.key;
+                            }}
+                            className={classes.ViewButton}
+                          >
+                            &nbsp;&nbsp;{store.button}&nbsp;&nbsp;
+                          </Button>
+                        </a>
                       </div>
                       <Box
                         display="flex"
