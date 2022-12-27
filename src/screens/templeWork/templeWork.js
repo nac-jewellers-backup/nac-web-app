@@ -70,7 +70,7 @@ const TempleWork = () => {
   };
   return (
     <Grid container>
-      <Grid item xs={12}>
+      {/* <Grid item xs={12}>
         <div className={classes.mainTag}>
           <Header />
         </div>
@@ -80,7 +80,7 @@ const TempleWork = () => {
         <div className={classes.footer}>
           <Footer />
         </div>
-      </Grid>
+      </Grid> */}
     </Grid>
   );
 };
