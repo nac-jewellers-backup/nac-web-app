@@ -91,15 +91,15 @@ export const BirthStonesData = [
             "img3": zodiac12,
             "img4": zodiac7,
             "img5": zodiac5,
-            "found": <p> Found in<span> SriLanka, Cambodia, Myanmar, Vietnam, Australia</span></p>,
-            "latin": <p>Latin Name <span>Ruber</span></p>,
-            "largestProducer": <p>Largest producer <span>Australia</span></p>,
+            "found": <p> Found in<span> South africa, russia, botswana, india</span></p>,
+            "latin": <p>Latin Name <span>adamas</span></p>,
+            "largestProducer": <p>Largest active mine <span>aikhal in sakha, republic of russia</span></p>,
             "scifiName": <p>Scientific Name <span>Carbon</span></p>,
-            "birthStoneFor": <p>Birthstone for <span>July/Cancer</span></p>,
-            "benefits": <p>Benefits <span>Improves paternal relationships, bring fame, wards of evil, commands authority, rejuvenates health conditions.</span></p>,
-            "MOHS": <p>MOHS Scale Details <span>9</span></p>,
-            "colour": <p>Colour<span>Red</span></p>,
-            "colorToolTip": <p>Colour Red</p>,
+            "birthStoneFor": <p>Birthstone for <span>april/aries</span></p>,
+            "benefits": <p>Benefits <span>attracts wealth, imporves physical health, offers, spiritual benefits, boosts confidence, adds positivity.</span></p>,
+            "MOHS": <p>MOHS Scale Details <span>10</span></p>,
+            "colour": <p>Colour<span>Colourless</span></p>,
+            "colorToolTip": <p>Colour Colourless</p>,
             "benefitsToolTip": <p>Benefits Improves paternal relationships, bring fame, wards of evil, commands authority, rejuvenates health conditions.</p>
         }
     },
@@ -177,7 +177,8 @@ export const BirthStonesData = [
             "birthStoneFor": <p>Birthstone for <span>April/Aries</span></p>,
             "benefits": <p>Benefits <span>healing , amplifying energy, revitalizing, creating harmony</span></p>,
             "MOHS": <p>MOHS Scale Details <span>7</span></p>,
-            "colour": <p>Colour <span>blue-green</span></p>,
+            "colour": <p>Colour <span>Clear, white, gray, purple, yellow, brown, black, red pink & green.</span>
+            </p>,
             "colorToolTip": <p>Colour blue-green</p>,
             "benefitsToolTip": <p>Benefits healing, amplifying energy, revitalizing, creating harmony
             </p>
@@ -450,9 +451,9 @@ export const BirthStonesData = [
             "img4": zodiac4,
             "img5": zodiac17,
             "found": <p> Found in
-                <span>Russia, afghanistan, sri lanka, brazil, mexico & the US</span></p>,
+                <span>tanzania</span></p>,
             "latin": <p>Latin Name <span>Blue Zoisite</span></p>,
-            "scifiName": <p>Scientific Name <span>Nesosilicate Minerals</span></p>,
+            "scifiName": <p>Scientific Name <span>Zoisite</span></p>,
             "largestProducer": <p>Largest producer <span>tanzania</span></p>,
             "birthStoneFor": <p>Birthstone for <span>December/ Capricorn</span></p>,
             "benefits": <p>Benefits
@@ -482,8 +483,8 @@ export const BirthStonesData = [
                 <span>provides physical, emotional and spiritual balance</span>
             </p>,
             "MOHS": <p>MOHS Scale Details <span>7.5</span></p>,
-            "colour": <p>Colour <span>black, green, blue, yellow, pink or red, colorless</span></p>,
-            "birthStoneToolTip": <p> Colour black, green, blue, yellow, pink or red, colorless</p>,
+            "colour": <p>Colour <span>reddish brown, yellow, green, blue, grey,  colorless</span></p>,
+            "birthStoneToolTip": <p> Colour reddish brown, yellow, green, blue, grey,  colorless</p>,
             "benefitsToolTip": <p>Benefits provides physical, emotional and spiritual balance</p>
         }
     }
