@@ -64,7 +64,10 @@ const CardUseStyles = makeStyles((theme) => ({
             fontSize: "11px",
             padding: "12px 0",
         },
-
+        [theme.breakpoints.up("xl")]: {
+            fontSize: "16px",
+            padding: "12px 0",
+        },
     },
     readText: {
         fontSize: "16px",

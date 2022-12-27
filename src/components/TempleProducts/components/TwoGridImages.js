@@ -19,7 +19,7 @@ const TwoGridImages = (props) => {
               </div>
             </Grid>
             <Grid item xs={5}>
-              <Typography className={classes.TempleName}>
+              <Typography className={classes.headerTempleName}>
                 {props.data?.header1}
               </Typography>
               <Typography className={classes.weighTxt}>
@@ -32,7 +32,7 @@ const TwoGridImages = (props) => {
           <Grid container alignItems="center">
             
             <Grid item xs={3}>
-              <Typography className={classes.TempleName}>
+              <Typography className={classes.headerTempleName}>
                 {props.data?.header2}
               </Typography>
               

@@ -62,7 +62,6 @@ const TempleFooterComp = (props) => {
                 <Box className={classes.aboutChild}>
                     {
                         props?.data?.map((val) => {
-                            debugger
                             return (
                                 <>
                                     <Typography className={classes.footHead}>{val?.title}</Typography>

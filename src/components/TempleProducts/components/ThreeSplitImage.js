@@ -19,7 +19,7 @@ const ThreeSplitImage = (props) => {
             }
           >
             <div style={{ width: "60%", margin: "auto" }}>
-              <Typography className={classes.TempleName}>
+              <Typography className={classes.headerTempleName}>
                 {props?.total?.firstHeader}
               </Typography>
               <Typography className={classes.weighTxt}>
@@ -55,7 +55,7 @@ const ThreeSplitImage = (props) => {
             }
           >
             <div style={{ width: "60%", margin: "auto" }}>
-              <Typography className={classes.TempleName}>
+              <Typography className={classes.headerTempleName}>
                 {props?.total?.secondHeader}
               </Typography>
               <Typography className={classes.weighTxt}>
@@ -75,13 +75,13 @@ const ThreeSplitImage = (props) => {
                    { val?.multipleText?.map((e, i) => (
                     <>
                       <Grid item xs={3} style={{maxWidth:"24%"}}>
-                        <Typography className={classes.TempleName} style={{fontSize:"11px"}}>
+                        <Typography className={classes.multipleTextTempleName} >
                           {e?.name}
                         </Typography>
-                        <Typography className={classes.weighTxt} style={{fontSize:"10px"}}>
+                        <Typography className={classes.multipleTextweighTxt} >
                           {e?.weigh}
                         </Typography>
-                        <Typography className={classes.weighTxt} style={{fontSize:"10px"}}>
+                        <Typography className={classes.multipleTextweighTxt}>
                           {e?.stone}
                         </Typography>
                       </Grid>

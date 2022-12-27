@@ -17,10 +17,9 @@ const ImageWithDescription = (props) => {
           xs={6}
           className={props?.custom ? classes.customGridBox : classes.GridBox}
         >
-          <Box className={e?.size ? classes.imageCustom : classes.TempleImg}>
+          <Box className={classes.TempleImg}>
             <img
-              style={{ width: e?.width ? "inherit" : "unset" }}
-              className={classes.imageOfImageWithDescription}
+              style={{ width: e?.width ? e?.width : "unset" }}
               src={e?.img}
             ></img>
           </Box>

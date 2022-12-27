@@ -11,7 +11,7 @@ const MultipleSimilarImages = (props) => {
       {!props.invert && 
             <>
                 <Typography className={classes.weighTxt}>{props.subHeader}</Typography>
-                <Typography className={classes.TempleName}>
+                <Typography className={classes.headerTempleName}>
                     {props.header}
                 </Typography>
             </>
@@ -26,7 +26,7 @@ const MultipleSimilarImages = (props) => {
         ))}
         {props.invert && 
             <div style={{display:"block",width:"100%",marginTop:"20px"}}>
-                <Typography style={{width:"35%",margin:"auto"}} className={classes.TempleName}>
+                <Typography style={{width:"35%",margin:"auto"}} className={classes.headerTempleName}>
                     {props.header}
                 </Typography>
             </div>

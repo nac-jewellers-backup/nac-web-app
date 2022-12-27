@@ -33,7 +33,38 @@ export const CardUseStyles = makeStyles((theme) => ({
       padding: "6px 0",
       textAlign: "center",
       [theme.breakpoints.down("xs")]: {
-        fontSize: "13px",
+        fontSize: "11px",
+      },
+      [theme.breakpoints.up("xl")]: {
+        fontSize: "19px",
+      },
+    },
+    multipleTextTempleName:{
+      fontSize: "11px",
+      color: "#213C97",
+      fontStyle: "italic",
+      textTransform: "capitalize",
+      padding: "6px 0",
+      textAlign: "center",
+      [theme.breakpoints.down("xs")]: {
+        fontSize: "7px",
+      },
+      [theme.breakpoints.up("xl")]: {
+        fontSize: "12px",
+      },
+    },
+    headerTempleName:{
+      fontSize: "16px",
+      color: "#213C97",
+      fontStyle: "italic",
+      textTransform: "capitalize",
+      padding: "6px 0",
+      textAlign: "center",
+      [theme.breakpoints.down("xs")]: {
+        fontSize: "12px",
+      },
+      [theme.breakpoints.up("xl")]: {
+        fontSize: "22px",
       },
     },
     templeTxt: {
@@ -47,11 +78,29 @@ export const CardUseStyles = makeStyles((theme) => ({
         fontSize: "14px",
       },
     },
-    weighTxt: {
-      fontSize: "13px",
+    multipleTextweighTxt:{
+      fontSize: "8px",
       color: "#727273",
       fontStyle: "italic",
-      textAlign:"center"
+      textAlign:"center",
+      [theme.breakpoints.down("xs")]: {
+        fontSize: "6px",
+      },
+      [theme.breakpoints.up("xl")]: {
+        fontSize: "10px",
+      },
+    },
+    weighTxt: {
+      fontSize: "11px",
+      color: "#727273",
+      fontStyle: "italic",
+      textAlign:"center",
+      [theme.breakpoints.down("xs")]: {
+        fontSize: "8px",
+      },
+      [theme.breakpoints.up("xl")]: {
+        fontSize: "14px",
+      },
     },
     GridBox: {
       textAlign: "center",

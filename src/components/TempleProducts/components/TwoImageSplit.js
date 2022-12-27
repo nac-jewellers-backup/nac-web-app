@@ -26,7 +26,7 @@ const TwoImageSplit = (props) => {
             ))}
           </Grid>
           <div style={{ width: "60%", margin: "auto" }}>
-            <Typography className={classes.TempleName}>
+            <Typography className={classes.headerTempleName}>
               {props?.total?.firstHeader}
             </Typography>
             <Typography className={classes.weighTxt}>
@@ -37,7 +37,7 @@ const TwoImageSplit = (props) => {
         <Grid item xs={12} md={6} style={{textAlign:"center"}}>
           <img src={props?.data?.secondData?.img} />
           <div style={{ width: "60%", margin: "auto" }}>
-            <Typography className={classes.TempleName}>
+            <Typography className={classes.headerTempleName}>
               {props?.total?.secondHeader}
             </Typography>
           </div>
