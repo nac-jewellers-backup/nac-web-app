@@ -77,7 +77,7 @@ export const BirthStonesData = [
             "largestProducer": <p>Largest producer <span>China</span></p>,
             "scifiName": <p>Scientific Name <span>Pintcada</span></p>,
             "birthStoneFor": <p>Birthstone for <span>June/Cancer</span></p>,
-            "benefits": <p>Benefits <span>Strengths the mind, helps with insomnia, increases facial luster, develops harmony between partners</span></p>,
+            "benefits": <p>Benefits <span>Strengths the mind,<br/> helps with insomnia,<br /> increases facial luster,<br /> develops harmony <br /> between partners</span></p>,
             "MOHS": <p>MOHS Scale Details <span>2.5</span></p>,
             "colour": <p>Colour<span>off-white</span></p>,
             "colorToolTip": <p>Colour off-white</p>,
@@ -96,7 +96,7 @@ export const BirthStonesData = [
             "largestProducer": <p>Largest active mine <span>aikhal in sakha, republic of russia</span></p>,
             "scifiName": <p>Scientific Name <span>Carbon</span></p>,
             "birthStoneFor": <p>Birthstone for <span>april/aries</span></p>,
-            "benefits": <p>Benefits <span>attracts wealth, imporves physical health, offers, spiritual benefits, boosts confidence, adds positivity.</span></p>,
+            "benefits": <p>Benefits <span>attracts wealth,<br /> imporves physical health,<br /> offers, spiritual benefits,<br /> boosts confidence, <br/>adds positivity.</span></p>,
             "MOHS": <p>MOHS Scale Details <span>10</span></p>,
             "colour": <p>Colour<span>Colourless</span></p>,
             "colorToolTip": <p>Colour Colourless</p>,
@@ -115,7 +115,7 @@ export const BirthStonesData = [
             "largestProducer": <p>Largest active mine <span>Russia and namibia</span></p>,
             "scifiName": <p>Scientific Name <span>spessartine</span></p>,
             "birthStoneFor": <p>Birthstone for <span>January/ Capricorn</span></p>,
-            "benefits": <p>Benefits <span>attracts wealth, regulates blood circulation, induces calming effects, offers balance in life</span></p>,
+            "benefits": <p>Benefits <span>attracts wealth, <br />regulates blood<br /> circulation,<br /> induces calming effects,<br /> offers balance in<br /> life</span></p>,
             "MOHS": <p>MOHS Scale Details <span>7.5 - 8.5</span></p>,
             "colour": <p>Colour <span>virtually all colors</span></p>,
             "colorToolTip": <p>Colour virtually all colors</p>,
@@ -134,7 +134,7 @@ export const BirthStonesData = [
             "largestProducer": <p>Largest producer <span>Brazil</span></p>,
             "scifiName": <p>Scientific Name <span>SiO2</span></p>,
             "birthStoneFor": <p>Birthstone for <span>Febuary/Pisces</span></p>,
-            "benefits": <p>Benefits <span>enchanes the immune system, regulates hormones, promotes serenity and calm</span></p>,
+            "benefits": <p>Benefits <span>enchanes the immune<br /> system, regulates<br /> hormones,<br /> promotes serenity<br /> and calm</span></p>,
             "MOHS": <p>MOHS Scale Details <span>7</span></p>,
             "colour": <p>Colour <span>Transparent purple</span></p>,
             "colorToolTip": <p>Colour Transparent purple</p>,
@@ -154,7 +154,7 @@ export const BirthStonesData = [
             "largestProducer": <p>Largest producer <span>Brazil</span></p>,
             "scifiName": <p>Scientific Name <span>SiO2</span></p>,
             "birthStoneFor": <p>Birthstone for <span>March/Pisces</span></p>,
-            "benefits": <p>Benefits <span>Stabilizes the mental, emotional & physical aspect, of its user, helps people become loving and selfless</span></p>,
+            "benefits": <p>Benefits <span>Stabilizes the mental,<br />  emotional & physical<br /> aspect, of its user,<br /> helps people become<br /> loving and selfless</span></p>,
             "MOHS": <p>MOHS Scale Details <span>7.5 - 8</span></p>,
             "colour": <p>Colour <span>blue-green</span></p>,
             "colorToolTip": <p>Colour blue-green</p>,
@@ -175,7 +175,7 @@ export const BirthStonesData = [
             "largestProducer": <p>Largest producer <span>USA and Brazil</span></p>,
             "scifiName": <p>Scientific Name <span>Sicila</span></p>,
             "birthStoneFor": <p>Birthstone for <span>April/Aries</span></p>,
-            "benefits": <p>Benefits <span>healing , amplifying energy, revitalizing, creating harmony</span></p>,
+            "benefits": <p>Benefits <span>healing ,<br />  amplifying energy,<br />  revitalizing,<br />  creating harmony</span></p>,
             "MOHS": <p>MOHS Scale Details <span>7</span></p>,
             "colour": <p>Colour <span>Clear, white, gray, purple, yellow, brown, black, red pink & green.</span>
             </p>,
@@ -197,7 +197,7 @@ export const BirthStonesData = [
             "largestProducer": <p>Largest producer <span>Arizona</span></p>,
             "scifiName": <p>Scientific Name <span>Callias - phosphate mineral</span></p>,
             "birthStoneFor": <p>Birthstone for <span>December/ january/ sagittarius</span></p>,
-            "benefits": <p>Benefits <span>ensure overall physical fitness, enchanes immunity, stabilizing mood swimgs, inculates deep understanding</span></p>,
+            "benefits": <p>Benefits <span>ensure overall<br />  physical fitness,<br />  enchanes immunity,<br />  stabilizing mood swimgs,<br />  inculates deep<br />  understanding</span></p>,
             "MOHS": <p>MOHS Scale Details <span>5-6</span></p>,
             "colour": <p>Colour <span>shade of blue between blue and green</span></p>,
             "colorToolTip": <p>Colour shade of blue between blue and green</p>,
@@ -217,7 +217,7 @@ export const BirthStonesData = [
             "scifiName": <p>Scientific Name <span>Chrysoberyl</span></p>,
             "largestProducer": <p>Largest producer <span>Brazil</span></p>,
             "birthStoneFor": <p>Birthstone for <span>June/ Cancer</span></p>,
-            "benefits": <p>Benefits <span>strengthens the intuition, creativity and imagination</span></p>,
+            "benefits": <p>Benefits <span>strengthens<br />  the intuition,<br />  creativity and<br />  imagination</span></p>,
             "MOHS": <p>MOHS Scale Details <span>8.5</span></p>,
             "colour": <p>Colour <span>Blue-Green</span></p>,
             "colorToolTip": <p>Colour Blue-Green</p>,
@@ -238,7 +238,7 @@ export const BirthStonesData = [
             "largestProducer": <p>Largest producer <span>India & Srilanka</span></p>,
             "birthStoneFor": <p>Birthstone for <span>June/ Cancer</span></p>,
             "benefits": <p>Benefits
-                <span>carrying soothing influences and relaxing effects</span></p>,
+                <span>carrying soothing<br />  influences and<br />  relaxing effects</span></p>,
             "MOHS": <p>MOHS Scale Details <span>6.0</span></p>,
             "colour": <p>Colour <span>Colourless, Grey, brown, yellow, green, pink</span></p>,
             "colorToolTip": <p>Colour Colourless, Grey, brown, yellow, green, pink</p>,
@@ -259,7 +259,7 @@ export const BirthStonesData = [
             "largestProducer": <p>Largest producer <span>Brazil</span></p>,
             "birthStoneFor": <p>Birthstone for <span>November/ sagittarius</span></p>,
             "benefits": <p>Benefits
-                <span>Induces positove energy and reduces depression</span></p>,
+                <span>Induces positove<br />  energy and reduces<br />  depression</span></p>,
             "MOHS": <p>MOHS Scale Details <span>7</span></p>,
             "colour": <p>Colour <span>Light Pastel yellow, dark reddish orange</span></p>,
             "foundToolTip": <p> Found in brazil, nigeria, madagascar, zambia, pakistan and mozambique.
@@ -282,7 +282,7 @@ export const BirthStonesData = [
             "largestProducer": <p>Largest producer <span>Colombia</span></p>,
             "birthStoneFor": <p>Birthstone for <span>November/ sagittarius</span></p>,
             "benefits": <p>Benefits
-                <span>Provides good health, wisdom, prosperity, creative skills and a blissful martial life.</span></p>,
+                <span>Provides good<br />  health, wisdom,<br />  prosperity, creative<br />  skills and a<br />  blissful martial life.</span></p>,
             "MOHS": <p>MOHS Scale Details <span>7.5-8</span></p>,
             "colour": <p>Colour <span>Green</span></p>,
             "colorToolTip": <p>Colour Green</p>,
@@ -303,7 +303,7 @@ export const BirthStonesData = [
             "largestProducer": <p>Largest producer <span>Myanmar</span></p>,
             "birthStoneFor": <p>Birthstone for <span>July/ Cancer</span></p>,
             "benefits": <p>Benefits
-                <span>improves paternal relationship, brings fame, wards off evil, commands authority, rejuvenates health conditions.</span></p>,
+                <span>improves paternal<br />  relationship, brings<br />  fame, wards off evil,<br />  commands authority,<br />  rejuvenates health<br />  conditions.</span></p>,
             "MOHS": <p>MOHS Scale Details <span>9</span></p>,
             "colour": <p>Colour <span>Red</span></p>,
             "colorToolTip": <p>Colour Red</p>,
@@ -324,7 +324,7 @@ export const BirthStonesData = [
             "largestProducer": <p>Largest producer <span>Egypt</span></p>,
             "birthStoneFor": <p>Birthstone for <span>August/ Leo</span></p>,
             "benefits": <p>Benefits
-                <span>alleviates anger and fear, fosters love, increases strength and vitality</span>
+                <span>alleviates anger<br />  and fear,<br />  fosters love,<br />  increases strength<br />  and vitality</span>
             </p>,
             "MOHS": <p>MOHS Scale Details <span>6.5-7</span></p>,
             "colour": <p>Colour <span>Green</span></p>,
@@ -346,7 +346,7 @@ export const BirthStonesData = [
             "largestProducer": <p>Largest producer <span>Madagascar</span></p>,
             "birthStoneFor": <p>Birthstone for <span>September/ Virgo</span></p>,
             "benefits": <p>Benefits
-                <span>Promotes love and commitment, calms nerves, brings learning, mental acuity, and spiritual healing</span>
+                <span>Promotes love<br />  and commitment,<br />  calms nerves,<br />  brings learning,<br />  mental acuity and<br />  spiritual healing</span>
             </p>,
             "MOHS": <p>MOHS Scale Details <span>9</span></p>,
             "colour": <p>Colour <span>Blue</span></p>,
@@ -368,7 +368,7 @@ export const BirthStonesData = [
             "largestProducer": <p>Largest producer <span>Australia</span></p>,
             "birthStoneFor": <p>Birthstone for <span>October/ Libra</span></p>,
             "benefits": <p>Benefits
-                <span>Enchances creativity, brings good fortune, peace, joy, and wealth</span>
+                <span>Enchances creativity,<br />  brings good fortune,<br />  peace, joy,<br />  and wealth</span>
             </p>,
             "MOHS": <p>MOHS Scale Details <span>5.5-6.5</span></p>,
             "colour": <p>Colour
@@ -391,7 +391,7 @@ export const BirthStonesData = [
             "largestProducer": <p>Largest producer <span>Italy and Hong Kong</span></p>,
             "birthStoneFor": <p>Birthstone for <span>October/ Libra</span></p>,
             "benefits": <p>Benefits
-                <span>removes obstacle, increases confidence, removes lethargy, better relationships and relief from debt</span>
+                <span>removes obstacle,<br />  increases confidence,<br />  removes lethargy,<br />  better relationships<br />  and relief from debt</span>
             </p>,
             "MOHS": <p>MOHS Scale Details <span>3.5-4</span></p>,
             "colour": <p>Colour <span>white, shades of red & pink, blue, black</span></p>,
@@ -413,7 +413,7 @@ export const BirthStonesData = [
             "largestProducer": <p>Largest producer <span>Brazil</span></p>,
             "birthStoneFor": <p>Birthstone for <span>November/ Libra</span></p>,
             "benefits": <p>Benefits
-                <span>prevents negative energies, balances all the chakras</span>
+                <span>prevents negative<br />  energies, balances<br />  all the chakras</span>
             </p>,
             "MOHS": <p>MOHS Scale Details <span>7-7.5</span></p>,
             "colour": <p>Colour <span>black, green, blue, yellow, pink or red, colorless</span></p>,
@@ -435,7 +435,7 @@ export const BirthStonesData = [
             "largestProducer": <p>Largest producer <span>Brazil</span></p>,
             "birthStoneFor": <p>Birthstone for <span>November/ sagittarius</span></p>,
             "benefits": <p>Benefits
-                <span>promotes truth and forgiveness</span>
+                <span>promotes truth<br />  and forgiveness</span>
             </p>,
             "MOHS": <p>MOHS Scale Details <span>8</span></p>,
             "colour": <p>Colour <span>black, green, blue, yellow, pink or red, colorless</span></p>,
@@ -457,7 +457,7 @@ export const BirthStonesData = [
             "largestProducer": <p>Largest producer <span>tanzania</span></p>,
             "birthStoneFor": <p>Birthstone for <span>December/ Capricorn</span></p>,
             "benefits": <p>Benefits
-                <span>Strengthens the immune system and improves the body's vitality</span>
+                <span>Strengthens the<br />  immune system and<br />  improves the<br />  body's vitality</span>
             </p>,
             "MOHS": <p>MOHS Scale Details <span>6.5</span></p>,
             "colour": <p>Colour <span>blue, violet, red</span></p>,
@@ -480,7 +480,7 @@ export const BirthStonesData = [
             "largestProducer": <p>Largest producer <span>Australia</span></p>,
             "birthStoneFor": <p>Birthstone for <span>December/ Capricorn</span></p>,
             "benefits": <p>Benefits
-                <span>provides physical, emotional and spiritual balance</span>
+                <span>provides physical,<br />  emotional and<br />  spiritual balance</span>
             </p>,
             "MOHS": <p>MOHS Scale Details <span>7.5</span></p>,
             "colour": <p>Colour <span>reddish brown, yellow, green, blue, grey,  colorless</span></p>,

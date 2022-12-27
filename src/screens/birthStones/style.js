@@ -443,10 +443,13 @@ const useStyles = makeStyles((theme) => ({
                     display: "block",
                     textTransform: "capitalize",
                     width: "155px",
-                    textOverflow: "ellipsis",
+                    // textOverflow: "ellipsis",
                     whiteSpace: "nowrap",
-                    overflow: "hidden",
-                    margin: "auto"
+                    // overflow: "hidden",
+                    margin: "auto",
+                    [theme.breakpoints.down("sm")]: {
+                        fontSize:"11px"
+                    },
                 }
             }
         },
