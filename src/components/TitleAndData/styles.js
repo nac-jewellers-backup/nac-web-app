@@ -87,12 +87,14 @@ export const useStyles = makeStyles((theme) => ({
     "& p": {
       "& span": {
         fontSize: "20px !important",
-        // color: "#717171",
+        fontFamily:"notoSerif-regular !important",
         [theme.breakpoints.down("md")]: {
           fontSize: "15px !important",
+          fontFamily:"notoSerif-regular !important"
         },
         [theme.breakpoints.down("xs")]: {
           fontSize: "14px !important",
+          fontFamily:"notoSerif-regular !important"
         },
       },
     },
@@ -100,12 +102,14 @@ export const useStyles = makeStyles((theme) => ({
       "& li":{
         "& span":{
           fontSize: "20px !important",
-        // color: "#717171",
+          fontFamily:"notoSerif-regular !important",
         [theme.breakpoints.down("md")]: {
           fontSize: "15px !important",
+          fontFamily:"notoSerif-regular !important"
         },
         [theme.breakpoints.down("xs")]: {
           fontSize: "14px !important",
+          fontFamily:"notoSerif-regular !important"
         },
         }
       }

@@ -61,6 +61,7 @@ export const routes = {
   ProductCareNew: "/productCareNew",
   CareerPage: "/careerPage",
   CustomApplication: "/form",
+  pongalCms:"/pongal&Sankranti"
 };
 
 export default routes;

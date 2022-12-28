@@ -57,7 +57,12 @@ function CdnPages(props) {
   };
 
   useEffect(() => {
-    const url = window.location.pathname.split("-")[1];
+    let url =""; 
+    if(window.location.pathname === "/pongal&Sankranti"){
+      url = "pongal&Sankranti"
+    }else{
+      url = window.location.pathname.split("-")[1];
+    } 
     fetch(`${API_URL}/graphql`, {
       method: "post",
       headers: {

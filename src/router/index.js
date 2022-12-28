@@ -278,6 +278,7 @@ export const RouterApp = (props) => {
         props.location.pathname !== "/productCareNew" &&
         props.location.pathname !== "/careerPage" &&
         props.location.pathname !== "/form" &&
+        props.location.pathname !== "/pongal&Sankranti" &&
         Globalctx &&
         Globalctx.pathName === false &&
         props.location.pathname !== "/homes" && (
@@ -356,7 +357,8 @@ export const RouterApp = (props) => {
         props.location.pathname !== "/faqDetails" &&
         props.location.pathname !== "/productCareNew" &&
         props.location.pathname !== "/careerPage" &&
-        props.location.pathname !== "/form" && (
+        props.location.pathname !== "/form" &&
+        props.location.pathname !== "/pongal&Sankranti" && (
           <Route exact={true} component={Stylori} path={"/:listingpage"} />
         )}
 
@@ -505,6 +507,7 @@ export const RouterApp = (props) => {
         path={routes.ProductCareNew}
       />
       <Route key="static" component={CdnPages} exact path={routes.Static} />
+      <Route key="static" component={CdnPages} exact path={routes.pongalCms} />
       <Route
         key="careerPage"
         component={CareerPage}
