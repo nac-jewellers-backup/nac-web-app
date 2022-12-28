@@ -72,7 +72,7 @@ const SlideImgMediaCard = (props) => {
     nextArrow: <ArrowRight />,
   };
   return (
-    <Grid style={{ width: "100%" }}>
+    <Grid style={{ width: "100%",overflowX:"hidden" }}>
       <Hidden smDown>
         <Container className={classes.cardEdit} style={{ paddingTop: 8 }}>
           <Slideshow

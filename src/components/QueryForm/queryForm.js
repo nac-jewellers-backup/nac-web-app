@@ -41,7 +41,7 @@ const QueryForm = (props) => {
     };
     await axios.post(`${API_URL}/trigger_mail`, params).then((res) => {
       if (res.data) {
-        setOpenSnack (true);
+        setOpenSnack(true);
         setFormData({
           name: "",
           phone: "",
@@ -95,15 +95,17 @@ const QueryForm = (props) => {
         body: JSON.stringify({
           query: SEND_ENQUIREY,
           variables: {
-            updatedAt: new Date(),
-            createdAt: new Date(),
-            email: formData.email,
-            appointmentTypeId: 5,
-            comments: formData.query,
-            specialRequests: window.location.pathname.slice(1),
-            customerName: formData.name,
-            isActive: true,
-            mobile: formData.phone,
+            appointment: {
+              updatedAt: new Date(),
+              createdAt: new Date(),
+              email: formData.email,
+              appointmentTypeId: 5,
+              comments: formData.query,
+              specialRequests: window.location.pathname.slice(1),
+              customerName: formData.name,
+              isActive: true,
+              mobile: formData.phone,
+            },
           },
         }),
       })
@@ -215,7 +217,10 @@ const QueryForm = (props) => {
           <img
             alt="images"
             loading="lazy"
-            src={props?.image ?? "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/akshaya+page/Group+63%402x.png"}
+            src={
+              props?.image ??
+              "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/akshaya+page/Group+63%402x.png"
+            }
             style={{ width: "100%" }}
             className={classes.storeImage}
           />
@@ -251,7 +256,6 @@ const QueryForm = (props) => {
           Something went wrong, Please try again!
         </Alert>
       </Snackbar>
-
     </Grid>
   );
 };
