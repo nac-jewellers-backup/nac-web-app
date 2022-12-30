@@ -3,9 +3,7 @@ const BlogImageCardStyles = makeStyles((theme) => ({
   imageCard: {
     width: "100%",
     height: "100%",
-    [theme.breakpoints.down("xs")]: {
-      height: "250px",
-    },
+    [theme.breakpoints.down("xs")]: {},
     "& img": {
       width: "100%",
       height: "100%",
@@ -33,19 +31,28 @@ const BlogImageCardStyles = makeStyles((theme) => ({
     marginBottom: "30px",
   },
 
-  contentText: {
-    padding: "40px 20px",
-    [theme.breakpoints.down("md")]: {
-      padding: "10px 15px",
-    },
-    [theme.breakpoints.down("xs")]: {
-      padding: "5px 12px",
-    },
+  backgroundClr: {
+    backgroundColor: "#f4f4f4",
+    padding: "27px 40px !important",
   },
+
+  backgroundPadding: {
+    padding: "0px !important",
+  },
+
+  // contentText: {
+  //   padding: "40px 20px",
+  //   [theme.breakpoints.down("md")]: {
+  //     padding: "10px 15px",
+  //   },
+  //   [theme.breakpoints.down("xs")]: {
+  //     padding: "5px 12px",
+  //   },
+  // },
 
   headingText: {
     "& p": {
-      fontSize: "22px",
+      fontSize: "21px",
       fontWeight: 600,
       color: "#393a96",
       [theme.breakpoints.down("md")]: {
@@ -59,7 +66,7 @@ const BlogImageCardStyles = makeStyles((theme) => ({
 
   dateText: {
     "& p": {
-      fontSize: "20px",
+      fontSize: "16px",
       fontWeight: 600,
       color: "gray",
       marginBottom: "20px",
@@ -74,27 +81,30 @@ const BlogImageCardStyles = makeStyles((theme) => ({
 
   middleText: {
     "& p": {
-      fontSize: "18px",
+      fontSize: "16px",
       fontWeight: 500,
       color: "gray",
       marginBottom: "20px",
+      display: "-webkit-box",
+      lineClamp: 6,
+      boxOrient: "vertical",
+      overflow: "hidden",
       [theme.breakpoints.down("md")]: {
         fontSize: "16px",
         marginBottom: "16px",
       },
       [theme.breakpoints.down("xs")]: {
         fontSize: "13px",
-        marginBottom:"12px"
+        marginBottom: "12px",
       },
     },
   },
 
   buttonText: {
     "& p": {
-      fontSize: "20px",
+      fontSize: "16px",
       fontWeight: 600,
       color: "#393a96",
-      marginBottom: "20px",
       textAlign: "right",
       cursor: "pointer",
       [theme.breakpoints.down("md")]: {
@@ -187,12 +197,12 @@ const BlogImageCardStyles = makeStyles((theme) => ({
     "& p": {
       fontSize: "17px",
       [theme.breakpoints.down("md")]: {
-        fontSize: "15px",   
+        fontSize: "15px",
       },
       [theme.breakpoints.down("xs")]: {
         fontSize: "13px",
         padding: "0px 20px",
-        textAlign:"justify"
+        textAlign: "justify",
       },
     },
   },
@@ -212,7 +222,7 @@ const BlogImageCardStyles = makeStyles((theme) => ({
       [theme.breakpoints.down("xs")]: {
         fontSize: "13px",
         padding: "0px 20px",
-        textAlign:"justify"
+        textAlign: "justify",
       },
     },
   },
@@ -227,7 +237,7 @@ const BlogImageCardStyles = makeStyles((theme) => ({
       [theme.breakpoints.down("xs")]: {
         fontSize: "13px",
         padding: "0px 20px",
-        textAlign:"justify"
+        textAlign: "justify",
       },
     },
   },
@@ -247,7 +257,7 @@ const BlogImageCardStyles = makeStyles((theme) => ({
       [theme.breakpoints.down("xs")]: {
         fontSize: "13px",
         padding: "0px 20px",
-        textAlign:"justify"
+        textAlign: "justify",
       },
     },
   },

@@ -46,12 +46,17 @@ const BlogImageCard = ({ value = [], handleShow = () => null }) => {
               return (
                 <div className={classes.main}>
                   <Grid container spacing={2}>
-                    <Grid item xs={12} md={6}>
+                    <Grid
+                      className={classes.backgroundPadding}
+                      item
+                      xs={12}
+                      md={6}
+                    >
                       <div className={classes.imageCard}>
                         <img src={e?.image} alt="jewell" />
                       </div>
                     </Grid>
-                    <Grid item xs={12} md={6}>
+                    <Grid className={classes.backgroundClr} item xs={12} md={6}>
                       <div className={classes.contentText}>
                         <div className={classes.headingText}>
                           <Typography>{e?.heading}</Typography>
