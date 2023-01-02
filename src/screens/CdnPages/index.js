@@ -68,7 +68,7 @@ function CdnPages(props) {
 
 
   useEffect(() => {
-    const url = window.location.pathname.split("-")[1];
+    const url = window.location.pathname.split("/")[1];
     fetch(`${API_URL}/graphql`, {
       method: "post",
       headers: {

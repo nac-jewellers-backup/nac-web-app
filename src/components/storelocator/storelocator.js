@@ -62,7 +62,7 @@ export default function Storelocator(props) {
                         >
                           <Button
                             onClick={() => {
-                              window.location.pathname = "/loc/" + store.key;
+                              window.location.pathname = "/loc";
                             }}
                             className={classes.ViewButton}
                           >

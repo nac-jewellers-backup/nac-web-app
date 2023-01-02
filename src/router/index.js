@@ -106,12 +106,12 @@ export const RouterApp = (props) => {
         exact
         path={routes.CollectionFullPage}
       />
-      <Route
+      {/* <Route
         key="AkshyaTritiya"
         component={CdnPages}
         exact
         path={routes.AkshyaTritiya}
-      />
+      /> */}
       <Route
         key="HomePageStylori"
         component={HomeComp}
@@ -146,13 +146,7 @@ export const RouterApp = (props) => {
         exact
         path={routes.AboutUsNew}
       />
-      <Route
-        key="Contacs"
-        component={AboutusPage}
-        exact
-        path={routes.ContactUs}
-      />
-      <Route key="Carees" component={Careers} exact path={routes.Careers} />
+      
       <Route
         key="forgotpassword"
         component={ForgotPassword}
@@ -184,12 +178,6 @@ export const RouterApp = (props) => {
         path={`${routes.paymentsuccess}/:id`}
       />
       <Route
-        key="SiteMap"
-        component={AboutusPage}
-        exact
-        path={routes.SiteMap}
-      />
-      <Route
         key="AboutUs"
         component={AboutUsPageNew}
         exact
@@ -202,12 +190,7 @@ export const RouterApp = (props) => {
         exact
         path={routes.Delivery}
       />
-      <Route
-        key="bridalCollection"
-        component={BridalCollection}
-        exact
-        path={routes.BridalCollection}
-      />
+      
       <Route
         key="Education"
         component={AboutusPage}
@@ -220,11 +203,11 @@ export const RouterApp = (props) => {
         exact
         path={routes.CareersPage}
       />
-      <Route
+      {/* <Route
         key="templeWork"
         component={TempleWork}
         exact
-        path={routes.TempleWork} />
+        path={routes.TempleWork} /> */}
       <Route
         key="paymentfail"
         component={Fail}
@@ -244,7 +227,6 @@ export const RouterApp = (props) => {
         `/static${"-" + window.location.pathname.split("-")[1]}` &&
         props.location.pathname !== "/savingscheme" &&
         props.location.pathname !== "/aboutus" &&
-        props.location.pathname !== "/newsroom" &&
         props.location.pathname !== "/terms" &&
         props.location.pathname !== "/return" &&
         props.location.pathname !== "/delivery" &&
@@ -253,7 +235,6 @@ export const RouterApp = (props) => {
         props.location.pathname !== "/sitemap" &&
         props.location.pathname !== "/faq" &&
         props.location.pathname !== "/education" &&
-        props.location.pathname !== "/store" &&
         props.location.pathname !== "/loc/:id" &&
         props.location.pathname !== "/careers" &&
         props.location.pathname !== "/careersDetail" &&
@@ -262,9 +243,7 @@ export const RouterApp = (props) => {
         props.location.pathname !== "/collectionpage" &&
         props.location.pathname !== "/blog" &&
         props.location.pathname !== "/rudramadeviBlog" &&
-        props.location.pathname !== "/advertising" &&
         props.location.pathname !== "/temple-work" &&
-        props.location.pathname !== "/experiences" &&
         props.location.pathname !== "/registers" &&
         props.location.pathname !== "/login" &&
         props.location.pathname !== "/checkout" &&
@@ -272,13 +251,11 @@ export const RouterApp = (props) => {
         props.location.pathname !== "/careers" &&
         props.location.pathname !== "/resetpassword/:id" &&
         props.location.pathname !== "/changepassword" &&
-        props.location.pathname !== "/collections" &&
         props.location.pathname !== "/education" &&
         props.location.pathname !== "/stories" &&
         props.location.pathname !== "/paymentfail" &&
         props.location.pathname !== "/experiencecard" &&
         props.location.pathname !== "/paymentsuccess/:id" &&
-        props.location.pathname !== "/contactus" &&
         props.location.pathname !== "/solitaires" &&
         props.location.pathname !== "/necklaceMela" &&
         props.location.pathname !== "/diwali2022" &&
@@ -289,11 +266,10 @@ export const RouterApp = (props) => {
         props.location.pathname !== "/blogNew" &&
         props.location.pathname !== "/readMore" &&
         props.location.pathname !== "/productCareNew" &&
-        props.location.pathname !== "/careerPage" &&
+        // props.location.pathname !== "/careerPage" &&
         props.location.pathname !== "/siteMapNew" &&
         props.location.pathname !== "/form" &&
         props.location.pathname !== "/birthStones" &&
-        props.location.pathname !== "/templeWork" &&
 
         Globalctx &&
         Globalctx.pathName === false &&
@@ -339,7 +315,6 @@ export const RouterApp = (props) => {
         props.location.pathname !== "/sitemap" &&
         props.location.pathname !== "/faq" &&
         props.location.pathname !== "/education" &&
-        props.location.pathname !== "/store" &&
         props.location.pathname !== "/blog" &&
         props.location.pathname !== "/loc/:id" &&
         props.location.pathname !== "/careers" &&
@@ -348,10 +323,7 @@ export const RouterApp = (props) => {
         props.location.pathname !== "/collectionhome" &&
         props.location.pathname !== "/collectionpage" &&
         props.location.pathname !== "/rudramadeviBlog" &&
-        props.location.pathname !== "/newsroom" &&
-        props.location.pathname !== "/advertising" &&
         props.location.pathname !== "/temple-work" &&
-        props.location.pathname !== "/experiences" &&
         props.location.pathname !== "/registers" &&
         props.location.pathname !== "/login" &&
         props.location.pathname !== "/checkout" &&
@@ -361,7 +333,6 @@ export const RouterApp = (props) => {
         props.location.pathname !== "/changepassword" &&
         props.location.pathname !== "/paymentfail" &&
         props.location.pathname !== "/experiencecard" &&
-        props.location.pathname !== "/contactus" &&
         props.location.pathname !== "/paymentsuccess/:id" &&
         props.location.pathname !== "/homes" &&
         props.location.pathname !== "/solitaires" &&
@@ -374,10 +345,9 @@ export const RouterApp = (props) => {
         props.location.pathname !== "/blogNew" &&
         props.location.pathname !== "/readMore" &&
         props.location.pathname !== "/productCareNew" &&
-        props.location.pathname !== "/careerPage" &&
+        // props.location.pathname !== "/careerPage" &&
         props.location.pathname !== "/siteMapNew" &&
         props.location.pathname !== "/birthStones" &&
-        props.location.pathname !== "/templeWork" &&
         props.location.pathname !== "/form" && (
           <Route exact={true} component={Stylori} path={"/:listingpage"} />
         )}
@@ -416,14 +386,6 @@ export const RouterApp = (props) => {
         exact
         path={routes.UserRegister}
       />
-      {/* Static Pages */}
-
-      <Route
-        key="StoreLocator"
-        component={Locator}
-        exact
-        path={routes.StoreLocator}
-      />
 
       <Route key="Diamonds" component={Diamonds} exact path={routes.Diamonds} />
       <Route
@@ -453,12 +415,12 @@ export const RouterApp = (props) => {
         exact
         path={routes.SavingsPage}
       />
-      <Route
+      {/* <Route
         key="ExperiencePage"
         component={ExperiencePage}
         exact
         path={routes.ExperiencePage}
-      />
+      /> */}
       <Route
         key="AdvertisingPage"
         component={AdvertisingPage}
@@ -471,12 +433,12 @@ export const RouterApp = (props) => {
         exact
         path={routes.TempleWorkPage}
       />
-      <Route
+      {/* <Route
         key="NewsRoomPage"
         component={NewsRoomPage}
         exact
         path={routes.NewsRoomPage}
-      />
+      /> */}
 
       <Route
         key="Solitaires"
@@ -539,12 +501,7 @@ export const RouterApp = (props) => {
         path={routes.ProductCareNew}
       />
       <Route key="static" component={CdnPages} exact path={routes.Static} />
-      <Route
-        key="careerPage"
-        component={CareerPage}
-        exact
-        path={routes.CareerPage}
-      />
+      
       <Route
         key="form"
         component={CustomApplication}
@@ -552,24 +509,13 @@ export const RouterApp = (props) => {
         path={routes.CustomApplication}
       />
 
-
-      <Route
-        key="form"
-        component={SiteMapNew}
-        exact
-        path={routes.SiteMapNew}
-        />
       <Route
         key="form"
         component={BirthStones}
         exact
         path={routes.BirthStones}
       />
-      <Route
-        key="templeWork"
-        component={TempleWork}
-        exact
-        path={routes.TempleWork} />
+
     </Switch>
   );
 };

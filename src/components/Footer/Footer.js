@@ -303,11 +303,11 @@ export default function Footer(props) {
         },
 
         {
-          url: "/static-blogsPage",
+          url: "/blogsPage",
           Title: "Blog",
         },
         {
-          url: "/temple-work",
+          url: "/templeWork",
           Title: "Temple Work",
         },
         {
@@ -335,7 +335,7 @@ export default function Footer(props) {
           Title: "Diamond Guide",
         },
         {
-          url: "/productcare",
+          url: "/birthStones",
           Title: "Birthstones Guide",
         },
         {
@@ -369,7 +369,7 @@ export default function Footer(props) {
     {
       row: [
         {
-          url: "/static-contactus",
+          url: "/contactus",
           heading: "Contact Us",
         },
 
@@ -386,7 +386,7 @@ export default function Footer(props) {
           Title: "+91 95974 57555 - WhatsApp",
         },
         {
-          url: "/static-careersPage",
+          url: "/careersPage",
           Title: "Careers",
         },
       ],
@@ -399,41 +399,41 @@ export default function Footer(props) {
       content: [
         {
           subTitle: "Our Story",
-          url: "/stories",
+          url: "/blogsPage",
         },
         {
           subTitle: "Temple Work",
-          url: "/temple-work",
+          url: "/templeWork",
         },
         {
           subTitle: "In The News",
-          url: "/temple-work",
+          url: "/newsroom",
         },
         {
           subTitle: "Advertisements",
-          url: "/temple-work",
+          url: "/advertising",
         },
       ],
     },
     {
-      url: "/careers",
+      url: "/careersPage",
       Title: "Know Your Jewellery",
       content: [
         {
           subTitle: "Collections",
-          url: "/stories",
+          url: "/collections",
         },
         {
           subTitle: "Diamond Guide",
-          url: "/temple-work",
+          url: "/productcare",
         },
         {
           subTitle: "Birthstones Gudide",
-          url: "/temple-work",
+          url: "/birthStones",
         },
         {
           subTitle: "Jewellery Care",
-          url: "/temple-work",
+          url: "/productcare",
         },
       ],
     },
@@ -456,7 +456,7 @@ export default function Footer(props) {
       ],
     },
     {
-      url: "/advertising",
+      url: "/contactus",
       Title: "Contact us",
       content: [
         {
@@ -772,7 +772,7 @@ export default function Footer(props) {
                   boxShadow: "4px 4px 4px #A5A4A5",
                 }}
                 onClick={() => {
-                  window.location.href = "/static-store";
+                  window.location.href = "/store";
                 }}
               >
                 &nbsp;Store Locator&nbsp;
@@ -801,7 +801,7 @@ export default function Footer(props) {
                   }}>
                   {" "}
                   <Grid item>
-                    <Link className={classes.linkTextmlg} onClick={() => {window.location.href = "/static-siteMap"}}>
+                    <Link className={classes.linkTextmlg} onClick={() => {window.location.href = "/siteMap"}}>
                       SITEMAP &nbsp;{" "}
                     </Link>
                   </Grid>
@@ -932,7 +932,7 @@ export default function Footer(props) {
                 borderRadius: "0px",
               }}
               onClick={() => {
-                window.location.href = "/static-store";
+                window.location.href = "/store";
               }}
             >
               Store Locator
@@ -1081,7 +1081,7 @@ export default function Footer(props) {
         >
           {" "}
           <Grid item>
-            <Link className={classes.linkTextm} to="/static-siteMap">
+            <Link className={classes.linkTextm} to="/siteMap">
               SITEMAP &nbsp;{" "}
             </Link>
           </Grid>
