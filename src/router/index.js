@@ -61,7 +61,7 @@ import { CareerPage } from "screens";
 import { CustomApplication } from "screens";
 import { SiteMapNew } from "screens";
 
-import { BirthStones } from "screens";
+import  BirthStones  from "../screens/birthStones/birthStones";
 import { TempleWork } from "screens";
 
 const browserHistory = createBrowserHistory();
@@ -287,12 +287,12 @@ export const RouterApp = (props) => {
         )}
       <Route key="sto" component={stories} exact path={routes.Stories} />
 
-      <Route
+      {/* <Route
         key="Collection"
         component={Collection}
         exact
         path={routes.Collection}
-      />
+      /> */}
       <Route
         key="Collection"
         component={CollectionPage}
@@ -503,14 +503,14 @@ export const RouterApp = (props) => {
       <Route key="static" component={CdnPages} exact path={routes.Static} />
       
       <Route
-        key="form"
+        key="CustomApplication"
         component={CustomApplication}
         exact
         path={routes.CustomApplication}
       />
 
       <Route
-        key="form"
+        key="birthStones"
         component={BirthStones}
         exact
         path={routes.BirthStones}
