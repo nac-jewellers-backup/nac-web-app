@@ -1,7 +1,6 @@
 import { makeStyles } from "@material-ui/core/styles";
 const CustomAdvertisementStyles = makeStyles((theme) => ({
   main: {
-    marginTop: "50px",
     marginBottom: "50px",
     padding: "0 110px !important",
     [theme.breakpoints.down("md")]: {
@@ -32,6 +31,10 @@ const CustomAdvertisementStyles = makeStyles((theme) => ({
   description: {
     textAlign: "center",
     padding: "30px 4px",
+    [theme.breakpoints.down("sm")]: {
+      padding: "15px 4px",
+    },
+
     "& p": {
       fontSize: "16px",
       color: "#514747",
@@ -39,7 +42,7 @@ const CustomAdvertisementStyles = makeStyles((theme) => ({
         minHeight: "28px",
         fontSize: "16px",
       },
-      [theme.breakpoints.down("xs")]: {
+      [theme.breakpoints.down("sm")]: {
         minHeight: "22px",
         fontSize: "14px",
       },
@@ -63,7 +66,10 @@ const CustomAdvertisementStyles = makeStyles((theme) => ({
   buttonText: {
     textAlign: "center",
     paddingBottom: "30px",
-    cursor:"pointer",
+    cursor: "pointer",
+    [theme.breakpoints.down("sm")]: {
+      addingBottom: "20px",
+    },
     "& p": {
       display: "flex",
       justifyContent: "center",
@@ -74,7 +80,7 @@ const CustomAdvertisementStyles = makeStyles((theme) => ({
       [theme.breakpoints.down("md")]: {
         fontSize: "16px !important",
       },
-      [theme.breakpoints.down("xs")]: {
+      [theme.breakpoints.down("sm")]: {
         fontSize: "15px !important",
       },
       "& svg": {

@@ -27,7 +27,6 @@ export default class Stylori extends Component {
     })
       .then((res) => res.json())
       .then((data) => {
-        debugger;
         const dataRecieved = data.data.allCdns.nodes;
         const pages = dataRecieved?.map((val) => val.page);
         const isCdnPage = pages.includes(window.location.pathname.split("/")[1]);

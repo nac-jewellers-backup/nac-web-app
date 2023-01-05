@@ -37,7 +37,14 @@ export default function Storelocator(props) {
                     />
                   </Grid>
                   <Grid item sm={12} md={1} lg={1} xs={12}></Grid>
-                  <Grid item xs={12} sm={12} md={7} lg={7}>
+                  <Grid
+                    className={classes.storeCenter}
+                    item
+                    xs={12}
+                    sm={12}
+                    md={7}
+                    lg={7}
+                  >
                     <div className={classes.pads}>
                       <Typography className={classes.title}>
                         {store.title}
@@ -57,8 +64,8 @@ export default function Storelocator(props) {
                       <div>
                         <a
                           style={{ textDecoration: "none" }}
-                        // href=""
-                        // target="_blank"
+                          // href=""
+                          // target="_blank"
                         >
                           <Button
                             onClick={() => {

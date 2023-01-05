@@ -30,8 +30,8 @@ const ThreeSplitImage = (props) => {
               {props?.data?.twoSplit.map((val, i) => (
                 <Grid item xs={6}>
                   <img
-                    style={{ width: val?.width ? val?.width : "unset" }}
-                    // className={classes.imageOfImageWithDescription}
+                    style={{ width: val?.width ? val?.width : "100%" }}
+                    className={classes.imageOfImageWithDescription}
                     src={val?.img}
                   ></img>
                   <Box className={classes.txtBox}>
@@ -66,30 +66,38 @@ const ThreeSplitImage = (props) => {
               {props?.data?.threeSplit.map((val, i) => (
                 <Grid item xs={val?.grid}>
                   <img
-                    style={{ width: val?.width ? val?.width : "unset" }}
-                    // className={classes.imageOfImageWithDescription}
+                    style={{ width: val?.width ? val?.width : "100%" }}
+                    className={classes.imageOfImageWithDescription}
                     src={val?.img}
                   ></img>
-                  {val?.multipleText?.length > 0 &&
+                  {val?.multipleText?.length > 0 && (
                     <Grid container>
-                   { val?.multipleText?.map((e, i) => (
-                    <>
-                      <Grid item xs={3} style={{maxWidth:"24%"}}>
-                        <Typography className={classes.multipleTextTempleName} >
-                          {e?.name}
-                        </Typography>
-                        <Typography className={classes.multipleTextweighTxt} >
-                          {e?.weigh}
-                        </Typography>
-                        <Typography className={classes.multipleTextweighTxt}>
-                          {e?.stone}
-                        </Typography>
-                      </Grid>
-                      {val?.multipleText?.length - 1 !== i && <Divider orientation="vertical" flexItem />}
-                      </>
-                    ))}
+                      {val?.multipleText?.map((e, i) => (
+                        <>
+                          <Grid item xs={3} style={{ maxWidth: "24%" }}>
+                            <Typography
+                              className={classes.multipleTextTempleName}
+                            >
+                              {e?.name}
+                            </Typography>
+                            <Typography
+                              className={classes.multipleTextweighTxt}
+                            >
+                              {e?.weigh}
+                            </Typography>
+                            <Typography
+                              className={classes.multipleTextweighTxt}
+                            >
+                              {e?.stone}
+                            </Typography>
+                          </Grid>
+                          {val?.multipleText?.length - 1 !== i && (
+                            <Divider orientation="vertical" flexItem />
+                          )}
+                        </>
+                      ))}
                     </Grid>
-                    }
+                  )}
                   <Box className={classes.txtBox}>
                     <Typography className={classes.TempleName}>
                       {val?.text}

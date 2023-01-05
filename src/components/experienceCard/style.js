@@ -19,9 +19,13 @@ const ExperienceCardStyles = makeStyles((theme) => ({
   content: {
     height: "140px",
     backgroundColor: "#f4f4f4",
+    [theme.breakpoints.down("md")]: {
+      height: "100px",
+      paddingBottom: "8px",
+    },
     [theme.breakpoints.down("sm")]: {
-      height: "160px",
-      paddingBottom:"8px"
+      height: "75px",
+      paddingBottom: "8px",
     },
   },
 

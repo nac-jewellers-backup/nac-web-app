@@ -19,7 +19,7 @@ const ImageWithDescription = (props) => {
         >
           <Box className={classes.TempleImg}>
             <img
-              style={{ width: e?.width ? e?.width : "unset" }}
+              style={{ width: e?.width ? e?.width : "100%" }}
               src={e?.img}
             ></img>
           </Box>

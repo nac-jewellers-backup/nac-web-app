@@ -8,14 +8,16 @@ const MultipleSimilarImages = (props) => {
 
   return (
     <div>
-      {!props.invert && 
-            <>
-                <Typography className={classes.weighTxt}>{props.subHeader}</Typography>
-                <Typography className={classes.headerTempleName}>
-                    {props.header}
-                </Typography>
-            </>
-        }
+      {!props.invert && (
+        <>
+          <Typography className={classes.weighTxt}>
+            {props.subHeader}
+          </Typography>
+          <Typography className={classes.headerTempleName}>
+            {props.header}
+          </Typography>
+        </>
+      )}
       <Grid container className={classes.aboutChild}>
         {props?.data.map((val) => (
           <Grid item xs={4} className={classes.customGridMultipleSimilar}>
@@ -24,18 +26,20 @@ const MultipleSimilarImages = (props) => {
             </div>
           </Grid>
         ))}
-        {props.invert && 
-            <div style={{display:"block",width:"100%",marginTop:"20px"}}>
-                <Typography style={{width:"35%",margin:"auto"}} className={classes.headerTempleName}>
-                    {props.header}
-                </Typography>
-            </div>
-        }
+        {props.invert && (
+          <div style={{ display: "block", width: "100%", marginTop: "20px" }}>
+            <Typography
+              style={{ width: "35%", margin: "auto" }}
+              className={classes.headerTempleName}
+            >
+              {props.header}
+            </Typography>
+          </div>
+        )}
         <div style={{ width: "100%" }}>
           <img src={line} style={{ width: "100%" }}></img>
         </div>
       </Grid>
-      
     </div>
   );
 };
