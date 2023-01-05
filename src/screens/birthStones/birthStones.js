@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import useStyles from "./style";
 import { BirthStonesData } from "./birthStonesData"
 import logo from "./../../assets/birthStoneslogo.png"
+import Footer from "components/Footer/Footer";
 
 
 
@@ -150,7 +151,7 @@ const BirthStones = () => {
 
             </Box>
 
-
+            <Footer />
         </div >
     )
 }
