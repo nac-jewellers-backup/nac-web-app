@@ -117,7 +117,7 @@ const BirthStones = () => {
                                             </div>
                                             <div className={classes.Child7Cirlce}>
                                                 <div className={classes.relativeCircle}>
-                                                    <Tooltip
+                                                    {/* <Tooltip
                                                         open={open}
                                                         title={e?.birthStoneDetails?.colorToolTip}
                                                         arrow
@@ -128,7 +128,8 @@ const BirthStones = () => {
                                                             onMouseEnter={() =>
                                                                 setOpen((true))}>
                                                             {e?.birthStoneDetails?.colour} </div>
-                                                    </Tooltip>
+                                                    </Tooltip> */}
+                                                    <div style={{ textAlign: "center" }}>{e?.birthStoneDetails?.colour}</div>
                                                     <img src={e?.birthStoneImg}></img>
                                                 </div>
                                             </div>

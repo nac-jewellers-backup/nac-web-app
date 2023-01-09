@@ -117,7 +117,7 @@ export const BirthStonesData = [
             "birthStoneFor": <p>Birthstone for <span>January/ Capricorn</span></p>,
             "benefits": <p>Benefits <span>attracts wealth, <br />regulates blood<br /> circulation,<br /> induces calming effects,<br /> offers balance in<br /> life</span></p>,
             "MOHS": <p>MOHS Scale Details <span>7.5 - 8.5</span></p>,
-            "colour": <p>Colour <span>virtually all colors</span></p>,
+            "colour": <p>Colour <span>virtually all <br />colors</span></p>,
             "colorToolTip": <p>Colour virtually all colors</p>,
             "benefitsToolTip": <p>Benefits attracts wealth, regulates blood circulation, induces calming effects, offers balance in life</p>
         }
@@ -136,7 +136,7 @@ export const BirthStonesData = [
             "birthStoneFor": <p>Birthstone for <span>Febuary/Pisces</span></p>,
             "benefits": <p>Benefits <span>enchanes the immune<br /> system, regulates<br /> hormones,<br /> promotes serenity<br /> and calm</span></p>,
             "MOHS": <p>MOHS Scale Details <span>7</span></p>,
-            "colour": <p>Colour <span>Transparent purple</span></p>,
+            "colour": <p>Colour <span>Transparent <br />purple</span></p>,
             "colorToolTip": <p>Colour Transparent purple</p>,
             "benefitsToolTip": <p>Benefits enchanes the immune system, regulates hormones, promotes serenity and calm</p>
         }
@@ -177,7 +177,7 @@ export const BirthStonesData = [
             "birthStoneFor": <p>Birthstone for <span>April/Aries</span></p>,
             "benefits": <p>Benefits <span>healing ,<br />  amplifying energy,<br />  revitalizing,<br />  creating harmony</span></p>,
             "MOHS": <p>MOHS Scale Details <span>7</span></p>,
-            "colour": <p>Colour <span>Clear, white, gray, purple, yellow, brown, black, red pink & green.</span>
+            "colour": <p>Colour <span>Clear,white,gray,<br /> purple, yellow, brown,<br /> black,red pink<br /> & green.</span>
             </p>,
             "colorToolTip": <p>Colour blue-green</p>,
             "benefitsToolTip": <p>Benefits healing, amplifying energy, revitalizing, creating harmony
@@ -199,7 +199,7 @@ export const BirthStonesData = [
             "birthStoneFor": <p>Birthstone for <span>December/ january/ sagittarius</span></p>,
             "benefits": <p>Benefits <span>ensure overall<br />  physical fitness,<br />  enchanes immunity,<br />  stabilizing mood swimgs,<br />  inculates deep<br />  understanding</span></p>,
             "MOHS": <p>MOHS Scale Details <span>5-6</span></p>,
-            "colour": <p>Colour <span>shade of blue between blue and green</span></p>,
+            "colour": <p>Colour <span>shade of blue<br /> between blue<br /> and green</span></p>,
             "colorToolTip": <p>Colour shade of blue between blue and green</p>,
             "benefitsToolTip": <p>Benefits ensure overall physical fitness, enchanes immunity, stabilizing mood swimgs, inculates deep understanding</p>
         }
@@ -240,8 +240,8 @@ export const BirthStonesData = [
             "benefits": <p>Benefits
                 <span>carrying soothing<br />  influences and<br />  relaxing effects</span></p>,
             "MOHS": <p>MOHS Scale Details <span>6.0</span></p>,
-            "colour": <p>Colour <span>Colourless, Grey, brown, yellow, green, pink</span></p>,
-            "colorToolTip": <p>Colour Colourless, Grey, brown, yellow, green, pink</p>,
+            "colour": <p>Colour <span>Colourless, Grey,<br /> brown, yellow,<br /> green, pink</span></p>,
+            "colorToolTip": <p>Colour Colourless,<br /> Grey, brown,<br /> yellow, green,<br /> pink</p>,
             "benefitsToolTip": <p>Benefits carrying soothing influences and relaxing effects.</p>
         }
     },
@@ -261,7 +261,7 @@ export const BirthStonesData = [
             "benefits": <p>Benefits
                 <span>Induces positove<br />  energy and reduces<br />  depression</span></p>,
             "MOHS": <p>MOHS Scale Details <span>7</span></p>,
-            "colour": <p>Colour <span>Light Pastel yellow, dark reddish orange</span></p>,
+            "colour": <p>Colour <span>Light Pastel<br /> yellow, dark reddish<br /> orange</span></p>,
             "foundToolTip": <p> Found in brazil, nigeria, madagascar, zambia, pakistan and mozambique.
             </p>,
             "colorToolTip": <p>Colour Light Pastel yellow, dark reddish orange</p>,
@@ -372,7 +372,7 @@ export const BirthStonesData = [
             </p>,
             "MOHS": <p>MOHS Scale Details <span>5.5-6.5</span></p>,
             "colour": <p>Colour
-                <span>Colorless, white, yellow, red, orange, green, brown, black, blue, pink</span></p>,
+                <span>Colorless, white,<br /> yellow, red, orange,<br /> green, brown,<br /> black, blue,<br /> pink</span></p>,
             "colorToolTip": <p>Colour Colorless, white, yellow, red, orange, green, brown, black, blue, pink</p>,
             "benefitsToolTip": <p>Benefits removes obstacle, increases confidence, removes lethargy, better relationships and relief from debt</p>
         }
@@ -394,7 +394,7 @@ export const BirthStonesData = [
                 <span>removes obstacle,<br />  increases confidence,<br />  removes lethargy,<br />  better relationships<br />  and relief from debt</span>
             </p>,
             "MOHS": <p>MOHS Scale Details <span>3.5-4</span></p>,
-            "colour": <p>Colour <span>white, shades of red & pink, blue, black</span></p>,
+            "colour": <p>Colour <span>white, shades of<br /> red & pink,<br /> blue, black</span></p>,
             "colorToolTip": <p> Colour white, shades of red & pink, blue, black</p>,
             "benefitsToolTip": <p>Benefits removes obstacle, increases confidence, removes lethargy, better relationships and relief from debt</p>
         }
@@ -416,7 +416,7 @@ export const BirthStonesData = [
                 <span>prevents negative<br />  energies, balances<br />  all the chakras</span>
             </p>,
             "MOHS": <p>MOHS Scale Details <span>7-7.5</span></p>,
-            "colour": <p>Colour <span>black, green, blue, yellow, pink or red, colorless</span></p>,
+            "colour": <p>Colour <span>black, green,<br /> blue, yellow,<br /> pink or red,<br /> colorless</span></p>,
             "colorToolTip": <p> Colour black, green, blue, yellow, pink or red, colorless</p>,
             "benefitsToolTip": <p>Benefits prevents negative energies, balances all the chakras</p>
         }
@@ -438,7 +438,7 @@ export const BirthStonesData = [
                 <span>promotes truth<br />  and forgiveness</span>
             </p>,
             "MOHS": <p>MOHS Scale Details <span>8</span></p>,
-            "colour": <p>Colour <span>black, green, blue, yellow, pink or red, colorless</span></p>,
+            "colour": <p>Colour <span>black, green,<br /> blue, yellow,<br /> pink or red,<br /> colorless</span></p>,
             "colorToolTip": <p> Colour black, green, blue, yellow, pink or red, colorless</p>,
             "benefitsToolTip": <p>Benefits promotes truth and forgiveness</p>
         }
@@ -460,7 +460,7 @@ export const BirthStonesData = [
                 <span>Strengthens the<br />  immune system and<br />  improves the<br />  body's vitality</span>
             </p>,
             "MOHS": <p>MOHS Scale Details <span>6.5</span></p>,
-            "colour": <p>Colour <span>blue, violet, red</span></p>,
+            "colour": <p>Colour <span>blue, violet,<br /> red</span></p>,
             "colorToolTip": <p> Colour blue, violet, red</p>,
             "benefitsToolTip": <p>Benefits
                 Strengthens the immune system and improves the body's vitality</p>
@@ -483,7 +483,7 @@ export const BirthStonesData = [
                 <span>provides physical,<br />  emotional and<br />  spiritual balance</span>
             </p>,
             "MOHS": <p>MOHS Scale Details <span>7.5</span></p>,
-            "colour": <p>Colour <span>reddish brown, yellow, green, blue, grey,  colorless</span></p>,
+            "colour": <p>Colour <span>reddish brown,<br /> yellow, green,<br /> blue, grey,<br />  colorless</span></p>,
             "birthStoneToolTip": <p> Colour reddish brown, yellow, green, blue, grey,  colorless</p>,
             "benefitsToolTip": <p>Benefits provides physical, emotional and spiritual balance</p>
         }

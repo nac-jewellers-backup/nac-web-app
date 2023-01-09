@@ -1,10 +1,14 @@
 import { Box, Button, Grid, makeStyles, Typography } from "@material-ui/core";
 import React from "react";
+import parse from "html-react-parser";
 
 const CardUseStyles = makeStyles((theme) => ({
   about: {
     backgroundColor: "#E6E6E6",
     width: "100%",
+    "& p":{
+      lineHeight:1.8
+    }
   },
   aboutChild: {
     width: "80%",
@@ -33,11 +37,27 @@ const CardUseStyles = makeStyles((theme) => ({
     fontSize: "13px",
   },
   title: {
-    fontSize: "26px",
+    fontSize: "30px",
     color: "#213C97",
     fontStyle: "italic",
+    marginTop:"15px",
     textTransform: "capitalize",
-    margin: "8px",
+    "& p":{
+      margin: "0px",
+    },
+    [theme.breakpoints.up("lg")]: {
+      marginTop: "100px",
+      fontSize: "32px !important",
+    },
+    [theme.breakpoints.down("lg")]: {
+      fontSize: "26px !important",
+    },
+    [theme.breakpoints.up("md")]: {
+      fontSize: "25px !important",
+    },
+    [theme.breakpoints.down("md")]: {
+      fontSize: "22px !important",
+    },
     [theme.breakpoints.down("sm")]: {
       fontSize: "22px",
     },
@@ -98,10 +118,10 @@ const CardUseStyles = makeStyles((theme) => ({
   },
   detailBox: {
     textAlign: "center",
-    height: "100%",
     display: "flex",
     justifyContent: "center",
     flexDirection: "column",
+    margin:"auto"
   },
   subtitleDiv: {
     display: "flex",
@@ -110,6 +130,57 @@ const CardUseStyles = makeStyles((theme) => ({
     marginTop: "0",
     [theme.breakpoints.down("sm")]: {
       padding: "0",
+    },
+  },
+  richTextEditAlign: {
+    margin: "auto",
+    lineHeight:1.8,
+    "& p": {
+      [theme.breakpoints.down("md")]: {
+        fontSize: "14px !important",
+        fontFamily:"notoSerif-regular !important"
+      },
+      [theme.breakpoints.down("xs")]: {
+        fontSize: "12px !important",
+        fontFamily:"notoSerif-regular !important"
+      },
+      "& span": {
+        fontSize: "20px !important",
+        fontFamily:"notoSerif-regular !important",
+        [theme.breakpoints.down("md")]: {
+          fontSize: "14px !important",
+          fontFamily:"notoSerif-regular !important"
+        },
+        [theme.breakpoints.down("xs")]: {
+          fontSize: "12px !important",
+          fontFamily:"notoSerif-regular !important"
+        },
+      },
+    },
+    "& h2":{
+      fontSize: "34px !important",
+    },
+    "& ul":{
+      "& li":{
+        "& span":{
+          fontSize: "20px !important",
+          fontFamily:"notoSerif-regular !important",
+        [theme.breakpoints.down("md")]: {
+          fontSize: "15px !important",
+          fontFamily:"notoSerif-regular !important"
+        },
+        [theme.breakpoints.down("xs")]: {
+          fontSize: "14px !important",
+          fontFamily:"notoSerif-regular !important"
+        },
+        }
+      }
+    },
+    [theme.breakpoints.down("md")]: {
+      // width: "75%",
+    },
+    [theme.breakpoints.down("xs")]: {
+      paddingBottom: "10px",
     },
   },
 }));
@@ -142,11 +213,14 @@ const TempleCardDetailComp = (props) => {
                     })}
                   </Grid>
                   <Grid item lg={8} md={8} sm={12} xs={12}>
+                    {/* <Typography className={classes.richTextEditAlign}>
+                      {parse(val?.content)}
+                    </Typography> */}
                     {val?.content?.map((e) => {
                       return (
                         <Box className={classes.detailBox}>
                           <Typography className={classes.title}>
-                            {e?.title}
+                            {parse(e?.title)}
                           </Typography>
                           <ul className={classes.subtitleDiv}>
                             <Typography className={classes.subtitle}>
@@ -154,16 +228,16 @@ const TempleCardDetailComp = (props) => {
                             </Typography>
                             <li className={classes.weigh}>{e?.weigh}</li>
                           </ul>
-                          <Typography className={classes.contentOne}>
+                          {/* <Typography className={classes.contentOne}>
                             {e?.ContentOne}
-                          </Typography>
-                          <Typography className={classes.aboutTxt}>
+                          </Typography> */}
+                          <Typography className={classes.richTextEditAlign}>
                             {" "}
-                            {e?.about}
+                            {parse(e?.about)}
                           </Typography>
-                          <Typography className={classes.contentTwo}>
+                          {/* <Typography className={classes.contentTwo}>
                             {e?.contentTwo}
-                          </Typography>
+                          </Typography> */}
                         </Box>
                       );
                     })}

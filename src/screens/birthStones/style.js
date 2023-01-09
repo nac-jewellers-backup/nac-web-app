@@ -149,7 +149,7 @@ const useStyles = makeStyles((theme) => ({
     about: {
         marginTop: "7px",
         [theme.breakpoints.down("xs")]: {
-            height: "650px",
+            height: "780px",
         },
     },
     parentWidth: {
@@ -160,7 +160,7 @@ const useStyles = makeStyles((theme) => ({
         },
         [theme.breakpoints.down("xs")]: {
             width: "95%",
-            height: "100%"
+            height: "80%"
         },
 
     },
@@ -476,8 +476,8 @@ const useStyles = makeStyles((theme) => ({
         border: "1px solid #888",
         background: "white",
         borderRadius: "50%",
-        width: "11%",
-        height: "95px",
+        width: "15%",
+        height: "99px",
         right: "2%",
         top: "16%",
         [theme.breakpoints.down("sm")]: {
@@ -487,8 +487,8 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down("xs")]: {
             top: "97%",
             right: "13%",
-            width: "20%",
-            height: "65px"
+            width: "27%",
+            height: "85px"
         },
         "& div": {
             color: "#323232",
@@ -502,9 +502,12 @@ const useStyles = makeStyles((theme) => ({
                     display: "block",
                     textTransform: "capitalize",
                     overflow: "hidden",
-                    width: "90px",
+                    width: "150px",
                     whiteSpace: "nowrap",
-                    textOverflow: "ellipsis"
+                    // textOverflow: "ellipsis"
+                    [theme.breakpoints.down("sm")]: {
+                        fontSize:"11px"
+                    },
                 }
             }
         },

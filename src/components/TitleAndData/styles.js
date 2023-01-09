@@ -77,4 +77,44 @@ export const useStyles = makeStyles((theme) => ({
         padding: "0 10px !important",
       },
     },
+    richTextEditAlign: {
+      width: "65%",
+      margin: "auto",
+      "& p": {
+        "& span": {
+          fontSize: "20px !important",
+          fontFamily:"notoSerif-regular !important",
+          [theme.breakpoints.down("md")]: {
+            fontSize: "15px !important",
+            fontFamily:"notoSerif-regular !important"
+          },
+          [theme.breakpoints.down("xs")]: {
+            fontSize: "14px !important",
+            fontFamily:"notoSerif-regular !important"
+          },
+        },
+      },
+      "& ul":{
+        "& li":{
+          "& span":{
+            fontSize: "20px !important",
+            fontFamily:"notoSerif-regular !important",
+          [theme.breakpoints.down("md")]: {
+            fontSize: "15px !important",
+            fontFamily:"notoSerif-regular !important"
+          },
+          [theme.breakpoints.down("xs")]: {
+            fontSize: "14px !important",
+            fontFamily:"notoSerif-regular !important"
+          },
+          }
+        }
+      },
+      [theme.breakpoints.down("md")]: {
+        width: "75%",
+      },
+      [theme.breakpoints.down("xs")]: {
+        paddingBottom: "10px",
+      },
+    },
   }));

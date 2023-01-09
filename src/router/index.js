@@ -387,7 +387,7 @@ export const RouterApp = (props) => {
         exact
         path={routes.rudramadeviBlog}
       />
-      <Route key="blog" component={Blog} exact path={routes.Blog} />
+      {/* <Route key="blog" component={Blog} exact path={routes.Blog} /> */}
 
       <Route key="HomePage" component={HomeComp} exact path={routes.HomePage} />
       <Route

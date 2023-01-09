@@ -24,7 +24,7 @@ const TitleAndData = (props) => {
             src="https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/collection+page/urn_aaid_sc_US_4f2880c9-1910-41e4-b332-90c4513a4ca7+(2).png"
           />
         </div>
-        <div style={{ width: "65%", margin: "auto" }}>{parse(richEditor)}</div>
+        <div className={classes.richTextEditAlign}>{parse(richEditor)}</div>
       </div>
     </Grid>
   );
