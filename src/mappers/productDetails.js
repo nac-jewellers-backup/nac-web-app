@@ -554,8 +554,9 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                 PD.totalNoStonesByProductSku &&
                 PD.totalNoStonesByProductSku.nodes &&
                 PD.totalNoStonesByProductSku.nodes[0] &&
-                PD.totalNoStonesByProductSku.nodes[0].markupPrice &&
-                PD.totalNoStonesByProductSku.nodes[0].discountPrice && {
+                (PD.totalNoStonesByProductSku.nodes[0].markupPrice ||
+                PD.totalNoStonesByProductSku.nodes[0].discountPrice || 
+                PD.totalNoStonesByProductSku.nodes[1].discountPrice) && {
                   name: "Diamond",
                   details: [
                     CurrencyConversion(
@@ -580,7 +581,8 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
                 PD.totalNoStonesByProductSku.nodes &&
                 PD.totalNoStonesByProductSku.nodes[1] &&
                 PD.totalNoStonesByProductSku.nodes[1].markupPrice &&
-                PD.totalNoStonesByProductSku.nodes[1].discountPrice && {
+                PD.totalNoStonesByProductSku.nodes[1].discountPrice &&
+                PD.totalNoStonesByProductSku.nodes[0].discountPrice && {
                   name: "Gemstone",
                   details: [
                     CurrencyConversion(

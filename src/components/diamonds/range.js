@@ -14,9 +14,6 @@ export default function DiamondRange(props) {
 
   const value = props.value;
 
-  // const handleClick1=()=>{
-  //     return cut
-  // }
 
   const classes = styles();
   return (
@@ -96,9 +93,7 @@ export default function DiamondRange(props) {
                 </Typography>
               </Grid>
             )
-            // <Grid item xs={12} style={{float:"left"}}>
-
-            // </Grid>
+           
           )}
       </Grid>
     </Grid>

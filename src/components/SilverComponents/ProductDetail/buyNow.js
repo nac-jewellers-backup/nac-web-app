@@ -18,7 +18,7 @@ const inputsearch = (props, state, handleChanges, handleCodChange) => {
   const { data } = props;
   const { classes } = props;
 
-  // const [] = React.useState()
+
 
   return (
     <div
@@ -108,7 +108,7 @@ const Buydetails = (
         <>
           <Grid container spacing={12} style={{ padding: "0 10px" }}>
             <Grid item xs={12} lg={4} style={{ marginRight: "15px" }}>
-              {/* <NavLink to="/cart" style={{ textDecoration: 'none' }} onClick={handleLocalStorage.bind(this)}> */}
+             
               <div onClick={handleLocalStorage.bind(this)}>
                 <Buynowbutton
                   sku={data[0].skuId}

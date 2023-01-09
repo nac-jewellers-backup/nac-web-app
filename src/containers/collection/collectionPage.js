@@ -5,7 +5,6 @@ import Slideshow from "components/Carousel/carosul";
 import { CollectionPageNac, YoungOnes } from "mappers/dummydata/collectionNac";
 import Story from "components/story";
 import LargeTiles from "components/largeTile/index";
-// import FeaturedProduct from 'components/featuredProduct/index';
 import SubListingCarousel from "components/subListingCarousel/subListingCarousel";
 import Header from "components/SilverComponents/Header";
 import Footer from "../../components/Footer/Footer";

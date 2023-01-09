@@ -22,11 +22,7 @@ export default function Social(props) {
                     <i style={{ fontSize: '34px', color: '#add8e6', paddingLeft: '10%', }} className="fa">&#xf099;</i>
                     <i style={{ fontSize: '34px', color: '#00008b', paddingLeft: '10%', }} className="fa">&#xf16d;</i>
 
-                    {/* <i style={{ fontSize: '24px', color: 'white', paddingLeft: '5%', }} className="fa">&#xf0d5;</i>
-                                <i style={{ fontSize: '24px', color: 'white', paddingLeft: '5%', }} className="fa">&#xf231;</i>
-                                <i style={{ fontSize: '24px', color: 'white', paddingLeft: '5%', }} className="fa">&#xf16d;</i>
-                                <i style={{ fontSize: '24px', color: 'white', paddingLeft: '5%', }} className="fa">&#xf167;</i>
-        */}
+                    
                 </Grid>
             </Grid>
         </Grid>

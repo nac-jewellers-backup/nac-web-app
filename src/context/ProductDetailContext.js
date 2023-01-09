@@ -158,11 +158,7 @@ export const TabsProvider = (props) => {
         arr = _sessionStorage.split(",");
         arr.push(filters.skuId);
         var uniqueArray = [...new Set(arr)];
-        // var removingCurrentProduct = uniqueArray.filter((val) => {
-        //   if (window.location.search.split("=")[1] !== val) {
-        //     return val;
-        //   }
-        // });
+  
         sessionStorage.setItem("skuId", uniqueArray);
       } else {
         sessionStorage.setItem("skuId", filters.skuId);

@@ -195,16 +195,11 @@ class Banner extends React.Component {
           }}
           loading="lazy" alt='...'
         />
-        {/* <div class="overlay1">
-          <div style={{paddingTop:'40%'}}>
-        <h2 className='next-price'>{hoverlist.title}</h2><br />
-        <a class='info' href={hoverlist.price}><span className='sub-list-price'> <i class="fa fa-rupee"></i> &nbsp;{hoverlist.price}</span></a>
-          </div>
-      </div> */}
+      
       </div>
     );
   };
-  //className={this.props.styles?this.props.styles:''}
+
   render() {
     const multipleData = {
       dots: true,
@@ -242,7 +237,7 @@ class Banner extends React.Component {
       pauseOnFocus: false,
       swipe: false,
     }
-    // const { dataCarousel: { settings }, sliderRef } = this.props;
+    
     const { sliderRef } = this.props;
     var settings = this.props.dataCarousel;
     console.log("this.banner", this.props);

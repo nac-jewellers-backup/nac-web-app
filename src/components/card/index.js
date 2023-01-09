@@ -1,14 +1,13 @@
 import { Grid } from "@material-ui/core";
 import React from "react";
 import Cards from "./card";
-// import {IndexAdvertisingPage , IndexTemplePage} from '../../mappers/dummydata/savingNac';
+
 
 export default function CardsIndex(props) {
   return (
     <Grid container xs={12}>
       {props.value && (
-        // props.value.data.map(val => (
-        // <>
+       
         <>
           <Cards
             data={props.value}

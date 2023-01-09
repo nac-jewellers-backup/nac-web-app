@@ -194,9 +194,7 @@ export default function Detailpage(props) {
     <>
       {!finish ? (
         <>
-          {/* <Box className={classes.back}>
-                  <Button variant='contained' onClick={props.back} style={{background:"#B3821F",color:"#fff"}}>Back</Button>
-          </Box> */}
+          
           <Grid
             item
             lg={5}

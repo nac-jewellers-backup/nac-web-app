@@ -22,7 +22,6 @@ const useStyles = makeStyles((theme) => ({
 
 const SlideImgMediaCard = (props) => {
   const { listProduct } = props
-  console.log("props1111111", props)
 
   const classes = useStyles();
   const ArrowLeft = (props) => {

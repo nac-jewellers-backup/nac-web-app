@@ -138,16 +138,7 @@ export default function MediaCarousel(props) {
                     ""
                   ) : (
                     <>
-                      {/* <Grid
-                        xs={2}
-                        sm={2}
-                        md={1}
-                        lg={1}
-                        xl={1}
-                        className={classes.gridHr}
-                      >
-                        <hr className={classes.hrTag} />
-                      </Grid> */}
+                     
                       <Grid
                         container
                         direction="row"

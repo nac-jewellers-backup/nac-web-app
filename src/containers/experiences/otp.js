@@ -52,9 +52,7 @@ export default function OtpCard(props) {
     return (
         <>
         {!isDetail ? <>
-          {/* <Box className={classes.back}>
-                  <Button variant='contained' onClick={props.back} style={{background:"#B3821F",color:"#fff"}}>Back</Button>
-          </Box> */}
+         
           <Grid item lg={5} xl={5} xs={12} sm={12} className={classes.cardSpace}>        
                 <Card className={classes.Cardview}>
                       <CardContent className={classes.otpContent}>
@@ -68,7 +66,7 @@ export default function OtpCard(props) {
                               isNumber
                               maxLength={6}
                               minLength={6}
-                    // error={edata ? true : false}
+                  
                              helperText="Please enter your OTP"
                               placeholder="Please enter your OTP"
                               color="secondary"

@@ -102,10 +102,7 @@ export default function LargeTile(props) {
               <a href="/#"
                           target="_blank"
                           el="noopener noreferrer" className={classes.anchor}>
-                {/* <Grid className={classes.algins}>
-                                    <Typography className={classes.anchor}>{props.store}</Typography>
-                                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAOCAMAAAAliK2kAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABtQTFRFqKio8fHxREREGRkZYWFh4uLijIyMNjY2////EoUdpQAAAAl0Uk5T//////////8AU094EgAAADpJREFUeNpUzdsKADAIAlBt1///4jkLxoLwYA9h1+BhooCGOqW8V1lLBlcYjOCFU8gUulMY/H8dAQYArKoCrGXO+aEAAAAASUVORK5CYII=" />
-                                </Grid> */}
+               
                 <Grid></Grid>
               </a>
             </Grid>
@@ -186,10 +183,7 @@ export default function LargeTile(props) {
                   <a className={classes.anchor} href="/#"
                           target="_blank"
                           el="noopener noreferrer">
-                    {/* <Grid className={classes.algins}> */}
-                    {/* <Typography onClick={handleReadMore} className={classes.anchor}>{props.store}</Typography> */}
-                    {/* <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAOCAMAAAAliK2kAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABtQTFRFqKio8fHxREREGRkZYWFh4uLijIyMNjY2////EoUdpQAAAAl0Uk5T//////////8AU094EgAAADpJREFUeNpUzdsKADAIAlBt1///4jkLxoLwYA9h1+BhooCGOqW8V1lLBlcYjOCFU8gUulMY/H8dAQYArKoCrGXO+aEAAAAASUVORK5CYII=" /> */}
-                    {/* </Grid> */}
+                    
                     <Grid></Grid>
                   </a>
                 </Grid>
@@ -377,10 +371,7 @@ export default function LargeTile(props) {
                   <a  href="/#"
                           target="_blank"
                           el="noopener noreferrer" className={classes.anchor}>
-                    {/* <Grid className={classes.algins}> */}
-                    {/* <Typography onClick={handleReadMore} className={classes.anchor}>{props.store}</Typography> */}
-                    {/* <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAOCAMAAAAliK2kAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABtQTFRFqKio8fHxREREGRkZYWFh4uLijIyMNjY2////EoUdpQAAAAl0Uk5T//////////8AU094EgAAADpJREFUeNpUzdsKADAIAlBt1///4jkLxoLwYA9h1+BhooCGOqW8V1lLBlcYjOCFU8gUulMY/H8dAQYArKoCrGXO+aEAAAAASUVORK5CYII=" /> */}
-                    {/* </Grid> */}
+                  
                     <Grid></Grid>
                   </a>
                 </Grid>
@@ -401,84 +392,14 @@ export default function LargeTile(props) {
                       allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                     ></iframe>
                   </Grid>
-                  {/* {" "}
-                  {window.innerWidth > 0 && window.innerWidth <= 320 && (
-                    <Grid style={{ display: "block" }}>
-                      <iframe
-                        width="100%"
-                        height="175"
-                        src={props.url}
-                        frameborder="0"
-                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                      ></iframe>
-                    </Grid>
-                  )}
-                  {window.innerWidth > 321 && window.innerWidth <= 375 && (
-                    <Grid style={{ display: "block" }}>
-                      <iframe
-                        width="100%"
-                        height="210"
-                        src={props.url}
-                        frameborder="0"
-                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                      ></iframe>
-                    </Grid>
-                  )}
-                  {window.innerWidth > 376 && window.innerWidth <= 425 && (
-                    <Grid style={{ display: "block" }}>
-                      <iframe
-                        width="100%"
-                        height="244"
-                        src={props.url}
-                        frameborder="0"
-                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                      ></iframe>
-                    </Grid>
-                  )}
-                  {window.innerWidth > 426 && window.innerWidth <= 768 && (
-                    <Grid item style={{ display: "block" }} contained>
-                      <iframe
-                        width="100%"
-                        height="216"
-                        src={props.url}
-                        frameborder="0"
-                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                      ></iframe>
-                    </Grid>
-                  )}
-                  {window.innerWidth > 769 && window.innerWidth <= 1024 && (
-                    <Grid style={{ display: "block" }}>
-                      <iframe
-                        width="100%"
-                        height="275"
-                        src={props.url}
-                        frameborder="0"
-                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                      ></iframe>
-                    </Grid>
-                  )}{" "}
-                  {window.innerWidth > 1025 && window.innerWidth <= 1440 && (
-                    <Grid style={{ display: "block" }}>
-                      <iframe
-                        width="100%"
-                        height="334"
-                        src={props.url}
-                        frameborder="0"
-                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                      ></iframe>
-                    </Grid>
-                  )}
-                  {window.innerWidth > 1441 && (
-                    <Grid style={{ display: "block" }}>
-                      <iframe
-                        width="100%"
-                        height="614"
-                        src={props.url}
-                        frameborder="0"
-                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                      ></iframe>
-                    </Grid>
-                  )}{" "} */}
+                  {
+                 
+                 
+                  
+                 
+                  
+                  
+                  }
                 </>
               ) : (
                 <>
@@ -568,10 +489,7 @@ export default function LargeTile(props) {
                   <a  href="/#"
                           target="_blank"
                           el="noopener noreferrer" className={classes.anchor}>
-                    {/* <Grid className={classes.algins}>
-                                                <Typography onClick={handleReadMore} className={classes.anchor}>Hide Video</Typography>
-                                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAOCAMAAAAliK2kAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABtQTFRFqKio8fHxREREGRkZYWFh4uLijIyMNjY2////EoUdpQAAAAl0Uk5T//////////8AU094EgAAADpJREFUeNpUzdsKADAIAlBt1///4jkLxoLwYA9h1+BhooCGOqW8V1lLBlcYjOCFU8gUulMY/H8dAQYArKoCrGXO+aEAAAAASUVORK5CYII=" />
-                                            </Grid> */}
+                    
                     <Grid></Grid>
                   </a>
                 </Grid>

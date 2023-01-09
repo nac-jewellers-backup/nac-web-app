@@ -110,5 +110,3 @@ export default function (data) {
 
 
 }
-
-// injectUrl("/images/product/SE0775/SE0775-1Y.jpg", cdnUrl)

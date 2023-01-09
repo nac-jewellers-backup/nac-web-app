@@ -25,15 +25,7 @@ export default function SiteMap(props) {
     
 
               
-                {/* <Grid item lg={4} xs={12}>
-
-                    </Grid>
-                    <Grid item lg={4} xs={12}>
-
-                    </Grid>
-                    <Grid item lg={4} xs={12}>
-
-                    </Grid> */}
+               
             </Grid>
         </Grid>
     )

@@ -17,16 +17,6 @@ import { ProductDetailContext } from 'context/ProductDetailContext';
 import { GlobalContext } from 'context'
 
 
-
-
-// function TabContainer({ children, dir }) {
-//     return (
-//         <Typography component="div" dir={dir} style={{ padding: 8 * 3 }}>
-//             {children}
-//         </Typography>
-//     );
-// }
-
 const PriceTabs = (props) => {
     const { ProductDetailCtx: { filters }, setFilters } = React.useContext(ProductDetailContext);
     const { Globalctx, setGlobalCtx } = React.useContext(GlobalContext)
@@ -47,9 +37,7 @@ class Component extends React.Component {
     handleOpen = () => {
         this.setState({ open: true });
     };
-    componentDidMount() {
-        // this.setState({ skuSize: this.props && this.props.filters && this.props.filters.defaultVariants && this.props.filters.defaultVariants.skuSize });
-    }
+   
 
     handleClose = () => {
         this.setState({ open: false });
@@ -67,14 +55,7 @@ class Component extends React.Component {
          // example : 18k Yellow And White
             var arrPurity
             var arrColor
-            // if (_multipleColor.length > 0) {
-            //     arrPurity = objVal[0]
-            //     arrColor = objVal[1].concat(' ').concat(objVal[3])
-            // }
-            // else {
-            //     arrPurity = objVal[0]
-            //     arrColor = objVal[1]
-            // }
+           
             arrPurity = kv.substr(0, kv.indexOf(' '))
             arrColor = kv.substr(kv.indexOf(' ') + 1)
             var diamondTypes = filters['defaultVariants']['diamondType']
@@ -101,16 +82,7 @@ class Component extends React.Component {
         }
         // const ringSize = event.target.name;
     }
-    // handleClickMetal = (event) => {
-    //     const metalColor = event.target.id;
-    //     this.setState({
-    //         metalColor,
-    //     }, () => this.props.setFilters('metalColor=' + metalColor));
-    // }
-    // handleClickDiamond = (event) => {
-    //     const diamondType = event.target.id
-    //      this.props.setFilters('diamondType=' + diamondType))
-    // }
+   
     handleChange = (event, value) => {
         this.setState({ value });
     };
@@ -225,7 +197,7 @@ class Component extends React.Component {
             
             // return last
         }
-        // data[0].productTabs[0].tab2.Children
+      
 
         return (
             <div>
@@ -318,11 +290,7 @@ class Component extends React.Component {
                                                         {
                                                              handle_extension(data[0].size_guide) === "document" && 
                                                              <div className={`${classes.modals_document}  "modalin-ring"`}>
-                                                           {/* <object data={data[0].size_guide} type="application/pdf" className="document_iframe"  width="100%" height="100%">
-  <p>Your web browser doesn't have a PDF plugin.
-  Instead you can <a href={data[0].size_guide}>click here to
-  download the PDF file.</a></p>
-</object> */}
+                                                           
                                                              <iframe
                                                               className="document_iframe" 
                                                                title='...'
@@ -342,9 +310,7 @@ class Component extends React.Component {
                                                         </>
                                                     {/* </div> */}
                                                 </Modal>
-                                                {/* <div style={{ marginTop: "10px", textAlign: "center" }}>
-                                                    <span style={{ cursor: "pointer" }} className={`my-ringsize ${classes.normalfonts} `} >My Ring Size ?</span>
-                                                 </div> */}
+                                                
                                             </Grid>
                                         </>
                                         : ""}
@@ -362,14 +328,7 @@ class Component extends React.Component {
                                               
                                                 var arrPurity
                                                 var arrColor
-                                                // if (_multipleColor.length > 0) {
-                                                //     arrPurity = objVal[0]
-                                                //     arrColor = objVal[1].concat(' ').concat(objVal[3])
-                                                // }
-                                                // else {
-                                                //     arrPurity = objVal[0]
-                                                //     arrColor = objVal[1]
-                                                // }
+                                               
                                                 arrPurity = kv.substr(0, kv.indexOf(' '))
                                                 arrColor = kv.substr(kv.indexOf(' ') + 1)
                                                 return (
@@ -414,12 +373,12 @@ class Component extends React.Component {
                                                                 id={val.name}
                                                                 onClick={event => this.handleClick(event, 'diamondType')}
                                                             >
-                                                                {/* {this.imageRender(val)} */}
+                                                              
                                                                 <span id={val.name} className={`tabs-cont ${classes.normalfonts}`}>{dimondclarity(val.name)}</span>
                                                             </button>
                                                         </div>
                                                     </div>
-                                                    {/* <div className={this.state.diamondType == i ? "rings_tabsvls_active":"rings_tabsvls"}>{arrColor}</div> */}
+                                                    
                                                 </Grid>
                                             )
                                         }

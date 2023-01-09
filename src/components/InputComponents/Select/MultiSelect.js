@@ -255,10 +255,7 @@ export default function IntegrationReactSelect(props) {
     values: [],
     helperText: false,
   });
-  React.useEffect(() => {
-    // console.info('MULTI', multi)
-    // setMulti({...multi, helperText: multi.values.length === 0 });
-  }, [multi.values]);
+ 
 
   function handleChangeMulti(value) {
     setMulti({
