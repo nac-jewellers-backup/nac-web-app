@@ -197,12 +197,12 @@ export const RouterApp = (props) => {
         exact
         path={routes.Education}
       />
-      <Route
+      {/* <Route
         key="careersni"
         component={careersPage}
         exact
         path={routes.CareersPage}
-      />
+      /> */}
       {/* <Route
         key="templeWork"
         component={TempleWork}
@@ -236,12 +236,9 @@ export const RouterApp = (props) => {
         props.location.pathname !== "/faq" &&
         props.location.pathname !== "/education" &&
         props.location.pathname !== "/loc/:id" &&
-        props.location.pathname !== "/careers" &&
-        props.location.pathname !== "/careersDetail" &&
         props.location.pathname !== "/solitaires-search" &&
         props.location.pathname !== "/collectionhome" &&
         props.location.pathname !== "/collectionpage" &&
-        props.location.pathname !== "/blog" &&
         props.location.pathname !== "/rudramadeviBlog" &&
         props.location.pathname !== "/temple-work" &&
         props.location.pathname !== "/registers" &&
@@ -315,10 +312,7 @@ export const RouterApp = (props) => {
         props.location.pathname !== "/sitemap" &&
         props.location.pathname !== "/faq" &&
         props.location.pathname !== "/education" &&
-        props.location.pathname !== "/blog" &&
         props.location.pathname !== "/loc/:id" &&
-        props.location.pathname !== "/careers" &&
-        props.location.pathname !== "/careersDetail" &&
         props.location.pathname !== "/solitaires-search" &&
         props.location.pathname !== "/collectionhome" &&
         props.location.pathname !== "/collectionpage" &&
@@ -327,7 +321,6 @@ export const RouterApp = (props) => {
         props.location.pathname !== "/registers" &&
         props.location.pathname !== "/login" &&
         props.location.pathname !== "/checkout" &&
-        props.location.pathname !== "/careers" &&
         props.location.pathname !== "/forgotpassword" &&
         props.location.pathname !== "/resetpassword/:id" &&
         props.location.pathname !== "/changepassword" &&

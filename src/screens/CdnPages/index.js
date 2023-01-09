@@ -33,6 +33,7 @@ import TempleCardComp from "components/templeCardComp";
 import TempleProducts from "components/TempleProducts";
 import TempleFooterComp from "components/templeFootComp";
 import TempleCardDetailComp from "components/templeCardDetailComp";
+import { useLocation } from "react-router-dom";
 
 function CdnPages(props) {
   // view more button click state
@@ -65,6 +66,7 @@ function CdnPages(props) {
 
   // Career page form submit click function
 
+  const location = useLocation();
 
 
   useEffect(() => {
@@ -87,11 +89,10 @@ function CdnPages(props) {
           setState(dataRecieved);
         }
       });
-  }, []);
+  }, [location]);
 
   const [state, setState] = useState([]);
-  console.log("cdnData",state);
-  
+  console.log("cdnState",state);
   const handleComponents = (val) => {
     switch (val.component) {
       case "BannerComponent": {
@@ -135,11 +136,12 @@ function CdnPages(props) {
               (value, index) => index < count
             )}
             handleRequest={careerViewMoreClick}
-          />
+            {...props}
+            />
         )
       }
       case "ResumeComp": {
-        return <CustomApplication />;
+        return <CustomApplication location={location} />;
       }
       case "CollectionHeader": {
         return <CollectionHeader value={val?.props?.header} />;

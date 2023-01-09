@@ -69,11 +69,12 @@ export default function Storelocator(props) {
                         >
                           <Button
                             onClick={() => {
+                              localStorage.setItem("storeKey", store?.key)
                               window.location.pathname = "/loc";
                             }}
                             className={classes.ViewButton}
                           >
-                            &nbsp;&nbsp;{store.button}&nbsp;&nbsp;
+                            &nbsp;&nbsp;{store?.button}&nbsp;&nbsp;
                           </Button>
                         </a>
                       </div>

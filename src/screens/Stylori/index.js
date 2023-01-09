@@ -53,7 +53,7 @@ export default class Stylori extends Component {
     //   arrows: false
     // }
     return this.state.cmspage ? (
-      <CdnPages />
+      <CdnPages {...this.props} />
     ) : (
       <FilterOptionsProvider>
         <CartProvider>

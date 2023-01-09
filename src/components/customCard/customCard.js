@@ -7,8 +7,8 @@ const CustomCard = (props) => {
   const classes = CustomCardStyles();
 
   const careerCardApplyNow = (value) => {
-    props.history.push({ pathname: "/careerDetails", state: value });
-    window.location.href = "/careerDetails";
+    props.history.push({ pathname: "/careerDetails", state: value }); 
+    // window.location.href = "/careerDetails";
   };
 
   return (
