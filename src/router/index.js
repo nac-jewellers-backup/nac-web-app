@@ -475,12 +475,12 @@ export const RouterApp = (props) => {
         exact
         path={routes.FaqDetails}
       />
-      <Route
+      {/* <Route
         key="blogNew"
         component={BlogPage}
         exact
         path={routes.BlogPage}
-      />
+      /> */}
       <Route
         key="readMore"
         component={ReadMore}
