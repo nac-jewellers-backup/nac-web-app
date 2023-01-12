@@ -1,7 +1,11 @@
 import {
+  Box,
   Button,
+  Dialog,
+  DialogContent,
   Grid,
   IconButton,
+  Modal,
   Snackbar,
   TextField,
   Tooltip,
@@ -12,6 +16,18 @@ import CustomFormStyles from "./style";
 import MuiAlert from "@material-ui/lab/Alert";
 import axios from "axios";
 import { API_URL } from "config";
+
+const style = {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 400,
+  bgcolor: "background.paper",
+  border: "2px solid #000",
+  boxShadow: 24,
+  p: 4,
+};
 
 const initialState = {
   name: "",
@@ -28,11 +44,15 @@ const CustomForm = (props) => {
   const classes = CustomFormStyles();
   const [state, setState] = useState(initialState);
   const [openSnackError, setOpenSnackError] = React.useState(false);
-  const [openSnack, setOpenSnack] = React.useState(false);
+  const [open, setOpen] = React.useState(false);
+  // const [openSnack, setOpenSnack] = React.useState(false);
 
   const handleChange = (name, value) => {
     setState({ ...state, [name]: value });
   };
+
+  const handleOpen = () => setOpen(true);
+  const handleCloser = () => setOpen(false);
 
   const handleSubmit = () => {
     var bodyFormData = new FormData();
@@ -44,7 +64,9 @@ const CustomForm = (props) => {
       .post(API_URL + "/apply_career", bodyFormData)
       .then((res) => {
         if (res) {
-          setOpenSnack(true);
+          // setOpenSnack(true);
+          handleOpen();
+          setState(initialState);
         }
       })
       .catch((err) => {
@@ -54,11 +76,11 @@ const CustomForm = (props) => {
   };
 
   const handleClose = (event, reason) => {
-    if (reason === 'clickaway') {
+    if (reason === "clickaway") {
       return;
     }
     setOpenSnackError(false);
-    setOpenSnack(false);
+    // setOpenSnack(false);
   };
 
   return (
@@ -72,7 +94,13 @@ const CustomForm = (props) => {
               <Typography>Submit Your Resume</Typography>
             </div>
             <div className={classes.jobForm}>
-              <Grid container style={{ justifyContent: "center", borderBottom:"1px solid #eee" }}>
+              <Grid
+                container
+                style={{
+                  justifyContent: "center",
+                  borderBottom: "1px solid #eee",
+                }}
+              >
                 <Grid item xs={10} sm={6} md={4}>
                   <div className={classes.textField}>
                     <TextField
@@ -126,7 +154,10 @@ const CustomForm = (props) => {
                       <div style={{ cursor: "pointer" }}>Choose file</div>
                     </label>
                   </div>
-                  <div className={classes.submit} onClick={() => handleSubmit()}>
+                  <div
+                    className={classes.submit}
+                    onClick={() => handleSubmit()}
+                  >
                     Submit
                   </div>
                 </Grid>
@@ -135,7 +166,7 @@ const CustomForm = (props) => {
           </div>
         </Grid>
       </Grid>
-      <Snackbar
+      {/* <Snackbar
         anchorOrigin={{
           vertical: "top",
           horizontal: "center",
@@ -147,7 +178,14 @@ const CustomForm = (props) => {
         <Alert onClose={handleClose} severity="success">
           Your resume has been updated successfully!
         </Alert>
-      </Snackbar>
+      </Snackbar> */}
+      <Dialog open={open} onClose={handleCloser}>
+        <DialogContent>
+          <Typography className={classes.success} style={{paddingBottom:"20px",color:"#2a2e6e"}}>
+            Your resume has been updated successfully!
+          </Typography>
+        </DialogContent>
+      </Dialog>
       <Snackbar
         anchorOrigin={{
           vertical: "top",

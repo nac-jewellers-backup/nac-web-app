@@ -125,6 +125,9 @@ const CustomFormStyles = makeStyles((theme) => ({
   input: {
     display: "none",
   },
+  success: {
+    color: "green",
+  },
 }));
 
 export default CustomFormStyles;
