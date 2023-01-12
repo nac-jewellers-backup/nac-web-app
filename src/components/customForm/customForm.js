@@ -3,7 +3,6 @@ import {
   Button,
   Dialog,
   DialogContent,
-  DialogTitle,
   Grid,
   IconButton,
   Modal,
@@ -180,19 +179,11 @@ const CustomForm = (props) => {
           Your resume has been updated successfully!
         </Alert>
       </Snackbar> */}
-      <Dialog
-        open={open}
-        onClose={handleCloser}
-      >
+      <Dialog open={open} onClose={handleCloser}>
         <DialogContent>
-        {/* <Box sx={style}> */}
-          <Typography
-            className={classes.success}
-            style={{color:"#2a2e6e",paddingBottom:"20px"}}
-          >
+          <Typography className={classes.success} style={{paddingBottom:"20px",color:"#2a2e6e"}}>
             Your resume has been updated successfully!
           </Typography>
-        {/* </Box> */}
         </DialogContent>
       </Dialog>
       <Snackbar
