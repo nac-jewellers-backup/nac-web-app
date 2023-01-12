@@ -22,12 +22,13 @@ const CCustomApplicationStyles = makeStyles((theme) => ({
   },
 
   secondLayer: {
+    cursor: "pointer",
+    color: "#606060",
     marginTop: "17px",
-    "& p": {
-      color: "#606060",
-      [theme.breakpoints.down("sm")]: {
-        fontSize: "13px",
-      },
+    "& span": {
+      fontSize: "14px",
+      marginLeft: "10px",
+      color: "grey",
     },
   },
 
@@ -41,6 +42,10 @@ const CCustomApplicationStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       padding: "30px 20px",
     },
+  },
+
+  readMore: {
+    display: "flex",
   },
 }));
 export default CCustomApplicationStyles;

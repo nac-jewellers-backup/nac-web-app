@@ -8,12 +8,7 @@ const useStyles = makeStyles((theme) => ({
   siteMapBox: {
     width: "80%",
     margin: "5% auto",
-    [theme.breakpoints.down("sm")]: {
-      width: "85%",
-    },
-    [theme.breakpoints.down("xs")]: {
-      width: "93%",
-    },
+    height: "100%",
   },
   heading: {
     color: "#1f1e24",
@@ -21,50 +16,38 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: "25px",
     fontWeight: "500",
   },
+  gridItem: {
+    marginBottom: "20px",
+    [theme.breakpoints.down("sm")]: {
+      padding: "0px 100px",
+    },
+  },
   categoryList: {
-    display: "flex",
-    width: "100%",
-    justifyContent: "space-between",
-    "& div": {
-      width: "23%",
-      margin: "auto",
-      borderRadius: "12px",
-      margin: "0px 0px 40px 0",
-      paddingBottom: "15px",
-      boxShadow: "0 4px 6px 0 rgb(83 83 83 / 20%)",
-      [theme.breakpoints.down("sm")]: {
-        width: "23%",
-      },
+    height: "100%",
+    borderRadius: "12px",
+    paddingBottom: "20px",
+    boxShadow: "0 4px 6px 0 rgb(83 83 83 / 20%)",
+    "& p": {
+      listStyle: "none",
+      marginBottom: "4px",
       [theme.breakpoints.down("xs")]: {
-        width: "47%",
+        marginBottom: "0px",
       },
-      "& p": {
-        listStyle: "none",
-        marginBottom: "4px",
-        [theme.breakpoints.down("xs")]: {
-          marginBottom: "0px",
+      "& a": {
+        color: "#231535",
+        textDecoration: "none",
+        fontSize: "14px",
+        lineHeight: "25px",
+        padding: "0 10px 0 10px",
+        margin: "0 0 0 10px",
+        display: "block",
+        [theme.breakpoints.down("sm")]: {
+          fontSize: "13px",
+          padding: "0 6px 0 6px",
+          margin: "0 0 0 7px",
         },
-        "& a": {
-          color: "#231535",
-          textDecoration: "none",
-          fontSize: "14px",
-          lineHeight: "25px",
-          padding: "0 10px 0 10px",
-          margin: "0 0 0 10px",
-          display: "block",
-          [theme.breakpoints.down("sm")]: {
-            fontSize: "13px",
-            padding: "0 6px 0 6px",
-            margin: "0 0 0 7px",
-          },
-          [theme.breakpoints.down("xs")]: {
-            fontSize: "12px",
-            padding: "0 0px 0 9px",
-            margin: "0",
-          },
-          "&:hover": {
-            color: '#600fc6'
-          }
+        "&:hover": {
+          color: "#600fc6",
         },
       },
     },
@@ -92,14 +75,21 @@ const SiteMapNew = (props) => {
   const classes = useStyles();
 
   return (
-    <Grid container>
-      <Box className={classes.siteMapBox}>
-        <h2 className={classes.heading}>Site Index</h2>
-        <div style={{ display: "flex" }}>
-          <Grid container className={classes.categoryList}>
-            {props?.value?.map((e) => {
-              return (
-                <Grid Item lg={2.9} md={2.9} sm={2.9} xs={5.5}>
+    <div className={classes.siteMapBox}>
+      <h2 className={classes.heading}>Site Index</h2>
+      <div>
+        <Grid container spacing={4} style={{ height: "100%" }}>
+          {props?.value?.map((e) => {
+            return (
+              <Grid
+                item
+                lg={3}
+                md={4}
+                sm={6}
+                xs={12}
+                className={classes.gridItem}
+              >
+                <div className={classes.categoryList}>
                   <Typography className={classes.subHeading}>
                     {e?.categoryHeading}
                   </Typography>
@@ -110,13 +100,13 @@ const SiteMapNew = (props) => {
                       </Typography>
                     );
                   })}
-                </Grid>
-              );
-            })}
-          </Grid>
-        </div>
-      </Box>
-    </Grid>
+                </div>
+              </Grid>
+            );
+          })}
+        </Grid>
+      </div>
+    </div>
   );
 };
 
