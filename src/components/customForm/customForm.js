@@ -1,6 +1,9 @@
 import {
   Box,
   Button,
+  Dialog,
+  DialogContent,
+  DialogTitle,
   Grid,
   IconButton,
   Modal,
@@ -177,22 +180,21 @@ const CustomForm = (props) => {
           Your resume has been updated successfully!
         </Alert>
       </Snackbar> */}
-      <Modal
+      <Dialog
         open={open}
         onClose={handleCloser}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
       >
-        <Box sx={style}>
+        <DialogContent>
+        {/* <Box sx={style}> */}
           <Typography
             className={classes.success}
-            id="modal-modal-description"
-            sx={{ mt: 2 }}
+            style={{color:"#2a2e6e",paddingBottom:"20px"}}
           >
             Your resume has been updated successfully!
           </Typography>
-        </Box>
-      </Modal>
+        {/* </Box> */}
+        </DialogContent>
+      </Dialog>
       <Snackbar
         anchorOrigin={{
           vertical: "top",
