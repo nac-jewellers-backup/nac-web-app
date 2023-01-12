@@ -10,21 +10,39 @@ import React, { useState } from "react";
 import ExperienceCardStyles from "./style";
 import parse from "html-react-parser";
 import { useNetworkRequest } from "hooks/index";
+import OtpCard from "./otpComponent";
 
 const ExperienceCards = (props) => {
   console.log("propsData", props);
   const classes = ExperienceCardStyles();
 
   const [enable, setEnable] = useState(false);
+  const [isOtp,setOtp] = React.useState(false);
 
   const [values, setValues] = React.useState({
     name: "",
     mobile: "",
     email: "",
+    otp:"",
+    date:new Date(),
+    timeslot:"",
+    metalType:[],
+    productCategory:[],
+    specialRequests:"",
+    isItRequired:"",
+    are_more_members_joining:"",
     error: {
       name: "",
       mobile: "",
       email: "",
+      otp:"",
+      date:"",
+      timeslot:"",
+      metalType:"",
+      productCategory:"",
+      specialRequests:"",
+      isItRequired:"",
+      are_more_members_joining:"",
     },
   });
 
@@ -85,8 +103,18 @@ const ExperienceCards = (props) => {
           : "",
     };
     makeFetch(Payload)
-    setEnable(!enable);
+    // setEnable(!enable);
   };
+
+  React.useEffect(()=>{
+    if(status?.status === 200){
+      setOtp(true)
+    }
+  },[status])
+
+  const onBack =()=>{
+    setOtp(false)
+  }
 
   return (
     <Grid container className={classes.mainContainer}>
@@ -95,7 +123,7 @@ const ExperienceCards = (props) => {
           <img src={props?.value?.background_Image} alt="Ear Piercing" />
         </div>
 
-        {!enable ? (
+        {!isOtp ? (
           <Grid item xs={12} sm={12} lg={6} className={classes.mainCard}>
             <Card className={classes.cardBox}>
               <CardContent className={classes.viewContent}>
@@ -211,27 +239,28 @@ const ExperienceCards = (props) => {
             </Card>
           </Grid>
         ) : (
-          <Grid item xs={12} sm={12} lg={6} className={classes.mainCard}>
-            <Card className={classes.cardBox}>
-              <CardContent className={classes.viewContent}>
-                <Grid container className={classes.cardContainer}>
-                  <Grid item xs={5}>
-                    <div className={classes.headerImage}>
-                      <img
-                        src={props?.value?.header_Image}
-                        alt="Ear Piercing"
-                      />
-                    </div>
-                  </Grid>
-                  <Grid item xs={10}>
-                    <div className={classes.submitText}>
-                      <Typography>{props?.value?.submit_Content}</Typography>
-                    </div>
-                  </Grid>
-                </Grid>
-              </CardContent>
-            </Card>
-          </Grid>
+          // <Grid item xs={12} sm={12} lg={6} className={classes.mainCard}>
+          //   <Card className={classes.cardBox}>
+          //     <CardContent className={classes.viewContent}>
+          //       <Grid container className={classes.cardContainer}>
+          //         <Grid item xs={5}>
+          //           <div className={classes.headerImage}>
+          //             <img
+          //               src={props?.value?.header_Image}
+          //               alt="Ear Piercing"
+          //             />
+          //           </div>
+          //         </Grid>
+          //         <Grid item xs={10}>
+          //           <div className={classes.submitText}>
+          //             <Typography>{props?.value?.submit_Content}</Typography>
+          //           </div>
+          //         </Grid>
+          //       </Grid>
+          //     </CardContent>
+          //   </Card>
+          // </Grid>
+          <OtpCard handleChange={handleChange} values={values} back={onBack} type={props?.value?.type} main={data} finalContent={props?.value?.submit_Content} finalImage={props?.value?.header_Image} />
         )}
       </>
     </Grid>

@@ -106,8 +106,5 @@ typings/
 *.tar
 *.zip
 
-# End of https://www.gitignore.io/api/node
-
-build/
 # Local Netlify folder
 .netlify
