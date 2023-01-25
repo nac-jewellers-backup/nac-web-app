@@ -11,7 +11,7 @@ const BlogImageCardStyles = makeStyles((theme) => ({
   },
 
   mainTitle: {
-    marginTop: "100px",
+    // marginTop: "100px",
     marginBottom: "60px",
     padding: "0 130px",
     overflowX: "hidden",
@@ -149,6 +149,7 @@ const BlogImageCardStyles = makeStyles((theme) => ({
 
   jewellImg: {
     width: "100%",
+    height:"70vh"
   },
 
   heading: {

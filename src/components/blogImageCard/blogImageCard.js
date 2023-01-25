@@ -44,7 +44,7 @@ const BlogImageCard = ({ value = [], handleShow = () => null }) => {
           <Grid item xs={12}>
             {cardData?.map((e) => {
               return (
-                <div className={classes.main}>
+                <div className={classes.main} style={{cursor:"pointer"}} onClick={() => readMoreBlog(e)}>
                   <Grid container spacing={2}>
                     <Grid
                       className={classes.backgroundPadding}
@@ -70,7 +70,7 @@ const BlogImageCard = ({ value = [], handleShow = () => null }) => {
                           <Typography>{e?.content}</Typography>
                         </div>
                         <div className={classes.buttonText}>
-                          <Typography onClick={() => readMoreBlog(e)}>
+                          <Typography>
                             {e?.bottomText}
                           </Typography>
                         </div>

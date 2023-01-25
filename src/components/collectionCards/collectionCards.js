@@ -7,7 +7,7 @@ const CollectionCards = (props) => {
   let history = useHistory();
   const classes = CollectionCardsStyles();
   const handleRoute = (url) => {
-    history.push(url);
+    window.open(url, "_blank")
   }
   return (
     <div className={classes.main}>

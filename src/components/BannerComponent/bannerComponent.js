@@ -27,7 +27,7 @@ const BannerComponent = (props)=> {
                       alt="images"
                       loading="lazy"
                       src={val?.web ?? val?.img}
-                      style={{ width: "100%", height: "100%" }}
+                      style={{ width: "100%", height: props?.forBlog ? "70vh" : "100%" }}
                     />
                   </a>
                 </Grid>

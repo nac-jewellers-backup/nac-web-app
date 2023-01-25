@@ -10,12 +10,19 @@ const ExperienceCardStyles = makeStyles((theme) => ({
 
   bgImage: {
     "& img": {
+      [theme.breakpoints.down("xs")]: {
+        height: "100%",
+      },
       width: "100%",
       height: "1000px",
     },
   },
 
   mainCard: {
+    [theme.breakpoints.down("xs")]: {
+      position: "relative",
+      margin:"0px 18px 14px"
+    },
     position: "absolute",
     alignSelf: "center",
   },

@@ -5,11 +5,10 @@ import parse from "html-react-parser";
 import BlogImageCardStyles from "./style";
 
 const ReadMore = (props) => {
-  console.log("propsssssssssss", props);
   const classes = BlogImageCardStyles();
   return (
     <div>
-      <div>
+      <div style={{width:"80%",margin:"auto"}}>
         <img
           className={classes.jewellImg}
           src={props?.data?.image}
@@ -30,9 +29,10 @@ const ReadMore = (props) => {
         </div>
       </div>
 
-      <div>
+      <div style={{width:"80%",margin:"auto"}}>
         <BannerComponent
           custom
+          forBlog
           banners={props?.data?.second_Image?.banners}
           dataCarousel={
             props?.data?.second_Image?.banners.length > 1

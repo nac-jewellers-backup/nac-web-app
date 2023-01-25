@@ -1,14 +1,17 @@
 import React from "react";
-import { Grid, Hidden,Card,CardMedia,CardContent,CardActionArea,CardActions,Button, Typography, Box } from "@material-ui/core";
+import { Grid, Hidden,Card,CardMedia,CardContent,CardActionArea,CardActions,Button, Typography, Box, Snackbar } from "@material-ui/core";
 import { Input } from "components/InputComponents/TextField/Input";
 import expstyles from "./experienceStyle";
 import Detailpage from "./detailPage";
 import { useNetworkRequest } from "hooks/index";
+import { Alert } from "@material-ui/lab";
 
 export default function OtpCard(props) {
     const classes = expstyles();
 
     const [isDetail,setDetail] = React.useState(false);
+    const [openSnackError, setOpenSnackError] = React.useState(false);
+    const [openSnack, setOpenSnack] = React.useState(false);
 
     const { dataVerify, error, status, loading, makeFetch  } = useNetworkRequest(
       "/appointment/verify_otp",
@@ -40,14 +43,27 @@ export default function OtpCard(props) {
   }
 
   React.useEffect(()=>{
+    debugger;
    if(status?.status === 200){
+    setOpenSnack(true)
     setDetail(true)
+   }else if(status?.status === 500){
+    setOpenSnackError(true)
    }
   },[status])
 
   const back=()=>{
     setDetail(false)
   }
+
+  // close the snackbar
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setOpenSnackError(false);
+    setOpenSnack(false);
+  };
     
     return (
         <>
@@ -91,7 +107,33 @@ export default function OtpCard(props) {
                 </Card>
           </Grid>  
         </> : <Detailpage back={props.back} values={props.values} handleChange={props.handleChange} type={props.type}  appointmentId={props?.main?.data?.appointment_id} finalContent={props.finalContent} finalImage={props.finalImage}/>}
-           
+
+        <Snackbar
+          anchorOrigin={{
+            vertical: "top",
+            horizontal: "center",
+          }}
+          open={openSnack}
+          autoHideDuration={4000}
+          onClose={handleClose}
+        >
+          <Alert variant="filled" onClose={handleClose} severity="success">
+            Thanks for registering
+          </Alert>
+        </Snackbar>   
+        <Snackbar
+          anchorOrigin={{
+            vertical: "top",
+            horizontal: "center",
+          }}
+          open={openSnackError}
+          autoHideDuration={3000}
+          onClose={handleClose}
+        >
+          <Alert variant="filled" onClose={handleClose} severity="error">
+            Otp verification failed please try again
+          </Alert>
+        </Snackbar>
         </>
     );
   }
