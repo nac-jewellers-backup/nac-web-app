@@ -23,7 +23,6 @@ const TempleWork = () => {
   const handleComponents = (val) => {
     switch (val.component) {
       case "TempleWorkBannerComponent": {
-        console.log("valueRender", val?.props);
         return (
           <TempleWorkBannerComp
             banners={val?.props?.banners}

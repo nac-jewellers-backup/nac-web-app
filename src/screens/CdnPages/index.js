@@ -83,7 +83,6 @@ function CdnPages(props) {
       .then((res) => res.json())
       .then((data) => {
         //feature product
-        console.log("cdnData", data);
         const dataRecieved = JSON.parse(data.data.cdnByPage.data);
         if (data.data.cdnByPage.isActive) {
           setState(dataRecieved);
@@ -92,7 +91,6 @@ function CdnPages(props) {
   }, [location]);
 
   const [state, setState] = useState([]);
-  console.log("cdnState",state);
   const handleComponents = (val) => {
     switch (val.component) {
       case "BannerComponent": {
@@ -231,7 +229,6 @@ function CdnPages(props) {
       }
 
       case "TempleWorkBannerComponent": {
-        console.log("valueRender", val?.props);
         return (
           <TempleWorkBannerComp
             banners={val?.props?.banners}

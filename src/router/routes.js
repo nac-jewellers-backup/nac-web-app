@@ -28,7 +28,7 @@ export const routes = {
   // ContactUs: "/contactus",
   HomePage: "/homes",
   SavingsPage: "/savingscheme",
-  // ExperiencePage: "/experiences",
+  ExperiencePage: "/experiences",
   AdvertisingPage: "/advertising",
   TempleWorkPage: "/temple-work",
   // NewsRoomPage: "/newsroom",

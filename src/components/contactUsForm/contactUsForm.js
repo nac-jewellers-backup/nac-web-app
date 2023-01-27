@@ -39,7 +39,6 @@ const ContactUsForm = (props) => {
 
   // Trigger the email
   const emailTrigger = async (id) => {
-    console.log(id, "????");
     const params = {
       type: "send_enquiry",
       appointment_id: id,
