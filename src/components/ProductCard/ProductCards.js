@@ -7,9 +7,7 @@ import { Link } from "react-router-dom";
 import Pricing from "../Pricing";
 import "./productCard.css";
 
-// let theme = createMuiTheme(require('./../../theme.json'));
-// theme = responsiveFontSizes(theme);
-//theme={outerTheme}
+
 
 const useStyles = makeStyles((theme) => ({
   card: {
@@ -68,7 +66,7 @@ export default function ProductCards(props) {
     dataLoaded: true,
   });
 
-  // placeImage.placeImage.map(img => `${img.img} ${img.size}`).toString()
+
 
   return (
     <Card className={` ${classes.card}`}>
@@ -106,24 +104,7 @@ export default function ProductCards(props) {
         }}
         style={{ textDecoration: "none" }}
       >
-        {/* <a href={} target={"_blank"} style={{ textDecoration: 'none' }}> */}
-        {/* <CardMedia
-          component='img'
-          onMouseOver={() => {
-            setCardState({ ...cardstate, hovered: !cardstate.hovered });
-          }}
-          onMouseOut={() => {
-            setCardState({ ...cardstate, hovered: !cardstate.hovered });
-          }}
-          className={`${props.data.image? 'shine imgDiv' :''}`}
-            image={
-              props.data.image[cardstate.hovered ? "hoverImage" : "placeImage"]
-            }
-            alt=""
-          width='100%'
-          height='auto'
-          title={props.data.title}
-        /> */}
+       
         <img
           srcset={renderImages(props, cardstate)}
           sizes="(max-width: 320px) 320w,
@@ -145,21 +126,7 @@ export default function ProductCards(props) {
           style={{ width: "100%", height: "100%" }}
           className={`${props.data === "" ? "shine" : ""}`}
         />
-        {/* src= {renderImagesSrc(props)} className={`${props.data.image? '' : 'shine '}`} */}
-
-        {/* <CardHeader
-        avatar={
-          <Avatar aria-label="Recipe" className={classes.avatar}>
-            R
-          </Avatar>
-        }
-        action={
-          <IconButton aria-label="Settings">
-            <MoreVertIcon />
-          </IconButton>
-        }
        
-      /> */}
         <CardContent>
           <Pricing
             title={props.data.title}

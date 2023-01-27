@@ -54,7 +54,7 @@ class Component extends React.Component {
   componentDidMount() {
     this.screenWidths();
     window.addEventListener("resize", this.screenWidths);
-    // window.addEventListener("scroll", this.screenWidths);
+ 
   }
 
   screenWidths = () => {
@@ -143,7 +143,7 @@ class Component extends React.Component {
                       &#xf0b0;
                     </i>
                   ) : (
-                    // <ChevronLeftIcon className={`${classes.colorMain}`} />
+                   
                     <i
                       style={{ fontSize: "22px", paddingRight: "15px" }}
                       className={`fa ${classes.colorMain}`}

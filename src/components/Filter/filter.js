@@ -167,20 +167,9 @@ class Component extends React.Component {
       var price_min = Number(this.props.data[0].subFilter["Price Range"].min);
       var price_max = Number(this.props.data[0].subFilter["Price Range"].max);
       var _price_min = CurrencyConversion(Math.round(price_min));
-      // new Intl.NumberFormat("en-IN", {
-      //   style: "currency",
-      //   currency: "INR",
-      //   minimumFractionDigits: 0,
-      // }).format(Math.round(price_min));
+     
       var _price_max = CurrencyConversion(Math.round(price_max));
-      // new Intl.NumberFormat("en-IN", {
-      //   style: "currency",
-      //   currency: "INR",
-      //   minimumFractionDigits: 0,
-      // }).format(Math.round(price_max));
-
-      // checked['pricemax'] = _price_max
-      // checked['pricemin'] = _price_min
+     
       this.setState(checked);
       this.setState({ numOne: _price_min, numTwo: _price_max });
     }
@@ -192,7 +181,7 @@ class Component extends React.Component {
       let price_two;
       let splitSearchParamers = window.location.search.split("&");
       if (splitSearchParamers.length > 0) {
-        // if (splitSearchParamers.length > 2) {
+      
         splitSearchParamers.map((val) => {
           let equalSplit = val.split("=");
           if (splitSearchParamers.length > 2) {
@@ -217,24 +206,15 @@ class Component extends React.Component {
           return 0;
         });
 
-        // if(numOne !== price_one && numTwo !== price_two){
+        
         const price_min = Number(price_one);
         const price_max = Number(price_two);
         const _price_min = CurrencyConversion(Math.round(price_min));
-        // new Intl.NumberFormat("en-IN", {
-        //   style: "currency",
-        //   currency: "INR",
-        //   minimumFractionDigits: 0,
-        // }).format(Math.round(price_min));
+       
         const _price_max = CurrencyConversion(Math.round(price_max));
-        // new Intl.NumberFormat("en-IN", {
-        //   style: "currency",
-        //   currency: "INR",
-        //   minimumFractionDigits: 0,
-        // }).format(Math.round(price_max));
+        
         this.setState({ numOne: _price_min, numTwo: _price_max });
-        // }
-        // }
+        
       }
     }
 
@@ -391,21 +371,12 @@ class Component extends React.Component {
         ? this.props.data[0].subFilter["Price Range"][0].max
         : 0;
       var numOne = CurrencyConversion(Math.round(numberOne));
-      // new Intl.NumberFormat("en-IN", {
-      //   style: "currency",
-      //   currency: "INR",
-      //   minimumFractionDigits: 0,
-      // }).format(Math.round(numberOne));
+    
       var numTwo = CurrencyConversion(Math.round(numberTwo));
-      // new Intl.NumberFormat("en-IN", {
-      //   style: "currency",
-      //   currency: "INR",
-      //   minimumFractionDigits: 0,
-      // }).format(Math.round(numberTwo));
+     
       this.state.Price_button_click === false &&
         this.setState({ numOne: numOne, numTwo: numTwo });
-      // if( this.props.data[0].subFilter['Price Range'].length > 0 && this.props.data[0].subFilter['Price Range'][0] !== undefined){
-      //   this.props.setFilters({pricemax:numberTwo, pricemin:numberOne})}
+     
     }
   }
   delete_val_chips = (value) =>
@@ -477,19 +448,7 @@ class Component extends React.Component {
     let checked = { ...this.state.checked };
    
 
-    // if (Object.entries(this.state.category).length === 0 && this.state.category.constructor === Object) {
-    //   const splitHiphen = () => {
-    //     if (pathnameSplit[1].indexOf('-')) {
-    //       return pathnameSplit[1].split('-')
-    //     }
-    //   }
-    //   var _category_capital_letter = splitHiphen()[0].charAt(0).toUpperCase() + splitHiphen()[0].slice(1)
-    //
-    //   var _category_obj = {}
-    //   _category_obj[_category_capital_letter] = true
-    //   checked['category'] = _category_obj
-    //   this.setState(checked)
-    // }
+   
 
     if (TargetName === undefined) {
       this.clearSortIfFiltersIsEmpty();
@@ -744,17 +703,9 @@ class Component extends React.Component {
         );
       }
       var price_min = CurrencyConversion(Math.round(_price_min));
-      // new Intl.NumberFormat("en-IN", {
-      //   style: "currency",
-      //   currency: "INR",
-      //   minimumFractionDigits: 0,
-      // }).format(Math.round(_price_min));
+    
       var price_max = CurrencyConversion(Math.round(_price_max));
-      // new Intl.NumberFormat("en-IN", {
-      //   style: "currency",
-      //   currency: "INR",
-      //   minimumFractionDigits: 0,
-      // }).format(Math.round(_price_max));
+     
 
       var pricemin =
         price_min.indexOf(",") > -1
@@ -1572,23 +1523,7 @@ class Component extends React.Component {
                     xs={6}
                     style={{ overflow: "scroll", height: "73vh" }}
                   >
-                    {/* <>
-                      <div className="header-chips Chip">
-                        {this.state.chipData.map(data => {
-                          return (
-                            <Chip
-                              className="header-chips-text"
-                              key={data.key}
-                              label={data.label}
-                              onClick={() => this.handleDelete}
-                              avatar={data.label ?
-                                <i className="search-choice-close" class="fa fa-times"></i>
-                                : ""}
-                            />
-                          );
-                        })}
-                      </div>
-                    </> */}
+                    
                     <>
                       {subFilter[
                         this.state.filtercheck && this.state.filtercheck
@@ -1737,101 +1672,7 @@ class Component extends React.Component {
                                   labelPlacement="end"
                                 />
 
-                                {/* <CheckboxWithTick
-                                  color="white"
-                                  value="checked"
-                                  className={`${classes.sublistMobile}`}
-                                  checked={
-                                    this.state.checked[
-                                      this.state.filtercheck &&
-                                        this.state.filtercheck.replace(
-                                          /\s/g,
-                                          ""
-                                        )
-                                    ][row] !== undefined
-                                      ? this.state.checked[
-                                          this.state.filtercheck &&
-                                            this.state.filtercheck.replace(
-                                              /\s/g,
-                                              ""
-                                            )
-                                        ][row]
-                                      : false
-                                  }
-                                  onChange={(e) =>
-                                    this.handleChange(
-                                      row,
-                                      this.state.checked[
-                                        this.state.filtercheck &&
-                                          this.state.filtercheck.replace(
-                                            /\s/g,
-                                            ""
-                                          )
-                                      ][row] !== undefined
-                                        ? !this.state.checked[
-                                            this.state.filtercheck &&
-                                              this.state.filtercheck.replace(
-                                                /\s/g,
-                                                ""
-                                              )
-                                          ][row]
-                                        : true,
-                                      e
-                                    )
-                                  }
-                                  // onChange={(e) => this.handleChange(row12, this.state.checked[row.replace(/\s/g, "")][row12] !== undefined ? !this.state.checked[row.replace(/\s/g, "")][row12] : true, e)}
-                                  icon={
-                                    <CheckBoxOutlineBlankIcon
-                                      fontSize="small"
-                                      style={{ fill: "#000 !important" }}
-                                    />
-                                  }
-                                  checkedIcon={
-                                    <CheckBoxIcon
-                                      fontSize="small"
-                                      style={{ fill: "#000 !important" }}
-                                    />
-                                  }
-                                  name={
-                                    this.state.filtercheck &&
-                                    this.state.filtercheck.replace(/\s/g, "")
-                                  }
-                                  onClick={this.handleDrawerCloseMobile}
-                                />
-                                <ListItemText>
-                                  <Typography
-                                    variant=""
-                                    className={`filter-mbl-font fnts ${classes.colorMainSecondary}`}
-                                  >
-                                    <div
-                                      // onClick={this.handleDrawerCloseMobile}
-                                      onClick={(e) =>
-                                        this.handleChange(
-                                          row,
-                                          this.state.checked[
-                                            this.state.filtercheck &&
-                                              this.state.filtercheck.replace(
-                                                /\s/g,
-                                                ""
-                                              )
-                                          ][row] !== undefined
-                                            ? !this.state.checked[
-                                                this.state.filtercheck &&
-                                                  this.state.filtercheck.replace(
-                                                    /\s/g,
-                                                    ""
-                                                  )
-                                              ][row]
-                                            : true,
-                                          e
-                                        )
-                                      }
-                                    >
-                                      {" "}
-                                      {row}
-                                    </div>
-                                  </Typography>
-                                </ListItemText> */}
+                                {}
                               </>
                             )}
                           </ListItem>
@@ -1841,24 +1682,7 @@ class Component extends React.Component {
                   </Grid>
                 )}
               </Grid>
-              {/* <Grid container item xs={12} className="filterButtonMobile" justify="flex-end">
-                <Paper>
-                    <Button variant="contained" style={{backgroundColor:'rgba(58, 69, 120, 1)', color:'white'}}>
-                      Apply
-                    </Button>
-                </Paper>    
-              </Grid> */}
-              {/* <AppBar color="primary" className="filter-fixed header" >
-                <Grid container item xs={12} justify="flex-end" alignItems="center" style={{ padding: '2%' }}>
-                  <Grid item xs={6}>
-
-                    <Button variant='contained' className={`filterBtnMobile`}>
-                      Apply
-                    </Button>
-                  </Grid>
-                </Grid>
-
-              </AppBar> */}
+             
             </Grid>
             {openMobile ? null : (
               <AppBar

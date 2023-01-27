@@ -45,7 +45,7 @@ class Request extends React.Component {
             },
         };
     }
-    // const { loading: ntx, error: ntxerr, data: ntxdata, makeFetch } = useNetworkRequest('/addquestion', {}, false, {})
+   
     handleChange = (event) => {
         let name = event.target.name;
         let value = event.target.value;
@@ -55,9 +55,7 @@ class Request extends React.Component {
         // if (name === "" && this.state['errors'] && this.state['errorMessage']) {
         this.state['errors'][name] = false
         this.setState((state) => ({ state, [name]: value }))
-        // }
-        // this.setState({ [name]: value }, () => {
-        // })
+       
     }
     handleError = (e) => {
         e.preventDefault();

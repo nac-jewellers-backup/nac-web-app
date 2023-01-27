@@ -29,16 +29,7 @@ const useStyles = makeStyles((theme) => ({
       color: `${theme.palette.primary.main} !important`,
       fontSize: "18px",
     },
-    // .arrow-chek, .MuiSvgIcon-root, .MuiExpansionPanelDetails-root, .MuiExpansionPanelDetails-root
-    // "&.arrow-chek":{
-    //     "&.MuiSvgIcon-root":{
-    //         "&.MuiExpansionPanelDetails-root":{
-    //             "&.MuiExpansionPanelDetails-root":{
-    //                 fill:`${theme.palette.primary.main} important`
-    //             }
-    //         }
-    //     }
-    // }
+   
   },
   paper1: {
     backgroundColor: theme.palette.background.paper,
@@ -54,16 +45,7 @@ const useStyles = makeStyles((theme) => ({
       color: `${theme.palette.primary.main} !important`,
       fontSize: "18px",
     },
-    // .arrow-chek, .MuiSvgIcon-root, .MuiExpansionPanelDetails-root, .MuiExpansionPanelDetails-root
-    // "&.arrow-chek":{
-    //     "&.MuiSvgIcon-root":{
-    //         "&.MuiExpansionPanelDetails-root":{
-    //             "&.MuiExpansionPanelDetails-root":{
-    //                 fill:`${theme.palette.primary.main} important`
-    //             }
-    //         }
-    //     }
-    // }
+  
   },
   checkboxlabel: {
     color: "rgb(109,110,112)",
@@ -228,60 +210,7 @@ export default function MoreFilters(props) {
                                     </Box>
                                   </Box>
 
-                                  {/* <FormControlLabel
-                                    control={
-                                      <div>
-                                        <span
-                                          style={{
-                                            cursor: "pointer",
-                                            fontSize: "12px",
-                                          }}
-                                          onClick={(e) => {
-                                            props.handleClose();
-                                            props.onchoosetype(
-                                              valsub,
-                                              props.checked[
-                                                val && val.replace(/\s/g, "")
-                                              ][valsub] !== undefined
-                                                ? !props.checked[
-                                                    val &&
-                                                      val.replace(/\s/g, "")
-                                                  ][valsub]
-                                                : true,
-                                              e,
-                                              null,
-                                              undefined,
-                                              props.state,
-                                              val ? val.replace(/\s/g, "") : ""
-                                            );
-                                          }}
-                                        >
-                                          {valsub}
-                                        </span>
-                                        <CheckboxWithTick
-                                          color="white"
-                                          label={valsub}
-                                          checked={
-                                            props.checked[
-                                              val.replace(/\s/g, "")
-                                            ] &&
-                                            props.checked[
-                                              val.replace(/\s/g, "")
-                                            ][valsub] !== undefined
-                                              ? props.checked[
-                                                  val.replace(/\s/g, "")
-                                                ] &&
-                                                props.checked[
-                                                  val.replace(/\s/g, "")
-                                                ][valsub]
-                                              : false
-                                          }
-                                          name={val.replace(/\s/g, "")}
-                                        />
-                                      </div>
-                                    }
-                                    labelPlacement="start"
-                                  /> */}
+                             
                                 </Grid>
                               );
                             } else {

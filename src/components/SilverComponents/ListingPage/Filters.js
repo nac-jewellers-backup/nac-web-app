@@ -21,7 +21,7 @@ import HeaderHoverMenuItem from "./../HoverNavBarListing/HeaderHoverMenuItem";
 import styles from "./style";
 const Filters = (props) => {
   const {
-    // setSort, setloadingfilters, setPriceMax, setPriceMin,
+   
     ListingPageCtx,
   } = React.useContext(ListingPageContext);
 
@@ -90,7 +90,7 @@ const Filters = (props) => {
   };
   const classes = styles();
   const { filters, filtercheck } = state;
-  // const {openFilters} = openFilters
+
   const { sortOptions } = props;
   const id = state.targetopen ? "simple-popper" : undefined;
   return (
@@ -160,8 +160,7 @@ const Filters = (props) => {
                     tabdata={props.data[0]}
                     filters={true}
                     listHoverItem={props.data[0].subFilter[state.listHoverItem]}
-                    // onMouseOver={(event) => { setState({ Menuopen: true }) }}
-                    // onMouseLeave={() => { setState({ Menuopen: false, targetopen: null }) }}
+                  
                     opened={state.Menuopen}
                     targetopened={state.targetopen}
                     _width={state._width}
@@ -254,13 +253,7 @@ const Filters = (props) => {
                   height: "73vh",
                 }}
               >
-                {/* {chck_res ?
-                    <ListItemText
-                      className='filter-mbl-font filter-mbl-fonts'
-                    >
-                      llllccc
-                        </ListItemText>
-                    : ""} */}
+               
                 <List className="mbl-filter-list">
                   {props.data[0].filter.map((row) => (
                     <ListItem
@@ -274,7 +267,7 @@ const Filters = (props) => {
                     </ListItem>
                   ))}
                 </List>
-                {/* {console.info('data-filter', subFilter, state.filtercheck)} */}
+              
               </Grid>
               {filtercheck !== "" && (
                 <Grid
@@ -315,7 +308,7 @@ const Filters = (props) => {
                                 e
                               )
                             }
-                            // onChange={(e) => handleChange(row12, state.checked[row.replace(/\s/g, "")][row12] !== undefined ? !state.checked[row.replace(/\s/g, "")][row12] : true, e)}
+                            
                             icon={<CheckBoxOutlineBlankIcon fontSize="small" />}
                             checkedIcon={<CheckBoxIcon fontSize="small" />}
                             name={filtercheck.replace(/\s/g, "")}

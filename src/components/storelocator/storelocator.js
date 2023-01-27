@@ -8,10 +8,7 @@ import getDirections from "../../assets/storeDirection.png";
 export default function Storelocator(props) {
   const value = props.value;
   const classes = style();
-  // const handleRoute = (key) => {
-  //   localStorage.setItem("storeKey", key);
-  //   window.location.pathname = "/static-loc" ;
-  // };
+
 
   return (
     <div className={classes.mainWidths}>
@@ -37,7 +34,14 @@ export default function Storelocator(props) {
                     />
                   </Grid>
                   <Grid item sm={12} md={1} lg={1} xs={12}></Grid>
-                  <Grid item xs={12} sm={12} md={7} lg={7}>
+                  <Grid
+                    className={classes.storeCenter}
+                    item
+                    xs={12}
+                    sm={12}
+                    md={7}
+                    lg={7}
+                  >
                     <div className={classes.pads}>
                       <Typography className={classes.title}>
                         {store.title}
@@ -46,14 +50,7 @@ export default function Storelocator(props) {
                         dangerouslySetInnerHTML={{ __html: store.para }}
                         className={classes.para}
                       ></Typography>
-                      {/* <div>
-                        <Button
-                          onClick={() => handleRoute(store.key)}
-                          className={classes.ViewButton}
-                        >
-                          &nbsp;&nbsp;{store.button}&nbsp;&nbsp;
-                        </Button>
-                      </div> */}
+                     
                       <div>
                         <a
                           style={{ textDecoration: "none" }}
@@ -62,11 +59,12 @@ export default function Storelocator(props) {
                         >
                           <Button
                             onClick={() => {
-                              window.location.pathname = "/loc/" + store.key;
+                              localStorage.setItem("storeKey", store?.key)
+                              window.location.pathname = "/loc";
                             }}
                             className={classes.ViewButton}
                           >
-                            &nbsp;&nbsp;{store.button}&nbsp;&nbsp;
+                            &nbsp;&nbsp;{store?.button}&nbsp;&nbsp;
                           </Button>
                         </a>
                       </div>

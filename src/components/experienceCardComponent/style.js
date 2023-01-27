@@ -10,12 +10,19 @@ const ExperienceCardStyles = makeStyles((theme) => ({
 
   bgImage: {
     "& img": {
+      [theme.breakpoints.down("xs")]: {
+        height: "100%",
+      },
       width: "100%",
       height: "1000px",
     },
   },
 
   mainCard: {
+    [theme.breakpoints.down("xs")]: {
+      position: "relative",
+      margin:"0px 18px 14px"
+    },
     position: "absolute",
     alignSelf: "center",
   },
@@ -29,6 +36,9 @@ const ExperienceCardStyles = makeStyles((theme) => ({
   viewContent: {
     height: "fit-content",
     padding: "35px !important",
+    [theme.breakpoints.down("xs")]: {
+      padding: "30px 5px !important",
+    },
   },
 
   cardContainer: {
@@ -50,6 +60,9 @@ const ExperienceCardStyles = makeStyles((theme) => ({
     marginTop: "50px",
     "& p": {
       fontSize: "18px",
+      [theme.breakpoints.down("xs")]: {
+        fontSize: "13px",
+      }, 
     },
   },
 
@@ -60,6 +73,14 @@ const ExperienceCardStyles = makeStyles((theme) => ({
       fontSize: "17px",
       marginBottom: "0px",
       marginTop: "0px",
+      [theme.breakpoints.down("xs")]: {
+        fontSize: "13px !important",
+      }, 
+      "& span":{
+        [theme.breakpoints.down("xs")]: {
+          fontSize: "13px !important",
+        }, 
+      }
     },
   },
 
@@ -72,6 +93,9 @@ const ExperienceCardStyles = makeStyles((theme) => ({
       fontSize: "18px",
       color: "grey",
       marginBottom: "4px",
+        [theme.breakpoints.down("xs")]: {
+          fontSize: "13px !important",
+        }, 
     },
   },
 

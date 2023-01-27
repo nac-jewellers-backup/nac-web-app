@@ -6,7 +6,7 @@ import Hidden from "@material-ui/core/Hidden";
 import { withStyles } from "@material-ui/core/styles";
 import Story from "../../components/story";
 import HomeCard from "../../components/homecard";
-// import {styles} from './homestyle';
+
 import Testimonial from "../../components/testimonial/testimonial";
 import { storyData } from "mappers/dummydata/homeNac";
 import Header from "components/SilverComponents/Header";
@@ -21,11 +21,7 @@ const styles = (theme) => ({
   
     // backgroundRepeat: "no-repeat !important",
     opacity: "1!important",
-    // backgroundImage:
-    //   "url(https://alpha-assets.stylori.com/images/static/slider_icon.png)!important",
-    // backgroundPosition: "-27px -229px!important",
-    // background-color: #fff!important;
-    // border: 1px solid #ccc;
+   
     borderLeft: 0,
     background: "none",
     left: 0,
@@ -63,14 +59,9 @@ const styles = (theme) => ({
     },
   },
   nextButton: {
-    // backgroundImage:
-    //   "url(https://alpha-assets.stylori.com/images/static/slider_icon.png)!important",
     
-    // backgroundRepeat: "no-repeat!important",
     opacity: "1!important",
-    // backgroundPosition: "-160px -229px!important",
-    // backgroundColor: "#fff!important",
-    // border: "1px solid #ccc",
+   
     "& svg":{
       fontSize:'3rem'
     },

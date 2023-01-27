@@ -9,8 +9,7 @@ const useStyles = makeStyles(theme => ({
         margin: "auto"
     },
     houseofnac: {
-        // backgroundImage: 'url(' + styloriGagets + ')',
-        // backgroundPosition: "-520px 52px",
+      
         width: "60%",
         height: "auto",
         margin: " 0 auto"
@@ -22,10 +21,7 @@ export default function ListDividers() {
 
     return (
         <Grid container className={classes.root}>
-            {/* <Grid item style={{ width: "60%", margin: "auto" }}>
-                wg
-                <div className={classes.houseofnac}></div>
-            </Grid> */}
+           
             <img className={classes.houseofnac} src={styloriGagets} loading="lazy" alt='...'/>
         </Grid>
     );

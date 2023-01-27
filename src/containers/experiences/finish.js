@@ -22,9 +22,7 @@ export default function FinishCard(props) {
     
     return (
         <>
-          {/* <Box className={classes.back}>
-                  <Button variant='contained' onClick={props.back} style={{background:"#B3821F",color:"#fff"}}>Back</Button>
-          </Box> */}
+         
           <Grid item lg={5} xl={5} xs={12} sm={12} className={classes.cardSpace}>        
                 <Card className={classes.Cardview}>
                       <CardContent style={{display:"flex"}}>

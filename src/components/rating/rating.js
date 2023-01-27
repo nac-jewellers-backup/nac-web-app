@@ -12,10 +12,7 @@ const Star = ({ selected = false, onClick = f => f }) =>
             </div>}
     </div>
 
-// Star.propTypes = {
-//   selected: React.PropTypes.bool,
-//   onClick: React.PropTypes.func
-// }
+
 const Ratings = (props) => {
     const { ProductDetailCtx: { ratingcounts, setratingcountsclear }, setratingcounts } = React.useContext(ProductDetailContext);
     return <Component setratingcounts={setratingcounts}  {...props} ratingcounts={ratingcounts} setratingcountsclear={setratingcountsclear} />

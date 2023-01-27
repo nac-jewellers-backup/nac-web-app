@@ -32,8 +32,7 @@ function HeaderHoverMenuItem(props) {
   const classHover = props.filters
     ? classes.mouseOverPopoverfilters
     : classes.mouseOverPopoverHeader;
-  // onMouseOver={onMouseOver} onMouseLeave={onMouseLeave}
-  // listHoverItem
+
   const onClose = () => {
     setOpens(false);
   };

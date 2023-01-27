@@ -30,10 +30,7 @@ class ProductDescription extends Component {
 
   render() {
     const { classes } = this.props;
-    // let path = window.location.pathname.split('/').pop();
    
-
-    // const descriptionData = this.props.data;
     const settings =
       this.props.data && this.props.data[0] && this.props.data[0].dataCarousel;
     const fadeImages =

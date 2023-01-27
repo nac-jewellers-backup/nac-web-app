@@ -307,7 +307,7 @@ export default function Footer(props) {
           Title: "Blog",
         },
         {
-          url: "/temple-work",
+          url: "/templeWork",
           Title: "Temple Work",
         },
         {
@@ -327,7 +327,7 @@ export default function Footer(props) {
           heading: "Know Your Jewellery",
         },
         {
-          url: "/collections",
+          url: "/jewellery",
           Title: "Collections",
         },
         {
@@ -335,7 +335,7 @@ export default function Footer(props) {
           Title: "Diamond Guide",
         },
         {
-          url: "/productcare",
+          url: "/birthStones",
           Title: "Birthstones Guide",
         },
         {
@@ -386,7 +386,7 @@ export default function Footer(props) {
           Title: "+91 95974 57555 - WhatsApp",
         },
         {
-          url: "/static-careersPage",
+          url: "/careers",
           Title: "Careers",
         },
       ],
@@ -403,37 +403,37 @@ export default function Footer(props) {
         },
         {
           subTitle: "Temple Work",
-          url: "/temple-work",
+          url: "/templeWork",
         },
         {
           subTitle: "In The News",
-          url: "/temple-work",
+          url: "/newsroom",
         },
         {
           subTitle: "Advertisements",
-          url: "/temple-work",
+          url: "/advertising",
         },
       ],
     },
     {
-      url: "/careers",
+      url: "/productcare",
       Title: "Know Your Jewellery",
       content: [
         {
           subTitle: "Collections",
-          url: "/stories",
+          url: "/jewellery",
         },
         {
           subTitle: "Diamond Guide",
-          url: "/temple-work",
+          url: "/productcare",
         },
         {
           subTitle: "Birthstones Gudide",
-          url: "/temple-work",
+          url: "/birthStones",
         },
         {
           subTitle: "Jewellery Care",
-          url: "/temple-work",
+          url: "/productcare",
         },
       ],
     },
@@ -456,7 +456,7 @@ export default function Footer(props) {
       ],
     },
     {
-      url: "/advertising",
+      url: "/contactus",
       Title: "Contact us",
       content: [
         {
@@ -479,70 +479,12 @@ export default function Footer(props) {
     },
   ];
 
-  // const status = (response) => {
-  //   if (
-  //     (response.status >= 200 && response.status < 300) ||
-  //     response.status === 409
-  //   ) {
-  //     if (response.status === 409) setStateClassname("snackBarError");
-  //     else setStateClassname("snackBar");
-  //     return Promise.resolve(response);
-  //   } else {
-  //     return Promise.reject(new Error(response.statusText));
-  //   }
-  // };
-
-  // const json = (response) => {
-  //   return response.json();
-  // };
+  
+ 
   const handleClose = () => {
     setOpen(false);
   };
-  // const handleChage = (e) => {
-  //   setState(e.target.value);
-  //   var element = document.getElementById("_button");
-  //   var element_input = document.getElementById("_input");
-  //   element_input.classList.remove("error");
-  //   element.classList.remove("error");
-  // };
-  // const handleEmail = (e) => {
-  //   var element = document.getElementById("_button");
-  //   var element_input = document.getElementById("_input");
-  //   element_input.classList.remove("error");
-  //   element.classList.remove("error");
-  //   var emailvld =
-  //     /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  //   if (!document.getElementById("_input").value.length > 0) {
-  //     element_input.classList.add("error");
-  //     element.classList.add("error");
-  //     return;
-  //   } else if (
-  //     !Boolean(document.getElementById("_input").value.match(emailvld))
-  //   ) {
-  //     element_input.classList.add("error");
-  //     element.classList.add("error");
-  //     return;
-  //   } else if (
-  //     document.getElementById("_input").value.length > 0 &&
-  //     document.getElementById("_input").value.match(emailvld)
-  //   ) {
-  //     fetch(`${API_URL}/addemailsubscription`, {
-  //       method: "post",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify({
-  //         email: state,
-  //       }),
-  //     })
-  //       .then(status)
-  //       .then(json)
-  //       .then(async (val) => {
-  //         setMessage(val.message);
-  //         setOpen(true);
-  //       });
-  //   }
-  // };
+ 
   return (
     <Grid
       container
@@ -633,16 +575,7 @@ export default function Footer(props) {
                         el="noopener noreferrer"
                         href={`http://www.twitter.com/share?url=${window.location.href}`}
                       >
-                        {/* <i
-                          style={{
-                            fontSize: "24px",
-                            color: "#434e77",
-                            paddingLeft: "5%",
-                          }}
-                          className="fa"
-                        >
-                          &#xf099;
-                        </i>{" "} */}
+                       
                         <img
                           src={
                             "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_footer/Path+53.svg"
@@ -731,16 +664,7 @@ export default function Footer(props) {
                         el="noopener noreferrer"
                         href="https://in.pinterest.com/stylori2015/"
                       >
-                        {/* <i
-                          style={{
-                            fontSize: "24px",
-                            color: "#434e77",
-                            paddingLeft: "5%",
-                          }}
-                          className="fa "
-                        >
-                          &#xf231;
-                        </i> */}
+                        
                         <img
                           src={
                             " https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_footer/nQjOPg.tif.svg"
@@ -772,7 +696,7 @@ export default function Footer(props) {
                   boxShadow: "4px 4px 4px #A5A4A5",
                 }}
                 onClick={() => {
-                  window.location.href = "/static-store";
+                  window.location.href = "/store";
                 }}
               >
                 &nbsp;Store Locator&nbsp;
@@ -798,11 +722,10 @@ export default function Footer(props) {
                   style={{
                     display: "flex",
                     color: "#6b6b6b",
-                  }}
-                >
+                  }}>
                   {" "}
                   <Grid item>
-                    <Link className={classes.linkTextmlg} to="/sitemap">
+                    <Link className={classes.linkTextmlg} onClick={() => {window.location.href = "/siteMap"}}>
                       SITEMAP &nbsp;{" "}
                     </Link>
                   </Grid>
@@ -933,7 +856,7 @@ export default function Footer(props) {
                 borderRadius: "0px",
               }}
               onClick={() => {
-                window.location.href = "/static-store";
+                window.location.href = "/store";
               }}
             >
               Store Locator
@@ -1082,7 +1005,7 @@ export default function Footer(props) {
         >
           {" "}
           <Grid item>
-            <Link className={classes.linkTextm} to="/sitemap">
+            <Link className={classes.linkTextm} to="/siteMap">
               SITEMAP &nbsp;{" "}
             </Link>
           </Grid>

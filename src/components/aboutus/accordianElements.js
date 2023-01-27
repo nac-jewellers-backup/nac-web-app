@@ -152,9 +152,6 @@ export default function AccordianElement(props) {
                           className={classes.details}
                           dangerouslySetInnerHTML={{ __html: value.faqTitle11 }}
                         ></Typography>
-                        {/* <Typography style={{ fontWeight: 700, color: "#5d5d5d", fontSize: "15px", paddingBottom: "8px", paddingTop: "8px" }}>
-                                                {value.faqSubtitle}
-                                            </Typography> */}
                         <Typography
                           dangerouslySetInnerHTML={{ __html: value.faqPara }}
                           style={{

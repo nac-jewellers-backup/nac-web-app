@@ -14,26 +14,7 @@ import { withStyles } from '@material-ui/core/styles';
 import styles from './style'
 import { ProductDetailContext } from 'context/ProductDetailContext';
 
-// imgleft: {
-//     backgroundImage: "url(https://alpha-assets.stylori.com/images/static/slider_icon.png) !important",
-//     backgroundPosition: "-27px -229px !important",
-//     width: "35px !important",
-//     height: "44px !important",
-//     backgroundRepeat: "no-repeat !important",
-//     float: "left",
-//     backgroundColor: "#fff",
-//     borderLeft: " 0px"
-// },
-// imgRight: {
-//     backgroundImage: "url(https://alpha-assets.stylori.com/images/static/slider_icon.png) !important",
-//     backgroundPosition: "-160px -229px !important",
-//     width: "35px !important",
-//     height: " 44px !important",
-//     backgroundRepeat: 'no-repeat !important',
-//     float: 'right',
-//     backgroundColor: '#fff',
-//     borderRight: '0px'
-// },
+
 function TabContainer({ children, dir }) {
     return (
         <Typography component="div" dir={dir} style={{ padding: 8 * 3 }}>
@@ -187,7 +168,7 @@ class Component extends React.Component {
         const previous = () => {
             slider.current.slickPrev();
         }
-        // data[0].productTabs[0].tab2.Children
+  
         return (
             <div>
                 {data[0].productTabs.map(val => {
@@ -203,7 +184,7 @@ class Component extends React.Component {
                                 <Grid item lg={9} xs={12} style={{ padding: "0px 5px 0px 5px" }}>
                                     {arr.length > 0 ?
                                         <>
-                                            <Grid container style={{ width: "100%" }} className={classes.pagination} style={{ overflow: "hidden" }}>
+                                            <Grid container style={{ width: "100%", overflow: "hidden" }} className={classes.pagination}>
                                                 <Grid item style={{ width: "8%", alignItems: "center", justifyContent: "center", display: "flex" }}>
                                                     <img loading="lazy" alt='...' onClick={() => previous()} className={"icon-leftcaro"} />
 

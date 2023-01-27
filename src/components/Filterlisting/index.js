@@ -125,19 +125,7 @@ class ProductDescription extends Component {
                   {/* window.location.pathname.split('/').pop()  */}
                 </Grid>
               </Hidden>
-              {/* <Hidden smDown >
-                                <Grid
-                                    item
-                                    xs={6}
-                                    className={`DescriptionTitle`}
-                                    style={{ textAlign: 'center' }}
-                                >
-                                    <Typography className={`${classes.TypoDark}`} variant='h1' component='h1'>
-                                        {renderTitle()}
-
-                                    </Typography>
-                                </Grid>
-                            </Hidden> */}
+             
               <Hidden mdUp>
                 <Grid
                   item

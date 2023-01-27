@@ -4,11 +4,10 @@ import CollectionCardsStyles from "./style";
 import { useHistory } from "react-router-dom";
 
 const CollectionCards = (props) => {
-  console.log("propppp", props);
   let history = useHistory();
   const classes = CollectionCardsStyles();
   const handleRoute = (url) => {
-    history.push(url);
+    window.open(url, "_blank")
   }
   return (
     <div className={classes.main}>

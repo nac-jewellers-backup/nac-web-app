@@ -26,16 +26,30 @@ import { StoreLocationDetails } from "components";
 import ExperienceBanner from "components/experienceBanner/experienceBanner";
 import ExperienceCardComp from "components/experienceCard/experienceCard";
 import { ExperienceCards } from "components/experienceCardComponent";
+import { BlogImageCard } from "components/blogImageCard";
+import { SiteMapNew } from "components/siteMapNew";
+import TempleWorkBannerComp from "components/TempleWorkBannerComp";
+import TempleCardComp from "components/templeCardComp";
+import TempleProducts from "components/TempleProducts";
+import TempleFooterComp from "components/templeFootComp";
+import TempleCardDetailComp from "components/templeCardDetailComp";
+import { useLocation } from "react-router-dom";
 
 function CdnPages(props) {
   // view more button click state
   const [count, setCount] = useState(3);
 
-  // card content send to form apllication state
-  const [content, setContent] = useState("");
-
   // card and form hide, show state
   const [enable, setEnable] = useState(false);
+
+  // Title comp show and hide
+  const [showCard, setShowCard] = useState(false);
+
+  const [templeShowDetail, setTempleShowDetail] = React.useState(false)
+
+  const handleClick = () => {
+    setTempleShowDetail(!templeShowDetail)
+  }
 
   // Career page view more button click function
 
@@ -45,24 +59,18 @@ function CdnPages(props) {
 
   // Career page card apply now button click function
 
-  const careerCardApplyNow = (value) => {
-    setContent(value);
-    setEnable(!enable);
+
+  const showTitle = () => {
+    setShowCard(!showCard);
   };
 
   // Career page form submit click function
 
-  const formSubmitClick = () => {
-    setEnable(!enable);
-  };
+  const location = useLocation();
+
 
   useEffect(() => {
-    let url =""; 
-    if(window.location.pathname === "/pongal&Sankranti"){
-      url = "pongal&Sankranti"
-    }else{
-      url = window.location.pathname.split("-")[1];
-    } 
+    const url = window.location.pathname.split("/")[1];
     fetch(`${API_URL}/graphql`, {
       method: "post",
       headers: {
@@ -75,14 +83,12 @@ function CdnPages(props) {
       .then((res) => res.json())
       .then((data) => {
         //feature product
-        console.log("cdnData",data);
         const dataRecieved = JSON.parse(data.data.cdnByPage.data);
-        if(data.data.cdnByPage.isActive){
+        if (data.data.cdnByPage.isActive) {
           setState(dataRecieved);
         }
       });
-  }, []);
-  // console.log(url, "url ");
+  }, [location]);
 
   const [state, setState] = useState([]);
   const handleComponents = (val) => {
@@ -107,7 +113,7 @@ function CdnPages(props) {
         );
       }
       case "titleComp": {
-        return <Title title={val?.props?.title} />;
+        return !showCard && <Title title={val?.props?.title} />;
       }
       case "SlideImgMediaCard": {
         return <SlideImgMediaCard listProduct={val?.props?.listingProducts} />;
@@ -122,18 +128,18 @@ function CdnPages(props) {
         return <CustomBanner value={val?.props?.banners} />;
       }
       case "CareerCard": {
-        return !enable ? (
+        return (
           <CustomCard
             value={val?.props?.cardContent.filter(
               (value, index) => index < count
             )}
             handleRequest={careerViewMoreClick}
-            enable={enable}
-            buttonClick={careerCardApplyNow}
-          />
-        ) : (
-          <CustomApplication data={content} handleClick={formSubmitClick} />
-        );
+            {...props}
+            />
+        )
+      }
+      case "ResumeComp": {
+        return <CustomApplication location={location} />;
       }
       case "CollectionHeader": {
         return <CollectionHeader value={val?.props?.header} />;
@@ -207,6 +213,60 @@ function CdnPages(props) {
         return <ExperienceCards value={val?.props} />;
       }
 
+      case "blogPageCard": {
+        return (
+          <BlogImageCard
+            value={val?.props?.cardContent}
+            handleShow={showTitle}
+          />
+        );
+      }
+
+      case "siteMap":{
+        return (
+          <SiteMapNew value={val?.props}/>
+        )
+      }
+
+      case "TempleWorkBannerComponent": {
+        return (
+          <TempleWorkBannerComp
+            banners={val?.props?.banners}
+            dataCarousel={
+              val?.props?.banners.length > 1 ? "multiple" : "single"
+            }
+          />
+        );
+      }
+      case "TempleCardComponent": {
+        return templeShowDetail === false &&
+          <TempleCardComp
+            data={val?.props?.CardData}
+            handleClick={handleClick}
+          />
+      }
+
+      case "TempleProducts": {
+        return templeShowDetail === false &&
+          <TempleProducts
+            data={val?.props?.listingItems}
+          />
+      }
+
+
+      case "FooterComponent": {
+        return templeShowDetail === false &&
+          <TempleFooterComp
+            data={val?.props?.content}
+          />
+      }
+
+      case "TempleCardDetailsComponent": {
+        return templeShowDetail === true &&
+          <TempleCardDetailComp
+            data={[val?.props?.detailData]}
+          />;
+      }
       default: {
         return <h1></h1>;
       }

@@ -135,14 +135,12 @@ const Quantity = (props) => {
     _updateQuantityApi();
     const _funcUpdate = () => {
       let { quantity } = filters;
-      // quantity[props.data[0].skuId] = state.qty;
+  
       let localStorageQuantity = localStorage.getItem("quantity")
         ? JSON.parse(localStorage.getItem("quantity"))
         : null;
 
-      // if(localStorageQuantity && localStorageQuantity[props.data[0].skuId] !== state.qty){
-      //   setFilters({ ...filters, quantity });
-      // }
+     
 
       if (!localStorageQuantity) {
         if (
@@ -210,7 +208,7 @@ const Quantity = (props) => {
       quantity[props.data[0].skuId] = state.qty;
     }
 
-    // _updateQuantityApi()
+    
   }, []);
 
   const { classes, cart, pdpage } = props;

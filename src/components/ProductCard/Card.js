@@ -57,6 +57,7 @@ const Gallery = (
         style={{ textDecoration: "none" }}
         target="_blank"
         onClick={handleProductDetatiContext(props)}
+        aria-label="...."
       >
         {props.similarProducts ? (
           <>
@@ -367,7 +368,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const renderImages = (props, cardstate) => {
-  console.log(props, "???")
   if (props.static) {
     return props.image;
   } else {
@@ -480,11 +480,7 @@ function Component(props) {
                             }}
                           >
                             {CurrencyConversion(props.data.price)}
-                            {/* {new Intl.NumberFormat("en-IN", {
-                              style: "currency",
-                              currency: "INR",
-                              minimumFractionDigits: 0,
-                            }).format(Math.round(props.data.price))} */}
+                            
                           </Typography>
                         ) : (
                           <Typography
@@ -500,11 +496,7 @@ function Component(props) {
                             }}
                           >
                             {CurrencyConversion(props.data.price)}
-                            {/* {new Intl.NumberFormat("en-IN", {
-                              style: "currency",
-                              currency: "INR",
-                              minimumFractionDigits: 0,
-                            }).format(Math.round(props.data.price))} */}
+                        
                             <span
                               style={{ display: "flex", alignSelf: "center" }}
                             >
@@ -529,13 +521,7 @@ function Component(props) {
                                           props.data.offerPrice
                                         )
 
-                                      // new Intl.NumberFormat("en-IN", {
-                                      //     style: "currency",
-                                      //     currency: "INR",
-                                      //     minimumFractionDigits: 0,
-                                      //   }).format(
-                                      //     Math.round(props.data.offerPrice)
-                                      // )
+                                      
                                     }
                                   </span>
                                 </span>
@@ -588,11 +574,7 @@ function Component(props) {
                             }}
                           >
                             {CurrencyConversion(props.data.price)}
-                            {/* {new Intl.NumberFormat("en-IN", {
-                              style: "currency",
-                              currency: "INR",
-                              minimumFractionDigits: 0,
-                            }).format(Math.round(props.data.price))} */}
+                           
                           </Typography>
                         ) : (
                           <Grid container>
@@ -607,11 +589,7 @@ function Component(props) {
                                 }}
                               >
                                 {CurrencyConversion(props.data.price)}
-                                {/* {new Intl.NumberFormat("en-IN", {
-                                  style: "currency",
-                                  currency: "INR",
-                                  minimumFractionDigits: 0,
-                                }).format(Math.round(props.data.price))} */}
+                              
                               </Typography>
                               <span
                                 style={{
@@ -626,13 +604,7 @@ function Component(props) {
                                     ? " "
                                     : CurrencyConversion(props.data.offerPrice)
 
-                                  // new Intl.NumberFormat("en-IN", {
-                                  //     style: "currency",
-                                  //     currency: "INR",
-                                  //     minimumFractionDigits: 0,
-                                  //   }).format(
-                                  //     Math.round(props.data.offerPrice)
-                                  //   )
+                                 
                                 }
                               </span>
                             </Grid>

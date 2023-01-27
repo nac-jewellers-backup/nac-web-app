@@ -10,3 +10,14 @@ export const CDNPAGES = (url) => {
       }
     `;
 } 
+
+export const ALLCDNPAGES = `query MyQuery {
+  allCdns {
+    nodes {
+      page
+      data
+      isActive
+    }
+  }
+}
+`;

@@ -17,7 +17,7 @@ const UseStyles = makeStyles((theme) => ({
         textAlign: "center",
         [theme.breakpoints.down("xs")]: {
             fontSize: "18px !important",
-          },
+        },
     },
     sub: {
         color: "gray",
@@ -25,7 +25,7 @@ const UseStyles = makeStyles((theme) => ({
         textAlign: "center",
         [theme.breakpoints.down("xs")]: {
             fontSize: "15px !important",
-          },
+        },
     },
     sub2: {
         textAlign: "center",
@@ -34,7 +34,7 @@ const UseStyles = makeStyles((theme) => ({
         marginTop: "10px",
         [theme.breakpoints.down("xs")]: {
             fontSize: "13px !important",
-          },
+        },
     },
     type: {
         display: "flex",

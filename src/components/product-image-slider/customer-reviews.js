@@ -58,11 +58,7 @@ class CustomerReviews extends React.Component {
       ) {
         value = (
           <>
-            {/* <div style={{ display: "flex", marginTop: "15px" }}>
-              {[1, 2, 3, 4, 5].map((n, i) => (
-                <Star key={i} selected={i < val.rating} onClick={() => this.change(i + 1)} />
-              ))}
-            </div> */}
+            
             <button
               style={{
                 borderRadius: "0px",
@@ -166,11 +162,7 @@ class CustomerReviews extends React.Component {
       }
       return value;
     });
-  componentDidUpdate(prevProps) {
-    // const rating = rating.CodData.data ? rating.CodData.data : ""
-    // const rating_if = this.props.rating && this.props.rating.CodData && this.props.rating.CodData.data
-    // if (rating_if !== prevProps.rating.CodData && rating.CodData.data) this.rat_map_message()
-  }
+
   next = () => {
     this.slider.current.slickNext();
   };

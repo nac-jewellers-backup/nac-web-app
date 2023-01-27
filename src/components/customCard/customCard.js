@@ -1,16 +1,23 @@
 import { Button, Card, Hidden, Typography } from "@material-ui/core";
 import React from "react";
 import CustomCardStyles from "./style";
+import { withRouter } from "react-router";
 
 const CustomCard = (props) => {
   const classes = CustomCardStyles();
 
+  const careerCardApplyNow = (value) => {
+    // props.history.push({ pathname: "/careerDetails", state: value }); 
+    // window.location.href = "/careerDetails";
+  };
+
   return (
     <>
       {/* TITLE */}
-
       <div className={classes.title}>
-        <Typography>{(props?.value.length > 0) ? "Current Openings" : "No Current Openings" }</Typography>
+        <Typography>
+          {props?.value.length > 0 ? "Current Openings" : "No Current Openings"}
+        </Typography>
       </div>
       <Hidden xsDown>
         {props?.value?.map((e) => {
@@ -26,7 +33,7 @@ const CustomCard = (props) => {
                   </div>
                 </div>
                 <div className={classes.right}>
-                  <Button disabled={true} onClick={() => props?.buttonClick(e)}>
+                  <Button onClick={() => careerCardApplyNow(e)}>
                     {e?.button_Text}
                   </Button>
                 </div>
@@ -44,7 +51,7 @@ const CustomCard = (props) => {
       <Hidden smUp>
         {props?.value?.map((val) => {
           return (
-            <Card className={classes.cardMobile} style={{width:"100%"}}>
+            <Card className={classes.cardMobile} style={{ width: "100%" }}>
               <div className={classes.roleLayer}>
                 <div className={classes.roleMobile}>
                   <Typography>{val?.job_Role}</Typography>
@@ -58,8 +65,7 @@ const CustomCard = (props) => {
               </div>
               <div className={classes.buttonLayer}>
                 <Button
-                  onClick={() => props?.buttonClick(val)}
-                  disabled={true}
+                  onClick={() => careerCardApplyNow(val)}
                   className={classes.buttonMobile}
                 >
                   {val?.button_Text}
@@ -70,9 +76,8 @@ const CustomCard = (props) => {
         })}
       </Hidden>
 
-      
       {/* VIEW MORE */}
-      {(props?.value.length > 0) && (
+      {props?.value.length > 0 && (
         <Hidden xsDown>
           <div className={classes.viewMore}>
             <Button onClick={props?.handleRequest}>View More</Button>
@@ -81,10 +86,13 @@ const CustomCard = (props) => {
       )}
 
       {/* VIEW MORE MOBILE */}
-      {(props?.value.length > 0) && (
+      {props?.value.length > 0 && (
         <Hidden smUp>
           <div className={classes.viewMoreMobile}>
-            <div onClick={props?.handleRequest} className={classes.viewMoreButton}>
+            <div
+              onClick={props?.handleRequest}
+              className={classes.viewMoreButton}
+            >
               View More
             </div>
           </div>
@@ -94,4 +102,4 @@ const CustomCard = (props) => {
   );
 };
 
-export default CustomCard;
+export default withRouter(CustomCard);

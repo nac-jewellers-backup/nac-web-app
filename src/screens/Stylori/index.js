@@ -1,13 +1,41 @@
-import React, { Component } from 'react';
-import {FilterOptionsProvider} from 'context'
-import ProductListing from 'containers/ProductListing'
-import { CartProvider } from 'context'
+import React, { Component } from "react";
+import { FilterOptionsProvider } from "context";
+import ProductListing from "containers/ProductListing";
+import { CartProvider } from "context";
+import { ALLCDNPAGES } from "queries/cdnPages";
+import { API_URL } from "../../config";
+import CdnPages from "screens/CdnPages";
 
 export default class Stylori extends Component {
   constructor(props) {
-    super(props)
+    super(props);
+    this.state = {
+      cmspage: false,
+      // window.location.pathname.split("-")[1]
+    };
   }
 
+  componentDidMount() {
+    fetch(`${API_URL}/graphql`, {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        query: ALLCDNPAGES,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        const dataRecieved = data.data.allCdns.nodes;
+        const pages = dataRecieved?.map((val) => val.page);
+        const isCdnPage = pages.includes(window.location.pathname.split("/")[1]);
+        this.setState({
+          ...this.state,
+          cmspage: isCdnPage,
+        });
+      });
+  }
 
   render() {
     // const fadeImages = [
@@ -24,14 +52,14 @@ export default class Stylori extends Component {
     //   fade: true,
     //   arrows: false
     // }
-    return (
-      <FilterOptionsProvider >
-          <CartProvider>
-     <ProductListing /> 
-     </CartProvider>
-     </FilterOptionsProvider>
-
-
-    )
+    return this.state.cmspage ? (
+      <CdnPages {...this.props} />
+    ) : (
+      <FilterOptionsProvider>
+        <CartProvider>
+          <ProductListing />
+        </CartProvider>
+      </FilterOptionsProvider>
+    );
   }
 }

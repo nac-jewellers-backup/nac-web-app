@@ -5,68 +5,7 @@ import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import { HomeSlider } from './carouselData'
 import './home.css'
-// const tile1 = [
-//     {
-//         img1: 'https://assets-cdn.stylori.com/276x276/images/homepage/276X276 PIXELS MANGO COLLECTIONS TILE-01 (1).jpg',
-//         title1: 'Image',
-//         author1: 'author',
-//     },
-// ];
-// const tileData = [
-//     {
-//         img: 'https://assets-cdn.stylori.com/552x276/images/homepage/Stylori-ring-tile.jpg',
-//         title: 'Image',
-//         author: 'author',
-//         cols: 2,
-//     },
 
-//     {
-//         img: 'https://assets-cdn.stylori.com/276x276/images/homepage/276X276 PIXELS MANGO COLLECTIONS TILE-01 (1).jpg',
-//         title: 'Image',
-//         author: 'author',
-
-//     },
-//     {
-//         img: 'https://assets-cdn.stylori.com/552x276/images/homepage/Stylori-ring-tile.jpg',
-//         title: 'Image',
-//         author: 'author',
-//     },
-
-//     {
-//         img: 'https://assets-cdn.stylori.com/276x276/images/homepage/276X276 PIXELS MANGO COLLECTIONS TILE-01 (1).jpg',
-//         title: 'Image',
-//         author: 'author',
-//         cols: 2,
-//     },
-// ];
-// const photos = [
-//     {
-//         src: 'https://assets-cdn.stylori.com/552x276/images/homepage/Stylori-ring-tile.jpg',
-//         width: 7,
-//         height: 3
-//     },
-//     {
-//         src: 'https://assets-cdn.stylori.com/276x276/images/homepage/276X276 PIXELS MANGO COLLECTIONS TILE-01 (1).jpg',
-//         width: 1,
-//         height: 1
-//     },
-//     {
-//         src: 'https://assets-cdn.stylori.com/276x567/images/homepage/blush 3.jpg',
-//         width: 4,
-//         height: 10
-//     },
-//     {
-//         src: 'https://assets-cdn.stylori.com/276x276/images/homepage/-11.jpg',
-//         width: 1,
-//         height: 1
-//     },
-//     {
-//         src: 'https://assets-cdn.stylori.com/276x276/images/homepage/276X276 PIXELS MANGO COLLECTIONS TILE-01 (1).jpg',
-//         width: 7,
-//         height: 3
-//     },
-
-// ];
 
 const Subheader = () => {
     return (
@@ -87,11 +26,7 @@ const Subheader = () => {
                         </Container>
                     </Toolbar>
                 </AppBar>
-                {/* <Container >
-                <div style={{ marginTop: "25px" }}>
-                    <Gallery photos={photos} />
-                </div>
-            </Container>  */}
+               
 
 
                 <div style={{ paddingTop: "15px" }}>
@@ -122,28 +57,7 @@ const Subheader = () => {
                         </Grid>
                     </Container>
                 </div>
-                {/* <Grid container spacing={2} >
-                        <Grid item xs={8}>
-                            <GridList  cols={3} >
-                                {tileData.map(tile => (
-                                    <GridListTile key={tile.img} cols={tile.cols || 1} >
-                                        <img src={tile.img}  style={{width:"100%",height:"100%"}}/>
-                                    </GridListTile>
-                                ))}
-
-                            </GridList>
-                        </Grid>
-                        <Grid item xs={4}>
-                            <GridList >
-                                {tile1.map(tile => (
-                                    <GridListTile key={tile.img1} cols={tile.cols || 1} style={{width:"100%",height:"100%"}}>
-                                        <img src={tile.img1}  style={{width:"100%",height:"100%"}} />
-                                    </GridListTile>
-                                ))}
-
-                            </GridList>
-                        </Grid>
-                    </Grid> */}
+               
             </div>
 
         </div>

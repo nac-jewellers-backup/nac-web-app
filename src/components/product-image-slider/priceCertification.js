@@ -27,9 +27,7 @@ class PriceCertification extends React.Component {
                 <Container>
                     {
                     certificates ?
-                    // certificates.map(val =>
-                    //  {
-// 
+                  
                           <>
                         
                             <ExpansionPanel className={classes.cerfificates} style={{ boxShadow: "rgb(190, 191, 191) 5px 5px 5px", border:'1px solid #ccc' ,padding:"0 5px"}} expanded={expanded === certificates.header} onChange={this.handle(certificates.header)} key={certificates.name}>
@@ -45,11 +43,7 @@ class PriceCertification extends React.Component {
                                 <Grid container spacing={12} >
                             <img src={certificates[0].img0}  width="100%" loading="lazy" alt='...'/>
                             </Grid>
-                                {/* <Grid spacing={12}>
-                                    <Grid item xs={12} className='certification-img'>
-                                        <img width='100%' height='100%' src={val.img4} alt="" />
-                                    </Grid>
-                                </Grid> */}
+                               
                             </ExpansionPanel>
                         <br/></>
                     //  })

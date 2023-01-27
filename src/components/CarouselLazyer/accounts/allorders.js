@@ -40,11 +40,7 @@ class Allorders extends React.Component {
       })
       .reduce(myFunc);
     return CurrencyConversion(Math.round(a));
-    // new Intl.NumberFormat("en-IN", {
-    //   style: "currency",
-    //   currency: "INR",
-    //   minimumFractionDigits: 0,
-    // }).format(Math.round(a));
+  
   };
   generateShipsBy = (readytoship, vendorDeliveryTime) => {
     var isReadytoShip = readytoship;
@@ -371,16 +367,7 @@ class Allorders extends React.Component {
                                               .markupPrice
                                           )
                                         )
-                                        // Intl.NumberFormat("en-IN", {
-                                        //   style: "currency",
-                                        //   currency: "INR",
-                                        //   minimumFractionDigits: 0,
-                                        // }).format(
-                                        //   Math.round(
-                                        //     cart.transSkuListByProductSku
-                                        //       .markupPrice
-                                        //   )
-                                        // )
+                                       
                                       }
                                     </del>
                                   ) : (
@@ -394,16 +381,7 @@ class Allorders extends React.Component {
                                           .discountPrice
                                       )
                                     )
-                                    // Intl.NumberFormat("en-IN", {
-                                    //   style: "currency",
-                                    //   currency: "INR",
-                                    //   minimumFractionDigits: 0,
-                                    // }).format(
-                                    //   Math.round(
-                                    //     cart.transSkuListByProductSku
-                                    //       .discountPrice
-                                    //   )
-                                    // )
+                                   
                                   }
                                 </Grid>
                               </Grid>

@@ -12,8 +12,6 @@ const styles = makeStyles(theme => ({
         backgroundRepeat: "no-repeat!important",
         opacity: "1!important",
         backgroundPosition: "-160px -229px!important",
-        // backgroundColor: "#fff!important",
-        // border: "1px solid #ccc",
         borderRight: 0,
         position: "absolute",
         zIndex: 9,

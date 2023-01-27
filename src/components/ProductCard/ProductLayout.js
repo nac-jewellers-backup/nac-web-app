@@ -61,7 +61,7 @@ class Component extends React.Component {
     this.screenWidth();
     // Additionally I could have just used an arrow function for the binding `this` to the component...
     window.addEventListener("resize", this.screenWidth);
-    // setTimeout(function () { this.setState({ loading: false }); }.bind(this), 2000);
+    
   }
   screenWidth = () => {
     const width = window.innerWidth;
@@ -86,7 +86,7 @@ class Component extends React.Component {
     if (this.props.data !== prevProps.data) {
       this.setState({ loadingtext: false });
 
-      // setTimeout(function(){ this.setState({loading:false}); }.bind(this), 2000);
+     
     }
   }
   handleOffset = () => {
@@ -96,10 +96,7 @@ class Component extends React.Component {
   };
   render() {
     const { classes, data } = this.props;
-    // const { disabledstate } = this.state;
-    // const _height = (data && data.imageResolution) ? `${data.imageResolution.img_res + 120}px` : `350px`
-    // const disabledstate = this.props.data.length < 24 ? 'disabled=true' : ''
-    // const { loading, errro, data, mappedData } = useGraphql(productlistquery,productlistmapper);
+   
 
     return (
       <>
@@ -173,13 +170,7 @@ class Component extends React.Component {
                               disabled={data && data.length < 24}
                             >
                               {data && data.length === 0 && `No products found`}
-                              {/* {data &&
-                                data.length >= 24 &&
-                                ` See ${
-                                  data && data.length > 0 && data[0]
-                                    ? data[0].totalCount - data.length
-                                    : ""
-                                } More Products`} */}
+                             
                               SEE MORE
                               {data &&
                                 data.length > 0 &&
@@ -194,9 +185,9 @@ class Component extends React.Component {
                         ) : (
                           <>
                             <div>No Products Found.</div>
-                            {/* <div onClick={()=>{this.props.history.push('/jewellery')}}>Try Again.</div> */}
+                           
                             <a href="/jewellery">Try Again.</a>
-                            {/* <Redirect to="/jewellery" >Try Again.</Redirect> */}
+                            
                           </>
                         )}
                       </>

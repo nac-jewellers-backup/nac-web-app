@@ -168,7 +168,7 @@ class PersistentDrawerLeft extends React.Component {
       <>
         <Hidden smDown>
           <FilterHeader handleChangeDrawer={this.handleChangeDrawer} />
-          {/*  handleDrawerOpen={this.handleDrawerOpen.bind(this)} */}
+     
         </Hidden>
         <div className={classes.root}>
           <Hidden smDown>
@@ -461,7 +461,7 @@ class PersistentDrawerLeft extends React.Component {
                     variant=""
                     className={`filter-mbl-font ${classes.colorMain}`}
                   >
-                    {/* <i className="filter-icon" className="fa fa-filter"></i>{" "} */}
+                   
                     &nbsp; Filter
                   </Typography>
                 </IconButton>
@@ -479,7 +479,7 @@ class PersistentDrawerLeft extends React.Component {
                     variant=""
                     className={`filter-mbl-font ${classes.colorMain}`}
                   >
-                    {/* <i className="filter-icon" className="fa fa-sort"></i> */}
+                    
                     &nbsp; Sort
                   </Typography>
                 </IconButton>

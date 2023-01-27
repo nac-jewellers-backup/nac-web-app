@@ -642,9 +642,7 @@ const Diwali2022 = (props) => {
             />
           </div>
 
-          {/* <Typography className={classes.titleHeader}>
-            Valam Perugum Valayal Thiruvizha with NAC Jewellers
-          </Typography> */}
+        
 
           <Typography className={classes.titleContents}>
             Tamil Nadu & Vijayawada (5th - 24th Oct)

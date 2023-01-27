@@ -99,11 +99,11 @@ typings/
 # git has its own built in compression methods
 *.7z
 *.dmg
-*.gz
 *.iso
 *.jar
 *.rar
 *.tar
 *.zip
 
-# End of https://www.gitignore.io/api/node
+# Local Netlify folder
+.netlify

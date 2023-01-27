@@ -53,8 +53,7 @@ const useRating = (props) => {
         setratingcountsclear({ ratingcountsclear: '123' })
     }
     const count = localStorage.getItem("count") ? localStorage.getItem("count") : ""
-    // variab['productSku'] = values.product_sku
-    // var rat_sate = values.error&&values.error.rateerr
+   
     useEffect(() => {
         var ratingdataerr = data.message ? data.message : ""
         if (ratingdataerr.length > 0) {

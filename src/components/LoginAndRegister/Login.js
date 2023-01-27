@@ -24,7 +24,7 @@ const LoginComponent = (props) => {
     setloadingfilters,
   } = React.useContext(FilterOptionsContext);
   const { classes } = props;
-  // const { values, handlers, data } = useLogin(() => props.changePanel(3));
+
 
   React.useEffect(() => {
     window.scrollTo(0, 0);

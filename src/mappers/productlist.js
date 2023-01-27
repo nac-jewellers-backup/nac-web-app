@@ -58,8 +58,7 @@ var screen_width_type = () => {
   }
   return img_res;
 };
-// const baseUi = "https://assets-cdn.stylori.com/";
-// const injectUrl = (url, baseUi) => url ? resolutions.map(k => ({ ...k, img: `${baseUi}${url.imageUrl===undefined  ? url : url.imageUrl}` })) : [];
+
 const injectUrl = (url, baseUi) => {
   var browser_type = JSON.parse(localStorage.getItem("browserDetails"));
   var resolution = screen_width_type();

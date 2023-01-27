@@ -13,10 +13,9 @@ const StoreLocationDetails = (props) => {
     url: "",
     key: "",
   });
-  // const key = location?.state?.key;
+
 
   useEffect(() => {
-    debugger;
     const key = localStorage.getItem("storeKey")
     if(key){
       const filterStore = props.data.filter((val) => val.key === key);

@@ -1,8 +1,8 @@
 import React from "react";
 import { Grid, Hidden,Card,CardMedia,CardContent,CardActionArea,CardActions,Button, Typography, Box } from "@material-ui/core";
-// import MediaCarousel from "../../components/mediacarousel/index";
+
 import MediaCarousel from "../../components/mediacarousel/mediaCarousel";
-// import Header from "../../components/header/header";
+
 import expstyles from "./experienceStyle";
 import { useParams } from "react-router-dom";
 import Header from "components/SilverComponents/Header";

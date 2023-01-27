@@ -32,6 +32,9 @@ const CustomNewsRoomStyles = makeStyles((theme) => ({
   description: {
     textAlign: "center",
     padding: "30px 20px",
+    [theme.breakpoints.down("sm")]: {
+      padding: "15px 4px",
+    },
     "& p": {
       minHeight: "81px",
       fontSize: "18px",
@@ -50,7 +53,10 @@ const CustomNewsRoomStyles = makeStyles((theme) => ({
   buttonText: {
     textAlign: "center",
     paddingBottom: "30px",
-    cursor:"pointer",
+    cursor: "pointer",
+    [theme.breakpoints.down("sm")]: {
+      addingBottom: "20px",
+    },
     "& p": {
       display: "flex",
       justifyContent: "center",

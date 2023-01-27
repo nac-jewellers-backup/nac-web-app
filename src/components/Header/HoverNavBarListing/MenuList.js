@@ -31,7 +31,7 @@ const styles = (theme) => ({
     },
   },
 });
-// const menuList =['Earrings','Pendants','Rings','Nose pins',' Bangles & Bracelets'];
+
 
 class MenuListItem extends Component {
   constructor(props) {

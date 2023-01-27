@@ -32,12 +32,7 @@ class Accountdetails extends Component {
       `/account${"-" + name}`
     );
   };
-  // fun = () => {
-  //     const allorder = this.props.allorderdata ? this.props.allorderdata : ""
-  //     if (allorder.length > 0) {
-  //         localStorage.setItem("order", this.props.allorderdata)
-  //     }
-  // }
+  
   render() {
     let c_k_l = localStorage.getItem("c_k_l")
       ? localStorage.getItem("c_k_l")
@@ -211,11 +206,9 @@ class Accountdetails extends Component {
             <div className="pay-index-subhed_da">
               {this.state.isActive == "profile" && (
                 <>
-                  {/* {c_k_l !== true ? */}
+                 
                   <Register />
-                  {/* <Addressform/> */}
-                  {/* : <Login /> */}
-                  {/* } */}
+                  
                 </>
               )}
               {this.state.isActive == "addresses" && <Addressform />}
@@ -236,7 +229,7 @@ class Accountdetails extends Component {
                     wishlistdata={this.props.wishlistdata}
                     data={this.props.data}
                   />
-                  {/* {JSON.stringify(this.props.wishlistdata)} */}
+                  
                 </>
               )}
               {this.state.isActive == "allorders" && (
@@ -246,7 +239,7 @@ class Accountdetails extends Component {
                     data={this.props.data}
                   />
 
-                  {/* {JSON.stringify(this.props.allorderdata)} */}
+                  
                 </>
               )}
             </div>

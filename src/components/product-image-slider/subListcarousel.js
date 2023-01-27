@@ -363,9 +363,7 @@ class Sublistcarousel extends React.Component {
                               </>
                             ))}
                           </Slideshow>
-                          {/* <Grid style={{ width: "100%" }}>
-                            <div className="loaders"></div>
-                          </Grid> */}
+                         
                         </Typography>
                       </Grid>
                     </Grid>

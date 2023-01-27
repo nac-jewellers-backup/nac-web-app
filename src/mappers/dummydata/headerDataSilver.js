@@ -1453,7 +1453,7 @@ export const menuLists = {
       {
         value: "Collection",
         title: "By Collection",
-        url: "/collections",
+        url: "/jewellery",
         imgContainer: {
           imageContainer: [
             {
