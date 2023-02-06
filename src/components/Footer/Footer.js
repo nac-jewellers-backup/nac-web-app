@@ -303,7 +303,7 @@ export default function Footer(props) {
         },
 
         {
-          url: "/stories",
+          url: "/blogsPage",
           Title: "Blog",
         },
         {
@@ -327,7 +327,7 @@ export default function Footer(props) {
           heading: "Know Your Jewellery",
         },
         {
-          url: "/jewellery",
+          url: "/collections",
           Title: "Collections",
         },
         {
@@ -399,7 +399,7 @@ export default function Footer(props) {
       content: [
         {
           subTitle: "Our Story",
-          url: "/stories",
+          url: "/blogsPage",
         },
         {
           subTitle: "Temple Work",
@@ -421,7 +421,7 @@ export default function Footer(props) {
       content: [
         {
           subTitle: "Collections",
-          url: "/jewellery",
+          url: "/collections",
         },
         {
           subTitle: "Diamond Guide",

@@ -12,10 +12,11 @@ import {
   ListItem,
   ListItemText,
   Modal,
+  TextField,
   Toolbar,
   Typography,
 } from "@material-ui/core";
-import { withStyles } from "@material-ui/core/styles";
+import { createTheme, ThemeProvider, withStyles } from "@material-ui/core/styles";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import MenuIcon from "@material-ui/icons/Menu";
 import classNames from "classnames";
@@ -31,6 +32,7 @@ import HeaderHoversubMenu from "./HoverNavBarListing/HeaderHoversubMenu";
 import { styles } from "./styles";
 import { GOLD_PRICE_AND_CURRENCY_CONVO } from "../../queries/home";
 import { API_URL } from "../../config";
+import { Autocomplete } from "@material-ui/lab";
 
 let user_id = localStorage.getItem("user_id")
   ? localStorage.getItem("user_id")
@@ -39,106 +41,106 @@ let selected_price = localStorage.getItem("selected_price")
   ? JSON.parse(localStorage.getItem("selected_price"))
   : null;
 
-// const theme = createTheme({
-//   overrides: {
-//     MuiInputLabel: {
-//       outlined: {
-//         border: "none",
-//         borderColor: "#fff",
-//         fontSize: "14px !important",
-//       },
-//       option: {
-//         fontSize: "14px !important",
-//       },
-//     },
-//     MuiOutlinedInput: {
-//       root: {
-//         "&&& $input": {
-//           padding: "0px",
-//           color: "#fff !important",
-//           fontSize: "14px!important",
-//         },
-//         option: {
-//           fontSize: "14px !important",
-//         },
-//       },
-//     },
-//     MuiAutocomplete: {
-//       inputRoot: {
-//         '&&[class*="MuiOutlinedInput-root"] $input': {
-//           padding: "0px !important",
-//           fontSize: "14px !important",
-//         },
-//       },
-//       option: {
-//         fontSize: "14px !important",
-//       },
-//     },
-//     option: {
-//       fontSize: "14px !important",
-//     },
-//   },
-// });
+const theme = createTheme({
+  overrides: {
+    MuiInputLabel: {
+      outlined: {
+        border: "none",
+        borderColor: "#fff",
+        fontSize: "14px !important",
+      },
+      option: {
+        fontSize: "14px !important",
+      },
+    },
+    MuiOutlinedInput: {
+      root: {
+        "&&& $input": {
+          padding: "0px",
+          color: "#fff !important",
+          fontSize: "14px!important",
+        },
+        option: {
+          fontSize: "14px !important",
+        },
+      },
+    },
+    MuiAutocomplete: {
+      inputRoot: {
+        '&&[class*="MuiOutlinedInput-root"] $input': {
+          padding: "0px !important",
+          fontSize: "14px !important",
+        },
+      },
+      option: {
+        fontSize: "14px !important",
+      },
+    },
+    option: {
+      fontSize: "14px !important",
+    },
+  },
+});
 
-// const themess = createTheme({
-//   overrides: {
-//     MuiInputLabel: {
-//       outlined: {
-//         border: "none",
-//         borderColor: "#fff",
-//         fontSize: "16px !important",
-//       },
-//       option: {
-//         fontSize: "16px !important",
-//         padding: "4px  !important",
-//       },
-//     },
-//     MuiOutlinedInput: {
-//       root: {
-//         "&&& $input": {
-//           padding: "0px",
-//           color: "#000 !important",
-//           fontSize: "16px !important",
-//         },
-//         option: {
-//           fontSize: "16px !important",
-//           padding: "4px  !important",
-//         },
-//       },
-//     },
-//     MuiAutocomplete: {
-//       inputRoot: {
-//         '&&[class*="MuiOutlinedInput-root"] $input': {
-//           padding: "0px  !important",
-//           fontSize: "16px !important",
-//         },
-//       },
-//       option: {
-//         fontSize: "16px !important",
-//         padding: "4px  !important",
-//       },
-//     },
-//     option: {
-//       fontSize: "16px !important",
-//       [theme.breakpoints.up("md")]: {
-//         padding: "2px !important",
-//       },
-//       [theme.breakpoints.down("sm")]: {
-//         padding: "0px !important",
-//       },
-//     },
-//   },
-// });
+const themess = createTheme({
+  overrides: {
+    MuiInputLabel: {
+      outlined: {
+        border: "none",
+        borderColor: "#fff",
+        fontSize: "16px !important",
+      },
+      option: {
+        fontSize: "16px !important",
+        padding: "4px  !important",
+      },
+    },
+    MuiOutlinedInput: {
+      root: {
+        "&&& $input": {
+          padding: "0px",
+          color: "#000 !important",
+          fontSize: "16px !important",
+        },
+        option: {
+          fontSize: "16px !important",
+          padding: "4px  !important",
+        },
+      },
+    },
+    MuiAutocomplete: {
+      inputRoot: {
+        '&&[class*="MuiOutlinedInput-root"] $input': {
+          padding: "0px  !important",
+          fontSize: "16px !important",
+        },
+      },
+      option: {
+        fontSize: "16px !important",
+        padding: "4px  !important",
+      },
+    },
+    option: {
+      fontSize: "16px !important",
+      [theme.breakpoints.up("md")]: {
+        padding: "2px !important",
+      },
+      [theme.breakpoints.down("sm")]: {
+        padding: "0px !important",
+      },
+    },
+  },
+});
 
-// function countryToFlag(isoCode) {
-//   return typeof String.fromCodePoint !== "undefined"
-//     ? isoCode
-//         .toUpperCase()
-//         .replace(/./g, (char) =>
-//           String.fromCodePoint(char.charCodeAt(0) + 127397)
-//         )
-//     : isoCode;
-// }
+function countryToFlag(isoCode) {
+  return typeof String.fromCodePoint !== "undefined"
+    ? isoCode
+        .toUpperCase()
+        .replace(/./g, (char) =>
+          String.fromCodePoint(char.charCodeAt(0) + 127397)
+        )
+    : isoCode;
+}
 
 class Header extends Component {
   constructor(props) {
@@ -211,7 +213,8 @@ class Header extends Component {
           selected_currency: selected_price
             ? selected_price
             : data?.data?.allMasterCountries?.nodes[0] ?? null,
-          livePrice: `${data?.data?.allDailyMetalPrices?.nodes[0]?.displayName} - ₹${data?.data?.allDailyMetalPrices?.nodes[0]?.displayPrice}`,
+          livePrice: {value:`${data?.data?.allDailyMetalPrices?.nodes[0]?.displayName} - ₹${data?.data?.allDailyMetalPrices?.nodes[0]?.displayPrice}`,
+          label:`${data?.data?.allDailyMetalPrices?.nodes[0]?.displayName} - ₹${data?.data?.allDailyMetalPrices?.nodes[0]?.displayPrice}`},
         });
       });
   };
@@ -310,7 +313,7 @@ class Header extends Component {
   };
   handleLivePrice = (e, value) => {
     this.setState({
-      livePrice: `${value.displayName} - ₹${value.displayPrice}`,
+      livePrice:{value: `${value.displayName} - ₹${value.displayPrice}`,label:`${value.displayName} - ₹${value.displayPrice}`},
     });
   };
 
@@ -434,14 +437,14 @@ class Header extends Component {
                       justify="flex-end"
                       alignItems="center"
                     >
-                      {/* <Grid
+                      <Grid
                         container
                         item
                         xs={12}
                         justify="flex-end"
                         className={classes.goldCurrentRate}
                       >
-                        <Grid item xs={12} sm={6} md={2} lg={2}>
+                        <Grid item xs={12} sm={6} md={3} lg={3}>
                           {" "}
                           <ThemeProvider theme={theme}>
                             <Autocomplete
@@ -456,22 +459,24 @@ class Header extends Component {
                                 boxShadow: "6px 7px 6px #bebfbf",
                               }}
                               classes={{ input: classes.smallFont }}
+                              onChange={(e,value) => this.handleLivePrice(e,value)}
                               options={this?.state?.goldPrice}
                               getOptionLabel={(option) =>
                                 `${option.displayName} - ₹${option.displayPrice}`
                               }
-                              defaultValue={this.state?.livePrice ?? null}
+                              // defaultValue={this.state?.livePrice ?? null}
                               renderInput={(params) => (
                                 <TextField
                                   {...params}
-                                  placeholder="Today's Gold Rate"
+                                  value={this.state?.livePrice?.label}
+                                  placeholder={this.state?.livePrice?.label ?? "Today's Gold Rate"}
                                   variant="outlined"
                                 />
                               )}
                             />
                           </ThemeProvider>
                         </Grid>
-                      </Grid> */}
+                      </Grid>
                       <Grid item xs={12}>
                         <div className={`head-icons1 ${classes.headIcons}`}>
                           <i class={`fa fa-phone  ${classes.iconFafa}`}></i>
@@ -838,7 +843,7 @@ class Header extends Component {
                                 )}
                               />
                             </Grid> */}
-                            {/* <Grid item xs={6} sm={6} md={3} lg={3}>
+                            <Grid item xs={12} sm={6} md={3} lg={3}>
                               <ThemeProvider theme={theme}>
                                 <Autocomplete
                                   id="country-select-demo"
@@ -850,22 +855,24 @@ class Header extends Component {
                                     borderColor: "#fff",
                                     boxShadow: "6px 7px 6px #bebfbf",
                                   }}
+                                  onChange={(e,value) => this.handleLivePrice(e,value)}
                                   classes={{ input: classes.smallFont }}
                                   options={this?.state?.goldPrice}
                                   getOptionLabel={(option) =>
                                     `${option.displayName} - ₹${option.displayPrice}`
                                   }
-                                  defaultValue={this.state?.livePrice ?? null}
+                                  // defaultValue={this.state?.livePrice ?? null}
                                   renderInput={(params) => (
                                     <TextField
                                       {...params}
-                                      placeholder="Today's Gold Rate"
+                                      value={this.state?.livePrice?.label}
+                                      placeholder={this.state?.livePrice?.label ?? "Today's Gold Rate"}
                                       variant="outlined"
                                     />
                                   )}
                                 />
                               </ThemeProvider>
-                            </Grid> */}
+                            </Grid>
                           </Grid>
                         </Grid>
                         <Grid item xs={12}>

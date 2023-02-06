@@ -241,7 +241,7 @@ export const RouterApp = (props) => {
         props.location.pathname !== "/collectionpage" &&
         props.location.pathname !== "/rudramadeviBlog" &&
         props.location.pathname !== "/temple-work" &&
-        props.location.pathname !== "/experiences" &&
+        // props.location.pathname !== "/experiences" &&
         props.location.pathname !== "/registers" &&
         props.location.pathname !== "/login" &&
         props.location.pathname !== "/checkout" &&
@@ -319,7 +319,7 @@ export const RouterApp = (props) => {
         props.location.pathname !== "/collectionpage" &&
         props.location.pathname !== "/rudramadeviBlog" &&
         props.location.pathname !== "/temple-work" &&
-        props.location.pathname !== "/experiences" &&
+        // props.location.pathname !== "/experiences" &&
         props.location.pathname !== "/registers" &&
         props.location.pathname !== "/login" &&
         props.location.pathname !== "/checkout" &&
@@ -410,12 +410,12 @@ export const RouterApp = (props) => {
         exact
         path={routes.SavingsPage}
       />
-      <Route
+      {/* <Route
         key="ExperiencePage"
         component={ExperiencePage}
         exact
         path={routes.ExperiencePage}
-      />
+      /> */}
       <Route
         key="AdvertisingPage"
         component={AdvertisingPage}
