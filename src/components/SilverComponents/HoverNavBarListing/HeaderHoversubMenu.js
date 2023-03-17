@@ -241,7 +241,7 @@ function HeaderHoverMenuItem(props) {
     {
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/ZZJVeH%402x.png",
       content: "Pearl earring",
-      url: "/#",
+      url: "/pearl+earrings-earrings-jewellery",
     },
     {
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/INe8h1%402x.png",
@@ -253,27 +253,27 @@ function HeaderHoverMenuItem(props) {
     {
       img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Ring+Casual-.webp",
       content: "Casual",
-      url: "/casual+rings-jewellery",
+      url: "/casual+rings-jewellery?sort=Price%20Low%20to%20High&startprice=0&endprice=0",
     },
     {
       img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Ring+Cocktail.webp",
       content: "Cocktail",
-      url: "/cocktail-rings-jewellery",
+      url: "/cocktail-rings-jewellery?sort=Price%20High%20to%20Low&startprice=0&endprice=0",
     },
     {
-      img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Ring+Fashion.webp",
-      content: "Fashion",
-      url: "/rings-jewellery-special+occasion",
+      img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/banners/web/Couple-band-rings.webp",
+      content: "Couple Band",
+      url: "/couple+bands-rings-jewellery",
     },
     {
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/rings/xJu4r9%402x.png",
       content: "Bridal",
-      url: "/rings-jewellery-bridal",
+      url: "/rings-jewellery-bridal?sort=Price%20High%20to%20Low&startprice=0&endprice=0",
     },
     {
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/rings/C1IQGq%402x.png",
       content: "Platinum rings",
-      url: "/buy+platinum-rings-jewellery",
+      url: "/rings-buy+platinum-jewellery",
     },
     {
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/rings/YE4CnD%402x.png",
@@ -283,7 +283,7 @@ function HeaderHoverMenuItem(props) {
     {
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/rings/JfQ2Pg%402x.png",
       content: <>Light&nbsp;weightby&nbsp;STYLORI</>,
-      url: "/rings-jewellery?sort=Price%20Low%20to%20High&startprice=0&endprice=0",
+      url: "/rings-jewellery?sort=Price%20Low%20to%20High&startprice=10001&endprice=20000",
     },
   ];
   const banglesbracelets = [
@@ -295,12 +295,12 @@ function HeaderHoverMenuItem(props) {
     {
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/bangles%26bracelets/6afKPj%402x.png",
       content: <>Tennies&nbsp;bracelets</>,
-      url: "/oval-bracelets-jewellery",
+      url: "/chain+bracelets-bracelets-jewellery",
     },
     {
       img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Ring+Casual-.webp",
       content: <>LightWeight&nbsp;bangles</>,
-      url: "/bracelets-jewellery-bracelets-stylori",
+      url: "/bangles-jewellery?sort=Price%20Low%20to%20High&startprice=0&endprice=0",
     },
     {
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/bangles%26bracelets/yGnqN0%402x.png",
@@ -310,7 +310,7 @@ function HeaderHoverMenuItem(props) {
     {
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/bangles%26bracelets/iYTHDb%402x.png",
       content: "Mens bracelets",
-      url: "/bracelets-jewellery-bracelets-mens+collection",
+      url: "/bracelets-jewellery-mens+collection",
     },
     {
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/bangles%26bracelets/MN2iaL%402x.png",
@@ -320,7 +320,7 @@ function HeaderHoverMenuItem(props) {
     {
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/bangles%26bracelets/2wA3vs%402x.png",
       content: <>Lightweight&nbsp;by&nbsp;stylori</>,
-      url: "/bracelets-jewellery-bracelets-stylori",
+      url: "/wristwear-jewellery?sort=Price%20Low%20to%20High&startprice=0&endprice=0",
     },
   ];
   const collectionsData = [
@@ -344,7 +344,7 @@ function HeaderHoverMenuItem(props) {
     },
     {
       title: "Muhurtham",
-      url: "/jewellery-muhurtham",
+      url: "/jewellery-bridal",
       image:
         "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/lMysCt%402x.png",
     },
@@ -398,17 +398,17 @@ function HeaderHoverMenuItem(props) {
     {
       img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Necklace/9-ei9520-Long+Necklace.webp",
       content: "Long Necklace",
-      url: "/long+necklace-necklaces-jewellery",
+      url: "/long+necklace-jewellery",
     },
     {
       img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Necklace/2-eh8221-Short+Necklace.webp",
       content: "Short Necklace",
-      url: "/short+necklace-necklaces-jewellery",
+      url: "/short+necklace-jewellery",
     },
     {
       img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Necklace/ax1069-Choker.webp",
       content: "Choker",
-      url: "/jhumkas+online-earrings-jewellery",
+      url: "/chokers-jewellery",
     },
     {
       img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Necklace/2-318402-Bridal.webp",
@@ -418,7 +418,7 @@ function HeaderHoverMenuItem(props) {
     {
       img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Necklace/2-bx8785-Layerred+Necklace.webp",
       content: "Layered",
-      url: "/huggies-earrings-jewellery",
+      url: "/layered+necklaces-necklaces-jewellery",
     },
 
     {
@@ -429,7 +429,7 @@ function HeaderHoverMenuItem(props) {
     {
       img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Necklace/28812219-Guttapusalu.webp",
       content: "Gutapulusu",
-      url: "/ear+jacket-earrings-jewellery",
+      url: "/gutapulusu-necklaces-jewellery",
     },
   ];
 
@@ -596,7 +596,7 @@ function HeaderHoverMenuItem(props) {
     {
       title: "Silver Bowls",
       img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Silver+Articles/SILVER+BOWLS.jpg",
-      url: "/silver+bowl-articles",
+      url: "/silver+bowl-silver+articles-articles",
     },
     {
       title: "Silver Lamps",
@@ -712,10 +712,11 @@ function HeaderHoverMenuItem(props) {
   const silverItems2 = [
     {
       title: <>CORPORATE&nbsp;GIFTING</>,
+      url:"/commingsoon",
       contents: [
-        { item: "Below ₹3,000", url: "#" },
-        { item: "₹3,001 - ₹5,001", url: "#" },
-        { item: "Above ₹5,001", url: "#" },
+        { item: "Below ₹3,000", url: "/commingsoon" },
+        { item: "₹3,001 - ₹5,001", url: "/commingsoon" },
+        { item: "Above ₹5,001", url: "/commingsoon" },
       ],
     },
     {
@@ -1541,6 +1542,7 @@ function HeaderHoverMenuItem(props) {
                         <Typography
                           className={classes.listedItemstitle}
                           style={{ textAlign: "center", marginBottom: "12px" }}
+                          onClick={() => window.location.href = val.url}
                         >
                           {val.title}
                         </Typography>

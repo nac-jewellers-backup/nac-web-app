@@ -71,7 +71,7 @@ export function AdvancedGridList() {
               </Link>
             </div>
             <div className="parent">
-              <Link href="/jewellery-fabula">
+              <Link href="/diamond-jewellery-bridal">
                 <img
                   src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/banners/web/Bridal-Diamond-Jewellery.webp"
                   alt="NAC"
@@ -93,7 +93,7 @@ export function AdvancedGridList() {
             <Grid container spacing={1}>
               <Grid item xs={6}>
                 <div className="parent">
-                  <Link href="https://www.stylori.com/">
+                  <Link href="/jewellery-nagas">
                     <img
                       src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/banners/web/Nagas-Gold-Jewellery.webp"
                       alt="NAC"
@@ -111,7 +111,7 @@ export function AdvancedGridList() {
                   </Link>
                 </div>
                 <div className="parent">
-                  <Link href="/jewellery-platinum">
+                  <Link href="/buy+platinum-jewellery">
                     <img
                       src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/banners/web/Platinum-Jewellery.webp"
                       alt="NAC"
@@ -131,7 +131,7 @@ export function AdvancedGridList() {
               </Grid>
               <Grid item xs={6}>
                 <div className="parent">
-                  <Link href="/jewellery-nagas">
+                  <Link href="/plain+gold-jewellery-bridal">
                     <img
                       src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/banners/web/Muhurtham_tile_385-X-600_px.webp"
                       alt="NAC"
@@ -227,7 +227,7 @@ export function AdvancedGridList() {
       <Hidden mdUp>
         <div class="grid-container-sm">
           <div class="grid-item-sm item1-sm">
-            <Link href="https://www.stylori.com/">
+            <Link href="/jewellery-nagas">
               {" "}
               <img
                 src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/banners/web/Nagas-Gold-Jewellery.webp"
@@ -260,7 +260,7 @@ export function AdvancedGridList() {
             </Link>
           </div>
           <div class="grid-item-sm item112-sm">
-            <Link href="/jewellery-platinum">
+            <Link href="/buy+platinum-jewellery">
               <img
                 src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/banners/web/Platinum-Jewellery.webp"
                 alt="NAC"
@@ -292,7 +292,7 @@ export function AdvancedGridList() {
             </Link>
           </div>
           <div class="grid-item-sm item11-sm">
-            <Link href="/jewellery-nagas">
+            <Link href="/plain+gold-jewellery-bridal">
               <img
                 src="https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/banners/web/Muhurtham_tile_385-X-600_px.webp"
                 alt="NAC"
