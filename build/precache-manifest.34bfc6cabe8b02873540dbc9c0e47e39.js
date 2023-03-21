@@ -1,34 +1,34 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0449ad934902cbdf1467ebd37f5d1b27",
+    "revision": "6091c3f0cbbaf9176993ae4e00555433",
     "url": "/index.html"
   },
   {
-    "revision": "ce10d6e606654006ee2e",
+    "revision": "dead2180bdb7c1f26c00",
     "url": "/static/css/2.css"
   },
   {
-    "revision": "1438629bff8d41f35b13",
+    "revision": "ef6d751ed9693eaa36c3",
     "url": "/static/css/3.css"
   },
   {
-    "revision": "7621d60f0ce8dba3d147",
+    "revision": "1932d901176223302079",
     "url": "/static/css/main.css"
   },
   {
-    "revision": "ce10d6e606654006ee2e",
+    "revision": "dead2180bdb7c1f26c00",
     "url": "/static/js/2.js"
   },
   {
-    "revision": "1438629bff8d41f35b13",
+    "revision": "ef6d751ed9693eaa36c3",
     "url": "/static/js/3.js"
   },
   {
-    "revision": "3889fcc9c058ca89c4a1",
+    "revision": "4680f3a37c0ead43e6fd",
     "url": "/static/js/4.js"
   },
   {
-    "revision": "7621d60f0ce8dba3d147",
+    "revision": "1932d901176223302079",
     "url": "/static/js/main.js"
   },
   {
@@ -148,7 +148,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/citrine.png"
   },
   {
-    "revision": "7996bd6992d473ba217275885f52812f",
+    "revision": "2b3d63f761a61e5c65a4773359c4eb40",
     "url": "/static/media/close.svg"
   },
   {
@@ -192,11 +192,11 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/img4ProductModal.jpg"
   },
   {
-    "revision": "3302d5b696d505a1f4ba1adbdb942fe9",
+    "revision": "8325785bd51ca5859c57268594d82f0e",
     "url": "/static/media/line.svg"
   },
   {
-    "revision": "51fc5370cb4d7e537c06ea117f090ba2",
+    "revision": "6e25bad6f003be8fe1ddf1c68d2b4dd9",
     "url": "/static/media/logout.svg"
   },
   {
@@ -252,7 +252,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/sapphire.png"
   },
   {
-    "revision": "b0c24c44cdbcd2228f0f6fef2740195f",
+    "revision": "57b56bb10faf3b9dbb17bc91e6be7baf",
     "url": "/static/media/shopping.svg"
   },
   {
@@ -284,7 +284,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/tanzatine.png"
   },
   {
-    "revision": "5a712650392a83e01a75498ebc83837b",
+    "revision": "26f4adaec0fa060fe6ef92c4c4f7c485",
     "url": "/static/media/telephone.svg"
   },
   {
@@ -312,7 +312,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/turquoise.png"
   },
   {
-    "revision": "c7359aa61314bf6d37f83ccc97dd0694",
+    "revision": "bcc776345852aa9836e64bcc3e000864",
     "url": "/static/media/user-shape.svg"
   },
   {
