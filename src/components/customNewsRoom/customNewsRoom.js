@@ -5,11 +5,15 @@ import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 import { useHistory } from "react-router-dom";
 
 const CustomNewsRoom = (props) => {
-  let history = useHistory();
   const classes = CustomNewsRoomStyles();
+  let history = useHistory();
   const handleRoute = (url) => {
-    history.push(url);
-  }
+    if (url) {
+      window.open(url, "_blank");
+    } else {
+      history.push("/newsroom");
+    }
+  };
   return (
     <div className={classes.main}>
       <Grid container spacing={3}>
@@ -24,7 +28,10 @@ const CustomNewsRoom = (props) => {
                   <div className={classes.description}>
                     <Typography>{val?.description}</Typography>
                   </div>
-                  <div className={classes.buttonText} onClick={() => handleRoute(val?.url)} >
+                  <div
+                    className={classes.buttonText}
+                    onClick={() => handleRoute(val?.url)}
+                  >
                     <Typography>
                       {val?.button_text}
                       <ArrowForwardIcon />

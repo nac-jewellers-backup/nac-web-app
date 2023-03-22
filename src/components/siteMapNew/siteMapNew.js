@@ -3,6 +3,7 @@ import Footer from "components/Footer/Footer";
 import { makeStyles } from "@material-ui/core/styles";
 import Header from "components/SilverComponents/Header";
 import React from "react";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   siteMapBox: {
@@ -69,11 +70,36 @@ const useStyles = makeStyles((theme) => ({
       fontSize: "12px !important",
     },
   },
+  subName: {
+    color: "#231535",
+    textDecoration: "none",
+    fontSize: "14px",
+    lineHeight: "25px",
+    padding: "0 10px 0 10px",
+    margin: "0 0 0 10px",
+    display: "block",
+    cursor: "pointer",
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "13px",
+      padding: "0 6px 0 6px",
+      margin: "0 0 0 7px",
+    },
+    "&:hover": {
+      color: "#600fc6",
+    },
+  },
 }));
 
 const SiteMapNew = (props) => {
   const classes = useStyles();
-
+  let history = useHistory();
+  const handleRoute = (url) => {
+    if(url){
+      window.open(url,'_blank')
+    }else{
+      history.push("/siteMap");
+    }  
+  }
   return (
     <div className={classes.siteMapBox}>
       <h2 className={classes.heading}>Site Index</h2>
@@ -95,8 +121,9 @@ const SiteMapNew = (props) => {
                   </Typography>
                   {e?.categoryList?.map((val) => {
                     return (
-                      <Typography>
-                        <a href={val.url}>{val.name}</a>
+                      <Typography className={classes.subName} onClick={() => handleRoute(val?.url)}>
+                        {/* <a href={val.url}>{val.name}</a> */}
+                        {val.name}
                       </Typography>
                     );
                   })}

@@ -5,10 +5,14 @@ import CustomAdvertisementStyles from "./style";
 import { useHistory } from "react-router-dom";
 
 const CustomAdvertisement = (props) => {
-  let history = useHistory();
   const classes = CustomAdvertisementStyles();
+  let history = useHistory();
   const handleRoute = (url) => {
-    history.push(url);
+    if(url){
+      window.open(url,'_blank')
+    }else{
+      history.push("/advertising");
+    }  
   }
   return (
     <div className={classes.main}>
