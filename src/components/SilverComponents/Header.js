@@ -455,9 +455,10 @@ class Header extends Component {
                                 backgroundColor: "#b78231",
                                 border: "0px",
                                 borderColor: "#fff",
-
+                                cursor: 'none',
                                 boxShadow: "6px 7px 6px #bebfbf",
                               }}
+                              inputValue=""
                               classes={{ input: classes.smallFont }}
                               onChange={(e,value) => this.handleLivePrice(e,value)}
                               options={this?.state?.goldPrice}
@@ -470,6 +471,7 @@ class Header extends Component {
                                   {...params}
                                   value={this.state?.livePrice?.label}
                                   placeholder={this.state?.livePrice?.label ?? "Today's Gold Rate"}
+                                  style={{cursor: 'none'}}
                                   variant="outlined"
                                 />
                               )}
@@ -855,6 +857,7 @@ class Header extends Component {
                                     borderColor: "#fff",
                                     boxShadow: "6px 7px 6px #bebfbf",
                                   }}
+                                  inputValue=""
                                   onChange={(e,value) => this.handleLivePrice(e,value)}
                                   classes={{ input: classes.smallFont }}
                                   options={this?.state?.goldPrice}
