@@ -305,7 +305,7 @@ function HeaderHoverMenuItem(props) {
     {
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/bangles%26bracelets/yGnqN0%402x.png",
       content: <>Platinum&nbsp;Bracelets</>,
-      url: "/buy+platinum-bracelets-jewellery",
+      url: "/bracelets-buy+platinum-jewellery",
     },
     {
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/bangles%26bracelets/iYTHDb%402x.png",
@@ -379,7 +379,7 @@ function HeaderHoverMenuItem(props) {
       image:
         "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/z5pju4%402x.png",
     },
-    { title: "Jadau", url: "/jadai-jewellery", image: "" },
+    { title: "Jadau", url: "/jewellery-jadau", image: "" },
 
     {
       title: "Strings",
@@ -614,7 +614,7 @@ function HeaderHoverMenuItem(props) {
       url: "/silver+baby+gifts-articles",
     },
     {
-      title: "Silver Dining Set",
+      title: "Dinner Set",
       img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/NAC+Menu+images/Silver+Articles/SILVER+DINNER+SETS.jpg",
       url: "/silver+dinner+set-articles",
     },
@@ -712,35 +712,37 @@ function HeaderHoverMenuItem(props) {
   const silverItems2 = [
     {
       title: <>CORPORATE&nbsp;GIFTING</>,
-      url:"/commingsoon",
+      url:"/comingsoon",
       contents: [
-        { item: "Below ₹3,000", url: "/commingsoon" },
-        { item: "₹3,001 - ₹5,001", url: "/commingsoon" },
-        { item: "Above ₹5,001", url: "/commingsoon" },
+        { item: "Below ₹3,000", url: "/comingsoon" },
+        { item: "₹3,001 - ₹5,001", url: "/comingsoon" },
+        { item: "Above ₹5,001", url: "/comingsoon" },
       ],
     },
     {
-      title: "TANGORE",
-      contents: [{ item: "Photos" }, { item: "Others" }, { item: "GIFTS" }],
+      title: "TANJORE",
+      url:"/comingsoon",
+      contents: [{ item: "Photos", url: "/tanjore" }, { item: "Others", url: "/comingsoon" }, { item: "GIFTS", url: "/comingsoon" }],
     },
     {
       title: "LEG CHAIN",
+      url:"/comingsoon",
       contents: [
-        { item: "Anklets" },
-        { item: "Toe Rings" },
-        { item: "Velli Paavai Set / combo set" },
-        { item: "Antique" },
-        { item: "Others" },
+        { item: "Anklets", url: "/anklets-silver+articles-jewellery" },
+        { item: "Toe Rings", url: "/comingsoon" },
+        { item: "Velli Paavai Set / combo set",url: "/comingsoon" },
+        { item: "Antique",url: "/comingsoon" },
+        { item: "Others",url: "/comingsoon" },
       ],
     },
     {
       title: "FURNITURE",
       contents: [
-        { item: "Chairs" },
-        { item: "Dining Table" },
-        { item: "Centre Tables" },
-        { item: "Sofa sets" },
-        { item: "Others" },
+        { item: "Chairs",url:"/comingsoon" },
+        { item: "Dining Table",url:"/comingsoon" },
+        { item: "Centre Tables",url:"/comingsoon" },
+        { item: "Sofa sets",url:"/comingsoon" },
+        { item: "Others",url:"/comingsoon" },
       ],
     },
   ];
@@ -1559,6 +1561,7 @@ function HeaderHoverMenuItem(props) {
                           <Typography
                             className={classes.listedItemsvalue}
                             style={{ paddingTop: "12px" }}
+                            onClick={() => x.url ? window.location.href = x.url : ""}
                           >
                             {x.item}
                           </Typography>
