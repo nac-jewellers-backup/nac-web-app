@@ -421,212 +421,220 @@ function Component(props) {
           {Gallery(props, callmouseover, callmouseout, cardstate)}
         </CardActions>
         <Card className={classes.priceClass}>
-          <CardContent
-            className={classes.cardContent}
-            style={{ display: "flex", marginBottom: "10px" }}
+          <Link
+            to={{ pathname: `/${props.data.skuUrl ?? props.data.sku_url}` }}
+            style={{ textDecoration: "none" }}
+            target="_blank"
+            onClick={handleProductDetatiContext(props)}
+            aria-label="...."
           >
-            <Grid
-              container
-              item
-              xs={12}
-              className={classes.textPriceCardGrid}
-              alignItems="center"
+            <CardContent
+              className={classes.cardContent}
+              style={{ display: "flex", marginBottom: "10px" }}
             >
-              {props.shopothercategories ? (
-                <>
-                  <Grid container xs={12}>
-                    <Typography
-                      variant="body1"
-                      style={{
-                        paddingLeft: "5px",
-                        marginTop: "14px",
-                        textTransform: "uppercase",
-                      }}
-                      className={`${classes.titlesshopother}`}
-                    >
-                      {" "}
-                      SHOP&nbsp;
-                      {props.data.product_list.product_type}
-                    </Typography>
-                  </Grid>
-                </>
-              ) : (
-                <>
-                  <Hidden smDown>
-                    <Grid
-                      container
-                      item
-                      xs={12}
-                      sm={12}
-                      className={`${classes.priceClassMain}`}
-                      style={{
-                        display: "flex",
-                        alignItems: "baseline",
-                        justifyContent: "space-between",
-                      }}
-                    >
-                      <Grid items>
-                        {props.data.offerPrice === props.data.price ? (
-                          <Typography
-                            variant="h5"
-                            component="h5"
-                            className={classes.offerMainPrice}
-                            style={{
-                              justifyContent: "flex-start",
-                              display: "flex",
-                              paddingLeft: "5px",
-                              color: "rgb(109,110,112)",
-                              fontFamily: "notoSerif-regular",
-                            }}
-                          >
-                            {CurrencyConversion(props.data.price)}
-                            
-                          </Typography>
-                        ) : (
-                          <Typography
-                            variant="h6"
-                            component="h6"
-                            className={classes.offerMainPrice}
-                            style={{
-                              justifyContent: "flex-start",
-                              display: "flex",
-                              paddingLeft: "5px",
-                              fontFamily: "notoSerif-regular",
-                              color: "rgb(109,110,112)",
-                            }}
-                          >
-                            {CurrencyConversion(props.data.price)}
-                        
-                            <span
-                              style={{ display: "flex", alignSelf: "center" }}
+              <Grid
+                container
+                item
+                xs={12}
+                className={classes.textPriceCardGrid}
+                alignItems="center"
+              >
+                {props.shopothercategories ? (
+                  <>
+                    <Grid container xs={12}>
+                      <Typography
+                        variant="body1"
+                        style={{
+                          paddingLeft: "5px",
+                          marginTop: "14px",
+                          textTransform: "uppercase",
+                        }}
+                        className={`${classes.titlesshopother}`}
+                      >
+                        {" "}
+                        SHOP&nbsp;
+                        {props.data.product_list.product_type}
+                      </Typography>
+                    </Grid>
+                  </>
+                ) : (
+                  <>
+                    <Hidden smDown>
+                      <Grid
+                        container
+                        item
+                        xs={12}
+                        sm={12}
+                        className={`${classes.priceClassMain}`}
+                        style={{
+                          display: "flex",
+                          alignItems: "baseline",
+                          justifyContent: "space-between",
+                        }}
+                      >
+                        <Grid items>
+                          {props.data.offerPrice === props.data.price ? (
+                            <Typography
+                              variant="h5"
+                              component="h5"
+                              className={classes.offerMainPrice}
+                              style={{
+                                justifyContent: "flex-start",
+                                display: "flex",
+                                paddingLeft: "5px",
+                                color: "rgb(109,110,112)",
+                                fontFamily: "notoSerif-regular",
+                              }}
                             >
-                              {" "}
-                              <Typography
-                                className={classes.strikeText}
-                                style={{
-                                  paddingLeft: "6px",
-                                }}
+                              {CurrencyConversion(props.data.price)}
+                              
+                            </Typography>
+                          ) : (
+                            <Typography
+                              variant="h6"
+                              component="h6"
+                              className={classes.offerMainPrice}
+                              style={{
+                                justifyContent: "flex-start",
+                                display: "flex",
+                                paddingLeft: "5px",
+                                fontFamily: "notoSerif-regular",
+                                color: "rgb(109,110,112)",
+                              }}
+                            >
+                              {CurrencyConversion(props.data.price)}
+                          
+                              <span
+                                style={{ display: "flex", alignSelf: "center" }}
                               >
+                                {" "}
+                                <Typography
+                                  className={classes.strikeText}
+                                  style={{
+                                    paddingLeft: "6px",
+                                  }}
+                                >
+                                  <span
+                                    style={{
+                                      color: "rgb(109,110,112)",
+                                      textDecoration: "line-through",
+                                    }}
+                                  >
+                                    <span>
+                                      {
+                                        props.data.offerPrice === 0
+                                          ? " "
+                                          : CurrencyConversion(
+                                            props.data.offerPrice
+                                          )
+
+                                        
+                                      }
+                                    </span>
+                                  </span>
+                                </Typography>
+                              </span>
+                            </Typography>
+                          )}{" "}
+                        </Grid>
+                        {props.similarProducts ? (
+                          " "
+                        ) : (
+                          <Grid items>
+                            <Typography className={classes.discountPercentage}>
+                              {props.data.save === 0
+                                ? " "
+                                : ` ${Math.abs(
+                                  Math.round(props.data.save)
+                                )}% OFF`}
+                              &nbsp;&nbsp;
+                            </Typography>
+                          </Grid>
+                        )}
+                      </Grid>
+                      <Grid container xs={12}>
+                        <Typography
+                          variant="body1"
+                          component="span"
+                          style={{ paddingLeft: "5px" }}
+                          className={`${classes.titles}`}
+                        >
+                          {" "}
+                          {props.data.title.charAt(0).toUpperCase() +
+                            props.data.title.slice(1)}
+                        </Typography>
+                      </Grid>
+                    </Hidden>
+                    <Hidden mdUp>
+                      <Grid container xs={12}>
+                        <div>
+                          {props.data.offerPrice === props.data.price ? (
+                            <Typography
+                              variant="h5"
+                              component="h5"
+                              className={classes.offerMainPrice}
+                              style={{
+                                justifyContent: "flex-start",
+                                display: "flex",
+                                paddingLeft: "5px",
+                                color: "rgb(109,110,112)",
+                              }}
+                            >
+                              {CurrencyConversion(props.data.price)}
+                            
+                            </Typography>
+                          ) : (
+                            <Grid container>
+                              <Grid item xs={12}>
+                                <Typography
+                                  className={classes.offerMainPrice}
+                                  style={{
+                                    justifyContent: "flex-start",
+                                    display: "flex",
+                                    paddingLeft: "5px",
+                                    color: "rgb(109,110,112)",
+                                  }}
+                                >
+                                  {CurrencyConversion(props.data.price)}
+                                
+                                </Typography>
                                 <span
                                   style={{
                                     color: "rgb(109,110,112)",
                                     textDecoration: "line-through",
+                                    fontSize: "12px",
+                                    paddingLeft: "5px",
                                   }}
                                 >
-                                  <span>
-                                    {
-                                      props.data.offerPrice === 0
-                                        ? " "
-                                        : CurrencyConversion(
-                                          props.data.offerPrice
-                                        )
+                                  {
+                                    props.data.offerPrice === 0
+                                      ? " "
+                                      : CurrencyConversion(props.data.offerPrice)
 
-                                      
-                                    }
-                                  </span>
+                                  
+                                  }
                                 </span>
-                              </Typography>
-                            </span>
-                          </Typography>
-                        )}{" "}
-                      </Grid>
-                      {props.similarProducts ? (
-                        " "
-                      ) : (
-                        <Grid items>
-                          <Typography className={classes.discountPercentage}>
-                            {props.data.save === 0
-                              ? " "
-                              : ` ${Math.abs(
-                                Math.round(props.data.save)
-                              )}% OFF`}
-                            &nbsp;&nbsp;
-                          </Typography>
-                        </Grid>
-                      )}
-                    </Grid>
-                    <Grid container xs={12}>
-                      <Typography
-                        variant="body1"
-                        component="span"
-                        style={{ paddingLeft: "5px" }}
-                        className={`${classes.titles}`}
-                      >
-                        {" "}
-                        {props.data.title.charAt(0).toUpperCase() +
-                          props.data.title.slice(1)}
-                      </Typography>
-                    </Grid>
-                  </Hidden>
-                  <Hidden mdUp>
-                    <Grid container xs={12}>
-                      <div>
-                        {props.data.offerPrice === props.data.price ? (
-                          <Typography
-                            variant="h5"
-                            component="h5"
-                            className={classes.offerMainPrice}
-                            style={{
-                              justifyContent: "flex-start",
-                              display: "flex",
-                              paddingLeft: "5px",
-                              color: "rgb(109,110,112)",
-                            }}
-                          >
-                            {CurrencyConversion(props.data.price)}
-                           
-                          </Typography>
-                        ) : (
-                          <Grid container>
-                            <Grid item xs={12}>
-                              <Typography
-                                className={classes.offerMainPrice}
-                                style={{
-                                  justifyContent: "flex-start",
-                                  display: "flex",
-                                  paddingLeft: "5px",
-                                  color: "rgb(109,110,112)",
-                                }}
-                              >
-                                {CurrencyConversion(props.data.price)}
-                              
-                              </Typography>
-                              <span
-                                style={{
-                                  color: "rgb(109,110,112)",
-                                  textDecoration: "line-through",
-                                  fontSize: "12px",
-                                  paddingLeft: "5px",
-                                }}
-                              >
-                                {
-                                  props.data.offerPrice === 0
-                                    ? " "
-                                    : CurrencyConversion(props.data.offerPrice)
-
-                                 
-                                }
-                              </span>
+                              </Grid>
                             </Grid>
-                          </Grid>
-                        )}{" "}
-                      </div>
-                      <Typography
-                        variant="body1"
-                        component="span"
-                        style={{ paddingLeft: "5px" }}
-                        className={`${classes.titles}`}
-                      >
-                        {" "}
-                        {props.data.title.charAt(0).toUpperCase() +
-                          props.data.title.slice(1)}
-                      </Typography>
-                    </Grid>
-                  </Hidden>
-                </>
-              )}
-            </Grid>
-          </CardContent>
+                          )}{" "}
+                        </div>
+                        <Typography
+                          variant="body1"
+                          component="span"
+                          style={{ paddingLeft: "5px" }}
+                          className={`${classes.titles}`}
+                        >
+                          {" "}
+                          {props.data.title.charAt(0).toUpperCase() +
+                            props.data.title.slice(1)}
+                        </Typography>
+                      </Grid>
+                    </Hidden>
+                  </>
+                )}
+              </Grid>
+            </CardContent>
+          </Link>
         </Card>
       </Card>
     </div>

@@ -302,7 +302,7 @@ const useRegister = (changePanel, props) => {
         });
         return false;
       }
-      makeFetch(values);
+      // makeFetch(values);
       return false;
     } else {
       makeFetcheditAddress(valuesadrees);
