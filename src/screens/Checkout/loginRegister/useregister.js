@@ -172,17 +172,17 @@ const useRegister = (changePanel, props) => {
     }
   }, [data]);
 
-  const handleChange = (type, value) => {
+  const handleChange = (type, value) => {    
     if (
       values.email !== "" &&
       type === "email" &&
       values["error"] &&
-      values["errortext"]
+      values["errortext"] 
     ) {
       values["error"]["emerr"] = false;
       values["errortext"]["emerr"] = "";
     }
-    if (values.password !== "" && values["error"] && values["errortext"]) {
+    if (values.password !== "" && values["error"] && values["errortext"] ) {
       values["error"]["passerr"] = false;
       values["errortext"]["passerr"] = "";
     }
@@ -217,6 +217,11 @@ const useRegister = (changePanel, props) => {
 
 
   const handleSubmit = (e) => {
+    var pattern = /^.*(?=.{8,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%&]).*$/;
+    values.email=values.email.trim();
+    values.password=values.password.trim();
+    values.firstname=values.firstname.trim();
+    values.lastname=values.lastname.trim();
     if (!pathnames) {
       if (values.email === "" && values["error"] && values["errortext"]) {
         values["error"]["emerr"] = true;
@@ -235,6 +240,15 @@ const useRegister = (changePanel, props) => {
           values,
         });
       }
+      if (!pattern.test(values.password)) {
+        values["error"]["passerr"] = true;
+        values["errortext"]["passerr"] = "Password must contain 1 Uppercase, 1 Lowercase, 1 numeric and minimum 8 characters in length!";
+        setValues({
+          ...values,
+          values,
+        });
+        return false;
+      }
       if (
         values.confirmpassword === "" &&
         values["error"] &&
@@ -246,6 +260,7 @@ const useRegister = (changePanel, props) => {
           ...values,
           values,
         });
+        return false;
       }
       if (values.firstname === "" && values["error"] && values["errortext"]) {
         values["error"]["firstname"] = true;
@@ -302,7 +317,7 @@ const useRegister = (changePanel, props) => {
         });
         return false;
       }
-      // makeFetch(values);
+      makeFetch(values);
       return false;
     } else {
       makeFetcheditAddress(valuesadrees);
