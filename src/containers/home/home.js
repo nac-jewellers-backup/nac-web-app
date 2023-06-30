@@ -25,6 +25,9 @@ import Homenote from "../../components/timeline/Homenote";
 import "./index.css";
 import InstagramFeed from "./InstagramFeed";
 import { Title } from "./titles";
+import { Modal, Button } from '@material-ui/core';
+import bidimage from "../../assets/NAC Jewellers popup 50 anniversary.jpg"
+
 const styles = (theme) => ({
   root: {
     overflow: "hidden",
@@ -228,6 +231,7 @@ class HomeComp extends React.Component {
     this.slider = React.createRef();
     this.livechat = React.createRef();
     this.state = {
+      modalOpen: true,
       loading: false,
       count: "",
       imageLoading: false,
@@ -416,9 +420,13 @@ class HomeComp extends React.Component {
   imageLoader = () => {
     this.setState({ imageLoading: true });
   };
+  onClose=()=>{
+    this.setState({ modalOpen: false });    
+  }
 
   render() {
     const { classes } = this.props;
+    const { modalOpen } = this.state;
     const dadgetdata = [
       {
         img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/banners/web/Group-1117.webp",
@@ -990,6 +998,33 @@ class HomeComp extends React.Component {
 
           <Footer />
         </Grid>
+        <Modal open={modalOpen}   style={{display:'flex',alignItems:'center',justifyContent:'center'}}>        
+          {/* Modal content */}         
+          <div  style={{
+            backgroundColor: '#b2832c',
+            color: 'white',
+            padding: '20px',
+            borderRadius: '8px',
+            position: 'relative'
+            
+          }}>
+            <button onClick={this.onClose} style={{
+              position: 'absolute',
+              top: '0px',
+              right: '0px',
+              background: 'rgb(39 45 91)',
+              width: '30px',
+              height: '30px',
+              fontSize: '25px',
+              color: '#fff',
+              zIndex:'99999'
+          }}>X</button>
+            
+            <a href={"https://anniversary.nacjewellers.net"} target="_blank">
+            <img src={bidimage} style={{maxWidth:'100%'}}  />
+            </a>
+          </div>
+        </Modal>
       </div >
     );
   }
