@@ -231,7 +231,7 @@ class HomeComp extends React.Component {
     this.slider = React.createRef();
     this.livechat = React.createRef();
     this.state = {
-      modalOpen: true,
+      modalOpen: false,
       loading: false,
       count: "",
       imageLoading: false,
