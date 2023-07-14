@@ -64,8 +64,8 @@ const useGift = () => {
     }
   }, [CodData]);
 
-  const handleChange = (type, value) => {
-    if (type === "gift_to") {
+  const handleChange = (type, value) => {   
+    if (type === "gift_to") {     
       if (value === email) {
         setEmailerr("Please Enter Mail Id Not Equal to Registered Mail ");
       } else {
@@ -82,14 +82,21 @@ const useGift = () => {
     }
   };
   const handleSubmit = (e) => {
-    // e.preventDefault();
-    const cart_id = {
-      cart_id: JSON.parse(localStorage.getItem("cart_id")).cart_id,
-    };
-    const Obj = { ...values, ...cart_id };
-    // setValues({...values,cart_id:JSON.parse(localStorage.getItem('cart_id')).cart_id})
-
-    makeFetch({ ...Obj });
+    // e.preventDefault();   
+    console.log(values.gift_to,"nnnnn")
+    if(!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(values.gift_to))){
+      alert("check mail id!!!")
+    }
+    else{
+      const cart_id = {
+        cart_id: JSON.parse(localStorage.getItem("cart_id")).cart_id,
+      };
+      const Obj = { ...values, ...cart_id };
+      // setValues({...values,cart_id:JSON.parse(localStorage.getItem('cart_id')).cart_id})
+  
+      makeFetch({ ...Obj });
+    }
+    
   };
 
   const handlers = { handleSubmit, handleChange };

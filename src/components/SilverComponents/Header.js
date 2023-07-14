@@ -194,6 +194,7 @@ class Header extends Component {
       }
     }
   }
+  
 
   getGoldPrice = () => {
     fetch(`${API_URL}/graphql`, {
@@ -326,7 +327,7 @@ class Header extends Component {
 
       menuListHeader,
       menuLists,
-    } = this.props.data;
+    } = this.props.data;    
     const { wishlist, cartcount } = this.props;
 
     let { selected, selected1 } = this.state;
@@ -449,7 +450,7 @@ class Header extends Component {
                           <ThemeProvider theme={theme}>
                             <Autocomplete
                               id="country-select-demo"
-                              size="small"
+                              size="small"                              
                               style={{
                                 color: "#000 !important",
                                 backgroundColor: "#b78231",

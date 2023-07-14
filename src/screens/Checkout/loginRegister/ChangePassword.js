@@ -35,6 +35,8 @@ const LoginComponent = (props) => {
     }
     const { classes } = props;
     const handelSubmit = async () => {
+        console.log("zxswsss")
+        var pattern = /^.*(?=.{8,30})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%&]).*$/;        
         if (values.oldpassword === "") {
             setValues({ ...values, oldpassworderror: true, oldpasswordText: "Field can't be empty!" })
         }
@@ -44,14 +46,16 @@ const LoginComponent = (props) => {
         else if (values.confirmPassword === "") {
             setValues({ ...values, confirmPasswordError: true, confirmPasswordHelper: "Field can't be empty!" })
         }
-        else if (values.newpassword.length < 8) {
-            setValues({ ...values, newPasswordError: true, newPasswordHelperText: "Password must be at least 8 characters!" })
+        else if (!pattern.test(values.newpassword)) {
+            setValues({ ...values, newPasswordError: true, newPasswordHelperText: "Password must contain 1 Uppercase, 1 Lowercase, 1 numeric and minimum 8 characters in length!" })
+            return false;
         }
         else if (values.newpassword !== values.confirmPassword) {
             setValues({ ...values, confirmPasswordError: true, confirmPasswordHelper: "New password and Confirm password does not match!" })
         }
         else {
             var body = { "oldpassword": values.oldpassword, "newpassword": values.newpassword }
+            console.log(body.newpassword,"----",body.oldpassword,"++++")
             await makeFetch(body);
         }
     }
@@ -91,7 +95,7 @@ const LoginComponent = (props) => {
                             <form action="javascript:void(0)" onSubmit={(e) => {
                                 handelSubmit(e)
                             }}>
-                                <div className={`${classes.normalfonts}`} style={{ fontSize: "18px" }}>Reset Password </div>
+                                <div className={`${classes.normalfonts}`} style={{ fontSize: "18px" }}>Reset Password</div>
                                 <TextField
                                     autoComplete='off'
                                     margin="normal"

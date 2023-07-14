@@ -9,7 +9,7 @@ import {
   IndexCollectionHomePage,
 } from "../../mappers/dummydata/savingNac";
 import Footer from "../../components/Footer/Footer";
-export default function Savings(props) {
+export default function Savings(props) {  
   const classes = styles();
   const next = () => {
     slider.current.slickNext();

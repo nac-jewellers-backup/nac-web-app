@@ -216,12 +216,13 @@ const useRegister = (changePanel, props) => {
   };
 
 
-  const handleSubmit = (e) => {
-    var pattern = /^.*(?=.{8,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%&]).*$/;
+  const handleSubmit = (e) => {    
+    var pattern = /^.*(?=.{8,30})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%&]).*$/;
     values.email=values.email.trim();
     values.password=values.password.trim();
     values.firstname=values.firstname.trim();
     values.lastname=values.lastname.trim();
+    var regExp = /[a-zA-Z]/g;
     if (!pathnames) {
       if (values.email === "" && values["error"] && values["errortext"]) {
         values["error"]["emerr"] = true;
@@ -270,6 +271,15 @@ const useRegister = (changePanel, props) => {
           values,
         });
       }
+      //check contains atleast one alphabet
+      if (!regExp.test(values.firstname)) {
+        values["error"]["firstname"] = true;
+        values["errortext"]["firstname"] = "First Name must contain atleast one alphabet";
+        setValues({
+          ...values,
+          values,
+        });
+      }
       if (values.lastname === "" && values["error"] && values["errortext"]) {
         values["error"]["lastname"] = true;
         values["errortext"]["lastname"] = "Last Name is required";
@@ -279,6 +289,17 @@ const useRegister = (changePanel, props) => {
         });
         return false;
       }
+      // if(!(regExp.test(values.lastname))) {
+      //   console.log(regExp.test(values.lastname),"sugu...")
+      //   console.log(values.lastname,"mmm")        
+      //   values["error"]["lastname"] = true;
+      //   values["errortext"]["lastname"] = "Last Name must contain atleast one alphabet";
+      //   setValues({
+      //     ...values,
+      //     values,
+      //   });
+      //   return false;
+      // }
       if (values.email === "" && values["error"] && values["errortext"]) {
         values["error"]["emerr"] = true;
         values["errortext"]["emerr"] = "Email is required";

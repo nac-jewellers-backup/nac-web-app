@@ -91,7 +91,7 @@ const ProductlistComponent = (props) => {
     setShow(!show);
   };
 
-  const gotogift = () => {
+  const gotogift = () => {    
     handlers.handleSubmit();
   };
   const editmsgform = () => {
@@ -318,7 +318,7 @@ const ProductlistComponent = (props) => {
                       type="text"
                       value={emailedit}
                       required
-                      onChange={(e) => Setemailedit(e.target.value)}
+                      onChange={(e) => Setemailedit(e.target.value)}                      
                     />
 
                     <div className="login-butn">

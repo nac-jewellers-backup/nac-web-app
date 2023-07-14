@@ -359,7 +359,7 @@ export default function Contact(props) {
                       multiline
                       rows="6"
                       variant="filled"
-                      color="secondary"
+                      color="secondary"                      
                     />
                   </Grid>
                   <Grid container justifyContent="flex-end">

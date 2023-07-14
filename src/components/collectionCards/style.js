@@ -50,7 +50,7 @@ const CollectionCardsStyles = makeStyles((theme) => ({
   content: {
     textAlign: "center",
     "& p": {
-      fontSize: "17px !important",
+      fontSize: "20px !important",
       color: "#807e7e",
       padding: "0 30px",
       marginBottom: "10px",

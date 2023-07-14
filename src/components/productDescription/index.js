@@ -66,7 +66,7 @@ class ProductDescription extends Component {
     const datadescription =
       this?.props?.data[0]?.seoText?.length > 0
         ? this.props.data[0].seoText
-        : " ";
+        : this.props.data_title;
    
 
     return (
@@ -102,7 +102,7 @@ class ProductDescription extends Component {
                               fontSize: "14px",
                             }}
                           >
-                            {datadescription.slice(0, 320)}...
+                            {datadescription == this.props.data_title?(datadescription):(datadescription.slice(0, 320)+"...")}
                           </span>
 
                           <p
@@ -114,7 +114,7 @@ class ProductDescription extends Component {
                             id="readMore"
                           >
                             {/* <span ><i className="fa faMore">&#xf0da;</i></span> */}
-                            READ MORE
+                            {datadescription.length > 320 ? "READ MORE" : ""}
                           </p>
                         </>
                       ) : (
@@ -156,7 +156,7 @@ class ProductDescription extends Component {
                               fontSize: "12px",
                             }}
                           >
-                            {datadescription.slice(0, 320)}...
+                            {datadescription == this.props.data_title?(datadescription):(datadescription.slice(0, 320)+"...")}
                           </span>
 
                           <p

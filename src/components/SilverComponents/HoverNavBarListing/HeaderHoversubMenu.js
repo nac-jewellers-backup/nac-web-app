@@ -24,7 +24,7 @@ function HeaderHoverMenuItem(props) {
     {
       title: "Gemstone",
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/Group+319.svg",
-      url1: "/#",
+      url1: "/gemstone-earrings-jewellery",
       url2: "#",
       url3: "#",
     },
@@ -52,7 +52,7 @@ function HeaderHoverMenuItem(props) {
     {
       title: <span>Gold &nbsp;&nbsp;</span>,
       img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/earrings/BXoGgN.svg",
-      url1: "/gold-earrings-jewellery",
+      url1: "/earrings-plain+gold-jewellery",
       url2: "/gold-rings-jewellery",
       url3: "/gold-necklaces-jewellery",
     },

@@ -56,7 +56,7 @@ const initialCtx = {
 export const FilterOptionsContext = React.createContext(initialCtx);
 export const FilterOptionsConsumer = FilterOptionsContext.Consumer;
 
-const Provider = (props) => {
+const Provider = (props) => {    
   const [filters, setFilters] = React.useState({
     Offers: {},
     Availability: {},

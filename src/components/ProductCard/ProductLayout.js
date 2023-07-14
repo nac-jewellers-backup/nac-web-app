@@ -95,8 +95,7 @@ class Component extends React.Component {
     this.props.setOffset(offsets);
   };
   render() {
-    const { classes, data } = this.props;
-   
+    const { classes, data } = this.props;   
 
     return (
       <>
@@ -123,7 +122,15 @@ class Component extends React.Component {
                     cols={this.state.colSize}
                     style={{ margin: "25px !important" }}
                   >
-                    {data.map((tile, i, index) => {
+                    {data.map((tile, i, index) => {                       
+                      if(tile.image.hoverImage.img !== tile.image.placeImage.img && (tile.image.hoverImage.img == "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/NAC+logo+mnemonic.png" || tile.image.placeImage.img == "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/NAC+logo+mnemonic.png")){
+                        if(tile.image.hoverImage.img == "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/home_page/NAC+logo+mnemonic.png"){
+                          tile.image.hoverImage.img = tile.image.placeImage.img
+                        }
+                        else{
+                          tile.image.placeImage.img =  tile.image.hoverImage.img                         
+                        }
+                      }
                       return tile && Object.entries(tile).length > 0 ? (
                         <GridListTile
                           key={tile.title}

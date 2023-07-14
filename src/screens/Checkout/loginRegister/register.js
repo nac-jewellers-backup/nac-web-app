@@ -116,7 +116,7 @@ const RegisterComponent = (props) => {
                         {label:"Mrs",value:"Mrs"},
                         {label:"Ms",value:"Ms"}
                       ]}
-                    />
+                    required/>
                   </Grid>
                 )}
                 {paths && (

@@ -14,7 +14,7 @@ const BlogImageCard = ({ value = [], handleShow = () => null }) => {
   const [count, setCount] = useState(3);
   const [cardData, setCardData] = useState([]);
 
-  const readMoreBlog = (value) => {
+  const readMoreBlog = (value) => {    
     handleShow();
     setMore(value);
     setShow(true);
@@ -42,7 +42,7 @@ const BlogImageCard = ({ value = [], handleShow = () => null }) => {
       {!show ? (
         <Grid container>
           <Grid item xs={12}>
-            {cardData?.map((e) => {
+            {cardData?.map((e) => {              
               return (
                 <div className={classes.main} style={{cursor:"pointer"}} onClick={() => readMoreBlog(e)}>
                   <Grid container spacing={2}>
@@ -80,11 +80,11 @@ const BlogImageCard = ({ value = [], handleShow = () => null }) => {
                 </div>
               );
             })}
-            <div className={classes.viewMore}>
+            {cardData.length > 0 && cardData.length >= count-1 ? <div className={classes.viewMore}>
               <Button onClick={careerViewMoreClick} variant="outlined">
                 View More
               </Button>
-            </div>
+            </div>:""}
           </Grid>
         </Grid>
       ) : (

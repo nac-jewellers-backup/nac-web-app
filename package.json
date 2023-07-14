@@ -101,7 +101,7 @@
   "scripts": {
     "generate-build-version": "node generate-build-version",
     "start": "npm run serve",
-    "start:dev": "env-cmd -f .env.development node scripts/start",
+    "start:dev": "env-cmd -f .env.development node --openssl-legacy-provider scripts/start",
     "start:staging": "env-cmd -f .env.staging node scripts/start",
     "start:production": "env-cmd -f .env.production node scripts/start",
     "build": "npm run generate-build-version &&  node scripts/build",

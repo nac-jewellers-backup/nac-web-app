@@ -20,7 +20,7 @@ class ProductDetails extends React.Component {
     expanded: null,
   };
 
-  productsDetails = (data) => {
+  productsDetails = (data) => {    
     const { classes } = this.props;
 
     return (

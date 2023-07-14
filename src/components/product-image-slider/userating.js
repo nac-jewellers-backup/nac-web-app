@@ -6,7 +6,7 @@ import { CUSTOMERREVIEWS, USERPROFILES } from 'queries/productdetail';
 import { ProductDetailContext } from 'context/ProductDetailContext';
 
 const useRating = (props) => {
-    const { setrating, ratingcounts, setratingcounts, setratingcountsclear } = React.useContext(ProductDetailContext);
+    const { setrating, setratingcounts} = React.useContext(ProductDetailContext);
     const [values, setValues] = React.useState({
         user_id: "",
         rate: "",
@@ -28,7 +28,7 @@ const useRating = (props) => {
         },
     });
     const [invalids, setInvalids] = React.useState({ username: false, password: false });
-    const { data, error, loading, makeFetch, mapped, status } = useNetworkRequest('/addproductreview', {}, false);
+    const { data, makeFetch } = useNetworkRequest('/addproductreview', {}, false);
     var variab = {}
     // const { setratingcounts } = React.useContext(ProductDetailContext);
     const { loading: codloading, error: coderror, data: CodData, makeRequestCod } = useCheckForCod(CUSTOMERREVIEWS, () => { }, {});

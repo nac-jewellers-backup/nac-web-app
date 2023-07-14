@@ -249,6 +249,7 @@ class Addressdetails extends React.Component {
             <>
               {_add_data_addres() &&
                 _add_data_addres().map((val_addrs1, index) => {
+                  console.log(val_addrs1,"lll")
                   return JSON.parse(localStorage.getItem("bil_isactive")) ===
                     index ? (
                     false
@@ -330,9 +331,10 @@ class Addressdetails extends React.Component {
                             {val_addrs1.city}
                             <br />
                             {val_addrs1.state}
+                            &nbsp;
                             {val_addrs1.pincode}
                             <br />
-                            IN
+                            {val_addrs1.country}                            
                           </p>
                           <div className="card-foo">
                             <span

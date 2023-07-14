@@ -11,9 +11,9 @@ class Stylori extends Component {
 
   render() {
     let productId = window.location.search.replace("?", "");
-
+    
     return (
-      <>
+      <>      
         <ProductDetailProvider productId={productId}>
           <CartProvider>
             <ProductDetail />

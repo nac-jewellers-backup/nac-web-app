@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Hidden,Card,CardMedia,CardContent,CardActionArea,CardActions,Button, Typography, Box, Snackbar } from "@material-ui/core";
+import { Grid,Card,CardContent,Button, Typography,Snackbar } from "@material-ui/core";
 import { Input } from "components/InputComponents/TextField/Input";
 import expstyles from "./experienceStyle";
 import Detailpage from "./detailPage";

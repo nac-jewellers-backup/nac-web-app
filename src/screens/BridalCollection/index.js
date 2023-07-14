@@ -1,36 +1,15 @@
-import {
-  Box,
-  Button,
-  Container,
-  Grid,
-  Hidden,
-  IconButton,
-  Typography,
+import {  
+  Grid 
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import ArrowLeftIcon from "@material-ui/icons/ArrowLeft";
-import ArrowRightIcon from "@material-ui/icons/ArrowRight";
-import { TitleAndData } from "components";
 import { BannerComponent } from "components";
 import { SlideImgMediaCard } from "components";
-import { QueryForm } from "components";
 import AboutBookAppointment from "components/aboutAppointment";
 import AboutCollectionComp from "components/aboutCollection";
-import Slideshow from "components/Carousel/carosul";
-import { ImgMediaCard } from "components/ProductCard/Card";
 import Header from "components/SilverComponents/Header";
 import SpclTitleDescr from "components/spclTitleDescr";
-import Storelocator from "components/storelocator/storelocator";
-import { Title } from "containers/home/titles";
-import { storeLocatorData } from "mappers/dummydata/storeLocator";
-import { CDNPAGES } from "queries/cdnPages";
-import React, { useEffect } from "react";
-import { BsChevronDown } from "react-icons/bs";
-import ArrowLeftBlue from "../../assets/arrowblueleft";
-import ArrowRightBlue from "../../assets/arrowrightblue";
+import React from "react";
 import Footer from "../../components/Footer/Footer";
-import { API_URL } from "../../config";
-import { AllHOMEQUERY } from "../../queries/home";
 import { BridalData } from "./bridalData";
 
 

@@ -286,11 +286,17 @@ const AddressComponent = (props) => {
                         }
                         placeholder="Mobile number"
                         value={values.addressOne.contactno}
-                        helperText="Please enter yout 10 digit mobile number"
+                        helperText="Please enter your 10 digit mobile number"
                         maxLength={10}
                         minLength={10}
                         required
                       />
+                      <label className="errtext">
+                        {" "}
+                        {values.addressOne &&
+                          values.addressOne.errortext &&
+                          values.addressOne.errortext.mobile}
+                      </label>
                     </Grid>
                   </Grid>
                 </Grid>

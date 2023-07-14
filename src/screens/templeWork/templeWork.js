@@ -1,8 +1,4 @@
 import { Grid } from "@material-ui/core";
-import { CommonTitle } from "components";
-import CommonContent from "components/commonContent/commonContent";
-import Footer from "components/Footer/Footer";
-import Header from "components/SilverComponents/Header";
 import TempleCardComp from "components/templeCardComp";
 import TempleCardDetailComp from "components/templeCardDetailComp";
 import TempleFooterComp from "components/templeFootComp";
@@ -10,8 +6,6 @@ import TempleProducts from "components/TempleProducts";
 import TempleWorkBannerComp from "components/TempleWorkBannerComp";
 import React from "react";
 import TempleWorkStyles from "./style";
-import { TempleWorkData } from "./templeWorkData";
-
 const TempleWork = () => {
   const classes = TempleWorkStyles()
   const [templeShowDetail, setTempleShowDetail] = React.useState(false)

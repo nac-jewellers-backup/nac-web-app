@@ -40,9 +40,14 @@ const LoginComponent = (props) => {
     }
     const handelSubmit = async () => {
         // let regex = /^([0-9a-zA-Z]([-_\\.]*[0-9a-zA-Z]+)*)@([0-9a-zA-Z]([-_\\.]*[0-9a-zA-Z]+)*)[\\.]([a-zA-Z]{2,9})$/;
-        // let email = values.email;
-        if (values.email === "") {
+        // let email = values.email;        
+        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        if ((values.email === "")) {
             setValues({ ...values, error: true, errorText: "Please enter email!" })
+        }
+        else if(!values.email.match(mailformat)){
+            console.log("ffff")
+            setValues({ ...values, error: true, errorText: "Please enter a valid email id !" })
         }
         else {
             let emails = { "email": values.email }
@@ -86,7 +91,7 @@ const LoginComponent = (props) => {
                                 <Input
                                     margin="normal"
                                     variant="outlined"
-                                    type="email"
+                                    type="text"
                                     autoComplete='off'
                                     name="email"
                                     value={values.email}

@@ -56,6 +56,7 @@ const Addressforms = (changePanel) => {
       errortext: {
         pinerr: "",
         pinerr1: "",
+        mobile:""
       },
     },
     addressTwo: {
@@ -71,7 +72,7 @@ const Addressforms = (changePanel) => {
       country_code: "+91",
       contactno: "",
       addresstype: 2,
-      errortext: { pinerr: "", pinerr1: "" },
+      errortext: { pinerr: "", pinerr1: ""},
     },
     addrs: valuegust && valuegust.length > 0 ? false : true,
     checkValue: true,
@@ -270,7 +271,7 @@ const Addressforms = (changePanel) => {
     },
     [CodData]
   );
-  const handleChange = (type, field, value, pincod) => {
+  const handleChange = (type, field, value, pincod) => {    
     values[type][field] = value;
     if (field === "pincode") {
       values[type]["pincode"] = value;
@@ -292,12 +293,23 @@ const Addressforms = (changePanel) => {
   };
 
   const handleSubmit = (e) => {
+    console.log(values.addressOne,"shipping address") 
+    values.addressOne.firstname=values.addressOne.firstname.trim()
+    values.addressOne.lastname=values.addressOne.lastname.trim()
+    values.addressOne.pincode= values.addressOne.pincode.trim()
+    values.addressOne.contactno= values.addressOne.contactno.trim()
+
+    var mozile=parseInt(values.addressOne.contactno);
     if (values && values.addressOne && values.addressOne.pincode === "") {
       values["addressOne"]["errortext"]["pinerr"] = "Pin Code is required";
       setValues({ ...values, values });
       return false;
     }
-
+    if (values && values.addressOne && mozile === 0) {
+      values["addressOne"]["errortext"]["mobile"] = "Enter valid mobile number!";
+      setValues({ ...values, values });
+      return false;
+    }
     if (
       (values &&
         values.addressOne &&
@@ -677,10 +689,14 @@ const Addressforms = (changePanel) => {
       window.location.reload();
     }
   };
-  const handleKeyPress = (e, isNumber) => {
+  const handleKeyPress = (e, isNumber) => {    
     if (isNumber) {
+      if(isNumber == "contactno"){
+        values["addressOne"]["errortext"]["mobile"] = "";
+      }
       if (!(e.which >= 48 && e.which <= 57)) e.preventDefault();
-    }
+    } 
+    
   };
   const redirectForm1 = (event) => {
     values["addressOne"] = "";
@@ -702,6 +718,7 @@ const Addressforms = (changePanel) => {
         errortext: {
           pinerr: "",
           pinerr1: "",
+          mobile:""
         },
       },
       addressTwo: {

@@ -124,7 +124,7 @@ export const TopFilters = (props) => {
                   </Grid>
                 </Grid>
 
-                {props.filter.map((listName, i) => {
+                {props.filter.map((listName, i) => {                 
                   if (
                     listName === "Style" ||
                     listName === "Occasion" ||

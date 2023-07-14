@@ -1697,7 +1697,7 @@ class Checkoutcard extends React.Component {
                 <Typography className={`subhesder ${classes.normalfonts1}`}>
                   Delivery Charge
                   <br />
-                  (Standrad)
+                  (Standard)
                 </Typography>
               </Grid>
               <Grid xs={6}>

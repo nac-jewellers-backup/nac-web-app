@@ -80,8 +80,8 @@ const styles = (theme) => ({
     },
   },
 });
-class ProductDetail extends Component {
-  constructor(props) {
+class ProductDetail extends Component {  
+  constructor(props) {    
     super(props);
     this.state = {
       clear: "",
@@ -132,31 +132,68 @@ class ProductDetail extends Component {
       }
     };
     const ArrowLeft = (props) => {
-      const { className, onClick } = props;
-      return (
-        <ArrowLeftIcon
-          className={`${className} ${classes.collectionSection}`}
-          onClick={onClick}
-          style={{
-            fill: "theme.palette.secondary.main !important",
-            fontSize: "40px",
-          }}
-        />
-      );
+      const { className, onClick } = props;      
+      if(props.className == "slick-arrow slick-prev slick-disabled"){
+        return (        
+          <ArrowLeftIcon
+            className={`${className} ${classes.collectionSection}`}
+            onClick={onClick}
+            style={{
+              fill: "theme.palette.secondary.main !important",
+              fontSize: "40px",
+              display:"none"
+            }}
+          />
+        );
+      }
+      else{
+        return (
+        
+          <ArrowLeftIcon
+            className={`${className} ${classes.collectionSection}`}
+            onClick={onClick}
+            style={{
+              fill: "theme.palette.secondary.main !important",
+              fontSize: "40px",
+                         }}
+          />
+        );
+      }
+      
     };
     const ArrowRight = (props) => {
-      const { className, style, onClick } = props;
-      return (
-        <ArrowRightIcon
-          className={`${className} ${classes.collectionSection}`}
-          onClick={onClick}
-          style={{
-            ...style,
-            fill: "theme.palette.secondary.main !important",
-            fontSize: "40px",
-          }}
-        />
-      );
+      const { className, style, onClick } = props;      
+        if(props.className == "slick-arrow slick-next slick-disabled"){
+          return (
+        
+            <ArrowRightIcon
+              className={`${className} ${classes.collectionSection}`}
+              onClick={onClick}
+              style={{
+                ...style,
+                fill: "theme.palette.secondary.main !important",
+                fontSize: "40px",
+                display:"none"
+              }}
+            />
+          );          
+        }
+        else{
+          return (
+        
+            <ArrowRightIcon
+              className={`${className} ${classes.collectionSection}`}
+              onClick={onClick}
+              style={{
+                ...style,
+                fill: "theme.palette.secondary.main !important",
+                fontSize: "40px",
+                display:"block"
+              }}
+            />
+          );          
+        }
+      
     };
     const dataCarouselcollections = {
       arrows: true,
@@ -484,7 +521,23 @@ class ProductDetail extends Component {
             </Grid>
           </Grid>
 
-          <Grid
+          
+          <div
+            className="pricing-product-media"
+            style={{
+              maxWidth: "1600px",
+              margin: "auto",
+            }}
+          >
+            <Grid container spacing={12}>
+              <Grid item xs={12} style={{ paddingLeft: "2%" }}>
+                <br />
+                <ProductDetails data={this?.props?.data} />
+              </Grid>
+
+              <br />
+            </Grid>
+            <Grid
             container
             item
             xs={12}
@@ -515,8 +568,9 @@ class ProductDetail extends Component {
                       class="subslider-carousel"
                       dataCarousel={dataCarouselcollections}
                     >
-                      {this?.props?.data[0]?.fadeImageSublist.map((val) => {
-                        return (
+                      {this?.props?.data[0]?.fadeImageSublist.map((val,i) => {                                               
+                        if(val.skuId !== this?.props?.data.skuId){
+                          return (                          
                           <ImgMediaCard
                             data={val}
                             similarProducts={true}
@@ -524,6 +578,8 @@ class ProductDetail extends Component {
                             hoverText={true}
                           />
                         );
+                        }
+                        
                       })}
                     </Slideshow>
                   </div>
@@ -531,21 +587,6 @@ class ProductDetail extends Component {
               </>
             }
           </Grid>
-          <div
-            className="pricing-product-media"
-            style={{
-              maxWidth: "1600px",
-              margin: "auto",
-            }}
-          >
-            <Grid container spacing={12}>
-              <Grid item xs={12} style={{ paddingLeft: "2%" }}>
-                <br />
-                <ProductDetails data={this?.props?.data} />
-              </Grid>
-
-              <br />
-            </Grid>
           </div>
           <div
             style={{

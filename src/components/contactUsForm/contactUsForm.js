@@ -31,10 +31,12 @@ const ContactUsForm = (props) => {
 
   // onChange the text-field 
   const onChangeData = (event) => {
-    setState({
-      ...state,
-      [event.target.name]: event.target.value,
-    });
+    
+      setState({
+        ...state,
+        [event.target.name]: event.target.value,
+      });
+        
   };
 
   // Trigger the email
@@ -64,6 +66,11 @@ const ContactUsForm = (props) => {
 
   // On submit the Contact
   const onsubmitvalue = () => {
+    state.firstName = state.firstName.trim()
+    state.lastName = state.lastName.trim()
+    state.email = state.email.trim()
+    state.number = state.number.trim()
+    state.message =  state.message.trim()
     if (
       state.firstName &&
       state.lastName &&
@@ -71,34 +78,43 @@ const ContactUsForm = (props) => {
       state.number &&
       state.message
     ) {
-      fetch(`${API_URL}/graphql`, {
-        method: "post",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          query: SEND_ENQUIREY,
-          variables: {
-            appointment: {
-              updatedAt: new Date(),
-              createdAt: new Date(),
-              email: state.email,
-              appointmentTypeId: 5,
-              comments: state.message,
-              specialRequests: "contactus",
-              customerName: state.firstName + " " + state.lastName,
-              isActive: true,
-              mobile: state.number,
-            },
+      if(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(state.email)){
+        fetch(`${API_URL}/graphql`, {
+          method: "post",
+          headers: {
+            "Content-Type": "application/json",
           },
-        }),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          if (data?.data?.createAppointment?.appointment?.id) {
-            emailTrigger(data?.data?.createAppointment?.appointment?.id);
-          }
-        });
+          body: JSON.stringify({
+            query: SEND_ENQUIREY,
+            variables: {
+              appointment: {
+                updatedAt: new Date(),
+                createdAt: new Date(),
+                email: state.email,
+                appointmentTypeId: 5,
+                comments: state.message,
+                specialRequests: "contactus",
+                customerName: state.firstName + " " + state.lastName,
+                isActive: true,
+                mobile: state.number,
+              },
+            },
+          }),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data?.data?.createAppointment?.appointment?.id) {
+              emailTrigger(data?.data?.createAppointment?.appointment?.id);
+            }
+          });
+      }
+      else{
+        setOpenSnackError({
+          type:true,
+          message:"Enter valid Email Id!!"
+        })        
+      }
+      
     }else{
       setOpenSnackError({
         type:true,
@@ -188,7 +204,7 @@ const ContactUsForm = (props) => {
                       <Typography>{val?.title}</Typography>
                     </div>
                     <div className={classes.description}>
-                      <Typography>{val?.description}</Typography>
+                      <Typography>{val?.description.replace("with","within")}</Typography>
                     </div>
                   </div>
                   <Grid container spacing={2}>
@@ -203,7 +219,7 @@ const ContactUsForm = (props) => {
                             id="firstName"
                             variant="outlined"
                             autoFocus
-                            margin="dense"
+                            margin="dense"                            
                             fullWidth
                             value={state.firstName}
                             onChange={onChangeData}
@@ -249,8 +265,9 @@ const ContactUsForm = (props) => {
                             fullWidth
                             type={"number"}
                             value={state.number}
-                            onChange={onChangeData}
+                            onChange={onChangeData}                            
                             name="number"
+                            onKeyDown={ (evt) => (evt.key === 'e' || evt.key === 'E' || evt.key === '.' || evt.key === '+' || evt.key === '-')  && evt.preventDefault() }                            
                             required
                           />
                         </div>

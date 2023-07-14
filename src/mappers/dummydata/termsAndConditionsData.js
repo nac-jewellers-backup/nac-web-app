@@ -42,7 +42,7 @@ export const termsData = [
     title: "Cancel an Order",
     element: (
       <span>
-        To cancel an order, please send an email to <a href="care@nacjewellers.com">care@nacjewellers.com</a> within the
+        To cancel an order, please send an email to <a href="mailto:care@nacjewellers.com">care@nacjewellers.com</a> within the
         same days from order confirmation. Please include the order ID in the
         subject line. EX: Order Cancellation.
       </span>

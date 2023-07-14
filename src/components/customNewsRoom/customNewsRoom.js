@@ -17,7 +17,10 @@ const CustomNewsRoom = (props) => {
   return (
     <div className={classes.main}>
       <Grid container spacing={3}>
-        {props?.value?.map((val) => {
+        {props?.value?.map((val) => { 
+          if(val.url == ""){
+            val.url="https://www.youtube.com/watch?v=4SGmIZ0GoNw"
+          }
           return (
             <>
               <Grid item xs={12} md={6} lg={4}>

@@ -1,9 +1,6 @@
 import React from "react";
-import { Grid, Hidden,Card,CardMedia,CardContent,CardActionArea,CardActions,Button, Typography, Box } from "@material-ui/core";
-import { Input } from "components/InputComponents/TextField/Input";
+import { Grid, Card,CardContent,Typography} from "@material-ui/core";
 import expstyles from "./experienceStyle";
-import Detailpage from "./detailPage";
-import { useNetworkRequest } from "hooks/index";
 import LotusTitle from '../../assets/NAC---Desktop-UI---NAC-Experiences (LL, EP, BS, Alive)_Sample-19.png';
 import AliveTitle from '../../assets/NAC---Desktop-UI---NAC-Experiences (LL, EP, BS, Alive)_Sample-20.png';
 import EarTitle from '../../assets/NAC---Desktop-UI---NAC-Experiences (LL, EP, BS, Alive)_Sample-21.png';

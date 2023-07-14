@@ -85,7 +85,7 @@ const Productprice = (
 
   return (
     <div>
-      {data.map((val) => (
+      {data.map((val) => (       
         <>
           <Grid container spacing={12} sm={12} className={classes.pricedetails}>
             <Hidden mdUp>
@@ -183,7 +183,7 @@ const Productprice = (
                         <Box>
                           {val?.dis?.length > 140 && showData
                             ? val?.dis
-                            : `${val?.dis.substring(0, 140)}..`}
+                            : val?.dis?.length == 0?val?.title:`${val?.dis.substring(0, 140)}..`}
                           <span
                             style={{
                               cursor: "pointer",

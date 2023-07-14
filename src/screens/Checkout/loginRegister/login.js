@@ -239,7 +239,7 @@ const LoginComponent = (props) => {
               } else {
                 props.history.push("/Checkout");
               }
-            }
+            }            
           })
           .catch(console.error);
       }
@@ -261,6 +261,7 @@ const LoginComponent = (props) => {
     setEmailForm(!emailForm);
   };
   const onChangeNumber = (e) => {
+    console.log(e.target.name,"kkkk")
     setNumberForm({ ...numberForm, [e.target.name]: e.target.value });
     setNumErr("");
     setOtpErr("");
@@ -332,6 +333,7 @@ const LoginComponent = (props) => {
         })
         .catch((err) => {
           console.log(err);
+          setOtpErr("Please enter valid OTP");
         });
     } else {
       setOtpErr("Please enter valid OTP");
@@ -672,11 +674,12 @@ const LoginComponent = (props) => {
                 {numberForm.NumberSubmit ? (
                   <Input
                     name="otp"
-                    type="number"
+                    type="text"                    
                     value={numberForm.otp ?? ""}
                     helperText={otpErr}
-                    placeholder="Enter OTP"
+                    placeholder="Enter OTP"                    
                     onChange={(e) => onChangeNumber(e)}
+                    onKeyDown={ (evt) => (evt.key === 'e' || evt.key === 'E' || evt.key === '.' || evt.key === '+' || evt.key === '-')  && evt.preventDefault() }
                     min="4"
                     max="4"
                   />
@@ -689,6 +692,7 @@ const LoginComponent = (props) => {
                     helperText={numErr}
                     onChange={(e) => onChangeNumber(e)}
                     placeholder="Enter Mobile Number"
+                    onKeyDown={ (evt) => (evt.key === 'e' || evt.key === 'E' || evt.key === '.' || evt.key === '+' || evt.key === '-')  && evt.preventDefault() }
                     min="10"
                     max="10"
                   />

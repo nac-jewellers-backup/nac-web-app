@@ -91,7 +91,8 @@ function CdnPages(props) {
   }, [location]);
 
   const [state, setState] = useState([]);
-  const handleComponents = (val) => {
+  const handleComponents = (val) => { 
+    console.log(val.component,"llll")   
     switch (val.component) {
       case "BannerComponent": {
         return (

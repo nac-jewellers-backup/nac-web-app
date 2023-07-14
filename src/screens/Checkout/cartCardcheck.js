@@ -27,6 +27,7 @@ import "./chckout.css";
 import LoginRegisterIndex from "./loginRegister";
 import ProductList from "./orderSummary/productList";
 import PaymentIndex from "./paymentOption/paymentindex";
+import { padding } from "polished";
 
 var adres = {};
 var variab = {};
@@ -65,6 +66,7 @@ class Component extends React.Component {
     panel3: false,
     panel4: false,
   };
+
   componentDidMount() {
     ReactPixel.init("1464338023867789", {}, { debug: true, autoConfig: false });
     ReactPixel.fbq("track", "PageView");
@@ -293,10 +295,10 @@ class Component extends React.Component {
                       >
                         <Grid container alignItems="center">
                           <Grid item xs={11}>
-                            <Typography className="text-chck">
+                            <Typography  className="text-chck">
                               {" "}
                               1.&nbsp;&nbsp;LOGIN
-                              <div className="ch-d-vl">{email}</div>
+                              <div className="ch-d-vl " style={{textTransform:"lowercase"}}>{email}</div>
                             </Typography>
                           </Grid>
                           <Grid item xs={1}>

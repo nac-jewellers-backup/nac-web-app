@@ -32,9 +32,14 @@ const LoginComponent = (props) => {
 
     const { classes } = props;
     const handelSubmit = async () => {
+        var decimal=  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,50}$/;
         if (values.newpassword === "") {
             setValues({ ...values, newPasswordError: true, newPasswordHelperText: "Field can't be empty!" })
         }
+        // pattern check..
+        else if (!values.newpassword.match(decimal)) {
+            setValues({ ...values, newPasswordError: true, newPasswordHelperText: "Password must contain one uppercase,one numeric and minimum 8 characters in length!" })
+        }        
         else if (values.confirmPassword === "") {
             setValues({ ...values, confirmPasswordError: true, confirmPasswordHelper: "Field can't be empty!" })
         }

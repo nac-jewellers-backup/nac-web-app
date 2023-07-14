@@ -1,6 +1,5 @@
 import React from "react";
 import { API_URL, HOME_PAGE_URL, CDN_URL } from "../config";
-
 const initialCtx = {
   NetworkCtx: {
     apiUrl: API_URL,

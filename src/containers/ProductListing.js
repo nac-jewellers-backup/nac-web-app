@@ -179,7 +179,7 @@ class Stylori extends React.Component {
           <Grid item xs={12} style={{ backgroundColor: "#ebebeb" }}>
             {this.state.starting ? (
               <Slideshow sliderRef={this.slider} dataCarousel={setting}>
-                {this.state.bannerData.map((val, index) => (
+                {this.state.bannerData.map((val, index) => (                  
                   <>
                     <Hidden smDown>
                       <Grid
@@ -253,6 +253,10 @@ class Stylori extends React.Component {
                   data={dataFilter}
                   datalisting={data}
                   wishlist={this.props.wishlistdata}
+                  data_title={this.props?.location?.pathname
+                    ?.replaceAll("/", " ")
+                    .replaceAll("-", " ")
+                    .replaceAll("+", " ") ?? " "}
                 />
                 <Filter
                   datas={data}

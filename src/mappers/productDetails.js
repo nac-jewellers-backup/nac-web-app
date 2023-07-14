@@ -417,7 +417,7 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
             : null,
         maxOrderQty: PD && PD?.maxOrderQty ? PD?.maxOrderQty : 1,
         minOrderQty: PD && PD?.minOrderQty ? PD?.minOrderQty : 1,
-        show: PD?.showPriceBreakup,
+        show: true,
 
         productsubHeaderlist: [
           {
@@ -498,7 +498,7 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
         productsDetails: [
           {
             header: "Product Details",
-            show: PD?.showPriceBreakup,
+            show: true,
             namedetail: [
               {
                 name: "Product Code",
@@ -1073,7 +1073,7 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
         productsDetailsonly: [
           {
             header: "Product Details",
-            show: PD?.showPriceBreakup,
+            show: true,
             namedetail: [
               {
                 name: "Product Code",
@@ -1127,7 +1127,7 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
         productsDetailssm: [
           {
             header: "Product Details",
-            show: PD?.showPriceBreakup,
+            show: true,
             namedetail: [
               {
                 name: "Product Description",
@@ -1708,7 +1708,7 @@ export default function (data, like_data, viewedddatas, rating, tabsChange) {
         productsDetailsonlysm: [
           {
             header: "Product Details",
-            show: PD?.showPriceBreakup,
+            show: true,
             namedetail: [
               {
                 name: "Product Desscription",

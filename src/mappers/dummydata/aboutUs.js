@@ -241,19 +241,19 @@ export const AboutUs = {
           img: [
             {
               img:
-                "https://storage.googleapis.com/media.nacjewellers.com/resources/about_us/Chairman%20Sir.jpg",
+                "https://d5hytmf23w067.cloudfront.net/resources/about_us/Chairman%20Sir.jpg",
               name: "Shri. N. Anjaneyalu Chetty",
               position: "The Chairman",
             },
             {
               img:
-                "https://storage.googleapis.com/media.nacjewellers.com/resources/about_us/Director.jpg",
+                "https://d5hytmf23w067.cloudfront.net/resources/about_us/Director.jpg",
               name: "Mr. N. Anandha Ramanujam",
               position: "Director",
             },
             {
               img:
-                "https://storage.googleapis.com/media.nacjewellers.com/resources/about_us/MD.jpg",
+                "https://d5hytmf23w067.cloudfront.net/resources/about_us/MD.jpg",
               name: "Mr. N. Anantha Padmanaban",
               position: "Managing Director",
             },
@@ -608,19 +608,19 @@ export const Return = {
           img: [
             {
               img:
-                "https://storage.googleapis.com/media.nacjewellers.com/resources/about_us/Chairman%20Sir.jpg",
+                "https://d5hytmf23w067.cloudfront.net/resources/about_us/Chairman%20Sir.jpg",
               name: "Shri. N. Anjaneyalu Chetty",
               position: "The Chairman",
             },
             {
               img:
-                "https://storage.googleapis.com/media.nacjewellers.com/resources/about_us/Director.jpg",
+                "https://d5hytmf23w067.cloudfront.net/resources/about_us/Director.jpg",
               name: "Mr. N. Anandha Ramanujam",
               position: "Director",
             },
             {
               img:
-                "https://storage.googleapis.com/media.nacjewellers.com/resources/about_us/MD.jpg",
+                "https://d5hytmf23w067.cloudfront.net/resources/about_us/MD.jpg",
               name: "Mr. N. Anantha Padmanaban",
               position: "Managing Director",
             },
@@ -729,19 +729,19 @@ export const Delivery = {
           img: [
             {
               img:
-                "https://storage.googleapis.com/media.nacjewellers.com/resources/about_us/Chairman%20Sir.jpg",
+                "https://d5hytmf23w067.cloudfront.net/resources/about_us/Chairman%20Sir.jpg",
               name: "Shri. N. Anjaneyalu Chetty",
               position: "The Chairman",
             },
             {
               img:
-                "https://storage.googleapis.com/media.nacjewellers.com/resources/about_us/Director.jpg",
+                "https://d5hytmf23w067.cloudfront.net/resources/about_us/Director.jpg",
               name: "Mr. N. Anandha Ramanujam",
               position: "Director",
             },
             {
               img:
-                "https://storage.googleapis.com/media.nacjewellers.com/resources/about_us/MD.jpg",
+                "https://d5hytmf23w067.cloudfront.net/resources/about_us/MD.jpg",
               name: "Mr. N. Anantha Padmanaban",
               position: "Managing Director",
             },
@@ -831,19 +831,19 @@ export const Privacy = {
           img: [
             {
               img:
-                "https://storage.googleapis.com/media.nacjewellers.com/resources/about_us/Chairman%20Sir.jpg",
+                "https://d5hytmf23w067.cloudfront.net/resources/about_us/Chairman%20Sir.jpg",
               name: "Shri. N. Anjaneyalu Chetty",
               position: "The Chairman",
             },
             {
               img:
-                "https://storage.googleapis.com/media.nacjewellers.com/resources/about_us/Director.jpg",
+                "https://d5hytmf23w067.cloudfront.net/resources/about_us/Director.jpg",
               name: "Mr. N. Anandha Ramanujam",
               position: "Director",
             },
             {
               img:
-                "https://storage.googleapis.com/media.nacjewellers.com/resources/about_us/MD.jpg",
+                "https://d5hytmf23w067.cloudfront.net/resources/about_us/MD.jpg",
               name: "Mr. N. Anantha Padmanaban",
               position: "Managing Director",
             },

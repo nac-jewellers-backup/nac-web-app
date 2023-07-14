@@ -91,6 +91,7 @@ export const RouterApp = (props) => {
   var loc_PD = window.location.pathname.split("/").filter((val) => {
     if (val === "silverjewellery") return val;
   });
+  console.log(Globalctx.pathName,"lll",loc_PD.length,"zzz")
 
   return (
     <Switch history={browserHistory}>
@@ -117,7 +118,7 @@ export const RouterApp = (props) => {
         component={HomeComp}
         exact
         path={routes.HomePageStylori}
-      />
+      />      
       <Route key="Silver" component={Silver} exact path={routes.Silver} />
       <Route key="Faqs" component={FaqDetails} exact path={routes.Faqs} />
       <Route

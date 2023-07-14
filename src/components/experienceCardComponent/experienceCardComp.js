@@ -63,6 +63,10 @@ const ExperienceCards = (props) => {
   );
 
   const handleSubmit = (type) => {
+      
+    values.name=values.name.trim() 
+    values.mobile=values.mobile.trim()
+    values.email=values.email.trim()
     var emailvld =
       /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (values.name === "" && values["error"]) {
@@ -71,6 +75,7 @@ const ExperienceCards = (props) => {
         ...values,
         values,
       });
+      return false;
     }
     if (values.mobile === "" && values["error"]) {
       values["error"]["mobile"] = "Mobile Number is required";
@@ -78,7 +83,22 @@ const ExperienceCards = (props) => {
         ...values,
         values,
       });
+      return false;
     }
+    if (values.mobile !== "") {
+      console.log("sss")        
+      let text = values.mobile;
+      let pattern = /^[0-9]/g;
+      let result = text.match(pattern);
+      if(!result){
+        values["error"]["mobile"] = "Mobile Number is Invalid";
+        setValues({
+          ...values,
+          values,
+        });
+        return false;
+      }
+    }    
     if (!emailvld.test(values.email)) {
       values["error"]["email"] = "An email address must contain a single @/.";
       setValues({
@@ -157,6 +177,7 @@ const ExperienceCards = (props) => {
                           fullWidth
                           variant="outlined"
                           value={values.name}
+                          inputProps={{maxLength:60}}
                           error={
                             values.error && values.error.name !== ""
                               ? true
@@ -178,10 +199,11 @@ const ExperienceCards = (props) => {
                       <div className={classes.textField}>
                         <TextField
                           name="mobile"
-                          id="outlined-basic"
+                          id="outlined-basic"                                                    
                           fullWidth
                           variant="outlined"
-                          value={values.mobile}
+                          value={values.mobile}                          
+                          inputProps={{maxLength:10,pattern:"[6-9]{1}[0-9]{9}"}}
                           isNumber
                           error={
                             values.error && values.error.mobile !== ""

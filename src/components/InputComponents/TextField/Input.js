@@ -29,7 +29,7 @@ const useStyles = makeStyles({
 
 });
 
-export const Input = (props) => {
+export const Input = (props) => {  
   let {
     isNumber = false,
     pattern,
@@ -43,7 +43,7 @@ export const Input = (props) => {
     isSide,
     ...rest
   } = props;
-
+ 
   const defaultStyle = {
     margin: "normal",
   };

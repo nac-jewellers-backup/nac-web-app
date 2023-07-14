@@ -263,6 +263,7 @@ class HomeComp extends React.Component {
     })
       .then((res) => res.json())
       .then((data) => {
+        console.log(data,"manos")
         //set banner
         let bannerDataFull =
           data?.data?.allBanners?.nodes?.sort(

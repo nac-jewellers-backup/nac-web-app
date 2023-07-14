@@ -348,12 +348,12 @@ export default function Footer(props) {
     {
       row: [
         {
-          url: "#",
+          url: "/account-profile",
           heading: "Customer Service",
         },
 
         {
-          url: "#",
+          url: "/account-allorders",
           Title: "Track Your Order",
         },
         {
@@ -374,15 +374,15 @@ export default function Footer(props) {
         },
 
         {
-          url: "",
+          url: "/contactus",
           Title: "+91 44 4399 6666 - Customer Care",
         },
         {
-          url: "",
+          url: "mailto:care@nacjewellers.com",
           Title: "care@nacjewellers.com - Email",
         },
         {
-          url: "",
+          url: "https://wa.me/9597457555",
           Title: "+91 95974 57555 - WhatsApp",
         },
         {

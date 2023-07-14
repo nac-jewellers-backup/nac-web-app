@@ -87,6 +87,7 @@ export default function ExperienceCard(props) {
         ...values,
         values,
       });
+      return false;
     }
     if (values.mobile === "" && values["error"]) {
       values["error"]["mobile"] = "Mobile Number is required";
@@ -94,6 +95,15 @@ export default function ExperienceCard(props) {
         ...values,
         values,
       });
+      return false;
+    }
+    if (values.mobile > 10) {
+      values["error"]["mobile"] = "Enter valid Mobile Number";
+      setValues({
+        ...values,
+        values,
+      });
+      return false;
     }
     if (!emailvld.test(values.email)) {
     values["error"]["email"] =
@@ -180,7 +190,7 @@ export default function ExperienceCard(props) {
                         </Grid>
                         <Grid item xs={10} style={{width:"100%"}}>
                            <h5 className={`title ${classes.normalfonts2}`}>Name :</h5>
-                             <Input
+                             <Input                               
                                 name="name"
                                 isSide
                                 value={values.name}

@@ -408,6 +408,10 @@ function Component(props) {
   const callmouseout = () => {
     setCardState({ ...cardstate, hovered: !cardstate.hovered });
   };
+  // var prod_desc=props.data.title;
+  // if(prod_desc.length > 24){
+  //   prod_desc=prod_desc.substring(0,24)+"..."    
+  // }
 
   return (
     <div
@@ -559,9 +563,9 @@ function Component(props) {
                           style={{ paddingLeft: "5px" }}
                           className={`${classes.titles}`}
                         >
-                          {" "}
-                          {props.data.title.charAt(0).toUpperCase() +
-                            props.data.title.slice(1)}
+                          {" "}                          
+                          {props.data.title.charAt(0).toUpperCase()+props.data.title.substring(1,24) +"..."
+                            }
                         </Typography>
                       </Grid>
                     </Hidden>
