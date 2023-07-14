@@ -27,6 +27,7 @@ import InstagramFeed from "./InstagramFeed";
 import { Title } from "./titles";
 import { Modal, Button } from '@material-ui/core';
 import bidimage from "../../assets/NAC Jewellers popup 50 anniversary.jpg"
+
 const styles = (theme) => ({
   root: {
     overflow: "hidden",
@@ -230,7 +231,7 @@ class HomeComp extends React.Component {
     this.slider = React.createRef();
     this.livechat = React.createRef();
     this.state = {
-      modalOpen: true,
+      modalOpen: false,
       loading: false,
       count: "",
       imageLoading: false,
@@ -425,7 +426,7 @@ class HomeComp extends React.Component {
 
 
   render() {
-    const { classes } = this.props;
+    const { classes } = this.props;    
     const { modalOpen } = this.state;
     const dadgetdata = [
       {
