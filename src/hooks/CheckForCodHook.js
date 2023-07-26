@@ -2,7 +2,7 @@ import React from 'react';
 import { createApolloFetch } from 'apollo-fetch';
 import { NetworkContext } from 'context/NetworkContext';
 
-export const useCheckForCod = (query, mapper, variables = {}, initRequest = false) => {
+export const useCheckForCod = (query, mapper, variables = {}, initRequest = false) => {    
     const [loading, setLoading] = React.useState(true);
     const [error, setError] = React.useState(false);
     const [data, setData] = React.useState({});
@@ -10,9 +10,9 @@ export const useCheckForCod = (query, mapper, variables = {}, initRequest = fals
     const { NetworkCtx: { graphqlUrl: uri, cdnUrl } } = React.useContext(NetworkContext);
     const client = createApolloFetch({ uri });
 
-    const makeRequestCod = (reqvars) => {
-       
+    const makeRequestCod = (reqvars) => {             
         client({ query, variables: { ...variables, ...reqvars } }).then(resdata => {
+            console.log(resdata,"mudila...")
             setLoading(false);
             setError(false);
             setData(resdata);

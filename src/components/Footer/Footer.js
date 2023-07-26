@@ -331,7 +331,7 @@ export default function Footer(props) {
           Title: "Collections",
         },
         {
-          url: "/productcare",
+          url: "/productcare?pro=diamond",
           Title: "Diamond Guide",
         },
         {
@@ -425,7 +425,7 @@ export default function Footer(props) {
         },
         {
           subTitle: "Diamond Guide",
-          url: "/productcare",
+          url: "/productcare?pro=diamond",
         },
         {
           subTitle: "Birthstones Gudide",

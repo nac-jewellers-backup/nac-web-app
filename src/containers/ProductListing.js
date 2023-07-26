@@ -75,6 +75,7 @@ class Stylori extends React.Component {
     this.setState({ imageLoading: true });
   };
   render() {
+    console.log(this.props,"ppp")
     const { data, dataFilter, loading } = this.props;
     const setting = {
       dots: false,

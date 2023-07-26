@@ -131,6 +131,7 @@ const Provider = (props) => {
       let pathnameSplit = window.location.pathname.split("/");
       const splitHiphen = () => {
         if (pathnameSplit[1].indexOf("-")) {
+          console.log(pathnameSplit[1].split("-"),"iiii")
           return pathnameSplit[1].split("-");
         }
       };

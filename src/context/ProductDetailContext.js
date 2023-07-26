@@ -39,7 +39,7 @@ const initialCtx = {
 };
 export const ProductDetailContext = React.createContext(initialCtx);
 export const ProductDetailConsumer = ProductDetailContext.Consumer;
-export const TabsProvider = (props) => {
+export const TabsProvider = (props) => {  
   const [filters, setFilters] = React.useState(
     initialCtx.ProductDetailCtx.filters
   );
@@ -58,13 +58,12 @@ export const TabsProvider = (props) => {
    
     pathQueries();
   }, [filters]);
-  let variables;
-
+  let variables;  
   const { loading, error, data, makeRequest } = useGraphql(
     PRODUCTDETAILS,
     () => {},
     {}
-  );
+  );  
   const {
     loading: likeloading,
     error: likeerror,

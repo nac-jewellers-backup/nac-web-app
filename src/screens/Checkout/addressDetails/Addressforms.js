@@ -201,7 +201,7 @@ const Addressforms = (changePanel) => {
           CodData.data.allPincodeMasters.nodes[0]
             ? CodData.data.allPincodeMasters.nodes[0].district
             : "";
-        if (res2.length > 0) {
+        if (res2 && res2.length > 0) {
           if (pincods.pincod === "pincode1") {
             values["addressOne"]["state"] = res;
             values["addressOne"]["country"] = res1;
@@ -227,10 +227,9 @@ const Addressforms = (changePanel) => {
               values["addressTwo"]["errortext"]["pinerr1"] = "";
             }
           }
-        } else {
-          if (pincods.pincod === "pincode1") {
-            if (
-              res2.length < 0 ||
+        } else {          
+          if (pincods.pincod === "pincode1") { 
+            if (              
               res2 === "" ||
               (values["addressOne"] &&
                 values["addressOne"]["errortext"] &&
@@ -239,7 +238,11 @@ const Addressforms = (changePanel) => {
               values["addressOne"]["errortext"]["pinerr"] =
                 "Your pincode is Invalid!";
             }
-          } else {
+            else{              
+              values["addressOne"]["errortext"]["pinerr"] =
+                "Your pincode is Invalid!";              
+            }           
+          } else {            
             if (
               res2.length < 0 ||
               res2 === "" ||
@@ -249,12 +252,14 @@ const Addressforms = (changePanel) => {
             ) {
               values["addressTwo"]["errortext"]["pinerr1"] =
                 "Your pincode is Invalid!";
-            }
+            }           
           }
         }
         setValues({ ...values, values });
       } else if (a?.nodes === undefined || a?.nodes?.length == 0) {
-        if (values.addressOne.pincode || values.addressTwo.pincode) {
+        console.log("sssss")
+        if (values.addressOne.pincode || values.addressTwo.pincode) { 
+          console.log("ssssszzz")         
           let pins = values.addressOne.pincode || values.addressTwo.pincode;
           fetch(`${API_URL}/get_pincode_details?pincode=${pins}`, {
             method: "GET",
@@ -265,13 +270,14 @@ const Addressforms = (changePanel) => {
               if (response.status == "OK") {
                 makeRequestCod({ pincode: pins });
               }
+              
             });
         }
       }
     },
     [CodData]
   );
-  const handleChange = (type, field, value, pincod) => {    
+  const handleChange = (type, field, value, pincod) => {  
     values[type][field] = value;
     if (field === "pincode") {
       values[type]["pincode"] = value;
@@ -287,9 +293,10 @@ const Addressforms = (changePanel) => {
         }
       }
     }
+    
     pincods["pincod"] = pincod;
     setpincod({ ...pincods, pincods });
-    setValues({ ...values, values });
+    setValues({ ...values, values });    
   };
 
   const handleSubmit = (e) => {

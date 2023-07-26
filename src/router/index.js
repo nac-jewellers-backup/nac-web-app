@@ -269,10 +269,10 @@ export const RouterApp = (props) => {
         props.location.pathname !== "/siteMapNew" &&
         props.location.pathname !== "/form" &&
         props.location.pathname !== "/birthStones" &&
-
+        props.location.pathname !== "/undefined" &&
         Globalctx &&
         Globalctx.pathName === false &&
-        props.location.pathname !== "/homes" && (
+        props.location.pathname !== "/homes" && (          
           <Route exact={true} component={Stylori} path={"/:listingpage"} />
         )}
       {Globalctx &&
@@ -344,16 +344,18 @@ export const RouterApp = (props) => {
         // props.location.pathname !== "/careerPage" &&
         props.location.pathname !== "/siteMapNew" &&
         props.location.pathname !== "/birthStones" &&
+        props.location.pathname !== "/undefined" &&
         props.location.pathname !== "/form" && (
           <Route exact={true} component={Stylori} path={"/:listingpage"} />
         )}
-
+        
       {Globalctx && Globalctx.pathName && loc_PD.length > 0 ? (
         <Route exact component={SilverProductDetail} path={paths} />
       ) : (
         <Route exact component={PricingPage} path={paths} />
       )}
-      <Route key="cart" exact component={Cart} path={routes.Cart} />
+      <Route key="cart" exact component={Cart} path={routes.Cart} /> 
+      
       <Route key="Register" component={Register} exact path={routes.Register} />
       {localStorage.getItem("user_id") ? (
         <Redirect key="stylori-redirect" from="/login" exact to={"/"} />
@@ -511,7 +513,7 @@ export const RouterApp = (props) => {
         exact
         path={routes.BirthStones}
       />
-
+      <Route  component={HomeComp}  />     
     </Switch>
   );
 };

@@ -1,16 +1,24 @@
-import React from "react";
+import React,{useEffect} from "react";
 import { Card, Grid, Typography } from "@material-ui/core";
 import ProductCareStyles from "./style";
 
 const ProductCareComp = (props) => {
   const classes = ProductCareStyles();
+  const path=window.location.search.length;  
+  useEffect(() => {
+    if (path > 0) {
+      // Scroll to a specific position in the ScrollView
+      const scrollElement = document.getElementById('The guide to caring for diamonds');
+      scrollElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, []);
   return (
-    <Grid container className={classes.contentText}>
+    <Grid container className={classes.contentText} >
       <Grid item xs={12}>
         {props?.data?.map((e, index) => {
           console.log("index", index);
           return (
-            <Card className={classes.cardBox}>
+            <Card className={classes.cardBox} id={e?.heading}>
               <Grid container spacing={5}>
                 <Grid
                   item

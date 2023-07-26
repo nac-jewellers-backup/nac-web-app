@@ -6,7 +6,7 @@ import { ALLCDNPAGES } from "queries/cdnPages";
 import { API_URL } from "../../config";
 import CdnPages from "screens/CdnPages";
 
-export default class Stylori extends Component {
+export default class Stylori extends Component {  
   constructor(props) {
     super(props);
     this.state = {
@@ -38,6 +38,7 @@ export default class Stylori extends Component {
   }
 
   render() {
+    
     // const fadeImages = [
     //   'https://assets-cdn.stylori.com/120x120/images/product/SR0986/SR0986-1Y.jpg',
     //   'https://assets-cdn.stylori.com/120x120/images/product/SE0464/SE0464-1Y.jpg',

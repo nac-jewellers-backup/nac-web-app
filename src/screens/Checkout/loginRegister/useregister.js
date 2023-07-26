@@ -216,7 +216,8 @@ const useRegister = (changePanel, props) => {
   };
 
 
-  const handleSubmit = (e) => {    
+  const handleSubmit = (e) => { 
+    console.log(valuesadrees.pincode,"oooo000")
     var pattern = /^.*(?=.{8,30})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%&]).*$/;
     values.email=values.email.trim();
     values.password=values.password.trim();
@@ -340,8 +341,14 @@ const useRegister = (changePanel, props) => {
       }
       makeFetch(values);
       return false;
-    } else {
-      makeFetcheditAddress(valuesadrees);
+    } else {      
+      if(valuesadrees.pincode.length < 4){        
+        return false;
+      }
+      else{
+        makeFetcheditAddress(valuesadrees);        
+      }
+      
     }
   };
   const handlers = { handleSubmit, handleChange, handlesetvaluesadrees, clear };
