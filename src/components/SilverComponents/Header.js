@@ -144,7 +144,7 @@ function countryToFlag(isoCode) {
 
 class Header extends Component {
   constructor(props) {
-    super(props);
+    super(props);    
     this.state = {
       wishlist: this.props.datas,
       open: false,
@@ -327,7 +327,7 @@ class Header extends Component {
 
       menuListHeader,
       menuLists,
-    } = this.props.data;    
+    } = this.props.data;       
     const { wishlist, cartcount } = this.props;
 
     let { selected, selected1 } = this.state;

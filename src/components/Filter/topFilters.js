@@ -10,7 +10,7 @@ import HeaderHoverMenuItem from "../SilverComponents/HoverNavBarListing/HeaderHo
 import MorefiltersOpen from "./moreFilters";
 import { styles } from "./topFilterStyles";
 
-export const TopFilters = (props) => {
+export const TopFilters = (props) => {  
   const [state, setState] = React.useState({
     open: false,
     panel: false,

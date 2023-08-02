@@ -91,7 +91,6 @@ export const RouterApp = (props) => {
   var loc_PD = window.location.pathname.split("/").filter((val) => {
     if (val === "silverjewellery") return val;
   });
-  console.log(Globalctx.pathName,"lll",loc_PD.length,"zzz")
 
   return (
     <Switch history={browserHistory}>
@@ -118,7 +117,7 @@ export const RouterApp = (props) => {
         component={HomeComp}
         exact
         path={routes.HomePageStylori}
-      />      
+      />
       <Route key="Silver" component={Silver} exact path={routes.Silver} />
       <Route key="Faqs" component={FaqDetails} exact path={routes.Faqs} />
       <Route
@@ -242,7 +241,7 @@ export const RouterApp = (props) => {
         props.location.pathname !== "/collectionpage" &&
         props.location.pathname !== "/rudramadeviBlog" &&
         props.location.pathname !== "/temple-work" &&
-        // props.location.pathname !== "/experiences" &&
+        props.location.pathname !== "/experiences" &&
         props.location.pathname !== "/registers" &&
         props.location.pathname !== "/login" &&
         props.location.pathname !== "/checkout" &&
@@ -269,10 +268,10 @@ export const RouterApp = (props) => {
         props.location.pathname !== "/siteMapNew" &&
         props.location.pathname !== "/form" &&
         props.location.pathname !== "/birthStones" &&
-        props.location.pathname !== "/undefined" &&
+
         Globalctx &&
         Globalctx.pathName === false &&
-        props.location.pathname !== "/homes" && (          
+        props.location.pathname !== "/homes" && (
           <Route exact={true} component={Stylori} path={"/:listingpage"} />
         )}
       {Globalctx &&
@@ -320,7 +319,7 @@ export const RouterApp = (props) => {
         props.location.pathname !== "/collectionpage" &&
         props.location.pathname !== "/rudramadeviBlog" &&
         props.location.pathname !== "/temple-work" &&
-        // props.location.pathname !== "/experiences" &&
+        props.location.pathname !== "/experiences" &&
         props.location.pathname !== "/registers" &&
         props.location.pathname !== "/login" &&
         props.location.pathname !== "/checkout" &&
@@ -344,18 +343,16 @@ export const RouterApp = (props) => {
         // props.location.pathname !== "/careerPage" &&
         props.location.pathname !== "/siteMapNew" &&
         props.location.pathname !== "/birthStones" &&
-        props.location.pathname !== "/undefined" &&
         props.location.pathname !== "/form" && (
           <Route exact={true} component={Stylori} path={"/:listingpage"} />
         )}
-        
+
       {Globalctx && Globalctx.pathName && loc_PD.length > 0 ? (
         <Route exact component={SilverProductDetail} path={paths} />
       ) : (
         <Route exact component={PricingPage} path={paths} />
       )}
-      <Route key="cart" exact component={Cart} path={routes.Cart} /> 
-      
+      <Route key="cart" exact component={Cart} path={routes.Cart} />
       <Route key="Register" component={Register} exact path={routes.Register} />
       {localStorage.getItem("user_id") ? (
         <Redirect key="stylori-redirect" from="/login" exact to={"/"} />
@@ -413,12 +410,12 @@ export const RouterApp = (props) => {
         exact
         path={routes.SavingsPage}
       />
-      {/* <Route
+      <Route
         key="ExperiencePage"
         component={ExperiencePage}
         exact
         path={routes.ExperiencePage}
-      /> */}
+      />
       <Route
         key="AdvertisingPage"
         component={AdvertisingPage}
@@ -512,8 +509,8 @@ export const RouterApp = (props) => {
         component={BirthStones}
         exact
         path={routes.BirthStones}
-      />
-      <Route  component={HomeComp}  />     
+      />      
+
     </Switch>
   );
 };

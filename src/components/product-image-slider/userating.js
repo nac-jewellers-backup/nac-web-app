@@ -153,7 +153,7 @@ const useRating = (props) => {
         }
     }
     const handelSubmit = (e, props) => {
-
+        console.log("backkkkkkkk")
         var rats = props.ratingcounts.ratingcounts ? props.ratingcounts.ratingcounts : ""
         if ((rats > 0) && values.title.length > 0 && values.message.length > 0) {
             let user_id = localStorage.getItem("user_id") ? localStorage.getItem("user_id") : '';

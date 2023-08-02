@@ -83,8 +83,8 @@ const RatingComponent = (props) => {
                   name="message"
                   fullWidth
                   placeholder="TYPE YOUR REVIEW"
-                  className={`rating-form-text ${classes.ratingFormText}`}
-                  maxLength={250}
+                  className={`rating-form-text ${classes.ratingFormText}`}                  
+                  inputProps={{ maxLength: 250 }}
                   value={values.message}
                   multiline={true}
                   rowsMax={4}

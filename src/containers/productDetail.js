@@ -98,6 +98,7 @@ class ProductDetail extends Component {
         sku_id: this?.props?.data[0]?.skuId,
       })
       .then((res) => {
+        console.log(res,"+++")        
         this.setState({ otherCategeriesdata: res.data });
       });
   }
@@ -568,8 +569,9 @@ class ProductDetail extends Component {
                       class="subslider-carousel"
                       dataCarousel={dataCarouselcollections}
                     >
-                      {this?.props?.data[0]?.fadeImageSublist.map((val,i) => {                                               
-                        if(val.skuId !== this?.props?.data.skuId){
+                      {this?.props?.data[0]?.fadeImageSublist.map((val,i) => { 
+                        console.log(val,"ooookkk")                                              
+                        if(val.skuId !== this?.props?.data.skuId && val.img){
                           return (                          
                           <ImgMediaCard
                             data={val}
@@ -644,7 +646,7 @@ class ProductDetail extends Component {
                       class="subslider-carousel"
                       dataCarousel={dataCarouselcollections}
                     >
-                      {this?.state?.otherCategeriesdata.map((val) => {
+                      {this?.state?.otherCategeriesdata.map((val) => {                        
                         return (
                           <ImgMediaCard
                             shopothercategories={true}

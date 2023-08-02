@@ -20,6 +20,7 @@ const inputsearch = (props, state, handleChanges, handleCodChange) => {
   let { productShipBy } = state;
   let dateObj = "";
   let shipByDate = "";
+  console.log(productShipBy,"555")
   if (productShipBy) {
     dateObj = new Date(state.productShipBy);
     shipByDate = `Ships by ${dateObj.getUTCDate()} ${dateObj.toLocaleString(

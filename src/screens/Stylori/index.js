@@ -5,6 +5,8 @@ import { CartProvider } from "context";
 import { ALLCDNPAGES } from "queries/cdnPages";
 import { API_URL } from "../../config";
 import CdnPages from "screens/CdnPages";
+// import HomeComp from "../containers/home/home";
+import HomeComp from "../../containers/home/home";
 
 export default class Stylori extends Component {  
   constructor(props) {
@@ -53,14 +55,33 @@ export default class Stylori extends Component {
     //   fade: true,
     //   arrows: false
     // }
-    return this.state.cmspage ? (
-      <CdnPages {...this.props} />
-    ) : (
-      <FilterOptionsProvider>
-        <CartProvider>
-          <ProductListing />
-        </CartProvider>
-      </FilterOptionsProvider>
-    );
+    // done by kiki
+    // return this.state.cmspage ? (
+    //   <CdnPages {...this.props} />
+    // ) : (
+    //   <FilterOptionsProvider>
+    //     <CartProvider>
+    //       <ProductListing />
+    //     </CartProvider>
+    //   </FilterOptionsProvider>
+    // );
+    var window_path=window.location.href;
+    var jewel=window_path.includes('jewellery');
+    var silver=window_path.includes('silver');
+    if(this.state.cmspage){
+      return <CdnPages {...this.props} />
+    }
+    else if(jewel || silver){
+      return (
+        <FilterOptionsProvider>
+          <CartProvider>
+            <ProductListing />
+          </CartProvider>
+        </FilterOptionsProvider>
+      )
+    }
+    else{     
+      return <HomeComp></HomeComp>
+    }
   }
 }

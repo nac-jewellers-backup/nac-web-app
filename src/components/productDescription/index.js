@@ -36,8 +36,6 @@ class ProductDescription extends Component {
     const { classes } = this.props;
     // let path = window.location.pathname.split('/').pop();
     var loc = this.props.location.pathname;
-    
-   
     const fadeImages =
       this.props.datalisting &&
       this.props.datalisting &&

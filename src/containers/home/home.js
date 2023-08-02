@@ -369,7 +369,7 @@ class HomeComp extends React.Component {
         this.setState({ reviews: reviewresponse });
       });
     Aos.init({ duration: 1500 });
-
+    console.log(localStorage.getItem("user_id"),"user_id")
     //wishlist
     fetch(`${API_URL}/graphql`, {
       method: "post",

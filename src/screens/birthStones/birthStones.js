@@ -5,7 +5,7 @@ import useStyles from "./style";
 import { BirthStonesData } from "./birthStonesData"
 import logo from "./../../assets/birthStoneslogo.png"
 import Footer from "components/Footer/Footer";
-
+import { CommonTitle } from "components/CommonTitle";
 
 
 const BirthStones = () => {
@@ -28,8 +28,13 @@ const BirthStones = () => {
     return (
         <div >
             <Header />
-            <Box className={classes.root}>
-                <Box className={classes.logoItem}><img src={logo} /></Box>
+            {/* changed by kiki */}
+                <CommonTitle title="BIRTH STONES COLLECTION" />
+                
+            <Box className={classes.root} style={{marginTop: "0%"}}>
+                {/* <Box className={classes.logoItem}><img src={logo} /></Box> */}
+                
+                
                 <Grid container className={classes.stoneParent} >
                     {
                         BirthStonesData?.map((e, i) => {
