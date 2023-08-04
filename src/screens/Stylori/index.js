@@ -68,10 +68,12 @@ export default class Stylori extends Component {
     var window_path=window.location.href;
     var jewel=window_path.includes('jewellery');
     var silver=window_path.includes('silver');
+    var tanjore=window_path.includes('tanjore');
+    var comingsoon=window_path.includes('comingsoon');
     if(this.state.cmspage){
       return <CdnPages {...this.props} />
     }
-    else if(jewel || silver){
+    else if(jewel || silver || tanjore || comingsoon){
       return (
         <FilterOptionsProvider>
           <CartProvider>

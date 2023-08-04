@@ -82,7 +82,7 @@ export const TopFilters = (props) => {
             >
               <Grid container>
                 <Grid
-                  item
+                  item                  
                   className={`${classes.menuListCursor} ${classes.menuListCursorfiltersLabel}`}
                   onMouseOver={(event) => {
                     setState({
@@ -136,7 +136,7 @@ export const TopFilters = (props) => {
                   )
                     return (
                       <Grid
-                        item
+                        item                        
                         className={`${classes.menuListCursorMoreFilters} ${classes.menuListCursorfiltersLabel}`}
                         onMouseOver={(event) => {
                           setState({

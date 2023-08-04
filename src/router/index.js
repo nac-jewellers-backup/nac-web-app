@@ -190,7 +190,12 @@ export const RouterApp = (props) => {
         exact
         path={routes.Delivery}
       />
-      
+      <Route
+        key="birthStones"
+        component={BirthStones}
+        exact
+        path={routes.BirthStones}
+      />       
       <Route
         key="Education"
         component={AboutusPage}
@@ -504,12 +509,7 @@ export const RouterApp = (props) => {
         path={routes.CustomApplication}
       />
 
-      <Route
-        key="birthStones"
-        component={BirthStones}
-        exact
-        path={routes.BirthStones}
-      />      
+           
 
     </Switch>
   );

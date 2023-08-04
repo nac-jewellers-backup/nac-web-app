@@ -250,8 +250,8 @@ class HomeComp extends React.Component {
       whishlistcount: "",
       cartdata: [],
     };
-  }  
-  componentDidMount() {    
+  }
+  componentDidMount() {
     //all  api
     fetch(`${API_URL}/graphql`, {
       method: "post",
@@ -264,7 +264,7 @@ class HomeComp extends React.Component {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data,"manos")
+        console.log(data, "manos")
         //set banner
         let bannerDataFull =
           data?.data?.allBanners?.nodes?.sort(
@@ -368,47 +368,52 @@ class HomeComp extends React.Component {
         let reviewresponse = data?.data?.allCustomerReviews.nodes;
         this.setState({ reviews: reviewresponse });
       });
-    Aos.init({ duration: 1500 });
-    console.log(localStorage.getItem("user_id"),"user_id")
+    Aos.init({ duration: 1500 });    
+    var User_Id = localStorage.getItem("user_id")
     //wishlist
-    fetch(`${API_URL}/graphql`, {
-      method: "post",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        query: WISHLIST,
-        variables: {
-          userprofileId: localStorage.getItem("user_id"),
+    if (User_Id) {
+      fetch(`${API_URL}/graphql`, {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json",
         },
-      }),
-    })
-      .then((res) => res.json())
-      .then((res) => {
-        this.setState({ wishlistdata: res.data });
+        body: JSON.stringify({
+          query: WISHLIST,
+          variables: {
+            userprofileId: localStorage.getItem("user_id"),
+          },
+        }),
       })
-      .catch((err) => {
-        console.log(err);
-      });
-    fetch(`${API_URL}/graphql`, {
-      method: "post",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        query: CARTALL,
-        variables: {
-          userprofileId: localStorage.getItem("user_id"),
+        .then((res) => res.json())
+        .then((res) => {
+          console.log(res.data, "888")
+          this.setState({ wishlistdata: res.data });
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+      fetch(`${API_URL}/graphql`, {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json",
         },
-      }),
-    })
-      .then((res) => res.json())
-      .then((res) => {
-        this.setState({ cartdata: res.data });
+        body: JSON.stringify({
+          query: CARTALL,
+          variables: {
+            userprofileId: localStorage.getItem("user_id"),
+          },
+        }),
       })
-      .catch((err) => {
-        console.log(err);
-      });
+        .then((res) => res.json())
+        .then((res) => {
+          this.setState({ cartdata: res.data });
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+
+
   }
 
   next = () => {
@@ -420,13 +425,13 @@ class HomeComp extends React.Component {
   imageLoader = () => {
     this.setState({ imageLoading: true });
   };
-  onClose=()=>{
-    this.setState({ modalOpen: false });    
+  onClose = () => {
+    this.setState({ modalOpen: false });
   }
 
 
   render() {
-    const { classes } = this.props;    
+    const { classes } = this.props;
     const { modalOpen } = this.state;
     const dadgetdata = [
       {
@@ -458,7 +463,7 @@ class HomeComp extends React.Component {
           style={{ ...style, fontSize: "3em" }}
         />
       );
-    };    
+    };
     const ArrowRight = (props) => {
       const { className, style, onClick } = props;
       return (
@@ -629,7 +634,7 @@ class HomeComp extends React.Component {
           "NAC Jewellers launches Stylori Silver, a curated range of exclusive silver jewellery, featuring classical and contemporary styles",
       },
     ];
-   
+
 
     return (
       <div className={classes.root}>
@@ -659,7 +664,7 @@ class HomeComp extends React.Component {
                 sliderRef={this.slider}
                 dataCarousel={homeNac.carouselTop.setting}
               >
-                {this.state.bannerHome.map((val, index) => (                  
+                {this.state.bannerHome.map((val, index) => (
                   <>
                     <Hidden smDown>
                       <Grid
@@ -909,24 +914,24 @@ class HomeComp extends React.Component {
                     {
                       img: "https://s3.ap-southeast-1.amazonaws.com/media.nacjewellers.com/banners/web/Group-181%402x.webp",
                     },
-                  ].map((val,i) => {                    
+                  ].map((val, i) => {
                     return (
                       <Grid item xs={4} style={{ paddingLeft: 5 }}>
                         <Slideshow
                           class="subslider-carousel"
                           dataCarousel={mysettings}
                         >
-                          {i < 2?
-                          <img
-                            src={val.img}
-                            alt="NAC"                            
-                            loading="lazy"
-                          />:<a href={"https://www.youtube.com/watch?v=4SGmIZ0GoNw"} ><img
-                          src={val.img}
-                          alt="NAC" 
-                          style={{height:"405px"}}                          
-                          loading="lazy"
-                        /></a>}
+                          {i < 2 ?
+                            <img
+                              src={val.img}
+                              alt="NAC"
+                              loading="lazy"
+                            /> : <a href={"https://www.youtube.com/watch?v=4SGmIZ0GoNw"} ><img
+                              src={val.img}
+                              alt="NAC"
+                              style={{ height: "405px" }}
+                              loading="lazy"
+                            /></a>}
                         </Slideshow>
                       </Grid>
                     );
@@ -1004,15 +1009,15 @@ class HomeComp extends React.Component {
 
           <Footer />
         </Grid>
-        <Modal open={modalOpen}   style={{display:'flex',alignItems:'center',justifyContent:'center'}}>        
-          {/* Modal content */}         
-          <div  style={{
+        <Modal open={modalOpen} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          {/* Modal content */}
+          <div style={{
             backgroundColor: '#b2832c',
             color: 'white',
             padding: '20px',
             borderRadius: '8px',
             position: 'relative'
-            
+
           }}>
             <button onClick={this.onClose} style={{
               position: 'absolute',
@@ -1023,11 +1028,11 @@ class HomeComp extends React.Component {
               height: '30px',
               fontSize: '25px',
               color: '#fff',
-              zIndex:'99999'
-          }}>X</button>
-            
+              zIndex: '99999'
+            }}>X</button>
+
             <a href={"https://anniversary.nacjewellers.net"} target="_blank">
-            <img src={bidimage} style={{maxWidth:'100%'}}  />
+              <img src={bidimage} style={{ maxWidth: '100%' }} />
             </a>
           </div>
         </Modal>

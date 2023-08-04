@@ -62,14 +62,13 @@ const ExperienceCards = (props) => {
     false
   );
 
-  const handleSubmit = (type) => {
-      
+  const handleSubmit = (type) => {    
     values.name=values.name.trim() 
     values.mobile=values.mobile.trim()
-    values.email=values.email.trim()
+    values.email=values.email.trim()    
     var emailvld =
       /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    if (values.name === "" && values["error"]) {
+    if (values.name.length === "" && values["error"]) {     
       values["error"]["name"] = "Name is required";
       setValues({
         ...values,
@@ -85,10 +84,17 @@ const ExperienceCards = (props) => {
       });
       return false;
     }
-    if (values.mobile !== "") {
-      console.log("sss")        
+    if (values.name.length == 0) {      
+      values["error"]["name"] = "Name is required";
+      setValues({
+        ...values,
+        values,
+      });
+      return false;
+    }
+    if (values.mobile !== "") {             
       let text = values.mobile;
-      let pattern = /^[0-9]/g;
+      let pattern = /^[0-9]{10}$/;
       let result = text.match(pattern);
       if(!result){
         values["error"]["mobile"] = "Mobile Number is Invalid";

@@ -36,7 +36,7 @@ import TempleCardDetailComp from "components/templeCardDetailComp";
 import { useLocation } from "react-router-dom";
 
 function CdnPages(props) {
-  // view more button click state
+  // view more button click state  
   const [count, setCount] = useState(3);
 
   // card and form hide, show state
@@ -91,8 +91,7 @@ function CdnPages(props) {
   }, [location]);
 
   const [state, setState] = useState([]);
-  const handleComponents = (val) => { 
-    console.log(val.component,"llll")   
+  const handleComponents = (val) => {        
     switch (val.component) {
       case "BannerComponent": {
         return (

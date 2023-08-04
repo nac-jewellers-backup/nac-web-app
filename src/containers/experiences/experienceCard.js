@@ -97,7 +97,8 @@ export default function ExperienceCard(props) {
       });
       return false;
     }
-    if (values.mobile > 10) {
+    console.log(values.mobile,"777")
+    if (values.mobile.length >= 11) {
       values["error"]["mobile"] = "Enter valid Mobile Number";
       setValues({
         ...values,

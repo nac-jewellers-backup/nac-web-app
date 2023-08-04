@@ -569,8 +569,7 @@ class ProductDetail extends Component {
                       class="subslider-carousel"
                       dataCarousel={dataCarouselcollections}
                     >
-                      {this?.props?.data[0]?.fadeImageSublist.map((val,i) => { 
-                        console.log(val,"ooookkk")                                              
+                      {this?.props?.data[0]?.fadeImageSublist.map((val,i) => {                                                                                              
                         if(val.skuId !== this?.props?.data.skuId && val.img){
                           return (                          
                           <ImgMediaCard
