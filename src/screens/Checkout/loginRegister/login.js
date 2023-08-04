@@ -348,7 +348,7 @@ const LoginComponent = (props) => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(body),
     };
-    fetch(`${API_URL}/send_otp`, opts)
+    fetch(`${API_URL}/resend_otp`, opts)
       .then((res) => res.json())
       .then((fetchValue) => {
         setOpenSnack(true);
