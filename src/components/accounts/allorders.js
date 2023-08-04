@@ -757,8 +757,8 @@ class Allorders extends React.Component {
                                               alt="..."
                                               src="https://assets.stylori.com/images/static/icon-ship.png"
                                             />{" "}
-                                            <a href="/#"
-                                         target="_blank"
+                                            <a 
+                                         
                                          rel="noopener noreferrer" >
                                               {this.generateShipsBy(
                                                 cart.transSkuListByProductSku

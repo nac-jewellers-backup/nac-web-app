@@ -260,12 +260,20 @@ const LoginComponent = (props) => {
     window.scrollTo(0, 0);
     setEmailForm(!emailForm);
   };
-  const onChangeNumber = (e) => {
-    console.log(e.target.name,"kkkk")
-    setNumberForm({ ...numberForm, [e.target.name]: e.target.value });
-    setNumErr("");
-    setOtpErr("");
-    setOtpEmailErr("");
+  const onChangeNumber = (e) => {    
+    if(e.target.name == 'otp'&& e.target.value.length > 6){
+      setNumberForm({ ...numberForm, [e.target.name]: e.target.value });
+      setNumErr("");
+      setOtpErr("Enter valid OTP!!");
+      setOtpEmailErr("");
+    }
+    else{
+      setNumberForm({ ...numberForm, [e.target.name]: e.target.value });
+      setNumErr("");
+      setOtpErr("");
+      setOtpEmailErr("");
+    }
+    
   };
   const MobileNumSubmit = (e, history) => {};
   const validateEmail = (email) => {
