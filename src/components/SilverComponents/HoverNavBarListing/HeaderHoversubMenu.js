@@ -1193,7 +1193,7 @@ function HeaderHoverMenuItem(props) {
                   return (
                     <Grid item xs={12} className={classes.secondSection}>
                       <Grid
-                        container
+                        container 
                         className={classes.imgcont}
                         onClick={() => {
                           if (props.listitem === "EARRINGS") {
@@ -1210,7 +1210,7 @@ function HeaderHoverMenuItem(props) {
                         style={{ cursor: "pointer",flexDirection:'column'  }}
                       >
                         <Typography
-                          style={{ margin: "auto", textAlign: "center" }}
+                          style={{ margin: "auto", textAlign: "center",  width:'150%'}} //dhivagar change => added width only
                           className={classes.listedItemsvalue}
                         >
                           {val.title}

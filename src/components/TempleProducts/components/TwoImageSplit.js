@@ -12,7 +12,7 @@ const TwoImageSplit = (props) => {
         <Grid item xs={12} md={6}>
           <Grid container alignItems="baseline">
             {props?.data?.firstData.map((val, i) => (
-              <Grid item xs={6} style={{ textAlign: "center" }}>
+              <Grid item xs={6} style={{ textAlign: "center"  }}>
                 <img
                   style={{ width: val?.width ? val?.width : "100%" }}
                   src={val?.img}
@@ -34,7 +34,7 @@ const TwoImageSplit = (props) => {
             </Typography>
           </div>
         </Grid>
-        <Grid item xs={12} md={6} style={{ textAlign: "center" }}>
+        <Grid item xs={12} md={6} style={{ textAlign: "center"  }}>
           <img style={{ width: "100%" }} src={props?.data?.secondData?.img} />
           <div style={{ width: "60%", margin: "auto" }}>
             <Typography className={classes.headerTempleName}>
