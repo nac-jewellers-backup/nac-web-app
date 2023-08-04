@@ -9,7 +9,7 @@ const ThreeSplitImage = (props) => {
     <div className={classes.aboutChild} style={{ paddingTop: "0px" }}>
       <Grid
         direction={props?.total?.position === "right" ? "row" : "row-reverse"}
-        container
+        container style={{ alignItems: "end"}}
       >
         <Grid item xs={12} md={5}>
           <Grid
@@ -18,7 +18,7 @@ const ThreeSplitImage = (props) => {
               props?.total?.firstHeaderLow ? "column-reverse" : "column"
             }
           >
-            <div style={{ width: "60%", margin: "auto" }}>
+            <div style={{ width: "60%", margin: "auto"  }}>
               <Typography className={classes.headerTempleName}>
                 {props?.total?.firstHeader}
               </Typography>
@@ -26,7 +26,30 @@ const ThreeSplitImage = (props) => {
                 {props?.total?.firstWeigh}
               </Typography>
             </div>
-            <Grid container>
+
+            
+            {/* Dhivagar change Starts    */} 
+            
+            {/* <Grid container >  
+              {props?.data?.twoSplit.map((val, i) => (
+                <Grid item xs={6}>
+                  <img
+                    style={{ width: val?.width ? val?.width : "100%" }}
+                    className={classes.imageOfImageWithDescription}
+                    src={val?.img}
+                  ></img>
+                  <Box className={classes.txtBox}>
+                    <Typography className={classes.TempleName}>
+                      {val?.text}
+                    </Typography>
+                    <Typography className={classes.weighTxt}>
+                      {val?.weigh}
+                    </Typography>
+                  </Box>
+                </Grid>
+              ))}
+            </Grid> */}
+            <Grid container style={{alignItems: "end"}}>  
               {props?.data?.twoSplit.map((val, i) => (
                 <Grid item xs={6}>
                   <img
@@ -45,11 +68,14 @@ const ThreeSplitImage = (props) => {
                 </Grid>
               ))}
             </Grid>
+            
+             {/* Dhivagar change end   */}
+             
           </Grid>
         </Grid>
         <Grid item xs={12} md={7}>
           <Grid
-            container
+            container style={{alignItems: "end"}}
             direction={
               props?.total?.secondHeaderLow ? "column-reverse" : "column"
             }
@@ -62,7 +88,7 @@ const ThreeSplitImage = (props) => {
                 {props?.total?.secondWeigh}
               </Typography>
             </div>
-            <Grid container alignItems="baseline">
+            <Grid container alignItems="baseline" >
               {props?.data?.threeSplit.map((val, i) => (
                 <Grid item xs={val?.grid}>
                   <img
@@ -71,7 +97,7 @@ const ThreeSplitImage = (props) => {
                     src={val?.img}
                   ></img>
                   {val?.multipleText?.length > 0 && (
-                    <Grid container>
+                    <Grid container >
                       {val?.multipleText?.map((e, i) => (
                         <>
                           <Grid item xs={3} style={{ maxWidth: "24%" }}>
