@@ -28,7 +28,7 @@ const ThreeSplitImage = (props) => {
             </div>
 
             
-            {/* Dhivagar change Starts    */} 
+            {/* Dhivagar change Starts   today */} 
             
             {/* <Grid container >  
               {props?.data?.twoSplit.map((val, i) => (
@@ -70,7 +70,7 @@ const ThreeSplitImage = (props) => {
             </Grid>
             
              {/* Dhivagar change end   */}
-             
+
           </Grid>
         </Grid>
         <Grid item xs={12} md={7}>
