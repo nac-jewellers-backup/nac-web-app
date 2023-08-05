@@ -970,7 +970,7 @@ export const Jewellery = {
           url: "/jewellery-uncut",
           img: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/z5pju4%402x.png",
         },
-        { content: "Jadau", url: "/jadai-jewellery", image: "" },
+        { content: "Jadau", url: "/jadai-jewellery", image: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/dist/jewellery/gold/kundan/necklace/2-659804.png" },
 
         {
           content: "Strings",

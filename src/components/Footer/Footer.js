@@ -357,7 +357,7 @@ export default function Footer(props) {
           Title: "Track Your Order",
         },
         {
-          url: "#",
+          url: "/return",
           Title: "30 Day Return",
         },
         {
@@ -443,11 +443,11 @@ export default function Footer(props) {
       content: [
         {
           subTitle: "Track Your Order",
-          url: "#",
+          url: "/account-allorders",
         },
         {
           subTitle: "30 Day Return",
-          url: "#",
+          url: "/account-allorders",
         },
         {
           subTitle: 'Experiences',

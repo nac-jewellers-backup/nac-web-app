@@ -40,7 +40,7 @@ export default class Stylori extends Component {
   }
 
   render() {
-    
+       
     // const fadeImages = [
     //   'https://assets-cdn.stylori.com/120x120/images/product/SR0986/SR0986-1Y.jpg',
     //   'https://assets-cdn.stylori.com/120x120/images/product/SE0464/SE0464-1Y.jpg',

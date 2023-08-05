@@ -58,6 +58,7 @@ class ProductDetails extends React.Component {
                           ? " "
                           : valueofproductdetail?.namedetail?.map(
                               (res, Index) => {
+                                console.log(res,"pppp")
                                 return (
                                   <>
                                     {res?.details !== null &&
@@ -83,7 +84,7 @@ class ProductDetails extends React.Component {
                                                         }}
                                                       >
                                                         {" "}
-                                                        {res.name}
+                                                        {res?.name === 'Total'?"Selling Price":res?.name}
                                                       </span>
                                                     }
                                                   </ListItemText>
@@ -413,7 +414,7 @@ class ProductDetails extends React.Component {
                                           >
                                             <span style={{ fontSize: "12px" }}>
                                               {" "}
-                                              {res.name}
+                                              {res?.name === 'Total'?"Selling Price":res?.name}
                                             </span>
                                           </ListItemText>
                                         </Grid>

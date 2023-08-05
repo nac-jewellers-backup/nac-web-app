@@ -379,7 +379,7 @@ function HeaderHoverMenuItem(props) {
       image:
         "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/static+page+images/home_web_header/collecions/z5pju4%402x.png",
     },
-    { title: "Jadau", url: "/jewellery-jadau", image: "" },
+    { title: "Jadau", url: "/jewellery-jadau", image: "https://s3-ap-southeast-1.amazonaws.com/media.nacjewellers.com/resources/dist/jewellery/gold/kundan/necklace/2-659804.png" },
 
     {
       title: "Strings",
@@ -833,7 +833,7 @@ function HeaderHoverMenuItem(props) {
             <Grid container item xs={12}>
               {collectionsData.map((val, index) => {
                 return (
-                  <Grid item xs={3}>
+                  <Grid item xs={3} >
                     <Grid
                       container
                       className={classes.imgcont}
