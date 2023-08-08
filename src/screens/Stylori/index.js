@@ -13,6 +13,7 @@ export default class Stylori extends Component {
     super(props);
     this.state = {
       cmspage: false,
+      automaticPath: "/"
       // window.location.pathname.split("-")[1]
     };
   }
@@ -38,6 +39,11 @@ export default class Stylori extends Component {
         });
       });
   }
+  redirectToPath = (path) => {
+    if (path !== window.location.pathname) {
+      window.location.replace(path);
+    }
+  };
 
   render() {
        
@@ -73,7 +79,7 @@ export default class Stylori extends Component {
     if(this.state.cmspage){
       return <CdnPages {...this.props} />
     }
-    else if(jewel || silver || tanjore || comingsoon){
+    else if(jewel || silver || tanjore ){
       return (
         <FilterOptionsProvider>
           <CartProvider>
@@ -82,7 +88,8 @@ export default class Stylori extends Component {
         </FilterOptionsProvider>
       )
     }
-    else{     
+    else{ 
+      this.redirectToPath(this.state.automaticPath);    
       return <HomeComp></HomeComp>
     }
   }

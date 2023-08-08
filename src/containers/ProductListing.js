@@ -97,10 +97,10 @@ class Stylori extends React.Component {
     };
 
   
-    return (
-      <>
+    return (      
+      <>      
         {/* <LiveChat license={5807571} /> */}
-        <Grid container>
+        <Grid container>        
           <div>
             {this.props &&
             this.props.mappedFilters &&

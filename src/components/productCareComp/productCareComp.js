@@ -4,12 +4,15 @@ import ProductCareStyles from "./style";
 
 const ProductCareComp = (props) => {
   const classes = ProductCareStyles();
-  const path=window.location.search.length;  
+    
   useEffect(() => {
-    if (path > 0) {
+    const path=window.location.search.length;
+    if (path > 0) {      
       // Scroll to a specific position in the ScrollView
-      const scrollElement = document.getElementById('The guide to caring for diamonds');
-      scrollElement.scrollIntoView({ behavior: 'smooth' });
+      const scrollElement = document.getElementById("5");
+      let el = document.getElementById("5");
+      // scrollElement.scrollIntoView({ behavior: 'smooth' });      
+      el.scrollIntoView(true);      
     }
   }, []);
   return (
@@ -18,7 +21,7 @@ const ProductCareComp = (props) => {
         {props?.data?.map((e, index) => {
           console.log("index", index);
           return (
-            <Card className={classes.cardBox} id={e?.heading}>
+            <Card className={classes.cardBox} >
               <Grid container spacing={5}>
                 <Grid
                   item
@@ -41,7 +44,7 @@ const ProductCareComp = (props) => {
                         <div className={classes.content}>
                           <ul>
                             <li>
-                              <Typography>{val}</Typography>
+                              <Typography id={index}>{val}</Typography>
                             </li>
                           </ul>
                         </div>

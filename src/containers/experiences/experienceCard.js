@@ -78,10 +78,19 @@ export default function ExperienceCard(props) {
     false
   );
   
-  const handleSubmit =()=>{
+  const handleSubmit =()=>{    
+    values.name=values.name.trim();
     var emailvld =
     /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (values.name === "" && values["error"]) {
+      values["error"]["name"] = "Name is required";
+      setValues({
+        ...values,
+        values,
+      });
+      return false;
+    }
+    if (values.name === "" && values["name"]) {
       values["error"]["name"] = "Name is required";
       setValues({
         ...values,
@@ -96,8 +105,7 @@ export default function ExperienceCard(props) {
         values,
       });
       return false;
-    }
-    console.log(values.mobile,"777")
+    }    
     if (values.mobile.length >= 11) {
       values["error"]["mobile"] = "Enter valid Mobile Number";
       setValues({
@@ -136,10 +144,37 @@ export default function ExperienceCard(props) {
 
 
 
-  const handleChange=(key,value)=>{
+  const handleChange=(key,value)=>{    
     if(key === 'productCategory'){
      if (value.length > 3) {return false}
      else setValues({...values,[key]:value})
+    }
+    else if(key === 'name'){            
+      setValues({
+        ...values,[key]:value,
+        error: {
+          ...values.error,
+          name: ""
+        }
+      });
+    }
+    else if(key == 'email'){
+      setValues({
+        ...values,[key]:value,
+        error: {
+          ...values.error,
+          email: ""
+        }
+      });
+    }
+    else if(key == 'mobile'){
+      setValues({
+        ...values,[key]:value,
+        error: {
+          ...values.error,
+          mobile: ""
+        }
+      });
     }
     else{
       setValues({...values,[key]:value})

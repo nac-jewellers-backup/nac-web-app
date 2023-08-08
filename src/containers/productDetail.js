@@ -115,6 +115,7 @@ class ProductDetail extends Component {
   };
 
   render() {
+      
     const { classes } = this.props;
 
     var loc = this.props.location.pathname;
@@ -220,12 +221,13 @@ class ProductDetail extends Component {
       prevArrow: <ArrowLeft />,
       nextArrow: <ArrowRight />,
     };
-
+    console.log(this.props.data.length,"gvhgvgv",this.props.data) 
     return (
       <div style={{ overflow: "hidden" }}>
         <div>
           <MetaTags>
-            {this?.props &&
+            {                       
+            this?.props &&
             this.props?.data &&
             this.props?.data[0] &&
             this.props?.data[0].length > 0 ? (
