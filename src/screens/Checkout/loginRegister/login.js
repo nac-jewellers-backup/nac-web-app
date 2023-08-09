@@ -682,7 +682,7 @@ const LoginComponent = (props) => {
                 {numberForm.NumberSubmit ? (
                   <Input
                     name="otp"
-                    type="text"                    
+                    type="number"                    
                     value={numberForm.otp ?? ""}
                     helperText={otpErr}
                     placeholder="Enter OTP"                    

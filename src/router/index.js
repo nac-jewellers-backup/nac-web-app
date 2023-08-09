@@ -159,12 +159,28 @@ export const RouterApp = (props) => {
         exact
         path={`${routes.ResetPassword}/:id`}
       />
-      <Route
+      {/* <Route
+        key="ChangePassword"
+        component={ChangePassword}
+        exact
+        path={routes.ChangePassword}
+      /> */}
+      {/* done by kiki */}
+      {Boolean(localStorage.getItem("user_id")) ? (
+        <Route
         key="ChangePassword"
         component={ChangePassword}
         exact
         path={routes.ChangePassword}
       />
+      ) : (
+        <Redirect
+          key="stylori-redirect"
+          from={routes.ChangePassword}
+          exact
+          to={"/login"}
+        />
+      )}
       <Route
         key="paymenthidden"
         component={PaymentHiddenForm}

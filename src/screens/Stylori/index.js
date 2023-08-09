@@ -89,8 +89,7 @@ export default class Stylori extends Component {
       )
     }
     else{ 
-      this.redirectToPath(this.state.automaticPath);    
-      return <HomeComp></HomeComp>
+      window.location.assign("/") 
     }
   }
 }

@@ -47,11 +47,16 @@ const LoginComponent = (props) => {
             setValues({ ...values, confirmPasswordError: true, confirmPasswordHelper: "Field can't be empty!" })
         }
         else if (!pattern.test(values.newpassword)) {
-            setValues({ ...values, newPasswordError: true, newPasswordHelperText: "Password must contain 1 Uppercase, 1 Lowercase, 1 numeric and minimum 8 characters in length!" })
+            setValues({ ...values, newPasswordError: true, newPasswordHelperText: "Password must contain 1 Uppercase, 1 Lowercase, 1 numeric,1 special character and minimum 8 characters in length!" })
             return false;
         }
         else if (values.newpassword !== values.confirmPassword) {
             setValues({ ...values, confirmPasswordError: true, confirmPasswordHelper: "New password and Confirm password does not match!" })
+            return false;
+        }
+        else if (values.newpassword === values.oldpassword) {
+            setValues({ ...values, newPasswordError: true, newPasswordHelperText: "New Password cannot be the old password!" })
+            return false;
         }
         else {
             var body = { "oldpassword": values.oldpassword, "newpassword": values.newpassword }
