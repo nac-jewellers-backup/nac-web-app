@@ -30,14 +30,15 @@ export default class Stylori extends Component {
     })
       .then((res) => res.json())
       .then((data) => {
+        console.log(data,"test..")
         const dataRecieved = data.data.allCdns.nodes;
         const pages = dataRecieved?.map((val) => val.page);
         const isCdnPage = pages.includes(window.location.pathname.split("/")[1]);        
         this.setState({
-          ...this.state,
+          // ...this.state,
           cmspage: isCdnPage,
         });
-      });
+      });      
   }
   redirectToPath = (path) => {
     if (path !== window.location.pathname) {
@@ -46,7 +47,10 @@ export default class Stylori extends Component {
   };
 
   render() {
-       
+    var window_path=window.location.href;
+    var jewel=window_path.includes('jewellery');
+    var silver=window_path.includes('silver');
+    var tanjore=window_path.includes('tanjore');       
     // const fadeImages = [
     //   'https://assets-cdn.stylori.com/120x120/images/product/SR0986/SR0986-1Y.jpg',
     //   'https://assets-cdn.stylori.com/120x120/images/product/SE0464/SE0464-1Y.jpg',
@@ -62,34 +66,37 @@ export default class Stylori extends Component {
     //   arrows: false
     // }
     // done by kiki
-    // return this.state.cmspage ? (
-    //   <CdnPages {...this.props} />
-    // ) : (
-    //   <FilterOptionsProvider>
-    //     <CartProvider>
-    //       <ProductListing />
-    //     </CartProvider>
-    //   </FilterOptionsProvider>
-    // );
-    var window_path=window.location.href;
-    var jewel=window_path.includes('jewellery');
-    var silver=window_path.includes('silver');
-    var tanjore=window_path.includes('tanjore');
-    var comingsoon=window_path.includes('comingsoon');
-    if(this.state.cmspage){
-      return <CdnPages {...this.props} />
-    }
-    else if(jewel || silver || tanjore ){
-      return (
-        <FilterOptionsProvider>
-          <CartProvider>
-            <ProductListing />
-          </CartProvider>
-        </FilterOptionsProvider>
-      )
-    }
-    else{ 
-      window.location.assign("/") 
-    }
+    return this.state.cmspage ? (
+      <CdnPages {...this.props} />
+    ) : (
+      <FilterOptionsProvider>
+        <CartProvider>
+          <ProductListing />
+        </CartProvider>
+      </FilterOptionsProvider>
+    );
+    // var window_path=window.location.href;
+    // var jewel=window_path.includes('jewellery');
+    // var silver=window_path.includes('silver');
+    // var tanjore=window_path.includes('tanjore');
+    // var comingsoon=window_path.includes('comingsoon');
+    // if(this.state.cmspage){
+    //   return <CdnPages {...this.props} />
+    // }
+    // else if(jewel || silver || tanjore ){
+    //   return (
+    //     <FilterOptionsProvider>
+    //       <CartProvider>
+    //         <ProductListing />
+    //       </CartProvider>
+    //     </FilterOptionsProvider>
+    //   )
+    // }
+    // else if((!jewel) && (!silver) && (!tanjore)){ 
+    //   window.location.assign("/aaa") 
+    // }
+    // else{
+    //   return <CdnPages {...this.props} />     
+    // }
   }
 }

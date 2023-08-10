@@ -3,23 +3,12 @@ import { Card, Grid, Typography } from "@material-ui/core";
 import ProductCareStyles from "./style";
 
 const ProductCareComp = (props) => {
-  const classes = ProductCareStyles();
-    
-  useEffect(() => {
-    const path=window.location.search.length;
-    if (path > 0) {      
-      // Scroll to a specific position in the ScrollView
-      const scrollElement = document.getElementById("5");
-      let el = document.getElementById("5");
-      // scrollElement.scrollIntoView({ behavior: 'smooth' });      
-      el.scrollIntoView(true);      
-    }
-  }, []);
+  const classes = ProductCareStyles(); 
   return (
     <Grid container className={classes.contentText} >
       <Grid item xs={12}>
-        {props?.data?.map((e, index) => {
-          console.log("index", index);
+        {
+        props?.data?.map((e, index) => {          
           return (
             <Card className={classes.cardBox} >
               <Grid container spacing={5}>

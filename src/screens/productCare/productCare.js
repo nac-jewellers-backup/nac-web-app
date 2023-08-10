@@ -9,6 +9,7 @@ import ProductCareStyles from "./style";
 
 const ProductCare = () => {
   const classes = ProductCareStyles();
+  const path=window.location.search.length;  
   return (
     <Grid container>
       <Grid item xs={12}>
@@ -19,7 +20,7 @@ const ProductCare = () => {
           <CommonTitle title="JEWELLERY CARE GUIDE" />
         </div>
         <div>
-          <ProductCareComp data={productCareData} />
+          {path?(<ProductCareComp data={productCareData.reverse()} />):(<ProductCareComp data={productCareData} />)}
         </div>
         <div className={classes.footer}>
           <Footer />

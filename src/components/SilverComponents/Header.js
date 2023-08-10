@@ -448,8 +448,7 @@ class Header extends Component {
                         <Grid item xs={12} sm={6} md={3} lg={3}>
                           {" "}
                           <ThemeProvider theme={theme}>
-                            <Autocomplete
-                              id="country-select-demo"
+                            <Autocomplete                              
                               size="small"                              
                               style={{
                                 color: "#000 !important",
@@ -473,12 +472,7 @@ class Header extends Component {
                                   value={this.state?.livePrice?.label}
                                   placeholder={this.state?.livePrice?.label ?? "Today's Gold Rate"}
                                   style={{cursor: 'none'}}
-                                  variant="outlined"
-                                  // done by kiki
-                                  InputProps={{
-                                    ...params.InputProps,
-                                    endAdornment: null, // Removes the endAdornment (clear icon)
-                                  }}
+                                  variant="outlined"                                                                    
                                 />
                               )}
                             />

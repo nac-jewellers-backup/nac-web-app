@@ -300,11 +300,11 @@ const Addressforms = (changePanel) => {
   };
 
   const handleSubmit = (e) => {
-    console.log(values.addressOne,"shipping address") 
+    console.log(values.addressOne,"shipping address")    
     values.addressOne.firstname=values.addressOne.firstname.trim()
     values.addressOne.lastname=values.addressOne.lastname.trim()
     values.addressOne.pincode= values.addressOne.pincode.trim()
-    values.addressOne.contactno= values.addressOne.contactno.trim()
+    values.addressOne.contactno= values.addressOne.contactno.trim()     
 
     var mozile=parseInt(values.addressOne.contactno);
     if (values && values.addressOne && values.addressOne.pincode === "") {
