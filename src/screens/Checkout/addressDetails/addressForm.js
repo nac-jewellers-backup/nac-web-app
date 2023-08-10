@@ -8,10 +8,12 @@ import Addressforms from "./Addressforms";
 import { MYCOUNTRIES } from "queries/cart";
 import { API_URL } from "config";
 
+//dhivagar changes added STARTS
+
 const Addressform = (props) => {
   return <AddressComponent {...props} />;
 };
-
+//dhivagar changes added end
 const AddressComponent = (props) => {
   const { values, handle, setValues } = Addressforms(() =>
     props.changePanel(3, values.selest_my_address)
@@ -32,16 +34,13 @@ const AddressComponent = (props) => {
     />
   );
   const redirectAdd = (num) => {
-   
     handle.redirectForm1();
     setState(num);
   };
   const redirectAdd2 = (num) => {
- 
     handle.redirectForm1();
     setState(num);
   };
-
 
   const json = (response) => {
     return response.json();
@@ -52,36 +51,36 @@ const AddressComponent = (props) => {
     ? localStorage.getItem("m")
     : values.addressOne.salutation;
 
-    const getCountries=()=>{
-      fetch(`${API_URL}/graphql`, {
-        method: "post",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          query:MYCOUNTRIES,
-        }),
+  const getCountries = () => {
+    fetch(`${API_URL}/graphql`, {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        query: MYCOUNTRIES,
+      }),
+    })
+      .then(json)
+      .then((data) => {
+        let main = data.data;
+        let countries = [];
+        main.allMasterCountries.nodes.map((_) => {
+          let obj = {};
+          obj.label = _.nicename;
+          obj.value = _.iso;
+          countries.push(obj);
+        });
+        setCountryCode(countries);
       })
-        .then(json)
-        .then((data) => {
-           let main = data.data;
-           let countries=[]
-           main.allMasterCountries.nodes.map(_ =>{
-             let obj={}
-             obj.label = _.nicename
-             obj.value = _.iso
-             countries.push(obj)
-           })
-           setCountryCode(countries)
-        })
-        .catch(err=>{
-          console.log(err,'err')
-        })
-    }
+      .catch((err) => {
+        console.log(err, "err");
+      });
+  };
 
-    React.useEffect(()=>{
-       getCountries();
-    },[])
+  React.useEffect(() => {
+    getCountries();
+  }, []);
 
   return (
     <Grid>
@@ -118,7 +117,6 @@ const AddressComponent = (props) => {
                   )}
 
                   <Grid container spacing={12}>
-                   
                     <Grid item lg={6}>
                       <Input
                         name="firstname"
@@ -158,20 +156,6 @@ const AddressComponent = (props) => {
                   </Grid>
                   <Grid container spacing={12}>
                     <Grid item xs={6} lg={6}>
-                      <SimpleSelect
-                        name='country'
-                        selectData={countryCode ?? []}
-                        onChange={(event) =>
-                          handle.handleChange(
-                            "addressOne",
-                            "country",
-                            event.target.value,
-                          )
-                        }
-                        value={values.addressOne.country ?? ''}
-                      />
-                    </Grid>
-                    <Grid item xs={6} lg={6}>
                       <Input
                         className="text-f"
                         type="tel"
@@ -197,6 +181,33 @@ const AddressComponent = (props) => {
                           values.addressOne.errortext &&
                           values.addressOne.errortext.pinerr}
                       </label>
+                    </Grid>
+                    <Grid item xs={6} lg={6}>
+                      <SimpleSelect
+                        name="country"
+                        selectData={countryCode ?? []}
+                        disabled={!props.value && !values[props.name]} //dhivagar changes(added)
+                        renderValue={(value) => {
+                          //dhivagar changes
+                          if (props.value || values[props.name]) {
+                            return props.value
+                              ? props.value
+                              : values[props.name];
+                          } else {
+                            return <em>Select country</em>; // Placeholder text
+                          }
+                        }}
+                        onChange={(event) =>
+                          handle.handleChange(
+                            "addressOne",
+                            "country",
+                            event.target.value
+                          )
+                        }
+                        value={values.addressOne.country ?? ""}
+                        // disabled={values.addressOne.country !== ''}
+                        
+                      />
                     </Grid>
                   </Grid>
                   <Grid container spacing={12}>
@@ -268,7 +279,6 @@ const AddressComponent = (props) => {
                     </Grid>
                   </Grid>
                   <Grid container spacing={12}>
-                   
                     <Grid item xs={12} lg={12}>
                       <Input
                         className="text-f"
@@ -333,9 +343,9 @@ const AddressComponent = (props) => {
                               val={"2"}
                               name={["Select"]}
                               selectData={[
-                                {label:"Mr",value:"Mr"},
-                                {label:"Mrs",value:"Mrs"},
-                                {label:"Ms",value:"Ms"}
+                                { label: "Mr", value: "Mr" },
+                                { label: "Mrs", value: "Mrs" },
+                                { label: "Ms", value: "Ms" },
                               ]}
                               // selectData={["Mr", "Mrs", "Ms"]}
                             />
@@ -492,9 +502,7 @@ const AddressComponent = (props) => {
                           <Grid item xs={3} lg={3}>
                             <SimpleSelect
                               name={["+91"]}
-                              selectData={[
-                                {label:"+91",value:"+91"},
-                              ]}
+                              selectData={[{ label: "+91", value: "+91" }]}
                               // selectData={["+91"]}
                               disabled={"disabled"}
                             />
