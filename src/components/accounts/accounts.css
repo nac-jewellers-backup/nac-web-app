@@ -340,12 +340,12 @@
     color: #2f348b;
 
     font-weight: bold !important;
-    position: sticky;
-    z-index: 200;
+    /* position: sticky; */
+    z-index: -1 !important;
     width: 90% !important;
     background: #fff;
     /* top:55px; */
-    display: flex;
+    /* display: flex; */
     margin-top: 25px !important;
     padding-top: 12px !important;
   }
@@ -410,7 +410,7 @@
   margin-top: 0px;
   font-weight: bold !important;
   position: sticky;
-  z-index: 200;
+  z-index: -1 !important;
   width: 100%;
   justify-content: center;
   display: flex;

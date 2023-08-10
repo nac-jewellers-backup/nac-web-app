@@ -682,12 +682,18 @@ const LoginComponent = (props) => {
                 {numberForm.NumberSubmit ? (
                   <Input
                     name="otp"
-                    type="text"                    
+                    type="number"                    
                     value={numberForm.otp ?? ""}
                     helperText={otpErr}
                     placeholder="Enter OTP"                    
                     onChange={(e) => onChangeNumber(e)}
-                    onKeyDown={ (evt) => (evt.key === 'e' || evt.key === 'E' || evt.key === '.' || evt.key === '+' || evt.key === '-')  && evt.preventDefault() }
+                    // onKeyDown={ (evt) => (evt.key === 'e' || evt.key === 'E' || evt.key === '.' || evt.key === '+' || evt.key === '-')  && evt.preventDefault() }
+                    onKeyPress={(e) => {                      
+                      const allowedCharacters = /^[0-9\b]+$/;
+                      if (!e.key.match(allowedCharacters)) {
+                        e.preventDefault();
+                      }
+                    }}
                     min="4"
                     max="4"
                   />
